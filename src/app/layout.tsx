@@ -1,10 +1,11 @@
+
 import './globals.css'
-// ...existing code...
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { Analytics } from '@vercel/analytics/react'   // ✅ import Analytics
+import { Playfair_Display } from 'next/font/google'
 
-
-
+const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400','500','600','700','800','900'] });
 
 export const metadata = {
   title: 'GradeMax',
@@ -13,11 +14,12 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white">
+    <html lang="en" className={playfair.className}>
+      <body className="bg-black text-white min-h-screen flex flex-col">
         <Navbar />
-        <div className="pt-20">{children}</div> {/* pushes content below navbar */}
+  <div className="pt-36 flex-1">{children}</div> {/* pushes content below navbar */}
         <Footer />
+        <Analytics />   {/* ✅ add Analytics here */}
       </body>
     </html>
   )

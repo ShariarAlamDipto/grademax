@@ -1,3 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-hover-sea {
+	color: #50c878;
+	transition: color 0.3s, filter 0.3s, background 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.gradient-hover-sea:hover {
+	background: linear-gradient(270deg, #50c878 0%, #ffffff 50%, #50c878 100%);
+	background-size: 200% 200%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	color: transparent;
+	animation: gradient-move-greenwhite-loop 6s linear infinite;
+	filter: drop-shadow(0 0 12px #50c878);
+	transition: color 0.3s, filter 0.3s, background 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes gradient-move-greenwhite-loop {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
