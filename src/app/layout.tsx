@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Analytics } from '@vercel/analytics/react'   // ✅ import Analytics
 import { Playfair_Display } from 'next/font/google'
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400','500','600','700','800','900'] });
 
