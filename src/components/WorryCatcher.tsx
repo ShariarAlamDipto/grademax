@@ -44,7 +44,7 @@ export default function WorryCatcher() {
   useEffect(() => {
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
     // Heuristic: treat devices with <=2GB RAM or low devicePixelRatio as slow
-  const deviceMemory = (navigator as any).deviceMemory;
+  const deviceMemory: unknown = (navigator as unknown as { deviceMemory?: unknown }).deviceMemory;
   const isSlow = isMobile && ((typeof deviceMemory === 'number' && deviceMemory <= 2) || window.devicePixelRatio <= 1.5);
     if (!isMobile || !isSlow) {
       setStarted(true);
