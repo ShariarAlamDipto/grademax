@@ -36,8 +36,22 @@ export default function WorryCatcher() {
   const [done, setDone] = useState(false)
   const [elapsed, setElapsed] = useState<number | null>(null)
   const [started, setStarted] = useState(false)
+  const [showPlay, setShowPlay] = useState(false)
   const doneRef = useRef(false)
   const startTimeRef = useRef<number | null>(null)
+
+  // Decide autoplay or show Play button on mount
+  useEffect(() => {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+    // Heuristic: treat devices with <=2GB RAM or low devicePixelRatio as slow
+  const deviceMemory = (navigator as any).deviceMemory;
+  const isSlow = isMobile && ((typeof deviceMemory === 'number' && deviceMemory <= 2) || window.devicePixelRatio <= 1.5);
+    if (!isMobile || !isSlow) {
+      setStarted(true);
+    } else {
+      setShowPlay(true);
+    }
+  }, []);
 
   useEffect(() => {
     if (!started) return;
@@ -401,7 +415,7 @@ export default function WorryCatcher() {
   return (
     <section className="mx-auto max-w-6xl px-2 sm:px-4 pb-16 text-center">
       <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6">Catch your problems</h2>
-      {!started ? (
+      {!started && showPlay ? (
         <div className="flex flex-col items-center justify-center h-[340px] sm:h-[440px] md:h-[560px]">
           <button
             className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg shadow-lg hover:scale-105 active:scale-95 transition mb-4"
