@@ -35,10 +35,14 @@ export default function WorryCatcher() {
   const wrapperRef = useRef<HTMLDivElement>(null)
   const [done, setDone] = useState(false)
   const [elapsed, setElapsed] = useState<number | null>(null)
+  const [started, setStarted] = useState(false)
   const doneRef = useRef(false)
   const startTimeRef = useRef<number | null>(null)
 
   useEffect(() => {
+    if (!started) return;
+    // Detect mobile
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768
     // Start timer on mount
     startTimeRef.current = performance.now()
     const canvas = canvasRef.current
@@ -49,13 +53,14 @@ export default function WorryCatcher() {
     if (!ctxMaybe) return
     const c = ctxMaybe // <- non-null ctx captured for all inner functions
 
-    const dpr = Math.max(1, window.devicePixelRatio || 1)
+    // Lower dpr on mobile for perf
+    const dpr = Math.max(1, isMobile ? 1 : window.devicePixelRatio || 1)
     let w = wrapper.clientWidth
-    let h = Math.max(560, Math.floor(wrapper.clientWidth * 0.55))
+    let h = Math.max(isMobile ? 340 : 560, Math.floor(wrapper.clientWidth * (isMobile ? 0.7 : 0.55)))
 
     const resizeCanvas = () => {
       w = wrapper.clientWidth
-      h = Math.max(560, Math.floor(wrapper.clientWidth * 0.55))
+      h = Math.max(isMobile ? 340 : 560, Math.floor(wrapper.clientWidth * (isMobile ? 0.7 : 0.55)))
       canvas.width = Math.floor(w * dpr)
       canvas.height = Math.floor(h * dpr)
       canvas.style.width = `${w}px`
@@ -68,16 +73,17 @@ export default function WorryCatcher() {
     const rand = (min: number, max: number) => Math.random() * (max - min) + min
     const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v))
 
-    // radius by text length
-    const labelFont = "600 12px system-ui, -apple-system, Segoe UI, Roboto"
+    // Responsive font and bubble size
+    const labelFont = isMobile ? "600 10px system-ui, -apple-system, Segoe UI, Roboto" : "600 12px system-ui, -apple-system, Segoe UI, Roboto"
     c.font = labelFont
     const radiusFor = (t: string) => {
       const width = c.measureText(t).width
-      return clamp(width * 0.6 + 18, 26, 70)
+      return clamp(width * 0.6 + (isMobile ? 12 : 18), isMobile ? 18 : 26, isMobile ? 36 : 70)
     }
 
-    // bubbles
-    const bubbles: Bubble[] = WORRIES.map((text, i) => ({
+    // Fewer bubbles on mobile
+    const MOBILE_WORRIES = ["Stress", "Deadlines", "Exam Fear"]
+    const bubbles: Bubble[] = (isMobile ? MOBILE_WORRIES : WORRIES).map((text, i) => ({
       id: i,
       text,
       x: rand(70, w - 70),
@@ -288,27 +294,36 @@ export default function WorryCatcher() {
 
     // ----- main loop -----
     let anim = 0
-    const tick = () => {
+    let lastFrame = 0
+    const tick = (now = performance.now()) => {
+      // Lower FPS on mobile
+      if (isMobile && now - lastFrame < 33) {
+        anim = requestAnimationFrame(tick)
+        return
+      }
+      lastFrame = now
       // clear
       c.clearRect(0, 0, w, h)
 
-      // subtle grid
-      c.globalAlpha = 0.05
-      for (let gx = 0; gx < w; gx += 32) {
-        c.beginPath()
-        c.moveTo(gx, 0)
-        c.lineTo(gx, h)
-        c.strokeStyle = "#fff"
-        c.stroke()
+      // Only show grid on desktop
+      if (!isMobile) {
+        c.globalAlpha = 0.05
+        for (let gx = 0; gx < w; gx += 32) {
+          c.beginPath()
+          c.moveTo(gx, 0)
+          c.lineTo(gx, h)
+          c.strokeStyle = "#fff"
+          c.stroke()
+        }
+        for (let gy = 0; gy < h; gy += 32) {
+          c.beginPath()
+          c.moveTo(0, gy)
+          c.lineTo(w, gy)
+          c.strokeStyle = "#fff"
+          c.stroke()
+        }
+        c.globalAlpha = 1
       }
-      for (let gy = 0; gy < h; gy += 32) {
-        c.beginPath()
-        c.moveTo(0, gy)
-        c.lineTo(w, gy)
-        c.strokeStyle = "#fff"
-        c.stroke()
-      }
-      c.globalAlpha = 1
 
       // motion update
       let allCaptured = true
@@ -381,32 +396,46 @@ export default function WorryCatcher() {
       canvas.removeEventListener("mousemove", onMove)
       window.removeEventListener("resize", resizeCanvas)
     }
-  }, [])
+  }, [started])
 
   return (
-    <section className="mx-auto max-w-6xl px-6 pb-24 text-center">
-      <h2 className="text-3xl md:text-4xl font-semibold mb-6">Catch your problems</h2>
-      <div
-        ref={wrapperRef}
-        className="relative w-full h-[560px] rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent overflow-hidden cursor-none"
-        aria-label="Interactive area: catch your problems"
-      >
-        <canvas ref={canvasRef} className="w-full h-full" />
-        {done && (
-          <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-            <div className="rounded-xl bg-black/70 px-5 py-3 text-center">
-              {elapsed !== null ? (
-                <p className="text-lg md:text-xl font-semibold">
-                  You caught your problems in: {(elapsed / 1000).toFixed(3)} seconds
-                </p>
-              ) : (
-                <p className="text-lg md:text-xl font-semibold">GradeMax will solve it all ✨</p>
-              )}
-            </div>
+    <section className="mx-auto max-w-6xl px-2 sm:px-4 pb-16 text-center">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold mb-4 sm:mb-6">Catch your problems</h2>
+      {!started ? (
+        <div className="flex flex-col items-center justify-center h-[340px] sm:h-[440px] md:h-[560px]">
+          <button
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold text-lg shadow-lg hover:scale-105 active:scale-95 transition mb-4"
+            onClick={() => setStarted(true)}
+          >
+            Play
+          </button>
+          <p className="text-xs sm:text-sm text-gray-400">Tap Play to start the animation.</p>
+        </div>
+      ) : (
+        <>
+          <div
+            ref={wrapperRef}
+            className="relative w-full h-[340px] sm:h-[440px] md:h-[560px] rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent overflow-hidden cursor-none"
+            aria-label="Interactive area: catch your problems"
+          >
+            <canvas ref={canvasRef} className="w-full h-full" />
+            {done && (
+              <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+                <div className="rounded-xl bg-black/70 px-3 sm:px-5 py-2 sm:py-3 text-center">
+                  {elapsed !== null ? (
+                    <p className="text-base sm:text-lg md:text-xl font-semibold">
+                      You caught your problems in: {(elapsed / 1000).toFixed(3)} seconds
+                    </p>
+                  ) : (
+                    <p className="text-base sm:text-lg md:text-xl font-semibold">GradeMax will solve it all ✨</p>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
-        )}
-      </div>
-      <p className="mt-3 text-xs text-gray-400">Move your mouse and catch the worries with the net.</p>
+          <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-gray-400">Move your finger or mouse and catch the worries with the net.</p>
+        </>
+      )}
     </section>
   )
 }
