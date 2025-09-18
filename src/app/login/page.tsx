@@ -4,10 +4,9 @@ import { useCallback } from "react";
 
 export default function LoginPage() {
   const signIn = useCallback(async () => {
-    const origin = window.location.origin;
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${origin}/dashboard` },
+      options: { redirectTo: `${window.location.origin}/auth/callback` },
     });
   }, []);
 

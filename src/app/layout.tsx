@@ -21,6 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   <div className="pt-36 flex-1">{children}</div> {/* pushes content below navbar */}
         <Footer />
         <Analytics />   {/* ✅ add Analytics here */}
+        <SpeedInsights/> {/* Add Speed Insights component */}
       </body>
     </html>
   )
