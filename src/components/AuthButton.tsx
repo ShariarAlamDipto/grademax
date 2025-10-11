@@ -1,22 +1,27 @@
 "use client"
 import { supabase } from "@/lib/supabaseClient"
-
-
 import type { User } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
 
 export default function AuthButton() {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getUser = async () => {
       const { data } = await supabase.auth.getUser();
       setUser(data?.user || null);
+      setLoading(false);
     };
     getUser();
     const { data: listener } = supabase.auth.onAuthStateChange(() => getUser());
     return () => { listener?.subscription?.unsubscribe?.(); };
   }, []);
+
+  // Don't show anything while loading
+  if (loading) {
+    return null;
+  }
 
   if (user) {
     return (
@@ -28,12 +33,6 @@ export default function AuthButton() {
       </button>
     );
   }
-  return (
-    <button
-      className="rounded-md bg-blue-500 px-3 py-1.5 text-sm text-white hover:bg-blue-600"
-      onClick={() => window.location.href = "/login"}
-    >
-      Sign in
-    </button>
-  );
+  
+  return null; // Don't show sign in button on dashboard
 }
