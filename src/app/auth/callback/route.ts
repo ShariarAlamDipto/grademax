@@ -1,34 +1,45 @@
-import { NextResponse } from "next/server"
-import { cookies } from "next/headers"
-import { createServerClient } from "@supabase/ssr"
+// src/app/auth/callback/route.ts
+import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
+import { createServerClient } from "@supabase/ssr";
+
+export const runtime = "nodejs";       // ensure Node runtime (not edge)
+export const dynamic = "force-dynamic"; // avoid caching this exchange
 
 export async function GET(request: Request) {
-  const url = new URL(request.url)
-  const code = url.searchParams.get("code")
+  const url = new URL(request.url);
+  const code = url.searchParams.get("code");
+  const next = url.searchParams.get("next") || "/dashboard";
 
   if (code) {
-    const cookieStorePromise = cookies();
+    // ⬇️ Next 15 route handlers: cookies() is async
+    const cookieStore = await cookies();
+
     const supabase = createServerClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
         cookies: {
-          get: async (name: string) => {
-            const store = await cookieStorePromise;
-            return store.get(name)?.value;
+          get(name) {
+            return cookieStore.get(name)?.value;
           },
-          set: async (name: string, value: string, options: Record<string, unknown>) => {
-            const store = await cookieStorePromise;
-            store.set(name, value, options);
+          set(name, value, options) {
+            cookieStore.set(name, value, options);
           },
-          remove: async (name: string, options: Record<string, unknown>) => {
-            const store = await cookieStorePromise;
-            store.set(name, "", { ...options, maxAge: 0 });
+          remove(name, options) {
+            cookieStore.set(name, "", { ...options, maxAge: 0 });
           },
         },
       }
     );
-    await supabase.auth.exchangeCodeForSession(code);
+
+    const { error } = await supabase.auth.exchangeCodeForSession(code);
+    if (error) {
+      return NextResponse.redirect(
+        `${url.origin}/login?error=${encodeURIComponent(error.message)}`
+      );
+    }
   }
-  return NextResponse.redirect(`${url.origin}/dashboard`)
+
+  return NextResponse.redirect(`${url.origin}${next}`);
 }
