@@ -1,0 +1,144 @@
+# Synonyms for auto-tagging (YAML format)
+# topic_name: [list of keywords/synonyms]
+
+# Forces and motion
+"Movement and position":
+  - distance-time
+  - s-t graph
+  - speed-time
+  - velocity
+  - displacement
+  - motion
+
+"Forces, movement, shape and momentum":
+  - Newton
+  - force
+  - friction
+  - momentum
+  - collision
+  - elastic
+  - inelastic
+
+# Electricity
+"Mains electricity":
+  - AC
+  - DC
+  - voltage
+  - current
+  - power
+  - resistance
+  - Ohm
+
+"Energy and voltage in circuits":
+  - circuit
+  - series
+  - parallel
+  - potential difference
+  - resistor
+
+"Electric charge":
+  - charge
+  - electron
+  - proton
+  - coulomb
+
+# Waves
+"Properties of waves":
+  - wavelength
+  - frequency
+  - amplitude
+  - transverse
+  - longitudinal
+
+"The electromagnetic spectrum":
+  - radio
+  - microwave
+  - infrared
+  - visible
+  - ultraviolet
+  - X-ray
+  - gamma
+
+"Light and sound":
+  - reflection
+  - refraction
+  - diffraction
+  - interference
+
+# Energy resources
+"Energy resources and electricity generation":
+  - fossil fuel
+  - renewable
+  - solar
+  - wind
+  - nuclear
+  - hydroelectric
+
+"Work and power":
+  - work done
+  - joule
+  - watt
+  - efficiency
+
+# Solids, liquids and gases
+"Density and pressure":
+  - density
+  - pressure
+  - pascal
+  - atmosphere
+
+"Change of state":
+  - melting
+  - boiling
+  - evaporation
+  - condensation
+  - sublimation
+
+"Ideal gas molecules":
+  - kinetic theory
+  - Brownian motion
+  - absolute zero
+  - Kelvin
+
+# Magnetism
+"Magnetism":
+  - magnetic field
+  - north pole
+  - south pole
+  - electromagnet
+
+"Electromagnetism":
+  - motor effect
+  - generator
+  - transformer
+  - electromagnetic induction
+
+# Radioactivity
+"Radioactivity":
+  - alpha
+  - beta
+  - gamma
+  - decay
+  - half-life
+  - isotope
+
+"Fission and fusion":
+  - nuclear fission
+  - nuclear fusion
+  - chain reaction
+
+# Astrophysics
+"Motion in the Universe":
+  - planet
+  - star
+  - galaxy
+  - universe
+  - orbit
+  - gravitational
+
+"Stellar evolution":
+  - main sequence
+  - red giant
+  - white dwarf
+  - supernova
+  - black hole
