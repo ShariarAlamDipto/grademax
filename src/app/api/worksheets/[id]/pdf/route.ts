@@ -60,7 +60,7 @@ export async function GET(
       } | null
     }
     
-    const sortedQuestions = (worksheet.worksheet_items as WorksheetItem[])
+    const sortedQuestions = (worksheet.worksheet_items as unknown as WorksheetItem[])
       .sort((a, b) => a.position - b.position)
       .map(item => item.questions)
       .filter((q): q is NonNullable<typeof q> => q !== null)
@@ -152,7 +152,7 @@ export async function GET(
     ])
     
     // 8. Return PDF as stream
-    return new NextResponse(pdfBuffer as any, {
+    return new NextResponse(pdfBuffer as unknown as BodyInit, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="worksheet_${worksheetId}.pdf"`,
