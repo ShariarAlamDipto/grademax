@@ -1,0 +1,1201 @@
+{
+  "paper_id": "4PH1_2019_Jun_1P",
+  "metadata": {
+    "board": "Edexcel",
+    "level": "IGCSE",
+    "subject_code": "4PH1",
+    "year": 2019,
+    "season": "Jun",
+    "paper_number": "1P"
+  },
+  "qp_file": "data\\raw\\IGCSE\\4PH1\\2019\\Jun\\4PH1_1P.pdf",
+  "ms_file": "data\\raw\\IGCSE\\4PH1\\2019\\Jun\\4PH1_1P_MS.pdf",
+  "total_questions": 11,
+  "questions": [
+    {
+      "question_number": "2",
+      "page_start": 3,
+      "page_end": 4,
+      "page_count": 2,
+      "pages": [
+        {
+          "page_index": 3,
+          "text": "4\n*P62041A0432*\n\t\n2\t A ship floats on the sea.\nupthrust\nsurface \nof sea\n\t\n(a)\t The ship floats because of the forces acting on it. \n\t\n\t\n(i)\t The upward force acting on the ship is called upthrust.\n\t\n\t\n\t\nThis force is shown on the diagram.\n\t\n\t\n\t\nDraw another labelled arrow on the diagram to show the other vertical force \nacting on the ship.\n(2)\n\t\n\t\n(ii)\t Forces are vector quantities.\n\t\n\t\n\t\nState what is meant by the term vector quantity. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n\t\n(iii)\tGive another example of a vector quantity.\n(1)\n.....................................................................................................................................................................................................................................................................................\n",
+          "text_excerpt": "4\n*P62041A0432*\n\t\n2\t A ship floats on the sea.\nupthrust\nsurface \nof sea\n\t\n(a)\t The ship floats because of the forces acting on it. \n\t\n\t\n(i)\t The upward force acting on the ship is called upthrust.\n\t\n\t\n\t\nThis force is shown on the diagram.\n\t\n\t\n\t\nDraw another labelled arrow on the diagram to show the other vertical force \nacting on the ship.\n(2)\n\t\n\t\n(ii)\t Forces are vector quantities.\n\t\n\t\n\t\nState what is meant by the term vector quantity. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n\t\n(iii)\tGive another example of a vector quantity.\n(1)\n.....................................................................................................................................................................................................................................................................................\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "a",
+            "iii",
+            "i"
+          ]
+        },
+        {
+          "page_index": 4,
+          "text": "5\n*P62041A0532*\nTurn over    \n\t\n\t\n(b)\t The upthrust force acting on the ship is proportional to the pressure difference \nbetween the bottom of the ship and the surface of the sea.\n\t\n\t\nThe pressure acting on the ship at the surface of the sea is 100 kPa. \n\t\n\t\n(i)\t State the formula linking pressure difference, height, density and \ngravitational field strength (g). \n(1)\n\t\n\t\n(ii)\t The bottom of the ship is 15.8 m below the surface of the sea.\n\t\n\t\n\t\nShow that the pressure acting on the bottom of the ship is approximately 260 kPa.\n\t\n\t\n\t\n[density of seawater = 1030 kg/m3]\n(3)\n\t\n\t\n(iii)\tExplain why the bottom of the ship is deeper below the surface of the sea \nwhen the ship is fully loaded with cargo.\n(2)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n(Total for Question 2 = 11 marks)\n",
+          "text_excerpt": "5\n*P62041A0532*\nTurn over    \n\t\n\t\n(b)\t The upthrust force acting on the ship is proportional to the pressure difference \nbetween the bottom of the ship and the surface of the sea.\n\t\n\t\nThe pressure acting on the ship at the surface of the sea is 100 kPa. \n\t\n\t\n(i)\t State the formula linking pressure difference, height, density and \ngravitational field strength (g). \n(1)\n\t\n\t\n(ii)\t The bottom of the ship is 15.8 m below the surface of the sea.\n\t\n\t\n\t\nShow that the pressure acting on the bottom of the ship is approximately 260 kPa.\n\t\n\t\n\t\n[density of seawater = 1030 kg/m3]\n(3)\n\t\n\t\n(iii)\tExplain why the bottom of the ship is deeper below the surface of the sea \nwhen the ship is fully loaded with cargo.\n(2)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n(Total for Question 2 = 11 marks)\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "iii",
+            "i",
+            "b"
+          ]
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q2.pdf",
+      "classifications": [
+        {
+          "page_index": 3,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "1",
+              "4",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "(i)",
+                "topics": [
+                  "4"
+                ]
+              },
+              {
+                "label": "(ii)",
+                "topics": [
+                  "4"
+                ]
+              },
+              {
+                "label": "(iii)",
+                "topics": [
+                  "4"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 4,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "1",
+              "8",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "i",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "ii",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "iii",
+                "topics": [
+                  "5"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "1",
+        "8",
+        "4",
+        "5"
+      ],
+      "page_pdf_url": "2019/Jun/1P/Q2.pdf"
+    },
+    {
+      "question_number": "3",
+      "page_start": 5,
+      "page_end": 7,
+      "page_count": 3,
+      "pages": [
+        {
+          "page_index": 5,
+          "text": "6\n*P62041A0632*\n\t\n3\t This question is about electric circuits.\n\t\n(a)\t Which quantity is defined as the rate of flow of charge? \n(1)\n\t\n\t\nA\t current\n\t\n\t\nB\t power\n\t\n\t\nC\t resistance\n\t\n\t\nD\t voltage\n\t\n(b)\t Which quantity is defined as the energy transferred per unit charge passed? \n(1)\n\t\n\t\nA\t current\n\t\n\t\nB\t power\n\t\n\t\nC\t resistance\n\t\n\t\nD\t voltage\n\t\n(c)\t Diagram 1 shows an electric circuit with two resistors, R and S.\n\t\n\t\nSome of the values of the current are also shown.\n0.60 A\nR\nA1\n0.40 A\nA2\nS\nDiagram 1\n",
+          "text_excerpt": "6\n*P62041A0632*\n\t\n3\t This question is about electric circuits.\n\t\n(a)\t Which quantity is defined as the rate of flow of charge? \n(1)\n\t\n\t\nA\t current\n\t\n\t\nB\t power\n\t\n\t\nC\t resistance\n\t\n\t\nD\t voltage\n\t\n(b)\t Which quantity is defined as the energy transferred per unit charge passed? \n(1)\n\t\n\t\nA\t current\n\t\n\t\nB\t power\n\t\n\t\nC\t resistance\n\t\n\t\nD\t voltage\n\t\n(c)\t Diagram 1 shows an electric circuit with two resistors, R and S.\n\t\n\t\nSome of the values of the current are also shown.\n0.60 A\nR\nA1\n0.40 A\nA2\nS\nDiagram 1\n",
+          "has_diagram": true,
+          "subparts": [
+            "c",
+            "a",
+            "b"
+          ]
+        },
+        {
+          "page_index": 6,
+          "text": "7\n*P62041A0732*\nTurn over    \n\t\n\t\n\t\n(i)\t On Diagram 1, draw a voltmeter to measure the voltage of resistor S. \n(2)\n\t\n\t\n(ii)\t Deduce the readings on the ammeters. \n(2)\ncurrent measured by A1 = .............................................................. A\ncurrent measured by A2 = .............................................................. A\n\t\n\t\n(iii)\tResistor R has a resistance of 11 Ω. \n\t\n\t\n\t\nCalculate the voltage across resistor R.\n(3)\nvoltage = .............................................................. V\n\t\n\t\n(iv)\tExplain how the voltage across resistor R compares with the voltage across \nthe battery.\n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n",
+          "text_excerpt": "7\n*P62041A0732*\nTurn over    \n\t\n\t\n\t\n(i)\t On Diagram 1, draw a voltmeter to measure the voltage of resistor S. \n(2)\n\t\n\t\n(ii)\t Deduce the readings on the ammeters. \n(2)\ncurrent measured by A1 = .............................................................. A\ncurrent measured by A2 = .............................................................. A\n\t\n\t\n(iii)\tResistor R has a resistance of 11 Ω. \n\t\n\t\n\t\nCalculate the voltage across resistor R.\n(3)\nvoltage = .............................................................. V\n\t\n\t\n(iv)\tExplain how the voltage across resistor R compares with the voltage across \nthe battery.\n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "iii",
+            "i",
+            "iv"
+          ]
+        },
+        {
+          "page_index": 7,
+          "text": "8\n*P62041A0832*\n\t\n\t\n(d)\t Diagram 2 shows a different circuit containing a battery, an ammeter and a thermistor.\nA\nDiagram 2\n\t\n\t\nExplain how the thermistor can be used to vary the current in this circuit.\n(3)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n(Total for Question 3 = 14 marks)\n",
+          "text_excerpt": "8\n*P62041A0832*\n\t\n\t\n(d)\t Diagram 2 shows a different circuit containing a battery, an ammeter and a thermistor.\nA\nDiagram 2\n\t\n\t\nExplain how the thermistor can be used to vary the current in this circuit.\n(3)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n(Total for Question 3 = 14 marks)\n",
+          "has_diagram": true,
+          "subparts": [
+            "d"
+          ]
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q3.pdf",
+      "classifications": [
+        {
+          "page_index": 5,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "4",
+              "3",
+              "2"
+            ],
+            "subparts": [
+              {
+                "label": "a",
+                "topics": [
+                  "3"
+                ]
+              },
+              {
+                "label": "b",
+                "topics": [
+                  "3"
+                ]
+              },
+              {
+                "label": "c",
+                "topics": [
+                  "3"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 6,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "7",
+              "2"
+            ],
+            "subparts": [
+              {
+                "label": "i",
+                "topics": [
+                  "7"
+                ]
+              },
+              {
+                "label": "ii",
+                "topics": [
+                  "7"
+                ]
+              },
+              {
+                "label": "iii",
+                "topics": [
+                  "7"
+                ]
+              },
+              {
+                "label": "iv",
+                "topics": [
+                  "7"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 7,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "3",
+              "2"
+            ],
+            "subparts": [],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "7",
+        "4",
+        "3",
+        "2"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q3.pdf"
+    },
+    {
+      "question_number": "4",
+      "page_start": 8,
+      "page_end": 10,
+      "page_count": 3,
+      "pages": [
+        {
+          "page_index": 8,
+          "text": "9\n*P62041A0932*\nTurn over    \n\t\n4\t A student investigates how much pressure she exerts on the ground when she is \nstanding up.\n\t\n(a)\t The weight of the student is 520 N. \n\t\n\t\n(i)\t State the formula linking weight, mass and gravitational field strength (g). \n(1)\n\t\n\t\n(ii)\t Calculate the mass of the student. \n(2)\nmass = .............................................................. kg\n",
+          "text_excerpt": "9\n*P62041A0932*\nTurn over    \n\t\n4\t A student investigates how much pressure she exerts on the ground when she is \nstanding up.\n\t\n(a)\t The weight of the student is 520 N. \n\t\n\t\n(i)\t State the formula linking weight, mass and gravitational field strength (g). \n(1)\n\t\n\t\n(ii)\t Calculate the mass of the student. \n(2)\nmass = .............................................................. kg\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "a",
+            "i"
+          ]
+        },
+        {
+          "page_index": 9,
+          "text": "10\n*P62041A01032*\n\t\n\t\n(b)\t The student measures the area of one of her feet when it is in contact with the ground.\n\t\n\t\nShe draws around her foot on a piece of squared paper.\n2 cm\n2 cm\ngrid not \nto scale\n",
+          "text_excerpt": "10\n*P62041A01032*\n\t\n\t\n(b)\t The student measures the area of one of her feet when it is in contact with the ground.\n\t\n\t\nShe draws around her foot on a piece of squared paper.\n2 cm\n2 cm\ngrid not \nto scale\n",
+          "has_diagram": true,
+          "subparts": [
+            "b"
+          ]
+        },
+        {
+          "page_index": 10,
+          "text": "11\n*P62041A01132*\nTurn over    \n\t\n\t\n\t\n(i)\t The squares on the paper have a side length of 2 cm.\n\t\n\t\n\t\nEstimate the area of the student’s foot in contact with the ground.\n(4)\narea = .............................................................. cm2\n\t\n\t\n(ii)\t State the formula linking pressure, force and area. \n(1)\n\t\n\t\n(iii)\tThe weight of the student is 520 N. \n\t\n\t\n\t\nCalculate the pressure the student exerts on the ground when she is standing \non both feet.\n\t\n\t\n\t\nGive the unit.\n(3)\npressure = .............................................................. unit ..............................................................\n(Total for Question 4 = 11 marks)\n",
+          "text_excerpt": "11\n*P62041A01132*\nTurn over    \n\t\n\t\n\t\n(i)\t The squares on the paper have a side length of 2 cm.\n\t\n\t\n\t\nEstimate the area of the student’s foot in contact with the ground.\n(4)\narea = .............................................................. cm2\n\t\n\t\n(ii)\t State the formula linking pressure, force and area. \n(1)\n\t\n\t\n(iii)\tThe weight of the student is 520 N. \n\t\n\t\n\t\nCalculate the pressure the student exerts on the ground when she is standing \non both feet.\n\t\n\t\n\t\nGive the unit.\n(3)\npressure = .............................................................. unit ..............................................................\n(Total for Question 4 = 11 marks)\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "iii",
+            "i"
+          ]
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q4.pdf",
+      "classifications": [
+        {
+          "page_index": 8,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "1",
+              "8",
+              "4",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "a",
+                "topics": [
+                  "4"
+                ]
+              },
+              {
+                "label": "i",
+                "topics": [
+                  "4"
+                ]
+              },
+              {
+                "label": "ii",
+                "topics": [
+                  "4"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 9,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "4",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "b",
+                "topics": [
+                  "4"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 10,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "1",
+              "4",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "(i)",
+                "topics": [
+                  "4"
+                ]
+              },
+              {
+                "label": "(ii)",
+                "topics": [
+                  "4"
+                ]
+              },
+              {
+                "label": "(iii)",
+                "topics": [
+                  "4"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "1",
+        "8",
+        "4",
+        "5"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q4.pdf"
+    },
+    {
+      "question_number": "5",
+      "page_start": 11,
+      "page_end": 12,
+      "page_count": 2,
+      "pages": [
+        {
+          "page_index": 11,
+          "text": "12\n*P62041A01232*\n\t\n5\t A bus transports passengers.\n©  Mikbiz/Shutterstock\n\t\n(a)\t The bus stops at certain points in its journey to let passengers get on or off the bus.\n\t\n\t\nThe distance-time graph shows part of the bus journey, with sections labelled A to G.\n8.0\n6.0\n4.0\n2.0\n0.0\n14\n12\n10\n8\n6\n4\n2\n0\nTime in minutes\nDistance \nin km\nA\nG\nF\nE\nD\nC\nB\n\t\n\t\n(i)\t Give the letters of the sections where the bus is stationary.\n(1)\n.....................................................................................................................................................................................................................................................................................\n",
+          "text_excerpt": "12\n*P62041A01232*\n\t\n5\t A bus transports passengers.\n©  Mikbiz/Shutterstock\n\t\n(a)\t The bus stops at certain points in its journey to let passengers get on or off the bus.\n\t\n\t\nThe distance-time graph shows part of the bus journey, with sections labelled A to G.\n8.0\n6.0\n4.0\n2.0\n0.0\n14\n12\n10\n8\n6\n4\n2\n0\nTime in minutes\nDistance \nin km\nA\nG\nF\nE\nD\nC\nB\n\t\n\t\n(i)\t Give the letters of the sections where the bus is stationary.\n(1)\n.....................................................................................................................................................................................................................................................................................\n",
+          "has_diagram": true,
+          "subparts": [
+            "a",
+            "i"
+          ]
+        },
+        {
+          "page_index": 12,
+          "text": "13\n*P62041A01332*\nTurn over    \n\t\n\t\n\t\n(ii)\t Calculate the speed of the bus during section C of the journey.\n\t\n\t\n\t\nGive your answer in m / s. \n(4)\nspeed = .............................................................. m / s\n\t\n\t\n(iii)\tExplain what the graph shows about the speed of the bus in section E  \ncompared with the speed of the bus in section A. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n(b)\t Another bus travels a distance of 7.0 km in a time of 14 minutes.\n\t\n\t\nThis bus travels at a constant velocity. \n\t\n\t\nComplete the velocity-time graph to show the motion of this bus.\n(2)\n0.6\n0.4\n0.2\n0.0\n14\n12\n10\n8\n6\n4\n2\n0\nTime in minutes\nVelocity in \nkm / minute\n(Total for Question 5 = 9 marks)\n",
+          "text_excerpt": "13\n*P62041A01332*\nTurn over    \n\t\n\t\n\t\n(ii)\t Calculate the speed of the bus during section C of the journey.\n\t\n\t\n\t\nGive your answer in m / s. \n(4)\nspeed = .............................................................. m / s\n\t\n\t\n(iii)\tExplain what the graph shows about the speed of the bus in section E  \ncompared with the speed of the bus in section A. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n(b)\t Another bus travels a distance of 7.0 km in a time of 14 minutes.\n\t\n\t\nThis bus travels at a constant velocity. \n\t\n\t\nComplete the velocity-time graph to show the motion of this bus.\n(2)\n0.6\n0.4\n0.2\n0.0\n14\n12\n10\n8\n6\n4\n2\n0\nTime in minutes\nVelocity in \nkm / minute\n(Total for Question 5 = 9 marks)\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "iii",
+            "b"
+          ]
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q5.pdf",
+      "classifications": [
+        {
+          "page_index": 11,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "i",
+                "topics": [
+                  "5"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 0.9,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 12,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "1",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "(ii)",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "(iii)",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "(b)",
+                "topics": [
+                  "5"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "1",
+        "5"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q5.pdf"
+    },
+    {
+      "question_number": "6",
+      "page_start": 13,
+      "page_end": 14,
+      "page_count": 2,
+      "pages": [
+        {
+          "page_index": 13,
+          "text": "14\n*P62041A01432*\n\t\n6\t A teacher makes a hot drink.\n\t\nHe puts the drink in a cup designed to keep the drink hot.\n\t\nThe photograph and cross-section diagram both show the cup.\nplastic lid\nshiny metal \nouter surface\nshiny metal \ninner surface\nvacuum\n",
+          "text_excerpt": "14\n*P62041A01432*\n\t\n6\t A teacher makes a hot drink.\n\t\nHe puts the drink in a cup designed to keep the drink hot.\n\t\nThe photograph and cross-section diagram both show the cup.\nplastic lid\nshiny metal \nouter surface\nshiny metal \ninner surface\nvacuum\n",
+          "has_diagram": true,
+          "subparts": []
+        },
+        {
+          "page_index": 14,
+          "text": "15\n*P62041A01532*\nTurn over    \n\t\n\t\nExplain how the design of the cup keeps the drink hot.\n\t\nRefer to methods of energy transfer in your answer.\n(6)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n(Total for Question 6 = 6 marks)\n",
+          "text_excerpt": "15\n*P62041A01532*\nTurn over    \n\t\n\t\nExplain how the design of the cup keeps the drink hot.\n\t\nRefer to methods of energy transfer in your answer.\n(6)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n.................................................................................",
+          "has_diagram": true,
+          "subparts": []
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q6.pdf",
+      "classifications": [
+        {
+          "page_index": 13,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "6"
+            ],
+            "subparts": [],
+            "difficulty": "easy",
+            "confidence": 0.9,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 14,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "4",
+              "2",
+              "6"
+            ],
+            "subparts": [],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "4",
+        "2",
+        "6"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q6.pdf"
+    },
+    {
+      "question_number": "7",
+      "page_start": 15,
+      "page_end": 16,
+      "page_count": 2,
+      "pages": [
+        {
+          "page_index": 15,
+          "text": "16\n*P62041A01632*\n\t\n7\t A student uses a syringe containing trapped air to investigate pressure.\n\t\nDiagram 1 shows the apparatus he uses.\npressure gauge\npiston\ntrapped air\nsyringe\nDiagram 1\n\t\n(a)\t Diagram 2 shows the pressure gauge when the piston is at its initial position. \n0\n60\n10\n20\n30\n40\n50\nkPa\n©  Lubos Chlubny/Shutterstock\nDiagram 2\n\t\n\t\nDetermine the reading on the pressure gauge. \n(1)\npressure = .............................................................. kPa\n",
+          "text_excerpt": "16\n*P62041A01632*\n\t\n7\t A student uses a syringe containing trapped air to investigate pressure.\n\t\nDiagram 1 shows the apparatus he uses.\npressure gauge\npiston\ntrapped air\nsyringe\nDiagram 1\n\t\n(a)\t Diagram 2 shows the pressure gauge when the piston is at its initial position. \n0\n60\n10\n20\n30\n40\n50\nkPa\n©  Lubos Chlubny/Shutterstock\nDiagram 2\n\t\n\t\nDetermine the reading on the pressure gauge. \n(1)\npressure = .............................................................. kPa\n",
+          "has_diagram": true,
+          "subparts": [
+            "a"
+          ]
+        },
+        {
+          "page_index": 16,
+          "text": "17\n*P62041A01732*\nTurn over    \n\t\n\t\n(b)\t The piston is pushed in so that the volume of trapped air in the syringe is halved. \n\t\n\t\nThe temperature of the trapped air remains constant.\n\t\n\t\nExplain how the reading on the pressure gauge will change when the piston is \npushed in.\n(3)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n\t\n(c)\t The position of the piston is then fixed so that the volume of trapped air in the \nsyringe is now constant. \n\t\n\t\nThe air in the syringe is then cooled.\n\t\n\t\n(i)\t State how the motion of air particles inside the syringe changes when the air \nis cooled.\n(1)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n\t\n\t\n(ii)\t Explain how the pressure of the trapped air inside the syringe changes when \nthe air is cooled.\n\t\n\t\n\t\nRefer to particles in your answer.\n(3)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n(Total for Question 7 = 8 marks)\n",
+          "text_excerpt": "17\n*P62041A01732*\nTurn over    \n\t\n\t\n(b)\t The piston is pushed in so that the volume of trapped air in the syringe is halved. \n\t\n\t\nThe temperature of the trapped air remains constant.\n\t\n\t\nExplain how the reading on the pressure gauge will change when the piston is \npushed in.\n(3)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n\t\n(c)\t The position of the piston is then fixed so that the volume of trapped air in the \nsyringe is now constant. \n\t\n\t\nThe air in the syringe is then cooled.\n\t\n\t\n(i)\t State how the motion of air particles inside the syringe changes when the air \nis cooled.\n(1)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n\t\n\t\n(ii)\t Explain how the pressure of the trapped air inside the syringe changes when \nthe air is cooled.\n\t\n\t\n\t\nRefer to particles in your answer.\n(3)\n...........................................................................................",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "c",
+            "i",
+            "b"
+          ]
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q7.pdf",
+      "classifications": [
+        {
+          "page_index": 15,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "7",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "a",
+                "topics": [
+                  "7"
+                ]
+              }
+            ],
+            "difficulty": "easy",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 16,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "7",
+              "1",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "b",
+                "topics": [
+                  "7"
+                ]
+              },
+              {
+                "label": "c",
+                "topics": [
+                  "7"
+                ]
+              },
+              {
+                "label": "c(i)",
+                "topics": [
+                  "7"
+                ]
+              },
+              {
+                "label": "c(ii)",
+                "topics": [
+                  "7"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "7",
+        "5",
+        "1"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q7.pdf"
+    },
+    {
+      "question_number": "8",
+      "page_start": 17,
+      "page_end": 19,
+      "page_count": 3,
+      "pages": [
+        {
+          "page_index": 17,
+          "text": "18\n*P62041A01832*\n\t\n8\t A car is moving along a road.\n\t\n(a)\t The car has an initial velocity of 26 m / s.\n\t\n\t\nThe car then accelerates at 1. 2 m / s2 until it reaches a velocity of 35 m / s.\n\t\n\t\n(i)\t State the formula linking acceleration, change in velocity and time taken. \n(1)\n\t\n\t\n(ii)\t Calculate the time taken for the car to accelerate to 35 m/s.\n(3)\ntime = .............................................................. s\n",
+          "text_excerpt": "18\n*P62041A01832*\n\t\n8\t A car is moving along a road.\n\t\n(a)\t The car has an initial velocity of 26 m / s.\n\t\n\t\nThe car then accelerates at 1. 2 m / s2 until it reaches a velocity of 35 m / s.\n\t\n\t\n(i)\t State the formula linking acceleration, change in velocity and time taken. \n(1)\n\t\n\t\n(ii)\t Calculate the time taken for the car to accelerate to 35 m/s.\n(3)\ntime = .............................................................. s\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "a",
+            "i"
+          ]
+        },
+        {
+          "page_index": 18,
+          "text": "19\n*P62041A01932*\nTurn over    \n\t\n\t\n(b)\t A radar speed gun is used to measure the speed of the moving car.\n©  Petar An/Shutterstock\n\t\n\t\nThe radar speed gun emits radio waves towards the moving car.\n\t\n\t\nThe moving car reflects the radio waves back to a detector on the gun.\n\t\n\t\nThe detected radio waves have a different frequency from the emitted radio waves.\n\t\n\t\nThis change in frequency is used to measure the speed of the moving car.\n\t\n\t\nExplain this change in frequency when the car is moving towards the radar speed gun.\n(4)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n(Total for Question 8 = 8 marks)\n",
+          "text_excerpt": "19\n*P62041A01932*\nTurn over    \n\t\n\t\n(b)\t A radar speed gun is used to measure the speed of the moving car.\n©  Petar An/Shutterstock\n\t\n\t\nThe radar speed gun emits radio waves towards the moving car.\n\t\n\t\nThe moving car reflects the radio waves back to a detector on the gun.\n\t\n\t\nThe detected radio waves have a different frequency from the emitted radio waves.\n\t\n\t\nThis change in frequency is used to measure the speed of the moving car.\n\t\n\t\nExplain this change in frequency when the car is moving towards the radar speed gun.\n(4)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.......................................................................................................................................................................................................................................................",
+          "has_diagram": true,
+          "subparts": [
+            "b"
+          ]
+        },
+        {
+          "page_index": 19,
+          "text": "20\n*P62041A02032*\n\t\nBLANK PAGE\n",
+          "text_excerpt": "20\n*P62041A02032*\n\t\nBLANK PAGE\n",
+          "has_diagram": true,
+          "subparts": []
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q8.pdf",
+      "classifications": [
+        {
+          "page_index": 17,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "8",
+              "1"
+            ],
+            "subparts": [
+              {
+                "label": "i",
+                "topics": [
+                  "8"
+                ]
+              },
+              {
+                "label": "ii",
+                "topics": [
+                  "8"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 18,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "1",
+              "3",
+              "5"
+            ],
+            "subparts": [],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 19,
+          "classification": {
+            "page_has_question": false,
+            "topics": [],
+            "subparts": [],
+            "difficulty": "easy",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "8",
+        "3",
+        "1",
+        "5"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q8.pdf"
+    },
+    {
+      "question_number": "9",
+      "page_start": 20,
+      "page_end": 22,
+      "page_count": 3,
+      "pages": [
+        {
+          "page_index": 20,
+          "text": "21\n*P62041A02132*\nTurn over    \n\t\n9\t A teacher investigates the penetrating ability of the gamma rays from a gamma source.\n\t\nThis is the teacher’s method.\n\t\n•\t\nplace the gamma source at a distance of 25 cm from a radiation detector\n\t\n•\t\nplace a 1 cm thick absorbing material between the source and the detector\n\t\n•\t\nmeasure the radiation count from the source for a time period of 3 s\n\t\n•\t\ncalculate the count rate in counts per second\n\t\n•\t\nrepeat the measurement two more times\n\t\nThe teacher repeats this method for different absorbing materials.\n\t\n(a)\t Name a suitable radiation detector that the teacher could use. \n(1)\n.....................................................................................................................................................................................................................................................................................\n\t\n(b)\t State the independent variable in the teacher’s investigation. \n(1)\n.....................................................................................................................................................................................................................................................................................\n\t\n(c)\t Explain why every absorbing material used in the investigation has a thickness of 1 cm. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n(d)\t Suggest one improvement the teacher could make to this method.\n(1)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n",
+          "text_excerpt": "21\n*P62041A02132*\nTurn over    \n\t\n9\t A teacher investigates the penetrating ability of the gamma rays from a gamma source.\n\t\nThis is the teacher’s method.\n\t\n•\t\nplace the gamma source at a distance of 25 cm from a radiation detector\n\t\n•\t\nplace a 1 cm thick absorbing material between the source and the detector\n\t\n•\t\nmeasure the radiation count from the source for a time period of 3 s\n\t\n•\t\ncalculate the count rate in counts per second\n\t\n•\t\nrepeat the measurement two more times\n\t\nThe teacher repeats this method for different absorbing materials.\n\t\n(a)\t Name a suitable radiation detector that the teacher could use. \n(1)\n.....................................................................................................................................................................................................................................................................................\n\t\n(b)\t State the independent variable in the teacher’s investigation. \n(1)\n.....................................................................................................................................................................................................................................................................................\n\t\n(c)\t Explain why every absorbing material used in the investigation has a thickness of 1 cm. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n(d)\t Suggest one improvement the teacher could make to this method.\n(1)\n.....................................................................................................................................................................................................................................................................................\n......................................................................................................................................................................................",
+          "has_diagram": true,
+          "subparts": [
+            "c",
+            "a",
+            "d",
+            "b"
+          ]
+        },
+        {
+          "page_index": 21,
+          "text": "22\n*P62041A02232*\n\t\n\t\n(e)\t The table shows the teacher’s results for seven different absorbing materials.\nAbsorbing \nmaterial\nCount rate in counts per second\nTest 1\nTest 2\nTest 3\nMean\nplastic\n248\n230\n226\n235\ncopper\n138\n127\n147\n137\nwood\n226\n231\n224\n227\naluminium\n204\n211\n190\n202\nlead\n96\n102\n92\n97\nglass\n204\n192\n190\n195\nstone\n205\n200\n205\n203\n\t\n\t\n(i)\t On the grid, plot a bar chart of the mean count rate for each absorbing material. \n(3)\n",
+          "text_excerpt": "22\n*P62041A02232*\n\t\n\t\n(e)\t The table shows the teacher’s results for seven different absorbing materials.\nAbsorbing \nmaterial\nCount rate in counts per second\nTest 1\nTest 2\nTest 3\nMean\nplastic\n248\n230\n226\n235\ncopper\n138\n127\n147\n137\nwood\n226\n231\n224\n227\naluminium\n204\n211\n190\n202\nlead\n96\n102\n92\n97\nglass\n204\n192\n190\n195\nstone\n205\n200\n205\n203\n\t\n\t\n(i)\t On the grid, plot a bar chart of the mean count rate for each absorbing material. \n(3)\n",
+          "has_diagram": true,
+          "subparts": [
+            "e",
+            "i"
+          ]
+        },
+        {
+          "page_index": 22,
+          "text": "23\n*P62041A02332*\nTurn over    \n\t\n\t\n\t\n(ii)\t Why is a bar chart the correct way to display the results?\n(1)\n\t\n\t\n\t\nA\t absorbing material is a continuous variable \n\t\n\t\n\t\nB\t absorbing material is not a continuous variable\n\t\n\t\n\t\nC\t count rate is a continuous variable\n\t\n\t\n\t\nD\t count rate is not a continuous variable \n\t\n\t\n(iii)\tA student concludes that plastic is the best absorber of gamma radiation \nbecause plastic gives the largest mean count rate.\n\t\n\t\n\t\nEvaluate the student’s conclusion.\n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n(Total for Question 9 = 11 marks)\n",
+          "text_excerpt": "23\n*P62041A02332*\nTurn over    \n\t\n\t\n\t\n(ii)\t Why is a bar chart the correct way to display the results?\n(1)\n\t\n\t\n\t\nA\t absorbing material is a continuous variable \n\t\n\t\n\t\nB\t absorbing material is not a continuous variable\n\t\n\t\n\t\nC\t count rate is a continuous variable\n\t\n\t\n\t\nD\t count rate is not a continuous variable \n\t\n\t\n(iii)\tA student concludes that plastic is the best absorber of gamma radiation \nbecause plastic gives the largest mean count rate.\n\t\n\t\n\t\nEvaluate the student’s conclusion.\n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n(Total for Question 9 = 11 marks)\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "iii"
+          ]
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q9.pdf",
+      "classifications": [
+        {
+          "page_index": 20,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "7",
+              "3",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "a",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "b",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "c",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "d",
+                "topics": [
+                  "5"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 21,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "i",
+                "topics": [
+                  "5"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 0.9,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 22,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "7",
+              "5"
+            ],
+            "subparts": [
+              {
+                "label": "(ii)",
+                "topics": [
+                  "5"
+                ]
+              },
+              {
+                "label": "(iii)",
+                "topics": [
+                  "5"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "7",
+        "3",
+        "5"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q9.pdf"
+    },
+    {
+      "question_number": "10",
+      "page_start": 23,
+      "page_end": 26,
+      "page_count": 4,
+      "pages": [
+        {
+          "page_index": 23,
+          "text": "24\n*P62041A02432*\n\t\n10\t This question is about light.\n\t\n(a)\t Diagram 1 shows a light ray entering a glass prism. \nair\nglass prism\nY\nA\n40°\nB\nX\nlight ray\nDiagram 1\n\t\n\t\n(i)\t Describe what happens to the light ray when it enters the prism at point A. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n\t\n(ii)\t State the name of line XY. \n(1)\n.....................................................................................................................................................................................................................................................................................\n",
+          "text_excerpt": "24\n*P62041A02432*\n\t\n10\t This question is about light.\n\t\n(a)\t Diagram 1 shows a light ray entering a glass prism. \nair\nglass prism\nY\nA\n40°\nB\nX\nlight ray\nDiagram 1\n\t\n\t\n(i)\t Describe what happens to the light ray when it enters the prism at point A. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n\t\n(ii)\t State the name of line XY. \n(1)\n.....................................................................................................................................................................................................................................................................................\n",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "a",
+            "i"
+          ]
+        },
+        {
+          "page_index": 24,
+          "text": "25\n*P62041A02532*\nTurn over    \n\t\n\t\n\t\n(iii)\tState the formula linking critical angle and refractive index. \n(1)\n\t\n\t\n(iv)\tThe refractive index for the glass in this prism is 1.6\n\t\n\t\n\t\nCalculate the critical angle for the glass in this prism. \n(3)\ncritical angle = .............................................................. °\n\t\n\t\n(v)\t Complete Diagram 1 by continuing the path of the light ray from point B.\n(2)\n",
+          "text_excerpt": "25\n*P62041A02532*\nTurn over    \n\t\n\t\n\t\n(iii)\tState the formula linking critical angle and refractive index. \n(1)\n\t\n\t\n(iv)\tThe refractive index for the glass in this prism is 1.6\n\t\n\t\n\t\nCalculate the critical angle for the glass in this prism. \n(3)\ncritical angle = .............................................................. °\n\t\n\t\n(v)\t Complete Diagram 1 by continuing the path of the light ray from point B.\n(2)\n",
+          "has_diagram": true,
+          "subparts": [
+            "iii",
+            "v",
+            "iv"
+          ]
+        },
+        {
+          "page_index": 25,
+          "text": "26\n*P62041A02632*\n\t\n\t\n(b)\t Diagram 2 shows a similar prism that is made from a material with a different \nrefractive index. \n\t\n\t\nThe critical angle for the material of this prism is 55°\n\t\n\t\nComplete Diagram 2 by continuing the path of the light ray.\nlight ray\nair\n40°\nDiagram 2\n(2)\n(Total for Question 10 = 11 marks)\n",
+          "text_excerpt": "26\n*P62041A02632*\n\t\n\t\n(b)\t Diagram 2 shows a similar prism that is made from a material with a different \nrefractive index. \n\t\n\t\nThe critical angle for the material of this prism is 55°\n\t\n\t\nComplete Diagram 2 by continuing the path of the light ray.\nlight ray\nair\n40°\nDiagram 2\n(2)\n(Total for Question 10 = 11 marks)\n",
+          "has_diagram": true,
+          "subparts": [
+            "b"
+          ]
+        },
+        {
+          "page_index": 26,
+          "text": "27\n*P62041A02732*\nTurn over    \n\t\nBLANK PAGE\n",
+          "text_excerpt": "27\n*P62041A02732*\nTurn over    \n\t\nBLANK PAGE\n",
+          "has_diagram": true,
+          "subparts": []
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q10.pdf",
+      "classifications": [
+        {
+          "page_index": 23,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "3"
+            ],
+            "subparts": [
+              {
+                "label": "a(i)",
+                "topics": [
+                  "3"
+                ]
+              },
+              {
+                "label": "a(ii)",
+                "topics": [
+                  "3"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 0.9,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 24,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "3"
+            ],
+            "subparts": [
+              {
+                "label": "iii",
+                "topics": [
+                  "3"
+                ]
+              },
+              {
+                "label": "iv",
+                "topics": [
+                  "3"
+                ]
+              },
+              {
+                "label": "v",
+                "topics": [
+                  "3"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 0.9,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 25,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "3",
+              "5"
+            ],
+            "subparts": [],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 26,
+          "classification": {
+            "page_has_question": false,
+            "topics": [],
+            "subparts": [],
+            "difficulty": "easy",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "3",
+        "5"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q10.pdf"
+    },
+    {
+      "question_number": "11",
+      "page_start": 27,
+      "page_end": 28,
+      "page_count": 2,
+      "pages": [
+        {
+          "page_index": 27,
+          "text": "28\n*P62041A02832*\n\t\n11\t Technetium-99m is an isotope of the element technetium.\n\t\n(a)\t Technetium-99m has a half-life of 6 hours.\n\t\n\t\nA sample of technetium-99m has an initial activity of 160 Bq.\n\t\n\t\nComplete the graph to show how the activity of this sample of technetium-99m \nchanges over a period of 24 hours. \n(3)\n200\n150\n100\n50\n0\n25\n20\n15\n10\n5\n0\nTime in hours\nActivity \nin Bq\n",
+          "text_excerpt": "28\n*P62041A02832*\n\t\n11\t Technetium-99m is an isotope of the element technetium.\n\t\n(a)\t Technetium-99m has a half-life of 6 hours.\n\t\n\t\nA sample of technetium-99m has an initial activity of 160 Bq.\n\t\n\t\nComplete the graph to show how the activity of this sample of technetium-99m \nchanges over a period of 24 hours. \n(3)\n200\n150\n100\n50\n0\n25\n20\n15\n10\n5\n0\nTime in hours\nActivity \nin Bq\n",
+          "has_diagram": true,
+          "subparts": [
+            "a"
+          ]
+        },
+        {
+          "page_index": 28,
+          "text": "29\n*P62041A02932*\nTurn over    \n\t\n\t\n(b)\t Technetium-99m has a half-life of 6 hours and can be used as a medical tracer.\n\t\n\t\nIt is injected into a patient’s blood and moves around the patient’s body.\n\t\n\t\nTechnetium-99m emits gamma radiation, which is used to locate the position of \nthe tracer in the patient’s body.\n\t\n\t\n(i)\t Technetium-99m does not exist naturally.\n\t\n\t\n\t\nSuggest why technetium-99m is usually made at the hospital where it is used. \n(1)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n\t\n(ii)\t Explain why technetium-99m is an effective isotope to use as a medical tracer. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n(c)\t The gamma radiation emitted by technetium-99m is potentially harmful to humans.\n\t\n\t\nDiscuss the risks of using technetium-99m to doctors and to patients.\n(3)\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n....................................................................................................................................................................................................................................................................................\n(Total for Question 11 = 9 marks)\n",
+          "text_excerpt": "29\n*P62041A02932*\nTurn over    \n\t\n\t\n(b)\t Technetium-99m has a half-life of 6 hours and can be used as a medical tracer.\n\t\n\t\nIt is injected into a patient’s blood and moves around the patient’s body.\n\t\n\t\nTechnetium-99m emits gamma radiation, which is used to locate the position of \nthe tracer in the patient’s body.\n\t\n\t\n(i)\t Technetium-99m does not exist naturally.\n\t\n\t\n\t\nSuggest why technetium-99m is usually made at the hospital where it is used. \n(1)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n\t\n(ii)\t Explain why technetium-99m is an effective isotope to use as a medical tracer. \n(2)\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n.....................................................................................................................................................................................................................................................................................\n\t\n(c)\t The gamma radiation emitted by technetium-99m is potentially harmful to humans.\n\t\n\t\nDiscuss the risks of using technetium-99m to doctors and to patients.\n(3)\n....................................................................................................................................................................................................................................................................................\n................................................................",
+          "has_diagram": true,
+          "subparts": [
+            "ii",
+            "c",
+            "i",
+            "b"
+          ]
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q11.pdf",
+      "classifications": [
+        {
+          "page_index": 27,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "7",
+              "3",
+              "5"
+            ],
+            "subparts": [],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 28,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "7",
+              "3"
+            ],
+            "subparts": [
+              {
+                "label": "i",
+                "topics": [
+                  "3"
+                ]
+              },
+              {
+                "label": "ii",
+                "topics": [
+                  "3"
+                ]
+              },
+              {
+                "label": "c",
+                "topics": [
+                  "3"
+                ]
+              }
+            ],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "7",
+        "3",
+        "5"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q11.pdf"
+    },
+    {
+      "question_number": "12",
+      "page_start": 29,
+      "page_end": 31,
+      "page_count": 3,
+      "pages": [
+        {
+          "page_index": 29,
+          "text": "30\n*P62041A03032*\n\t\n12\t The planets Mars and Saturn orbit around the same star, the Sun.\n\t\n(a)\t The diagram shows the orbital paths of Mars and Saturn.\nSun\nSaturn\nMars\nNot to scale\n\t\n\t\nDraw an orbital path of a comet on the diagram.\n(2)\n",
+          "text_excerpt": "30\n*P62041A03032*\n\t\n12\t The planets Mars and Saturn orbit around the same star, the Sun.\n\t\n(a)\t The diagram shows the orbital paths of Mars and Saturn.\nSun\nSaturn\nMars\nNot to scale\n\t\n\t\nDraw an orbital path of a comet on the diagram.\n(2)\n",
+          "has_diagram": true,
+          "subparts": [
+            "a"
+          ]
+        },
+        {
+          "page_index": 30,
+          "text": "31\n*P62041A03132*\n\t\n\t\n(b)\t The table gives some information about the orbits of Mars and Saturn.\nMars\nSaturn\nOrbital radius in km\n2.28 × 108\n1.43 × 109\nOrbital speed in km/s\n24.1\n9.70\n\t\n\t\nMars completes a number of orbits in the time it takes for Saturn to complete one orbit.\n\t\n\t\nCalculate the number of orbits that Mars completes in the time it takes for Saturn \nto complete one orbit.\n(5)\nnumber of orbits = ..............................................................\n(Total for Question 12 = 7 marks)\nTOTAL FOR PAPER = 110 MARKS\n",
+          "text_excerpt": "31\n*P62041A03132*\n\t\n\t\n(b)\t The table gives some information about the orbits of Mars and Saturn.\nMars\nSaturn\nOrbital radius in km\n2.28 × 108\n1.43 × 109\nOrbital speed in km/s\n24.1\n9.70\n\t\n\t\nMars completes a number of orbits in the time it takes for Saturn to complete one orbit.\n\t\n\t\nCalculate the number of orbits that Mars completes in the time it takes for Saturn \nto complete one orbit.\n(5)\nnumber of orbits = ..............................................................\n(Total for Question 12 = 7 marks)\nTOTAL FOR PAPER = 110 MARKS\n",
+          "has_diagram": true,
+          "subparts": [
+            "b"
+          ]
+        },
+        {
+          "page_index": 31,
+          "text": "32\n*P62041A03232*\n\t\nBLANK PAGE\n",
+          "text_excerpt": "32\n*P62041A03232*\n\t\nBLANK PAGE\n",
+          "has_diagram": true,
+          "subparts": []
+        }
+      ],
+      "pdf_path": "data\\processed\\4PH1_2019_Jun_1P\\pages\\q12.pdf",
+      "classifications": [
+        {
+          "page_index": 29,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "8",
+              "2"
+            ],
+            "subparts": [],
+            "difficulty": "easy",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 30,
+          "classification": {
+            "page_has_question": true,
+            "topics": [
+              "1",
+              "8",
+              "5"
+            ],
+            "subparts": [],
+            "difficulty": "medium",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        },
+        {
+          "page_index": 31,
+          "classification": {
+            "page_has_question": false,
+            "topics": [],
+            "subparts": [],
+            "difficulty": "easy",
+            "confidence": 1.0,
+            "raw_response": null
+          }
+        }
+      ],
+      "aggregated_topics": [
+        "8",
+        "1",
+        "5",
+        "2"
+      ],
+      "page_pdf_url": "papers/2019_Jun_1P/Q12.pdf"
+    }
+  ],
+  "processing": {
+    "pdfs_uploaded": true,
+    "questions_classified": true,
+    "llm_calls": 29,
+    "guardrails_applied": true,
+    "guardrail_corrections": 21,
+    "stored_in_db": true,
+    "processing_time_seconds": 32,
+    "gemini_model": "gemini-2.0-flash-lite",
+    "timestamp": "2025-10-12T04:55:08.936045"
+  }
+}

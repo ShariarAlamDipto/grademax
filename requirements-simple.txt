@@ -1,0 +1,23 @@
+# Simplified Python dependencies - Install these one by one if batch install fails
+# Core PDF processing
+PyMuPDF>=1.23.0
+
+# Google Gemini API for LLM classification
+google-generativeai>=0.3.0
+
+# YAML parsing for topic catalogue
+PyYAML>=6.0.0
+
+# Database (optional - only if you want to run ingestion)
+psycopg2-binary>=2.9.0
+
+# Utilities
+python-dotenv>=1.0.0
+requests>=2.31.0
+tqdm>=4.66.0
+
+# PDF compression (optional)
+pikepdf>=8.0.0
+
+# OCR (optional, for scanned PDFs - skip if not needed)
+# pytesseract>=0.3.10

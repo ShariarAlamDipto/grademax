@@ -17,7 +17,7 @@ export default function Navbar() {
         <li><Link href="/dashboard" className="gradient-hover-sea">Dashboard</Link></li>
         <li><Link href="/past-papers" className="gradient-hover-sea">Past Papers</Link></li>
         <li><Link href="/lectures" className="gradient-hover-sea">Lectures</Link></li>
-        <li><Link href="/worksheets" className="gradient-hover-sea">Worksheets</Link></li>
+        <li><Link href="/generate" className="gradient-hover-sea">Generate Worksheets</Link></li>
         <li><Link href="/#worry-catcher" className="gradient-hover-sea">WorryCatcher</Link></li>
         <li>
           {isClient && <AuthButton />}
