@@ -110,7 +110,7 @@ export async function GET(
     const mergedPdfBytes = await mergePDFs(pdfUrls);
 
     // Return the merged PDF
-    return new Response(mergedPdfBytes, {
+    return new Response(mergedPdfBytes as unknown as BodyInit, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${type}-${worksheetId}.pdf"`,
