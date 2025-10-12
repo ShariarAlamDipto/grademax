@@ -4,6 +4,7 @@
  * 2. Generate sentence embeddings for each topic.content
  * 3. Write to ingest/topic_index.json for reuse in auto-tagging
  */
+import 'dotenv/config';
 import fs from 'fs'
 import path from 'path'
 import { createClient } from '@supabase/supabase-js'
