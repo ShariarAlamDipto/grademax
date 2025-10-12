@@ -1,0 +1,481 @@
+# IGCSE Physics Topic Catalogue
+# Based on Edexcel IGCSE Physics Specification (9-1)
+# Eight core topics with keywords, formulas, and synonyms for LLM classification
+
+topics:
+  - code: "1"
+    name: "Forces and motion"
+    description: "Kinematics, dynamics, momentum, work, energy and power"
+    keywords:
+      - force
+      - motion
+      - velocity
+      - acceleration
+      - speed
+      - displacement
+      - momentum
+      - impulse
+      - mass
+      - weight
+      - gravity
+      - friction
+      - air resistance
+      - terminal velocity
+      - Newton's laws
+      - kinematics
+      - dynamics
+      - work done
+      - power
+      - energy transfer
+      - kinetic energy
+      - potential energy
+      - gravitational potential
+      - elastic potential
+      - Hooke's law
+      - spring
+      - extension
+      - compression
+      - deformation
+    formulas:
+      - "v = u + at"
+      - "s = ut + ½at²"
+      - "v² = u² + 2as"
+      - "F = ma"
+      - "W = mg"
+      - "p = mv"
+      - "F = Δp/Δt"
+      - "W = Fs"
+      - "P = W/t"
+      - "P = Fv"
+      - "KE = ½mv²"
+      - "GPE = mgh"
+      - "F = kx"
+      - "EPE = ½kx²"
+    units:
+      - "m/s"
+      - "m/s²"
+      - "N"
+      - "kg"
+      - "kg m/s"
+      - "J"
+      - "W"
+    synonyms:
+      - kinematics
+      - projectile motion
+      - free fall
+      - uniform acceleration
+      - conservation of momentum
+      - elastic collision
+      - inelastic collision
+
+  - code: "2"
+    name: "Electricity"
+    description: "Electric circuits, current, voltage, resistance, power, and household electricity"
+    keywords:
+      - electric
+      - electricity
+      - current
+      - voltage
+      - potential difference
+      - resistance
+      - resistor
+      - circuit
+      - series
+      - parallel
+      - Ohm's law
+      - power
+      - energy
+      - charge
+      - electron
+      - conductor
+      - insulator
+      - ammeter
+      - voltmeter
+      - battery
+      - cell
+      - wire
+      - lamp
+      - bulb
+      - switch
+      - fuse
+      - earth wire
+      - live wire
+      - neutral wire
+      - mains electricity
+      - AC
+      - DC
+      - transformer
+    formulas:
+      - "V = IR"
+      - "P = IV"
+      - "P = I²R"
+      - "P = V²/R"
+      - "E = Pt"
+      - "E = VIt"
+      - "Q = It"
+      - "R_total = R₁ + R₂ (series)"
+      - "1/R_total = 1/R₁ + 1/R₂ (parallel)"
+    units:
+      - "A"
+      - "V"
+      - "Ω"
+      - "W"
+      - "kW"
+      - "kWh"
+      - "C"
+    synonyms:
+      - electrical circuit
+      - series circuit
+      - parallel circuit
+      - household electricity
+      - electrical safety
+      - electrical power
+
+  - code: "3"
+    name: "Waves"
+    description: "Properties of waves, light, sound, electromagnetic spectrum"
+    keywords:
+      - wave
+      - wavelength
+      - frequency
+      - amplitude
+      - period
+      - oscillation
+      - transverse
+      - longitudinal
+      - light
+      - sound
+      - electromagnetic
+      - spectrum
+      - radio wave
+      - microwave
+      - infrared
+      - visible light
+      - ultraviolet
+      - X-ray
+      - gamma ray
+      - reflection
+      - refraction
+      - diffraction
+      - interference
+      - ray diagram
+      - lens
+      - mirror
+      - image
+      - focal point
+      - focal length
+      - speed of light
+      - speed of sound
+      - echo
+      - ultrasound
+      - seismic wave
+    formulas:
+      - "v = fλ"
+      - "T = 1/f"
+      - "n = sin i / sin r"
+      - "1/f = 1/u + 1/v"
+      - "magnification = v/u"
+      - "magnification = image height / object height"
+    units:
+      - "Hz"
+      - "m"
+      - "m/s"
+      - "s"
+    synonyms:
+      - electromagnetic radiation
+      - EM spectrum
+      - optical
+      - optics
+      - acoustic
+      - vibration
+
+  - code: "4"
+    name: "Energy resources and transfers"
+    description: "Energy resources, efficiency, conservation, renewable and non-renewable sources"
+    keywords:
+      - energy
+      - energy resource
+      - renewable
+      - non-renewable
+      - fossil fuel
+      - coal
+      - oil
+      - gas
+      - nuclear
+      - solar
+      - wind
+      - hydroelectric
+      - geothermal
+      - biomass
+      - tidal
+      - wave power
+      - efficiency
+      - energy transfer
+      - conservation of energy
+      - dissipation
+      - wasted energy
+      - useful energy
+      - Sankey diagram
+      - power station
+      - generator
+      - turbine
+      - thermal energy
+      - heat
+      - temperature
+      - conduction
+      - convection
+      - radiation
+      - insulation
+      - greenhouse effect
+      - climate change
+    formulas:
+      - "efficiency = (useful output / total input) × 100%"
+      - "efficiency = (useful power out / total power in) × 100%"
+      - "E = mcΔθ"
+      - "E = mL"
+    units:
+      - "J"
+      - "kJ"
+      - "MJ"
+      - "W"
+      - "kW"
+      - "MW"
+      - "%"
+      - "J/kg°C"
+      - "J/kg"
+    synonyms:
+      - energy conservation
+      - energy efficiency
+      - sustainable energy
+      - alternative energy
+      - thermal transfer
+      - heat transfer
+
+  - code: "5"
+    name: "Solids, liquids and gases"
+    description: "States of matter, density, pressure, gas laws, kinetic theory"
+    keywords:
+      - solid
+      - liquid
+      - gas
+      - state of matter
+      - particle
+      - molecule
+      - atom
+      - density
+      - mass
+      - volume
+      - pressure
+      - force
+      - area
+      - atmospheric pressure
+      - gas law
+      - Boyle's law
+      - Charles's law
+      - pressure law
+      - ideal gas
+      - kinetic theory
+      - temperature
+      - Kelvin
+      - Celsius
+      - absolute zero
+      - Brownian motion
+      - diffusion
+      - evaporation
+      - boiling
+      - melting
+      - freezing
+      - condensation
+      - sublimation
+      - change of state
+      - latent heat
+      - specific heat capacity
+      - internal energy
+    formulas:
+      - "ρ = m/V"
+      - "p = F/A"
+      - "pV = constant (Boyle)"
+      - "V/T = constant (Charles)"
+      - "p/T = constant (Pressure law)"
+      - "pV/T = constant"
+      - "T(K) = T(°C) + 273"
+      - "E = mcΔθ"
+      - "E = mL"
+    units:
+      - "kg/m³"
+      - "g/cm³"
+      - "Pa"
+      - "N/m²"
+      - "kPa"
+      - "K"
+      - "°C"
+      - "J/kg°C"
+      - "J/kg"
+    synonyms:
+      - particle theory
+      - kinetic particle theory
+      - thermal physics
+      - gas pressure
+      - atmospheric
+
+  - code: "6"
+    name: "Magnetism and electromagnetism"
+    description: "Magnets, magnetic fields, electromagnets, motors, generators, transformers"
+    keywords:
+      - magnet
+      - magnetic
+      - magnetism
+      - magnetic field
+      - field line
+      - north pole
+      - south pole
+      - attract
+      - repel
+      - iron
+      - steel
+      - nickel
+      - cobalt
+      - ferromagnetic
+      - electromagnet
+      - solenoid
+      - coil
+      - current
+      - wire
+      - motor
+      - generator
+      - dynamo
+      - electromagnetic induction
+      - induced voltage
+      - induced current
+      - Fleming's left hand rule
+      - Fleming's right hand rule
+      - transformer
+      - primary coil
+      - secondary coil
+      - turns ratio
+      - step up
+      - step down
+      - AC
+      - alternating current
+    formulas:
+      - "Vp/Vs = Np/Ns"
+      - "VpIp = VsIs (ideal transformer)"
+      - "F = BIl"
+    units:
+      - "T"
+      - "V"
+      - "A"
+      - "N"
+    synonyms:
+      - magnetic effect of current
+      - electromagnetic effect
+      - electric motor
+      - electric generator
+      - mutual induction
+
+  - code: "7"
+    name: "Radioactivity and particles"
+    description: "Atomic structure, radioactivity, nuclear reactions, ionizing radiation"
+    keywords:
+      - atom
+      - atomic structure
+      - nucleus
+      - proton
+      - neutron
+      - electron
+      - atomic number
+      - mass number
+      - isotope
+      - ion
+      - radioactive
+      - radioactivity
+      - radiation
+      - alpha
+      - beta
+      - gamma
+      - decay
+      - half-life
+      - activity
+      - count rate
+      - Geiger-Muller tube
+      - ionizing
+      - ionization
+      - penetrating power
+      - background radiation
+      - nuclear
+      - nuclear fission
+      - nuclear fusion
+      - chain reaction
+      - nuclear reactor
+      - nuclear power
+      - uranium
+      - plutonium
+      - contamination
+      - irradiation
+    formulas:
+      - "N = N₀ × (½)^(t/t½)"
+      - "A = A₀ × (½)^(t/t½)"
+    units:
+      - "Bq"
+      - "s"
+      - "min"
+      - "year"
+    synonyms:
+      - atomic physics
+      - nuclear physics
+      - particle physics
+      - ionizing radiation
+      - nuclear energy
+
+  - code: "8"
+    name: "Astrophysics"
+    description: "Solar system, stars, galaxies, universe, cosmology"
+    keywords:
+      - solar system
+      - sun
+      - planet
+      - moon
+      - asteroid
+      - comet
+      - meteor
+      - satellite
+      - orbit
+      - orbital
+      - gravity
+      - gravitational
+      - star
+      - constellation
+      - galaxy
+      - Milky Way
+      - universe
+      - Big Bang
+      - cosmology
+      - redshift
+      - Doppler effect
+      - expanding universe
+      - light year
+      - astronomical unit
+      - nebula
+      - supernova
+      - black hole
+      - fusion
+      - stellar
+      - main sequence
+      - red giant
+      - white dwarf
+      - neutron star
+    formulas:
+      - "F = GMm/r²"
+      - "v = 2πr/T"
+    units:
+      - "AU"
+      - "ly"
+      - "pc"
+      - "km/s"
+      - "years"
+    synonyms:
+      - astronomy
+      - space
+      - celestial
+      - planetary
+      - galactic
