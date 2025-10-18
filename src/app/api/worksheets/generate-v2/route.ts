@@ -1,8 +1,12 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
+import { getUsageMeterService } from '@/lib/usageMeter';
+import { getAuditLogger } from '@/lib/auditLogger';
+import { cookies } from 'next/headers';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
 interface GenerateRequest {
   topics: string[];
@@ -51,6 +55,45 @@ export async function POST(request: Request) {
         { error: 'Topics are required' },
         { status: 400 }
       );
+    }
+
+    // Get authenticated user (Phase 1)
+    const cookieStore = await cookies();
+    const authCookie = cookieStore.get('sb-tybaetnvnfgniotdfxze-auth-token');
+    
+    let userId: string | null = null;
+    let userEmail: string | null = null;
+    
+    if (authCookie) {
+      const supabaseAuth = createClient(supabaseUrl, supabaseServiceKey);
+      const { data: { user } } = await supabaseAuth.auth.getUser(authCookie.value.split('-')[0]);
+      userId = user?.id || null;
+      userEmail = user?.email || null;
+    }
+
+    // Check quota (Phase 1)
+    if (userId) {
+      const meter = getUsageMeterService();
+      const check = await meter.canGenerateWorksheet(userId);
+      
+      if (!check.allowed) {
+        const ipAddress = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+        
+        // Log quota exceeded
+        await getAuditLogger().logQuotaExceeded(
+          userId,
+          userEmail || 'unknown',
+          'worksheets',
+          check.usage?.worksheets || 0,
+          check.limits?.maxWorksheetsPerMonth || 0,
+          ipAddress
+        );
+        
+        return NextResponse.json(
+          { error: check.reason || 'Quota exceeded' },
+          { status: 429 } // 429 Too Many Requests
+        );
+      }
     }
 
     const supabase = createClient(supabaseUrl, supabaseKey);
@@ -134,7 +177,8 @@ export async function POST(request: Request) {
         year_end: yearEnd,
         difficulty,
         total_questions: finalPages.length,
-        total_pages: finalPages.length
+        total_pages: finalPages.length,
+        user_id: userId // Add user_id if authenticated
       })
       .select()
       .single();
@@ -160,6 +204,32 @@ export async function POST(request: Request) {
 
     if (itemsError) {
       console.error('Worksheet items error:', itemsError);
+    }
+
+    // Track usage (Phase 1)
+    if (userId) {
+      const meter = getUsageMeterService();
+      await meter.incrementUsage(
+        userId,
+        1, // 1 worksheet
+        finalPages.length, // pages
+        finalPages.length // questions (assuming 1 question per page)
+      );
+
+      // Log worksheet generation
+      const ipAddress = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
+      await getAuditLogger().logWorksheetGenerated(
+        userId,
+        userEmail || 'unknown',
+        worksheet.id,
+        {
+          subjectCode: firstPage.papers.subjects.code || 'unknown',
+          topics,
+          questionsCount: finalPages.length,
+          pagesCount: finalPages.length
+        },
+        ipAddress
+      );
     }
 
     // Format response

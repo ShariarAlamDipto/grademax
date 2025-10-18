@@ -1,0 +1,160 @@
+# ============================================================================
+# GradeMax LLM Hybrid Configuration
+# Replaces Gemini with local LM Studio while keeping OpenAI/Anthropic optional
+# ============================================================================
+
+# Priority order for LLM providers
+# LM Studio is always tried first for offline operation
+provider_priority:
+  - "lmstudio"
+  - "openai"      # Optional fallback
+  - "anthropic"   # Optional fallback
+
+# ============================================================================
+# LM Studio Configuration (PRIMARY - Offline)
+# ============================================================================
+lmstudio:
+  base_url: "http://127.0.0.1:1234"
+  enabled: true
+  
+  # Model mapping for different tasks
+  models:
+    # General classification, tagging, reasoning
+    classifier: "qwen2.5-7b-instruct-1m"
+    
+    # Math-specific reasoning (Further Pure, Statistics, Mechanics)
+    math_reasoner: "deepseek-math-7b-instruct"
+    
+    # Embeddings for vector search
+    embedder: "text-embedding-nomic-embed-text-v1.5"
+  
+  # Default parameters for inference
+  defaults:
+    temperature: 0.1      # Low for deterministic classification
+    max_tokens: 256       # Sufficient for most tasks
+    timeout_seconds: 120  # 2 minutes max wait
+    top_p: 0.95
+    frequency_penalty: 0.0
+    presence_penalty: 0.0
+  
+  # Retry policy for transient failures
+  retry_policy:
+    max_retries: 3
+    backoff: 2.5          # Exponential backoff multiplier
+    retry_on_timeout: true
+  
+  # Local caching to avoid re-inference
+  cache_dir: "./cache/llm_responses"
+  cache_enabled: true
+  cache_ttl_hours: 168    # 1 week
+
+# ============================================================================
+# Subject-to-Model Routing
+# Automatically choose the best model based on subject
+# ============================================================================
+subject_routing:
+  # Math-heavy subjects use DeepSeek Math
+  math_subjects:
+    - "Further Pure Mathematics"
+    - "Pure Mathematics"
+    - "Mechanics"
+    - "Statistics"
+    - "Probability & Statistics"
+  
+  # All other subjects use Qwen for classification
+  default_model: "qwen2.5-7b-instruct-1m"
+  
+  # Embedding model used for all subjects
+  embedding_model: "text-embedding-nomic-embed-text-v1.5"
+
+# ============================================================================
+# OpenAI Configuration (OPTIONAL - Online fallback)
+# ============================================================================
+openai:
+  enabled: true
+  model: "gpt-4-turbo"
+  base_url: "https://api.openai.com/v1"
+  env_var: "OPENAI_API_KEY"
+  
+  # Use only as fallback if LM Studio fails
+  fallback_only: true
+  
+  defaults:
+    temperature: 0.1
+    max_tokens: 512
+    timeout_seconds: 30
+
+# ============================================================================
+# Anthropic Configuration (OPTIONAL - Online fallback)
+# ============================================================================
+anthropic:
+  enabled: true
+  model: "claude-3-sonnet-20240229"
+  base_url: "https://api.anthropic.com/v1"
+  env_var: "ANTHROPIC_API_KEY"
+  
+  # Use only as fallback if LM Studio fails
+  fallback_only: true
+  
+  defaults:
+    temperature: 0.1
+    max_tokens: 512
+    timeout_seconds: 30
+
+# ============================================================================
+# REMOVED PROVIDERS
+# These are no longer supported and will raise errors if referenced
+# ============================================================================
+removed:
+  providers:
+    - "gemini"
+    - "google-generative-ai"
+  
+  env_vars:
+    - "GEMINI_API_KEY"
+    - "GOOGLE_API_KEY"
+  
+  endpoints:
+    - "generativelanguage.googleapis.com"
+    - "gemini.googleapis.com"
+
+# ============================================================================
+# Response Validation
+# Ensure LLM outputs are properly formatted
+# ============================================================================
+validation:
+  # Preserve LaTeX math formatting
+  preserve_latex: true
+  
+  # Preserve diagram tags like [DIAGRAM: ...]
+  preserve_diagrams: true
+  
+  # Verify JSON structure for classification tasks
+  require_valid_json: true
+  
+  # Maximum response length (characters)
+  max_response_length: 4096
+
+# ============================================================================
+# Performance Monitoring
+# ============================================================================
+monitoring:
+  log_inference_time: true
+  log_model_used: true
+  log_cache_hits: true
+  
+  # Alert if inference takes too long
+  warn_if_slower_than_seconds: 10
+  
+  # Track statistics
+  track_stats: true
+  stats_file: "./cache/llm_stats.json"
+
+# ============================================================================
+# Development/Debug Settings
+# ============================================================================
+debug:
+  verbose_logging: false
+  save_prompts: false
+  save_responses: false
+  test_mode: false

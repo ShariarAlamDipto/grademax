@@ -1,13 +1,15 @@
 "use client"
-import { supabase } from "@/lib/supabaseClient"
+import { createClient } from "@/lib/supabaseBrowser"
 import type { User } from "@supabase/supabase-js";
 import { useEffect, useState } from "react";
+import SignOutButton from "./SignOutButton";
 
 export default function AuthButton() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    const supabase = createClient();
     const getUser = async () => {
       const { data } = await supabase.auth.getUser();
       setUser(data?.user || null);
@@ -24,14 +26,7 @@ export default function AuthButton() {
   }
 
   if (user) {
-    return (
-      <button
-        className="rounded-md bg-white/10 px-3 py-1.5 text-sm hover:bg-white/15"
-        onClick={() => supabase.auth.signOut().then(() => (window.location.href = "/"))}
-      >
-        Sign out
-      </button>
-    );
+    return <SignOutButton />;
   }
   
   return null; // Don't show sign in button on dashboard

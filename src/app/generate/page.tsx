@@ -2,78 +2,32 @@
 
 import { useState, useEffect } from 'react';
 
-// Subject configurations
-const SUBJECTS = [
-  { 
-    code: '4PH1', 
-    name: 'IGCSE Physics', 
-    level: 'IGCSE',
-    icon: '⚛️',
-    topics: [
-      { code: '1', name: 'Forces and motion', icon: '🚗' },
-      { code: '2', name: 'Electricity', icon: '⚡' },
-      { code: '3', name: 'Waves', icon: '🌊' },
-      { code: '4', name: 'Energy resources', icon: '🔋' },
-      { code: '5', name: 'Solids, liquids and gases', icon: '💧' },
-      { code: '6', name: 'Magnetism and electromagnetism', icon: '🧲' },
-      { code: '7', name: 'Radioactivity and particles', icon: '☢️' },
-      { code: '8', name: 'Astrophysics', icon: '🌌' },
-    ]
-  },
-  { 
-    code: '9MA0', 
-    name: 'IGCSE Mathematics A', 
-    level: 'IGCSE',
-    icon: '📐',
-    topics: [
-      { code: '1', name: 'Number', icon: '🔢' },
-      { code: '2', name: 'Algebra', icon: '✖️' },
-      { code: '3', name: 'Graphs', icon: '📈' },
-      { code: '4', name: 'Geometry', icon: '📐' },
-      { code: '5', name: 'Probability', icon: '🎲' },
-      { code: '6', name: 'Statistics', icon: '📊' },
-    ]
-  },
-  { 
-    code: '4MB1', 
-    name: 'IGCSE Mathematics B', 
-    level: 'IGCSE',
-    icon: '🔣',
-    topics: [
-      { code: '1', name: 'Number', icon: '🔢' },
-      { code: '2', name: 'Algebra', icon: '✖️' },
-      { code: '3', name: 'Geometry', icon: '📐' },
-      { code: '4', name: 'Statistics', icon: '📊' },
-      { code: '5', name: 'Probability', icon: '🎲' },
-    ]
-  },
-  { 
-    code: '9FM0', 
-    name: 'IGCSE Further Pure Mathematics', 
-    level: 'IGCSE',
-    icon: '∫',
-    topics: [
-      { code: '1', name: 'Algebra', icon: '✖️' },
-      { code: '2', name: 'Calculus', icon: '∫' },
-      { code: '3', name: 'Matrices', icon: '🔲' },
-      { code: '4', name: 'Complex numbers', icon: 'ℂ' },
-      { code: '5', name: 'Functions', icon: 'ƒ' },
-    ]
-  },
-  { 
-    code: 'WME1', 
-    name: 'IAL Mechanics 1', 
-    level: 'IAL',
-    icon: '⚙️',
-    topics: [
-      { code: '1', name: 'Kinematics', icon: '🚀' },
-      { code: '2', name: 'Forces', icon: '💪' },
-      { code: '3', name: 'Newton\'s laws', icon: '🍎' },
-      { code: '4', name: 'Momentum', icon: '🎱' },
-      { code: '5', name: 'Energy', icon: '⚡' },
-    ]
-  },
-];
+// Subject icon mapping
+const SUBJECT_ICONS: Record<string, string> = {
+  '4PH1': '⚛️',
+  '9MA0': '�',
+  '4MB1': '🔣',
+  '9FM0': '∫',
+  'WME1': '⚙️',
+};
+
+// Default icon for unknown subjects
+const DEFAULT_ICON = '�';
+
+interface Subject {
+  id: string;
+  code: string;
+  name: string;
+  level?: string;
+  color?: string;
+}
+
+interface Topic {
+  id: string;
+  code: string;
+  name: string;
+  spec_ref?: string;
+}
 
 const CURRENT_YEAR = 2025;
 const START_YEAR = 2011;
@@ -93,7 +47,13 @@ interface Question {
 }
 
 export default function WorksheetGeneratorPage() {
-  const [selectedSubject, setSelectedSubject] = useState<string>('4PH1');
+  // Subject and topic states
+  const [subjects, setSubjects] = useState<Subject[]>([]);
+  const [topics, setTopics] = useState<Topic[]>([]);
+  const [loadingSubjects, setLoadingSubjects] = useState(true);
+  const [loadingTopics, setLoadingTopics] = useState(false);
+  
+  const [selectedSubject, setSelectedSubject] = useState<string>('');
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [yearStart, setYearStart] = useState<number>(START_YEAR);
   const [yearEnd, setYearEnd] = useState<number>(CURRENT_YEAR);
@@ -110,8 +70,78 @@ export default function WorksheetGeneratorPage() {
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
 
-  // Get current subject data
-  const currentSubject = SUBJECTS.find(s => s.code === selectedSubject) || SUBJECTS[0];
+  // Permission states
+  const [checkingPermission, setCheckingPermission] = useState(true);
+  const [hasPermission, setHasPermission] = useState(false);
+  const [permissionError, setPermissionError] = useState<string | null>(null);
+  const [remainingQuota, setRemainingQuota] = useState<number | null>(null);
+  const [maxPerDay, setMaxPerDay] = useState<number | null>(null);
+
+  // Fetch subjects on mount
+  useEffect(() => {
+    async function fetchSubjects() {
+      try {
+        const response = await fetch('/api/subjects');
+        const data = await response.json();
+        setSubjects(data);
+        // Set first subject as default
+        if (data.length > 0) {
+          setSelectedSubject(data[0].id);
+        }
+      } catch (err) {
+        console.error('Error fetching subjects:', err);
+      } finally {
+        setLoadingSubjects(false);
+      }
+    }
+    fetchSubjects();
+  }, []);
+
+  // Fetch topics when subject changes
+  useEffect(() => {
+    if (!selectedSubject) return;
+    
+    async function fetchTopics() {
+      setLoadingTopics(true);
+      try {
+        const response = await fetch(`/api/topics?subjectId=${selectedSubject}`);
+        const data = await response.json();
+        setTopics(data);
+      } catch (err) {
+        console.error('Error fetching topics:', err);
+        setTopics([]);
+      } finally {
+        setLoadingTopics(false);
+      }
+    }
+    fetchTopics();
+  }, [selectedSubject]);
+
+  // Check permission on mount
+  useEffect(() => {
+    async function checkPermission() {
+      try {
+        const response = await fetch('/api/worksheets/check-permission');
+        const data = await response.json();
+        
+        setHasPermission(data.hasPermission);
+        setRemainingQuota(data.remainingQuota !== undefined ? data.remainingQuota : null);
+        setMaxPerDay(data.maxPerDay !== undefined ? data.maxPerDay : null);
+        
+        if (!data.hasPermission) {
+          setPermissionError(data.error || 'You do not have permission to generate worksheets');
+        }
+      } catch (err) {
+        console.error('Error checking permission:', err);
+        setPermissionError('Failed to verify permissions. Please try again.');
+        setHasPermission(false);
+      } finally {
+        setCheckingPermission(false);
+      }
+    }
+    
+    checkPermission();
+  }, []);
 
   // Reset selected topics when subject changes
   useEffect(() => {
@@ -223,7 +253,63 @@ export default function WorksheetGeneratorPage() {
           Select subject, topics, year range, and difficulty to create custom worksheets
         </p>
 
-        {/* Filters Panel */}
+        {/* Permission Status */}
+        {checkingPermission && (
+          <div className="bg-blue-900 bg-opacity-50 border border-blue-500 rounded-xl p-6 mb-8">
+            <div className="flex items-center gap-3">
+              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
+              <p className="text-white font-semibold">Verifying permissions...</p>
+            </div>
+          </div>
+        )}
+
+        {!checkingPermission && !hasPermission && (
+          <div className="bg-red-900 bg-opacity-50 border border-red-500 rounded-xl p-6 mb-8">
+            <div className="flex items-center gap-3 mb-4">
+              <span className="text-3xl">🔒</span>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1">Access Restricted</h3>
+                <p className="text-red-200">{permissionError}</p>
+              </div>
+            </div>
+            <div className="bg-red-950 bg-opacity-50 rounded-lg p-4 mt-4">
+              <p className="text-sm text-gray-300 mb-2">
+                <strong>To gain access:</strong>
+              </p>
+              <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
+                <li>Make sure you are signed in with your Google account</li>
+                <li>Contact the administrator to request worksheet generation permissions</li>
+                <li>Once approved, refresh this page to start generating worksheets</li>
+              </ul>
+            </div>
+          </div>
+        )}
+
+        {!checkingPermission && hasPermission && remainingQuota !== null && (
+          <div className="bg-green-900 bg-opacity-50 border border-green-500 rounded-xl p-6 mb-8">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-3xl">✅</span>
+                <div>
+                  <h3 className="text-xl font-bold text-white">Access Granted</h3>
+                  <p className="text-green-200">You have permission to generate worksheets</p>
+                </div>
+              </div>
+              {maxPerDay && maxPerDay > 0 && (
+                <div className="text-right">
+                  <p className="text-sm text-gray-300">Daily Quota</p>
+                  <p className="text-2xl font-bold text-white">
+                    {remainingQuota} / {maxPerDay}
+                  </p>
+                  <p className="text-xs text-gray-400">remaining today</p>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Filters Panel - Only show if has permission */}
+        {!checkingPermission && hasPermission && (
         <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl p-8 mb-8 border border-gray-700">
           
           {/* Subject Selection */}
@@ -231,23 +317,29 @@ export default function WorksheetGeneratorPage() {
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-white">
               📚 Select Subject
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-              {SUBJECTS.map((subject) => (
-                <button
-                  key={subject.code}
-                  onClick={() => setSelectedSubject(subject.code)}
-                  className={`p-4 rounded-xl border-2 transition-all transform hover:scale-105 ${
-                    selectedSubject === subject.code
-                      ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg shadow-purple-500/50'
-                      : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500 hover:shadow'
-                  }`}
-                >
-                  <div className="text-3xl mb-2">{subject.icon}</div>
-                  <div className="text-xs text-gray-400 font-medium">{subject.level}</div>
-                  <div className="text-sm font-semibold text-white text-center">{subject.name}</div>
-                </button>
-              ))}
-            </div>
+            {loadingSubjects ? (
+              <div className="flex items-center justify-center p-8">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                {subjects.map((subject) => (
+                  <button
+                    key={subject.id}
+                    onClick={() => setSelectedSubject(subject.id)}
+                    className={`p-4 rounded-xl border-2 transition-all transform hover:scale-105 ${
+                      selectedSubject === subject.id
+                        ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg shadow-purple-500/50'
+                        : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500 hover:shadow'
+                    }`}
+                  >
+                    <div className="text-3xl mb-2">{SUBJECT_ICONS[subject.code] || DEFAULT_ICON}</div>
+                    <div className="text-xs text-gray-400 font-medium">{subject.level || 'IGCSE'}</div>
+                    <div className="text-sm font-semibold text-white text-center">{subject.name}</div>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           {/* Topic Selection */}
@@ -262,47 +354,56 @@ export default function WorksheetGeneratorPage() {
             </h2>
             
             {/* Topics Table */}
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="bg-gray-700 bg-opacity-50">
-                    <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Select</th>
-                    <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Code</th>
-                    <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Topic Name</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {currentSubject.topics.map((topic) => (
-                    <tr 
-                      key={topic.code}
-                      className={`transition-colors ${
-                        selectedTopics.includes(topic.code)
-                          ? 'bg-blue-900 bg-opacity-50 border-blue-500'
-                          : 'bg-gray-700 bg-opacity-30 hover:bg-gray-600 hover:bg-opacity-40'
-                      }`}
-                    >
-                      <td className="border border-gray-600 px-4 py-3 text-center">
-                        <input
-                          type="checkbox"
-                          checked={selectedTopics.includes(topic.code)}
-                          onChange={() => toggleTopic(topic.code)}
-                          className="w-5 h-5 cursor-pointer"
-                        />
-                      </td>
-                      <td className="border border-gray-600 px-4 py-3">
-                        <div className="flex items-center gap-2">
-                          <span className="text-2xl">{topic.icon}</span>
-                          <span className="text-white font-semibold">{topic.code}</span>
-                        </div>
-                      </td>
-                      <td className="border border-gray-600 px-4 py-3">
-                        <span className="text-white">{topic.name}</span>
-                      </td>
+            {loadingTopics ? (
+              <div className="flex items-center justify-center p-8">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+              </div>
+            ) : topics.length === 0 ? (
+              <div className="text-center p-8 bg-gray-700 bg-opacity-30 rounded-xl">
+                <p className="text-gray-400">No topics available for this subject yet</p>
+              </div>
+            ) : (
+              <div className="overflow-x-auto">
+                <table className="w-full border-collapse">
+                  <thead>
+                    <tr className="bg-gray-700 bg-opacity-50">
+                      <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Select</th>
+                      <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Code</th>
+                      <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Topic Name</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {topics.map((topic) => (
+                      <tr 
+                        key={topic.id}
+                        className={`transition-colors ${
+                          selectedTopics.includes(topic.code)
+                            ? 'bg-blue-900 bg-opacity-50 border-blue-500'
+                            : 'bg-gray-700 bg-opacity-30 hover:bg-gray-600 hover:bg-opacity-40'
+                        }`}
+                      >
+                        <td className="border border-gray-600 px-4 py-3 text-center">
+                          <input
+                            type="checkbox"
+                            checked={selectedTopics.includes(topic.code)}
+                            onChange={() => toggleTopic(topic.code)}
+                            className="w-5 h-5 cursor-pointer"
+                          />
+                        </td>
+                        <td className="border border-gray-600 px-4 py-3">
+                          <div className="flex items-center gap-2">
+                            <span className="text-white font-semibold">{topic.code}</span>
+                          </div>
+                        </td>
+                        <td className="border border-gray-600 px-4 py-3">
+                          <span className="text-white">{topic.name}</span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
 
           {/* Year Range */}
@@ -383,12 +484,13 @@ export default function WorksheetGeneratorPage() {
           {/* Generate Button */}
           <button
             onClick={handleGenerate}
-            disabled={loading || selectedTopics.length === 0}
+            disabled={loading || selectedTopics.length === 0 || !hasPermission}
             className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {loading ? '🔄 Generating...' : '✨ Generate Worksheet'}
           </button>
         </div>
+        )}
 
         {/* Error Display */}
         {error && (
