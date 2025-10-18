@@ -46,10 +46,12 @@ class QuestionDetector:
     
     # Patterns for question numbers
     QUESTION_PATTERNS = [
-        r'^\s*(\d+)\s+[A-Z(]',  # "1 The" or "1 ("
-        r'^\s*(\d+)\s*\n',       # "1\n"
-        r'^Question\s+(\d+)',    # "Question 1"
-        r'^\s*(\d+)\s*\.',       # "1."
+        r'^\s*(\d+)\s+[A-Z(]',          # "1 The" or "1 ("
+        r'^\s*(\d+)\s{2,}[A-Z]',        # "1        This" (multiple spaces)
+        r'^\s*(\d+)\s*\n',               # "1\n"
+        r'^Question\s+(\d+)',            # "Question 1"
+        r'^\s*(\d+)\s*\.',               # "1."
+        r'^\s*(\d+)\s+This\s+question', # "1 This question" (common pattern)
     ]
     
     # Patterns for subparts
@@ -62,9 +64,13 @@ class QuestionDetector:
     @staticmethod
     def detect_question_start(text: str) -> Optional[str]:
         """Detect if page starts with a question number"""
-        lines = text.strip().split('\n')[:5]  # Check first 5 lines
+        lines = text.strip().split('\n')[:20]  # Check first 20 lines (covers instructions)
         
         for line in lines:
+            # Skip common header text
+            if any(skip in line for skip in ['DO NOT WRITE', 'Turn over', '*P', 'Answer ALL']):
+                continue
+                
             for pattern in QuestionDetector.QUESTION_PATTERNS:
                 match = re.search(pattern, line, re.MULTILINE)
                 if match:
