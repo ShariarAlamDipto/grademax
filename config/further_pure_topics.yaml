@@ -1,0 +1,483 @@
+version: 2
+subject:
+  code: "9FM0"
+  name: "Further Pure Mathematics"
+  board: "Edexcel"
+  level: "International GCSE"
+
+schema:
+  tag_unit: "question"                 # Tag the WHOLE question (not subparts)
+  keep_context_whole_question: true
+  allow_multi_tag: true
+  output_format: "json"
+
+escalation:
+  llm_escalation_threshold: 0.62       # If max confidence < 0.62 → ask LLM to re-score
+  llm_hard_escalation_threshold: 0.50  # If max < 0.50 → force escalate
+  llm_additive_boost_cap: 0.15         # LLM can nudge confidence but not override obvious rules
+  escalate_if_no_symbols_and_low_lexical: true  # If no symbols & weak words → escalate
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Symbol grammar & normalization
+# ─────────────────────────────────────────────────────────────────────────────
+symbol_grammar:
+  normalize:
+    superscripts_to_caret: true          # x² → x^2
+    minus_to_ascii: true                 # − → -
+    times_to_ascii_x: true               # ×·∘ → *
+    divide_slash: true                   # ÷ → /
+    greek_letters_to_ascii_names: true   # θ→theta, π→pi
+    remove_invisible_times: true
+    strip_function_application_symbol: true   # f⁡(x) → f(x)
+    normalize_brackets: true
+
+  # Match groups used by topics & methods
+  tokens:
+    derivatives:
+      - "\\b(d/dx|d\\s*y\\s*/\\s*dx|f'\\(x\\)|y'\\b)"
+    integrals:
+      - "(∫|\\bint\\b)"
+    limits:
+      - "\\blim\\b"
+    sigma_sum:
+      - "(Σ|\\bsigma\\b|\\bsum\\b)"
+    choose_binom:
+      - "\\bC\\s*\\(\\s*\\d+\\s*,\\s*\\d+\\s*\\)|\\(\\s*\\d+\\s*choose\\s*\\d+\\s*\\)|\\\\binom\\{"
+    powers_parentheses:
+      - "\\(1[+\\-][^)]*\\)\\^[^\\s)]+"
+    quadratic_forms:
+      - "\\bax\\^2\\s*\\+\\s*bx\\s*\\+\\s*c\\b"
+      - "b\\^2\\s*-\\s*4ac"
+      - "\\(x\\s*[-+]\\s*[^)]+\\)\\^2\\s*[-+]"
+    trig_funcs:
+      - "\\b(sin|cos|tan|cot|sec|cosec)\\s*\\("
+    trig_identities:
+      - "sin\\(A\\s*[+\\-]\\s*B\\)|cos\\(A\\s*[+\\-]\\s*B\\)|2sinAcosA|sin2A|cos2A|tan2A|R[ -]?formula"
+    graph_transforms:
+      - "y\\s*=\\s*f\\(x\\s*[-+]\\s*[^)]+\\)|y\\s*=\\s*[0-9a-zA-Z]*\\s*f\\(x\\)|y\\s*=\\s*f\\([0-9a-zA-Z]*\\s*x\\)"
+    reciprocal:
+      - "\\b1\\s*/\\s*x\\b|\\b\\d+\\s*/\\s*x\\b|y\\s*=\\s*\\d+\\s*/\\s*x\\b"
+    logs_ln:
+      - "\\bln\\s*\\(|\\blog\\s*\\(|\\blog_\\w+\\s*\\("
+    exp_e:
+      - "\\be\\^\\(?[^)]+\\)?"
+    vec_notation:
+      - "\\|\\s*\\w\\s*\\||\\bvec\\{\\w+\\}"
+      - "\\b\\w\\s*·\\s*\\w\\b"
+      - "\\(\\s*-?\\d+(?:/\\d+)?\\s*,\\s*-?\\d+(?:/\\d+)?\\s*\\)"
+      - "\\b(i|j|i\\^|j\\^)\\b"
+    circle_equation:
+      - "\\(x\\s*[-+]\\s*a\\)\\^2\\s*\\+\\s*\\(y\\s*[-+]\\s*b\\)\\^2\\s*=\\s*r\\^2"
+    line_forms:
+      - "y\\s*=\\s*mx\\s*\\+\\s*c\\b"
+    inequalities:
+      - "(≤|≥|<|>|<=|>=|≡)"
+
+  methods_catalog:
+    diff_chain: ["chain rule"]
+    diff_product: ["product rule"]
+    diff_quotient: ["quotient rule"]
+    diff_implicit: ["implicit differentiation", "dy/dx.+both sides"]
+    int_substitution: ["substitution", "let u|put u|dx\\s*=|du\\b"]
+    int_parts: ["integration by parts", "uv-"]
+    int_partial_fractions: ["partial fractions"]
+    binom_fractional_index: ["fractional index"]
+    trig_R_formula: ["R.?formula"]
+    trig_compound_angle: ["sin\\(A|cos\\(A"]
+    series_Sn: ["S_n|sum to n"]
+    series_infinity: ["sum to infinity"]
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Scoring (symbol-first) + hard floors
+# ─────────────────────────────────────────────────────────────────────────────
+scoring:
+  weights:
+    lexical: 0.35
+    symbols: 0.45
+    layout:  0.05
+    co_tag_prior: 0.15
+  penalties:
+    negative_hits: -0.22
+    too_generic: -0.10
+  clamp: [0.0, 1.0]
+
+symbol_hard_floors:
+  CALC:       { any_of: ["derivatives", "integrals", "limits"],         min_confidence: 0.62 }
+  SERIES:     { any_of: ["sigma_sum"],                                  min_confidence: 0.60 }
+  BINOMIAL:   { any_of: ["choose_binom", "powers_parentheses"],         min_confidence: 0.60 }
+  QUAD:       { any_of: ["quadratic_forms"],                             min_confidence: 0.58 }
+  TRIG:       { any_of: ["trig_funcs", "trig_identities"],              min_confidence: 0.58 }
+  GRAPHS:     { any_of: ["graph_transforms", "reciprocal"],             min_confidence: 0.56 }
+  LOGS:       { any_of: ["logs_ln", "exp_e"],                            min_confidence: 0.56 }
+  VECTORS:    { any_of: ["vec_notation"],                               min_confidence: 0.56 }
+  COORD:      { any_of: ["circle_equation", "line_forms"],              min_confidence: 0.55 }
+  IDENT_INEQ: { any_of: ["inequalities"],                                min_confidence: 0.55 }
+
+# Diagram/layout hints
+layout_signals:
+  has_axes: ["axis", "axes", "asymptote", "intercept", "sketch", "graph paper"]
+  triangle_fig: ["right-angled", "hypotenuse", "opposite", "adjacent", "theta", "diagram shows a triangle"]
+  circle_fig: ["circle centre", "radius", "tangent", "chord", "locus", "perpendicular bisector"]
+
+postprocess:
+  boost_if_layout:
+    GRAPHS: { has_axes: 0.06 }
+    TRIG:   { triangle_fig: 0.05 }
+    COORD:  { circle_fig: 0.05 }
+
+  precedence:
+    - include_if_symbol: CALC
+    - prefer: BINOMIAL
+      over: SERIES
+      when_symbols_any_of: ["powers_parentheses"]
+      boost: 0.05
+    - prefer: TRIG
+      over: IDENT_INEQ
+      when_symbols_any_of: ["trig_identities"]
+      boost: 0.04
+    - include_if_symbol: COORD
+
+  negatives_global:
+    - "log book"
+    - "identity card"
+    - "log table"
+    - "cosmetic"
+
+  difficulty_hints:
+    CALC: ["chain rule", "product rule", "quotient rule", "optimisation", "area under curve with bounds"]
+    TRIG: ["R-formula", "compound angle", "multi-solution set"]
+    BINOMIAL: ["fractional index", "collect to stated order"]
+    IDENT_INEQ: ["algebraic proof", "inequality region reasoning"]
+
+  ao_mapping:
+    LOGS: "Algebra & calculus"
+    QUAD: "Algebra & calculus"
+    IDENT_INEQ: "Algebra & calculus"
+    GRAPHS: "Algebra & calculus"
+    SERIES: "Algebra & calculus"
+    BINOMIAL: "Algebra & calculus"
+    VECTORS: "Geometry & trigonometry"
+    COORD: "Geometry & trigonometry"
+    CALC: "Algebra & calculus"
+    TRIG: "Geometry & trigonometry"
+
+topics:
+  - id: LOGS
+    code: "1"
+    name: "Logarithmic functions & indices"
+    description: "Logarithms (ln, log), exponential functions, laws of logs, change of base, indices"
+    lexical:
+      any:
+        - "\\blog\\b"
+        - "\\bln\\b"
+        - "logarithm"
+        - "exponential"
+        - "laws of logs"
+        - "change of base"
+        - "\\bindices?\\b"
+        - "index form"
+    symbols:
+      any_sets:
+        - "logs_ln"
+        - "exp_e"
+    structural_patterns:
+      any:
+        - "\\blog_a\\s*\\(\\s*\\w+\\s*\\)"
+        - "\\blog\\s*\\w+\\s*/\\s*\\blog\\s*\\w+"
+    co_tag_prior:
+      GRAPHS: 0.15
+      IDENT_INEQ: 0.10
+
+  - id: QUAD
+    code: "2"
+    name: "Quadratic function"
+    description: "Quadratics, parabola, discriminant, completing the square, roots"
+    lexical:
+      any:
+        - "quadratic"
+        - "parabola"
+        - "turning point"
+        - "vertex"
+        - "discriminant"
+        - "complete the square"
+        - "roots"
+    symbols:
+      any_sets:
+        - "quadratic_forms"
+    structural_patterns:
+      any:
+        - "y\\s*=\\s*ax\\^2\\s*\\+\\s*bx\\s*\\+\\s*c"
+        - "discriminant\\s*[:=]\\s*b\\^2\\s*-\\s*4ac"
+    co_tag_prior:
+      IDENT_INEQ: 0.15
+      GRAPHS: 0.10
+
+  - id: IDENT_INEQ
+    code: "3"
+    name: "Identities & inequalities"
+    description: "Algebraic identities, proofs, inequalities, solution regions"
+    lexical:
+      any:
+        - "\\bidentity\\b"
+        - "\\bprove\\b"
+        - "\\bshow that\\b"
+        - "inequalit(y|ies)"
+        - "for all x"
+        - "hence or otherwise"
+    symbols:
+      any_sets:
+        - "inequalities"
+    structural_patterns:
+      any:
+        - "region"
+        - "interval"
+        - "number\\s*line"
+        - "solution set"
+    co_tag_prior:
+      QUAD: 0.15
+      TRIG: 0.15
+
+  - id: GRAPHS
+    code: "4"
+    name: "Graphs"
+    description: "Function graphs, transformations, sketching, intercepts, asymptotes"
+    lexical:
+      any:
+        - "sketch"
+        - "intercepts?"
+        - "asymptote"
+        - "transformation"
+        - "composition"
+        - "mapping"
+        - "domain"
+        - "range"
+    symbols:
+      any_sets:
+        - "graph_transforms"
+        - "reciprocal"
+    layout:
+      any_from_layout_signals:
+        - "has_axes"
+    co_tag_prior:
+      CALC: 0.10
+      QUAD: 0.10
+      LOGS: 0.10
+
+  - id: SERIES
+    code: "5"
+    name: "Series (AP/GP, sums, limits)"
+    description: "Arithmetic/geometric series, sum to n terms, sum to infinity"
+    lexical:
+      any:
+        - "arithmetic series"
+        - "geometric series"
+        - "sum to n"
+        - "sum to infinity"
+        - "common difference"
+        - "common ratio"
+    symbols:
+      any_sets:
+        - "sigma_sum"
+    structural_patterns:
+      any:
+        - "S_n\\s*=\\s*\\(?n\\)?/2\\s*\\(2a\\s*\\+\\s*\\(n-1\\)d\\)"
+        - "S_n\\s*=\\s*a\\s*\\(1-?r\\^n\\)\\s*/\\s*\\(1-?r\\)"
+        - "\\|r\\|\\s*<\\s*1"
+    co_tag_prior:
+      LOGS: 0.05
+      BINOMIAL: 0.05
+
+  - id: BINOMIAL
+    code: "6"
+    name: "Binomial series"
+    description: "Binomial expansion, general term, fractional/negative indices, validity"
+    lexical:
+      any:
+        - "binomial expansion"
+        - "general term"
+        - "validity"
+        - "powers of x"
+        - "expand to (?:the )?first .* terms"
+    symbols:
+      any_sets:
+        - "choose_binom"
+        - "powers_parentheses"
+    structural_patterns:
+      any:
+        - "\\\\binom\\{n\\}\\{r\\}|C\\(n,\\s*r\\)"
+        - "\\(1[+\\-]x\\)\\^[^\\s)]+"
+    co_tag_prior:
+      SERIES: 0.10
+      GRAPHS: 0.05
+
+  - id: VECTORS
+    code: "7"
+    name: "Scalar & vector quantities"
+    description: "Vectors, magnitude, direction, dot product, unit vectors"
+    lexical:
+      any:
+        - "\\bvector\\b"
+        - "magnitude"
+        - "unit vector"
+        - "component"
+        - "parallel"
+        - "perpendicular"
+        - "direction cosines?"
+    symbols:
+      any_sets:
+        - "vec_notation"
+    structural_patterns:
+      any:
+        - "a\\s*\\cdot\\s*b\\s*=\\s*\\|a\\|\\|b\\|\\s*cos\\s*theta"
+        - "unit\\s*vector\\s*(?:i|j)"
+    co_tag_prior:
+      COORD: 0.10
+      TRIG: 0.05
+
+  - id: COORD
+    code: "8"
+    name: "Rectangular Cartesian coordinates"
+    description: "Coordinate geometry, lines, circles, distance, midpoint, gradients"
+    lexical:
+      any:
+        - "gradient"
+        - "distance"
+        - "midpoint"
+        - "perpendicular"
+        - "circle"
+        - "tangent"
+        - "chord"
+        - "locus"
+        - "perpendicular bisector"
+    symbols:
+      any_sets:
+        - "circle_equation"
+        - "line_forms"
+    layout:
+      any_from_layout_signals:
+        - "circle_fig"
+    co_tag_prior:
+      QUAD: 0.05
+      CALC: 0.05
+
+  - id: CALC
+    code: "9"
+    name: "Calculus"
+    description: "Differentiation, integration, applications, chain/product/quotient rules"
+    lexical:
+      any:
+        - "differentiate"
+        - "derive"
+        - "integrate"
+        - "tangent"
+        - "normal"
+        - "stationary point"
+        - "area under curve"
+        - "maxim(?:um|a)"
+        - "minim(?:um|a)"
+        - "increasing"
+        - "decreasing"
+        - "hence find"
+    symbols:
+      any_sets:
+        - "derivatives"
+        - "integrals"
+        - "limits"
+    structural_patterns:
+      any:
+        - "quotient rule"
+        - "product rule"
+        - "chain rule"
+        - "dy/dx"
+        - "d/dx"
+        - "f'\\(x\\)"
+    co_tag_prior:
+      GRAPHS: 0.10
+      TRIG: 0.05
+
+  - id: TRIG
+    code: "10"
+    name: "Trigonometry"
+    description: "Trig identities, compound angles, R-formula, solving equations"
+    lexical:
+      any:
+        - "prove (?:the )?identity"
+        - "solve (?:the )?equation"
+        - "compound angle"
+        - "R[- ]?formula"
+        - "exact values"
+        - "period"
+        - "amplitude"
+    symbols:
+      any_sets:
+        - "trig_funcs"
+        - "trig_identities"
+    layout:
+      any_from_layout_signals:
+        - "triangle_fig"
+    co_tag_prior:
+      IDENT_INEQ: 0.10
+      CALC: 0.05
+
+output:
+  fields:
+    - question_number
+    - marks
+    - topics:
+        - id
+        - confidence
+        - evidence
+    - methods
+    - dominant_ao
+    - difficulty_hint
+  json_schema:
+    type: object
+    required:
+      - question_number
+      - marks
+      - topics
+    properties:
+      question_number:
+        type: string
+      marks:
+        type: number
+      topics:
+        type: array
+        items:
+          type: object
+          required:
+            - id
+            - confidence
+          properties:
+            id:
+              type: string
+              enum:
+                - LOGS
+                - QUAD
+                - IDENT_INEQ
+                - GRAPHS
+                - SERIES
+                - BINOMIAL
+                - VECTORS
+                - COORD
+                - CALC
+                - TRIG
+            confidence:
+              type: number
+              minimum: 0.0
+              maximum: 1.0
+            evidence:
+              type: array
+              items:
+                type: string
+      methods:
+        type: array
+        items:
+          type: string
+      dominant_ao:
+        type: string
+        enum:
+          - "Algebra & calculus"
+          - "Geometry & trigonometry"
+      difficulty_hint:
+        type: string

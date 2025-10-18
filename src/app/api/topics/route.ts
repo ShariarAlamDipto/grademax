@@ -16,7 +16,6 @@ export async function GET(req: Request) {
     .from('topics')
     .select('id, name, code, spec_ref')
     .eq('subject_id', subjectId)
-    .in('code', ['1', '2', '3', '4', '5', '6', '7', '8'])  // Only main 8 topics
     .order('code')
   
   if (error) return NextResponse.json({ error: error.message }, { status: 400 })
