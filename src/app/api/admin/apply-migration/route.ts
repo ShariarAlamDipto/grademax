@@ -7,9 +7,6 @@ import path from 'path';
 // Only accessible to admins
 export async function POST(request: NextRequest) {
   try {
-    // Check admin auth
-    const adminEmails = process.env.ADMIN_EMAILS?.split(',').map(e => e.trim()) || [];
-    
     // Get user from request
     const authHeader = request.headers.get('authorization');
     if (!authHeader) {
@@ -43,7 +40,7 @@ export async function POST(request: NextRequest) {
       
       try {
         // Use the SQL query feature via RPC if available
-        const { data, error } = await supabase.rpc('exec_sql', { sql_query: stmt });
+        const { error } = await supabase.rpc('exec_sql', { sql_query: stmt });
         
         if (error) {
           console.error(`Statement ${i + 1} failed:`, error.message);
