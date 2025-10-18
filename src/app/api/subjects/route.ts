@@ -7,11 +7,20 @@ const supabase = createClient(
 )
 
 export async function GET() {
-  const { data, error } = await supabase
-    .from('subjects')
-    .select('id, name, code, level, color')
-    .order('name')
-  
-  if (error) return NextResponse.json({ error: error.message }, { status: 400 })
-  return NextResponse.json(data || [])
+  try {
+    const { data, error } = await supabase
+      .from('subjects')
+      .select('id, name, code, level, color')
+      .order('name')
+    
+    if (error) {
+      console.error('Subjects API error:', error)
+      return NextResponse.json([], { status: 200 }) // Return empty array on error
+    }
+    
+    return NextResponse.json(data || [], { status: 200 })
+  } catch (err) {
+    console.error('Subjects API exception:', err)
+    return NextResponse.json([], { status: 200 }) // Return empty array on exception
+  }
 }
