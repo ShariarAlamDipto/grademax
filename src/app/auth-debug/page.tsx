@@ -2,12 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import { createClient } from '@/lib/supabaseBrowser';
+import type { Session, User } from '@supabase/supabase-js';
 
 interface AuthState {
-  session?: unknown;
-  sessionError?: unknown;
-  user?: unknown;
-  userError?: unknown;
+  session?: Session | null;
+  sessionError?: Error | null;
+  user?: User | null;
+  userError?: Error | null;
   hasSession: boolean;
   hasUser: boolean;
   cookies: string;
@@ -105,9 +106,9 @@ export default function AuthDebugPage() {
             <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
               <h2 className="text-xl font-semibold mb-4">User Information</h2>
               <div className="space-y-2 text-sm font-mono">
-                <div><span className="text-gray-400">Email:</span> {(authState.user as {email?: string})?.email || 'N/A'}</div>
-                <div><span className="text-gray-400">ID:</span> {(authState.user as {id?: string})?.id || 'N/A'}</div>
-                <div><span className="text-gray-400">Created:</span> {(authState.user as {created_at?: string})?.created_at ? new Date((authState.user as {created_at: string}).created_at).toLocaleString() : 'N/A'}</div>
+                <div><span className="text-gray-400">Email:</span> {authState.user.email || 'N/A'}</div>
+                <div><span className="text-gray-400">ID:</span> {authState.user.id || 'N/A'}</div>
+                <div><span className="text-gray-400">Created:</span> {authState.user.created_at ? new Date(authState.user.created_at).toLocaleString() : 'N/A'}</div>
               </div>
             </div>
           )}
@@ -117,9 +118,9 @@ export default function AuthDebugPage() {
             <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
               <h2 className="text-xl font-semibold mb-4">Session Details</h2>
               <div className="space-y-2 text-sm font-mono">
-                <div><span className="text-gray-400">Access Token:</span> {((authState.session as {access_token?: string})?.access_token || '').substring(0, 20)}...</div>
-                <div><span className="text-gray-400">Expires:</span> {(authState.session as {expires_at?: number})?.expires_at ? new Date((authState.session as {expires_at: number}).expires_at * 1000).toLocaleString() : 'N/A'}</div>
-                <div><span className="text-gray-400">Provider:</span> {((authState.session as {user?: {app_metadata?: {provider?: string}}})?.user?.app_metadata?.provider) || 'N/A'}</div>
+                <div><span className="text-gray-400">Access Token:</span> {(authState.session.access_token || '').substring(0, 20)}...</div>
+                <div><span className="text-gray-400">Expires:</span> {authState.session.expires_at ? new Date(authState.session.expires_at * 1000).toLocaleString() : 'N/A'}</div>
+                <div><span className="text-gray-400">Provider:</span> {authState.session.user?.app_metadata?.provider || 'N/A'}</div>
               </div>
             </div>
           )}
