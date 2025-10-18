@@ -1,20 +1,83 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const TOPICS = [
-  { code: '1', name: 'Forces and motion', icon: '🚗' },
-  { code: '2', name: 'Electricity', icon: '⚡' },
-  { code: '3', name: 'Waves', icon: '🌊' },
-  { code: '4', name: 'Energy resources', icon: '🔋' },
-  { code: '5', name: 'Solids, liquids and gases', icon: '💧' },
-  { code: '6', name: 'Magnetism and electromagnetism', icon: '🧲' },
-  { code: '7', name: 'Radioactivity and particles', icon: '☢️' },
-  { code: '8', name: 'Astrophysics', icon: '🌌' },
+// Subject configurations
+const SUBJECTS = [
+  { 
+    code: '4PH1', 
+    name: 'IGCSE Physics', 
+    level: 'IGCSE',
+    icon: '⚛️',
+    topics: [
+      { code: '1', name: 'Forces and motion', icon: '🚗' },
+      { code: '2', name: 'Electricity', icon: '⚡' },
+      { code: '3', name: 'Waves', icon: '🌊' },
+      { code: '4', name: 'Energy resources', icon: '🔋' },
+      { code: '5', name: 'Solids, liquids and gases', icon: '💧' },
+      { code: '6', name: 'Magnetism and electromagnetism', icon: '🧲' },
+      { code: '7', name: 'Radioactivity and particles', icon: '☢️' },
+      { code: '8', name: 'Astrophysics', icon: '🌌' },
+    ]
+  },
+  { 
+    code: '9MA0', 
+    name: 'IGCSE Mathematics A', 
+    level: 'IGCSE',
+    icon: '📐',
+    topics: [
+      { code: '1', name: 'Number', icon: '🔢' },
+      { code: '2', name: 'Algebra', icon: '✖️' },
+      { code: '3', name: 'Graphs', icon: '📈' },
+      { code: '4', name: 'Geometry', icon: '📐' },
+      { code: '5', name: 'Probability', icon: '🎲' },
+      { code: '6', name: 'Statistics', icon: '📊' },
+    ]
+  },
+  { 
+    code: '4MB1', 
+    name: 'IGCSE Mathematics B', 
+    level: 'IGCSE',
+    icon: '🔣',
+    topics: [
+      { code: '1', name: 'Number', icon: '🔢' },
+      { code: '2', name: 'Algebra', icon: '✖️' },
+      { code: '3', name: 'Geometry', icon: '📐' },
+      { code: '4', name: 'Statistics', icon: '📊' },
+      { code: '5', name: 'Probability', icon: '🎲' },
+    ]
+  },
+  { 
+    code: '9FM0', 
+    name: 'IGCSE Further Pure Mathematics', 
+    level: 'IGCSE',
+    icon: '∫',
+    topics: [
+      { code: '1', name: 'Algebra', icon: '✖️' },
+      { code: '2', name: 'Calculus', icon: '∫' },
+      { code: '3', name: 'Matrices', icon: '🔲' },
+      { code: '4', name: 'Complex numbers', icon: 'ℂ' },
+      { code: '5', name: 'Functions', icon: 'ƒ' },
+    ]
+  },
+  { 
+    code: 'WME1', 
+    name: 'IAL Mechanics 1', 
+    level: 'IAL',
+    icon: '⚙️',
+    topics: [
+      { code: '1', name: 'Kinematics', icon: '🚀' },
+      { code: '2', name: 'Forces', icon: '💪' },
+      { code: '3', name: 'Newton\'s laws', icon: '🍎' },
+      { code: '4', name: 'Momentum', icon: '🎱' },
+      { code: '5', name: 'Energy', icon: '⚡' },
+    ]
+  },
 ];
 
 const CURRENT_YEAR = 2025;
-const YEARS = Array.from({ length: 10 }, (_, i) => CURRENT_YEAR - i);
+const START_YEAR = 2011;
+const YEARS = Array.from({ length: CURRENT_YEAR - START_YEAR + 1 }, (_, i) => CURRENT_YEAR - i);
 
 interface Question {
   id: string;
@@ -30,8 +93,9 @@ interface Question {
 }
 
 export default function WorksheetGeneratorPage() {
+  const [selectedSubject, setSelectedSubject] = useState<string>('4PH1');
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
-  const [yearStart, setYearStart] = useState<number>(2017);
+  const [yearStart, setYearStart] = useState<number>(START_YEAR);
   const [yearEnd, setYearEnd] = useState<number>(CURRENT_YEAR);
   const [difficulty, setDifficulty] = useState<string>('');
   const [limit, setLimit] = useState<number>(20);
@@ -45,6 +109,19 @@ export default function WorksheetGeneratorPage() {
   
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
+
+  // Get current subject data
+  const currentSubject = SUBJECTS.find(s => s.code === selectedSubject) || SUBJECTS[0];
+
+  // Reset selected topics when subject changes
+  useEffect(() => {
+    setSelectedTopics([]);
+    setQuestions([]);
+    setWorksheetId(null);
+    setWorksheetUrl(null);
+    setMarkschemeUrl(null);
+    setError(null);
+  }, [selectedSubject]);
 
   const toggleTopic = (code: string) => {
     setSelectedTopics(prev =>
@@ -72,7 +149,7 @@ export default function WorksheetGeneratorPage() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          subjectCode: '4PH1',
+          subjectCode: selectedSubject,
           topics: selectedTopics,
           yearStart,
           yearEnd,
@@ -140,14 +217,39 @@ export default function WorksheetGeneratorPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h1 className="text-5xl font-bold mb-2 text-white">📝 Worksheet Generator</h1>
         <p className="text-gray-300 mb-8">
-          Select topics, year range, and difficulty to create custom worksheets with mark schemes
+          Select subject, topics, year range, and difficulty to create custom worksheets
         </p>
 
         {/* Filters Panel */}
         <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl p-8 mb-8 border border-gray-700">
+          
+          {/* Subject Selection */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-white">
+              📚 Select Subject
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {SUBJECTS.map((subject) => (
+                <button
+                  key={subject.code}
+                  onClick={() => setSelectedSubject(subject.code)}
+                  className={`p-4 rounded-xl border-2 transition-all transform hover:scale-105 ${
+                    selectedSubject === subject.code
+                      ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg shadow-purple-500/50'
+                      : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500 hover:shadow'
+                  }`}
+                >
+                  <div className="text-3xl mb-2">{subject.icon}</div>
+                  <div className="text-xs text-gray-400 font-medium">{subject.level}</div>
+                  <div className="text-sm font-semibold text-white text-center">{subject.name}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
           {/* Topic Selection */}
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-white">
@@ -158,22 +260,48 @@ export default function WorksheetGeneratorPage() {
                 </span>
               )}
             </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {TOPICS.map((topic) => (
-                <button
-                  key={topic.code}
-                  onClick={() => toggleTopic(topic.code)}
-                  className={`p-4 rounded-xl border-2 transition-all transform hover:scale-105 ${
-                    selectedTopics.includes(topic.code)
-                      ? 'border-blue-500 bg-blue-900 bg-opacity-50 shadow-lg shadow-blue-500/50'
-                      : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500 hover:shadow'
-                  }`}
-                >
-                  <div className="text-3xl mb-2">{topic.icon}</div>
-                  <div className="text-xs text-gray-400 font-medium">Topic {topic.code}</div>
-                  <div className="text-sm font-semibold text-white">{topic.name}</div>
-                </button>
-              ))}
+            
+            {/* Topics Table */}
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse">
+                <thead>
+                  <tr className="bg-gray-700 bg-opacity-50">
+                    <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Select</th>
+                    <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Code</th>
+                    <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Topic Name</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {currentSubject.topics.map((topic) => (
+                    <tr 
+                      key={topic.code}
+                      className={`transition-colors ${
+                        selectedTopics.includes(topic.code)
+                          ? 'bg-blue-900 bg-opacity-50 border-blue-500'
+                          : 'bg-gray-700 bg-opacity-30 hover:bg-gray-600 hover:bg-opacity-40'
+                      }`}
+                    >
+                      <td className="border border-gray-600 px-4 py-3 text-center">
+                        <input
+                          type="checkbox"
+                          checked={selectedTopics.includes(topic.code)}
+                          onChange={() => toggleTopic(topic.code)}
+                          className="w-5 h-5 cursor-pointer"
+                        />
+                      </td>
+                      <td className="border border-gray-600 px-4 py-3">
+                        <div className="flex items-center gap-2">
+                          <span className="text-2xl">{topic.icon}</span>
+                          <span className="text-white font-semibold">{topic.code}</span>
+                        </div>
+                      </td>
+                      <td className="border border-gray-600 px-4 py-3">
+                        <span className="text-white">{topic.name}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
 
@@ -322,24 +450,24 @@ export default function WorksheetGeneratorPage() {
                   )}
                 </div>
 
-                {/* PDF Previews */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                {/* PDF Previews - Centered and 70% screen width */}
+                <div className="flex flex-col items-center gap-8">
                   {worksheetUrl && (
-                    <div>
-                      <h4 className="text-green-300 font-semibold mb-2">📄 Worksheet Preview</h4>
+                    <div className="w-full flex flex-col items-center">
+                      <h4 className="text-green-300 font-semibold mb-4 text-xl">📄 Worksheet Preview</h4>
                       <iframe 
                         src={worksheetUrl} 
-                        className="w-full h-96 border-2 border-green-500 rounded-lg bg-white"
+                        className="w-[70vw] h-[80vh] border-2 border-green-500 rounded-lg bg-white shadow-2xl"
                         title="Worksheet Preview"
                       />
                     </div>
                   )}
                   {markschemeUrl && (
-                    <div>
-                      <h4 className="text-blue-300 font-semibold mb-2">✅ Markscheme Preview</h4>
+                    <div className="w-full flex flex-col items-center mt-8">
+                      <h4 className="text-blue-300 font-semibold mb-4 text-xl">✅ Markscheme Preview</h4>
                       <iframe 
                         src={markschemeUrl} 
-                        className="w-full h-96 border-2 border-blue-500 rounded-lg bg-white"
+                        className="w-[70vw] h-[80vh] border-2 border-blue-500 rounded-lg bg-white shadow-2xl"
                         title="Markscheme Preview"
                       />
                     </div>
