@@ -81,13 +81,19 @@ export default function WorksheetGeneratorPage() {
   useEffect(() => {
     async function fetchSubjects() {
       try {
+        console.log('[Generate] Fetching subjects...');
         const response = await fetch('/api/subjects');
+        console.log('[Generate] Subjects response status:', response.status);
         const data = await response.json();
+        console.log('[Generate] Subjects data:', data);
+        
         // Ensure data is an array
         if (Array.isArray(data)) {
+          console.log('[Generate] Setting subjects:', data.length, 'subjects found');
           setSubjects(data);
           // Set first subject as default
           if (data.length > 0) {
+            console.log('[Generate] Setting default subject:', data[0].id);
             setSelectedSubject(data[0].id);
           }
         } else {
@@ -325,6 +331,15 @@ export default function WorksheetGeneratorPage() {
         {!checkingPermission && hasPermission && (
         <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl p-8 mb-8 border border-gray-700">
           
+          {/* Debug Info */}
+          {process.env.NODE_ENV === 'development' && (
+            <div className="mb-4 p-4 bg-yellow-900 bg-opacity-30 border border-yellow-500 rounded text-xs text-yellow-200">
+              <strong>Debug:</strong> Subjects count: {subjects.length}, Loading: {loadingSubjects ? 'Yes' : 'No'}, Selected: {selectedSubject}
+              <br />
+              Subjects: {JSON.stringify(subjects.map(s => ({ id: s.id, name: s.name })))}
+            </div>
+          )}
+          
           {/* Subject Selection */}
           <div className="mb-8">
             <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-white">
@@ -336,21 +351,28 @@ export default function WorksheetGeneratorPage() {
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {subjects.map((subject) => (
-                  <button
-                    key={subject.id}
-                    onClick={() => setSelectedSubject(subject.id)}
-                    className={`p-4 rounded-xl border-2 transition-all transform hover:scale-105 ${
-                      selectedSubject === subject.id
-                        ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg shadow-purple-500/50'
-                        : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500 hover:shadow'
-                    }`}
-                  >
-                    <div className="text-3xl mb-2">{SUBJECT_ICONS[subject.code] || DEFAULT_ICON}</div>
-                    <div className="text-xs text-gray-400 font-medium">{subject.level || 'IGCSE'}</div>
-                    <div className="text-sm font-semibold text-white text-center">{subject.name}</div>
-                  </button>
-                ))}
+                {subjects.length === 0 ? (
+                  <div className="col-span-full text-center py-8 text-gray-400">
+                    <p className="text-lg mb-2">No subjects available</p>
+                    <p className="text-sm">Please contact the administrator</p>
+                  </div>
+                ) : (
+                  subjects.map((subject) => (
+                    <button
+                      key={subject.id}
+                      onClick={() => setSelectedSubject(subject.id)}
+                      className={`p-4 rounded-xl border-2 transition-all transform hover:scale-105 ${
+                        selectedSubject === subject.id
+                          ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg shadow-purple-500/50'
+                          : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500 hover:shadow'
+                      }`}
+                    >
+                      <div className="text-3xl mb-2">{SUBJECT_ICONS[subject.code] || DEFAULT_ICON}</div>
+                      <div className="text-xs text-gray-400 font-medium">{subject.level || 'IGCSE'}</div>
+                      <div className="text-sm font-semibold text-white text-center">{subject.name}</div>
+                    </button>
+                  ))
+                )}
               </div>
             )}
           </div>
