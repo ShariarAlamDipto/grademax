@@ -23,6 +23,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from split_pages import PageSplitter
 from single_topic_classifier import SingleTopicClassifier
 from supabase_client import SupabaseClient
+from compress_pdf import compress_pdf_in_place, format_size
 
 # Load environment variables from .env.ingest
 load_dotenv('.env.ingest')
@@ -99,22 +100,31 @@ class MarkSchemeExtractor:
 class PageBasedPipeline:
     """Page-based ingestion pipeline"""
     
-    def __init__(self, config_path: str = "config/physics_topics.yaml"):
+    def __init__(self, config_path: str = "config/physics_topics.yaml", subject_name: str = None):
         self.db = SupabaseClient()
         api_key = os.getenv('GEMINI_API_KEY')
         if not api_key:
             raise ValueError("GEMINI_API_KEY not set")
         self.classifier = SingleTopicClassifier(config_path, api_key)
-        self.subject_code = "4PH1"
-        self.subject_name = "Physics"
+        
+        # Subject mapping (will be auto-detected from folder structure)
+        self.subject_map = {
+            'Physics': '4PH1',
+            'Chemistry': '4CH1',
+            'Biology': '4BI1',
+            'Mathematics': '4MA1',
+            'Maths': '4MA1'
+        }
+        self.subject_code = None  # Will be set during processing
+        self.subject_name = subject_name  # Will be set during processing
         
     def process_paper_pair(self, qp_path: str, ms_path: str):
         """Process a QP and MS pair"""
         qp_path = Path(qp_path)
         ms_path = Path(ms_path)
         
-        # Parse filename
-        paper_info = self._parse_filename(qp_path.name, qp_path.parent)
+        # Parse filename (with watermark extraction)
+        paper_info = self._parse_filename(qp_path.name, qp_path.parent, str(qp_path))
         paper_id_str = f"{paper_info['year']}_{paper_info['season']}_{paper_info['paper']}"
         
         print(f"\n{'='*70}")
@@ -174,6 +184,14 @@ class PageBasedPipeline:
             qp_storage_path = f"subjects/{self.subject_name}/pages/{paper_id_str}/q{q_num}.pdf"
             ms_storage_path = f"subjects/{self.subject_name}/pages/{paper_id_str}/q{q_num}_ms.pdf"
             
+            # Compress QP before upload
+            try:
+                orig_size, comp_size, ratio = compress_pdf_in_place(str(q_pdf), compression_level=3)
+                if ratio > 10:  # Only mention if significant compression
+                    print(f"      📦 Compressed: {format_size(orig_size)} → {format_size(comp_size)} ({ratio:.0f}% saved)")
+            except Exception as e:
+                print(f"      ⚠️  Compression failed (will upload original): {e}")
+            
             # Upload QP
             try:
                 self.db.upload_file(
@@ -188,6 +206,12 @@ class PageBasedPipeline:
             # Upload MS (if exists)
             ms_url = None
             if q_num in ms_paths:
+                # Compress MS before upload
+                try:
+                    compress_pdf_in_place(ms_paths[q_num], compression_level=3)
+                except:
+                    pass  # Continue even if compression fails
+                
                 try:
                     self.db.upload_file(
                         bucket="question-pdfs",
@@ -283,40 +307,122 @@ class PageBasedPipeline:
         result = self.db.insert('papers', paper_data)
         return result[0]['id']
     
-    def _parse_filename(self, filename: str, parent_path: Path) -> Dict:
-        """Parse paper filename and extract metadata from path"""
-        # Try to extract from path structure: .../2019/Jun/...
+    def _extract_watermark_metadata(self, pdf_path: str) -> Dict:
+        """Extract metadata from PMT watermark at bottom left of pages
+        
+        Watermark format: "PMT\nPhysics · 2024 · May/Jun · Paper 1 · QP"
+        Returns: {'subject': 'Physics', 'year': 2024, 'season': 'May/Jun', 'paper': '1', 'type': 'QP'}
+        """
+        try:
+            doc = fitz.open(pdf_path)
+            # Check first few pages for watermark
+            for page_num in range(min(5, len(doc))):
+                page = doc[page_num]
+                blocks = page.get_text('blocks')
+                
+                # Look for watermark at bottom left (X < 30, Y < 10)
+                for block in blocks:
+                    x, y, text = block[0], block[1], block[4].strip()
+                    
+                    if x < 30 and y < 10 and '·' in text:
+                        # Found watermark! Parse it
+                        # Format: "PMT\nPhysics · 2024 · May/Jun · Paper 1 · QP"
+                        lines = text.split('\n')
+                        if len(lines) >= 2 and 'PMT' in lines[0]:
+                            parts = lines[1].split('·')
+                            if len(parts) >= 5:
+                                subject = parts[0].strip()
+                                year = int(parts[1].strip())
+                                season = parts[2].strip()
+                                paper_info = parts[3].strip()  # "Paper 1"
+                                paper_num = paper_info.replace('Paper', '').strip()
+                                doc_type = parts[4].strip()  # "QP" or "MS"
+                                
+                                doc.close()
+                                return {
+                                    'subject': subject,
+                                    'year': year,
+                                    'season': season,
+                                    'paper': paper_num,
+                                    'type': doc_type
+                                }
+            doc.close()
+        except Exception as e:
+            print(f"   ⚠️  Could not extract watermark: {e}")
+        
+        return None
+    
+    def _normalize_season(self, season: str) -> str:
+        """Normalize season names to database format
+        
+        May/Jun, May-Jun -> Jun
+        Oct/Nov, Oct-Nov -> Jan (represents Jan sitting of next year)
+        Jan -> Jan
+        """
+        season_lower = season.lower()
+        if 'may' in season_lower or 'jun' in season_lower:
+            return 'Jun'
+        elif 'oct' in season_lower or 'nov' in season_lower:
+            return 'Jan'
+        elif 'jan' in season_lower:
+            return 'Jan'
+        else:
+            return 'Jun'  # Default fallback
+    
+    def _parse_filename(self, filename: str, parent_path: Path, pdf_path: str) -> Dict:
+        """Parse paper filename and extract metadata from path and watermark
+        
+        NEW FORMAT:
+        - Filename: "Paper 1.pdf", "Paper 2_MS.pdf"
+        - Path: data/raw/IGCSE/Physics/2024/May-Jun/
+        - Watermark: "PMT\nPhysics · 2024 · May/Jun · Paper 1 · QP"
+        """
+        # STEP 1: Extract from watermark (most reliable)
+        watermark_data = self._extract_watermark_metadata(pdf_path)
+        
+        if watermark_data:
+            print(f"   📍 Watermark: {watermark_data['subject']} · {watermark_data['year']} · {watermark_data['season']} · Paper {watermark_data['paper']} · {watermark_data['type']}")
+            
+            # Set subject info
+            self.subject_name = watermark_data['subject']
+            self.subject_code = self.subject_map.get(self.subject_name, '4PH1')
+            
+            return {
+                'year': watermark_data['year'],
+                'season': self._normalize_season(watermark_data['season']),
+                'paper': f"{watermark_data['paper']}P"
+            }
+        
+        # STEP 2: Fallback to path-based parsing
+        print(f"   ⚠️  No watermark found, using path-based parsing")
         parts = parent_path.parts
         year = None
         season = None
+        subject = None
         
-        for part in reversed(parts):
+        # Extract from path: data/raw/IGCSE/Physics/2024/May-Jun/
+        for i, part in enumerate(parts):
             if part.isdigit() and len(part) == 4:
                 year = int(part)
-            elif part in ['Jun', 'Oct', 'Jan', 'May']:
-                season = part
+            elif part in ['Jun', 'Jan', 'May-Jun', 'Oct-Nov', 'May/Jun', 'Oct/Nov']:
+                season = self._normalize_season(part)
+            elif part in self.subject_map:
+                subject = part
         
-        # Parse filename
-        name_parts = filename.replace('.pdf', '').split('_')
+        # Parse filename: "Paper 1.pdf" or "Paper 2_MS.pdf"
+        name_clean = filename.replace('.pdf', '').replace('_MS', '').replace(' MS', '')
+        paper_match = re.search(r'Paper\s*(\d+)', name_clean, re.IGNORECASE)
+        paper_num = paper_match.group(1) if paper_match else '1'
         
-        if len(name_parts) >= 2:
-            paper = name_parts[-1]  # Last part is usually paper number
-        else:
-            paper = "1P"
-        
-        # Extract from filename if not in path
-        if not year or not season:
-            # Try format: 4PH1_Jun19_QP_1P.pdf
-            for part in name_parts:
-                match = re.match(r'([A-Za-z]+)(\d{2})', part)
-                if match:
-                    season = match.group(1)
-                    year = 2000 + int(match.group(2))
+        # Set subject info
+        if subject:
+            self.subject_name = subject
+            self.subject_code = self.subject_map.get(subject, '4PH1')
         
         return {
-            'year': year or 2019,
+            'year': year or 2024,
             'season': season or 'Jun',
-            'paper': paper
+            'paper': f"{paper_num}P"
         }
 
 

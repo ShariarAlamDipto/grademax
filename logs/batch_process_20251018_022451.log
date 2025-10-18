@@ -1,0 +1,291 @@
+Batch Processing Log - 2025-10-18 02:24:51.075545
+Total papers: 56
+Starting from index: 0
+
+
+[1/56] 2011_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2011\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2011\May-Jun\Paper 1_MS.pdf
+  Status: SKIPPED (already exists)
+
+[2/56] 2011_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2011\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2011\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[3/56] 2012_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2012\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2012\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[4/56] 2012_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2012\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2012\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[5/56] 2012_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2012\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2012\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[6/56] 2012_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2012\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2012\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[7/56] 2013_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2013\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2013\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[8/56] 2013_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2013\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2013\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[9/56] 2013_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2013\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2013\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[10/56] 2013_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2013\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2013\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[11/56] 2014_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2014\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2014\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[12/56] 2014_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2014\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2014\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[13/56] 2014_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2014\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2014\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[14/56] 2014_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2014\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2014\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[15/56] 2015_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2015\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2015\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[16/56] 2015_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2015\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2015\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[17/56] 2015_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2015\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2015\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[18/56] 2015_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2015\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2015\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[19/56] 2016_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2016\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2016\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[20/56] 2016_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2016\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2016\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[21/56] 2016_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2016\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2016\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[22/56] 2016_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2016\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2016\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[23/56] 2017_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2017\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2017\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[24/56] 2017_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2017\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2017\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[25/56] 2017_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2017\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2017\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[26/56] 2017_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2017\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2017\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[27/56] 2017_Specimen_Paper1
+  QP: data\raw\IGCSE\Physics\2017\Specimen\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2017\Specimen\Paper 1_MS.pdf
+  Status: SKIPPED (already exists)
+
+[28/56] 2017_Specimen_Paper2
+  QP: data\raw\IGCSE\Physics\2017\Specimen\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2017\Specimen\Paper 2_MS.pdf
+  Status: SKIPPED (already exists)
+
+[29/56] 2018_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2018\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2018\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[30/56] 2018_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2018\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2018\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[31/56] 2018_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2018\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2018\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[32/56] 2018_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2018\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2018\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[33/56] 2019_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2019\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2019\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[34/56] 2019_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2019\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2019\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[35/56] 2019_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2019\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2019\May-Jun\Paper 1_MS.pdf
+  Status: SKIPPED (already exists)
+
+[36/56] 2019_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2019\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2019\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[37/56] 2020_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2020\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2020\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[38/56] 2020_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2020\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2020\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[39/56] 2020_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2020\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2020\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[40/56] 2020_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2020\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2020\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[41/56] 2021_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2021\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2021\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[42/56] 2021_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2021\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2021\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[43/56] 2021_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2021\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2021\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[44/56] 2021_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2021\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2021\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[45/56] 2021_Oct-Nov_Paper1
+  QP: data\raw\IGCSE\Physics\2021\Oct-Nov\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2021\Oct-Nov\Paper 1_MS.pdf
+  Status: SKIPPED (already exists)
+
+[46/56] 2021_Oct-Nov_Paper2
+  QP: data\raw\IGCSE\Physics\2021\Oct-Nov\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2021\Oct-Nov\Paper 2_MS.pdf
+  Status: SKIPPED (already exists)
+
+[47/56] 2022_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2022\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2022\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[48/56] 2022_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2022\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2022\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[49/56] 2022_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2022\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2022\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[50/56] 2022_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2022\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2022\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[51/56] 2023_Jan_Paper1
+  QP: data\raw\IGCSE\Physics\2023\Jan\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2023\Jan\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[52/56] 2023_Jan_Paper2
+  QP: data\raw\IGCSE\Physics\2023\Jan\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2023\Jan\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[53/56] 2023_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2023\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2023\May-Jun\Paper 1_MS.pdf
+  Status: SUCCESS
+
+[54/56] 2023_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2023\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2023\May-Jun\Paper 2_MS.pdf
+  Status: SUCCESS
+
+[55/56] 2024_May-Jun_Paper1
+  QP: data\raw\IGCSE\Physics\2024\May-Jun\Paper 1.pdf
+  MS: data\raw\IGCSE\Physics\2024\May-Jun\Paper 1_MS.pdf
+  Status: SKIPPED (already exists)
+
+[56/56] 2024_May-Jun_Paper2
+  QP: data\raw\IGCSE\Physics\2024\May-Jun\Paper 2.pdf
+  MS: data\raw\IGCSE\Physics\2024\May-Jun\Paper 2_MS.pdf
+  Status: SKIPPED (already exists)
+
+======================================================================
+BATCH COMPLETE
+======================================================================
+Processed: 48/56
+Failed: 0
+Skipped: 8
