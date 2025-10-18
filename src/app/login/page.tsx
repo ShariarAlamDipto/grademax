@@ -1,12 +1,16 @@
 "use client";
-import { supabase } from "@/lib/supabaseClient";
+import { createClient } from "@/lib/supabaseBrowser";
 import { useCallback } from "react";
 
 export default function LoginPage() {
   const signIn = useCallback(async () => {
+    const supabase = createClient();
     await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { 
+        redirectTo: `${window.location.origin}/auth/callback`,
+        skipBrowserRedirect: false 
+      },
     });
   }, []);
 
