@@ -83,13 +83,20 @@ export default function WorksheetGeneratorPage() {
       try {
         const response = await fetch('/api/subjects');
         const data = await response.json();
-        setSubjects(data);
-        // Set first subject as default
-        if (data.length > 0) {
-          setSelectedSubject(data[0].id);
+        // Ensure data is an array
+        if (Array.isArray(data)) {
+          setSubjects(data);
+          // Set first subject as default
+          if (data.length > 0) {
+            setSelectedSubject(data[0].id);
+          }
+        } else {
+          console.error('Subjects API returned non-array:', data);
+          setSubjects([]);
         }
       } catch (err) {
         console.error('Error fetching subjects:', err);
+        setSubjects([]);
       } finally {
         setLoadingSubjects(false);
       }
@@ -106,7 +113,13 @@ export default function WorksheetGeneratorPage() {
       try {
         const response = await fetch(`/api/topics?subjectId=${selectedSubject}`);
         const data = await response.json();
-        setTopics(data);
+        // Ensure data is an array
+        if (Array.isArray(data)) {
+          setTopics(data);
+        } else {
+          console.error('Topics API returned non-array:', data);
+          setTopics([]);
+        }
       } catch (err) {
         console.error('Error fetching topics:', err);
         setTopics([]);
