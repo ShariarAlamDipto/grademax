@@ -5,15 +5,20 @@ export async function GET() {
   try {
     const supabase = getSupabaseServer();
     
+    console.log('[check-permission] Checking user permission...');
+    
     // Get current user
     const { data: { user }, error: authError } = await supabase.auth.getUser();
     
     if (authError || !user) {
+      console.log('[check-permission] Not authenticated:', authError?.message);
       return NextResponse.json(
         { hasPermission: false, error: 'Not authenticated' },
         { status: 401 }
       );
     }
+    
+    console.log('[check-permission] User authenticated:', user.email);
     
     // Check user permissions
     const { data: permission, error: permError } = await supabase
@@ -23,6 +28,7 @@ export async function GET() {
       .single();
     
     if (permError) {
+      console.log('[check-permission] No permission record found:', permError.message);
       // User doesn't have permission record yet
       return NextResponse.json({
         hasPermission: false,
@@ -31,7 +37,10 @@ export async function GET() {
       });
     }
     
+    console.log('[check-permission] Permission record:', permission);
+    
     if (!permission.can_generate_worksheets || !permission.is_active) {
+      console.log('[check-permission] Permission denied');
       return NextResponse.json({
         hasPermission: false,
         error: 'Worksheet generation permission not granted',
@@ -46,8 +55,10 @@ export async function GET() {
         .rpc('get_remaining_worksheet_quota', { check_user_id: user.id });
       
       remainingQuota = quotaResult;
+      console.log('[check-permission] Remaining quota:', remainingQuota);
       
       if (remainingQuota !== null && remainingQuota <= 0) {
+        console.log('[check-permission] Quota exceeded');
         return NextResponse.json({
           hasPermission: false,
           error: 'Daily worksheet quota exceeded',
@@ -58,6 +69,7 @@ export async function GET() {
     }
     
     // User has permission
+    console.log('[check-permission] Permission granted');
     return NextResponse.json({
       hasPermission: true,
       remainingQuota: remainingQuota,
