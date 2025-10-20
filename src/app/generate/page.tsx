@@ -331,14 +331,20 @@ export default function WorksheetGeneratorPage() {
         {!checkingPermission && hasPermission && (
         <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl p-8 mb-8 border border-gray-700">
           
-          {/* Debug Info */}
-          {process.env.NODE_ENV === 'development' && (
-            <div className="mb-4 p-4 bg-yellow-900 bg-opacity-30 border border-yellow-500 rounded text-xs text-yellow-200">
-              <strong>Debug:</strong> Subjects count: {subjects.length}, Loading: {loadingSubjects ? 'Yes' : 'No'}, Selected: {selectedSubject}
-              <br />
-              Subjects: {JSON.stringify(subjects.map(s => ({ id: s.id, name: s.name })))}
-            </div>
-          )}
+          {/* Debug Info - Always visible */}
+          <div className="mb-4 p-4 bg-blue-900 bg-opacity-30 border border-blue-500 rounded text-xs text-blue-200">
+            <strong>Debug Info:</strong>
+            <br />• Subjects count: {subjects.length}
+            <br />• Loading subjects: {loadingSubjects ? 'Yes' : 'No'}
+            <br />• Selected subject: {selectedSubject || 'None'}
+            <br />• Has permission: {hasPermission ? 'Yes' : 'No'}
+            <br />• Checking permission: {checkingPermission ? 'Yes' : 'No'}
+            {subjects.length > 0 && (
+              <>
+                <br />• Subjects: {subjects.map(s => s.name).join(', ')}
+              </>
+            )}
+          </div>
           
           {/* Subject Selection */}
           <div className="mb-8">
