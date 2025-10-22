@@ -84,19 +84,16 @@ export async function GET(
     const worksheetData = worksheet as unknown as WorksheetData;
     const items = worksheetData.worksheet_items.sort((a, b) => a.sequence - b.sequence);
     
-    // Build full URLs for PDFs
-    const storageBase = `${supabaseUrl}/storage/v1/object/public/question-pdfs`;
-    
+    // Get PDF URLs (they're already full URLs from the database)
     let pdfUrls: string[];
     if (type === 'markscheme') {
       pdfUrls = items
         .map(item => item.pages.ms_page_url)
-        .filter(Boolean)
-        .map(url => `${storageBase}/${url}`);
+        .filter(Boolean) as string[];
     } else {
       pdfUrls = items
         .map(item => item.pages.qp_page_url)
-        .map(url => `${storageBase}/${url}`);
+        .filter(Boolean) as string[];
     }
 
     if (pdfUrls.length === 0) {
