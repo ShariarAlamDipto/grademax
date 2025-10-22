@@ -19,14 +19,14 @@ interface Subject {
   code: string;
   name: string;
   level?: string;
-  color?: string;
+  board?: string;
 }
 
 interface Topic {
   id: string;
   code: string;
   name: string;
-  spec_ref?: string;
+  description?: string;
 }
 
 const CURRENT_YEAR = 2025;
@@ -70,12 +70,7 @@ export default function WorksheetGeneratorPage() {
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
 
-  // Permission states
-  const [checkingPermission, setCheckingPermission] = useState(true);
-  const [hasPermission, setHasPermission] = useState(false);
-  const [permissionError, setPermissionError] = useState<string | null>(null);
-  const [remainingQuota, setRemainingQuota] = useState<number | null>(null);
-  const [maxPerDay, setMaxPerDay] = useState<number | null>(null);
+  // Removed permission checks - open access for now
 
   // Fetch subjects on mount
   useEffect(() => {
@@ -135,32 +130,6 @@ export default function WorksheetGeneratorPage() {
     }
     fetchTopics();
   }, [selectedSubject]);
-
-  // Check permission on mount
-  useEffect(() => {
-    async function checkPermission() {
-      try {
-        const response = await fetch('/api/worksheets/check-permission');
-        const data = await response.json();
-        
-        setHasPermission(data.hasPermission);
-        setRemainingQuota(data.remainingQuota !== undefined ? data.remainingQuota : null);
-        setMaxPerDay(data.maxPerDay !== undefined ? data.maxPerDay : null);
-        
-        if (!data.hasPermission) {
-          setPermissionError(data.error || 'You do not have permission to generate worksheets');
-        }
-      } catch (err) {
-        console.error('Error checking permission:', err);
-        setPermissionError('Failed to verify permissions. Please try again.');
-        setHasPermission(false);
-      } finally {
-        setCheckingPermission(false);
-      }
-    }
-    
-    checkPermission();
-  }, []);
 
   // Reset selected topics when subject changes
   useEffect(() => {
@@ -272,79 +241,8 @@ export default function WorksheetGeneratorPage() {
           Select subject, topics, year range, and difficulty to create custom worksheets
         </p>
 
-        {/* Permission Status */}
-        {checkingPermission && (
-          <div className="bg-blue-900 bg-opacity-50 border border-blue-500 rounded-xl p-6 mb-8">
-            <div className="flex items-center gap-3">
-              <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-white"></div>
-              <p className="text-white font-semibold">Verifying permissions...</p>
-            </div>
-          </div>
-        )}
-
-        {!checkingPermission && !hasPermission && (
-          <div className="bg-red-900 bg-opacity-50 border border-red-500 rounded-xl p-6 mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="text-3xl">🔒</span>
-              <div>
-                <h3 className="text-xl font-bold text-white mb-1">Access Restricted</h3>
-                <p className="text-red-200">{permissionError}</p>
-              </div>
-            </div>
-            <div className="bg-red-950 bg-opacity-50 rounded-lg p-4 mt-4">
-              <p className="text-sm text-gray-300 mb-2">
-                <strong>To gain access:</strong>
-              </p>
-              <ul className="text-sm text-gray-300 space-y-1 list-disc list-inside">
-                <li>Make sure you are signed in with your Google account</li>
-                <li>Contact the administrator to request worksheet generation permissions</li>
-                <li>Once approved, refresh this page to start generating worksheets</li>
-              </ul>
-            </div>
-          </div>
-        )}
-
-        {!checkingPermission && hasPermission && remainingQuota !== null && (
-          <div className="bg-green-900 bg-opacity-50 border border-green-500 rounded-xl p-6 mb-8">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-3">
-                <span className="text-3xl">✅</span>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Access Granted</h3>
-                  <p className="text-green-200">You have permission to generate worksheets</p>
-                </div>
-              </div>
-              {maxPerDay && maxPerDay > 0 && (
-                <div className="text-right">
-                  <p className="text-sm text-gray-300">Daily Quota</p>
-                  <p className="text-2xl font-bold text-white">
-                    {remainingQuota} / {maxPerDay}
-                  </p>
-                  <p className="text-xs text-gray-400">remaining today</p>
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-
-        {/* Filters Panel - Only show if has permission */}
-        {!checkingPermission && hasPermission && (
+        {/* Filters Panel - Open Access (No permission check) */}
         <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl p-8 mb-8 border border-gray-700">
-          
-          {/* Debug Info - Always visible */}
-          <div className="mb-4 p-4 bg-blue-900 bg-opacity-30 border border-blue-500 rounded text-xs text-blue-200">
-            <strong>Debug Info:</strong>
-            <br />• Subjects count: {subjects.length}
-            <br />• Loading subjects: {loadingSubjects ? 'Yes' : 'No'}
-            <br />• Selected subject: {selectedSubject || 'None'}
-            <br />• Has permission: {hasPermission ? 'Yes' : 'No'}
-            <br />• Checking permission: {checkingPermission ? 'Yes' : 'No'}
-            {subjects.length > 0 && (
-              <>
-                <br />• Subjects: {subjects.map(s => s.name).join(', ')}
-              </>
-            )}
-          </div>
           
           {/* Subject Selection */}
           <div className="mb-8">
@@ -525,13 +423,12 @@ export default function WorksheetGeneratorPage() {
           {/* Generate Button */}
           <button
             onClick={handleGenerate}
-            disabled={loading || selectedTopics.length === 0 || !hasPermission}
+            disabled={loading || selectedTopics.length === 0}
             className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
           >
             {loading ? '🔄 Generating...' : '✨ Generate Worksheet'}
           </button>
         </div>
-        )}
 
         {/* Error Display */}
         {error && (

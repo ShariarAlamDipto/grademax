@@ -24,7 +24,7 @@ export async function GET(req: Request) {
     
     const { data, error } = await supabase
       .from('topics')
-      .select('id, name, code, spec_ref')
+      .select('id, name, code, description')
       .eq('subject_id', subjectId)
       .order('code')
     
