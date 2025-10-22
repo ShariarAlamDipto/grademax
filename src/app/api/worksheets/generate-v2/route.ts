@@ -176,6 +176,9 @@ export async function POST(request: Request) {
       paper: page.papers?.paper_number
     }));
 
+    console.log(`Generated worksheet with ${formattedPages.length} pages`);
+    console.log('Sample page:', formattedPages[0]);
+
     return NextResponse.json({
       worksheet_id: worksheet.id,
       pages: formattedPages,

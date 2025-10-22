@@ -179,15 +179,21 @@ export default function WorksheetGeneratorPage() {
 
       const data = await response.json();
 
+      console.log('Generate response:', data);
+      console.log('Pages returned:', data.pages?.length || 0);
+
       if (!response.ok) {
         throw new Error(data.error || 'Failed to generate worksheet');
       }
 
-      if (data.pages.length === 0) {
+      if (!data.pages || data.pages.length === 0) {
         setError('No questions found matching your criteria. Try different filters.');
         return;
       }
 
+      console.log('Setting worksheet ID:', data.worksheet_id);
+      console.log('Setting questions:', data.pages);
+      
       setWorksheetId(data.worksheet_id);
       setQuestions(data.pages);
 
