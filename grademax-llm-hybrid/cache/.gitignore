@@ -1,6 +1,0 @@
-# Ignore cached LLM responses
-llm_responses/
-*.json
-
-# Keep directory structure
-!.gitkeep

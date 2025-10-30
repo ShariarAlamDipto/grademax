@@ -1,0 +1,91 @@
+{
+  "qp_file": "data\\raw\\IGCSE\\Further Pure Maths\\2016\\May-Jun\\Paper 1.pdf",
+  "ms_file": "data\\raw\\IGCSE\\Further Pure Maths\\2016\\May-Jun\\Paper 1_MS.pdf",
+  "total_questions": 4,
+  "questions_with_markschemes": 4,
+  "questions": [
+    {
+      "question_number": "1",
+      "qp_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "qp_page_count": 6,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\pages\\q1.pdf",
+      "ms_pages": [
+        6
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\markschemes\\q1.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "4",
+      "qp_pages": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "qp_page_count": 10,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\pages\\q4.pdf",
+      "ms_pages": [
+        9,
+        10
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\markschemes\\q4.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "7",
+      "qp_pages": [
+        17,
+        18,
+        19,
+        20
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\pages\\q7.pdf",
+      "ms_pages": [
+        15,
+        16
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\markschemes\\q7.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "8",
+      "qp_pages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "qp_page_count": 11,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\pages\\q8.pdf",
+      "ms_pages": [
+        17,
+        18,
+        19
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jun_1P\\markschemes\\q8.pdf",
+      "has_markscheme": true
+    }
+  ]
+}

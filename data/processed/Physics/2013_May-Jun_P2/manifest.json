@@ -1,0 +1,99 @@
+{
+  "qp_file": "data\\raw\\IGCSE\\Physics\\2013\\May-Jun\\Paper 2.pdf",
+  "ms_file": "data\\raw\\IGCSE\\Physics\\2013\\May-Jun\\Paper 2_MS.pdf",
+  "total_questions": 6,
+  "questions_with_markschemes": 6,
+  "questions": [
+    {
+      "question_number": "1",
+      "qp_pages": [
+        4,
+        5
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Physics\\2013_May-Jun_P2\\pages\\q1.pdf",
+      "has_markscheme": true,
+      "ms_pages": [
+        3
+      ],
+      "ms_pdf_path": "Physics\\2013_May-Jun_P2\\markschemes\\q1.pdf"
+    },
+    {
+      "question_number": "2",
+      "qp_pages": [
+        6,
+        7,
+        8
+      ],
+      "qp_page_count": 3,
+      "qp_pdf_path": "Physics\\2013_May-Jun_P2\\pages\\q2.pdf",
+      "has_markscheme": true,
+      "ms_pages": [
+        4,
+        5
+      ],
+      "ms_pdf_path": "Physics\\2013_May-Jun_P2\\markschemes\\q2.pdf"
+    },
+    {
+      "question_number": "3",
+      "qp_pages": [
+        9,
+        10,
+        11
+      ],
+      "qp_page_count": 3,
+      "qp_pdf_path": "Physics\\2013_May-Jun_P2\\pages\\q3.pdf",
+      "has_markscheme": true,
+      "ms_pages": [
+        6,
+        7
+      ],
+      "ms_pdf_path": "Physics\\2013_May-Jun_P2\\markschemes\\q3.pdf"
+    },
+    {
+      "question_number": "4",
+      "qp_pages": [
+        12,
+        13,
+        14
+      ],
+      "qp_page_count": 3,
+      "qp_pdf_path": "Physics\\2013_May-Jun_P2\\pages\\q4.pdf",
+      "has_markscheme": true,
+      "ms_pages": [
+        8
+      ],
+      "ms_pdf_path": "Physics\\2013_May-Jun_P2\\markschemes\\q4.pdf"
+    },
+    {
+      "question_number": "5",
+      "qp_pages": [
+        15,
+        16,
+        17
+      ],
+      "qp_page_count": 3,
+      "qp_pdf_path": "Physics\\2013_May-Jun_P2\\pages\\q5.pdf",
+      "has_markscheme": true,
+      "ms_pages": [
+        9
+      ],
+      "ms_pdf_path": "Physics\\2013_May-Jun_P2\\markschemes\\q5.pdf"
+    },
+    {
+      "question_number": "6",
+      "qp_pages": [
+        18,
+        19,
+        20
+      ],
+      "qp_page_count": 3,
+      "qp_pdf_path": "Physics\\2013_May-Jun_P2\\pages\\q6.pdf",
+      "has_markscheme": true,
+      "ms_pages": [
+        10
+      ],
+      "ms_pdf_path": "Physics\\2013_May-Jun_P2\\markschemes\\q6.pdf"
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+# Document Splitting Configurations
+# Subject-specific settings for splitting exam papers into questions
+
+# =============================================================================
+# FURTHER PURE MATHEMATICS (4PM1)
+# =============================================================================
+further_pure_maths:
+  subject_code: "4PM1"
+  subject_name: "Further Pure Mathematics"
+  
+  # Question Paper Detection Patterns
+  question_patterns:
+    # Priority 1: Number followed by space/tab and uppercase letter (most reliable)
+    # Examples: "1 Solve", "2 Given", "3\tFind"
+    priority_1:
+      - regex: '^\s*(\d+)\s+[A-Z(]'
+        description: "Number + space + uppercase (e.g., '1 Solve')"
+      - regex: '^\s*(\d+)\s{2,}[A-Z]'
+        description: "Number + multiple spaces + uppercase"
+      - regex: '^\s*(\d+)\s+\('
+        description: "Number + space + opening parenthesis (e.g., '1 (')"
+    
+    # Priority 2: Standalone number with question keywords nearby
+    # Examples: "2" followed by "(a) Given" on next line
+    priority_2:
+      - regex: '^\s*(\d+)\s*(\([a-z]\))?$'
+        description: "Standalone number or number with subpart"
+        validation:
+          # Must have question keywords within next 15 lines
+          keywords: 
+            - "diagram"
+            - "figure"
+            - "given"
+            - "find"
+            - "show"
+            - "calculate"
+            - "prove"
+            - "write"
+            - "hence"
+            - "obtain"
+            - "solve"
+            - "third term"
+            - "curve"
+            - "line"
+            - "series"
+            - "expression"
+          search_range: 15  # lines
+  
+  # Markscheme Detection Patterns
+  markscheme_patterns:
+    # Table format: "Question\nnumber\nScheme\nMarks\n5  a"
+    table_format:
+      marker: "marks"
+      description: "Look for 'Marks' row in table header"
+      pattern: '^\s*(\d+)\s*[a-z]?'
+      search_after_marker: 5  # lines to search after finding "marks"
+  
+  # Format-specific settings (old vs new papers)
+  format_detection:
+    old_format:
+      years: [2011, 2012, 2013, 2014, 2015]
+      characteristics:
+        - "Question numbers on line 2-3 after header"
+        - "Minimal spacing between number and text"
+        - "Page numbers with *P... codes"
+      start_line: 0  # Check from beginning
+    
+    new_format:
+      years: [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+      characteristics:
+        - "Question numbers after line 5"
+        - "Tab character or multiple spaces"
+        - "Consistent header structure"
+      start_line: 5  # Skip headers
+  
+  # Page number filtering
+  page_number_detection:
+    # Skip numbers followed by *P... header codes
+    filter_pattern: '\*P\d+'
+    check_next_line: true
+    apply_to_first_n_lines: 3
+  
+  # Continuation page detection
+  continuation_markers:
+    - "continued"
+    - "Question {num} continued"
+  
+  # Skip patterns (pages to ignore)
+  skip_patterns:
+    - "formulae"
+    - "formula"
+    - "Turn over"
+    - "DO NOT WRITE"
+    - "Centre Number"
+    - "Candidate Number"
+    - "Answer all"
+    - "Write your answers"
+    - "You must"
+    - "Calculators"
+    - "Total Marks"
+  
+  # Question number validation
+  validation:
+    min_question: 1
+    max_question: 11  # Some papers have 11 questions
+    expected_range: [9, 11]  # Typical question count
+  
+  # Multi-page handling
+  multi_page:
+    enabled: true
+    group_by_number: true  # Group all pages with same question number
+    include_blank_pages: true  # Include pages between questions
+
+
+# =============================================================================
+# PHYSICS (4PH1) - For reference
+# =============================================================================
+physics:
+  subject_code: "4PH1"
+  subject_name: "Physics"
+  
+  question_patterns:
+    priority_1:
+      - regex: '^\s*(\d+)\s+[A-Z(]'
+        description: "Number + space + uppercase"
+    
+    priority_2:
+      - regex: '^\s*(\d+)\s*(\([a-z]\))?$'
+        description: "Standalone number"
+        validation:
+          keywords: ["figure", "diagram", "calculate", "explain", "describe"]
+          search_range: 10
+  
+  validation:
+    min_question: 1
+    max_question: 20  # Physics can have more questions
+    expected_range: [12, 20]
+
+
+# =============================================================================
+# TEMPLATE - Copy this for new subjects
+# =============================================================================
+_template:
+  subject_code: "XXXX"
+  subject_name: "Subject Name"
+  
+  question_patterns:
+    priority_1:
+      - regex: '^\s*(\d+)\s+[A-Z(]'
+        description: "Pattern description"
+    
+    priority_2:
+      - regex: '^\s*(\d+)\s*$'
+        description: "Standalone pattern"
+        validation:
+          keywords: ["word1", "word2"]
+          search_range: 15
+  
+  markscheme_patterns:
+    table_format:
+      marker: "marks"
+      pattern: '^\s*(\d+)'
+      search_after_marker: 5
+  
+  skip_patterns:
+    - "pattern1"
+    - "pattern2"
+  
+  validation:
+    min_question: 1
+    max_question: 15
+    expected_range: [10, 15]
+  
+  multi_page:
+    enabled: true
+    group_by_number: true

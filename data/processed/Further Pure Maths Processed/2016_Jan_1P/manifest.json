@@ -1,0 +1,174 @@
+{
+  "qp_file": "data\\raw\\IGCSE\\Further Pure Maths\\2016\\Jan\\Paper 1.pdf",
+  "ms_file": "data\\raw\\IGCSE\\Further Pure Maths\\2016\\Jan\\Paper 1_MS.pdf",
+  "total_questions": 10,
+  "questions_with_markschemes": 10,
+  "questions": [
+    {
+      "question_number": "1",
+      "qp_pages": [
+        1,
+        2
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q1.pdf",
+      "ms_pages": [
+        5
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q1.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "2",
+      "qp_pages": [
+        3,
+        4
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q2.pdf",
+      "ms_pages": [
+        6
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q2.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "3",
+      "qp_pages": [
+        5,
+        6
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q3.pdf",
+      "ms_pages": [
+        7,
+        8
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q3.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "4",
+      "qp_pages": [
+        7,
+        8
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q4.pdf",
+      "ms_pages": [
+        9,
+        10
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q4.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "5",
+      "qp_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q5.pdf",
+      "ms_pages": [
+        11,
+        12
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q5.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "6",
+      "qp_pages": [
+        13,
+        14
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q6.pdf",
+      "ms_pages": [
+        13,
+        14
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q6.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "7",
+      "qp_pages": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q7.pdf",
+      "ms_pages": [
+        15,
+        16
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q7.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "8",
+      "qp_pages": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q8.pdf",
+      "ms_pages": [
+        17
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q8.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "9",
+      "qp_pages": [
+        23,
+        24,
+        25,
+        26
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q9.pdf",
+      "ms_pages": [
+        18,
+        19
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q9.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "10",
+      "qp_pages": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "qp_page_count": 9,
+      "qp_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\pages\\q10.pdf",
+      "ms_pages": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2016_Jan_1P\\markschemes\\q10.pdf",
+      "has_markscheme": true
+    }
+  ]
+}
