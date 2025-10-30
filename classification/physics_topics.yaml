@@ -1,0 +1,130 @@
+# Physics Topics for Classification
+# Compatible format for MistralTopicClassifier
+version: "1.0"
+subject:
+  code: "4PH1"
+  name: "Physics"
+  level: "International GCSE"
+
+schema:
+  tag_unit: "question"
+  allow_multi_tag: true  # Physics questions can span multiple topics
+
+thresholds:
+  min_topic_confidence: 0.44
+  escalate_below: 0.60
+
+topics:
+  - id: "1"
+    code: "FM"
+    name: "Forces and motion"
+    core:
+      - {text: "Newton's laws", weight: 5}
+      - {text: "F = ma", weight: 5}
+      - {text: "momentum p = mv", weight: 5}
+      - {text: "kinetic energy KE = ½mv²", weight: 5}
+      - {text: "gravitational potential energy GPE = mgh", weight: 5}
+    support:
+      - {text: "velocity acceleration", weight: 4}
+      - {text: "force motion", weight: 4}
+      - {text: "work done W = Fs", weight: 4}
+      - {text: "power P = W/t", weight: 4}
+      - {text: "Hooke's law F = kx", weight: 4}
+
+  - id: "2"
+    code: "ELEC"
+    name: "Electricity"
+    core:
+      - {text: "V = IR Ohm's law", weight: 5}
+      - {text: "P = IV electrical power", weight: 5}
+      - {text: "current voltage resistance", weight: 5}
+      - {text: "series parallel circuit", weight: 5}
+    support:
+      - {text: "ammeter voltmeter", weight: 4}
+      - {text: "resistor", weight: 3}
+      - {text: "mains electricity", weight: 3}
+      - {text: "transformer", weight: 3}
+
+  - id: "3"
+    code: "WAVE"
+    name: "Waves"
+    core:
+      - {text: "v = fλ wave equation", weight: 5}
+      - {text: "frequency wavelength", weight: 5}
+      - {text: "reflection refraction", weight: 5}
+      - {text: "electromagnetic spectrum", weight: 5}
+    support:
+      - {text: "transverse longitudinal", weight: 4}
+      - {text: "light sound", weight: 4}
+      - {text: "ray diagram lens mirror", weight: 4}
+      - {text: "radio microwave infrared", weight: 3}
+
+  - id: "4"
+    code: "ENRG"
+    name: "Energy resources and transfers"
+    core:
+      - {text: "efficiency = useful output / total input", weight: 5}
+      - {text: "renewable non-renewable", weight: 5}
+      - {text: "conservation of energy", weight: 5}
+      - {text: "E = mcΔθ specific heat", weight: 5}
+    support:
+      - {text: "fossil fuel solar wind", weight: 4}
+      - {text: "conduction convection radiation", weight: 4}
+      - {text: "Sankey diagram", weight: 4}
+      - {text: "thermal energy heat", weight: 3}
+
+  - id: "5"
+    code: "SLG"
+    name: "Solids, liquids and gases"
+    core:
+      - {text: "ρ = m/V density", weight: 5}
+      - {text: "p = F/A pressure", weight: 5}
+      - {text: "pV = constant Boyle's law", weight: 5}
+      - {text: "kinetic theory particle", weight: 5}
+    support:
+      - {text: "state of matter solid liquid gas", weight: 4}
+      - {text: "Brownian motion diffusion", weight: 4}
+      - {text: "latent heat", weight: 4}
+      - {text: "absolute zero Kelvin", weight: 3}
+
+  - id: "6"
+    code: "MAG"
+    name: "Magnetism and electromagnetism"
+    core:
+      - {text: "magnetic field", weight: 5}
+      - {text: "electromagnet solenoid", weight: 5}
+      - {text: "motor generator", weight: 5}
+      - {text: "transformer Vp/Vs = Np/Ns", weight: 5}
+    support:
+      - {text: "north south pole", weight: 4}
+      - {text: "electromagnetic induction", weight: 4}
+      - {text: "Fleming's rule", weight: 4}
+      - {text: "AC alternating current", weight: 3}
+
+  - id: "7"
+    code: "RAD"
+    name: "Radioactivity and particles"
+    core:
+      - {text: "alpha beta gamma radiation", weight: 5}
+      - {text: "atomic structure proton neutron electron", weight: 5}
+      - {text: "half-life decay", weight: 5}
+      - {text: "nuclear fission fusion", weight: 5}
+    support:
+      - {text: "radioactive isotope", weight: 4}
+      - {text: "ionizing radiation", weight: 4}
+      - {text: "Geiger-Muller", weight: 4}
+      - {text: "atomic number mass number", weight: 3}
+
+  - id: "8"
+    code: "ASTRO"
+    name: "Astrophysics"
+    core:
+      - {text: "solar system planet", weight: 5}
+      - {text: "star galaxy universe", weight: 5}
+      - {text: "Big Bang", weight: 5}
+      - {text: "gravitational F = GMm/r²", weight: 5}
+    support:
+      - {text: "orbit satellite", weight: 4}
+      - {text: "redshift Doppler", weight: 4}
+      - {text: "light year", weight: 4}
+      - {text: "nebula supernova", weight: 3}

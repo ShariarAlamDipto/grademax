@@ -1,0 +1,156 @@
+{
+  "qp_file": "data\\raw\\IGCSE\\Further Pure Maths\\2022\\May-Jun\\Paper 2.pdf",
+  "ms_file": "data\\raw\\IGCSE\\Further Pure Maths\\2022\\May-Jun\\Paper 2_MS.pdf",
+  "total_questions": 9,
+  "questions_with_markschemes": 9,
+  "questions": [
+    {
+      "question_number": "1",
+      "qp_pages": [
+        2
+      ],
+      "qp_page_count": 1,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q1.pdf",
+      "ms_pages": [
+        6
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q1.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "2",
+      "qp_pages": [
+        3,
+        4
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q2.pdf",
+      "ms_pages": [
+        7
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q2.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "3",
+      "qp_pages": [
+        5,
+        6
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q3.pdf",
+      "ms_pages": [
+        8,
+        9
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q3.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "8",
+      "qp_pages": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q8.pdf",
+      "ms_pages": [
+        18,
+        19
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q8.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "5",
+      "qp_pages": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "qp_page_count": 10,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q5.pdf",
+      "ms_pages": [
+        13
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q5.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "8",
+      "qp_pages": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q8.pdf",
+      "ms_pages": [
+        18,
+        19
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q8.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "9",
+      "qp_pages": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q9.pdf",
+      "ms_pages": [
+        20,
+        21,
+        22
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q9.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "10",
+      "qp_pages": [
+        29,
+        30
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q10.pdf",
+      "ms_pages": [
+        23,
+        24
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q10.pdf",
+      "has_markscheme": true
+    },
+    {
+      "question_number": "1",
+      "qp_pages": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "qp_page_count": 5,
+      "qp_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\pages\\q1.pdf",
+      "ms_pages": [
+        6
+      ],
+      "ms_pdf_path": "Further Pure Maths Processed\\2022_Jun_2P\\markschemes\\q1.pdf",
+      "has_markscheme": true
+    }
+  ]
+}

@@ -5,6 +5,7 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 interface GenerateRequest {
+  subjectCode?: string;  // Actually the subject ID
   topics: string[];
   yearStart?: number;
   yearEnd?: number;
@@ -38,6 +39,7 @@ export async function POST(request: Request) {
   try {
     const body: GenerateRequest = await request.json();
     const {
+      subjectCode,  // This is actually the subject ID from the frontend
       topics,
       yearStart,
       yearEnd,
@@ -45,6 +47,8 @@ export async function POST(request: Request) {
       limit = 50,
       shuffle = false
     } = body;
+
+    console.log('Generate request:', { subjectCode, topics, yearStart, yearEnd, difficulty, limit });
 
     if (!topics || topics.length === 0) {
       return NextResponse.json(
@@ -55,7 +59,47 @@ export async function POST(request: Request) {
 
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Query pages that match criteria
+    // First, get papers that match the subject filter
+    let paperQuery = supabase
+      .from('papers')
+      .select('id, year, season, paper_number, subject_id, subjects(code)');
+
+    // Filter by subject if provided
+    if (subjectCode) {
+      paperQuery = paperQuery.eq('subject_id', subjectCode);
+    }
+
+    // Apply year filters to papers
+    if (yearStart) {
+      paperQuery = paperQuery.gte('year', yearStart);
+    }
+    if (yearEnd) {
+      paperQuery = paperQuery.lte('year', yearEnd);
+    }
+
+    const { data: matchingPapers, error: paperError } = await paperQuery;
+
+    if (paperError) {
+      console.error('Error fetching papers:', paperError);
+      return NextResponse.json(
+        { error: 'Failed to fetch papers', details: paperError.message },
+        { status: 500 }
+      );
+    }
+
+    console.log(`Found ${matchingPapers?.length || 0} matching papers`);
+
+    if (!matchingPapers || matchingPapers.length === 0) {
+      return NextResponse.json(
+        { error: 'No papers found matching the criteria' },
+        { status: 404 }
+      );
+    }
+
+    // Get the paper IDs
+    const paperIds = matchingPapers.map(p => p.id);
+
+    // Now query pages that match the criteria
     let query = supabase
       .from('pages')
       .select(`
@@ -80,26 +124,18 @@ export async function POST(request: Request) {
       `)
       .eq('is_question', true)
       .not('qp_page_url', 'is', null)
+      .in('paper_id', paperIds)  // Filter by matching paper IDs
       .overlaps('topics', topics)  // Array overlap - matches any topic
       .limit(limit);
-
-    // Apply year filter
-    if (yearStart) {
-      query = query.gte('papers.year', yearStart);
-    }
-    if (yearEnd) {
-      query = query.lte('papers.year', yearEnd);
-    }
 
     // Apply difficulty filter
     if (difficulty) {
       query = query.eq('difficulty', difficulty);
     }
 
-    // Order by year and season
-    query = query.order('papers(year)', { ascending: true });
-
     const { data: pages, error } = await query;
+
+    console.log(`Query returned ${pages?.length || 0} pages`);
 
     if (error) {
       console.error('Query error:', error);
@@ -120,9 +156,14 @@ export async function POST(request: Request) {
       finalPages = [...pages as unknown as PageData[]].sort(() => Math.random() - 0.5);
     }
 
-    // Get subject_id from first page
+    // Get subject_id from first page (we already have it from subjectCode, but get from data as backup)
     const firstPage = pages[0] as unknown as PageData;
-    const subjectId = firstPage.papers.subject_id;
+    const subjectId = subjectCode || (firstPage.papers ? firstPage.papers.subject_id : null);
+
+    if (!subjectId) {
+      console.error('Could not determine subject_id');
+      return NextResponse.json({ error: 'Could not determine subject' }, { status: 500 });
+    }
 
     // Create worksheet record
     const { data: worksheet, error: worksheetError } = await supabase

@@ -56,9 +56,7 @@ class SingleTopicClassifier:
         
         # Configure Gemini
         genai.configure(api_key=api_key)
-        # Use gemini-2.5-flash for production - latest stable Flash model
-        # Balanced: Good speed + quality with high rate limits
-        self.model = genai.GenerativeModel('gemini-2.5-flash')
+        self.model = genai.GenerativeModel('gemini-2.0-flash-lite')
         
         # Build schema
         self.schema = Schema(

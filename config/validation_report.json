@@ -1,0 +1,182 @@
+[
+  {
+    "paper": {
+      "year": 2011,
+      "season": "May-Jun",
+      "paper": 1,
+      "qp_pages": 32,
+      "ms_pages": 24
+    },
+    "num_questions": 14,
+    "issues": [],
+    "warnings": [
+      "⚠️  1 questions missing mark schemes: ['12']"
+    ],
+    "stats": {
+      "avg_pages_per_question": 3.0714285714285716,
+      "questions_with_ms": 13,
+      "total_qp_pages": 32,
+      "total_ms_pages": 24
+    },
+    "passed": true
+  },
+  {
+    "paper": {
+      "year": 2012,
+      "season": "Jan",
+      "paper": 2,
+      "qp_pages": 16,
+      "ms_pages": 16
+    },
+    "num_questions": 1,
+    "issues": [],
+    "warnings": [
+      "⚠️  Only 1 questions detected (expected 7-15)",
+      "⚠️  Q1 spans 14 pages (seems too many)"
+    ],
+    "stats": {
+      "avg_pages_per_question": 14.0,
+      "questions_with_ms": 1,
+      "total_qp_pages": 16,
+      "total_ms_pages": 16
+    },
+    "passed": true
+  },
+  {
+    "paper": {
+      "year": 2017,
+      "season": "May-Jun",
+      "paper": 2,
+      "qp_pages": 20,
+      "ms_pages": 12
+    },
+    "num_questions": 9,
+    "issues": [
+      "❌ Duplicate question numbers: [6, 3]"
+    ],
+    "warnings": [
+      "⚠️  Question numbers not sequential: [1, 6, 3, 2, 3, 4, 5, 6, 7]"
+    ],
+    "stats": {
+      "avg_pages_per_question": 2.888888888888889,
+      "questions_with_ms": 9,
+      "total_qp_pages": 20,
+      "total_ms_pages": 12
+    },
+    "passed": false
+  },
+  {
+    "paper": {
+      "year": 2018,
+      "season": "Jan",
+      "paper": 1,
+      "qp_pages": 32,
+      "ms_pages": 20
+    },
+    "num_questions": 12,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "avg_pages_per_question": 3.4166666666666665,
+      "questions_with_ms": 12,
+      "total_qp_pages": 32,
+      "total_ms_pages": 20
+    },
+    "passed": true
+  },
+  {
+    "paper": {
+      "year": 2020,
+      "season": "Jan",
+      "paper": 1,
+      "qp_pages": 32,
+      "ms_pages": 17
+    },
+    "num_questions": 12,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "avg_pages_per_question": 3.4166666666666665,
+      "questions_with_ms": 12,
+      "total_qp_pages": 32,
+      "total_ms_pages": 17
+    },
+    "passed": true
+  },
+  {
+    "paper": {
+      "year": 2021,
+      "season": "May-Jun",
+      "paper": 2,
+      "qp_pages": 24,
+      "ms_pages": 11
+    },
+    "num_questions": 7,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "avg_pages_per_question": 3.857142857142857,
+      "questions_with_ms": 7,
+      "total_qp_pages": 24,
+      "total_ms_pages": 11
+    },
+    "passed": true
+  },
+  {
+    "paper": {
+      "year": 2022,
+      "season": "May-Jun",
+      "paper": 2,
+      "qp_pages": 24,
+      "ms_pages": 12
+    },
+    "num_questions": 7,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "avg_pages_per_question": 3.857142857142857,
+      "questions_with_ms": 7,
+      "total_qp_pages": 24,
+      "total_ms_pages": 12
+    },
+    "passed": true
+  },
+  {
+    "paper": {
+      "year": 2023,
+      "season": "Jan",
+      "paper": 1,
+      "qp_pages": 32,
+      "ms_pages": 15
+    },
+    "num_questions": 11,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "avg_pages_per_question": 3.6363636363636362,
+      "questions_with_ms": 11,
+      "total_qp_pages": 32,
+      "total_ms_pages": 15
+    },
+    "passed": true
+  },
+  {
+    "paper": {
+      "year": 2024,
+      "season": "May-Jun",
+      "paper": 1,
+      "qp_pages": 36,
+      "ms_pages": 18
+    },
+    "num_questions": 12,
+    "issues": [],
+    "warnings": [],
+    "stats": {
+      "avg_pages_per_question": 3.75,
+      "questions_with_ms": 12,
+      "total_qp_pages": 36,
+      "total_ms_pages": 18
+    },
+    "passed": true
+  }
+]

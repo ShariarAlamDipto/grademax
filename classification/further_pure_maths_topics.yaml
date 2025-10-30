@@ -1,0 +1,128 @@
+version: "2.3"
+subject:
+  code: "4PM1"
+  name: "Further Pure Mathematics"
+  level: "International GCSE"
+
+schema:
+  tag_unit: "question"
+  allow_multi_tag: false
+
+thresholds:
+  min_topic_confidence: 0.44
+  escalate_below: 0.60
+
+topics:
+  - id: "1"  # LOGS
+    code: "LOGS"
+    name: "Logarithmic functions & indices"
+    core:
+      - {text: "laws of logs: log_a(xy)=log_a x+log_a y", weight: 5}
+      - {text: "log rules: log_a(x^k)=k log_a x", weight: 5}
+      - {text: "change of base", weight: 5}
+      - {text: "surds rationalise denominator", weight: 4}
+    support:
+      - {text: "exponential graph a^x", weight: 3}
+
+  - id: "2"  # QUAD
+    code: "QUAD"
+    name: "Quadratic function"
+    core:
+      - {text: "quadratic formula", weight: 5}
+      - {text: "discriminant b^2-4ac", weight: 5}
+      - {text: "complete the square", weight: 4}
+      - {text: "sum/product of roots", weight: 4}
+    support:
+      - {text: "forming equation from roots", weight: 3}
+
+  - id: "3"  # IDENT
+    code: "IDENT"
+    name: "Identities & inequalities"
+    core:
+      - {text: "algebraic division by (x±a) or (ax±b)", weight: 5}
+      - {text: "factor & remainder theorem", weight: 5}
+      - {text: "prove identity", weight: 4}
+    support:
+      - {text: "inequality regions", weight: 3}
+
+  - id: "4"  # GRAPHS
+    code: "GRAPHS"
+    name: "Graphs"
+    core:
+      - {text: "sketching rational functions", weight: 4}
+      - {text: "transformations of functions", weight: 4}
+    support:
+      - {text: "asymptotes intercepts", weight: 3}
+
+  - id: "5"  # SERIES
+    code: "SERIES"
+    name: "Series"
+    core:
+      - {text: "arithmetic series sum", weight: 5}
+      - {text: "geometric series sum", weight: 5}
+      - {text: "convergence |r|<1", weight: 4}
+    support:
+      - {text: "sigma notation", weight: 3}
+
+  - id: "6"  # BINOM
+    code: "BINOM"
+    name: "Binomial series"
+    core:
+      - {text: "(1+x)^n expansion (n∈N)", weight: 5}
+      - {text: "general term nCk a^(n-k) b^k", weight: 5}
+      - {text: "binomial for negative/fractional (range)", weight: 4}
+    support:
+      - {text: "coefficients & term identification", weight: 3}
+
+  - id: "7"  # VECT
+    code: "VECT"
+    name: "Scalar & vector quantities"
+    core:
+      - {text: "magnitude |a|", weight: 4}
+      - {text: "position vector & displacement", weight: 4}
+      - {text: "vector addition/subtraction", weight: 4}
+    support:
+      - {text: "parallel/collinear tests", weight: 3}
+
+  - id: "8"  # COORD
+    code: "COORD"
+    name: "Rectangular Cartesian coordinates"
+    core:
+      - {text: "distance formula", weight: 4}
+      - {text: "gradient & perpendicularity", weight: 4}
+      - {text: "equation of line", weight: 4}
+      - {text: "circle centre-radius form", weight: 4}
+    support:
+      - {text: "region shading inequalities", weight: 3}
+
+  - id: "9"  # CALC
+    code: "CALC"
+    name: "Calculus"
+    core:
+      - {text: "differentiate x^n", weight: 5}
+      - {text: "differentiate e^x, ln x", weight: 5}
+      - {text: "product/quotient/chain rules", weight: 5}
+      - {text: "integrate x^n", weight: 5}
+      - {text: "area under curve", weight: 4}
+    support:
+      - {text: "stationary points & nature", weight: 3}
+
+  - id: "10" # TRIG
+    code: "TRIG"
+    name: "Trigonometry"
+    core:
+      - {text: "R-formula (a sin x + b cos x)", weight: 5}
+      - {text: "compound angle identities", weight: 5}
+      - {text: "trig equations & exact values", weight: 4}
+    support:
+      - {text: "sketch trig graphs", weight: 3}
+
+negatives:
+  - "log in"
+  - "series of events"
+  - "vector graphic"
+  - "index of a book"
+
+precedence:
+  - {prefer: "CALC", over: "TRIG", when_any: ["differentiate","integrate","d/dx","∫"], boost: 0.05}
+  - {prefer: "QUAD", over: "IDENT", when_any: ["discriminant","roots","complete the square"], boost: 0.05}

@@ -1,0 +1,57 @@
+================================================================================
+TESSERACT OCR INSTALLATION GUIDE
+================================================================================
+
+OPTION 1: Install via Chocolatey (Recommended - Easiest)
+------------------------------------------------------------------------
+1. Open PowerShell as Administrator
+2. Run: choco install tesseract
+3. Verify: tesseract --version
+
+OPTION 2: Manual Download
+------------------------------------------------------------------------
+1. Download from: https://github.com/UB-Mannheim/tesseract/wiki
+2. Choose: tesseract-ocr-w64-setup-v5.3.0.exe (or latest)
+3. Run installer
+4. Add to PATH: C:\Program Files\Tesseract-OCR
+5. Verify: tesseract --version
+
+OPTION 3: Use Online OCR Service (No Installation Required)
+------------------------------------------------------------------------
+For quick testing without local installation:
+
+1. Upload PDFs to online OCR:
+   - https://ocr.space/
+   - https://www.onlineocr.net/
+   - Adobe Acrobat Online
+
+2. Download OCR'd PDFs
+
+3. Replace original files in:
+   data/raw/IGCSE/Physics/2013/May-Jun/Paper 1.pdf
+   data/raw/IGCSE/Physics/2019/May-Jun/Paper 1.pdf
+
+OPTION 4: Request Clean PDFs from Source
+------------------------------------------------------------------------
+Contact exam board to request clean digital versions:
+- Pearson Edexcel: https://qualifications.pearson.com/
+- Request non-scanned versions with text layer
+
+================================================================================
+AFTER INSTALLATION - RUN OCR
+================================================================================
+
+Once Tesseract is installed:
+
+1. Run OCR script:
+   python scripts/ocr_corrupted_pdfs.py
+
+2. Confirm when prompted (it will create backups)
+
+3. Re-run paper processing:
+   python scripts/reprocess_all_papers.py
+
+4. Check results:
+   python scripts/check_linking_issues.py
+
+================================================================================

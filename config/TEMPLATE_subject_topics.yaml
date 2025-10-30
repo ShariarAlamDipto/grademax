@@ -1,0 +1,373 @@
+# GradeMax Subject Classification Template v2.2
+# Copy this file to config/{subject}_topics.yaml and customize
+
+version: "2.2"
+
+# ============================================================================
+# SUBJECT METADATA
+# ============================================================================
+subject:
+  code: "4XX1"                    # Exam board subject code (e.g., 4PH1, 4MA1)
+  name: "Subject Name"            # Full subject name (e.g., Physics, Mathematics)
+  board: "Edexcel"                # Exam board (Edexcel, Cambridge, AQA, etc.)
+  level: "International GCSE"     # Level (IGCSE, GCSE, A-Level, etc.)
+  id: "uuid-from-supabase"        # UUID from Supabase subjects table
+
+# ============================================================================
+# CLASSIFICATION SCHEMA
+# ============================================================================
+schema:
+  tag_unit: "question"            # Tag granularity: "question" or "subpart"
+  keep_context: true              # Include question context in classification
+  allow_multi_tag: false          # false = single topic, true = multiple topics
+  output_format: "json"           # Output format: "json"
+
+# ============================================================================
+# TOPICS (Define 4-12 topics for your subject)
+# ============================================================================
+topics:
+  # Topic 1 - Forces & Motion (EXAMPLE)
+  - id: "1"                       # String ID (1-12)
+    code: "MOTION"                # Internal code (UPPERCASE, unique)
+    name: "Forces & Motion"       # Display name (for UI)
+    description: "F=ma, momentum, suvat, energy, terminal velocity, weight"
+    # Description should include: key formulas, main concepts, examples
+    
+  # Topic 2 - Electricity (EXAMPLE)
+  - id: "2"
+    code: "ELEC"
+    name: "Electricity"
+    description: "V=IR, power, circuits, series/parallel, resistance"
+    
+  # Topic 3 - ADD YOUR TOPICS
+  - id: "3"
+    code: "TOPIC3"
+    name: "Topic 3 Name"
+    description: "Key concepts, formulas, examples"
+    
+  # Topic 4
+  - id: "4"
+    code: "TOPIC4"
+    name: "Topic 4 Name"
+    description: "Key concepts, formulas, examples"
+    
+  # ADD MORE TOPICS AS NEEDED (up to 12 recommended)
+
+# ============================================================================
+# KEYWORDS - CORE (High Specificity, Weight 4-5)
+# ============================================================================
+# Core keywords are highly specific terms that strongly indicate a topic:
+# - Unique formulas (e.g., "v=fλ", "F=ma")
+# - Technical phrases (e.g., "electromagnetic spectrum", "half-life")
+# - Specific methods/laws (e.g., "Snell's law", "Newton's second law")
+#
+# Weight guidelines:
+# - 5: Unique formula or phrase that ONLY appears in this topic
+# - 4: Very specific term with <5% false positive rate
+# ============================================================================
+keywords:
+  core:
+    # Topic 1 core keywords
+    topic_1:
+      - text: "f=ma"              # Exact formula (use lowercase)
+        weight: 5
+      - text: "terminal velocity"  # Multi-word specific phrase
+        weight: 5
+      - text: "suvat"              # Unique acronym/term
+        weight: 5
+      - text: "conservation of momentum"
+        weight: 5
+      - text: "p = mv"
+        weight: 5
+        
+    # Topic 2 core keywords
+    topic_2:
+      - text: "v=ir"
+        weight: 5
+      - text: "ohm's law"
+        weight: 5
+      - text: "series circuit"
+        weight: 5
+      - text: "parallel circuit"
+        weight: 5
+      - text: "p=iv"
+        weight: 5
+        
+    # ADD CORE KEYWORDS FOR YOUR TOPICS
+    topic_3:
+      - text: "specific formula"
+        weight: 5
+      - text: "unique phrase"
+        weight: 4
+        
+    topic_4:
+      - text: "key formula"
+        weight: 5
+
+# ============================================================================
+# KEYWORDS - SUPPORT (Lower Specificity, Weight 2-3)
+# ============================================================================
+# Support keywords are more general terms that support topic identification:
+# - General concepts (e.g., "acceleration", "current", "wave")
+# - Common units (e.g., "m/s", "volts", "joules")
+# - Broad category terms (e.g., "energy", "force", "circuit")
+#
+# Weight guidelines:
+# - 3: Moderately specific, appears mainly in this topic
+# - 2: General term, appears in multiple contexts
+# ============================================================================
+  support:
+    # Topic 1 support keywords
+    topic_1:
+      - text: "acceleration"
+        weight: 3
+      - text: "velocity"
+        weight: 2
+      - text: "force"
+        weight: 2
+      - text: "mass"
+        weight: 2
+        
+    # Topic 2 support keywords
+    topic_2:
+      - text: "resistance"
+        weight: 3
+      - text: "current"
+        weight: 2
+      - text: "voltage"
+        weight: 2
+      - text: "circuit"
+        weight: 2
+        
+    # ADD SUPPORT KEYWORDS FOR YOUR TOPICS
+    topic_3:
+      - text: "general term"
+        weight: 3
+      - text: "broad concept"
+        weight: 2
+        
+    topic_4:
+      - text: "common term"
+        weight: 2
+
+# ============================================================================
+# NEGATIVE KEYWORDS (False Positive Filters)
+# ============================================================================
+# Negative keywords are phrases that cause false positives and should be filtered:
+# - Common phrases with ambiguous words (e.g., "current affairs" contains "current")
+# - Generic usage of subject terms (e.g., "power of attorney" contains "power")
+# - Non-technical uses (e.g., "waves goodbye" contains "wave")
+#
+# When a negative keyword is found, confidence is reduced by 20-30%
+# ============================================================================
+negatives:
+  - "current affairs"             # Don't tag "current" as electricity
+  - "radio button"                # Don't tag "radio" as waves/nuclear
+  - "power of attorney"           # Don't tag "power" as energy/electricity
+  - "pressure group"              # Don't tag "pressure" as matter/gases
+  - "waves goodbye"               # Don't tag "waves" as waves topic
+  # ADD YOUR FALSE POSITIVE PATTERNS
+  - "subject to change"
+  - "in the past"
+
+# ============================================================================
+# DIFFICULTY INDICATORS (Optional - Used by LLM Prompts)
+# ============================================================================
+# These define characteristics of each difficulty level for your subject.
+# Used to generate better LLM prompts and for rule-based difficulty estimation.
+# ============================================================================
+difficulty:
+  # EASY: Simple recall, single-step, direct application
+  easy:
+    command_words:
+      - "define"
+      - "state"
+      - "name"
+      - "label"
+      - "list"
+      - "identify"
+      - "give"
+    characteristics:
+      - "single-step calculation"
+      - "recall definition"
+      - "direct formula substitution with all values given"
+      - "state a fact"
+    examples:
+      - "Define velocity"
+      - "State the unit of force"
+      - "Calculate F=ma given F=10N and a=5m/s²"
+    
+  # MEDIUM: Multi-step, explanation, application to familiar contexts
+  medium:
+    command_words:
+      - "calculate"
+      - "explain"
+      - "describe"
+      - "compare"
+      - "show"
+      - "determine"
+      - "find"
+    characteristics:
+      - "multi-step calculation"
+      - "graph interpretation"
+      - "explain concepts or processes"
+      - "apply to familiar contexts"
+      - "use previous answer in next step"
+    examples:
+      - "Calculate speed, then use it to find kinetic energy"
+      - "Explain how a transformer works"
+      - "Describe the process of nuclear fission"
+    
+  # HARD: Design, evaluation, unfamiliar contexts, synthesis
+  hard:
+    command_words:
+      - "design"
+      - "plan"
+      - "evaluate"
+      - "suggest why"
+      - "explain why"
+      - "devise"
+      - "justify"
+    characteristics:
+      - "design or plan investigation/experiment"
+      - "evaluate methods and suggest improvements"
+      - "apply to unfamiliar contexts"
+      - "combine 3+ concepts or formulas"
+      - "derive or rearrange complex formulas"
+      - "analysis and critical thinking"
+    examples:
+      - "Design an experiment to test..."
+      - "Explain why method X is more accurate than Y"
+      - "Suggest improvements to the apparatus"
+
+# ============================================================================
+# LLM PROMPT TEMPLATES (Advanced - Optional Customization)
+# ============================================================================
+# Customize these if you need subject-specific prompt engineering.
+# Variables available: {board}, {level}, {subject}, {topic_list}, {question_text}, {max_topic}
+# ============================================================================
+prompts:
+  # System prompt (sets examiner role and constraints)
+  system: |
+    You are an expert {board} {level} {subject} examiner with 10+ years experience.
+    You classify exam questions by their PRIMARY concept being tested.
+    Focus on the physics principles, formulas, and calculations required - not just vocabulary.
+    
+  # User prompt template for single question
+  user_single: |
+    Classify this {subject} question into ONE topic from the list below.
+    
+    TOPICS:
+    {topic_list}
+    
+    QUESTION:
+    {question_text}
+    
+    Determine:
+    1. The PRIMARY topic (look at formulas and core concepts, not just words)
+    2. Difficulty (easy=recall, medium=apply, hard=evaluate/create)
+    3. Your confidence (0.0-1.0)
+    
+    Return ONLY valid JSON:
+    {{"topic": "1-{max_topic}", "difficulty": "easy/medium/hard", "confidence": 0.0-1.0}}
+    
+  # User prompt template for batch classification
+  user_batch: |
+    Classify these {subject} questions by PRIMARY topic and difficulty.
+    
+    TOPICS:
+    {topic_list}
+    
+    DIFFICULTY RULES:
+    • easy: Single-step recall, direct formula with all values given
+    • medium: Multi-step, graph interpretation, explain concepts
+    • hard: Design experiments, evaluate, synthesis of multiple concepts
+    
+    QUESTIONS:
+    {questions_text}
+    
+    Return JSON array ONLY (no markdown):
+    [
+      {{"question_number": int, "topic": "1-{max_topic}", "difficulty": "easy/medium/hard", "confidence": 0.0-1.0}},
+      ...
+    ]
+
+# ============================================================================
+# SCORING CONFIGURATION (Advanced)
+# ============================================================================
+# Fine-tune how keyword scores are calculated and thresholds
+# ============================================================================
+scoring:
+  weights:
+    core: 0.7                     # Weight for core keyword matches
+    support: 0.3                  # Weight for support keyword matches
+    layout: 0.06                  # Bonus for diagram/layout signals (future)
+  clamp: [0.0, 1.0]               # Min/max confidence bounds
+  
+thresholds:
+  min_topic_confidence: 0.42      # Minimum confidence to accept keyword classification
+  escalate_below: 0.60            # If confidence < this, escalate to LLM refinement
+  
+# ============================================================================
+# POSTPROCESSING RULES (Advanced - For Disambiguation)
+# ============================================================================
+# Define rules to prefer one topic over another when both match
+# ============================================================================
+postprocess:
+  # Precedence rules (prefer X over Y when Z is present)
+  precedence:
+    # Example: Prefer Electricity over Magnetism when circuit components present
+    - prefer: "2"                 # Topic ID to prefer
+      over: "6"                   # Topic ID to deprioritize
+      when_any:                   # Trigger if ANY of these keywords present
+        - "resistor"
+        - "ammeter"
+        - "series circuit"
+      boost: 0.05                 # Confidence boost amount
+      
+    # ADD YOUR DISAMBIGUATION RULES
+    # - prefer: "3"
+    #   over: "1"
+    #   when_any:
+    #     - "specific keyword"
+    #   boost: 0.05
+
+# ============================================================================
+# UNITS SUPPORT (Optional - Weak Supporting Evidence)
+# ============================================================================
+# Define subject-specific units that provide weak supporting evidence
+# Should never be sole basis for classification
+# ============================================================================
+units_support:
+  topic_1_units:
+    - "m/s"
+    - "m/s²"
+    - "N"
+    - "kg"
+  topic_2_units:
+    - "A"
+    - "V"
+    - "Ω"
+    - "W"
+  # ADD UNITS FOR YOUR TOPICS
+
+# ============================================================================
+# METADATA
+# ============================================================================
+metadata:
+  created: "2025-10-23"
+  version: "2.2"
+  author: "GradeMax"
+  notes: |
+    Template for creating new subject classifications.
+    Copy and customize for each subject.
+    
+    Key steps:
+    1. Update subject metadata (code, name, id)
+    2. Define 4-12 topics with clear descriptions
+    3. Add 5-10 core keywords per topic (weight 4-5)
+    4. Add 3-5 support keywords per topic (weight 2-3)
+    5. Identify negative keywords (false positive patterns)
+    6. Customize difficulty indicators
+    7. Test on sample questions
+    8. Adjust weights and keywords based on results
