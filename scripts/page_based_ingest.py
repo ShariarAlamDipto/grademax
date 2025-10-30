@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 sys.path.insert(0, str(Path(__file__).parent))
 
 from split_pages import PageSplitter
-from symbol_aware_classifier import SymbolAwareClassifier
+from single_topic_classifier import SingleTopicClassifier
 from supabase_client import SupabaseClient
 from compress_pdf import compress_pdf_in_place, format_size
 
@@ -105,7 +105,7 @@ class PageBasedPipeline:
         api_key = os.getenv('GEMINI_API_KEY')
         if not api_key:
             raise ValueError("GEMINI_API_KEY not set")
-        self.classifier = SymbolAwareClassifier(config_path, api_key)
+        self.classifier = SingleTopicClassifier(config_path, api_key)
         
         # Subject mapping (will be auto-detected from folder structure)
         self.subject_map = {
@@ -113,10 +113,7 @@ class PageBasedPipeline:
             'Chemistry': '4CH1',
             'Biology': '4BI1',
             'Mathematics': '4MA1',
-            'Maths': '4MA1',
-            'Further Pure Maths': '9FM0',
-            'FurtherPureMaths': '9FM0',
-            'Further Pure Mathematics': '9FM0'
+            'Maths': '4MA1'
         }
         self.subject_code = None  # Will be set during processing
         self.subject_name = subject_name  # Will be set during processing
