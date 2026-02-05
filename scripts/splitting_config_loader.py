@@ -178,10 +178,10 @@ class ConfigurableQuestionDetector:
         """Detect question number in question paper using configured patterns"""
         lines = text.strip().split('\n')
         
-        # Skip if matches skip patterns
-        text_lower = text.lower()
+        # Skip if matches skip patterns (only check first 200 chars - skip patterns indicate non-content pages)
+        text_first_200 = text.lower()[:200]
         for skip_pattern in self.config.skip_patterns:
-            if skip_pattern.lower() in text_lower:
+            if skip_pattern.lower() in text_first_200:
                 return None
         
         # Determine start line based on format (old vs new)

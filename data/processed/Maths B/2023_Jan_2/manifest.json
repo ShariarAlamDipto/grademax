@@ -1,0 +1,210 @@
+{
+  "qp_file": "C:\\Users\\shari\\grademax\\data\\raw\\IGCSE\\Maths B\\2023\\Jan\\Paper 2.pdf",
+  "ms_file": "C:\\Users\\shari\\grademax\\data\\raw\\IGCSE\\Maths B\\2023\\Jan\\Paper 2_MS.pdf",
+  "subject_code": "4MB1",
+  "subject_name": "Mathematics B",
+  "year": 2023,
+  "session": "Jun",
+  "paper_number": "2R",
+  "qp_watermark": "4MB1 | 2023 | Jun | QP",
+  "ms_watermark": "4MB1 | 2023 | Jan | MS",
+  "metadata_extracted": {
+    "qp": {
+      "subject_code": "4MB1",
+      "year": 2023,
+      "session": "Jun",
+      "paper_number": "2R",
+      "paper_type": "QP",
+      "raw_paper_ref": "4MB1/02R",
+      "confidence": 0.7,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    "ms": {
+      "subject_code": "4MB1",
+      "year": 2023,
+      "session": "Jan",
+      "paper_number": "2R",
+      "paper_type": "MS",
+      "raw_paper_ref": "4MB1/2R",
+      "confidence": 1.0,
+      "watermark": "4MB1 | 2023 | Jan | MS"
+    }
+  },
+  "total_questions": 12,
+  "questions_with_markschemes": 4,
+  "questions": [
+    {
+      "question_number": "1",
+      "qp_pages": [
+        1,
+        2
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q1.pdf",
+      "ms_pages": [
+        4
+      ],
+      "ms_pdf_path": "2023_Jan_2\\markschemes\\q1.pdf",
+      "has_markscheme": true,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "2",
+      "qp_pages": [
+        3,
+        4
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q2.pdf",
+      "ms_pages": [
+        4
+      ],
+      "ms_pdf_path": "2023_Jan_2\\markschemes\\q2.pdf",
+      "has_markscheme": true,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "3",
+      "qp_pages": [
+        5,
+        6
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q3.pdf",
+      "ms_pages": [
+        4
+      ],
+      "ms_pdf_path": "2023_Jan_2\\markschemes\\q3.pdf",
+      "has_markscheme": true,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "4",
+      "qp_pages": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q4.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "5",
+      "qp_pages": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q5.pdf",
+      "ms_pages": [
+        4
+      ],
+      "ms_pdf_path": "2023_Jan_2\\markschemes\\q5.pdf",
+      "has_markscheme": true,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "6",
+      "qp_pages": [
+        15,
+        16,
+        17,
+        18
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q6.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "7",
+      "qp_pages": [
+        19,
+        20
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q7.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "8",
+      "qp_pages": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "qp_page_count": 4,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q8.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "9",
+      "qp_pages": [
+        25,
+        26
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q9.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "10",
+      "qp_pages": [
+        27,
+        28
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q10.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "11",
+      "qp_pages": [
+        29,
+        30
+      ],
+      "qp_page_count": 2,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q11.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    },
+    {
+      "question_number": "12",
+      "qp_pages": [
+        31,
+        32,
+        33
+      ],
+      "qp_page_count": 3,
+      "qp_pdf_path": "2023_Jan_2\\pages\\q12.pdf",
+      "ms_pages": null,
+      "ms_pdf_path": null,
+      "has_markscheme": false,
+      "watermark": "4MB1 | 2023 | Jun | QP"
+    }
+  ]
+}

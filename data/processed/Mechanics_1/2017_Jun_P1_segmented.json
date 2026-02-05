@@ -1,0 +1,136 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2017,
+    "season": "Jun",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 2,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "ms_pages": [
+        7
+      ],
+      "marks_ms": 7,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 3,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "ms_pages": [
+        8
+      ],
+      "marks_ms": 51,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 6,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "ms_pages": [
+        11
+      ],
+      "marks_ms": 163,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 7,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "ms_pages": [
+        13
+      ],
+      "marks_ms": 48,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 8,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "ms_pages": [
+        14
+      ],
+      "marks_ms": 29,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 15,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "ms_pages": [
+        8
+      ],
+      "marks_ms": 51,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 6,
+    "ms_linking_pct": 100.0,
+    "qp_pages": 8,
+    "ms_pages": 17
+  }
+}

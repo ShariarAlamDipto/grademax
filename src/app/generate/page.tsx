@@ -2,17 +2,29 @@
 
 import { useState, useEffect } from 'react';
 
-// Subject icon mapping
-const SUBJECT_ICONS: Record<string, string> = {
-  '4PH1': '⚛️',
-  '9MA0': '�',
-  '4MB1': '🔣',
-  '9FM0': '∫',
-  'WME1': '⚙️',
-};
-
-// Default icon for unknown subjects
-const DEFAULT_ICON = '�';
+// Fullscreen modal component for PDF preview
+function FullscreenPdfModal({ url, title, onClose }: { url: string; title: string; onClose: () => void }) {
+  return (
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-95 flex flex-col">
+      <div className="flex items-center justify-between p-3 md:p-4 bg-gray-900 border-b border-gray-700">
+        <h3 className="text-white font-semibold text-sm md:text-lg truncate">{title}</h3>
+        <button
+          onClick={onClose}
+          className="text-white bg-red-600 hover:bg-red-700 px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-sm transition-colors"
+        >
+          Close
+        </button>
+      </div>
+      <div className="flex-1 p-2 md:p-4">
+        <iframe
+          src={url}
+          className="w-full h-full border-0 rounded-lg bg-white"
+          title={title}
+        />
+      </div>
+    </div>
+  );
+}
 
 interface Subject {
   id: string;
@@ -69,6 +81,7 @@ export default function WorksheetGeneratorPage() {
   
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
+  const [fullscreenPdf, setFullscreenPdf] = useState<{ url: string; title: string } | null>(null);
 
   // Removed permission checks - open access for now
 
@@ -240,46 +253,55 @@ export default function WorksheetGeneratorPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 p-4 md:p-8">
+      {/* Fullscreen PDF Modal */}
+      {fullscreenPdf && (
+        <FullscreenPdfModal
+          url={fullscreenPdf.url}
+          title={fullscreenPdf.title}
+          onClose={() => setFullscreenPdf(null)}
+        />
+      )}
+      
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-5xl font-bold mb-2 text-white">📝 Worksheet Generator</h1>
-        <p className="text-gray-300 mb-8">
+        <h1 className="text-2xl md:text-5xl font-bold mb-2 text-white">Worksheet Generator</h1>
+        <p className="text-gray-300 mb-4 md:mb-8 text-sm md:text-base">
           Select subject, topics, year range, and difficulty to create custom worksheets
         </p>
 
         {/* Filters Panel - Open Access (No permission check) */}
-        <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl p-8 mb-8 border border-gray-700">
+        <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-xl md:rounded-2xl shadow-xl p-4 md:p-8 mb-4 md:mb-8 border border-gray-700">
           
           {/* Subject Selection */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-white">
-              📚 Select Subject
+          <div className="mb-4 md:mb-8">
+            <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-4 flex items-center gap-2 text-white">
+              Select Subject
             </h2>
             {loadingSubjects ? (
-              <div className="flex items-center justify-center p-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+              <div className="flex items-center justify-center p-4 md:p-8">
+                <div className="animate-spin rounded-full h-6 w-6 md:h-8 md:w-8 border-b-2 border-white"></div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4">
                 {subjects.length === 0 ? (
-                  <div className="col-span-full text-center py-8 text-gray-400">
-                    <p className="text-lg mb-2">No subjects available</p>
-                    <p className="text-sm">Please contact the administrator</p>
+                  <div className="col-span-full text-center py-4 md:py-8 text-gray-400">
+                    <p className="text-base md:text-lg mb-2">No subjects available</p>
+                    <p className="text-xs md:text-sm">Please contact the administrator</p>
                   </div>
                 ) : (
                   subjects.map((subject) => (
                     <button
                       key={subject.id}
                       onClick={() => setSelectedSubject(subject.id)}
-                      className={`p-4 rounded-xl border-2 transition-all transform hover:scale-105 ${
+                      className={`p-2 md:p-4 rounded-lg md:rounded-xl border-2 transition-all ${
                         selectedSubject === subject.id
-                          ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg shadow-purple-500/50'
-                          : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500 hover:shadow'
+                          ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg'
+                          : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500'
                       }`}
                     >
-                      <div className="text-3xl mb-2">{SUBJECT_ICONS[subject.code] || DEFAULT_ICON}</div>
-                      <div className="text-xs text-gray-400 font-medium">{subject.level || 'IGCSE'}</div>
-                      <div className="text-sm font-semibold text-white text-center">{subject.name}</div>
+                      <div className="text-[10px] md:text-xs text-gray-400 font-medium mb-0.5 md:mb-1">{subject.code}</div>
+                      <div className="text-[10px] md:text-xs text-gray-400 font-medium">{subject.level || 'IGCSE'}</div>
+                      <div className="text-xs md:text-sm font-semibold text-white text-center">{subject.name}</div>
                     </button>
                   ))
                 )}
@@ -288,11 +310,11 @@ export default function WorksheetGeneratorPage() {
           </div>
 
           {/* Topic Selection */}
-          <div className="mb-8">
-            <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2 text-white">
-              🎯 Select Topics
+          <div className="mb-4 md:mb-8">
+            <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-4 flex flex-wrap items-center gap-2 text-white">
+              Select Topics
               {selectedTopics.length > 0 && (
-                <span className="text-sm bg-blue-500 text-white px-3 py-1 rounded-full">
+                <span className="text-xs md:text-sm bg-blue-500 text-white px-2 md:px-3 py-0.5 md:py-1 rounded-full">
                   {selectedTopics.length} selected
                 </span>
               )}
@@ -300,48 +322,47 @@ export default function WorksheetGeneratorPage() {
             
             {/* Topics Table */}
             {loadingTopics ? (
-              <div className="flex items-center justify-center p-8">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white"></div>
+              <div className="flex items-center justify-center p-4 md:p-8">
+                <div className="animate-spin rounded-full h-6 w-6 md:h-8 md:w-8 border-b-2 border-white"></div>
               </div>
             ) : topics.length === 0 ? (
-              <div className="text-center p-8 bg-gray-700 bg-opacity-30 rounded-xl">
-                <p className="text-gray-400">No topics available for this subject yet</p>
+              <div className="text-center p-4 md:p-8 bg-gray-700 bg-opacity-30 rounded-xl">
+                <p className="text-gray-400 text-sm md:text-base">No topics available for this subject yet</p>
               </div>
             ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full border-collapse">
+              <div className="overflow-x-auto -mx-4 md:mx-0">
+                <table className="w-full border-collapse min-w-[300px]">
                   <thead>
                     <tr className="bg-gray-700 bg-opacity-50">
-                      <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Select</th>
-                      <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Code</th>
-                      <th className="border border-gray-600 px-4 py-3 text-left text-white font-semibold">Topic Name</th>
+                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left text-white font-semibold text-xs md:text-base">Select</th>
+                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left text-white font-semibold text-xs md:text-base">Code</th>
+                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left text-white font-semibold text-xs md:text-base">Topic Name</th>
                     </tr>
                   </thead>
                   <tbody>
                     {topics.map((topic) => (
                       <tr 
                         key={topic.id}
-                        className={`transition-colors ${
+                        onClick={() => toggleTopic(topic.code)}
+                        className={`transition-colors cursor-pointer ${
                           selectedTopics.includes(topic.code)
                             ? 'bg-blue-900 bg-opacity-50 border-blue-500'
                             : 'bg-gray-700 bg-opacity-30 hover:bg-gray-600 hover:bg-opacity-40'
                         }`}
                       >
-                        <td className="border border-gray-600 px-4 py-3 text-center">
+                        <td className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-center">
                           <input
                             type="checkbox"
                             checked={selectedTopics.includes(topic.code)}
                             onChange={() => toggleTopic(topic.code)}
-                            className="w-5 h-5 cursor-pointer"
+                            className="w-4 h-4 md:w-5 md:h-5 cursor-pointer"
                           />
                         </td>
-                        <td className="border border-gray-600 px-4 py-3">
-                          <div className="flex items-center gap-2">
-                            <span className="text-white font-semibold">{topic.code}</span>
-                          </div>
+                        <td className="border border-gray-600 px-2 md:px-4 py-2 md:py-3">
+                          <span className="text-white font-semibold text-xs md:text-base">{topic.code}</span>
                         </td>
-                        <td className="border border-gray-600 px-4 py-3">
-                          <span className="text-white">{topic.name}</span>
+                        <td className="border border-gray-600 px-2 md:px-4 py-2 md:py-3">
+                          <span className="text-white text-xs md:text-base">{topic.name}</span>
                         </td>
                       </tr>
                     ))}
@@ -352,15 +373,15 @@ export default function WorksheetGeneratorPage() {
           </div>
 
           {/* Year Range */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-8">
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                📅 Start Year
+              <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
+                Start Year
               </label>
               <select
                 value={yearStart}
                 onChange={(e) => setYearStart(parseInt(e.target.value))}
-                className="w-full p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -368,13 +389,13 @@ export default function WorksheetGeneratorPage() {
               </select>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                📅 End Year
+              <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
+                End Year
               </label>
               <select
                 value={yearEnd}
                 onChange={(e) => setYearEnd(parseInt(e.target.value))}
-                className="w-full p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -384,25 +405,25 @@ export default function WorksheetGeneratorPage() {
           </div>
 
           {/* Additional Filters */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 mb-4 md:mb-8">
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                💪 Difficulty
+              <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
+                Difficulty
               </label>
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
-                className="w-full p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               >
-                <option value="">All Difficulties</option>
+                <option value="">All</option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
               </select>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-gray-300 mb-2">
-                📊 Max Questions
+              <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
+                Max Questions
               </label>
               <input
                 type="number"
@@ -410,18 +431,18 @@ export default function WorksheetGeneratorPage() {
                 onChange={(e) => setLimit(parseInt(e.target.value) || 20)}
                 min="1"
                 max="100"
-                className="w-full p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>
-            <div className="flex items-end">
-              <label className="flex items-center gap-2 cursor-pointer p-3 border-2 border-gray-600 bg-gray-700 rounded-lg hover:border-blue-500 w-full">
+            <div className="col-span-2 md:col-span-1 flex items-end">
+              <label className="flex items-center gap-2 cursor-pointer p-2 md:p-3 border-2 border-gray-600 bg-gray-700 rounded-lg hover:border-blue-500 w-full">
                 <input
                   type="checkbox"
                   checked={shuffle}
                   onChange={(e) => setShuffle(e.target.checked)}
-                  className="w-5 h-5"
+                  className="w-4 h-4 md:w-5 md:h-5"
                 />
-                <span className="text-sm font-semibold text-white">🔀 Shuffle Questions</span>
+                <span className="text-xs md:text-sm font-semibold text-white">Shuffle Questions</span>
               </label>
             </div>
           </div>
@@ -430,20 +451,19 @@ export default function WorksheetGeneratorPage() {
           <button
             onClick={handleGenerate}
             disabled={loading || selectedTopics.length === 0}
-            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? '🔄 Generating...' : '✨ Generate Worksheet'}
+            {loading ? 'Generating...' : 'Generate Worksheet'}
           </button>
         </div>
 
         {/* Error Display */}
         {error && (
-          <div className="bg-red-900 bg-opacity-80 backdrop-blur-lg border-2 border-red-500 rounded-xl p-6 mb-8">
+          <div className="bg-red-900 bg-opacity-80 backdrop-blur-lg border-2 border-red-500 rounded-xl p-4 md:p-6 mb-4 md:mb-8">
             <div className="flex items-center gap-3">
-              <span className="text-3xl">❌</span>
               <div>
-                <div className="font-bold text-red-300">Error</div>
-                <div className="text-red-200">{error}</div>
+                <div className="font-bold text-red-300 text-sm md:text-base">Error</div>
+                <div className="text-red-200 text-sm md:text-base">{error}</div>
               </div>
             </div>
           </div>
@@ -451,69 +471,85 @@ export default function WorksheetGeneratorPage() {
 
         {/* Results */}
         {questions.length > 0 && (
-          <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-2xl shadow-xl p-8 border border-gray-700">
-            <div className="flex justify-between items-center mb-6">
+          <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-xl md:rounded-2xl shadow-xl p-4 md:p-8 border border-gray-700">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-4 md:mb-6">
               <div>
-                <h2 className="text-2xl font-bold text-white">
-                  📋 Generated Worksheet
+                <h2 className="text-lg md:text-2xl font-bold text-white">
+                  Generated Worksheet
                 </h2>
-                <p className="text-gray-300">
-                  {questions.length} questions found • Topics: {selectedTopics.join(', ')}
+                <p className="text-gray-300 text-xs md:text-base">
+                  {questions.length} questions • {selectedTopics.join(', ')}
                 </p>
               </div>
               
               <button
                 onClick={handleDownload}
                 disabled={generatingPDF}
-                className="bg-green-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors disabled:opacity-50"
+                className="w-full sm:w-auto bg-green-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors disabled:opacity-50 text-sm md:text-base"
               >
-                {generatingPDF ? '📄 Creating PDFs...' : '⬇️ Download PDFs'}
+                {generatingPDF ? 'Creating PDFs...' : 'Download PDFs'}
               </button>
             </div>
 
             {/* Download Links */}
             {(worksheetUrl || markschemeUrl) && (
-              <div className="bg-gradient-to-r from-green-900 to-emerald-900 bg-opacity-50 border-2 border-green-500 rounded-xl p-6 mb-6">
-                <h3 className="font-bold text-green-300 mb-4 text-lg">✅ PDFs Ready!</h3>
-                <div className="flex flex-wrap gap-4 mb-6">
+              <div className="bg-gradient-to-r from-green-900 to-emerald-900 bg-opacity-50 border-2 border-green-500 rounded-xl p-4 md:p-6 mb-4 md:mb-6">
+                <h3 className="font-bold text-green-300 mb-3 md:mb-4 text-base md:text-lg">PDFs Ready!</h3>
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-4 md:mb-6">
                   {worksheetUrl && (
                     <a
                       href={worksheetUrl}
                       download="worksheet.pdf"
-                      className="flex-1 bg-gray-700 border-2 border-green-500 text-green-300 px-6 py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors text-center"
+                      className="flex-1 bg-gray-700 border-2 border-green-500 text-green-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors text-center text-sm md:text-base"
                     >
-                      📝 Download Worksheet.pdf
+                      Download Worksheet.pdf
                     </a>
                   )}
                   {markschemeUrl && (
                     <a
                       href={markschemeUrl}
                       download="markscheme.pdf"
-                      className="flex-1 bg-gray-700 border-2 border-blue-500 text-blue-300 px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 transition-colors text-center"
+                      className="flex-1 bg-gray-700 border-2 border-blue-500 text-blue-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-900 transition-colors text-center text-sm md:text-base"
                     >
-                      ✅ Download Markscheme.pdf
+                      Download Markscheme.pdf
                     </a>
                   )}
                 </div>
 
-                {/* PDF Previews - Centered and 70% screen width */}
-                <div className="flex flex-col items-center gap-8">
+                {/* PDF Previews - Responsive with fullscreen option */}
+                <div className="flex flex-col items-center gap-6 md:gap-8">
                   {worksheetUrl && (
                     <div className="w-full flex flex-col items-center">
-                      <h4 className="text-green-300 font-semibold mb-4 text-xl">📄 Worksheet Preview</h4>
+                      <div className="flex items-center justify-between w-full mb-3 md:mb-4">
+                        <h4 className="text-green-300 font-semibold text-base md:text-xl">Worksheet Preview</h4>
+                        <button
+                          onClick={() => setFullscreenPdf({ url: worksheetUrl, title: 'Worksheet Preview' })}
+                          className="bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
+                        >
+                          Fullscreen
+                        </button>
+                      </div>
                       <iframe 
                         src={worksheetUrl} 
-                        className="w-[70vw] h-[80vh] border-2 border-green-500 rounded-lg bg-white shadow-2xl"
+                        className="w-full md:w-[85vw] lg:w-[80vw] h-[50vh] md:h-[70vh] lg:h-[85vh] border-2 border-green-500 rounded-lg bg-white shadow-2xl"
                         title="Worksheet Preview"
                       />
                     </div>
                   )}
                   {markschemeUrl && (
-                    <div className="w-full flex flex-col items-center mt-8">
-                      <h4 className="text-blue-300 font-semibold mb-4 text-xl">✅ Markscheme Preview</h4>
+                    <div className="w-full flex flex-col items-center mt-4 md:mt-8">
+                      <div className="flex items-center justify-between w-full mb-3 md:mb-4">
+                        <h4 className="text-blue-300 font-semibold text-base md:text-xl">Markscheme Preview</h4>
+                        <button
+                          onClick={() => setFullscreenPdf({ url: markschemeUrl, title: 'Markscheme Preview' })}
+                          className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
+                        >
+                          Fullscreen
+                        </button>
+                      </div>
                       <iframe 
                         src={markschemeUrl} 
-                        className="w-[70vw] h-[80vh] border-2 border-blue-500 rounded-lg bg-white shadow-2xl"
+                        className="w-full md:w-[85vw] lg:w-[80vw] h-[50vh] md:h-[70vh] lg:h-[85vh] border-2 border-blue-500 rounded-lg bg-white shadow-2xl"
                         title="Markscheme Preview"
                       />
                     </div>
@@ -523,37 +559,37 @@ export default function WorksheetGeneratorPage() {
             )}
 
             {/* Question List */}
-            <div className="space-y-3">
+            <div className="space-y-2 md:space-y-3">
               {questions.map((q, index) => (
                 <div
                   key={q.id}
-                  className="border-2 border-gray-600 bg-gray-700 bg-opacity-50 rounded-lg p-4 hover:border-blue-500 transition-colors"
+                  className="border-2 border-gray-600 bg-gray-700 bg-opacity-50 rounded-lg p-3 md:p-4 hover:border-blue-500 transition-colors"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4">
-                      <div className="bg-blue-500 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold">
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="bg-blue-500 text-white w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-sm md:text-base flex-shrink-0">
                         {index + 1}
                       </div>
                       <div>
-                        <div className="font-semibold text-white">
+                        <div className="font-semibold text-white text-sm md:text-base">
                           Question {q.questionNumber}
                         </div>
-                        <div className="text-sm text-gray-300">
+                        <div className="text-xs md:text-sm text-gray-300">
                           {q.year} {q.season} • Paper {q.paper}
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-1.5 md:gap-2 ml-11 sm:ml-0">
                       {q.topics.map((topic: string) => (
                         <span
                           key={topic}
-                          className="px-3 py-1 bg-blue-900 text-blue-300 border border-blue-500 rounded-full text-sm font-medium"
+                          className="px-2 md:px-3 py-0.5 md:py-1 bg-blue-900 text-blue-300 border border-blue-500 rounded-full text-xs md:text-sm font-medium"
                         >
-                          Topic {topic}
+                          {topic}
                         </span>
                       ))}
                       {q.difficulty && (
-                        <span className={`px-3 py-1 rounded-full text-sm font-medium border ${
+                        <span className={`px-2 md:px-3 py-0.5 md:py-1 rounded-full text-xs md:text-sm font-medium border ${
                           q.difficulty === 'easy' ? 'bg-green-900 text-green-300 border-green-500' :
                           q.difficulty === 'medium' ? 'bg-yellow-900 text-yellow-300 border-yellow-500' :
                           'bg-red-900 text-red-300 border-red-500'
@@ -562,8 +598,8 @@ export default function WorksheetGeneratorPage() {
                         </span>
                       )}
                       {q.hasDiagram && (
-                        <span className="px-3 py-1 bg-purple-900 text-purple-300 border border-purple-500 rounded-full text-sm">
-                          📊 Diagram
+                        <span className="px-2 md:px-3 py-0.5 md:py-1 bg-purple-900 text-purple-300 border border-purple-500 rounded-full text-xs md:text-sm">
+                          Diagram
                         </span>
                       )}
                     </div>

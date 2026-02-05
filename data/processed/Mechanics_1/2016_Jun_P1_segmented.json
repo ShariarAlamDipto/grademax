@@ -1,0 +1,156 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2016,
+    "season": "Jun",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 1,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "ms_pages": [
+        6
+      ],
+      "marks_ms": 67,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 2,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "ms_pages": [
+        7
+      ],
+      "marks_ms": 21,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 4,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "ms_pages": [
+        9
+      ],
+      "marks_ms": 320,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 7,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "ms_pages": [
+        14
+      ],
+      "marks_ms": 28,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 8,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "ms_pages": [
+        17
+      ],
+      "marks_ms": 79,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 5,
+    "ms_linking_pct": 100.0,
+    "qp_pages": 16,
+    "ms_pages": 20
+  }
+}

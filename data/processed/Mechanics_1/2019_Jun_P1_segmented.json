@@ -1,0 +1,177 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2019,
+    "season": "Jun",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 1,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ms_pages": [
+        6
+      ],
+      "marks_ms": 4,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 3,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ms_pages": [
+        8
+      ],
+      "marks_ms": 44,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 4,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ms_pages": [
+        9
+      ],
+      "marks_ms": 55,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 5,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ms_pages": [
+        10
+      ],
+      "marks_ms": 6,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 6,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ms_pages": [
+        11
+      ],
+      "marks_ms": 75,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 7,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ms_pages": [
+        12
+      ],
+      "marks_ms": 14,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 8,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "ms_pages": [
+        13
+      ],
+      "marks_ms": 146,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 7,
+    "ms_linking_pct": 100.0,
+    "qp_pages": 11,
+    "ms_pages": 15
+  }
+}

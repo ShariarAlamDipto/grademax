@@ -8,7 +8,10 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from dotenv import load_dotenv
-load_dotenv('.env.ingest')
+# Try multiple env files
+env_loaded = load_dotenv('.env.ingest')
+if not env_loaded:
+    load_dotenv('.env.local')
 
 from supabase_client import SupabaseClient
 
@@ -54,6 +57,24 @@ SUBJECTS = {
             {'number': '6', 'name': 'Trigonometry', 'desc': 'Sin, cos, tan, Pythagoras, bearings'},
             {'number': '7', 'name': 'Statistics and Probability', 'desc': 'Data, averages, probability, diagrams'},
         ]
+    },
+    'maths_b': {
+        'code': '4MB1',
+        'name': 'Mathematics B',
+        'level': 'IGCSE',
+        'exam_board': 'Edexcel',
+        'topics': [
+            {'number': '1', 'name': 'Number', 'desc': 'Integers, fractions, decimals, indices, surds, standard form, bounds, ratio'},
+            {'number': '2', 'name': 'Sets', 'desc': 'Set notation, union, intersection, Venn diagrams, subsets, complements'},
+            {'number': '3', 'name': 'Algebra', 'desc': 'Expressions, equations, inequalities, formulae, sequences, factor theorem'},
+            {'number': '4', 'name': 'Functions', 'desc': 'Function notation, domain, range, composite, inverse, differentiation, graphs'},
+            {'number': '5', 'name': 'Matrices', 'desc': 'Matrix operations, multiplication, determinants, inverses, transformations'},
+            {'number': '6', 'name': 'Geometry', 'desc': 'Angles, polygons, congruence, similarity, circle theorems, constructions'},
+            {'number': '7', 'name': 'Mensuration', 'desc': 'Perimeter, area, volume, arc, sector, similar shapes'},
+            {'number': '8', 'name': 'Vectors and Transformation Geometry', 'desc': 'Vectors, transformations, position vectors, enlargement'},
+            {'number': '9', 'name': 'Trigonometry', 'desc': 'Sin, cos, tan, sine rule, cosine rule, 3D, bearings'},
+            {'number': '10', 'name': 'Statistics and Probability', 'desc': 'Data, averages, frequency, probability, tree diagrams'},
+        ]
     }
 }
 
@@ -88,11 +109,12 @@ def add_subject(subject_key: str):
             'code': subject_info['code'],
             'name': subject_info['name'],
             'level': subject_info['level'],
-            'exam_board': subject_info['exam_board']
+            'board': subject_info['exam_board']  # Note: DB uses 'board' not 'exam_board'
         }
         
         result = db.insert('subjects', subject_data)
-        subject_uuid = result['id']
+        # Result is a list, get first item
+        subject_uuid = result[0]['id'] if isinstance(result, list) else result['id']
         print(f"   ✅ Created: {subject_info['code']} - {subject_info['name']}")
         print(f"   UUID: {subject_uuid}")
     
@@ -102,7 +124,7 @@ def add_subject(subject_key: str):
         # Check if topic exists
         existing_topic = db.select('topics', filters={
             'subject_id': f"eq.{subject_uuid}",
-            'topic_number': f"eq.{topic['number']}"
+            'code': f"eq.{topic['number']}"  # DB uses 'code' not 'topic_number'
         })
         
         if existing_topic:
@@ -110,7 +132,7 @@ def add_subject(subject_key: str):
         else:
             topic_data = {
                 'subject_id': subject_uuid,
-                'topic_number': topic['number'],
+                'code': topic['number'],  # DB uses 'code' not 'topic_number'
                 'name': topic['name'],
                 'description': topic['desc']
             }

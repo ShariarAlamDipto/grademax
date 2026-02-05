@@ -138,6 +138,84 @@ physics:
 
 
 # =============================================================================
+# MATHEMATICS B (4MB1)
+# =============================================================================
+maths_b:
+  subject_code: "4MB1"
+  subject_name: "Mathematics B"
+  
+  # Question Paper Detection Patterns
+  question_patterns:
+    # Priority 1: Number followed by space/tab and content (most reliable)
+    # Examples: "1 Simplify", "2 Solve", "3 (a)"
+    priority_1:
+      - regex: '^\s*(\d+)\s+[A-Z(]'
+        description: "Number + space + uppercase (e.g., '1 Solve')"
+      - regex: '^\s*(\d+)\s{2,}[A-Z]'
+        description: "Number + multiple spaces + uppercase"
+      - regex: '^\s*(\d+)\s+\('
+        description: "Number + space + opening parenthesis (e.g., '1 (')"
+    
+    # Priority 2: Standalone number with question keywords nearby
+    priority_2:
+      - regex: '^\s*(\d+)\s*(\([a-z]\))?$'
+        description: "Standalone number or number with subpart"
+        validation:
+          keywords: 
+            - "calculate"
+            - "work out"
+            - "solve"
+            - "simplify"
+            - "factorise"
+            - "find"
+            - "show"
+            - "prove"
+            - "diagram"
+            - "figure"
+            - "graph"
+            - "sketch"
+            - "write down"
+            - "expand"
+            - "express"
+            - "give your answer"
+            - "correct to"
+          search_range: 15
+  
+  # Markscheme Detection Patterns
+  markscheme_patterns:
+    table_format:
+      marker: "marks"
+      description: "Look for 'Marks' row in table header"
+      pattern: '^\s*(\d+)\s*[a-z]?'
+      search_after_marker: 5
+  
+  # Skip patterns (pages to ignore) - Only patterns that indicate NON-question pages
+  # Note: For Maths B, instruction text appears on the SAME page as Q1, so we only skip
+  # truly non-content pages like blank pages and formulae sheets
+  skip_patterns:
+    - "formulae"
+    - "formula sheet"
+    - "BLANK PAGE"
+  
+  # Question number validation
+  validation:
+    min_question: 1
+    max_question: 25  # Maths B can have up to 25 questions per paper
+    expected_range: [15, 25]  # Typical question count for Maths B
+  
+  # Multi-page handling
+  multi_page:
+    enabled: true
+    group_by_number: true
+    include_blank_pages: false
+  
+  # Continuation page detection
+  continuation_markers:
+    - "continued"
+    - "Question {num} continued"
+
+
+# =============================================================================
 # TEMPLATE - Copy this for new subjects
 # =============================================================================
 _template:

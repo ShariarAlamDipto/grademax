@@ -1,0 +1,159 @@
+version: "2.3"
+subject:
+  code: "WME01"
+  name: "Mechanics 1"
+  level: "International A Level"
+
+schema:
+  tag_unit: "question"
+  allow_multi_tag: false
+
+thresholds:
+  min_topic_confidence: 0.44
+  escalate_below: 0.60
+
+topics:
+  - id: "M1.1"
+    code: "MODEL"
+    name: "Modelling & Assumptions"
+    core:
+      - {text: "particle model assumption", weight: 5}
+      - {text: "uniform body mass concentrated at centre", weight: 5}
+      - {text: "light inextensible string", weight: 5}
+      - {text: "smooth surface frictionless", weight: 5}
+      - {text: "rough surface friction present", weight: 4}
+      - {text: "air resistance negligible", weight: 4}
+      - {text: "pegs smooth or fixed", weight: 4}
+    support:
+      - {text: "model assumptions stated or implied", weight: 3}
+      - {text: "simplifying assumptions", weight: 3}
+      - {text: "limitations of model", weight: 3}
+
+  - id: "M1.2"
+    code: "VECT"
+    name: "Vectors in Mechanics"
+    core:
+      - {text: "position vector r", weight: 5}
+      - {text: "displacement vector", weight: 5}
+      - {text: "velocity vector v", weight: 5}
+      - {text: "acceleration vector a", weight: 5}
+      - {text: "force vector F", weight: 5}
+      - {text: "magnitude |v| or |r|", weight: 4}
+      - {text: "unit vector i j components", weight: 4}
+      - {text: "vector addition subtraction", weight: 4}
+    support:
+      - {text: "resolve vectors into components", weight: 3}
+      - {text: "angle between vectors", weight: 3}
+      - {text: "resultant vector", weight: 3}
+
+  - id: "M1.3"
+    code: "KINEM"
+    name: "Kinematics"
+    core:
+      - {text: "constant acceleration suvat", weight: 5}
+      - {text: "v = u + at", weight: 5}
+      - {text: "s = ut + ½at²", weight: 5}
+      - {text: "v² = u² + 2as", weight: 5}
+      - {text: "s = ½(u+v)t", weight: 5}
+      - {text: "displacement velocity acceleration", weight: 5}
+      - {text: "distance-time graph", weight: 4}
+      - {text: "velocity-time graph area gradient", weight: 4}
+      - {text: "projectile motion vertical horizontal", weight: 4}
+    support:
+      - {text: "free fall under gravity g=9.8", weight: 3}
+      - {text: "vertical projection upward downward", weight: 3}
+      - {text: "time of flight maximum height range", weight: 3}
+
+  - id: "M1.4"
+    code: "DYNAM"
+    name: "Dynamics"
+    core:
+      - {text: "Newton's first law inertia", weight: 5}
+      - {text: "Newton's second law F=ma", weight: 5}
+      - {text: "Newton's third law action reaction", weight: 5}
+      - {text: "force mass acceleration F=ma", weight: 5}
+      - {text: "weight W=mg", weight: 5}
+      - {text: "normal reaction R or N", weight: 5}
+      - {text: "tension T in string or rope", weight: 5}
+      - {text: "connected particles pulley systems", weight: 4}
+      - {text: "inclined plane slope angle", weight: 4}
+    support:
+      - {text: "resolving forces parallel perpendicular", weight: 3}
+      - {text: "acceleration up or down slope", weight: 3}
+      - {text: "equilibrium F=0", weight: 3}
+
+  - id: "M1.5"
+    code: "MOMENT"
+    name: "Momentum & Impulse"
+    core:
+      - {text: "momentum p=mv", weight: 5}
+      - {text: "impulse I=Ft or I=Δ(mv)", weight: 5}
+      - {text: "conservation of momentum", weight: 5}
+      - {text: "elastic collision kinetic energy conserved", weight: 5}
+      - {text: "inelastic collision KE not conserved", weight: 4}
+      - {text: "coefficient of restitution e", weight: 4}
+      - {text: "Newton's law of restitution", weight: 4}
+    support:
+      - {text: "collision between particles", weight: 3}
+      - {text: "impulse momentum theorem", weight: 3}
+      - {text: "rebound velocity after impact", weight: 3}
+
+  - id: "M1.6"
+    code: "FRICT"
+    name: "Friction"
+    core:
+      - {text: "friction force F or Fᵣ", weight: 5}
+      - {text: "coefficient of friction μ", weight: 5}
+      - {text: "limiting friction F≤μR", weight: 5}
+      - {text: "smooth surface no friction", weight: 5}
+      - {text: "rough surface friction present", weight: 5}
+      - {text: "motion impending about to move", weight: 4}
+      - {text: "equilibrium with friction", weight: 4}
+    support:
+      - {text: "friction opposes motion", weight: 3}
+      - {text: "static friction kinetic friction", weight: 3}
+      - {text: "normal reaction perpendicular to surface", weight: 3}
+
+  - id: "M1.7"
+    code: "STATIC"
+    name: "Statics of a Particle"
+    core:
+      - {text: "particle in equilibrium ΣF=0", weight: 5}
+      - {text: "resolving forces horizontally vertically", weight: 5}
+      - {text: "Lami's theorem", weight: 4}
+      - {text: "triangle of forces", weight: 4}
+      - {text: "polygon of forces closed", weight: 4}
+      - {text: "three forces in equilibrium", weight: 4}
+    support:
+      - {text: "resultant force zero", weight: 3}
+      - {text: "concurrent forces meet at point", weight: 3}
+      - {text: "angle between forces", weight: 3}
+
+  - id: "M1.8"
+    code: "MOMENTS"
+    name: "Moments"
+    core:
+      - {text: "moment of force M=Fd", weight: 5}
+      - {text: "torque perpendicular distance", weight: 5}
+      - {text: "equilibrium ΣM=0", weight: 5}
+      - {text: "taking moments about point", weight: 5}
+      - {text: "clockwise anticlockwise moments", weight: 4}
+      - {text: "couple pair of forces", weight: 4}
+      - {text: "moment of couple Fd", weight: 4}
+    support:
+      - {text: "rigid body equilibrium", weight: 3}
+      - {text: "beam supported at two points", weight: 3}
+      - {text: "centre of mass balance point", weight: 3}
+
+negatives:
+  - "emotional moment"
+  - "friction in relationships"
+  - "model of car"
+  - "static electricity"
+  - "dynamic person"
+
+precedence:
+  - {prefer: "DYNAM", over: "KINEM", when_any: ["F=ma","force","Newton"], boost: 0.05}
+  - {prefer: "FRICT", over: "DYNAM", when_any: ["friction","coefficient","μ","rough"], boost: 0.05}
+  - {prefer: "MOMENTS", over: "STATIC", when_any: ["moment","torque","couple","distance"], boost: 0.05}
+  - {prefer: "MOMENT", over: "MOMENTS", when_any: ["momentum","impulse","collision","restitution"], boost: 0.05}

@@ -1,0 +1,32 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2014,
+    "season": "Jan",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 2,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "ms_pages": [
+        12
+      ],
+      "marks_ms": 257,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 1,
+    "ms_linking_pct": 100.0,
+    "qp_pages": 4,
+    "ms_pages": 16
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2020,
+    "season": "Jan",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 1,
+      "qp_pages": [
+        1,
+        2
+      ],
+      "ms_pages": [
+        6
+      ],
+      "marks_ms": 29,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.5",
+        "difficulty": "hard",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 2,
+      "qp_pages": [
+        3,
+        4
+      ],
+      "ms_pages": [],
+      "marks_ms": null,
+      "marks_meta": {
+        "mode": "no_pages"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 3,
+      "qp_pages": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "ms_pages": [
+        8
+      ],
+      "marks_ms": 21,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.3",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 4,
+      "qp_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "ms_pages": [
+        10
+      ],
+      "marks_ms": 11,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.4",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 5,
+      "qp_pages": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "ms_pages": [
+        11
+      ],
+      "marks_ms": 86,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.3",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 6,
+      "qp_pages": [
+        17,
+        18
+      ],
+      "ms_pages": [
+        12
+      ],
+      "marks_ms": 41,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.2",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 7,
+      "qp_pages": [
+        19,
+        20,
+        21,
+        22,
+        23
+      ],
+      "ms_pages": [
+        13
+      ],
+      "marks_ms": 41,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.4",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 7,
+    "ms_linking_pct": 85.71428571428571,
+    "qp_pages": 24,
+    "ms_pages": 16
+  }
+}
