@@ -1,0 +1,683 @@
+# Mathematics B Topics for Classification
+# Edexcel International GCSE Mathematics B (4MB1)
+# Based on 2016 Specification - 10 Topic Areas
+# Updated with Comprehensive Topic-wise Detection Guardrails
+
+version: "2.0"
+subject:
+  code: "4MB1"
+  name: "Mathematics B"
+  level: "International GCSE"
+  board: "Edexcel"
+
+schema:
+  tag_unit: "question"
+  allow_multi_tag: true  # Multi-topic questions should be multi-labeled
+
+thresholds:
+  min_topic_confidence: 0.44
+  escalate_below: 0.60
+
+# =============================================================================
+# GLOBAL GUARDRAILS (Apply to every question)
+# =============================================================================
+# GR-1: Multi-topic Questions Must Be Multi-labeled
+#       If a question requires knowledge from 2+ topics, return multiple tags in priority order
+#
+# GR-2: Decide Topic by "Main Skill Being Tested"
+#       Even if numbers appear everywhere, do not tag as Number unless the main skill is
+#       number manipulation/accuracy/bounds/etc.
+#
+# GR-3: Use "Key Trigger Signals" + "Expected Method"
+#       Classify using: Keywords, Objects, Required method
+#
+# GR-4: Prefer the Most Specific Topic
+#       Example: "Rotate a shape about the origin" is Transformations, not general Geometry
+#
+# GR-5: When Ambiguous, Use "Last-step Rule"
+#       If the final step is:
+#       - Probability computation → tag Statistics & Probability
+#       - Graph intersection → tag Functions
+#       - Angle chase → tag Geometry
+# =============================================================================
+
+topics:
+  # =========================================================================
+  # Topic 1: NUMBER
+  # =========================================================================
+  - id: "1"
+    code: "NUM"
+    name: "Number"
+    description: "Arithmetic operations, number properties, indices, surds, bounds, standard form"
+    
+    # GUARDRAIL: Detect as Number when the question focuses on:
+    # - Arithmetic operations, brackets
+    # - Prime numbers, factors, multiples, HCF/LCM
+    # - Indices/powers/roots (including fractional & negative powers)
+    # - Surds and rationalising denominators
+    # - Rational vs irrational numbers
+    # - Fractions/decimals/ratio/proportion/percentage
+    # - Rounding, significant figures, decimal places
+    # - Upper and lower bounds
+    # - Standard form
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If the question is mainly solving an equation → Algebra, not Number
+    # - If ratio is inside a geometry scale factor question → Geometry/Mensuration
+    
+    core:
+      - {text: "HCF", weight: 5}
+      - {text: "LCM", weight: 5}
+      - {text: "highest common factor", weight: 5}
+      - {text: "lowest common multiple", weight: 5}
+      - {text: "prime factor", weight: 5}
+      - {text: "prime number", weight: 5}
+      - {text: "standard form", weight: 5}
+      - {text: "×10^", weight: 5}
+      - {text: "significant figures", weight: 5}
+      - {text: "decimal places", weight: 5}
+      - {text: "upper bound", weight: 5}
+      - {text: "lower bound", weight: 5}
+      - {text: "simplify surd", weight: 5}
+      - {text: "rationalise", weight: 5}
+      - {text: "rationalising denominator", weight: 5}
+      - {text: "indices", weight: 5}
+      - {text: "index notation", weight: 5}
+      - {text: "powers", weight: 4}
+      - {text: "fractional power", weight: 5}
+      - {text: "negative power", weight: 5}
+    support:
+      - {text: "integer", weight: 4}
+      - {text: "natural number", weight: 4}
+      - {text: "rational number", weight: 4}
+      - {text: "irrational number", weight: 4}
+      - {text: "fraction", weight: 4}
+      - {text: "decimal", weight: 4}
+      - {text: "percentage", weight: 4}
+      - {text: "ratio", weight: 4}
+      - {text: "proportion", weight: 4}
+      - {text: "percentage increase", weight: 4}
+      - {text: "percentage decrease", weight: 4}
+      - {text: "compound interest", weight: 4}
+      - {text: "recurring decimal", weight: 4}
+      - {text: "currency convert", weight: 3}
+      - {text: "exchange rate", weight: 3}
+      - {text: "speed distance time", weight: 3}
+      - {text: "rounding", weight: 4}
+      - {text: "accuracy", weight: 4}
+      - {text: "bounds", weight: 5}
+      - {text: "factor", weight: 3}
+      - {text: "multiple", weight: 3}
+      - {text: "root", weight: 3}
+      - {text: "surd", weight: 5}
+
+  # =========================================================================
+  # Topic 2: SETS
+  # =========================================================================
+  - id: "2"
+    code: "SETS"
+    name: "Sets"
+    description: "Set notation, Venn diagrams, union, intersection, complement, subsets"
+    
+    # GUARDRAIL: Detect as Sets when the question includes:
+    # - Set notation: ∪, ∩, ⊂, A′, ∅, universal set
+    # - Number of elements n(A)
+    # - Venn diagrams and logical set problems
+    # - Subsets, complement
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If Venn diagram is used for probability → Statistics & Probability primary, Sets secondary
+    
+    core:
+      - {text: "Venn diagram", weight: 5}
+      - {text: "union", weight: 5}
+      - {text: "intersection", weight: 5}
+      - {text: "complement", weight: 5}
+      - {text: "n(A)", weight: 5}
+      - {text: "subset", weight: 5}
+      - {text: "set notation", weight: 5}
+      - {text: "element", weight: 4}
+      - {text: "universal set", weight: 5}
+      - {text: "A'", weight: 5}
+    support:
+      - {text: "empty set", weight: 4}
+      - {text: "null set", weight: 4}
+      - {text: "ξ", weight: 5}
+      - {text: "∩", weight: 5}
+      - {text: "∪", weight: 5}
+      - {text: "⊂", weight: 5}
+      - {text: "∈", weight: 5}
+      - {text: "shaded region", weight: 3}
+      - {text: "number of elements", weight: 4}
+
+  # =========================================================================
+  # Topic 3: ALGEBRA
+  # =========================================================================
+  - id: "3"
+    code: "ALG"
+    name: "Algebra"
+    description: "Expressions, equations, factorising, simultaneous equations, inequalities, sequences"
+    
+    # GUARDRAIL: Detect as Algebra when the question involves:
+    # - Simplifying expressions, collecting like terms
+    # - Forming/manipulating formulae (change subject)
+    # - Factorising expressions
+    # - Factor theorem (including cubic)
+    # - Algebraic division (cubic ÷ linear)
+    # - Algebraic fractions
+    # - Solving equations: linear/quadratic/cubic
+    # - Simultaneous equations (linear-linear, linear-quadratic)
+    # - Inequalities (linear/quadratic) + solution sets
+    # - Sequences (common difference etc.)
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If question is about function notation f(x) and inverse/composite → Functions, not Algebra
+    # - If sequence question asks for nth term explicitly → still Algebra (unless framed as function mapping)
+    
+    core:
+      - {text: "factorise", weight: 5}
+      - {text: "expand", weight: 5}
+      - {text: "simplify", weight: 4}
+      - {text: "solve", weight: 4}
+      - {text: "solve for x", weight: 5}
+      - {text: "solve the equation", weight: 5}
+      - {text: "simultaneous equations", weight: 5}
+      - {text: "simultaneous", weight: 5}
+      - {text: "inequality", weight: 5}
+      - {text: "solution set", weight: 5}
+      - {text: "change the subject", weight: 5}
+      - {text: "make the subject", weight: 5}
+      - {text: "subject of the formula", weight: 5}
+      - {text: "factor theorem", weight: 5}
+      - {text: "quadratic", weight: 5}
+      - {text: "completing the square", weight: 5}
+      - {text: "algebraic fraction", weight: 5}
+    support:
+      - {text: "expression", weight: 3}
+      - {text: "equation", weight: 4}
+      - {text: "brackets", weight: 3}
+      - {text: "rearrange", weight: 4}
+      - {text: "collecting like terms", weight: 4}
+      - {text: "substitute value", weight: 4}
+      - {text: "cubic equation", weight: 5}
+      - {text: "sequence", weight: 4}
+      - {text: "nth term", weight: 5}
+      - {text: "common difference", weight: 4}
+      - {text: "algebraic division", weight: 5}
+      - {text: "linear", weight: 3}
+      - {text: "quadratic formula", weight: 5}
+      - {text: "coefficient", weight: 3}
+      - {text: "term", weight: 3}
+
+  # =========================================================================
+  # Topic 4: FUNCTIONS
+  # =========================================================================
+  - id: "4"
+    code: "FUNC"
+    name: "Functions"
+    description: "Function notation, composite/inverse functions, graphs, differentiation, proportion"
+    
+    # GUARDRAIL: Detect as Functions when the question includes:
+    # - Function notation f(x), mapping, domain/range
+    # - Composite functions fg (do g first then f)
+    # - Inverse functions f⁻¹(x)
+    # - Direct/indirect proportion and variation (y ∝ x, y ∝ 1/x, etc.)
+    # - Coordinate geometry of straight lines (y = mx + c)
+    # - Drawing/interpreting graphs of polynomials/rational forms
+    # - Using intersection of curves to solve equations
+    # - Gradients from tangents
+    # - Differentiation of integer powers
+    # - Maxima/minima, stationary points
+    # - Kinematics graphs (distance-time, speed-time)
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If it's only solving a quadratic without graphs/differentiation → Algebra
+    # - If straight-line gradients are used in coordinate geometry but without function language,
+    #   still classify as Functions (because it's graph-based)
+    
+    core:
+      - {text: "f(x)", weight: 5}
+      - {text: "g(x)", weight: 5}
+      - {text: "domain", weight: 5}
+      - {text: "range", weight: 5}
+      - {text: "inverse function", weight: 5}
+      - {text: "f⁻¹", weight: 5}
+      - {text: "f-1", weight: 5}
+      - {text: "composite function", weight: 5}
+      - {text: "fg(", weight: 5}
+      - {text: "gf(", weight: 5}
+      - {text: "differentiate", weight: 5}
+      - {text: "dy/dx", weight: 5}
+      - {text: "gradient of curve", weight: 5}
+      - {text: "gradient of the curve", weight: 5}
+      - {text: "tangent", weight: 4}
+      - {text: "turning point", weight: 5}
+      - {text: "stationary point", weight: 5}
+      - {text: "maximum", weight: 4}
+      - {text: "minimum", weight: 4}
+    support:
+      - {text: "y = mx + c", weight: 4}
+      - {text: "gradient", weight: 4}
+      - {text: "intercept", weight: 4}
+      - {text: "Cartesian coordinates", weight: 4}
+      - {text: "sketch graph", weight: 4}
+      - {text: "sketch curve", weight: 4}
+      - {text: "rate of change", weight: 4}
+      - {text: "tangent to curve", weight: 5}
+      - {text: "velocity", weight: 4}
+      - {text: "acceleration", weight: 4}
+      - {text: "distance time graph", weight: 5}
+      - {text: "speed time graph", weight: 5}
+      - {text: "distance-time", weight: 5}
+      - {text: "speed-time", weight: 5}
+      - {text: "directly proportional", weight: 5}
+      - {text: "inversely proportional", weight: 5}
+      - {text: "direct proportion", weight: 5}
+      - {text: "inverse proportion", weight: 5}
+      - {text: "y ∝", weight: 5}
+      - {text: "proportional to", weight: 4}
+      - {text: "mapping", weight: 4}
+
+  # =========================================================================
+  # Topic 5: MATRICES
+  # =========================================================================
+  - id: "5"
+    code: "MAT"
+    name: "Matrices"
+    description: "Matrix operations, determinant, inverse, transformations using matrices"
+    
+    # GUARDRAIL: Detect as Matrices when the question involves:
+    # - Matrix representation of data
+    # - Addition/multiplication of matrices (≤ 3×3)
+    # - Scalar multiplication
+    # - Identity matrix / zero matrix
+    # - Determinant and inverse of 2×2
+    # - Using matrices for transformations
+    # - Combining transformations via AB meaning "B then A"
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If transformations are described without matrices (rotate/reflect/enlarge)
+    #   → classify as Vectors & Transformation geometry, not Matrices
+    
+    core:
+      - {text: "matrix", weight: 5}
+      - {text: "matrices", weight: 5}
+      - {text: "determinant", weight: 5}
+      - {text: "inverse matrix", weight: 5}
+      - {text: "identity matrix", weight: 5}
+      - {text: "2×2", weight: 5}
+      - {text: "2x2", weight: 5}
+      - {text: "3×3", weight: 5}
+      - {text: "3x3", weight: 5}
+      - {text: "matrix multiplication", weight: 5}
+      - {text: "matrix transformation", weight: 5}
+    support:
+      - {text: "scalar multiplication", weight: 4}
+      - {text: "matrix addition", weight: 4}
+      - {text: "transformation matrix", weight: 5}
+      - {text: "null matrix", weight: 4}
+      - {text: "zero matrix", weight: 4}
+      - {text: "order of matrix", weight: 4}
+      - {text: "combined transformation", weight: 4}
+      - {text: "singular matrix", weight: 4}
+      - {text: "non-singular", weight: 4}
+
+  # =========================================================================
+  # Topic 6: GEOMETRY
+  # =========================================================================
+  - id: "6"
+    code: "GEOM"
+    name: "Geometry"
+    description: "Angles, polygons, circle theorems, similarity, congruence, constructions, loci"
+    
+    # GUARDRAIL: Detect as Geometry when the question involves:
+    # - Angle properties (parallel lines, triangles, polygons)
+    # - Properties of quadrilaterals (parallelogram, kite, trapezium, etc.)
+    # - Symmetry (line/rotational)
+    # - Pythagoras in 2D/3D (if focus is reasoning, not volume)
+    # - Similarity & congruence proofs (SSS, SAS, ASA, RHS)
+    # - Circle theorems (chords, tangents, cyclic quadrilateral)
+    # - Loci (2D)
+    # - Constructions (angle bisector, perpendicular bisector)
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If question is mainly area/volume formulas → Mensuration
+    # - If question is transformation-heavy (rotate/reflect/translate/enlarge)
+    #   → Vectors & Transformation geometry
+    
+    core:
+      - {text: "circle theorem", weight: 5}
+      - {text: "cyclic quadrilateral", weight: 5}
+      - {text: "tangent", weight: 4}
+      - {text: "chord", weight: 5}
+      - {text: "prove triangles congruent", weight: 5}
+      - {text: "congruent triangles", weight: 5}
+      - {text: "similar triangles", weight: 5}
+      - {text: "locus", weight: 5}
+      - {text: "loci", weight: 5}
+      - {text: "construction", weight: 5}
+      - {text: "angles in parallel lines", weight: 5}
+      - {text: "alternate angles", weight: 5}
+      - {text: "corresponding angles", weight: 5}
+      - {text: "interior angle", weight: 5}
+      - {text: "exterior angle", weight: 5}
+      - {text: "polygon", weight: 5}
+    support:
+      - {text: "angle", weight: 3}
+      - {text: "triangle", weight: 3}
+      - {text: "parallel", weight: 4}
+      - {text: "parallelogram", weight: 4}
+      - {text: "rectangle", weight: 3}
+      - {text: "rhombus", weight: 4}
+      - {text: "trapezium", weight: 4}
+      - {text: "kite", weight: 4}
+      - {text: "alternate segment theorem", weight: 5}
+      - {text: "intersecting chord", weight: 5}
+      - {text: "angle bisector", weight: 5}
+      - {text: "perpendicular bisector", weight: 5}
+      - {text: "SSS", weight: 5}
+      - {text: "SAS", weight: 5}
+      - {text: "ASA", weight: 5}
+      - {text: "RHS", weight: 5}
+      - {text: "prove congruence", weight: 5}
+      - {text: "scale factor", weight: 4}
+      - {text: "similarity", weight: 5}
+      - {text: "Pythagoras", weight: 5}
+      - {text: "Pythagoras theorem", weight: 5}
+      - {text: "symmetry", weight: 4}
+      - {text: "rotational symmetry", weight: 5}
+      - {text: "line of symmetry", weight: 5}
+
+  # =========================================================================
+  # Topic 7: MENSURATION
+  # =========================================================================
+  - id: "7"
+    code: "MENS"
+    name: "Mensuration"
+    description: "Area, perimeter, volume, surface area, arc length, sector area"
+    
+    # GUARDRAIL: Detect as Mensuration when the question is about:
+    # - Area of 2D shapes (triangle, trapezium, circle)
+    # - Volume of 3D shapes (cylinder, cone, sphere, prism, pyramid)
+    # - Arc length and sector area (degrees only, not radians)
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If a triangle area is found using sine rule (½ab sinC)
+    #   → primary Trigonometry, secondary Mensuration
+    # - If similarity scale factor leads to area/volume ratio
+    #   → primary Geometry, secondary Mensuration
+    
+    core:
+      - {text: "area", weight: 5}
+      - {text: "perimeter", weight: 5}
+      - {text: "volume", weight: 5}
+      - {text: "surface area", weight: 5}
+      - {text: "arc length", weight: 5}
+      - {text: "sector area", weight: 5}
+      - {text: "sector", weight: 5}
+      - {text: "cylinder", weight: 5}
+      - {text: "cone", weight: 5}
+      - {text: "sphere", weight: 5}
+      - {text: "hemisphere", weight: 5}
+      - {text: "prism", weight: 5}
+      - {text: "pyramid", weight: 5}
+      - {text: "cuboid", weight: 5}
+    support:
+      - {text: "circle", weight: 3}
+      - {text: "circumference", weight: 5}
+      - {text: "radius", weight: 3}
+      - {text: "diameter", weight: 3}
+      - {text: "trapezium", weight: 3}
+      - {text: "parallelogram", weight: 3}
+      - {text: "compound shape", weight: 4}
+      - {text: "cross section", weight: 4}
+      - {text: "similar shapes area", weight: 4}
+      - {text: "similar shapes volume", weight: 4}
+
+  # =========================================================================
+  # Topic 8: VECTORS AND TRANSFORMATION GEOMETRY
+  # =========================================================================
+  - id: "8"
+    code: "VECT"
+    name: "Vectors and Transformation Geometry"
+    description: "Vectors, position vectors, column vectors, transformations without matrices"
+    
+    # GUARDRAIL: Detect as this topic when the question includes:
+    # - Vector notation OA, AB, column vectors
+    # - Vector addition/subtraction, scalar multiples
+    # - Resultant vectors, magnitude/modulus
+    # - Vector geometry (colinearity, parallel lines, concurrency)
+    # - Transformations: reflection, rotation, translation, enlargement
+    # - Combining transformations
+    # - Using matrices to map vectors (only if framed as transformation geometry)
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If transformation is explicitly done using matrices → may be Matrices + Transformations
+    # - If it's only coordinate graph movement without transformation language
+    #   → might be Functions (graph shift) depending on context
+    
+    core:
+      - {text: "vector", weight: 5}
+      - {text: "OA =", weight: 5}
+      - {text: "OB =", weight: 5}
+      - {text: "AB =", weight: 5}
+      - {text: "position vector", weight: 5}
+      - {text: "column vector", weight: 5}
+      - {text: "in terms of a and b", weight: 5}
+      - {text: "resultant", weight: 5}
+      - {text: "modulus", weight: 5}
+      - {text: "translation vector", weight: 5}
+      - {text: "translation", weight: 5}
+      - {text: "reflection", weight: 5}
+      - {text: "rotation", weight: 5}
+      - {text: "rotate by", weight: 5}
+      - {text: "rotate about", weight: 5}
+      - {text: "reflection in", weight: 5}
+      - {text: "reflect in", weight: 5}
+      - {text: "enlargement", weight: 5}
+      - {text: "centre of enlargement", weight: 5}
+      - {text: "scale factor", weight: 4}
+    support:
+      - {text: "midpoint", weight: 4}
+      - {text: "parallel vectors", weight: 5}
+      - {text: "magnitude", weight: 4}
+      - {text: "unit vector", weight: 4}
+      - {text: "collinear", weight: 5}
+      - {text: "collinear points", weight: 5}
+      - {text: "invariant point", weight: 5}
+      - {text: "invariant line", weight: 5}
+      - {text: "combined transformation", weight: 4}
+      - {text: "single transformation", weight: 5}
+      - {text: "describe fully", weight: 4}
+      - {text: "describe the transformation", weight: 5}
+      - {text: "a + b", weight: 3}
+      - {text: "y = x", weight: 4}
+      - {text: "y = -x", weight: 4}
+
+  # =========================================================================
+  # Topic 9: TRIGONOMETRY
+  # =========================================================================
+  - id: "9"
+    code: "TRIG"
+    name: "Trigonometry"
+    description: "sin/cos/tan, sine rule, cosine rule, bearings, angles of elevation/depression"
+    
+    # GUARDRAIL: Detect as Trigonometry when the question includes:
+    # - sin/cos/tan up to 180°
+    # - Sine rule, cosine rule
+    # - Area of triangle using ½ab sinC
+    # - 2D/3D trigonometry problems
+    # - Angles of elevation/depression
+    # - Bearings
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If question is purely Pythagoras without trig ratios → Geometry
+    # - If question is graph of sin/cos (not in this spec explicitly)
+    #   → treat cautiously; likely Functions only if graphing is asked
+    
+    core:
+      - {text: "sine rule", weight: 5}
+      - {text: "cosine rule", weight: 5}
+      - {text: "sin", weight: 4}
+      - {text: "cos", weight: 4}
+      - {text: "tan", weight: 4}
+      - {text: "sine", weight: 4}
+      - {text: "cosine", weight: 4}
+      - {text: "tangent", weight: 4}
+      - {text: "angle of elevation", weight: 5}
+      - {text: "angle of depression", weight: 5}
+      - {text: "elevation", weight: 4}
+      - {text: "depression", weight: 4}
+      - {text: "bearing", weight: 5}
+      - {text: "bearing 0", weight: 5}
+      - {text: "3D trigonometry", weight: 5}
+      - {text: "½ab sinC", weight: 5}
+      - {text: "½absinC", weight: 5}
+    support:
+      - {text: "right-angled triangle", weight: 4}
+      - {text: "SOHCAHTOA", weight: 5}
+      - {text: "opposite", weight: 3}
+      - {text: "adjacent", weight: 3}
+      - {text: "hypotenuse", weight: 4}
+      - {text: "angle 180", weight: 3}
+      - {text: "two dimensions", weight: 3}
+      - {text: "three dimensions", weight: 4}
+      - {text: "find angle using", weight: 4}
+      - {text: "find the angle", weight: 3}
+
+  # =========================================================================
+  # Topic 10: STATISTICS AND PROBABILITY
+  # =========================================================================
+  - id: "10"
+    code: "STAT"
+    name: "Statistics and Probability"
+    description: "Charts, mean/median/mode, frequency tables, probability, tree diagrams"
+    
+    # GUARDRAIL: Detect as Statistics & Probability when the question includes:
+    #
+    # Statistics:
+    # - Bar chart, pie chart, histogram
+    # - Mean/median/mode (discrete or grouped)
+    # - Estimated mean from grouped frequency
+    # - Modal class, median class
+    #
+    # Probability:
+    # - Probability scale, sample space
+    # - Mutually exclusive events (addition rule)
+    # - Independent events (product rule)
+    # - Tree diagrams
+    # - Conditional probability (simple)
+    #
+    # NEGATIVE GUARDRAILS:
+    # - If the problem is set-based probability using Venn diagrams
+    #   → Probability primary, Sets secondary
+    # - If mean/median appears inside a word problem, still tag as Statistics
+    
+    core:
+      - {text: "histogram", weight: 5}
+      - {text: "bar chart", weight: 5}
+      - {text: "pie chart", weight: 5}
+      - {text: "frequency table", weight: 5}
+      - {text: "grouped data", weight: 5}
+      - {text: "estimate the mean", weight: 5}
+      - {text: "estimated mean", weight: 5}
+      - {text: "mean", weight: 4}
+      - {text: "median", weight: 4}
+      - {text: "mode", weight: 4}
+      - {text: "probability", weight: 5}
+      - {text: "P(A)", weight: 5}
+      - {text: "P(", weight: 4}
+      - {text: "tree diagram", weight: 5}
+      - {text: "independent", weight: 5}
+      - {text: "mutually exclusive", weight: 5}
+      - {text: "expected frequency", weight: 5}
+    support:
+      - {text: "modal class", weight: 5}
+      - {text: "class containing median", weight: 5}
+      - {text: "median class", weight: 5}
+      - {text: "grouped frequency", weight: 5}
+      - {text: "conditional probability", weight: 5}
+      - {text: "P(A or B)", weight: 5}
+      - {text: "P(A and B)", weight: 5}
+      - {text: "relative frequency", weight: 4}
+      - {text: "sample space", weight: 4}
+      - {text: "frequency", weight: 3}
+      - {text: "cumulative frequency", weight: 5}
+      - {text: "frequency polygon", weight: 5}
+      - {text: "interquartile range", weight: 5}
+      - {text: "quartile", weight: 4}
+      - {text: "standard deviation", weight: 5}
+      - {text: "without replacement", weight: 5}
+      - {text: "with replacement", weight: 4}
+      - {text: "at random", weight: 4}
+
+negatives:
+  - "physics"
+  - "chemistry"
+  - "biology"
+
+# =============================================================================
+# CONFLICT RESOLUTION RULES (When Topics Overlap)
+# =============================================================================
+# CR-1: Algebra vs Functions
+#       "Solve equation" → Algebra
+#       "Use f(x), domain/range, inverse/composite, differentiation, gradients" → Functions
+#
+# CR-2: Geometry vs Mensuration
+#       Angle chasing/proofs/theorems → Geometry
+#       Area/volume/arc/sector computation → Mensuration
+#
+# CR-3: Matrices vs Transformations
+#       Transformation described with matrices → Matrices
+#       Transformation described geometrically (rotate/reflect/translate/enlarge) → Vectors & Transformation Geometry
+#
+# CR-4: Sets vs Probability
+#       If probability is being computed → Statistics & Probability primary
+#       If only set operations asked → Sets
+# =============================================================================
+
+precedence:
+  # CR-1: Algebra vs Functions
+  - {prefer: "FUNC", over: "ALG", when_any: ["f(x)", "g(x)", "domain", "range", "composite", "inverse function", "differentiate", "dy/dx", "stationary point", "turning point", "gradient of curve"], boost: 0.15}
+  
+  # CR-2: Geometry vs Mensuration (prefer most specific)
+  - {prefer: "MENS", over: "GEOM", when_any: ["area", "volume", "perimeter", "surface area", "arc length", "sector", "cylinder", "cone", "sphere", "hemisphere", "prism", "pyramid"], boost: 0.10}
+  - {prefer: "GEOM", over: "MENS", when_any: ["circle theorem", "angle", "prove", "congruent", "similar triangles", "locus", "construction", "parallel lines"], boost: 0.10}
+  
+  # CR-3: Matrices vs Transformations
+  - {prefer: "MAT", over: "VECT", when_any: ["matrix", "matrices", "determinant", "2x2", "3x3", "inverse matrix", "identity matrix"], boost: 0.15}
+  - {prefer: "VECT", over: "MAT", when_any: ["reflect", "rotate", "translate", "enlarge", "column vector", "position vector", "describe the transformation"], boost: 0.10}
+  
+  # CR-4: Sets vs Probability
+  - {prefer: "STAT", over: "SETS", when_any: ["probability", "P(", "tree diagram", "independent", "mutually exclusive", "expected"], boost: 0.15}
+  
+  # CR-5: Trigonometry vs Geometry
+  - {prefer: "TRIG", over: "GEOM", when_any: ["sin", "cos", "tan", "sine rule", "cosine rule", "bearing", "elevation", "depression"], boost: 0.15}
+  - {prefer: "GEOM", over: "TRIG", when_any: ["Pythagoras", "circle theorem", "congruent", "similar"], boost: 0.05}
+  
+  # CR-6: Trigonometry vs Mensuration (when using ½ab sinC)
+  - {prefer: "TRIG", over: "MENS", when_any: ["sine rule", "cosine rule", "½ab sinC", "sinC", "sin C"], boost: 0.10}
+  
+  # CR-7: Number vs Algebra
+  - {prefer: "ALG", over: "NUM", when_any: ["solve", "equation", "factorise", "simplify expression", "subject of formula", "inequality", "simultaneous"], boost: 0.10}
+  
+  # CR-8: Number vs Statistics (stats keywords win)
+  - {prefer: "STAT", over: "NUM", when_any: ["mean", "median", "mode", "frequency", "probability", "histogram", "pie chart"], boost: 0.10}
+  
+  # CR-9: Sets vs Number
+  - {prefer: "SETS", over: "NUM", when_any: ["Venn", "union", "intersection", "subset", "complement", "n(A)"], boost: 0.10}
+
+# =============================================================================
+# QUICK DETECTION KEYWORD MAP (Fast Routing)
+# =============================================================================
+# Number → standard form, bounds, surds, rationalise, HCF/LCM
+# Sets → Venn, union, intersection, complement, n(A)
+# Algebra → factorise, solve, inequality, simultaneous, change subject
+# Functions → f(x), domain, range, inverse, composite, dy/dx, tangent
+# Matrices → determinant, inverse matrix, identity, 2×2, 3×3
+# Geometry → circle theorem, cyclic, congruent, similar, construction, loci
+# Mensuration → area, volume, surface area, sector, arc length
+# Vectors/Transformations → translation vector, reflection, rotation, enlargement, modulus
+# Trigonometry → sin/cos/tan, sine rule, cosine rule, bearings, elevation
+# Stats/Probability → histogram, mean/median, tree diagram, independent, expected frequency
+# =============================================================================

@@ -24,11 +24,11 @@ class SupabaseClient:
         """
         # Try multiple environment variable names for flexibility
         self.url = supabase_url or os.getenv('SUPABASE_URL') or os.getenv('NEXT_PUBLIC_SUPABASE_URL')
-        self.key = supabase_key or os.getenv('SUPABASE_SERVICE_ROLE') or os.getenv('NEXT_PUBLIC_SUPABASE_ANON_KEY')
+        self.key = supabase_key or os.getenv('SUPABASE_SERVICE_ROLE_KEY') or os.getenv('SUPABASE_SERVICE_ROLE') or os.getenv('NEXT_PUBLIC_SUPABASE_ANON_KEY')
         
         if not self.url or not self.key:
             raise ValueError(
-                "Supabase credentials not found. Set SUPABASE_URL and SUPABASE_SERVICE_ROLE "
+                "Supabase credentials not found. Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY "
                 "(or NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY) environment variables."
             )
         

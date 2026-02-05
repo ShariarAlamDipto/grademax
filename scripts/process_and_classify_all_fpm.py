@@ -23,7 +23,7 @@ from mistral_classifier import MistralTopicClassifier
 # Load environment
 env_path = Path(__file__).parent.parent / '.env.local'
 if not env_path.exists():
-    print("❌ .env.local not found!")
+    print("ERROR: .env.local not found!")
     sys.exit(1)
 load_dotenv(env_path)
 
@@ -32,7 +32,7 @@ SUPABASE_KEY = os.getenv("SUPABASE_SERVICE_ROLE_KEY")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 if not SUPABASE_URL or not SUPABASE_KEY:
-    print("❌ Missing Supabase credentials in .env.local")
+    print("ERROR: Missing Supabase credentials in .env.local")
     sys.exit(1)
 
 # Initialize Supabase
@@ -53,7 +53,7 @@ def extract_text_from_pdf(pdf_path: Path) -> str:
                 text += page.extract_text() or ""
             return text.strip()
     except Exception as e:
-        print(f"        ❌ Error extracting text: {str(e)[:50]}")
+        print(f"        [ERROR] Error extracting text: {str(e)[:50]}")
         return ""
 
 
@@ -147,7 +147,7 @@ def process_paper_pages(paper_id: str, pages_dir: Path, manifest_path: Path):
             supabase.table("pages").insert(page_data).execute()
             pages_created += 1
         except Exception as e:
-            print(f"        ❌ Error creating page Q{q_num}: {str(e)[:50]}")
+            print(f"        [ERROR] Error creating page Q{q_num}: {str(e)[:50]}")
             continue
     
     return pages_created, pages_created
@@ -201,12 +201,12 @@ def classify_paper(paper_id: str, pages_dir: Path, classifier: MistralTopicClass
                     .execute()
                 
                 classified_count += 1
-                print(f"        ✅ Q{q_num}: Topic {result.topic} | {result.difficulty} | {result.confidence:.2f}")
+                print(f"        [OK] Q{q_num}: Topic {result.topic} | {result.difficulty} | {result.confidence:.2f}")
             else:
                 failed_count += 1
                 
         except Exception as e:
-            print(f"        ❌ Q{q_num}: {str(e)[:60]}")
+            print(f"        [ERROR] Q{q_num}: {str(e)[:60]}")
             failed_count += 1
             continue
     
@@ -215,39 +215,39 @@ def classify_paper(paper_id: str, pages_dir: Path, classifier: MistralTopicClass
 
 def main():
     print("\n" + "=" * 80)
-    print("📦 PROCESS AND CLASSIFY ALL FPM PAPERS")
+    print("PROCESS AND CLASSIFY ALL FPM PAPERS")
     print("=" * 80)
     
     # Get subject
     try:
         subject_id, subject_name = get_fpm_subject_id()
-        print(f"\n✅ Subject: {subject_name} (ID: {subject_id[:8]}...)")
+        print(f"\n[OK] Subject: {subject_name} (ID: {subject_id[:8]}...)")
     except ValueError as e:
-        print(f"\n❌ Error: {e}")
+        print(f"\n[ERROR] Error: {e}")
         return
     
     # Check processed directory
     if not PROCESSED_DIR.exists():
-        print(f"\n❌ Processed directory not found: {PROCESSED_DIR}")
+        print(f"\n[ERROR] Processed directory not found: {PROCESSED_DIR}")
         return
     
     # Get all paper folders
     paper_folders = sorted([d for d in PROCESSED_DIR.iterdir() if d.is_dir()])
-    print(f"\n📂 Found {len(paper_folders)} paper folders in {PROCESSED_DIR.name}")
+    print(f"\n[INFO] Found {len(paper_folders)} paper folders in {PROCESSED_DIR.name}")
     
     # Initialize classifier
-    print("\n📦 Initializing Classifier")
+    print("\nInitializing Classifier")
     print("=" * 80)
     classifier = MistralTopicClassifier(
         topics_yaml_path=str(TOPICS_YAML),
         api_key=GROQ_API_KEY,
         model_name="llama-3.1-8b-instant"
     )
-    print(f"   ✅ Loaded {len(classifier.topics)} FPM topics")
-    print(f"   ✅ Subject: {classifier.subject_name}")
+    print(f"   [OK] Loaded {len(classifier.topics)} FPM topics")
+    print(f"   [OK] Subject: {classifier.subject_name}")
     
     # Process each paper
-    print("\n📦 Processing Papers")
+    print("\nProcessing Papers")
     print("=" * 80)
     
     stats = {
@@ -261,7 +261,7 @@ def main():
     for i, folder in enumerate(paper_folders, 1):
         parsed = parse_paper_folder(folder.name)
         if not parsed:
-            print(f"\n   [{i}/{len(paper_folders)}] ⚠️  Skipping invalid folder: {folder.name}")
+            print(f"\n   [{i}/{len(paper_folders)}] [WARN] Skipping invalid folder: {folder.name}")
             continue
         
         year, season, paper_number = parsed
@@ -272,11 +272,11 @@ def main():
         pages_dir = folder / "pages"
         
         if not manifest_path.exists():
-            print(f"      ⚠️  No manifest.json")
+            print(f"      [WARN] No manifest.json")
             continue
         
         if not pages_dir.exists():
-            print(f"      ⚠️  No pages directory")
+            print(f"      [WARN] No pages directory")
             continue
         
         # Load manifest to get page count
@@ -288,19 +288,19 @@ def main():
             # Create or get paper
             paper_id, is_new = create_or_get_paper(subject_id, year, season, paper_number, total_pages)
             if is_new:
-                print(f"      ✅ Created paper (ID: {paper_id[:8]}...)")
+                print(f"      [OK] Created paper (ID: {paper_id[:8]}...)")
                 stats["papers_new"] += 1
             else:
-                print(f"      ℹ️  Paper exists (ID: {paper_id[:8]}...)")
+                print(f"      [INFO] Paper exists (ID: {paper_id[:8]}...)")
                 stats["papers_existing"] += 1
             
             # Process pages (extract text and create in DB)
             total, created = process_paper_pages(paper_id, pages_dir, manifest_path)
             if created > 0:
-                print(f"      ✅ Created {created} pages in database")
+                print(f"      [OK] Created {created} pages in database")
                 stats["pages_created"] += created
             elif total > 0:
-                print(f"      ℹ️  {total} pages already exist")
+                print(f"      [INFO] {total} pages already exist")
             
             # Classify pages
             classified, failed = classify_paper(paper_id, pages_dir, classifier)
@@ -308,12 +308,12 @@ def main():
             stats["pages_failed"] += failed
             
         except Exception as e:
-            print(f"      ❌ Error: {str(e)[:100]}")
+            print(f"      [ERROR] Error: {str(e)[:100]}")
             continue
     
     # Final summary
     print("\n" + "=" * 80)
-    print("📊 FINAL SUMMARY")
+    print("FINAL SUMMARY")
     print("=" * 80)
     print(f"   Papers processed: {len(paper_folders)}")
     print(f"   Papers created: {stats['papers_new']}")

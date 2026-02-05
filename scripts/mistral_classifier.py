@@ -113,7 +113,7 @@ class MistralTopicClassifier:
                     if phrase:
                         self.keyword_map[phrase] = topic_id
         
-        print(f"   ✅ Built keyword map with {len(self.keyword_map)} keywords")
+        print(f"   [OK] Built keyword map with {len(self.keyword_map)} keywords")
     
     def _load_topics(self, yaml_path: str):
         """Load topics from YAML"""
@@ -128,7 +128,7 @@ class MistralTopicClassifier:
         self.current_model_index = (self.current_model_index + 1) % len(self.available_models)
         self.model = self.available_models[self.current_model_index]["name"]
         self.current_provider = self.available_models[self.current_model_index]["provider"]
-        print(f"   🔄 Switching from {old_provider}:{old_model} to {self.current_provider}:{self.model}")
+        print(f"   [SWITCH] From {old_provider}:{old_model} to {self.current_provider}:{self.model}")
         return self.model
     
     def _wait_for_rate_limit(self):
@@ -162,7 +162,7 @@ class MistralTopicClassifier:
                 oldest_request = min(self.model_requests[self.model])
                 wait_time = 61 - (now - oldest_request)
                 if wait_time > 0:
-                    print(f"   ⏳ All models at capacity. Waiting {wait_time:.1f}s...", flush=True)
+                    print(f"   [WAIT] All models at capacity. Waiting {wait_time:.1f}s...", flush=True)
                     time.sleep(wait_time)
                     now = time.time()
                     self.model_requests[self.model] = [t for t in self.model_requests[self.model] if now - t < 60]
@@ -210,17 +210,29 @@ class MistralTopicClassifier:
         
         return "\n".join(descriptors)
     
-    def classify(self, page_text: str, question_num: str = None) -> TopicClassification:
+    def classify(self, page_text: str, question_num: str = None, _retry_count: int = 0) -> TopicClassification:
         """
         Classify ONE page with ONE topic using Groq API
         
         Args:
             page_text: Extracted text from PDF page
             question_num: Question number for logging
+            _retry_count: Internal retry counter to prevent infinite recursion
         
         Returns:
             TopicClassification with single topic
         """
+        # Prevent infinite recursion
+        if _retry_count >= len(self.available_models) * 2:
+            print(f"   [ERROR] Max retries exceeded, using keyword fallback")
+            keyword_topic = self._keyword_check(page_text.lower())
+            return TopicClassification(
+                page_has_question=True,
+                topic=keyword_topic if keyword_topic else '1',
+                difficulty='medium',
+                confidence=0.2 if keyword_topic else 0.0
+            )
+        
         # Try keyword-based classification FIRST to reduce API calls
         keyword_topic = self._keyword_check(page_text.lower())
         
@@ -303,7 +315,7 @@ class MistralTopicClassifier:
             api_url = "https://api.groq.com/openai/v1/chat/completions"
             api_key = self.groq_api_key
             if not api_key:
-                print(f"   ⚠️  Groq API key not available")
+                print(f"   [WARN] Groq API key not available")
                 return None
             
             headers = {
@@ -342,34 +354,52 @@ class MistralTopicClassifier:
             result_data = response.json()
             
         except requests.exceptions.HTTPError as e:
-            # Handle rate limit errors specifically
+            # Handle rate limit errors - try switching models
             if e.response.status_code == 429:
-                print(f"   ⚠️  Rate limit hit on {self.model}, switching models...")
+                print(f"   [RATE LIMIT] Hit on {self.model}, switching...")
+                old_model = self.model
                 self._switch_to_next_model()
+                # If we're back to the original model, all models are rate limited
+                if self.model == old_model:
+                    print(f"   [WAIT] All models rate limited, waiting 60s...")
+                    time.sleep(60)
+                else:
+                    time.sleep(2)
                 # Retry with new model
-                time.sleep(2)
-                return self.classify(page_text, question_num)
+                return self.classify(page_text, question_num, _retry_count + 1)
             elif e.response.status_code == 400:
-                print(f"   ⚠️  Bad request on {self.model} (possibly unsupported feature), switching models...")
+                print(f"   [WARN] Bad request on {self.model} (possibly unsupported feature), switching models...")
+                old_model = self.model
                 self._switch_to_next_model()
-                # Retry with new model
                 time.sleep(1)
-                return self.classify(page_text, question_num)
+                # Don't retry indefinitely
+                if self.model != old_model:
+                    return self.classify(page_text, question_num, _retry_count + 1)
+                # All models failed with 400
+                keyword_topic = self._keyword_check(page_text.lower())
+                return TopicClassification(
+                    page_has_question=True,
+                    topic=keyword_topic if keyword_topic else '1',
+                    difficulty='medium',
+                    confidence=0.3 if keyword_topic else 0.0
+                )
             elif e.response.status_code == 503:
-                print(f"   ⚠️  Service unavailable on {self.model}, switching models...")
+                print(f"   [UNAVAILABLE] Service unavailable on {self.model}")
                 self._switch_to_next_model()
-                # Retry with new model after brief wait
-                time.sleep(3)
-                return self.classify(page_text, question_num)
+                time.sleep(1)
+                return self.classify(page_text, question_num, _retry_count + 1)
             else:
-                print(f"❌ HTTP error {e.response.status_code}: {e}")
-                # For other errors, try switching models once
-                print(f"   ⚠️  Trying different model...")
-                self._switch_to_next_model()
-                time.sleep(2)
-                return self.classify(page_text, question_num)
+                print(f"   [HTTP ERROR] {e.response.status_code}: {e}")
+                # Try keyword fallback
+                keyword_topic = self._keyword_check(page_text.lower())
+                return TopicClassification(
+                    page_has_question=True,
+                    topic=keyword_topic if keyword_topic else '1',
+                    difficulty='medium',
+                    confidence=0.3 if keyword_topic else 0.0
+                )
         except Exception as e:
-            print(f"❌ Classification error: {e}")
+            print(f"   [ERROR] Classification error: {e}")
             # Try keyword fallback
             keyword_topic = self._keyword_check(page_text.lower())
             return TopicClassification(
@@ -426,19 +456,19 @@ class MistralTopicClassifier:
             
             # If all strategies failed, raise error
             if result is None:
-                print(f"   ⚠️  Failed to parse JSON from {self.model}. Response: {message_content[:200]}")
-                print(f"   🔄 Switching models and retrying...")
+                print(f"   [WARN] Failed to parse JSON from {self.model}. Response: {message_content[:200]}")
+                print(f"   [RETRY] Switching models and retrying...")
                 self._switch_to_next_model()
                 time.sleep(1)
-                return self.classify(page_text, question_num)
+                return self.classify(page_text, question_num, _retry_count + 1)
             
             # Validate required fields
             if 'topic' not in result or 'difficulty' not in result:
-                print(f"   ⚠️  Invalid JSON structure from {self.model}. Missing required fields.")
-                print(f"   🔄 Switching models and retrying...")
+                print(f"   [WARN] Invalid JSON structure from {self.model}. Missing required fields.")
+                print(f"   [RETRY] Switching models and retrying...")
                 self._switch_to_next_model()
                 time.sleep(1)
-                return self.classify(page_text, question_num)
+                return self.classify(page_text, question_num, _retry_count + 1)
             
             classification = TopicClassification(
                 page_has_question=result.get('page_has_question', True),
@@ -451,16 +481,16 @@ class MistralTopicClassifier:
             if classification.confidence < 0.7:
                 keyword_topic = self._keyword_check(page_text.lower())
                 if keyword_topic and keyword_topic != classification.topic:
-                    print(f"   ⚠️  Low confidence ({classification.confidence:.2f}), keyword suggests topic {keyword_topic}")
+                    print(f"   [WARN] Low confidence ({classification.confidence:.2f}), keyword suggests topic {keyword_topic}")
             
             return classification
             
         except Exception as e:
-            print(f"❌ JSON parsing error: {e}")
-            print(f"   🔄 Switching models and retrying...")
+            print(f"   [ERROR] JSON parsing error: {e}")
+            print(f"   [RETRY] Switching models and retrying...")
             self._switch_to_next_model()
             time.sleep(1)
-            return self.classify(page_text, question_num)
+            return self.classify(page_text, question_num, _retry_count + 1)
     
     def _keyword_check(self, text: str) -> str:
         """Check for keyword matches to suggest a topic"""
@@ -500,11 +530,11 @@ if __name__ == "__main__":
     openrouter_key = os.getenv('OPENROUTER_API_KEY')
     
     if not groq_key and not openrouter_key:
-        print("❌ Neither GROQ_API_KEY nor OPENROUTER_API_KEY set in .env.local!")
+        print("[ERROR] Neither GROQ_API_KEY nor OPENROUTER_API_KEY set in .env.local!")
         sys.exit(1)
 
-    print(f"\n✅ Groq API: {'Available' if groq_key else 'Not available'}")
-    print(f"✅ OpenRouter API: {'Available' if openrouter_key else 'Not available'}")
+    print(f"\\n[OK] Groq API: {'Available' if groq_key else 'Not available'}")
+    print(f"[OK] OpenRouter API: {'Available' if openrouter_key else 'Not available'}")
 
     classifier = MistralTopicClassifier(sys.argv[1], groq_key, openrouter_key)
 
