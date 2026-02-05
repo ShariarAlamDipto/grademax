@@ -19,22 +19,22 @@ supabase = create_client(
 )
 
 print("\n" + "="*80)
-print("📊 FPM CLASSIFICATION PROGRESS")
+print("FPM CLASSIFICATION PROGRESS")
 print("="*80)
 
 # Get FPM subject
 fpm = supabase.table("subjects").select("*").eq("code", "9FM0").execute()
 if not fpm.data:
-    print("❌ FPM subject not found")
+    print("ERROR: FPM subject not found")
     sys.exit(1)
 
 fpm_id = fpm.data[0]['id']
-print(f"\n✅ Subject: {fpm.data[0]['name']} ({fpm.data[0]['code']})")
+print(f"\n[OK] Subject: {fpm.data[0]['name']} ({fpm.data[0]['code']})")
 
 # Get paper count
 papers = supabase.table("papers").select("id", count="exact").eq("subject_id", fpm_id).execute()
 paper_count = papers.count if papers.count else 0
-print(f"📄 Papers in database: {paper_count}")
+print(f"[INFO] Papers in database: {paper_count}")
 
 # Get total pages
 all_pages = supabase.table("pages")\
@@ -42,7 +42,7 @@ all_pages = supabase.table("pages")\
     .in_("paper_id", [p['id'] for p in papers.data if papers.data])\
     .execute()
 total_pages = all_pages.count if all_pages.count else 0
-print(f"📝 Total pages: {total_pages}")
+print(f"[INFO] Total pages: {total_pages}")
 
 # Get classified pages (topics array not empty)
 if papers.data:
@@ -53,15 +53,15 @@ if papers.data:
         .execute()
     classified_count = classified.count if classified.count else 0
     
-    print(f"✅ Classified pages: {classified_count}")
-    print(f"⏳ Remaining: {total_pages - classified_count}")
+    print(f"[OK] Classified pages: {classified_count}")
+    print(f"[WAIT] Remaining: {total_pages - classified_count}")
     
     if total_pages > 0:
         progress = (classified_count / total_pages) * 100
-        print(f"📊 Progress: {progress:.1f}%")
+        print(f"[PROGRESS] Progress: {progress:.1f}%")
     
     # Get topic distribution
-    print(f"\n📊 Topic Distribution:")
+    print(f"\n[TOPICS] Topic Distribution:")
     for i in range(1, 11):
         topic_pages = supabase.table("pages")\
             .select("id", count="exact")\

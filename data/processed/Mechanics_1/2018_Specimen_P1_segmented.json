@@ -1,0 +1,148 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2018,
+    "season": "Specimen",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 2,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ms_pages": [
+        1
+      ],
+      "marks_ms": 25,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 3,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ms_pages": [
+        7
+      ],
+      "marks_ms": 63,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 4,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ms_pages": [
+        3
+      ],
+      "marks_ms": 28,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 5,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ms_pages": [
+        5
+      ],
+      "marks_ms": 41,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 6,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ms_pages": [
+        7
+      ],
+      "marks_ms": 63,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    },
+    {
+      "qnum": 7,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "ms_pages": [
+        7
+      ],
+      "marks_ms": 63,
+      "marks_meta": {
+        "mode": "summed"
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 6,
+    "ms_linking_pct": 100.0,
+    "qp_pages": 10,
+    "ms_pages": 10
+  }
+}

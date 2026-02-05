@@ -1,0 +1,70 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2012,
+    "season": "Jun",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 1,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ms_pages": [
+        10
+      ],
+      "marks_ms": 22,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.1",
+        "difficulty": "easy",
+        "confidence": 0.0,
+        "page_has_question": false
+      }
+    },
+    {
+      "qnum": 2,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "ms_pages": [
+        6
+      ],
+      "marks_ms": 5,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.1",
+        "difficulty": "easy",
+        "confidence": 0.0,
+        "page_has_question": false
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 2,
+    "ms_linking_pct": 100.0,
+    "qp_pages": 9,
+    "ms_pages": 18
+  }
+}

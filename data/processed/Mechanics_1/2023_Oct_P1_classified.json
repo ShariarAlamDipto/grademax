@@ -1,0 +1,338 @@
+{
+  "subject_code": "WME01",
+  "paper": {
+    "year": 2023,
+    "season": "Oct",
+    "paper_number": "P1"
+  },
+  "questions": [
+    {
+      "qnum": 2,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ms_pages": [
+        7
+      ],
+      "marks_ms": 43,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.95,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 3,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ms_pages": [
+        8
+      ],
+      "marks_ms": 15,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 4,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ms_pages": [
+        10
+      ],
+      "marks_ms": 27,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 5,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ms_pages": [
+        11
+      ],
+      "marks_ms": 29,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 6,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ms_pages": [
+        12
+      ],
+      "marks_ms": 12,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 7,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ms_pages": [
+        14
+      ],
+      "marks_ms": 42,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.9,
+        "page_has_question": true
+      }
+    },
+    {
+      "qnum": 15,
+      "qp_pages": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27
+      ],
+      "ms_pages": [
+        14
+      ],
+      "marks_ms": 42,
+      "marks_meta": {
+        "mode": "summed"
+      },
+      "classification": {
+        "topic": "M1.7",
+        "difficulty": "medium",
+        "confidence": 0.95,
+        "page_has_question": true
+      }
+    }
+  ],
+  "metrics": {
+    "question_count": 7,
+    "ms_linking_pct": 100.0,
+    "qp_pages": 28,
+    "ms_pages": 17
+  }
+}
