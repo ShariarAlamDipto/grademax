@@ -8,10 +8,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="text-center px-4 md:px-8 pt-8 md:pt-16">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-          Your AI-Powered Study Assistant for IGCSE & A Level Success
+          GradeMax - Your AI-Powered Study Assistant for IGCSE & A Level Success
         </h1>
         <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-          Generate custom worksheets from real past papers, practice topic-wise questions, 
+          GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, 
           and ace your Cambridge and Edexcel exams with smart revision tools.
         </p>
       </section>
