@@ -2,19 +2,18 @@
 import { useEffect, useMemo, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 
-export default function SubjectDropdown({ currentLevel }: { currentLevel: "igcse" | "ial" | null }) {
+export default function SubjectDropdown({ currentLevel, initialEnrolled }: { currentLevel: "igcse" | "ial" | null; initialEnrolled: string[] }) {
   const [open, setOpen] = useState(false)
   const [all, setAll] = useState<{ id: string; name: string; level: string }[]>([])
-  const [enrolled, setEnrolled] = useState<Set<string>>(new Set())
+  const [enrolled, setEnrolled] = useState<Set<string>>(new Set(initialEnrolled))
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    Promise.all([
-      supabase.from("subjects").select("id,name,level").then(({ data }) => setAll(data || [])),
-      supabase.from("user_subjects").select("subject_id").then(({ data }) => {
-        setEnrolled(new Set((data || []).map((r) => r.subject_id)))
-      }),
-    ]).finally(() => setLoading(false))
+    // Only fetch subjects catalog - enrolled already passed as prop
+    supabase.from("subjects").select("id,name,level").then(({ data }) => {
+      setAll(data || [])
+      setLoading(false)
+    })
   }, [])
 
   const list = useMemo(

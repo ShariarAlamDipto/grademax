@@ -22,7 +22,7 @@ export default async function DashboardPage() {
 
   // Run upsert and profile fetch in parallel where possible
   // Use upsert with select to combine two calls into one
-  const [, { data: profile }] = await Promise.all([
+  const [, { data: profile }, { data: userSubjects }] = await Promise.all([
     supabase
       .from("profiles")
       .upsert(
@@ -42,10 +42,14 @@ export default async function DashboardPage() {
       .select("study_level, marks_goal_pct")
       .eq("id", user.id)
       .single(),
+    supabase
+      .from("user_subjects")
+      .select("subject_id"),
   ])
 
   const studyLevel = (profile?.study_level as "igcse" | "ial" | null) ?? null
   const marksGoal = profile?.marks_goal_pct ?? 90
+  const subjectIds = (userSubjects || []).map((r: { subject_id: string }) => r.subject_id)
 
   return (
     <main className="min-h-screen bg-black text-white px-6 pb-16">
@@ -69,16 +73,16 @@ export default async function DashboardPage() {
         {/* Left column: Level, Goal, Subjects */}
         <div className="md:col-span-1 space-y-6">
           <LevelAndGoal initialLevel={studyLevel} initialGoal={marksGoal} />
-          <SubjectDropdown currentLevel={studyLevel} />
+          <SubjectDropdown currentLevel={studyLevel} initialEnrolled={subjectIds} />
         </div>
 
         {/* Right column: Timer + Papers + Chart */}
         <div className="md:col-span-2 space-y-6">
           <div className="grid gap-6 md:grid-cols-2">
             <CircularTimer />
-            <LazyMarksChart />
+            <LazyMarksChart firstSubjectId={subjectIds[0] || null} />
           </div>
-          <PapersChecklist />
+          <PapersChecklist initialSubjectIds={subjectIds} marksGoal={marksGoal} userId={user.id} />
         </div>
       </div>
     </main>

@@ -48,8 +48,6 @@ export async function POST(request: Request) {
       shuffle = false
     } = body;
 
-    console.log('Generate request:', { subjectCode, topics, yearStart, yearEnd, difficulty, limit });
-
     if (!topics || topics.length === 0) {
       return NextResponse.json(
         { error: 'Topics are required' },
@@ -80,14 +78,11 @@ export async function POST(request: Request) {
     const { data: matchingPapers, error: paperError } = await paperQuery;
 
     if (paperError) {
-      console.error('Error fetching papers:', paperError);
       return NextResponse.json(
         { error: 'Failed to fetch papers', details: paperError.message },
         { status: 500 }
       );
     }
-
-    console.log(`Found ${matchingPapers?.length || 0} matching papers`);
 
     if (!matchingPapers || matchingPapers.length === 0) {
       return NextResponse.json(
@@ -135,10 +130,7 @@ export async function POST(request: Request) {
 
     const { data: pages, error } = await query;
 
-    console.log(`Query returned ${pages?.length || 0} pages`);
-
     if (error) {
-      console.error('Query error:', error);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
@@ -216,9 +208,6 @@ export async function POST(request: Request) {
       season: page.papers?.season,
       paper: page.papers?.paper_number
     }));
-
-    console.log(`Generated worksheet with ${formattedPages.length} pages`);
-    console.log('Sample page:', formattedPages[0]);
 
     return NextResponse.json({
       worksheet_id: worksheet.id,

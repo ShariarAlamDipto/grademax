@@ -74,7 +74,7 @@ export default function WorksheetGeneratorPage() {
   const [shuffle, setShuffle] = useState<boolean>(false);
   
   const [loading, setLoading] = useState(false);
-  const [generatingPDF, setGeneratingPDF] = useState(false);
+  const [pdfProgress, setPdfProgress] = useState<{ step: number; total: number; label: string } | null>(null);
   const [worksheetId, setWorksheetId] = useState<string | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -209,11 +209,11 @@ export default function WorksheetGeneratorPage() {
   const handleDownload = async () => {
     if (!worksheetId) return;
 
-    setGeneratingPDF(true);
     setError(null);
 
     try {
-      // Download worksheet PDF
+      // Step 1: Download worksheet PDF
+      setPdfProgress({ step: 1, total: 3, label: 'Building worksheet PDF...' });
       const worksheetResponse = await fetch(`/api/worksheets/${worksheetId}/download?type=worksheet`);
       
       if (!worksheetResponse.ok) {
@@ -225,7 +225,8 @@ export default function WorksheetGeneratorPage() {
       const worksheetUrl = URL.createObjectURL(worksheetBlob);
       setWorksheetUrl(worksheetUrl);
 
-      // Download markscheme PDF
+      // Step 2: Download markscheme PDF
+      setPdfProgress({ step: 2, total: 3, label: 'Building markscheme PDF...' });
       const markschemeResponse = await fetch(`/api/worksheets/${worksheetId}/download?type=markscheme`);
       
       if (markschemeResponse.ok) {
@@ -234,10 +235,13 @@ export default function WorksheetGeneratorPage() {
         setMarkschemeUrl(markschemeUrl);
       }
 
+      // Step 3: Done
+      setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
+      setTimeout(() => setPdfProgress(null), 2000);
+
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Failed to generate PDFs');
-    } finally {
-      setGeneratingPDF(false);
+      setPdfProgress(null);
     }
   };
 
@@ -483,12 +487,53 @@ export default function WorksheetGeneratorPage() {
               
               <button
                 onClick={handleDownload}
-                disabled={generatingPDF}
+                disabled={pdfProgress !== null}
                 className="w-full sm:w-auto bg-green-500 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-green-600 transition-colors disabled:opacity-50 text-sm md:text-base"
               >
-                {generatingPDF ? 'Creating PDFs...' : 'Download PDFs'}
+                {pdfProgress ? pdfProgress.label : 'Download PDFs'}
               </button>
             </div>
+
+            {/* PDF Progress Bar */}
+            {pdfProgress && (
+              <div className="bg-gray-900 border border-gray-600 rounded-xl p-4 md:p-6 mb-4 md:mb-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-sm font-semibold text-white">{pdfProgress.label}</span>
+                  <span className="text-xs text-gray-400">Step {pdfProgress.step} of {pdfProgress.total}</span>
+                </div>
+                <div className="w-full h-3 bg-gray-700 rounded-full overflow-hidden">
+                  <div
+                    className="h-full rounded-full transition-all duration-500 ease-out"
+                    style={{
+                      width: `${Math.round((pdfProgress.step / pdfProgress.total) * 100)}%`,
+                      background: pdfProgress.step === pdfProgress.total
+                        ? 'linear-gradient(to right, #22c55e, #10b981)'
+                        : 'linear-gradient(to right, #3b82f6, #6366f1)',
+                    }}
+                  />
+                </div>
+                <div className="flex justify-between mt-3 gap-1">
+                  {['Worksheet PDF', 'Markscheme PDF', 'Complete'].map((stepLabel, i) => (
+                    <div key={stepLabel} className="flex items-center gap-1.5 text-xs">
+                      <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                        i + 1 < pdfProgress.step
+                          ? 'bg-green-400'
+                          : i + 1 === pdfProgress.step
+                          ? 'bg-blue-400 animate-pulse'
+                          : 'bg-gray-600'
+                      }`} />
+                      <span className={
+                        i + 1 < pdfProgress.step
+                          ? 'text-green-400'
+                          : i + 1 === pdfProgress.step
+                          ? 'text-blue-300'
+                          : 'text-gray-500'
+                      }>{stepLabel}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Download Links */}
             {(worksheetUrl || markschemeUrl) && (
