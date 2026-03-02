@@ -1,5 +1,5 @@
 // src/app/page.tsx
-import WorryCatcher from "@/components/WorryCatcher"
+import LazyWorryCatcher from "@/components/LazyWorryCatcher"
 import Link from "next/link"
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
         <p className="text-center text-gray-400 text-sm mb-4">
           Catch your worries - click on them!
         </p>
-        <WorryCatcher />
+        <LazyWorryCatcher />
       </section>
 
       {/* Features Section */}

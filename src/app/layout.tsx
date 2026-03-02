@@ -6,10 +6,9 @@ import { Analytics } from '@vercel/analytics/react'
 import { Playfair_Display } from 'next/font/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import { AuthProvider } from '@/context/AuthContext'
 
-const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400','500','600','700','800','900'] });
+const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700'], display: 'swap' });
 
 // JSON-LD Structured Data for Brand Recognition
 const jsonLd = {
@@ -151,12 +150,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={playfair.className}>
       <head>
-        <Script
-          id="json-ld"
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <link rel="canonical" href="https://grademax.me" />
       </head>
       <body className="bg-black text-white min-h-screen flex flex-col">
         <AuthProvider>

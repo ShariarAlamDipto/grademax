@@ -6,7 +6,7 @@ import LevelAndGoal from "@/components/dashboard/LevelAndGoal"
 import SubjectDropdown from "@/components/dashboard/SubjectDropdown"
 import PapersChecklist from "@/components/dashboard/PapersChecklist"
 import CircularTimer from "@/components/dashboard/CircularTimer"
-import MarksChart from "@/components/dashboard/MarksChart"
+import LazyMarksChart from "@/components/dashboard/LazyMarksChart"
 import Link from "next/link"
 
 export default async function DashboardPage() {
@@ -20,27 +20,29 @@ export default async function DashboardPage() {
     user.email?.split("@")[0] ||
     "Student"
 
-  // Ensure profile exists (upsert in case the trigger didn't fire)
-  await supabase
-    .from("profiles")
-    .upsert(
-      {
-        id: user.id,
-        email: user.email,
-        full_name:
-          (user.user_metadata?.full_name as string) ||
-          (user.user_metadata?.name as string) ||
-          null,
-        avatar_url: (user.user_metadata?.avatar_url as string) || null,
-      },
-      { onConflict: "id", ignoreDuplicates: true }
-    )
-
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("study_level, marks_goal_pct")
-    .eq("id", user.id)
-    .single()
+  // Run upsert and profile fetch in parallel where possible
+  // Use upsert with select to combine two calls into one
+  const [, { data: profile }] = await Promise.all([
+    supabase
+      .from("profiles")
+      .upsert(
+        {
+          id: user.id,
+          email: user.email,
+          full_name:
+            (user.user_metadata?.full_name as string) ||
+            (user.user_metadata?.name as string) ||
+            null,
+          avatar_url: (user.user_metadata?.avatar_url as string) || null,
+        },
+        { onConflict: "id", ignoreDuplicates: true }
+      ),
+    supabase
+      .from("profiles")
+      .select("study_level, marks_goal_pct")
+      .eq("id", user.id)
+      .single(),
+  ])
 
   const studyLevel = (profile?.study_level as "igcse" | "ial" | null) ?? null
   const marksGoal = profile?.marks_goal_pct ?? 90
@@ -74,7 +76,7 @@ export default async function DashboardPage() {
         <div className="md:col-span-2 space-y-6">
           <div className="grid gap-6 md:grid-cols-2">
             <CircularTimer />
-            <MarksChart />
+            <LazyMarksChart />
           </div>
           <PapersChecklist />
         </div>
