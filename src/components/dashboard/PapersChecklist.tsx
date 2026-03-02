@@ -5,26 +5,12 @@ import { supabase } from "@/lib/supabaseClient"
 type Paper = { id: string; year: number; session: string; paper_code: string; max_score: number }
 type Attempt = { id: string; paper_id: string | null; subject_id: string; percentage: number | null; raw_score: number | null }
 
-export default function PapersChecklist() {
-  const [goal, setGoal] = useState(90)
-  const [subjectIds, setSubjectIds] = useState<string[]>([])
+export default function PapersChecklist({ initialSubjectIds, marksGoal, userId }: { initialSubjectIds: string[]; marksGoal: number; userId: string }) {
+  const [goal] = useState(marksGoal)
+  const [subjectIds, setSubjectIds] = useState<string[]>(initialSubjectIds)
   const [papers, setPapers] = useState<Paper[]>([])
   const [attempts, setAttempts] = useState<Attempt[]>([])
   const [loading, setLoading] = useState(true)
-
-  // Load profile goal + user subjects
-  useEffect(() => {
-    async function init() {
-      const [, prof, us] = await Promise.all([
-        supabase.auth.getUser(),
-        supabase.from("profiles").select("marks_goal_pct").maybeSingle(),
-        supabase.from("user_subjects").select("subject_id"),
-      ])
-      setGoal(prof.data?.marks_goal_pct ?? 90)
-      setSubjectIds((us.data || []).map(r => r.subject_id))
-    }
-    init()
-  }, [])
 
   // Load papers & attempts for the first selected subject (expand later to tabs)
   useEffect(() => {
@@ -56,10 +42,8 @@ export default function PapersChecklist() {
   async function markComplete(paper: Paper, raw: number) {
     // Create a finished attempt (no timer) with the entered raw score
     const percent = Math.max(0, Math.min(100, (raw / (paper.max_score || 100)) * 100))
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) return
     const { error } = await supabase.from("paper_attempts").insert({
-      user_id: user.id,
+      user_id: userId,
       subject_id: subjectIds[0],
       year: paper.year,
       session: paper.session,

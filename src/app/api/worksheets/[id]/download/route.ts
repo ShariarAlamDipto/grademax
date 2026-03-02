@@ -30,15 +30,27 @@ async function downloadPDF(url: string): Promise<ArrayBuffer> {
 async function mergePDFs(pdfUrls: string[]): Promise<Uint8Array> {
   const mergedPdf = await PDFDocument.create();
 
-  for (const url of pdfUrls) {
+  // Download all PDFs in parallel (batches of 10 to avoid overwhelming)
+  const batchSize = 10;
+  const pdfBytesArray: (ArrayBuffer | null)[] = [];
+  
+  for (let i = 0; i < pdfUrls.length; i += batchSize) {
+    const batch = pdfUrls.slice(i, i + batchSize);
+    const results = await Promise.allSettled(batch.map(url => downloadPDF(url)));
+    for (const result of results) {
+      pdfBytesArray.push(result.status === 'fulfilled' ? result.value : null);
+    }
+  }
+
+  // Merge in order
+  for (const pdfBytes of pdfBytesArray) {
+    if (!pdfBytes) continue;
     try {
-      const pdfBytes = await downloadPDF(url);
       const pdf = await PDFDocument.load(pdfBytes);
       const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
       copiedPages.forEach((page) => mergedPdf.addPage(page));
     } catch (error) {
-      console.error(`Error processing PDF ${url}:`, error);
-      // Continue with other PDFs
+      console.error('Error merging PDF page:', error);
     }
   }
 

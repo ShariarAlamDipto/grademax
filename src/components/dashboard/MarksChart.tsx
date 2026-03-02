@@ -5,27 +5,24 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceL
 
 type Attempt = { created_at: string; percentage: number | null };
 
-export default function MarksChart() {
+export default function MarksChart({ firstSubjectId }: { firstSubjectId: string | null }) {
   const [attempts, setAttempts] = useState<Attempt[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function load() {
-      // Get first subject
-      const us = await supabase.from("user_subjects").select("subject_id");
-      const sid = us.data?.[0]?.subject_id || null;
-      if (!sid) { setAttempts([]); setLoading(false); return; }
+      if (!firstSubjectId) { setAttempts([]); setLoading(false); return; }
       const pa = await supabase
         .from("paper_attempts")
         .select("created_at, percentage")
-        .eq("subject_id", sid)
+        .eq("subject_id", firstSubjectId)
         .order("created_at", { ascending: true })
         .limit(200);
       setAttempts(pa.data || []);
       setLoading(false);
     }
     load();
-  }, []);
+  }, [firstSubjectId]);
 
   const data = (attempts || []).filter(a => typeof a.percentage === "number").map((a, i) => ({
     i,

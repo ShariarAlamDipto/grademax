@@ -11,6 +11,6 @@ const MarksChart = dynamic(() => import("@/components/dashboard/MarksChart"), {
   ),
 })
 
-export default function LazyMarksChart() {
-  return <MarksChart />
+export default function LazyMarksChart({ firstSubjectId }: { firstSubjectId: string | null }) {
+  return <MarksChart firstSubjectId={firstSubjectId} />
 }
