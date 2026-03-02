@@ -2,34 +2,41 @@ import { NextResponse, type NextRequest } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 
 export async function middleware(request: NextRequest) {
-  let response = NextResponse.next({ request: { headers: request.headers } })
+  // Create a response we can mutate
+  const response = NextResponse.next({
+    request: { headers: request.headers },
+  })
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
-        get(name: string) {
-          return request.cookies.get(name)?.value
+        getAll() {
+          return request.cookies.getAll()
         },
-        set(name: string, value: string, options: Record<string, unknown>) {
-          request.cookies.set(name, value)
-          response = NextResponse.next({ request: { headers: request.headers } })
-          response.cookies.set(name, value, options as Record<string, string>)
-        },
-        remove(name: string, options: Record<string, unknown>) {
-          request.cookies.set(name, "")
-          response = NextResponse.next({ request: { headers: request.headers } })
-          response.cookies.set(name, "", options as Record<string, string>)
+        setAll(cookiesToSet) {
+          // Write into the request so downstream server components can read them
+          cookiesToSet.forEach(({ name, value }) => {
+            request.cookies.set(name, value)
+          })
+          // Write into the response so the browser stores them
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options)
+          })
         },
       },
     }
   )
 
-  // Refresh the session (important for server components)
-  const { data: { user } } = await supabase.auth.getUser()
+  // IMPORTANT: always call getUser() so the session gets refreshed
+  // and cookies are written. Do NOT use getSession() — it doesn't
+  // validate the JWT with the Supabase Auth server.
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
 
-  // Protected routes - redirect to login if not authenticated
+  // Protected routes — redirect to login if not authenticated
   const protectedPaths = ["/dashboard", "/profile", "/generate"]
   const isProtected = protectedPaths.some((p) =>
     request.nextUrl.pathname.startsWith(p)
