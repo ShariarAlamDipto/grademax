@@ -62,6 +62,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       setSession(s)
       setUser(s?.user ?? null)
       if (s?.user) {
+        // Sync cookies to the server immediately
+        await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
         await fetchProfile(s.user.id)
       }
       setLoading(false)
@@ -70,13 +72,21 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (_event, s) => {
+      async (event, s) => {
         setSession(s)
         setUser(s?.user ?? null)
         if (s?.user) {
+          // Sync cookies to the server FIRST so server components can read them
+          await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
           await fetchProfile(s.user.id)
-          // Refresh server-side cookies
-          await fetch("/api/auth/refresh", { method: "POST" })
+
+          // After SIGNED_IN event, if we're still on /login, navigate to dashboard
+          if (event === "SIGNED_IN" && window.location.pathname === "/login") {
+            const params = new URLSearchParams(window.location.search)
+            const next = params.get("next") || "/dashboard"
+            window.location.href = next
+            return
+          }
         } else {
           setProfile(null)
         }

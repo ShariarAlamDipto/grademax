@@ -56,6 +56,8 @@ function LoginForm() {
       if (signInError) {
         setError(signInError.message)
       } else {
+        // Sync cookies to the server before redirect
+        await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
         window.location.href = nextUrl
       }
     }
