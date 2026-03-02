@@ -7,6 +7,7 @@ import { Playfair_Display } from 'next/font/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { AuthProvider } from '@/context/AuthContext'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['400','500','600','700','800','900'] });
 
@@ -21,11 +22,11 @@ const jsonLd = {
       url: 'https://grademax.me',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://grademax.me/logo.png',
+        url: 'https://grademax.me/icon.svg',
         width: 512,
         height: 512
       },
-      description: 'GradeMax is the ultimate AI-powered study platform for IGCSE and A Level students.',
+      description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
       sameAs: [
         // Add your social profiles here when created
         // 'https://twitter.com/grademax',
@@ -56,14 +57,14 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': 'https://grademax.me/#webpage',
       url: 'https://grademax.me',
-      name: 'GradeMax - AI Study Assistant for IGCSE & A Level Students',
+      name: 'GradeMax - Past Papers | Chapterwise Worksheet | Lecture Notes',
       isPartOf: {
         '@id': 'https://grademax.me/#website'
       },
       about: {
         '@id': 'https://grademax.me/#organization'
       },
-      description: 'GradeMax helps IGCSE and A Level students prepare for exams with AI-powered worksheet generation and topic-wise past paper practice.',
+      description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
       inLanguage: 'en-US'
     },
     {
@@ -71,7 +72,7 @@ const jsonLd = {
       '@id': 'https://grademax.me/#educationalorg',
       name: 'GradeMax',
       url: 'https://grademax.me',
-      description: 'Online study platform providing exam preparation resources for IGCSE and A Level students worldwide.',
+      description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
       areaServed: 'Worldwide',
       audience: {
         '@type': 'EducationalAudience',
@@ -85,15 +86,19 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://grademax.me'),
   title: {
-    default: 'GradeMax - AI Study Assistant for IGCSE & A Level Students',
+    default: 'GradeMax - Past Papers | Chapterwise Worksheet | Lecture Notes',
     template: '%s | GradeMax'
   },
-  description: 'GradeMax is the ultimate AI-powered study platform for IGCSE and A Level students. Generate custom worksheets from past papers, practice topic-wise questions, and ace your exams with smart revision tools.',
+  description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
   keywords: ['GradeMax', 'grademax', 'grade max', 'IGCSE study', 'A Level revision', 'past papers', 'worksheet generator', 'exam preparation', 'Cambridge IGCSE', 'Edexcel A Level', 'O Level', 'practice questions', 'mark scheme', 'study assistant', 'AI tutor'],
   authors: [{ name: 'GradeMax Team' }],
   creator: 'GradeMax',
   publisher: 'GradeMax',
   applicationName: 'GradeMax',
+  icons: {
+    icon: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
   generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
   formatDetection: {
@@ -109,22 +114,22 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://grademax.me',
     siteName: 'GradeMax',
-    title: 'GradeMax - AI Study Assistant for IGCSE & A Level Students',
-    description: 'Generate custom worksheets from past papers, practice topic-wise questions, and ace your IGCSE & A Level exams with GradeMax.',
+    title: 'GradeMax - Past Papers | Chapterwise Worksheet | Lecture Notes',
+    description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
     images: [
       {
-        url: '/og-image.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'GradeMax - Smart Exam Preparation for IGCSE & A Level',
+        alt: 'GradeMax - Study Assistant for IGCSE & A Level Success',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GradeMax - AI Study Assistant for IGCSE & A Level',
-    description: 'Generate custom worksheets from past papers and ace your exams with GradeMax.',
-    images: ['/og-image.png'],
+    title: 'GradeMax - Study Assistant for IGCSE & A Level Success',
+    description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams.',
+    images: ['/opengraph-image'],
     creator: '@grademax',
     site: '@grademax',
   },
@@ -154,9 +159,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="canonical" href="https://grademax.me" />
       </head>
       <body className="bg-black text-white min-h-screen flex flex-col">
-        <Navbar />
-        <div className="pt-36 flex-1">{children}</div>
-        <Footer />
+        <AuthProvider>
+          <Navbar />
+          <div className="pt-36 flex-1">{children}</div>
+          <Footer />
+        </AuthProvider>
         <Analytics />
         <SpeedInsights />
       </body>

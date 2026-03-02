@@ -7,7 +7,7 @@ import SubjectDropdown from "@/components/dashboard/SubjectDropdown"
 import PapersChecklist from "@/components/dashboard/PapersChecklist"
 import CircularTimer from "@/components/dashboard/CircularTimer"
 import MarksChart from "@/components/dashboard/MarksChart"
-import AuthButton from "@/components/AuthButton"
+import Link from "next/link"
 
 export default async function DashboardPage() {
   const supabase = getSupabaseServer()
@@ -20,6 +20,22 @@ export default async function DashboardPage() {
     user.email?.split("@")[0] ||
     "Student"
 
+  // Ensure profile exists (upsert in case the trigger didn't fire)
+  await supabase
+    .from("profiles")
+    .upsert(
+      {
+        id: user.id,
+        email: user.email,
+        full_name:
+          (user.user_metadata?.full_name as string) ||
+          (user.user_metadata?.name as string) ||
+          null,
+        avatar_url: (user.user_metadata?.avatar_url as string) || null,
+      },
+      { onConflict: "id", ignoreDuplicates: true }
+    )
+
   const { data: profile } = await supabase
     .from("profiles")
     .select("study_level, marks_goal_pct")
@@ -31,11 +47,19 @@ export default async function DashboardPage() {
 
   return (
     <main className="min-h-screen bg-black text-white px-6 pb-16">
-      {/* Header */}
-      <div className="sticky top-0 z-10 bg-black/60 backdrop-blur border-b border-white/10 -mx-6 px-6 py-4 mb-6">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <h1 className="text-xl md:text-2xl font-semibold">Hi, {displayName} 👋</h1>
-          <AuthButton />
+      {/* Dashboard Header */}
+      <div className="max-w-6xl mx-auto py-6 mb-2">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl md:text-3xl font-bold">Hi, {displayName} 👋</h1>
+            <p className="text-sm text-white/50 mt-1">Welcome to your dashboard</p>
+          </div>
+          <Link
+            href="/profile"
+            className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
+          >
+            Edit Profile
+          </Link>
         </div>
       </div>
 
