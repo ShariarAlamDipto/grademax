@@ -84,6 +84,13 @@ export default function WorryCatcher() {
     }
     resizeCanvas()
 
+    // Debounce resize events
+    let resizeTimer: ReturnType<typeof setTimeout>
+    const debouncedResize = () => {
+      clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(resizeCanvas, 100)
+    }
+
     const rand = (min: number, max: number) => Math.random() * (max - min) + min
     const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v))
 
@@ -121,7 +128,7 @@ export default function WorryCatcher() {
       mouse.y = e.clientY - rect.top
     }
     canvas.addEventListener("mousemove", onMove)
-    window.addEventListener("resize", resizeCanvas)
+    window.addEventListener("resize", debouncedResize)
 
     // ----- collisions -----
     function resolveBubbleCollisions() {
@@ -161,6 +168,20 @@ export default function WorryCatcher() {
       }
     }
 
+    // Pre-render a blurred white circle offscreen once (avoid per-frame filter)
+    const blurSize = 160 // max bubble diameter + padding
+    const blurCanvas = document.createElement("canvas")
+    blurCanvas.width = blurSize
+    blurCanvas.height = blurSize
+    const blurCtx = blurCanvas.getContext("2d")!
+    blurCtx.filter = "blur(6px)"
+    blurCtx.globalAlpha = 0.18
+    blurCtx.fillStyle = "#fff"
+    blurCtx.beginPath()
+    blurCtx.arc(blurSize / 2, blurSize / 2, blurSize * 0.38, 0, Math.PI * 2)
+    blurCtx.fill()
+    blurCtx.filter = "none"
+
     // ----- draw helpers (glassy bubble) -----
     function drawGlassBubble(x: number, y: number, r: number, text: string) {
       // halo / lens glow
@@ -197,19 +218,19 @@ export default function WorryCatcher() {
       c.arc(x, y, r - 0.6, 0, Math.PI * 2)
       c.stroke()
 
-      // inner glow (blurred, clipped)
+      // inner glow — draw from pre-rendered offscreen canvas (no per-frame blur)
       c.save()
       c.beginPath()
       c.arc(x, y, r * 0.82, 0, Math.PI * 2)
       c.clip()
-  c.filter = "blur(6px)"
-      c.globalAlpha = 0.18
-      c.fillStyle = "#fff"
-      c.beginPath()
-      c.arc(x - r * 0.2, y - r * 0.2, r * 0.75, 0, Math.PI * 2)
-      c.fill()
-  c.filter = "none"
-      c.globalAlpha = 1
+      const scale = (r * 2) / blurSize
+      c.drawImage(
+        blurCanvas,
+        x - r * 0.2 - blurSize * scale * 0.5,
+        y - r * 0.2 - blurSize * scale * 0.5,
+        blurSize * scale,
+        blurSize * scale
+      )
       c.restore()
 
       // caustic reflection arcs
@@ -407,8 +428,9 @@ export default function WorryCatcher() {
 
     return () => {
       cancelAnimationFrame(anim)
+      clearTimeout(resizeTimer)
       canvas.removeEventListener("mousemove", onMove)
-      window.removeEventListener("resize", resizeCanvas)
+      window.removeEventListener("resize", debouncedResize)
     }
   }, [started])
 

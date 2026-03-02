@@ -6,12 +6,15 @@ export default function SubjectDropdown({ currentLevel }: { currentLevel: "igcse
   const [open, setOpen] = useState(false)
   const [all, setAll] = useState<{ id: string; name: string; level: string }[]>([])
   const [enrolled, setEnrolled] = useState<Set<string>>(new Set())
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    supabase.from("subjects").select("id,name,level").then(({ data }) => setAll(data || []))
-    supabase.from("user_subjects").select("subject_id").then(({ data }) => {
-      setEnrolled(new Set((data || []).map((r) => r.subject_id)))
-    })
+    Promise.all([
+      supabase.from("subjects").select("id,name,level").then(({ data }) => setAll(data || [])),
+      supabase.from("user_subjects").select("subject_id").then(({ data }) => {
+        setEnrolled(new Set((data || []).map((r) => r.subject_id)))
+      }),
+    ]).finally(() => setLoading(false))
   }, [])
 
   const list = useMemo(
@@ -45,7 +48,13 @@ export default function SubjectDropdown({ currentLevel }: { currentLevel: "igcse
         </button>
       </div>
 
-      {open && (
+      {loading ? (
+        <div className="mt-4 space-y-2">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className="h-5 w-32 rounded bg-white/10 animate-pulse" />
+          ))}
+        </div>
+      ) : open ? (
         <div className="mt-4 max-h-64 overflow-auto space-y-2 pr-1">
           {list.map((s) => {
             const on = enrolled.has(s.id)
@@ -62,9 +71,7 @@ export default function SubjectDropdown({ currentLevel }: { currentLevel: "igcse
             )
           })}
         </div>
-      )}
-
-      {!open && (
+      ) : (
         <p className="mt-2 text-sm text-white/70">
           {currentLevel ? `Showing ${currentLevel.toUpperCase()} subjects.` : "Pick your exam level to filter subjects."}
         </p>

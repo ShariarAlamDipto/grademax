@@ -89,19 +89,14 @@ export default function WorksheetGeneratorPage() {
   useEffect(() => {
     async function fetchSubjects() {
       try {
-        console.log('[Generate] Fetching subjects...');
         const response = await fetch('/api/subjects');
-        console.log('[Generate] Subjects response status:', response.status);
         const data = await response.json();
-        console.log('[Generate] Subjects data:', data);
         
         // Ensure data is an array
         if (Array.isArray(data)) {
-          console.log('[Generate] Setting subjects:', data.length, 'subjects found');
           setSubjects(data);
           // Set first subject as default
           if (data.length > 0) {
-            console.log('[Generate] Setting default subject:', data[0].id);
             setSelectedSubject(data[0].id);
           }
         } else {
@@ -192,9 +187,6 @@ export default function WorksheetGeneratorPage() {
 
       const data = await response.json();
 
-      console.log('Generate response:', data);
-      console.log('Pages returned:', data.pages?.length || 0);
-
       if (!response.ok) {
         throw new Error(data.error || 'Failed to generate worksheet');
       }
@@ -204,9 +196,6 @@ export default function WorksheetGeneratorPage() {
         return;
       }
 
-      console.log('Setting worksheet ID:', data.worksheet_id);
-      console.log('Setting questions:', data.pages);
-      
       setWorksheetId(data.worksheet_id);
       setQuestions(data.pages);
 

@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 
 export default function LevelAndGoal({
@@ -20,7 +20,7 @@ export default function LevelAndGoal({
     setSaving(false)
   }
 
-  useEffect(() => { /* optionally autosave */ }, [])
+  // autosave removed – manual save only
 
   return (
     <section className="rounded-2xl border border-white/10 bg-white/5 p-4">

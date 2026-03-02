@@ -7,13 +7,14 @@ type Attempt = { created_at: string; percentage: number | null };
 
 export default function MarksChart() {
   const [attempts, setAttempts] = useState<Attempt[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function load() {
       // Get first subject
       const us = await supabase.from("user_subjects").select("subject_id");
       const sid = us.data?.[0]?.subject_id || null;
-      if (!sid) { setAttempts([]); return; }
+      if (!sid) { setAttempts([]); setLoading(false); return; }
       const pa = await supabase
         .from("paper_attempts")
         .select("created_at, percentage")
@@ -21,6 +22,7 @@ export default function MarksChart() {
         .order("created_at", { ascending: true })
         .limit(200);
       setAttempts(pa.data || []);
+      setLoading(false);
     }
     load();
   }, []);
@@ -47,31 +49,36 @@ export default function MarksChart() {
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
       <div className="mb-2 text-sm text-white/70">Performance Over Time</div>
-      <div className="h-64">
-        <ResponsiveContainer width="100%" height="100%">
-          <LineChart data={data} margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
-            <XAxis dataKey="date" hide />
-            <YAxis domain={[0, 100]} tick={{ fill: "#ddd", fontSize: 12 }} />
-            <Tooltip
-              contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,.1)" }}
-              labelStyle={{ color: "#fff" }}
-              formatter={(v: number) => [`${v}%`, "Score"]}
-            />
-            <Line type="monotone" dataKey="pct" stroke="#ffffff" strokeWidth={2} dot={false} />
-            {trend && (
-              <>
-                {/* Next predicted marker */}
-                <ReferenceLine y={trend.nextY} stroke="rgba(255,255,255,.4)" strokeDasharray="4 4" />
-              </>
-            )}
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-      {trend && (
-        <div className="mt-2 text-sm text-white/80">
-          If you continue at this pace, your next score may be around {" "}
-          <span className="font-semibold">{Math.round(trend.nextY)}%</span>.
-        </div>
+      {loading ? (
+        <div className="h-64 rounded-lg bg-white/5 animate-pulse" />
+      ) : (
+        <>
+          <div className="h-64">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={data} margin={{ left: 12, right: 12, top: 8, bottom: 8 }}>
+                <XAxis dataKey="date" hide />
+                <YAxis domain={[0, 100]} tick={{ fill: "#ddd", fontSize: 12 }} />
+                <Tooltip
+                  contentStyle={{ background: "#111", border: "1px solid rgba(255,255,255,.1)" }}
+                  labelStyle={{ color: "#fff" }}
+                  formatter={(v: number) => [`${v}%`, "Score"]}
+                />
+                <Line type="monotone" dataKey="pct" stroke="#ffffff" strokeWidth={2} dot={false} />
+                {trend && (
+                  <>
+                    <ReferenceLine y={trend.nextY} stroke="rgba(255,255,255,.4)" strokeDasharray="4 4" />
+                  </>
+                )}
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
+          {trend && (
+            <div className="mt-2 text-sm text-white/80">
+              If you continue at this pace, your next score may be around {" "}
+              <span className="font-semibold">{Math.round(trend.nextY)}%</span>.
+            </div>
+          )}
+        </>
       )}
     </div>
   );

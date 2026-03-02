@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  serverExternalPackages: [
+    "canvas",
+    "@xenova/transformers",
+    "pdf-to-png-converter",
+    "sharp",
+  ],
+  experimental: {
+    optimizePackageImports: ["recharts"],
+  },
   images: {
     remotePatterns: [
       {

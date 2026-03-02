@@ -116,7 +116,11 @@ export default function PapersChecklist() {
 
       {/* Papers list */}
       {loading ? (
-        <p className="text-sm text-white/70">Loading papers…</p>
+        <div className="space-y-2">
+          {[1, 2, 3, 4].map((i) => (
+            <div key={i} className="h-12 rounded-md bg-white/5 animate-pulse" />
+          ))}
+        </div>
       ) : !subjectIds[0] ? (
         <p className="text-sm text-white/70">Pick at least one subject from “Your subjects”.</p>
       ) : papers.length === 0 ? (
