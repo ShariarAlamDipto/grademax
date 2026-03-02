@@ -10,7 +10,6 @@ export async function GET(req: Request) {
   try {
     // Check environment variables
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-      console.error('Topics API: Missing Supabase credentials');
       return NextResponse.json([], { status: 200 });
     }
 
@@ -18,7 +17,6 @@ export async function GET(req: Request) {
     const subjectId = url.searchParams.get('subjectId')
     
     if (!subjectId) {
-      console.warn('Topics API: No subjectId provided')
       return NextResponse.json([], { status: 200 })
     }
     
@@ -29,14 +27,14 @@ export async function GET(req: Request) {
       .order('code')
     
     if (error) {
-      console.error('Topics API error:', error.message, error.details, error.hint)
       return NextResponse.json([], { status: 200 })
     }
     
-    console.log(`Topics API: Returning ${data?.length || 0} topics for subject ${subjectId}`);
-    return NextResponse.json(data || [], { status: 200 })
-  } catch (err) {
-    console.error('Topics API exception:', err)
+    return NextResponse.json(data || [], {
+      status: 200,
+      headers: { 'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=86400' },
+    })
+  } catch {
     return NextResponse.json([], { status: 200 })
   }
 }
