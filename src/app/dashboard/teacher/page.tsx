@@ -4,6 +4,8 @@ import { supabase } from "@/lib/supabaseClient"
 import { useCallback, useEffect, useState, useRef } from "react"
 import Link from "next/link"
 
+const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
+
 interface Subject {
   id: string
   name: string
@@ -50,10 +52,17 @@ export default function TeacherDashboardPage() {
   const fetchLectures = useCallback(async () => {
     if (!selectedSubject) return
     setLoadingLectures(true)
-    const res = await fetch(`/api/lectures?subject_id=${selectedSubject}`)
-    const data = await res.json()
-    setLectures(data.lectures || [])
-    setLoadingLectures(false)
+    try {
+      const res = await fetch(`/api/lectures?subject_id=${selectedSubject}`)
+      if (!res.ok) throw new Error(`Server error (${res.status})`)
+      const data = await res.json()
+      setLectures(data.lectures || [])
+    } catch (err) {
+      console.error("Failed to fetch lectures:", err)
+      setLectures([])
+    } finally {
+      setLoadingLectures(false)
+    }
   }, [selectedSubject])
 
   useEffect(() => {
@@ -184,7 +193,9 @@ export default function TeacherDashboardPage() {
     )
   }
 
-  if (profile && profile.role !== "teacher" && profile.role !== "admin") {
+  const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
+
+  if (profile && profile.role !== "teacher" && profile.role !== "admin" && !isSuperAdminUser) {
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center max-w-md">
