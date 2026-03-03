@@ -10,6 +10,7 @@ interface Profile {
   avatar_url: string | null
   study_level: string | null
   marks_goal_pct: number
+  role: "student" | "teacher" | "admin"
 }
 
 interface AuthContextType {
@@ -43,10 +44,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const fetchProfile = useCallback(async (userId: string) => {
     const { data } = await supabase
       .from("profiles")
-      .select("id, email, full_name, avatar_url, study_level, marks_goal_pct")
+      .select("id, email, full_name, avatar_url, study_level, marks_goal_pct, role")
       .eq("id", userId)
       .single()
-    setProfile(data)
+    setProfile(data ? { ...data, role: data.role || "student" } : null)
   }, [])
 
   const refreshProfile = useCallback(async () => {
