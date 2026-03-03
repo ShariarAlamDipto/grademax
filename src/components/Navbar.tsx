@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link"
-import { useCallback, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { useAuth } from "@/context/AuthContext"
 
 export default function Navbar() {
@@ -9,18 +9,15 @@ export default function Navbar() {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   // Close dropdown on outside click
-  const handleClickOutside = useCallback((e: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-      setDropdownOpen(false)
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setDropdownOpen(false)
+      }
     }
-  }, [])
-
-  // Use a ref-based approach to avoid re-registering on every render
-  const listenerRef = useRef(false)
-  if (!listenerRef.current && typeof document !== "undefined") {
     document.addEventListener("mousedown", handleClickOutside)
-    listenerRef.current = true
-  }
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   const initials = displayName
     ? displayName

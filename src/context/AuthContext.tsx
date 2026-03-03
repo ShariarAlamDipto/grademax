@@ -67,12 +67,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
 
         if (s?.user) {
-          // Bootstrap admin once per session, not every event
+          // Bootstrap admin once per session — await so profile fetch gets updated role
           if (!bootstrapped && s.user.email?.toLowerCase() === "shariardipto111@gmail.com") {
             bootstrapped = true
-            fetch("/api/admin/bootstrap", { method: "POST" }).catch(() => {})
+            try { await fetch("/api/admin/bootstrap", { method: "POST" }) } catch {}
           }
-          // Fetch profile (runs in parallel with bootstrap, no need to await it)
+          // Fetch profile AFTER bootstrap so the role is up-to-date
           await fetchProfileDirect(s.user.id)
         } else {
           setProfile(null)

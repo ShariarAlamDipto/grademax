@@ -19,9 +19,18 @@ export async function POST() {
     return NextResponse.json({ error: "Not a super admin" }, { status: 403 })
   }
 
-  // Use service role to bypass RLS and set role, fall back to regular client
+  // Use service role to bypass RLS, fall back to regular client
   const admin = getSupabaseAdmin()
   const db = admin || supabase
+
+  // Ensure profile exists before updating role
+  await db
+    .from("profiles")
+    .upsert(
+      { id: user.id, email: user.email },
+      { onConflict: "id", ignoreDuplicates: true }
+    )
+
   const { error } = await db
     .from("profiles")
     .update({ role: "admin" })

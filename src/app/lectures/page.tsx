@@ -148,7 +148,7 @@ export default function LecturesPage() {
             <p className="text-sm text-white/50 mt-1">Browse lecture materials uploaded by your teachers</p>
           </div>
           <div className="flex items-center gap-3">
-            {profile && (profile.role === "teacher" || profile.role === "admin") && (
+            {profile && (profile.role === "teacher" || profile.role === "admin" || user?.email?.toLowerCase() === "shariardipto111@gmail.com") && (
               <Link
                 href="/dashboard/teacher"
                 className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
