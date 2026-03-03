@@ -8,11 +8,12 @@ import { Suspense } from "react"
 function LoginForm() {
   const searchParams = useSearchParams()
   const nextUrl = searchParams.get("next") || "/dashboard"
+  const callbackError = searchParams.get("error")
   const [mode, setMode] = useState<"signin" | "signup">("signin")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [fullName, setFullName] = useState("")
-  const [error, setError] = useState("")
+  const [error, setError] = useState(callbackError || "")
   const [success, setSuccess] = useState("")
   const [loading, setLoading] = useState(false)
 
