@@ -26,7 +26,7 @@ export default function AdminPage() {
 
   // Auto-bootstrap admin on load
   useEffect(() => {
-    if (user && (!profile || profile.role !== "admin")) {
+    if (user && !authLoading && (!profile || profile.role !== "admin")) {
       setBootstrapping(true)
       fetch("/api/admin/bootstrap", { method: "POST" })
         .then(async (res) => {
@@ -37,7 +37,7 @@ export default function AdminPage() {
         .catch(() => {})
         .finally(() => setBootstrapping(false))
     }
-  }, [user, profile, refreshProfile])
+  }, [user, authLoading, profile, refreshProfile])
 
   const fetchUsers = useCallback(async () => {
     setLoading(true)
