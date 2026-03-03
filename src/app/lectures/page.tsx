@@ -46,6 +46,7 @@ export default function LecturesPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
+  const [initialLoadDone, setInitialLoadDone] = useState(false)
 
   // Fetch subjects
   useEffect(() => {
@@ -54,8 +55,8 @@ export default function LecturesPage() {
     })
   }, [])
 
-  // Fetch lectures
-  const fetchLectures = useCallback(async () => {
+  // Fetch lectures with abort controller for cleanup
+  const fetchLectures = useCallback(async (signal?: AbortSignal) => {
     setLoading(true)
     setError(null)
     try {
@@ -65,7 +66,7 @@ export default function LecturesPage() {
       if (selectedWeek) params.set("week", selectedWeek)
       if (params.toString()) url += `?${params.toString()}`
 
-      const res = await fetch(url)
+      const res = await fetch(url, { signal })
       if (!res.ok) {
         const errData = await res.json().catch(() => null)
         throw new Error(errData?.error || `Server error (${res.status})`)
@@ -73,16 +74,23 @@ export default function LecturesPage() {
       const data = await res.json()
       setLectures(data.lectures || [])
     } catch (err) {
+      // Don't set error state if the fetch was aborted (component unmount / filter change)
+      if (err instanceof DOMException && err.name === "AbortError") return
       console.error("Failed to fetch lectures:", err)
       setError(err instanceof Error ? err.message : "Failed to load lectures")
       setLectures([])
     } finally {
       setLoading(false)
+      setInitialLoadDone(true)
     }
   }, [selectedSubject, selectedWeek])
 
+  // Trigger fetch when auth is ready OR when filters change
   useEffect(() => {
-    if (user && !authLoading) fetchLectures()
+    if (authLoading || !user) return
+    const controller = new AbortController()
+    fetchLectures(controller.signal)
+    return () => controller.abort()
   }, [user, authLoading, fetchLectures])
 
   // Filter by search

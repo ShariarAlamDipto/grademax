@@ -1,11 +1,23 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireTeacher } from "@/lib/apiAuth"
+import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 
 // POST /api/lectures/upload - Upload file to Supabase Storage
 export async function POST(req: NextRequest) {
   const auth = await requireTeacher()
   if ("error" in auth) return auth.error
-  const { user, db } = auth
+  const { user } = auth
+
+  // Must use the service-role client for storage+insert to bypass RLS
+  // (the lectures RLS policies have a circular profiles reference that
+  //  causes 42P17 when accessed through the anon client)
+  const admin = getSupabaseAdmin()
+  if (!admin) {
+    return NextResponse.json(
+      { error: "Server configuration error: service role key not set" },
+      { status: 500 }
+    )
+  }
 
   const formData = await req.formData()
   const file = formData.get("file") as File | null
@@ -21,9 +33,9 @@ export async function POST(req: NextRequest) {
   const sanitizedLesson = lessonName.replace(/[^a-zA-Z0-9-_ ]/g, "").trim()
   const storagePath = `${subjectId}/week_${weekNumber}/${sanitizedLesson}/${file.name}`
 
-  // Upload to Supabase Storage
+  // Upload to Supabase Storage using admin client
   const buffer = Buffer.from(await file.arrayBuffer())
-  const { error: uploadError } = await db.storage
+  const { error: uploadError } = await admin.storage
     .from("lectures")
     .upload(storagePath, buffer, {
       contentType: file.type,
@@ -35,12 +47,12 @@ export async function POST(req: NextRequest) {
   }
 
   // Get public URL
-  const { data: urlData } = db.storage
+  const { data: urlData } = admin.storage
     .from("lectures")
     .getPublicUrl(storagePath)
 
-  // Insert lecture record
-  const { data: lecture, error: insertError } = await db
+  // Insert lecture record using admin client (bypasses RLS)
+  const { data: lecture, error: insertError } = await admin
     .from("lectures")
     .insert({
       teacher_id: user.id,
@@ -56,7 +68,10 @@ export async function POST(req: NextRequest) {
     .single()
 
   if (insertError) {
-    return NextResponse.json({ error: insertError.message }, { status: 500 })
+    return NextResponse.json(
+      { error: insertError.message, code: insertError.code },
+      { status: 500 }
+    )
   }
 
   return NextResponse.json({ lecture }, { status: 201 })
