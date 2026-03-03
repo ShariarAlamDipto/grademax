@@ -15,26 +15,14 @@ export default async function DashboardPage() {
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect("/login")
 
-  // Auto-promote super admin if needed
-  if (isSuperAdmin(user.email)) {
-    const admin = getSupabaseAdmin()
-    if (admin) {
-      await admin
-        .from("profiles")
-        .update({ role: "admin" })
-        .eq("id", user.id)
-    }
-  }
-
   const displayName =
     (user.user_metadata?.full_name as string) ||
     (user.user_metadata?.name as string) ||
     user.email?.split("@")[0] ||
     "Student"
 
-  // Run upsert and profile fetch in parallel where possible
-  // Use upsert with select to combine two calls into one
-  const [, { data: profile }, { data: userSubjects }] = await Promise.all([
+  // Step 1: Ensure profile exists + fetch user subjects in parallel
+  const [, { data: userSubjects }] = await Promise.all([
     supabase
       .from("profiles")
       .upsert(
@@ -50,19 +38,33 @@ export default async function DashboardPage() {
         { onConflict: "id", ignoreDuplicates: true }
       ),
     supabase
-      .from("profiles")
-      .select("study_level, marks_goal_pct, role")
-      .eq("id", user.id)
-      .single(),
-    supabase
       .from("user_subjects")
       .select("subject_id"),
   ])
+
+  // Step 2: Auto-promote super admin AFTER profile guaranteed to exist
+  if (isSuperAdmin(user.email)) {
+    const admin = getSupabaseAdmin()
+    if (admin) {
+      await admin
+        .from("profiles")
+        .update({ role: "admin" })
+        .eq("id", user.id)
+    }
+  }
+
+  // Step 3: Fetch profile with up-to-date role
+  const { data: profile } = await supabase
+    .from("profiles")
+    .select("study_level, marks_goal_pct, role")
+    .eq("id", user.id)
+    .single()
 
   const studyLevel = (profile?.study_level as "igcse" | "ial" | null) ?? null
   const marksGoal = profile?.marks_goal_pct ?? 90
   const subjectIds = (userSubjects || []).map((r: { subject_id: string }) => r.subject_id)
   const userRole = (profile?.role as string) ?? "student"
+  const showTeacherPanel = userRole === "teacher" || userRole === "admin" || isSuperAdmin(user.email)
 
   return (
     <main className="min-h-screen bg-black text-white px-6 pb-16">
@@ -74,7 +76,7 @@ export default async function DashboardPage() {
             <p className="text-sm text-white/50 mt-1">Welcome to your dashboard</p>
           </div>
           <div className="flex items-center gap-3">
-            {(userRole === "teacher" || userRole === "admin") && (
+            {showTeacherPanel && (
               <Link
                 href="/dashboard/teacher"
                 className="rounded-lg border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm text-blue-400 hover:bg-blue-400/20 transition-colors"
