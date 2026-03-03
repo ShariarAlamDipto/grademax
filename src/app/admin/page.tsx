@@ -3,6 +3,12 @@ import { useAuth } from "@/context/AuthContext"
 import { useState, useEffect, useCallback } from "react"
 import Link from "next/link"
 
+const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
+function isSuperAdminClient(email: string | undefined | null): boolean {
+  if (!email) return false
+  return email.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
+}
+
 interface UserEntry {
   id: string
   email: string | null
@@ -22,19 +28,30 @@ export default function AdminPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [changingRole, setChangingRole] = useState<string | null>(null)
   const [bootstrapping, setBootstrapping] = useState(false)
+  const [bootstrapError, setBootstrapError] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<"users" | "assign">("users")
+
+  const isAdmin = profile?.role === "admin" || isSuperAdminClient(user?.email)
 
   // Auto-bootstrap admin on load
   useEffect(() => {
-    if (user && !authLoading && (!profile || profile.role !== "admin")) {
+    if (user && !authLoading && (!profile || profile.role !== "admin") && isSuperAdminClient(user.email)) {
       setBootstrapping(true)
+      setBootstrapError(null)
       fetch("/api/admin/bootstrap", { method: "POST" })
         .then(async (res) => {
           if (res.ok) {
             await refreshProfile()
+          } else {
+            const data = await res.json().catch(() => null)
+            console.error("Bootstrap failed:", res.status, data)
+            setBootstrapError(data?.error || `Bootstrap failed (${res.status})`)
           }
         })
-        .catch(() => {})
+        .catch((err) => {
+          console.error("Bootstrap error:", err)
+          setBootstrapError(err.message || "Network error")
+        })
         .finally(() => setBootstrapping(false))
     }
   }, [user, authLoading, profile, refreshProfile])
@@ -50,10 +67,10 @@ export default function AdminPage() {
   }, [])
 
   useEffect(() => {
-    if (user && profile?.role === "admin") {
+    if (user && isAdmin) {
       fetchUsers()
     }
-  }, [user, profile?.role, fetchUsers])
+  }, [user, isAdmin, fetchUsers])
 
   const handleAssignRole = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -163,7 +180,7 @@ export default function AdminPage() {
     )
   }
 
-  if (!user || !profile || profile.role !== "admin") {
+  if (!user || !isAdmin) {
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center max-w-md px-6">
@@ -173,8 +190,16 @@ export default function AdminPage() {
             </svg>
           </div>
           <h1 className="text-2xl font-bold mb-2">Admin Access Required</h1>
-          <p className="text-white/50 mb-6">
+          <p className="text-white/50 mb-4">
             You don&apos;t have admin privileges. Only the super admin can manage users and roles.
+          </p>
+          {bootstrapError && (
+            <p className="text-red-400/80 text-sm mb-4 bg-red-400/10 rounded-lg px-4 py-2">
+              Error: {bootstrapError}
+            </p>
+          )}
+          <p className="text-white/30 text-xs mb-6">
+            Logged in as: {user?.email || "unknown"}
           </p>
           <Link
             href="/dashboard"
