@@ -1,19 +1,20 @@
 "use client"
 import { useState } from "react"
+import { useAuth } from "@/context/AuthContext"
 import { supabase } from "@/lib/supabaseClient"
 
 export default function LevelAndGoal({
   initialLevel,
   initialGoal,
 }: { initialLevel: "igcse" | "ial" | null; initialGoal: number }) {
+  const { user } = useAuth()
   const [level, setLevel] = useState<"igcse" | "ial" | "">(initialLevel ?? "");
   const [goal, setGoal] = useState<number>(initialGoal || 90)
   const [saving, setSaving] = useState(false)
 
   async function save() {
-    setSaving(true)
-    const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
+    setSaving(true)
     await supabase
       .from("profiles")
       .upsert({ id: user.id, study_level: level || null, marks_goal_pct: goal })

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, ReferenceLine } from "recharts";
 
@@ -24,14 +24,14 @@ export default function MarksChart({ firstSubjectId }: { firstSubjectId: string 
     load();
   }, [firstSubjectId]);
 
-  const data = (attempts || []).filter(a => typeof a.percentage === "number").map((a, i) => ({
+  const data = useMemo(() => (attempts || []).filter(a => typeof a.percentage === "number").map((a, i) => ({
     i,
     date: new Date(a.created_at).toLocaleDateString(),
     pct: Number(a.percentage),
-  }));
+  })), [attempts]);
 
   // Simple linear trend (least squares)
-  const trend = (() => {
+  const trend = useMemo(() => {
     const N = data.length;
     if (N < 2) return null;
     let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
@@ -41,7 +41,7 @@ export default function MarksChart({ firstSubjectId }: { firstSubjectId: string 
     const nextX = N;
     const nextY = Math.max(0, Math.min(100, m * nextX + b));
     return { m, b, nextY };
-  })();
+  }, [data]);
 
   return (
     <div className="rounded-2xl border border-white/10 bg-white/5 p-4">

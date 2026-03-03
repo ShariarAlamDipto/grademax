@@ -1,31 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getSupabaseServer } from "@/lib/supabaseServer"
-import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
+import { requireTeacher } from "@/lib/apiAuth"
 
 // POST /api/lectures/upload - Upload file to Supabase Storage
 export async function POST(req: NextRequest) {
-  const supabase = getSupabaseServer()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
-
-  // Check teacher/admin role — try service role client first, fall back to regular client
-  const admin = getSupabaseAdmin()
-  const db = admin || supabase
-  const { data: profile } = await db
-    .from("profiles")
-    .select("role")
-    .eq("id", user.id)
-    .single()
-
-  const isTeacherOrAdmin =
-    isSuperAdmin(user.email) ||
-    (profile && ["teacher", "admin"].includes(profile.role))
-
-  if (!isTeacherOrAdmin) {
-    return NextResponse.json({ error: "Only teachers can upload" }, { status: 403 })
-  }
+  const auth = await requireTeacher()
+  if ("error" in auth) return auth.error
+  const { user, db } = auth
 
   const formData = await req.formData()
   const file = formData.get("file") as File | null
@@ -41,10 +21,9 @@ export async function POST(req: NextRequest) {
   const sanitizedLesson = lessonName.replace(/[^a-zA-Z0-9-_ ]/g, "").trim()
   const storagePath = `${subjectId}/week_${weekNumber}/${sanitizedLesson}/${file.name}`
 
-  // Upload to Supabase Storage — prefer admin client (bypasses storage RLS), fall back to regular
-  const storageClient = admin || supabase
+  // Upload to Supabase Storage
   const buffer = Buffer.from(await file.arrayBuffer())
-  const { error: uploadError } = await storageClient.storage
+  const { error: uploadError } = await db.storage
     .from("lectures")
     .upload(storagePath, buffer, {
       contentType: file.type,
@@ -56,11 +35,11 @@ export async function POST(req: NextRequest) {
   }
 
   // Get public URL
-  const { data: urlData } = storageClient.storage
+  const { data: urlData } = db.storage
     .from("lectures")
     .getPublicUrl(storagePath)
 
-  // Insert lecture record — prefer admin client, fall back to regular
+  // Insert lecture record
   const { data: lecture, error: insertError } = await db
     .from("lectures")
     .insert({

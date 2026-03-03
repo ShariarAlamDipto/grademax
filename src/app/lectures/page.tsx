@@ -1,7 +1,7 @@
 "use client"
 import { useAuth } from "@/context/AuthContext"
 import { supabase } from "@/lib/supabaseClient"
-import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 
 interface Subject {
@@ -86,17 +86,17 @@ export default function LecturesPage() {
   }, [user, authLoading, fetchLectures])
 
   // Filter by search
-  const filteredLectures = lectures.filter((l) => {
+  const filteredLectures = useMemo(() => lectures.filter((l) => {
     if (!searchQuery) return true
     const q = searchQuery.toLowerCase()
     return (
       l.lesson_name.toLowerCase().includes(q) ||
       l.file_name.toLowerCase().includes(q)
     )
-  })
+  }), [lectures, searchQuery])
 
   // Group by subject → week → lesson
-  const groupedBySubject = filteredLectures.reduce<
+  const groupedBySubject = useMemo(() => filteredLectures.reduce<
     Record<string, Record<number, Record<string, Lecture[]>>>
   >((acc, l) => {
     const subjectName = subjects.find((s) => s.id === l.subject_id)?.name || `Subject ${l.subject_id}`
@@ -105,19 +105,19 @@ export default function LecturesPage() {
     if (!acc[subjectName][l.week_number][l.lesson_name]) acc[subjectName][l.week_number][l.lesson_name] = []
     acc[subjectName][l.week_number][l.lesson_name].push(l)
     return acc
-  }, {})
+  }, {}), [filteredLectures, subjects])
 
-  const formatSize = (bytes: number | null) => {
+  const formatSize = useCallback((bytes: number | null) => {
     if (!bytes) return ""
     if (bytes < 1024) return `${bytes} B`
     if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
     return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
-  }
+  }, [])
 
-  const getFileIcon = (type: string | null) => FILE_ICONS[type || ""] || "📎"
+  const getFileIcon = useCallback((type: string | null) => FILE_ICONS[type || ""] || "📎", [])
 
   // Get unique weeks for filter
-  const availableWeeks = [...new Set(lectures.map((l) => l.week_number))].sort((a, b) => a - b)
+  const availableWeeks = useMemo(() => [...new Set(lectures.map((l) => l.week_number))].sort((a, b) => a - b), [lectures])
 
   if (authLoading) {
     return (

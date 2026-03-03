@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic"
+// Page is implicitly dynamic due to cookies() usage in getSupabaseServer()
 
 import { redirect } from "next/navigation"
 import { getSupabaseServer } from "@/lib/supabaseServer"

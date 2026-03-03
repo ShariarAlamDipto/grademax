@@ -1,6 +1,6 @@
 "use client"
 import { useAuth } from "@/context/AuthContext"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useMemo } from "react"
 import Link from "next/link"
 
 const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
@@ -125,7 +125,7 @@ export default function AdminPage() {
     setChangingRole(null)
   }
 
-  const filteredUsers = users.filter((u) => {
+  const filteredUsers = useMemo(() => users.filter((u) => {
     if (!searchQuery) return true
     const q = searchQuery.toLowerCase()
     return (
@@ -133,14 +133,17 @@ export default function AdminPage() {
       u.full_name?.toLowerCase().includes(q) ||
       u.role.toLowerCase().includes(q)
     )
-  })
+  }), [users, searchQuery])
 
-  const stats = {
-    total: users.length,
-    admins: users.filter((u) => u.role === "admin").length,
-    teachers: users.filter((u) => u.role === "teacher").length,
-    students: users.filter((u) => u.role === "student").length,
-  }
+  const stats = useMemo(() => {
+    let admins = 0, teachers = 0, students = 0
+    for (const u of users) {
+      if (u.role === "admin") admins++
+      else if (u.role === "teacher") teachers++
+      else students++
+    }
+    return { total: users.length, admins, teachers, students }
+  }, [users])
 
   const roleColor = (role: string) => {
     switch (role) {
