@@ -16,6 +16,7 @@ async function verifyAdmin() {
 
   // Check DB role
   const admin = getSupabaseAdmin()
+  if (!admin) return null
   const { data: profile } = await admin
     .from("profiles")
     .select("role")
@@ -34,6 +35,7 @@ export async function GET() {
   }
 
   const admin = getSupabaseAdmin()
+  if (!admin) return NextResponse.json({ error: "Server config error" }, { status: 500 })
   const { data: users, error } = await admin
     .from("profiles")
     .select("id, email, full_name, role, created_at")
@@ -61,6 +63,7 @@ export async function PATCH(req: NextRequest) {
   }
 
   const admin = getSupabaseAdmin()
+  if (!admin) return NextResponse.json({ error: "Server config error" }, { status: 500 })
 
   const { data: targetUser, error: findError } = await admin
     .from("profiles")

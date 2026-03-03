@@ -18,10 +18,12 @@ export default async function DashboardPage() {
   // Auto-promote super admin if needed
   if (isSuperAdmin(user.email)) {
     const admin = getSupabaseAdmin()
-    await admin
-      .from("profiles")
-      .update({ role: "admin" })
-      .eq("id", user.id)
+    if (admin) {
+      await admin
+        .from("profiles")
+        .update({ role: "admin" })
+        .eq("id", user.id)
+    }
   }
 
   const displayName =
