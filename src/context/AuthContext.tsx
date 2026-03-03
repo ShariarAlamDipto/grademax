@@ -41,12 +41,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null)
   const [loading, setLoading] = useState(true)
 
-  const fetchProfile = useCallback(async (userId: string, userEmail?: string) => {
-    // If this is the super admin, auto-bootstrap their role first
-    if (userEmail && userEmail.toLowerCase() === "shariardipto111@gmail.com") {
-      await fetch("/api/admin/bootstrap", { method: "POST" }).catch(() => {})
-    }
-
+  const fetchProfileDirect = useCallback(async (userId: string) => {
     const { data } = await supabase
       .from("profiles")
       .select("id, email, full_name, avatar_url, study_level, marks_goal_pct, role")
@@ -57,37 +52,32 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const refreshProfile = useCallback(async () => {
     if (user?.id) {
-      await fetchProfile(user.id, user.email ?? undefined)
+      await fetchProfileDirect(user.id)
     }
-  }, [user?.id, user?.email, fetchProfile])
+  }, [user?.id, fetchProfileDirect])
 
   useEffect(() => {
-    // Get initial session
-    const init = async () => {
-      const { data: { session: s } } = await supabase.auth.getSession()
-      if (s?.user) {
-        // Sync cookies to the server FIRST so API calls have valid auth
-        await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
-        await fetchProfile(s.user.id, s.user.email ?? undefined)
-      }
-      // Only set user/session AFTER cookies are synced
-      setSession(s)
-      setUser(s?.user ?? null)
-      setLoading(false)
-    }
-    init()
+    let bootstrapped = false
 
-    // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, s) => {
+        // Only sync cookies on sign-in and token refresh — not every event
+        if (s?.user && (event === "SIGNED_IN" || event === "TOKEN_REFRESHED")) {
+          fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
+        }
+
         if (s?.user) {
-          // Sync cookies to the server FIRST so API calls have valid auth
-          await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
-          await fetchProfile(s.user.id, s.user.email ?? undefined)
+          // Bootstrap admin once per session, not every event
+          if (!bootstrapped && s.user.email?.toLowerCase() === "shariardipto111@gmail.com") {
+            bootstrapped = true
+            fetch("/api/admin/bootstrap", { method: "POST" }).catch(() => {})
+          }
+          // Fetch profile (runs in parallel with bootstrap, no need to await it)
+          await fetchProfileDirect(s.user.id)
         } else {
           setProfile(null)
         }
-        // Only set user/session AFTER cookies are synced
+        // Only set user/session AFTER profile is fetched
         setSession(s)
         setUser(s?.user ?? null)
         setLoading(false)
@@ -95,14 +85,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         // After SIGNED_IN event, if we're still on /login, navigate to dashboard
         if (s?.user && event === "SIGNED_IN" && window.location.pathname === "/login") {
           const params = new URLSearchParams(window.location.search)
-          const next = params.get("next") || "/dashboard"
-          window.location.href = next
+          window.location.href = params.get("next") || "/dashboard"
         }
       }
     )
 
     return () => subscription.unsubscribe()
-  }, [fetchProfile])
+  }, [fetchProfileDirect])
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut()

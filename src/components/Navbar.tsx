@@ -1,26 +1,26 @@
 "use client"
 import Link from "next/link"
-import { useEffect, useRef, useState } from "react"
+import { useCallback, useRef, useState } from "react"
 import { useAuth } from "@/context/AuthContext"
 
 export default function Navbar() {
-  const [isClient, setIsClient] = useState(false)
   const { user, displayName, avatarUrl, loading, signOut } = useAuth()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => { setIsClient(true) }, [])
-
   // Close dropdown on outside click
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false)
-      }
+  const handleClickOutside = useCallback((e: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+      setDropdownOpen(false)
     }
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
+
+  // Use a ref-based approach to avoid re-registering on every render
+  const listenerRef = useRef(false)
+  if (!listenerRef.current && typeof document !== "undefined") {
+    document.addEventListener("mousedown", handleClickOutside)
+    listenerRef.current = true
+  }
 
   const initials = displayName
     ? displayName
@@ -46,7 +46,7 @@ export default function Navbar() {
 
         {/* Auth / Profile */}
         <li>
-          {isClient && !loading && (
+          {!loading && (
             user ? (
               <div className="relative" ref={dropdownRef}>
                 <button

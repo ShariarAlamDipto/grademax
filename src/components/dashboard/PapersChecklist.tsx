@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useMemo, useState } from "react"
+import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 
 type Paper = { id: string; year: number; session: string; paper_code: string; max_score: number }
@@ -39,12 +39,13 @@ export default function PapersChecklist({ initialSubjectIds, marksGoal, userId }
     return Math.round(vals.reduce((a,b)=>a+b,0) / vals.length)
   }, [attempts])
 
-  async function markComplete(paper: Paper, raw: number) {
+  const markComplete = useCallback(async (paper: Paper, raw: number) => {
     // Create a finished attempt (no timer) with the entered raw score
     const percent = Math.max(0, Math.min(100, (raw / (paper.max_score || 100)) * 100))
+    const sid = subjectIds[0]
     const { error } = await supabase.from("paper_attempts").insert({
       user_id: userId,
-      subject_id: subjectIds[0],
+      subject_id: sid,
       year: paper.year,
       session: paper.session,
       paper_code: paper.paper_code,
@@ -60,11 +61,11 @@ export default function PapersChecklist({ initialSubjectIds, marksGoal, userId }
       const pa = await supabase
         .from("paper_attempts")
         .select("id, subject_id, percentage, raw_score")
-        .eq("subject_id", subjectIds[0])
+        .eq("subject_id", sid)
         .order("created_at", { ascending: true })
       setAttempts(pa.data?.map(a => ({ ...a, paper_id: null })) || [])
     }
-  }
+  }, [subjectIds, userId])
 
   return (
     <section className="rounded-2xl border border-white/10 bg-white/5 p-4">
@@ -120,7 +121,7 @@ export default function PapersChecklist({ initialSubjectIds, marksGoal, userId }
   )
 }
 
-function PaperRow({ paper, onComplete }: { paper: Paper; onComplete: (p: Paper, raw: number) => void }) {
+const PaperRow = React.memo(function PaperRow({ paper, onComplete }: { paper: Paper; onComplete: (p: Paper, raw: number) => void }) {
   const [checked, setChecked] = useState(false)
   const [raw, setRaw] = useState<number | "">("")
 
