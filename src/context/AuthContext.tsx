@@ -65,13 +65,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Get initial session
     const init = async () => {
       const { data: { session: s } } = await supabase.auth.getSession()
-      setSession(s)
-      setUser(s?.user ?? null)
       if (s?.user) {
-        // Sync cookies to the server immediately
+        // Sync cookies to the server FIRST so API calls have valid auth
         await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
         await fetchProfile(s.user.id, s.user.email ?? undefined)
       }
+      // Only set user/session AFTER cookies are synced
+      setSession(s)
+      setUser(s?.user ?? null)
       setLoading(false)
     }
     init()
@@ -79,24 +80,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, s) => {
-        setSession(s)
-        setUser(s?.user ?? null)
         if (s?.user) {
-          // Sync cookies to the server FIRST so server components can read them
+          // Sync cookies to the server FIRST so API calls have valid auth
           await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
           await fetchProfile(s.user.id, s.user.email ?? undefined)
-
-          // After SIGNED_IN event, if we're still on /login, navigate to dashboard
-          if (event === "SIGNED_IN" && window.location.pathname === "/login") {
-            const params = new URLSearchParams(window.location.search)
-            const next = params.get("next") || "/dashboard"
-            window.location.href = next
-            return
-          }
         } else {
           setProfile(null)
         }
+        // Only set user/session AFTER cookies are synced
+        setSession(s)
+        setUser(s?.user ?? null)
         setLoading(false)
+
+        // After SIGNED_IN event, if we're still on /login, navigate to dashboard
+        if (s?.user && event === "SIGNED_IN" && window.location.pathname === "/login") {
+          const params = new URLSearchParams(window.location.search)
+          const next = params.get("next") || "/dashboard"
+          window.location.href = next
+        }
       }
     )
 
