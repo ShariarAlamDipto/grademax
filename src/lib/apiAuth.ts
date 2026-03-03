@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server"
+import { headers } from "next/headers"
+import { createClient } from "@supabase/supabase-js"
 import { getSupabaseServer } from "./supabaseServer"
 import { getSupabaseAdmin, isSuperAdmin } from "./supabaseAdmin"
 import type { SupabaseClient, User } from "@supabase/supabase-js"
@@ -12,12 +14,48 @@ type TeacherResult =
   | { user: User; db: SupabaseClient; supabase: SupabaseClient; role: string }
 
 /**
- * Authenticate the current request. Returns the user and a database client
+ * Try to authenticate via Bearer token (for mobile apps).
+ * Returns the user if valid, null otherwise.
+ */
+async function tryBearerAuth(): Promise<User | null> {
+  try {
+    const h = await headers()
+    const auth = h.get("authorization") || ""
+    if (!auth.startsWith("Bearer ")) return null
+    const token = auth.slice(7)
+    if (!token) return null
+
+    // Create a one-off client with the user's access token
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      { global: { headers: { Authorization: `Bearer ${token}` } } }
+    )
+    const { data: { user } } = await supabase.auth.getUser(token)
+    return user
+  } catch {
+    return null
+  }
+}
+
+/**
+ * Authenticate the current request. Supports both cookie auth (web) and
+ * Bearer token auth (mobile app). Returns the user and a database client
  * (admin if available, else regular). Eliminates repeated auth boilerplate.
  */
 export async function requireAuth(): Promise<AuthResult> {
+  // Try cookie-based auth first (web)
   const supabase = getSupabaseServer()
-  const { data: { user } } = await supabase.auth.getUser()
+  let user: User | null = null
+
+  const { data } = await supabase.auth.getUser()
+  user = data.user
+
+  // Fallback: Bearer token auth (mobile)
+  if (!user) {
+    user = await tryBearerAuth()
+  }
+
   if (!user) {
     return { error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }) }
   }
