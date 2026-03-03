@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireTeacher } from "@/lib/apiAuth"
-import { isSuperAdmin } from "@/lib/supabaseAdmin"
+import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 
 // DELETE /api/lectures/[id] - Delete a lecture
 export async function DELETE(
@@ -10,7 +10,11 @@ export async function DELETE(
   const { id } = await params
   const auth = await requireTeacher()
   if ("error" in auth) return auth.error
-  const { user, db, role } = auth
+  const { user, role } = auth
+
+  // Use admin client to bypass RLS circular reference on profiles
+  const admin = getSupabaseAdmin()
+  const db = admin || auth.db
 
   // Get the lecture to find the storage path
   const { data: lecture } = await db
