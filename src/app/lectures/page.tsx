@@ -44,6 +44,7 @@ export default function LecturesPage() {
   const [selectedSubject, setSelectedSubject] = useState<string>("")
   const [selectedWeek, setSelectedWeek] = useState<string>("")
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
 
   // Fetch subjects
@@ -56,16 +57,28 @@ export default function LecturesPage() {
   // Fetch lectures
   const fetchLectures = useCallback(async () => {
     setLoading(true)
-    let url = "/api/lectures"
-    const params = new URLSearchParams()
-    if (selectedSubject) params.set("subject_id", selectedSubject)
-    if (selectedWeek) params.set("week", selectedWeek)
-    if (params.toString()) url += `?${params.toString()}`
+    setError(null)
+    try {
+      let url = "/api/lectures"
+      const params = new URLSearchParams()
+      if (selectedSubject) params.set("subject_id", selectedSubject)
+      if (selectedWeek) params.set("week", selectedWeek)
+      if (params.toString()) url += `?${params.toString()}`
 
-    const res = await fetch(url)
-    const data = await res.json()
-    setLectures(data.lectures || [])
-    setLoading(false)
+      const res = await fetch(url)
+      if (!res.ok) {
+        const errData = await res.json().catch(() => null)
+        throw new Error(errData?.error || `Server error (${res.status})`)
+      }
+      const data = await res.json()
+      setLectures(data.lectures || [])
+    } catch (err) {
+      console.error("Failed to fetch lectures:", err)
+      setError(err instanceof Error ? err.message : "Failed to load lectures")
+      setLectures([])
+    } finally {
+      setLoading(false)
+    }
   }, [selectedSubject, selectedWeek])
 
   useEffect(() => {
@@ -191,6 +204,18 @@ export default function LecturesPage() {
         {loading ? (
           <div className="text-center py-16">
             <div className="animate-pulse text-white/50">Loading lectures...</div>
+          </div>
+        ) : error ? (
+          <div className="text-center py-16 rounded-2xl border border-red-500/20 bg-red-500/5">
+            <div className="text-4xl mb-3">⚠️</div>
+            <h2 className="text-lg font-semibold mb-1 text-red-400">Failed to load lectures</h2>
+            <p className="text-sm text-white/40 mb-4">{error}</p>
+            <button
+              onClick={() => fetchLectures()}
+              className="rounded-lg bg-white/10 px-4 py-2 text-sm hover:bg-white/20 transition-colors"
+            >
+              Try Again
+            </button>
           </div>
         ) : filteredLectures.length === 0 ? (
           <div className="text-center py-16 rounded-2xl border border-white/10 bg-white/5">
