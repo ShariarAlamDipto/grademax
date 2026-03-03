@@ -50,6 +50,7 @@ export default function TeacherDashboardPage() {
   const [loadingLectures, setLoadingLectures] = useState(false)
   const [editState, setEditState] = useState<EditState | null>(null)
   const [editSaving, setEditSaving] = useState(false)
+  const [collapsedWeeks, setCollapsedWeeks] = useState<Set<string>>(new Set())
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
@@ -99,6 +100,14 @@ export default function TeacherDashboardPage() {
       return acc
     }, {})
   }, [visibleLectures])
+
+  const toggleWeek = useCallback((weekKey: string) => {
+    setCollapsedWeeks((prev) => {
+      const next = new Set(prev)
+      next.has(weekKey) ? next.delete(weekKey) : next.add(weekKey)
+      return next
+    })
+  }, [])
 
   // Check if user can edit/delete a specific lecture
   const canModify = useCallback(
@@ -486,17 +495,28 @@ export default function TeacherDashboardPage() {
                     : "You haven't uploaded any lectures for this subject yet"}
                 </p>
               ) : (
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {Object.entries(groupedLectures)
                     .sort(([a], [b]) => parseInt(a) - parseInt(b))
-                    .map(([week, lessons]) => (
+                    .map(([week, lessons]) => {
+                      const weekKey = `week__${week}`
+                      const weekCollapsed = collapsedWeeks.has(weekKey)
+                      const weekFileCount = Object.values(lessons).reduce((s, f) => s + f.length, 0)
+                      return (
                       <div key={week}>
-                        <h3 className="text-sm font-semibold text-white/80 mb-3 flex items-center gap-2">
+                        <button
+                          type="button"
+                          onClick={() => toggleWeek(weekKey)}
+                          className="text-sm font-semibold text-white/80 mb-3 flex items-center gap-2 hover:text-white transition-colors cursor-pointer w-full text-left"
+                        >
+                          <span className={`transition-transform duration-200 text-white/40 text-xs ${weekCollapsed ? '' : 'rotate-90'}`}>▶</span>
                           <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 text-xs">
                             {week}
                           </span>
                           Week {week}
-                        </h3>
+                          <span className="text-xs text-white/30 ml-auto">{weekFileCount} file{weekFileCount !== 1 ? 's' : ''}</span>
+                        </button>
+                        {!weekCollapsed && (
                         <div className="space-y-3 ml-9">
                           {Object.entries(lessons)
                             .sort(([a], [b]) => a.localeCompare(b))
@@ -550,8 +570,10 @@ export default function TeacherDashboardPage() {
                               </div>
                             ))}
                         </div>
+                        )}
                       </div>
-                    ))}
+                    )})
+                  }
                 </div>
               )}
             </div>

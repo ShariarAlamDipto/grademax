@@ -47,6 +47,24 @@ export default function LecturesPage() {
   const [error, setError] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
   const [initialLoadDone, setInitialLoadDone] = useState(false)
+  const [collapsedSubjects, setCollapsedSubjects] = useState<Set<string>>(new Set())
+  const [collapsedWeeks, setCollapsedWeeks] = useState<Set<string>>(new Set())
+
+  const toggleSubject = useCallback((name: string) => {
+    setCollapsedSubjects((prev) => {
+      const next = new Set(prev)
+      next.has(name) ? next.delete(name) : next.add(name)
+      return next
+    })
+  }, [])
+
+  const toggleWeek = useCallback((key: string) => {
+    setCollapsedWeeks((prev) => {
+      const next = new Set(prev)
+      next.has(key) ? next.delete(key) : next.add(key)
+      return next
+    })
+  }, [])
 
   // Fetch subjects
   useEffect(() => {
@@ -243,27 +261,51 @@ export default function LecturesPage() {
             </p>
           </div>
         ) : (
-          <div className="space-y-8">
+          <div className="space-y-4">
             {Object.entries(groupedBySubject)
               .sort(([a], [b]) => a.localeCompare(b))
-              .map(([subjectName, weeks]) => (
+              .map(([subjectName, weeks]) => {
+                const subjectCollapsed = collapsedSubjects.has(subjectName)
+                const fileCount = Object.values(weeks).reduce((sum, lessons) =>
+                  sum + Object.values(lessons).reduce((s, f) => s + f.length, 0), 0)
+                return (
                 <div key={subjectName} className="rounded-2xl border border-white/10 bg-white/5 overflow-hidden">
-                  {/* Subject header */}
-                  <div className="px-6 py-4 bg-white/5 border-b border-white/10">
-                    <h2 className="text-lg font-semibold">{subjectName}</h2>
-                  </div>
+                  {/* Subject header — clickable to collapse/expand */}
+                  <button
+                    type="button"
+                    onClick={() => toggleSubject(subjectName)}
+                    className="w-full flex items-center justify-between px-6 py-4 bg-white/5 border-b border-white/10 hover:bg-white/10 transition-colors text-left cursor-pointer"
+                  >
+                    <h2 className="text-lg font-semibold flex items-center gap-2">
+                      <span className={`transition-transform duration-200 text-white/50 text-sm ${subjectCollapsed ? '' : 'rotate-90'}`}>▶</span>
+                      {subjectName}
+                    </h2>
+                    <span className="text-xs text-white/40">{fileCount} file{fileCount !== 1 ? 's' : ''}</span>
+                  </button>
 
+                  {!subjectCollapsed && (
                   <div className="p-6 space-y-6">
                     {Object.entries(weeks)
                       .sort(([a], [b]) => parseInt(a) - parseInt(b))
-                      .map(([week, lessons]) => (
+                      .map(([week, lessons]) => {
+                        const weekKey = `${subjectName}__${week}`
+                        const weekCollapsed = collapsedWeeks.has(weekKey)
+                        const weekFileCount = Object.values(lessons).reduce((s, f) => s + f.length, 0)
+                        return (
                         <div key={week}>
-                          <h3 className="text-sm font-semibold text-white/70 mb-3 flex items-center gap-2">
+                          <button
+                            type="button"
+                            onClick={() => toggleWeek(weekKey)}
+                            className="text-sm font-semibold text-white/70 mb-3 flex items-center gap-2 hover:text-white/90 transition-colors cursor-pointer w-full text-left"
+                          >
+                            <span className={`transition-transform duration-200 text-white/40 text-xs ${weekCollapsed ? '' : 'rotate-90'}`}>▶</span>
                             <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 text-xs font-bold">
                               {week}
                             </span>
                             Week {week}
-                          </h3>
+                            <span className="text-xs text-white/30 ml-auto">{weekFileCount} file{weekFileCount !== 1 ? 's' : ''}</span>
+                          </button>
+                          {!weekCollapsed && (
                           <div className="space-y-3 ml-9">
                             {Object.entries(lessons)
                               .sort(([a], [b]) => a.localeCompare(b))
@@ -297,11 +339,14 @@ export default function LecturesPage() {
                                 </div>
                               ))}
                           </div>
+                          )}
                         </div>
-                      ))}
+                      )})
+                    }
                   </div>
+                  )}
                 </div>
-              ))}
+              )})}
           </div>
         )}
       </div>
