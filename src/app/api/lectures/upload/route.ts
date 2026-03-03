@@ -13,8 +13,13 @@ export async function POST(req: NextRequest) {
   //  causes 42P17 when accessed through the anon client)
   const admin = getSupabaseAdmin()
   if (!admin) {
+    console.error(
+      "[lectures/upload] Service role client unavailable.",
+      "SUPABASE_SERVICE_ROLE_KEY set:", !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+      "NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY set:", !!process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY
+    )
     return NextResponse.json(
-      { error: "Server configuration error: service role key not set" },
+      { error: "Server configuration error: service role key not set. Check Vercel env vars (SUPABASE_SERVICE_ROLE_KEY)." },
       { status: 500 }
     )
   }

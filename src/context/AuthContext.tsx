@@ -1,7 +1,9 @@
 "use client"
-import { createContext, useContext, useEffect, useState, useCallback } from "react"
+import { createContext, useContext, useEffect, useState, useCallback, useRef } from "react"
 import { supabase } from "@/lib/supabaseClient"
 import type { User, Session } from "@supabase/supabase-js"
+
+const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
 
 interface Profile {
   id: string
@@ -40,14 +42,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)
   const [profile, setProfile] = useState<Profile | null>(null)
   const [loading, setLoading] = useState(true)
+  const bootstrappedRef = useRef(false)
+  const initializedRef = useRef(false)
 
   const fetchProfileDirect = useCallback(async (userId: string) => {
-    const { data } = await supabase
-      .from("profiles")
-      .select("id, email, full_name, avatar_url, study_level, marks_goal_pct, role")
-      .eq("id", userId)
-      .single()
-    setProfile(data ? { ...data, role: data.role || "student" } : null)
+    try {
+      const { data } = await supabase
+        .from("profiles")
+        .select("id, email, full_name, avatar_url, study_level, marks_goal_pct, role")
+        .eq("id", userId)
+        .single()
+      setProfile(data ? { ...data, role: data.role || "student" } : null)
+    } catch {
+      setProfile(null)
+    }
   }, [])
 
   const refreshProfile = useCallback(async () => {
@@ -56,66 +64,74 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [user?.id, fetchProfileDirect])
 
+  // Handle session changes (both from getSession and onAuthStateChange)
+  const handleSession = useCallback((s: Session | null, event?: string) => {
+    setSession(s)
+    setUser(s?.user ?? null)
+
+    if (s?.user) {
+      // Sync server-side cookies — fire and forget
+      fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
+
+      // Bootstrap admin once per page load — fire and forget
+      if (!bootstrappedRef.current && s.user.email?.toLowerCase() === SUPER_ADMIN_EMAIL) {
+        bootstrappedRef.current = true
+        fetch("/api/admin/bootstrap", { method: "POST" })
+          .then(() => fetchProfileDirect(s.user!.id))
+          .catch(() => {})
+      }
+
+      // Fetch profile async (non-blocking)
+      fetchProfileDirect(s.user.id)
+    } else {
+      setProfile(null)
+    }
+
+    // Redirect away from /login if authenticated
+    if (
+      s?.user &&
+      (!event || event === "SIGNED_IN" || event === "INITIAL_SESSION" || event === "TOKEN_REFRESHED") &&
+      typeof window !== "undefined" &&
+      window.location.pathname === "/login"
+    ) {
+      const params = new URLSearchParams(window.location.search)
+      window.location.href = params.get("next") || "/dashboard"
+    }
+  }, [fetchProfileDirect])
+
   useEffect(() => {
-    let bootstrapped = false
     let resolved = false
 
-    // Safety-net: guarantee loading becomes false within 8s even if
-    // onAuthStateChange never fires (e.g. stale cookies, network issues).
-    const timeout = setTimeout(() => {
+    const resolve = () => {
       if (!resolved) {
         resolved = true
         setLoading(false)
       }
-    }, 8000)
+    }
 
+    // Safety-net: guarantee loading becomes false within 4s
+    const timeout = setTimeout(resolve, 4000)
+
+    // *** STRATEGY: Use BOTH getSession() (instant, local) and
+    // onAuthStateChange (reactive, reliable) to ensure we never
+    // miss an existing session. This prevents the "Sign In" flash. ***
+
+    // 1. Immediately check for an existing session from cookies
+    if (!initializedRef.current) {
+      initializedRef.current = true
+      supabase.auth.getSession().then(({ data: { session: existingSession } }) => {
+        if (existingSession?.user) {
+          handleSession(existingSession)
+          resolve()
+        }
+      }).catch(() => {})
+    }
+
+    // 2. Listen for auth state changes (handles sign-in, sign-out, token refresh)
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      async (event, s) => {
-        // Sync server-side cookies on ANY event that has a valid session.
-        // This ensures the middleware can always find the user.
-        if (s?.user) {
-          fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
-        }
-
-        if (s?.user) {
-          // Bootstrap admin once per session — fire-and-forget with short timeout
-          if (!bootstrapped && s.user.email?.toLowerCase() === "shariardipto111@gmail.com") {
-            bootstrapped = true
-            try {
-              await Promise.race([
-                fetch("/api/admin/bootstrap", { method: "POST" }),
-                new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), 3000)),
-              ])
-            } catch {}
-          }
-          // Fetch profile AFTER bootstrap so the role is up-to-date
-          try {
-            await fetchProfileDirect(s.user.id)
-          } catch {
-            setProfile(null)
-          }
-        } else {
-          setProfile(null)
-        }
-        // Only set user/session AFTER profile is fetched
-        setSession(s)
-        setUser(s?.user ?? null)
-        if (!resolved) {
-          resolved = true
-          setLoading(false)
-        }
-
-        // If user has a session and we're on the /login page, redirect away.
-        // Handle SIGNED_IN, TOKEN_REFRESHED, and INITIAL_SESSION so we
-        // never get stuck on the login page when already authenticated.
-        if (
-          s?.user &&
-          (event === "SIGNED_IN" || event === "INITIAL_SESSION" || event === "TOKEN_REFRESHED") &&
-          window.location.pathname === "/login"
-        ) {
-          const params = new URLSearchParams(window.location.search)
-          window.location.href = params.get("next") || "/dashboard"
-        }
+      (event, s) => {
+        handleSession(s, event)
+        resolve()
       }
     )
 
@@ -123,7 +139,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       clearTimeout(timeout)
       subscription.unsubscribe()
     }
-  }, [fetchProfileDirect])
+  }, [handleSession])
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut()

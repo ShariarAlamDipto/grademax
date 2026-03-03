@@ -1,9 +1,10 @@
-import { NextResponse } from "next/server"
-import { cookies } from "next/headers"
+import { type NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 
-async function refreshSession() {
-  const cookieStore = await cookies()
+// Refresh the auth session and ensure cookies are properly propagated
+// Uses NextRequest/NextResponse pattern to ensure cookies survive
+async function refreshSession(request: NextRequest) {
+  const response = NextResponse.json({ ok: true })
 
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -11,30 +12,28 @@ async function refreshSession() {
     {
       cookies: {
         getAll() {
-          return cookieStore.getAll()
+          return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) => {
-              cookieStore.set(name, value, options)
-            })
-          } catch {
-            // setAll may throw in some contexts; safe to ignore
-          }
+          // Write cookies onto the outgoing response
+          cookiesToSet.forEach(({ name, value, options }) => {
+            response.cookies.set(name, value, options)
+          })
         },
       },
     }
   )
 
   const { data: { user } } = await supabase.auth.getUser()
-  return NextResponse.json({ ok: true, authenticated: !!user })
+  return NextResponse.json({ ok: true, authenticated: !!user }, {
+    headers: response.headers,
+  })
 }
 
-export async function POST() {
-  return refreshSession()
+export async function POST(request: NextRequest) {
+  return refreshSession(request)
 }
 
-// Also handle GET so the browser can refresh via a simple fetch or navigation
-export async function GET() {
-  return refreshSession()
+export async function GET(request: NextRequest) {
+  return refreshSession(request)
 }

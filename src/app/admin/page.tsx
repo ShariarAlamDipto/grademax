@@ -33,28 +33,40 @@ export default function AdminPage() {
 
   const isAdmin = profile?.role === "admin" || isSuperAdminClient(user?.email)
 
-  // Auto-bootstrap admin on load
+  // Auto-bootstrap admin on load (only once)
+  const [bootstrapDone, setBootstrapDone] = useState(false)
   useEffect(() => {
-    if (user && !authLoading && (!profile || profile.role !== "admin") && isSuperAdminClient(user.email)) {
-      setBootstrapping(true)
-      setBootstrapError(null)
-      fetch("/api/admin/bootstrap", { method: "POST" })
-        .then(async (res) => {
-          if (res.ok) {
-            await refreshProfile()
-          } else {
-            const data = await res.json().catch(() => null)
-            console.error("Bootstrap failed:", res.status, data)
-            setBootstrapError(data?.error || `Bootstrap failed (${res.status})`)
-          }
-        })
-        .catch((err) => {
-          console.error("Bootstrap error:", err)
-          setBootstrapError(err.message || "Network error")
-        })
-        .finally(() => setBootstrapping(false))
+    if (bootstrapDone || authLoading || !user) return
+    if (!isSuperAdminClient(user.email)) {
+      setBootstrapDone(true)
+      return
     }
-  }, [user, authLoading, profile, refreshProfile])
+    // Already admin — skip bootstrap
+    if (profile?.role === "admin") {
+      setBootstrapDone(true)
+      return
+    }
+    setBootstrapping(true)
+    setBootstrapError(null)
+    fetch("/api/admin/bootstrap", { method: "POST" })
+      .then(async (res) => {
+        if (res.ok) {
+          await refreshProfile()
+        } else {
+          const data = await res.json().catch(() => null)
+          console.error("Bootstrap failed:", res.status, data)
+          setBootstrapError(data?.error || `Bootstrap failed (${res.status})`)
+        }
+      })
+      .catch((err) => {
+        console.error("Bootstrap error:", err)
+        setBootstrapError(err.message || "Network error")
+      })
+      .finally(() => {
+        setBootstrapping(false)
+        setBootstrapDone(true)
+      })
+  }, [user, authLoading, profile?.role, refreshProfile, bootstrapDone])
 
   const fetchUsers = useCallback(async () => {
     setLoading(true)
