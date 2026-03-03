@@ -82,8 +82,8 @@ export default function LecturesPage() {
   }, [selectedSubject, selectedWeek])
 
   useEffect(() => {
-    if (user) fetchLectures()
-  }, [user, fetchLectures])
+    if (user && !authLoading) fetchLectures()
+  }, [user, authLoading, fetchLectures])
 
   // Filter by search
   const filteredLectures = lectures.filter((l) => {
