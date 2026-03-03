@@ -261,10 +261,10 @@ export default function TeacherDashboardPage() {
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
-          <p className="text-white/60 mb-4">Please sign in to access the teacher dashboard.</p>
-          <Link href="/login" className="rounded-lg bg-white text-black px-6 py-2 font-medium">
-            Sign In
-          </Link>
+          <div className="animate-pulse text-white/50 mb-4">Verifying your session...</div>
+          <p className="text-white/40 text-sm">If this takes too long,{" "}
+            <Link href="/login?next=/dashboard/teacher" className="text-white underline underline-offset-4">sign in here</Link>.
+          </p>
         </div>
       </main>
     )

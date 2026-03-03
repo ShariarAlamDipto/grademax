@@ -136,11 +136,18 @@ export default function LecturesPage() {
   }
 
   if (!user) {
+    // If auth is still resolving (just finished loading but user hasn't
+    // populated yet), show a brief loading state instead of a sign-in wall.
+    // The middleware already protects this route, so if the user reached
+    // this page they should have a valid session — just wait for the
+    // client-side auth to catch up.
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center">
-          <p className="text-white/60 mb-4">Please sign in to view lectures.</p>
-          <Link href="/login" className="rounded-lg bg-white text-black px-6 py-2 font-medium">Sign In</Link>
+          <div className="animate-pulse text-white/50 mb-4">Verifying your session...</div>
+          <p className="text-white/40 text-sm">If this takes too long,{" "}
+            <Link href="/login?next=/lectures" className="text-white underline underline-offset-4">sign in here</Link>.
+          </p>
         </div>
       </main>
     )

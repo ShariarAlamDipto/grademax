@@ -2,7 +2,7 @@ import { NextResponse } from "next/server"
 import { cookies } from "next/headers"
 import { createServerClient } from "@supabase/ssr"
 
-export async function POST() {
+async function refreshSession() {
   const cookieStore = await cookies()
 
   const supabase = createServerClient(
@@ -14,14 +14,27 @@ export async function POST() {
           return cookieStore.getAll()
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) => {
-            cookieStore.set(name, value, options)
-          })
+          try {
+            cookiesToSet.forEach(({ name, value, options }) => {
+              cookieStore.set(name, value, options)
+            })
+          } catch {
+            // setAll may throw in some contexts; safe to ignore
+          }
         },
       },
     }
   )
 
-  await supabase.auth.getUser()
-  return NextResponse.json({ ok: true })
+  const { data: { user } } = await supabase.auth.getUser()
+  return NextResponse.json({ ok: true, authenticated: !!user })
+}
+
+export async function POST() {
+  return refreshSession()
+}
+
+// Also handle GET so the browser can refresh via a simple fetch or navigation
+export async function GET() {
+  return refreshSession()
 }
