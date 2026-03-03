@@ -5,16 +5,29 @@ import { createClient, SupabaseClient } from "@supabase/supabase-js"
  * ONLY use this in server-side API routes, NEVER expose to the client.
  * Cached as a singleton to avoid recreating the client on every call.
  */
-let _adminClient: SupabaseClient | null | undefined
+let _adminClient: SupabaseClient | null = null
 
 export function getSupabaseAdmin(): SupabaseClient | null {
-  if (_adminClient !== undefined) return _adminClient
+  // Return cached client if already created
+  if (_adminClient) return _adminClient
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY
+  // Check multiple common env var names for the service role key
+  const serviceKey =
+    process.env.SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY ||
+    process.env.SUPABASE_SERVICE_KEY
 
   if (!url || !serviceKey) {
-    _adminClient = null
+    // DON'T cache null — env vars might become available on next invocation
+    // (e.g. Vercel cold start race, or env var added after deployment)
+    console.warn(
+      "[supabaseAdmin] Missing env vars.",
+      "NEXT_PUBLIC_SUPABASE_URL:", !!url,
+      "SUPABASE_SERVICE_ROLE_KEY:", !!process.env.SUPABASE_SERVICE_ROLE_KEY,
+      "NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY:", !!process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY,
+      "SUPABASE_SERVICE_KEY:", !!process.env.SUPABASE_SERVICE_KEY
+    )
     return null
   }
 
