@@ -45,7 +45,28 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  return NextResponse.json({ lectures: data })
+  // Batch-fetch teacher profiles for unique teacher_ids
+  const teacherIds = [...new Set((data || []).map((l: { teacher_id: string }) => l.teacher_id))]
+  let teacherMap: Record<string, { full_name: string | null; email: string | null }> = {}
+  if (teacherIds.length > 0) {
+    const { data: profiles } = await db
+      .from("profiles")
+      .select("id, full_name, email")
+      .in("id", teacherIds)
+    if (profiles) {
+      teacherMap = Object.fromEntries(
+        profiles.map((p: { id: string; full_name: string | null; email: string | null }) => [p.id, { full_name: p.full_name, email: p.email }])
+      )
+    }
+  }
+
+  // Merge teacher info into lectures
+  const lectures = (data || []).map((l: { teacher_id: string;[key: string]: unknown }) => ({
+    ...l,
+    teacher: teacherMap[l.teacher_id] || null,
+  }))
+
+  return NextResponse.json({ lectures })
 }
 
 // POST /api/lectures - Create a lecture record (after file upload to storage)

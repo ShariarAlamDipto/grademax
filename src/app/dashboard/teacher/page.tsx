@@ -1,7 +1,7 @@
 "use client"
 import { useAuth } from "@/context/AuthContext"
 import { supabase } from "@/lib/supabaseClient"
-import { useCallback, useEffect, useState, useRef } from "react"
+import { useCallback, useEffect, useState, useRef, useMemo } from "react"
 import Link from "next/link"
 
 const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
@@ -16,6 +16,7 @@ interface Subject {
 interface Lecture {
   id: string
   subject_id: string
+  teacher_id: string
   week_number: number
   lesson_name: string
   file_name: string
@@ -23,6 +24,14 @@ interface Lecture {
   file_size: number | null
   file_type: string | null
   created_at: string
+  teacher?: { full_name: string | null; email: string | null } | null
+}
+
+interface EditState {
+  id: string
+  lesson_name: string
+  week_number: number
+  subject_id: string
 }
 
 export default function TeacherDashboardPage() {
@@ -39,7 +48,12 @@ export default function TeacherDashboardPage() {
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
   const [loadingLectures, setLoadingLectures] = useState(false)
+  const [editState, setEditState] = useState<EditState | null>(null)
+  const [editSaving, setEditSaving] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
+  const isAdminOrSuper = profile?.role === "admin" || isSuperAdminUser
 
   // Fetch subjects
   useEffect(() => {
@@ -68,6 +82,29 @@ export default function TeacherDashboardPage() {
   useEffect(() => {
     fetchLectures()
   }, [fetchLectures])
+
+  // Filter lectures: admins see all, teachers see only their own
+  const visibleLectures = useMemo(() => {
+    if (isAdminOrSuper) return lectures
+    if (!user) return []
+    return lectures.filter((l) => l.teacher_id === user.id)
+  }, [lectures, isAdminOrSuper, user])
+
+  // Group lectures by week → lesson
+  const groupedLectures = useMemo(() => {
+    return visibleLectures.reduce<Record<number, Record<string, Lecture[]>>>((acc, l) => {
+      if (!acc[l.week_number]) acc[l.week_number] = {}
+      if (!acc[l.week_number][l.lesson_name]) acc[l.week_number][l.lesson_name] = []
+      acc[l.week_number][l.lesson_name].push(l)
+      return acc
+    }, {})
+  }, [visibleLectures])
+
+  // Check if user can edit/delete a specific lecture
+  const canModify = useCallback(
+    (lecture: Lecture) => isAdminOrSuper || lecture.teacher_id === user?.id,
+    [isAdminOrSuper, user]
+  )
 
   // Drag and drop handlers
   const handleDrag = useCallback((e: React.DragEvent) => {
@@ -153,6 +190,48 @@ export default function TeacherDashboardPage() {
     const res = await fetch(`/api/lectures/${lectureId}`, { method: "DELETE" })
     if (res.ok) {
       fetchLectures()
+    } else {
+      const err = await res.json().catch(() => null)
+      setError(err?.error || "Failed to delete")
+    }
+  }
+
+  // Edit a lecture
+  const openEdit = (lecture: Lecture) => {
+    setEditState({
+      id: lecture.id,
+      lesson_name: lecture.lesson_name,
+      week_number: lecture.week_number,
+      subject_id: lecture.subject_id,
+    })
+  }
+
+  const saveEdit = async () => {
+    if (!editState) return
+    setEditSaving(true)
+    setError("")
+    try {
+      const res = await fetch(`/api/lectures/${editState.id}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lesson_name: editState.lesson_name,
+          week_number: editState.week_number,
+          subject_id: editState.subject_id,
+        }),
+      })
+      if (!res.ok) {
+        const err = await res.json().catch(() => null)
+        setError(err?.error || "Failed to update")
+      } else {
+        setEditState(null)
+        setSuccess("Lecture updated!")
+        fetchLectures()
+      }
+    } catch {
+      setError("Failed to update lecture")
+    } finally {
+      setEditSaving(false)
     }
   }
 
@@ -164,13 +243,11 @@ export default function TeacherDashboardPage() {
     return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
   }
 
-  // Group lectures by week → lesson
-  const groupedLectures = lectures.reduce<Record<number, Record<string, Lecture[]>>>((acc, l) => {
-    if (!acc[l.week_number]) acc[l.week_number] = {}
-    if (!acc[l.week_number][l.lesson_name]) acc[l.week_number][l.lesson_name] = []
-    acc[l.week_number][l.lesson_name].push(l)
-    return acc
-  }, {})
+  // Get teacher display name
+  const getTeacherName = (lecture: Lecture) => {
+    if (!lecture.teacher) return "Unknown"
+    return lecture.teacher.full_name || lecture.teacher.email || "Unknown"
+  }
 
   if (authLoading) {
     return (
@@ -192,8 +269,6 @@ export default function TeacherDashboardPage() {
       </main>
     )
   }
-
-  const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
 
   if (profile && profile.role !== "teacher" && profile.role !== "admin" && !isSuperAdminUser) {
     return (
@@ -218,15 +293,30 @@ export default function TeacherDashboardPage() {
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold">Teacher Dashboard</h1>
-            <p className="text-sm text-white/50 mt-1">Welcome, {displayName} — Upload and manage your lectures</p>
+            <h1 className="text-2xl md:text-3xl font-bold">
+              {isAdminOrSuper ? "Admin — Lecture Manager" : "Teacher Dashboard"}
+            </h1>
+            <p className="text-sm text-white/50 mt-1">
+              Welcome, {displayName} —{" "}
+              {isAdminOrSuper
+                ? "Manage all uploaded lectures"
+                : "Upload and manage your lectures"}
+            </p>
           </div>
-          <Link
-            href="/dashboard"
-            className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
-          >
-            Student View
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/lectures"
+              className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
+            >
+              Student View
+            </Link>
+            <Link
+              href="/dashboard"
+              className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
+            >
+              Dashboard
+            </Link>
+          </div>
         </div>
 
         <div className="grid gap-8 lg:grid-cols-5">
@@ -365,14 +455,21 @@ export default function TeacherDashboardPage() {
           {/* Lecture List - Right */}
           <div className="lg:col-span-3">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h2 className="text-lg font-semibold mb-4">
-                Uploaded Lectures
-                {selectedSubject && (
-                  <span className="text-sm text-white/50 font-normal ml-2">
-                    — {subjects.find((s) => s.id === selectedSubject)?.name}
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-lg font-semibold">
+                  {isAdminOrSuper ? "All Uploaded Lectures" : "Your Uploaded Lectures"}
+                  {selectedSubject && (
+                    <span className="text-sm text-white/50 font-normal ml-2">
+                      — {subjects.find((s) => s.id === selectedSubject)?.name}
+                    </span>
+                  )}
+                </h2>
+                {isAdminOrSuper && selectedSubject && (
+                  <span className="text-xs text-white/40 bg-white/5 px-2 py-1 rounded">
+                    {visibleLectures.length} file{visibleLectures.length !== 1 ? "s" : ""}
                   </span>
                 )}
-              </h2>
+              </div>
 
               {!selectedSubject ? (
                 <p className="text-sm text-white/40 text-center py-8">
@@ -384,7 +481,9 @@ export default function TeacherDashboardPage() {
                 </div>
               ) : Object.keys(groupedLectures).length === 0 ? (
                 <p className="text-sm text-white/40 text-center py-8">
-                  No lectures uploaded yet for this subject
+                  {isAdminOrSuper
+                    ? "No lectures uploaded yet for this subject"
+                    : "You haven't uploaded any lectures for this subject yet"}
                 </p>
               ) : (
                 <div className="space-y-6">
@@ -408,26 +507,42 @@ export default function TeacherDashboardPage() {
                                 </div>
                                 <div className="divide-y divide-white/5">
                                   {files.map((file) => (
-                                    <div key={file.id} className="flex items-center justify-between px-4 py-2 text-sm">
+                                    <div key={file.id} className="flex items-center justify-between px-4 py-2 text-sm gap-2">
                                       <a
                                         href={file.file_url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-blue-400 hover:text-blue-300 truncate mr-3"
+                                        className="text-blue-400 hover:text-blue-300 truncate mr-1 min-w-0"
                                       >
                                         {file.file_name}
                                       </a>
-                                      <div className="flex items-center gap-3 shrink-0">
+                                      <div className="flex items-center gap-2 shrink-0">
+                                        {isAdminOrSuper && (
+                                          <span className="text-white/25 text-xs max-w-[100px] truncate" title={getTeacherName(file)}>
+                                            {getTeacherName(file)}
+                                          </span>
+                                        )}
                                         <span className="text-white/30 text-xs">
                                           {formatSize(file.file_size)}
                                         </span>
-                                        <button
-                                          onClick={() => handleDelete(file.id)}
-                                          className="text-red-400/60 hover:text-red-400 text-xs"
-                                          title="Delete"
-                                        >
-                                          🗑
-                                        </button>
+                                        {canModify(file) && (
+                                          <>
+                                            <button
+                                              onClick={() => openEdit(file)}
+                                              className="text-blue-400/60 hover:text-blue-400 text-xs"
+                                              title="Edit"
+                                            >
+                                              ✏️
+                                            </button>
+                                            <button
+                                              onClick={() => handleDelete(file.id)}
+                                              className="text-red-400/60 hover:text-red-400 text-xs"
+                                              title="Delete"
+                                            >
+                                              🗑
+                                            </button>
+                                          </>
+                                        )}
                                       </div>
                                     </div>
                                   ))}
@@ -443,6 +558,76 @@ export default function TeacherDashboardPage() {
           </div>
         </div>
       </div>
+
+      {/* Edit Modal */}
+      {editState && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
+          <div className="w-full max-w-md rounded-2xl border border-white/10 bg-neutral-900 p-6 shadow-2xl">
+            <h3 className="text-lg font-semibold mb-4">Edit Lecture</h3>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm text-white/70 mb-1">Lesson Name</label>
+                <input
+                  type="text"
+                  value={editState.lesson_name}
+                  onChange={(e) => setEditState({ ...editState, lesson_name: e.target.value })}
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm text-white/70 mb-1">Week Number</label>
+                <input
+                  type="number"
+                  min={1}
+                  max={52}
+                  value={editState.week_number}
+                  onChange={(e) =>
+                    setEditState({ ...editState, week_number: parseInt(e.target.value) || 1 })
+                  }
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm text-white/70 mb-1">Subject</label>
+                <select
+                  value={editState.subject_id}
+                  onChange={(e) => setEditState({ ...editState, subject_id: e.target.value })}
+                  className="w-full rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-sm text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+                >
+                  {subjects.map((s) => (
+                    <option key={s.id} value={s.id} className="bg-black">
+                      {s.name} ({s.board} {s.level})
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
+            <div className="flex gap-3 mt-6">
+              <button
+                onClick={() => setEditState(null)}
+                className="flex-1 rounded-lg border border-white/20 bg-white/5 py-2 text-sm hover:bg-white/10 transition-colors"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={saveEdit}
+                disabled={editSaving || !editState.lesson_name.trim()}
+                className={`flex-1 rounded-lg py-2 text-sm font-medium transition-colors ${
+                  editSaving || !editState.lesson_name.trim()
+                    ? "bg-white/10 text-white/30 cursor-not-allowed"
+                    : "bg-white text-black hover:bg-white/90"
+                }`}
+              >
+                {editSaving ? "Saving..." : "Save Changes"}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   )
 }
