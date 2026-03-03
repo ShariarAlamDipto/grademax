@@ -60,19 +60,20 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let bootstrapped = false
     let resolved = false
 
-    // Safety-net: guarantee loading becomes false within 5s even if
+    // Safety-net: guarantee loading becomes false within 8s even if
     // onAuthStateChange never fires (e.g. stale cookies, network issues).
     const timeout = setTimeout(() => {
       if (!resolved) {
         resolved = true
         setLoading(false)
       }
-    }, 5000)
+    }, 8000)
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, s) => {
-        // Only sync cookies on sign-in and token refresh
-        if (s?.user && (event === "SIGNED_IN" || event === "TOKEN_REFRESHED")) {
+        // Sync server-side cookies on ANY event that has a valid session.
+        // This ensures the middleware can always find the user.
+        if (s?.user) {
           fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
         }
 
@@ -104,8 +105,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           setLoading(false)
         }
 
-        // After SIGNED_IN event, if we're still on /login, navigate to dashboard
-        if (s?.user && event === "SIGNED_IN" && window.location.pathname === "/login") {
+        // If user has a session and we're on the /login page, redirect away.
+        // Handle SIGNED_IN, TOKEN_REFRESHED, and INITIAL_SESSION so we
+        // never get stuck on the login page when already authenticated.
+        if (
+          s?.user &&
+          (event === "SIGNED_IN" || event === "INITIAL_SESSION" || event === "TOKEN_REFRESHED") &&
+          window.location.pathname === "/login"
+        ) {
           const params = new URLSearchParams(window.location.search)
           window.location.href = params.get("next") || "/dashboard"
         }

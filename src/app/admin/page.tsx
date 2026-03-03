@@ -193,6 +193,19 @@ export default function AdminPage() {
   }
 
   if (!user || !isAdmin) {
+    // If user is null, auth may still be resolving — show a gentler message
+    if (!user) {
+      return (
+        <main className="min-h-screen bg-black text-white flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-pulse text-white/50 mb-4">Verifying your session...</div>
+            <p className="text-white/40 text-sm">If this takes too long,{" "}
+              <Link href="/login?next=/admin" className="text-white underline underline-offset-4">sign in here</Link>.
+            </p>
+          </div>
+        </main>
+      )
+    }
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center max-w-md px-6">
