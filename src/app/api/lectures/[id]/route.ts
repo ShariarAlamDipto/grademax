@@ -14,12 +14,10 @@ export async function DELETE(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
-  // Check role using service role client
+  // Check role — use admin client if available, fall back to regular
   const admin = getSupabaseAdmin()
-  if (!admin) {
-    return NextResponse.json({ error: "Server config error" }, { status: 500 })
-  }
-  const { data: profile } = await admin
+  const db = admin || supabase
+  const { data: profile } = await db
     .from("profiles")
     .select("role")
     .eq("id", user.id)
@@ -34,7 +32,7 @@ export async function DELETE(
   }
 
   // Get the lecture to find the storage path
-  const { data: lecture } = await admin
+  const { data: lecture } = await db
     .from("lectures")
     .select("file_url, teacher_id")
     .eq("id", id)
@@ -54,12 +52,12 @@ export async function DELETE(
   if (lecture.file_url.includes("/storage/")) {
     const path = lecture.file_url.split("/lectures/").pop()
     if (path) {
-      await admin.storage.from("lectures").remove([decodeURIComponent(path)])
+      await db.storage.from("lectures").remove([decodeURIComponent(path)])
     }
   }
 
   // Delete the record
-  const { error } = await admin.from("lectures").delete().eq("id", id)
+  const { error } = await db.from("lectures").delete().eq("id", id)
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
