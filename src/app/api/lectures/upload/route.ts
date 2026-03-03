@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseServer } from "@/lib/supabaseServer"
+import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 
 // POST /api/lectures/upload - Upload file to Supabase Storage
 export async function POST(req: NextRequest) {
@@ -9,14 +10,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
-  // Check teacher/admin role
-  const { data: profile } = await supabase
+  // Check teacher/admin role using service role client (bypasses RLS)
+  const admin = getSupabaseAdmin()
+  const { data: profile } = await admin
     .from("profiles")
     .select("role")
     .eq("id", user.id)
     .single()
 
-  if (!profile || !["teacher", "admin"].includes(profile.role)) {
+  const isTeacherOrAdmin =
+    isSuperAdmin(user.email) ||
+    (profile && ["teacher", "admin"].includes(profile.role))
+
+  if (!isTeacherOrAdmin) {
     return NextResponse.json({ error: "Only teachers can upload" }, { status: 403 })
   }
 
@@ -34,9 +40,9 @@ export async function POST(req: NextRequest) {
   const sanitizedLesson = lessonName.replace(/[^a-zA-Z0-9-_ ]/g, "").trim()
   const storagePath = `${subjectId}/week_${weekNumber}/${sanitizedLesson}/${file.name}`
 
-  // Upload to Supabase Storage
+  // Upload to Supabase Storage using service role (bypasses storage RLS)
   const buffer = Buffer.from(await file.arrayBuffer())
-  const { error: uploadError } = await supabase.storage
+  const { error: uploadError } = await admin.storage
     .from("lectures")
     .upload(storagePath, buffer, {
       contentType: file.type,
@@ -48,12 +54,12 @@ export async function POST(req: NextRequest) {
   }
 
   // Get public URL
-  const { data: urlData } = supabase.storage
+  const { data: urlData } = admin.storage
     .from("lectures")
     .getPublicUrl(storagePath)
 
-  // Insert lecture record
-  const { data: lecture, error: insertError } = await supabase
+  // Insert lecture record using service role (bypasses RLS)
+  const { data: lecture, error: insertError } = await admin
     .from("lectures")
     .insert({
       teacher_id: user.id,

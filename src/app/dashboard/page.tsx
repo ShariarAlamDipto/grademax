@@ -2,6 +2,7 @@ export const dynamic = "force-dynamic"
 
 import { redirect } from "next/navigation"
 import { getSupabaseServer } from "@/lib/supabaseServer"
+import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 import LevelAndGoal from "@/components/dashboard/LevelAndGoal"
 import SubjectDropdown from "@/components/dashboard/SubjectDropdown"
 import PapersChecklist from "@/components/dashboard/PapersChecklist"
@@ -13,6 +14,15 @@ export default async function DashboardPage() {
   const supabase = getSupabaseServer()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect("/login")
+
+  // Auto-promote super admin if needed
+  if (isSuperAdmin(user.email)) {
+    const admin = getSupabaseAdmin()
+    await admin
+      .from("profiles")
+      .update({ role: "admin" })
+      .eq("id", user.id)
+  }
 
   const displayName =
     (user.user_metadata?.full_name as string) ||
@@ -68,14 +78,6 @@ export default async function DashboardPage() {
                 className="rounded-lg border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm text-blue-400 hover:bg-blue-400/20 transition-colors"
               >
                 Teacher Panel
-              </Link>
-            )}
-            {userRole === "admin" && (
-              <Link
-                href="/admin"
-                className="rounded-lg border border-red-400/30 bg-red-400/10 px-4 py-2 text-sm text-red-400 hover:bg-red-400/20 transition-colors"
-              >
-                Admin
               </Link>
             )}
             <Link
