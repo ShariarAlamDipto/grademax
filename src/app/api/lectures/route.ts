@@ -15,7 +15,9 @@ export async function GET(req: NextRequest) {
   const weekNumber = url.searchParams.get("week")
 
   const admin = getSupabaseAdmin()
-  let query = admin
+  // Use admin client if available, fall back to regular client for reads
+  const db = admin || supabase
+  let query = db
     .from("lectures")
     .select(`
       id,
@@ -58,6 +60,9 @@ export async function POST(req: NextRequest) {
 
   // Check teacher/admin role using service role client
   const admin = getSupabaseAdmin()
+  if (!admin) {
+    return NextResponse.json({ error: "Server config error" }, { status: 500 })
+  }
   const { data: profile } = await admin
     .from("profiles")
     .select("role")

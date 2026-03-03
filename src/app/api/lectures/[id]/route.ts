@@ -16,6 +16,9 @@ export async function DELETE(
 
   // Check role using service role client
   const admin = getSupabaseAdmin()
+  if (!admin) {
+    return NextResponse.json({ error: "Server config error" }, { status: 500 })
+  }
   const { data: profile } = await admin
     .from("profiles")
     .select("role")

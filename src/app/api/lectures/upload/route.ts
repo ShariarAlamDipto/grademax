@@ -12,6 +12,9 @@ export async function POST(req: NextRequest) {
 
   // Check teacher/admin role using service role client (bypasses RLS)
   const admin = getSupabaseAdmin()
+  if (!admin) {
+    return NextResponse.json({ error: "Server config error" }, { status: 500 })
+  }
   const { data: profile } = await admin
     .from("profiles")
     .select("role")
