@@ -10,12 +10,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
-  // Check teacher/admin role using service role client (bypasses RLS)
+  // Check teacher/admin role — try service role client first, fall back to regular client
   const admin = getSupabaseAdmin()
-  if (!admin) {
-    return NextResponse.json({ error: "Server config error" }, { status: 500 })
-  }
-  const { data: profile } = await admin
+  const db = admin || supabase
+  const { data: profile } = await db
     .from("profiles")
     .select("role")
     .eq("id", user.id)
@@ -43,9 +41,10 @@ export async function POST(req: NextRequest) {
   const sanitizedLesson = lessonName.replace(/[^a-zA-Z0-9-_ ]/g, "").trim()
   const storagePath = `${subjectId}/week_${weekNumber}/${sanitizedLesson}/${file.name}`
 
-  // Upload to Supabase Storage using service role (bypasses storage RLS)
+  // Upload to Supabase Storage — prefer admin client (bypasses storage RLS), fall back to regular
+  const storageClient = admin || supabase
   const buffer = Buffer.from(await file.arrayBuffer())
-  const { error: uploadError } = await admin.storage
+  const { error: uploadError } = await storageClient.storage
     .from("lectures")
     .upload(storagePath, buffer, {
       contentType: file.type,
@@ -57,12 +56,12 @@ export async function POST(req: NextRequest) {
   }
 
   // Get public URL
-  const { data: urlData } = admin.storage
+  const { data: urlData } = storageClient.storage
     .from("lectures")
     .getPublicUrl(storagePath)
 
-  // Insert lecture record using service role (bypasses RLS)
-  const { data: lecture, error: insertError } = await admin
+  // Insert lecture record — prefer admin client, fall back to regular
+  const { data: lecture, error: insertError } = await db
     .from("lectures")
     .insert({
       teacher_id: user.id,

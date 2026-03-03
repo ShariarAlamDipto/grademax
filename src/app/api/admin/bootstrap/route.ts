@@ -19,12 +19,10 @@ export async function POST() {
     return NextResponse.json({ error: "Not a super admin" }, { status: 403 })
   }
 
-  // Use service role to bypass RLS and set role
+  // Use service role to bypass RLS and set role, fall back to regular client
   const admin = getSupabaseAdmin()
-  if (!admin) {
-    return NextResponse.json({ error: "Service role key not configured" }, { status: 500 })
-  }
-  const { error } = await admin
+  const db = admin || supabase
+  const { error } = await db
     .from("profiles")
     .update({ role: "admin" })
     .eq("id", user.id)

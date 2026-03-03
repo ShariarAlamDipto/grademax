@@ -58,12 +58,10 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
-  // Check teacher/admin role using service role client
+  // Check teacher/admin role — use admin client if available, fall back to regular
   const admin = getSupabaseAdmin()
-  if (!admin) {
-    return NextResponse.json({ error: "Server config error" }, { status: 500 })
-  }
-  const { data: profile } = await admin
+  const db = admin || supabase
+  const { data: profile } = await db
     .from("profiles")
     .select("role")
     .eq("id", user.id)
@@ -84,7 +82,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
   }
 
-  const { data, error } = await admin
+  const { data, error } = await db
     .from("lectures")
     .insert({
       teacher_id: user.id,

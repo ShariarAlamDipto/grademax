@@ -58,10 +58,19 @@ export default function AdminPage() {
 
   const fetchUsers = useCallback(async () => {
     setLoading(true)
-    const res = await fetch("/api/admin/users")
-    if (res.ok) {
-      const data = await res.json()
-      setUsers(data.users || [])
+    try {
+      const res = await fetch("/api/admin/users")
+      if (res.ok) {
+        const data = await res.json()
+        setUsers(data.users || [])
+      } else {
+        const data = await res.json().catch(() => null)
+        console.error("Failed to fetch users:", res.status, data)
+        setError(data?.error || `Failed to load users (${res.status})`)
+      }
+    } catch (err) {
+      console.error("Fetch users error:", err)
+      setError("Network error loading users")
     }
     setLoading(false)
   }, [])
