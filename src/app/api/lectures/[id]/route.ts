@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseServer } from "@/lib/supabaseServer"
+import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 
 // DELETE /api/lectures/[id] - Delete a lecture
 export async function DELETE(
@@ -13,19 +14,24 @@ export async function DELETE(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
-  // Check role
-  const { data: profile } = await supabase
+  // Check role using service role client
+  const admin = getSupabaseAdmin()
+  const { data: profile } = await admin
     .from("profiles")
     .select("role")
     .eq("id", user.id)
     .single()
 
-  if (!profile || !["teacher", "admin"].includes(profile.role)) {
+  const isTeacherOrAdmin =
+    isSuperAdmin(user.email) ||
+    (profile && ["teacher", "admin"].includes(profile.role))
+
+  if (!isTeacherOrAdmin) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 })
   }
 
   // Get the lecture to find the storage path
-  const { data: lecture } = await supabase
+  const { data: lecture } = await admin
     .from("lectures")
     .select("file_url, teacher_id")
     .eq("id", id)
@@ -36,7 +42,8 @@ export async function DELETE(
   }
 
   // Only the teacher who uploaded or an admin can delete
-  if (lecture.teacher_id !== user.id && profile.role !== "admin") {
+  const effectiveRole = isSuperAdmin(user.email) ? "admin" : (profile?.role || "student")
+  if (lecture.teacher_id !== user.id && effectiveRole !== "admin") {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 })
   }
 
@@ -44,12 +51,12 @@ export async function DELETE(
   if (lecture.file_url.includes("/storage/")) {
     const path = lecture.file_url.split("/lectures/").pop()
     if (path) {
-      await supabase.storage.from("lectures").remove([decodeURIComponent(path)])
+      await admin.storage.from("lectures").remove([decodeURIComponent(path)])
     }
   }
 
   // Delete the record
-  const { error } = await supabase.from("lectures").delete().eq("id", id)
+  const { error } = await admin.from("lectures").delete().eq("id", id)
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }

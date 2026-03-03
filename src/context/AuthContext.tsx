@@ -41,7 +41,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null)
   const [loading, setLoading] = useState(true)
 
-  const fetchProfile = useCallback(async (userId: string) => {
+  const fetchProfile = useCallback(async (userId: string, userEmail?: string) => {
+    // If this is the super admin, auto-bootstrap their role first
+    if (userEmail && userEmail.toLowerCase() === "shariardipto111@gmail.com") {
+      await fetch("/api/admin/bootstrap", { method: "POST" }).catch(() => {})
+    }
+
     const { data } = await supabase
       .from("profiles")
       .select("id, email, full_name, avatar_url, study_level, marks_goal_pct, role")
@@ -52,9 +57,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const refreshProfile = useCallback(async () => {
     if (user?.id) {
-      await fetchProfile(user.id)
+      await fetchProfile(user.id, user.email ?? undefined)
     }
-  }, [user?.id, fetchProfile])
+  }, [user?.id, user?.email, fetchProfile])
 
   useEffect(() => {
     // Get initial session
@@ -65,7 +70,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       if (s?.user) {
         // Sync cookies to the server immediately
         await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
-        await fetchProfile(s.user.id)
+        await fetchProfile(s.user.id, s.user.email ?? undefined)
       }
       setLoading(false)
     }
@@ -79,7 +84,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         if (s?.user) {
           // Sync cookies to the server FIRST so server components can read them
           await fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
-          await fetchProfile(s.user.id)
+          await fetchProfile(s.user.id, s.user.email ?? undefined)
 
           // After SIGNED_IN event, if we're still on /login, navigate to dashboard
           if (event === "SIGNED_IN" && window.location.pathname === "/login") {

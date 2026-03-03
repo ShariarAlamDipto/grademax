@@ -1,25 +1,40 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseServer } from "@/lib/supabaseServer"
+import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 
-// GET /api/admin/users - List all users with their roles (admin only)
-export async function GET() {
+/**
+ * Verify the caller is an admin (either by DB role or super-admin email).
+ * Returns the user or null.
+ */
+async function verifyAdmin() {
   const supabase = getSupabaseServer()
   const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
+  if (!user) return null
 
-  const { data: profile } = await supabase
+  // Super admin always passes
+  if (isSuperAdmin(user.email)) return user
+
+  // Check DB role
+  const admin = getSupabaseAdmin()
+  const { data: profile } = await admin
     .from("profiles")
     .select("role")
     .eq("id", user.id)
     .single()
 
-  if (!profile || profile.role !== "admin") {
+  if (profile?.role === "admin") return user
+  return null
+}
+
+// GET /api/admin/users - List all users with their roles (admin only)
+export async function GET() {
+  const user = await verifyAdmin()
+  if (!user) {
     return NextResponse.json({ error: "Admin access required" }, { status: 403 })
   }
 
-  const { data: users, error } = await supabase
+  const admin = getSupabaseAdmin()
+  const { data: users, error } = await admin
     .from("profiles")
     .select("id, email, full_name, role, created_at")
     .order("created_at", { ascending: false })
@@ -33,19 +48,8 @@ export async function GET() {
 
 // PATCH /api/admin/users - Update a user's role by email (admin only)
 export async function PATCH(req: NextRequest) {
-  const supabase = getSupabaseServer()
-  const { data: { user } } = await supabase.auth.getUser()
+  const user = await verifyAdmin()
   if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
-
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("role")
-    .eq("id", user.id)
-    .single()
-
-  if (!profile || profile.role !== "admin") {
     return NextResponse.json({ error: "Admin access required" }, { status: 403 })
   }
 
@@ -56,7 +60,9 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: "Valid email and role (student/teacher/admin) required" }, { status: 400 })
   }
 
-  const { data: targetUser, error: findError } = await supabase
+  const admin = getSupabaseAdmin()
+
+  const { data: targetUser, error: findError } = await admin
     .from("profiles")
     .select("id, email, role")
     .eq("email", email)
@@ -66,7 +72,7 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: "User not found with that email" }, { status: 404 })
   }
 
-  const { error: updateError } = await supabase
+  const { error: updateError } = await admin
     .from("profiles")
     .update({ role })
     .eq("id", targetUser.id)
