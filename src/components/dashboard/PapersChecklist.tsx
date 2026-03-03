@@ -166,4 +166,4 @@ const PaperRow = React.memo(function PaperRow({ paper, onComplete }: { paper: Pa
       </button>
     </div>
   )
-}
+})
