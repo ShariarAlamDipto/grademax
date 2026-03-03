@@ -58,29 +58,51 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     let bootstrapped = false
+    let resolved = false
+
+    // Safety-net: guarantee loading becomes false within 5s even if
+    // onAuthStateChange never fires (e.g. stale cookies, network issues).
+    const timeout = setTimeout(() => {
+      if (!resolved) {
+        resolved = true
+        setLoading(false)
+      }
+    }, 5000)
 
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       async (event, s) => {
-        // Only sync cookies on sign-in and token refresh — not every event
+        // Only sync cookies on sign-in and token refresh
         if (s?.user && (event === "SIGNED_IN" || event === "TOKEN_REFRESHED")) {
           fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
         }
 
         if (s?.user) {
-          // Bootstrap admin once per session — await so profile fetch gets updated role
+          // Bootstrap admin once per session — fire-and-forget with short timeout
           if (!bootstrapped && s.user.email?.toLowerCase() === "shariardipto111@gmail.com") {
             bootstrapped = true
-            try { await fetch("/api/admin/bootstrap", { method: "POST" }) } catch {}
+            try {
+              await Promise.race([
+                fetch("/api/admin/bootstrap", { method: "POST" }),
+                new Promise((_, reject) => setTimeout(() => reject(new Error("timeout")), 3000)),
+              ])
+            } catch {}
           }
           // Fetch profile AFTER bootstrap so the role is up-to-date
-          await fetchProfileDirect(s.user.id)
+          try {
+            await fetchProfileDirect(s.user.id)
+          } catch {
+            setProfile(null)
+          }
         } else {
           setProfile(null)
         }
         // Only set user/session AFTER profile is fetched
         setSession(s)
         setUser(s?.user ?? null)
-        setLoading(false)
+        if (!resolved) {
+          resolved = true
+          setLoading(false)
+        }
 
         // After SIGNED_IN event, if we're still on /login, navigate to dashboard
         if (s?.user && event === "SIGNED_IN" && window.location.pathname === "/login") {
@@ -90,7 +112,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     )
 
-    return () => subscription.unsubscribe()
+    return () => {
+      clearTimeout(timeout)
+      subscription.unsubscribe()
+    }
   }, [fetchProfileDirect])
 
   const signOut = useCallback(async () => {

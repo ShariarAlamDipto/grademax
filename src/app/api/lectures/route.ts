@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireAuth, requireTeacher } from "@/lib/apiAuth"
-import { isSuperAdmin } from "@/lib/supabaseAdmin"
+import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 
 // GET /api/lectures - List lectures, optionally filtered by subject_id
 export async function GET(req: NextRequest) {
   const auth = await requireAuth()
   if ("error" in auth) return auth.error
-  const { db } = auth
+
+  // Use admin client to bypass RLS circular reference on profiles
+  const admin = getSupabaseAdmin()
+  const db = admin || auth.db
 
   const url = new URL(req.url)
   const subjectId = url.searchParams.get("subject_id")
@@ -49,7 +52,11 @@ export async function GET(req: NextRequest) {
 export async function POST(req: NextRequest) {
   const auth = await requireTeacher()
   if ("error" in auth) return auth.error
-  const { user, db } = auth
+  const { user } = auth
+
+  // Use admin client to bypass RLS circular reference
+  const admin = getSupabaseAdmin()
+  const db = admin || auth.db
 
   const body = await req.json()
   const { subject_id, week_number, lesson_name, file_name, file_url, file_size, file_type } = body
