@@ -32,15 +32,15 @@ export async function middleware(request: NextRequest) {
   // IMPORTANT: always call getUser() so the session gets refreshed
   // and cookies are written. Do NOT use getSession() — it doesn't
   // validate the JWT with the Supabase Auth server.
-  // Only call getUser() on protected or auth-related routes for performance
   const protectedPaths = ["/dashboard", "/profile", "/generate", "/admin", "/lectures"]
   const isProtected = protectedPaths.some((p) =>
     request.nextUrl.pathname.startsWith(p)
   )
+  const isApiRoute = request.nextUrl.pathname.startsWith("/api/")
   const isLoginPage = request.nextUrl.pathname === "/login"
 
-  // Skip Supabase call entirely for public pages
-  if (!isProtected && !isLoginPage) {
+  // Skip Supabase call entirely for public pages (NOT api routes — those need fresh sessions)
+  if (!isProtected && !isApiRoute && !isLoginPage) {
     return response
   }
 
