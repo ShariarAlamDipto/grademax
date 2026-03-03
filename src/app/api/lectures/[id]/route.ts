@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getSupabaseServer } from "@/lib/supabaseServer"
-import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
+import { requireTeacher } from "@/lib/apiAuth"
+import { isSuperAdmin } from "@/lib/supabaseAdmin"
 
 // DELETE /api/lectures/[id] - Delete a lecture
 export async function DELETE(
@@ -8,28 +8,9 @@ export async function DELETE(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params
-  const supabase = getSupabaseServer()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
-
-  // Check role — use admin client if available, fall back to regular
-  const admin = getSupabaseAdmin()
-  const db = admin || supabase
-  const { data: profile } = await db
-    .from("profiles")
-    .select("role")
-    .eq("id", user.id)
-    .single()
-
-  const isTeacherOrAdmin =
-    isSuperAdmin(user.email) ||
-    (profile && ["teacher", "admin"].includes(profile.role))
-
-  if (!isTeacherOrAdmin) {
-    return NextResponse.json({ error: "Forbidden" }, { status: 403 })
-  }
+  const auth = await requireTeacher()
+  if ("error" in auth) return auth.error
+  const { user, db, role } = auth
 
   // Get the lecture to find the storage path
   const { data: lecture } = await db
@@ -43,7 +24,7 @@ export async function DELETE(
   }
 
   // Only the teacher who uploaded or an admin can delete
-  const effectiveRole = isSuperAdmin(user.email) ? "admin" : (profile?.role || "student")
+  const effectiveRole = isSuperAdmin(user.email) ? "admin" : role
   if (lecture.teacher_id !== user.id && effectiveRole !== "admin") {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 })
   }

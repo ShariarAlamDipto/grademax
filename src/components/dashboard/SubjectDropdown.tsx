@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 
 export default function SubjectDropdown({ currentLevel, initialEnrolled }: { currentLevel: "igcse" | "ial" | null; initialEnrolled: string[] }) {
@@ -21,7 +21,7 @@ export default function SubjectDropdown({ currentLevel, initialEnrolled }: { cur
     [all, currentLevel]
   )
 
-  async function toggle(id: string, on: boolean) {
+  const toggle = useCallback(async (id: string, on: boolean) => {
     if (on) {
       await supabase.from("user_subjects").insert({ subject_id: id })
       setEnrolled((prev) => new Set(prev).add(id))
@@ -33,7 +33,7 @@ export default function SubjectDropdown({ currentLevel, initialEnrolled }: { cur
         return copy
       })
     }
-  }
+  }, [])
 
   return (
     <section className="rounded-2xl border border-white/10 bg-white/5 p-4">

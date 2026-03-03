@@ -1,22 +1,17 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getSupabaseServer } from "@/lib/supabaseServer"
-import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
+import { requireAuth, requireTeacher } from "@/lib/apiAuth"
+import { isSuperAdmin } from "@/lib/supabaseAdmin"
 
 // GET /api/lectures - List lectures, optionally filtered by subject_id
 export async function GET(req: NextRequest) {
-  const supabase = getSupabaseServer()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
+  const auth = await requireAuth()
+  if ("error" in auth) return auth.error
+  const { db } = auth
 
   const url = new URL(req.url)
   const subjectId = url.searchParams.get("subject_id")
   const weekNumber = url.searchParams.get("week")
 
-  const admin = getSupabaseAdmin()
-  // Use admin client if available, fall back to regular client for reads
-  const db = admin || supabase
   let query = db
     .from("lectures")
     .select(`
@@ -52,28 +47,9 @@ export async function GET(req: NextRequest) {
 
 // POST /api/lectures - Create a lecture record (after file upload to storage)
 export async function POST(req: NextRequest) {
-  const supabase = getSupabaseServer()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
-  }
-
-  // Check teacher/admin role — use admin client if available, fall back to regular
-  const admin = getSupabaseAdmin()
-  const db = admin || supabase
-  const { data: profile } = await db
-    .from("profiles")
-    .select("role")
-    .eq("id", user.id)
-    .single()
-
-  const isTeacherOrAdmin =
-    isSuperAdmin(user.email) ||
-    (profile && ["teacher", "admin"].includes(profile.role))
-
-  if (!isTeacherOrAdmin) {
-    return NextResponse.json({ error: "Only teachers can upload lectures" }, { status: 403 })
-  }
+  const auth = await requireTeacher()
+  if ("error" in auth) return auth.error
+  const { user, db } = auth
 
   const body = await req.json()
   const { subject_id, week_number, lesson_name, file_name, file_url, file_size, file_type } = body

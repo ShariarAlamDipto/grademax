@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     "sharp",
   ],
   experimental: {
-    optimizePackageImports: ["recharts"],
+    optimizePackageImports: ["recharts", "@supabase/supabase-js", "pdf-lib", "zod"],
   },
   images: {
     remotePatterns: [

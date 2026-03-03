@@ -36,11 +36,10 @@ export async function middleware(request: NextRequest) {
   const isProtected = protectedPaths.some((p) =>
     request.nextUrl.pathname.startsWith(p)
   )
-  const isApiRoute = request.nextUrl.pathname.startsWith("/api/")
   const isLoginPage = request.nextUrl.pathname === "/login"
 
-  // Skip Supabase call entirely for public pages (NOT api routes — those need fresh sessions)
-  if (!isProtected && !isApiRoute && !isLoginPage) {
+  // Skip non-protected pages. API routes handle their own auth internally.
+  if (!isProtected && !isLoginPage) {
     return response
   }
 
