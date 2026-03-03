@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { getSupabaseServer } from "@/lib/supabaseServer"
+import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 
 // GET /api/lectures - List lectures, optionally filtered by subject_id
 export async function GET(req: NextRequest) {
@@ -13,7 +14,8 @@ export async function GET(req: NextRequest) {
   const subjectId = url.searchParams.get("subject_id")
   const weekNumber = url.searchParams.get("week")
 
-  let query = supabase
+  const admin = getSupabaseAdmin()
+  let query = admin
     .from("lectures")
     .select(`
       id,
@@ -54,14 +56,19 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
   }
 
-  // Check teacher/admin role
-  const { data: profile } = await supabase
+  // Check teacher/admin role using service role client
+  const admin = getSupabaseAdmin()
+  const { data: profile } = await admin
     .from("profiles")
     .select("role")
     .eq("id", user.id)
     .single()
 
-  if (!profile || !["teacher", "admin"].includes(profile.role)) {
+  const isTeacherOrAdmin =
+    isSuperAdmin(user.email) ||
+    (profile && ["teacher", "admin"].includes(profile.role))
+
+  if (!isTeacherOrAdmin) {
     return NextResponse.json({ error: "Only teachers can upload lectures" }, { status: 403 })
   }
 
@@ -72,7 +79,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
   }
 
-  const { data, error } = await supabase
+  const { data, error } = await admin
     .from("lectures")
     .insert({
       teacher_id: user.id,
