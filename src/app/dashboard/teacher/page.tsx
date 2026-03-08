@@ -35,7 +35,7 @@ interface EditState {
 }
 
 export default function TeacherDashboardPage() {
-  const { user, profile, displayName, loading: authLoading } = useAuth()
+  const { user, profile, isTeacher, isAdmin, profileLoaded, displayName, loading: authLoading } = useAuth()
   const [subjects, setSubjects] = useState<Subject[]>([])
   const [lectures, setLectures] = useState<Lecture[]>([])
   const [selectedSubject, setSelectedSubject] = useState<string>("")
@@ -54,7 +54,7 @@ export default function TeacherDashboardPage() {
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
-  const isAdminOrSuper = profile?.role === "admin" || isSuperAdminUser
+  const isAdminOrSuper = isAdmin || isSuperAdminUser
 
   // Fetch subjects
   useEffect(() => {
@@ -279,7 +279,7 @@ export default function TeacherDashboardPage() {
     )
   }
 
-  if (profile && profile.role !== "teacher" && profile.role !== "admin" && !isSuperAdminUser) {
+  if (profileLoaded && !isTeacher && !isSuperAdminUser) {
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center max-w-md">

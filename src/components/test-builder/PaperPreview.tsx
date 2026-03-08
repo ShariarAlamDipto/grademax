@@ -18,7 +18,11 @@ interface PaperPreviewProps {
   onDownloadQP: () => void;
   onDownloadMS: () => void;
   pdfProgress: { step: number; total: number; label: string } | null;
+  error?: string | null;
 }
+
+/** A4 aspect ratio: 210 × 297 mm ≈ 1 : 1.4142 */
+const A4_RATIO = 297 / 210;
 
 export default function PaperPreview({
   items,
@@ -35,13 +39,14 @@ export default function PaperPreview({
   onDownloadQP,
   onDownloadMS,
   pdfProgress,
+  error,
 }: PaperPreviewProps) {
-  const totalMarks = items.length * 4; // estimated
+  const totalMarks = items.length * 4;
 
   return (
-    <div className="bg-gray-800/80 border border-gray-700 rounded-xl flex flex-col h-full">
-      {/* Header */}
-      <div className="p-4 border-b border-gray-700">
+    <div className="bg-gray-800/80 border border-gray-700 rounded-xl flex flex-col h-full overflow-hidden">
+      {/* ── Header ── */}
+      <div className="shrink-0 p-4 border-b border-gray-700">
         <div className="flex items-center justify-between mb-3">
           <h2 className="text-base font-bold text-white flex items-center gap-2">
             <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,14 +69,14 @@ export default function PaperPreview({
         />
         {items.length > 0 && (
           <div className="flex justify-between text-xs mt-2 text-gray-400">
-            <span>{items.length} question{items.length !== 1 ? 's' : ''}</span>
+            <span>{items.length} question{items.length !== 1 ? 's' : ''} · {items.length + 1} pages</span>
             <span>~{totalMarks} marks</span>
           </div>
         )}
       </div>
 
-      {/* Paper preview */}
-      <div className="flex-1 overflow-y-auto min-h-0">
+      {/* ── Scrollable paper pages ── */}
+      <div className="flex-1 overflow-y-auto min-h-0 p-3">
         {items.length === 0 ? (
           <div className="text-center py-12 px-4">
             <svg className="w-12 h-12 text-gray-600 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,38 +88,46 @@ export default function PaperPreview({
             </p>
           </div>
         ) : (
-          <div className="p-3 space-y-0">
-            {/* Mock cover page — minimalistic, centered, Times New Roman style */}
-            <div className="bg-white rounded-t-lg p-6 border border-gray-300 mx-1 text-center" style={{ fontFamily: 'Times New Roman, serif' }}>
-              <p className="text-xs text-gray-400 tracking-[0.2em] uppercase mb-4">Question Paper</p>
-              <p className="text-base font-bold text-gray-900 mb-6">{testTitle || 'Untitled Test'}</p>
-              <div className="mx-auto max-w-[180px] space-y-3 text-left text-[11px]">
-                <div className="flex items-end gap-1">
-                  <span className="text-gray-500 shrink-0">Name</span>
-                  <span className="flex-1 border-b border-gray-300" />
-                </div>
-                <div className="flex items-end gap-1">
-                  <span className="text-gray-500 shrink-0">Total Marks</span>
-                  <span className="font-bold text-gray-800 ml-auto">{totalMarks}</span>
-                </div>
-                <div className="flex items-end gap-1">
-                  <span className="text-gray-500 shrink-0">Marks Received</span>
-                  <span className="flex-1 border-b border-gray-300" />
+          <div className="space-y-4">
+            {/* ── Page 1: Cover Page (A4 ratio) ── */}
+            <div className="relative">
+              <span className="absolute -top-0 left-2 z-10 bg-gray-700 text-gray-300 text-[9px] font-bold px-1.5 py-0.5 rounded-b">
+                COVER PAGE
+              </span>
+              <div
+                className="bg-white rounded-lg shadow-md border border-gray-300 flex items-center justify-center overflow-hidden"
+                style={{ aspectRatio: `1 / ${A4_RATIO}` }}
+              >
+                <div className="text-center px-6 w-full" style={{ fontFamily: 'Times New Roman, serif' }}>
+                  <p className="text-[10px] text-gray-400 tracking-[0.2em] uppercase mb-4">Question Paper</p>
+                  <p className="text-sm font-bold text-gray-900 mb-5 leading-tight">{testTitle || 'Untitled Test'}</p>
+                  <div className="mx-auto max-w-[160px] space-y-2.5 text-left text-[10px]">
+                    <div className="flex items-end gap-1">
+                      <span className="text-gray-500 shrink-0">Name</span>
+                      <span className="flex-1 border-b border-gray-300" />
+                    </div>
+                    <div className="flex items-end gap-1">
+                      <span className="text-gray-500 shrink-0">Total Marks</span>
+                      <span className="font-bold text-gray-800 ml-auto">{totalMarks}</span>
+                    </div>
+                    <div className="flex items-end gap-1">
+                      <span className="text-gray-500 shrink-0">Marks Received</span>
+                      <span className="flex-1 border-b border-gray-300" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Question pages */}
+            {/* ── Question Pages (each in A4 ratio) ── */}
             {items.map((item, index) => (
-              <div key={item.id} className="relative group mx-1">
-                <div className="absolute top-2 left-2 z-10">
-                  <span className="bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
-                    Q{index + 1}
-                  </span>
-                </div>
+              <div key={item.id} className="relative group">
+                <span className="absolute -top-0 left-2 z-10 bg-black/70 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-b">
+                  Q{index + 1}
+                </span>
 
                 {/* Reorder & remove controls */}
-                <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute top-1.5 right-2 z-10 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
                   <button onClick={() => onMoveUp(index)} disabled={index === 0}
                     className="p-1 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30" title="Move up">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" /></svg>
@@ -129,8 +142,11 @@ export default function PaperPreview({
                   </button>
                 </div>
 
-                <div className="border-x border-b border-gray-300 overflow-hidden bg-white">
-                  <PdfThumbnail url={item.qpPageUrl} width={340} className="w-full" />
+                <div
+                  className="bg-white rounded-lg shadow-md border border-gray-300 overflow-hidden"
+                  style={{ aspectRatio: `1 / ${A4_RATIO}` }}
+                >
+                  <PdfThumbnail url={item.qpPageUrl} width={340} className="w-full h-full object-contain" />
                 </div>
               </div>
             ))}
@@ -138,10 +154,16 @@ export default function PaperPreview({
         )}
       </div>
 
-      {/* Footer */}
-      <div className="p-4 border-t border-gray-700 space-y-2">
+      {/* ── Footer — always visible ── */}
+      <div className="shrink-0 p-4 border-t border-gray-700 space-y-2">
+        {error && (
+          <div className="bg-red-900/50 border border-red-500/40 rounded-lg p-2 mb-1">
+            <p className="text-red-300 text-xs">{error}</p>
+          </div>
+        )}
+
         {pdfProgress && (
-          <div className="mb-2">
+          <div className="mb-1">
             <div className="flex items-center justify-between mb-1">
               <span className="text-xs font-medium text-white">{pdfProgress.label}</span>
               <span className="text-[10px] text-gray-400">{pdfProgress.step}/{pdfProgress.total}</span>
@@ -155,24 +177,25 @@ export default function PaperPreview({
           </div>
         )}
 
+        {/* Download buttons — shown after generate succeeds */}
         {(worksheetUrl || markschemeUrl) && (
-          <div className="flex gap-2 mb-2">
+          <div className="flex gap-2">
             {worksheetUrl && (
               <button onClick={onDownloadQP}
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                Question Paper
+                Download Question Paper
               </button>
             )}
             {markschemeUrl && (
               <button onClick={onDownloadMS}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
-                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                Mark Scheme
+                Download Mark Scheme
               </button>
             )}
           </div>
@@ -180,7 +203,7 @@ export default function PaperPreview({
 
         <button onClick={onGenerate} disabled={items.length === 0 || generating}
           className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white py-2.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-          {generating ? 'Generating...' : 'Generate Test PDF'}
+          {generating ? 'Generating...' : worksheetUrl ? 'Regenerate PDF' : 'Generate & Download PDF'}
         </button>
       </div>
     </div>
