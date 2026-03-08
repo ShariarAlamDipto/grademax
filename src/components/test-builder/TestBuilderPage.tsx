@@ -468,7 +468,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           </div>
 
           {/* ═══ RIGHT COLUMN: Live Paper Preview ═══ */}
-          <div className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-120px)]">
+          <div className="lg:sticky lg:top-24 lg:self-start lg:h-[calc(100vh-7rem)] lg:max-h-[calc(100vh-7rem)]">
             <PaperPreview
               items={basketItems}
               testTitle={testTitle}
@@ -484,6 +484,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               onDownloadQP={() => worksheetUrl && downloadFile(worksheetUrl, `${testTitle || 'test'}_question_paper.pdf`)}
               onDownloadMS={() => markschemeUrl && downloadFile(markschemeUrl, `${testTitle || 'test'}_mark_scheme.pdf`)}
               pdfProgress={pdfProgress}
+              error={error}
             />
           </div>
         </div>
