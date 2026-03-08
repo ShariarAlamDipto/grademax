@@ -70,7 +70,7 @@ export default function PaperPreview({
         )}
       </div>
 
-      {/* Paper preview — shows assembled questions as images */}
+      {/* Paper preview */}
       <div className="flex-1 overflow-y-auto min-h-0">
         {items.length === 0 ? (
           <div className="text-center py-12 px-4">
@@ -84,72 +84,51 @@ export default function PaperPreview({
           </div>
         ) : (
           <div className="p-3 space-y-0">
-            {/* Mock cover page */}
-            <div className="bg-white rounded-t-lg p-4 border border-gray-300 mx-1">
-              <div className="h-1.5 w-full bg-blue-600 rounded mb-3" />
-              <p className="text-[10px] text-blue-600 font-bold tracking-wide">QUESTION PAPER</p>
-              <p className="text-sm font-bold text-gray-800 mt-1">{testTitle || 'Untitled Test'}</p>
-              <div className="mt-3 space-y-1.5">
-                <div className="flex text-[10px]">
-                  <span className="text-gray-500 w-20 font-medium">Name:</span>
+            {/* Mock cover page — minimalistic, centered, Times New Roman style */}
+            <div className="bg-white rounded-t-lg p-6 border border-gray-300 mx-1 text-center" style={{ fontFamily: 'Times New Roman, serif' }}>
+              <p className="text-xs text-gray-400 tracking-[0.2em] uppercase mb-4">Question Paper</p>
+              <p className="text-base font-bold text-gray-900 mb-6">{testTitle || 'Untitled Test'}</p>
+              <div className="mx-auto max-w-[180px] space-y-3 text-left text-[11px]">
+                <div className="flex items-end gap-1">
+                  <span className="text-gray-500 shrink-0">Name</span>
                   <span className="flex-1 border-b border-gray-300" />
                 </div>
-                <div className="flex text-[10px]">
-                  <span className="text-gray-500 w-20 font-medium">Total Marks:</span>
-                  <span className="text-gray-800 font-bold">{totalMarks}</span>
+                <div className="flex items-end gap-1">
+                  <span className="text-gray-500 shrink-0">Total Marks</span>
+                  <span className="font-bold text-gray-800 ml-auto">{totalMarks}</span>
                 </div>
-                <div className="flex text-[10px]">
-                  <span className="text-gray-500 w-20 font-medium">Score:</span>
-                  <span className="text-gray-400">_____ / {totalMarks}</span>
+                <div className="flex items-end gap-1">
+                  <span className="text-gray-500 shrink-0">Marks Received</span>
+                  <span className="flex-1 border-b border-gray-300" />
                 </div>
               </div>
-              <div className="h-0.5 w-full bg-blue-600 rounded mt-3" />
             </div>
 
             {/* Question pages */}
             {items.map((item, index) => (
               <div key={item.id} className="relative group mx-1">
-                {/* Question label overlay */}
-                <div className="absolute top-2 left-2 z-10 flex items-center gap-1">
-                  <span className="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shadow">
+                <div className="absolute top-2 left-2 z-10">
+                  <span className="bg-black/70 text-white text-[10px] font-bold px-1.5 py-0.5 rounded">
                     Q{index + 1}
                   </span>
                 </div>
 
                 {/* Reorder & remove controls */}
                 <div className="absolute top-2 right-2 z-10 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button
-                    onClick={() => onMoveUp(index)}
-                    disabled={index === 0}
-                    className="p-1 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30 transition-colors"
-                    title="Move up"
-                  >
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" />
-                    </svg>
+                  <button onClick={() => onMoveUp(index)} disabled={index === 0}
+                    className="p-1 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30" title="Move up">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" /></svg>
                   </button>
-                  <button
-                    onClick={() => onMoveDown(index)}
-                    disabled={index === items.length - 1}
-                    className="p-1 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30 transition-colors"
-                    title="Move down"
-                  >
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                    </svg>
+                  <button onClick={() => onMoveDown(index)} disabled={index === items.length - 1}
+                    className="p-1 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30" title="Move down">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                   </button>
-                  <button
-                    onClick={() => onRemove(item.id)}
-                    className="p-1 bg-red-600/80 text-white rounded hover:bg-red-700 transition-colors"
-                    title="Remove"
-                  >
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                  <button onClick={() => onRemove(item.id)}
+                    className="p-1 bg-red-600/80 text-white rounded hover:bg-red-700" title="Remove">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                   </button>
                 </div>
 
-                {/* PDF page image */}
                 <div className="border-x border-b border-gray-300 overflow-hidden bg-white">
                   <PdfThumbnail url={item.qpPageUrl} width={340} className="w-full" />
                 </div>
@@ -159,9 +138,8 @@ export default function PaperPreview({
         )}
       </div>
 
-      {/* Footer — generate + download buttons */}
+      {/* Footer */}
       <div className="p-4 border-t border-gray-700 space-y-2">
-        {/* Progress bar */}
         {pdfProgress && (
           <div className="mb-2">
             <div className="flex items-center justify-between mb-1">
@@ -169,27 +147,19 @@ export default function PaperPreview({
               <span className="text-[10px] text-gray-400">{pdfProgress.step}/{pdfProgress.total}</span>
             </div>
             <div className="w-full h-1.5 bg-gray-700 rounded-full overflow-hidden">
-              <div
-                className="h-full rounded-full transition-all duration-500"
-                style={{
-                  width: `${Math.round((pdfProgress.step / pdfProgress.total) * 100)}%`,
+              <div className="h-full rounded-full transition-all duration-500"
+                style={{ width: `${Math.round((pdfProgress.step / pdfProgress.total) * 100)}%`,
                   background: pdfProgress.step === pdfProgress.total
-                    ? 'linear-gradient(to right, #22c55e, #10b981)'
-                    : 'linear-gradient(to right, #3b82f6, #6366f1)',
-                }}
-              />
+                    ? 'linear-gradient(to right, #22c55e, #10b981)' : 'linear-gradient(to right, #3b82f6, #6366f1)' }} />
             </div>
           </div>
         )}
 
-        {/* Download buttons (shown after generation) */}
         {(worksheetUrl || markschemeUrl) && (
           <div className="flex gap-2 mb-2">
             {worksheetUrl && (
-              <button
-                onClick={onDownloadQP}
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
-              >
+              <button onClick={onDownloadQP}
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
@@ -197,10 +167,8 @@ export default function PaperPreview({
               </button>
             )}
             {markschemeUrl && (
-              <button
-                onClick={onDownloadMS}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
-              >
+              <button onClick={onDownloadMS}
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
@@ -210,12 +178,8 @@ export default function PaperPreview({
           </div>
         )}
 
-        {/* Generate button */}
-        <button
-          onClick={onGenerate}
-          disabled={items.length === 0 || generating}
-          className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white py-2.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-        >
+        <button onClick={onGenerate} disabled={items.length === 0 || generating}
+          className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white py-2.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed">
           {generating ? 'Generating...' : 'Generate Test PDF'}
         </button>
       </div>

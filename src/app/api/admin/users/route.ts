@@ -114,32 +114,42 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: "Valid email and role (student/teacher/admin) required" }, { status: 400 })
   }
 
-  // First try profiles table
+  // First try profiles table (case-insensitive email lookup)
   const { data: targetUser } = await db
     .from("profiles")
     .select("id, email, role")
-    .eq("email", email)
+    .ilike("email", email.trim())
     .single()
 
   if (targetUser) {
     // User found in profiles — update role
-    const { error: updateError } = await db
+    const { data: updated, error: updateError } = await db
       .from("profiles")
       .update({ role })
       .eq("id", targetUser.id)
+      .select("id, email, role")
+      .single()
 
     if (updateError) {
+      console.error("[admin/users] Role update failed:", updateError)
       return NextResponse.json({ error: updateError.message }, { status: 500 })
     }
-    return NextResponse.json({ success: true, user: { ...targetUser, role } })
+
+    if (!updated) {
+      console.error("[admin/users] Update matched 0 rows for id:", targetUser.id)
+      return NextResponse.json({ error: "Update failed — no rows updated" }, { status: 500 })
+    }
+
+    console.log(`[admin/users] Role updated: ${email} → ${role} (id: ${targetUser.id})`)
+    return NextResponse.json({ success: true, user: updated })
   }
 
   // Not in profiles — search auth.users by email (needs admin client)
   if (!admin) {
-    return NextResponse.json({ error: "User not found with that email" }, { status: 404 })
+    return NextResponse.json({ error: "User not found with that email. They may need to sign in once first." }, { status: 404 })
   }
 
-  // Search auth users for the email
+  // Search auth users for the email (case-insensitive)
   const { data: { users: authUsers } } = await admin.auth.admin.listUsers()
   const authUser = authUsers?.find(
     (u) => u.email?.toLowerCase() === email.toLowerCase()

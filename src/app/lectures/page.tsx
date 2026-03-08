@@ -181,10 +181,13 @@ export default function LecturesPage() {
             <p className="text-sm text-white/50 mt-1">Browse lecture materials uploaded by your teachers</p>
           </div>
           <div className="flex items-center gap-3">
+            {!profile && !authLoading && user && (
+              <span className="text-xs text-white/40 animate-pulse">Loading role...</span>
+            )}
             {profile && (profile.role === "teacher" || profile.role === "admin" || user?.email?.toLowerCase() === "shariardipto111@gmail.com") && (
               <Link
                 href="/dashboard/teacher"
-                className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
+                className="rounded-lg border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm text-blue-400 hover:bg-blue-400/20 transition-colors font-medium"
               >
                 Upload Lectures
               </Link>
