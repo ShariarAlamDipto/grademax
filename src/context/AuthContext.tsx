@@ -22,6 +22,9 @@ interface AuthContextType {
   loading: boolean
   displayName: string
   avatarUrl: string | null
+  role: "student" | "teacher" | "admin"
+  isTeacher: boolean
+  isAdmin: boolean
   refreshProfile: () => Promise<void>
   signOut: () => Promise<void>
 }
@@ -33,6 +36,9 @@ const AuthContext = createContext<AuthContextType>({
   loading: true,
   displayName: "",
   avatarUrl: null,
+  role: "student",
+  isTeacher: false,
+  isAdmin: false,
   refreshProfile: async () => {},
   signOut: async () => {},
 })
@@ -141,6 +147,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   }, [handleSession])
 
+  // Auto-refresh profile when tab becomes visible (picks up role changes from admin)
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible" && user?.id) {
+        fetchProfileDirect(user.id)
+      }
+    }
+    document.addEventListener("visibilitychange", onVisibilityChange)
+    return () => document.removeEventListener("visibilitychange", onVisibilityChange)
+  }, [user?.id, fetchProfileDirect])
+
   const signOut = useCallback(async () => {
     await supabase.auth.signOut()
     setUser(null)
@@ -161,6 +178,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     (user?.user_metadata?.avatar_url as string) ||
     null
 
+  const role = profile?.role || "student"
+  const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL
+  const isAdmin = role === "admin" || isSuperAdminUser
+  const isTeacher = role === "teacher" || isAdmin
+
   return (
     <AuthContext.Provider
       value={{
@@ -170,6 +192,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         loading,
         displayName,
         avatarUrl,
+        role,
+        isTeacher,
+        isAdmin,
         refreshProfile,
         signOut,
       }}

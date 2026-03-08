@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { useAuth } from "@/context/AuthContext"
 
 export default function Navbar() {
-  const { user, displayName, avatarUrl, loading, signOut } = useAuth()
+  const { user, displayName, avatarUrl, loading, isTeacher, isAdmin, signOut } = useAuth()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -40,6 +40,7 @@ export default function Navbar() {
         <li><Link href="/past-papers" className="gradient-hover-sea">Past Papers</Link></li>
         <li><Link href="/lectures" className="gradient-hover-sea">Lectures</Link></li>
         <li><Link href="/generate" className="gradient-hover-sea">Generate Worksheets</Link></li>
+        <li><Link href="/test-builder" className="gradient-hover-sea">Test Builder</Link></li>
 
         {/* Auth / Profile */}
         <li>
@@ -96,6 +97,31 @@ export default function Navbar() {
                       </svg>
                       Dashboard
                     </Link>
+                    {isTeacher && (
+                      <Link
+                        href="/dashboard/teacher"
+                        onClick={() => setDropdownOpen(false)}
+                        className="flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-white/5 transition-colors"
+                      >
+                        <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        Teacher Panel
+                      </Link>
+                    )}
+                    {isAdmin && (
+                      <Link
+                        href="/dashboard/admin"
+                        onClick={() => setDropdownOpen(false)}
+                        className="flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-white/5 transition-colors"
+                      >
+                        <svg className="w-4 h-4 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        Admin Panel
+                      </Link>
+                    )}
                     <div className="border-t border-white/10 mt-1 pt-1">
                       <button
                         onClick={() => { setDropdownOpen(false); signOut() }}
