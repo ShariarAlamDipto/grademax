@@ -1,12 +1,19 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Worksheet Generator',
-  description: 'GradeMax Worksheet Generator - Create custom IGCSE and A Level practice worksheets from real past papers. Filter by topic, year, and difficulty level.',
-  keywords: ['GradeMax worksheet', 'IGCSE worksheet generator', 'A Level practice papers', 'custom worksheets', 'past paper generator', 'exam preparation'],
+  title: 'Edexcel Worksheet Generator – Create Custom Past Paper Worksheets Free',
+  description: 'Free Edexcel worksheet generator. Create custom IGCSE and A Level practice worksheets from real past paper questions. Filter by topic, year, and difficulty. Download PDF with mark schemes.',
+  keywords: [
+    'worksheet generator', 'Edexcel worksheet generator', 'custom worksheet generator',
+    'IGCSE worksheet generator', 'A Level worksheet generator',
+    'past paper generator', 'practice paper generator',
+    'Edexcel worksheets', 'custom worksheets', 'exam worksheets',
+    'maths worksheet generator', 'physics worksheet generator',
+    'create worksheets from past papers', 'download worksheets free',
+  ],
   openGraph: {
-    title: 'GradeMax Worksheet Generator',
-    description: 'Create custom IGCSE and A Level practice worksheets from real past papers.',
+    title: 'Edexcel Worksheet Generator – Create Custom Past Paper Worksheets Free',
+    description: 'Create custom Edexcel IGCSE and A Level practice worksheets from real past papers. Free with mark schemes.',
     url: 'https://grademax.me/generate',
   },
   alternates: {
