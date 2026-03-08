@@ -15,9 +15,9 @@ type TeacherResult =
 
 /**
  * Try to authenticate via Bearer token (for mobile apps).
- * Returns the user if valid, null otherwise.
+ * Returns the user AND the authenticated client if valid, null otherwise.
  */
-async function tryBearerAuth(): Promise<User | null> {
+async function tryBearerAuth(): Promise<{ user: User; client: SupabaseClient } | null> {
   try {
     const h = await headers()
     const auth = h.get("authorization") || ""
@@ -26,13 +26,14 @@ async function tryBearerAuth(): Promise<User | null> {
     if (!token) return null
 
     // Create a one-off client with the user's access token
-    const supabase = createClient(
+    const client = createClient(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       { global: { headers: { Authorization: `Bearer ${token}` } } }
     )
-    const { data: { user } } = await supabase.auth.getUser(token)
-    return user
+    const { data: { user } } = await client.auth.getUser(token)
+    if (!user) return null
+    return { user, client }
   } catch {
     return null
   }
@@ -52,16 +53,22 @@ export async function requireAuth(): Promise<AuthResult> {
   user = data.user
 
   // Fallback: Bearer token auth (mobile)
+  let bearerClient: SupabaseClient | null = null
   if (!user) {
-    user = await tryBearerAuth()
+    const bearer = await tryBearerAuth()
+    if (bearer) {
+      user = bearer.user
+      bearerClient = bearer.client
+    }
   }
 
   if (!user) {
     return { error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }) }
   }
   const admin = getSupabaseAdmin()
-  const db = admin || supabase
-  return { user, db, supabase }
+  // Prefer admin (bypasses RLS), then Bearer-authenticated client, then cookie client
+  const db = admin || bearerClient || supabase
+  return { user, db, supabase: bearerClient || supabase }
 }
 
 /**
