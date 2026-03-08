@@ -5,7 +5,7 @@ import SubjectSelector from './SubjectSelector';
 import TopicTree from './TopicTree';
 import FilterBar from './FilterBar';
 import QuestionCard, { QuestionItem } from './QuestionCard';
-import TestBasket from './TestBasket';
+import PaperPreview from './PaperPreview';
 import QuestionPreviewModal from './QuestionPreviewModal';
 
 // ─────────────────────────────────────────────
@@ -37,29 +37,6 @@ interface Pagination {
 interface TestBuilderPageProps {
   initialSubjects: Subject[];
   initialTopics: Topic[];
-}
-
-// ─────────────────────────────────────────────
-// Fullscreen PDF modal (shared)
-// ─────────────────────────────────────────────
-
-function FullscreenPdfModal({ url, title, onClose }: { url: string; title: string; onClose: () => void }) {
-  return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-95 flex flex-col">
-      <div className="flex items-center justify-between p-3 md:p-4 bg-gray-900 border-b border-gray-700">
-        <h3 className="text-white font-semibold text-sm md:text-lg truncate">{title}</h3>
-        <button
-          onClick={onClose}
-          className="text-white bg-red-600 hover:bg-red-700 px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-sm transition-colors"
-        >
-          Close
-        </button>
-      </div>
-      <div className="flex-1 p-2 md:p-4">
-        <iframe src={url} className="w-full h-full border-0 rounded-lg bg-white" title={title} />
-      </div>
-    </div>
-  );
 }
 
 // ─────────────────────────────────────────────
@@ -96,7 +73,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   const [generating, setGenerating] = useState(false);
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
-  const [fullscreenPdf, setFullscreenPdf] = useState<{ url: string; title: string } | null>(null);
   const [pdfProgress, setPdfProgress] = useState<{ step: number; total: number; label: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -224,6 +200,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
   const clearBasket = () => {
     setBasketItems([]);
+    setWorksheetUrl(null);
+    setMarkschemeUrl(null);
   };
 
   // ─────────────────────────────────────────────
@@ -262,7 +240,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       const testId = createData.test.id;
 
       // Step 2: Download question paper PDF
-      setPdfProgress({ step: 2, total: 4, label: 'Building question paper PDF...' });
+      setPdfProgress({ step: 2, total: 4, label: 'Building question paper...' });
       const qpRes = await fetch(`/api/test-builder/tests/${testId}/download?type=worksheet`);
       if (!qpRes.ok) {
         const err = await qpRes.json();
@@ -273,7 +251,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       setWorksheetUrl(qpUrl);
 
       // Step 3: Download mark scheme PDF
-      setPdfProgress({ step: 3, total: 4, label: 'Building mark scheme PDF...' });
+      setPdfProgress({ step: 3, total: 4, label: 'Building mark scheme...' });
       const msRes = await fetch(`/api/test-builder/tests/${testId}/download?type=markscheme`);
       if (msRes.ok) {
         const msBlob = await msRes.blob();
@@ -294,21 +272,25 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   };
 
   // ─────────────────────────────────────────────
+  // Download helpers
+  // ─────────────────────────────────────────────
+
+  const downloadFile = (url: string, filename: string) => {
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+
+  // ─────────────────────────────────────────────
   // Render
   // ─────────────────────────────────────────────
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Fullscreen PDF Modal */}
-      {fullscreenPdf && (
-        <FullscreenPdfModal
-          url={fullscreenPdf.url}
-          title={fullscreenPdf.title}
-          onClose={() => setFullscreenPdf(null)}
-        />
-      )}
-
-      {/* Question Preview Modal */}
+      {/* Question Preview Side Panel */}
       {previewQuestion && (
         <QuestionPreviewModal
           question={previewQuestion}
@@ -319,12 +301,12 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
         />
       )}
 
-      <div className="max-w-[1600px] mx-auto p-4 md:p-6">
+      <div className="max-w-[1800px] mx-auto p-4 md:p-6">
         {/* Page header */}
         <div className="mb-6">
           <h1 className="text-2xl md:text-4xl font-bold text-white mb-1">Test Builder</h1>
           <p className="text-gray-400 text-sm">
-            Select topics, browse individual questions, and build your custom test paper
+            Select topics, browse questions, and build your custom test paper with live preview
           </p>
         </div>
 
@@ -338,12 +320,11 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           />
         </div>
 
-        {/* 3-Column Layout: Topics + Filters | Question Browser | Test Basket */}
-        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr_300px] gap-4">
+        {/* 3-Column Layout: Topics + Filters | Question Browser | Paper Preview */}
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr_380px] gap-4">
           
           {/* ═══ LEFT COLUMN: Topics + Filters ═══ */}
           <div className="space-y-4">
-            {/* Topic Tree */}
             <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-4">
               <h2 className="text-base font-bold text-white mb-3">Topics</h2>
               <TopicTree
@@ -356,7 +337,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               />
             </div>
 
-            {/* Filters */}
             <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-4">
               <FilterBar
                 difficulty={difficulty}
@@ -368,7 +348,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               />
             </div>
 
-            {/* Search Button */}
             <button
               onClick={() => fetchQuestions(1)}
               disabled={loadingQuestions}
@@ -380,14 +359,12 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
           {/* ═══ CENTER COLUMN: Question Browser ═══ */}
           <div className="min-w-0">
-            {/* Error */}
             {error && (
               <div className="bg-red-900/60 border border-red-500/50 rounded-xl p-4 mb-4">
                 <p className="text-red-300 text-sm">{error}</p>
               </div>
             )}
 
-            {/* Not searched yet */}
             {!searchTriggered && !loadingQuestions && (
               <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-8 text-center">
                 <svg className="w-16 h-16 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -400,7 +377,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               </div>
             )}
 
-            {/* Loading */}
             {loadingQuestions && (
               <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-8 text-center">
                 <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-400 mx-auto mb-4"></div>
@@ -408,10 +384,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               </div>
             )}
 
-            {/* Results */}
             {searchTriggered && !loadingQuestions && (
               <>
-                {/* Results header */}
                 <div className="flex items-center justify-between mb-3">
                   <h2 className="text-base font-bold text-white">
                     {pagination.total === 0 ? 'No questions found' : `${pagination.total} questions found`}
@@ -423,7 +397,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                   )}
                 </div>
 
-                {/* Question grid */}
                 {questions.length > 0 && (
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
                     {questions.map((q) => (
@@ -439,7 +412,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                   </div>
                 )}
 
-                {/* Pagination */}
                 {pagination.totalPages > 1 && (
                   <div className="flex items-center justify-center gap-2">
                     <button
@@ -449,7 +421,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                     >
                       Previous
                     </button>
-                    {/* Page number buttons */}
                     {Array.from({ length: Math.min(pagination.totalPages, 7) }, (_, i) => {
                       let pageNum: number;
                       if (pagination.totalPages <= 7) {
@@ -485,7 +456,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                   </div>
                 )}
 
-                {/* No results message */}
                 {questions.length === 0 && pagination.total === 0 && (
                   <div className="bg-gray-800/40 rounded-xl p-8 text-center">
                     <p className="text-gray-400 text-sm">
@@ -495,108 +465,25 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                 )}
               </>
             )}
-
-            {/* ══ Generated PDFs section ══ */}
-            {(worksheetUrl || markschemeUrl) && (
-              <div className="mt-6 bg-gradient-to-r from-green-900/40 to-emerald-900/40 border-2 border-green-500/50 rounded-xl p-4 md:p-6">
-                <h3 className="font-bold text-green-300 mb-3 text-lg">Test PDFs Ready!</h3>
-                <div className="flex flex-col sm:flex-row gap-3 mb-4">
-                  {worksheetUrl && (
-                    <a
-                      href={worksheetUrl}
-                      download={`${testTitle || 'test'}_question_paper.pdf`}
-                      className="flex-1 bg-gray-700 border-2 border-green-500 text-green-300 px-6 py-3 rounded-lg font-semibold hover:bg-green-900/50 transition-colors text-center text-sm"
-                    >
-                      Download Question Paper
-                    </a>
-                  )}
-                  {markschemeUrl && (
-                    <a
-                      href={markschemeUrl}
-                      download={`${testTitle || 'test'}_mark_scheme.pdf`}
-                      className="flex-1 bg-gray-700 border-2 border-blue-500 text-blue-300 px-6 py-3 rounded-lg font-semibold hover:bg-blue-900/50 transition-colors text-center text-sm"
-                    >
-                      Download Mark Scheme
-                    </a>
-                  )}
-                </div>
-
-                {/* PDF Previews */}
-                <div className="space-y-6">
-                  {worksheetUrl && (
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-green-300 font-semibold text-sm">Question Paper Preview</h4>
-                        <button
-                          onClick={() => setFullscreenPdf({ url: worksheetUrl, title: 'Question Paper' })}
-                          className="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded-lg text-xs font-medium transition-colors"
-                        >
-                          Fullscreen
-                        </button>
-                      </div>
-                      <iframe
-                        src={worksheetUrl}
-                        className="w-full h-[60vh] border-2 border-green-500/50 rounded-lg bg-white"
-                        title="Question Paper Preview"
-                      />
-                    </div>
-                  )}
-                  {markschemeUrl && (
-                    <div>
-                      <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-blue-300 font-semibold text-sm">Mark Scheme Preview</h4>
-                        <button
-                          onClick={() => setFullscreenPdf({ url: markschemeUrl, title: 'Mark Scheme' })}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded-lg text-xs font-medium transition-colors"
-                        >
-                          Fullscreen
-                        </button>
-                      </div>
-                      <iframe
-                        src={markschemeUrl}
-                        className="w-full h-[60vh] border-2 border-blue-500/50 rounded-lg bg-white"
-                        title="Mark Scheme Preview"
-                      />
-                    </div>
-                  )}
-                </div>
-              </div>
-            )}
-
-            {/* PDF Progress Bar */}
-            {pdfProgress && (
-              <div className="mt-4 bg-gray-900 border border-gray-600 rounded-xl p-4">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-semibold text-white">{pdfProgress.label}</span>
-                  <span className="text-xs text-gray-400">Step {pdfProgress.step} of {pdfProgress.total}</span>
-                </div>
-                <div className="w-full h-2.5 bg-gray-700 rounded-full overflow-hidden">
-                  <div
-                    className="h-full rounded-full transition-all duration-500 ease-out"
-                    style={{
-                      width: `${Math.round((pdfProgress.step / pdfProgress.total) * 100)}%`,
-                      background: pdfProgress.step === pdfProgress.total
-                        ? 'linear-gradient(to right, #22c55e, #10b981)'
-                        : 'linear-gradient(to right, #3b82f6, #6366f1)',
-                    }}
-                  />
-                </div>
-              </div>
-            )}
           </div>
 
-          {/* ═══ RIGHT COLUMN: Test Basket ═══ */}
-          <div className="lg:sticky lg:top-40 lg:self-start">
-            <TestBasket
+          {/* ═══ RIGHT COLUMN: Live Paper Preview ═══ */}
+          <div className="lg:sticky lg:top-24 lg:self-start lg:max-h-[calc(100vh-120px)]">
+            <PaperPreview
               items={basketItems}
+              testTitle={testTitle}
+              onTitleChange={setTestTitle}
               onRemove={removeFromBasket}
               onMoveUp={moveUp}
               onMoveDown={moveDown}
               onClearAll={clearBasket}
               onGenerate={handleGenerate}
               generating={generating}
-              testTitle={testTitle}
-              onTitleChange={setTestTitle}
+              worksheetUrl={worksheetUrl}
+              markschemeUrl={markschemeUrl}
+              onDownloadQP={() => worksheetUrl && downloadFile(worksheetUrl, `${testTitle || 'test'}_question_paper.pdf`)}
+              onDownloadMS={() => markschemeUrl && downloadFile(markschemeUrl, `${testTitle || 'test'}_mark_scheme.pdf`)}
+              pdfProgress={pdfProgress}
             />
           </div>
         </div>

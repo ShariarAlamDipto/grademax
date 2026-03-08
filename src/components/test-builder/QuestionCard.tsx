@@ -1,5 +1,7 @@
 'use client';
 
+import PdfThumbnail from './PdfThumbnail';
+
 export interface QuestionItem {
   id: string;
   questionNumber: string;
@@ -39,68 +41,76 @@ interface QuestionCardProps {
 export default function QuestionCard({ question, isInBasket, onAdd, onRemove, onPreview }: QuestionCardProps) {
   return (
     <div
-      className={`bg-gray-800/80 border rounded-xl p-4 transition-all hover:shadow-lg ${
+      className={`bg-gray-800/80 border rounded-xl overflow-hidden transition-all hover:shadow-lg ${
         isInBasket ? 'border-blue-500/50 bg-blue-900/20' : 'border-gray-700 hover:border-gray-500'
       }`}
     >
-      {/* Top row: Question number + year + difficulty */}
-      <div className="flex items-start justify-between mb-2.5">
-        <div>
-          <h4 className="text-base font-bold text-white">Q{question.questionNumber}</h4>
-          <p className="text-xs text-gray-400">
-            {question.year} {question.season} &middot; Paper {question.paper}
-          </p>
+      {/* Image preview of question page */}
+      <div
+        className="relative cursor-pointer group"
+        onClick={() => onPreview(question)}
+      >
+        <div className="w-full overflow-hidden bg-gray-900" style={{ maxHeight: 200 }}>
+          <PdfThumbnail url={question.qpPageUrl} width={400} className="w-full" />
         </div>
-        <DifficultyBadge level={question.difficulty} />
+        {/* Hover overlay */}
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-900 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
+            Preview Question
+          </span>
+        </div>
       </div>
 
-      {/* Topic chips */}
-      <div className="flex flex-wrap gap-1 mb-2.5">
-        {question.topics.map((t) => (
-          <span
-            key={t}
-            className="text-[10px] px-1.5 py-0.5 bg-gray-700/80 text-gray-300 rounded font-mono"
-          >
-            {t}
-          </span>
-        ))}
-        {question.hasDiagram && (
-          <span className="text-[10px] px-1.5 py-0.5 bg-purple-900/50 text-purple-300 rounded border border-purple-500/30">
-            Diagram
-          </span>
-        )}
-      </div>
+      {/* Info bar */}
+      <div className="p-3">
+        {/* Top row: Question number + year + difficulty */}
+        <div className="flex items-start justify-between mb-2">
+          <div>
+            <h4 className="text-sm font-bold text-white">Q{question.questionNumber}</h4>
+            <p className="text-[11px] text-gray-400">
+              {question.year} {question.season} &middot; P{question.paper}
+            </p>
+          </div>
+          <DifficultyBadge level={question.difficulty} />
+        </div>
 
-      {/* Text excerpt */}
-      {question.textExcerpt && (
-        <p className="text-xs text-gray-400 line-clamp-2 mb-3 leading-relaxed">
-          {question.textExcerpt}
-        </p>
-      )}
+        {/* Topic chips */}
+        <div className="flex flex-wrap gap-1 mb-2.5">
+          {question.topics.slice(0, 3).map((t) => (
+            <span key={t} className="text-[10px] px-1.5 py-0.5 bg-gray-700/80 text-gray-300 rounded font-mono">
+              {t}
+            </span>
+          ))}
+          {question.topics.length > 3 && (
+            <span className="text-[10px] px-1.5 py-0.5 bg-gray-700/80 text-gray-400 rounded">
+              +{question.topics.length - 3}
+            </span>
+          )}
+          {question.hasDiagram && (
+            <span className="text-[10px] px-1.5 py-0.5 bg-purple-900/50 text-purple-300 rounded border border-purple-500/30">
+              Diagram
+            </span>
+          )}
+        </div>
 
-      {/* Actions */}
-      <div className="flex items-center justify-between pt-2 border-t border-gray-700/50">
-        <button
-          onClick={() => onPreview(question)}
-          className="text-xs text-blue-400 hover:text-blue-300 font-medium transition-colors"
-        >
-          Preview
-        </button>
-        {isInBasket ? (
-          <button
-            onClick={() => onRemove(question.id)}
-            className="text-xs bg-red-500/20 text-red-400 hover:bg-red-500/30 px-3 py-1.5 rounded-lg font-medium transition-colors"
-          >
-            Remove
-          </button>
-        ) : (
-          <button
-            onClick={() => onAdd(question)}
-            className="text-xs bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 px-3 py-1.5 rounded-lg font-medium transition-colors"
-          >
-            + Add to Test
-          </button>
-        )}
+        {/* Actions */}
+        <div className="flex items-center justify-end">
+          {isInBasket ? (
+            <button
+              onClick={() => onRemove(question.id)}
+              className="text-xs bg-red-500/20 text-red-400 hover:bg-red-500/30 px-3 py-1.5 rounded-lg font-medium transition-colors"
+            >
+              Remove
+            </button>
+          ) : (
+            <button
+              onClick={() => onAdd(question)}
+              className="text-xs bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 px-3 py-1.5 rounded-lg font-medium transition-colors"
+            >
+              + Add to Test
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

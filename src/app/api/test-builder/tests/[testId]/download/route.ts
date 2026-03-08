@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { PDFDocument } from 'pdf-lib';
+import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -10,55 +10,127 @@ interface TestItemRow {
   pages: {
     qp_page_url: string;
     ms_page_url: string | null;
+    question_number: string | null;
   };
 }
 
 interface TestRow {
   id: string;
   title: string;
+  subject_id: string;
+  total_questions: number;
   test_items: TestItemRow[];
+  subjects: { name: string; code: string; level: string } | null;
 }
 
-async function downloadPDF(url: string): Promise<ArrayBuffer> {
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to download PDF from ${url}`);
+async function downloadPDF(url: string): Promise<ArrayBuffer | null> {
+  try {
+    const response = await fetch(url, { signal: AbortSignal.timeout(15000) });
+    if (!response.ok) return null;
+    return await response.arrayBuffer();
+  } catch {
+    return null;
   }
-  return await response.arrayBuffer();
 }
 
-async function mergePDFs(pdfUrls: string[]): Promise<Uint8Array> {
-  const mergedPdf = await PDFDocument.create();
+/**
+ * Build a professional cover page for the test PDF.
+ */
+async function buildCoverPage(
+  doc: PDFDocument,
+  opts: {
+    title: string;
+    subjectName: string;
+    subjectCode: string;
+    level: string;
+    totalQuestions: number;
+    totalMarks: number;
+    type: 'worksheet' | 'markscheme';
+  }
+) {
+  const page = doc.addPage(PageSizes.A4);
+  const { width, height } = page.getSize();
 
-  const batchSize = 10;
-  const pdfBytesArray: (ArrayBuffer | null)[] = [];
+  const bold = await doc.embedFont(StandardFonts.HelveticaBold);
+  const regular = await doc.embedFont(StandardFonts.Helvetica);
 
-  for (let i = 0; i < pdfUrls.length; i += batchSize) {
-    const batch = pdfUrls.slice(i, i + batchSize);
-    const results = await Promise.allSettled(batch.map(url => downloadPDF(url)));
-    for (const result of results) {
-      pdfBytesArray.push(result.status === 'fulfilled' ? result.value : null);
+  const dark = rgb(0.1, 0.1, 0.15);
+  const accent = rgb(0.145, 0.388, 0.922);
+  const gray = rgb(0.4, 0.4, 0.45);
+
+  // ── Top accent bar ──
+  page.drawRectangle({ x: 0, y: height - 8, width, height: 8, color: accent });
+
+  // ── Title area ──
+  const titleText = opts.type === 'markscheme' ? 'MARK SCHEME' : 'QUESTION PAPER';
+  page.drawText(titleText, {
+    x: 60, y: height - 80, size: 14, font: bold, color: accent,
+  });
+
+  const displayTitle = opts.title || 'Untitled Test';
+  page.drawText(displayTitle, {
+    x: 60, y: height - 120, size: 28, font: bold, color: dark,
+  });
+
+  const subjectLine = [opts.subjectName, opts.subjectCode, opts.level].filter(Boolean).join('  •  ');
+  page.drawText(subjectLine, {
+    x: 60, y: height - 155, size: 13, font: regular, color: gray,
+  });
+
+  // ── Divider ──
+  page.drawRectangle({ x: 60, y: height - 180, width: width - 120, height: 1, color: rgb(0.85, 0.85, 0.88) });
+
+  // ── Info box ──
+  const boxY = height - 340;
+  const boxW = width - 120;
+  page.drawRectangle({
+    x: 60, y: boxY, width: boxW, height: 140,
+    borderColor: rgb(0.82, 0.82, 0.86), borderWidth: 1, color: rgb(0.97, 0.97, 0.98),
+  });
+
+  const labelX = 80;
+  const valueX = 240;
+  let rowY = boxY + 110;
+
+  const drawRow = (label: string, value: string, underline = false) => {
+    page.drawText(label, { x: labelX, y: rowY, size: 12, font: bold, color: dark });
+    if (underline) {
+      page.drawRectangle({ x: valueX, y: rowY - 3, width: 220, height: 0.5, color: rgb(0.7, 0.7, 0.74) });
+    } else {
+      page.drawText(value, { x: valueX, y: rowY, size: 12, font: bold, color: dark });
     }
+    rowY -= 32;
+  };
+
+  drawRow('Student Name:', '', true);
+  drawRow('Total Questions:', String(opts.totalQuestions));
+  drawRow('Total Marks:', String(opts.totalMarks));
+  drawRow('Marks Received:', `_____ / ${opts.totalMarks}`, false);
+
+  // ── Instructions ──
+  if (opts.type === 'worksheet') {
+    const instrY = boxY - 40;
+    page.drawText('Instructions:', { x: 60, y: instrY, size: 12, font: bold, color: dark });
+    const instructions = [
+      'Write your name in the space provided above.',
+      'Answer all questions in the spaces provided.',
+      'Show all working clearly for full marks.',
+      `The total mark for this paper is ${opts.totalMarks}.`,
+    ];
+    instructions.forEach((line, i) => {
+      page.drawText(`•  ${line}`, { x: 60, y: instrY - 24 - i * 20, size: 11, font: regular, color: gray });
+    });
   }
 
-  for (const pdfBytes of pdfBytesArray) {
-    if (!pdfBytes) continue;
-    try {
-      const pdf = await PDFDocument.load(pdfBytes);
-      const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-      copiedPages.forEach((page) => mergedPdf.addPage(page));
-    } catch (error) {
-      console.error('Error merging PDF page:', error);
-    }
-  }
-
-  return await mergedPdf.save();
+  // ── Bottom bar ──
+  page.drawRectangle({ x: 0, y: 0, width, height: 4, color: accent });
+  page.drawText('Generated by GradeMax', {
+    x: width / 2 - 60, y: 16, size: 9, font: regular, color: rgb(0.65, 0.65, 0.68),
+  });
 }
 
 /**
  * GET /api/test-builder/tests/[testId]/download?type=worksheet|markscheme
- * 
- * Generate and download the merged PDF for a test.
  */
 export async function GET(
   request: Request,
@@ -67,65 +139,87 @@ export async function GET(
   try {
     const { testId } = await context.params;
     const url = new URL(request.url);
-    const type = url.searchParams.get('type') || 'worksheet';
+    const type = (url.searchParams.get('type') || 'worksheet') as 'worksheet' | 'markscheme';
 
     const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Get test with items and page URLs
     const { data: test, error: testError } = await supabase
       .from('tests')
       .select(`
         id,
         title,
+        subject_id,
+        total_questions,
         test_items (
           sequence_order,
           pages (
             qp_page_url,
-            ms_page_url
+            ms_page_url,
+            question_number
           )
+        ),
+        subjects (
+          name,
+          code,
+          level
         )
       `)
       .eq('id', testId)
       .single();
 
     if (testError || !test) {
-      return NextResponse.json(
-        { error: 'Test not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: 'Test not found' }, { status: 404 });
     }
 
     const testData = test as unknown as TestRow;
     const items = testData.test_items.sort((a, b) => a.sequence_order - b.sequence_order);
 
-    // Extract PDF URLs based on type
-    let pdfUrls: string[];
-    if (type === 'markscheme') {
-      pdfUrls = items
-        .map(item => item.pages?.ms_page_url)
-        .filter(Boolean) as string[];
-    } else {
-      pdfUrls = items
-        .map(item => item.pages?.qp_page_url)
-        .filter(Boolean) as string[];
-    }
+    const pdfUrls = items
+      .map(item => type === 'markscheme' ? item.pages?.ms_page_url : item.pages?.qp_page_url)
+      .filter(Boolean) as string[];
 
     if (pdfUrls.length === 0) {
-      return NextResponse.json(
-        { error: `No ${type} PDFs found for this test` },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: `No ${type} PDFs found for this test` }, { status: 404 });
     }
 
-    // Merge all PDFs
-    const mergedPdfBytes = await mergePDFs(pdfUrls);
+    // Create merged PDF with cover page
+    const mergedPdf = await PDFDocument.create();
 
-    const filename = `${testData.title.replace(/[^a-zA-Z0-9]/g, '_')}_${type}.pdf`;
+    await buildCoverPage(mergedPdf, {
+      title: testData.title,
+      subjectName: testData.subjects?.name || '',
+      subjectCode: testData.subjects?.code || '',
+      level: testData.subjects?.level || '',
+      totalQuestions: testData.total_questions || items.length,
+      totalMarks: items.length * 4,
+      type,
+    });
 
-    return new Response(mergedPdfBytes as unknown as BodyInit, {
+    // Download and merge PDFs in parallel batches
+    const batchSize = 10;
+    for (let i = 0; i < pdfUrls.length; i += batchSize) {
+      const batch = pdfUrls.slice(i, i + batchSize);
+      const results = await Promise.allSettled(batch.map(u => downloadPDF(u)));
+      for (const result of results) {
+        if (result.status !== 'fulfilled' || !result.value) continue;
+        try {
+          const pdf = await PDFDocument.load(result.value);
+          const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
+          copiedPages.forEach((p) => mergedPdf.addPage(p));
+        } catch (err) {
+          console.error('Error merging PDF page:', err);
+        }
+      }
+    }
+
+    const mergedBytes = await mergedPdf.save();
+    const filename = `${testData.title.replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, '_')}_${type}.pdf`;
+
+    return new Response(Buffer.from(mergedBytes), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename}"`,
+        'Cache-Control': 'no-store',
       },
     });
 
