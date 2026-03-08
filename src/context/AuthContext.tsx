@@ -20,6 +20,7 @@ interface AuthContextType {
   session: Session | null
   profile: Profile | null
   loading: boolean
+  profileLoaded: boolean
   displayName: string
   avatarUrl: string | null
   role: "student" | "teacher" | "admin"
@@ -34,6 +35,7 @@ const AuthContext = createContext<AuthContextType>({
   session: null,
   profile: null,
   loading: true,
+  profileLoaded: false,
   displayName: "",
   avatarUrl: null,
   role: "student",
@@ -48,6 +50,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<Session | null>(null)
   const [profile, setProfile] = useState<Profile | null>(null)
   const [loading, setLoading] = useState(true)
+  const [profileLoaded, setProfileLoaded] = useState(false)
   const bootstrappedRef = useRef(false)
   const initializedRef = useRef(false)
 
@@ -61,12 +64,24 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       if (error) {
         console.error("[Auth] Profile fetch error:", error.message, error.code)
-        // Retry once after a short delay (handles race conditions after signup)
         if (retryCount < 2) {
           setTimeout(() => fetchProfileDirect(userId, retryCount + 1), 1500)
           return
         }
+        // All retries exhausted — try server-side fallback
+        try {
+          const res = await fetch("/api/auth/me")
+          if (res.ok) {
+            const serverProfile = await res.json()
+            if (serverProfile?.id) {
+              setProfile({ ...serverProfile, role: serverProfile.role || "student" })
+              setProfileLoaded(true)
+              return
+            }
+          }
+        } catch { /* ignore fallback errors */ }
         setProfile(null)
+        setProfileLoaded(true)
         return
       }
 
@@ -77,13 +92,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
           return
         }
         setProfile(null)
+        setProfileLoaded(true)
         return
       }
 
       setProfile({ ...data, role: data.role || "student" })
+      setProfileLoaded(true)
     } catch (err) {
       console.error("[Auth] Profile fetch exception:", err)
       setProfile(null)
+      setProfileLoaded(true)
     }
   }, [])
 
@@ -213,6 +231,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         session,
         profile,
         loading,
+        profileLoaded,
         displayName,
         avatarUrl,
         role,

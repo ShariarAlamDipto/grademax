@@ -214,7 +214,8 @@ export async function GET(
       type,
     });
 
-    // Download and merge PDFs in parallel batches
+    // Download and merge PDFs in parallel batches — embed into A4 pages
+    const [a4W, a4H] = PageSizes.A4;
     let successCount = 0;
     const batchSize = 10;
     for (let i = 0; i < pdfUrls.length; i += batchSize) {
@@ -227,9 +228,30 @@ export async function GET(
           continue;
         }
         try {
-          const pdf = await PDFDocument.load(result.value);
-          const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
-          copiedPages.forEach((p) => mergedPdf.addPage(p));
+          const srcPdf = await PDFDocument.load(result.value);
+          const pageIndices = srcPdf.getPageIndices();
+          for (const pi of pageIndices) {
+            const srcPage = srcPdf.getPage(pi);
+            const { width: srcW, height: srcH } = srcPage.getSize();
+            // If already A4 (within 2pt tolerance), copy directly for quality
+            if (Math.abs(srcW - a4W) < 2 && Math.abs(srcH - a4H) < 2) {
+              const [copied] = await mergedPdf.copyPages(srcPdf, [pi]);
+              mergedPdf.addPage(copied);
+            } else {
+              // Embed into an A4 frame, scaled to fit, centered
+              const [embedded] = await mergedPdf.embedPdf(srcPdf, [pi]);
+              const a4Page = mergedPdf.addPage(PageSizes.A4);
+              const scale = Math.min(a4W / srcW, a4H / srcH, 1);
+              const scaledW = srcW * scale;
+              const scaledH = srcH * scale;
+              a4Page.drawPage(embedded, {
+                x: (a4W - scaledW) / 2,
+                y: (a4H - scaledH) / 2,
+                width: scaledW,
+                height: scaledH,
+              });
+            }
+          }
           successCount++;
         } catch (err) {
           console.error(`[download] Error merging PDF ${i + j + 1}:`, err);

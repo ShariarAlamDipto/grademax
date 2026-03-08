@@ -38,7 +38,7 @@ const FILE_ICONS: Record<string, string> = {
 }
 
 export default function LecturesPage() {
-  const { user, profile, loading: authLoading } = useAuth()
+  const { user, isTeacher, loading: authLoading } = useAuth()
   const [subjects, setSubjects] = useState<Subject[]>([])
   const [lectures, setLectures] = useState<Lecture[]>([])
   const [selectedSubject, setSelectedSubject] = useState<string>("")
@@ -181,10 +181,7 @@ export default function LecturesPage() {
             <p className="text-sm text-white/50 mt-1">Browse lecture materials uploaded by your teachers</p>
           </div>
           <div className="flex items-center gap-3">
-            {!profile && !authLoading && user && (
-              <span className="text-xs text-white/40 animate-pulse">Loading role...</span>
-            )}
-            {profile && (profile.role === "teacher" || profile.role === "admin" || user?.email?.toLowerCase() === "shariardipto111@gmail.com") && (
+            {isTeacher && (
               <Link
                 href="/dashboard/teacher"
                 className="rounded-lg border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm text-blue-400 hover:bg-blue-400/20 transition-colors font-medium"
