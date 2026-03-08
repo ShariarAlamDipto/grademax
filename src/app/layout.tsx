@@ -10,7 +10,7 @@ import { AuthProvider } from '@/context/AuthContext'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700'], display: 'swap' });
 
-// JSON-LD Structured Data for Brand Recognition
+// JSON-LD Structured Data for Brand Recognition & Edexcel SEO
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -25,20 +25,15 @@ const jsonLd = {
         width: 512,
         height: 512
       },
-      description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
-      sameAs: [
-        // Add your social profiles here when created
-        // 'https://twitter.com/grademax',
-        // 'https://facebook.com/grademax',
-        // 'https://linkedin.com/company/grademax'
-      ]
+      description: 'Free Edexcel past papers, topic-wise question papers, and custom worksheet generator for IGCSE and A Level students. Access mark schemes, practice papers, and revision resources.',
+      sameAs: []
     },
     {
       '@type': 'WebSite',
       '@id': 'https://grademax.me/#website',
       url: 'https://grademax.me',
       name: 'GradeMax',
-      description: 'AI-Powered Study Assistant for IGCSE & A Level Students',
+      description: 'Free Edexcel IGCSE & A Level Past Papers, Custom Worksheets & Topic-Wise Questions',
       publisher: {
         '@id': 'https://grademax.me/#organization'
       },
@@ -56,28 +51,94 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': 'https://grademax.me/#webpage',
       url: 'https://grademax.me',
-      name: 'GradeMax - Past Papers | Chapterwise Worksheet | Lecture Notes',
+      name: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions & Worksheets | GradeMax',
       isPartOf: {
         '@id': 'https://grademax.me/#website'
       },
       about: {
         '@id': 'https://grademax.me/#organization'
       },
-      description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
-      inLanguage: 'en-US'
+      description: 'Free Edexcel past papers with mark schemes for IGCSE and A Level. Generate custom worksheets, practice topic-wise questions, and revise with 14+ years of real exam papers.',
+      inLanguage: 'en-US',
+      speakable: {
+        '@type': 'SpeakableSpecification',
+        cssSelector: ['h1', '.hero-description']
+      }
     },
     {
       '@type': 'EducationalOrganization',
       '@id': 'https://grademax.me/#educationalorg',
       name: 'GradeMax',
       url: 'https://grademax.me',
-      description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
+      description: 'Free online platform for Edexcel IGCSE and A Level exam preparation with past papers, custom worksheets, and topic-wise practice questions.',
       areaServed: 'Worldwide',
       audience: {
         '@type': 'EducationalAudience',
         educationalRole: 'student',
-        audienceType: 'IGCSE and A Level students'
+        audienceType: 'Edexcel IGCSE and A Level students worldwide'
       }
+    },
+    // FAQ Schema for homepage rich snippets
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://grademax.me/#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Where can I find free Edexcel IGCSE past papers?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'GradeMax offers free Edexcel IGCSE past papers for Physics (4PH1), Maths A (4MA1), Maths B (4MB1), Chemistry (4CH1), Biology (4BI1), and ICT (4IT1). All papers include mark schemes and are organized by topic and year from 2014-2024.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'How do I generate a custom Edexcel worksheet?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Use the GradeMax Worksheet Generator to create custom worksheets from real Edexcel past paper questions. Select your subject, choose topics, set difficulty levels, pick year ranges, and generate a PDF worksheet with its mark scheme in seconds.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'What Edexcel A Level past papers are available?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'GradeMax provides Edexcel IAL past papers for Pure Mathematics 1 (WMA11), Mechanics 1 (WME01), and Statistics 1 (WST01), with more units being added. Papers span from 2014-2024 with full mark schemes.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Can I practice Edexcel past papers by topic?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes! GradeMax organizes all Edexcel past paper questions by topic (chapter-wise). Browse questions for specific topics like Electricity, Algebra, Differentiation, or Organic Chemistry and practice with instant access to mark schemes.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: 'Is GradeMax free to use?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Yes, GradeMax is completely free. Access all Edexcel IGCSE and A Level past papers, generate unlimited custom worksheets, and practice topic-wise questions at no cost.'
+          }
+        }
+      ]
+    },
+    // ItemList for subjects
+    {
+      '@type': 'ItemList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'IGCSE Physics Past Papers', url: 'https://grademax.me/subjects/igcse/physics' },
+        { '@type': 'ListItem', position: 2, name: 'IGCSE Maths A Past Papers', url: 'https://grademax.me/subjects/igcse/maths-a' },
+        { '@type': 'ListItem', position: 3, name: 'IGCSE Maths B Past Papers', url: 'https://grademax.me/subjects/igcse/maths-b' },
+        { '@type': 'ListItem', position: 4, name: 'IGCSE Chemistry Past Papers', url: 'https://grademax.me/subjects/igcse/chemistry' },
+        { '@type': 'ListItem', position: 5, name: 'IGCSE Biology Past Papers', url: 'https://grademax.me/subjects/igcse/biology' },
+        { '@type': 'ListItem', position: 6, name: 'IGCSE ICT Past Papers', url: 'https://grademax.me/subjects/igcse/ict' },
+        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://grademax.me/subjects/ial/pure-maths-1' },
+        { '@type': 'ListItem', position: 8, name: 'A Level Mechanics 1 Past Papers', url: 'https://grademax.me/subjects/ial/mechanics-1' },
+        { '@type': 'ListItem', position: 9, name: 'A Level Statistics 1 Past Papers', url: 'https://grademax.me/subjects/ial/statistics-1' },
+      ]
     }
   ]
 }
@@ -85,11 +146,64 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://grademax.me'),
   title: {
-    default: 'GradeMax - Past Papers | Chapterwise Worksheet | Lecture Notes',
+    default: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions & Custom Worksheets | GradeMax',
     template: '%s | GradeMax'
   },
-  description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
-  keywords: ['GradeMax', 'grademax', 'grade max', 'IGCSE study', 'A Level revision', 'past papers', 'worksheet generator', 'exam preparation', 'Cambridge IGCSE', 'Edexcel A Level', 'O Level', 'practice questions', 'mark scheme', 'study assistant', 'AI tutor'],
+  description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology & more. 14+ years of papers (2010-2024).',
+  keywords: [
+    // Brand
+    'GradeMax', 'grademax', 'grade max',
+    // Core - Past Papers
+    'Edexcel past papers', 'Edexcel past papers with answers', 'Edexcel past papers free',
+    'past papers Edexcel', 'past papers with mark schemes',
+    'Pearson Edexcel past papers', 'Edexcel exam papers',
+    // IGCSE Past Papers
+    'IGCSE past papers', 'IGCSE past papers Edexcel', 'Edexcel IGCSE past papers',
+    'IGCSE past papers with mark scheme', 'IGCSE past papers free download',
+    'international GCSE past papers', 'IGCSE revision papers',
+    // IGCSE Subject-Specific
+    'IGCSE Physics past papers', 'Edexcel IGCSE Physics past papers', '4PH1 past papers',
+    'IGCSE Maths past papers', 'Edexcel IGCSE Maths past papers', '4MA1 past papers', '4MB1 past papers',
+    'IGCSE Chemistry past papers', 'Edexcel IGCSE Chemistry past papers', '4CH1 past papers',
+    'IGCSE Biology past papers', 'Edexcel IGCSE Biology past papers', '4BI1 past papers',
+    'IGCSE ICT past papers', '4IT1 past papers',
+    // A Level Past Papers
+    'A Level past papers', 'A Level past papers Edexcel', 'Edexcel A Level past papers',
+    'IAL past papers', 'International A Level past papers',
+    'A Level Maths past papers', 'A Level Maths past papers Edexcel',
+    'A Level Physics past papers', 'A Level Chemistry past papers',
+    'Pure Maths 1 past papers', 'WMA11 past papers',
+    'Mechanics 1 past papers', 'WME01 past papers',
+    'Statistics 1 past papers', 'WST01 past papers',
+    // Topic-Wise / Chapter-Wise
+    'topic wise past papers', 'topic wise questions', 'topicwise past papers',
+    'chapter wise past papers', 'chapterwise questions', 'chapterwise past papers',
+    'topic wise questions Edexcel', 'Edexcel topic wise past papers',
+    'IGCSE topic wise past papers', 'A Level topic wise questions',
+    'past papers by topic', 'questions by topic', 'Edexcel questions by topic',
+    // Worksheets
+    'worksheet generator', 'custom worksheet generator', 'Edexcel worksheet generator',
+    'custom worksheets', 'Edexcel worksheets', 'past paper worksheets',
+    'create worksheets from past papers', 'exam worksheet generator',
+    'IGCSE worksheets', 'A Level worksheets', 'practice worksheets',
+    'maths worksheet generator', 'physics worksheet generator',
+    // Mark Schemes
+    'mark scheme', 'mark schemes Edexcel', 'IGCSE mark scheme',
+    'A Level mark scheme', 'past papers with mark scheme',
+    'Edexcel marking scheme', 'answer key Edexcel',
+    // Year-Specific (high search volume)
+    'Edexcel past papers 2024', 'Edexcel past papers 2023', 'Edexcel past papers 2022',
+    'IGCSE past papers 2024', 'IGCSE past papers 2023',
+    'A Level past papers 2024', 'A Level past papers 2023',
+    // Revision & Practice
+    'IGCSE revision', 'A Level revision', 'Edexcel revision',
+    'IGCSE practice questions', 'A Level practice papers',
+    'exam preparation', 'exam practice', 'revision resources',
+    'study resources Edexcel', 'free exam papers',
+    // Question Papers
+    'Edexcel question papers', 'IGCSE question papers', 'A Level question papers',
+    'topic wise question papers', 'question papers with answers',
+  ],
   authors: [{ name: 'GradeMax Team' }],
   creator: 'GradeMax',
   publisher: 'GradeMax',
@@ -113,21 +227,21 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://grademax.me',
     siteName: 'GradeMax',
-    title: 'GradeMax - Past Papers | Chapterwise Worksheet | Lecture Notes',
-    description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams with smart revision tools.',
+    title: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions & Custom Worksheets',
+    description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology & more.',
     images: [
       {
         url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'GradeMax - Study Assistant for IGCSE & A Level Success',
+        alt: 'GradeMax - Free Edexcel Past Papers & Custom Worksheet Generator',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'GradeMax - Study Assistant for IGCSE & A Level Success',
-    description: 'GradeMax helps you generate custom worksheets from real past papers, practice topic-wise questions, and ace your Cambridge and Edexcel exams.',
+    title: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions | GradeMax',
+    description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Generate custom worksheets, practice topic-wise, and ace your exams.',
     images: ['/opengraph-image'],
     creator: '@grademax',
     site: '@grademax',

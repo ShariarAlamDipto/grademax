@@ -8,19 +8,18 @@ import {
 } from '@/lib/seo-schema'
 
 export const metadata: Metadata = {
-  title: 'All Subjects – IGCSE & A Level Past Papers | GradeMax',
-  description: 'Browse all IGCSE and A Level subjects on GradeMax. Access past papers, topic questions, and AI-powered practice for Physics, Maths, Chemistry, Biology, ICT and more.',
+  title: 'All Edexcel Subjects – IGCSE & A Level Past Papers by Topic',
+  description: 'Browse all Edexcel IGCSE and A Level subjects on GradeMax. Access topic-wise past papers, custom worksheets, and mark schemes for Physics, Maths, Chemistry, Biology, ICT and more.',
   keywords: [
-    'IGCSE subjects',
-    'A Level subjects',
-    'IGCSE past papers',
-    'A Level past papers',
-    'exam revision',
-    'study resources'
+    'Edexcel subjects', 'IGCSE subjects', 'A Level subjects',
+    'Edexcel IGCSE past papers', 'Edexcel A Level past papers',
+    'topic wise past papers', 'past papers by topic',
+    'Edexcel exam revision', 'IGCSE revision', 'A Level revision',
+    'study resources Edexcel', 'free past papers',
   ],
   openGraph: {
-    title: 'All Subjects – IGCSE & A Level Past Papers | GradeMax',
-    description: 'Browse all IGCSE and A Level subjects. Access past papers and study resources.',
+    title: 'All Edexcel Subjects – IGCSE & A Level Past Papers by Topic',
+    description: 'Browse all Edexcel IGCSE and A Level subjects. Topic-wise past papers and custom worksheets.',
     url: 'https://grademax.me/subjects',
     siteName: 'GradeMax',
     type: 'website',
