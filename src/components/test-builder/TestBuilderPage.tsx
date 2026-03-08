@@ -216,55 +216,62 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     setWorksheetUrl(null);
     setMarkschemeUrl(null);
 
+    const subject = initialSubjects.find(s => s.id === selectedSubject);
+    const totalMarks = basketItems.length * 4;
+    const pagesPayload = basketItems.map(item => ({
+      qpPageUrl: item.qpPageUrl,
+      msPageUrl: item.msPageUrl,
+    }));
+
     try {
-      // Step 1: Create test record
-      setPdfProgress({ step: 1, total: 4, label: 'Creating test...' });
-      const createRes = await fetch('/api/test-builder/tests', {
+      // Step 1: Generate question paper PDF
+      setPdfProgress({ step: 1, total: 3, label: 'Building question paper...' });
+      const qpRes = await fetch('/api/test-builder/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           title: testTitle || 'Untitled Test',
-          subjectId: selectedSubject,
-          items: basketItems.map((item, index) => ({
-            pageId: item.id,
-            sequenceOrder: index + 1,
-          })),
+          type: 'worksheet',
+          totalMarks,
+          subjectName: subject?.name || '',
+          level: subject?.level || '',
+          pages: pagesPayload,
         }),
       });
 
-      const createData = await createRes.json();
-      if (!createRes.ok) {
-        throw new Error(createData.error || 'Failed to create test');
-      }
-
-      const testId = createData.test.id;
-
-      // Step 2: Download question paper PDF
-      setPdfProgress({ step: 2, total: 4, label: 'Building question paper...' });
-      const qpRes = await fetch(`/api/test-builder/tests/${testId}/download?type=worksheet`);
       if (!qpRes.ok) {
-        const err = await qpRes.json();
+        const err = await qpRes.json().catch(() => ({ error: `Server error (${qpRes.status})` }));
         throw new Error(err.error || 'Failed to generate question paper');
       }
       const qpBlob = await qpRes.blob();
-      const qpUrl = URL.createObjectURL(qpBlob);
-      setWorksheetUrl(qpUrl);
+      setWorksheetUrl(URL.createObjectURL(qpBlob));
 
-      // Step 3: Download mark scheme PDF
-      setPdfProgress({ step: 3, total: 4, label: 'Building mark scheme...' });
-      const msRes = await fetch(`/api/test-builder/tests/${testId}/download?type=markscheme`);
+      // Step 2: Generate mark scheme PDF
+      setPdfProgress({ step: 2, total: 3, label: 'Building mark scheme...' });
+      const msRes = await fetch('/api/test-builder/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: testTitle || 'Untitled Test',
+          type: 'markscheme',
+          totalMarks,
+          subjectName: subject?.name || '',
+          level: subject?.level || '',
+          pages: pagesPayload,
+        }),
+      });
+
       if (msRes.ok) {
         const msBlob = await msRes.blob();
-        const msUrl = URL.createObjectURL(msBlob);
-        setMarkschemeUrl(msUrl);
+        setMarkschemeUrl(URL.createObjectURL(msBlob));
       }
 
-      // Step 4: Done
-      setPdfProgress({ step: 4, total: 4, label: 'PDFs ready!' });
+      // Step 3: Done
+      setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
       setTimeout(() => setPdfProgress(null), 2000);
 
     } catch (err: unknown) {
-      setError(err instanceof Error ? err.message : 'Failed to generate test');
+      setError(err instanceof Error ? err.message : 'Failed to generate PDF');
       setPdfProgress(null);
     } finally {
       setGenerating(false);
