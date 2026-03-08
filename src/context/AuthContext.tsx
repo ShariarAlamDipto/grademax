@@ -51,15 +51,38 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const bootstrappedRef = useRef(false)
   const initializedRef = useRef(false)
 
-  const fetchProfileDirect = useCallback(async (userId: string) => {
+  const fetchProfileDirect = useCallback(async (userId: string, retryCount = 0) => {
     try {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from("profiles")
         .select("id, email, full_name, avatar_url, study_level, marks_goal_pct, role")
         .eq("id", userId)
         .single()
-      setProfile(data ? { ...data, role: data.role || "student" } : null)
-    } catch {
+
+      if (error) {
+        console.error("[Auth] Profile fetch error:", error.message, error.code)
+        // Retry once after a short delay (handles race conditions after signup)
+        if (retryCount < 2) {
+          setTimeout(() => fetchProfileDirect(userId, retryCount + 1), 1500)
+          return
+        }
+        setProfile(null)
+        return
+      }
+
+      if (!data) {
+        console.warn("[Auth] No profile found for user:", userId)
+        if (retryCount < 2) {
+          setTimeout(() => fetchProfileDirect(userId, retryCount + 1), 1500)
+          return
+        }
+        setProfile(null)
+        return
+      }
+
+      setProfile({ ...data, role: data.role || "student" })
+    } catch (err) {
+      console.error("[Auth] Profile fetch exception:", err)
       setProfile(null)
     }
   }, [])

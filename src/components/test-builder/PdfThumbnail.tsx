@@ -10,45 +10,51 @@ interface PdfThumbnailProps {
 }
 
 /**
- * Renders the first page of a PDF as a canvas image.
- * Uses pdfjs-dist which is already installed.
+ * Renders the first page of a PDF as a canvas thumbnail.
+ * Worker is served from /public/pdf.worker.min.mjs for reliability.
  */
 export default function PdfThumbnail({ url, width = 280, className = '', onClick }: PdfThumbnailProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const renderingRef = useRef(false);
+  const taskRef = useRef(0); // generation counter to cancel stale renders
 
   useEffect(() => {
-    if (!url || renderingRef.current) return;
-    renderingRef.current = true;
+    if (!url) { setError(true); setLoading(false); return; }
+
+    const gen = ++taskRef.current;
     setLoading(true);
     setError(false);
 
-    let cancelled = false;
-
     (async () => {
       try {
+        // Dynamic import to avoid SSR issues
         const pdfjsLib = await import('pdfjs-dist');
-        // Use CDN worker to avoid Next.js bundling issues
-        pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+
+        // Use the local worker copy (placed in public/)
+        if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
+          pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+        }
 
         const loadingTask = pdfjsLib.getDocument({
           url,
           disableAutoFetch: true,
           disableStream: true,
+          isEvalSupported: false,
         });
-        const pdf = await loadingTask.promise;
-        const page = await pdf.getPage(1);
 
-        if (cancelled) return;
+        const pdf = await loadingTask.promise;
+        if (gen !== taskRef.current) { pdf.destroy(); return; }
+
+        const page = await pdf.getPage(1);
+        if (gen !== taskRef.current) { pdf.destroy(); return; }
 
         const canvas = canvasRef.current;
-        if (!canvas) return;
+        if (!canvas) { pdf.destroy(); return; }
 
-        // Scale to fit desired width
-        const unscaledViewport = page.getViewport({ scale: 1 });
-        const scale = (width * 2) / unscaledViewport.width; // 2x for retina
+        const unscaledVp = page.getViewport({ scale: 1 });
+        const dpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
+        const scale = (width * dpr) / unscaledVp.width;
         const viewport = page.getViewport({ scale });
 
         canvas.width = viewport.width;
@@ -57,53 +63,63 @@ export default function PdfThumbnail({ url, width = 280, className = '', onClick
         canvas.style.height = `${(viewport.height / viewport.width) * width}px`;
 
         const ctx = canvas.getContext('2d');
-        if (!ctx) return;
+        if (!ctx) { pdf.destroy(); return; }
 
-        await page.render({ canvas, canvasContext: ctx, viewport } as Parameters<typeof page.render>[0]).promise;
-        if (!cancelled) setLoading(false);
+        const renderTask = page.render({
+          canvasContext: ctx,
+          viewport,
+          canvas,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } as any);
 
+        await renderTask.promise;
         pdf.destroy();
-      } catch {
-        if (!cancelled) {
-          setError(true);
-          setLoading(false);
-        }
-      } finally {
-        renderingRef.current = false;
+
+        if (gen === taskRef.current) setLoading(false);
+      } catch (err) {
+        console.warn('[PdfThumbnail] render failed:', url, err);
+        if (gen === taskRef.current) { setError(true); setLoading(false); }
       }
     })();
 
-    return () => {
-      cancelled = true;
-      renderingRef.current = false;
-    };
+    return () => { taskRef.current++; };
   }, [url, width]);
+
+  if (error) {
+    // Fallback: show the PDF in a scaled iframe
+    return (
+      <div
+        className={`relative bg-white rounded-lg overflow-hidden ${onClick ? 'cursor-pointer' : ''} ${className}`}
+        onClick={onClick}
+        style={{ width, height: width * 1.414 }}
+      >
+        <iframe
+          src={`${url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+          className="border-0 pointer-events-none"
+          title="PDF preview"
+          style={{
+            width: width * 3,
+            height: width * 1.414 * 3,
+            transform: 'scale(0.333)',
+            transformOrigin: 'top left',
+          }}
+        />
+      </div>
+    );
+  }
 
   return (
     <div
       className={`relative bg-white rounded-lg overflow-hidden ${onClick ? 'cursor-pointer' : ''} ${className}`}
       onClick={onClick}
-      style={{ width, minHeight: width * 1.4 }}
+      style={{ width, minHeight: loading ? width * 1.414 : undefined }}
     >
       {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-          <div className="animate-pulse flex flex-col items-center gap-2">
-            <div className="w-8 h-8 border-2 border-gray-300 border-t-blue-500 rounded-full animate-spin" />
-            <span className="text-[10px] text-gray-400">Loading...</span>
-          </div>
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-50" style={{ height: width * 1.414 }}>
+          <div className="animate-spin w-6 h-6 border-2 border-gray-300 border-t-blue-500 rounded-full" />
         </div>
       )}
-      {error && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-          <div className="text-center p-2">
-            <svg className="w-6 h-6 text-gray-400 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <span className="text-[10px] text-gray-400">Preview unavailable</span>
-          </div>
-        </div>
-      )}
-      <canvas ref={canvasRef} className={loading || error ? 'invisible' : ''} />
+      <canvas ref={canvasRef} className={loading ? 'invisible absolute' : 'block'} />
     </div>
   );
 }
