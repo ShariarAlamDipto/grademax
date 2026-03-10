@@ -1,81 +1,101 @@
 
 "use client"
-import React from "react"
 
 import Link from "next/link"
+import {
+  pastPaperSubjects,
+  subjectColorClasses,
+  type Subject,
+} from "@/lib/subjects"
 
-const subjects = {
-  IGCSE: [
-    { name: "Physics", color: "#F4A261" },         // Soft Amber
-    { name: "Chemistry", color: "#CDB4DB" },       // Muted Lavender
-    { name: "Biology", color: "#90BE6D" },         // Sage Green
-    { name: "English Language B", color: "#FFB4A2" }, // Blush Pink
-    { name: "ICT", color: "#E76F51" },             // Dusty Rose Red
-    { name: "Maths A", color: "#A8DADC" },         // Calm Sky Blue
-    { name: "Maths B", color: "#457B9D" },         // Steel Blue
-  ],
-  IAL: [
-    { name: "Maths", color: "#A8DADC" },
-    { name: "Physics", color: "#F4A261" },
-    { name: "Chemistry", color: "#CDB4DB" },
-  ],
+const colorAccents: Record<Subject["colorKey"], string> = {
+  physics:   "border-orange-400/30 hover:border-orange-400/60",
+  maths:     "border-sky-400/30 hover:border-sky-400/60",
+  biology:   "border-emerald-400/30 hover:border-emerald-400/60",
+  chemistry: "border-violet-400/30 hover:border-violet-400/60",
+  ict:       "border-red-400/30 hover:border-red-400/60",
+  english:   "border-rose-400/30 hover:border-rose-400/60",
+  other:     "border-indigo-400/30 hover:border-indigo-400/60",
+}
+
+function SubjectCard({ subject }: { subject: Subject }) {
+  const accent = colorAccents[subject.colorKey]
+  const badge = subjectColorClasses[subject.colorKey]
+
+  return (
+    <Link href={`/past-papers/${subject.slug}`}>
+      <div
+        className={`group relative bg-white/[0.03] border rounded-xl p-5
+                    transition-all duration-300 hover:bg-white/[0.06] hover:scale-[1.02]
+                    hover:shadow-lg hover:shadow-black/20 ${accent}`}
+      >
+        <div className="flex items-center justify-between">
+          <div>
+            <h3 className="font-bold text-white text-base group-hover:text-white/90 transition-colors">
+              {subject.name}
+            </h3>
+            <span
+              className={`inline-block mt-1.5 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${badge}`}
+            >
+              Edexcel {subject.level === "ial" ? "A Level" : "IGCSE"}
+            </span>
+          </div>
+          <span className="text-white/20 group-hover:text-white/40 transition-colors text-lg">
+            →
+          </span>
+        </div>
+      </div>
+    </Link>
+  )
 }
 
 export default function PastPapersPage() {
+  const igcse = pastPaperSubjects.filter((s) => s.level === "igcse")
+  const ial = pastPaperSubjects.filter((s) => s.level === "ial")
+
   return (
     <main className="min-h-screen bg-black text-white px-6 py-12">
-      <h1 className="text-center text-4xl font-extrabold mb-10">
-        Past Papers
-      </h1>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-        {/* IGCSE */}
-        <div className="bg-[#0f0f0f] rounded-2xl p-6 shadow-lg shadow-black/40">
-          <h2 className="text-2xl font-bold mb-6 text-center">IGCSE</h2>
-            <div className="flex flex-col gap-0">
-              {subjects.IGCSE.map((subj, idx) => (
-                <React.Fragment key={subj.name}>
-                  <Link href={`/past-papers/${subj.name.toLowerCase().replace(/\s+/g, "-")}`}> 
-                    <button
-                      className="w-full py-3 rounded-lg text-white font-semibold 
-                                 transition-all duration-300 shadow-md 
-                                 hover:brightness-110 hover:shadow-lg hover:scale-[1.02]"
-                      style={{ backgroundColor: subj.color }}
-                    >
-                      {subj.name}
-                    </button>
-                  </Link>
-                  {idx < subjects.IGCSE.length - 1 && (
-                    <div className="my-3 w-full border-t border-white/10" />
-                  )}
-                </React.Fragment>
-              ))}
-            </div>
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-extrabold mb-3">Past Papers</h1>
+          <p className="text-white/50 max-w-lg mx-auto">
+            Free Edexcel IGCSE &amp; A Level past papers with mark schemes.
+            Download question papers organized by year and session.
+          </p>
         </div>
+
+        {/* IGCSE */}
+        <section className="mb-12">
+          <div className="flex items-center gap-3 mb-6">
+            <h2 className="text-2xl font-bold">IGCSE</h2>
+            <span className="text-xs text-white/30 font-medium bg-white/5 px-2.5 py-1 rounded-full">
+              {igcse.length} subjects
+            </span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {igcse.map((s) => (
+              <SubjectCard key={s.slug} subject={s} />
+            ))}
+          </div>
+        </section>
 
         {/* IAL */}
-        <div className="bg-[#0f0f0f] rounded-2xl p-6 shadow-lg shadow-black/40">
-          <h2 className="text-2xl font-bold mb-6 text-center">IAL</h2>
-            <div className="flex flex-col gap-0">
-              {subjects.IAL.map((subj, idx) => (
-                <React.Fragment key={subj.name}>
-                  <Link href={`/past-papers/${subj.name.toLowerCase().replace(/\s+/g, "-")}`}> 
-                    <button
-                      className="w-full py-3 rounded-lg text-white font-semibold 
-                                 transition-all duration-300 shadow-md 
-                                 hover:brightness-110 hover:shadow-lg hover:scale-[1.02]"
-                      style={{ backgroundColor: subj.color }}
-                    >
-                      {subj.name}
-                    </button>
-                  </Link>
-                  {idx < subjects.IAL.length - 1 && (
-                    <div className="my-3 w-full border-t border-white/10" />
-                  )}
-                </React.Fragment>
+        {ial.length > 0 && (
+          <section>
+            <div className="flex items-center gap-3 mb-6">
+              <h2 className="text-2xl font-bold">A Level (IAL)</h2>
+              <span className="text-xs text-white/30 font-medium bg-white/5 px-2.5 py-1 rounded-full">
+                {ial.length} subjects
+              </span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              {ial.map((s) => (
+                <SubjectCard key={s.slug} subject={s} />
               ))}
             </div>
-        </div>
+          </section>
+        )}
       </div>
     </main>
   )
