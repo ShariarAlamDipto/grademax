@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about GradeMax - the AI-powered study assistant helping IGCSE and A Level students prepare for exams with custom worksheets and past paper practice.',
+  description: 'Learn about GradeMax - the study platform helping IGCSE and A Level students prepare for exams with custom worksheets and past paper practice.',
 }
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
             deserves access to quality study resources that help them achieve their academic goals.
           </p>
           <p className="text-gray-300">
-            Our AI-powered platform transforms years of past examination papers into personalized 
+            Our platform transforms years of past examination papers into personalized 
             study materials, allowing students to focus on exactly what they need to improve.
           </p>
         </section>
@@ -88,7 +88,7 @@ export default function AboutPage() {
           </p>
           <p className="text-gray-300">
             Our platform is designed to address these challenges by providing smart, 
-            AI-powered tools that help you study smarter, not harder.
+            tools that help you study smarter, not harder.
           </p>
         </section>
 

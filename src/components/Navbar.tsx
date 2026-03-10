@@ -35,11 +35,10 @@ export default function Navbar() {
       </div>
       <ul className="flex flex-wrap gap-3 md:gap-10 text-sm md:text-xl font-semibold items-center justify-center w-full md:w-auto">
         <li><Link href="/" className="gradient-hover-sea">Home</Link></li>
-        <li><Link href="/subjects" className="gradient-hover-sea">Subjects</Link></li>
         <li><Link href="/dashboard" className="gradient-hover-sea">Dashboard</Link></li>
         <li><Link href="/past-papers" className="gradient-hover-sea">Past Papers</Link></li>
         <li><Link href="/lectures" className="gradient-hover-sea">Lectures</Link></li>
-        <li><Link href="/generate" className="gradient-hover-sea">Generate Worksheets</Link></li>
+        <li><Link href="/generate" className="gradient-hover-sea">Worksheets</Link></li>
         <li><Link href="/test-builder" className="gradient-hover-sea">Test Builder</Link></li>
 
         {/* Auth / Profile */}

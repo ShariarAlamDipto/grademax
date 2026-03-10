@@ -75,7 +75,7 @@ export default function SubjectsIndexPage() {
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mb-8">
             Choose your qualification level and subject to access past papers, 
-            topic-wise questions, and AI-powered practice tools.
+            topic-wise questions, and practice tools.
           </p>
           
           {/* Quick Stats */}
