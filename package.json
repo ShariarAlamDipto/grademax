@@ -7,9 +7,11 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "ingest:papers": "tsx --env-file=.env.ingest ingest/ingest_papers.ts"
+    "ingest:papers": "tsx --env-file=.env.ingest ingest/ingest_papers.ts",
+    "upload:papers": "tsx --env-file=.env.local scripts/upload-papers-r2.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.1005.0",
     "@react-pdf/renderer": "^4.3.1",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.75.0",
