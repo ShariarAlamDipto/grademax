@@ -39,7 +39,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   
   return {
     title: `${levelDisplay} Subjects – Past Papers & Study Resources | GradeMax`,
-    description: `Master ${levelDisplay} with GradeMax. Access past papers, topic questions, and AI-powered practice for ${subjectNames}. Free study resources for exam success.`,
+    description: `Master ${levelDisplay} with GradeMax. Access past papers, topic questions, and practice for ${subjectNames}. Free study resources for exam success.`,
     keywords: [
       `${levelDisplay} past papers`,
       `${levelDisplay} revision`,
@@ -122,7 +122,7 @@ export default async function LevelPage({ params }: PageProps) {
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mb-8">
             Master {levelDisplay} with GradeMax. Choose a subject below to access 
-            past papers, topic-wise questions, and AI-powered practice tools.
+            past papers, topic-wise questions, and practice tools.
           </p>
           
           {/* Subject Stats */}
@@ -243,7 +243,7 @@ export default async function LevelPage({ params }: PageProps) {
             <div className="bg-gray-900 rounded-lg p-6">
               <h3 className="font-semibold mb-2">How can GradeMax help me with {levelDisplay}?</h3>
               <p className="text-gray-400">
-                GradeMax provides access to past papers organized by topic, AI-powered worksheet generation, 
+                GradeMax provides access to past papers organized by topic, worksheet generation, 
                 and instant mark schemes. Practice exactly what you need to improve your grades.
               </p>
             </div>
