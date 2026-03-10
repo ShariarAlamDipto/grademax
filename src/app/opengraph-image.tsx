@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og"
 
-export const alt = "GradeMax - Study Assistant for IGCSE & A Level Success"
+export const alt = "GradeMax - Free Edexcel IGCSE and A Level Past Papers"
 export const size = { width: 1200, height: 630 }
 export const contentType = "image/png"
 
@@ -114,7 +114,7 @@ export default function OGImage() {
                 marginTop: 8,
               }}
             >
-              Study Assistant for IGCSE & A Level Success
+              Free Edexcel IGCSE and A Level Past Papers
             </span>
           </div>
         </div>

@@ -53,7 +53,7 @@ export const igcsePhysics: SEOSubject = {
   colorKey: "physics",
   
   metaTitle: "IGCSE Physics – Past Papers, Topics & Questions | GradeMax",
-  metaDescription: "Master IGCSE Physics with topic-wise past paper questions, mark schemes, and AI-powered practice. Forces, electricity, waves, and more.",
+  metaDescription: "Master IGCSE Physics with topic-wise past paper questions and mark schemes. Forces, electricity, waves, and more.",
   h1: "IGCSE Physics: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IGCSE Physics with organized past paper questions and mark schemes.",
   longDescription: "GradeMax provides comprehensive IGCSE Physics revision with real past paper questions organized by topic. Practice forces and motion, electricity, waves, energy resources, and more with instant access to mark schemes.",

@@ -27,10 +27,10 @@ export default function Home() {
       {/* Hero */}
       <section className="text-center px-4 md:px-8 pt-10 md:pt-20 pb-6">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
-          Free Edexcel Past Papers &amp; Custom Worksheets
+          Free Edexcel Past Papers and Custom Worksheets
         </h1>
         <p className="hero-description text-lg text-gray-400 max-w-2xl mx-auto mb-8">
-          IGCSE &amp; A Level past papers organized by topic, with mark schemes. 
+          IGCSE and A Level past papers organized by topic, with mark schemes. 
           Generate custom worksheets from real exam questions.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

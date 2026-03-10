@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
+import { pastPaperSubjects } from '@/lib/subjects'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://grademax.me'
@@ -121,8 +122,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
   
-  // Past papers by subject
-  const pastPaperSubjectPages: MetadataRoute.Sitemap = seoSubjects.map((subject: SEOSubject) => ({
+  // Past paper subject pages (actual route: /past-papers/{slug})
+  const pastPaperSubjectPages: MetadataRoute.Sitemap = pastPaperSubjects.map((subject) => ({
+    url: `${baseUrl}/past-papers/${subject.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+  
+  // SEO subject past paper pages (subject-level detail)
+  const seoPastPaperPages: MetadataRoute.Sitemap = seoSubjects.map((subject: SEOSubject) => ({
     url: `${baseUrl}/past-papers/${subject.level}/${subject.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
@@ -139,30 +148,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
   
-  // Practice pages
-  const practicePages: MetadataRoute.Sitemap = seoSubjects.map((subject: SEOSubject) => ({
-    url: `${baseUrl}/practice/${subject.level}/${subject.slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
-  
-  // Worksheets pages
-  const worksheetPages: MetadataRoute.Sitemap = seoSubjects.map((subject: SEOSubject) => ({
-    url: `${baseUrl}/worksheets/${subject.level}/${subject.slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }))
-  
   return [
     ...corePages,
     ...levelPages,
     ...subjectPages,
     ...topicPages,
     ...pastPaperSubjectPages,
+    ...seoPastPaperPages,
     ...pastPaperYearPages,
-    ...practicePages,
-    ...worksheetPages,
   ]
 }

@@ -33,7 +33,7 @@ const jsonLd = {
       '@id': 'https://grademax.me/#website',
       url: 'https://grademax.me',
       name: 'GradeMax',
-      description: 'Free Edexcel IGCSE & A Level Past Papers, Custom Worksheets & Topic-Wise Questions',
+      description: 'Free Edexcel IGCSE and A Level Past Papers, Custom Worksheets and Topic-Wise Questions',
       publisher: {
         '@id': 'https://grademax.me/#organization'
       },
@@ -51,7 +51,7 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': 'https://grademax.me/#webpage',
       url: 'https://grademax.me',
-      name: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions & Worksheets | GradeMax',
+      name: 'Edexcel Past Papers | IGCSE and A Level Topic-Wise Questions and Worksheets | GradeMax',
       isPartOf: {
         '@id': 'https://grademax.me/#website'
       },
@@ -146,10 +146,10 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://grademax.me'),
   title: {
-    default: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions & Custom Worksheets | GradeMax',
+    default: 'Edexcel Past Papers | IGCSE and A Level Questions and Custom Worksheets | GradeMax',
     template: '%s | GradeMax'
   },
-  description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology & more. 14+ years of papers (2010-2024).',
+  description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology and more. 14+ years of papers (2010-2024).',
   keywords: [
     // Brand
     'GradeMax', 'grademax', 'grade max',
@@ -209,10 +209,12 @@ export const metadata: Metadata = {
   publisher: 'GradeMax',
   applicationName: 'GradeMax',
   icons: {
-    icon: '/icon.svg',
-    apple: '/apple-icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    shortcut: '/favicon.ico',
   },
-  generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
   formatDetection: {
     email: false,
@@ -227,8 +229,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://grademax.me',
     siteName: 'GradeMax',
-    title: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions & Custom Worksheets',
-    description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology & more.',
+    title: 'Edexcel Past Papers | IGCSE and A Level Topic-Wise Questions and Custom Worksheets',
+    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology and more.',
     images: [
       {
         url: '/opengraph-image',
@@ -240,8 +242,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel Past Papers | IGCSE & A Level Topic-Wise Questions | GradeMax',
-    description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Generate custom worksheets, practice topic-wise, and ace your exams.',
+    title: 'Edexcel Past Papers | IGCSE and A Level Topic-Wise Questions | GradeMax',
+    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets, practice topic-wise, and ace your exams.',
     images: ['/opengraph-image'],
     creator: '@grademax',
     site: '@grademax',

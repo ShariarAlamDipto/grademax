@@ -1,12 +1,17 @@
 {
   "name": "GradeMax",
   "short_name": "GradeMax",
-  "description": "AI-Powered Study Assistant for IGCSE & A Level Students",
+  "description": "Free Edexcel IGCSE and A Level past papers, worksheets, and revision tools",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#687E34",
   "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
     {
       "src": "/icon.svg",
       "sizes": "any",

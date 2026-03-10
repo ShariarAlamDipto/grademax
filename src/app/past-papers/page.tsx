@@ -60,7 +60,7 @@ export default function PastPapersPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold mb-3">Past Papers</h1>
           <p className="text-white/50 max-w-lg mx-auto">
-            Free Edexcel IGCSE &amp; A Level past papers with mark schemes.
+            Free Edexcel IGCSE and A Level past papers with mark schemes.
             Download question papers organized by year and session.
           </p>
         </div>

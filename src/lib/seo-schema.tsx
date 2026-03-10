@@ -24,7 +24,7 @@ export function generateOrganizationSchema() {
       width: 512,
       height: 512
     },
-    description: 'GradeMax is the ultimate AI-powered study platform for IGCSE and A Level students.',
+    description: 'GradeMax provides free Edexcel IGCSE and A Level past papers, topic-wise questions, custom worksheets, and mark schemes.',
     sameAs: [
       // Add social profiles when created
     ]
@@ -40,7 +40,7 @@ export function generateWebSiteSchema() {
     '@id': WEBSITE_ID,
     url: BASE_URL,
     name: 'GradeMax',
-    description: 'AI-Powered Study Assistant for IGCSE & A Level Students',
+    description: 'Free Edexcel IGCSE and A Level Past Papers, Custom Worksheets, and Topic-Wise Questions',
     publisher: { '@id': ORG_ID },
     potentialAction: {
       '@type': 'SearchAction',
