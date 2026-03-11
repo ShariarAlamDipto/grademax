@@ -52,8 +52,8 @@ export const igcsePhysics: SEOSubject = {
   examCode: "4PH1",
   colorKey: "physics",
   
-  metaTitle: "IGCSE Physics – Past Papers, Topics & Questions | GradeMax",
-  metaDescription: "Master IGCSE Physics with topic-wise past paper questions and mark schemes. Forces, electricity, waves, and more.",
+  metaTitle: "Edexcel IGCSE Physics Past Papers (4PH1) – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IGCSE Physics (4PH1) past papers, topic-wise questions, and mark schemes. Forces, electricity, waves, energy, and more. 2011–2025.",
   h1: "IGCSE Physics: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IGCSE Physics with organized past paper questions and mark schemes.",
   longDescription: "GradeMax provides comprehensive IGCSE Physics revision with real past paper questions organized by topic. Practice forces and motion, electricity, waves, energy resources, and more with instant access to mark schemes.",
@@ -85,7 +85,7 @@ export const igcsePhysics: SEOSubject = {
     { question: "What grade boundaries are typical for IGCSE Physics?", answer: "Grade boundaries vary by session, but typically an A* requires around 80-85%, an A around 70-75%, and a C around 45-50%. Check the latest boundaries on the Edexcel website." },
   ],
   
-  yearsAvailable: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -100,8 +100,8 @@ export const igcseMathsB: SEOSubject = {
   examCode: "4MB1",
   colorKey: "maths",
   
-  metaTitle: "IGCSE Maths B – Past Papers, Topics & Practice Questions | GradeMax",
-  metaDescription: "Master IGCSE Mathematics B with topic-wise past papers, worked examples, and AI practice. Algebra, functions, calculus, matrices and more.",
+  metaTitle: "Edexcel IGCSE Maths B Past Papers (4MB1) – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IGCSE Mathematics B (4MB1) past papers, topic questions, and mark schemes. Algebra, functions, calculus, matrices and more. 2018–2025.",
   h1: "IGCSE Mathematics B: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IGCSE Maths B with organized past paper questions covering algebra, functions, and calculus.",
   longDescription: "GradeMax provides comprehensive IGCSE Mathematics B revision with real past paper questions organized by topic. Practice number, algebra, functions, matrices, geometry, and trigonometry with instant mark scheme access.",
@@ -135,7 +135,7 @@ export const igcseMathsB: SEOSubject = {
     { question: "What calculator is allowed for IGCSE Maths B?", answer: "A scientific calculator is required for both papers. Graphing calculators are generally not allowed unless specified. Check the exam regulations for approved models." },
   ],
   
-  yearsAvailable: [2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -150,8 +150,8 @@ export const ialMechanics1: SEOSubject = {
   examCode: "WME01",
   colorKey: "other",
   
-  metaTitle: "A Level Mechanics 1 (M1) – Past Papers & Topic Questions | GradeMax",
-  metaDescription: "Master A Level Mechanics 1 with SUVAT, dynamics, momentum, friction, and moments. Past papers organized by topic with mark schemes.",
+  metaTitle: "Edexcel A Level Mechanics 1 (WME01) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Mechanics 1 (WME01/M1) past papers with mark schemes. SUVAT, dynamics, momentum, friction, moments. 2012–2025.",
   h1: "A Level Mechanics 1: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IAL Mechanics 1 with organized past paper questions and worked solutions.",
   longDescription: "GradeMax provides comprehensive A Level Mechanics 1 revision with real past paper questions organized by topic. Practice kinematics, dynamics, momentum, friction, statics, and moments with instant mark scheme access.",
@@ -183,7 +183,7 @@ export const ialMechanics1: SEOSubject = {
     { question: "How long is the Mechanics 1 exam?", answer: "The Edexcel IAL Mechanics 1 (WME01) exam is 1 hour 30 minutes and worth 75 marks. It's a calculator paper." },
   ],
   
-  yearsAvailable: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -198,8 +198,8 @@ export const ialPureMaths1: SEOSubject = {
   examCode: "WMA11",
   colorKey: "maths",
   
-  metaTitle: "A Level Pure Mathematics 1 (P1) – Past Papers & Questions | GradeMax",
-  metaDescription: "Master A Level Pure Maths 1 with algebra, quadratics, coordinate geometry, and differentiation. Past papers organized by topic.",
+  metaTitle: "Edexcel A Level Pure Maths 1 (WMA11) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Pure Mathematics 1 (WMA11/P1) past papers with mark schemes. Algebra, quadratics, coordinate geometry, differentiation. 2014–2025.",
   h1: "A Level Pure Mathematics 1: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IAL Pure Mathematics 1 with organized past paper questions and worked solutions.",
   longDescription: "GradeMax provides comprehensive A Level Pure Mathematics 1 revision with real past paper questions organized by topic. Practice algebra, quadratics, coordinate geometry, differentiation, and integration.",
@@ -228,7 +228,7 @@ export const ialPureMaths1: SEOSubject = {
     { question: "What's the binomial expansion formula?", answer: "(a+b)ⁿ = Σ(r=0 to n) ⁿCᵣ × aⁿ⁻ʳ × bʳ. For (1+x)ⁿ, the general term is ⁿCᵣ × xʳ. Remember ⁿCᵣ = n!/(r!(n-r)!)." },
   ],
   
-  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -243,8 +243,8 @@ export const ialStatistics1: SEOSubject = {
   examCode: "WST01",
   colorKey: "other",
   
-  metaTitle: "A Level Statistics 1 (S1) – Past Papers & Questions | GradeMax",
-  metaDescription: "Master A Level Statistics 1 with probability, data representation, correlation, and regression. Past papers organized by topic.",
+  metaTitle: "Edexcel A Level Statistics 1 (WST01) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Statistics 1 (WST01/S1) past papers with mark schemes. Probability, data representation, correlation, regression. 2014–2025.",
   h1: "A Level Statistics 1: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IAL Statistics 1 with organized past paper questions covering probability and data analysis.",
   longDescription: "GradeMax provides comprehensive A Level Statistics 1 revision with real past paper questions organized by topic. Practice probability, data representation, correlation, regression, and discrete random variables.",
@@ -273,7 +273,7 @@ export const ialStatistics1: SEOSubject = {
     { question: "When do you use P(A∩B) vs P(A∪B)?", answer: "P(A∩B) = probability of A AND B both happening. P(A∪B) = probability of A OR B (or both). P(A∪B) = P(A) + P(B) - P(A∩B)." },
   ],
   
-  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -288,8 +288,8 @@ export const igcseICT: SEOSubject = {
   examCode: "4IT1",
   colorKey: "ict",
   
-  metaTitle: "IGCSE ICT – Past Papers, Theory Notes & Questions | GradeMax",
-  metaDescription: "Master IGCSE ICT with theory notes, past paper questions, and practical skills. Hardware, software, networks, and more.",
+  metaTitle: "Edexcel IGCSE ICT Past Papers (4IT1) – Theory, Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IGCSE ICT (4IT1) past papers, theory notes, questions, and mark schemes. Hardware, software, networks, databases. 2018–2025.",
   h1: "IGCSE ICT: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IGCSE ICT with organized theory notes and past paper questions.",
   longDescription: "GradeMax provides comprehensive IGCSE ICT revision covering both theory and practical components. Study hardware, software, networks, databases, spreadsheets, and web development with real exam questions.",
@@ -317,7 +317,7 @@ export const igcseICT: SEOSubject = {
     { question: "What practical skills are tested in IGCSE ICT?", answer: "IGCSE ICT practical tests spreadsheet skills (formulas, charts, data validation), database skills (queries, reports), and document production (mail merge, formatting)." },
   ],
   
-  yearsAvailable: [2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -332,8 +332,8 @@ export const igcseMathsA: SEOSubject = {
   examCode: "4MA1",
   colorKey: "maths",
   
-  metaTitle: "IGCSE Maths A – Past Papers, Topics & Questions | GradeMax",
-  metaDescription: "Master IGCSE Mathematics A with topic-wise past papers and mark schemes. Algebra, geometry, statistics, and more.",
+  metaTitle: "Edexcel IGCSE Maths A Past Papers (4MA1) – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IGCSE Mathematics A (4MA1) past papers, topic-wise questions, and mark schemes. Algebra, geometry, statistics. 2015–2025.",
   h1: "IGCSE Mathematics A: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IGCSE Maths A with organized past paper questions and worked examples.",
   longDescription: "GradeMax provides comprehensive IGCSE Mathematics A revision with real past paper questions organized by topic. Practice number, algebra, geometry, and statistics with instant mark scheme access.",
@@ -364,7 +364,7 @@ export const igcseMathsA: SEOSubject = {
     { question: "What are the key formulas for IGCSE Maths?", answer: "Key formulas include: Area of triangle = ½bh, Area of circle = πr², Pythagoras = a²+b²=c², Quadratic formula = (-b±√(b²-4ac))/2a. A formula sheet is provided in the exam." },
   ],
   
-  yearsAvailable: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -379,8 +379,8 @@ export const igcseChemistry: SEOSubject = {
   examCode: "4CH1",
   colorKey: "chemistry",
   
-  metaTitle: "IGCSE Chemistry – Past Papers, Topics & Questions | GradeMax",
-  metaDescription: "Master IGCSE Chemistry with topic-wise past papers and mark schemes. Atomic structure, bonding, organic chemistry, and more.",
+  metaTitle: "Edexcel IGCSE Chemistry Past Papers (4CH1) – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IGCSE Chemistry (4CH1) past papers, topic-wise questions, and mark schemes. Atomic structure, bonding, organic chemistry. 2017–2025.",
   h1: "IGCSE Chemistry: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IGCSE Chemistry with organized past paper questions and detailed explanations.",
   longDescription: "GradeMax provides comprehensive IGCSE Chemistry revision with real past paper questions organized by topic. Practice principles of chemistry, organic chemistry, physical chemistry, and more.",
@@ -409,7 +409,7 @@ export const igcseChemistry: SEOSubject = {
     { question: "What equipment do I need for IGCSE Chemistry?", answer: "For the exam: pen, pencil, ruler, and calculator. You should know common lab equipment names and uses (beaker, conical flask, burette, etc.) for exam questions." },
   ],
   
-  yearsAvailable: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================
@@ -424,8 +424,8 @@ export const igcseBiology: SEOSubject = {
   examCode: "4BI1",
   colorKey: "biology",
   
-  metaTitle: "IGCSE Biology – Past Papers, Topics & Questions | GradeMax",
-  metaDescription: "Master IGCSE Biology with topic-wise past papers and mark schemes. Cells, genetics, ecology, and human biology.",
+  metaTitle: "Edexcel IGCSE Biology Past Papers (4BI1) – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IGCSE Biology (4BI1) past papers, topic-wise questions, and mark schemes. Cells, genetics, ecology, human biology. 2017–2025.",
   h1: "IGCSE Biology: Complete Study Guide & Past Papers",
   shortDescription: "Master Edexcel IGCSE Biology with organized past paper questions and detailed explanations.",
   longDescription: "GradeMax provides comprehensive IGCSE Biology revision with real past paper questions organized by topic. Practice cells, genetics, ecology, human biology, and plant biology with mark schemes.",
@@ -454,7 +454,7 @@ export const igcseBiology: SEOSubject = {
     { question: "What equations do I need for IGCSE Biology?", answer: "Key equations: Photosynthesis (CO₂ + H₂O → glucose + O₂), Aerobic respiration (glucose + O₂ → CO₂ + H₂O + energy), Magnification = image size / actual size." },
   ],
   
-  yearsAvailable: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024],
+  yearsAvailable: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
 // ============================================================================

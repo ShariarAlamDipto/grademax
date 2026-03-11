@@ -4,11 +4,11 @@ import { getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
 
 export const metadata: Metadata = {
-  title: 'Edexcel A Level Past Papers 2024 – Free IAL with Mark Schemes',
-  description: 'Free Edexcel A Level (IAL) past papers with mark schemes. Pure Maths 1 (WMA11), Mechanics 1 (WME01), Statistics 1 (WST01). Topic-wise questions from 2014-2024.',
+  title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+  description: 'Free Edexcel A Level (IAL) past papers with mark schemes. Pure Maths 1 (WMA11), Mechanics 1 (WME01), Statistics 1 (WST01). Topic-wise questions from 2012-2025.',
   keywords: [
     'A Level past papers', 'A Level past papers Edexcel', 'Edexcel A Level past papers',
-    'A Level past papers 2024', 'A Level past papers 2023', 'A Level past papers free',
+    'A Level past papers 2025', 'A Level past papers 2024', 'A Level past papers 2023', 'A Level past papers free',
     'IAL past papers', 'International A Level past papers', 'Edexcel IAL past papers',
     'A Level Maths past papers', 'A Level Maths past papers Edexcel',
     'A Level Maths past papers by topic', 'A Level Maths topic wise',
@@ -23,11 +23,18 @@ export const metadata: Metadata = {
     'A Level worksheets', 'A Level practice papers',
   ],
   openGraph: {
-    title: 'Edexcel A Level Past Papers 2024 – Free IAL with Mark Schemes',
+    title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
     description: 'Free A Level past papers for all Edexcel IAL units with mark schemes. Organized by topic and year.',
     url: 'https://grademax.me/edexcel-a-level-past-papers',
     siteName: 'GradeMax',
     type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Edexcel A Level Past Papers' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+    description: 'Free A Level past papers for Pure Maths, Mechanics, Statistics with mark schemes.',
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: 'https://grademax.me/edexcel-a-level-past-papers',

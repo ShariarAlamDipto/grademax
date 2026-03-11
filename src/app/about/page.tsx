@@ -2,7 +2,24 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About Us',
-  description: 'Learn about GradeMax - the study platform helping IGCSE and A Level students prepare for exams with custom worksheets and past paper practice.',
+  description: 'Learn about GradeMax – the free study platform helping IGCSE and A Level students prepare for Edexcel exams with past papers, worksheets, and topic-wise practice.',
+  openGraph: {
+    title: 'About GradeMax – Free Edexcel Past Papers Platform',
+    description: 'Learn about GradeMax and how we help students prepare for Edexcel IGCSE and A Level exams.',
+    url: 'https://grademax.me/about',
+    siteName: 'GradeMax',
+    type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'About GradeMax' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About GradeMax',
+    description: 'Free Edexcel IGCSE & A Level past papers, worksheets, and topic-wise practice for students worldwide.',
+    images: ['/opengraph-image'],
+  },
+  alternates: {
+    canonical: 'https://grademax.me/about',
+  },
 }
 
 export default function AboutPage() {

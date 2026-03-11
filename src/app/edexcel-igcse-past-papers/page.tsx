@@ -4,11 +4,11 @@ import { getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE Past Papers 2024 – Free with Mark Schemes | All Subjects',
-  description: 'Free Edexcel IGCSE past papers with mark schemes for Physics (4PH1), Maths A (4MA1), Maths B (4MB1), Chemistry (4CH1), Biology (4BI1), ICT (4IT1). Topic-wise questions from 2014-2024.',
+  title: 'Edexcel IGCSE Past Papers 2025 – Free with Mark Schemes | All Subjects',
+  description: 'Free Edexcel IGCSE past papers with mark schemes for Physics (4PH1), Maths A (4MA1), Maths B (4MB1), Chemistry (4CH1), Biology (4BI1), ICT (4IT1). Topic-wise questions from 2010-2025.',
   keywords: [
     'IGCSE past papers', 'IGCSE past papers Edexcel', 'Edexcel IGCSE past papers',
-    'IGCSE past papers 2024', 'IGCSE past papers 2023', 'IGCSE past papers free',
+    'IGCSE past papers 2025', 'IGCSE past papers 2024', 'IGCSE past papers 2023', 'IGCSE past papers free',
     'IGCSE past papers with mark scheme', 'IGCSE past papers free download',
     'international GCSE past papers', 'Pearson Edexcel IGCSE',
     'IGCSE Physics past papers', 'IGCSE Maths past papers',
@@ -21,11 +21,18 @@ export const metadata: Metadata = {
     'IGCSE worksheets', 'IGCSE chapterwise questions',
   ],
   openGraph: {
-    title: 'Edexcel IGCSE Past Papers 2024 – Free with Mark Schemes',
+    title: 'Edexcel IGCSE Past Papers 2025 – Free with Mark Schemes',
     description: 'Free IGCSE past papers for all Edexcel subjects with mark schemes. Organized by topic and year.',
     url: 'https://grademax.me/edexcel-igcse-past-papers',
     siteName: 'GradeMax',
     type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Edexcel IGCSE Past Papers' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Edexcel IGCSE Past Papers 2025 – Free with Mark Schemes',
+    description: 'Free IGCSE past papers for Physics, Maths, Chemistry, Biology, ICT with mark schemes.',
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: 'https://grademax.me/edexcel-igcse-past-papers',
