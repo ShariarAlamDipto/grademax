@@ -25,15 +25,16 @@ const jsonLd = {
         width: 512,
         height: 512
       },
-      description: 'Free Edexcel past papers, topic-wise question papers, and custom worksheet generator for IGCSE and A Level students. Access mark schemes, practice papers, and revision resources.',
-      sameAs: []
+      description: 'Free Edexcel past papers, topic-wise question papers, and custom worksheet generator for IGCSE and A Level students. Access mark schemes, practice papers, and revision resources for Physics, Maths, Chemistry, Biology, ICT and more.',
+      foundingDate: '2024',
+      knowsAbout: ['Edexcel past papers', 'IGCSE', 'A Level', 'Pearson Edexcel', 'Past paper questions', 'Mark schemes']
     },
     {
       '@type': 'WebSite',
       '@id': 'https://grademax.me/#website',
       url: 'https://grademax.me',
       name: 'GradeMax',
-      description: 'Free Edexcel IGCSE and A Level Past Papers, Custom Worksheets and Topic-Wise Questions',
+      description: 'Free Edexcel IGCSE and A Level Past Papers 2025, Custom Worksheets and Topic-Wise Questions with Mark Schemes',
       publisher: {
         '@id': 'https://grademax.me/#organization'
       },
@@ -51,14 +52,16 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': 'https://grademax.me/#webpage',
       url: 'https://grademax.me',
-      name: 'Edexcel Past Papers | IGCSE and A Level Topic-Wise Questions and Worksheets | GradeMax',
+      name: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
+      datePublished: '2024-01-15T00:00:00+00:00',
+      dateModified: new Date().toISOString(),
       isPartOf: {
         '@id': 'https://grademax.me/#website'
       },
       about: {
         '@id': 'https://grademax.me/#organization'
       },
-      description: 'Free Edexcel past papers with mark schemes for IGCSE and A Level. Generate custom worksheets, practice topic-wise questions, and revise with 14+ years of real exam papers.',
+      description: 'Free Edexcel past papers with mark schemes for IGCSE and A Level (2010-2025). Generate custom worksheets, practice topic-wise questions, and revise with 14+ years of real Pearson Edexcel exam papers.',
       inLanguage: 'en-US',
       speakable: {
         '@type': 'SpeakableSpecification',
@@ -88,7 +91,7 @@ const jsonLd = {
           name: 'Where can I find free Edexcel IGCSE past papers?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'GradeMax offers free Edexcel IGCSE past papers for Physics (4PH1), Maths A (4MA1), Maths B (4MB1), Chemistry (4CH1), Biology (4BI1), and ICT (4IT1). All papers include mark schemes and are organized by topic and year from 2014-2024.'
+            text: 'GradeMax offers free Edexcel IGCSE past papers for Physics (4PH1), Maths A (4MA1), Maths B (4MB1), Chemistry (4CH1), Biology (4BI1), and ICT (4IT1). All papers include mark schemes and are organized by topic and year from 2010-2025.'
           }
         },
         {
@@ -104,7 +107,7 @@ const jsonLd = {
           name: 'What Edexcel A Level past papers are available?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'GradeMax provides Edexcel IAL past papers for Pure Mathematics 1 (WMA11), Mechanics 1 (WME01), and Statistics 1 (WST01), with more units being added. Papers span from 2014-2024 with full mark schemes.'
+            text: 'GradeMax provides Edexcel IAL past papers for Pure Mathematics 1 (WMA11), Mechanics 1 (WME01), and Statistics 1 (WST01), with more units being added. Papers span from 2012-2025 with full mark schemes.'
           }
         },
         {
@@ -146,10 +149,10 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://grademax.me'),
   title: {
-    default: 'Edexcel Past Papers | IGCSE and A Level Questions and Custom Worksheets | GradeMax',
+    default: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
     template: '%s | GradeMax'
   },
-  description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology and more. 14+ years of papers (2010-2024).',
+  description: 'Free Edexcel IGCSE & A Level past papers with mark schemes (2010–2025). Generate custom worksheets from real Pearson exam questions. Topic-wise practice for Physics, Maths, Chemistry & more.',
   keywords: [
     // Brand
     'GradeMax', 'grademax', 'grade max',
@@ -192,9 +195,9 @@ export const metadata: Metadata = {
     'A Level mark scheme', 'past papers with mark scheme',
     'Edexcel marking scheme', 'answer key Edexcel',
     // Year-Specific (high search volume)
-    'Edexcel past papers 2024', 'Edexcel past papers 2023', 'Edexcel past papers 2022',
-    'IGCSE past papers 2024', 'IGCSE past papers 2023',
-    'A Level past papers 2024', 'A Level past papers 2023',
+    'Edexcel past papers 2025', 'Edexcel past papers 2024', 'Edexcel past papers 2023',
+    'IGCSE past papers 2025', 'IGCSE past papers 2024', 'IGCSE past papers 2023',
+    'A Level past papers 2025', 'A Level past papers 2024', 'A Level past papers 2023',
     // Revision & Practice
     'IGCSE revision', 'A Level revision', 'Edexcel revision',
     'IGCSE practice questions', 'A Level practice papers',
@@ -229,8 +232,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://grademax.me',
     siteName: 'GradeMax',
-    title: 'Edexcel Past Papers | IGCSE and A Level Topic-Wise Questions and Custom Worksheets',
-    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology and more.',
+    title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level Topic-Wise Questions with Mark Schemes',
+    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real Pearson Edexcel exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology, ICT and more.',
     images: [
       {
         url: '/opengraph-image',
@@ -242,8 +245,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel Past Papers | IGCSE and A Level Topic-Wise Questions | GradeMax',
-    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets, practice topic-wise, and ace your exams.',
+    title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level Questions | GradeMax',
+    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes (2010-2025). Generate custom worksheets, practice topic-wise, and ace your exams.',
     images: ['/opengraph-image'],
     creator: '@grademax',
     site: '@grademax',
@@ -266,15 +269,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={playfair.className}>
       <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
       <body className="bg-black text-white min-h-screen flex flex-col">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
         <AuthProvider>
           <Navbar />
-          <div className="pt-36 flex-1">{children}</div>
+          <div id="main-content" className="pt-36 flex-1">{children}</div>
           <Footer />
         </AuthProvider>
         <Analytics />

@@ -148,6 +148,49 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   )
   
+  // QP landing pages — high-intent keyword pages for each subject
+  // These target queries like "edexcel igcse physics past papers", "4PH1 past papers", etc.
+  const qpPages: MetadataRoute.Sitemap = seoSubjects.flatMap((subject: SEOSubject) => {
+    const levelPrefix = subject.level === 'igcse' ? 'igcse' : 'a-level'
+    return [
+      // Primary: /qp/igcse-physics
+      {
+        url: `${baseUrl}/qp/${levelPrefix}-${subject.slug}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.9,
+      },
+      // With "past-papers": /qp/igcse-physics-past-papers
+      {
+        url: `${baseUrl}/qp/${levelPrefix}-${subject.slug}-past-papers`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.9,
+      },
+      // With "question-papers": /qp/igcse-physics-question-papers
+      {
+        url: `${baseUrl}/qp/${levelPrefix}-${subject.slug}-question-papers`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.85,
+      },
+      // Exam code: /qp/4ph1
+      {
+        url: `${baseUrl}/qp/${subject.examCode.toLowerCase()}`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.85,
+      },
+      // Exam code with past papers: /qp/4ph1-past-papers
+      {
+        url: `${baseUrl}/qp/${subject.examCode.toLowerCase()}-past-papers`,
+        lastModified: now,
+        changeFrequency: 'weekly' as const,
+        priority: 0.85,
+      },
+    ]
+  })
+  
   return [
     ...corePages,
     ...levelPages,
@@ -156,5 +199,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...pastPaperSubjectPages,
     ...seoPastPaperPages,
     ...pastPaperYearPages,
+    ...qpPages,
   ]
 }

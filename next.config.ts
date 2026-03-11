@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  trailingSlash: false,
   serverExternalPackages: [
     "canvas",
     "@xenova/transformers",
@@ -48,6 +49,24 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },
         ],
       },
+      // Cache static SEO pages for better Core Web Vitals
+      {
+        source: "/:path(edexcel-past-papers|edexcel-igcse-past-papers|edexcel-a-level-past-papers|edexcel-worksheets|subjects|about|privacy|terms|contact)",
+        headers: [
+          { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
+        ],
+      },
+    ];
+  },
+  async redirects() {
+    return [
+      // Catch common misspellings & alternate search patterns
+      { source: "/pastpapers", destination: "/past-papers", permanent: true },
+      { source: "/past_papers", destination: "/past-papers", permanent: true },
+      { source: "/worksheets", destination: "/edexcel-worksheets", permanent: true },
+      { source: "/worksheet-generator", destination: "/generate", permanent: true },
+      // Redirect trailing slashes for consistency
+      { source: "/:path+/", destination: "/:path+", permanent: true },
     ];
   },
 };

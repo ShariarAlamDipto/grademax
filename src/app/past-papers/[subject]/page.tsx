@@ -29,12 +29,25 @@ export async function generateMetadata({
   const level = subj.level === "ial" ? "A Level" : "IGCSE"
 
   return {
-    title: `${subj.name} ${level} Past Papers – Free Download with Mark Schemes`,
-    description: `Download free Edexcel ${level} ${subj.name} past papers and mark schemes from 2011 to 2025. All papers organized by year and session.`,
+    title: `Edexcel ${level} ${subj.name} Past Papers – Free Download with Mark Schemes`,
+    description: `Download free Edexcel ${level} ${subj.name} past papers and mark schemes from 2010 to 2025. All question papers organized by year and session. Topic-wise practice available.`,
+    keywords: [
+      `${subj.name} past papers`, `${level} ${subj.name} past papers`,
+      `Edexcel ${subj.name} past papers`,
+      `${subj.name} question papers`, `${subj.name} mark scheme`,
+      `${subj.name} past papers free download`,
+    ],
     openGraph: {
-      title: `${subj.name} Past Papers – Edexcel ${level}`,
-      description: `Download free ${subj.name} past papers with mark schemes.`,
+      title: `Edexcel ${level} ${subj.name} Past Papers | GradeMax`,
+      description: `Download free ${subj.name} past papers with mark schemes. ${level} papers from 2010-2025.`,
       url: `https://grademax.me/past-papers/${slug}`,
+      siteName: 'GradeMax',
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${level} ${subj.name} Past Papers | GradeMax`,
+      description: `Free Edexcel ${level} ${subj.name} past papers with mark schemes.`,
     },
     alternates: {
       canonical: `https://grademax.me/past-papers/${slug}`,
