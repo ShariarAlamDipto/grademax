@@ -4,11 +4,11 @@ import { seoSubjects, getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
 
 export const metadata: Metadata = {
-  title: 'Edexcel Past Papers 2024 – Free IGCSE & A Level with Mark Schemes',
-  description: 'Download free Edexcel past papers for IGCSE and A Level with mark schemes. Physics, Maths, Chemistry, Biology, ICT, Statistics & more. Topic-wise questions from 2010-2024.',
+  title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
+  description: 'Download free Edexcel past papers for IGCSE and A Level with mark schemes. Physics, Maths, Chemistry, Biology, ICT, Statistics & more. Topic-wise questions from 2010-2025.',
   keywords: [
-    'Edexcel past papers', 'Edexcel past papers free', 'Edexcel past papers 2024',
-    'Edexcel past papers 2023', 'Edexcel past papers with answers',
+    'Edexcel past papers', 'Edexcel past papers free', 'Edexcel past papers 2025',
+    'Edexcel past papers 2024', 'Edexcel past papers 2023', 'Edexcel past papers with answers',
     'Pearson Edexcel past papers', 'Edexcel exam papers',
     'Edexcel IGCSE past papers', 'Edexcel A Level past papers',
     'Edexcel past papers with mark scheme', 'Edexcel question papers',
@@ -16,11 +16,18 @@ export const metadata: Metadata = {
     'past papers Edexcel free download', 'Edexcel past papers online',
   ],
   openGraph: {
-    title: 'Edexcel Past Papers 2024 – Free IGCSE & A Level with Mark Schemes',
-    description: 'Free Edexcel past papers for all subjects with mark schemes. IGCSE and A Level.',
+    title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
+    description: 'Free Edexcel past papers for all subjects with mark schemes. IGCSE and A Level. Updated 2025.',
     url: 'https://grademax.me/edexcel-past-papers',
     siteName: 'GradeMax',
     type: 'website',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Free Edexcel Past Papers' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Edexcel Past Papers 2025 – Free with Mark Schemes',
+    description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Topic-wise questions from 2010–2025.',
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: 'https://grademax.me/edexcel-past-papers',
@@ -30,7 +37,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     question: "Where can I find free Edexcel past papers?",
-    answer: "GradeMax provides free Edexcel past papers for all IGCSE and A Level subjects including Physics, Maths, Chemistry, Biology, and ICT. All papers from 2014-2024 are available with official mark schemes, organized by topic and year."
+    answer: "GradeMax provides free Edexcel past papers for all IGCSE and A Level subjects including Physics, Maths, Chemistry, Biology, and ICT. All papers from 2010-2025 are available with official mark schemes, organized by topic and year."
   },
   {
     question: "Are Edexcel past papers available with mark schemes?",
@@ -50,7 +57,7 @@ const faqs = [
   },
   {
     question: "Are Edexcel 2024 past papers available?",
-    answer: "Yes, GradeMax regularly updates its database with the latest Edexcel past papers. 2024 papers are available for most subjects as they are released by Pearson Edexcel."
+    answer: "Yes, GradeMax regularly updates its database with the latest Edexcel past papers. 2024 and 2025 papers are available for most subjects as they are released by Pearson Edexcel."
   },
 ]
 
@@ -86,7 +93,7 @@ export default function EdexcelPastPapersPage() {
           Free Edexcel Past Papers with Mark Schemes
         </h1>
         <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-4">
-          Access 14+ years of Pearson Edexcel past papers for IGCSE and A Level. 
+          Access 14+ years of Pearson Edexcel past papers for IGCSE and A Level (2010–2025). 
           All papers include official mark schemes, organized by topic and year.
         </p>
         <p className="text-sm text-gray-500 max-w-2xl mx-auto mb-8">

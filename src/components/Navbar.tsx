@@ -29,7 +29,7 @@ export default function Navbar() {
     : "?"
 
   return (
-    <nav className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 md:py-5 bg-black/70 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-lg">
+    <nav aria-label="Main navigation" className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 md:py-5 bg-black/70 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-lg">
       <div className="text-2xl md:text-4xl font-bold tracking-wide mb-3 md:mb-0 text-center w-full md:w-auto">
         <Link href="/">GradeMax</Link>
       </div>

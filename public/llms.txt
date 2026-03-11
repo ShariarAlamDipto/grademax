@@ -1,0 +1,44 @@
+# GradeMax – Free Edexcel Past Papers & Worksheet Generator
+
+> GradeMax is a free educational platform providing Edexcel IGCSE and A Level past papers, topic-wise questions, mark schemes, and a custom worksheet generator for students worldwide.
+
+## About
+
+GradeMax helps students prepare for Pearson Edexcel IGCSE and International A Level (IAL) exams. The platform organizes real past paper questions by subject and topic, making revision more efficient. Students can also generate custom worksheets tailored to specific topics, difficulty levels, and year ranges.
+
+## Subjects Covered
+
+### Edexcel IGCSE
+- Physics (4PH1) — Forces, Electricity, Waves, Energy, Radioactivity, Astrophysics
+- Mathematics A (4MA1) — Number, Algebra, Geometry, Statistics
+- Mathematics B (4MB1) — Number, Algebra, Functions, Geometry, Trigonometry, Vectors, Statistics
+- Chemistry (4CH1) — Atomic Structure, Bonding, Organic Chemistry, Rates, Equilibria
+- Biology (4BI1) — Cell Biology, Genetics, Ecology, Human Biology
+- ICT (4IT1) — Digital Devices, Connectivity, Multimedia, Databases, Spreadsheets
+
+### Edexcel International A Level (IAL)
+- Pure Mathematics 1 (WMA11) — Algebra, Differentiation, Integration, Coordinate Geometry
+- Mechanics 1 (WME01) — Kinematics, Dynamics, Statics, Moments
+- Statistics 1 (WST01) — Probability, Statistical Distributions, Representation of Data
+
+## Key Features
+
+- **Topic-Wise Questions**: Past paper questions organized by topic/chapter for focused revision
+- **Mark Schemes**: Official Pearson Edexcel mark schemes included with every question
+- **Custom Worksheet Generator**: Create personalized PDF worksheets from real exam questions
+- **Year Coverage**: Papers from 2010 to 2025
+- **Free Access**: No sign-up or payment required
+
+## URLs
+
+- Homepage: https://grademax.me
+- All Past Papers: https://grademax.me/edexcel-past-papers
+- IGCSE Past Papers: https://grademax.me/edexcel-igcse-past-papers
+- A Level Past Papers: https://grademax.me/edexcel-a-level-past-papers
+- Worksheet Generator: https://grademax.me/generate
+- Browse by Topic: https://grademax.me/browse
+
+## Contact
+
+- Website: https://grademax.me
+- Contact page: https://grademax.me/contact
