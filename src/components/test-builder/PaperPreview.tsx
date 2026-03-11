@@ -24,27 +24,19 @@ interface PaperPreviewProps {
 /** A4 aspect ratio: 210 × 297 mm ≈ 1 : 1.4142 */
 const A4_RATIO = 297 / 210;
 
-export default function PaperPreview({
-  items,
-  testTitle,
-  onRemove,
-  onMoveUp,
-  onMoveDown,
-  onClearAll,
-  onGenerate,
-  generating,
-  onTitleChange,
-  worksheetUrl,
-  markschemeUrl,
-  onDownloadQP,
-  onDownloadMS,
-  pdfProgress,
-  error,
-}: PaperPreviewProps) {
-  const totalMarks = items.length * 4;
+import { useTheme } from '@/context/ThemeContext'
 
+export default function PaperPreview(props: PaperPreviewProps) {
+  const { theme } = useTheme();
+  const totalMarks = props.items.length * 4;
+  const bg = theme === 'dark' ? 'bg-gray-800/80' : 'bg-white';
+  const border = theme === 'dark' ? 'border-gray-700' : 'border-gray-200';
+  const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
+  const btn = theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-blue-500 hover:bg-blue-600 text-white';
+  const btnOutline = theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700' : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-300';
+  const btnDanger = theme === 'dark' ? 'text-red-400 hover:text-red-300' : 'text-red-600 hover:text-red-400';
   return (
-    <div className="bg-gray-800/80 border border-gray-700 rounded-xl flex flex-col h-full overflow-hidden">
+    <div className={`${bg} ${border} rounded-xl flex flex-col h-full overflow-hidden ${text}`}> 
       {/* ── Header ── */}
       <div className="shrink-0 p-4 border-b border-gray-700">
         <div className="flex items-center justify-between mb-3">
