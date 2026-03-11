@@ -1,8 +1,15 @@
 import Link from 'next/link'
 
+import { useTheme } from '@/context/ThemeContext'
+
 export default function Footer() {
+  const { theme } = useTheme();
+  const bg = theme === 'dark' ? 'bg-gray-950' : 'bg-white';
+  const border = theme === 'dark' ? 'border-gray-800' : 'border-gray-200';
+  const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
+  const muted = theme === 'dark' ? 'text-gray-400' : 'text-gray-500';
   return (
-    <footer aria-label="Site footer" className="bg-gray-950 border-t border-gray-800">
+    <footer aria-label="Site footer" className={`${bg} border-t ${border}`}> 
       <div className="max-w-6xl mx-auto px-4 py-10">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
           {/* Company */}

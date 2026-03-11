@@ -7,9 +7,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 }
 
+import { useTheme } from '@/context/ThemeContext'
+
 export default function NotFound() {
+  const { theme } = useTheme();
+  const bg = theme === 'dark' ? 'bg-black' : 'bg-white';
+  const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
   return (
-    <main className="min-h-[60vh] flex flex-col items-center justify-center px-4 text-center">
+    <main className={`min-h-[60vh] flex flex-col items-center justify-center px-4 text-center ${bg} ${text}`}> 
       <h1 className="text-6xl font-bold text-gray-200 mb-4">404</h1>
       <h2 className="text-xl font-semibold text-gray-400 mb-2">Page Not Found</h2>
       <p className="text-gray-500 mb-8 max-w-md">

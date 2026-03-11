@@ -24,12 +24,17 @@ const faqs = [
   { q: "Does GradeMax have Edexcel 2024 and 2025 past papers?", a: "Yes, GradeMax is regularly updated with the latest Edexcel past papers and mark schemes as they are released by Pearson." },
 ]
 
+import { useTheme } from '@/context/ThemeContext'
+
 export default function Home() {
   const igcseSubjects = subjects.filter(s => s.level === "igcse")
   const ialSubjects = subjects.filter(s => s.level === "ial")
-
+  const { theme } = useTheme();
+  const bg = theme === 'dark' ? 'bg-black' : 'bg-white';
+  const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
+  const heroText = theme === 'dark' ? 'text-gray-400' : 'text-gray-600';
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main className={`min-h-screen ${bg} ${text}`}> 
       {/* Hero */}
       <section className="text-center px-4 md:px-8 pt-10 md:pt-20 pb-6">
         <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
