@@ -7,6 +7,7 @@ import { Playfair_Display } from 'next/font/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700'], display: 'swap' });
 
@@ -265,27 +266,28 @@ export const metadata: Metadata = {
   category: 'education',
 }
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={playfair.className}>
-      <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-      </head>
-      <body className="bg-black text-white min-h-screen flex flex-col">
-        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
-        <AuthProvider>
-          <Navbar />
-          <div id="main-content" className="pt-36 flex-1">{children}</div>
-          <Footer />
-        </AuthProvider>
-        <Analytics />
-        <SpeedInsights />
-      </body>
-    </html>
+    <ThemeProvider>
+      <html lang="en" className={playfair.className}>
+        <head>
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+          <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+        </head>
+        <body className="min-h-screen flex flex-col">
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
+          <AuthProvider>
+            <Navbar />
+            <div id="main-content" className="pt-36 flex-1">{children}</div>
+            <Footer />
+          </AuthProvider>
+          <Analytics />
+          <SpeedInsights />
+        </body>
+      </html>
+    </ThemeProvider>
   )
 }

@@ -2,11 +2,13 @@
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { useAuth } from "@/context/AuthContext"
+import { useTheme } from '@/context/ThemeContext'
 
 export default function Navbar() {
   const { user, displayName, avatarUrl, loading, isTeacher, isAdmin, signOut } = useAuth()
   const [dropdownOpen, setDropdownOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
+  const { theme, toggleTheme } = useTheme();
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -28,10 +30,26 @@ export default function Navbar() {
         .slice(0, 2)
     : "?"
 
+  const bg = theme === 'dark' ? 'bg-black/70' : 'bg-white/90';
+  const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
+  const border = theme === 'dark' ? 'border-white/20' : 'border-gray-200';
   return (
-    <nav aria-label="Main navigation" className="flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 md:py-5 bg-black/70 backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-lg">
-      <div className="text-2xl md:text-4xl font-bold tracking-wide mb-3 md:mb-0 text-center w-full md:w-auto">
-        <Link href="/">GradeMax</Link>
+    <nav aria-label="Main navigation" className={`flex flex-col md:flex-row items-center justify-between px-4 md:px-6 py-4 md:py-5 ${bg} backdrop-blur-md fixed top-0 left-0 w-full z-50 shadow-lg ${text}`}> 
+      <div className="flex items-center gap-4">
+        <div className="text-2xl md:text-4xl font-bold tracking-wide mb-3 md:mb-0 text-center w-full md:w-auto">
+          <Link href="/">GradeMax</Link>
+        </div>
+        <button
+          onClick={toggleTheme}
+          aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
+          className="ml-2 p-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 transition-colors text-lg"
+        >
+          {theme === 'dark' ? (
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 0112.21 3a7 7 0 000 14A9 9 0 0021 12.79z" /></svg>
+          ) : (
+            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" /><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+          )}
+        </button>
       </div>
       <ul className="flex flex-wrap gap-3 md:gap-10 text-sm md:text-xl font-semibold items-center justify-center w-full md:w-auto">
         <li><Link href="/" className="gradient-hover-sea">Home</Link></li>
