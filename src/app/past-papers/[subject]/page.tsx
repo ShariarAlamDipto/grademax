@@ -139,6 +139,7 @@ export default async function SubjectPapersPage({
       .from("papers")
       .select("id, paper_number, year, season, pdf_url, markscheme_pdf_url")
       .eq("subject_id", subjectRow.id)
+      .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
       .order("year", { ascending: false })
       .order("season", { ascending: false })
 
