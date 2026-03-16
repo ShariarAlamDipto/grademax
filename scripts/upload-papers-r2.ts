@@ -32,7 +32,7 @@ for (const p of envPaths) {
 
 // ─── Configuration ─────────────────────────────────────────────────────────────
 
-const RAW_DATA_DIR = String.raw`C:\Users\shari\grademax scraper\grademax-scraper\data\raw`
+const RAW_DATA_DIR = String.raw`C:\Users\shari\grademax scraper\grademax-scraper\data\paperlords_download`
 
 const R2_ACCOUNT_ID = process.env.R2_ACCOUNT_ID || 'REDACTED'
 const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID!
@@ -57,14 +57,14 @@ const SUBJECT_MAP: Record<string, SubjectMeta> = {
   'Accounting':         { slug: 'accounting',          name: 'Accounting',               level: 'IGCSE', code: '4AC1', board: 'Edexcel' },
   'Bangla':             { slug: 'bangla',              name: 'Bangla',                   level: 'IGCSE', code: '4BN1', board: 'Edexcel' },
   'Biology':            { slug: 'biology',             name: 'Biology',                  level: 'IGCSE', code: '4BI1', board: 'Edexcel' },
-  'Business':           { slug: 'business',            name: 'Business',                 level: 'IGCSE', code: '4BS1', board: 'Edexcel' },
+  'Business_Studies':   { slug: 'business',            name: 'Business',                 level: 'IGCSE', code: '4BS1', board: 'Edexcel' },
   'Chemistry':          { slug: 'chemistry',           name: 'Chemistry',                level: 'IGCSE', code: '4CH1', board: 'Edexcel' },
   'Commerce':           { slug: 'commerce',            name: 'Commerce',                 level: 'IGCSE', code: '4CM1', board: 'Edexcel' },
   'Economics':          { slug: 'economics',           name: 'Economics',                level: 'IGCSE', code: '4EC1', board: 'Edexcel' },
   'English_A':          { slug: 'english-language-a',  name: 'English Language A',       level: 'IGCSE', code: '4EA1', board: 'Edexcel' },
   'English_B':          { slug: 'english-language-b',  name: 'English Language B',       level: 'IGCSE', code: '4EB1', board: 'Edexcel' },
-  'Further Pure Maths': { slug: 'further-pure-maths',  name: 'Further Pure Mathematics', level: 'IGCSE', code: '4PM1', board: 'Edexcel' },
-  'Human Biology':      { slug: 'human-biology',       name: 'Human Biology',            level: 'IGCSE', code: '4HB1', board: 'Edexcel' },
+  'Further_Pure_Maths': { slug: 'further-pure-maths',  name: 'Further Pure Mathematics', level: 'IGCSE', code: '4PM1', board: 'Edexcel' },
+  'Human_Biology':      { slug: 'human-biology',       name: 'Human Biology',            level: 'IGCSE', code: '4HB1', board: 'Edexcel' },
   'ICT':                { slug: 'ict',                 name: 'ICT',                      level: 'IGCSE', code: '4IT1', board: 'Edexcel' },
   'Mathematics_A':      { slug: 'maths-a',             name: 'Mathematics A',            level: 'IGCSE', code: '4MA1', board: 'Edexcel' },
   'Mathematics_B':      { slug: 'maths-b',             name: 'Mathematics B',            level: 'IGCSE', code: '4MB1', board: 'Edexcel' },
@@ -98,17 +98,18 @@ function parseFilename(filename: string): ParsedFile | null {
     }
   }
 
-  // Pattern B: hyphen-separated "4eb1-01-que-20240524.pdf", "4eb1-01r-rms-20240822.pdf"
-  const patternB = /^\w+-(\d+)(r?)-(que|rms)-\d+$/i
+  // Pattern B: hyphen-separated "4eb1-01-que-20240524.pdf", "4eb1-01r-rms-20240822.pdf",
+  //            "4CH1-1C-msc-20190822-V2.pdf", "4bi1-1b-ms-2023.pdf", "4eb1-01-ms-20240108_190710.pdf"
+  const patternB = /^\w+-(\d+)([A-Z]*)-(que|rms|msc|ms)-[\d]+[A-Za-z0-9\-_]*$/i
   const matchB = base.match(patternB)
   if (matchB) {
     const paperNum = String(parseInt(matchB[1]))
-    const replacement = matchB[2].toLowerCase() === 'r' ? 'R' : ''
+    const variant = (matchB[2] || '').toUpperCase()
     const isQP = matchB[3].toLowerCase() === 'que'
     return {
-      paperNumber: paperNum + replacement,
+      paperNumber: paperNum + variant,
       type: isQP ? 'qp' : 'ms',
-      displayName: `Paper ${paperNum}${replacement}`,
+      displayName: `Paper ${paperNum}${variant}`,
     }
   }
 
@@ -137,6 +138,119 @@ function parseFilename(filename: string): ParsedFile | null {
     const paperNum = matchD[2]
     const variant = (matchD[3] || '').toUpperCase()
     const isQP = typeStr === 'question-paper'
+    return {
+      paperNumber: paperNum + variant,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}${variant}`,
+    }
+  }
+
+  // Pattern E: "JAN-2020-4MB1-PAPER-1-QP.pdf", "MAY-NOV-2020-4MB1-PAPER-1R-MS.pdf"
+  const patternE = /^[A-Z-]+-\d{4}-\w+-PAPER-(\d+)([A-Z]*)-(QP|MS)$/i
+  const matchE = base.match(patternE)
+  if (matchE) {
+    const paperNum = matchE[1]
+    const variant = (matchE[2] || '').toUpperCase()
+    const isQP = matchE[3].toUpperCase() === 'QP'
+    return {
+      paperNumber: paperNum + variant,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}${variant}`,
+    }
+  }
+
+  // Pattern F: "May-19-ICT-Paper-1-MS.pdf", "May-19-ICT-Paper-1R-QP.pdf"
+  const patternF = /^[A-Za-z]+-\d{2}-\w+-Paper-(\d+)([A-Z]*)-(QP|MS)$/i
+  const matchF = base.match(patternF)
+  if (matchF) {
+    const paperNum = matchF[1]
+    const variant = (matchF[2] || '').toUpperCase()
+    const isQP = matchF[3].toUpperCase() === 'QP'
+    return {
+      paperNumber: paperNum + variant,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}${variant}`,
+    }
+  }
+
+  // Pattern G: "Jan20-P-1-MS.pdf" (Accounting — P-N with hyphen before number)
+  const patternG = /^[A-Za-z]+\d{2}-P-(\d+)-(QP|MS)$/i
+  const matchG = base.match(patternG)
+  if (matchG) {
+    const paperNum = matchG[1]
+    const isQP = matchG[2].toUpperCase() === 'QP'
+    return {
+      paperNumber: paperNum,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}`,
+    }
+  }
+
+  // Pattern H: "Jan20-P1-MS.pdf", "Jan-20-P1R-QP.pdf", "MAY-2022-P1R-MS.pdf", "May-22-P2R-QP.pdf"
+  //            Covers Bangla, Biology, Human_Biology, Commerce (2- and 4-digit year)
+  const patternH = /^[A-Za-z]+-?\d{2,4}-P(\d+)([A-Z]*)-(QP|MS)$/i
+  const matchH = base.match(patternH)
+  if (matchH) {
+    const paperNum = matchH[1]
+    const variant = (matchH[2] || '').toUpperCase()
+    const isQP = matchH[3].toUpperCase() === 'QP'
+    return {
+      paperNumber: paperNum + variant,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}${variant}`,
+    }
+  }
+
+  // Pattern I: "June20_Nov20-P1-MS.pdf", "June20_Nov20-P1-R-QP.pdf" (Business_Studies)
+  //            Variant is separated with extra hyphen: P1-R-QP = Paper 1R QP
+  const patternI = /^[A-Za-z\d_]+-P(\d+)(?:-([A-Z]+))?-(QP|MS)$/i
+  const matchI = base.match(patternI)
+  if (matchI) {
+    const paperNum = matchI[1]
+    const variant = (matchI[2] || '').toUpperCase()
+    const isQP = matchI[3].toUpperCase() === 'QP'
+    return {
+      paperNumber: paperNum + variant,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}${variant}`,
+    }
+  }
+
+  // Pattern J: "Chemistry_2019_May-Jun_Paper_1_QP.pdf", "Chemistry_2019_May-Jun_Paper_1R_MS.pdf"
+  const patternJ = /^\w+_\d{4}_[A-Za-z-]+_Paper_(\d+)([A-Z]*)_(QP|MS)$/i
+  const matchJ = base.match(patternJ)
+  if (matchJ) {
+    const paperNum = matchJ[1]
+    const variant = (matchJ[2] || '').toUpperCase()
+    const isQP = matchJ[3].toUpperCase() === 'QP'
+    return {
+      paperNumber: paperNum + variant,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}${variant}`,
+    }
+  }
+
+  // Pattern K: "IGCSE-EDEXCEL-MS-Business-202405-Paper-1R.pdf" (Business MS)
+  //            "IGCSE-EDEXCEL-QP-Math1-202001-P1F.pdf" (Math A QP/MS with Foundation variant)
+  const patternK1 = /^IGCSE-EDEXCEL-(QP|MS)-\w+-\d{6}-Paper-(\d+)([A-Z]*)$/i
+  const matchK1 = base.match(patternK1)
+  if (matchK1) {
+    const isQP = matchK1[1].toUpperCase() === 'QP'
+    const paperNum = matchK1[2]
+    const variant = (matchK1[3] || '').toUpperCase()
+    return {
+      paperNumber: paperNum + variant,
+      type: isQP ? 'qp' : 'ms',
+      displayName: `Paper ${paperNum}${variant}`,
+    }
+  }
+
+  const patternK2 = /^IGCSE-EDEXCEL-(QP|MS)-\w+-\d{6}-P(\d+)([A-Z]*)$/i
+  const matchK2 = base.match(patternK2)
+  if (matchK2) {
+    const isQP = matchK2[1].toUpperCase() === 'QP'
+    const paperNum = matchK2[2]
+    const variant = (matchK2[3] || '').toUpperCase()
     return {
       paperNumber: paperNum + variant,
       type: isQP ? 'qp' : 'ms',
