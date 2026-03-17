@@ -270,8 +270,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const appBg = process.env.NEXT_PUBLIC_APP_BG ?? '#000000'
-  const appText = process.env.NEXT_PUBLIC_APP_TEXT ?? '#f5f7ff'
+  const appBg = process.env.NEXT_PUBLIC_APP_BG ?? '#060912'
+  const appText = process.env.NEXT_PUBLIC_APP_TEXT ?? '#EDF0F7'
 
   return (
     <html lang="en" className={`${playfair.className} dark`}>
@@ -293,7 +293,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
         <AuthProvider>
           <Navbar />
-          <div id="main-content" className="pt-20 md:pt-24 flex-1">{children}</div>
+          <div id="main-content" className="pt-[60px] flex-1">{children}</div>
           <Footer />
         </AuthProvider>
         <Analytics />
