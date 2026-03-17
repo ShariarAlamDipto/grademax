@@ -82,6 +82,7 @@ export default function PdfThumbnail({ url, width = 280, className = '', onClick
       }
     })();
 
+    return () => { taskRef.current++; };
   }, [url, width]);
 
   if (error) {

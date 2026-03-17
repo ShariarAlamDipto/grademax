@@ -270,10 +270,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const designProfile = process.env.NEXT_PUBLIC_DESIGN_PROFILE === 'classic' ? 'classic' : 'conversion'
-
   return (
-    <html lang="en" className={`${playfair.className} dark design-profile-${designProfile}`}>
+    <html lang="en" className={`${playfair.className} dark`}>
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -282,7 +280,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`min-h-screen flex flex-col bg-black text-white design-profile-${designProfile}`} data-design-profile={designProfile}>
+      <body className="min-h-screen flex flex-col bg-black text-white">
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
         <AuthProvider>
           <Navbar />

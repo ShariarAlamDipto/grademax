@@ -51,18 +51,18 @@ export default function Home() {
         <h1 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
           Free Edexcel Past Papers and Custom Worksheets
         </h1>
-        <p className="hero-description gm-text-secondary text-lg max-w-2xl mx-auto mb-3">
+        <p className="hero-description text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-3">
           IGCSE and A Level past papers organized by topic, with mark schemes.
           Generate custom worksheets from real exam questions.
         </p>
-        <p className="text-sm gm-text-secondary max-w-xl mx-auto mb-8">
+        <p className="text-sm text-gray-500 max-w-xl mx-auto mb-8">
           Pearson Edexcel question papers from 2010–2025 · 9 subjects · Topic-wise &amp; year-wise
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link href="/generate" className="gm-btn-premium font-semibold px-8 py-3 rounded-lg transition-colors">
+          <Link href="/generate" className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
             Generate Worksheet
           </Link>
-          <Link href="/past-papers" className="gm-btn-primary font-semibold px-8 py-3 rounded-lg transition-colors border border-transparent">
+          <Link href="/past-papers" className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-gray-300 dark:border-gray-700">
             Browse Past Papers
           </Link>
         </div>
@@ -167,7 +167,7 @@ export default function Home() {
           <h2 className="text-lg font-semibold text-center mb-5 text-gray-700 dark:text-gray-300">Popular Edexcel Past Paper Topics</h2>
           <div className="flex flex-wrap justify-center gap-2">
             {popularTopics.map((t) => (
-              <Link key={t.href} href={t.href} className="gm-chip border px-3 py-1.5 text-xs hover:opacity-90 transition-colors">
+              <Link key={t.href} href={t.href} className="bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 px-3 py-1.5 rounded-full text-xs text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
                 {t.name}
               </Link>
             ))}

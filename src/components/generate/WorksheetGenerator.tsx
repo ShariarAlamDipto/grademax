@@ -240,13 +240,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
       )}
       
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-2xl md:text-5xl font-bold mb-2 gm-text-primary">Worksheet Generator</h1>
-        <p className="gm-text-secondary mb-4 md:mb-8 text-sm md:text-base">
+        <h1 className="text-2xl md:text-5xl font-bold mb-2 text-white">Worksheet Generator</h1>
+        <p className="text-gray-300 mb-4 md:mb-8 text-sm md:text-base">
           Select subject, topics, year range, and difficulty to create custom worksheets
         </p>
 
         {/* Filters Panel */}
-        <div className="gm-surface bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-xl md:rounded-2xl shadow-xl p-4 md:p-8 mb-4 md:mb-8 border border-gray-700">
+        <div className="bg-gray-800 bg-opacity-80 backdrop-blur-lg rounded-xl md:rounded-2xl shadow-xl p-4 md:p-8 mb-4 md:mb-8 border border-gray-700">
           
           {/* Subject Selection */}
           <div className="mb-4 md:mb-8">
@@ -264,10 +264,10 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                   <button
                     key={subject.id}
                     onClick={() => setSelectedSubject(subject.id)}
-                    className={`gm-chip border p-2 md:p-4 rounded-lg md:rounded-xl transition-all ${
+                    className={`p-2 md:p-4 rounded-lg md:rounded-xl border-2 transition-all ${
                       selectedSubject === subject.id
-                        ? 'ring-2 ring-[#6EA8FE] shadow-lg'
-                        : 'hover:opacity-90'
+                        ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg'
+                        : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500'
                     }`}
                   >
                     <div className="text-[10px] md:text-xs text-gray-400 font-medium mb-0.5 md:mb-1">{subject.code}</div>
@@ -284,7 +284,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-4 flex flex-wrap items-center gap-2 text-white">
               Select Topics
               {selectedTopics.length > 0 && (
-                <span className="text-xs md:text-sm gm-chip border px-2 md:px-3 py-0.5 md:py-1 rounded-full">
+                <span className="text-xs md:text-sm bg-blue-500 text-white px-2 md:px-3 py-0.5 md:py-1 rounded-full">
                   {selectedTopics.length} selected
                 </span>
               )}
@@ -295,7 +295,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                 <div className="animate-spin rounded-full h-6 w-6 md:h-8 md:w-8 border-b-2 border-white"></div>
               </div>
             ) : topics.length === 0 ? (
-              <div className="text-center p-4 md:p-8 gm-surface rounded-xl border">
+              <div className="text-center p-4 md:p-8 bg-gray-700 bg-opacity-30 rounded-xl">
                 <p className="text-gray-400 text-sm md:text-base">No topics available for this subject yet</p>
               </div>
             ) : (
@@ -303,9 +303,9 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                 <table className="w-full border-collapse min-w-[300px]">
                   <thead>
                     <tr className="bg-gray-700 bg-opacity-50">
-                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left gm-text-primary font-semibold text-xs md:text-base">Select</th>
-                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left gm-text-primary font-semibold text-xs md:text-base">Code</th>
-                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left gm-text-primary font-semibold text-xs md:text-base">Topic Name</th>
+                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left text-white font-semibold text-xs md:text-base">Select</th>
+                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left text-white font-semibold text-xs md:text-base">Code</th>
+                      <th className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-left text-white font-semibold text-xs md:text-base">Topic Name</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -315,8 +315,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                         onClick={() => toggleTopic(topic.code)}
                         className={`transition-colors cursor-pointer ${
                           selectedTopics.includes(topic.code)
-                            ? 'bg-[#0B1020] border-[#6EA8FE]'
-                            : 'bg-[#0B1020]/70 hover:bg-[#0B1020]'
+                            ? 'bg-blue-900 bg-opacity-50 border-blue-500'
+                            : 'bg-gray-700 bg-opacity-30 hover:bg-gray-600 hover:bg-opacity-40'
                         }`}
                       >
                         <td className="border border-gray-600 px-2 md:px-4 py-2 md:py-3 text-center">
@@ -360,7 +360,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={yearStart}
                 onChange={(e) => setYearStart(parseInt(e.target.value))}
-                className="w-full gm-input p-2 md:p-3 border-2 rounded-lg text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -374,7 +374,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={yearEnd}
                 onChange={(e) => setYearEnd(parseInt(e.target.value))}
-                className="w-full gm-input p-2 md:p-3 border-2 rounded-lg text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -392,7 +392,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
-                className="w-full gm-input p-2 md:p-3 border-2 rounded-lg text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               >
                 <option value="">All</option>
                 <option value="easy">Easy</option>
@@ -410,11 +410,11 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                 onChange={(e) => setLimit(parseInt(e.target.value) || 20)}
                 min="1"
                 max="100"
-                className="w-full gm-input p-2 md:p-3 border-2 rounded-lg text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>
             <div className="col-span-2 md:col-span-1 flex items-end">
-              <label className="flex items-center gap-2 cursor-pointer p-2 md:p-3 gm-input border-2 rounded-lg w-full">
+              <label className="flex items-center gap-2 cursor-pointer p-2 md:p-3 border-2 border-gray-600 bg-gray-700 rounded-lg hover:border-blue-500 w-full">
                 <input
                   type="checkbox"
                   checked={shuffle}
@@ -430,7 +430,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
           <button
             onClick={handleGenerate}
             disabled={loading || selectedTopics.length === 0}
-            className="w-full gm-btn-premium py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Generating...' : 'Generate Worksheet'}
           </button>
