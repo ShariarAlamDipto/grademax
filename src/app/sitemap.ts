@@ -1,202 +1,149 @@
 import { MetadataRoute } from 'next'
+import { createClient } from '@supabase/supabase-js'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
-import { pastPaperSubjects } from '@/lib/subjects'
+import { pastPaperSubjects, subjects } from '@/lib/subjects'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://grademax.me'
+const BASE_URL = 'https://grademax.me'
+
+// Build a slug → subject map for quick lookup
+const slugByName = new Map(subjects.map(s => [s.name, s.slug]))
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
-  
-  // Core pages
+
+  // ─── Core pages ──────────────────────────────────────────────────────────────
+
   const corePages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/edexcel-past-papers`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/edexcel-igcse-past-papers`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/edexcel-a-level-past-papers`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/edexcel-worksheets`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/subjects`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/generate`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/browse`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/past-papers`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: now,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
+    { url: BASE_URL,                              lastModified: now, changeFrequency: 'weekly',  priority: 1    },
+    { url: `${BASE_URL}/edexcel-past-papers`,     lastModified: now, changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE_URL}/edexcel-igcse-past-papers`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/edexcel-a-level-past-papers`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/edexcel-worksheets`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE_URL}/subjects`,                lastModified: now, changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/generate`,                lastModified: now, changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/browse`,                  lastModified: now, changeFrequency: 'weekly',  priority: 0.8  },
+    { url: `${BASE_URL}/past-papers`,             lastModified: now, changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/about`,                   lastModified: now, changeFrequency: 'monthly', priority: 0.6  },
+    { url: `${BASE_URL}/contact`,                 lastModified: now, changeFrequency: 'monthly', priority: 0.5  },
+    { url: `${BASE_URL}/privacy`,                 lastModified: now, changeFrequency: 'yearly',  priority: 0.3  },
+    { url: `${BASE_URL}/terms`,                   lastModified: now, changeFrequency: 'yearly',  priority: 0.3  },
   ]
-  
-  // Level landing pages
+
+  // ─── Level landing pages ──────────────────────────────────────────────────────
+
   const levelPages: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/subjects/igcse`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/subjects/ial`,
-      lastModified: now,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
+    { url: `${BASE_URL}/subjects/igcse`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE_URL}/subjects/ial`,   lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
   ]
-  
-  // Subject pages (pillar pages)
-  const subjectPages: MetadataRoute.Sitemap = seoSubjects.map((subject: SEOSubject) => ({
-    url: `${baseUrl}/subjects/${subject.level}/${subject.slug}`,
+
+  // ─── SEO subject pages ───────────────────────────────────────────────────────
+
+  const subjectPages: MetadataRoute.Sitemap = seoSubjects.map((s: SEOSubject) => ({
+    url: `${BASE_URL}/subjects/${s.level}/${s.slug}`,
     lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.85,
   }))
-  
-  // Topic pages (supporting pages)
-  const topicPages: MetadataRoute.Sitemap = seoSubjects.flatMap((subject: SEOSubject) =>
-    subject.topics.map(topic => ({
-      url: `${baseUrl}/subjects/${subject.level}/${subject.slug}/${topic.slug}`,
+
+  const topicPages: MetadataRoute.Sitemap = seoSubjects.flatMap((s: SEOSubject) =>
+    s.topics.map(t => ({
+      url: `${BASE_URL}/subjects/${s.level}/${s.slug}/${t.slug}`,
       lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.75,
     }))
   )
-  
-  // Past paper subject pages (actual route: /past-papers/{slug})
-  const pastPaperSubjectPages: MetadataRoute.Sitemap = pastPaperSubjects.map((subject) => ({
-    url: `${baseUrl}/past-papers/${subject.slug}`,
+
+  // ─── Past paper subject pages ─────────────────────────────────────────────────
+
+  const pastPaperSubjectPages: MetadataRoute.Sitemap = pastPaperSubjects.map(s => ({
+    url: `${BASE_URL}/past-papers/${s.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.8,
+    priority: 0.85,
   }))
-  
-  // SEO subject past paper pages (subject-level detail)
-  const seoPastPaperPages: MetadataRoute.Sitemap = seoSubjects.map((subject: SEOSubject) => ({
-    url: `${baseUrl}/past-papers/${subject.level}/${subject.slug}`,
+
+  // ─── Dynamic: individual paper session pages (fetched from Supabase) ──────────
+  // These give Google specific year+season pages to index, enabling rich results
+  // like "Edexcel IGCSE Maths B 2023 January Past Papers".
+
+  const sessionPages: MetadataRoute.Sitemap = []
+
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+      { auth: { autoRefreshToken: false, persistSession: false } }
+    )
+
+    // Fetch all distinct subject / year / season combos with at least one paper
+    const { data } = await supabase
+      .from('papers')
+      .select('year, season, subjects!inner(name)')
+      .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
+
+    if (data) {
+      // Deduplicate
+      const seen = new Set<string>()
+      for (const row of data) {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const subjectName: string = (row.subjects as any)?.name ?? ''
+        const slug = slugByName.get(subjectName)
+        if (!slug) continue
+
+        const key = `${slug}/${row.year}/${row.season}`
+        if (seen.has(key)) continue
+        seen.add(key)
+
+        sessionPages.push({
+          url: `${BASE_URL}/past-papers/${key}`,
+          lastModified: now,
+          changeFrequency: 'yearly' as const,
+          priority: 0.8,
+        })
+      }
+    }
+  } catch {
+    // Non-fatal — sitemap will still generate without session pages
+    console.warn('sitemap: could not fetch session pages from Supabase')
+  }
+
+  // ─── SEO "QP" landing pages ───────────────────────────────────────────────────
+
+  const seoPastPaperPages: MetadataRoute.Sitemap = seoSubjects.map((s: SEOSubject) => ({
+    url: `${BASE_URL}/past-papers/${s.level}/${s.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }))
-  
-  // Past papers by year (for subjects with years available)
-  const pastPaperYearPages: MetadataRoute.Sitemap = seoSubjects.flatMap((subject: SEOSubject) =>
-    subject.yearsAvailable.map(year => ({
-      url: `${baseUrl}/past-papers/${subject.level}/${subject.slug}/${year}`,
+
+  const pastPaperYearPages: MetadataRoute.Sitemap = seoSubjects.flatMap((s: SEOSubject) =>
+    s.yearsAvailable.map(year => ({
+      url: `${BASE_URL}/past-papers/${s.level}/${s.slug}/${year}`,
       lastModified: now,
       changeFrequency: 'yearly' as const,
       priority: 0.6,
     }))
   )
-  
-  // QP landing pages — high-intent keyword pages for each subject
-  // These target queries like "edexcel igcse physics past papers", "4PH1 past papers", etc.
-  const qpPages: MetadataRoute.Sitemap = seoSubjects.flatMap((subject: SEOSubject) => {
-    const levelPrefix = subject.level === 'igcse' ? 'igcse' : 'a-level'
+
+  const qpPages: MetadataRoute.Sitemap = seoSubjects.flatMap((s: SEOSubject) => {
+    const levelPrefix = s.level === 'igcse' ? 'igcse' : 'a-level'
     return [
-      // Primary: /qp/igcse-physics
-      {
-        url: `${baseUrl}/qp/${levelPrefix}-${subject.slug}`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.9,
-      },
-      // With "past-papers": /qp/igcse-physics-past-papers
-      {
-        url: `${baseUrl}/qp/${levelPrefix}-${subject.slug}-past-papers`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.9,
-      },
-      // With "question-papers": /qp/igcse-physics-question-papers
-      {
-        url: `${baseUrl}/qp/${levelPrefix}-${subject.slug}-question-papers`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.85,
-      },
-      // Exam code: /qp/4ph1
-      {
-        url: `${baseUrl}/qp/${subject.examCode.toLowerCase()}`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.85,
-      },
-      // Exam code with past papers: /qp/4ph1-past-papers
-      {
-        url: `${baseUrl}/qp/${subject.examCode.toLowerCase()}-past-papers`,
-        lastModified: now,
-        changeFrequency: 'weekly' as const,
-        priority: 0.85,
-      },
+      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}`,                     lastModified: now, changeFrequency: 'weekly' as const, priority: 0.9 },
+      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-past-papers`,         lastModified: now, changeFrequency: 'weekly' as const, priority: 0.9 },
+      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-question-papers`,     lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
+      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}`,                  lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
+      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}-past-papers`,      lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
     ]
   })
-  
+
   return [
     ...corePages,
     ...levelPages,
     ...subjectPages,
     ...topicPages,
     ...pastPaperSubjectPages,
+    ...sessionPages,          // ← new: individual year/season pages
     ...seoPastPaperPages,
     ...pastPaperYearPages,
     ...qpPages,
