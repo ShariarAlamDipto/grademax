@@ -7,6 +7,7 @@ import {
   subjectColorClasses,
   seasonDisplay,
 } from "@/lib/subjects"
+import { seoSubjects } from "@/lib/seo-subjects"
 
 export const revalidate = 3600
 
@@ -28,10 +29,13 @@ export async function generateMetadata({
   if (!subj) return {}
 
   const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const seoData = seoSubjects.find(s => s.slug === slug)
+  const examCode = seoData?.examCode ?? ''
+  const codeStr = examCode ? ` (${examCode})` : ''
 
   return {
-    title: `Edexcel ${level} ${subj.name} Past Papers – Free Download with Mark Schemes`,
-    description: `Download free Edexcel ${level} ${subj.name} past papers and mark schemes from 2011 to 2025. All question papers organized by year and session.`,
+    title: `Edexcel ${level} ${subj.name}${codeStr} Past Papers – Free Download | GradeMax`,
+    description: `Download free Edexcel ${level} ${subj.name}${codeStr} past papers and mark schemes from 2011 to 2025. All question papers organised by year and session – free PDF download.`,
     keywords: [
       `${subj.name} past papers`,
       `${level} ${subj.name} past papers`,
@@ -39,18 +43,28 @@ export async function generateMetadata({
       `${subj.name} question papers`,
       `${subj.name} mark scheme`,
       `${subj.name} past papers free download`,
-      `Edexcel ${subj.name} ${level}`,
+      ...(examCode ? [
+        `${examCode} past papers`,
+        `${examCode} question papers`,
+        `${examCode} mark scheme`,
+        `Edexcel ${examCode}`,
+      ] : []),
+      `Edexcel ${level} ${subj.name}`,
+      `${subj.name} past papers 2025`,
+      `${subj.name} past papers 2024`,
+      `${subj.name} past papers 2023`,
+      `free ${subj.name} past papers`,
     ],
     openGraph: {
-      title: `Edexcel ${level} ${subj.name} Past Papers | GradeMax`,
-      description: `Download free ${subj.name} past papers with mark schemes. ${level} papers from 2011-2025.`,
+      title: `Edexcel ${level} ${subj.name}${codeStr} Past Papers – Free Download | GradeMax`,
+      description: `Download free Edexcel ${level} ${subj.name}${codeStr} past papers and mark schemes from 2011 to 2025. All sessions available as free PDF.`,
       url: `https://grademax.me/past-papers/${slug}`,
       siteName: "GradeMax",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${level} ${subj.name} Past Papers | GradeMax`,
+      title: `${level} ${subj.name}${codeStr} Past Papers | GradeMax`,
       description: `Free Edexcel ${level} ${subj.name} past papers with mark schemes.`,
     },
     alternates: {

@@ -60,7 +60,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${BASE_URL}/past-papers/${s.slug}`,
     lastModified: now,
     changeFrequency: 'monthly' as const,
-    priority: 0.85,
+    priority: 0.9,
   }))
 
   // ─── Dynamic: individual paper session pages (fetched from Supabase) ──────────
@@ -98,8 +98,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         sessionPages.push({
           url: `${BASE_URL}/past-papers/${key}`,
           lastModified: now,
-          changeFrequency: 'yearly' as const,
-          priority: 0.8,
+          changeFrequency: 'monthly' as const,
+          priority: 0.9,
         })
       }
     }

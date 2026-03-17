@@ -2,6 +2,7 @@ import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
+import { seoSubjects } from "@/lib/seo-subjects"
 
 export const revalidate = 3600
 
@@ -22,27 +23,41 @@ export async function generateMetadata({
 
   const level = subj.level === "ial" ? "A Level" : "IGCSE"
   const seasonName = seasonDisplay(season)
+  const seoData = seoSubjects.find(s => s.slug === slug)
+  const examCode = seoData?.examCode ?? ''
+  const codeStr = examCode ? ` (${examCode})` : ''
 
   return {
-    title: `Edexcel ${level} ${subj.name} ${year} ${seasonName} Past Papers | GradeMax`,
-    description: `Download free Edexcel ${level} ${subj.name} ${year} ${seasonName} past papers and mark schemes. All question papers and mark schemes available for free.`,
+    title: `Edexcel ${level} ${subj.name}${codeStr} ${year} ${seasonName} Past Papers – Free PDF | GradeMax`,
+    description: `Download free Edexcel ${level} ${subj.name}${codeStr} ${year} ${seasonName} past papers with mark schemes. Official Pearson Edexcel question papers and mark schemes available as free PDF.`,
     keywords: [
       `${subj.name} ${year} ${seasonName} past paper`,
-      `Edexcel ${level} ${subj.name} ${year}`,
+      `Edexcel ${level} ${subj.name} ${year} ${seasonName}`,
       `${subj.name} ${year} ${seasonName} mark scheme`,
       `${subj.name} past papers ${year}`,
-      `Edexcel ${subj.name} ${year} ${seasonName}`,
+      ...(examCode ? [
+        `${examCode} ${year} ${seasonName} past paper`,
+        `${examCode} ${year} past paper`,
+        `${examCode} mark scheme ${year}`,
+        `${examCode} past papers`,
+      ] : []),
+      `${subj.name} ${year} paper 1`,
+      `${subj.name} ${year} paper 2`,
+      `Edexcel ${subj.name} ${year} free download`,
+      `${subj.name} ${year} past paper PDF`,
+      `Edexcel ${level} ${subj.name} ${year}`,
+      `${level} ${subj.name} ${year} ${seasonName}`,
     ],
     openGraph: {
-      title: `${level} ${subj.name} ${year} ${seasonName} Past Papers | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${year} ${seasonName} past papers with mark schemes.`,
+      title: `Edexcel ${level} ${subj.name}${codeStr} ${year} ${seasonName} Past Papers | GradeMax`,
+      description: `Free Edexcel ${level} ${subj.name} ${year} ${seasonName} past papers with mark schemes. Download question papers and answer booklets as PDF.`,
       url: `https://grademax.me/past-papers/${slug}/${year}/${season}`,
       siteName: "GradeMax",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: `${level} ${subj.name} ${year} ${seasonName} Past Papers | GradeMax`,
+      title: `${level} ${subj.name}${codeStr} ${year} ${seasonName} Past Papers | GradeMax`,
       description: `Free Edexcel ${level} ${subj.name} ${year} ${seasonName} papers with mark schemes.`,
     },
     alternates: {
@@ -98,7 +113,8 @@ function buildJsonLd(
   level: string,
   year: string,
   seasonName: string,
-  papers: PaperRow[]
+  papers: PaperRow[],
+  examCode: string
 ) {
   const BASE = "https://grademax.me"
   const pageUrl = `${BASE}/past-papers/${slug}/${year}/${seasonName.toLowerCase().replace(/\s*\/\s*/g, '-')}`
@@ -122,6 +138,23 @@ function buildJsonLd(
         isAccessibleForFree: true,
         inLanguage: "en-GB",
         datePublished: `${year}-01-01`,
+        alternativeHeadline: examCode ? `${examCode} ${year} ${seasonName}` : undefined,
+        audience: {
+          "@type": "EducationalAudience",
+          educationalRole: "student",
+          audienceType: `${level} students`,
+        },
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+        about: examCode ? {
+          "@type": "Thing",
+          name: `Edexcel ${level} ${subjectName} (${examCode})`,
+          identifier: examCode,
+        } : undefined,
         educationalAlignment: {
           "@type": "AlignmentObject",
           alignmentType: "educationalSubject",
@@ -179,6 +212,8 @@ export default async function SessionPapersPage({
   const subj = getSubjectBySlug(slug)
   if (!subj) notFound()
 
+  const seoData = seoSubjects.find(s => s.slug === slug)
+  const examCode = seoData?.examCode ?? ''
   const level = subj.level === "ial" ? "A Level" : "IGCSE"
   const colorClass = subjectColorClasses[subj.colorKey]
   const normalizedSeason = normalizeSeason(season)
@@ -221,7 +256,7 @@ export default async function SessionPapersPage({
 
   if (papers.length === 0) notFound()
 
-  const jsonLd = buildJsonLd(slug, subj.name, level, year, seasonName, papers)
+  const jsonLd = buildJsonLd(slug, subj.name, level, year, seasonName, papers, examCode)
 
   return (
     <>
