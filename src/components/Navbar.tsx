@@ -19,40 +19,50 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
       window.removeEventListener("resize", handleResize)
-      window.removeEventListener("scroll", handleScroll, { passive: true } as EventListenerOptions)
+      window.removeEventListener("scroll", handleScroll)
     }
   }, [])
 
-  // Always visible on all screen sizes
   const coreLinks = [
-    { href: "/past-papers", label: "Past Papers" },
-    { href: "/generate",    label: "Worksheets" },
-    { href: "/test-builder",label: "Test Builder" },
+    { href: "/past-papers",  label: "Past Papers" },
+    { href: "/generate",     label: "Worksheets" },
+    { href: "/test-builder", label: "Test Builder" },
   ]
 
-  // Only visible on larger screens (lg+)
   const extraLinks = [
-    { href: "/subjects",    label: "Subjects" },
-    { href: "/lectures",    label: "Lectures" },
-    { href: "/dashboard",   label: "Dashboard" },
+    { href: "/subjects",  label: "Subjects" },
+    { href: "/lectures",  label: "Lectures" },
+    { href: "/dashboard", label: "Dashboard" },
   ]
 
   const allLinks = [...coreLinks, ...extraLinks]
+
+  const pillBase: React.CSSProperties = {
+    listStyle: "none",
+    margin: 0,
+    padding: "0 0.3rem",
+    background: "var(--gm-card-bg)",
+    border: "1px solid var(--gm-border-2)",
+    borderRadius: "99px",
+    alignItems: "center",
+    whiteSpace: "nowrap",
+    gap: 0,
+  }
 
   return (
     <nav
       aria-label="Main navigation"
       className="gm-nav"
-      style={{ boxShadow: scrolled ? "0 1px 32px rgba(0,0,0,0.5)" : "none" }}
+      style={{ boxShadow: scrolled ? "0 2px 24px rgba(0,0,0,0.35)" : "none" }}
     >
-      {/* Main bar */}
+      {/* ── Main bar ── */}
       <div style={{
-        position: "relative",
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns: "auto 1fr auto",
         alignItems: "center",
-        justifyContent: "space-between",
-        padding: "0 1.5rem",
+        padding: "0 1.25rem",
         height: "68px",
+        gap: "0.75rem",
       }}>
 
         {/* Logo */}
@@ -64,142 +74,66 @@ export default function Navbar() {
             fontSize: "1.35rem",
             letterSpacing: "-0.04em",
             textDecoration: "none",
-            flexShrink: 0,
-            zIndex: 1,
             lineHeight: 1,
+            whiteSpace: "nowrap",
           }}
         >
           Grade<span style={{ color: "var(--gm-amber)" }}>Max</span>
         </Link>
 
-        {/* Desktop nav pill — absolutely centered */}
-        <ul
-          className="hidden lg:flex"
-          style={{
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: 0,
-            listStyle: "none",
-            margin: 0,
-            padding: "0 0.3rem",
-            background: "var(--gm-card-bg)",
-            border: "1px solid var(--gm-border-2)",
-            borderRadius: "99px",
-            alignItems: "center",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {allLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="gradient-hover-sea"
-                style={{
-                  padding: "0.5rem 1rem",
-                  display: "block",
-                  borderRadius: "99px",
-                }}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {/* Center pill — Tailwind controls display; NO inline display property */}
+        <div style={{ display: "flex", justifyContent: "center", minWidth: 0, overflow: "hidden" }}>
 
-        {/* Tablet: core 3 links always visible */}
-        <ul
-          className="hidden sm:flex lg:hidden"
-          style={{
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: 0,
-            listStyle: "none",
-            margin: 0,
-            padding: "0 0.3rem",
-            background: "var(--gm-card-bg)",
-            border: "1px solid var(--gm-border-2)",
-            borderRadius: "99px",
-            alignItems: "center",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {coreLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="gradient-hover-sea"
-                style={{
-                  padding: "0.45rem 0.875rem",
-                  display: "block",
-                  borderRadius: "99px",
-                  fontSize: "0.82rem",
-                }}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop (lg+): all 6 links */}
+          <ul className="hidden lg:flex" style={pillBase}>
+            {allLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="gradient-hover-sea"
+                  style={{ padding: "0.5rem 0.85rem", display: "block", borderRadius: "99px", fontSize: "0.875rem" }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        {/* Mobile: core 3 links (smaller) */}
-        <ul
-          className="flex sm:hidden"
-          style={{
-            position: "absolute",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: 0,
-            listStyle: "none",
-            margin: 0,
-            padding: "0 0.2rem",
-            background: "var(--gm-card-bg)",
-            border: "1px solid var(--gm-border-2)",
-            borderRadius: "99px",
-            alignItems: "center",
-            whiteSpace: "nowrap",
-          }}
-        >
-          {coreLinks.map(({ href, label }) => (
-            <li key={href}>
-              <Link
-                href={href}
-                className="gradient-hover-sea"
-                style={{
-                  padding: "0.35rem 0.55rem",
-                  display: "block",
-                  borderRadius: "99px",
-                  fontSize: "0.7rem",
-                }}
-              >
-                {label}
-              </Link>
-            </li>
-          ))}
-        </ul>
+          {/* Tablet (sm–lg): core 3 only */}
+          <ul className="hidden sm:flex lg:hidden" style={pillBase}>
+            {coreLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="gradient-hover-sea"
+                  style={{ padding: "0.45rem 0.9rem", display: "block", borderRadius: "99px", fontSize: "0.83rem" }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Mobile (<sm): nothing in center row — links shown in row below */}
+        </div>
 
         {/* Right: theme toggle + auth + hamburger */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", zIndex: 1, flexShrink: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexShrink: 0 }}>
           <ThemeToggle />
           <NavAuthSection />
-
-          {/* Hamburger — hidden on lg+ */}
           <button
             className="lg:hidden"
             style={{
               padding: "0.45rem",
-              borderRadius: "0.625rem",
+              borderRadius: "0.5rem",
               border: "1px solid var(--gm-border-2)",
               color: "var(--gm-text)",
               background: "transparent",
               cursor: "pointer",
               flexShrink: 0,
+              lineHeight: 0,
             }}
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={() => setMenuOpen(v => !v)}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
           >
@@ -216,48 +150,72 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile/tablet drawer — shows extra links only (core are always in pill) */}
+      {/* ── Mobile core-links row (only on xs, hidden sm+) ── */}
+      <div
+        className="flex sm:hidden"
+        style={{
+          borderTop: "1px solid var(--gm-border)",
+          padding: "0.5rem 1rem",
+          justifyContent: "space-around",
+          background: "var(--gm-nav-bg)",
+          gap: "0.375rem",
+        }}
+      >
+        {coreLinks.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className="gradient-hover-sea"
+            style={{
+              padding: "0.35rem 0.65rem",
+              borderRadius: "99px",
+              fontSize: "0.72rem",
+              fontWeight: 500,
+              whiteSpace: "nowrap",
+              background: "var(--gm-card-bg)",
+              border: "1px solid var(--gm-border-2)",
+              textDecoration: "none",
+              flex: "1 1 0",
+              textAlign: "center",
+              maxWidth: "120px",
+            }}
+          >
+            {label}
+          </Link>
+        ))}
+      </div>
+
+      {/* ── Drawer (mobile/tablet, hidden lg+) ── */}
       {menuOpen && (
         <div
           className="lg:hidden"
           style={{
             borderTop: "1px solid var(--gm-border)",
             background: "var(--gm-nav-bg)",
-            padding: "0.75rem 1.5rem 1.25rem",
+            padding: "0.75rem 1.25rem 1.25rem",
           }}
         >
-          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.2rem" }}>
+          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.15rem" }}>
             {allLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
                   onClick={() => setMenuOpen(false)}
+                  className="gm-link"
                   style={{
                     display: "block",
                     padding: "0.6rem 0.75rem",
-                    borderRadius: "0.625rem",
+                    borderRadius: "0.5rem",
                     fontSize: "0.9rem",
                     fontWeight: 500,
                     color: "var(--gm-text-2)",
                     textDecoration: "none",
-                    transition: "color 0.15s, background 0.15s",
                   }}
-                  className="gm-link"
                 >
                   {label}
                 </Link>
               </li>
             ))}
-            <li style={{ paddingTop: "0.5rem", borderTop: "1px solid var(--gm-border)", marginTop: "0.25rem" }}>
-              <Link
-                href="/generate"
-                onClick={() => setMenuOpen(false)}
-                className="btn-beacon"
-                style={{ display: "block", textAlign: "center", fontSize: "0.875rem" }}
-              >
-                Generate Worksheet
-              </Link>
-            </li>
           </ul>
         </div>
       )}
