@@ -144,7 +144,7 @@ export default async function SubjectPage({ params }: PageProps) {
               Browse Questions
             </Link>
             <Link 
-              href={`/past-papers/${level}/${slug}`}
+              href={`/past-papers/${slug}`}
               className="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
             >
               Past Papers
@@ -205,7 +205,7 @@ export default async function SubjectPage({ params }: PageProps) {
             {subject.yearsAvailable.slice().reverse().map(year => (
               <Link
                 key={year}
-                href={`/past-papers/${level}/${slug}/${year}`}
+                href={`/past-papers/${slug}`}
                 className="bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-600 px-4 py-2 rounded-lg transition-colors"
               >
                 {year}

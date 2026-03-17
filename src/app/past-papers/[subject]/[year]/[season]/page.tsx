@@ -60,6 +60,38 @@ interface PaperRow {
   markscheme_pdf_url: string | null
 }
 
+const VALID_SEASONS = new Set(["jan", "jan-feb", "feb-mar", "may-jun", "oct-nov"])
+
+function normalizeSeason(value: string): string {
+  return value.trim().toLowerCase()
+}
+
+function isValidPublicUrl(url: string | null): url is string {
+  if (!url) return false
+  return /^https?:\/\//i.test(url)
+}
+
+function dedupePapers(rows: PaperRow[]): PaperRow[] {
+  const byPaperNumber = new Map<string, PaperRow>()
+
+  for (const row of rows) {
+    const existing = byPaperNumber.get(row.paper_number)
+    if (!existing) {
+      byPaperNumber.set(row.paper_number, row)
+      continue
+    }
+
+    const existingScore = Number(Boolean(existing.pdf_url)) + Number(Boolean(existing.markscheme_pdf_url))
+    const rowScore = Number(Boolean(row.pdf_url)) + Number(Boolean(row.markscheme_pdf_url))
+
+    if (rowScore > existingScore || (rowScore === existingScore && row.id > existing.id)) {
+      byPaperNumber.set(row.paper_number, row)
+    }
+  }
+
+  return Array.from(byPaperNumber.values()).sort((a, b) => paperSort(a.paper_number, b.paper_number))
+}
+
 function buildJsonLd(
   slug: string,
   subjectName: string,
@@ -149,7 +181,9 @@ export default async function SessionPapersPage({
 
   const level = subj.level === "ial" ? "A Level" : "IGCSE"
   const colorClass = subjectColorClasses[subj.colorKey]
-  const seasonName = seasonDisplay(season)
+  const normalizedSeason = normalizeSeason(season)
+  if (!VALID_SEASONS.has(normalizedSeason)) notFound()
+  const seasonName = seasonDisplay(normalizedSeason)
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -171,11 +205,17 @@ export default async function SessionPapersPage({
       .select("id, paper_number, pdf_url, markscheme_pdf_url")
       .eq("subject_id", subjectRow.id)
       .eq("year", parseInt(year))
-      .eq("season", season)
+      .eq("season", normalizedSeason)
       .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
 
-    papers = ((data as PaperRow[]) ?? []).sort((a, b) =>
-      paperSort(a.paper_number, b.paper_number)
+    papers = dedupePapers(
+      ((data as PaperRow[]) ?? [])
+        .map((paper) => ({
+          ...paper,
+          pdf_url: isValidPublicUrl(paper.pdf_url) ? paper.pdf_url : null,
+          markscheme_pdf_url: isValidPublicUrl(paper.markscheme_pdf_url) ? paper.markscheme_pdf_url : null,
+        }))
+        .filter((paper) => Boolean(paper.pdf_url) || Boolean(paper.markscheme_pdf_url))
     )
   }
 
