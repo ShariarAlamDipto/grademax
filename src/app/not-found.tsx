@@ -7,15 +7,10 @@ export const metadata: Metadata = {
   robots: { index: false, follow: true },
 }
 
-import { useTheme } from '@/context/ThemeContext'
-
 export default function NotFound() {
-  const { theme } = useTheme();
-  const bg = theme === 'dark' ? 'bg-black' : 'bg-white';
-  const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
   return (
-    <main className={`min-h-[60vh] flex flex-col items-center justify-center px-4 text-center ${bg} ${text}`}> 
-      <h1 className="text-6xl font-bold text-gray-200 mb-4">404</h1>
+    <main className="min-h-[60vh] flex flex-col items-center justify-center px-4 text-center bg-white dark:bg-black text-gray-900 dark:text-white">
+      <h1 className="text-6xl font-bold text-gray-200 dark:text-gray-700 mb-4">404</h1>
       <h2 className="text-xl font-semibold text-gray-400 mb-2">Page Not Found</h2>
       <p className="text-gray-500 mb-8 max-w-md">
         The page you&apos;re looking for doesn&apos;t exist or has been moved.
@@ -31,13 +26,13 @@ export default function NotFound() {
         </Link>
         <Link
           href="/past-papers"
-          className="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors border border-gray-700"
+          className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold px-6 py-3 rounded-lg transition-colors border border-gray-300 dark:border-gray-700"
         >
           Browse Past Papers
         </Link>
         <Link
           href="/generate"
-          className="bg-gray-800 hover:bg-gray-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors border border-gray-700"
+          className="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-semibold px-6 py-3 rounded-lg transition-colors border border-gray-300 dark:border-gray-700"
         >
           Generate Worksheet
         </Link>
@@ -47,17 +42,17 @@ export default function NotFound() {
       <div className="max-w-2xl">
         <h3 className="text-sm font-semibold text-gray-500 mb-3">Popular Resources</h3>
         <div className="flex flex-wrap justify-center gap-2">
-          <Link href="/subjects/igcse/physics" className="text-xs text-gray-600 hover:text-white transition-colors">IGCSE Physics</Link>
-          <span className="text-gray-800">·</span>
-          <Link href="/subjects/igcse/maths-a" className="text-xs text-gray-600 hover:text-white transition-colors">IGCSE Maths A</Link>
-          <span className="text-gray-800">·</span>
-          <Link href="/subjects/igcse/chemistry" className="text-xs text-gray-600 hover:text-white transition-colors">IGCSE Chemistry</Link>
-          <span className="text-gray-800">·</span>
-          <Link href="/subjects/igcse/biology" className="text-xs text-gray-600 hover:text-white transition-colors">IGCSE Biology</Link>
-          <span className="text-gray-800">·</span>
-          <Link href="/subjects/ial/pure-mathematics-1" className="text-xs text-gray-600 hover:text-white transition-colors">A Level Pure Maths 1</Link>
-          <span className="text-gray-800">·</span>
-          <Link href="/edexcel-past-papers" className="text-xs text-gray-600 hover:text-white transition-colors">All Edexcel Past Papers</Link>
+          <Link href="/subjects/igcse/physics" className="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Physics</Link>
+          <span className="text-gray-300 dark:text-gray-700">·</span>
+          <Link href="/subjects/igcse/maths-a" className="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Maths A</Link>
+          <span className="text-gray-300 dark:text-gray-700">·</span>
+          <Link href="/subjects/igcse/chemistry" className="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Chemistry</Link>
+          <span className="text-gray-300 dark:text-gray-700">·</span>
+          <Link href="/subjects/igcse/biology" className="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Biology</Link>
+          <span className="text-gray-300 dark:text-gray-700">·</span>
+          <Link href="/subjects/ial/pure-mathematics-1" className="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">A Level Pure Maths 1</Link>
+          <span className="text-gray-300 dark:text-gray-700">·</span>
+          <Link href="/edexcel-past-papers" className="text-xs text-gray-500 hover:text-gray-900 dark:hover:text-white transition-colors">All Edexcel Past Papers</Link>
         </div>
       </div>
     </main>
