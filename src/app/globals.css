@@ -435,3 +435,133 @@ body {
 .page-bg        { background: var(--gm-bg); }
 .surface-bg     { background: var(--gm-surface); }
 .surface-2-bg   { background: var(--gm-surface-2); }
+
+/* ═══════════════════════════════════════════════════════════════
+   Light-mode: override hardcoded dark Tailwind utility classes
+   so that components using gray-900/800/700 work in white mode
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Backgrounds ── */
+html.light .bg-black              { background-color: var(--gm-bg)       !important; }
+html.light .bg-gray-950           { background-color: var(--gm-bg)       !important; }
+html.light .bg-gray-900           { background-color: var(--gm-bg)       !important; }
+html.light .bg-gray-800           { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-700           { background-color: var(--gm-surface-2) !important; }
+html.light .bg-gray-600           { background-color: var(--gm-surface-3) !important; }
+html.light .bg-gray-800\/80       { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-800\/60       { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-800\/50       { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-800\/40       { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-800\/30       { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-700\/50       { background-color: var(--gm-surface-2) !important; }
+html.light .bg-gray-700\/40       { background-color: var(--gm-surface-2) !important; }
+html.light .bg-gray-700\/30       { background-color: var(--gm-surface-2) !important; }
+html.light .bg-gray-900\/80       { background-color: var(--gm-surface-2) !important; }
+html.light .bg-gray-900\/60       { background-color: var(--gm-surface-2) !important; }
+
+/* ── Gradient resets (Worksheet/TestBuilder root containers) ── */
+html.light .from-gray-900 { --tw-gradient-from: var(--gm-bg)      !important; }
+html.light .via-black     { --tw-gradient-via:  var(--gm-surface)  !important; }
+html.light .to-gray-900   { --tw-gradient-to:   var(--gm-bg)      !important; }
+
+/* ── Text ── */
+html.light .text-white    { color: var(--gm-text)   !important; }
+html.light .text-gray-100 { color: var(--gm-text)   !important; }
+html.light .text-gray-200 { color: var(--gm-text-2) !important; }
+html.light .text-gray-300 { color: var(--gm-text-2) !important; }
+html.light .text-gray-400 { color: var(--gm-text-3) !important; }
+html.light .text-gray-500 { color: var(--gm-text-3) !important; }
+html.light .text-gray-600 { color: var(--gm-text-3) !important; }
+
+/* ── Borders ── */
+html.light .border-gray-800     { border-color: var(--gm-border)       !important; }
+html.light .border-gray-700     { border-color: var(--gm-border)       !important; }
+html.light .border-gray-600     { border-color: var(--gm-border-2)     !important; }
+html.light .border-gray-500     { border-color: var(--gm-border-input) !important; }
+html.light .border-gray-300     { border-color: var(--gm-border-2)     !important; }
+html.light .border-gray-200     { border-color: var(--gm-border)       !important; }
+html.light .border-gray-600\/40 { border-color: var(--gm-border)       !important; }
+
+/* ── Inputs & selects (attribute-based override for safety) ── */
+html.light input[class*="bg-gray"],
+html.light select[class*="bg-gray"],
+html.light textarea[class*="bg-gray"] {
+  background-color: var(--gm-surface)   !important;
+  color:            var(--gm-text)      !important;
+  border-color:     var(--gm-border-2)  !important;
+}
+html.light .placeholder-gray-500::placeholder { color: var(--gm-text-3) !important; }
+
+/* ── Blue accent ── */
+html.light .bg-blue-900\/50,
+html.light .bg-blue-900\/40,
+html.light .bg-blue-900\/20       { background-color: var(--gm-blue-bg)   !important; }
+html.light .text-blue-300,
+html.light .text-blue-400         { color: var(--gm-blue)                 !important; }
+html.light .border-blue-500,
+html.light .border-blue-400       { border-color: var(--gm-blue)          !important; }
+html.light .border-blue-500\/50,
+html.light .border-blue-500\/30   { border-color: var(--gm-blue-ring)     !important; }
+html.light .hover\:text-blue-300:hover { color: var(--gm-blue)            !important; }
+
+/* ── Green (PDFs ready / download) ── */
+html.light .from-green-900        { --tw-gradient-from: rgba(209,250,229,0.6) !important; }
+html.light .to-emerald-900        { --tw-gradient-to:   rgba(209,250,229,0.4) !important; }
+html.light .border-green-500      { border-color: var(--gm-green)         !important; }
+html.light .text-green-300,
+html.light .text-green-400        { color: var(--gm-green)                !important; }
+html.light .bg-emerald-900\/60    { background-color: var(--gm-green-bg)  !important; }
+html.light .bg-emerald-500\/20    { background-color: var(--gm-green-bg)  !important; }
+html.light .text-emerald-300,
+html.light .text-emerald-400      { color: var(--gm-green)                !important; }
+html.light .border-emerald-500\/50 { border-color: rgba(5,150,105,0.3)   !important; }
+html.light .hover\:bg-green-900:hover { background-color: var(--gm-green-bg) !important; }
+
+/* ── Amber / difficulty medium ── */
+html.light .bg-amber-900\/60      { background-color: var(--gm-amber-bg)  !important; }
+html.light .border-amber-500\/50  { border-color: var(--gm-amber-ring)    !important; }
+html.light .text-amber-300        { color: var(--gm-amber)                !important; }
+
+/* ── Red / errors ── */
+html.light .bg-red-900,
+html.light .bg-red-900\/60,
+html.light .bg-red-900\/80        { background-color: rgba(254,226,226,0.7) !important; }
+html.light .text-red-300,
+html.light .text-red-400,
+html.light .text-red-200          { color: #dc2626                        !important; }
+html.light .border-red-500        { border-color: #ef4444                 !important; }
+html.light .border-red-500\/50,
+html.light .border-red-500\/40    { border-color: rgba(239,68,68,0.4)     !important; }
+
+/* ── Purple / diagram badge ── */
+html.light .bg-purple-900\/50     { background-color: rgba(237,233,254,0.5) !important; }
+html.light .text-purple-300       { color: #6d28d9                        !important; }
+html.light .border-purple-500\/30 { border-color: rgba(109,40,217,0.3)    !important; }
+
+/* ── Subject selector active states ── */
+html.light .bg-orange-900\/40     { background-color: rgba(255,237,213,0.7) !important; }
+html.light .bg-violet-900\/40     { background-color: rgba(237,233,254,0.7) !important; }
+html.light .bg-emerald-900\/40    { background-color: rgba(209,250,229,0.7) !important; }
+html.light .bg-sky-900\/40        { background-color: rgba(224,242,254,0.7) !important; }
+html.light .bg-red-900\/40        { background-color: rgba(254,226,226,0.7) !important; }
+html.light .bg-indigo-900\/40     { background-color: rgba(238,242,255,0.7) !important; }
+
+/* ── Misc hover states ── */
+html.light .hover\:bg-gray-700:hover        { background-color: var(--gm-surface-2) !important; }
+html.light .hover\:bg-gray-700\/50:hover    { background-color: var(--gm-surface-2) !important; }
+html.light .hover\:bg-gray-700\/40:hover    { background-color: var(--gm-surface-2) !important; }
+html.light .hover\:bg-gray-600:hover        { background-color: var(--gm-surface-3) !important; }
+html.light .hover\:bg-gray-600\/40:hover    { background-color: var(--gm-surface-3) !important; }
+html.light .hover\:border-gray-500:hover    { border-color: var(--gm-border-input)  !important; }
+html.light .bg-gray-700\/80                 { background-color: var(--gm-surface-2) !important; }
+
+/* ── Spinner fix ── */
+html.light .border-b-2.border-white         { border-bottom-color: var(--gm-blue)   !important; }
+
+/* ── Light mode font: Inter for superior readability ── */
+html.light body {
+  font-family: var(--font-inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif) !important;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}

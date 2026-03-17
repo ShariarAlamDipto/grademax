@@ -451,7 +451,8 @@ export default function WorryCatcher() {
         <>
           <div
             ref={wrapperRef}
-            className="relative w-full h-[340px] sm:h-[440px] md:h-[560px] rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent overflow-hidden cursor-none"
+            className="relative w-full h-[340px] sm:h-[440px] md:h-[560px] rounded-2xl overflow-hidden cursor-none"
+            style={{ background: "linear-gradient(to bottom, #0d1526, #060912)", border: "1px solid rgba(255,255,255,0.08)" }}
             aria-label="Interactive area: catch your problems"
           >
             <canvas ref={canvasRef} className="w-full h-full" />

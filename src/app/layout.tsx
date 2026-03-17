@@ -3,13 +3,14 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Analytics } from '@vercel/analytics/react'
-import { Playfair_Display } from 'next/font/google'
+import { Playfair_Display, Inter } from 'next/font/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700'], display: 'swap' });
+const inter = Inter({ subsets: ['latin'], weight: ['400','500','600','700'], display: 'swap', variable: '--font-inter' });
 
 // JSON-LD Structured Data for Brand Recognition & Edexcel SEO
 const jsonLd = {
@@ -272,7 +273,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={playfair.className}>
+    <html lang="en" className={`${playfair.className} ${inter.variable}`}>
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
