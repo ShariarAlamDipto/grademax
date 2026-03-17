@@ -3,14 +3,13 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Analytics } from '@vercel/analytics/react'
-import { Playfair_Display, Inter } from 'next/font/google'
+import { Playfair_Display } from 'next/font/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700'], display: 'swap' });
-const inter = Inter({ subsets: ['latin'], weight: ['400','500','600','700'], display: 'swap', variable: '--font-inter' });
 
 // JSON-LD Structured Data for Brand Recognition & Edexcel SEO
 const jsonLd = {
@@ -215,13 +214,14 @@ export const metadata: Metadata = {
   applicationName: 'GradeMax',
   icons: {
     icon: [
-      { url: '/icon-32.png', sizes: '32x32',  type: 'image/png' },
+      { url: '/favicon.ico', sizes: '48x48',   type: 'image/x-icon' },
+      { url: '/favicon.png', sizes: 'any',      type: 'image/png' },
+      { url: '/icon-32.png', sizes: '32x32',   type: 'image/png' },
       { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/icon.svg',    type: 'image/svg+xml' },
     ],
-    shortcut: '/icon-32.png',
+    shortcut: '/favicon.ico',
     apple: [
-      { url: '/logo.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon.png', sizes: '512x512', type: 'image/png' },
     ],
   },
   referrer: 'origin-when-cross-origin',
@@ -273,7 +273,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${playfair.className} ${inter.variable}`}>
+    <html lang="en" className={playfair.className}>
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />

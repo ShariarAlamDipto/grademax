@@ -73,7 +73,7 @@ export default function Home() {
               fontWeight: 800,
               lineHeight: 1.0,
               letterSpacing: "-0.04em",
-              marginBottom: "2rem",
+              marginBottom: "1rem",
               background: "linear-gradient(135deg, #F59E0B 0%, #FCD34D 60%, #F97316 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -82,6 +82,19 @@ export default function Home() {
           >
             simplified.
           </h1>
+
+          {/* Board labels */}
+          <p style={{
+            fontSize: "clamp(0.95rem, 2.5vw, 1.4rem)",
+            fontWeight: 600,
+            letterSpacing: "0.18em",
+            textTransform: "uppercase",
+            color: "var(--gm-text-2)",
+            marginBottom: "2.5rem",
+            opacity: 0.75,
+          }}>
+            Edexcel &nbsp;&amp;&nbsp; Cambridge
+          </p>
 
           {/* Subtitle — white text with subtle separators */}
           <p

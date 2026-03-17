@@ -56,23 +56,23 @@ export default function SubjectsIndexPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <main style={{ background: "#000000", color: "#E5E7EB", minHeight: "100vh" }}>
+      <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
         <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
 
           {/* Header */}
           <div style={{ marginBottom: "3rem" }}>
-            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#F59E0B", marginBottom: "0.75rem" }}>
+            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.75rem" }}>
               Pearson Edexcel
             </p>
-            <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
+            <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
               All Subjects
             </h1>
-            <p style={{ color: "#9CA3AF", fontSize: "0.9rem", maxWidth: "480px", lineHeight: 1.6, marginBottom: "2rem" }}>
+            <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", maxWidth: "480px", lineHeight: 1.6, marginBottom: "2rem" }}>
               Choose your qualification level to access past papers, topic-wise questions, and practice tools.
             </p>
 
             {/* Stats strip */}
-            <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", paddingTop: "1.5rem", borderTop: "1px solid #1F2937" }}>
+            <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", paddingTop: "1.5rem", borderTop: "1px solid var(--gm-border)" }}>
               {([
                 { val: seoSubjects.length.toString(), label: "Subjects" },
                 { val: totalTopics.toString(),         label: "Topics" },
@@ -80,8 +80,8 @@ export default function SubjectsIndexPage() {
                 { val: "Free",                         label: "Always" },
               ] as { val: string; label: string }[]).map(s => (
                 <div key={s.label}>
-                  <p style={{ fontSize: "1.1rem", fontWeight: 800, color: "#E5E7EB", lineHeight: 1 }}>{s.val}</p>
-                  <p style={{ fontSize: "0.65rem", color: "#6B7280", marginTop: "0.25rem", letterSpacing: "0.04em" }}>{s.label}</p>
+                  <p style={{ fontSize: "1.1rem", fontWeight: 800, color: "var(--gm-text)", lineHeight: 1 }}>{s.val}</p>
+                  <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.25rem", letterSpacing: "0.04em" }}>{s.label}</p>
                 </div>
               ))}
             </div>
@@ -90,10 +90,10 @@ export default function SubjectsIndexPage() {
           {/* IGCSE */}
           <section style={{ marginBottom: "3rem" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
-              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 IGCSE Subjects
               </h2>
-              <Link href="/subjects/igcse" style={{ fontSize: "0.72rem", color: "#6B7280", textDecoration: "none" }}>
+              <Link href="/subjects/igcse" style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", textDecoration: "none" }}>
                 View all →
               </Link>
             </div>
@@ -103,8 +103,8 @@ export default function SubjectsIndexPage() {
                   key={subject.slug}
                   href={`/subjects/igcse/${subject.slug}`}
                   style={{
-                    background: "#000000",
-                    border: "1px solid #333333",
+                    background: "var(--gm-surface)",
+                    border: "1px solid var(--gm-border)",
                     borderRadius: "0.875rem",
                     padding: "1.25rem 1rem",
                     display: "flex",
@@ -115,10 +115,10 @@ export default function SubjectsIndexPage() {
                   }}
                   className="gm-card"
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{subject.name}</p>
-                  <p style={{ fontSize: "0.65rem", color: "#6EA8FE", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
-                  <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
-                  <p style={{ fontSize: "0.65rem", color: "#4B5563", marginTop: "0.5rem" }}>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{subject.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: "var(--gm-blue)", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
+                  <p style={{ fontSize: "0.75rem", color: "var(--gm-text-2)", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
+                  <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.5rem" }}>
                     {subject.topics.length} topics · {subject.yearsAvailable.length} years
                   </p>
                 </Link>
@@ -129,10 +129,10 @@ export default function SubjectsIndexPage() {
           {/* A Level */}
           <section style={{ marginBottom: "3rem" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
-              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 A Level (IAL) Subjects
               </h2>
-              <Link href="/subjects/ial" style={{ fontSize: "0.72rem", color: "#6B7280", textDecoration: "none" }}>
+              <Link href="/subjects/ial" style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", textDecoration: "none" }}>
                 View all →
               </Link>
             </div>
@@ -142,8 +142,8 @@ export default function SubjectsIndexPage() {
                   key={subject.slug}
                   href={`/subjects/ial/${subject.slug}`}
                   style={{
-                    background: "#000000",
-                    border: "1px solid #333333",
+                    background: "var(--gm-surface)",
+                    border: "1px solid var(--gm-border)",
                     borderRadius: "0.875rem",
                     padding: "1.25rem 1rem",
                     display: "flex",
@@ -154,10 +154,10 @@ export default function SubjectsIndexPage() {
                   }}
                   className="gm-card"
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{subject.name}</p>
-                  <p style={{ fontSize: "0.65rem", color: "#A78BFA", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
-                  <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
-                  <p style={{ fontSize: "0.65rem", color: "#4B5563", marginTop: "0.5rem" }}>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{subject.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: "var(--gm-amber)", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
+                  <p style={{ fontSize: "0.75rem", color: "var(--gm-text-2)", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
+                  <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.5rem" }}>
                     {subject.topics.length} topics · {subject.yearsAvailable.length} years
                   </p>
                 </Link>
@@ -166,8 +166,8 @@ export default function SubjectsIndexPage() {
           </section>
 
           {/* Footer CTA */}
-          <div style={{ borderTop: "1px solid #1F2937", paddingTop: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-            <p style={{ fontSize: "0.8rem", color: "#6B7280", lineHeight: 1.6 }}>
+          <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+            <p style={{ fontSize: "0.8rem", color: "var(--gm-text-3)", lineHeight: 1.6 }}>
               Can&apos;t find your subject? Let us know.
             </p>
             <Link href="/contact" className="btn-ghost-blue" style={{ fontSize: "0.8rem", padding: "0.5rem 1.25rem", minHeight: "36px" }}>

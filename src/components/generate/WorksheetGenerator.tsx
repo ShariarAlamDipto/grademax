@@ -266,7 +266,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     onClick={() => setSelectedSubject(subject.id)}
                     className={`p-2 md:p-4 rounded-lg md:rounded-xl border-2 transition-all ${
                       selectedSubject === subject.id
-                        ? 'border-purple-500 bg-purple-900 bg-opacity-50 shadow-lg'
+                        ? 'border-amber-500 bg-amber-900 bg-opacity-50 shadow-lg'
                         : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500'
                     }`}
                   >
@@ -430,7 +430,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
           <button
             onClick={handleGenerate}
             disabled={loading || selectedTopics.length === 0}
-            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Generating...' : 'Generate Worksheet'}
           </button>
@@ -618,7 +618,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                         </span>
                       )}
                       {q.hasDiagram && (
-                        <span className="px-2 md:px-3 py-0.5 md:py-1 bg-purple-900 text-purple-300 border border-purple-500 rounded-full text-xs md:text-sm">
+                        <span className="px-2 md:px-3 py-0.5 md:py-1 bg-amber-900 text-amber-300 border border-amber-500 rounded-full text-xs md:text-sm">
                           Diagram
                         </span>
                       )}
