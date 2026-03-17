@@ -22,7 +22,7 @@ const jsonLd = {
       url: 'https://grademax.me',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://grademax.me/icon.svg',
+        url: 'https://grademax.me/logo.png',
         width: 512,
         height: 512
       },
@@ -214,10 +214,14 @@ export const metadata: Metadata = {
   applicationName: 'GradeMax',
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '32x32' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon-32.png', sizes: '32x32',  type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon.svg',    type: 'image/svg+xml' },
     ],
-    shortcut: '/favicon.ico',
+    shortcut: '/icon-32.png',
+    apple: [
+      { url: '/logo.png', sizes: '512x512', type: 'image/png' },
+    ],
   },
   referrer: 'origin-when-cross-origin',
   formatDetection: {
@@ -266,6 +270,7 @@ export const metadata: Metadata = {
   category: 'education',
 }
 
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider>
       <html lang="en" className={playfair.className}>
@@ -281,7 +286,7 @@ export const metadata: Metadata = {
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
           <AuthProvider>
             <Navbar />
-            <div id="main-content" className="pt-36 flex-1">{children}</div>
+            <div id="main-content" className="pt-20 md:pt-24 flex-1">{children}</div>
             <Footer />
           </AuthProvider>
           <Analytics />

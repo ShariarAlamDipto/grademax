@@ -5,7 +5,7 @@ export type Subject = {
   name: string
   level: Level
   colorKey: "physics" | "maths" | "biology" | "chemistry" | "ict" | "english" | "other"
-  /** If this subject has past papers in the raw data, this is the folder name */
+  /** Folder name in the FINAL data directory */
   dataFolder?: string
 }
 
@@ -24,17 +24,19 @@ export const subjects: Subject[] = [
   { slug: "physics",              name: "Physics",                  level: "igcse", colorKey: "physics",   dataFolder: "Physics" },
   { slug: "chemistry",            name: "Chemistry",                level: "igcse", colorKey: "chemistry", dataFolder: "Chemistry" },
   { slug: "biology",              name: "Biology",                  level: "igcse", colorKey: "biology",   dataFolder: "Biology" },
-  { slug: "human-biology",        name: "Human Biology",            level: "igcse", colorKey: "biology",   dataFolder: "Human Biology" },
+  { slug: "human-biology",        name: "Human Biology",            level: "igcse", colorKey: "biology",   dataFolder: "Human_Biology" },
   { slug: "maths-a",              name: "Mathematics A",            level: "igcse", colorKey: "maths",     dataFolder: "Mathematics_A" },
   { slug: "maths-b",              name: "Mathematics B",            level: "igcse", colorKey: "maths",     dataFolder: "Mathematics_B" },
-  { slug: "further-pure-maths",   name: "Further Pure Mathematics", level: "igcse", colorKey: "maths",     dataFolder: "Further Pure Maths" },
+  { slug: "further-pure-maths",   name: "Further Pure Mathematics", level: "igcse", colorKey: "maths",     dataFolder: "Further_Pure_Maths" },
   { slug: "english-language-a",   name: "English Language A",       level: "igcse", colorKey: "english",   dataFolder: "English_A" },
   { slug: "english-language-b",   name: "English Language B",       level: "igcse", colorKey: "english",   dataFolder: "English_B" },
   { slug: "ict",                  name: "ICT",                      level: "igcse", colorKey: "ict",       dataFolder: "ICT" },
+  { slug: "computer-science",     name: "Computer Science",         level: "igcse", colorKey: "ict",       dataFolder: "Computer_Science" },
   { slug: "accounting",           name: "Accounting",               level: "igcse", colorKey: "other",     dataFolder: "Accounting" },
-  { slug: "business",             name: "Business",                 level: "igcse", colorKey: "other",     dataFolder: "Business" },
+  { slug: "business",             name: "Business Studies",         level: "igcse", colorKey: "other",     dataFolder: "Business_Studies" },
   { slug: "commerce",             name: "Commerce",                 level: "igcse", colorKey: "other",     dataFolder: "Commerce" },
   { slug: "economics",            name: "Economics",                level: "igcse", colorKey: "other",     dataFolder: "Economics" },
+  { slug: "geography",            name: "Geography",                level: "igcse", colorKey: "other",     dataFolder: "Geography" },
   { slug: "bangla",               name: "Bangla",                   level: "igcse", colorKey: "other",     dataFolder: "Bangla" },
 
   // ─── IAL ──────────────────────────────────────────────────────────────────
@@ -58,3 +60,23 @@ export function getSubjectBySlug(slug: string): Subject | undefined {
 export const byLevel = (level: Level) => subjects.filter(s => s.level === level)
 export const findSubject = (level: Level, slug: string) =>
   subjects.find(s => s.level === level && s.slug === slug) || null
+
+/**
+ * Normalise a season string to a consistent lowercase slug for URLs and DB queries.
+ * FINAL folder names: "Jan", "May-Jun", "Oct-Nov"
+ */
+export function seasonToSlug(season: string): string {
+  return season.toLowerCase()
+}
+
+/** Human-readable display name for a season slug */
+export function seasonDisplay(slug: string): string {
+  const map: Record<string, string> = {
+    jan:        "January",
+    "jan-feb":  "January / February",
+    "feb-mar":  "February / March",
+    "may-jun":  "May / June",
+    "oct-nov":  "October / November",
+  }
+  return map[slug.toLowerCase()] ?? slug
+}
