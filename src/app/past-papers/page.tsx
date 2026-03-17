@@ -1,53 +1,31 @@
 
 import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
-import { pastPaperSubjects, subjectColorClasses, type Subject } from "@/lib/subjects"
-
-const colorAccents: Record<Subject["colorKey"], string> = {
-  physics:   "border-orange-400/30 hover:border-orange-400/60",
-  maths:     "border-sky-400/30 hover:border-sky-400/60",
-  biology:   "border-emerald-400/30 hover:border-emerald-400/60",
-  chemistry: "border-violet-400/30 hover:border-violet-400/60",
-  ict:       "border-red-400/30 hover:border-red-400/60",
-  english:   "border-rose-400/30 hover:border-rose-400/60",
-  other:     "border-indigo-400/30 hover:border-indigo-400/60",
-}
+import { pastPaperSubjects, type Subject } from "@/lib/subjects"
 
 export const revalidate = 3600
 
-function SubjectCard({ subject }: { subject: Subject }) {
-  const accent = colorAccents[subject.colorKey]
-  const badge = subjectColorClasses[subject.colorKey]
+const accentMap: Record<Subject["colorKey"], string> = {
+  physics:   "accent-orange",
+  maths:     "accent-blue",
+  biology:   "accent-green",
+  chemistry: "accent-green",
+  ict:       "accent-cyan",
+  english:   "accent-pink",
+  other:     "accent-violet",
+}
 
-  return (
-    <Link href={`/past-papers/${subject.slug}`}>
-      <div
-        className={`group relative bg-gray-50 dark:bg-white/[0.03] border rounded-xl p-5
-                    transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/[0.06] hover:scale-[1.02]
-                    hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-black/20 ${accent}`}
-      >
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="font-bold text-gray-900 dark:text-white text-base transition-colors">
-              {subject.name}
-            </h3>
-            <span
-              className={`inline-block mt-1.5 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${badge}`}
-            >
-              Edexcel {subject.level === "ial" ? "A Level" : "IGCSE"}
-            </span>
-          </div>
-          <span className="text-gray-400 dark:text-white/40 group-hover:text-gray-700 dark:group-hover:text-white/80 transition-colors text-lg">
-            →
-          </span>
-        </div>
-      </div>
-    </Link>
-  )
+const codeColorMap: Record<Subject["colorKey"], string> = {
+  physics:   "#F97316",
+  maths:     "#6EA8FE",
+  biology:   "#34D399",
+  chemistry: "#34D399",
+  ict:       "#22D3EE",
+  english:   "#F472B6",
+  other:     "#A78BFA",
 }
 
 export default async function PastPapersPage() {
-  // Fetch subject names that actually have papers in the database
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -66,64 +44,95 @@ export default async function PastPapersPage() {
     }).filter(Boolean)
   )
 
-  // Only show subjects that exist in our static list AND have data in DB
   const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(s.name))
-
   const igcse = availableSubjects.filter((s) => s.level === "igcse")
-  const ial = availableSubjects.filter((s) => s.level === "ial")
+  const ial  = availableSubjects.filter((s) => s.level === "ial")
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white px-6 py-12">
-      <div className="max-w-6xl mx-auto">
+    <main style={{ background: "#000000", color: "#E5E7EB", minHeight: "100vh" }}>
+      <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
+
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-3">Past Papers</h1>
-          <p className="text-gray-500 dark:text-white/50 max-w-lg mx-auto">
-            Free Edexcel IGCSE and A Level past papers with mark schemes.
-            Download question papers organized by year and session.
+        <div style={{ marginBottom: "3rem" }}>
+          <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#F59E0B", marginBottom: "0.75rem" }}>
+            Pearson Edexcel
+          </p>
+          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
+            Past Papers
+          </h1>
+          <p style={{ color: "#9CA3AF", fontSize: "0.9rem", maxWidth: "480px", lineHeight: 1.6 }}>
+            Free Edexcel IGCSE and A Level past papers with mark schemes, organised by year and session.
           </p>
         </div>
 
         {/* IGCSE */}
         {igcse.length > 0 && (
-          <section className="mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-2xl font-bold">IGCSE</h2>
-              <span className="text-xs text-gray-500 dark:text-white/30 font-medium bg-gray-100 dark:bg-white/5 px-2.5 py-1 rounded-full">
-                {igcse.length} subjects
-              </span>
+          <section style={{ marginBottom: "3rem" }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                IGCSE
+              </h2>
+              <span style={{ fontSize: "0.7rem", color: "#6B7280" }}>{igcse.length} subjects</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.625rem" }}>
               {igcse.map((s) => (
-                <SubjectCard key={s.slug} subject={s} />
+                <Link
+                  key={s.slug}
+                  href={`/past-papers/${s.slug}`}
+                  className={`subject-card ${accentMap[s.colorKey]}`}
+                >
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{s.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 600, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
+                    Edexcel IGCSE
+                  </p>
+                </Link>
               ))}
             </div>
           </section>
         )}
 
-        {/* IAL */}
+        {/* A Level */}
         {ial.length > 0 && (
-          <section>
-            <div className="flex items-center gap-3 mb-6">
-              <h2 className="text-2xl font-bold">A Level (IAL)</h2>
-              <span className="text-xs text-gray-500 dark:text-white/30 font-medium bg-gray-100 dark:bg-white/5 px-2.5 py-1 rounded-full">
-                {ial.length} subjects
-              </span>
+          <section style={{ marginBottom: "3rem" }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                A Level (IAL)
+              </h2>
+              <span style={{ fontSize: "0.7rem", color: "#6B7280" }}>{ial.length} subjects</span>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.625rem" }}>
               {ial.map((s) => (
-                <SubjectCard key={s.slug} subject={s} />
+                <Link
+                  key={s.slug}
+                  href={`/past-papers/${s.slug}`}
+                  className={`subject-card ${accentMap[s.colorKey]}`}
+                >
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{s.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 600, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
+                    Edexcel A Level
+                  </p>
+                </Link>
               ))}
             </div>
           </section>
         )}
 
         {availableSubjects.length === 0 && (
-          <div className="text-center py-20 text-gray-400 dark:text-white/40">
-            <p className="text-lg font-medium mb-2">No papers available yet</p>
-            <p className="text-sm">Papers are being uploaded. Check back soon.</p>
+          <div style={{ textAlign: "center", padding: "5rem 0", color: "#6B7280" }}>
+            <p style={{ fontSize: "1rem", fontWeight: 600, color: "#9CA3AF", marginBottom: "0.5rem" }}>No papers available yet</p>
+            <p style={{ fontSize: "0.85rem" }}>Papers are being uploaded. Check back soon.</p>
           </div>
         )}
+
+        {/* Divider + CTA */}
+        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+          <p style={{ fontSize: "0.8rem", color: "#6B7280", lineHeight: 1.6 }}>
+            Want to practice by topic instead of by year?
+          </p>
+          <Link href="/subjects" className="btn-ghost-blue" style={{ fontSize: "0.8rem", padding: "0.5rem 1.25rem", minHeight: "36px" }}>
+            Browse by Topic →
+          </Link>
+        </div>
       </div>
     </main>
   )

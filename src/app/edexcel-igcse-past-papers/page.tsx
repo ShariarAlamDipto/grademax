@@ -85,126 +85,112 @@ export default function IGCSEPastPapersPage() {
   }
 
   return (
-    <main className="min-h-screen bg-black text-white">
+    <main style={{ background: "#000000", color: "#E5E7EB", minHeight: "100vh" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      {/* Hero */}
-      <section className="text-center px-4 md:px-8 pt-8 md:pt-16 pb-12">
-        <nav className="text-sm text-gray-500 mb-4">
-          <Link href="/" className="hover:text-gray-300">Home</Link>
-          <span className="mx-2">›</span>
-          <Link href="/edexcel-past-papers" className="hover:text-gray-300">Edexcel Past Papers</Link>
-          <span className="mx-2">›</span>
-          <span className="text-gray-400">IGCSE</span>
-        </nav>
-        <h1 className="text-3xl md:text-5xl font-bold mb-4">
-          Edexcel IGCSE Past Papers – Free with Mark Schemes
-        </h1>
-        <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-4">
-          Access free Pearson Edexcel International GCSE past papers for all subjects. 
-          Topic-wise questions with mark schemes from 2014–2024.
-        </p>
-        <p className="text-sm text-gray-500 max-w-2xl mx-auto mb-8">
-          Physics (4PH1) · Maths A (4MA1) · Maths B (4MB1) · Chemistry (4CH1) · Biology (4BI1) · ICT (4IT1)
-        </p>
-      </section>
+      <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
 
-      {/* Subjects Grid */}
-      <section className="px-4 md:px-8 py-12 bg-gray-950">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8">
-            Choose Your IGCSE Subject
+        {/* Breadcrumb */}
+        <nav style={{ marginBottom: "1.75rem" }}>
+          <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, flexWrap: "wrap" }}>
+            <li><Link href="/" className="gm-link" style={{ fontSize: "0.78rem" }}>Home</Link></li>
+            <li style={{ color: "#374151", fontSize: "0.78rem" }}>/</li>
+            <li><Link href="/edexcel-past-papers" className="gm-link" style={{ fontSize: "0.78rem" }}>Edexcel Past Papers</Link></li>
+            <li style={{ color: "#374151", fontSize: "0.78rem" }}>/</li>
+            <li style={{ fontSize: "0.78rem", color: "#9CA3AF" }}>IGCSE</li>
+          </ol>
+        </nav>
+
+        {/* Header */}
+        <div style={{ marginBottom: "3rem" }}>
+          <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#F59E0B", marginBottom: "0.75rem" }}>
+            Pearson Edexcel · IGCSE
+          </p>
+          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
+            Edexcel IGCSE Past Papers
+          </h1>
+          <p style={{ color: "#9CA3AF", fontSize: "0.9rem", maxWidth: "520px", lineHeight: 1.6 }}>
+            Free Pearson Edexcel International GCSE past papers with mark schemes, organised by topic and year.
+            Physics · Maths A &amp; B · Chemistry · Biology · ICT.
+          </p>
+        </div>
+
+        {/* Subjects */}
+        <section style={{ marginBottom: "3rem" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+            Choose Your Subject
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "0.625rem" }}>
             {subjects.map((subj) => (
-              <Link 
+              <Link
                 key={subj.slug}
                 href={`/subjects/igcse/${subj.slug}`}
-                className="bg-gray-900 rounded-xl p-6 border border-gray-800 hover:border-blue-600 transition-colors group"
+                style={{ background: "#000000", border: "1px solid #333333", borderRadius: "0.875rem", padding: "1.25rem 1rem", display: "flex", flexDirection: "column", gap: "0.4rem", textDecoration: "none" }}
+                className="gm-card"
               >
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="text-xl font-semibold group-hover:text-blue-400 transition-colors">
-                    IGCSE {subj.name}
-                  </h3>
-                  <span className="text-xs text-gray-500 bg-gray-800 px-2 py-1 rounded">{subj.examCode}</span>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>IGCSE {subj.name}</p>
+                  <span style={{ fontSize: "0.6rem", color: "#6B7280", background: "#111827", border: "1px solid #1F2937", borderRadius: "4px", padding: "0.15rem 0.4rem", flexShrink: 0, marginLeft: "0.5rem" }}>{subj.examCode}</span>
                 </div>
-                <p className="text-sm text-gray-400 mb-3">{subj.longDescription}</p>
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {subj.topics.slice(0, 4).map((topic) => (
-                    <span key={topic.slug} className="text-xs bg-gray-800 text-gray-400 px-2 py-1 rounded">
-                      {topic.name}
-                    </span>
+                <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5 }}>{subj.shortDescription}</p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", marginTop: "0.35rem" }}>
+                  {subj.topics.slice(0, 3).map((t) => (
+                    <span key={t.slug} style={{ fontSize: "0.6rem", color: "#4B5563", background: "#111827", border: "1px solid #1F2937", borderRadius: "4px", padding: "0.1rem 0.4rem" }}>{t.name}</span>
                   ))}
-                  {subj.topics.length > 4 && (
-                    <span className="text-xs text-gray-500">+{subj.topics.length - 4} more</span>
-                  )}
+                  {subj.topics.length > 3 && <span style={{ fontSize: "0.6rem", color: "#4B5563" }}>+{subj.topics.length - 3} more</span>}
                 </div>
-                <p className="text-xs text-gray-500">
-                  {subj.yearsAvailable.length} years of papers · {subj.topics.length} topics · Mark schemes included
+                <p style={{ fontSize: "0.65rem", color: "#4B5563", marginTop: "0.35rem" }}>
+                  {subj.yearsAvailable.length} years · {subj.topics.length} topics · Mark schemes included
                 </p>
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Year Quick Access */}
-      <section className="px-4 md:px-8 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-6">
-            IGCSE Past Papers by Year
+        {/* Years */}
+        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #1F2937" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1rem" }}>
+            Browse by Year
           </h2>
-          <p className="text-gray-400 text-center mb-8 text-sm">
-            Jump to Edexcel IGCSE past papers from a specific year
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
             {[2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
-              <Link 
-                key={year}
-                href={`/browse?level=igcse&year=${year}`}
-                className="bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-blue-600 px-4 py-2 rounded-lg text-sm transition-colors"
-              >
+              <Link key={year} href={`/browse?level=igcse&year=${year}`} className="topic-pill">
                 {year}
               </Link>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQ */}
-      <section className="px-4 md:px-8 py-12 bg-gray-950">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl font-bold text-center mb-8">
-            IGCSE Past Papers FAQ
+        {/* FAQ */}
+        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #1F2937" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+            Common Questions
           </h2>
-          <div className="space-y-4">
-            {faqs.map((faq, idx) => (
-              <details key={idx} className="bg-gray-900 rounded-lg border border-gray-800 group">
-                <summary className="px-6 py-4 cursor-pointer font-semibold text-gray-200 hover:text-white transition-colors list-none flex justify-between items-center">
+          <div style={{ maxWidth: "640px" }}>
+            {faqs.map((faq, i, arr) => (
+              <details key={i} style={{ borderBottom: i < arr.length - 1 ? "1px solid #1F2937" : "none" }}>
+                <summary style={{ padding: "1rem 0", cursor: "pointer", fontSize: "0.875rem", fontWeight: 500, color: "#E5E7EB", display: "flex", justifyContent: "space-between", alignItems: "center", listStyle: "none", userSelect: "none", gap: "1rem" }}>
                   {faq.question}
-                  <svg className="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#6B7280" strokeWidth={2.5} style={{ flexShrink: 0 }}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </summary>
-                <p className="px-6 pb-4 text-gray-400 text-sm leading-relaxed">{faq.answer}</p>
+                <p style={{ padding: "0 0 1rem", fontSize: "0.845rem", color: "#9CA3AF", lineHeight: 1.75 }}>{faq.answer}</p>
               </details>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Internal Links */}
-      <section className="px-4 md:px-8 py-12 border-t border-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-lg font-semibold mb-6 text-gray-300">Related Resources</h2>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/edexcel-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">All Edexcel Past Papers</Link>
-            <Link href="/edexcel-a-level-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">A Level Past Papers</Link>
-            <Link href="/edexcel-worksheets" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Custom Worksheets</Link>
-            <Link href="/generate" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Worksheet Generator</Link>
-          </div>
+        {/* Related links */}
+        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "1.5rem", display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+          {([
+            ["/edexcel-past-papers",      "All Edexcel Past Papers"],
+            ["/edexcel-a-level-past-papers","A Level Past Papers"],
+            ["/edexcel-worksheets",        "Custom Worksheets"],
+            ["/generate",                  "Worksheet Generator"],
+          ] as [string,string][]).map(([href, label]) => (
+            <Link key={href} href={href} className="topic-pill">{label}</Link>
+          ))}
         </div>
-      </section>
+      </div>
     </main>
   )
 }

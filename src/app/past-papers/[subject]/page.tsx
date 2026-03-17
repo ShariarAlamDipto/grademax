@@ -298,10 +298,9 @@ export default async function SubjectPapersPage({
 
           {/* Empty State */}
           {yearGroups.length === 0 && (
-            <div className="text-center py-20 text-white/40">
-              <div className="text-5xl mb-4">📄</div>
-              <p className="text-lg font-medium mb-2">No papers available yet</p>
-              <p className="text-sm">Papers for {subj.name} will be uploaded soon.</p>
+            <div style={{ textAlign: "center", padding: "5rem 0", color: "#6B7280" }}>
+              <p style={{ fontSize: "1rem", fontWeight: 600, color: "#9CA3AF", marginBottom: "0.5rem" }}>No papers available yet</p>
+              <p style={{ fontSize: "0.85rem" }}>Papers for {subj.name} will be uploaded soon.</p>
             </div>
           )}
 

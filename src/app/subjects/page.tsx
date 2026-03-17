@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { seoSubjects, getSubjectsByLevel } from '@/lib/seo-subjects'
-import { 
-  generateOrganizationSchema, 
+import {
+  generateOrganizationSchema,
   generateBreadcrumbSchema,
   generateWebPageSchema
 } from '@/lib/seo-schema'
@@ -31,16 +31,15 @@ export const metadata: Metadata = {
 
 export default function SubjectsIndexPage() {
   const igcseSubjects = getSubjectsByLevel('igcse')
-  const ialSubjects = getSubjectsByLevel('ial')
-  
+  const ialSubjects   = getSubjectsByLevel('ial')
+
   const baseUrl = 'https://grademax.me'
-  
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       generateOrganizationSchema(),
       generateBreadcrumbSchema([
-        { name: 'Home', url: baseUrl },
+        { name: 'Home',     url: baseUrl },
         { name: 'Subjects', url: `${baseUrl}/subjects` },
       ]),
       generateWebPageSchema(
@@ -50,149 +49,132 @@ export default function SubjectsIndexPage() {
       )
     ]
   }
-  
+
+  const totalTopics = seoSubjects.reduce((acc, s) => acc + s.topics.length, 0)
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-      
-      <main className="min-h-screen bg-black text-white">
-        {/* Breadcrumb */}
-        <nav className="max-w-6xl mx-auto px-4 py-4 text-sm text-gray-400">
-          <ol className="flex items-center gap-2">
-            <li><Link href="/" className="hover:text-white">Home</Link></li>
-            <li>/</li>
-            <li className="text-white">Subjects</li>
-          </ol>
-        </nav>
-        
-        {/* Hero */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            All Subjects
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mb-8">
-            Choose your qualification level and subject to access past papers, 
-            topic-wise questions, and practice tools.
-          </p>
-          
-          {/* Quick Stats */}
-          <div className="flex gap-8 text-sm text-gray-400 mb-8">
-            <div>
-              <span className="text-2xl font-bold text-white">{seoSubjects.length}</span>
-              <span className="ml-2">Subjects</span>
-            </div>
-            <div>
-              <span className="text-2xl font-bold text-white">
-                {seoSubjects.reduce((acc, s) => acc + s.topics.length, 0)}
-              </span>
-              <span className="ml-2">Topics</span>
-            </div>
-            <div>
-              <span className="text-2xl font-bold text-white">2</span>
-              <span className="ml-2">Qualification Levels</span>
-            </div>
-          </div>
-        </section>
-        
-        {/* IGCSE Section */}
-        <section className="px-4 md:px-8 py-12 bg-gray-950">
-          <div className="max-w-6xl mx-auto">
-            <div className="flex items-center justify-between mb-8">
-              <div>
-                <h2 className="text-2xl md:text-3xl font-bold">IGCSE Subjects</h2>
-                <p className="text-gray-400 mt-1">International General Certificate of Secondary Education</p>
-              </div>
-              <Link 
-                href="/subjects/igcse"
-                className="text-blue-400 hover:text-blue-300 text-sm font-medium"
-              >
-                View All IGCSE →
-              </Link>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {igcseSubjects.map(subject => (
-                <Link 
-                  key={subject.slug}
-                  href={`/subjects/igcse/${subject.slug}`}
-                  className="group bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-gray-600 transition-all"
-                >
-                  <h3 className="font-semibold text-lg group-hover:text-blue-400 transition-colors">
-                    {subject.name}
-                  </h3>
-                  <p className="text-sm text-gray-500 mb-3">{subject.examCode}</p>
-                  <p className="text-gray-400 text-sm">{subject.shortDescription}</p>
-                  <div className="flex gap-3 text-xs text-gray-500 mt-3">
-                    <span>{subject.topics.length} topics</span>
-                    <span>•</span>
-                    <span>{subject.yearsAvailable.length} years</span>
-                  </div>
-                </Link>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+      <main style={{ background: "#000000", color: "#E5E7EB", minHeight: "100vh" }}>
+        <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
+
+          {/* Header */}
+          <div style={{ marginBottom: "3rem" }}>
+            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#F59E0B", marginBottom: "0.75rem" }}>
+              Pearson Edexcel
+            </p>
+            <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
+              All Subjects
+            </h1>
+            <p style={{ color: "#9CA3AF", fontSize: "0.9rem", maxWidth: "480px", lineHeight: 1.6, marginBottom: "2rem" }}>
+              Choose your qualification level to access past papers, topic-wise questions, and practice tools.
+            </p>
+
+            {/* Stats strip */}
+            <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", paddingTop: "1.5rem", borderTop: "1px solid #1F2937" }}>
+              {([
+                { val: seoSubjects.length.toString(), label: "Subjects" },
+                { val: totalTopics.toString(),         label: "Topics" },
+                { val: "2",                            label: "Levels" },
+                { val: "Free",                         label: "Always" },
+              ] as { val: string; label: string }[]).map(s => (
+                <div key={s.label}>
+                  <p style={{ fontSize: "1.1rem", fontWeight: 800, color: "#E5E7EB", lineHeight: 1 }}>{s.val}</p>
+                  <p style={{ fontSize: "0.65rem", color: "#6B7280", marginTop: "0.25rem", letterSpacing: "0.04em" }}>{s.label}</p>
+                </div>
               ))}
             </div>
           </div>
-        </section>
-        
-        {/* A Level Section */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold">A Level Subjects</h2>
-              <p className="text-gray-400 mt-1">International Advanced Level (IAL)</p>
+
+          {/* IGCSE */}
+          <section style={{ marginBottom: "3rem" }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                IGCSE Subjects
+              </h2>
+              <Link href="/subjects/igcse" style={{ fontSize: "0.72rem", color: "#6B7280", textDecoration: "none" }}>
+                View all →
+              </Link>
             </div>
-            <Link 
-              href="/subjects/ial"
-              className="text-blue-400 hover:text-blue-300 text-sm font-medium"
-            >
-              View All A Level →
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "0.625rem" }}>
+              {igcseSubjects.map(subject => (
+                <Link
+                  key={subject.slug}
+                  href={`/subjects/igcse/${subject.slug}`}
+                  style={{
+                    background: "#000000",
+                    border: "1px solid #333333",
+                    borderRadius: "0.875rem",
+                    padding: "1.25rem 1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.4rem",
+                    textDecoration: "none",
+                    transition: "border-color 0.2s ease",
+                  }}
+                  className="gm-card"
+                >
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{subject.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: "#6EA8FE", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
+                  <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
+                  <p style={{ fontSize: "0.65rem", color: "#4B5563", marginTop: "0.5rem" }}>
+                    {subject.topics.length} topics · {subject.yearsAvailable.length} years
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* A Level */}
+          <section style={{ marginBottom: "3rem" }}>
+            <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                A Level (IAL) Subjects
+              </h2>
+              <Link href="/subjects/ial" style={{ fontSize: "0.72rem", color: "#6B7280", textDecoration: "none" }}>
+                View all →
+              </Link>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "0.625rem" }}>
+              {ialSubjects.map(subject => (
+                <Link
+                  key={subject.slug}
+                  href={`/subjects/ial/${subject.slug}`}
+                  style={{
+                    background: "#000000",
+                    border: "1px solid #333333",
+                    borderRadius: "0.875rem",
+                    padding: "1.25rem 1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.4rem",
+                    textDecoration: "none",
+                    transition: "border-color 0.2s ease",
+                  }}
+                  className="gm-card"
+                >
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{subject.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: "#A78BFA", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
+                  <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
+                  <p style={{ fontSize: "0.65rem", color: "#4B5563", marginTop: "0.5rem" }}>
+                    {subject.topics.length} topics · {subject.yearsAvailable.length} years
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          {/* Footer CTA */}
+          <div style={{ borderTop: "1px solid #1F2937", paddingTop: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+            <p style={{ fontSize: "0.8rem", color: "#6B7280", lineHeight: 1.6 }}>
+              Can&apos;t find your subject? Let us know.
+            </p>
+            <Link href="/contact" className="btn-ghost-blue" style={{ fontSize: "0.8rem", padding: "0.5rem 1.25rem", minHeight: "36px" }}>
+              Request a Subject
             </Link>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {ialSubjects.map(subject => (
-              <Link 
-                key={subject.slug}
-                href={`/subjects/ial/${subject.slug}`}
-                className="group bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-gray-600 transition-all"
-              >
-                <h3 className="font-semibold text-lg group-hover:text-blue-400 transition-colors">
-                  {subject.name}
-                </h3>
-                <p className="text-sm text-gray-500 mb-3">{subject.examCode}</p>
-                <p className="text-gray-400 text-sm">{subject.shortDescription}</p>
-                <div className="flex gap-3 text-xs text-gray-500 mt-3">
-                  <span>{subject.topics.length} topics</span>
-                  <span>•</span>
-                  <span>{subject.yearsAvailable.length} years</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </section>
-        
-        {/* CTA Section */}
-        <section className="px-4 md:px-8 py-16 bg-gray-950">
-          <div className="max-w-6xl mx-auto">
-            <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                Can&apos;t Find Your Subject?
-              </h2>
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                We&apos;re constantly adding new subjects. Let us know what you&apos;re studying 
-                and we&apos;ll prioritize adding it.
-              </p>
-              <Link 
-                href="/contact"
-                className="inline-block bg-white text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Request a Subject
-              </Link>
-            </div>
-          </div>
-        </section>
+        </div>
       </main>
     </>
   )
