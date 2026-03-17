@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# debug/utility scripts that should not be in version control
+check_paperlords*.js
+check_pages.js
+scripts/check-r2.js
+config/google-service-account.json
+config/*.json
