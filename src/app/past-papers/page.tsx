@@ -1,27 +1,43 @@
 
 import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
-import { pastPaperSubjects, type Subject } from "@/lib/subjects"
+import { pastPaperSubjects, subjectColorClasses, type Subject } from "@/lib/subjects"
+
+const colorAccents: Record<Subject["colorKey"], string> = {
+  physics:   "border-orange-400/30 hover:border-orange-400/60",
+  maths:     "border-sky-400/30 hover:border-sky-400/60",
+  biology:   "border-emerald-400/30 hover:border-emerald-400/60",
+  chemistry: "border-violet-400/30 hover:border-violet-400/60",
+  ict:       "border-red-400/30 hover:border-red-400/60",
+  english:   "border-rose-400/30 hover:border-rose-400/60",
+  other:     "border-indigo-400/30 hover:border-indigo-400/60",
+}
 
 export const revalidate = 3600
 
 function SubjectCard({ subject }: { subject: Subject }) {
+  const accent = colorAccents[subject.colorKey]
+  const badge = subjectColorClasses[subject.colorKey]
+
   return (
     <Link href={`/past-papers/${subject.slug}`}>
       <div
-        className="group relative bg-gray-50 dark:bg-white/[0.03] border border-gray-200 dark:border-gray-800 rounded-xl p-5
-                    transition-colors duration-200 hover:bg-gray-100 dark:hover:bg-white/[0.06] hover:border-gray-400 dark:hover:border-gray-600"
+        className={`group relative bg-gray-50 dark:bg-white/[0.03] border rounded-xl p-5
+                    transition-all duration-300 hover:bg-gray-100 dark:hover:bg-white/[0.06] hover:scale-[1.02]
+                    hover:shadow-lg hover:shadow-black/10 dark:hover:shadow-black/20 ${accent}`}
       >
         <div className="flex items-center justify-between">
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white text-base">
+            <h3 className="font-bold text-gray-900 dark:text-white text-base transition-colors">
               {subject.name}
             </h3>
-            <span className="inline-block mt-1 text-xs text-gray-400 dark:text-gray-600">
+            <span
+              className={`inline-block mt-1.5 text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full ${badge}`}
+            >
               Edexcel {subject.level === "ial" ? "A Level" : "IGCSE"}
             </span>
           </div>
-          <span className="text-gray-300 dark:text-gray-700 group-hover:text-gray-600 dark:group-hover:text-gray-400 transition-colors">
+          <span className="text-gray-400 dark:text-white/40 group-hover:text-gray-700 dark:group-hover:text-white/80 transition-colors text-lg">
             →
           </span>
         </div>
