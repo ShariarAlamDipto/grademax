@@ -3,45 +3,81 @@
 @tailwind utilities;
 
 /* ═══════════════════════════════════════════════════════════════
-   GradeMax Design System v3 — Reasonal-inspired Layered Dark
+   GradeMax Design System v4 — Dark + Light Mode
    ═══════════════════════════════════════════════════════════════ */
 
-:root {
-  /* ── Backgrounds ── */
-  --gm-bg:          #060912;   /* Deep dark navy — primary canvas */
-  --gm-surface:     #0C1120;   /* Elevated surfaces */
-  --gm-surface-2:   #101829;   /* Nested surfaces */
-  --gm-surface-3:   #161F35;   /* Tertiary elevation */
+/* ── Dark Mode (default) ── */
+:root,
+html.dark {
+  --gm-bg:           #060912;
+  --gm-surface:      #0C1120;
+  --gm-surface-2:    #101829;
+  --gm-surface-3:    #161F35;
 
-  /* ── Text ── */
-  --gm-text:        #EDF0F7;   /* Primary reading text */
-  --gm-text-2:      #9CA3AF;   /* Secondary / labels */
-  --gm-text-3:      #6B7280;   /* Placeholder / disabled */
+  --gm-text:         #EDF0F7;
+  --gm-text-2:       #9CA3AF;
+  --gm-text-3:       #6B7280;
 
-  /* ── Action Blue ── */
-  --gm-blue:        #6EA8FE;
-  --gm-blue-bg:     rgba(110, 168, 254, 0.10);
-  --gm-blue-ring:   rgba(110, 168, 254, 0.25);
-  --gm-blue-hover:  rgba(110, 168, 254, 0.18);
+  --gm-blue:         #6EA8FE;
+  --gm-blue-bg:      rgba(110, 168, 254, 0.10);
+  --gm-blue-ring:    rgba(110, 168, 254, 0.25);
+  --gm-blue-hover:   rgba(110, 168, 254, 0.18);
 
-  /* ── Premium Amber (Beacon Effect) ── */
-  --gm-amber:       #F59E0B;
-  --gm-amber-hover: #D97706;
-  --gm-amber-bg:    rgba(245, 158, 11, 0.10);
-  --gm-amber-ring:  rgba(245, 158, 11, 0.30);
+  --gm-amber:        #F59E0B;
+  --gm-amber-hover:  #D97706;
+  --gm-amber-bg:     rgba(245, 158, 11, 0.10);
+  --gm-amber-ring:   rgba(245, 158, 11, 0.30);
 
-  /* ── Semantic greens ── */
-  --gm-green:       #34D399;
-  --gm-green-bg:    rgba(52, 211, 153, 0.10);
+  --gm-green:        #34D399;
+  --gm-green-bg:     rgba(52, 211, 153, 0.10);
 
-  /* ── Borders ── */
-  --gm-border:      #1A2235;
-  --gm-border-2:    #243048;
-  --gm-border-input:#5B6470;
+  --gm-border:       rgba(255, 255, 255, 0.07);
+  --gm-border-2:     rgba(255, 255, 255, 0.10);
+  --gm-border-input: #5B6470;
 
-  /* ── Typography ── */
+  --gm-nav-bg:       rgba(6, 9, 18, 0.88);
+  --gm-nav-border:   rgba(255, 255, 255, 0.05);
+
+  --gm-card-bg:      rgba(255, 255, 255, 0.02);
+  --gm-card-hover:   rgba(255, 255, 255, 0.04);
+
   --gm-lh: 1.7;
   --gm-ls: 0.01em;
+}
+
+/* ── Light Mode ── */
+html.light {
+  --gm-bg:           #F5F7FB;
+  --gm-surface:      #FFFFFF;
+  --gm-surface-2:    #EEF2F8;
+  --gm-surface-3:    #E5EAF3;
+
+  --gm-text:         #111827;
+  --gm-text-2:       #374151;
+  --gm-text-3:       #6B7280;
+
+  --gm-blue:         #2563EB;
+  --gm-blue-bg:      rgba(37, 99, 235, 0.08);
+  --gm-blue-ring:    rgba(37, 99, 235, 0.20);
+  --gm-blue-hover:   rgba(37, 99, 235, 0.14);
+
+  --gm-amber:        #D97706;
+  --gm-amber-hover:  #B45309;
+  --gm-amber-bg:     rgba(217, 119, 6, 0.08);
+  --gm-amber-ring:   rgba(217, 119, 6, 0.25);
+
+  --gm-green:        #059669;
+  --gm-green-bg:     rgba(5, 150, 105, 0.08);
+
+  --gm-border:       rgba(0, 0, 0, 0.08);
+  --gm-border-2:     rgba(0, 0, 0, 0.12);
+  --gm-border-input: #9CA3AF;
+
+  --gm-nav-bg:       rgba(245, 247, 251, 0.92);
+  --gm-nav-border:   rgba(0, 0, 0, 0.07);
+
+  --gm-card-bg:      rgba(0, 0, 0, 0.025);
+  --gm-card-hover:   rgba(0, 0, 0, 0.045);
 }
 
 /* ── Base ── */
@@ -53,11 +89,14 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 body {
   line-height: var(--gm-lh);
   letter-spacing: var(--gm-ls);
+  background-color: var(--gm-bg);
+  color: var(--gm-text);
 }
 
 /* ── Scrollbar ── */
@@ -72,11 +111,12 @@ body {
   top: 0; left: 0;
   width: 100%;
   z-index: 50;
-  background: rgba(6, 9, 18, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  background: var(--gm-nav-bg);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--gm-nav-border);
   color: var(--gm-text);
+  transition: background 0.2s ease, border-color 0.2s ease;
 }
 
 /* ── Buttons ── */
@@ -84,6 +124,7 @@ body {
   background-color: var(--gm-amber);
   color: #000000;
   font-weight: 700;
+  font-size: 0.9rem;
   padding: 0.75rem 1.75rem;
   border-radius: 0.75rem;
   display: inline-flex;
@@ -100,11 +141,32 @@ body {
   box-shadow: 0 4px 24px var(--gm-amber-ring);
 }
 
+.btn-ghost-amber {
+  color: var(--gm-amber);
+  border: 1px solid var(--gm-amber-ring);
+  background: var(--gm-amber-bg);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  white-space: nowrap;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+}
+.btn-ghost-amber:hover {
+  background: var(--gm-amber-bg);
+  border-color: var(--gm-amber);
+}
+
 .btn-ghost-blue {
   color: var(--gm-blue);
   border: 1px solid var(--gm-blue-ring);
   background: var(--gm-blue-bg);
   font-weight: 600;
+  font-size: 0.9rem;
   padding: 0.75rem 1.75rem;
   border-radius: 0.75rem;
   display: inline-flex;
@@ -121,14 +183,15 @@ body {
 
 /* ── Cards ── */
 .gm-card {
-  background: var(--gm-surface);
+  background: var(--gm-card-bg);
   border: 1px solid var(--gm-border-2);
   border-radius: 1rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
 }
 .gm-card:hover {
   border-color: var(--gm-blue);
   transform: translateY(-2px);
+  background: var(--gm-card-hover);
 }
 .gm-card-amber:hover {
   border-color: var(--gm-amber);
@@ -151,16 +214,18 @@ body {
 
 /* ── Nav gradient link ── */
 .gradient-hover-sea {
-  color: var(--gm-text-3);
+  color: var(--gm-text-2);
   transition: color 0.2s ease;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
 }
 .gradient-hover-sea:hover { color: var(--gm-text); }
 
 /* ── Table banding ── */
 .gm-table-row:nth-child(even) { background: var(--gm-surface); }
 .gm-table-row { border-left: 2px solid transparent; transition: border-color 0.15s; }
-.gm-table-row:hover { border-left-color: #7DD3FC; background: var(--gm-surface-2); }
+.gm-table-row:hover { border-left-color: var(--gm-blue); background: var(--gm-surface-2); }
 
 /* ── Custom checkbox ── */
 .gm-checkbox {
@@ -223,6 +288,12 @@ body {
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 
+/* ── Feature card scroll reveal ── */
+@keyframes card-reveal {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 /* ── Subject float grid (scroll-triggered via data-visible) ── */
 @keyframes float-from-right {
   from { opacity: 0; transform: translateX(36px) scale(0.94); }
@@ -247,6 +318,15 @@ body {
   animation-delay: var(--delay, 0s);
 }
 
+/* ── Feature cards (always visible) ── */
+.feature-card-grid[data-visible="1"] .feature-card-item {
+  animation: card-reveal 0.6s cubic-bezier(0.22,1,0.36,1) both;
+  animation-delay: var(--delay, 0s);
+}
+.feature-card-item {
+  opacity: 0;
+}
+
 /* ── Section divider ── */
 .gm-divider { border-top: 1px solid var(--gm-border); }
 
@@ -267,7 +347,7 @@ body {
 
 /* Subject / Catalog card hover */
 .subject-card {
-  background: rgba(255,255,255,0.02);
+  background: var(--gm-card-bg);
   border: 1px solid var(--gm-border-2);
   border-radius: 1rem;
   padding: 1.25rem 1rem;
@@ -279,7 +359,7 @@ body {
 }
 .subject-card:hover {
   transform: translateY(-3px);
-  background: rgba(255,255,255,0.035);
+  background: var(--gm-card-hover);
 }
 
 /* Per-subject accent colours on hover */
@@ -293,7 +373,7 @@ body {
 
 /* Topic pill */
 .topic-pill {
-  background: rgba(255,255,255,0.02);
+  background: var(--gm-card-bg);
   border: 1px solid var(--gm-border-2);
   border-radius: 99px;
   padding: 0.4rem 1rem;
@@ -314,3 +394,44 @@ body {
   transition: color 0.15s ease;
 }
 .quick-link:hover { color: var(--gm-text); }
+
+/* ── Theme toggle button ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--gm-border-2);
+  background: var(--gm-card-bg);
+  color: var(--gm-text-2);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  background: var(--gm-card-hover);
+  border-color: var(--gm-border-input);
+  color: var(--gm-text);
+}
+
+/* ── Lectures/Auth page inputs ── */
+.gm-input {
+  background: var(--gm-surface);
+  border: 1px solid var(--gm-border-2);
+  border-radius: 0.625rem;
+  color: var(--gm-text);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+.gm-input:focus { border-color: var(--gm-blue); }
+.gm-input::placeholder { color: var(--gm-text-3); }
+.gm-select { appearance: none; }
+
+/* ── Page section backgrounds (use CSS vars to support themes) ── */
+.page-bg        { background: var(--gm-bg); }
+.surface-bg     { background: var(--gm-surface); }
+.surface-2-bg   { background: var(--gm-surface-2); }

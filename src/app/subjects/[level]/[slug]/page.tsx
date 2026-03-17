@@ -60,7 +60,7 @@ export default async function SubjectPage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
-      <main style={{ background: "#060912", color: "#EDF0F7", minHeight: "100vh" }}>
+      <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
 
         {/* ── Hero ── */}
         <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "2.5rem 1.5rem 2rem" }}>
@@ -72,7 +72,7 @@ export default async function SubjectPage({ params }: PageProps) {
               <li style={{ color: "#1A2235", fontSize: "0.75rem" }}>/</li>
               <li><Link href={`/subjects/${level}`} className="gm-link" style={{ fontSize: "0.75rem" }}>{levelDisplay}</Link></li>
               <li style={{ color: "#1A2235", fontSize: "0.75rem" }}>/</li>
-              <li style={{ fontSize: "0.75rem", color: "#9CA3AF" }}>{subject.name}</li>
+              <li style={{ fontSize: "0.75rem", color: "var(--gm-text-2)" }}>{subject.name}</li>
             </ol>
           </nav>
 
@@ -81,15 +81,15 @@ export default async function SubjectPage({ params }: PageProps) {
             <span style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor, background: `${accentColor}18`, border: `1px solid ${accentColor}28`, borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
               {subject.examBoard}
             </span>
-            <span style={{ fontSize: "0.6rem", fontWeight: 600, color: "#6B7280", background: "#0C1120", border: "1px solid #1A2235", borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
+            <span style={{ fontSize: "0.6rem", fontWeight: 600, color: "var(--gm-text-3)", background: "#0C1120", border: "1px solid #1A2235", borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
               {subject.examCode}
             </span>
           </div>
 
-          <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.4rem)", fontWeight: 800, color: "#EDF0F7", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
+          <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.4rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
             {subject.name} Past Papers
           </h1>
-          <p style={{ color: "#9CA3AF", fontSize: "0.875rem", lineHeight: 1.65, maxWidth: "520px", marginBottom: "2rem" }}>
+          <p style={{ color: "var(--gm-text-2)", fontSize: "0.875rem", lineHeight: 1.65, maxWidth: "520px", marginBottom: "2rem" }}>
             {subject.shortDescription}
           </p>
 
@@ -104,24 +104,24 @@ export default async function SubjectPage({ params }: PageProps) {
           </div>
 
           {/* Quick stats */}
-          <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", paddingTop: "1.5rem", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
+          <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", paddingTop: "1.5rem", borderTop: "1px solid var(--gm-border)" }}>
             {([
               { val: subject.topics.length.toString(), label: "Topics" },
               { val: subject.yearsAvailable.length.toString(), label: "Years" },
               { val: `${subject.yearsAvailable[0]}–${subject.yearsAvailable[subject.yearsAvailable.length - 1]}`, label: "Coverage" },
             ] as { val: string; label: string }[]).map(s => (
               <div key={s.label}>
-                <p style={{ fontSize: "1rem", fontWeight: 800, color: "#EDF0F7", lineHeight: 1 }}>{s.val}</p>
-                <p style={{ fontSize: "0.62rem", color: "#6B7280", marginTop: "0.2rem", letterSpacing: "0.04em", textTransform: "uppercase" }}>{s.label}</p>
+                <p style={{ fontSize: "1rem", fontWeight: 800, color: "var(--gm-text)", lineHeight: 1 }}>{s.val}</p>
+                <p style={{ fontSize: "0.62rem", color: "var(--gm-text-3)", marginTop: "0.2rem", letterSpacing: "0.04em", textTransform: "uppercase" }}>{s.label}</p>
               </div>
             ))}
           </div>
         </section>
 
         {/* ── Topics ── */}
-        <section style={{ borderTop: "1px solid rgba(255,255,255,0.04)", background: "#0C1120", padding: "2.5rem 1.5rem" }}>
+        <section style={{ borderTop: "1px solid var(--gm-border)", background: "var(--gm-surface)", padding: "2.5rem 1.5rem" }}>
           <div style={{ maxWidth: "1040px", margin: "0 auto" }}>
-            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "#EDF0F7", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
               Topics
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "0.5rem" }}>
@@ -130,8 +130,8 @@ export default async function SubjectPage({ params }: PageProps) {
                   key={topic.code}
                   href={`/subjects/${level}/${slug}/${topic.slug}`}
                   style={{
-                    background: "#060912",
-                    border: "1px solid #1A2235",
+                    background: "var(--gm-bg)",
+                    border: "1px solid var(--gm-border-2)",
                     borderRadius: "0.75rem",
                     padding: "0.875rem 1rem",
                     display: "flex",
@@ -145,7 +145,7 @@ export default async function SubjectPage({ params }: PageProps) {
                   <span style={{ fontSize: "0.65rem", fontWeight: 800, color: accentColor, background: `${accentColor}15`, width: "26px", height: "26px", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     {index + 1}
                   </span>
-                  <p style={{ fontSize: "0.82rem", fontWeight: 500, color: "#EDF0F7", lineHeight: 1.3 }}>{topic.name}</p>
+                  <p style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--gm-text)", lineHeight: 1.3 }}>{topic.name}</p>
                 </Link>
               ))}
             </div>
@@ -155,7 +155,7 @@ export default async function SubjectPage({ params }: PageProps) {
         {/* ── Past Papers by Year ── */}
         <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
           <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1rem", flexWrap: "wrap", gap: "0.5rem" }}>
-            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "#EDF0F7", letterSpacing: "0.1em", textTransform: "uppercase" }}>
+            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
               Papers by Year
             </h2>
             <Link href={`/past-papers/${slug}`} className="gm-link" style={{ fontSize: "0.72rem" }}>View all →</Link>
@@ -170,20 +170,20 @@ export default async function SubjectPage({ params }: PageProps) {
         </section>
 
         {/* ── FAQ ── */}
-        <section style={{ background: "#0C1120", borderTop: "1px solid rgba(255,255,255,0.04)", padding: "2.5rem 1.5rem" }}>
+        <section style={{ background: "#0C1120", borderTop: "1px solid var(--gm-border)", padding: "2.5rem 1.5rem" }}>
           <div style={{ maxWidth: "600px", margin: "0 auto" }}>
-            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "#EDF0F7", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
               FAQ
             </h2>
             {subject.faqs.map((faq, i, arr) => (
               <details key={i} style={{ borderBottom: i < arr.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none" }}>
-                <summary style={{ padding: "0.875rem 0", cursor: "pointer", fontSize: "0.845rem", fontWeight: 500, color: "#EDF0F7", display: "flex", justifyContent: "space-between", alignItems: "center", listStyle: "none", userSelect: "none", gap: "1rem" }}>
+                <summary style={{ padding: "0.875rem 0", cursor: "pointer", fontSize: "0.845rem", fontWeight: 500, color: "var(--gm-text)", display: "flex", justifyContent: "space-between", alignItems: "center", listStyle: "none", userSelect: "none", gap: "1rem" }}>
                   {faq.question}
                   <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="#6B7280" strokeWidth={2.5} style={{ flexShrink: 0 }}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <p style={{ padding: "0 0 0.875rem", fontSize: "0.82rem", color: "#9CA3AF", lineHeight: 1.7 }}>{faq.answer}</p>
+                <p style={{ padding: "0 0 0.875rem", fontSize: "0.82rem", color: "var(--gm-text-2)", lineHeight: 1.7 }}>{faq.answer}</p>
               </details>
             ))}
           </div>
@@ -193,7 +193,7 @@ export default async function SubjectPage({ params }: PageProps) {
         <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
           <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "1.5rem", alignItems: "center", flexWrap: "wrap" }}>
             <div>
-              <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "#EDF0F7", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.875rem" }}>
+              <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.875rem" }}>
                 Related Subjects
               </h2>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>

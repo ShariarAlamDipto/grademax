@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer
       aria-label="Site footer"
-      style={{ background: "#0B1020", borderTop: "1px solid #1F2937", color: "#9CA3AF" }}
+      style={{ background: "var(--gm-surface)", borderTop: "1px solid var(--gm-border)", color: "var(--gm-text-2)" }}
     >
       <div style={{ maxWidth: "1080px", margin: "0 auto", padding: "3.5rem 1.5rem 2rem" }}>
 
@@ -19,10 +19,10 @@ export default function Footer() {
         >
           {/* Brand */}
           <div>
-            <p style={{ fontWeight: 800, fontSize: "1.1rem", color: "#E5E7EB", marginBottom: "0.75rem" }}>
+            <p style={{ fontWeight: 800, fontSize: "1.1rem", color: "var(--gm-text)", marginBottom: "0.75rem" }}>
               Grade<span style={{ color: "#F59E0B" }}>Max</span>
             </p>
-            <p style={{ fontSize: "0.8rem", lineHeight: 1.65, color: "#6B7280", marginBottom: "1rem" }}>
+            <p style={{ fontSize: "0.8rem", lineHeight: 1.65, color: "var(--gm-text-3)", marginBottom: "1rem" }}>
               Free Edexcel IGCSE &amp; A Level past papers with mark schemes.
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -39,7 +39,7 @@ export default function Footer() {
 
           {/* IGCSE */}
           <div>
-            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "var(--gm-text)", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               IGCSE Past Papers
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -63,7 +63,7 @@ export default function Footer() {
 
           {/* A Level */}
           <div>
-            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "var(--gm-text)", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               A Level Past Papers
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Features */}
           <div>
-            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "var(--gm-text)", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               Features
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -102,7 +102,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "var(--gm-text)", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               Legal
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
@@ -117,7 +117,7 @@ export default function Footer() {
         </div>
 
         {/* SEO description */}
-        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "1.75rem", marginBottom: "1.25rem" }}>
+        <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "1.75rem", marginBottom: "1.25rem" }}>
           <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.7, maxWidth: "780px", margin: "0 auto", textAlign: "center" }}>
             GradeMax is a free platform for Edexcel IGCSE and A Level past papers, question papers, and
             mark schemes. Practice topic-wise questions for Physics, Mathematics, Chemistry, Biology, and ICT.
@@ -126,11 +126,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "1.25rem", textAlign: "center" }}>
-          <p style={{ fontSize: "0.78rem", color: "#6B7280" }}>
+        <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "1.25rem", textAlign: "center" }}>
+          <p style={{ fontSize: "0.78rem", color: "var(--gm-text-3)" }}>
             © {new Date().getFullYear()} GradeMax. All rights reserved.
           </p>
-          <p style={{ fontSize: "0.72rem", color: "#4B5563", marginTop: "0.4rem" }}>
+          <p style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", marginTop: "0.4rem" }}>
             Free Edexcel past papers and custom worksheets for IGCSE &amp; A Level students worldwide · Papers available 2010–2025
           </p>
         </div>

@@ -13,7 +13,11 @@ export default async function TestBuilderRoute() {
     .select("id, name, code, level, board")
     .order("name")
 
-  const subjectList = subjects || []
+  // Only expose subjects available in the test builder
+  const ALLOWED_SUBJECTS = ['maths b', 'physics', 'further pure mathematics', 'biology', 'chemistry']
+  const subjectList = (subjects || []).filter(s =>
+    ALLOWED_SUBJECTS.some(allowed => s.name.toLowerCase().includes(allowed))
+  )
   const firstSubjectId = subjectList[0]?.id
 
   let initialTopics: { id: string; code: string; name: string; description?: string }[] = []
