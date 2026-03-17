@@ -65,8 +65,8 @@ export default function Navbar() {
           {/* Generate CTA — desktop only */}
           <Link
             href="/generate"
-            className="hidden md:inline-flex btn-beacon text-xs px-4 py-2 beacon-pulse"
-            style={{ minHeight: "36px", padding: "0.45rem 1rem", borderRadius: "0.5rem" }}
+            className="hidden md:inline-flex btn-beacon beacon-pulse"
+            style={{ minHeight: "34px", padding: "0.4rem 0.9rem", borderRadius: "0.5rem", fontSize: "0.78rem" }}
           >
             Generate Worksheet
           </Link>
