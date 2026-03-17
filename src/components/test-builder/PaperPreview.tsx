@@ -28,9 +28,8 @@ export default function PaperPreview({
   onGenerate, generating, onTitleChange, worksheetUrl, markschemeUrl,
   onDownloadQP, onDownloadMS, pdfProgress, error,
 }: PaperPreviewProps) {
-  const totalMarks = items.length * 4;
   return (
-    <div className="bg-white dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 rounded-xl flex flex-col h-full overflow-hidden text-gray-900 dark:text-white"> 
+    <div className="bg-white/95 dark:bg-slate-900/85 border border-gray-200 dark:border-slate-700/70 rounded-2xl shadow-[0_18px_45px_-24px_rgba(15,23,42,0.8)] backdrop-blur-sm flex flex-col h-full overflow-hidden text-gray-900 dark:text-white"> 
       {/* ── Header ── */}
       <div className="shrink-0 p-4 border-b border-gray-700">
         <div className="flex items-center justify-between mb-3">
@@ -56,7 +55,7 @@ export default function PaperPreview({
         {items.length > 0 && (
           <div className="flex justify-between text-xs mt-2 text-gray-400">
             <span>{items.length} question{items.length !== 1 ? 's' : ''} · {items.length + 1} pages</span>
-            <span>~{totalMarks} marks</span>
+            <span>Marks left blank</span>
           </div>
         )}
       </div>
@@ -86,6 +85,9 @@ export default function PaperPreview({
               >
                 <div className="text-center px-6 w-full" style={{ fontFamily: 'Times New Roman, serif' }}>
                   <p className="text-[10px] text-gray-400 tracking-[0.2em] uppercase mb-4">Question Paper</p>
+                  <p className="mx-auto mb-3 leading-none font-bold text-gray-900" style={{ width: '70%', fontSize: 'clamp(28px, 5vw, 52px)' }}>
+                    GradeMax Exams
+                  </p>
                   <p className="text-sm font-bold text-gray-900 mb-5 leading-tight">{testTitle || 'Untitled Test'}</p>
                   <div className="mx-auto max-w-[160px] space-y-2.5 text-left text-[10px]">
                     <div className="flex items-end gap-1">
@@ -94,7 +96,7 @@ export default function PaperPreview({
                     </div>
                     <div className="flex items-end gap-1">
                       <span className="text-gray-500 shrink-0">Total Marks</span>
-                      <span className="font-bold text-gray-800 ml-auto">{totalMarks}</span>
+                      <span className="flex-1 border-b border-gray-300" />
                     </div>
                     <div className="flex items-end gap-1">
                       <span className="text-gray-500 shrink-0">Marks Received</span>

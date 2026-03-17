@@ -31,3 +31,89 @@
 		background-position: 0% 50%;
 	}
 }
+
+/* Reversible design profile: conversion dark system */
+.design-profile-conversion {
+	--gm-bg: #000000;
+	--gm-surface: #0b1020;
+	--gm-border: #5b6470;
+	--gm-primary: #6ea8fe;
+	--gm-premium: #f59e0b;
+	--gm-focus: #7dd3fc;
+	--gm-text-primary: #e5e7eb;
+	--gm-text-secondary: #9ca3af;
+	--gm-success: #34d399;
+	--gm-error: #f87171;
+}
+
+.design-profile-conversion body,
+body.design-profile-conversion {
+	background: var(--gm-bg);
+	color: var(--gm-text-primary);
+	letter-spacing: 0.01em;
+	line-height: 1.6;
+}
+
+.design-profile-conversion .gm-nav {
+	background: color-mix(in srgb, var(--gm-surface) 94%, black);
+	border-color: color-mix(in srgb, var(--gm-border) 55%, transparent);
+}
+
+.design-profile-conversion .gm-surface {
+	background: var(--gm-surface);
+	border-color: color-mix(in srgb, var(--gm-border) 65%, transparent);
+}
+
+.design-profile-conversion .gm-text-primary {
+	color: var(--gm-text-primary);
+}
+
+.design-profile-conversion .gm-text-secondary {
+	color: var(--gm-text-secondary);
+}
+
+.design-profile-conversion .gm-btn-primary {
+	background: var(--gm-primary);
+	color: #07101f;
+}
+
+.design-profile-conversion .gm-btn-primary:hover {
+	filter: brightness(1.04);
+}
+
+.design-profile-conversion .gm-btn-premium {
+	background: var(--gm-premium);
+	color: #1a1204;
+}
+
+.design-profile-conversion .gm-btn-premium:hover {
+	filter: brightness(1.05);
+}
+
+.design-profile-conversion .gm-input {
+	background: #000000;
+	border-color: var(--gm-border);
+	color: var(--gm-text-primary);
+}
+
+.design-profile-conversion .gm-input:focus {
+	border-color: var(--gm-focus);
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--gm-focus) 25%, transparent);
+	outline: none;
+}
+
+.design-profile-conversion .gm-chip {
+	background: var(--gm-surface);
+	border-color: color-mix(in srgb, var(--gm-border) 70%, transparent);
+	color: var(--gm-text-primary);
+	border-radius: 999px;
+}
+
+.design-profile-conversion .gm-list-row {
+	background: color-mix(in srgb, var(--gm-surface) 70%, transparent);
+	border: 1px solid color-mix(in srgb, var(--gm-border) 55%, transparent);
+}
+
+.design-profile-conversion .gm-list-row:hover {
+	background: color-mix(in srgb, var(--gm-surface) 85%, transparent);
+}
