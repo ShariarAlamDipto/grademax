@@ -66,20 +66,22 @@ function LoginForm() {
   }
 
   return (
-    <div className="rounded-2xl border border-white/10 bg-white/5 p-8 max-w-md w-full">
+    <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-8 max-w-md w-full shadow-sm dark:shadow-none">
       <div className="text-center mb-6">
-        <Link href="/" className="text-3xl font-bold">GradeMax</Link>
-        <p className="text-white/60 text-sm mt-2">
+        <Link href="/" className="text-3xl font-bold text-gray-900 dark:text-white">GradeMax</Link>
+        <p className="text-gray-500 dark:text-white/60 text-sm mt-2">
           {mode === "signin" ? "Welcome back! Sign in to continue." : "Create your account to get started."}
         </p>
       </div>
 
       {/* Tab switcher */}
-      <div className="flex rounded-lg bg-white/5 p-1 mb-6">
+      <div className="flex rounded-lg bg-gray-100 dark:bg-white/5 p-1 mb-6">
         <button
           onClick={() => { setMode("signin"); setError(""); setSuccess("") }}
           className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
-            mode === "signin" ? "bg-white text-black" : "text-white/70 hover:text-white"
+            mode === "signin"
+              ? "bg-white dark:bg-white text-gray-900 dark:text-black shadow-sm"
+              : "text-gray-500 dark:text-white/70 hover:text-gray-900 dark:hover:text-white"
           }`}
         >
           Sign In
@@ -87,7 +89,9 @@ function LoginForm() {
         <button
           onClick={() => { setMode("signup"); setError(""); setSuccess("") }}
           className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
-            mode === "signup" ? "bg-white text-black" : "text-white/70 hover:text-white"
+            mode === "signup"
+              ? "bg-white dark:bg-white text-gray-900 dark:text-black shadow-sm"
+              : "text-gray-500 dark:text-white/70 hover:text-gray-900 dark:hover:text-white"
           }`}
         >
           Sign Up
@@ -97,7 +101,7 @@ function LoginForm() {
       {/* Google button */}
       <button
         onClick={signInWithGoogle}
-        className="w-full flex items-center justify-center gap-3 rounded-lg border border-white/20 bg-white/5 py-2.5 text-sm font-medium hover:bg-white/10 transition-colors mb-4"
+        className="w-full flex items-center justify-center gap-3 rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-white/5 py-2.5 text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors mb-4"
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24">
           <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
@@ -110,60 +114,60 @@ function LoginForm() {
 
       {/* Divider */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="flex-1 h-px bg-white/10" />
-        <span className="text-xs text-white/40 uppercase">or</span>
-        <div className="flex-1 h-px bg-white/10" />
+        <div className="flex-1 h-px bg-gray-200 dark:bg-white/10" />
+        <span className="text-xs text-gray-400 dark:text-white/40 uppercase">or</span>
+        <div className="flex-1 h-px bg-gray-200 dark:bg-white/10" />
       </div>
 
       {/* Email/Password form */}
       <form onSubmit={handleSubmit} className="space-y-4">
         {mode === "signup" && (
           <div>
-            <label className="block text-sm text-white/70 mb-1">Full Name</label>
+            <label className="block text-sm text-gray-600 dark:text-white/70 mb-1">Full Name</label>
             <input
               type="text"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
               placeholder="Your full name"
-              className="w-full rounded-lg bg-black/40 border border-white/10 px-3 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white/30"
+              className="w-full rounded-lg bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-white/30 focus:outline-none focus:border-blue-400 dark:focus:border-white/30 focus:ring-1 focus:ring-blue-400/30 dark:focus:ring-white/10"
               required
             />
           </div>
         )}
 
         <div>
-          <label className="block text-sm text-white/70 mb-1">Email</label>
+          <label className="block text-sm text-gray-600 dark:text-white/70 mb-1">Email</label>
           <input
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
-            className="w-full rounded-lg bg-black/40 border border-white/10 px-3 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white/30"
+            className="w-full rounded-lg bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-white/30 focus:outline-none focus:border-blue-400 dark:focus:border-white/30 focus:ring-1 focus:ring-blue-400/30 dark:focus:ring-white/10"
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm text-white/70 mb-1">Password</label>
+          <label className="block text-sm text-gray-600 dark:text-white/70 mb-1">Password</label>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Min 6 characters"
             minLength={6}
-            className="w-full rounded-lg bg-black/40 border border-white/10 px-3 py-2 text-sm placeholder:text-white/30 focus:outline-none focus:border-white/30"
+            className="w-full rounded-lg bg-gray-50 dark:bg-black/40 border border-gray-200 dark:border-white/10 px-3 py-2 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-white/30 focus:outline-none focus:border-blue-400 dark:focus:border-white/30 focus:ring-1 focus:ring-blue-400/30 dark:focus:ring-white/10"
             required
           />
         </div>
 
         {error && (
-          <div className="rounded-lg bg-red-500/10 border border-red-500/20 p-3 text-sm text-red-400">
+          <div className="rounded-lg bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 p-3 text-sm text-red-600 dark:text-red-400">
             {error}
           </div>
         )}
 
         {success && (
-          <div className="rounded-lg bg-emerald-500/10 border border-emerald-500/20 p-3 text-sm text-emerald-400">
+          <div className="rounded-lg bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 p-3 text-sm text-emerald-700 dark:text-emerald-400">
             {success}
           </div>
         )}
@@ -171,24 +175,24 @@ function LoginForm() {
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-lg bg-white text-black py-2.5 font-medium hover:opacity-90 disabled:opacity-50 transition-opacity"
+          className="w-full rounded-lg bg-gray-900 dark:bg-white text-white dark:text-black py-2.5 font-medium hover:bg-gray-800 dark:hover:opacity-90 disabled:opacity-50 transition-all"
         >
           {loading ? "Please wait..." : mode === "signin" ? "Sign In" : "Create Account"}
         </button>
       </form>
 
       {mode === "signin" && (
-        <p className="mt-4 text-center text-sm text-white/50">
+        <p className="mt-4 text-center text-sm text-gray-500 dark:text-white/50">
           Don&apos;t have an account?{" "}
-          <button onClick={() => setMode("signup")} className="text-white underline underline-offset-4">
+          <button onClick={() => setMode("signup")} className="text-gray-900 dark:text-white underline underline-offset-4 hover:no-underline">
             Sign up
           </button>
         </p>
       )}
       {mode === "signup" && (
-        <p className="mt-4 text-center text-sm text-white/50">
+        <p className="mt-4 text-center text-sm text-gray-500 dark:text-white/50">
           Already have an account?{" "}
-          <button onClick={() => setMode("signin")} className="text-white underline underline-offset-4">
+          <button onClick={() => setMode("signin")} className="text-gray-900 dark:text-white underline underline-offset-4 hover:no-underline">
             Sign in
           </button>
         </p>
@@ -199,10 +203,10 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <main className="min-h-screen bg-black text-white grid place-items-center p-6">
+    <main className="min-h-screen bg-gray-50 dark:bg-black text-gray-900 dark:text-white grid place-items-center p-6">
       <Suspense fallback={
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-8 max-w-md w-full text-center">
-          <p className="text-white/60">Loading...</p>
+        <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-white/5 p-8 max-w-md w-full text-center">
+          <p className="text-gray-500 dark:text-white/60">Loading...</p>
         </div>
       }>
         <LoginForm />
