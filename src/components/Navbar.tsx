@@ -18,7 +18,7 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => {
       window.removeEventListener("resize", handleResize)
-      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("scroll", handleScroll, { passive: true } as EventListenerOptions)
     }
   }, [])
 
