@@ -2,6 +2,7 @@
 
 import { QuestionItem } from './QuestionCard';
 import PdfThumbnail from './PdfThumbnail';
+import { useTheme } from '@/context/ThemeContext';
 
 interface PaperPreviewProps {
   items: QuestionItem[];
@@ -24,11 +25,13 @@ interface PaperPreviewProps {
 /** A4 aspect ratio: 210 × 297 mm ≈ 1 : 1.4142 */
 const A4_RATIO = 297 / 210;
 
-import { useTheme } from '@/context/ThemeContext'
-
-export default function PaperPreview(props: PaperPreviewProps) {
+export default function PaperPreview({
+  items, testTitle, onRemove, onMoveUp, onMoveDown, onClearAll,
+  onGenerate, generating, onTitleChange, worksheetUrl, markschemeUrl,
+  onDownloadQP, onDownloadMS, pdfProgress, error,
+}: PaperPreviewProps) {
   const { theme } = useTheme();
-  const totalMarks = props.items.length * 4;
+  const totalMarks = items.length * 4;
   const bg = theme === 'dark' ? 'bg-gray-800/80' : 'bg-white';
   const border = theme === 'dark' ? 'border-gray-700' : 'border-gray-200';
   const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
