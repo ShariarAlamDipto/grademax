@@ -2,8 +2,6 @@
 
 import { QuestionItem } from './QuestionCard';
 import PdfThumbnail from './PdfThumbnail';
-import { useTheme } from '@/context/ThemeContext';
-
 interface PaperPreviewProps {
   items: QuestionItem[];
   testTitle: string;
@@ -30,16 +28,9 @@ export default function PaperPreview({
   onGenerate, generating, onTitleChange, worksheetUrl, markschemeUrl,
   onDownloadQP, onDownloadMS, pdfProgress, error,
 }: PaperPreviewProps) {
-  const { theme } = useTheme();
   const totalMarks = items.length * 4;
-  const bg = theme === 'dark' ? 'bg-gray-800/80' : 'bg-white';
-  const border = theme === 'dark' ? 'border-gray-700' : 'border-gray-200';
-  const text = theme === 'dark' ? 'text-white' : 'text-gray-900';
-  const btn = theme === 'dark' ? 'bg-blue-600 hover:bg-blue-700 text-white' : 'bg-blue-500 hover:bg-blue-600 text-white';
-  const btnOutline = theme === 'dark' ? 'bg-gray-800 hover:bg-gray-700 text-white border border-gray-700' : 'bg-gray-100 hover:bg-gray-200 text-gray-900 border border-gray-300';
-  const btnDanger = theme === 'dark' ? 'text-red-400 hover:text-red-300' : 'text-red-600 hover:text-red-400';
   return (
-    <div className={`${bg} ${border} rounded-xl flex flex-col h-full overflow-hidden ${text}`}> 
+    <div className="bg-white dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 rounded-xl flex flex-col h-full overflow-hidden text-gray-900 dark:text-white"> 
       {/* ── Header ── */}
       <div className="shrink-0 p-4 border-b border-gray-700">
         <div className="flex items-center justify-between mb-3">
