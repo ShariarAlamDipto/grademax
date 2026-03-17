@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useContext, useEffect, useState, type FC, type ReactNode } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 export type Theme = 'dark' | 'light';
 
@@ -9,16 +9,26 @@ interface ThemeContextProps {
   toggleTheme: () => void;
 }
 
-const ThemeContext = createContext<ThemeContextProps | undefined>(undefined);
+// Default value so useContext never returns undefined (safe for SSR)
+const ThemeContext = createContext<ThemeContextProps>({
+  theme: 'dark',
+  setTheme: () => {},
+  toggleTheme: () => {},
+});
 
-export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
-  const [theme, setThemeState] = useState<Theme>(() => {
-    if (typeof window !== 'undefined') {
-      return (localStorage.getItem('theme') as Theme) || 'dark';
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
+  // Start with 'dark' — no localStorage access during SSR
+  const [theme, setThemeState] = useState<Theme>('dark');
+
+  // Read stored preference on the client after mount
+  useEffect(() => {
+    const stored = localStorage.getItem('theme') as Theme | null;
+    if (stored === 'dark' || stored === 'light') {
+      setThemeState(stored);
     }
-    return 'dark';
-  });
+  }, []);
 
+  // Apply theme class and persist
   useEffect(() => {
     document.documentElement.classList.remove('dark', 'light');
     document.documentElement.classList.add(theme);
@@ -33,10 +43,8 @@ export const ThemeProvider: FC<{ children: ReactNode }> = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
-};
+}
 
-export const useTheme = () => {
-  const ctx = useContext(ThemeContext);
-  if (!ctx) throw new Error('useTheme must be used within ThemeProvider');
-  return ctx;
-};
+export function useTheme(): ThemeContextProps {
+  return useContext(ThemeContext);
+}
