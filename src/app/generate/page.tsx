@@ -4,6 +4,9 @@ import WorksheetGenerator from "@/components/generate/WorksheetGenerator"
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
+// Only show these subjects in the worksheet generator (others are not ready yet)
+const ALLOWED_WORKSHEET_SUBJECTS = ['Mathematics B', 'Physics', 'Pure Mathematics', 'Chemistry', 'Biology']
+
 export default async function GeneratePage() {
   const supabase = createClient(supabaseUrl, supabaseKey)
 
@@ -13,7 +16,9 @@ export default async function GeneratePage() {
     .select("id, name, code, level, board")
     .order("name")
 
-  const subjectList = subjects || []
+  const subjectList = (subjects || []).filter(s =>
+    ALLOWED_WORKSHEET_SUBJECTS.some(allowed => s.name.includes(allowed))
+  )
   const firstSubjectId = subjectList[0]?.id
 
   let initialTopics: { id: string; code: string; name: string; description?: string }[] = []
