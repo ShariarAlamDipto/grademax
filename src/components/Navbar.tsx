@@ -103,10 +103,7 @@ export default function Navbar() {
                 <Link
                   href={href}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors"
-                  style={{ color: "#9CA3AF" }}
-                  onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
-                  onMouseLeave={e => (e.currentTarget.style.color = "#9CA3AF")}
+                  className="gm-link block px-3 py-2.5 rounded-lg text-sm font-medium"
                 >
                   {label}
                 </Link>
