@@ -19,20 +19,6 @@
 	transition: color 0.3s, filter 0.3s, background 0.8s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* Light mode override: green → emerald → green (no white, stays visible on light bg) */
-html.light .gradient-hover-sea {
-	color: #16a34a;
-}
-html.light .gradient-hover-sea:hover {
-	background: linear-gradient(270deg, #16a34a 0%, #059669 50%, #16a34a 100%);
-	background-size: 200% 200%;
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
-	color: transparent;
-	animation: gradient-move-greenwhite-loop 6s linear infinite;
-	filter: drop-shadow(0 0 8px #16a34a);
-}
 
 @keyframes gradient-move-greenwhite-loop {
 	0% {

@@ -1,7 +1,6 @@
 "use client"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import ThemeToggle from "./ThemeToggle"
 import NavAuthSection from "./NavAuthSection"
 
 export default function Navbar() {
@@ -47,9 +46,8 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right side: theme toggle + auth + hamburger */}
+        {/* Right side: auth + hamburger */}
         <div className="flex items-center gap-2">
-          <ThemeToggle />
           <NavAuthSection />
 
           {/* Hamburger — mobile only */}
