@@ -1,6 +1,7 @@
 // src/app/page.tsx
 import LazyWorryCatcher from "@/components/LazyWorryCatcher"
 import SubjectGrid from "@/components/SubjectGrid"
+import FeatureCards from "@/components/FeatureCards"
 import Link from "next/link"
 
 const igcseSubjects = [
@@ -20,13 +21,13 @@ const ialSubjects = [
 
 export default function Home() {
   return (
-    <main style={{ background: "#060912", color: "#EDF0F7", minHeight: "100vh" }}>
+    <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
 
       {/* ════════════════════════════════════════
           § 1  HERO
           ════════════════════════════════════════ */}
       <section style={{
-        minHeight: "calc(100vh - 60px)",
+        minHeight: "calc(100vh - 68px)",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
@@ -40,7 +41,7 @@ export default function Home() {
         <div aria-hidden style={{
           position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
           width: "900px", height: "500px",
-          background: "radial-gradient(ellipse at 50% -10%, rgba(110,168,254,0.07) 0%, rgba(245,158,11,0.03) 40%, transparent 70%)",
+          background: "radial-gradient(ellipse at 50% -10%, rgba(110,168,254,0.08) 0%, rgba(245,158,11,0.03) 40%, transparent 70%)",
           pointerEvents: "none",
         }} />
         <div aria-hidden style={{
@@ -50,16 +51,16 @@ export default function Home() {
           pointerEvents: "none",
         }} />
 
-        <div style={{ position: "relative", zIndex: 1, maxWidth: "780px", width: "100%" }}>
+        <div style={{ position: "relative", zIndex: 1, maxWidth: "820px", width: "100%" }}>
           {/* Main headline */}
           <h1
             className="hero-line-1"
             style={{
-              fontSize: "clamp(3.5rem, 9vw, 6.5rem)",
+              fontSize: "clamp(3.2rem, 9vw, 6.5rem)",
               fontWeight: 800,
               lineHeight: 1.0,
               letterSpacing: "-0.04em",
-              color: "#EDF0F7",
+              color: "var(--gm-text)",
               marginBottom: "0.1em",
             }}
           >
@@ -68,7 +69,7 @@ export default function Home() {
           <h1
             className="hero-line-2"
             style={{
-              fontSize: "clamp(3.5rem, 9vw, 6.5rem)",
+              fontSize: "clamp(3.2rem, 9vw, 6.5rem)",
               fontWeight: 800,
               lineHeight: 1.0,
               letterSpacing: "-0.04em",
@@ -82,27 +83,28 @@ export default function Home() {
             simplified.
           </h1>
 
-          {/* Subtitle */}
+          {/* Subtitle — white text with subtle separators */}
           <p
             className="hero-sub"
             style={{
-              fontSize: "clamp(0.8rem, 2vw, 0.95rem)",
-              color: "#6B7280",
-              letterSpacing: "0.12em",
+              fontSize: "clamp(0.82rem, 2vw, 1rem)",
+              color: "var(--gm-text)",
+              letterSpacing: "0.10em",
               textTransform: "uppercase",
-              fontWeight: 500,
+              fontWeight: 600,
               marginBottom: "2.5rem",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               gap: "0.75rem",
               flexWrap: "wrap",
+              opacity: 0.85,
             }}
           >
             <span>Past Papers</span>
-            <span style={{ color: "#243048" }}>|</span>
+            <span style={{ color: "var(--gm-border-2)", opacity: 0.6 }}>|</span>
             <span>Chapterwise Worksheets</span>
-            <span style={{ color: "#243048" }}>|</span>
+            <span style={{ color: "var(--gm-border-2)", opacity: 0.6 }}>|</span>
             <span>Test Builder</span>
           </p>
 
@@ -111,7 +113,7 @@ export default function Home() {
             <Link href="/generate" className="btn-beacon beacon-pulse">
               Generate Worksheet
             </Link>
-            <Link href="/past-papers" className="btn-ghost-blue">
+            <Link href="/past-papers" className="btn-ghost-amber">
               Browse Past Papers
             </Link>
           </div>
@@ -119,21 +121,42 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          § 2  SUBJECTS — float from center
+          § 2  FEATURE CARDS
           ════════════════════════════════════════ */}
       <section style={{
-        borderTop: "1px solid rgba(255,255,255,0.04)",
-        background: "#060912",
+        borderTop: "1px solid var(--gm-border)",
+        background: "var(--gm-surface)",
+        padding: "4rem 1.5rem",
+      }}>
+        <div style={{ maxWidth: "1080px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.5rem" }}>
+              Everything you need
+            </p>
+            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+              Three tools. One platform.
+            </h2>
+          </div>
+          <FeatureCards />
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          § 3  SUBJECTS — float from center
+          ════════════════════════════════════════ */}
+      <section style={{
+        borderTop: "1px solid var(--gm-border)",
+        background: "var(--gm-bg)",
         padding: "5rem 1.5rem",
       }}>
         <div style={{ maxWidth: "1080px", margin: "0 auto" }}>
 
           {/* Section header */}
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#F59E0B", marginBottom: "0.75rem" }}>
+            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.75rem" }}>
               Edexcel · IGCSE &amp; A Level
             </p>
-            <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.2rem)", fontWeight: 800, color: "#EDF0F7", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+            <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.2rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
               Choose your subject
             </h2>
           </div>
@@ -149,8 +172,8 @@ export default function Home() {
           </div>
 
           {/* View all link */}
-          <div style={{ textAlign: "center", paddingTop: "2rem", borderTop: "1px solid rgba(255,255,255,0.04)" }}>
-            <Link href="/subjects" style={{ fontSize: "0.8rem", color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }} className="gm-link">
+          <div style={{ textAlign: "center", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
+            <Link href="/subjects" style={{ fontSize: "0.8rem", color: "var(--gm-text-3)", textDecoration: "none", transition: "color 0.15s" }} className="gm-link">
               View all subjects →
             </Link>
           </div>
@@ -158,13 +181,13 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          § 3  WORRY CATCHER
+          § 4  WORRY CATCHER
           ════════════════════════════════════════ */}
-      <section style={{ borderTop: "1px solid rgba(255,255,255,0.04)", padding: "4rem 1.5rem" }}>
-        <p style={{ textAlign: "center", fontSize: "0.85rem", fontWeight: 600, color: "#EDF0F7", marginBottom: "0.35rem" }}>
+      <section style={{ borderTop: "1px solid var(--gm-border)", padding: "4rem 1.5rem", background: "var(--gm-surface)" }}>
+        <p style={{ textAlign: "center", fontSize: "0.9rem", fontWeight: 600, color: "var(--gm-text)", marginBottom: "0.35rem" }}>
           Stressed about exams?
         </p>
-        <p style={{ textAlign: "center", color: "#6B7280", fontSize: "0.75rem", marginBottom: "1.75rem" }}>
+        <p style={{ textAlign: "center", color: "var(--gm-text-3)", fontSize: "0.78rem", marginBottom: "1.75rem" }}>
           Click on your worries to catch them.
         </p>
         <LazyWorryCatcher />
@@ -174,13 +197,13 @@ export default function Home() {
           SEO — hidden prose for crawlers
           ════════════════════════════════════════ */}
       <section style={{ padding: "2rem 1.5rem 1rem", maxWidth: "680px", margin: "0 auto" }} aria-hidden="true">
-        <p style={{ fontSize: "0.75rem", color: "#1A2235", lineHeight: 1.8, textAlign: "center" }}>
+        <p style={{ fontSize: "0.75rem", color: "var(--gm-border-2)", lineHeight: 1.8, textAlign: "center" }}>
           GradeMax provides free{" "}
           <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses-and-edexcel-certificates.html"
-            target="_blank" rel="noopener noreferrer" style={{ color: "#1A2235" }}>Pearson Edexcel IGCSE</a>{" "}
+            target="_blank" rel="noopener noreferrer" style={{ color: "var(--gm-border-2)" }}>Pearson Edexcel IGCSE</a>{" "}
           and{" "}
           <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels.html"
-            target="_blank" rel="noopener noreferrer" style={{ color: "#1A2235" }}>International A Level</a>{" "}
+            target="_blank" rel="noopener noreferrer" style={{ color: "var(--gm-border-2)" }}>International A Level</a>{" "}
           past papers with mark schemes from 2010–2025. Topic-wise practice for Physics, Maths, Chemistry, Biology and ICT.
           Generate custom worksheets from real Pearson Edexcel exam questions.
         </p>

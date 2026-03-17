@@ -49,18 +49,18 @@ export default async function PastPapersPage() {
   const ial  = availableSubjects.filter((s) => s.level === "ial")
 
   return (
-    <main style={{ background: "#000000", color: "#E5E7EB", minHeight: "100vh" }}>
+    <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
       <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
 
         {/* Header */}
         <div style={{ marginBottom: "3rem" }}>
-          <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#F59E0B", marginBottom: "0.75rem" }}>
+          <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.75rem" }}>
             Pearson Edexcel
           </p>
-          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
+          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
             Past Papers
           </h1>
-          <p style={{ color: "#9CA3AF", fontSize: "0.9rem", maxWidth: "480px", lineHeight: 1.6 }}>
+          <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", maxWidth: "480px", lineHeight: 1.6 }}>
             Free Edexcel IGCSE and A Level past papers with mark schemes, organised by year and session.
           </p>
         </div>
@@ -69,10 +69,10 @@ export default async function PastPapersPage() {
         {igcse.length > 0 && (
           <section style={{ marginBottom: "3rem" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
-              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 IGCSE
               </h2>
-              <span style={{ fontSize: "0.7rem", color: "#6B7280" }}>{igcse.length} subjects</span>
+              <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)" }}>{igcse.length} subjects</span>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.625rem" }}>
               {igcse.map((s) => (
@@ -81,7 +81,7 @@ export default async function PastPapersPage() {
                   href={`/past-papers/${s.slug}`}
                   className={`subject-card ${accentMap[s.colorKey]}`}
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{s.name}</p>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{s.name}</p>
                   <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 600, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
                     Edexcel IGCSE
                   </p>
@@ -95,10 +95,10 @@ export default async function PastPapersPage() {
         {ial.length > 0 && (
           <section style={{ marginBottom: "3rem" }}>
             <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
-              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                 A Level (IAL)
               </h2>
-              <span style={{ fontSize: "0.7rem", color: "#6B7280" }}>{ial.length} subjects</span>
+              <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)" }}>{ial.length} subjects</span>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "0.625rem" }}>
               {ial.map((s) => (
@@ -107,7 +107,7 @@ export default async function PastPapersPage() {
                   href={`/past-papers/${s.slug}`}
                   className={`subject-card ${accentMap[s.colorKey]}`}
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{s.name}</p>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{s.name}</p>
                   <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 600, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
                     Edexcel A Level
                   </p>
@@ -118,15 +118,15 @@ export default async function PastPapersPage() {
         )}
 
         {availableSubjects.length === 0 && (
-          <div style={{ textAlign: "center", padding: "5rem 0", color: "#6B7280" }}>
-            <p style={{ fontSize: "1rem", fontWeight: 600, color: "#9CA3AF", marginBottom: "0.5rem" }}>No papers available yet</p>
+          <div style={{ textAlign: "center", padding: "5rem 0", color: "var(--gm-text-3)" }}>
+            <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--gm-text-2)", marginBottom: "0.5rem" }}>No papers available yet</p>
             <p style={{ fontSize: "0.85rem" }}>Papers are being uploaded. Check back soon.</p>
           </div>
         )}
 
         {/* Divider + CTA */}
-        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
-          <p style={{ fontSize: "0.8rem", color: "#6B7280", lineHeight: 1.6 }}>
+        <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "2rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+          <p style={{ fontSize: "0.8rem", color: "var(--gm-text-3)", lineHeight: 1.6 }}>
             Want to practice by topic instead of by year?
           </p>
           <Link href="/subjects" className="btn-ghost-blue" style={{ fontSize: "0.8rem", padding: "0.5rem 1.25rem", minHeight: "36px" }}>

@@ -47,12 +47,25 @@ async function buildCoverPage(
   const black = rgb(0, 0, 0);
   const gray = rgb(0.4, 0.4, 0.4);
 
+  // ── "GradeMax Exams" header — sized to span 70% of page width ──
+  const headerText = 'GradeMax Exams';
+  const targetW = width * 0.70;
+  const headerSize = targetW / bold.widthOfTextAtSize(headerText, 1);
+  const headerW = bold.widthOfTextAtSize(headerText, headerSize);
+  page.drawText(headerText, {
+    x: (width - headerW) / 2,
+    y: height - 160,
+    size: headerSize,
+    font: bold,
+    color: rgb(0, 0, 0),
+  });
+
   // ── Centered label ──
   const typeLabel = opts.type === 'markscheme' ? 'MARK SCHEME' : 'QUESTION PAPER';
   const labelW = bold.widthOfTextAtSize(typeLabel, 11);
   page.drawText(typeLabel, {
     x: (width - labelW) / 2,
-    y: height - 200,
+    y: height - 210,
     size: 11,
     font: bold,
     color: gray,
@@ -64,7 +77,7 @@ async function buildCoverPage(
   const titleW = bold.widthOfTextAtSize(displayTitle, titleSize);
   page.drawText(displayTitle, {
     x: (width - titleW) / 2,
-    y: height - 250,
+    y: height - 260,
     size: titleSize,
     font: bold,
     color: black,

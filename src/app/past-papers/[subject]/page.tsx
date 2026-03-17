@@ -269,97 +269,116 @@ export default async function SubjectPapersPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <main className="min-h-screen bg-black text-white">
-        {/* Sticky header */}
-        <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky top-0 z-10">
-          <div className="max-w-5xl mx-auto px-6 py-4 flex items-center gap-4">
-            <Link
-              href="/past-papers"
-              className="text-white/60 hover:text-white transition-colors text-sm"
-            >
+      <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
+        {/* Header */}
+        <div style={{ borderBottom: "1px solid var(--gm-border)", background: "var(--gm-nav-bg)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", position: "sticky", top: "68px", zIndex: 10 }}>
+          <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", gap: "0.875rem", flexWrap: "wrap" }}>
+            <Link href="/past-papers" className="gm-link" style={{ fontSize: "0.82rem" }}>
               ← Past Papers
             </Link>
-            <span className="text-white/20">|</span>
-            <h1 className="text-lg font-bold">{subj.name}</h1>
-            <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${colorClass}`}>
+            <span style={{ color: "var(--gm-border-2)" }}>|</span>
+            <h1 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--gm-text)", margin: 0 }}>{subj.name}</h1>
+            <span style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.08em", padding: "0.2rem 0.625rem", borderRadius: "99px", background: "var(--gm-blue-bg)", color: "var(--gm-blue)", border: "1px solid var(--gm-blue-ring)" }}>
               Edexcel {level}
             </span>
           </div>
         </div>
 
-        <div className="max-w-5xl mx-auto px-6 py-10">
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
           {/* Page Title */}
-          <div className="mb-10">
-            <h2 className="text-3xl font-extrabold mb-2">{subj.name} Past Papers</h2>
-            <p className="text-white/50">
-              Download free Edexcel {level} {subj.name} question papers and mark schemes.
+          <div style={{ marginBottom: "2.5rem" }}>
+            <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.2rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.5rem" }}>
+              {subj.name} Past Papers
+            </h2>
+            <p style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>
+              Free Edexcel {level} {subj.name} question papers and mark schemes.
             </p>
           </div>
 
           {/* Empty State */}
           {yearGroups.length === 0 && (
-            <div style={{ textAlign: "center", padding: "5rem 0", color: "#6B7280" }}>
-              <p style={{ fontSize: "1rem", fontWeight: 600, color: "#9CA3AF", marginBottom: "0.5rem" }}>No papers available yet</p>
+            <div style={{ textAlign: "center", padding: "5rem 0", color: "var(--gm-text-3)" }}>
+              <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--gm-text-2)", marginBottom: "0.5rem" }}>No papers available yet</p>
               <p style={{ fontSize: "0.85rem" }}>Papers for {subj.name} will be uploaded soon.</p>
             </div>
           )}
 
           {/* Year Groups */}
-          <div className="space-y-6">
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {yearGroups.map((yg) => (
               <details
                 key={yg.year}
-                className="group bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden"
+                style={{ background: "var(--gm-card-bg)", border: "1px solid var(--gm-border-2)", borderRadius: "1rem", overflow: "hidden" }}
                 open={yg.year >= new Date().getFullYear() - 2}
               >
-                <summary className="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-white/[0.03] transition-colors select-none">
-                  <span className="text-xl font-bold">{yg.year}</span>
-                  <span className="text-white/30 text-sm group-open:rotate-180 transition-transform">▼</span>
+                <summary style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem 1.25rem", cursor: "pointer", userSelect: "none", listStyle: "none" }}>
+                  <span style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--gm-text)" }}>{yg.year}</span>
+                  <span style={{ color: "var(--gm-text-3)", fontSize: "0.75rem" }}>▼</span>
                 </summary>
 
-                <div className="px-6 pb-5 space-y-6">
+                <div style={{ padding: "0 1.25rem 1.25rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                   {yg.sessions.map((sess) => (
                     <div key={sess.season}>
-                      {/* Session header with link to dedicated session page */}
-                      <div className="flex items-center justify-between border-b border-white/5 pb-2 mb-3">
-                        <h3 className="text-sm font-semibold text-white/50 uppercase tracking-wider">
+                      {/* Session header */}
+                      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", borderBottom: "1px solid var(--gm-border)", paddingBottom: "0.5rem", marginBottom: "0.75rem" }}>
+                        <h3 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text-2)", textTransform: "uppercase", letterSpacing: "0.1em" }}>
                           {sess.displaySeason}
                         </h3>
                         <Link
                           href={`/past-papers/${slug}/${yg.year}/${sess.season}`}
-                          className="text-xs text-white/30 hover:text-white/60 transition-colors"
+                          className="gm-link"
+                          style={{ fontSize: "0.72rem" }}
                         >
-                          View session page →
+                          Session page →
                         </Link>
                       </div>
 
-                      <div className="space-y-2">
+                      <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                         {sess.papers.map((paper) => (
                           <div
                             key={paper.id}
-                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-white/[0.02] rounded-lg px-4 py-3 hover:bg-white/[0.05] transition-colors"
+                            style={{
+                              display: "flex",
+                              flexWrap: "wrap",
+                              alignItems: "center",
+                              justifyContent: "space-between",
+                              gap: "0.5rem",
+                              background: "var(--gm-surface)",
+                              borderRadius: "0.625rem",
+                              padding: "0.75rem 1rem",
+                              border: "1px solid var(--gm-border)",
+                            }}
                           >
-                            <span className="font-medium text-sm">Paper {paper.paper_number}</span>
+                            <span style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)" }}>Paper {paper.paper_number}</span>
 
-                            <div className="flex gap-2 flex-wrap">
+                            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                               {paper.pdf_url ? (
                                 <a
                                   href={paper.pdf_url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg
-                                             bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30
-                                             hover:bg-blue-500/25 transition-colors"
+                                  style={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: "0.35rem",
+                                    padding: "0.35rem 0.75rem",
+                                    fontSize: "0.75rem",
+                                    fontWeight: 600,
+                                    borderRadius: "0.5rem",
+                                    background: "var(--gm-blue-bg)",
+                                    color: "var(--gm-blue)",
+                                    border: "1px solid var(--gm-blue-ring)",
+                                    textDecoration: "none",
+                                    transition: "background 0.15s",
+                                  }}
                                 >
-                                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                   </svg>
-                                  <span className="hidden sm:inline">Question Paper</span>
-                                  <span className="sm:hidden">QP</span>
+                                  Question Paper
                                 </a>
                               ) : (
-                                <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">QP —</span>
+                                <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", padding: "0.35rem 0.75rem" }}>QP —</span>
                               )}
 
                               {paper.markscheme_pdf_url ? (
@@ -367,19 +386,28 @@ export default async function SubjectPapersPage({
                                   href={paper.markscheme_pdf_url}
                                   target="_blank"
                                   rel="noopener noreferrer"
-                                  className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg
-                                             bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30
-                                             hover:bg-emerald-500/25 transition-colors"
+                                  style={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: "0.35rem",
+                                    padding: "0.35rem 0.75rem",
+                                    fontSize: "0.75rem",
+                                    fontWeight: 600,
+                                    borderRadius: "0.5rem",
+                                    background: "var(--gm-green-bg)",
+                                    color: "var(--gm-green)",
+                                    border: "1px solid rgba(52,211,153,0.25)",
+                                    textDecoration: "none",
+                                    transition: "background 0.15s",
+                                  }}
                                 >
-                                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round"
-                                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                   </svg>
-                                  <span className="hidden sm:inline">Mark Scheme</span>
-                                  <span className="sm:hidden">MS</span>
+                                  Mark Scheme
                                 </a>
                               ) : (
-                                <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">MS —</span>
+                                <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", padding: "0.35rem 0.75rem" }}>MS —</span>
                               )}
                             </div>
                           </div>

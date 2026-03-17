@@ -56,26 +56,38 @@ async function buildCoverPage(
   const bold = await doc.embedFont(StandardFonts.TimesRomanBold);
   const regular = await doc.embedFont(StandardFonts.TimesRoman);
   const black = rgb(0, 0, 0);
-  const gray = rgb(0.4, 0.4, 0.4);
 
-  // ── Centered label at top ──
+  // ── "GradeMax Exams" header — sized to span 70% of page width ──
+  const headerText = 'GradeMax Exams';
+  const targetW = width * 0.70;
+  const headerSize = targetW / bold.widthOfTextAtSize(headerText, 1);
+  const headerW = bold.widthOfTextAtSize(headerText, headerSize);
+  page.drawText(headerText, {
+    x: (width - headerW) / 2,
+    y: height - 180,
+    size: headerSize,
+    font: bold,
+    color: black,
+  });
+
+  // ── Type label (QUESTION PAPER / MARK SCHEME) ──
   const typeLabel = opts.type === 'markscheme' ? 'MARK SCHEME' : 'QUESTION PAPER';
   const labelW = bold.widthOfTextAtSize(typeLabel, 11);
   page.drawText(typeLabel, {
     x: (width - labelW) / 2,
-    y: height - 200,
+    y: height - 220,
     size: 11,
     font: bold,
-    color: gray,
+    color: black,
   });
 
-  // ── Title ──
+  // ── Test title ──
   const displayTitle = opts.title || 'Untitled Test';
   const titleSize = displayTitle.length > 30 ? 22 : 28;
   const titleW = bold.widthOfTextAtSize(displayTitle, titleSize);
   page.drawText(displayTitle, {
     x: (width - titleW) / 2,
-    y: height - 250,
+    y: height - 270,
     size: titleSize,
     font: bold,
     color: black,
@@ -87,10 +99,10 @@ async function buildCoverPage(
     const subW = regular.widthOfTextAtSize(subjectLine, 12);
     page.drawText(subjectLine, {
       x: (width - subW) / 2,
-      y: height - 280,
+      y: height - 300,
       size: 12,
       font: regular,
-      color: gray,
+      color: black,
     });
   }
 
@@ -98,33 +110,28 @@ async function buildCoverPage(
   const ruleW = 260;
   page.drawRectangle({
     x: (width - ruleW) / 2,
-    y: height - 310,
+    y: height - 330,
     width: ruleW,
     height: 0.5,
-    color: rgb(0.7, 0.7, 0.7),
+    color: black,
   });
 
-  // ── Fields: Name, Total Marks, Marks Received ──
-  const fieldStartY = height - 370;
+  // ── Fields: Name, Total Marks (empty), Marks Received (empty) ──
+  const fieldStartY = height - 390;
   const fieldGap = 45;
   const labelX = (width - ruleW) / 2;
   const lineStartX = labelX + 130;
   const lineEndX = labelX + ruleW;
 
-  const drawField = (label: string, value: string | null, y: number) => {
+  const drawField = (label: string, y: number) => {
     page.drawText(label, { x: labelX, y, size: 13, font: regular, color: black });
-    if (value) {
-      const vw = bold.widthOfTextAtSize(value, 13);
-      page.drawText(value, { x: lineEndX - vw, y, size: 13, font: bold, color: black });
-    } else {
-      // Draw underline for fill-in
-      page.drawRectangle({ x: lineStartX, y: y - 2, width: lineEndX - lineStartX, height: 0.5, color: rgb(0.6, 0.6, 0.6) });
-    }
+    // Empty underline for all fields
+    page.drawRectangle({ x: lineStartX, y: y - 2, width: lineEndX - lineStartX, height: 0.5, color: black });
   };
 
-  drawField('Name:', null, fieldStartY);
-  drawField('Total Marks:', String(opts.totalMarks), fieldStartY - fieldGap);
-  drawField('Marks Received:', null, fieldStartY - fieldGap * 2);
+  drawField('Name:', fieldStartY);
+  drawField('Total Marks:', fieldStartY - fieldGap);
+  drawField('Marks Received:', fieldStartY - fieldGap * 2);
 
   // ── Bottom branding ──
   const brand = 'GradeMax';
@@ -134,7 +141,7 @@ async function buildCoverPage(
     y: 40,
     size: 9,
     font: regular,
-    color: rgb(0.7, 0.7, 0.7),
+    color: black,
   });
 }
 
@@ -210,7 +217,7 @@ export async function GET(
       subjectCode: testData.subjects?.code || '',
       level: testData.subjects?.level || '',
       totalQuestions: testData.total_questions || items.length,
-      totalMarks: items.length * 4,
+      totalMarks: 0,
       type,
     });
 

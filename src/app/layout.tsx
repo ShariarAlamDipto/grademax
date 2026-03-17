@@ -7,6 +7,7 @@ import { Playfair_Display } from 'next/font/google'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
+import { ThemeProvider } from '@/context/ThemeContext'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700'], display: 'swap' });
 
@@ -270,32 +271,31 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const appBg = process.env.NEXT_PUBLIC_APP_BG ?? '#060912'
-  const appText = process.env.NEXT_PUBLIC_APP_TEXT ?? '#EDF0F7'
-
   return (
-    <html lang="en" className={`${playfair.className} dark`}>
+    <html lang="en" className={playfair.className}>
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        {/* Theme init — runs before paint to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');document.documentElement.classList.add(t==='light'?'light':'dark');}catch(e){document.documentElement.classList.add('dark');}})();`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body
-        style={{
-          ['--app-bg' as string]: appBg,
-          ['--app-text' as string]: appText,
-        }}
-        className="min-h-screen flex flex-col bg-[var(--app-bg)] text-[var(--app-text)]"
-      >
+      <body className="min-h-screen flex flex-col" style={{ background: 'var(--gm-bg)', color: 'var(--gm-text)' }}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
-        <AuthProvider>
-          <Navbar />
-          <div id="main-content" className="pt-[60px] flex-1">{children}</div>
-          <Footer />
-        </AuthProvider>
+        <ThemeProvider>
+          <AuthProvider>
+            <Navbar />
+            <div id="main-content" className="pt-[68px] flex-1">{children}</div>
+            <Footer />
+          </AuthProvider>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>
