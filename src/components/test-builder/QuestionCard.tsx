@@ -41,7 +41,7 @@ interface QuestionCardProps {
 export default function QuestionCard({ question, isInBasket, onAdd, onRemove, onPreview }: QuestionCardProps) {
   return (
     <div
-      className={`bg-gray-800/80 border rounded-xl overflow-hidden transition-all hover:shadow-lg ${
+      className={`bg-gradient-to-br from-slate-900/90 to-slate-800/80 border rounded-2xl overflow-hidden transition-all shadow-[0_14px_32px_-26px_rgba(15,23,42,0.95)] hover:-translate-y-0.5 hover:shadow-[0_22px_40px_-24px_rgba(30,41,59,0.95)] ${
         isInBasket ? 'border-blue-500/50 bg-blue-900/20' : 'border-gray-700 hover:border-gray-500'
       }`}
     >
@@ -55,7 +55,7 @@ export default function QuestionCard({ question, isInBasket, onAdd, onRemove, on
         </div>
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-center justify-center">
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-gray-900 px-3 py-1.5 rounded-lg text-xs font-semibold shadow-lg">
+          <span className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/95 text-gray-900 px-3 py-1.5 rounded-xl text-xs font-semibold shadow-lg">
             Preview Question
           </span>
         </div>

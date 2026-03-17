@@ -318,7 +318,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
         </div>
 
         {/* Subject Selection */}
-        <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-4 md:p-6 mb-6">
+        <div className="bg-gradient-to-br from-slate-900/90 via-slate-900/75 to-slate-800/75 backdrop-blur-lg rounded-2xl border border-slate-700/70 shadow-[0_16px_40px_-24px_rgba(15,23,42,0.95)] p-4 md:p-6 mb-6">
           <h2 className="text-lg font-bold text-white mb-4">Select Subject</h2>
           <SubjectSelector
             subjects={initialSubjects}
@@ -332,7 +332,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           
           {/* ═══ LEFT COLUMN: Topics + Filters ═══ */}
           <div className="space-y-4">
-            <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-4">
+            <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/80 backdrop-blur-lg rounded-2xl border border-slate-700/70 shadow-[0_14px_35px_-24px_rgba(15,23,42,0.9)] p-4">
               <h2 className="text-base font-bold text-white mb-3">Topics</h2>
               <TopicTree
                 topics={topics}
@@ -344,7 +344,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               />
             </div>
 
-            <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-4">
+            <div className="bg-gradient-to-br from-slate-900/90 to-slate-800/80 backdrop-blur-lg rounded-2xl border border-slate-700/70 shadow-[0_14px_35px_-24px_rgba(15,23,42,0.9)] p-4">
               <FilterBar
                 difficulty={difficulty}
                 onDifficultyChange={setDifficulty}
@@ -358,7 +358,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             <button
               onClick={() => fetchQuestions(1)}
               disabled={loadingQuestions}
-              className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 text-white py-3 rounded-2xl font-bold text-sm shadow-[0_14px_30px_-16px_rgba(37,99,235,0.85)] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loadingQuestions ? 'Searching...' : 'Search Questions'}
             </button>
@@ -367,13 +367,13 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           {/* ═══ CENTER COLUMN: Question Browser ═══ */}
           <div className="min-w-0">
             {error && (
-              <div className="bg-red-900/60 border border-red-500/50 rounded-xl p-4 mb-4">
+              <div className="bg-red-900/55 border border-red-500/55 rounded-2xl p-4 mb-4">
                 <p className="text-red-300 text-sm">{error}</p>
               </div>
             )}
 
             {!searchTriggered && !loadingQuestions && (
-              <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-8 text-center">
+              <div className="bg-gradient-to-br from-slate-900/85 to-slate-800/75 backdrop-blur-lg rounded-2xl border border-slate-700/70 p-8 text-center">
                 <svg className="w-16 h-16 text-gray-600 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
@@ -385,7 +385,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             )}
 
             {loadingQuestions && (
-              <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-8 text-center">
+              <div className="bg-gradient-to-br from-slate-900/85 to-slate-800/75 backdrop-blur-lg rounded-2xl border border-slate-700/70 p-8 text-center">
                 <div className="animate-spin rounded-full h-10 w-10 border-b-2 border-blue-400 mx-auto mb-4"></div>
                 <p className="text-gray-400 text-sm">Searching questions...</p>
               </div>
@@ -464,7 +464,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                 )}
 
                 {questions.length === 0 && pagination.total === 0 && (
-                  <div className="bg-gray-800/40 rounded-xl p-8 text-center">
+                  <div className="bg-slate-800/50 rounded-2xl p-8 text-center border border-slate-700/70">
                     <p className="text-gray-400 text-sm">
                       No questions match your current filters. Try selecting different topics or adjusting filters.
                     </p>

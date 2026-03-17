@@ -58,13 +58,28 @@ async function buildCoverPage(
     color: gray,
   });
 
+  // ── Brand title (70% width) ──
+  const brandTitle = 'GradeMax Exams';
+  const targetWidth = width * 0.7;
+  const baseWidth = bold.widthOfTextAtSize(brandTitle, 1);
+  const computedBrandSize = targetWidth / baseWidth;
+  const brandSize = Math.max(28, Math.min(56, computedBrandSize));
+  const brandW = bold.widthOfTextAtSize(brandTitle, brandSize);
+  page.drawText(brandTitle, {
+    x: (width - brandW) / 2,
+    y: height - 250,
+    size: brandSize,
+    font: bold,
+    color: black,
+  });
+
   // ── Title ──
   const displayTitle = opts.title || 'Untitled Test';
-  const titleSize = displayTitle.length > 30 ? 22 : 28;
+  const titleSize = displayTitle.length > 30 ? 16 : 20;
   const titleW = bold.widthOfTextAtSize(displayTitle, titleSize);
   page.drawText(displayTitle, {
     x: (width - titleW) / 2,
-    y: height - 250,
+    y: height - 305,
     size: titleSize,
     font: bold,
     color: black,
@@ -76,7 +91,7 @@ async function buildCoverPage(
     const subW = regular.widthOfTextAtSize(subjectLine, 12);
     page.drawText(subjectLine, {
       x: (width - subW) / 2,
-      y: height - 280,
+      y: height - 330,
       size: 12,
       font: regular,
       color: gray,
@@ -87,14 +102,14 @@ async function buildCoverPage(
   const ruleW = 260;
   page.drawRectangle({
     x: (width - ruleW) / 2,
-    y: height - 310,
+    y: height - 350,
     width: ruleW,
     height: 0.5,
     color: rgb(0.7, 0.7, 0.7),
   });
 
   // ── Fields: Name, Total Marks, Marks Received ──
-  const fieldStartY = height - 370;
+  const fieldStartY = height - 410;
   const fieldGap = 45;
   const labelX = (width - ruleW) / 2;
   const lineStartX = labelX + 130;
@@ -111,14 +126,15 @@ async function buildCoverPage(
   };
 
   drawField('Name:', null, fieldStartY);
-  drawField('Total Marks:', String(opts.totalMarks), fieldStartY - fieldGap);
+  // Keep mark fields intentionally blank: current mark calculation is not reliable.
+  drawField('Total Marks:', null, fieldStartY - fieldGap);
   drawField('Marks Received:', null, fieldStartY - fieldGap * 2);
 
   // ── Bottom branding ──
   const brand = 'GradeMax';
-  const brandW = regular.widthOfTextAtSize(brand, 9);
+  const footerBrandW = regular.widthOfTextAtSize(brand, 9);
   page.drawText(brand, {
-    x: (width - brandW) / 2,
+    x: (width - footerBrandW) / 2,
     y: 40,
     size: 9,
     font: regular,
