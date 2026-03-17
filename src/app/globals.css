@@ -216,3 +216,67 @@ body {
 
 /* ── Section divider ── */
 .gm-divider { border-top: 1px solid var(--gm-border); }
+
+/* ── Hover-only link utilities (no JS needed) ── */
+.gm-link {
+  color: #6B7280;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.gm-link:hover { color: #E5E7EB; }
+
+.gm-link-blue {
+  color: #6B7280;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.gm-link-blue:hover { color: #6EA8FE; }
+
+/* Subject / Catalog card hover */
+.subject-card {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 0.875rem;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.subject-card:hover {
+  transform: translateY(-3px);
+}
+
+/* Per-subject accent colours on hover */
+.subject-card.accent-orange:hover  { border-color: #F97316; }
+.subject-card.accent-blue:hover    { border-color: #6EA8FE; }
+.subject-card.accent-green:hover   { border-color: #34D399; }
+.subject-card.accent-cyan:hover    { border-color: #22D3EE; }
+.subject-card.accent-violet:hover  { border-color: #A78BFA; }
+.subject-card.accent-amber:hover   { border-color: #F59E0B; }
+.subject-card.accent-pink:hover    { border-color: #F472B6; }
+
+/* Topic pill */
+.topic-pill {
+  background: #000000;
+  border: 1px solid #333333;
+  border-radius: 99px;
+  padding: 0.4rem 1rem;
+  font-size: 0.78rem;
+  color: #9CA3AF;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.topic-pill:hover {
+  border-color: #6EA8FE;
+  color: #E5E7EB;
+}
+
+/* Quick footer/page links */
+.quick-link {
+  color: #6B7280;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.quick-link:hover { color: #E5E7EB; }

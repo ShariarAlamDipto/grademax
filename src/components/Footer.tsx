@@ -4,15 +4,11 @@ export default function Footer() {
   return (
     <footer
       aria-label="Site footer"
-      style={{
-        background: "#0B1020",
-        borderTop: "1px solid #1F2937",
-        color: "#9CA3AF",
-      }}
+      style={{ background: "#0B1020", borderTop: "1px solid #1F2937", color: "#9CA3AF" }}
     >
       <div style={{ maxWidth: "1080px", margin: "0 auto", padding: "3.5rem 1.5rem 2rem" }}>
 
-        {/* Top row */}
+        {/* Link grid */}
         <div
           style={{
             display: "grid",
@@ -29,19 +25,14 @@ export default function Footer() {
             <p style={{ fontSize: "0.8rem", lineHeight: 1.65, color: "#6B7280", marginBottom: "1rem" }}>
               Free Edexcel IGCSE &amp; A Level past papers with mark schemes.
             </p>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
-              {[
-                ["/about",             "About Us"],
-                ["/contact",           "Contact"],
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {([
+                ["/about",              "About Us"],
+                ["/contact",            "Contact"],
                 ["/edexcel-past-papers","Edexcel Past Papers"],
                 ["/edexcel-worksheets", "Worksheet Generator"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
-                  >{label}</Link>
-                </li>
+              ] as [string, string][]).map(([href, label]) => (
+                <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}
             </ul>
           </div>
@@ -51,26 +42,21 @@ export default function Footer() {
             <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               IGCSE Past Papers
             </p>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
-              {[
-                ["/subjects/igcse/physics",    "Physics (4PH1)"],
-                ["/subjects/igcse/maths-a",    "Maths A (4MA1)"],
-                ["/subjects/igcse/maths-b",    "Maths B (4MB1)"],
-                ["/subjects/igcse/chemistry",  "Chemistry (4CH1)"],
-                ["/subjects/igcse/biology",    "Biology (4BI1)"],
-                ["/subjects/igcse/ict",        "ICT (4IT1)"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
-                  >{label}</Link>
-                </li>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {([
+                ["/subjects/igcse/physics",   "Physics (4PH1)"],
+                ["/subjects/igcse/maths-a",   "Maths A (4MA1)"],
+                ["/subjects/igcse/maths-b",   "Maths B (4MB1)"],
+                ["/subjects/igcse/chemistry", "Chemistry (4CH1)"],
+                ["/subjects/igcse/biology",   "Biology (4BI1)"],
+                ["/subjects/igcse/ict",       "ICT (4IT1)"],
+              ] as [string, string][]).map(([href, label]) => (
+                <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}
-              <li>
-                <Link href="/edexcel-igcse-past-papers"
-                  style={{ color: "#6EA8FE", fontSize: "0.75rem", textDecoration: "none", marginTop: "0.25rem", display: "inline-block" }}
-                >View all IGCSE →</Link>
+              <li style={{ marginTop: "0.25rem" }}>
+                <Link href="/edexcel-igcse-past-papers" style={{ color: "#6EA8FE", fontSize: "0.75rem", textDecoration: "none" }}>
+                  View all IGCSE →
+                </Link>
               </li>
             </ul>
           </div>
@@ -80,23 +66,18 @@ export default function Footer() {
             <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               A Level Past Papers
             </p>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
-              {[
-                ["/subjects/ial/pure-mathematics-1", "Pure Maths 1 (WMA11)"],
-                ["/subjects/ial/mechanics-1",        "Mechanics 1 (WME01)"],
-                ["/subjects/ial/statistics-1",       "Statistics 1 (WST01)"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
-                  >{label}</Link>
-                </li>
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {([
+                ["/subjects/ial/pure-mathematics-1","Pure Maths 1 (WMA11)"],
+                ["/subjects/ial/mechanics-1",       "Mechanics 1 (WME01)"],
+                ["/subjects/ial/statistics-1",      "Statistics 1 (WST01)"],
+              ] as [string, string][]).map(([href, label]) => (
+                <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}
-              <li>
-                <Link href="/edexcel-a-level-past-papers"
-                  style={{ color: "#A78BFA", fontSize: "0.75rem", textDecoration: "none", marginTop: "0.25rem", display: "inline-block" }}
-                >View all A Level →</Link>
+              <li style={{ marginTop: "0.25rem" }}>
+                <Link href="/edexcel-a-level-past-papers" style={{ color: "#A78BFA", fontSize: "0.75rem", textDecoration: "none" }}>
+                  View all A Level →
+                </Link>
               </li>
             </ul>
           </div>
@@ -106,20 +87,15 @@ export default function Footer() {
             <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               Features
             </p>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
-              {[
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {([
                 ["/generate",    "Worksheet Generator"],
                 ["/test-builder","Test Builder"],
                 ["/browse",      "Browse by Topic"],
                 ["/past-papers", "Past Papers by Year"],
                 ["/subjects",    "All Subjects"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
-                  >{label}</Link>
-                </li>
+              ] as [string, string][]).map(([href, label]) => (
+                <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}
             </ul>
           </div>
@@ -129,17 +105,12 @@ export default function Footer() {
             <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
               Legal
             </p>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
-              {[
+            <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              {([
                 ["/privacy","Privacy Policy"],
                 ["/terms",  "Terms of Service"],
-              ].map(([href, label]) => (
-                <li key={href}>
-                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
-                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
-                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
-                  >{label}</Link>
-                </li>
+              ] as [string, string][]).map(([href, label]) => (
+                <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}
             </ul>
           </div>
@@ -150,8 +121,7 @@ export default function Footer() {
           <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.7, maxWidth: "780px", margin: "0 auto", textAlign: "center" }}>
             GradeMax is a free platform for Edexcel IGCSE and A Level past papers, question papers, and
             mark schemes. Practice topic-wise questions for Physics, Mathematics, Chemistry, Biology, and ICT.
-            Generate custom worksheets from real Pearson Edexcel exam papers. All resources are free — no
-            sign-up required.
+            Generate custom worksheets from real Pearson Edexcel exam papers. All resources are free — no sign-up required.
           </p>
         </div>
 
