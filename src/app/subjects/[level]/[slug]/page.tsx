@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { 
+import {
   getSubjectBySlug,
   seoSubjects,
   getLevelDisplay,
@@ -27,14 +27,10 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const resolvedParams = await params
-  const { level, slug } = resolvedParams
-  
+  const { level, slug } = await params
   if (!isValidLevel(level)) return {}
-  
   const subject = getSubjectBySlug(level, slug)
   if (!subject) return {}
-  
   return {
     title: subject.metaTitle,
     description: subject.metaDescription,
@@ -58,234 +54,232 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 }
 
 export default async function SubjectPage({ params }: PageProps) {
-  const resolvedParams = await params
-  const { level, slug } = resolvedParams
-  
-  if (!isValidLevel(level)) {
-    notFound()
-  }
-  
+  const { level, slug } = await params
+  if (!isValidLevel(level)) notFound()
   const subject = getSubjectBySlug(level, slug)
-  if (!subject) {
-    notFound()
-  }
-  
+  if (!subject) notFound()
+
   const levelDisplay = getLevelDisplay(level)
   const schema = generateSubjectPageSchema(subject)
-  
+  const accentColor = level === 'ial' ? '#A78BFA' : '#6EA8FE'
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-      />
-      
-      <main className="min-h-screen bg-black text-white">
-        {/* Breadcrumb */}
-        <nav className="max-w-6xl mx-auto px-4 py-4 text-sm text-gray-400">
-          <ol className="flex items-center gap-2 flex-wrap">
-            <li><Link href="/" className="hover:text-white">Home</Link></li>
-            <li>/</li>
-            <li><Link href={`/subjects/${level}`} className="hover:text-white">{levelDisplay}</Link></li>
-            <li>/</li>
-            <li className="text-white">{subject.name}</li>
-          </ol>
-        </nav>
-        
-        {/* Hero Section */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+
+      <main style={{ background: "#000000", color: "#E5E7EB", minHeight: "100vh" }}>
+
+        {/* ── Hero ── */}
+        <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem 2rem" }}>
+
+          {/* Breadcrumb */}
+          <nav style={{ marginBottom: "1.75rem" }}>
+            <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", listStyle: "none", padding: 0, margin: 0 }}>
+              <li><Link href="/" className="gm-link" style={{ fontSize: "0.78rem" }}>Home</Link></li>
+              <li style={{ color: "#374151", fontSize: "0.78rem" }}>/</li>
+              <li><Link href={`/subjects/${level}`} className="gm-link" style={{ fontSize: "0.78rem" }}>{levelDisplay}</Link></li>
+              <li style={{ color: "#374151", fontSize: "0.78rem" }}>/</li>
+              <li style={{ fontSize: "0.78rem", color: "#9CA3AF" }}>{subject.name}</li>
+            </ol>
+          </nav>
+
+          {/* Badges */}
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+            <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor, background: `${accentColor}18`, border: `1px solid ${accentColor}30`, borderRadius: "99px", padding: "0.25rem 0.75rem" }}>
               {subject.examBoard}
             </span>
-            <span className="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+            <span style={{ fontSize: "0.65rem", fontWeight: 600, color: "#6B7280", background: "#111827", border: "1px solid #1F2937", borderRadius: "99px", padding: "0.25rem 0.75rem" }}>
               {subject.examCode}
             </span>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+
+          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "1rem" }}>
             {subject.h1}
           </h1>
-          
-          <p className="text-xl text-gray-300 max-w-4xl mb-8">
+          <p style={{ color: "#9CA3AF", fontSize: "0.95rem", lineHeight: 1.7, maxWidth: "600px", marginBottom: "2rem" }}>
             {subject.longDescription}
           </p>
-          
-          {/* Quick Stats */}
-          <div className="flex flex-wrap gap-6 text-sm mb-8">
-            <div className="bg-gray-900 rounded-lg px-4 py-3">
-              <span className="text-2xl font-bold text-white">{subject.topics.length}</span>
-              <span className="ml-2 text-gray-400">Topics</span>
-            </div>
-            <div className="bg-gray-900 rounded-lg px-4 py-3">
-              <span className="text-2xl font-bold text-white">{subject.yearsAvailable.length}</span>
-              <span className="ml-2 text-gray-400">Years of Papers</span>
-            </div>
-            <div className="bg-gray-900 rounded-lg px-4 py-3">
-              <span className="text-2xl font-bold text-white">{subject.yearsAvailable[0]}</span>
-              <span className="mx-1 text-gray-500">-</span>
-              <span className="text-2xl font-bold text-white">{subject.yearsAvailable[subject.yearsAvailable.length - 1]}</span>
-              <span className="ml-2 text-gray-400">Coverage</span>
-            </div>
+
+          {/* Stats */}
+          <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap", paddingBottom: "2rem", borderBottom: "1px solid #1F2937", marginBottom: "2rem" }}>
+            {([
+              { val: subject.topics.length.toString(), label: "Topics" },
+              { val: subject.yearsAvailable.length.toString(), label: "Years of Papers" },
+              { val: `${subject.yearsAvailable[0]}–${subject.yearsAvailable[subject.yearsAvailable.length - 1]}`, label: "Coverage" },
+            ] as { val: string; label: string }[]).map(s => (
+              <div key={s.label}>
+                <p style={{ fontSize: "1.1rem", fontWeight: 800, color: "#E5E7EB", lineHeight: 1 }}>{s.val}</p>
+                <p style={{ fontSize: "0.65rem", color: "#6B7280", marginTop: "0.25rem", letterSpacing: "0.04em" }}>{s.label}</p>
+              </div>
+            ))}
           </div>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4">
-            <Link 
-              href={`/generate?subject=${slug}&level=${level}`}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
+
+          {/* CTAs */}
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap" }}>
+            <Link href={`/generate?subject=${slug}&level=${level}`} className="btn-beacon">
               Generate Worksheet
             </Link>
-            <Link 
-              href={`/browse?subject=${slug}`}
-              className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              Browse Questions
-            </Link>
-            <Link 
-              href={`/past-papers/${slug}`}
-              className="border border-gray-700 hover:border-gray-500 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
+            <Link href={`/past-papers/${slug}`} className="btn-ghost-blue">
               Past Papers
+            </Link>
+            <Link href={`/browse?subject=${slug}`} style={{ color: "#6B7280", fontSize: "0.875rem", fontWeight: 500, display: "inline-flex", alignItems: "center", padding: "0 0.5rem" }} className="gm-link">
+              Browse Questions →
             </Link>
           </div>
         </section>
-        
-        {/* Topics Section */}
-        <section className="px-4 md:px-8 py-12 bg-gray-950">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">
-              {subject.levelDisplay} {subject.name} Topics
+
+        {/* ── Topics ── */}
+        <section style={{ background: "#0B1020", borderTop: "1px solid #1F2937", borderBottom: "1px solid #1F2937", padding: "3rem 1.5rem" }}>
+          <div style={{ maxWidth: "1040px", margin: "0 auto" }}>
+            <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+              {levelDisplay} {subject.name} Topics
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-4">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "0.625rem" }}>
               {subject.topics.map((topic, index) => (
                 <Link
                   key={topic.code}
                   href={`/subjects/${level}/${slug}/${topic.slug}`}
-                  className="group bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-gray-600 transition-all"
+                  style={{
+                    background: "#000000",
+                    border: "1px solid #1F2937",
+                    borderRadius: "0.875rem",
+                    padding: "1rem",
+                    display: "flex",
+                    gap: "0.875rem",
+                    textDecoration: "none",
+                    transition: "border-color 0.2s ease",
+                    alignItems: "flex-start",
+                  }}
+                  className="gm-card"
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="bg-blue-600/20 text-blue-400 w-10 h-10 rounded-lg flex items-center justify-center font-bold shrink-0">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-lg group-hover:text-blue-400 transition-colors">
-                        {topic.name}
-                      </h3>
-                      <p className="text-gray-400 text-sm mt-1">
-                        {topic.description}
-                      </p>
-                      <div className="flex flex-wrap gap-1 mt-3">
-                        {topic.keywords.slice(0, 3).map(keyword => (
-                          <span 
-                            key={keyword}
-                            className="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded"
-                          >
-                            {keyword}
+                  <span style={{ fontSize: "0.7rem", fontWeight: 800, color: accentColor, background: `${accentColor}18`, width: "28px", height: "28px", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    {index + 1}
+                  </span>
+                  <div>
+                    <p style={{ fontSize: "0.85rem", fontWeight: 600, color: "#E5E7EB", marginBottom: "0.25rem" }}>{topic.name}</p>
+                    <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5 }}>{topic.description}</p>
+                    {topic.keywords.length > 0 && (
+                      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", marginTop: "0.625rem" }}>
+                        {topic.keywords.slice(0, 3).map(kw => (
+                          <span key={kw} style={{ fontSize: "0.6rem", color: "#4B5563", background: "#111827", border: "1px solid #1F2937", borderRadius: "4px", padding: "0.1rem 0.4rem" }}>
+                            {kw}
                           </span>
                         ))}
                       </div>
-                    </div>
+                    )}
                   </div>
                 </Link>
               ))}
             </div>
           </div>
         </section>
-        
-        {/* Past Papers by Year */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">
-            Past Papers by Year
-          </h2>
-          
-          <div className="flex flex-wrap gap-3">
+
+        {/* ── Past Papers by Year ── */}
+        <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
+          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1.25rem", flexWrap: "wrap", gap: "0.5rem" }}>
+            <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+              Past Papers by Year
+            </h2>
+            <Link href={`/past-papers/${slug}`} style={{ fontSize: "0.72rem", color: "#6B7280", textDecoration: "none" }}>
+              View all →
+            </Link>
+          </div>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
             {subject.yearsAvailable.slice().reverse().map(year => (
               <Link
                 key={year}
                 href={`/past-papers/${slug}`}
-                className="bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-600 px-4 py-2 rounded-lg transition-colors"
+                style={{
+                  background: "#000000",
+                  border: "1px solid #333333",
+                  borderRadius: "0.5rem",
+                  padding: "0.4rem 0.875rem",
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  color: "#9CA3AF",
+                  textDecoration: "none",
+                  transition: "border-color 0.15s ease, color 0.15s ease",
+                }}
+                className="topic-pill"
               >
                 {year}
               </Link>
             ))}
           </div>
         </section>
-        
-        {/* FAQ Section */}
-        <section className="px-4 md:px-8 py-12 bg-gray-950">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">
-              Frequently Asked Questions
+
+        {/* ── FAQ ── */}
+        <section style={{ background: "#0B1020", borderTop: "1px solid #1F2937", padding: "3rem 1.5rem" }}>
+          <div style={{ maxWidth: "640px", margin: "0 auto" }}>
+            <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+              Common Questions
             </h2>
-            
-            <div className="space-y-4">
-              {subject.faqs.map((faq, index) => (
-                <details 
-                  key={index}
-                  className="group bg-gray-900 rounded-lg border border-gray-800"
-                >
-                  <summary className="flex items-center justify-between p-5 cursor-pointer list-none">
-                    <h3 className="font-semibold pr-4">{faq.question}</h3>
-                    <svg 
-                      className="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            <div>
+              {subject.faqs.map((faq, i, arr) => (
+                <details key={i} style={{ borderBottom: i < arr.length - 1 ? "1px solid #1F2937" : "none" }}>
+                  <summary style={{ padding: "1rem 0", cursor: "pointer", fontSize: "0.875rem", fontWeight: 500, color: "#E5E7EB", display: "flex", justifyContent: "space-between", alignItems: "center", listStyle: "none", userSelect: "none", gap: "1rem" }}>
+                    {faq.question}
+                    <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#6B7280" strokeWidth={2.5} style={{ flexShrink: 0 }}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <div className="px-5 pb-5 text-gray-400">
+                  <p style={{ padding: "0 0 1rem", fontSize: "0.845rem", color: "#9CA3AF", lineHeight: 1.75 }}>
                     {faq.answer}
-                  </div>
+                  </p>
                 </details>
               ))}
             </div>
           </div>
         </section>
-        
-        {/* Related Subjects */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold mb-8">Related Subjects</h2>
-          
-          <div className="grid md:grid-cols-3 gap-4">
+
+        {/* ── Related Subjects ── */}
+        <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+            Related Subjects
+          </h2>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "0.625rem" }}>
             {seoSubjects
               .filter(s => s.level === level && s.slug !== slug)
               .slice(0, 3)
-              .map(relatedSubject => (
+              .map(rel => (
                 <Link
-                  key={relatedSubject.slug}
-                  href={`/subjects/${level}/${relatedSubject.slug}`}
-                  className="bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-gray-600 transition-all"
+                  key={rel.slug}
+                  href={`/subjects/${level}/${rel.slug}`}
+                  style={{
+                    background: "#000000",
+                    border: "1px solid #333333",
+                    borderRadius: "0.875rem",
+                    padding: "1rem",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "0.35rem",
+                    textDecoration: "none",
+                  }}
+                  className="gm-card"
                 >
-                  <h3 className="font-semibold mb-2">{relatedSubject.name}</h3>
-                  <p className="text-gray-400 text-sm">{relatedSubject.shortDescription}</p>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{rel.name}</p>
+                  <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5 }}>{rel.shortDescription}</p>
                 </Link>
               ))}
           </div>
         </section>
-        
-        {/* Bottom CTA */}
-        <section className="px-4 md:px-8 py-16 max-w-6xl mx-auto">
-          <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-2xl p-8 md:p-12 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Start Practicing {subject.name} Now
+
+        {/* ── Bottom CTA ── */}
+        <section style={{ background: "#0B1020", borderTop: "1px solid #1F2937", padding: "3rem 1.5rem" }}>
+          <div style={{ maxWidth: "480px", margin: "0 auto", textAlign: "center" }}>
+            <h2 style={{ fontSize: "1.2rem", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", marginBottom: "0.75rem" }}>
+              Start practising {subject.name} now
             </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Generate custom worksheets from real {subject.levelDisplay} {subject.name} past papers. 
+            <p style={{ fontSize: "0.85rem", color: "#9CA3AF", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+              Generate custom worksheets from real {levelDisplay} {subject.name} past papers.
               Focus on your weak topics and ace your exams.
             </p>
-            <Link 
-              href={`/generate?subject=${slug}&level=${level}`}
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
-            >
+            <Link href={`/generate?subject=${slug}&level=${level}`} className="btn-beacon">
               Generate Free Worksheet
             </Link>
           </div>
         </section>
+
       </main>
     </>
   )
