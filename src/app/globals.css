@@ -117,3 +117,268 @@ body.design-profile-conversion {
 .design-profile-conversion .gm-list-row:hover {
 	background: color-mix(in srgb, var(--gm-surface) 85%, transparent);
 }
+
+/* Global remap for existing Tailwind color classes across untouched pages */
+.design-profile-conversion .bg-black {
+	background-color: var(--gm-bg) !important;
+}
+
+.design-profile-conversion .bg-gray-950,
+.design-profile-conversion .bg-gray-900,
+.design-profile-conversion .bg-gray-800,
+.design-profile-conversion .bg-gray-700,
+.design-profile-conversion .dark\:bg-gray-950,
+.design-profile-conversion .dark\:bg-gray-900,
+.design-profile-conversion .dark\:bg-gray-800 {
+	background-color: var(--gm-surface) !important;
+}
+
+.design-profile-conversion .text-white,
+.design-profile-conversion .dark\:text-white {
+	color: var(--gm-text-primary) !important;
+}
+
+.design-profile-conversion .text-gray-300,
+.design-profile-conversion .text-gray-400,
+.design-profile-conversion .text-gray-500,
+.design-profile-conversion .dark\:text-gray-300,
+.design-profile-conversion .dark\:text-gray-400,
+.design-profile-conversion .dark\:text-gray-500 {
+	color: var(--gm-text-secondary) !important;
+}
+
+.design-profile-conversion .border-gray-950,
+.design-profile-conversion .border-gray-900,
+.design-profile-conversion .border-gray-800,
+.design-profile-conversion .border-gray-700,
+.design-profile-conversion .border-gray-600,
+.design-profile-conversion .dark\:border-gray-800,
+.design-profile-conversion .dark\:border-gray-700,
+.design-profile-conversion .dark\:border-white\/10,
+.design-profile-conversion .border-white\/10 {
+	border-color: color-mix(in srgb, var(--gm-border) 70%, transparent) !important;
+}
+
+.design-profile-conversion .bg-blue-600,
+.design-profile-conversion .bg-blue-500,
+.design-profile-conversion .hover\:bg-blue-700:hover,
+.design-profile-conversion .hover\:bg-blue-600:hover {
+	background-color: var(--gm-primary) !important;
+	color: #07101f !important;
+}
+
+.design-profile-conversion .bg-emerald-500,
+.design-profile-conversion .bg-emerald-600,
+.design-profile-conversion .bg-green-500,
+.design-profile-conversion .bg-green-600,
+.design-profile-conversion .hover\:bg-green-600:hover,
+.design-profile-conversion .hover\:bg-green-700:hover {
+	background-color: var(--gm-premium) !important;
+	color: #1a1204 !important;
+}
+
+.design-profile-conversion .focus\:border-blue-500:focus,
+.design-profile-conversion .focus\:ring-blue-500:focus,
+.design-profile-conversion .focus\:ring-blue-400\/40:focus {
+	border-color: var(--gm-focus) !important;
+	box-shadow: 0 0 0 3px color-mix(in srgb, var(--gm-focus) 25%, transparent) !important;
+}
+
+.design-profile-conversion .text-red-300,
+.design-profile-conversion .text-red-400,
+.design-profile-conversion .text-red-600,
+.design-profile-conversion .text-red-700,
+.design-profile-conversion .text-red-800 {
+	color: var(--gm-error) !important;
+}
+
+.design-profile-conversion .text-green-300,
+.design-profile-conversion .text-green-400 {
+	color: var(--gm-success) !important;
+}
+
+.design-profile-conversion .bg-red-900\/50,
+.design-profile-conversion .bg-red-900\/60,
+.design-profile-conversion .bg-red-900 {
+	background-color: color-mix(in srgb, var(--gm-error) 18%, var(--gm-surface)) !important;
+}
+
+/* Comprehensive fallback remap for untouched pages that still use Tailwind palette utilities */
+.design-profile-conversion [class*="bg-slate-"],
+.design-profile-conversion [class*="bg-gray-"],
+.design-profile-conversion [class*="bg-zinc-"],
+.design-profile-conversion [class*="bg-neutral-"] {
+	background-color: var(--gm-surface) !important;
+}
+
+.design-profile-conversion [class*="text-gray-"],
+.design-profile-conversion [class*="text-slate-"] {
+	color: var(--gm-text-secondary) !important;
+}
+
+.design-profile-conversion [class*="text-blue-"],
+.design-profile-conversion [class*="text-indigo-"],
+.design-profile-conversion [class*="text-violet-"],
+.design-profile-conversion [class*="text-purple-"],
+.design-profile-conversion [class*="text-sky-"],
+.design-profile-conversion [class*="text-cyan-"] {
+	color: var(--gm-primary) !important;
+}
+
+.design-profile-conversion [class*="text-amber-"],
+.design-profile-conversion [class*="text-yellow-"],
+.design-profile-conversion [class*="text-orange-"] {
+	color: var(--gm-premium) !important;
+}
+
+.design-profile-conversion [class*="text-green-"],
+.design-profile-conversion [class*="text-emerald-"] {
+	color: var(--gm-success) !important;
+}
+
+.design-profile-conversion [class*="text-red-"],
+.design-profile-conversion [class*="text-rose-"] {
+	color: var(--gm-error) !important;
+}
+
+.design-profile-conversion [class*="bg-blue-"],
+.design-profile-conversion [class*="bg-indigo-"],
+.design-profile-conversion [class*="bg-violet-"],
+.design-profile-conversion [class*="bg-purple-"],
+.design-profile-conversion [class*="bg-sky-"],
+.design-profile-conversion [class*="bg-cyan-"] {
+	background-color: var(--gm-primary) !important;
+	color: #07101f !important;
+}
+
+.design-profile-conversion [class*="bg-amber-"],
+.design-profile-conversion [class*="bg-yellow-"],
+.design-profile-conversion [class*="bg-orange-"] {
+	background-color: var(--gm-premium) !important;
+	color: #1a1204 !important;
+}
+
+.design-profile-conversion [class*="bg-green-"],
+.design-profile-conversion [class*="bg-emerald-"] {
+	background-color: color-mix(in srgb, var(--gm-success) 78%, var(--gm-surface)) !important;
+	color: #05130f !important;
+}
+
+.design-profile-conversion [class*="bg-red-"],
+.design-profile-conversion [class*="bg-rose-"] {
+	background-color: color-mix(in srgb, var(--gm-error) 75%, var(--gm-surface)) !important;
+	color: #200708 !important;
+}
+
+.design-profile-conversion [class*="border-gray-"],
+.design-profile-conversion [class*="border-slate-"],
+.design-profile-conversion [class*="border-zinc-"],
+.design-profile-conversion [class*="border-neutral-"] {
+	border-color: color-mix(in srgb, var(--gm-border) 70%, transparent) !important;
+}
+
+.design-profile-conversion [class*="border-blue-"],
+.design-profile-conversion [class*="border-indigo-"],
+.design-profile-conversion [class*="border-violet-"],
+.design-profile-conversion [class*="border-purple-"],
+.design-profile-conversion [class*="border-sky-"],
+.design-profile-conversion [class*="border-cyan-"] {
+	border-color: color-mix(in srgb, var(--gm-primary) 72%, var(--gm-border)) !important;
+}
+
+.design-profile-conversion [class*="border-amber-"],
+.design-profile-conversion [class*="border-yellow-"],
+.design-profile-conversion [class*="border-orange-"] {
+	border-color: color-mix(in srgb, var(--gm-premium) 70%, var(--gm-border)) !important;
+}
+
+.design-profile-conversion [class*="border-green-"],
+.design-profile-conversion [class*="border-emerald-"] {
+	border-color: color-mix(in srgb, var(--gm-success) 68%, var(--gm-border)) !important;
+}
+
+.design-profile-conversion [class*="border-red-"],
+.design-profile-conversion [class*="border-rose-"] {
+	border-color: color-mix(in srgb, var(--gm-error) 68%, var(--gm-border)) !important;
+}
+
+.design-profile-conversion [class*="ring-blue-"],
+.design-profile-conversion [class*="ring-indigo-"],
+.design-profile-conversion [class*="ring-violet-"],
+.design-profile-conversion [class*="ring-purple-"],
+.design-profile-conversion [class*="ring-sky-"],
+.design-profile-conversion [class*="ring-cyan-"] {
+	--tw-ring-color: color-mix(in srgb, var(--gm-focus) 55%, transparent) !important;
+}
+
+.design-profile-conversion [class*="ring-green-"],
+.design-profile-conversion [class*="ring-emerald-"] {
+	--tw-ring-color: color-mix(in srgb, var(--gm-success) 52%, transparent) !important;
+}
+
+.design-profile-conversion [class*="ring-red-"],
+.design-profile-conversion [class*="ring-rose-"] {
+	--tw-ring-color: color-mix(in srgb, var(--gm-error) 52%, transparent) !important;
+}
+
+.design-profile-conversion [class*="ring-amber-"],
+.design-profile-conversion [class*="ring-orange-"] {
+	--tw-ring-color: color-mix(in srgb, var(--gm-premium) 52%, transparent) !important;
+}
+
+/* Keep gradient accents aligned with conversion palette */
+.design-profile-conversion [class*="from-blue-"],
+.design-profile-conversion [class*="from-indigo-"],
+.design-profile-conversion [class*="from-violet-"],
+.design-profile-conversion [class*="from-purple-"],
+.design-profile-conversion [class*="from-sky-"] {
+	--tw-gradient-from: color-mix(in srgb, var(--gm-primary) 90%, black) !important;
+	--tw-gradient-to: color-mix(in srgb, var(--gm-primary) 0%, transparent) !important;
+}
+
+.design-profile-conversion [class*="via-blue-"],
+.design-profile-conversion [class*="via-slate-"] {
+	--tw-gradient-via: color-mix(in srgb, var(--gm-primary) 55%, var(--gm-surface)) !important;
+}
+
+.design-profile-conversion [class*="to-blue-"],
+.design-profile-conversion [class*="to-indigo-"],
+.design-profile-conversion [class*="to-violet-"],
+.design-profile-conversion [class*="to-purple-"] {
+	--tw-gradient-to: color-mix(in srgb, var(--gm-primary) 65%, var(--gm-surface)) !important;
+}
+
+.design-profile-conversion [class*="from-green-"],
+.design-profile-conversion [class*="from-emerald-"] {
+	--tw-gradient-from: color-mix(in srgb, var(--gm-success) 82%, black) !important;
+	--tw-gradient-to: color-mix(in srgb, var(--gm-success) 0%, transparent) !important;
+}
+
+.design-profile-conversion [class*="to-green-"],
+.design-profile-conversion [class*="to-emerald-"] {
+	--tw-gradient-to: color-mix(in srgb, var(--gm-success) 55%, var(--gm-surface)) !important;
+}
+
+.design-profile-conversion [class*="from-red-"],
+.design-profile-conversion [class*="from-rose-"] {
+	--tw-gradient-from: color-mix(in srgb, var(--gm-error) 82%, black) !important;
+	--tw-gradient-to: color-mix(in srgb, var(--gm-error) 0%, transparent) !important;
+}
+
+.design-profile-conversion [class*="to-red-"],
+.design-profile-conversion [class*="to-rose-"] {
+	--tw-gradient-to: color-mix(in srgb, var(--gm-error) 58%, var(--gm-surface)) !important;
+}
+
+.design-profile-conversion [class*="from-amber-"],
+.design-profile-conversion [class*="from-yellow-"],
+.design-profile-conversion [class*="from-orange-"] {
+	--tw-gradient-from: color-mix(in srgb, var(--gm-premium) 86%, black) !important;
+	--tw-gradient-to: color-mix(in srgb, var(--gm-premium) 0%, transparent) !important;
+}
+
+.design-profile-conversion [class*="to-amber-"],
+.design-profile-conversion [class*="to-yellow-"],
+.design-profile-conversion [class*="to-orange-"] {
+	--tw-gradient-to: color-mix(in srgb, var(--gm-premium) 60%, var(--gm-surface)) !important;
+}
