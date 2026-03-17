@@ -310,7 +310,7 @@ export default async function SubjectPapersPage({
             {yearGroups.map((yg) => (
               <details
                 key={yg.year}
-                className="group gm-surface border rounded-xl overflow-hidden"
+                className="group bg-white/[0.03] border border-white/10 rounded-xl overflow-hidden"
                 open={yg.year >= new Date().getFullYear() - 2}
               >
                 <summary className="flex items-center justify-between px-6 py-4 cursor-pointer hover:bg-white/[0.03] transition-colors select-none">
@@ -338,7 +338,7 @@ export default async function SubjectPapersPage({
                         {sess.papers.map((paper) => (
                           <div
                             key={paper.id}
-                            className="gm-list-row flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 rounded-lg px-4 py-3 transition-colors"
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-white/[0.02] rounded-lg px-4 py-3 hover:bg-white/[0.05] transition-colors"
                           >
                             <span className="font-medium text-sm">Paper {paper.paper_number}</span>
 

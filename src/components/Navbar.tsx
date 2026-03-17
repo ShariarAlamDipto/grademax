@@ -27,7 +27,7 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main navigation"
-      className="fixed top-0 left-0 w-full z-50 gm-nav bg-white/95 dark:bg-black/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-white/10 text-gray-900 dark:text-white"
+      className="fixed top-0 left-0 w-full z-50 bg-white/95 dark:bg-black/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-white/10 text-gray-900 dark:text-white"
     >
       {/* Main bar */}
       <div className="flex items-center justify-between px-4 md:px-6 py-3 md:py-4">
@@ -72,7 +72,7 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-200 dark:border-white/10 gm-surface bg-white dark:bg-gray-950 px-4 py-3">
+        <div className="md:hidden border-t border-gray-200 dark:border-white/10 bg-white dark:bg-gray-950 px-4 py-3">
           <ul className="flex flex-col gap-0.5">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
