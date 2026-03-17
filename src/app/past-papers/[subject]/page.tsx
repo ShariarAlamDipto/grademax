@@ -81,6 +81,38 @@ interface YearGroup {
   sessions: SessionGroup[]
 }
 
+const VALID_SEASONS = new Set(["jan", "jan-feb", "feb-mar", "may-jun", "oct-nov"])
+
+function normalizeSeason(season: string): string {
+  return season.trim().toLowerCase()
+}
+
+function isValidPublicUrl(url: string | null): url is string {
+  if (!url) return false
+  return /^https?:\/\//i.test(url)
+}
+
+function dedupeSessionPapers(sessionPapers: PaperRow[]): PaperRow[] {
+  const byPaperNumber = new Map<string, PaperRow>()
+
+  for (const paper of sessionPapers) {
+    const existing = byPaperNumber.get(paper.paper_number)
+    if (!existing) {
+      byPaperNumber.set(paper.paper_number, paper)
+      continue
+    }
+
+    const existingScore = Number(Boolean(existing.pdf_url)) + Number(Boolean(existing.markscheme_pdf_url))
+    const paperScore = Number(Boolean(paper.pdf_url)) + Number(Boolean(paper.markscheme_pdf_url))
+
+    if (paperScore > existingScore || (paperScore === existingScore && paper.id > existing.id)) {
+      byPaperNumber.set(paper.paper_number, paper)
+    }
+  }
+
+  return Array.from(byPaperNumber.values()).sort((a, b) => paperSort(a.paper_number, b.paper_number))
+}
+
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 
 function paperSort(a: string, b: string): number {
@@ -185,11 +217,20 @@ export default async function SubjectPapersPage({
       .from("papers")
       .select("id, paper_number, year, season, pdf_url, markscheme_pdf_url")
       .eq("subject_id", subjectRow.id)
+      .in("season", Array.from(VALID_SEASONS))
       .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
       .order("year", { ascending: false })
       .order("season", { ascending: false })
 
-    papers = (data as PaperRow[]) ?? []
+    papers = ((data as PaperRow[]) ?? [])
+      .map((paper) => ({
+        ...paper,
+        season: normalizeSeason(paper.season),
+        pdf_url: isValidPublicUrl(paper.pdf_url) ? paper.pdf_url : null,
+        markscheme_pdf_url: isValidPublicUrl(paper.markscheme_pdf_url) ? paper.markscheme_pdf_url : null,
+      }))
+      .filter((paper) => VALID_SEASONS.has(paper.season))
+      .filter((paper) => Boolean(paper.pdf_url) || Boolean(paper.markscheme_pdf_url))
   }
 
   // Group by year → season
@@ -210,9 +251,14 @@ export default async function SubjectPapersPage({
         .map(([season, sessionPapers]) => ({
           season,
           displaySeason: seasonDisplay(season),
-          papers: sessionPapers.sort((a, b) => paperSort(a.paper_number, b.paper_number)),
+          papers: dedupeSessionPapers(sessionPapers),
         })),
     }))
+    .map((group) => ({
+      ...group,
+      sessions: group.sessions.filter((session) => session.papers.length > 0),
+    }))
+    .filter((group) => group.sessions.length > 0)
 
   const jsonLd = buildJsonLd(slug, subj.name, level, yearGroups)
 
@@ -292,11 +338,11 @@ export default async function SubjectPapersPage({
                         {sess.papers.map((paper) => (
                           <div
                             key={paper.id}
-                            className="flex items-center justify-between bg-white/[0.02] rounded-lg px-4 py-3 hover:bg-white/[0.05] transition-colors"
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 bg-white/[0.02] rounded-lg px-4 py-3 hover:bg-white/[0.05] transition-colors"
                           >
                             <span className="font-medium text-sm">Paper {paper.paper_number}</span>
 
-                            <div className="flex gap-2">
+                            <div className="flex gap-2 flex-wrap">
                               {paper.pdf_url ? (
                                 <a
                                   href={paper.pdf_url}
@@ -310,7 +356,8 @@ export default async function SubjectPapersPage({
                                     <path strokeLinecap="round" strokeLinejoin="round"
                                       d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                   </svg>
-                                  Question Paper
+                                  <span className="hidden sm:inline">Question Paper</span>
+                                  <span className="sm:hidden">QP</span>
                                 </a>
                               ) : (
                                 <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">QP —</span>
@@ -329,7 +376,8 @@ export default async function SubjectPapersPage({
                                     <path strokeLinecap="round" strokeLinejoin="round"
                                       d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                   </svg>
-                                  Mark Scheme
+                                  <span className="hidden sm:inline">Mark Scheme</span>
+                                  <span className="sm:hidden">MS</span>
                                 </a>
                               ) : (
                                 <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">MS —</span>
