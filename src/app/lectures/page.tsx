@@ -311,8 +311,6 @@ export default function LecturesPage() {
                         cursor: "pointer",
                         textAlign: "left",
                         color: "var(--gm-text)",
-                        border: "none",
-                        borderBottom: "1px solid var(--gm-border)",
                       }}
                     >
                       <h2 style={{ fontSize: "0.95rem", fontWeight: 700, display: "flex", alignItems: "center", gap: "0.5rem", margin: 0 }}>
