@@ -270,8 +270,8 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const appBg = process.env.NEXT_PUBLIC_APP_BG ?? '#ffffff'
-  const appText = process.env.NEXT_PUBLIC_APP_TEXT ?? '#111827'
+  const appBg = process.env.NEXT_PUBLIC_APP_BG ?? '#000000'
+  const appText = process.env.NEXT_PUBLIC_APP_TEXT ?? '#f5f7ff'
 
   return (
     <html lang="en" className={`${playfair.className} dark`}>
