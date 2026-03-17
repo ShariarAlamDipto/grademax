@@ -2,93 +2,169 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer aria-label="Site footer" className="bg-gray-50 dark:bg-gray-950 border-t border-gray-200 dark:border-gray-800">
-      <div className="max-w-6xl mx-auto px-4 py-10">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
+    <footer
+      aria-label="Site footer"
+      style={{
+        background: "#0B1020",
+        borderTop: "1px solid #1F2937",
+        color: "#9CA3AF",
+      }}
+    >
+      <div style={{ maxWidth: "1080px", margin: "0 auto", padding: "3.5rem 1.5rem 2rem" }}>
 
-          {/* Company */}
+        {/* Top row */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))",
+            gap: "2rem",
+            marginBottom: "2.5rem",
+          }}
+        >
+          {/* Brand */}
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-sm">GradeMax</h3>
-            <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">
-              <li><Link href="/about" className="hover:underline underline-offset-2 transition-colors">About Us</Link></li>
-              <li><Link href="/contact" className="hover:underline underline-offset-2 transition-colors">Contact</Link></li>
-              <li><Link href="/edexcel-past-papers" className="hover:underline underline-offset-2 transition-colors">Edexcel Past Papers</Link></li>
-              <li><Link href="/edexcel-worksheets" className="hover:underline underline-offset-2 transition-colors">Worksheet Generator</Link></li>
+            <p style={{ fontWeight: 800, fontSize: "1.1rem", color: "#E5E7EB", marginBottom: "0.75rem" }}>
+              Grade<span style={{ color: "#F59E0B" }}>Max</span>
+            </p>
+            <p style={{ fontSize: "0.8rem", lineHeight: 1.65, color: "#6B7280", marginBottom: "1rem" }}>
+              Free Edexcel IGCSE &amp; A Level past papers with mark schemes.
+            </p>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
+              {[
+                ["/about",             "About Us"],
+                ["/contact",           "Contact"],
+                ["/edexcel-past-papers","Edexcel Past Papers"],
+                ["/edexcel-worksheets", "Worksheet Generator"],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
+                  >{label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* IGCSE Past Papers */}
+          {/* IGCSE */}
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-sm">IGCSE Past Papers</h3>
-            <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-              <li><Link href="/subjects/igcse/physics" className="hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Physics (4PH1)</Link></li>
-              <li><Link href="/subjects/igcse/maths-a" className="hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Maths A (4MA1)</Link></li>
-              <li><Link href="/subjects/igcse/maths-b" className="hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Maths B (4MB1)</Link></li>
-              <li><Link href="/subjects/igcse/chemistry" className="hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Chemistry (4CH1)</Link></li>
-              <li><Link href="/subjects/igcse/biology" className="hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE Biology (4BI1)</Link></li>
-              <li><Link href="/subjects/igcse/ict" className="hover:text-gray-900 dark:hover:text-white transition-colors">IGCSE ICT (4IT1)</Link></li>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+              IGCSE Past Papers
+            </p>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
+              {[
+                ["/subjects/igcse/physics",    "Physics (4PH1)"],
+                ["/subjects/igcse/maths-a",    "Maths A (4MA1)"],
+                ["/subjects/igcse/maths-b",    "Maths B (4MB1)"],
+                ["/subjects/igcse/chemistry",  "Chemistry (4CH1)"],
+                ["/subjects/igcse/biology",    "Biology (4BI1)"],
+                ["/subjects/igcse/ict",        "ICT (4IT1)"],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
+                  >{label}</Link>
+                </li>
+              ))}
               <li>
-                <Link href="/edexcel-igcse-past-papers" className="text-blue-500 hover:text-blue-600 dark:hover:text-blue-300 transition-colors text-xs mt-1 inline-block">
-                  View all IGCSE past papers →
-                </Link>
+                <Link href="/edexcel-igcse-past-papers"
+                  style={{ color: "#6EA8FE", fontSize: "0.75rem", textDecoration: "none", marginTop: "0.25rem", display: "inline-block" }}
+                >View all IGCSE →</Link>
               </li>
             </ul>
           </div>
 
-          {/* A Level Past Papers */}
+          {/* A Level */}
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-sm">A Level Past Papers</h3>
-            <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-              <li><Link href="/subjects/ial/pure-mathematics-1" className="hover:text-gray-900 dark:hover:text-white transition-colors">Pure Maths 1 (WMA11)</Link></li>
-              <li><Link href="/subjects/ial/mechanics-1" className="hover:text-gray-900 dark:hover:text-white transition-colors">Mechanics 1 (WME01)</Link></li>
-              <li><Link href="/subjects/ial/statistics-1" className="hover:text-gray-900 dark:hover:text-white transition-colors">Statistics 1 (WST01)</Link></li>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+              A Level Past Papers
+            </p>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
+              {[
+                ["/subjects/ial/pure-mathematics-1", "Pure Maths 1 (WMA11)"],
+                ["/subjects/ial/mechanics-1",        "Mechanics 1 (WME01)"],
+                ["/subjects/ial/statistics-1",       "Statistics 1 (WST01)"],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
+                  >{label}</Link>
+                </li>
+              ))}
               <li>
-                <Link href="/edexcel-a-level-past-papers" className="text-purple-500 hover:text-purple-600 dark:hover:text-purple-300 transition-colors text-xs mt-1 inline-block">
-                  View all A Level past papers →
-                </Link>
+                <Link href="/edexcel-a-level-past-papers"
+                  style={{ color: "#A78BFA", fontSize: "0.75rem", textDecoration: "none", marginTop: "0.25rem", display: "inline-block" }}
+                >View all A Level →</Link>
               </li>
             </ul>
           </div>
 
           {/* Features */}
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-sm">Features</h3>
-            <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-              <li><Link href="/generate" className="hover:text-gray-900 dark:hover:text-white transition-colors">Custom Worksheet Generator</Link></li>
-              <li><Link href="/browse" className="hover:text-gray-900 dark:hover:text-white transition-colors">Browse by Topic</Link></li>
-              <li><Link href="/past-papers" className="hover:text-gray-900 dark:hover:text-white transition-colors">Past Papers by Year</Link></li>
-              <li><Link href="/subjects" className="hover:text-gray-900 dark:hover:text-white transition-colors">All Subjects</Link></li>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+              Features
+            </p>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
+              {[
+                ["/generate",    "Worksheet Generator"],
+                ["/test-builder","Test Builder"],
+                ["/browse",      "Browse by Topic"],
+                ["/past-papers", "Past Papers by Year"],
+                ["/subjects",    "All Subjects"],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
+                  >{label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-4 text-sm">Legal</h3>
-            <ul className="space-y-2 text-sm text-gray-500 dark:text-gray-400">
-              <li><Link href="/privacy" className="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/terms" className="hover:text-gray-900 dark:hover:text-white transition-colors">Terms of Service</Link></li>
+            <p style={{ fontWeight: 700, fontSize: "0.8rem", color: "#E5E7EB", marginBottom: "0.875rem", letterSpacing: "0.04em" }}>
+              Legal
+            </p>
+            <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem" }}>
+              {[
+                ["/privacy","Privacy Policy"],
+                ["/terms",  "Terms of Service"],
+              ].map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} style={{ color: "#6B7280", textDecoration: "none", transition: "color 0.15s" }}
+                    onMouseEnter={e => (e.currentTarget.style.color = "#E5E7EB")}
+                    onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}
+                  >{label}</Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
 
-        {/* SEO-rich descriptive text */}
-        <div className="border-t border-gray-200 dark:border-gray-800 pt-6 mb-6">
-          <p className="text-xs text-gray-400 dark:text-gray-600 leading-relaxed max-w-4xl mx-auto text-center">
-            GradeMax is a free platform for Edexcel IGCSE and A Level past papers, question papers, and mark schemes.
-            Practice topic-wise questions for Physics, Mathematics, Chemistry, Biology, and ICT.
-            Generate custom worksheets from real Pearson Edexcel exam papers. All resources are free — no sign-up required.
+        {/* SEO description */}
+        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "1.75rem", marginBottom: "1.25rem" }}>
+          <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.7, maxWidth: "780px", margin: "0 auto", textAlign: "center" }}>
+            GradeMax is a free platform for Edexcel IGCSE and A Level past papers, question papers, and
+            mark schemes. Practice topic-wise questions for Physics, Mathematics, Chemistry, Biology, and ICT.
+            Generate custom worksheets from real Pearson Edexcel exam papers. All resources are free — no
+            sign-up required.
           </p>
         </div>
 
-        <div className="border-t border-gray-200 dark:border-gray-800 pt-6 text-center text-sm">
-          <p className="text-gray-400 dark:text-gray-500">© {new Date().getFullYear()} GradeMax. All rights reserved.</p>
-          <p className="mt-2 text-xs text-gray-400 dark:text-gray-600">
-            Free Edexcel past papers and custom worksheets for IGCSE &amp; A Level students worldwide.
+        {/* Bottom bar */}
+        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "1.25rem", textAlign: "center" }}>
+          <p style={{ fontSize: "0.78rem", color: "#6B7280" }}>
+            © {new Date().getFullYear()} GradeMax. All rights reserved.
           </p>
-          <p className="mt-1 text-xs text-gray-400 dark:text-gray-700">
-            Last updated: January 2025 · Papers available from 2010–2025
+          <p style={{ fontSize: "0.72rem", color: "#4B5563", marginTop: "0.4rem" }}>
+            Free Edexcel past papers and custom worksheets for IGCSE &amp; A Level students worldwide · Papers available 2010–2025
           </p>
         </div>
+
       </div>
     </footer>
   )
