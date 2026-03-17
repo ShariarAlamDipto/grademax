@@ -1,5 +1,5 @@
 "use client"
-import React, { useCallback, useEffect, useMemo, useState } from "react"
+import { memo, useCallback, useEffect, useMemo, useState } from "react"
 import { supabase } from "@/lib/supabaseClient"
 
 type Paper = { id: string; year: number; session: string; paper_code: string; max_score: number }
@@ -121,7 +121,7 @@ export default function PapersChecklist({ initialSubjectIds, marksGoal, userId }
   )
 }
 
-const PaperRow = React.memo(function PaperRow({ paper, onComplete }: { paper: Paper; onComplete: (p: Paper, raw: number) => void }) {
+const PaperRow = memo(function PaperRow({ paper, onComplete }: { paper: Paper; onComplete: (p: Paper, raw: number) => void }) {
   const [checked, setChecked] = useState(false)
   const [raw, setRaw] = useState<number | "">("")
 
