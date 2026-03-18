@@ -6,9 +6,25 @@ import { seoSubjects } from "@/lib/seo-subjects"
 
 export const revalidate = 3600
 
-// ISR: pages are generated on-demand and cached for 1 hour.
-// generateStaticParams is omitted intentionally — we have hundreds of
-// subject/year/season combos and ISR handles them all automatically.
+// Pre-render the most-searched subject/year/season combos for faster indexing.
+// All other combos are handled by ISR (on-demand + 1h cache).
+export function generateStaticParams() {
+  const popularSubjects = [
+    'physics', 'chemistry', 'biology', 'maths-a', 'maths-b', 'ict',
+    'pure-mathematics-1', 'mechanics-1', 'statistics-1',
+  ]
+  const recentYears = ['2024', '2023', '2022', '2021']
+  const mainSeasons = ['may-jun', 'oct-nov', 'jan']
+  const params: { subject: string; year: string; season: string }[] = []
+  for (const subject of popularSubjects) {
+    for (const year of recentYears) {
+      for (const season of mainSeasons) {
+        params.push({ subject, year, season })
+      }
+    }
+  }
+  return params
+}
 
 // ─── Metadata ──────────────────────────────────────────────────────────────────
 
@@ -354,6 +370,78 @@ export default async function SessionPapersPage({
               </div>
             ))}
           </div>
+
+          {/* SEO Content Block */}
+          {seoData && (
+            <div className="mt-12 space-y-8">
+              {/* About this paper */}
+              <div className="pt-6 border-t border-white/10">
+                <h2 className="text-lg font-bold mb-3">
+                  About Edexcel {level} {subj.name} {year} {seasonName} Past Papers
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed mb-2">
+                  This page provides free access to the official Pearson Edexcel {level} {subj.name} ({examCode}) {year} {seasonName} past papers with mark schemes.
+                  These past papers are the most effective revision resource for students preparing for their {level} {subj.name} examinations.
+                  Download the question papers and mark schemes as PDF and practise under timed conditions.
+                </p>
+                <p className="text-white/50 text-sm leading-relaxed">
+                  {seoData.shortDescription} The {year} {seasonName} papers cover all {seoData.topics.length} topic areas of the specification.
+                  Reviewing mark schemes helps you understand exactly what examiners award marks for.
+                </p>
+              </div>
+
+              {/* Topics covered */}
+              <div>
+                <h2 className="text-base font-bold mb-3 text-white/80">
+                  Topics in Edexcel {level} {subj.name}
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {seoData.topics.map((topic) => (
+                    <div key={topic.slug} className="bg-white/[0.03] border border-white/8 rounded-lg px-4 py-2.5">
+                      <p className="text-sm font-semibold text-white/80">{topic.name}</p>
+                      <p className="text-xs text-white/40 mt-0.5 leading-snug">{topic.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* How to use these papers */}
+              <div>
+                <h2 className="text-base font-bold mb-3 text-white/80">How to Revise with Past Papers</h2>
+                <ol className="space-y-1.5 text-sm text-white/55 list-decimal list-inside leading-relaxed">
+                  <li>Download the Question Paper and attempt it under timed, exam conditions.</li>
+                  <li>Mark your answers using the official Mark Scheme — note where marks were lost.</li>
+                  <li>Identify weak topics and revisit those sections before trying another paper.</li>
+                  <li>Use GradeMax topic-wise questions to drill specific areas until confident.</li>
+                </ol>
+              </div>
+
+              {/* Related sessions */}
+              <div>
+                <h2 className="text-base font-bold mb-3 text-white/80">Other {subj.name} Past Papers</h2>
+                <div className="flex flex-wrap gap-2">
+                  {seoData.yearsAvailable
+                    .filter((y) => y !== parseInt(year))
+                    .slice(-6)
+                    .map((y) => (
+                      <Link
+                        key={y}
+                        href={`/past-papers/${slug}/${y}/${season}`}
+                        className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                      >
+                        {subj.name} {y} {seasonName}
+                      </Link>
+                    ))}
+                  <Link
+                    href={`/past-papers/${slug}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                  >
+                    All {subj.name} Papers →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Back */}
           <div className="mt-10 pt-6 border-t border-white/10">

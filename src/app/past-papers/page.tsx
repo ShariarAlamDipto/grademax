@@ -3,6 +3,28 @@ import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
 import { pastPaperSubjects, type Subject } from "@/lib/subjects"
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://grademax.me" },
+        { "@type": "ListItem", position: 2, name: "Past Papers", item: "https://grademax.me/past-papers" },
+      ],
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://grademax.me/past-papers#webpage",
+      url: "https://grademax.me/past-papers",
+      name: "Free Edexcel Past Papers 2025 – IGCSE & A Level with Mark Schemes",
+      description: "Download free Edexcel IGCSE and A Level past papers with mark schemes (2011–2025). Browse Physics, Maths, Chemistry, Biology, ICT and more by year and session.",
+      isPartOf: { "@id": "https://grademax.me/#website" },
+      inLanguage: "en-GB",
+    },
+  ],
+}
+
 export const revalidate = 3600
 
 const accentMap: Record<Subject["colorKey"], string> = {
@@ -50,6 +72,7 @@ export default async function PastPapersPage() {
 
   return (
     <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
 
         {/* Header */}
