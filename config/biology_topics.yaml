@@ -1,0 +1,782 @@
+# IGCSE Biology Topic Catalogue v2.2
+# Edexcel IGCSE Biology Specification (4BI1) — 27 chapters
+# Aligned with Section 1–5 of the Pearson specification
+
+version: "2.2"
+subject:
+  code: "4BI1"
+  name: "Biology"
+  board: "Edexcel"
+  level: "International GCSE"
+
+schema:
+  tag_unit: "question"
+  keep_context: true
+  allow_multi_tag: false
+  output_format: "json"
+
+topics:
+  # ── SECTION 1: NATURE AND VARIETY OF LIVING ORGANISMS ───────────────────────
+  - id: "1.1"
+    code: "CHARACTERISTICS"
+    name: "Characteristics of Living Organisms"
+    description: "The seven characteristics of life — MRS GREN: movement, respiration, sensitivity, growth, reproduction, excretion, nutrition"
+    keywords:
+      - characteristics of life
+      - MRS GREN
+      - movement
+      - sensitivity
+      - growth
+      - reproduction
+      - excretion
+      - nutrition
+      - living organism
+      - life process
+      - characteristic
+    synonyms:
+      - life processes
+      - signs of life
+
+  - id: "1.2"
+    code: "VARIETY"
+    name: "Variety of Living Organisms"
+    description: "Classification into five kingdoms (animals, plants, fungi, bacteria, protists); viruses; dichotomous keys; binomial nomenclature"
+    keywords:
+      - classification
+      - kingdom
+      - animal
+      - plant
+      - fungi
+      - fungus
+      - bacteria
+      - protist
+      - virus
+      - dichotomous key
+      - binomial nomenclature
+      - species
+      - genus
+      - eukaryote
+      - prokaryote
+      - vertebrate
+      - invertebrate
+      - taxonomy
+    synonyms:
+      - variety of life
+      - biological classification
+      - taxonomy
+
+  # ── SECTION 2: STRUCTURES AND FUNCTIONS IN LIVING ORGANISMS ─────────────────
+  - id: "2.1"
+    code: "CELL_STRUCT"
+    name: "Cell Structure and Organisation"
+    description: "Animal and plant cells, organelles (nucleus, mitochondria, chloroplast, cell wall, vacuole), specialised cells, tissue, organ, system"
+    keywords:
+      - cell structure
+      - organelle
+      - nucleus
+      - mitochondria
+      - mitochondrion
+      - chloroplast
+      - cell wall
+      - vacuole
+      - cell membrane
+      - ribosome
+      - cytoplasm
+      - animal cell
+      - plant cell
+      - specialised cell
+      - tissue
+      - organ
+      - organ system
+      - sperm cell
+      - red blood cell
+      - root hair cell
+      - palisade cell
+      - magnification
+      - electron microscope
+      - light microscope
+    formulas:
+      - "magnification = image size / actual size"
+    synonyms:
+      - cell biology
+      - cell organisation
+
+  - id: "2.2"
+    code: "BIO_MOLECULES"
+    name: "Biological Molecules"
+    description: "Carbohydrates, lipids, proteins, DNA; enzyme structure; food tests (Benedict's, iodine, biuret, emulsion)"
+    keywords:
+      - carbohydrate
+      - lipid
+      - protein
+      - DNA
+      - enzyme
+      - starch
+      - glucose
+      - glycogen
+      - fatty acid
+      - glycerol
+      - amino acid
+      - polypeptide
+      - Benedict's test
+      - iodine test
+      - biuret test
+      - emulsion test
+      - food test
+      - reducing sugar
+      - non-reducing sugar
+      - substrate
+      - active site
+      - lock and key
+      - denatured
+    synonyms:
+      - biological chemistry
+      - food test
+      - enzyme structure
+
+  - id: "2.3"
+    code: "MOVEMENT_SUBS"
+    name: "Movement of Substances"
+    description: "Diffusion, osmosis, active transport; concentration gradient; water potential; turgid, plasmolysed, flaccid cells"
+    keywords:
+      - diffusion
+      - osmosis
+      - active transport
+      - concentration gradient
+      - water potential
+      - turgid
+      - plasmolysis
+      - plasmolysed
+      - flaccid
+      - partially permeable membrane
+      - facilitated diffusion
+      - net movement
+      - high to low concentration
+      - passive process
+      - carrier protein
+    synonyms:
+      - transport across membrane
+      - membrane transport
+
+  - id: "2.4"
+    code: "PLANT_NUTRITION"
+    name: "Nutrition in Plants"
+    description: "Photosynthesis equation and process; limiting factors (light, CO₂, temperature); leaf structure; mineral ion requirements"
+    keywords:
+      - photosynthesis
+      - chlorophyll
+      - light intensity
+      - carbon dioxide
+      - water
+      - glucose
+      - starch
+      - oxygen
+      - limiting factor
+      - leaf structure
+      - palisade mesophyll
+      - spongy mesophyll
+      - stomata
+      - guard cell
+      - chloroplast
+      - mineral ion
+      - nitrate
+      - magnesium
+      - phosphate
+    formulas:
+      - "6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂"
+      - "carbon dioxide + water → glucose + oxygen"
+    synonyms:
+      - plant photosynthesis
+      - autotrophic nutrition
+
+  - id: "2.5"
+    code: "HUMAN_NUTRITION"
+    name: "Nutrition in Humans"
+    description: "Balanced diet; digestive system; enzymes (amylase, protease, lipase); bile; absorption in small intestine; villi; liver"
+    keywords:
+      - digestion
+      - digestive system
+      - stomach
+      - small intestine
+      - large intestine
+      - oesophagus
+      - amylase
+      - protease
+      - lipase
+      - bile
+      - villi
+      - villus
+      - absorption
+      - peristalsis
+      - dietary fibre
+      - balanced diet
+      - carbohydrate
+      - protein
+      - fat
+      - vitamin
+      - mineral
+      - liver function
+      - pancreas
+      - salivary gland
+    synonyms:
+      - heterotrophic nutrition
+      - human digestion
+
+  - id: "2.6"
+    code: "RESPIRATION"
+    name: "Respiration"
+    description: "Aerobic and anaerobic respiration equations; ATP; fermentation; effects of exercise on breathing rate and heart rate"
+    keywords:
+      - aerobic respiration
+      - anaerobic respiration
+      - respiration
+      - ATP
+      - mitochondria
+      - glucose
+      - oxygen
+      - carbon dioxide
+      - water
+      - energy
+      - lactic acid
+      - fermentation
+      - yeast
+      - ethanol
+      - oxygen debt
+      - breathing rate
+      - heart rate
+      - exercise
+    formulas:
+      - "C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy"
+      - "glucose + oxygen → carbon dioxide + water + energy"
+      - "glucose → lactic acid + energy"
+      - "glucose → ethanol + carbon dioxide + energy"
+    synonyms:
+      - cellular respiration
+      - energy release
+
+  - id: "2.7"
+    code: "GAS_EXCHANGE"
+    name: "Gas Exchange"
+    description: "Gas exchange surfaces in humans (alveoli), plants (stomata), and fish (gills); ventilation; breathing mechanism"
+    keywords:
+      - alveoli
+      - alveolus
+      - lung
+      - breathing
+      - tidal volume
+      - diaphragm
+      - intercostal muscle
+      - stomata
+      - guard cell
+      - gill
+      - ventilation
+      - gas exchange surface
+      - oxygen diffusion
+      - carbon dioxide diffusion
+      - inhale
+      - exhale
+      - rib cage
+      - pleural membrane
+    synonyms:
+      - lung ventilation
+      - breathing mechanism
+
+  - id: "2.8"
+    code: "PLANT_TRANSPORT"
+    name: "Transport in Plants"
+    description: "Xylem and phloem; transpiration; factors affecting transpiration; translocation; root hair absorption"
+    keywords:
+      - xylem
+      - phloem
+      - transpiration
+      - translocation
+      - water transport
+      - mineral transport
+      - root hair
+      - transpiration stream
+      - stomata
+      - evaporation
+      - wilting
+      - potometer
+      - humidity
+      - wind speed
+      - temperature effect on transpiration
+    synonyms:
+      - vascular tissue
+      - plant vascular system
+
+  - id: "2.9"
+    code: "HUMAN_TRANSPORT"
+    name: "Transport in Humans"
+    description: "Heart structure and function; circulatory system (double); blood composition; coronary heart disease; blood groups"
+    keywords:
+      - heart
+      - atrium
+      - ventricle
+      - valve
+      - artery
+      - vein
+      - capillary
+      - blood
+      - plasma
+      - red blood cell
+      - white blood cell
+      - platelet
+      - haemoglobin
+      - pulse
+      - blood pressure
+      - coronary heart disease
+      - double circulation
+      - pulmonary
+      - systemic
+      - aorta
+      - vena cava
+    synonyms:
+      - circulatory system
+      - cardiovascular system
+
+  - id: "2.10"
+    code: "EXCRETION"
+    name: "Excretion"
+    description: "Kidneys and urine formation; ultrafiltration; selective reabsorption; ADH; liver producing urea; CO₂ excretion by lungs"
+    keywords:
+      - excretion
+      - kidney
+      - urine
+      - urea
+      - ultrafiltration
+      - selective reabsorption
+      - nephron
+      - glomerulus
+      - Bowman's capsule
+      - tubule
+      - ADH
+      - osmoregulation
+      - liver
+      - deamination
+      - filtrate
+      - water reabsorption
+    synonyms:
+      - renal system
+      - waste removal
+
+  - id: "2.11"
+    code: "COORDINATION"
+    name: "Coordination and Response"
+    description: "Nervous system (neurones, reflex arc, brain, spinal cord); hormonal system; plant responses (tropisms, auxins); eye"
+    keywords:
+      - nervous system
+      - neurone
+      - synapse
+      - reflex arc
+      - receptor
+      - effector
+      - brain
+      - spinal cord
+      - hormone
+      - endocrine gland
+      - insulin
+      - glucagon
+      - adrenaline
+      - oestrogen
+      - testosterone
+      - auxin
+      - phototropism
+      - geotropism
+      - tropism
+      - sense organ
+      - eye
+      - cornea
+      - retina
+      - iris
+      - pupil reflex
+    synonyms:
+      - nervous control
+      - hormonal control
+
+  - id: "2.12"
+    code: "HOMEOSTASIS"
+    name: "Homeostasis"
+    description: "Regulation of body temperature; blood glucose control (insulin, glucagon); water balance (ADH); negative feedback"
+    keywords:
+      - homeostasis
+      - thermoregulation
+      - body temperature
+      - temperature regulation
+      - blood glucose
+      - insulin
+      - glucagon
+      - negative feedback
+      - vasodilation
+      - vasoconstriction
+      - shivering
+      - sweating
+      - hypothalamus
+      - osmoregulation
+      - ADH
+      - diabetes
+      - pancreas
+    synonyms:
+      - internal environment
+      - temperature control
+      - blood sugar control
+
+  # ── SECTION 3: REPRODUCTION AND INHERITANCE ─────────────────────────────────
+  - id: "3.1"
+    code: "PLANT_REPRO"
+    name: "Reproduction in Plants"
+    description: "Sexual reproduction in plants (flowers, pollination, fertilisation, seed dispersal); asexual reproduction (runners, tubers, bulbs)"
+    keywords:
+      - plant reproduction
+      - pollination
+      - fertilisation
+      - seed dispersal
+      - pollen
+      - stigma
+      - ovule
+      - ovary
+      - seed
+      - fruit
+      - flower structure
+      - sepal
+      - petal
+      - anther
+      - filament
+      - carpel
+      - pistil
+      - stamen
+      - asexual reproduction
+      - runner
+      - bulb
+      - tuber
+      - cutting
+      - vegetative reproduction
+    synonyms:
+      - flower reproduction
+      - plant sexual reproduction
+
+  - id: "3.2"
+    code: "HUMAN_REPRO"
+    name: "Reproduction in Humans"
+    description: "Male and female reproductive systems; menstrual cycle; fertilisation; pregnancy; fetal development; contraception; STIs"
+    keywords:
+      - menstrual cycle
+      - ovulation
+      - fertilisation
+      - implantation
+      - pregnancy
+      - uterus
+      - ovary
+      - testes
+      - sperm
+      - egg
+      - ovum
+      - FSH
+      - LH
+      - oestrogen
+      - progesterone
+      - contraception
+      - sexually transmitted infection
+      - STI
+      - placenta
+      - umbilical cord
+      - amniotic sac
+    synonyms:
+      - human sexual reproduction
+      - reproductive cycle
+
+  - id: "3.3"
+    code: "CELL_DIVISION"
+    name: "Cell Division"
+    description: "Mitosis (growth and repair, 2 identical diploid cells); meiosis (4 haploid gametes, genetic variation, crossing over)"
+    keywords:
+      - mitosis
+      - meiosis
+      - chromosome
+      - diploid
+      - haploid
+      - gamete
+      - DNA replication
+      - spindle
+      - cell cycle
+      - crossing over
+      - genetic variation
+      - interphase
+      - binary fission
+      - cell division
+      - cleavage
+      - identical cells
+    synonyms:
+      - cell reproduction
+      - nuclear division
+
+  - id: "3.4"
+    code: "INHERITANCE"
+    name: "Inheritance"
+    description: "DNA structure; genes; alleles; dominant and recessive; Punnett squares; monohybrid crosses; codominance; sex linkage; mutations"
+    keywords:
+      - genetics
+      - allele
+      - dominant
+      - recessive
+      - genotype
+      - phenotype
+      - homozygous
+      - heterozygous
+      - Punnett square
+      - monohybrid cross
+      - dihybrid cross
+      - codominance
+      - sex-linked
+      - mutation
+      - gene
+      - DNA
+      - chromosome
+      - carrier
+      - inheritance
+      - ratio
+      - cross
+    synonyms:
+      - Mendelian genetics
+      - genetic inheritance
+
+  - id: "3.5"
+    code: "EVOLUTION"
+    name: "Natural Selection and Evolution"
+    description: "Natural selection, Darwin's theory, variation, adaptation, antibiotic resistance, speciation, fossil record"
+    keywords:
+      - natural selection
+      - evolution
+      - Darwin
+      - variation
+      - adaptation
+      - survival of the fittest
+      - antibiotic resistance
+      - speciation
+      - fossil record
+      - selective pressure
+      - mutation
+      - extinction
+      - population
+      - competition
+      - inheritance of variation
+    synonyms:
+      - Darwinian evolution
+      - selective pressure
+
+  # ── SECTION 4: ECOLOGY AND THE ENVIRONMENT ──────────────────────────────────
+  - id: "4.1"
+    code: "ORGANISMS_ENV"
+    name: "Organisms and Their Environment"
+    description: "Ecosystems, habitats, niches, abiotic and biotic factors, population size, sampling (quadrats, transects)"
+    keywords:
+      - ecosystem
+      - habitat
+      - niche
+      - abiotic factor
+      - biotic factor
+      - population
+      - community
+      - quadrat
+      - transect
+      - sampling
+      - distribution
+      - abundance
+      - competition
+      - limiting factor
+      - predation
+      - carrying capacity
+    synonyms:
+      - ecological niche
+      - population ecology
+
+  - id: "4.2"
+    code: "FEEDING"
+    name: "Feeding Relationships"
+    description: "Food chains and food webs; producers, consumers, decomposers; energy transfer; trophic levels; pyramids of number/biomass/energy"
+    keywords:
+      - food chain
+      - food web
+      - producer
+      - consumer
+      - decomposer
+      - herbivore
+      - carnivore
+      - omnivore
+      - predator
+      - prey
+      - trophic level
+      - pyramid of numbers
+      - pyramid of biomass
+      - pyramid of energy
+      - energy transfer
+      - biomass
+      - ten percent rule
+    synonyms:
+      - food web
+      - trophic relationship
+
+  - id: "4.3"
+    code: "CYCLES"
+    name: "Nutrient Cycles"
+    description: "Carbon cycle (photosynthesis, respiration, decomposition, combustion); nitrogen cycle (fixation, nitrification, denitrification); water cycle"
+    keywords:
+      - carbon cycle
+      - nitrogen cycle
+      - water cycle
+      - decomposition
+      - carbon dioxide
+      - nitrogen fixation
+      - nitrification
+      - denitrification
+      - Rhizobium
+      - lightning
+      - combustion
+      - evaporation
+      - precipitation
+      - transpiration
+      - decomposer
+      - bacteria
+      - nutrient recycling
+    synonyms:
+      - biogeochemical cycle
+      - nutrient recycling
+
+  - id: "4.4"
+    code: "HUMAN_IMPACT"
+    name: "Human Influences on the Environment"
+    description: "Pollution (water, air, land); deforestation; habitat destruction; climate change; conservation; eutrophication"
+    keywords:
+      - pollution
+      - deforestation
+      - habitat destruction
+      - climate change
+      - global warming
+      - eutrophication
+      - sewage
+      - fertiliser runoff
+      - pesticide
+      - conservation
+      - endangered species
+      - biodiversity
+      - recycling
+      - acid rain
+      - greenhouse gas
+      - human impact
+    synonyms:
+      - environmental impact
+      - human activity on environment
+
+  # ── SECTION 5: USE OF BIOLOGICAL RESOURCES ──────────────────────────────────
+  - id: "5.1"
+    code: "FOOD_PROD"
+    name: "Food Production"
+    description: "Crop plants (pest control, fertilisers, irrigation); livestock farming; fish farming; glasshouses; hydroponics; food chain efficiency"
+    keywords:
+      - food production
+      - farming
+      - crop
+      - livestock
+      - pest control
+      - fertiliser
+      - irrigation
+      - fish farming
+      - aquaculture
+      - glasshouse
+      - hydroponics
+      - intensive farming
+      - battery farming
+      - food chain efficiency
+      - energy loss
+    synonyms:
+      - agriculture
+      - intensive farming
+
+  - id: "5.2"
+    code: "SELECTIVE_BREED"
+    name: "Selective Breeding"
+    description: "Artificial selection in plants and animals; examples; advantages and risks; high-yield crop varieties; disease resistance"
+    keywords:
+      - selective breeding
+      - artificial selection
+      - breeding program
+      - high yield crop
+      - disease resistance
+      - trait selection
+      - domestication
+      - genetic improvement
+      - desired characteristic
+      - inbreeding
+    synonyms:
+      - artificial selection
+      - animal breeding
+
+  - id: "5.3"
+    code: "GENETIC_ENG"
+    name: "Genetic Engineering"
+    description: "Process of genetic modification; GM crops; production of insulin; restriction enzymes; ligase; plasmid vector; ethical issues"
+    keywords:
+      - genetic engineering
+      - genetic modification
+      - GM crop
+      - recombinant DNA
+      - insulin production
+      - plasmid
+      - restriction enzyme
+      - DNA ligase
+      - host cell
+      - transformation
+      - Bt cotton
+      - Golden Rice
+      - ethics
+      - gene cloning
+    synonyms:
+      - transgenic organism
+      - gene technology
+
+  - id: "5.4"
+    code: "CLONING"
+    name: "Cloning"
+    description: "Tissue culture; embryo transplanting; adult cell cloning (Dolly the sheep); stem cells; therapeutic vs reproductive cloning; ethics"
+    keywords:
+      - cloning
+      - tissue culture
+      - embryo transplant
+      - adult cell cloning
+      - Dolly
+      - stem cell
+      - therapeutic cloning
+      - reproductive cloning
+      - somatic cell
+      - nuclear transfer
+      - micropropagation
+      - identical copy
+    synonyms:
+      - plant propagation
+      - stem cell research
+
+# ── NEGATIVE KEYWORDS ──────────────────────────────────────────────────────────
+negatives:
+  - "organic chemistry"        # prevent biology/organic confusion
+  - "inorganic"
+  - "atomic"
+  - "electron configuration"
+  - "molar"
+  - "acid base reaction"
+  - "periodic table"
+  - "halogen"
+  - "electrolysis"
+  - "current affairs"
+  - "cultural growth"
+
+# ── DIFFICULTY INDICATORS ──────────────────────────────────────────────────────
+difficulty:
+  easy:
+    command_words: ["define", "state", "name", "identify", "label", "give", "list", "complete the table", "write down"]
+    characteristics: ["single recall", "direct labelling", "simple identification"]
+  medium:
+    command_words: ["calculate", "explain", "describe", "compare", "suggest", "draw", "predict", "write an equation"]
+    characteristics: ["multi-step", "application", "linking concepts"]
+  hard:
+    command_words: ["design an experiment", "evaluate", "discuss", "assess", "justify", "suggest why", "analyse"]
+    characteristics: ["experimental design", "evaluation", "synthesis", "unfamiliar context"]

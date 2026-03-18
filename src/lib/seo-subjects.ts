@@ -378,7 +378,7 @@ export const igcseChemistry: SEOSubject = {
   examBoard: "Edexcel",
   examCode: "4CH1",
   colorKey: "chemistry",
-  
+
   metaTitle: "Edexcel IGCSE Chemistry Past Papers (4CH1) – Topic Questions & Mark Schemes",
   metaDescription: "Free Edexcel IGCSE Chemistry (4CH1) past papers, topic-wise questions, and mark schemes. Atomic structure, bonding, organic chemistry. 2017–2025.",
   h1: "IGCSE Chemistry: Complete Study Guide & Past Papers",
@@ -392,23 +392,54 @@ export const igcseChemistry: SEOSubject = {
     "IGCSE Chemistry revision",
     "organic chemistry"
   ],
-  
+
   topics: [
-    { code: "1", name: "Principles of Chemistry", slug: "principles-chemistry", description: "States of matter, atoms, elements, compounds, and chemical formulas.", keywords: ["atoms", "elements", "compounds", "states of matter", "formulas"] },
-    { code: "2", name: "Chemistry of the Elements", slug: "chemistry-elements", description: "Periodic table, groups, metals, non-metals, and reactivity series.", keywords: ["periodic table", "metals", "non-metals", "reactivity series", "groups"] },
-    { code: "3", name: "Organic Chemistry", slug: "organic-chemistry", description: "Hydrocarbons, alkanes, alkenes, alcohols, and polymers.", keywords: ["organic chemistry", "alkanes", "alkenes", "alcohols", "polymers"] },
-    { code: "4", name: "Physical Chemistry", slug: "physical-chemistry", description: "Energetics, rates of reaction, equilibrium, and electrolysis.", keywords: ["energetics", "rates", "equilibrium", "electrolysis"] },
-    { code: "5", name: "Chemistry in Society", slug: "chemistry-society", description: "Industrial processes, atmosphere, earth materials, and environmental chemistry.", keywords: ["industrial chemistry", "atmosphere", "environment", "extraction"] },
+    // Section 1: Principles of Chemistry
+    { code: "1.1", name: "States of Matter", slug: "states-of-matter", description: "Particle model of solids, liquids and gases. Diffusion, melting and boiling points, separation techniques.", keywords: ["states of matter", "particles", "diffusion", "separation", "evaporation"] },
+    { code: "1.2", name: "Atoms, Elements and Compounds", slug: "atoms-elements-compounds", description: "Atomic symbols, formulae of compounds, mixtures vs pure substances, relative atomic mass.", keywords: ["atoms", "elements", "compounds", "atomic symbol", "mixture"] },
+    { code: "1.3", name: "Atomic Structure", slug: "atomic-structure", description: "Protons, neutrons and electrons; atomic number; mass number; isotopes; electron configuration.", keywords: ["atomic structure", "protons", "neutrons", "electrons", "isotopes", "electron configuration"] },
+    { code: "1.4", name: "Relative Formula Masses and Moles", slug: "relative-formula-masses-moles", description: "Relative formula mass (Mr), mole calculations, reacting masses, percentage composition, molar volumes of gases.", keywords: ["moles", "relative formula mass", "reacting masses", "molar volume", "stoichiometry"] },
+    { code: "1.5", name: "Chemical Formulae and Equations", slug: "chemical-formulae-equations", description: "Balancing equations, ionic equations, state symbols, empirical and molecular formulae, limiting reagents.", keywords: ["balancing equations", "ionic equations", "state symbols", "empirical formula", "limiting reagent"] },
+    { code: "1.6", name: "Ionic Compounds", slug: "ionic-compounds", description: "Ionic bonding, formation of ions, lattice structure, properties of ionic compounds, testing for ions.", keywords: ["ionic bonding", "ions", "lattice", "ionic compounds", "electrostatic attraction"] },
+    { code: "1.7", name: "Covalent Substances", slug: "covalent-substances", description: "Covalent bonding, dot-and-cross diagrams, molecular and giant covalent structures (diamond, graphite), properties.", keywords: ["covalent bonding", "dot and cross", "molecular structure", "diamond", "graphite", "giant covalent"] },
+    { code: "1.8", name: "Metallic Crystals", slug: "metallic-crystals", description: "Metallic bonding, structure of metals, delocalized electrons, properties of metals and alloys.", keywords: ["metallic bonding", "delocalized electrons", "alloys", "metal structure", "conduction"] },
+    { code: "1.9", name: "Electrolysis", slug: "electrolysis", description: "Electrolysis of molten and aqueous solutions, electrode reactions, half-equations, industrial electrolysis (brine, aluminium).", keywords: ["electrolysis", "electrodes", "half equations", "anode", "cathode", "brine", "aluminium extraction"] },
+    // Section 2: Inorganic Chemistry
+    { code: "2.1", name: "Group 1 – Alkali Metals", slug: "group-1-alkali-metals", description: "Properties and reactions of Li, Na, K with water and oxygen. Trend in reactivity down the group.", keywords: ["alkali metals", "group 1", "lithium", "sodium", "potassium", "reactivity trend"] },
+    { code: "2.2", name: "Group 7 – Halogens", slug: "group-7-halogens", description: "Properties of F, Cl, Br, I; reactions with metals and hydrogen; displacement reactions; trend in reactivity.", keywords: ["halogens", "group 7", "chlorine", "bromine", "iodine", "displacement", "halide ions"] },
+    { code: "2.3", name: "Oxygen and Oxides", slug: "oxygen-and-oxides", description: "Properties of oxygen; combustion; acidic, basic and amphoteric oxides; rusting and corrosion prevention.", keywords: ["oxygen", "oxides", "combustion", "rusting", "acidic oxides", "basic oxides", "corrosion"] },
+    { code: "2.4", name: "Sulfur and Sulfur Dioxide", slug: "sulfur-and-sulfur-dioxide", description: "Properties of sulfur and SO₂; sulfuric acid manufacture (Contact process); acid rain.", keywords: ["sulfur", "sulfur dioxide", "SO2", "Contact process", "acid rain", "sulfuric acid"] },
+    { code: "2.5", name: "Nitrogen and Ammonia", slug: "nitrogen-and-ammonia", description: "Haber process for ammonia manufacture; uses of ammonia; nitrogen cycle; fertilisers.", keywords: ["nitrogen", "ammonia", "Haber process", "fertilisers", "nitrogen cycle", "nitric acid"] },
+    { code: "2.6", name: "Metals and Alloys", slug: "metals-and-alloys", description: "Physical and chemical properties of metals; structure and uses of steel, brass, bronze, and other alloys.", keywords: ["metals", "alloys", "steel", "brass", "bronze", "properties of metals"] },
+    { code: "2.7", name: "Reactivity Series", slug: "reactivity-series", description: "Order of reactivity; displacement reactions; reactions of metals with water, acids and oxygen.", keywords: ["reactivity series", "displacement reactions", "metals", "reactions with acids", "reactions with water"] },
+    { code: "2.8", name: "Extraction of Metals", slug: "extraction-of-metals", description: "Reduction with carbon, electrolysis; blast furnace for iron; extraction of aluminium; recycling metals.", keywords: ["extraction of metals", "blast furnace", "iron extraction", "aluminium extraction", "reduction", "recycling metals"] },
+    { code: "2.9", name: "Making Salts", slug: "making-salts", description: "Acids and bases; neutralisation; methods of making soluble and insoluble salts; precipitation; pH scale.", keywords: ["salts", "neutralisation", "acids", "bases", "precipitation", "pH", "soluble salts"] },
+    { code: "2.10", name: "Tests for Ions and Gases", slug: "tests-ions-gases", description: "Flame tests, precipitate tests, tests for anions; identifying gases (H₂, O₂, CO₂, Cl₂, NH₃).", keywords: ["flame tests", "ion tests", "gas tests", "anion tests", "cation tests", "identifying gases"] },
+    // Section 3: Physical Chemistry
+    { code: "3.1", name: "Energetics", slug: "energetics", description: "Exothermic and endothermic reactions; enthalpy changes (ΔH); bond energies; activation energy; energy profile diagrams.", keywords: ["energetics", "exothermic", "endothermic", "enthalpy", "bond energy", "activation energy", "energy diagrams"] },
+    { code: "3.2", name: "Rates of Reaction", slug: "rates-of-reaction", description: "Factors affecting rate: concentration, temperature, surface area, catalysts; collision theory; measuring reaction rate.", keywords: ["rates of reaction", "concentration", "temperature", "surface area", "catalyst", "collision theory"] },
+    { code: "3.3", name: "Reversible Reactions and Equilibria", slug: "reversible-reactions-equilibria", description: "Reversible reactions; dynamic equilibrium; Le Chatelier's principle; industrial applications (Haber, Contact).", keywords: ["reversible reactions", "equilibrium", "Le Chatelier", "dynamic equilibrium", "yield", "industrial processes"] },
+    // Section 4: Organic Chemistry
+    { code: "4.1", name: "Introduction to Organic Chemistry", slug: "introduction-organic-chemistry", description: "Homologous series; functional groups; naming organic compounds; structural isomers; crude oil and fractional distillation.", keywords: ["organic chemistry", "homologous series", "functional groups", "isomers", "crude oil", "fractional distillation"] },
+    { code: "4.2", name: "Alkanes", slug: "alkanes", description: "Structure, properties and reactions of alkanes; complete and incomplete combustion; cracking; uses of alkanes.", keywords: ["alkanes", "methane", "ethane", "propane", "combustion", "cracking", "saturated hydrocarbons"] },
+    { code: "4.3", name: "Alkenes", slug: "alkenes", description: "Structure and properties of alkenes; addition reactions; bromine water test; polymerisation; compared to alkanes.", keywords: ["alkenes", "ethene", "propene", "addition reactions", "bromine water", "unsaturated", "double bond"] },
+    { code: "4.4", name: "Ethanol", slug: "ethanol", description: "Production by fermentation and hydration; properties; oxidation to ethanoic acid; uses and social impacts.", keywords: ["ethanol", "alcohol", "fermentation", "hydration", "ethanoic acid", "alcohols"] },
+    { code: "4.5", name: "Carboxylic Acids and Esters", slug: "carboxylic-acids-esters", description: "Properties of carboxylic acids; esterification; hydrolysis; uses of esters; reactions with alkalis and metals.", keywords: ["carboxylic acids", "esters", "esterification", "ethanoic acid", "hydrolysis", "reactions of acids"] },
+    { code: "4.6", name: "Polymerisation", slug: "polymerisation", description: "Addition polymerisation (alkenes); condensation polymerisation; structure and properties of polymers; environmental issues.", keywords: ["polymerisation", "addition polymerisation", "condensation polymerisation", "polymers", "monomers", "plastics"] },
+    // Section 5: Chemistry in Society
+    { code: "5.1", name: "Gases in the Atmosphere", slug: "gases-in-the-atmosphere", description: "Composition of air; history and evolution of the atmosphere; greenhouse effect; global warming; air pollution.", keywords: ["atmosphere", "greenhouse effect", "global warming", "carbon dioxide", "air pollution", "ozone layer"] },
+    { code: "5.2", name: "Water", slug: "water", description: "Water treatment and purification; temporary and permanent hardness; removing hardness; water as a solvent.", keywords: ["water", "water treatment", "hard water", "soft water", "purification", "filtration", "chlorination"] },
+    { code: "5.3", name: "Industrial Chemistry", slug: "industrial-chemistry", description: "Raw materials; economic factors in industrial processes; life cycle assessment; recycling; sustainability.", keywords: ["industrial chemistry", "raw materials", "economic factors", "life cycle assessment", "recycling", "sustainability"] },
   ],
-  
+
   faqs: [
-    { question: "What topics are in IGCSE Chemistry?", answer: "IGCSE Chemistry covers: Principles of Chemistry (atomic structure, bonding), Chemistry of the Elements (periodic table, reactivity), Organic Chemistry (hydrocarbons, polymers), Physical Chemistry (rates, equilibrium), and Chemistry in Society." },
+    { question: "What topics are in Edexcel IGCSE Chemistry (4CH1)?", answer: "Edexcel IGCSE Chemistry has 5 sections: Section 1 (Principles of Chemistry — states of matter, atomic structure, bonding, electrolysis), Section 2 (Inorganic Chemistry — groups 1 & 7, reactivity, extraction), Section 3 (Physical Chemistry — energetics, rates, equilibrium), Section 4 (Organic Chemistry — alkanes, alkenes, polymers), Section 5 (Chemistry in Society — atmosphere, water, industrial chemistry)." },
     { question: "How do you balance chemical equations?", answer: "To balance equations: 1) Write the unbalanced equation, 2) Count atoms of each element on both sides, 3) Add coefficients to balance atoms (never change subscripts), 4) Check all atoms are balanced." },
-    { question: "What is the reactivity series?", answer: "The reactivity series orders metals by reactivity: K, Na, Ca, Mg, Al, Zn, Fe, Pb, H, Cu, Ag, Au (most to least reactive). More reactive metals displace less reactive ones from solutions." },
+    { question: "What is the reactivity series?", answer: "The reactivity series orders metals by reactivity: K, Na, Ca, Mg, Al, C, Zn, Fe, Pb, H, Cu, Ag, Au (most to least reactive). More reactive metals displace less reactive ones from solutions and react more vigorously with acid and water." },
     { question: "How many papers are in IGCSE Chemistry?", answer: "Edexcel IGCSE Chemistry has two papers: Paper 1 (2 hours, 110 marks) and Paper 2 (1 hour 15 minutes, 70 marks). Both are written exams covering all topics." },
-    { question: "What equipment do I need for IGCSE Chemistry?", answer: "For the exam: pen, pencil, ruler, and calculator. You should know common lab equipment names and uses (beaker, conical flask, burette, etc.) for exam questions." },
+    { question: "What is the difference between ionic and covalent bonding?", answer: "Ionic bonding involves transfer of electrons between metals and non-metals, forming charged ions held by electrostatic attraction in a lattice. Covalent bonding involves sharing of electrons between non-metals, forming molecules or giant covalent structures." },
   ],
-  
+
   yearsAvailable: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 
@@ -423,7 +454,7 @@ export const igcseBiology: SEOSubject = {
   examBoard: "Edexcel",
   examCode: "4BI1",
   colorKey: "biology",
-  
+
   metaTitle: "Edexcel IGCSE Biology Past Papers (4BI1) – Topic Questions & Mark Schemes",
   metaDescription: "Free Edexcel IGCSE Biology (4BI1) past papers, topic-wise questions, and mark schemes. Cells, genetics, ecology, human biology. 2017–2025.",
   h1: "IGCSE Biology: Complete Study Guide & Past Papers",
@@ -437,23 +468,50 @@ export const igcseBiology: SEOSubject = {
     "IGCSE Biology revision",
     "genetics"
   ],
-  
+
   topics: [
-    { code: "1", name: "Nature and Variety of Living Organisms", slug: "living-organisms", description: "Characteristics of life, classification, and variety of organisms.", keywords: ["classification", "characteristics of life", "organisms", "variety"] },
-    { code: "2", name: "Structures and Functions in Living Organisms", slug: "structures-functions", description: "Cells, enzymes, nutrition, respiration, gas exchange, and transport.", keywords: ["cells", "enzymes", "nutrition", "respiration", "transport"] },
-    { code: "3", name: "Reproduction and Inheritance", slug: "reproduction-inheritance", description: "Reproduction, cell division, genetics, and evolution.", keywords: ["reproduction", "genetics", "DNA", "evolution", "inheritance"] },
-    { code: "4", name: "Ecology and the Environment", slug: "ecology", description: "Ecosystems, food chains, nutrient cycles, and human impact.", keywords: ["ecology", "ecosystems", "food chains", "environment"] },
-    { code: "5", name: "Use of Biological Resources", slug: "biological-resources", description: "Food production, selective breeding, genetic modification, and cloning.", keywords: ["food production", "selective breeding", "genetic modification", "cloning"] },
+    // Section 1: Nature and Variety of Living Organisms
+    { code: "1.1", name: "Characteristics of Living Organisms", slug: "characteristics-living-organisms", description: "The seven characteristics of life (MRS GREN): movement, respiration, sensitivity, growth, reproduction, excretion, nutrition.", keywords: ["characteristics of life", "MRS GREN", "living organisms", "life processes"] },
+    { code: "1.2", name: "Variety of Living Organisms", slug: "variety-living-organisms", description: "Classification into five kingdoms (animals, plants, fungi, bacteria, protists); features of viruses; dichotomous keys.", keywords: ["classification", "kingdoms", "animals", "plants", "fungi", "bacteria", "viruses", "dichotomous keys"] },
+    // Section 2: Structures and Functions in Living Organisms
+    { code: "2.1", name: "Cell Structure and Organisation", slug: "cell-structure-organisation", description: "Animal and plant cells; cell organelles (nucleus, mitochondria, chloroplast, cell wall, vacuole); cell, tissue, organ, system hierarchy; specialised cells.", keywords: ["cell structure", "organelles", "nucleus", "mitochondria", "chloroplast", "plant cell", "animal cell", "specialised cells"] },
+    { code: "2.2", name: "Biological Molecules", slug: "biological-molecules", description: "Structure and function of carbohydrates, lipids, proteins and DNA; enzyme structure; food tests (Benedict's, iodine, biuret).", keywords: ["biological molecules", "carbohydrates", "lipids", "proteins", "DNA", "enzyme", "food tests", "Benedict's test"] },
+    { code: "2.3", name: "Movement of Substances", slug: "movement-of-substances", description: "Diffusion, osmosis and active transport; factors affecting diffusion; water potential; turgid and plasmolysed cells.", keywords: ["diffusion", "osmosis", "active transport", "water potential", "turgid", "plasmolysis", "concentration gradient"] },
+    { code: "2.4", name: "Nutrition in Plants", slug: "nutrition-in-plants", description: "Photosynthesis equation and process; limiting factors (light, CO₂, temperature); leaf structure; mineral ion requirements.", keywords: ["photosynthesis", "chlorophyll", "limiting factors", "light intensity", "leaf structure", "mineral ions", "nitrates"] },
+    { code: "2.5", name: "Nutrition in Humans", slug: "nutrition-in-humans", description: "Balanced diet; digestive system; enzymes (amylase, protease, lipase); absorption in small intestine; villi; liver functions.", keywords: ["digestion", "digestive system", "enzymes", "amylase", "protease", "lipase", "villi", "absorption", "liver"] },
+    { code: "2.6", name: "Respiration", slug: "respiration", description: "Aerobic and anaerobic respiration equations; ATP; fermentation; effects of exercise; mitochondria.", keywords: ["respiration", "aerobic respiration", "anaerobic respiration", "ATP", "fermentation", "glucose", "energy", "lactic acid"] },
+    { code: "2.7", name: "Gas Exchange", slug: "gas-exchange", description: "Gas exchange in humans (alveoli, lungs); gas exchange in plants (stomata, guard cells); gas exchange in fish (gills).", keywords: ["gas exchange", "alveoli", "lungs", "breathing", "stomata", "guard cells", "gills", "ventilation"] },
+    { code: "2.8", name: "Transport in Plants", slug: "transport-in-plants", description: "Xylem and phloem; transpiration; transpiration stream; factors affecting transpiration rate; translocation.", keywords: ["xylem", "phloem", "transpiration", "translocation", "water transport", "stomata", "wilting"] },
+    { code: "2.9", name: "Transport in Humans", slug: "transport-in-humans", description: "Heart structure and function; circulatory system; blood composition (plasma, red cells, white cells, platelets); blood groups; coronary heart disease.", keywords: ["heart", "circulatory system", "blood", "red blood cells", "white blood cells", "platelets", "arteries", "veins", "capillaries"] },
+    { code: "2.10", name: "Excretion", slug: "excretion", description: "Kidneys and urine formation; ultrafiltration and reabsorption; role of ADH; liver producing urea; lungs excreting CO₂.", keywords: ["excretion", "kidneys", "urea", "urine", "ultrafiltration", "reabsorption", "ADH", "osmoregulation"] },
+    { code: "2.11", name: "Coordination and Response", slug: "coordination-and-response", description: "Nervous system (neurones, reflex arc, brain, spinal cord); hormonal system (hormones, endocrine glands); plant responses (tropisms, auxins).", keywords: ["nervous system", "neurones", "reflex arc", "hormones", "endocrine", "insulin", "adrenaline", "tropisms", "auxins"] },
+    { code: "2.12", name: "Homeostasis", slug: "homeostasis", description: "Regulation of body temperature; blood glucose control (insulin, glucagon); ADH and water balance; negative feedback.", keywords: ["homeostasis", "thermoregulation", "blood glucose", "insulin", "glucagon", "negative feedback", "body temperature"] },
+    // Section 3: Reproduction and Inheritance
+    { code: "3.1", name: "Reproduction in Plants", slug: "reproduction-in-plants", description: "Sexual reproduction (flowers, pollination, fertilisation, seed dispersal); asexual reproduction (runners, tubers, bulbs, cuttings).", keywords: ["plant reproduction", "pollination", "fertilisation", "seed dispersal", "asexual reproduction", "flowers", "runners"] },
+    { code: "3.2", name: "Reproduction in Humans", slug: "reproduction-in-humans", description: "Male and female reproductive systems; menstrual cycle; fertilisation; pregnancy; contraception; sexually transmitted infections.", keywords: ["human reproduction", "menstrual cycle", "fertilisation", "pregnancy", "contraception", "reproductive system", "ovulation"] },
+    { code: "3.3", name: "Cell Division", slug: "cell-division", description: "Mitosis (growth and repair, produces 2 identical diploid cells); meiosis (produces 4 haploid gametes, genetic variation).", keywords: ["mitosis", "meiosis", "cell division", "diploid", "haploid", "chromosomes", "gametes", "genetic variation"] },
+    { code: "3.4", name: "Inheritance", slug: "inheritance", description: "DNA structure; genes and alleles; dominant and recessive; Punnett squares; monohybrid and dihybrid crosses; codominance; sex linkage; mutations.", keywords: ["genetics", "DNA", "alleles", "dominant", "recessive", "Punnett square", "genotype", "phenotype", "codominance", "mutations"] },
+    { code: "3.5", name: "Natural Selection and Evolution", slug: "natural-selection-evolution", description: "Natural selection; Darwin's theory; variation; adaptation; antibiotic resistance; speciation; fossil record.", keywords: ["natural selection", "evolution", "Darwin", "adaptation", "antibiotic resistance", "speciation", "variation", "survival of the fittest"] },
+    // Section 4: Ecology and the Environment
+    { code: "4.1", name: "Organisms and Their Environment", slug: "organisms-environment", description: "Ecosystems; habitats and niches; abiotic and biotic factors; population size; sampling techniques (quadrats, transects).", keywords: ["ecosystem", "habitat", "niche", "abiotic factors", "biotic factors", "population", "quadrats", "transects"] },
+    { code: "4.2", name: "Feeding Relationships", slug: "feeding-relationships", description: "Food chains and food webs; producers, consumers and decomposers; energy transfer; trophic levels; pyramids of number, biomass and energy.", keywords: ["food chains", "food webs", "producers", "consumers", "decomposers", "trophic levels", "energy transfer", "biomass pyramids"] },
+    { code: "4.3", name: "Nutrient Cycles", slug: "nutrient-cycles", description: "Carbon cycle (photosynthesis, respiration, decomposition, combustion); nitrogen cycle (fixation, nitrification, denitrification); water cycle.", keywords: ["carbon cycle", "nitrogen cycle", "water cycle", "decomposition", "nitrogen fixation", "nitrification", "denitrification"] },
+    { code: "4.4", name: "Human Influences on the Environment", slug: "human-influences-environment", description: "Pollution (water, air, land); deforestation; habitat destruction; climate change; conservation; biodiversity; eutrophication.", keywords: ["pollution", "deforestation", "climate change", "conservation", "biodiversity", "eutrophication", "global warming", "human impact"] },
+    // Section 5: Use of Biological Resources
+    { code: "5.1", name: "Food Production", slug: "food-production", description: "Crop plants (pest control, fertilisers, irrigation); livestock farming; fish farming; glasshouses and hydroponics; food chains and efficiency.", keywords: ["food production", "farming", "crop production", "pest control", "fertilisers", "fish farming", "hydroponics", "food efficiency"] },
+    { code: "5.2", name: "Selective Breeding", slug: "selective-breeding", description: "Artificial selection in plants and animals; examples (high-yield crops, disease-resistant varieties, dog breeds); advantages and risks.", keywords: ["selective breeding", "artificial selection", "high yield crops", "disease resistance", "genetic improvement"] },
+    { code: "5.3", name: "Genetic Engineering", slug: "genetic-engineering", description: "Process of genetic modification; GM crops (pest resistance, herbicide tolerance); production of insulin and other proteins; ethical issues.", keywords: ["genetic engineering", "genetic modification", "GM crops", "insulin production", "recombinant DNA", "ethical issues"] },
+    { code: "5.4", name: "Cloning", slug: "cloning", description: "Tissue culture; embryo transplanting; adult cell cloning (Dolly the sheep); stem cells; advantages and ethical considerations.", keywords: ["cloning", "tissue culture", "embryo transplant", "Dolly the sheep", "stem cells", "adult cell cloning", "ethics"] },
   ],
-  
+
   faqs: [
-    { question: "What topics are in IGCSE Biology?", answer: "IGCSE Biology covers: Nature and Variety of Living Organisms, Structures and Functions (cells, enzymes, respiration), Reproduction and Inheritance (genetics), Ecology and Environment, and Use of Biological Resources." },
-    { question: "How do you draw a Punnett square?", answer: "To draw a Punnett square: 1) Write parent genotypes, 2) Split alleles - one parent across top, one down side, 3) Fill in boxes by combining alleles, 4) Calculate phenotype ratios from results." },
-    { question: "What is the difference between mitosis and meiosis?", answer: "Mitosis produces 2 identical diploid cells for growth/repair. Meiosis produces 4 different haploid cells (gametes) for sexual reproduction. Meiosis involves crossing over and creates genetic variation." },
+    { question: "What topics are in Edexcel IGCSE Biology (4BI1)?", answer: "Edexcel IGCSE Biology has 5 sections with 27 chapters: Section 1 (Nature and Variety of Living Organisms), Section 2 (Structures and Functions — cells, nutrition, respiration, transport, coordination), Section 3 (Reproduction and Inheritance — genetics, evolution), Section 4 (Ecology and the Environment), and Section 5 (Use of Biological Resources)." },
+    { question: "How do you draw a Punnett square?", answer: "To draw a Punnett square: 1) Write parent genotypes, 2) Split alleles — one parent across top, one down side, 3) Fill in boxes by combining alleles, 4) Calculate genotype and phenotype ratios from results." },
+    { question: "What is the difference between mitosis and meiosis?", answer: "Mitosis produces 2 identical diploid cells for growth and repair. Meiosis produces 4 genetically different haploid cells (gametes) for sexual reproduction. Meiosis involves two divisions and creates genetic variation through crossing over and independent assortment." },
     { question: "How many papers are in IGCSE Biology?", answer: "Edexcel IGCSE Biology has two papers: Paper 1 (2 hours, 110 marks) and Paper 2 (1 hour 15 minutes, 70 marks). Both are written exams covering all topics." },
-    { question: "What equations do I need for IGCSE Biology?", answer: "Key equations: Photosynthesis (CO₂ + H₂O → glucose + O₂), Aerobic respiration (glucose + O₂ → CO₂ + H₂O + energy), Magnification = image size / actual size." },
+    { question: "What equations do I need for IGCSE Biology?", answer: "Key equations: Photosynthesis (6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂), Aerobic respiration (C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + energy), Anaerobic respiration in animals (glucose → lactic acid), Magnification = image size ÷ actual size." },
   ],
-  
+
   yearsAvailable: [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
 }
 

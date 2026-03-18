@@ -1,0 +1,840 @@
+# IGCSE Chemistry Topic Catalogue v2.2
+# Edexcel IGCSE Chemistry Specification (4CH1) — 31 chapters
+# Aligned with Section 1–5 of the Pearson specification
+
+version: "2.2"
+subject:
+  code: "4CH1"
+  name: "Chemistry"
+  board: "Edexcel"
+  level: "International GCSE"
+
+schema:
+  tag_unit: "question"
+  keep_context: true
+  allow_multi_tag: false
+  output_format: "json"
+
+topics:
+  # ── SECTION 1: PRINCIPLES OF CHEMISTRY ─────────────────────────────────────
+  - id: "1.1"
+    code: "STATES"
+    name: "States of Matter"
+    description: "Particle model, states of matter, diffusion, separation techniques (filtration, evaporation, distillation, chromatography)"
+    keywords:
+      - solid
+      - liquid
+      - gas
+      - state of matter
+      - particle
+      - diffusion
+      - melting point
+      - boiling point
+      - condensation
+      - evaporation
+      - sublimation
+      - change of state
+      - filtration
+      - distillation
+      - chromatography
+      - separation
+      - crystallisation
+      - Rf value
+      - viscosity
+      - Brownian motion
+    formulas:
+      - "Rf = distance moved by substance / distance moved by solvent"
+    synonyms:
+      - particle theory
+      - kinetic theory
+      - separating mixtures
+      - pure substance
+
+  - id: "1.2"
+    code: "ATOMS_ELEM"
+    name: "Atoms, Elements and Compounds"
+    description: "Elements, compounds, mixtures, chemical symbols, formulae, relative atomic mass"
+    keywords:
+      - element
+      - compound
+      - mixture
+      - symbol
+      - formula
+      - relative atomic mass
+      - Ar
+      - atom
+      - molecule
+      - pure substance
+      - chemical formula
+      - molecular formula
+      - periodic table
+    synonyms:
+      - chemical symbol
+      - chemical formula
+      - substance
+
+  - id: "1.3"
+    code: "ATOMIC_STRUCT"
+    name: "Atomic Structure"
+    description: "Protons, neutrons, electrons, atomic number, mass number, isotopes, electron configuration, shells"
+    keywords:
+      - proton
+      - neutron
+      - electron
+      - atomic number
+      - mass number
+      - isotope
+      - electron configuration
+      - shell
+      - energy level
+      - orbit
+      - nucleus
+      - subshell
+      - electronic structure
+      - relative charge
+      - relative mass
+    synonyms:
+      - subatomic particle
+      - nuclear model
+      - Bohr model
+      - electron arrangement
+
+  - id: "1.4"
+    code: "MOLES"
+    name: "Relative Formula Masses and Moles"
+    description: "Mr, moles, molar mass, Avogadro's constant, reacting masses, percentage composition, molar volumes of gases"
+    keywords:
+      - mole
+      - molar mass
+      - Mr
+      - Avogadro
+      - reacting mass
+      - percentage composition
+      - molar volume
+      - stoichiometry
+      - limiting reagent
+      - excess
+      - theoretical yield
+      - empirical formula
+      - calculation
+      - mol
+    formulas:
+      - "moles = mass / Mr"
+      - "moles = volume (dm³) / 24 (at RTP)"
+      - "% composition = (mass of element / Mr) × 100"
+    synonyms:
+      - molar calculation
+      - quantitative chemistry
+      - reacting quantities
+
+  - id: "1.5"
+    code: "EQUATIONS"
+    name: "Chemical Formulae and Equations"
+    description: "Balancing equations, ionic equations, state symbols, empirical and molecular formulae, limiting reagents"
+    keywords:
+      - balance
+      - equation
+      - coefficient
+      - state symbol
+      - ionic equation
+      - spectator ion
+      - empirical formula
+      - molecular formula
+      - half equation
+      - oxidation
+      - reduction
+    synonyms:
+      - balanced equation
+      - symbol equation
+      - word equation
+
+  - id: "1.6"
+    code: "IONIC"
+    name: "Ionic Compounds"
+    description: "Ionic bonding, ion formation, lattice structure, properties of ionic compounds, dot-and-cross diagrams for ionic"
+    keywords:
+      - ionic bond
+      - ionic compound
+      - ion
+      - cation
+      - anion
+      - lattice
+      - electrostatic attraction
+      - transfer of electrons
+      - dot-and-cross
+      - sodium chloride
+      - NaCl
+      - giant ionic
+      - ionic structure
+      - metal ion
+      - non-metal ion
+    synonyms:
+      - electrovalent bond
+      - ionic lattice
+
+  - id: "1.7"
+    code: "COVALENT"
+    name: "Covalent Substances"
+    description: "Covalent bonding, shared electrons, dot-and-cross diagrams, molecular and giant covalent structures (diamond, graphite, silicon dioxide)"
+    keywords:
+      - covalent bond
+      - covalent substance
+      - shared electron
+      - dot-and-cross
+      - molecule
+      - diamond
+      - graphite
+      - silicon dioxide
+      - giant covalent
+      - molecular structure
+      - double bond
+      - triple bond
+      - van der Waals
+      - intermolecular force
+      - simple molecular
+    synonyms:
+      - covalent structure
+      - molecular lattice
+      - allotrope
+
+  - id: "1.8"
+    code: "METALLIC"
+    name: "Metallic Crystals"
+    description: "Metallic bonding, delocalized electrons, properties of metals and alloys, structure of metals"
+    keywords:
+      - metallic bond
+      - delocalized electron
+      - sea of electrons
+      - metal structure
+      - metallic crystal
+      - alloy
+      - lattice of ions
+      - conductivity
+      - malleability
+      - ductility
+      - metal property
+    synonyms:
+      - metallic lattice
+      - metal bonding
+
+  - id: "1.9"
+    code: "ELECTROLYSIS"
+    name: "Electrolysis"
+    description: "Electrolysis of molten and aqueous solutions, electrode reactions, half-equations, industrial electrolysis (brine, aluminium)"
+    keywords:
+      - electrolysis
+      - electrolyte
+      - electrode
+      - anode
+      - cathode
+      - discharge
+      - half equation
+      - copper sulfate
+      - brine
+      - molten
+      - electrolytic cell
+      - chlorine gas
+      - hydrogen gas
+      - sodium hydroxide
+      - aqueous
+      - selective discharge
+      - oxidation at anode
+      - reduction at cathode
+    formulas:
+      - "oxidation occurs at anode"
+      - "reduction occurs at cathode"
+    synonyms:
+      - electrochemical
+      - electrolytic
+
+  # ── SECTION 2: INORGANIC CHEMISTRY ─────────────────────────────────────────
+  - id: "2.1"
+    code: "GROUP1"
+    name: "Group 1 – Alkali Metals"
+    description: "Properties and reactions of Li, Na, K with water and oxygen; trend in reactivity down Group 1"
+    keywords:
+      - alkali metal
+      - group 1
+      - lithium
+      - sodium
+      - potassium
+      - rubidium
+      - caesium
+      - react with water
+      - hydroxide
+      - hydrogen
+      - vigorous
+      - trend in reactivity
+      - fizzes
+      - floats
+      - melts
+      - white solid
+      - flame colour
+    synonyms:
+      - group I
+      - alkali group
+
+  - id: "2.2"
+    code: "GROUP7"
+    name: "Group 7 – Halogens"
+    description: "Properties of F, Cl, Br, I; reactions with metals and hydrogen; displacement reactions; halide tests; trend in reactivity"
+    keywords:
+      - halogen
+      - group 7
+      - fluorine
+      - chlorine
+      - bromine
+      - iodine
+      - astatine
+      - displacement
+      - halide
+      - bleach
+      - disinfectant
+      - trend in reactivity
+      - diatomic
+      - coloured gas
+      - silver nitrate
+      - potassium iodide
+      - more reactive displaces
+    synonyms:
+      - group VII
+      - halide ion
+
+  - id: "2.3"
+    code: "OXY_OXIDES"
+    name: "Oxygen and Oxides"
+    description: "Combustion, rusting, types of oxides (acidic, basic, neutral, amphoteric), corrosion prevention"
+    keywords:
+      - oxygen
+      - oxide
+      - combustion
+      - burning
+      - rusting
+      - oxidation
+      - corrosion
+      - acidic oxide
+      - basic oxide
+      - neutral oxide
+      - amphoteric
+      - iron oxide
+      - carbon dioxide
+      - nitrogen dioxide
+      - sulfur dioxide
+      - metal oxide
+      - galvanising
+      - sacrificial protection
+    synonyms:
+      - oxidation
+      - rust prevention
+
+  - id: "2.4"
+    code: "SULFUR"
+    name: "Sulfur and Sulfur Dioxide"
+    description: "Properties of sulfur and SO₂; Contact process for sulfuric acid; acid rain; uses of sulfuric acid"
+    keywords:
+      - sulfur
+      - sulphur
+      - sulfur dioxide
+      - SO2
+      - sulfuric acid
+      - H2SO4
+      - Contact process
+      - acid rain
+      - sulfur trioxide
+      - vanadium pentoxide
+      - catalyst
+      - industrial
+    formulas:
+      - "S + O₂ → SO₂"
+      - "2SO₂ + O₂ → 2SO₃"
+      - "SO₃ + H₂O → H₂SO₄"
+    synonyms:
+      - sulphuric acid
+      - sulphur dioxide
+
+  - id: "2.5"
+    code: "NITROGEN"
+    name: "Nitrogen and Ammonia"
+    description: "Haber process, manufacture of ammonia, uses of ammonia, nitrogen cycle, fertilisers, nitric acid"
+    keywords:
+      - nitrogen
+      - ammonia
+      - Haber process
+      - fertiliser
+      - nitrate
+      - nitric acid
+      - HNO3
+      - nitrogen fixation
+      - nitrogen cycle
+      - urea
+      - NPK
+      - iron catalyst
+      - high pressure
+      - high temperature
+      - Ostwald process
+    formulas:
+      - "N₂ + 3H₂ ⇌ 2NH₃"
+    synonyms:
+      - nitrogen fertiliser
+      - industrial ammonia
+
+  - id: "2.6"
+    code: "METALS_ALLOYS"
+    name: "Metals and Alloys"
+    description: "Physical and chemical properties of metals; structure and composition of alloys (steel, brass, bronze, duralumin)"
+    keywords:
+      - alloy
+      - steel
+      - brass
+      - bronze
+      - duralumin
+      - stainless steel
+      - solder
+      - amalgam
+      - properties of alloy
+      - hardness
+      - corrosion resistance
+      - carbon steel
+      - transition metal
+      - copper alloy
+    synonyms:
+      - metal mixture
+      - alloying
+
+  - id: "2.7"
+    code: "REACTIVITY"
+    name: "Reactivity Series"
+    description: "Order of reactivity; displacement reactions; reactions of metals with water, dilute acids and oxygen"
+    keywords:
+      - reactivity series
+      - displacement
+      - reactive
+      - less reactive
+      - potassium
+      - sodium
+      - calcium
+      - magnesium
+      - aluminium
+      - zinc
+      - iron
+      - lead
+      - copper
+      - silver
+      - gold
+      - reacts with water
+      - reacts with acid
+      - order of reactivity
+    synonyms:
+      - activity series
+      - metal reactivity
+
+  - id: "2.8"
+    code: "EXTRACTION"
+    name: "Extraction of Metals"
+    description: "Reduction with carbon, electrolysis; blast furnace for iron; extraction of aluminium from bauxite; recycling"
+    keywords:
+      - blast furnace
+      - iron extraction
+      - aluminium extraction
+      - bauxite
+      - cryolite
+      - haematite
+      - coke
+      - limestone
+      - slag
+      - reduction
+      - ore
+      - electrolysis of aluminium
+      - recycling metal
+      - smelting
+      - pig iron
+      - carbon monoxide
+    synonyms:
+      - metal extraction
+      - ore reduction
+
+  - id: "2.9"
+    code: "SALTS"
+    name: "Making Salts"
+    description: "Acids and bases; neutralisation; methods of preparing soluble and insoluble salts; titration; pH scale"
+    keywords:
+      - salt
+      - neutralisation
+      - acid
+      - alkali
+      - base
+      - titration
+      - precipitation
+      - soluble salt
+      - insoluble salt
+      - pH
+      - indicator
+      - sodium chloride
+      - copper sulfate
+      - filtration of precipitate
+      - excess acid
+      - pipette
+      - burette
+      - end point
+    formulas:
+      - "acid + base → salt + water"
+      - "acid + carbonate → salt + water + CO₂"
+      - "acid + metal → salt + hydrogen"
+    synonyms:
+      - salt preparation
+      - neutralisation reaction
+
+  - id: "2.10"
+    code: "ION_TESTS"
+    name: "Tests for Ions and Gases"
+    description: "Flame tests, precipitate tests, silver nitrate tests, gas tests (H₂, O₂, CO₂, Cl₂, NH₃)"
+    keywords:
+      - flame test
+      - precipitate
+      - silver nitrate
+      - barium chloride
+      - sodium hydroxide
+      - identify
+      - test for
+      - limewater
+      - bleach test
+      - hydrogen test
+      - oxygen test
+      - chlorine test
+      - ammonia test
+      - gas test
+      - anion test
+      - cation test
+      - lilac flame
+      - yellow flame
+      - brick red
+      - cream precipitate
+      - white precipitate
+    synonyms:
+      - qualitative analysis
+      - ion identification
+
+  # ── SECTION 3: PHYSICAL CHEMISTRY ──────────────────────────────────────────
+  - id: "3.1"
+    code: "ENERGETICS"
+    name: "Energetics"
+    description: "Exothermic and endothermic reactions, enthalpy changes (ΔH), bond energies, activation energy, energy profile diagrams"
+    keywords:
+      - exothermic
+      - endothermic
+      - enthalpy
+      - delta H
+      - bond energy
+      - activation energy
+      - energy profile
+      - energy level diagram
+      - Hess's law
+      - heat of combustion
+      - heat of neutralisation
+      - heat of reaction
+      - temperature change
+      - calorimetry
+    formulas:
+      - "ΔH = energy to break bonds − energy released forming bonds"
+      - "Q = mcΔT"
+    synonyms:
+      - thermochemistry
+      - heat of reaction
+      - bond enthalpy
+
+  - id: "3.2"
+    code: "RATES"
+    name: "Rates of Reaction"
+    description: "Factors affecting rate: concentration, temperature, surface area, catalysts; collision theory; measuring rate"
+    keywords:
+      - rate of reaction
+      - concentration
+      - surface area
+      - temperature
+      - catalyst
+      - collision theory
+      - activation energy
+      - frequency of collision
+      - successful collision
+      - graph of rate
+      - measuring rate
+      - marble chips
+      - hydrochloric acid
+      - sodium thiosulfate
+      - gas syringe
+      - rate graph
+    synonyms:
+      - reaction rate
+      - kinetics
+      - speed of reaction
+
+  - id: "3.3"
+    code: "EQUILIBRIUM"
+    name: "Reversible Reactions and Equilibria"
+    description: "Reversible reactions, dynamic equilibrium, Le Chatelier's principle, industrial applications"
+    keywords:
+      - reversible reaction
+      - equilibrium
+      - dynamic equilibrium
+      - Le Chatelier
+      - yield
+      - pressure
+      - forward reaction
+      - backward reaction
+      - double arrow
+      - shift in equilibrium
+      - temperature effect on yield
+      - Haber process equilibrium
+      - Contact process equilibrium
+    synonyms:
+      - chemical equilibrium
+      - Le Chatelier's principle
+
+  # ── SECTION 4: ORGANIC CHEMISTRY ───────────────────────────────────────────
+  - id: "4.1"
+    code: "INTRO_ORGANIC"
+    name: "Introduction to Organic Chemistry"
+    description: "Homologous series, functional groups, naming organic compounds, structural isomers, crude oil, fractional distillation"
+    keywords:
+      - organic chemistry
+      - homologous series
+      - functional group
+      - isomer
+      - structural isomer
+      - crude oil
+      - fractional distillation
+      - hydrocarbon
+      - general formula
+      - IUPAC name
+      - suffix
+      - carbon chain
+      - saturated
+      - unsaturated
+      - displayed formula
+    synonyms:
+      - carbon chemistry
+      - organic compound
+
+  - id: "4.2"
+    code: "ALKANES"
+    name: "Alkanes"
+    description: "Structure and properties of alkanes; combustion; cracking; uses of alkanes as fuels"
+    keywords:
+      - alkane
+      - methane
+      - ethane
+      - propane
+      - butane
+      - pentane
+      - saturated hydrocarbon
+      - complete combustion
+      - incomplete combustion
+      - cracking
+      - carbon monoxide
+      - soot
+      - fuel
+      - CnH2n+2
+      - single bond
+    formulas:
+      - "CₙH₂ₙ₊₂"
+      - "CH₄ + 2O₂ → CO₂ + 2H₂O"
+    synonyms:
+      - paraffin
+      - saturated hydrocarbon
+
+  - id: "4.3"
+    code: "ALKENES"
+    name: "Alkenes"
+    description: "Structure of alkenes; addition reactions; bromine water test; polymerisation; compared to alkanes"
+    keywords:
+      - alkene
+      - ethene
+      - propene
+      - butene
+      - unsaturated
+      - double bond
+      - addition reaction
+      - bromine water
+      - decolourise
+      - polymerisation
+      - addition polymer
+      - CnH2n
+      - test for unsaturation
+      - hydration
+      - halogenation
+    formulas:
+      - "CₙH₂ₙ"
+    synonyms:
+      - olefin
+      - unsaturated hydrocarbon
+
+  - id: "4.4"
+    code: "ETHANOL"
+    name: "Ethanol"
+    description: "Production by fermentation and hydration; oxidation to ethanoic acid; uses of ethanol; social impacts"
+    keywords:
+      - ethanol
+      - alcohol
+      - fermentation
+      - glucose
+      - yeast
+      - hydration of ethene
+      - ethanoic acid
+      - oxidation of alcohol
+      - biofuel
+      - industrial ethanol
+      - wine
+      - beer
+      - breathalyser
+    formulas:
+      - "C₆H₁₂O₆ → 2C₂H₅OH + 2CO₂"
+    synonyms:
+      - drinking alcohol
+      - ethyl alcohol
+
+  - id: "4.5"
+    code: "CARBOXYLIC"
+    name: "Carboxylic Acids and Esters"
+    description: "Properties of carboxylic acids; esterification; hydrolysis; uses of esters"
+    keywords:
+      - carboxylic acid
+      - ethanoic acid
+      - ester
+      - esterification
+      - hydrolysis
+      - vinegar
+      - methanoic acid
+      - COOH
+      - fruity smell
+      - condensation reaction
+      - acid + alcohol
+      - reflux
+      - concentrated sulfuric acid
+    formulas:
+      - "carboxylic acid + alcohol ⇌ ester + water"
+    synonyms:
+      - organic acid
+      - ester formation
+
+  - id: "4.6"
+    code: "POLYMERS"
+    name: "Polymerisation"
+    description: "Addition polymerisation from alkenes; condensation polymerisation; structure of polymers; environmental issues with plastics"
+    keywords:
+      - polymer
+      - monomer
+      - addition polymerisation
+      - condensation polymerisation
+      - polyethene
+      - poly(ethene)
+      - polypropene
+      - PVC
+      - nylon
+      - polyester
+      - thermoplastic
+      - thermosetting
+      - plastic waste
+      - repeat unit
+      - long chain
+    synonyms:
+      - plastic
+      - synthetic polymer
+
+  # ── SECTION 5: CHEMISTRY IN SOCIETY ────────────────────────────────────────
+  - id: "5.1"
+    code: "ATMOSPHERE"
+    name: "Gases in the Atmosphere"
+    description: "Composition of air, history of atmosphere, greenhouse effect, global warming, air pollution"
+    keywords:
+      - atmosphere
+      - greenhouse effect
+      - global warming
+      - carbon dioxide
+      - methane
+      - nitrogen
+      - oxygen
+      - noble gas
+      - ozone layer
+      - air pollution
+      - nitrogen oxide
+      - photosynthesis effect on atmosphere
+      - history of atmosphere
+      - volcanic activity
+      - percentage of gases
+    synonyms:
+      - air composition
+      - atmospheric chemistry
+
+  - id: "5.2"
+    code: "WATER"
+    name: "Water"
+    description: "Water treatment and purification; hardness of water; removing hardness; water as a solvent"
+    keywords:
+      - hard water
+      - soft water
+      - temporary hardness
+      - permanent hardness
+      - calcium carbonate
+      - calcium sulfate
+      - limescale
+      - scale
+      - ion exchange
+      - water treatment
+      - filtration
+      - chlorination
+      - sedimentation
+      - distillation
+      - removing hardness
+      - soap scum
+    synonyms:
+      - water hardness
+      - water purification
+
+  - id: "5.3"
+    code: "INDUSTRIAL"
+    name: "Industrial Chemistry"
+    description: "Economic factors in industrial processes; raw materials; life cycle assessment; recycling; sustainability"
+    keywords:
+      - industrial chemistry
+      - raw material
+      - economic factor
+      - life cycle assessment
+      - recycling
+      - sustainability
+      - manufacture
+      - large scale
+      - percentage yield
+      - atom economy
+      - green chemistry
+      - waste
+      - cost
+      - energy requirement
+    synonyms:
+      - industrial process
+      - manufacturing chemistry
+
+# ── NEGATIVE KEYWORDS ──────────────────────────────────────────────────────────
+negatives:
+  - "current affairs"
+  - "power of attorney"
+  - "subject to change"
+  - "in solution to"
+  - "radio button"
+  - "electric feel"
+  - "organic farming"         # prevent 4.1 false positive
+  - "organic food"
+  - "organic waste"
+  - "carbon footprint"        # context — not organic chemistry
+  - "industrial action"
+
+# ── DIFFICULTY INDICATORS ──────────────────────────────────────────────────────
+difficulty:
+  easy:
+    command_words: ["define", "state", "name", "give", "label", "list", "identify", "write the formula", "complete the table"]
+    characteristics: ["single recall", "direct substitution", "balance simple equation"]
+  medium:
+    command_words: ["calculate", "explain", "describe", "compare", "show", "predict", "suggest", "draw", "write an equation"]
+    characteristics: ["multi-step calculation", "application", "interpretation of graph"]
+  hard:
+    command_words: ["design", "plan", "evaluate", "suggest why", "justify", "assess", "discuss", "deduce"]
+    characteristics: ["synthesis", "evaluation", "unfamiliar context", "multi-concept"]
