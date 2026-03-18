@@ -85,41 +85,20 @@ export function generateCourseSchema(subject: SEOSubject) {
 }
 
 /**
- * FAQPage schema for subject/topic pages with FAQs
+ * Q&A schema for FAQ sections — uses ItemList (valid for all sites).
+ * NOTE: FAQPage schema has been restricted to government/healthcare sites since Aug 2023.
+ * The Q&A content is still indexed from visible page HTML.
  */
 export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
   return {
-    '@type': 'FAQPage',
-    mainEntity: faqs.map(faq => ({
-      '@type': 'Question',
+    '@type': 'ItemList',
+    name: 'Frequently Asked Questions',
+    numberOfItems: faqs.length,
+    itemListElement: faqs.map((faq, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
       name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer
-      }
-    }))
-  }
-}
-
-/**
- * HowTo schema for tutorial/how-to-solve pages
- */
-export function generateHowToSchema(
-  name: string,
-  description: string,
-  steps: { name: string; text: string }[],
-  totalTime?: string // e.g., "PT10M" for 10 minutes
-) {
-  return {
-    '@type': 'HowTo',
-    name,
-    description,
-    totalTime: totalTime || 'PT15M',
-    step: steps.map((step, index) => ({
-      '@type': 'HowToStep',
-      position: index + 1,
-      name: step.name,
-      text: step.text
+      description: faq.answer,
     }))
   }
 }
@@ -227,14 +206,13 @@ export function generateItemListSchema(
  */
 export function generateSubjectPageSchema(subject: SEOSubject) {
   const url = `${BASE_URL}/subjects/${subject.level}/${subject.slug}`
-  
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
       generateOrganizationSchema(),
       generateCourseSchema(subject),
       generateLearningResourceSchema(subject),
-      generateFAQSchema(subject.faqs),
       generateBreadcrumbSchema([
         { name: 'Home', url: BASE_URL },
         { name: getLevelDisplay(subject.level), url: `${BASE_URL}/subjects/${subject.level}` },

@@ -87,7 +87,7 @@ export default function ALevelPastPapersPage() {
   }
 
   return (
-    <main style={{ background: "#000000", color: "#E5E7EB", minHeight: "100vh" }}>
+    <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
 
       <div style={{ maxWidth: "1040px", margin: "0 auto", padding: "3rem 1.5rem" }}>
@@ -96,22 +96,22 @@ export default function ALevelPastPapersPage() {
         <nav style={{ marginBottom: "1.75rem" }}>
           <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", listStyle: "none", padding: 0, margin: 0, flexWrap: "wrap" }}>
             <li><Link href="/" className="gm-link" style={{ fontSize: "0.78rem" }}>Home</Link></li>
-            <li style={{ color: "#374151", fontSize: "0.78rem" }}>/</li>
+            <li style={{ color: "var(--gm-border-2)", fontSize: "0.78rem" }}>/</li>
             <li><Link href="/edexcel-past-papers" className="gm-link" style={{ fontSize: "0.78rem" }}>Edexcel Past Papers</Link></li>
-            <li style={{ color: "#374151", fontSize: "0.78rem" }}>/</li>
-            <li style={{ fontSize: "0.78rem", color: "#9CA3AF" }}>A Level</li>
+            <li style={{ color: "var(--gm-border-2)", fontSize: "0.78rem" }}>/</li>
+            <li style={{ fontSize: "0.78rem", color: "var(--gm-text-2)" }}>A Level</li>
           </ol>
         </nav>
 
         {/* Header */}
         <div style={{ marginBottom: "3rem" }}>
-          <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#A78BFA", marginBottom: "0.75rem" }}>
+          <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.75rem" }}>
             Pearson Edexcel · IAL
           </p>
-          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "#E5E7EB", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
+          <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
             Edexcel A Level (IAL) Past Papers
           </h1>
-          <p style={{ color: "#9CA3AF", fontSize: "0.9rem", maxWidth: "520px", lineHeight: 1.6 }}>
+          <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", maxWidth: "520px", lineHeight: 1.6 }}>
             Free Pearson Edexcel International A Level past papers with mark schemes.
             Pure Maths 1 · Mechanics 1 · Statistics 1.
           </p>
@@ -119,7 +119,7 @@ export default function ALevelPastPapersPage() {
 
         {/* Units */}
         <section style={{ marginBottom: "3rem" }}>
-          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
             A Level Units Available
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "0.625rem" }}>
@@ -127,20 +127,20 @@ export default function ALevelPastPapersPage() {
               <Link
                 key={subj.slug}
                 href={`/subjects/ial/${subj.slug}`}
-                style={{ background: "#000000", border: "1px solid #333333", borderRadius: "0.875rem", padding: "1.25rem 1rem", display: "flex", flexDirection: "column", gap: "0.4rem", textDecoration: "none" }}
+                style={{ background: "var(--gm-card-bg)", border: "1px solid var(--gm-border)", borderRadius: "0.875rem", padding: "1.25rem 1rem", display: "flex", flexDirection: "column", gap: "0.4rem", textDecoration: "none" }}
                 className="gm-card"
               >
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "#E5E7EB" }}>{subj.name}</p>
-                  <span style={{ fontSize: "0.6rem", color: "#6B7280", background: "#111827", border: "1px solid #1F2937", borderRadius: "4px", padding: "0.15rem 0.4rem", flexShrink: 0, marginLeft: "0.5rem" }}>{subj.examCode}</span>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{subj.name}</p>
+                  <span style={{ fontSize: "0.6rem", color: "var(--gm-text-3)", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "4px", padding: "0.15rem 0.4rem", flexShrink: 0, marginLeft: "0.5rem" }}>{subj.examCode}</span>
                 </div>
-                <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.5 }}>{subj.shortDescription}</p>
+                <p style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", lineHeight: 1.5 }}>{subj.shortDescription}</p>
                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.3rem", marginTop: "0.35rem" }}>
                   {subj.topics.map((t) => (
-                    <span key={t.slug} style={{ fontSize: "0.6rem", color: "#4B5563", background: "#111827", border: "1px solid #1F2937", borderRadius: "4px", padding: "0.1rem 0.4rem" }}>{t.name}</span>
+                    <span key={t.slug} style={{ fontSize: "0.6rem", color: "var(--gm-text-3)", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "4px", padding: "0.1rem 0.4rem" }}>{t.name}</span>
                   ))}
                 </div>
-                <p style={{ fontSize: "0.65rem", color: "#4B5563", marginTop: "0.35rem" }}>
+                <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.35rem" }}>
                   {subj.yearsAvailable.length} years · {subj.topics.length} topics · Mark schemes included
                 </p>
               </Link>
@@ -149,14 +149,14 @@ export default function ALevelPastPapersPage() {
         </section>
 
         {/* Topic links */}
-        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #1F2937" }}>
-          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
             Browse by Topic
           </h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1.5rem" }}>
             {subjects.map((subj) => (
               <div key={subj.slug}>
-                <p style={{ fontSize: "0.72rem", fontWeight: 700, color: "#A78BFA", marginBottom: "0.625rem", letterSpacing: "0.04em" }}>{subj.name}</p>
+                <p style={{ fontSize: "0.72rem", fontWeight: 700, color: "var(--gm-amber)", marginBottom: "0.625rem", letterSpacing: "0.04em" }}>{subj.name}</p>
                 <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.35rem" }}>
                   {subj.topics.map((topic) => (
                     <li key={topic.slug}>
@@ -172,8 +172,8 @@ export default function ALevelPastPapersPage() {
         </section>
 
         {/* Years */}
-        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #1F2937" }}>
-          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1rem" }}>
+        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1rem" }}>
             Browse by Year
           </h2>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
@@ -186,25 +186,25 @@ export default function ALevelPastPapersPage() {
         </section>
 
         {/* FAQ */}
-        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #1F2937" }}>
-          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "#E5E7EB", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
+        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
+          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1.5rem" }}>
             Common Questions
           </h2>
           <div style={{ maxWidth: "640px" }}>
             {faqs.map((faq, i, arr) => (
-              <details key={i} style={{ borderBottom: i < arr.length - 1 ? "1px solid #1F2937" : "none" }}>
-                <summary style={{ padding: "1rem 0", cursor: "pointer", fontSize: "0.875rem", fontWeight: 500, color: "#E5E7EB", display: "flex", justifyContent: "space-between", alignItems: "center", listStyle: "none", userSelect: "none", gap: "1rem" }}>
+              <details key={i} style={{ borderBottom: i < arr.length - 1 ? "1px solid var(--gm-border)" : "none" }}>
+                <summary style={{ padding: "1rem 0", cursor: "pointer", fontSize: "0.875rem", fontWeight: 500, color: "var(--gm-text)", display: "flex", justifyContent: "space-between", alignItems: "center", listStyle: "none", userSelect: "none", gap: "1rem" }}>
                   {faq.question}
-                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="#6B7280" strokeWidth={2.5} style={{ flexShrink: 0 }}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="var(--gm-text-3)" strokeWidth={2.5} style={{ flexShrink: 0 }}><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                 </summary>
-                <p style={{ padding: "0 0 1rem", fontSize: "0.845rem", color: "#9CA3AF", lineHeight: 1.75 }}>{faq.answer}</p>
+                <p style={{ padding: "0 0 1rem", fontSize: "0.845rem", color: "var(--gm-text-2)", lineHeight: 1.75 }}>{faq.answer}</p>
               </details>
             ))}
           </div>
         </section>
 
         {/* Related links */}
-        <div style={{ borderTop: "1px solid #1F2937", paddingTop: "1.5rem", display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+        <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "1.5rem", display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
           {([
             ["/edexcel-past-papers",       "All Edexcel Past Papers"],
             ["/edexcel-igcse-past-papers", "IGCSE Past Papers"],

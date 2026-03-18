@@ -78,19 +78,6 @@ export default function WorksheetsPage() {
         'Generate free custom worksheets from real Edexcel past paper questions.'
       ),
       generateFAQSchema(faqs),
-      // HowTo schema for worksheet generation
-      {
-        '@type': 'HowTo',
-        name: 'How to Generate a Custom Edexcel Worksheet',
-        description: 'Create a custom worksheet from real Edexcel past paper questions in 4 simple steps.',
-        step: [
-          { '@type': 'HowToStep', position: 1, name: 'Choose Your Subject', text: 'Select an Edexcel IGCSE or A Level subject from the available options.' },
-          { '@type': 'HowToStep', position: 2, name: 'Select Topics', text: 'Choose specific topics or chapters to include in your worksheet.' },
-          { '@type': 'HowToStep', position: 3, name: 'Set Filters', text: 'Pick year range and difficulty level to customize your practice paper.' },
-          { '@type': 'HowToStep', position: 4, name: 'Generate & Download', text: 'Click generate to create your PDF worksheet with its matching mark scheme.' },
-        ],
-        totalTime: 'PT1M',
-      }
     ]
   }
 
