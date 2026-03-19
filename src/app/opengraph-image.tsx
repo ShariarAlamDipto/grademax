@@ -52,46 +52,14 @@ export default function OGImage() {
           }}
         >
           {/* Icon */}
-          <div
-            style={{
-              width: 140,
-              height: 140,
-              borderRadius: 28,
-              background: "linear-gradient(135deg, #0a0a0a 0%, #111111 100%)",
-              border: "2px solid rgba(104,126,52,0.35)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              boxShadow: "0 20px 60px rgba(104,126,52,0.3)",
-            }}
-          >
-            <span
-              style={{
-                fontSize: 80,
-                fontWeight: 800,
-                color: "#687E34",
-                fontFamily: "Georgia, serif",
-                lineHeight: 1,
-                marginTop: -4,
-              }}
-            >
-              G
-            </span>
-            <span
-              style={{
-                fontSize: 24,
-                fontWeight: 700,
-                color: "#687E34",
-                fontFamily: "Arial, sans-serif",
-                letterSpacing: 4,
-                marginTop: -2,
-                opacity: 0.9,
-              }}
-            >
-              MAX
-            </span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="https://grademax.me/favicon.png"
+            width={140}
+            height={140}
+            alt="GradeMax logo"
+            style={{ borderRadius: 28 }}
+          />
 
           {/* Text */}
           <div style={{ display: "flex", flexDirection: "column" }}>
