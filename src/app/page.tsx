@@ -6,10 +6,6 @@ import LazyWorryCatcher from "@/components/LazyWorryCatcher"
 const SubjectGrid = dynamic(() => import("@/components/SubjectGrid"))
 const FeatureCards = dynamic(() => import("@/components/FeatureCards"))
 
-const LazyWorryCatcher = dynamic(() => import("@/components/LazyWorryCatcher"), { ssr: false })
-const SubjectGrid = dynamic(() => import("@/components/SubjectGrid"))
-const FeatureCards = dynamic(() => import("@/components/FeatureCards"))
-
 const igcseSubjects = [
   { name: "Physics",   level: "igcse", slug: "physics",   code: "4PH1",  color: "#F97316", bg: "rgba(249,115,22,0.06)",   border: "rgba(249,115,22,0.20)"   },
   { name: "Maths A",   level: "igcse", slug: "maths-a",   code: "4MA1",  color: "#6EA8FE", bg: "rgba(110,168,254,0.06)",  border: "rgba(110,168,254,0.20)"  },
