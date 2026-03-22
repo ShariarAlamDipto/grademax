@@ -1,6 +1,10 @@
 // src/app/page.tsx
 import dynamic from "next/dynamic"
 import Link from "next/link"
+import LazyWorryCatcher from "@/components/LazyWorryCatcher"
+
+const SubjectGrid = dynamic(() => import("@/components/SubjectGrid"))
+const FeatureCards = dynamic(() => import("@/components/FeatureCards"))
 
 const LazyWorryCatcher = dynamic(() => import("@/components/LazyWorryCatcher"), { ssr: false })
 const SubjectGrid = dynamic(() => import("@/components/SubjectGrid"))
