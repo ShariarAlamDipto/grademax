@@ -1,8 +1,10 @@
 // src/app/page.tsx
-import LazyWorryCatcher from "@/components/LazyWorryCatcher"
-import SubjectGrid from "@/components/SubjectGrid"
-import FeatureCards from "@/components/FeatureCards"
+import dynamic from "next/dynamic"
 import Link from "next/link"
+
+const LazyWorryCatcher = dynamic(() => import("@/components/LazyWorryCatcher"), { ssr: false })
+const SubjectGrid = dynamic(() => import("@/components/SubjectGrid"))
+const FeatureCards = dynamic(() => import("@/components/FeatureCards"))
 
 const igcseSubjects = [
   { name: "Physics",   level: "igcse", slug: "physics",   code: "4PH1",  color: "#F97316", bg: "rgba(249,115,22,0.06)",   border: "rgba(249,115,22,0.20)"   },
@@ -93,7 +95,7 @@ export default function Home() {
             marginBottom: "2.5rem",
             opacity: 0.75,
           }}>
-            Edexcel &nbsp;&amp;&nbsp; Cambridge
+            Edexcel & Cambridge
           </p>
 
           {/* Subtitle — white text with subtle separators */}
@@ -167,7 +169,7 @@ export default function Home() {
           {/* Section header */}
           <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
             <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.75rem" }}>
-              Edexcel · IGCSE &amp; A Level
+              Edexcel · IGCSE & A Level
             </p>
             <h2 style={{ fontSize: "clamp(1.6rem, 4vw, 2.2rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
               Choose your subject
@@ -194,9 +196,9 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          § 4  WORRY CATCHER
+          § 4  WORRY CATCHER  (desktop only)
           ════════════════════════════════════════ */}
-      <section style={{ borderTop: "1px solid var(--gm-border)", padding: "4rem 1.5rem", background: "var(--gm-surface)" }}>
+      <section className="hidden md:block" style={{ borderTop: "1px solid var(--gm-border)", padding: "4rem 1.5rem", background: "var(--gm-surface)" }}>
         <p style={{ textAlign: "center", fontSize: "0.9rem", fontWeight: 600, color: "var(--gm-text)", marginBottom: "0.35rem" }}>
           Stressed about exams?
         </p>

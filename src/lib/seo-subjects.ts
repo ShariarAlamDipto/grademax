@@ -516,6 +516,447 @@ export const igcseBiology: SEOSubject = {
 }
 
 // ============================================================================
+// IAL — Mathematics additional modules
+// ============================================================================
+
+export const ialPureMaths2: SEOSubject = {
+  slug: "pure-mathematics-2", name: "Pure Mathematics 2 (P2)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WMA12", colorKey: "maths",
+  metaTitle: "Edexcel A Level Pure Maths 2 (WMA12) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Pure Mathematics 2 (WMA12/P2) past papers with mark schemes. Algebra, trigonometry, exponentials, integration. 2014–2025.",
+  h1: "A Level Pure Mathematics 2: Past Papers & Mark Schemes",
+  shortDescription: "Master Edexcel IAL Pure Mathematics 2 with organized past paper questions.",
+  longDescription: "GradeMax provides Edexcel IAL Pure Mathematics 2 past papers organized by year and session with official mark schemes.",
+  keywords: ["Pure Mathematics 2", "P2 past papers", "WMA12 past papers", "A Level Maths P2"],
+  topics: [
+    { code: "P2.1", name: "Algebra and Functions", slug: "algebra-functions", description: "Partial fractions, algebraic division, and modulus function.", keywords: ["partial fractions", "algebraic division"] },
+    { code: "P2.2", name: "Trigonometry", slug: "trigonometry", description: "Radian measure, arc length, area of sector, sine and cosine rules.", keywords: ["radians", "trigonometry", "sine rule"] },
+    { code: "P2.3", name: "Exponentials and Logarithms", slug: "exponentials-logarithms", description: "Exponential functions, natural logarithms, and equations.", keywords: ["exponentials", "logarithms", "ln"] },
+    { code: "P2.4", name: "Differentiation", slug: "differentiation", description: "Chain rule, product rule, quotient rule, implicit differentiation.", keywords: ["chain rule", "product rule", "differentiation"] },
+    { code: "P2.5", name: "Integration", slug: "integration", description: "Integration techniques, integration by substitution.", keywords: ["integration", "substitution"] },
+    { code: "P2.6", name: "Numerical Methods", slug: "numerical-methods", description: "Iterative methods, Newton-Raphson, and trapezium rule.", keywords: ["numerical methods", "Newton-Raphson", "trapezium rule"] },
+  ],
+  faqs: [
+    { question: "What is in Pure Mathematics 2?", answer: "P2 covers: algebra and functions (partial fractions), trigonometry (radians), exponentials and logarithms, advanced differentiation and integration, and numerical methods." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialPureMaths3: SEOSubject = {
+  slug: "pure-mathematics-3", name: "Pure Mathematics 3 (P3)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WMA13", colorKey: "maths",
+  metaTitle: "Edexcel A Level Pure Maths 3 (WMA13) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Pure Mathematics 3 (WMA13/P3) past papers with mark schemes. Further algebra, proof, vectors, differential equations. 2014–2025.",
+  h1: "A Level Pure Mathematics 3: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Pure Mathematics 3 past papers with mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Pure Mathematics 3 past papers with official mark schemes.",
+  keywords: ["Pure Mathematics 3", "P3 past papers", "WMA13 past papers", "A Level Maths P3"],
+  topics: [
+    { code: "P3.1", name: "Proof", slug: "proof", description: "Proof by contradiction and mathematical induction.", keywords: ["proof", "mathematical induction"] },
+    { code: "P3.2", name: "Further Algebra and Functions", slug: "further-algebra", description: "Rational functions, inverse functions, and transformations.", keywords: ["rational functions", "inverse functions"] },
+    { code: "P3.3", name: "Further Trigonometry", slug: "further-trigonometry", description: "Addition formulae, double angle, R cos(θ + α) form.", keywords: ["addition formulae", "double angle", "trigonometric identities"] },
+    { code: "P3.4", name: "Differential Equations", slug: "differential-equations", description: "First-order differential equations by separation of variables.", keywords: ["differential equations", "separation of variables"] },
+    { code: "P3.5", name: "Vectors", slug: "vectors", description: "3D vectors, equations of lines, scalar product, angle between lines.", keywords: ["vectors", "3D", "scalar product"] },
+    { code: "P3.6", name: "Further Integration", slug: "further-integration", description: "Integration by parts, integration by partial fractions.", keywords: ["integration by parts", "partial fractions"] },
+  ],
+  faqs: [
+    { question: "What is in Pure Mathematics 3?", answer: "P3 covers: proof, further algebra and functions, further trigonometry (compound angles), differential equations, vectors in 3D, and further integration techniques." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialPureMaths4: SEOSubject = {
+  slug: "pure-mathematics-4", name: "Pure Mathematics 4 (P4)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WMA14", colorKey: "maths",
+  metaTitle: "Edexcel A Level Pure Maths 4 (WMA14) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Pure Mathematics 4 (WMA14/P4) past papers with mark schemes. Polar coordinates, hyperbolic functions, further differential equations. 2014–2025.",
+  h1: "A Level Pure Mathematics 4: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Pure Mathematics 4 past papers with mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Pure Mathematics 4 past papers with official mark schemes.",
+  keywords: ["Pure Mathematics 4", "P4 past papers", "WMA14 past papers", "A Level Maths P4"],
+  topics: [
+    { code: "P4.1", name: "Proof", slug: "proof", description: "Further proof by induction.", keywords: ["proof by induction"] },
+    { code: "P4.2", name: "Polar Coordinates", slug: "polar-coordinates", description: "Polar equations, sketching, area using polar coordinates.", keywords: ["polar coordinates", "polar equations"] },
+    { code: "P4.3", name: "Hyperbolic Functions", slug: "hyperbolic-functions", description: "sinh, cosh, tanh, inverse hyperbolic functions, identities.", keywords: ["hyperbolic functions", "sinh", "cosh", "tanh"] },
+    { code: "P4.4", name: "Further Differential Equations", slug: "further-differential-equations", description: "Second-order differential equations, complementary function, particular integral.", keywords: ["differential equations", "second order", "complementary function"] },
+    { code: "P4.5", name: "Further Vectors", slug: "further-vectors", description: "Planes in 3D, intersection of lines and planes, angle between plane and line.", keywords: ["vectors", "planes", "3D geometry"] },
+  ],
+  faqs: [
+    { question: "What is in Pure Mathematics 4?", answer: "P4 covers: advanced proof, polar coordinates, hyperbolic functions, second-order differential equations, and 3D vector geometry including planes." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialMechanics2: SEOSubject = {
+  slug: "mechanics-2", name: "Mechanics 2 (M2)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WME02", colorKey: "other",
+  metaTitle: "Edexcel A Level Mechanics 2 (WME02) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Mechanics 2 (WME02/M2) past papers with mark schemes. Projectiles, work and energy, circular motion. 2014–2025.",
+  h1: "A Level Mechanics 2: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Mechanics 2 past papers including projectiles, energy and circular motion.",
+  longDescription: "GradeMax provides Edexcel IAL Mechanics 2 past papers with official mark schemes.",
+  keywords: ["Mechanics 2", "M2 past papers", "WME02 past papers", "A Level Mechanics"],
+  topics: [
+    { code: "M2.1", name: "Kinematics", slug: "kinematics", description: "Variable acceleration using calculus, integration and differentiation of velocity.", keywords: ["variable acceleration", "kinematics"] },
+    { code: "M2.2", name: "Projectiles", slug: "projectiles", description: "Motion under gravity, horizontal and vertical components, range and maximum height.", keywords: ["projectiles", "trajectory", "range"] },
+    { code: "M2.3", name: "Work, Energy and Power", slug: "work-energy-power", description: "Work done, kinetic and potential energy, conservation of energy, power.", keywords: ["work", "energy", "power", "conservation"] },
+    { code: "M2.4", name: "Circular Motion", slug: "circular-motion", description: "Angular velocity, centripetal acceleration, conical pendulum, motion on a circular path.", keywords: ["circular motion", "centripetal", "angular velocity"] },
+    { code: "M2.5", name: "Centres of Mass", slug: "centres-of-mass", description: "Centre of mass of composite bodies, laminae, and systems of particles.", keywords: ["centre of mass", "lamina", "composite bodies"] },
+  ],
+  faqs: [
+    { question: "What is in Mechanics 2?", answer: "M2 covers: kinematics with variable acceleration (calculus), projectile motion, work/energy/power, circular motion, and centres of mass." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialMechanics3: SEOSubject = {
+  slug: "mechanics-3", name: "Mechanics 3 (M3)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WME03", colorKey: "other",
+  metaTitle: "Edexcel A Level Mechanics 3 (WME03) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Mechanics 3 (WME03/M3) past papers with mark schemes. Elastic strings, SHM, relative motion. 2014–2025.",
+  h1: "A Level Mechanics 3: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Mechanics 3 past papers covering elastic strings, SHM and relative motion.",
+  longDescription: "GradeMax provides Edexcel IAL Mechanics 3 past papers with official mark schemes.",
+  keywords: ["Mechanics 3", "M3 past papers", "WME03 past papers", "SHM", "elastic strings"],
+  topics: [
+    { code: "M3.1", name: "Further Kinematics", slug: "further-kinematics", description: "Motion in a straight line with variable force; impulse-momentum theorem.", keywords: ["variable force", "impulse", "momentum"] },
+    { code: "M3.2", name: "Elastic Strings and Springs", slug: "elastic-strings-springs", description: "Hooke's law, elastic potential energy, work done stretching/compressing.", keywords: ["Hooke's law", "elastic potential energy", "springs"] },
+    { code: "M3.3", name: "Simple Harmonic Motion", slug: "simple-harmonic-motion", description: "SHM definition, period, amplitude, x = a cos(ωt), energy in SHM.", keywords: ["SHM", "simple harmonic motion", "oscillation", "period"] },
+    { code: "M3.4", name: "Further Circular Motion", slug: "further-circular-motion", description: "Vertical circular motion, conditions at top and bottom, on a string or rod.", keywords: ["vertical circular motion", "centripetal force"] },
+  ],
+  faqs: [
+    { question: "What is in Mechanics 3?", answer: "M3 covers: further kinematics with variable forces, elastic strings and springs (Hooke's law), simple harmonic motion, and vertical circular motion." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialDecisionMaths1: SEOSubject = {
+  slug: "decision-mathematics-1", name: "Decision Mathematics 1 (D1)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WDM11", colorKey: "maths",
+  metaTitle: "Edexcel A Level Decision Maths 1 (WDM11) Past Papers – Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Decision Mathematics 1 (WDM11/D1) past papers with mark schemes. Algorithms, networks, linear programming. 2014–2025.",
+  h1: "A Level Decision Mathematics 1: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Decision Mathematics 1 past papers covering algorithms and networks.",
+  longDescription: "GradeMax provides Edexcel IAL Decision Mathematics 1 past papers with official mark schemes.",
+  keywords: ["Decision Mathematics", "D1 past papers", "WDM11 past papers", "algorithms", "networks"],
+  topics: [
+    { code: "D1.1", name: "Algorithms", slug: "algorithms", description: "Sorting algorithms (bubble, quick, shell), bin packing, order of an algorithm.", keywords: ["algorithms", "sorting", "bubble sort", "order of algorithm"] },
+    { code: "D1.2", name: "Graph Theory", slug: "graph-theory", description: "Graphs, digraphs, Euler and Hamilton paths, planarity.", keywords: ["graph theory", "Euler", "Hamilton"] },
+    { code: "D1.3", name: "Networks", slug: "networks", description: "Minimum spanning trees (Kruskal's and Prim's), shortest path (Dijkstra's).", keywords: ["networks", "Kruskal", "Prim", "Dijkstra"] },
+    { code: "D1.4", name: "Route Inspection", slug: "route-inspection", description: "Chinese postman problem, inspection of a network.", keywords: ["route inspection", "Chinese postman"] },
+    { code: "D1.5", name: "Critical Path Analysis", slug: "critical-path-analysis", description: "Activity networks, critical path, float, precedence tables.", keywords: ["critical path", "activity network", "float"] },
+    { code: "D1.6", name: "Linear Programming", slug: "linear-programming", description: "Formulation, graphical method, vertex testing, objective line.", keywords: ["linear programming", "graphical method", "objective function"] },
+  ],
+  faqs: [
+    { question: "What is in Decision Mathematics 1?", answer: "D1 covers: algorithms (sorting, bin packing), graph theory, network algorithms (Prim's, Kruskal's, Dijkstra's), route inspection, critical path analysis, and linear programming." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialStatistics2: SEOSubject = {
+  slug: "statistics-2", name: "Statistics 2 (S2)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WST02", colorKey: "other",
+  metaTitle: "Edexcel A Level Statistics 2 (WST02) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Statistics 2 (WST02/S2) past papers with mark schemes. Binomial, Poisson, hypothesis testing, continuous distributions. 2014–2025.",
+  h1: "A Level Statistics 2: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Statistics 2 past papers covering Binomial, Poisson and hypothesis testing.",
+  longDescription: "GradeMax provides Edexcel IAL Statistics 2 past papers with official mark schemes.",
+  keywords: ["Statistics 2", "S2 past papers", "WST02 past papers", "Binomial", "Poisson", "hypothesis testing"],
+  topics: [
+    { code: "S2.1", name: "The Binomial Distribution", slug: "binomial-distribution", description: "Binomial probability, mean and variance, normal approximation.", keywords: ["binomial distribution", "binomial probability"] },
+    { code: "S2.2", name: "The Poisson Distribution", slug: "poisson-distribution", description: "Poisson model, mean and variance, approximation to binomial.", keywords: ["Poisson distribution", "Poisson approximation"] },
+    { code: "S2.3", name: "Continuous Random Variables", slug: "continuous-random-variables", description: "Probability density function, cumulative distribution function, mean and variance.", keywords: ["pdf", "cdf", "continuous random variable"] },
+    { code: "S2.4", name: "Hypothesis Testing", slug: "hypothesis-testing", description: "One-tailed and two-tailed tests, critical regions, Type I and Type II errors.", keywords: ["hypothesis testing", "critical region", "Type I error"] },
+  ],
+  faqs: [
+    { question: "What is in Statistics 2?", answer: "S2 covers: Binomial distribution, Poisson distribution, continuous random variables (pdf/cdf), and hypothesis testing." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialStatistics3: SEOSubject = {
+  slug: "statistics-3", name: "Statistics 3 (S3)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WST03", colorKey: "other",
+  metaTitle: "Edexcel A Level Statistics 3 (WST03) Past Papers – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel A Level Statistics 3 (WST03/S3) past papers with mark schemes. Combinations of random variables, sampling, chi-squared. 2014–2025.",
+  h1: "A Level Statistics 3: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Statistics 3 past papers covering sampling, chi-squared and combinations of variables.",
+  longDescription: "GradeMax provides Edexcel IAL Statistics 3 past papers with official mark schemes.",
+  keywords: ["Statistics 3", "S3 past papers", "WST03 past papers", "chi-squared", "sampling"],
+  topics: [
+    { code: "S3.1", name: "Combinations of Random Variables", slug: "combinations-random-variables", description: "Distribution of sums and differences of independent normal variables.", keywords: ["combinations", "random variables", "normal distribution"] },
+    { code: "S3.2", name: "Sampling", slug: "sampling", description: "Sampling distributions, central limit theorem, t-distribution.", keywords: ["sampling", "central limit theorem", "t-distribution"] },
+    { code: "S3.3", name: "Estimation", slug: "estimation", description: "Confidence intervals for means and proportions.", keywords: ["confidence intervals", "estimation"] },
+    { code: "S3.4", name: "Chi-Squared Tests", slug: "chi-squared-tests", description: "Goodness of fit and contingency table tests.", keywords: ["chi-squared", "goodness of fit", "contingency table"] },
+  ],
+  faqs: [
+    { question: "What is in Statistics 3?", answer: "S3 covers: combinations of random variables, sampling theory and the central limit theorem, confidence intervals, and chi-squared tests." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+// ============================================================================
+// IAL — Further Pure Mathematics
+// ============================================================================
+
+export const ialFurtherPureMaths1: SEOSubject = {
+  slug: "further-pure-maths-1", name: "Further Pure Mathematics 1 (FP1)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WFM01", colorKey: "maths",
+  metaTitle: "Edexcel A Level Further Pure Maths 1 (WFM01) Past Papers – Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IAL Further Pure Mathematics 1 (WFM01/FP1) past papers with mark schemes. Complex numbers, matrices, proof, conics. 2014–2025.",
+  h1: "A Level Further Pure Mathematics 1: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Further Pure Mathematics 1 (FP1) past papers with mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Further Pure Mathematics 1 past papers with official mark schemes.",
+  keywords: ["Further Pure Mathematics 1", "FP1 past papers", "WFM01 past papers", "complex numbers", "matrices"],
+  topics: [
+    { code: "FP1.1", name: "Complex Numbers", slug: "complex-numbers", description: "Argand diagram, modulus, argument, multiplication and division.", keywords: ["complex numbers", "Argand diagram", "modulus"] },
+    { code: "FP1.2", name: "Roots of Polynomials", slug: "roots-polynomials", description: "Relationships between roots and coefficients, symmetric functions of roots.", keywords: ["roots", "polynomials", "Vieta's formulae"] },
+    { code: "FP1.3", name: "Series", slug: "series", description: "Summation of finite series using standard results.", keywords: ["series", "summation", "standard results"] },
+    { code: "FP1.4", name: "Matrices", slug: "matrices", description: "Matrix algebra, determinants, inverses, transformations.", keywords: ["matrices", "determinants", "inverse matrix", "transformations"] },
+    { code: "FP1.5", name: "Proof by Induction", slug: "proof-by-induction", description: "Mathematical induction for divisibility and series.", keywords: ["proof by induction", "mathematical induction"] },
+  ],
+  faqs: [
+    { question: "What is in Further Pure Mathematics 1?", answer: "FP1 covers: complex numbers, roots of polynomials, series summation, matrix algebra and transformations, and proof by induction." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialFurtherPureMaths2: SEOSubject = {
+  slug: "further-pure-maths-2", name: "Further Pure Mathematics 2 (FP2)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WFM02", colorKey: "maths",
+  metaTitle: "Edexcel A Level Further Pure Maths 2 (WFM02) Past Papers – Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IAL Further Pure Mathematics 2 (WFM02/FP2) past papers with mark schemes. 2014–2025.",
+  h1: "A Level Further Pure Mathematics 2: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Further Pure Mathematics 2 (FP2) past papers with mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Further Pure Mathematics 2 past papers with official mark schemes.",
+  keywords: ["Further Pure Mathematics 2", "FP2 past papers", "WFM02 past papers"],
+  topics: [
+    { code: "FP2.1", name: "Inequalities", slug: "inequalities", description: "Algebraic and graphical methods for inequalities involving rational functions.", keywords: ["inequalities", "rational functions"] },
+    { code: "FP2.2", name: "Series", slug: "series", description: "Method of differences, Maclaurin series.", keywords: ["Maclaurin series", "method of differences"] },
+    { code: "FP2.3", name: "Further Complex Numbers", slug: "further-complex-numbers", description: "De Moivre's theorem, nth roots of unity, loci in the Argand diagram.", keywords: ["De Moivre", "roots of unity", "Argand diagram loci"] },
+    { code: "FP2.4", name: "Further Differential Equations", slug: "further-odes", description: "Second-order ODEs, singular solutions, substitution methods.", keywords: ["differential equations", "second order ODE"] },
+    { code: "FP2.5", name: "Coordinate Systems", slug: "coordinate-systems", description: "Cartesian and parametric equations of conics; parabola, ellipse, hyperbola.", keywords: ["conics", "parabola", "ellipse", "hyperbola", "parametric"] },
+  ],
+  faqs: [
+    { question: "What is in Further Pure Mathematics 2?", answer: "FP2 covers: inequalities, series (Maclaurin and method of differences), further complex numbers (De Moivre's theorem), further differential equations, and conic sections." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialFurtherPureMaths3: SEOSubject = {
+  slug: "further-pure-maths-3", name: "Further Pure Mathematics 3 (FP3)", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WFM03", colorKey: "maths",
+  metaTitle: "Edexcel A Level Further Pure Maths 3 (WFM03) Past Papers – Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IAL Further Pure Mathematics 3 (WFM03/FP3) past papers with mark schemes. 2014–2025.",
+  h1: "A Level Further Pure Mathematics 3: Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Further Pure Mathematics 3 (FP3) past papers with mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Further Pure Mathematics 3 past papers with official mark schemes.",
+  keywords: ["Further Pure Mathematics 3", "FP3 past papers", "WFM03 past papers"],
+  topics: [
+    { code: "FP3.1", name: "Further Matrix Algebra", slug: "further-matrix-algebra", description: "Eigenvalues, eigenvectors, diagonalisation of matrices.", keywords: ["eigenvalues", "eigenvectors", "diagonalisation"] },
+    { code: "FP3.2", name: "Vectors and 3D Geometry", slug: "vectors-3d", description: "Vector product, triple scalar product, equations of planes, distances.", keywords: ["vector product", "planes", "3D geometry"] },
+    { code: "FP3.3", name: "Calculus", slug: "calculus", description: "Arc length, surface area of revolution, reduction formulae.", keywords: ["arc length", "surface area", "reduction formulae"] },
+    { code: "FP3.4", name: "Further Differential Equations", slug: "further-odes-3", description: "Systems of first-order differential equations, coupled ODEs.", keywords: ["systems of equations", "coupled ODEs"] },
+  ],
+  faqs: [
+    { question: "What is in Further Pure Mathematics 3?", answer: "FP3 covers: further matrix algebra (eigenvalues/eigenvectors), advanced 3D vector geometry, advanced calculus (arc length, surface area), and systems of differential equations." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+// ============================================================================
+// IAL — Sciences
+// ============================================================================
+
+export const ialBiology: SEOSubject = {
+  slug: "ial-biology", name: "IAL Biology", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WBI", colorKey: "biology",
+  metaTitle: "Edexcel A Level Biology (IAL) Past Papers – All Units with Mark Schemes",
+  metaDescription: "Free Edexcel A Level (IAL) Biology past papers for all units (WBI11–WBI16) with mark schemes. 2014–2025. Unit 1, 2, 3, 4, 5, 6.",
+  h1: "A Level Biology (IAL): Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Biology past papers for all 6 units with official mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Biology past papers for all 6 units with official mark schemes organized by year and session.",
+  keywords: ["A Level Biology IAL", "Edexcel Biology IAL", "WBI past papers", "A Level Biology past papers"],
+  topics: [
+    { code: "WBI11", name: "Unit 1 – Lifestyle, Transport, Genes and Health", slug: "unit-1", description: "Lifestyle and health, cell structure, transport across membranes, nucleic acids.", keywords: ["lifestyle", "health", "transport", "nucleic acids"] },
+    { code: "WBI12", name: "Unit 2 – Development, Plants and the Environment", slug: "unit-2", description: "Cell signalling, meiosis, plant biology, ecosystems.", keywords: ["cell signalling", "meiosis", "plants", "ecosystems"] },
+    { code: "WBI13", name: "Unit 3 – Practical Biology and Research Skills", slug: "unit-3", description: "Practical skills assessment and scientific research methods.", keywords: ["practical biology", "research skills"] },
+    { code: "WBI14", name: "Unit 4 – Energy, Environment, Microbiology and Immunity", slug: "unit-4", description: "Cellular respiration, photosynthesis, microbiology, immunity.", keywords: ["respiration", "photosynthesis", "immunity", "microbiology"] },
+    { code: "WBI15", name: "Unit 5 – Respiration, Internal Environment, Coordination and Gene Technology", slug: "unit-5", description: "Respiration detail, kidney function, nervous coordination, gene technology.", keywords: ["respiration", "kidney", "gene technology", "coordination"] },
+    { code: "WBI16", name: "Unit 6 – Practical Biology and Investigative Skills", slug: "unit-6", description: "Advanced practical investigation skills.", keywords: ["practical skills", "investigative skills"] },
+  ],
+  faqs: [
+    { question: "How many units are in Edexcel IAL Biology?", answer: "Edexcel IAL Biology has 6 units: Unit 1 (Lifestyle and Health), Unit 2 (Development and Environment), Unit 3 (Practical Skills), Unit 4 (Energy and Immunity), Unit 5 (Coordination and Gene Technology), Unit 6 (Investigative Skills)." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialChemistry: SEOSubject = {
+  slug: "ial-chemistry", name: "IAL Chemistry", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WCH", colorKey: "chemistry",
+  metaTitle: "Edexcel A Level Chemistry (IAL) Past Papers – All Units with Mark Schemes",
+  metaDescription: "Free Edexcel A Level (IAL) Chemistry past papers for all units (WCH11–WCH16) with mark schemes. 2014–2025. Unit 1 to Unit 6.",
+  h1: "A Level Chemistry (IAL): Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Chemistry past papers for all 6 units with official mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Chemistry past papers for all 6 units with official mark schemes organized by year and session.",
+  keywords: ["A Level Chemistry IAL", "Edexcel Chemistry IAL", "WCH past papers", "A Level Chemistry past papers"],
+  topics: [
+    { code: "WCH11", name: "Unit 1 – The Core Principles of Chemistry", slug: "unit-1", description: "Atomic structure, bonding, energetics, moles and reactions.", keywords: ["atomic structure", "bonding", "energetics", "moles"] },
+    { code: "WCH12", name: "Unit 2 – Application of Core Principles of Chemistry", slug: "unit-2", description: "Periodic table, redox, alkanes and alkenes, haloalkanes.", keywords: ["periodic table", "redox", "alkanes", "haloalkanes"] },
+    { code: "WCH13", name: "Unit 3 – Chemistry Laboratory Skills I", slug: "unit-3", description: "Practical chemistry laboratory skills assessment.", keywords: ["practical chemistry", "laboratory skills"] },
+    { code: "WCH14", name: "Unit 4 – Rates, Equilibria and Further Organic Chemistry", slug: "unit-4", description: "Kinetics, equilibrium, further organic chemistry.", keywords: ["kinetics", "equilibrium", "organic chemistry"] },
+    { code: "WCH15", name: "Unit 5 – Transition Metals and Organic Nitrogen Chemistry", slug: "unit-5", description: "Transition metals, complex ions, nitrogen compounds.", keywords: ["transition metals", "complex ions", "nitrogen compounds"] },
+    { code: "WCH16", name: "Unit 6 – Chemistry Laboratory Skills II", slug: "unit-6", description: "Advanced practical chemistry skills.", keywords: ["practical skills", "laboratory II"] },
+  ],
+  faqs: [
+    { question: "How many units are in Edexcel IAL Chemistry?", answer: "Edexcel IAL Chemistry has 6 units: Unit 1 (Core Principles), Unit 2 (Application of Core Principles), Unit 3 (Lab Skills I), Unit 4 (Rates and Equilibria), Unit 5 (Transition Metals), Unit 6 (Lab Skills II)." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2021, 2022, 2023, 2024, 2025],
+}
+
+export const ialPhysics: SEOSubject = {
+  slug: "ial-physics", name: "IAL Physics", level: "ial", levelDisplay: "A Level",
+  examBoard: "Pearson Edexcel", examCode: "WPH", colorKey: "physics",
+  metaTitle: "Edexcel A Level Physics (IAL) Past Papers – All Units with Mark Schemes",
+  metaDescription: "Free Edexcel A Level (IAL) Physics past papers for all units (WPH11–WPH16) with mark schemes. 2014–2025. Unit 1 to Unit 6.",
+  h1: "A Level Physics (IAL): Past Papers & Mark Schemes",
+  shortDescription: "Edexcel IAL Physics past papers for all 6 units with official mark schemes.",
+  longDescription: "GradeMax provides Edexcel IAL Physics past papers for all 6 units with official mark schemes organized by year and session.",
+  keywords: ["A Level Physics IAL", "Edexcel Physics IAL", "WPH past papers", "A Level Physics past papers"],
+  topics: [
+    { code: "WPH11", name: "Unit 1 – Mechanics and Materials", slug: "unit-1", description: "Forces, motion, Newton's laws, materials and Young modulus.", keywords: ["mechanics", "materials", "Young modulus", "Newton's laws"] },
+    { code: "WPH12", name: "Unit 2 – Waves and Electricity", slug: "unit-2", description: "Waves, optics, electric fields, circuits and components.", keywords: ["waves", "optics", "electricity", "circuits"] },
+    { code: "WPH13", name: "Unit 3 – Practical Skills in Physics I", slug: "unit-3", description: "Practical physics skills and investigation.", keywords: ["practical physics", "investigation"] },
+    { code: "WPH14", name: "Unit 4 – Further Mechanics, Fields and Particles", slug: "unit-4", description: "Momentum, circular motion, gravitation, electrostatics, capacitors.", keywords: ["momentum", "circular motion", "gravitation", "capacitors"] },
+    { code: "WPH15", name: "Unit 5 – Thermodynamics, Radiation, Oscillations and Cosmology", slug: "unit-5", description: "Thermodynamics, radioactivity, SHM, and cosmology.", keywords: ["thermodynamics", "radioactivity", "SHM", "cosmology"] },
+    { code: "WPH16", name: "Unit 6 – Practical Skills in Physics II", slug: "unit-6", description: "Advanced practical physics skills.", keywords: ["practical skills", "advanced physics"] },
+  ],
+  faqs: [
+    { question: "How many units are in Edexcel IAL Physics?", answer: "Edexcel IAL Physics has 6 units: Unit 1 (Mechanics and Materials), Unit 2 (Waves and Electricity), Unit 3 (Practical Skills I), Unit 4 (Further Mechanics, Fields and Particles), Unit 5 (Thermodynamics and Cosmology), Unit 6 (Practical Skills II)." },
+  ],
+  yearsAvailable: [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+// ============================================================================
+// IAL — Humanities, Social Sciences & Languages (concise entries)
+// ============================================================================
+
+function makeIALSubject(
+  slug: string, name: string, code: string,
+  colorKey: SEOSubject["colorKey"],
+  description: string,
+  years: number[],
+  unitCount: number,
+  unitLabel = "Unit"
+): SEOSubject {
+  return {
+    slug, name, level: "ial", levelDisplay: "A Level",
+    examBoard: "Pearson Edexcel", examCode: code, colorKey,
+    metaTitle: `Edexcel ${name} (${code}) Past Papers – Questions & Mark Schemes`,
+    metaDescription: `Free Edexcel A Level ${name} past papers with mark schemes. ${description} ${years[0]}–${years[years.length - 1]}.`,
+    h1: `${name}: Past Papers & Mark Schemes`,
+    shortDescription: `Edexcel IAL ${name} past papers with official mark schemes.`,
+    longDescription: `GradeMax provides Edexcel IAL ${name} past papers with official mark schemes organized by year and session.`,
+    keywords: [`${name} past papers`, `Edexcel ${name}`, `${code} past papers`, `A Level ${name}`],
+    topics: Array.from({ length: unitCount }, (_, i) => ({
+      code: `${i + 1}`,
+      name: `${unitLabel} ${i + 1}`,
+      slug: `${unitLabel.toLowerCase()}-${i + 1}`,
+      description: `${name} ${unitLabel} ${i + 1} examination content.`,
+      keywords: [`${name} ${unitLabel} ${i + 1}`],
+    })),
+    faqs: [
+      { question: `How many units are in Edexcel IAL ${name}?`, answer: `Edexcel IAL ${name} has ${unitCount} assessed units.` },
+    ],
+    yearsAvailable: years,
+  }
+}
+
+export const ialAccounting = makeIALSubject(
+  "ial-accounting", "IAL Accounting", "WAC011", "other",
+  "Financial statements, management accounting and business finance.",
+  [2022, 2023, 2024, 2025], 2
+)
+
+export const ialBusiness = makeIALSubject(
+  "ial-business", "IAL Business", "WBS", "other",
+  "Business environment, management, marketing and finance.",
+  [2022, 2025], 4
+)
+
+export const ialEconomics = makeIALSubject(
+  "ial-economics", "IAL Economics", "WEC", "other",
+  "Microeconomics, macroeconomics, international economics and economic development.",
+  [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026], 4
+)
+
+export const ialGeography = makeIALSubject(
+  "ial-geography", "IAL Geography", "WGE", "other",
+  "Physical geography, human geography, and global geographical issues.",
+  [2022, 2023, 2024, 2025], 4
+)
+
+export const ialHistory = makeIALSubject(
+  "ial-history", "IAL History", "WHI", "other",
+  "Historical periods, sources, interpretations and thematic studies.",
+  [2022, 2023, 2024, 2025], 4
+)
+
+export const ialLaw = makeIALSubject(
+  "ial-law", "IAL Law", "WLW", "other",
+  "English legal system, criminal law, tort law and contract law.",
+  [2022, 2023, 2024], 2, "Paper"
+)
+
+export const ialPsychology = makeIALSubject(
+  "ial-psychology", "IAL Psychology", "WPS", "other",
+  "Social influence, memory, attachment, psychopathology and research methods.",
+  [2022, 2023, 2024, 2025], 4
+)
+
+export const ialEnglishLanguage = makeIALSubject(
+  "ial-english-language", "IAL English Language", "WEN", "english",
+  "Language study, texts in context, and language investigation.",
+  [2022, 2023, 2024, 2025], 4
+)
+
+export const ialEnglishLiterature = makeIALSubject(
+  "ial-english-literature", "IAL English Literature", "WLT", "english",
+  "Poetry, prose, drama, and comparative literary study.",
+  [2016, 2022, 2023, 2024, 2025], 4
+)
+
+export const ialFrench = makeIALSubject(
+  "ial-french", "IAL French", "WFR", "other",
+  "French language skills, culture and contemporary French-speaking society.",
+  [2022], 4
+)
+
+export const ialGerman = makeIALSubject(
+  "ial-german", "IAL German", "WGN", "other",
+  "German language skills, culture and contemporary German-speaking society.",
+  [2022], 4
+)
+
+export const ialGreek = makeIALSubject(
+  "ial-greek", "IAL Greek", "WGK", "other",
+  "Classical Greek language, texts and culture.",
+  [2022], 4
+)
+
+export const ialItalian = makeIALSubject(
+  "ial-italian", "IAL Italian", "WIT", "other",
+  "Italian language skills, culture and contemporary Italian society.",
+  [2022], 4
+)
+
+export const ialSpanish = makeIALSubject(
+  "ial-spanish", "IAL Spanish", "WSP", "other",
+  "Spanish language skills, culture and contemporary Spanish-speaking society.",
+  [2022], 4
+)
+
+// ============================================================================
 // MASTER EXPORT
 // ============================================================================
 export const seoSubjects: SEOSubject[] = [
@@ -526,11 +967,47 @@ export const seoSubjects: SEOSubject[] = [
   igcseChemistry,
   igcseBiology,
   igcseICT,
-  
-  // IAL
+
+  // IAL — Mathematics
   ialPureMaths1,
+  ialPureMaths2,
+  ialPureMaths3,
+  ialPureMaths4,
   ialMechanics1,
+  ialMechanics2,
+  ialMechanics3,
+  ialDecisionMaths1,
   ialStatistics1,
+  ialStatistics2,
+  ialStatistics3,
+
+  // IAL — Further Mathematics
+  ialFurtherPureMaths1,
+  ialFurtherPureMaths2,
+  ialFurtherPureMaths3,
+
+  // IAL — Sciences
+  ialBiology,
+  ialChemistry,
+  ialPhysics,
+
+  // IAL — Humanities & Social Sciences
+  ialAccounting,
+  ialBusiness,
+  ialEconomics,
+  ialGeography,
+  ialHistory,
+  ialLaw,
+  ialPsychology,
+
+  // IAL — Languages
+  ialEnglishLanguage,
+  ialEnglishLiterature,
+  ialFrench,
+  ialGerman,
+  ialGreek,
+  ialItalian,
+  ialSpanish,
 ]
 
 export const getSubjectBySlug = (level: Level, slug: string): SEOSubject | undefined => {

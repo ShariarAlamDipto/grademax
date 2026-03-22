@@ -43,12 +43,12 @@ export const metadata: Metadata = {
 
 const faqs = [
   {
-    question: "What A Level units have past papers available?",
-    answer: "GradeMax offers free Edexcel IAL past papers for: Pure Mathematics 1 (WMA11/P1), Mechanics 1 (WME01/M1), and Statistics 1 (WST01/S1). More units including P2, P3, M2, S2, and Further Pure are being added."
+    question: "What A Level subjects have past papers available?",
+    answer: "GradeMax offers free Edexcel IAL past papers for 30+ subjects including: all Mathematics units (P1–P4, M1–M3, S1–S3, D1), Further Mathematics (FP1–FP3), Sciences (Biology, Chemistry, Physics — all units), and Humanities/Languages (Accounting, Business, Economics, Geography, History, Law, Psychology, English Language, English Literature, French, German, Greek, Italian, Spanish)."
   },
   {
     question: "What is the difference between IAL and A Level?",
-    answer: "IAL (International A Level) is Pearson Edexcel's international version of A Levels, taken by students worldwide. The content is similar to UK A Levels but exams are available in January and June sessions. GradeMax focuses on Edexcel IAL papers."
+    answer: "IAL (International A Level) is Pearson Edexcel's international version of A Levels, taken by students worldwide. Exams are available in January, May/June, and October/November sessions. GradeMax focuses on Edexcel IAL papers."
   },
   {
     question: "Can I practice A Level Maths past papers by topic?",
@@ -61,6 +61,10 @@ const faqs = [
   {
     question: "How do I revise for Edexcel A Level Maths?",
     answer: "1) Practice topic-wise past paper questions to master individual concepts. 2) Generate custom worksheets to mix questions from different years. 3) Do full timed papers under exam conditions. 4) Always check the mark scheme to understand the marking criteria."
+  },
+  {
+    question: "What years do the IAL papers cover?",
+    answer: "Mathematics units go back to 2014 (some to 2011). Sciences (Biology, Chemistry, Physics) from 2014. Humanities and languages from 2016–2022 onwards. Papers include January, May/June, and October/November sessions where available."
   },
 ]
 
@@ -111,9 +115,9 @@ export default function ALevelPastPapersPage() {
           <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
             Edexcel A Level (IAL) Past Papers
           </h1>
-          <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", maxWidth: "520px", lineHeight: 1.6 }}>
+          <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", maxWidth: "580px", lineHeight: 1.6 }}>
             Free Pearson Edexcel International A Level past papers with mark schemes.
-            Pure Maths 1 · Mechanics 1 · Statistics 1.
+            Mathematics · Further Mathematics · Sciences · Humanities · Languages.
           </p>
         </div>
 
@@ -177,7 +181,7 @@ export default function ALevelPastPapersPage() {
             Browse by Year
           </h2>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-            {[2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
+            {[2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
               <Link key={year} href={`/browse?level=ial&year=${year}`} className="topic-pill">
                 {year}
               </Link>

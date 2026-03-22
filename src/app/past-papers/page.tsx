@@ -54,17 +54,38 @@ export default async function PastPapersPage() {
     { auth: { autoRefreshToken: false, persistSession: false } }
   )
 
-  const { data: paperRows } = await supabase
-    .from("papers")
-    .select("subjects!inner(name)")
-    .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
+  const subjectsWithPapers = new Set<string>()
+  const pageSize = 1000
+  let lastSeenId: string | null = null
 
-  const subjectsWithPapers = new Set<string>(
-    (paperRows ?? []).map((r: { subjects: { name: string } | { name: string }[] }) => {
-      const s = Array.isArray(r.subjects) ? r.subjects[0] : r.subjects
-      return s?.name ?? ""
-    }).filter(Boolean)
-  )
+  while (true) {
+    let query = supabase
+      .from("papers")
+      .select("id,subjects!inner(name)")
+      .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
+      .order("id", { ascending: true })
+      .limit(pageSize)
+
+    if (lastSeenId) {
+      query = query.gt("id", lastSeenId)
+    }
+
+    const { data: paperRows, error } = await query
+
+    if (error) {
+      throw new Error(`Failed to fetch papers for listing: ${error.message}`)
+    }
+    if (!paperRows || paperRows.length === 0) break
+
+    const typedRows = paperRows as Array<{ id: string; subjects: { name: string } | { name: string }[] }>
+    for (const row of typedRows) {
+      const s = Array.isArray(row.subjects) ? row.subjects[0] : row.subjects
+      if (s?.name) subjectsWithPapers.add(s.name)
+    }
+
+    lastSeenId = typedRows[typedRows.length - 1].id
+    if (typedRows.length < pageSize) break
+  }
 
   const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(s.name))
   const igcse = availableSubjects.filter((s) => s.level === "igcse")

@@ -44,9 +44,10 @@ export async function POST(request: Request) {
       yearStart,
       yearEnd,
       difficulty,
-      limit = 50,
+      limit: rawLimit = 50,
       shuffle = false
     } = body;
+    const limit = Math.min(Math.max(1, Number(rawLimit) || 50), 200);
 
     if (!topics || topics.length === 0) {
       return NextResponse.json(

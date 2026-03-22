@@ -40,9 +40,9 @@ export default function BrowseQuestionsPage() {
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://tybaetnvnfgniotdfxze.supabase.co';
 
   useEffect(() => {
-    if (selectedTopic) {
-      loadQuestions(selectedTopic);
-    }
+    if (!selectedTopic) return;
+    const timer = setTimeout(() => loadQuestions(selectedTopic), 250);
+    return () => clearTimeout(timer);
   }, [selectedTopic]);
 
   const loadQuestions = async (topicCode: string) => {

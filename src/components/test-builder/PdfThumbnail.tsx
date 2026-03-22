@@ -2,6 +2,16 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+// Cache the pdfjs module so it's only loaded once across all thumbnails
+let pdfjsCache: typeof import('pdfjs-dist') | null = null;
+async function getPdfjsLib() {
+  if (!pdfjsCache) {
+    pdfjsCache = await import('pdfjs-dist');
+    pdfjsCache.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+  }
+  return pdfjsCache;
+}
+
 interface PdfThumbnailProps {
   url: string;
   width?: number;
@@ -28,13 +38,7 @@ export default function PdfThumbnail({ url, width = 280, className = '', onClick
 
     (async () => {
       try {
-        // Dynamic import to avoid SSR issues
-        const pdfjsLib = await import('pdfjs-dist');
-
-        // Use the local worker copy (placed in public/)
-        if (!pdfjsLib.GlobalWorkerOptions.workerSrc) {
-          pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-        }
+        const pdfjsLib = await getPdfjsLib();
 
         const loadingTask = pdfjsLib.getDocument({
           url,

@@ -25,7 +25,7 @@ export default function ContactPage() {
         {/* Contact items */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0", marginBottom: "3rem" }}>
           {([
-            { label: "General &amp; Support",  email: "shariardipto111@gmail.com", note: "Fastest response" },
+            { label: "General & Support",  email: "shariardipto111@gmail.com", note: "Fastest response" },
             { label: "Feature Requests",       email: "shariardipto111@gmail.com", note: "Ideas welcome" },
             { label: "Bug Reports",            email: "shariardipto111@gmail.com", note: "Include details" },
           ] as { label: string; email: string; note: string }[]).map(({ label, email, note }, i, arr) => (

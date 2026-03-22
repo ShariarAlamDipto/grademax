@@ -12,8 +12,15 @@ export default function Navbar() {
     function handleResize() {
       if (window.innerWidth >= 1024) setMenuOpen(false)
     }
+    let ticking = false
     function handleScroll() {
-      setScrolled(window.scrollY > 8)
+      if (!ticking) {
+        ticking = true
+        requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 8)
+          ticking = false
+        })
+      }
     }
     window.addEventListener("resize", handleResize)
     window.addEventListener("scroll", handleScroll, { passive: true })
