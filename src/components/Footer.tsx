@@ -23,7 +23,7 @@ export default function Footer() {
               Grade<span style={{ color: "#F59E0B" }}>Max</span>
             </p>
             <p style={{ fontSize: "0.8rem", lineHeight: 1.65, color: "var(--gm-text-3)", marginBottom: "1rem" }}>
-              Free Edexcel IGCSE &amp; A Level past papers with mark schemes.
+              Free Edexcel IGCSE & A Level past papers with mark schemes.
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {([
@@ -131,7 +131,7 @@ export default function Footer() {
             © {new Date().getFullYear()} GradeMax. All rights reserved.
           </p>
           <p style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", marginTop: "0.4rem" }}>
-            Free Edexcel past papers and custom worksheets for IGCSE &amp; A Level students worldwide · Papers available 2010–2025
+            Free Edexcel past papers and custom worksheets for IGCSE & A Level students worldwide · Papers available 2010–2025
           </p>
         </div>
 

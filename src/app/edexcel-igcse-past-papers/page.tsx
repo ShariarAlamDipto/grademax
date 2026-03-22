@@ -111,7 +111,7 @@ export default function IGCSEPastPapersPage() {
           </h1>
           <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", maxWidth: "520px", lineHeight: 1.6 }}>
             Free Pearson Edexcel International GCSE past papers with mark schemes, organised by topic and year.
-            Physics · Maths A &amp; B · Chemistry · Biology · ICT.
+            Physics · Maths A & B · Chemistry · Biology · ICT.
           </p>
         </div>
 

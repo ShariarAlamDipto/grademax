@@ -39,18 +39,50 @@ export const subjects: Subject[] = [
   { slug: "geography",            name: "Geography",                level: "igcse", colorKey: "other",     dataFolder: "Geography" },
   { slug: "bangla",               name: "Bangla",                   level: "igcse", colorKey: "other",     dataFolder: "Bangla" },
 
-  // ─── IAL ──────────────────────────────────────────────────────────────────
-  { slug: "mechanics-1",          name: "Mechanics 1 (M1)",         level: "ial",   colorKey: "other",     dataFolder: "Mechanics_1" },
-  { slug: "pure-mathematics-1",   name: "Pure Mathematics 1 (P1)",  level: "ial",   colorKey: "maths" },
-  { slug: "pure-mathematics-2",   name: "Pure Mathematics 2 (P2)",  level: "ial",   colorKey: "maths" },
-  { slug: "pure-mathematics-3",   name: "Pure Mathematics 3 (P3)",  level: "ial",   colorKey: "maths" },
-  { slug: "pure-mathematics-4",   name: "Pure Mathematics 4 (P4)",  level: "ial",   colorKey: "maths" },
-  { slug: "statistics-1",         name: "Statistics 1 (S1)",        level: "ial",   colorKey: "other" },
-  { slug: "physics-ial",          name: "Physics",                  level: "ial",   colorKey: "physics" },
+  // ─── IAL — Mathematics modules ────────────────────────────────────────────
+  { slug: "pure-mathematics-1",      name: "Pure Mathematics 1 (P1)",         level: "ial", colorKey: "maths" },
+  { slug: "pure-mathematics-2",      name: "Pure Mathematics 2 (P2)",         level: "ial", colorKey: "maths" },
+  { slug: "pure-mathematics-3",      name: "Pure Mathematics 3 (P3)",         level: "ial", colorKey: "maths" },
+  { slug: "pure-mathematics-4",      name: "Pure Mathematics 4 (P4)",         level: "ial", colorKey: "maths" },
+  { slug: "mechanics-1",             name: "Mechanics 1 (M1)",                level: "ial", colorKey: "other" },
+  { slug: "mechanics-2",             name: "Mechanics 2 (M2)",                level: "ial", colorKey: "other" },
+  { slug: "mechanics-3",             name: "Mechanics 3 (M3)",                level: "ial", colorKey: "other" },
+  { slug: "decision-mathematics-1",  name: "Decision Mathematics 1 (D1)",     level: "ial", colorKey: "maths" },
+  { slug: "statistics-1",            name: "Statistics 1 (S1)",               level: "ial", colorKey: "other" },
+  { slug: "statistics-2",            name: "Statistics 2 (S2)",               level: "ial", colorKey: "other" },
+  { slug: "statistics-3",            name: "Statistics 3 (S3)",               level: "ial", colorKey: "other" },
+
+  // ─── IAL — Further Mathematics modules ────────────────────────────────────
+  { slug: "further-pure-maths-1",    name: "Further Pure Mathematics 1 (FP1)", level: "ial", colorKey: "maths" },
+  { slug: "further-pure-maths-2",    name: "Further Pure Mathematics 2 (FP2)", level: "ial", colorKey: "maths" },
+  { slug: "further-pure-maths-3",    name: "Further Pure Mathematics 3 (FP3)", level: "ial", colorKey: "maths" },
+
+  // ─── IAL — Sciences ───────────────────────────────────────────────────────
+  { slug: "ial-biology",             name: "IAL Biology",                     level: "ial", colorKey: "biology" },
+  { slug: "ial-chemistry",           name: "IAL Chemistry",                   level: "ial", colorKey: "chemistry" },
+  { slug: "ial-physics",             name: "IAL Physics",                     level: "ial", colorKey: "physics" },
+
+  // ─── IAL — Humanities & Social Sciences ───────────────────────────────────
+  { slug: "ial-accounting",          name: "IAL Accounting",                  level: "ial", colorKey: "other" },
+  { slug: "ial-business",            name: "IAL Business",                    level: "ial", colorKey: "other" },
+  { slug: "ial-economics",           name: "IAL Economics",                   level: "ial", colorKey: "other" },
+  { slug: "ial-geography",           name: "IAL Geography",                   level: "ial", colorKey: "other" },
+  { slug: "ial-history",             name: "IAL History",                     level: "ial", colorKey: "other" },
+  { slug: "ial-law",                 name: "IAL Law",                         level: "ial", colorKey: "other" },
+  { slug: "ial-psychology",          name: "IAL Psychology",                  level: "ial", colorKey: "other" },
+
+  // ─── IAL — Languages ──────────────────────────────────────────────────────
+  { slug: "ial-english-language",    name: "IAL English Language",            level: "ial", colorKey: "english" },
+  { slug: "ial-english-literature",  name: "IAL English Literature",          level: "ial", colorKey: "english" },
+  { slug: "ial-french",              name: "IAL French",                      level: "ial", colorKey: "other" },
+  { slug: "ial-german",              name: "IAL German",                      level: "ial", colorKey: "other" },
+  { slug: "ial-greek",               name: "IAL Greek",                       level: "ial", colorKey: "other" },
+  { slug: "ial-italian",             name: "IAL Italian",                     level: "ial", colorKey: "other" },
+  { slug: "ial-spanish",             name: "IAL Spanish",                     level: "ial", colorKey: "other" },
 ]
 
 /** Subjects that have past papers available for download */
-export const pastPaperSubjects = subjects.filter(s => !!s.dataFolder)
+export const pastPaperSubjects = subjects
 
 /** Find a subject by its URL slug */
 export function getSubjectBySlug(slug: string): Subject | undefined {

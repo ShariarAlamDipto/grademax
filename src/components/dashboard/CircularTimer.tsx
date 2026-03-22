@@ -22,9 +22,14 @@ export default function CircularTimer() {
 
   useEffect(() => () => { if (raf.current) cancelAnimationFrame(raf.current) }, [])
 
+  const lastTickRef = useRef(0)
   function tick(t: number) {
     if (startedAt.current == null) startedAt.current = t
-  setElapsed(t - (startedAt.current as number))
+    // Update state at ~4fps — text only needs seconds-level precision
+    if (t - lastTickRef.current >= 250) {
+      lastTickRef.current = t
+      setElapsed(t - (startedAt.current as number))
+    }
     raf.current = requestAnimationFrame(tick)
   }
 

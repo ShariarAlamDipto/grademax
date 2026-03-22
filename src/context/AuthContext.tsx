@@ -189,9 +189,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [handleSession])
 
   // Auto-refresh profile when tab becomes visible (picks up role changes from admin)
+  // Throttled to once per 30s to avoid unnecessary DB round-trips
   useEffect(() => {
+    let lastFetch = 0
     const onVisibilityChange = () => {
-      if (document.visibilityState === "visible" && user?.id) {
+      const now = Date.now()
+      if (document.visibilityState === "visible" && user?.id && now - lastFetch > 30_000) {
+        lastFetch = now
         fetchProfileDirect(user.id)
       }
     }

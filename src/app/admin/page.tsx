@@ -265,7 +265,7 @@ export default function AdminPage() {
             </div>
             <div>
               <h1 className="text-lg font-bold">Admin Portal</h1>
-              <p className="text-xs text-white/40">Manage users, roles &amp; access</p>
+              <p className="text-xs text-white/40">Manage users, roles & access</p>
             </div>
           </div>
           <div className="flex items-center gap-3">

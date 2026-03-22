@@ -1,5 +1,5 @@
 "use client"
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useLayoutEffect, useState } from 'react';
 
 type Theme = 'dark' | 'light';
 
@@ -18,7 +18,9 @@ const ThemeContext = createContext<ThemeContextProps>({
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>('dark');
 
-  useEffect(() => {
+  // useLayoutEffect runs synchronously before paint — state is correct
+  // before the user can interact, preventing the double-tap bug
+  useLayoutEffect(() => {
     const stored = localStorage.getItem('theme') as Theme | null;
     if (stored === 'dark' || stored === 'light') {
       setThemeState(stored);

@@ -330,7 +330,19 @@ export default function WorryCatcher() {
     // ----- main loop -----
     let anim = 0
     let lastFrame = 0
+    let visible = true
+    const observer = new IntersectionObserver(
+      (entries) => { visible = entries[0].isIntersecting },
+      { threshold: 0 }
+    )
+    observer.observe(canvas)
+
     const tick = (now = performance.now()) => {
+      // Pause animation when canvas is scrolled out of view
+      if (!visible) {
+        anim = requestAnimationFrame(tick)
+        return
+      }
       // Lower FPS on mobile
       if (isMobile && now - lastFrame < 33) {
         anim = requestAnimationFrame(tick)
@@ -429,6 +441,7 @@ export default function WorryCatcher() {
     return () => {
       cancelAnimationFrame(anim)
       clearTimeout(resizeTimer)
+      observer.disconnect()
       canvas.removeEventListener("mousemove", onMove)
       window.removeEventListener("resize", debouncedResize)
     }
