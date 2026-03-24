@@ -97,6 +97,7 @@ body {
   letter-spacing: var(--gm-ls);
   background-color: var(--gm-bg);
   color: var(--gm-text);
+  overflow-x: hidden;
 }
 
 /* ── Scrollbar ── */

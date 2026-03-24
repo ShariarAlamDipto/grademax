@@ -101,7 +101,7 @@ export default function SubjectsIndexPage() {
               {igcseSubjects.map(subject => (
                 <Link
                   key={subject.slug}
-                  href={`/subjects/igcse/${subject.slug}`}
+                  href={`/past-papers/${subject.slug}`}
                   style={{
                     background: "var(--gm-surface)",
                     border: "1px solid var(--gm-border)",
@@ -115,11 +115,10 @@ export default function SubjectsIndexPage() {
                   }}
                   className="gm-card"
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{subject.name}</p>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)" }}>{subject.name}</p>
                   <p style={{ fontSize: "0.65rem", color: "var(--gm-blue)", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
-                  <p style={{ fontSize: "0.75rem", color: "var(--gm-text-2)", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
-                  <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.5rem" }}>
-                    {subject.topics.length} topics · {subject.yearsAvailable.length} years
+                  <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.25rem" }}>
+                    {subject.yearsAvailable.length} years
                   </p>
                 </Link>
               ))}
@@ -140,7 +139,7 @@ export default function SubjectsIndexPage() {
               {ialSubjects.map(subject => (
                 <Link
                   key={subject.slug}
-                  href={`/subjects/ial/${subject.slug}`}
+                  href={`/past-papers/${subject.slug}`}
                   style={{
                     background: "var(--gm-surface)",
                     border: "1px solid var(--gm-border)",
@@ -154,11 +153,10 @@ export default function SubjectsIndexPage() {
                   }}
                   className="gm-card"
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{subject.name}</p>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)" }}>{subject.name}</p>
                   <p style={{ fontSize: "0.65rem", color: "var(--gm-amber)", fontWeight: 600, letterSpacing: "0.05em" }}>{subject.examCode}</p>
-                  <p style={{ fontSize: "0.75rem", color: "var(--gm-text-2)", lineHeight: 1.5, marginTop: "0.25rem" }}>{subject.shortDescription}</p>
-                  <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.5rem" }}>
-                    {subject.topics.length} topics · {subject.yearsAvailable.length} years
+                  <p style={{ fontSize: "0.65rem", color: "var(--gm-text-3)", marginTop: "0.25rem" }}>
+                    {subject.yearsAvailable.length} years
                   </p>
                 </Link>
               ))}
