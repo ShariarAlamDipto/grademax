@@ -46,6 +46,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
+// Subjects that have a working worksheet generator
+const WORKSHEET_SLUGS = new Set(['physics', 'maths-b', 'pure-mathematics-1', 'chemistry', 'biology'])
+
 export default async function SubjectPage({ params }: PageProps) {
   const { level, slug } = await params
   if (!isValidLevel(level)) notFound()
@@ -55,6 +58,7 @@ export default async function SubjectPage({ params }: PageProps) {
   const levelDisplay = getLevelDisplay(level)
   const schema = generateSubjectPageSchema(subject)
   const accentColor = level === 'ial' ? '#A78BFA' : '#6EA8FE'
+  const hasWorksheet = WORKSHEET_SLUGS.has(slug)
 
   return (
     <>
@@ -69,9 +73,9 @@ export default async function SubjectPage({ params }: PageProps) {
           <nav style={{ marginBottom: "1.5rem" }}>
             <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", listStyle: "none", padding: 0, margin: 0 }}>
               <li><Link href="/" className="gm-link" style={{ fontSize: "0.75rem" }}>Home</Link></li>
-              <li style={{ color: "#1A2235", fontSize: "0.75rem" }}>/</li>
+              <li style={{ color: "var(--gm-text-3)", fontSize: "0.75rem" }}>/</li>
               <li><Link href={`/subjects/${level}`} className="gm-link" style={{ fontSize: "0.75rem" }}>{levelDisplay}</Link></li>
-              <li style={{ color: "#1A2235", fontSize: "0.75rem" }}>/</li>
+              <li style={{ color: "var(--gm-text-3)", fontSize: "0.75rem" }}>/</li>
               <li style={{ fontSize: "0.75rem", color: "var(--gm-text-2)" }}>{subject.name}</li>
             </ol>
           </nav>
@@ -81,7 +85,7 @@ export default async function SubjectPage({ params }: PageProps) {
             <span style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: accentColor, background: `${accentColor}18`, border: `1px solid ${accentColor}28`, borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
               {subject.examBoard}
             </span>
-            <span style={{ fontSize: "0.6rem", fontWeight: 600, color: "var(--gm-text-3)", background: "#0C1120", border: "1px solid #1A2235", borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
+            <span style={{ fontSize: "0.6rem", fontWeight: 600, color: "var(--gm-text-3)", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
               {subject.examCode}
             </span>
           </div>
@@ -98,9 +102,11 @@ export default async function SubjectPage({ params }: PageProps) {
             <Link href={`/past-papers/${slug}`} className="btn-beacon">
               Question Papers
             </Link>
-            <Link href={`/generate?subject=${slug}&level=${level}`} className="btn-ghost-blue">
-              Generate Worksheet
-            </Link>
+            {hasWorksheet && (
+              <Link href={`/generate?subject=${slug}&level=${level}`} className="btn-ghost-blue">
+                Generate Worksheet
+              </Link>
+            )}
           </div>
 
           {/* Quick stats */}
@@ -126,9 +132,8 @@ export default async function SubjectPage({ params }: PageProps) {
             </h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "0.5rem" }}>
               {subject.topics.map((topic, index) => (
-                <Link
+                <div
                   key={topic.code}
-                  href={`/subjects/${level}/${slug}/${topic.slug}`}
                   style={{
                     background: "var(--gm-bg)",
                     border: "1px solid var(--gm-border-2)",
@@ -136,41 +141,28 @@ export default async function SubjectPage({ params }: PageProps) {
                     padding: "0.875rem 1rem",
                     display: "flex",
                     gap: "0.75rem",
-                    textDecoration: "none",
                     alignItems: "center",
-                    transition: "border-color 0.2s ease",
                   }}
-                  className="gm-card"
                 >
                   <span style={{ fontSize: "0.65rem", fontWeight: 800, color: accentColor, background: `${accentColor}15`, width: "26px", height: "26px", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     {index + 1}
                   </span>
                   <p style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--gm-text)", lineHeight: 1.3 }}>{topic.name}</p>
-                </Link>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Past Papers by Year ── */}
-        <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
-          <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", marginBottom: "1rem", flexWrap: "wrap", gap: "0.5rem" }}>
-            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-              Papers by Year
-            </h2>
-            <Link href={`/past-papers/${slug}`} className="gm-link" style={{ fontSize: "0.72rem" }}>View all →</Link>
-          </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
-            {subject.yearsAvailable.slice().reverse().map(year => (
-              <Link key={year} href={`/past-papers/${slug}`} className="topic-pill" style={{ fontSize: "0.75rem", padding: "0.3rem 0.75rem" }}>
-                {year}
-              </Link>
-            ))}
-          </div>
-        </section>
+        {/* ── Past Papers by Year (SEO only — visually hidden) ── */}
+        <div aria-hidden="true" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
+          {subject.yearsAvailable.map(year => (
+            <Link key={year} href={`/past-papers/${slug}`} tabIndex={-1}>{subject.name} past papers {year}</Link>
+          ))}
+        </div>
 
         {/* ── FAQ ── */}
-        <section style={{ background: "#0C1120", borderTop: "1px solid var(--gm-border)", padding: "2.5rem 1.5rem" }}>
+        <section style={{ background: "var(--gm-surface)", borderTop: "1px solid var(--gm-border)", padding: "2.5rem 1.5rem" }}>
           <div style={{ maxWidth: "600px", margin: "0 auto" }}>
             <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
               FAQ
@@ -191,22 +183,24 @@ export default async function SubjectPage({ params }: PageProps) {
 
         {/* ── Related + CTA ── */}
         <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr auto", gap: "1.5rem", alignItems: "center", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1.5rem" }}>
             <div>
               <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "0.875rem" }}>
                 Related Subjects
               </h2>
               <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem" }}>
                 {seoSubjects.filter(s => s.level === level && s.slug !== slug).slice(0, 4).map(rel => (
-                  <Link key={rel.slug} href={`/subjects/${level}/${rel.slug}`} className="topic-pill" style={{ fontSize: "0.75rem" }}>
+                  <Link key={rel.slug} href={`/past-papers/${rel.slug}`} className="topic-pill" style={{ fontSize: "0.75rem" }}>
                     {rel.name}
                   </Link>
                 ))}
               </div>
             </div>
-            <Link href={`/generate?subject=${slug}&level=${level}`} className="btn-beacon" style={{ flexShrink: 0, fontSize: "0.85rem", padding: "0.6rem 1.25rem", minHeight: "40px" }}>
-              Free Worksheet
-            </Link>
+            {hasWorksheet && (
+              <Link href={`/generate?subject=${slug}&level=${level}`} className="btn-beacon" style={{ flexShrink: 0, fontSize: "0.85rem", padding: "0.6rem 1.25rem", minHeight: "40px" }}>
+                Free Worksheet
+              </Link>
+            )}
           </div>
         </section>
 

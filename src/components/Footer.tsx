@@ -22,9 +22,6 @@ export default function Footer() {
             <p style={{ fontWeight: 800, fontSize: "1.1rem", color: "var(--gm-text)", marginBottom: "0.75rem" }}>
               Grade<span style={{ color: "#F59E0B" }}>Max</span>
             </p>
-            <p style={{ fontSize: "0.8rem", lineHeight: 1.65, color: "var(--gm-text-3)", marginBottom: "1rem" }}>
-              Free Edexcel IGCSE & A Level past papers with mark schemes.
-            </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {([
                 ["/about",              "About Us"],
@@ -91,7 +88,6 @@ export default function Footer() {
               {([
                 ["/generate",    "Worksheet Generator"],
                 ["/test-builder","Test Builder"],
-                ["/browse",      "Browse by Topic"],
                 ["/past-papers", "Past Papers by Year"],
                 ["/subjects",    "All Subjects"],
               ] as [string, string][]).map(([href, label]) => (
@@ -116,22 +112,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* SEO description */}
-        <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "1.75rem", marginBottom: "1.25rem" }}>
-          <p style={{ fontSize: "0.75rem", color: "#6B7280", lineHeight: 1.7, maxWidth: "780px", margin: "0 auto", textAlign: "center" }}>
-            GradeMax is a free platform for Edexcel IGCSE and A Level past papers, question papers, and
-            mark schemes. Practice topic-wise questions for Physics, Mathematics, Chemistry, Biology, and ICT.
-            Generate custom worksheets from real Pearson Edexcel exam papers. All resources are free — no sign-up required.
-          </p>
-        </div>
-
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "1.25rem", textAlign: "center" }}>
           <p style={{ fontSize: "0.78rem", color: "var(--gm-text-3)" }}>
             © {new Date().getFullYear()} GradeMax. All rights reserved.
-          </p>
-          <p style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", marginTop: "0.4rem" }}>
-            Free Edexcel past papers and custom worksheets for IGCSE & A Level students worldwide · Papers available 2010–2025
           </p>
         </div>
 

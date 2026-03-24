@@ -13,19 +13,16 @@ export function getSupabaseAdmin(): SupabaseClient | null {
 
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL
   // Check multiple common env var names for the service role key
+  // NOTE: Never use NEXT_PUBLIC_ prefix for service role key — it would be exposed in the client bundle
   const serviceKey =
     process.env.SUPABASE_SERVICE_ROLE_KEY ||
-    process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY ||
     process.env.SUPABASE_SERVICE_KEY
 
   if (!url || !serviceKey) {
-    // DON'T cache null — env vars might become available on next invocation
-    // (e.g. Vercel cold start race, or env var added after deployment)
     console.warn(
       "[supabaseAdmin] Missing env vars.",
       "NEXT_PUBLIC_SUPABASE_URL:", !!url,
       "SUPABASE_SERVICE_ROLE_KEY:", !!process.env.SUPABASE_SERVICE_ROLE_KEY,
-      "NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY:", !!process.env.NEXT_PUBLIC_SUPABASE_SERVICE_ROLE_KEY,
       "SUPABASE_SERVICE_KEY:", !!process.env.SUPABASE_SERVICE_KEY
     )
     return null

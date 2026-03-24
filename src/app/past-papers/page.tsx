@@ -125,8 +125,8 @@ export default async function PastPapersPage() {
                   href={`/past-papers/${s.slug}`}
                   className={`subject-card ${accentMap[s.colorKey]}`}
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{s.name}</p>
-                  <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 600, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)" }}>{s.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 700, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
                     Edexcel IGCSE
                   </p>
                 </Link>
@@ -151,8 +151,8 @@ export default async function PastPapersPage() {
                   href={`/past-papers/${s.slug}`}
                   className={`subject-card ${accentMap[s.colorKey]}`}
                 >
-                  <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)" }}>{s.name}</p>
-                  <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 600, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
+                  <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)" }}>{s.name}</p>
+                  <p style={{ fontSize: "0.65rem", color: codeColorMap[s.colorKey], fontWeight: 700, letterSpacing: "0.05em", marginTop: "0.15rem" }}>
                     Edexcel A Level
                   </p>
                 </Link>

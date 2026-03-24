@@ -24,99 +24,67 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="max-w-4xl mx-auto px-4 md:px-8 py-12">
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">About GradeMax</h1>
-        
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-          <p className="text-gray-300 mb-4">
-            GradeMax was created with one simple goal: to make exam preparation more efficient 
-            and effective for IGCSE and A Level students worldwide. We believe every student 
-            deserves access to quality study resources that help them achieve their academic goals.
+    <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
+      <div style={{ maxWidth: "720px", margin: "0 auto", padding: "3rem 1.5rem" }}>
+
+        <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 2.5rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "2.5rem" }}>
+          About GradeMax
+        </h1>
+
+        <section style={{ marginBottom: "2.5rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "1rem" }}>Our Mission</h2>
+          <p style={{ color: "var(--gm-text-2)", lineHeight: 1.7, marginBottom: "1rem" }}>
+            GradeMax was created with one simple goal: to make exam preparation more efficient
+            and effective for IGCSE and A Level students worldwide. Every student deserves access
+            to quality study resources that help them achieve their academic goals.
           </p>
-          <p className="text-gray-300">
-            Our platform transforms years of past examination papers into personalized 
-            study materials, allowing students to focus on exactly what they need to improve.
+          <p style={{ color: "var(--gm-text-2)", lineHeight: 1.7 }}>
+            Our platform transforms years of past examination papers into focused study materials,
+            allowing students to practise exactly what they need to improve.
           </p>
         </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">What We Offer</h2>
-          <ul className="space-y-4 text-gray-300">
-            <li className="flex items-start gap-3">
-              <span className="text-blue-500 mt-1">✓</span>
-              <div>
-                <strong className="text-white">Custom Worksheet Generator</strong>
-                <p>Create personalized practice papers filtered by topic, year, and difficulty level.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-500 mt-1">✓</span>
-              <div>
-                <strong className="text-white">Topic-Wise Question Bank</strong>
-                <p>Access thousands of past paper questions organized by subject and topic.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-500 mt-1">✓</span>
-              <div>
-                <strong className="text-white">Instant Mark Schemes</strong>
-                <p>Check your answers immediately with official mark schemes included.</p>
-              </div>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-blue-500 mt-1">✓</span>
-              <div>
-                <strong className="text-white">Free Access</strong>
-                <p>All core features are completely free - no hidden costs or subscriptions.</p>
-              </div>
-            </li>
+        <section style={{ marginBottom: "2.5rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "1rem" }}>What We Offer</h2>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {([
+              ["Custom Worksheet Generator", "Create personalised practice papers filtered by topic, year, and difficulty level."],
+              ["Instant Mark Schemes",        "Check your answers immediately with official mark schemes included."],
+              ["Test Builder",                "Build custom timed tests from real exam questions and download them as PDFs."],
+              ["Free Access",                 "All core features are completely free — no hidden costs or subscriptions."],
+            ] as [string, string][]).map(([title, body]) => (
+              <li key={title} style={{ display: "flex", gap: "0.875rem", alignItems: "flex-start" }}>
+                <span style={{ color: "var(--gm-blue)", marginTop: "0.15rem", flexShrink: 0 }}>✓</span>
+                <div>
+                  <p style={{ fontWeight: 600, color: "var(--gm-text)", marginBottom: "0.2rem" }}>{title}</p>
+                  <p style={{ color: "var(--gm-text-2)", fontSize: "0.875rem", lineHeight: 1.6 }}>{body}</p>
+                </div>
+              </li>
+            ))}
           </ul>
         </section>
 
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Subjects We Cover</h2>
-          <p className="text-gray-300 mb-4">
-            We currently support the following subjects with more being added regularly:
+        <section style={{ marginBottom: "2.5rem" }}>
+          <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "1rem" }}>Built by Students, for Students</h2>
+          <p style={{ color: "var(--gm-text-2)", lineHeight: 1.7, marginBottom: "1rem" }}>
+            GradeMax was founded by students who experienced firsthand the challenges of exam
+            preparation. We understand the stress of deadlines, the overwhelm of revision, and
+            the need for efficient study tools.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="bg-gray-900 rounded-lg p-4 border border-gray-800">
-              <p className="font-semibold">Mathematics</p>
-              <p className="text-sm text-gray-400">IGCSE & A Level</p>
-            </div>
-            <div className="bg-gray-900 rounded-lg p-4 border border-gray-800">
-              <p className="font-semibold">Physics</p>
-              <p className="text-sm text-gray-400">IGCSE & A Level</p>
-            </div>
-            <div className="bg-gray-900 rounded-lg p-4 border border-gray-800">
-              <p className="font-semibold">Further Mathematics</p>
-              <p className="text-sm text-gray-400">A Level</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Built by Students, for Students</h2>
-          <p className="text-gray-300 mb-4">
-            GradeMax was founded by students who experienced firsthand the challenges of 
-            exam preparation. We understand the stress of deadlines, the overwhelm of revision, 
-            and the need for efficient study tools.
-          </p>
-          <p className="text-gray-300">
-            Our platform is designed to address these challenges by providing smart, 
-            tools that help you study smarter, not harder.
+          <p style={{ color: "var(--gm-text-2)", lineHeight: 1.7 }}>
+            Our platform is designed to address these challenges by providing smart tools that
+            help you study smarter, not harder.
           </p>
         </section>
 
         <section>
-          <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-          <p className="text-gray-300">
-            Have questions, feedback, or suggestions? We&apos;d love to hear from you. 
-            Visit our <a href="/contact" className="text-blue-500 hover:text-blue-400">contact page</a> to 
-            get in touch with our team.
+          <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "1rem" }}>Contact Us</h2>
+          <p style={{ color: "var(--gm-text-2)", lineHeight: 1.7 }}>
+            Have questions, feedback, or suggestions? We&apos;d love to hear from you.{' '}
+            <a href="/contact" style={{ color: "var(--gm-blue)", textDecoration: "none" }}>Get in touch</a>.
           </p>
         </section>
+
       </div>
     </main>
   )
