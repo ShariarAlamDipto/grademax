@@ -12,11 +12,26 @@ export async function GET() {
 
   const db = getSupabaseAdmin() || auth.db
 
-  const [subjectsRes, papersRes, profilesRes] = await Promise.all([
+  const [subjectsRes, papersRes, profilesRes, withQPRes, withMSRes, pagesRes, questionPagesRes] = await Promise.all([
     db.from("subjects").select("id", { count: "exact", head: true }),
     db.from("papers").select("id", { count: "exact", head: true }),
     db.from("profiles").select("role"),
+    db.from("papers").select("id", { count: "exact", head: true }).not("pdf_url", "is", null),
+    db.from("papers").select("id", { count: "exact", head: true }).not("markscheme_pdf_url", "is", null),
+    db.from("pages").select("id", { count: "exact", head: true }),
+    db.from("pages").select("id", { count: "exact", head: true }).eq("is_question", true).not("qp_page_url", "is", null),
   ])
+
+  if (subjectsRes.error || papersRes.error || profilesRes.error || withQPRes.error || withMSRes.error) {
+    const message =
+      subjectsRes.error?.message ||
+      papersRes.error?.message ||
+      profilesRes.error?.message ||
+      withQPRes.error?.message ||
+      withMSRes.error?.message ||
+      "Failed to load admin stats"
+    return NextResponse.json({ error: message }, { status: 500 })
+  }
 
   const roles = { total: 0, admins: 0, teachers: 0, students: 0 }
   for (const p of profilesRes.data || []) {
@@ -34,15 +49,13 @@ export async function GET() {
     r2Count = res.KeyCount || 0
   } catch { /* R2 may not be reachable on Vercel */ }
 
-  // Papers with QP and MS coverage
-  const { data: withQP } = await db.from("papers").select("id", { count: "exact", head: true }).not("pdf_url", "is", null)
-  const { data: withMS } = await db.from("papers").select("id", { count: "exact", head: true }).not("markscheme_pdf_url", "is", null)
-
   return NextResponse.json({
     subjects: subjectsRes.count ?? 0,
     papers: papersRes.count ?? 0,
-    papersWithQP: (withQP as unknown as { count: number })?.count ?? 0,
-    papersWithMS: (withMS as unknown as { count: number })?.count ?? 0,
+    papersWithQP: withQPRes.count ?? 0,
+    papersWithMS: withMSRes.count ?? 0,
+    pages: pagesRes.count ?? 0,
+    questionPages: questionPagesRes.count ?? 0,
     r2Objects: r2Count,
     users: roles,
   })

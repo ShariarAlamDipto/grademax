@@ -13,10 +13,15 @@ export default async function TestBuilderRoute() {
     .select("id, name, code, level, board")
     .order("name")
 
-  // Only expose subjects available in the test builder
-  const ALLOWED_SUBJECTS = ['maths b', 'physics', 'further pure mathematics', 'biology', 'chemistry']
+  // IGCSE Edexcel subjects supported by the test builder pipeline.
+  const ALLOWED_SUBJECT_CODES = [
+    '4PH1', '4PH0',   // IGCSE Physics
+    '4CH1', '4CH0',   // IGCSE Chemistry
+    '4BI1', '4BI0',   // IGCSE Biology
+    '4PM1',            // IGCSE Further Pure Mathematics
+  ]
   const subjectList = (subjects || []).filter(s =>
-    ALLOWED_SUBJECTS.some(allowed => s.name.toLowerCase().includes(allowed))
+    ALLOWED_SUBJECT_CODES.includes(s.code)
   )
   const firstSubjectId = subjectList[0]?.id
 

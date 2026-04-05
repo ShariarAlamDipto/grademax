@@ -4,13 +4,13 @@ import WorksheetGenerator from "@/components/generate/WorksheetGenerator"
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
-// Show one subject per slot and support legacy code variants when present.
+// IGCSE Edexcel subjects supported by the worksheet pipeline.
+// Each slot shows one subject; legacy code variants are listed as fallbacks.
 const WORKSHEET_SUBJECT_SLOTS = [
-  ['4MB1', '4MB0'],
-  ['4PH1', '4PH0'],
-  ['WMA11', '9FM0'],
-  ['4CH1', '4CH0'],
-  ['4BI1', '4BI0'],
+  ['4PH1', '4PH0'],   // IGCSE Physics
+  ['4CH1', '4CH0'],   // IGCSE Chemistry
+  ['4BI1', '4BI0'],   // IGCSE Biology
+  ['4PM1'],            // IGCSE Further Pure Mathematics
 ] as const
 
 const ALLOWED_WORKSHEET_SUBJECT_CODES = WORKSHEET_SUBJECT_SLOTS.flat()

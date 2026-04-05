@@ -194,6 +194,10 @@ export async function POST(request: Request) {
 
     if (itemsError) {
       console.error('Worksheet items error:', itemsError);
+      return NextResponse.json(
+        { error: `Failed to save worksheet questions: ${itemsError.message}` },
+        { status: 500 }
+      );
     }
 
     // Format response
