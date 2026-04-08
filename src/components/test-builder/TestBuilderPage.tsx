@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import SubjectSelector from './SubjectSelector';
 import TopicTree from './TopicTree';
 import FilterBar from './FilterBar';
@@ -77,7 +77,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   const [error, setError] = useState<string | null>(null);
 
   // ── Basket helpers ──
-  const basketIds = new Set(basketItems.map(i => i.id));
+  const basketIds = useMemo(() => new Set(basketItems.map(i => i.id)), [basketItems]);
 
   // ─────────────────────────────────────────────
   // Fetch topics when subject changes
@@ -269,6 +269,20 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       // Step 3: Done
       setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
       setTimeout(() => setPdfProgress(null), 2000);
+
+      // Background save — persist test to DB (non-blocking, failure doesn't affect the user)
+      fetch('/api/test-builder/tests', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          title: testTitle || 'Untitled Test',
+          subjectId: selectedSubject,
+          items: basketItems.map((item, index) => ({
+            pageId: item.id,
+            sequenceOrder: index + 1,
+          })),
+        }),
+      }).catch(err => console.warn('[test-builder] Background save failed:', err));
 
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Failed to generate PDF');

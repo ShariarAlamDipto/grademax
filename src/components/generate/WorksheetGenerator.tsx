@@ -122,13 +122,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     fetchTopics();
   }, [selectedSubject]);
 
-  // Reset selected topics when subject changes
+  // Reset selected topics when subject changes — revoke any live object URLs
   useEffect(() => {
     setSelectedTopics([]);
     setQuestions([]);
     setWorksheetId(null);
-    setWorksheetUrl(null);
-    setMarkschemeUrl(null);
+    setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setError(null);
   }, [selectedSubject]);
 
@@ -145,20 +145,26 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
       setError('Please select at least one topic');
       return;
     }
+    if (yearStart > yearEnd) {
+      setError('Start year cannot be after end year');
+      return;
+    }
 
     setLoading(true);
     setError(null);
     setWorksheetId(null);
     setQuestions([]);
-    setWorksheetUrl(null);
-    setMarkschemeUrl(null);
+
+    // Revoke any existing object URLs before creating new ones
+    setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
 
     try {
       const response = await fetch('/api/worksheets/generate-v2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          subjectCode: selectedSubject,
+          subjectId: selectedSubject,
           topics: selectedTopics,
           yearStart,
           yearEnd,
@@ -193,6 +199,9 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     if (!worksheetId) return;
 
     setError(null);
+    // Revoke any previously created object URLs
+    setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
 
     try {
       // Step 1: Download worksheet PDF
