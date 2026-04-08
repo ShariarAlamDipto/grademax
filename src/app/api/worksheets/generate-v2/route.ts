@@ -5,7 +5,7 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 interface GenerateRequest {
-  subjectCode?: string;  // Actually the subject ID
+  subjectId?: string;
   topics: string[];
   yearStart?: number;
   yearEnd?: number;
@@ -35,12 +35,44 @@ interface PageData {
   };
 }
 
+/**
+ * Normalize topic codes from the UI (topics table) to classifier IDs (pages.topics).
+ *
+ * The topics table has sub-codes seeded from the spec:
+ *   Physics:         "1a", "1b", "1c", "1d", "2a", "2b", ...
+ *   Chemistry/Bio:   "1.1", "1.2", "1.3", ...
+ * But pages.topics stores YAML classifier IDs: "1", "2", "3", ...
+ *
+ * FPM YAML codes are also mapped to their numeric IDs.
+ */
+function normalizeTopicCodes(codes: string[]): string[] {
+  // Maps topics table `code` values → classifier IDs stored in pages.topics
+  const YAML_CODE_TO_ID: Record<string, string> = {
+    // Physics (4PH1) — physics_topics.yaml
+    FM: '1', ELEC: '2', WAVE: '3', ENRG: '4', SLG: '5', MAG: '6', RAD: '7', ASTRO: '8',
+    // Further Pure Maths (4PM1, legacy alias 9FM0) — further_pure_maths_topics.yaml
+    LOGS: '1', QUAD: '2', IDENT: '3', GRAPHS: '4', SERIES: '5',
+    BINOM: '6', VECT: '7', COORD: '8', CALC: '9', TRIG: '10',
+  };
+  const normalized = new Set<string>();
+  for (const code of codes) {
+    if (YAML_CODE_TO_ID[code]) {
+      normalized.add(YAML_CODE_TO_ID[code]);
+    } else {
+      // Extract leading digit(s): "1a"→"1", "1.1"→"1", "10"→"10", "1"→"1"
+      const match = code.match(/^(\d+)/);
+      normalized.add(match ? match[1] : code);
+    }
+  }
+  return Array.from(normalized);
+}
+
 export async function POST(request: Request) {
   try {
     const body: GenerateRequest = await request.json();
     const {
-      subjectCode,  // This is actually the subject ID from the frontend
-      topics,
+      subjectId,
+      topics: rawTopics,
       yearStart,
       yearEnd,
       difficulty,
@@ -49,12 +81,15 @@ export async function POST(request: Request) {
     } = body;
     const limit = Math.min(Math.max(1, Number(rawLimit) || 50), 200);
 
-    if (!topics || topics.length === 0) {
+    if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json(
         { error: 'Topics are required' },
         { status: 400 }
       );
     }
+
+    // Normalize sub-topic codes (e.g. "1a", "1.1") to classifier IDs ("1", "2")
+    const topics = normalizeTopicCodes(rawTopics);
 
     const supabase = createClient(supabaseUrl, supabaseKey);
 
@@ -64,8 +99,8 @@ export async function POST(request: Request) {
       .select('id, year, season, paper_number, subject_id, subjects(code)');
 
     // Filter by subject if provided
-    if (subjectCode) {
-      paperQuery = paperQuery.eq('subject_id', subjectCode);
+    if (subjectId) {
+      paperQuery = paperQuery.eq('subject_id', subjectId);
     }
 
     // Apply year filters to papers
@@ -149,11 +184,11 @@ export async function POST(request: Request) {
       finalPages = [...pages as unknown as PageData[]].sort(() => Math.random() - 0.5);
     }
 
-    // Get subject_id from first page (we already have it from subjectCode, but get from data as backup)
+    // Use subjectId from request, fall back to the value embedded in page data
     const firstPage = pages[0] as unknown as PageData;
-    const subjectId = subjectCode || (firstPage.papers ? firstPage.papers.subject_id : null);
+    const resolvedSubjectId = subjectId || (firstPage.papers ? firstPage.papers.subject_id : null);
 
-    if (!subjectId) {
+    if (!resolvedSubjectId) {
       console.error('Could not determine subject_id');
       return NextResponse.json({ error: 'Could not determine subject' }, { status: 500 });
     }
@@ -162,7 +197,7 @@ export async function POST(request: Request) {
     const { data: worksheet, error: worksheetError } = await supabase
       .from('worksheets')
       .insert({
-        subject_id: subjectId,
+        subject_id: resolvedSubjectId,
         topics,
         year_start: yearStart,
         year_end: yearEnd,

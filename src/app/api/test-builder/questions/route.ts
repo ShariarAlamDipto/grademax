@@ -5,6 +5,30 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
 /**
+ * Normalize topic codes from the UI (topics table) to classifier IDs (pages.topics).
+ * Physics: "1a","1b" → "1". Chemistry/Bio: "1.1","1.2" → "1". FPM YAML codes mapped explicitly.
+ */
+function normalizeTopicCodes(codes: string[]): string[] {
+  const YAML_CODE_TO_ID: Record<string, string> = {
+    // Physics (4PH1)
+    FM: '1', ELEC: '2', WAVE: '3', ENRG: '4', SLG: '5', MAG: '6', RAD: '7', ASTRO: '8',
+    // Further Pure Maths (4PM1, legacy alias 9FM0)
+    LOGS: '1', QUAD: '2', IDENT: '3', GRAPHS: '4', SERIES: '5',
+    BINOM: '6', VECT: '7', COORD: '8', CALC: '9', TRIG: '10',
+  };
+  const normalized = new Set<string>();
+  for (const code of codes) {
+    if (YAML_CODE_TO_ID[code]) {
+      normalized.add(YAML_CODE_TO_ID[code]);
+    } else {
+      const match = code.match(/^(\d+)/);
+      normalized.add(match ? match[1] : code);
+    }
+  }
+  return Array.from(normalized);
+}
+
+/**
  * GET /api/test-builder/questions
  * 
  * Browse questions with filters for the test builder.
@@ -79,7 +103,7 @@ export async function GET(request: Request) {
       .in('paper_id', paperIds);
 
     if (topicsParam) {
-      const topicCodes = topicsParam.split(',').map(t => t.trim()).filter(Boolean);
+      const topicCodes = normalizeTopicCodes(topicsParam.split(',').map(t => t.trim()).filter(Boolean));
       if (topicCodes.length > 0) {
         countQuery = countQuery.overlaps('topics', topicCodes);
       }
@@ -131,7 +155,7 @@ export async function GET(request: Request) {
       .range(offset, offset + limit - 1);
 
     if (topicsParam) {
-      const topicCodes = topicsParam.split(',').map(t => t.trim()).filter(Boolean);
+      const topicCodes = normalizeTopicCodes(topicsParam.split(',').map(t => t.trim()).filter(Boolean));
       if (topicCodes.length > 0) {
         dataQuery = dataQuery.overlaps('topics', topicCodes);
       }
