@@ -21,7 +21,7 @@ from scripts.mistral_classifier import MistralTopicClassifier
 
 
 # Configuration - FURTHER PURE MATHS
-SUBJECT_CODE = "9FM0"  # Edexcel IGCSE Further Pure Maths code
+SUBJECT_CODES = ["4PM1", "9FM0"]  # Canonical IGCSE code + legacy alias
 SUBJECT_NAME = "Further Pure Mathematics"
 VALID_TOPICS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]  # FPM has 10 topics
 BATCH_SIZE = 10  # Groq batch size
@@ -48,19 +48,38 @@ def init_supabase() -> Client:
     return create_client(url, key)
 
 
-def get_subject_id(supabase: Client) -> str:
-    """Get Further Pure Maths subject ID from database"""
-    response = supabase.table('subjects')\
-        .select('id')\
-        .eq('code', SUBJECT_CODE)\
-        .execute()
-    
-    if not response.data:
-        print(f"❌ Subject {SUBJECT_CODE} not found in database!")
-        print("   Please add it first using the subjects table.")
+def get_subject_id(supabase: Client) -> tuple[str, str]:
+    """Resolve Further Pure Maths subject ID from canonical/legacy codes."""
+    candidates = []
+
+    for code in SUBJECT_CODES:
+        response = supabase.table('subjects')\
+            .select('id, code')\
+            .eq('code', code)\
+            .execute()
+
+        for row in (response.data or []):
+            # Prefer subjects that already have paper data attached.
+            papers_resp = supabase.table('papers')\
+                .select('id')\
+                .eq('subject_id', row['id'])\
+                .execute()
+            paper_count = len(papers_resp.data or [])
+            candidates.append({
+                'id': row['id'],
+                'code': row['code'],
+                'paper_count': paper_count,
+                'priority': SUBJECT_CODES.index(code)
+            })
+
+    if not candidates:
+        print(f"❌ Subject codes {SUBJECT_CODES} not found in database!")
+        print("   Please add Further Pure Mathematics to the subjects table.")
         exit(1)
-    
-    return response.data[0]['id']
+
+    candidates.sort(key=lambda c: (-c['paper_count'], c['priority']))
+    selected = candidates[0]
+    return selected['id'], selected['code']
 
 
 def get_unclassified_pages(supabase: Client, subject_id: str):
@@ -225,8 +244,9 @@ def run_classification():
     # Initialize
     print("\n1️⃣  Initializing...")
     supabase = init_supabase()
-    subject_id = get_subject_id(supabase)
+    subject_id, resolved_code = get_subject_id(supabase)
     print(f"   ✅ Subject ID: {subject_id}")
+    print(f"   ✅ Subject Code: {resolved_code}")
     
     # Load classifier with FPM topics
     topics_yaml = project_root / 'classification' / 'further_pure_maths_topics.yaml'
