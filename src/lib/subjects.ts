@@ -38,6 +38,7 @@ export const subjects: Subject[] = [
   { slug: "economics",            name: "Economics",                level: "igcse", colorKey: "other",     dataFolder: "Economics" },
   { slug: "geography",            name: "Geography",                level: "igcse", colorKey: "other",     dataFolder: "Geography" },
   { slug: "bangla",               name: "Bangla",                   level: "igcse", colorKey: "other",     dataFolder: "Bangla" },
+  { slug: "igcse-mechanics-1",   name: "Mechanics 1",              level: "igcse", colorKey: "other",     dataFolder: "Mechanics_1" },
 
   // ─── IAL — Mathematics modules ────────────────────────────────────────────
   { slug: "pure-mathematics-1",      name: "Pure Mathematics 1 (P1)",         level: "ial", colorKey: "maths" },
@@ -79,6 +80,7 @@ export const subjects: Subject[] = [
   { slug: "ial-greek",               name: "IAL Greek",                       level: "ial", colorKey: "other" },
   { slug: "ial-italian",             name: "IAL Italian",                     level: "ial", colorKey: "other" },
   { slug: "ial-spanish",             name: "IAL Spanish",                     level: "ial", colorKey: "other" },
+  { slug: "ial-sociology",           name: "IAL Sociology",                   level: "ial", colorKey: "other" },
 ]
 
 /** Subjects that have past papers available for download */
