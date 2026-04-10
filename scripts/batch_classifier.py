@@ -83,21 +83,38 @@ class GroqBatchClassifier:
         normalized = ' '.join(text.lower().strip().split())
         return hashlib.md5(f"{question_num}:{normalized}".encode()).hexdigest()
     
+    def _parse_header_int(self, value, default: int = 0) -> int:
+        """Parse rate limit header value that may have suffix like '172m' or '10k'."""
+        if not value:
+            return default
+        s = str(value).strip().lower()
+        try:
+            if s.endswith('m'):
+                return int(float(s[:-1]) * 1_000_000)
+            elif s.endswith('k'):
+                return int(float(s[:-1]) * 1_000)
+            return int(s)
+        except (ValueError, TypeError):
+            return default
+
     def _update_rate_limits(self, headers: Dict):
         """Update rate limit info from response headers"""
-        self.remaining_requests = int(headers.get('x-ratelimit-remaining-requests', 0))
-        self.remaining_tokens = int(headers.get('x-ratelimit-remaining-tokens', 0))
-        self.limit_requests = int(headers.get('x-ratelimit-limit-requests', 100))
-        self.limit_tokens = int(headers.get('x-ratelimit-limit-tokens', 100000))
+        self.remaining_requests = self._parse_header_int(headers.get('x-ratelimit-remaining-requests', 0))
+        self.remaining_tokens = self._parse_header_int(headers.get('x-ratelimit-remaining-tokens', 0))
+        self.limit_requests = self._parse_header_int(headers.get('x-ratelimit-limit-requests', 100))
+        self.limit_tokens = self._parse_header_int(headers.get('x-ratelimit-limit-tokens', 100000))
         
         # Parse reset time if available
         reset_str = headers.get('x-ratelimit-reset-requests', '')
         if reset_str:
-            # Format: "5s" or "10ms"
-            if reset_str.endswith('s'):
-                self.reset_time = time.time() + float(reset_str[:-1])
-            elif reset_str.endswith('ms'):
-                self.reset_time = time.time() + float(reset_str[:-2]) / 1000
+            # Format: "5s" or "10ms" — check 'ms' before 's' to avoid partial match
+            try:
+                if reset_str.endswith('ms'):
+                    self.reset_time = time.time() + float(reset_str[:-2]) / 1000
+                elif reset_str.endswith('s'):
+                    self.reset_time = time.time() + float(reset_str[:-1])
+            except (ValueError, TypeError):
+                pass
     
     def _should_throttle(self) -> Tuple[bool, float]:
         """Check if we should throttle based on rate limits"""
@@ -213,7 +230,7 @@ class GroqBatchClassifier:
                 {"role": "user", "content": user_prompt}
             ],
             "temperature": 0.1,
-            "max_tokens": 150 * len(uncached_questions)  # ~150 tokens per question
+            "max_tokens": 800 * len(uncached_questions)  # ~800 tokens per question
         }
         
         headers = {
@@ -299,8 +316,13 @@ class GroqBatchClassifier:
                     )
                     batch_results.append(classification)
                     
-                    # Cache result
-                    q = next(q for q in uncached_questions if q['number'] == item['question_number'])
+                    # Cache result — compare as strings since DB question_number is str
+                    q = next(
+                        (q for q in uncached_questions if str(q['number']) == str(item['question_number'])),
+                        None
+                    )
+                    if q is None:
+                        continue
                     cache_key = self._get_cache_key(q['text'], q['number'])
                     self.cache[cache_key] = classification
                 

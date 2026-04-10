@@ -1,6 +1,8 @@
 import { Metadata } from 'next'
+import { createClient } from '@supabase/supabase-js'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { cache } from 'react'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
 import { 
   generateOrganizationSchema, 
@@ -33,6 +35,75 @@ function getSlugMapping(): Record<string, SEOSubject> {
 }
 
 const slugMap = getSlugMapping()
+
+function serializeJsonLd(schema: object): string {
+  return JSON.stringify(schema).replace(/</g, '\\u003c')
+}
+
+function parseYearParam(value: unknown): number | null {
+  if (typeof value === 'number') {
+    if (!Number.isInteger(value)) return null
+    if (value < 2000 || value > 2100) return null
+    return value
+  }
+
+  const raw = String(value ?? '').trim()
+  if (!/^\d{4}$/.test(raw)) return null
+  const year = Number.parseInt(raw, 10)
+  if (year < 2000 || year > 2100) return null
+  return year
+}
+
+function isValidPublicUrl(url: string | null): boolean {
+  if (!url) return false
+  return /^https?:\/\//i.test(url)
+}
+
+const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
+
+function normalizeSeason(value: unknown): string {
+  return String(value ?? '').trim().toLowerCase()
+}
+
+const getAvailableYearsForSubject = cache(async (subjectName: string): Promise<number[]> => {
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+      { auth: { autoRefreshToken: false, persistSession: false } }
+    )
+
+    const { data: subjectRow } = await supabase
+      .from('subjects')
+      .select('id')
+      .eq('name', subjectName)
+      .maybeSingle()
+
+    if (!subjectRow) return []
+
+    const { data } = await supabase
+      .from('papers')
+      .select('year, season, pdf_url, markscheme_pdf_url')
+      .eq('subject_id', subjectRow.id)
+      .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
+
+    const years = new Set<number>()
+    for (const row of data ?? []) {
+      const hasRenderableFile = isValidPublicUrl(row.pdf_url) || isValidPublicUrl(row.markscheme_pdf_url)
+      if (!hasRenderableFile) continue
+
+      const season = normalizeSeason(row.season)
+      if (!VALID_SEASONS.has(season)) continue
+
+      const year = parseYearParam(row.year)
+      if (year !== null) years.add(year)
+    }
+
+    return Array.from(years).sort((a, b) => b - a)
+  } catch {
+    return []
+  }
+})
 
 export async function generateStaticParams() {
   return Object.keys(slugMap).map(slug => ({ slug }))
@@ -100,6 +171,8 @@ export default async function SubjectQPPage({ params }: PageProps) {
 
   const baseUrl = 'https://grademax.me'
   const levelDisplay = subject.levelDisplay
+  const availableYears = await getAvailableYearsForSubject(subject.name)
+  const yearLinks = availableYears.length > 0 ? availableYears : [...subject.yearsAvailable].reverse()
 
   const schema = {
     '@context': 'https://schema.org',
@@ -144,7 +217,7 @@ export default async function SubjectQPPage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-black text-white">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }} />
       
       {/* Breadcrumb */}
       <nav className="max-w-6xl mx-auto px-4 py-4 text-sm text-gray-400">
@@ -243,10 +316,10 @@ export default async function SubjectQPPage({ params }: PageProps) {
           {levelDisplay} {subject.name} Past Papers by Year
         </h2>
         <div className="flex flex-wrap gap-3">
-          {[...subject.yearsAvailable].reverse().map(year => (
+          {yearLinks.map(year => (
             <Link
               key={year}
-              href={`/past-papers/${subject.level}/${subject.slug}/${year}`}
+              href={`/past-papers/${subject.slug}/${year}`}
               className="bg-gray-900 hover:bg-gray-800 border border-gray-800 hover:border-gray-600 rounded-lg px-4 py-2 text-sm transition-colors"
             >
               {subject.name} {year}

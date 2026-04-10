@@ -40,7 +40,7 @@ TOPICS_YAML = Path(__file__).parent.parent / 'config' / 'physics_topics.yaml'
 VALID_TOPICS = ['1', '2', '3', '4', '5', '6', '7', '8']
 
 # Batch size: 5-10 questions per request (adjust based on TPM/RPM headroom)
-BATCH_SIZE = 5
+BATCH_SIZE = 3
 
 
 def download_pdf_from_url(url: str) -> bytes:
@@ -177,7 +177,10 @@ def main():
             
             # Update database
             for result in results:
-                page_id = next(q['_page_id'] for q in questions if q['number'] == result.question_number)
+                matched_q = next((q for q in questions if str(q['number']) == str(result.question_number)), None)
+                if matched_q is None:
+                    continue
+                page_id = matched_q['_page_id']
                 
                 # Use primary topic (highest confidence)
                 primary_topic = result.topics[0]['id'] if result.topics else '1'
@@ -194,7 +197,9 @@ def main():
                     print(f"      ✅ Q{result.question_number}: Topic {primary_topic} ({result.difficulty}, {confidence:.2f})")
                 except Exception as e:
                     print(f"      ❌ Q{result.question_number}: DB update failed - {e}")
-                    failed_pages.append(next(p for p in batch if p['question_number'] == result.question_number))
+                    fp = next((p for p in batch if str(p['question_number']) == str(result.question_number)), None)
+                    if fp:
+                        failed_pages.append(fp)
         
         except Exception as e:
             print(f"      ❌ Batch classification failed: {str(e)[:200]}")

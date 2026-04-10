@@ -111,7 +111,7 @@ const jsonLd = {
         { '@type': 'ListItem', position: 4, name: 'IGCSE Chemistry Past Papers', url: 'https://grademax.me/subjects/igcse/chemistry' },
         { '@type': 'ListItem', position: 5, name: 'IGCSE Biology Past Papers', url: 'https://grademax.me/subjects/igcse/biology' },
         { '@type': 'ListItem', position: 6, name: 'IGCSE ICT Past Papers', url: 'https://grademax.me/subjects/igcse/ict' },
-        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://grademax.me/subjects/ial/pure-maths-1' },
+        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://grademax.me/subjects/ial/pure-mathematics-1' },
         { '@type': 'ListItem', position: 8, name: 'A Level Mechanics 1 Past Papers', url: 'https://grademax.me/subjects/ial/mechanics-1' },
         { '@type': 'ListItem', position: 9, name: 'A Level Statistics 1 Past Papers', url: 'https://grademax.me/subjects/ial/statistics-1' },
       ]

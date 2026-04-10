@@ -182,7 +182,7 @@ export default function ALevelPastPapersPage() {
           </h2>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
             {[2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
-              <Link key={year} href={`/browse?level=ial&year=${year}`} className="topic-pill">
+              <Link key={year} href={`/past-papers/pure-mathematics-1/${year}`} className="topic-pill">
                 {year}
               </Link>
             ))}

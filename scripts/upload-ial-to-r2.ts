@@ -40,7 +40,7 @@ for (const p of envPaths) {
 
 // ─── Configuration ─────────────────────────────────────────────────────────────
 
-const IAL_DIR = path.resolve('C:\\Users\\shari\\grademax\\data\\raw\\IAL')
+const IAL_DIR = path.resolve('C:\\Users\\shari\\grademax\\data\\IAL Final')
 
 const R2_ACCOUNT_ID    = process.env.R2_ACCOUNT_ID!
 const R2_ACCESS_KEY_ID = process.env.R2_ACCESS_KEY_ID!
@@ -118,6 +118,7 @@ const FOLDER_SUBJECT_MAP: Record<string, SubjectMeta> = {
   Physics:            { slug: 'ial-physics',            name: 'IAL Physics',            code: 'WPH',  board: 'Edexcel', level: 'IAL' },
   Psychology:         { slug: 'ial-psychology',         name: 'IAL Psychology',         code: 'WPS',  board: 'Edexcel', level: 'IAL' },
   Spanish:            { slug: 'ial-spanish',            name: 'IAL Spanish',            code: 'WSP',  board: 'Edexcel', level: 'IAL' },
+  Sociology:          { slug: 'ial-sociology',          name: 'IAL Sociology',          code: 'WSO',  board: 'Edexcel', level: 'IAL' },
 }
 
 // ─── Filename parser ───────────────────────────────────────────────────────────

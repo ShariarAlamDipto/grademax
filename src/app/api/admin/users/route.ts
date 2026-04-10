@@ -34,16 +34,23 @@ export async function GET() {
       page,
       perPage: 1000,
     })
-    if (error || !batch || batch.length === 0) break
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 })
+    }
+    if (!batch || batch.length === 0) break
     allAuthUsers.push(...batch)
     if (batch.length < 1000) break
     page++
   }
 
   // 2. Fetch all profiles (has role)
-  const { data: profiles } = await admin
+  const { data: profiles, error: profilesError } = await admin
     .from("profiles")
     .select("id, email, full_name, role, created_at")
+
+  if (profilesError) {
+    return NextResponse.json({ error: profilesError.message }, { status: 500 })
+  }
 
   const profileMap = new Map(
     (profiles || []).map((p: { id: string; email: string | null; full_name: string | null; role: string; created_at: string }) => [p.id, p])
@@ -107,7 +114,10 @@ export async function PATCH(req: NextRequest) {
   const admin = getSupabaseAdmin()
   const db = admin || auth.db
 
-  const body = await req.json()
+  const body = await req.json().catch(() => null)
+  if (!body || typeof body !== "object") {
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 })
+  }
   const { email, role } = body
 
   if (!email || !role || !["student", "teacher", "admin"].includes(role)) {
@@ -149,11 +159,20 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: "User not found with that email. They may need to sign in once first." }, { status: 404 })
   }
 
-  // Search auth users for the email (case-insensitive)
-  const { data: { users: authUsers } } = await admin.auth.admin.listUsers()
-  const authUser = authUsers?.find(
-    (u) => u.email?.toLowerCase() === email.toLowerCase()
-  )
+  // Search auth users for the email (case-insensitive), with pagination
+  const normalizedEmail = String(email).trim().toLowerCase()
+  let authUser: { id: string; email?: string | undefined; user_metadata?: Record<string, unknown> } | null = null
+  let page = 1
+  while (!authUser) {
+    const { data: { users: batch }, error } = await admin.auth.admin.listUsers({ page, perPage: 1000 })
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 })
+    }
+    if (!batch || batch.length === 0) break
+    authUser = batch.find((u) => u.email?.toLowerCase() === normalizedEmail) || null
+    if (batch.length < 1000) break
+    page++
+  }
 
   if (!authUser) {
     return NextResponse.json({ error: "User not found with that email" }, { status: 404 })
