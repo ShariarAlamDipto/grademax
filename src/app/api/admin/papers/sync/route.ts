@@ -20,7 +20,8 @@ export async function POST(req: NextRequest) {
   const db = getSupabaseAdmin()
   if (!db) return NextResponse.json({ error: "Server misconfiguration: admin client unavailable" }, { status: 500 })
 
-  const { data: subject } = await db.from("subjects").select("name").eq("id", subjectId).single()
+  const { data: subject, error: subjectError } = await db.from("subjects").select("name").eq("id", subjectId).maybeSingle()
+  if (subjectError) return NextResponse.json({ error: subjectError.message }, { status: 500 })
   if (!subject) return NextResponse.json({ error: "Subject not found" }, { status: 404 })
 
   const subjectFolder = subject.name.replace(/\s+/g, "_")
@@ -51,40 +52,67 @@ export async function POST(req: NextRequest) {
 
   let inserted = 0
   let updated = 0
+  const failedKeys: string[] = []
 
   for (const obj of r2Objects) {
     const dbSeason = normalizeSessionForDB(obj.season)
+    const normalizedPaperNumber = obj.paperNumber.trim().toUpperCase()
     const publicUrl = `${R2_PUBLIC_URL}/${obj.key}`
     const updateField = obj.type === "QP"
-      ? { pdf_url: publicUrl, qp_source_path: obj.key }
-      : { markscheme_pdf_url: publicUrl, ms_source_path: obj.key }
+      ? { pdf_url: publicUrl }
+      : { markscheme_pdf_url: publicUrl }
 
-    const { data: existing } = await db
+    const { data: existing, error: existingError } = await db
       .from("papers")
       .select("id, pdf_url, markscheme_pdf_url")
       .eq("subject_id", subjectId)
       .eq("year", obj.year)
       .eq("season", dbSeason)
-      .eq("paper_number", obj.paperNumber)
+      .eq("paper_number", normalizedPaperNumber)
       .maybeSingle()
+
+    if (existingError) {
+      failedKeys.push(obj.key)
+      continue
+    }
 
     if (existing) {
       // Only update if the URL field is missing
       const needsUpdate = obj.type === "QP" ? !existing.pdf_url : !existing.markscheme_pdf_url
       if (needsUpdate) {
-        await db.from("papers").update(updateField).eq("id", existing.id)
+        const { error: updateError } = await db.from("papers").update(updateField).eq("id", existing.id)
+        if (updateError) {
+          failedKeys.push(obj.key)
+          continue
+        }
         updated++
       }
     } else {
-      await db.from("papers").insert({
+      const { error: insertError } = await db.from("papers").insert({
         subject_id: subjectId,
         year: obj.year,
         season: dbSeason,
-        paper_number: obj.paperNumber,
+        paper_number: normalizedPaperNumber,
         ...updateField,
       })
+      if (insertError) {
+        failedKeys.push(obj.key)
+        continue
+      }
       inserted++
     }
+  }
+
+  if (failedKeys.length > 0) {
+    return NextResponse.json({
+      success: false,
+      warning: "Sync completed with write failures",
+      r2ObjectsScanned: r2Objects.length,
+      inserted,
+      updated,
+      failedCount: failedKeys.length,
+      failedKeys: failedKeys.slice(0, 25),
+    }, { status: 200 })
   }
 
   return NextResponse.json({ success: true, r2ObjectsScanned: r2Objects.length, inserted, updated })
