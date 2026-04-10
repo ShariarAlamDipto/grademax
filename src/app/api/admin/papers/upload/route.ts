@@ -3,7 +3,7 @@ import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getR2Client, R2_BUCKET, R2_PUBLIC_URL } from "@/lib/r2Client"
 import { buildR2Key, normalizeSessionForDB, normalizeSessionForR2, parseR2Filename } from "@/lib/r2FilenameParser"
-import { PutObjectCommand } from "@aws-sdk/client-s3"
+import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3"
 
 export const dynamic = "force-dynamic"
 
@@ -14,10 +14,10 @@ export async function POST(req: NextRequest) {
   const formData = await req.formData()
   const file = formData.get("file") as File | null
   if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 })
-  if (!file.name.endsWith(".pdf")) return NextResponse.json({ error: "Only PDF files allowed" }, { status: 400 })
+  if (!file.name.toLowerCase().endsWith(".pdf")) return NextResponse.json({ error: "Only PDF files allowed" }, { status: 400 })
 
   // Accept either manual fields or auto-detect from filename
-  let subjectId = formData.get("subject_id") as string
+  const subjectId = formData.get("subject_id") as string
   let yearStr = formData.get("year") as string
   let session = formData.get("session") as string
   let paperNumber = formData.get("paper_number") as string
@@ -39,12 +39,20 @@ export async function POST(req: NextRequest) {
   if (!["QP", "MS"].includes(type)) return NextResponse.json({ error: "type must be QP or MS" }, { status: 400 })
   const year = parseInt(yearStr)
   if (isNaN(year) || year < 2000 || year > 2030) return NextResponse.json({ error: "Invalid year" }, { status: 400 })
+  const normalizedPaperNumber = paperNumber.trim().toUpperCase()
+  if (!normalizedPaperNumber) return NextResponse.json({ error: "paper_number required" }, { status: 400 })
 
   const db = getSupabaseAdmin() || auth.db
 
   // Resolve subject folder name from DB if not provided
   if (!subjectFolder) {
-    const { data: subject } = await db.from("subjects").select("name").eq("id", subjectId).single()
+    const { data: subject, error: subjectError } = await db.from("subjects").select("name").eq("id", subjectId).maybeSingle()
+    if (subjectError) {
+      return NextResponse.json({ error: subjectError.message }, { status: 500 })
+    }
+    if (!subject) {
+      return NextResponse.json({ error: "Subject not found" }, { status: 404 })
+    }
     subjectFolder = subject?.name?.replace(/\s+/g, "_") || subjectId
   }
 
@@ -69,30 +77,68 @@ export async function POST(req: NextRequest) {
   // Upsert papers table
   const dbSeason = normalizeSessionForDB(session)
   const updateField = type === "QP"
-    ? { pdf_url: publicUrl, qp_source_path: r2Key }
-    : { markscheme_pdf_url: publicUrl, ms_source_path: r2Key }
+    ? { pdf_url: publicUrl }
+    : { markscheme_pdf_url: publicUrl }
 
   // Check if row exists
-  const { data: existing } = await db
+  const { data: existing, error: existingError } = await db
     .from("papers")
     .select("id")
     .eq("subject_id", subjectId)
     .eq("year", year)
     .eq("season", dbSeason)
-    .eq("paper_number", paperNumber)
+    .eq("paper_number", normalizedPaperNumber)
     .maybeSingle()
 
-  let paperId: string
+  if (existingError) {
+    try {
+      const r2 = getR2Client()
+      await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: r2Key }))
+    } catch {
+      // Keep original DB error as the primary response.
+    }
+    return NextResponse.json({ error: existingError.message }, { status: 500 })
+  }
+
+  let paperId: string | null = null
   if (existing) {
-    await db.from("papers").update(updateField).eq("id", existing.id)
+    const { error: updateError } = await db.from("papers").update(updateField).eq("id", existing.id)
+    if (updateError) {
+      try {
+        const r2 = getR2Client()
+        await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: r2Key }))
+      } catch {
+        // Keep original DB error as the primary response.
+      }
+      return NextResponse.json({ error: updateError.message }, { status: 500 })
+    }
     paperId = existing.id
   } else {
-    const { data: inserted } = await db
+    const { data: inserted, error: insertError } = await db
       .from("papers")
-      .insert({ subject_id: subjectId, year, season: dbSeason, paper_number: paperNumber, ...updateField })
+      .insert({ subject_id: subjectId, year, season: dbSeason, paper_number: normalizedPaperNumber, ...updateField })
       .select("id")
       .single()
+    if (insertError || !inserted?.id) {
+      try {
+        const r2 = getR2Client()
+        await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: r2Key }))
+      } catch {
+        // Keep original DB error as the primary response.
+      }
+      return NextResponse.json({ error: insertError?.message || "Failed to insert paper row" }, { status: 500 })
+    }
     paperId = inserted?.id
+  }
+
+  if (!paperId) {
+    try {
+      const r2 = getR2Client()
+      await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: r2Key }))
+    } catch {
+      // Keep original DB error as the primary response.
+    }
+    return NextResponse.json({ error: "Failed to resolve paper id" }, { status: 500 })
   }
 
   return NextResponse.json({ success: true, paperId, r2Key, url: publicUrl })
