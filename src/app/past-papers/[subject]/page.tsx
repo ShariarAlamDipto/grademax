@@ -307,6 +307,31 @@ export default async function SubjectPapersPage({
             <p style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>
               Free Edexcel {level} {subj.name} question papers and mark schemes.
             </p>
+
+            {/* Paper number quick-filter */}
+            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginTop: "1.25rem" }}>
+              <span style={{ fontSize: "0.7rem", fontWeight: 600, color: "var(--gm-text-3)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                Filter by paper:
+              </span>
+              {["1", "2", "3", "4"].map((n) => (
+                <Link
+                  key={n}
+                  href={`/past-papers/${slug}/paper-${n}`}
+                  style={{
+                    fontSize: "0.75rem",
+                    fontWeight: 600,
+                    padding: "0.3rem 0.875rem",
+                    borderRadius: "99px",
+                    background: "transparent",
+                    color: "var(--gm-text-2)",
+                    border: "1px solid var(--gm-border-2)",
+                    textDecoration: "none",
+                  }}
+                >
+                  Paper {n}
+                </Link>
+              ))}
+            </div>
           </div>
 
           {/* Empty State */}
@@ -348,9 +373,12 @@ export default async function SubjectPapersPage({
                       </div>
 
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
-                        {sess.papers.map((paper) => (
+                        {sess.papers.map((paper) => {
+                          const paperPageSlug = `paper-${paper.paper_number.toLowerCase()}`
+                          return (
                           <div
                             key={paper.id}
+                            id={`${yg.year}-${sess.season}-${paperPageSlug}`}
                             style={{
                               display: "flex",
                               flexWrap: "wrap",
@@ -363,7 +391,13 @@ export default async function SubjectPapersPage({
                               border: "1px solid var(--gm-border)",
                             }}
                           >
-                            <span style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)" }}>Paper {paper.paper_number}</span>
+                            <Link
+                              href={`/past-papers/${slug}/${yg.year}/${sess.season}/${paperPageSlug}`}
+                              style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)", textDecoration: "none" }}
+                              className="gm-link"
+                            >
+                              Paper {paper.paper_number}
+                            </Link>
 
                             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
                               {paper.pdf_url ? (
@@ -425,7 +459,7 @@ export default async function SubjectPapersPage({
                               )}
                             </div>
                           </div>
-                        ))}
+                        )})}
                       </div>
                     </div>
                   ))}

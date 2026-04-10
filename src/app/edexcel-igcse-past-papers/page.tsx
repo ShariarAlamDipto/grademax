@@ -153,8 +153,8 @@ export default function IGCSEPastPapersPage() {
             Browse by Year
           </h2>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-            {[2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
-              <Link key={year} href={`/browse?level=igcse&year=${year}`} className="topic-pill">
+            {[2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
+              <Link key={year} href={`/past-papers/physics/${year}`} className="topic-pill">
                 {year}
               </Link>
             ))}
