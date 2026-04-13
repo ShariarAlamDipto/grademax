@@ -24,15 +24,22 @@ export async function POST(req: NextRequest) {
   let type = (formData.get("type") as string || "").toUpperCase() as "QP" | "MS"
   let subjectFolder = formData.get("subject_folder") as string
 
-  // Auto-detect from filename if not provided
+  // Auto-detect from filename for any fields not explicitly provided
   if (!yearStr || !session || !paperNumber || !type) {
     const parsed = parseR2Filename(file.name)
-    if (!parsed) return NextResponse.json({ error: "Cannot parse filename. Please provide fields manually." }, { status: 400 })
-    yearStr = yearStr || String(parsed.year)
-    session = session || parsed.session
-    paperNumber = paperNumber || parsed.paperNumber
-    type = type || parsed.type
-    subjectFolder = subjectFolder || parsed.subject
+    if (parsed) {
+      yearStr = yearStr || String(parsed.year)
+      session = session || parsed.session
+      paperNumber = paperNumber || parsed.paperNumber
+      type = (type || parsed.type) as "QP" | "MS"
+      subjectFolder = subjectFolder || parsed.subject
+    }
+    // After attempting auto-detect, verify all required fields are present
+    if (!yearStr || !session || !paperNumber) {
+      return NextResponse.json({
+        error: "Please fill in Year, Session, and Paper Number. Or name the file: SubjectName_YYYY_Jan|May-Jun|Oct-Nov_Paper_N_QP|MS.pdf",
+      }, { status: 400 })
+    }
   }
 
   if (!subjectId) return NextResponse.json({ error: "subject_id required" }, { status: 400 })
