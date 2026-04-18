@@ -12,7 +12,9 @@ export const dynamic = "force-dynamic"
 export async function GET(request: NextRequest) {
   const url = new URL(request.url)
   const code = url.searchParams.get("code")
-  const next = url.searchParams.get("next") || "/dashboard"
+  const rawNext = url.searchParams.get("next") || ""
+  // Reject absolute URLs to prevent open redirect (new URL(abs, origin) ignores origin)
+  const next = rawNext.startsWith("/") ? rawNext : "/dashboard"
 
   // Build the redirect response FIRST so we can attach cookies to it
   const redirectTo = new URL(next, url.origin)

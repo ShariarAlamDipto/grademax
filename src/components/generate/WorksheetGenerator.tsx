@@ -41,7 +41,7 @@ interface Topic {
   description?: string;
 }
 
-const CURRENT_YEAR = 2025;
+const CURRENT_YEAR = new Date().getFullYear();
 const START_YEAR = 2011;
 const YEARS = Array.from({ length: CURRENT_YEAR - START_YEAR + 1 }, (_, i) => CURRENT_YEAR - i);
 

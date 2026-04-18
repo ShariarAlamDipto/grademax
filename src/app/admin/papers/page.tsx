@@ -308,11 +308,8 @@ export default function PapersAdminPage() {
   // Delete paper from DB (and optionally R2)
   const handleDeletePaper = async (row: AuditRow) => {
     if (!row.paperId) return
-    const withR2 = window.confirm(
-      `Delete DB record for ${row.year} ${row.season} Paper ${row.paperNumber}?\n\nClick OK to also delete R2 files, or Cancel to keep R2 files.`
-    )
-    // We confirmed — now delete
-    if (!window.confirm(`Confirm: delete ${withR2 ? "DB + R2 files" : "DB record only"} for ${row.year} ${row.season} P${row.paperNumber}?`)) return
+    if (!window.confirm(`Delete DB record for ${row.year} ${row.season} Paper ${row.paperNumber}?`)) return
+    const withR2 = window.confirm(`Also delete R2 files for ${row.year} ${row.season} P${row.paperNumber}?\n\nOK = delete files too, Cancel = keep R2 files.`)
     setDeletingPaperId(row.paperId)
     const res = await fetch(`/api/admin/papers/${row.paperId}?deleteR2=${withR2}`, { method: "DELETE" })
     const data = await res.json()
