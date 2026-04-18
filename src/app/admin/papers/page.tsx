@@ -79,6 +79,7 @@ export default function PapersAdminPage() {
   const [formErrors, setFormErrors] = useState<Partial<Record<"year" | "session" | "paper", string>>>({})
 
   const dropRef = useRef<HTMLDivElement>(null)
+  const pdfInputRef = useRef<HTMLInputElement>(null)
   const [dragOver, setDragOver] = useState(false)
 
   useEffect(() => {
@@ -132,7 +133,7 @@ export default function PapersAdminPage() {
       const newItems: QueueItem[] = files.map(f => {
         const parsed = parseFilenameFields(f.name)
         return {
-          id: `${Date.now()}-${Math.random()}`,
+          id: crypto.randomUUID(),
           file: f,
           year: parsed.year || "",
           session: parsed.session || "",
@@ -156,7 +157,7 @@ export default function PapersAdminPage() {
       const newItems: QueueItem[] = pdfs.map(f => {
         const parsed = parseFilenameFields(f.name)
         return {
-          id: `${Date.now()}-${Math.random()}`,
+          id: crypto.randomUUID(),
           file: f,
           year: parsed.year || "",
           session: parsed.session || "",
@@ -212,8 +213,7 @@ export default function PapersAdminPage() {
     if (res.ok) {
       setUploadMsg({ type: "ok", text: `✓ Uploaded → ${data.r2Key}` })
       setFile(null); setUploadYear(""); setUploadSession(""); setUploadPaper(""); setUploadType("QP"); setFormErrors({})
-      const input = document.getElementById("pdf-input") as HTMLInputElement
-      if (input) input.value = ""
+      if (pdfInputRef.current) pdfInputRef.current.value = ""
       if (auditRows.length > 0) runAudit(selectedId)
     } else {
       setUploadMsg({ type: "err", text: data.error || "Upload failed" })
@@ -485,7 +485,7 @@ export default function PapersAdminPage() {
           <div style={{ marginBottom: "1.25rem" }}>
             <label style={labelStyle}>PDF File <span style={{ color: "#ef4444" }}>*</span></label>
             <div
-              onClick={() => document.getElementById("pdf-input")?.click()}
+              onClick={() => pdfInputRef.current?.click()}
               style={{
                 border: `2px dashed ${file ? "var(--gm-blue)" : "var(--gm-border)"}`,
                 borderRadius: "0.75rem", padding: "2rem", textAlign: "center",
@@ -504,7 +504,7 @@ export default function PapersAdminPage() {
                 <span>Click or drag-and-drop PDF files <span style={{ opacity: 0.6 }}>(single file fills fields below; multiple files go to queue)</span></span>
               )}
             </div>
-            <input id="pdf-input" type="file" accept=".pdf" multiple style={{ display: "none" }}
+            <input ref={pdfInputRef} type="file" accept=".pdf" multiple style={{ display: "none" }}
               onChange={e => handleFilesSelected(e.target.files)} />
           </div>
 
@@ -753,12 +753,13 @@ export default function PapersAdminPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {filteredRows.map((row, i) => {
+                    {filteredRows.map((row) => {
                       const complete = row.dbHasQP && row.dbHasMS && row.r2HasQP && row.r2HasMS
                       const dbComplete = row.dbHasQP && row.dbHasMS
                       const hasR2ButNoDb = (row.r2HasQP || row.r2HasMS) && !row.paperId
+                      const rowKey = row.paperId ?? `${row.year}-${row.season}-${row.paperNumber}`
                       return (
-                        <tr key={i} style={{
+                        <tr key={rowKey} style={{
                           borderBottom: "1px solid var(--gm-border)",
                           background: complete ? "transparent" : dbComplete ? "#f59e0b06" : "#ef444406",
                         }}>

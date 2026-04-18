@@ -72,6 +72,10 @@ export async function GET(request: Request) {
 
     const paperIds = papers.map(p => p.id);
 
+    const topicCodes = topicsParam
+      ? normalizeTopicCodes(topicsParam.split(',').map(t => t.trim()).filter(Boolean))
+      : [];
+
     // Step 2: Count total matching pages (for pagination)
     let countQuery = supabase
       .from('pages')
@@ -80,16 +84,8 @@ export async function GET(request: Request) {
       .not('qp_page_url', 'is', null)
       .in('paper_id', paperIds);
 
-    if (topicsParam) {
-      const topicCodes = normalizeTopicCodes(topicsParam.split(',').map(t => t.trim()).filter(Boolean));
-      if (topicCodes.length > 0) {
-        countQuery = countQuery.overlaps('topics', topicCodes);
-      }
-    }
-
-    if (difficulty) {
-      countQuery = countQuery.eq('difficulty', difficulty);
-    }
+    if (topicCodes.length > 0) countQuery = countQuery.overlaps('topics', topicCodes);
+    if (difficulty) countQuery = countQuery.eq('difficulty', difficulty);
 
     const { count, error: countError } = await countQuery;
 
@@ -132,16 +128,8 @@ export async function GET(request: Request) {
       .order('page_number', { ascending: true })
       .range(offset, offset + limit - 1);
 
-    if (topicsParam) {
-      const topicCodes = normalizeTopicCodes(topicsParam.split(',').map(t => t.trim()).filter(Boolean));
-      if (topicCodes.length > 0) {
-        dataQuery = dataQuery.overlaps('topics', topicCodes);
-      }
-    }
-
-    if (difficulty) {
-      dataQuery = dataQuery.eq('difficulty', difficulty);
-    }
+    if (topicCodes.length > 0) dataQuery = dataQuery.overlaps('topics', topicCodes);
+    if (difficulty) dataQuery = dataQuery.eq('difficulty', difficulty);
 
     const { data: pages, error: pagesError } = await dataQuery;
 
@@ -200,7 +188,6 @@ export async function GET(request: Request) {
     });
 
   } catch (error: unknown) {
-    console.error('Test builder questions API error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

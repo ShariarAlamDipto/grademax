@@ -95,7 +95,7 @@ export async function POST(request: Request) {
         total_marks: typeof totalMarks === 'number' ? totalMarks : items.length,
         status: 'draft',
       })
-      .select()
+      .select('id, title, total_marks, total_questions, status')
       .single();
 
     if (testError) {
