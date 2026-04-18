@@ -1,187 +1,259 @@
 "use client"
-import { useEffect, useState } from 'react'
-import { supabase } from '@/lib/supabaseClient'
+import { useEffect, useState, useCallback } from "react"
 
+interface Topic { id: number; name: string }
+interface PredictedTopic { id: number; name: string; confidence: number }
 interface Question {
   id: number
   question_number: string
   text: string
   difficulty: number
   marks: number
-  predicted_topics: { id: number; name: string; confidence: number }[]
+  predicted_topics: PredictedTopic[]
 }
 
-interface RawTopic {
-  id: number
-  name: string
-}
-
-interface RawQuestionTopic {
-  topic_id: number
-  confidence: number
-  topics: RawTopic | RawTopic[] | null
-}
-
-interface RawQuestion {
-  id: number
-  question_number: string
-  text: string
-  difficulty: number
-  marks: number
-  question_topics: RawQuestionTopic[] | null
-}
+const PAGE_SIZE = 50
 
 export default function TaggerPage() {
   const [questions, setQuestions] = useState<Question[]>([])
-  const [allTopics, setAllTopics] = useState<{id: number; name: string}[]>([])
+  const [allTopics, setAllTopics] = useState<Topic[]>([])
+  const [total, setTotal] = useState(0)
   const [loading, setLoading] = useState(true)
-  const [saveMsg, setSaveMsg] = useState<{ type: 'ok' | 'err'; text: string } | null>(null)
+  const [saveMsg, setSaveMsg] = useState<{ type: "ok" | "err"; text: string } | null>(null)
   const [savingId, setSavingId] = useState<number | null>(null)
 
-  useEffect(() => {
-    async function load() {
-      setLoading(true)
-      try {
-        const [{ data: qs, error: qErr }, { data: topics, error: tErr }] = await Promise.all([
-          supabase
-            .from('questions')
-            .select('id, question_number, text, difficulty, marks, question_topics(topic_id, confidence, topics(id, name))')
-            .order('id', { ascending: false })
-            .limit(50),
-          supabase.from('topics').select('id, name').order('name'),
-        ])
+  // Filters + pagination
+  const [offset, setOffset] = useState(0)
+  const [untaggedOnly, setUntaggedOnly] = useState(false)
+  const [minConf, setMinConf] = useState(0)
 
-        if (qErr || tErr) {
-          setSaveMsg({ type: 'err', text: qErr?.message || tErr?.message || 'Failed to load tagger data' })
-          setQuestions([])
-          setAllTopics([])
-          return
-        }
-
-        setAllTopics(topics || [])
-
-        const mapped = ((qs || []) as RawQuestion[]).map(q => {
-          const predictedTopics = (q.question_topics || [])
-            .map(qt => {
-              const topic = Array.isArray(qt.topics) ? qt.topics[0] : qt.topics
-              if (!topic?.id || !topic?.name) {
-                return null
-              }
-              return {
-                id: topic.id,
-                name: topic.name,
-                confidence: qt.confidence,
-              }
-            })
-            .filter((topic): topic is { id: number; name: string; confidence: number } => topic !== null)
-
-          return {
-            id: q.id,
-            question_number: q.question_number,
-            text: q.text,
-            difficulty: q.difficulty,
-            marks: q.marks,
-            predicted_topics: predictedTopics,
-          }
-        })
-
-        setQuestions(mapped)
-      } finally {
-        setLoading(false)
+  const load = useCallback(async () => {
+    setLoading(true)
+    setSaveMsg(null)
+    try {
+      const params = new URLSearchParams({
+        offset: String(offset),
+        limit: String(PAGE_SIZE),
+        untagged: String(untaggedOnly),
+        minConf: String(minConf),
+      })
+      const res = await fetch(`/api/admin/tagger?${params}`)
+      const data = await res.json()
+      if (!res.ok) {
+        setSaveMsg({ type: "err", text: data.error || "Failed to load" })
+        return
       }
+      setQuestions(data.questions || [])
+      setAllTopics(data.topics || [])
+      setTotal(data.total || 0)
+    } finally {
+      setLoading(false)
     }
-    load()
-  }, [])
+  }, [offset, untaggedOnly, minConf])
+
+  useEffect(() => { load() }, [load])
 
   async function saveTags(qId: number, topicIds: number[]) {
     setSaveMsg(null)
     setSavingId(qId)
-    const { error: deleteError } = await supabase.from('question_topics').delete().eq('question_id', qId)
-    if (deleteError) {
-      setSaveMsg({ type: 'err', text: deleteError.message })
-      setSavingId(null)
-      return
+    const res = await fetch("/api/admin/tagger", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question_id: qId, topic_ids: topicIds }),
+    })
+    const data = await res.json()
+    if (res.ok) {
+      setSaveMsg({ type: "ok", text: `Saved ${data.tagged} tag(s) for question ${qId}` })
+    } else {
+      setSaveMsg({ type: "err", text: data.error || "Save failed" })
     }
-
-    if (topicIds.length) {
-      const { error: insertError } = await supabase
-        .from('question_topics')
-        .insert(topicIds.map(tid => ({ question_id: qId, topic_id: tid, confidence: 1.0 })))
-      if (insertError) {
-        setSaveMsg({ type: 'err', text: insertError.message })
-        setSavingId(null)
-        return
-      }
-    }
-
-    setSaveMsg({ type: 'ok', text: 'Tags saved successfully' })
     setSavingId(null)
   }
 
-  if (loading) return <div className="min-h-screen text-white p-6">Loading...</div>
+  const containerStyle: React.CSSProperties = { padding: "2rem", maxWidth: "900px" }
+  const pageCount = Math.ceil(total / PAGE_SIZE)
+  const currentPage = Math.floor(offset / PAGE_SIZE) + 1
 
   return (
-    <main className="min-h-screen text-white p-6 bg-black">
-      <h1 className="text-2xl font-semibold mb-6">Admin: Question Tagger (QA)</h1>
-      <p className="text-sm text-white/70 mb-8">Review auto-tagged questions, fix topics, and adjust difficulty.</p>
+    <div style={containerStyle}>
+      <h1 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--gm-text)", marginBottom: "0.25rem" }}>
+        Question Tagger (QA)
+      </h1>
+      <p style={{ fontSize: "0.875rem", color: "var(--gm-text-3)", marginBottom: "1.5rem" }}>
+        Review auto-tagged questions, fix topics, and adjust difficulty.
+      </p>
+
+      {/* Filters */}
+      <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap", marginBottom: "1.25rem", padding: "0.875rem 1rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.625rem" }}>
+        <label style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.8rem", color: "var(--gm-text-2)", cursor: "pointer" }}>
+          <input
+            type="checkbox"
+            checked={untaggedOnly}
+            onChange={e => { setUntaggedOnly(e.target.checked); setOffset(0) }}
+          />
+          Untagged only
+        </label>
+        <label style={{ display: "flex", alignItems: "center", gap: "0.4rem", fontSize: "0.8rem", color: "var(--gm-text-2)" }}>
+          Min confidence &lt;
+          <select
+            value={minConf}
+            onChange={e => { setMinConf(parseFloat(e.target.value)); setOffset(0) }}
+            style={{ background: "var(--gm-bg)", border: "1px solid var(--gm-border)", borderRadius: "0.375rem", padding: "0.2rem 0.4rem", color: "var(--gm-text)", fontSize: "0.78rem" }}
+          >
+            <option value={0}>All</option>
+            <option value={0.5}>50%</option>
+            <option value={0.7}>70%</option>
+            <option value={0.9}>90%</option>
+          </select>
+        </label>
+        <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", marginLeft: "auto" }}>
+          {total} total questions
+        </span>
+        <button
+          onClick={() => load()}
+          style={{ padding: "0.3rem 0.75rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.375rem", color: "var(--gm-text-2)", fontSize: "0.78rem", cursor: "pointer" }}
+        >
+          Refresh
+        </button>
+      </div>
 
       {saveMsg && (
-        <div className={`mb-4 rounded border px-3 py-2 text-sm ${saveMsg.type === 'ok' ? 'border-emerald-500/40 bg-emerald-500/10 text-emerald-300' : 'border-rose-500/40 bg-rose-500/10 text-rose-300'}`}>
+        <div style={{
+          marginBottom: "1rem", padding: "0.625rem 0.875rem", borderRadius: "0.5rem", fontSize: "0.8rem",
+          background: saveMsg.type === "ok" ? "#22c55e10" : "#ef444410",
+          border: `1px solid ${saveMsg.type === "ok" ? "#22c55e30" : "#ef444430"}`,
+          color: saveMsg.type === "ok" ? "#22c55e" : "#ef4444",
+        }}>
           {saveMsg.text}
         </div>
       )}
 
-      <div className="space-y-6">
-        {questions.map(q => (
-          <QuestionCard key={q.id} question={q} allTopics={allTopics} onSave={saveTags} saving={savingId === q.id} />
-        ))}
-      </div>
-    </main>
+      {loading ? (
+        <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Loading questions…</div>
+      ) : questions.length === 0 ? (
+        <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>No questions match the current filters.</div>
+      ) : (
+        <>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            {questions.map(q => (
+              <QuestionCard
+                key={q.id}
+                question={q}
+                allTopics={allTopics}
+                onSave={saveTags}
+                saving={savingId === q.id}
+              />
+            ))}
+          </div>
+
+          {/* Pagination */}
+          {pageCount > 1 && (
+            <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.75rem" }}>
+              <button
+                onClick={() => setOffset(Math.max(0, offset - PAGE_SIZE))}
+                disabled={offset === 0}
+                style={{ padding: "0.4rem 0.875rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.5rem", color: "var(--gm-text-2)", fontSize: "0.78rem", cursor: offset === 0 ? "not-allowed" : "pointer", opacity: offset === 0 ? 0.4 : 1 }}
+              >
+                ← Prev
+              </button>
+              <span style={{ fontSize: "0.8rem", color: "var(--gm-text-3)" }}>
+                Page {currentPage} of {pageCount}
+              </span>
+              <button
+                onClick={() => setOffset(offset + PAGE_SIZE)}
+                disabled={offset + PAGE_SIZE >= total}
+                style={{ padding: "0.4rem 0.875rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.5rem", color: "var(--gm-text-2)", fontSize: "0.78rem", cursor: offset + PAGE_SIZE >= total ? "not-allowed" : "pointer", opacity: offset + PAGE_SIZE >= total ? 0.4 : 1 }}
+              >
+                Next →
+              </button>
+            </div>
+          )}
+        </>
+      )}
+    </div>
   )
 }
 
 function QuestionCard({ question, allTopics, onSave, saving }: {
   question: Question
-  allTopics: {id: number; name: string}[]
+  allTopics: Topic[]
   onSave: (qId: number, topicIds: number[]) => Promise<void>
   saving: boolean
 }) {
   const [selected, setSelected] = useState<number[]>(question.predicted_topics.map(t => t.id))
 
   function toggle(id: number) {
-    setSelected(prev => prev.includes(id) ? prev.filter(x=>x!==id) : [...prev, id])
+    setSelected(prev => prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id])
   }
 
   return (
-    <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-      <div className="flex justify-between items-start mb-2">
-        <span className="text-xs text-white/70">{question.question_number} • {question.marks} marks • Diff {question.difficulty}</span>
+    <div style={{
+      background: "var(--gm-surface)",
+      border: "1px solid var(--gm-border)",
+      borderRadius: "0.625rem",
+      padding: "1rem",
+    }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
+        <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)" }}>
+          {question.question_number} · {question.marks} marks · Difficulty {question.difficulty}
+        </span>
         <button
           onClick={() => { void onSave(question.id, selected) }}
           disabled={saving}
-          className="rounded bg-emerald-500 text-black px-3 py-1 text-xs font-medium hover:bg-emerald-600 disabled:cursor-not-allowed disabled:opacity-60"
+          style={{
+            padding: "0.25rem 0.75rem",
+            background: saving ? "var(--gm-border)" : "#22c55e",
+            color: saving ? "var(--gm-text-3)" : "#000",
+            border: "none", borderRadius: "0.375rem", fontSize: "0.75rem", fontWeight: 600,
+            cursor: saving ? "not-allowed" : "pointer", opacity: saving ? 0.6 : 1,
+          }}
         >
-          {saving ? 'Saving...' : 'Save'}
+          {saving ? "Saving…" : "Save"}
         </button>
       </div>
-      <p className="text-sm leading-snug mb-3 whitespace-pre-wrap">{question.text.slice(0, 300)}...</p>
-      
-      <div className="mb-2">
-        <span className="text-xs text-white/70">Predicted topics ({question.predicted_topics.length}):</span>
-        <div className="flex flex-wrap gap-1 mt-1">
-          {question.predicted_topics.map(t => (
-            <span key={t.id} className="px-2 py-0.5 rounded-full text-xs bg-yellow-500/20 text-yellow-300 border border-yellow-500/30">
-              {t.name} ({(t.confidence * 100).toFixed(0)}%)
-            </span>
-          ))}
+
+      <p style={{ fontSize: "0.8rem", color: "var(--gm-text-2)", lineHeight: 1.5, marginBottom: "0.75rem", whiteSpace: "pre-wrap" }}>
+        {question.text.slice(0, 300)}{question.text.length > 300 ? "…" : ""}
+      </p>
+
+      {question.predicted_topics.length > 0 && (
+        <div style={{ marginBottom: "0.625rem" }}>
+          <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", display: "block", marginBottom: "0.25rem" }}>
+            Auto-tagged ({question.predicted_topics.length}):
+          </span>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}>
+            {question.predicted_topics.map(t => (
+              <span
+                key={t.id}
+                style={{
+                  padding: "0.15rem 0.5rem", borderRadius: "999px", fontSize: "0.7rem",
+                  background: "#f59e0b20", color: "#f59e0b", border: "1px solid #f59e0b30",
+                }}
+              >
+                {t.name} ({(t.confidence * 100).toFixed(0)}%)
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
 
       <div>
-        <span className="text-xs text-white/70">All topics (select correct):</span>
-        <div className="flex flex-wrap gap-1 mt-1">
+        <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", display: "block", marginBottom: "0.25rem" }}>
+          Select correct topics ({selected.length} selected):
+        </span>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.25rem" }}>
           {allTopics.map(t => (
-            <button key={t.id} onClick={() => toggle(t.id)} className={`px-2 py-0.5 rounded text-xs border ${selected.includes(t.id)?'bg-white text-black border-white':'bg-white/10 border-white/10'}`}>
+            <button
+              key={t.id}
+              onClick={() => toggle(t.id)}
+              style={{
+                padding: "0.15rem 0.5rem", borderRadius: "0.25rem", fontSize: "0.7rem",
+                background: selected.includes(t.id) ? "var(--gm-text)" : "var(--gm-bg)",
+                color: selected.includes(t.id) ? "var(--gm-bg)" : "var(--gm-text-3)",
+                border: `1px solid ${selected.includes(t.id) ? "var(--gm-text)" : "var(--gm-border)"}`,
+                cursor: "pointer",
+              }}
+            >
               {t.name}
             </button>
           ))}

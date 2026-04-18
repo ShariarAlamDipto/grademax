@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState, useCallback, useRef } f
 import { supabase } from "@/lib/supabaseClient"
 import type { User, Session } from "@supabase/supabase-js"
 
-const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
 
 interface Profile {
   id: string
@@ -121,7 +120,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
 
       // Bootstrap admin once per page load — fire and forget
-      if (!bootstrappedRef.current && s.user.email?.toLowerCase() === SUPER_ADMIN_EMAIL) {
+      if (!bootstrappedRef.current && s.user.email?.toLowerCase() === process.env.NEXT_PUBLIC_SUPER_ADMIN_EMAIL?.toLowerCase()) {
         bootstrappedRef.current = true
         fetch("/api/admin/bootstrap", { method: "POST" })
           .then(() => fetchProfileDirect(s.user!.id))
@@ -224,8 +223,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     null
 
   const role = profile?.role || "student"
-  const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL
-  const isAdmin = role === "admin" || isSuperAdminUser
+  const isAdmin = role === "admin"
   const isTeacher = role === "teacher" || isAdmin
 
   return (

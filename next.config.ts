@@ -62,6 +62,13 @@ const nextConfig: NextConfig = {
           { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
         ],
       },
+      // Cache all past-papers routes at the CDN edge (ISR revalidates at origin)
+      {
+        source: "/past-papers/:path*",
+        headers: [
+          { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
+        ],
+      },
     ];
   },
   async redirects() {

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 
 interface Subject {
-  id: string; name: string; code: string | null; board: string | null; level: string; paperCount: number
+  id: string; name: string; code: string | null; board: string | null; level: string; paperCount: number; is_active?: boolean
 }
 
 const inputStyle: React.CSSProperties = {
@@ -72,8 +72,11 @@ export default function SubjectsAdminPage() {
     setSaving(false)
   }
 
-  const handleDelete = async (id: string, name: string) => {
-    if (!confirm(`Delete "${name}" and all its papers? This cannot be undone.`)) return
+  const handleDelete = async (id: string, name: string, paperCount: number) => {
+    const impact = paperCount > 0
+      ? `⚠ This will also delete ${paperCount} paper record(s).\n\n`
+      : ""
+    if (!confirm(`${impact}Delete "${name}"? This cannot be undone.`)) return
     const res = await fetch(`/api/admin/subjects?id=${id}`, { method: "DELETE" })
     if (res.ok) { setMsg({ type: "ok", text: `Deleted "${name}"` }); load() }
     else { const d = await res.json(); setMsg({ type: "err", text: d.error || "Delete failed" }) }
@@ -86,21 +89,48 @@ export default function SubjectsAdminPage() {
   const ial = filtered.filter(s => s.level === "IAL")
   const other = filtered.filter(s => s.level !== "IGCSE" && s.level !== "IAL")
 
-  const SubjectRow = ({ s }: { s: Subject }) => (
-    <div style={{
-      display: "grid", gridTemplateColumns: "1fr auto auto auto", gap: "0.75rem",
-      alignItems: "center", padding: "0.625rem 0.875rem",
-      borderBottom: "1px solid var(--gm-border)",
-    }}>
-      <div>
-        <span style={{ fontWeight: 500, fontSize: "0.875rem", color: "var(--gm-text)" }}>{s.name}</span>
-        {s.code && <span style={{ marginLeft: "0.5rem", fontSize: "0.7rem", color: "var(--gm-text-3)", background: "var(--gm-bg)", border: "1px solid var(--gm-border)", borderRadius: "0.25rem", padding: "0 0.3rem" }}>{s.code}</span>}
+  const handleToggleActive = async (s: Subject) => {
+    const newActive = !(s.is_active ?? true)
+    const res = await fetch("/api/admin/subjects", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: s.id, is_active: newActive }),
+    })
+    if (res.ok) {
+      setSubjects(prev => prev.map(x => x.id === s.id ? { ...x, is_active: newActive } : x))
+    } else {
+      const d = await res.json()
+      setMsg({ type: "err", text: d.error || "Toggle failed" })
+    }
+  }
+
+  const SubjectRow = ({ s }: { s: Subject }) => {
+    const active = s.is_active ?? true
+    return (
+      <div style={{
+        display: "grid", gridTemplateColumns: "1fr auto auto auto auto", gap: "0.75rem",
+        alignItems: "center", padding: "0.625rem 0.875rem",
+        borderBottom: "1px solid var(--gm-border)",
+        opacity: active ? 1 : 0.55,
+      }}>
+        <div>
+          <span style={{ fontWeight: 500, fontSize: "0.875rem", color: "var(--gm-text)" }}>{s.name}</span>
+          {s.code && <span style={{ marginLeft: "0.5rem", fontSize: "0.7rem", color: "var(--gm-text-3)", background: "var(--gm-bg)", border: "1px solid var(--gm-border)", borderRadius: "0.25rem", padding: "0 0.3rem" }}>{s.code}</span>}
+          {!active && <span style={{ marginLeft: "0.5rem", fontSize: "0.65rem", color: "#f59e0b", background: "#f59e0b15", border: "1px solid #f59e0b30", borderRadius: "0.25rem", padding: "0 0.3rem" }}>inactive</span>}
+        </div>
+        <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)" }}>{s.paperCount} papers</span>
+        <button
+          onClick={() => handleToggleActive(s)}
+          title={active ? "Deactivate subject (hides from students)" : "Activate subject"}
+          style={{ fontSize: "0.7rem", color: active ? "#f59e0b" : "#22c55e", background: "none", border: "none", cursor: "pointer", padding: "0.25rem 0.5rem" }}
+        >
+          {active ? "Deactivate" : "Activate"}
+        </button>
+        <button onClick={() => startEdit(s)} style={{ fontSize: "0.75rem", color: "var(--gm-blue)", background: "none", border: "none", cursor: "pointer", padding: "0.25rem 0.5rem" }}>Edit</button>
+        <button onClick={() => handleDelete(s.id, s.name, s.paperCount)} style={{ fontSize: "0.75rem", color: "#ef4444", background: "none", border: "none", cursor: "pointer", padding: "0.25rem 0.5rem" }}>Delete</button>
       </div>
-      <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)" }}>{s.paperCount} papers</span>
-      <button onClick={() => startEdit(s)} style={{ fontSize: "0.75rem", color: "var(--gm-blue)", background: "none", border: "none", cursor: "pointer", padding: "0.25rem 0.5rem" }}>Edit</button>
-      <button onClick={() => handleDelete(s.id, s.name)} style={{ fontSize: "0.75rem", color: "#ef4444", background: "none", border: "none", cursor: "pointer", padding: "0.25rem 0.5rem" }}>Delete</button>
-    </div>
-  )
+    )
+  }
 
   const Section = ({ label, items }: { label: string; items: Subject[] }) => items.length === 0 ? null : (
     <div style={{ marginBottom: "1.5rem" }}>
@@ -135,9 +165,14 @@ export default function SubjectsAdminPage() {
       {/* Add/Edit form */}
       {(adding || editing) && (
         <form onSubmit={handleSave} style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", padding: "1.25rem", marginBottom: "1.5rem" }}>
-          <p style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)", marginBottom: "1rem" }}>
+          <p style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)", marginBottom: "0.75rem" }}>
             {editing ? `Edit: ${editing.name}` : "New Subject"}
           </p>
+          {editing && editing.paperCount > 0 && (
+            <div style={{ marginBottom: "0.75rem", padding: "0.5rem 0.75rem", background: "#f59e0b10", border: "1px solid #f59e0b30", borderRadius: "0.5rem", fontSize: "0.75rem", color: "#f59e0b" }}>
+              ⚠ This subject has {editing.paperCount} paper(s). Renaming it will break all R2 file paths — the server will reject a name change.
+            </div>
+          )}
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem", marginBottom: "1rem" }}>
             <div>
               <label style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", display: "block", marginBottom: "0.25rem" }}>Name *</label>

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
+import { logAdminAction } from "@/lib/auditLog"
 
 export const dynamic = "force-dynamic"
 
@@ -64,6 +65,15 @@ export async function POST(req: NextRequest) {
     .single()
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+  void logAdminAction({
+    admin_email: auth.user?.email,
+    action: "create_subject",
+    entity_type: "subject",
+    entity_id: data.id,
+    details: { name, code: code || null, board: board || null, level },
+  })
+
   return NextResponse.json({ success: true, subject: data })
 }
 
@@ -76,15 +86,29 @@ export async function PATCH(req: NextRequest) {
   if (!db) return NextResponse.json({ error: "Server misconfiguration: admin client unavailable" }, { status: 500 })
 
   const body = await req.json().catch(() => ({}))
-  const { id, name, code, board, level } = body
+  const { id, name, code, board, level, is_active } = body
 
   if (!id) return NextResponse.json({ error: "id required" }, { status: 400 })
 
-  const updates: Record<string, string | null> = {}
+  // Block name changes if the subject already has papers (renaming breaks all R2 paths)
+  if (name !== undefined) {
+    const { data: existing } = await db.from("subjects").select("name").eq("id", id).single()
+    if (existing && existing.name !== name) {
+      const { count } = await db.from("papers").select("id", { count: "exact", head: true }).eq("subject_id", id)
+      if ((count ?? 0) > 0) {
+        return NextResponse.json({
+          error: `Cannot rename subject: ${count} paper(s) exist with R2 paths using the current name "${existing.name}". Rename would break all file paths.`,
+        }, { status: 409 })
+      }
+    }
+  }
+
+  const updates: Record<string, string | boolean | null> = {}
   if (name !== undefined) updates.name = name
   if (code !== undefined) updates.code = code
   if (board !== undefined) updates.board = board
   if (level !== undefined) updates.level = level
+  if (is_active !== undefined) updates.is_active = is_active
 
   const { data, error } = await db
     .from("subjects")
@@ -94,10 +118,20 @@ export async function PATCH(req: NextRequest) {
     .single()
 
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+  void logAdminAction({
+    admin_email: auth.user?.email,
+    action: "update_subject",
+    entity_type: "subject",
+    entity_id: id,
+    details: updates,
+  })
+
   return NextResponse.json({ success: true, subject: data })
 }
 
 // DELETE /api/admin/subjects — delete a subject (and its papers cascade)
+// Add ?preview=true to get impact counts without actually deleting.
 export async function DELETE(req: NextRequest) {
   const auth = await requireAdmin()
   if ("error" in auth) return auth.error
@@ -107,11 +141,30 @@ export async function DELETE(req: NextRequest) {
 
   const { searchParams } = new URL(req.url)
   const id = searchParams.get("id")
+  const preview = searchParams.get("preview") === "true"
 
   if (!id) return NextResponse.json({ error: "id required" }, { status: 400 })
+
+  // Always compute impact
+  const { count: paperCount } = await db
+    .from("papers")
+    .select("id", { count: "exact", head: true })
+    .eq("subject_id", id)
+
+  if (preview) {
+    return NextResponse.json({ paperCount: paperCount ?? 0 })
+  }
 
   const { error } = await db.from("subjects").delete().eq("id", id)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-  return NextResponse.json({ success: true })
+  void logAdminAction({
+    admin_email: auth.user?.email,
+    action: "delete_subject",
+    entity_type: "subject",
+    entity_id: id,
+    details: { deletedPaperCount: paperCount ?? 0 },
+  })
+
+  return NextResponse.json({ success: true, deletedPaperCount: paperCount ?? 0 })
 }

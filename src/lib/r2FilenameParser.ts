@@ -21,6 +21,7 @@ export function normalizeSessionForR2(s: string): string {
   if (lower === "jan" || lower === "january") return "Jan"
   if (lower === "may-jun" || lower === "may" || lower === "june" || lower === "summer") return "May-Jun"
   if (lower === "oct-nov" || lower === "oct" || lower === "november" || lower === "winter") return "Oct-Nov"
+  if (lower === "specimen" || lower === "spec") return "Specimen"
   // Return as-is with first-letter caps per segment
   return s.split("-").map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join("-")
 }
@@ -37,7 +38,7 @@ export function parseR2Filename(filename: string): ParsedFilename | null {
   const base = filename.replace(/\.pdf$/i, "")
   // Pattern: {Subject}_{Year}_{Session}_Paper_{N}_{Type}
   // Session can contain hyphens (Oct-Nov, May-Jun)
-  const m = base.match(/^(.+?)_(\d{4})_(Jan|May-Jun|Oct-Nov)_Paper_(\w+)_(QP|MS)$/i)
+  const m = base.match(/^(.+?)_(\d{4})_(Jan|May-Jun|Oct-Nov|Specimen)_Paper_(\w+)_(QP|MS)$/i)
   if (!m) return null
   return {
     subject: m[1],
@@ -57,7 +58,8 @@ export function buildR2Key(subject: string, year: number, session: string, paper
 
 /** Build the public URL for an R2 key */
 export function buildR2PublicUrl(r2Key: string): string {
-  const base = process.env.NEXT_PUBLIC_R2_PUBLIC_URL || "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev"
+  const base = process.env.NEXT_PUBLIC_R2_PUBLIC_URL
+  if (!base) throw new Error("Missing required env var: NEXT_PUBLIC_R2_PUBLIC_URL")
   return `${base}/${r2Key}`
 }
 

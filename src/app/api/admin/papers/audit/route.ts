@@ -13,6 +13,9 @@ export async function GET(req: NextRequest) {
 
   const subjectId = req.nextUrl.searchParams.get("subject_id")
   if (!subjectId) return NextResponse.json({ error: "subject_id required" }, { status: 400 })
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(subjectId)) {
+    return NextResponse.json({ error: "Invalid subject_id" }, { status: 400 })
+  }
 
   const db = getSupabaseAdmin() || auth.db
 
@@ -73,18 +76,19 @@ export async function GET(req: NextRequest) {
   const allKeys = new Set([...dbMap.keys(), ...r2Map.keys()])
   const rows = Array.from(allKeys).map(key => {
     const [year, season, paperNumber] = key.split("_", 3)
-    const db = dbMap.get(key)
-    const r2 = r2Map.get(key)
+    const dbEntry = dbMap.get(key)
+    const r2Entry = r2Map.get(key)
     return {
+      paperId: dbEntry?.id ?? null,
       year: parseInt(year),
       season,
       paperNumber,
-      dbHasQP: db?.hasQP ?? false,
-      dbHasMS: db?.hasMS ?? false,
-      r2HasQP: !!(r2?.qpKey),
-      r2HasMS: !!(r2?.msKey),
-      r2QpKey: r2?.qpKey ?? null,
-      r2MsKey: r2?.msKey ?? null,
+      dbHasQP: dbEntry?.hasQP ?? false,
+      dbHasMS: dbEntry?.hasMS ?? false,
+      r2HasQP: !!(r2Entry?.qpKey),
+      r2HasMS: !!(r2Entry?.msKey),
+      r2QpKey: r2Entry?.qpKey ?? null,
+      r2MsKey: r2Entry?.msKey ?? null,
     }
   })
 

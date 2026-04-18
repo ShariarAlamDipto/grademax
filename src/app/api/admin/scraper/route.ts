@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
+import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 
 export const dynamic = "force-dynamic"
 
@@ -7,14 +8,64 @@ const VALID_SESSIONS = new Set(["Jan", "May-Jun", "Oct-Nov", "Specimen"])
 const VALID_TYPES = new Set(["QP", "MS"])
 const YEAR_RE = /^\d{4}$/
 
-// GET /api/admin/scraper — check if scraper is available in this environment
+/**
+ * Attempt to log a scraper run. Silently ignores if the table doesn't exist yet.
+ * Create table with:
+ *   CREATE TABLE IF NOT EXISTS scraper_runs (
+ *     id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+ *     created_at timestamptz DEFAULT now(),
+ *     subject text NOT NULL,
+ *     session text,
+ *     year text,
+ *     paper_type text,
+ *     success boolean NOT NULL,
+ *     output text,
+ *     error_text text
+ *   );
+ */
+async function logRun(params: {
+  subject: string; session?: string; year?: string; paperType?: string
+  success: boolean; output?: string; errorText?: string
+}) {
+  try {
+    const db = getSupabaseAdmin()
+    if (!db) return
+    await db.from("scraper_runs").insert({
+      subject: params.subject,
+      session: params.session || null,
+      year: params.year || null,
+      paper_type: params.paperType || null,
+      success: params.success,
+      output: (params.output || "").slice(0, 5000),
+      error_text: (params.errorText || "").slice(0, 2000) || null,
+    })
+  } catch {
+    // Table may not exist yet — non-fatal
+  }
+}
+
+// GET /api/admin/scraper — check if scraper is available + return recent run history
 export async function GET() {
   const auth = await requireAdmin()
   if ("error" in auth) return auth.error
 
+  const db = getSupabaseAdmin() || auth.db
+  let recentRuns: unknown[] = []
+  try {
+    const { data } = await db
+      .from("scraper_runs")
+      .select("id, created_at, subject, session, year, paper_type, success, output, error_text")
+      .order("created_at", { ascending: false })
+      .limit(20)
+    recentRuns = data || []
+  } catch {
+    // Table may not exist yet
+  }
+
   return NextResponse.json({
     available: process.env.NODE_ENV === "development",
     env: process.env.NODE_ENV,
+    recentRuns,
   })
 }
 
@@ -45,8 +96,8 @@ export async function POST(req: NextRequest) {
   if (paperType && !VALID_TYPES.has(paperType)) {
     return NextResponse.json({ error: "Invalid paperType" }, { status: 400 })
   }
-  // Subject must be alphanumeric + spaces + underscores only
-  if (!/^[\w\s-]+$/.test(subject)) {
+  // Subject must be alphanumeric + single spaces + underscores + hyphens only (no control chars)
+  if (!/^[a-zA-Z0-9][a-zA-Z0-9_ -]*$/.test(subject) || /[\t\n\r\v\f]/.test(subject)) {
     return NextResponse.json({ error: "Invalid subject name" }, { status: 400 })
   }
 
@@ -63,8 +114,9 @@ export async function POST(req: NextRequest) {
   if (paperType) args.push("--type", paperType)
 
   return new Promise<NextResponse>((resolve) => {
-    execFile("python", args, { cwd: scraperRoot, timeout: 120000 }, (error, stdout, stderr) => {
+    execFile("python", args, { cwd: scraperRoot, timeout: 120000 }, async (error, stdout, stderr) => {
       if (error) {
+        await logRun({ subject, session, year, paperType, success: false, output: stdout, errorText: error.message + "\n" + stderr })
         resolve(NextResponse.json({
           success: false,
           error: error.message,
@@ -73,6 +125,7 @@ export async function POST(req: NextRequest) {
         }, { status: 500 }))
         return
       }
+      await logRun({ subject, session, year, paperType, success: true, output: stdout })
       resolve(NextResponse.json({
         success: true,
         stdout: stdout?.slice(0, 5000),

@@ -105,8 +105,8 @@ export async function GET() {
 
     for (const key of allKeys) {
       const [yearStr, season, paperNumber] = key.split("_", 3)
-      const db = dbMap.get(key)
-      const r2 = r2Map.get(key)
+      const dbEntry = dbMap.get(key)
+      const r2Entry = r2Map.get(key)
 
       rows.push({
         subject: subject.name,
@@ -114,10 +114,10 @@ export async function GET() {
         year: parseInt(yearStr),
         season,
         paperNumber,
-        dbHasQP: db?.hasQP ?? false,
-        dbHasMS: db?.hasMS ?? false,
-        r2HasQP: !!(r2?.qpKey),
-        r2HasMS: !!(r2?.msKey),
+        dbHasQP: dbEntry?.hasQP ?? false,
+        dbHasMS: dbEntry?.hasMS ?? false,
+        r2HasQP: !!(r2Entry?.qpKey),
+        r2HasMS: !!(r2Entry?.msKey),
       })
     }
   }

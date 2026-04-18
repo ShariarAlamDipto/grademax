@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { 
+import {
   getSubjectBySlug,
   seoSubjects,
   getLevelDisplay,
@@ -32,18 +32,18 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const resolvedParams = await params
   const { level, slug, topic: topicSlug } = resolvedParams
-  
+
   if (!isValidLevel(level)) return {}
-  
+
   const subject = getSubjectBySlug(level, slug)
   if (!subject) return {}
-  
+
   const topic = subject.topics.find(t => t.slug === topicSlug)
   if (!topic) return {}
-  
+
   const title = `${topic.name} - ${subject.levelDisplay} ${subject.name} | GradeMax`
   const description = `Master ${topic.name} for ${subject.levelDisplay} ${subject.name}. ${topic.description} Practice with real exam questions and mark schemes.`
-  
+
   return {
     title,
     description,
@@ -75,232 +75,242 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function TopicPage({ params }: PageProps) {
   const resolvedParams = await params
   const { level, slug, topic: topicSlug } = resolvedParams
-  
-  if (!isValidLevel(level)) {
-    notFound()
-  }
-  
+
+  if (!isValidLevel(level)) notFound()
+
   const subject = getSubjectBySlug(level, slug)
-  if (!subject) {
-    notFound()
-  }
-  
+  if (!subject) notFound()
+
   const topic = subject.topics.find(t => t.slug === topicSlug)
-  if (!topic) {
-    notFound()
-  }
-  
+  if (!topic) notFound()
+
   const levelDisplay = getLevelDisplay(level)
   const schema = generateTopicPageSchema(subject, topic)
-  
-  // Find adjacent topics for navigation
+
   const topicIndex = subject.topics.findIndex(t => t.slug === topicSlug)
   const prevTopic = topicIndex > 0 ? subject.topics[topicIndex - 1] : null
   const nextTopic = topicIndex < subject.topics.length - 1 ? subject.topics[topicIndex + 1] : null
-  
+
+  const accentColor = level === 'ial' ? '#A78BFA' : '#6EA8FE'
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
-      
-      <main className="min-h-screen bg-black text-white">
+
+      <main style={{ minHeight: "100vh", background: "var(--gm-bg)", color: "var(--gm-text)" }}>
+
         {/* Breadcrumb */}
-        <nav className="max-w-6xl mx-auto px-4 py-4 text-sm text-gray-400">
-          <ol className="flex items-center gap-2 flex-wrap">
-            <li><Link href="/" className="hover:text-white">Home</Link></li>
+        <nav style={{ maxWidth: "1040px", margin: "0 auto", padding: "1rem 1.5rem" }}>
+          <ol style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", listStyle: "none", padding: 0, margin: 0, fontSize: "0.8rem", color: "var(--gm-text-3)" }}>
+            <li><Link href="/" className="gm-link">Home</Link></li>
             <li>/</li>
-            <li><Link href={`/subjects/${level}`} className="hover:text-white">{levelDisplay}</Link></li>
+            <li><Link href={`/subjects/${level}`} className="gm-link">{levelDisplay}</Link></li>
             <li>/</li>
-            <li><Link href={`/subjects/${level}/${slug}`} className="hover:text-white">{subject.name}</Link></li>
+            <li><Link href={`/subjects/${level}/${slug}`} className="gm-link">{subject.name}</Link></li>
             <li>/</li>
-            <li className="text-white">{topic.name}</li>
+            <li style={{ color: "var(--gm-text-2)" }}>{topic.name}</li>
           </ol>
         </nav>
-        
-        {/* Hero Section */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="bg-blue-600/20 text-blue-400 px-3 py-1 rounded-full text-sm font-medium">
+
+        {/* Hero */}
+        <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "1rem 1.5rem 2.5rem" }}>
+          <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+            <span style={{ fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: accentColor, background: `${accentColor}18`, border: `1px solid ${accentColor}28`, borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
               Topic {topic.code}
             </span>
-            <span className="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-sm">
+            <span style={{ fontSize: "0.65rem", fontWeight: 600, color: "var(--gm-text-3)", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "99px", padding: "0.2rem 0.7rem" }}>
               {subject.levelDisplay} {subject.name}
             </span>
           </div>
-          
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+
+          <h1 style={{ fontSize: "clamp(1.6rem, 4vw, 2.4rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.02em", lineHeight: 1.1, marginBottom: "0.75rem" }}>
             {topic.name}
           </h1>
-          
-          <p className="text-xl text-gray-300 max-w-4xl mb-8">
-            {topic.description} Master this topic with practice questions from real 
-            {subject.levelDisplay} {subject.name} past papers.
+
+          <p style={{ fontSize: "1rem", color: "var(--gm-text-2)", lineHeight: 1.65, maxWidth: "600px", marginBottom: "1.5rem" }}>
+            {topic.description} Master this topic with practice questions from real {subject.levelDisplay} {subject.name} past papers.
           </p>
-          
+
           {/* Keywords */}
-          <div className="flex flex-wrap gap-2 mb-8">
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "2rem" }}>
             {topic.keywords.map(keyword => (
-              <span 
+              <span
                 key={keyword}
-                className="bg-gray-900 text-gray-300 px-3 py-1 rounded-full text-sm border border-gray-800"
+                className="topic-pill"
+                style={{ fontSize: "0.75rem" }}
               >
                 {keyword}
               </span>
             ))}
           </div>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4">
-            <Link 
+
+          {/* CTAs */}
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem" }}>
+            <Link
               href={`/generate?subject=${slug}&level=${level}&topic=${topic.code}`}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              className="btn-beacon"
             >
               Practice {topic.name} Questions
             </Link>
-            <Link 
-              href={`/browse?subject=${slug}&topic=${topic.code}`}
-              className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+            <Link
+              href={`/past-papers/${slug}`}
+              className="btn-ghost-blue"
             >
-              Browse All Questions
+              Past Papers
             </Link>
           </div>
         </section>
-        
+
         {/* What You'll Learn */}
-        <section className="px-4 md:px-8 py-12 bg-gray-950">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold mb-8">
+        <section style={{ borderTop: "1px solid var(--gm-border)", background: "var(--gm-surface)", padding: "2.5rem 1.5rem" }}>
+          <div style={{ maxWidth: "1040px", margin: "0 auto" }}>
+            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
               What You&apos;ll Learn in {topic.name}
             </h2>
-            
-            <div className="grid md:grid-cols-2 gap-6">
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "0.5rem" }}>
               {topic.keywords.map((keyword, index) => (
-                <div 
+                <div
                   key={keyword}
-                  className="bg-gray-900 rounded-lg p-5 border border-gray-800"
+                  style={{
+                    background: "var(--gm-bg)",
+                    border: "1px solid var(--gm-border-2)",
+                    borderRadius: "0.75rem",
+                    padding: "0.875rem 1rem",
+                    display: "flex",
+                    gap: "0.75rem",
+                    alignItems: "flex-start",
+                  }}
                 >
-                  <div className="flex items-start gap-4">
-                    <div className="bg-green-600/20 text-green-400 w-8 h-8 rounded-lg flex items-center justify-center font-bold shrink-0">
-                      {index + 1}
-                    </div>
-                    <div>
-                      <h3 className="font-semibold capitalize">{keyword}</h3>
-                      <p className="text-gray-400 text-sm mt-1">
-                        Practice {keyword} questions from {subject.levelDisplay} {subject.name} exams.
-                      </p>
-                    </div>
+                  <span style={{ fontSize: "0.65rem", fontWeight: 800, color: accentColor, background: `${accentColor}15`, width: "26px", height: "26px", borderRadius: "6px", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    {index + 1}
+                  </span>
+                  <div>
+                    <p style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--gm-text)", lineHeight: 1.3, textTransform: "capitalize" }}>{keyword}</p>
+                    <p style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", marginTop: "0.2rem", lineHeight: 1.4 }}>
+                      Practice {keyword} questions from {subject.levelDisplay} {subject.name} exams.
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
-        
-        {/* Practice Section */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold mb-8">
-            Practice {topic.name} Questions
-          </h2>
-          
-          <div className="bg-gray-900 rounded-xl p-8 border border-gray-800">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-600/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold mb-2">
-                Generate a Custom Worksheet
-              </h3>
-              <p className="text-gray-400 mb-6 max-w-lg mx-auto">
-                Create a practice worksheet with {topic.name} questions from multiple years of 
-                {subject.levelDisplay} {subject.name} past papers.
-              </p>
-              <Link 
-                href={`/generate?subject=${slug}&level=${level}&topic=${topic.code}`}
-                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors"
-              >
-                Generate Worksheet
-              </Link>
+
+        {/* Generate Worksheet CTA */}
+        <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
+          <div className="gm-card" style={{ textAlign: "center", padding: "2.5rem 2rem" }}>
+            <div style={{ width: "48px", height: "48px", background: `${accentColor}18`, border: `1px solid ${accentColor}28`, borderRadius: "12px", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 1rem" }}>
+              <svg width="22" height="22" fill="none" viewBox="0 0 24 24" stroke={accentColor} strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
+            <h2 style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "0.5rem" }}>
+              Generate a Custom Worksheet
+            </h2>
+            <p style={{ fontSize: "0.85rem", color: "var(--gm-text-2)", marginBottom: "1.5rem", maxWidth: "420px", margin: "0 auto 1.5rem", lineHeight: 1.6 }}>
+              Create a practice worksheet with {topic.name} questions from multiple years of {subject.levelDisplay} {subject.name} past papers.
+            </p>
+            <Link
+              href={`/generate?subject=${slug}&level=${level}&topic=${topic.code}`}
+              className="btn-beacon"
+            >
+              Generate Worksheet
+            </Link>
           </div>
         </section>
-        
+
         {/* Topic Navigation */}
-        <section className="px-4 md:px-8 py-12 bg-gray-950">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-xl font-bold mb-6">More Topics in {subject.name}</h2>
-            
-            <div className="flex flex-wrap gap-2 mb-8">
+        <section style={{ borderTop: "1px solid var(--gm-border)", background: "var(--gm-surface)", padding: "2.5rem 1.5rem" }}>
+          <div style={{ maxWidth: "1040px", margin: "0 auto" }}>
+            <h2 style={{ fontSize: "0.7rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "1.25rem" }}>
+              More Topics in {subject.name}
+            </h2>
+
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "2rem" }}>
               {subject.topics.map(t => (
                 <Link
                   key={t.code}
                   href={`/subjects/${level}/${slug}/${t.slug}`}
-                  className={`px-4 py-2 rounded-lg text-sm transition-colors ${
-                    t.slug === topicSlug
-                      ? 'bg-blue-600 text-white'
-                      : 'bg-gray-900 text-gray-300 hover:bg-gray-800 border border-gray-800'
-                  }`}
+                  style={{
+                    fontSize: "0.8rem",
+                    fontWeight: 500,
+                    padding: "0.35rem 0.875rem",
+                    borderRadius: "99px",
+                    border: `1px solid ${t.slug === topicSlug ? accentColor + "50" : "var(--gm-border-2)"}`,
+                    background: t.slug === topicSlug ? `${accentColor}18` : "transparent",
+                    color: t.slug === topicSlug ? accentColor : "var(--gm-text-2)",
+                    textDecoration: "none",
+                    transition: "all 0.15s",
+                  }}
                 >
                   {t.name}
                 </Link>
               ))}
             </div>
-            
-            {/* Prev/Next Navigation */}
-            <div className="flex justify-between items-center pt-6 border-t border-gray-800">
+
+            {/* Prev / Next */}
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", paddingTop: "1.5rem", borderTop: "1px solid var(--gm-border)" }}>
               {prevTopic ? (
-                <Link 
+                <Link
                   href={`/subjects/${level}/${slug}/${prevTopic.slug}`}
-                  className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                  className="gm-link"
+                  style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem" }}
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                   </svg>
-                  <div className="text-left">
-                    <div className="text-xs text-gray-500">Previous Topic</div>
-                    <div className="font-medium">{prevTopic.name}</div>
-                  </div>
+                  <span>
+                    <span style={{ display: "block", fontSize: "0.65rem", color: "var(--gm-text-3)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Previous</span>
+                    {prevTopic.name}
+                  </span>
                 </Link>
               ) : <div />}
-              
+
               {nextTopic ? (
-                <Link 
+                <Link
                   href={`/subjects/${level}/${slug}/${nextTopic.slug}`}
-                  className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-right"
+                  className="gm-link"
+                  style={{ display: "flex", alignItems: "center", gap: "0.5rem", fontSize: "0.85rem", textAlign: "right" }}
                 >
-                  <div>
-                    <div className="text-xs text-gray-500">Next Topic</div>
-                    <div className="font-medium">{nextTopic.name}</div>
-                  </div>
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  <span>
+                    <span style={{ display: "block", fontSize: "0.65rem", color: "var(--gm-text-3)", textTransform: "uppercase", letterSpacing: "0.06em" }}>Next</span>
+                    {nextTopic.name}
+                  </span>
+                  <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </Link>
               ) : <div />}
             </div>
           </div>
         </section>
-        
-        {/* Back to Subject CTA */}
-        <section className="px-4 md:px-8 py-12 max-w-6xl mx-auto">
-          <div className="bg-gradient-to-r from-blue-900/50 to-purple-900/50 rounded-2xl p-8 text-center">
-            <h2 className="text-xl font-bold mb-4">
-              Explore All {subject.name} Topics
-            </h2>
-            <p className="text-gray-300 mb-6">
-              View all {subject.topics.length} topics in {subject.levelDisplay} {subject.name}
-            </p>
-            <Link 
-              href={`/subjects/${level}/${slug}`}
-              className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-            >
-              View All Topics
-            </Link>
+
+        {/* Back to Subject */}
+        <section style={{ maxWidth: "1040px", margin: "0 auto", padding: "2.5rem 1.5rem" }}>
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", paddingTop: "1rem", borderTop: "1px solid var(--gm-border)" }}>
+            <div>
+              <p style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", marginBottom: "0.35rem" }}>
+                All {subject.topics.length} topics in {subject.levelDisplay} {subject.name}
+              </p>
+              <Link href={`/subjects/${level}/${slug}`} className="gm-link" style={{ fontWeight: 600, fontSize: "0.875rem" }}>
+                ← Back to {subject.name}
+              </Link>
+            </div>
+            {seoSubjects.filter(s => s.level === level && s.slug !== slug).slice(0, 3).length > 0 && (
+              <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
+                {seoSubjects.filter(s => s.level === level && s.slug !== slug).slice(0, 3).map(rel => (
+                  <Link key={rel.slug} href={`/subjects/${level}/${rel.slug}`} className="topic-pill" style={{ fontSize: "0.75rem" }}>
+                    {rel.name}
+                  </Link>
+                ))}
+              </div>
+            )}
           </div>
         </section>
+
       </main>
     </>
   )

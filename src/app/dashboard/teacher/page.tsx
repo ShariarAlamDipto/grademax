@@ -4,7 +4,6 @@ import { supabase } from "@/lib/supabaseClient"
 import { useCallback, useEffect, useState, useRef, useMemo } from "react"
 import Link from "next/link"
 
-const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
 
 interface Subject {
   id: string
@@ -53,8 +52,7 @@ export default function TeacherDashboardPage() {
   const [collapsedWeeks, setCollapsedWeeks] = useState<Set<string>>(new Set())
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  const isSuperAdminUser = user?.email?.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
-  const isAdminOrSuper = isAdmin || isSuperAdminUser
+  const isAdminOrSuper = isAdmin
 
   // Fetch subjects
   useEffect(() => {
@@ -279,7 +277,7 @@ export default function TeacherDashboardPage() {
     )
   }
 
-  if (profileLoaded && !isTeacher && !isSuperAdminUser) {
+  if (profileLoaded && !isTeacher && !isAdminOrSuper) {
     return (
       <main className="min-h-screen bg-black text-white flex items-center justify-center">
         <div className="text-center max-w-md">

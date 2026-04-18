@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
+import { logAdminAction } from "@/lib/auditLog"
 
 // GET /api/admin/users - List all users with their roles (admin only)
 // Merges auth.users (email, name, avatar from Google) with profiles (role)
@@ -106,6 +107,37 @@ export async function GET() {
   return NextResponse.json({ users })
 }
 
+// DELETE /api/admin/users?id=<userId> — deactivate (ban) a user
+export async function DELETE(req: NextRequest) {
+  const auth = await requireAdmin()
+  if ("error" in auth) return auth.error
+
+  const admin = getSupabaseAdmin()
+  if (!admin) return NextResponse.json({ error: "Admin client required for user deactivation" }, { status: 500 })
+
+  const id = new URL(req.url).searchParams.get("id")
+  if (!id) return NextResponse.json({ error: "id required" }, { status: 400 })
+
+  // Ban user in Supabase Auth (sets banned_until to far future)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const { error } = await (admin.auth.admin as any).updateUserById(id, {
+    ban_duration: "87600h", // 10 years
+  })
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+
+  // Optionally downgrade role to student so they can't regain privileges after unban
+  await admin.from("profiles").update({ role: "student" }).eq("id", id)
+
+  void logAdminAction({
+    admin_email: auth.user?.email,
+    action: "deactivate_user",
+    entity_type: "user",
+    entity_id: id,
+  })
+
+  return NextResponse.json({ success: true, id })
+}
+
 // PATCH /api/admin/users - Update a user's role by email (admin only)
 export async function PATCH(req: NextRequest) {
   const auth = await requireAdmin()
@@ -150,7 +182,14 @@ export async function PATCH(req: NextRequest) {
       return NextResponse.json({ error: "Update failed — no rows updated" }, { status: 500 })
     }
 
-    console.log(`[admin/users] Role updated: ${email} → ${role} (id: ${targetUser.id})`)
+    console.log(`[admin/users] Role updated: id=${targetUser.id} role=${role}`)
+    void logAdminAction({
+      admin_email: auth.user?.email,
+      action: "update_role",
+      entity_type: "user",
+      entity_id: targetUser.id,
+      details: { email, role, prev_role: targetUser.role },
+    })
     return NextResponse.json({ success: true, user: updated })
   }
 

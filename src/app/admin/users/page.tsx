@@ -11,11 +11,15 @@ const roleColors: Record<string, string> = {
   student: "#22c55e",
 }
 
+const SENSITIVE_ROLES = new Set(["admin"])
+
 export default function UsersAdminPage() {
   const [users, setUsers] = useState<UserEntry[]>([])
   const [loading, setLoading] = useState(false)
   const [search, setSearch] = useState("")
+  const [roleFilter, setRoleFilter] = useState<"all" | "admin" | "teacher" | "student">("all")
   const [changingRole, setChangingRole] = useState<string | null>(null)
+  const [deactivating, setDeactivating] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<"list" | "assign">("list")
   const [assignEmail, setAssignEmail] = useState("")
   const [assignRole, setAssignRole] = useState<"student" | "teacher" | "admin">("teacher")
@@ -35,7 +39,15 @@ export default function UsersAdminPage() {
 
   const handleInlineRoleChange = async (u: UserEntry, newRole: string) => {
     if (newRole === u.role) return
+    // Confirm before granting or revoking admin
+    if (SENSITIVE_ROLES.has(newRole) || SENSITIVE_ROLES.has(u.role)) {
+      const action = SENSITIVE_ROLES.has(newRole)
+        ? `grant Admin to ${u.email || u.full_name}`
+        : `revoke Admin from ${u.email || u.full_name}`
+      if (!confirm(`Are you sure you want to ${action}?\n\nAdmin users have full access to the admin panel.`)) return
+    }
     setChangingRole(u.id)
+    setMsg(null)
     const res = await fetch("/api/admin/users", {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
@@ -43,8 +55,27 @@ export default function UsersAdminPage() {
     })
     if (res.ok) {
       setUsers(prev => prev.map(x => x.id === u.id ? { ...x, role: newRole } : x))
+      setMsg({ type: "ok", text: `${u.email} role updated to ${newRole}` })
+    } else {
+      const d = await res.json()
+      setMsg({ type: "err", text: d.error || "Role change failed" })
     }
     setChangingRole(null)
+  }
+
+  const handleDeactivate = async (u: UserEntry) => {
+    if (!confirm(`Deactivate ${u.email || u.full_name}?\n\nThis will ban the account and downgrade their role to student. The action can be reversed from the Supabase dashboard.`)) return
+    setDeactivating(u.id)
+    setMsg(null)
+    const res = await fetch(`/api/admin/users?id=${u.id}`, { method: "DELETE" })
+    const data = await res.json()
+    if (res.ok) {
+      setMsg({ type: "ok", text: `${u.email} deactivated` })
+      fetchUsers()
+    } else {
+      setMsg({ type: "err", text: data.error || "Deactivation failed" })
+    }
+    setDeactivating(null)
   }
 
   const handleAssign = async (e: React.FormEvent) => {
@@ -66,10 +97,11 @@ export default function UsersAdminPage() {
   }
 
   const filtered = useMemo(() => users.filter(u => {
+    if (roleFilter !== "all" && u.role !== roleFilter) return false
     if (!search) return true
     const q = search.toLowerCase()
     return u.email?.toLowerCase().includes(q) || u.full_name?.toLowerCase().includes(q) || u.role.includes(q)
-  }), [users, search])
+  }), [users, search, roleFilter])
 
   const stats = useMemo(() => {
     const admins = users.filter(u => u.role === "admin").length
@@ -95,12 +127,20 @@ export default function UsersAdminPage() {
       {/* Stats */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0.75rem", marginBottom: "1.5rem" }}>
         {[
-          { label: "Total", value: stats.total, color: "var(--gm-text)" },
-          { label: "Admins", value: stats.admins, color: "#ef4444" },
-          { label: "Teachers", value: stats.teachers, color: "var(--gm-blue)" },
-          { label: "Students", value: stats.students, color: "#22c55e" },
+          { label: "Total", value: stats.total, color: "var(--gm-text)", filter: "all" as const },
+          { label: "Admins", value: stats.admins, color: "#ef4444", filter: "admin" as const },
+          { label: "Teachers", value: stats.teachers, color: "var(--gm-blue)", filter: "teacher" as const },
+          { label: "Students", value: stats.students, color: "#22c55e", filter: "student" as const },
         ].map(s => (
-          <div key={s.label} style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", padding: "1rem" }}>
+          <div
+            key={s.label}
+            onClick={() => { setRoleFilter(s.filter); setActiveTab("list") }}
+            style={{
+              background: roleFilter === s.filter ? `${s.color}10` : "var(--gm-surface)",
+              border: `1px solid ${roleFilter === s.filter ? s.color + "60" : "var(--gm-border)"}`,
+              borderRadius: "0.75rem", padding: "1rem", cursor: "pointer",
+            } as React.CSSProperties}
+          >
             <p style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", textTransform: "uppercase", letterSpacing: "0.06em", marginBottom: "0.25rem" }}>{s.label}</p>
             <p style={{ fontSize: "1.5rem", fontWeight: 800, color: s.color }}>{s.value}</p>
           </div>
@@ -130,22 +170,45 @@ export default function UsersAdminPage() {
       {/* User list */}
       {activeTab === "list" && (
         <div>
-          <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem" }}>
+          <div style={{ display: "flex", gap: "0.75rem", marginBottom: "1rem", flexWrap: "wrap", alignItems: "center" }}>
             <input style={{ ...inputStyle, minWidth: "260px" }} value={search} onChange={e => setSearch(e.target.value)} placeholder="Search users…" />
-            <button onClick={fetchUsers} disabled={loading} style={{ padding: "0.5rem 1rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.5rem", color: "var(--gm-text)", fontSize: "0.8rem", cursor: "pointer" }}>
+            {/* Role filter pills */}
+            <div style={{ display: "flex", gap: "0.35rem" }}>
+              {([
+                { key: "all", label: "All" },
+                { key: "admin", label: "Admins" },
+                { key: "teacher", label: "Teachers" },
+                { key: "student", label: "Students" },
+              ] as const).map(f => (
+                <button
+                  key={f.key}
+                  onClick={() => setRoleFilter(f.key)}
+                  style={{
+                    padding: "0.25rem 0.625rem", borderRadius: "999px", fontSize: "0.72rem", cursor: "pointer",
+                    background: roleFilter === f.key ? "var(--gm-text)" : "var(--gm-surface)",
+                    color: roleFilter === f.key ? "var(--gm-bg)" : "var(--gm-text-3)",
+                    border: `1px solid ${roleFilter === f.key ? "var(--gm-text)" : "var(--gm-border)"}`,
+                    fontWeight: roleFilter === f.key ? 600 : 400,
+                  }}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
+            <button onClick={fetchUsers} disabled={loading} style={{ padding: "0.5rem 1rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.5rem", color: "var(--gm-text)", fontSize: "0.8rem", cursor: "pointer", marginLeft: "auto" }}>
               {loading ? "Loading…" : "Refresh"}
             </button>
           </div>
           <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-              <span>Name</span><span>Email</span><span>Joined</span><span>Role</span>
+            <div style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr auto", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <span>Name</span><span>Email</span><span>Joined</span><span>Role</span><span></span>
             </div>
             {loading ? (
               <div style={{ padding: "2rem", textAlign: "center", color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Loading…</div>
             ) : filtered.length === 0 ? (
               <div style={{ padding: "2rem", textAlign: "center", color: "var(--gm-text-3)", fontSize: "0.875rem" }}>No users found</div>
             ) : filtered.map(u => (
-              <div key={u.id} style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr", padding: "0.625rem 1rem", borderBottom: "1px solid var(--gm-border)", alignItems: "center" }}>
+              <div key={u.id} style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr auto", padding: "0.625rem 1rem", borderBottom: "1px solid var(--gm-border)", alignItems: "center", gap: "0.5rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}>
                   <div style={{ width: "1.75rem", height: "1.75rem", borderRadius: "50%", background: `${roleColors[u.role] || "var(--gm-text-3)"}20`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: roleColors[u.role] || "var(--gm-text-3)", flexShrink: 0 }}>
                     {avatar(u)}
@@ -167,6 +230,14 @@ export default function UsersAdminPage() {
                   </select>
                   {changingRole === u.id && <div style={{ width: "0.875rem", height: "0.875rem", border: "2px solid var(--gm-border)", borderTopColor: "var(--gm-blue)", borderRadius: "50%", animation: "spin 0.6s linear infinite" }} />}
                 </div>
+                <button
+                  onClick={() => handleDeactivate(u)}
+                  disabled={deactivating === u.id || u.role === "admin"}
+                  title={u.role === "admin" ? "Cannot deactivate admins" : "Deactivate this user"}
+                  style={{ padding: "0.2rem 0.5rem", background: "#ef444410", border: "1px solid #ef444425", borderRadius: "0.375rem", color: "#ef4444", fontSize: "0.7rem", cursor: u.role === "admin" ? "not-allowed" : "pointer", opacity: u.role === "admin" ? 0.3 : 1, whiteSpace: "nowrap" }}
+                >
+                  {deactivating === u.id ? "…" : "Deactivate"}
+                </button>
               </div>
             ))}
             <div style={{ padding: "0.625rem 1rem", fontSize: "0.75rem", color: "var(--gm-text-3)", textAlign: "right" }}>
