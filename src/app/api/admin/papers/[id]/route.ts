@@ -16,12 +16,12 @@ export const dynamic = "force-dynamic"
  */
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const auth = await requireAdmin()
   if ("error" in auth) return auth.error
 
-  const { id } = params
+  const { id } = await params
   if (!id) return NextResponse.json({ error: "Missing paper id" }, { status: 400 })
 
   const deleteR2 = req.nextUrl.searchParams.get("deleteR2") === "true"
@@ -87,12 +87,12 @@ export async function DELETE(
  */
 export async function PATCH(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   const auth = await requireAdmin()
   if ("error" in auth) return auth.error
 
-  const { id } = params
+  const { id } = await params
   if (!id) return NextResponse.json({ error: "Missing paper id" }, { status: 400 })
 
   const body = await req.json().catch(() => ({}))

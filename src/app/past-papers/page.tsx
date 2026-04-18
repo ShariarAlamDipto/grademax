@@ -77,43 +77,47 @@ const codeColorMap: Record<Subject["colorKey"], string> = {
 }
 
 export default async function PastPapersPage() {
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { auth: { autoRefreshToken: false, persistSession: false } }
-  )
-
   const subjectsWithPapers = new Set<string>()
-  const pageSize = 1000
-  let lastSeenId: string | null = null
 
-  while (true) {
-    let query = supabase
-      .from("papers")
-      .select("id,subjects!inner(name)")
-      .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
-      .order("id", { ascending: true })
-      .limit(pageSize)
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+      { auth: { autoRefreshToken: false, persistSession: false } }
+    )
 
-    if (lastSeenId) {
-      query = query.gt("id", lastSeenId)
+    const pageSize = 1000
+    let lastSeenId: string | null = null
+
+    while (true) {
+      let query = supabase
+        .from("papers")
+        .select("id,subjects!inner(name)")
+        .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
+        .order("id", { ascending: true })
+        .limit(pageSize)
+
+      if (lastSeenId) {
+        query = query.gt("id", lastSeenId)
+      }
+
+      const { data: paperRows, error } = await query
+
+      if (error || !paperRows || paperRows.length === 0) break
+
+      const typedRows = paperRows as Array<{ id: string; subjects: { name: string } | { name: string }[] }>
+      for (const row of typedRows) {
+        const s = Array.isArray(row.subjects) ? row.subjects[0] : row.subjects
+        if (s?.name) subjectsWithPapers.add(s.name)
+      }
+
+      lastSeenId = typedRows[typedRows.length - 1].id
+      if (typedRows.length < pageSize) break
     }
-
-    const { data: paperRows, error } = await query
-
-    if (error) {
-      throw new Error(`Failed to fetch papers for listing: ${error.message}`)
-    }
-    if (!paperRows || paperRows.length === 0) break
-
-    const typedRows = paperRows as Array<{ id: string; subjects: { name: string } | { name: string }[] }>
-    for (const row of typedRows) {
-      const s = Array.isArray(row.subjects) ? row.subjects[0] : row.subjects
-      if (s?.name) subjectsWithPapers.add(s.name)
-    }
-
-    lastSeenId = typedRows[typedRows.length - 1].id
-    if (typedRows.length < pageSize) break
+  } catch {
+    // If Supabase is unreachable at build time, fall back to showing all subjects.
+    // The page will revalidate at runtime (revalidate = 3600).
+    pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
   }
 
   const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(s.name))
