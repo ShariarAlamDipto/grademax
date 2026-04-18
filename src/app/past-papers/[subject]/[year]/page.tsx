@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getSubjectBySlug, seasonDisplay, subjectColorClasses } from "@/lib/subjects"
+import { getSubjectBySlug, pastPaperSubjects, seasonDisplay, subjectColorClasses } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
 import { toPaperSlug } from "@/lib/paper-slugs"
 
@@ -16,12 +16,8 @@ function parseYearParam(value: string): number | null {
 }
 
 export function generateStaticParams() {
-  const popularSubjects = [
-    "physics", "chemistry", "biology", "maths-a", "maths-b", "ict",
-    "pure-mathematics-1", "mechanics-1", "statistics-1",
-  ]
-  const recentYears = ["2025", "2024", "2023", "2022", "2021"]
-  return popularSubjects.flatMap((subject) => recentYears.map((year) => ({ subject, year })))
+  const allYears = Array.from({ length: 15 }, (_, i) => String(2011 + i))
+  return pastPaperSubjects.flatMap((s) => allYears.map((year) => ({ subject: s.slug, year })))
 }
 
 export async function generateMetadata({
@@ -342,13 +338,36 @@ export default async function SubjectYearPapersPage({
             ))}
           </div>
 
-          <div className="mt-10 pt-6 border-t border-white/10">
+          <div className="mt-10 pt-6 border-t border-white/10 space-y-4">
             <Link
               href={`/past-papers/${slug}`}
               className="text-sm text-white/50 hover:text-white transition-colors"
             >
               ← All {subj.name} Past Papers
             </Link>
+
+            {(() => {
+              const seoData = seoSubjects.find((s) => s.slug === slug)
+              const years = seoData?.yearsAvailable ?? Array.from({ length: 15 }, (_, i) => 2011 + i)
+              const otherYears = years.filter((y) => y !== parsedYear)
+              if (otherYears.length === 0) return null
+              return (
+                <div>
+                  <p className="text-xs text-white/30 uppercase tracking-widest mb-2">Other years</p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {otherYears.map((y) => (
+                      <Link
+                        key={y}
+                        href={`/past-papers/${slug}/${y}`}
+                        className="text-xs px-2.5 py-1 rounded-full border border-white/10 text-white/40 hover:text-white hover:border-white/30 transition-colors"
+                      >
+                        {y}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )
+            })()}
           </div>
         </div>
       </main>

@@ -2,9 +2,20 @@
 import { useEffect, useState } from "react"
 
 interface Subject { id: string; name: string; level: string }
+interface ScraperRun {
+  id: string
+  created_at: string
+  subject: string
+  session: string | null
+  year: string | null
+  paper_type: string | null
+  success: boolean
+  output: string | null
+  error_text: string | null
+}
 
 const SESSIONS = ["Jan", "May-Jun", "Oct-Nov", "Specimen"]
-const YEARS = Array.from({ length: 16 }, (_, i) => String(2024 - i))
+const YEARS = Array.from({ length: 20 }, (_, i) => String(2025 - i))  // 2025–2006
 
 const inputStyle: React.CSSProperties = {
   background: "var(--gm-bg)", border: "1px solid var(--gm-border)",
@@ -21,14 +32,21 @@ export default function ScraperAdminPage() {
   const [running, setRunning] = useState(false)
   const [output, setOutput] = useState<{ ok: boolean; text: string } | null>(null)
   const [isProd, setIsProd] = useState(false)
+  const [recentRuns, setRecentRuns] = useState<ScraperRun[]>([])
+  const [expandedRun, setExpandedRun] = useState<string | null>(null)
 
-  useEffect(() => {
+  const loadData = () => {
     fetch("/api/admin/subjects").then(r => r.json()).then(d => setSubjects(d.subjects || []))
     fetch("/api/admin/scraper")
       .then(r => r.json())
-      .then(d => { if (!d.available) setIsProd(true) })
+      .then(d => {
+        if (!d.available) setIsProd(true)
+        setRecentRuns(d.recentRuns || [])
+      })
       .catch(() => setIsProd(true))
-  }, [])
+  }
+
+  useEffect(() => { loadData() }, [])
 
   const handleRun = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -47,6 +65,8 @@ export default function ScraperAdminPage() {
       setOutput({ ok: false, text: data.error || data.stderr || "Error" })
     }
     setRunning(false)
+    // Refresh run history
+    fetch("/api/admin/scraper").then(r => r.json()).then(d => setRecentRuns(d.recentRuns || []))
   }
 
   return (
@@ -116,10 +136,7 @@ export default function ScraperAdminPage() {
       </div>
 
       {output && (
-        <div style={{
-          background: "var(--gm-surface)", border: `1px solid ${output.ok ? "#22c55e40" : "#ef444440"}`,
-          borderRadius: "0.75rem", padding: "1.25rem",
-        }}>
+        <div style={{ background: "var(--gm-surface)", border: `1px solid ${output.ok ? "#22c55e40" : "#ef444440"}`, borderRadius: "0.75rem", padding: "1.25rem", marginBottom: "1.5rem" }}>
           <p style={{ fontSize: "0.75rem", fontWeight: 600, color: output.ok ? "#22c55e" : "#ef4444", marginBottom: "0.75rem", textTransform: "uppercase", letterSpacing: "0.06em" }}>
             {output.ok ? "Success" : "Error"}
           </p>
@@ -129,8 +146,56 @@ export default function ScraperAdminPage() {
         </div>
       )}
 
+      {/* Recent runs */}
+      {recentRuns.length > 0 && (
+        <div style={{ marginBottom: "1.5rem" }}>
+          <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>
+            Recent Runs
+          </p>
+          <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden" }}>
+            {recentRuns.map((run, i) => (
+              <div key={run.id}>
+                <div
+                  onClick={() => setExpandedRun(expandedRun === run.id ? null : run.id)}
+                  style={{
+                    display: "grid", gridTemplateColumns: "auto 1fr auto auto auto", gap: "0.75rem",
+                    alignItems: "center", padding: "0.625rem 1rem",
+                    borderBottom: i < recentRuns.length - 1 ? "1px solid var(--gm-border)" : "none",
+                    cursor: "pointer",
+                  }}
+                >
+                  <span style={{ fontSize: "0.7rem", color: run.success ? "#22c55e" : "#ef4444" }}>
+                    {run.success ? "✓" : "✗"}
+                  </span>
+                  <span style={{ fontSize: "0.8rem", color: "var(--gm-text)", fontWeight: 500 }}>
+                    {run.subject}
+                    {run.year && <span style={{ color: "var(--gm-text-3)", fontWeight: 400 }}> · {run.year}</span>}
+                    {run.session && <span style={{ color: "var(--gm-text-3)", fontWeight: 400 }}> {run.session}</span>}
+                    {run.paper_type && <span style={{ color: "var(--gm-text-3)", fontWeight: 400 }}> ({run.paper_type})</span>}
+                  </span>
+                  <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)" }}>
+                    {new Date(run.created_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "2-digit" })}
+                  </span>
+                  <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)" }}>
+                    {new Date(run.created_at).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" })}
+                  </span>
+                  <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)" }}>{expandedRun === run.id ? "▲" : "▼"}</span>
+                </div>
+                {expandedRun === run.id && (run.output || run.error_text) && (
+                  <div style={{ padding: "0.75rem 1rem", borderBottom: i < recentRuns.length - 1 ? "1px solid var(--gm-border)" : "none", background: "var(--gm-bg)" }}>
+                    <pre style={{ fontFamily: "monospace", fontSize: "0.7rem", color: "var(--gm-text-2)", whiteSpace: "pre-wrap", wordBreak: "break-word", maxHeight: "200px", overflowY: "auto", margin: 0 }}>
+                      {run.error_text || run.output}
+                    </pre>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Manual commands */}
-      <div style={{ marginTop: "1.5rem" }}>
+      <div>
         <p style={{ fontSize: "0.75rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>
           Run Manually
         </p>

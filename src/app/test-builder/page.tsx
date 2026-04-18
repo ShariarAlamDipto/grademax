@@ -11,6 +11,7 @@ export default async function TestBuilderRoute() {
   // IGCSE Edexcel subjects supported by the test builder pipeline.
   const TEST_BUILDER_SUBJECT_SLOTS = [
     ['4PH1', '4PH0'], // IGCSE Physics
+    ['4MB1', '4MB0'], // IGCSE Mathematics B
     ['4CH1', '4CH0'], // IGCSE Chemistry
     ['4BI1', '4BI0'], // IGCSE Biology
     ['4PM1', '9FM0'], // IGCSE Further Pure Mathematics (9FM0 retained as legacy alias)

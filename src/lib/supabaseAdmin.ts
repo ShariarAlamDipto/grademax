@@ -38,15 +38,12 @@ export function getSupabaseAdmin(): SupabaseClient | null {
 }
 
 /**
- * Super admin email — this account is automatically promoted to admin+teacher
- * on every login. No database changes needed.
- */
-export const SUPER_ADMIN_EMAIL = "shariardipto111@gmail.com"
-
-/**
- * Check if an email is the super admin
+ * Check if an email is the super admin.
+ * Reads from SUPER_ADMIN_EMAIL env var — never hardcoded in source.
  */
 export function isSuperAdmin(email: string | undefined | null): boolean {
   if (!email) return false
-  return email.toLowerCase() === SUPER_ADMIN_EMAIL.toLowerCase()
+  const superAdminEmail = process.env.SUPER_ADMIN_EMAIL
+  if (!superAdminEmail) return false
+  return email.toLowerCase() === superAdminEmail.toLowerCase()
 }

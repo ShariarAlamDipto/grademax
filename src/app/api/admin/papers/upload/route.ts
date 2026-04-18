@@ -4,6 +4,7 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getR2Client, R2_BUCKET, R2_PUBLIC_URL } from "@/lib/r2Client"
 import { buildR2Key, normalizeSessionForDB, normalizeSessionForR2, parseR2Filename } from "@/lib/r2FilenameParser"
 import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3"
+import { logAdminAction } from "@/lib/auditLog"
 
 export const dynamic = "force-dynamic"
 
@@ -15,6 +16,9 @@ export async function POST(req: NextRequest) {
   const file = formData.get("file") as File | null
   if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 })
   if (!file.name.toLowerCase().endsWith(".pdf")) return NextResponse.json({ error: "Only PDF files allowed" }, { status: 400 })
+
+  const MAX_PDF_BYTES = 50 * 1024 * 1024 // 50 MB
+  if (file.size > MAX_PDF_BYTES) return NextResponse.json({ error: "File too large (50 MB max)" }, { status: 413 })
 
   // Accept either manual fields or auto-detect from filename
   const subjectId = formData.get("subject_id") as string
@@ -43,6 +47,9 @@ export async function POST(req: NextRequest) {
   }
 
   if (!subjectId) return NextResponse.json({ error: "subject_id required" }, { status: 400 })
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(subjectId)) {
+    return NextResponse.json({ error: "Invalid subject_id" }, { status: 400 })
+  }
   if (!["QP", "MS"].includes(type)) return NextResponse.json({ error: "type must be QP or MS" }, { status: 400 })
   const year = parseInt(yearStr)
   if (isNaN(year) || year < 2000 || year > 2030) return NextResponse.json({ error: "Invalid year" }, { status: 400 })
@@ -63,12 +70,20 @@ export async function POST(req: NextRequest) {
     subjectFolder = subject?.name?.replace(/\s+/g, "_") || subjectId
   }
 
+  // Sanitize subject folder — strip anything that could traverse R2 path segments
+  const safeSubjectFolder = subjectFolder.replace(/[^a-zA-Z0-9_\- ]/g, "_")
+
   const r2Session = normalizeSessionForR2(session)
-  const r2Key = buildR2Key(subjectFolder, year, r2Session, paperNumber, type)
+  const r2Key = buildR2Key(safeSubjectFolder, year, r2Session, paperNumber, type)
   const publicUrl = `${R2_PUBLIC_URL}/${r2Key}`
 
   // Upload to R2
   const bytes = await file.arrayBuffer()
+
+  // Validate PDF magic bytes (%PDF-)
+  const header = Buffer.from(bytes.slice(0, 5)).toString("ascii")
+  if (header !== "%PDF-") return NextResponse.json({ error: "File is not a valid PDF" }, { status: 400 })
+
   try {
     const r2 = getR2Client()
     await r2.send(new PutObjectCommand({
@@ -147,6 +162,14 @@ export async function POST(req: NextRequest) {
     }
     return NextResponse.json({ error: "Failed to resolve paper id" }, { status: 500 })
   }
+
+  void logAdminAction({
+    admin_email: auth.user?.email,
+    action: "upload_paper",
+    entity_type: "paper",
+    entity_id: paperId,
+    details: { r2Key, year, session: dbSeason, paper_number: normalizedPaperNumber, type, subject_id: subjectId },
+  })
 
   return NextResponse.json({ success: true, paperId, r2Key, url: publicUrl })
 }

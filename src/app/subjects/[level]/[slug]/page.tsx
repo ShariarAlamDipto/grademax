@@ -157,7 +157,7 @@ export default async function SubjectPage({ params }: PageProps) {
         {/* ── Past Papers by Year (SEO only — visually hidden) ── */}
         <div aria-hidden="true" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
           {subject.yearsAvailable.map(year => (
-            <Link key={year} href={`/past-papers/${slug}`} tabIndex={-1}>{subject.name} past papers {year}</Link>
+            <Link key={year} href={`/past-papers/${slug}/${year}`} tabIndex={-1}>{subject.name} past papers {year}</Link>
           ))}
         </div>
 

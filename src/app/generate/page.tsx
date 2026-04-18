@@ -8,6 +8,7 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 // Each slot shows one subject; legacy code variants are listed as fallbacks.
 const WORKSHEET_SUBJECT_SLOTS = [
   ['4PH1', '4PH0'],   // IGCSE Physics
+  ['4MB1', '4MB0'],   // IGCSE Mathematics B
   ['4CH1', '4CH0'],   // IGCSE Chemistry
   ['4BI1', '4BI0'],   // IGCSE Biology
   ['4PM1', '9FM0'],   // IGCSE Further Pure Mathematics (9FM0 retained as legacy alias)

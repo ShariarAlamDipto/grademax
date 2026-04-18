@@ -26,13 +26,18 @@ export async function GET(req: NextRequest) {
     .ilike("email", email.trim())
     .single()
 
-  // 2. Check auth.users if admin client available
+  // 2. Check auth.users if admin client available (paginated to avoid loading all users at once)
   let authUser = null
   if (admin) {
-    const { data: { users } } = await admin.auth.admin.listUsers()
-    authUser = users?.find(
-      (u) => u.email?.toLowerCase() === email.toLowerCase().trim()
-    )
+    const normalizedEmail = email.toLowerCase().trim()
+    let page = 1
+    while (!authUser) {
+      const { data: { users: batch }, error: listErr } = await admin.auth.admin.listUsers({ page, perPage: 1000 })
+      if (listErr || !batch || batch.length === 0) break
+      authUser = batch.find((u) => u.email?.toLowerCase() === normalizedEmail) || null
+      if (batch.length < 1000) break
+      page++
+    }
   }
 
   return NextResponse.json({
