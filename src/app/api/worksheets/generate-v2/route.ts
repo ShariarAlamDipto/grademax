@@ -1,8 +1,7 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+import { requireAuth } from '@/lib/apiAuth';
+import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
+import { normalizeTopicCodes } from '@/lib/topicCodes';
 
 interface GenerateRequest {
   subjectId?: string;
@@ -35,43 +34,11 @@ interface PageData {
   };
 }
 
-/**
- * Normalize topic codes from the UI (topics table) to classifier IDs stored in pages.topics.
- *
- * Physics (4PH1): topics table stores descriptive codes (FM, ELEC, WAVE, ENRG, SLG, MAG, RAD, ASTRO)
- *   but pages.topics stores numeric IDs ("1"–"8") → convert via CODE_TO_ID.
- *
- * FPM (4PM1/9FM0): topics table stores YAML codes (LOGS, QUAD, etc.)
- *   BUT pages.topics stores numeric IDs ("1", "2", ...) → must convert via YAML_CODE_TO_ID.
- *
- * Chemistry/Bio: topics table stores "1.1", "1.2", etc.
- *   pages.topics stores "1", "2", ... → regex extracts leading digit(s).
- */
-function normalizeTopicCodes(codes: string[]): string[] {
-  // Maps topics table codes → numeric IDs stored in pages.topics
-  const CODE_TO_ID: Record<string, string> = {
-    // Further Pure Maths (4PM1 / 9FM0) — pages.topics stores numeric IDs
-    LOGS: '1', QUAD: '2', IDENT: '3', GRAPHS: '4', SERIES: '5',
-    BINOM: '6', VECT: '7', COORD: '8', CALC: '9', TRIG: '10',
-    // Physics (4PH1) — topics table uses descriptive codes; pages.topics stores numeric IDs
-    FM: '1', ELEC: '2', WAVE: '3', ENRG: '4',
-    SLG: '5', MAG: '6', RAD: '7', ASTRO: '8',
-  };
-  const normalized = new Set<string>();
-  for (const code of codes) {
-    if (CODE_TO_ID[code]) {
-      normalized.add(CODE_TO_ID[code]);
-    } else {
-      // Chemistry/Bio: "1.1" → extracts leading digit "1". Plain numerics preserved.
-      const match = code.match(/^(\d+)/);
-      normalized.add(match ? match[1] : code);
-    }
-  }
-  return Array.from(normalized);
-}
-
 export async function POST(request: Request) {
   try {
+    const auth = await requireAuth();
+    if ('error' in auth) return auth.error;
+
     const body: GenerateRequest = await request.json();
     const {
       subjectId,
@@ -94,7 +61,7 @@ export async function POST(request: Request) {
     // Normalize topic codes: FPM YAML codes → numeric IDs; Physics codes pass through; Chemistry/Bio extracts leading digit
     const topics = normalizeTopicCodes(rawTopics);
 
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const supabase = getSupabaseAdmin() || auth.db;
 
     // First, get papers that match the subject filter
     let paperQuery = supabase

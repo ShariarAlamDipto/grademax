@@ -12,10 +12,12 @@ export async function GET() {
 
   const db = getSupabaseAdmin() || auth.db
 
-  const [subjectsRes, papersRes, profilesRes, withQPRes, withMSRes, pagesRes, questionPagesRes, testsRes, worksheetsRes] = await Promise.all([
+  const [subjectsRes, papersRes, adminRes, teacherRes, studentRes, withQPRes, withMSRes, pagesRes, questionPagesRes, testsRes, worksheetsRes] = await Promise.all([
     db.from("subjects").select("id", { count: "exact", head: true }),
     db.from("papers").select("id", { count: "exact", head: true }),
-    db.from("profiles").select("role"),
+    db.from("profiles").select("id", { count: "exact", head: true }).eq("role", "admin"),
+    db.from("profiles").select("id", { count: "exact", head: true }).eq("role", "teacher"),
+    db.from("profiles").select("id", { count: "exact", head: true }).not("role", "in", '("admin","teacher")'),
     db.from("papers").select("id", { count: "exact", head: true }).not("pdf_url", "is", null),
     db.from("papers").select("id", { count: "exact", head: true }).not("markscheme_pdf_url", "is", null),
     db.from("pages").select("id", { count: "exact", head: true }),
@@ -24,11 +26,13 @@ export async function GET() {
     db.from("worksheets").select("id", { count: "exact", head: true }),
   ])
 
-  if (subjectsRes.error || papersRes.error || profilesRes.error || withQPRes.error || withMSRes.error || pagesRes.error || questionPagesRes.error || testsRes.error || worksheetsRes.error) {
+  if (subjectsRes.error || papersRes.error || adminRes.error || teacherRes.error || studentRes.error || withQPRes.error || withMSRes.error || pagesRes.error || questionPagesRes.error || testsRes.error || worksheetsRes.error) {
     const message =
       subjectsRes.error?.message ||
       papersRes.error?.message ||
-      profilesRes.error?.message ||
+      adminRes.error?.message ||
+      teacherRes.error?.message ||
+      studentRes.error?.message ||
       withQPRes.error?.message ||
       withMSRes.error?.message ||
       pagesRes.error?.message ||
@@ -39,13 +43,10 @@ export async function GET() {
     return NextResponse.json({ error: message }, { status: 500 })
   }
 
-  const roles = { total: 0, admins: 0, teachers: 0, students: 0 }
-  for (const p of profilesRes.data || []) {
-    roles.total++
-    if (p.role === "admin") roles.admins++
-    else if (p.role === "teacher") roles.teachers++
-    else roles.students++
-  }
+  const admins = adminRes.count ?? 0
+  const teachers = teacherRes.count ?? 0
+  const students = studentRes.count ?? 0
+  const roles = { total: admins + teachers + students, admins, teachers, students }
 
   // Count all R2 objects with pagination (no 1000-key cap)
   let r2Count = 0

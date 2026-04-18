@@ -1,11 +1,14 @@
 import { S3Client } from "@aws-sdk/client-s3"
 
-const ACCOUNT_ID = process.env.R2_ACCOUNT_ID!
-export const R2_BUCKET = process.env.R2_BUCKET_NAME || "grademax-papers"
-
+if (!process.env.R2_ACCOUNT_ID) {
+  throw new Error("Missing required env var: R2_ACCOUNT_ID")
+}
 if (!process.env.NEXT_PUBLIC_R2_PUBLIC_URL) {
   throw new Error("Missing required env var: NEXT_PUBLIC_R2_PUBLIC_URL")
 }
+
+const ACCOUNT_ID = process.env.R2_ACCOUNT_ID
+export const R2_BUCKET = process.env.R2_BUCKET_NAME || "grademax-papers"
 export const R2_PUBLIC_URL = process.env.NEXT_PUBLIC_R2_PUBLIC_URL
 
 let _r2Client: S3Client | null = null

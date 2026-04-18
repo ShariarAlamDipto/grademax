@@ -40,6 +40,10 @@ export default function ProfilePage() {
     }
   }, [profile, user])
 
+  useEffect(() => {
+    if (!loading && !user) router.push("/login")
+  }, [loading, user, router])
+
   if (loading) {
     return (
       <main className="min-h-screen bg-black text-white grid place-items-center">
@@ -48,10 +52,7 @@ export default function ProfilePage() {
     )
   }
 
-  if (!user) {
-    router.push("/login")
-    return null
-  }
+  if (!user) return null
 
   const isGoogleUser = user.app_metadata?.provider === "google"
 
