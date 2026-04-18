@@ -40,8 +40,8 @@ export default function AnalyticsAdminPage() {
 
   useEffect(() => {
     Promise.all([
-      fetch("/api/admin/stats").then(r => r.json()),
-      fetch("/api/admin/subjects").then(r => r.json()),
+      fetch("/api/admin/stats").then(r => { if (!r.ok) throw new Error("stats"); return r.json() }),
+      fetch("/api/admin/subjects").then(r => { if (!r.ok) throw new Error("subjects"); return r.json() }),
     ]).then(([s, sub]) => {
       setStats(s)
       setSubjects(sub.subjects || [])

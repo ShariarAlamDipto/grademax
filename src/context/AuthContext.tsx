@@ -44,6 +44,11 @@ const AuthContext = createContext<AuthContextType>({
   signOut: async () => {},
 })
 
+const MAX_PROFILE_RETRIES = 2
+const PROFILE_RETRY_DELAY_MS = 1500
+const AUTH_LOADING_TIMEOUT_MS = 4000
+const PROFILE_REFRESH_THROTTLE_MS = 30_000
+
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null)
   const [session, setSession] = useState<Session | null>(null)
@@ -62,9 +67,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         .single()
 
       if (error) {
-        console.error("[Auth] Profile fetch error:", error.message, error.code)
-        if (retryCount < 2) {
-          setTimeout(() => fetchProfileDirect(userId, retryCount + 1), 1500)
+        if (retryCount < MAX_PROFILE_RETRIES) {
+          setTimeout(() => fetchProfileDirect(userId, retryCount + 1), PROFILE_RETRY_DELAY_MS)
           return
         }
         // All retries exhausted — try server-side fallback
@@ -85,9 +89,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
 
       if (!data) {
-        console.warn("[Auth] No profile found for user:", userId)
-        if (retryCount < 2) {
-          setTimeout(() => fetchProfileDirect(userId, retryCount + 1), 1500)
+        if (retryCount < MAX_PROFILE_RETRIES) {
+          setTimeout(() => fetchProfileDirect(userId, retryCount + 1), PROFILE_RETRY_DELAY_MS)
           return
         }
         setProfile(null)
@@ -97,8 +100,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
       setProfile({ ...data, role: data.role || "student" })
       setProfileLoaded(true)
-    } catch (err) {
-      console.error("[Auth] Profile fetch exception:", err)
+    } catch {
       setProfile(null)
       setProfileLoaded(true)
     }
@@ -156,7 +158,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
 
     // Safety-net: guarantee loading becomes false within 4s
-    const timeout = setTimeout(resolve, 4000)
+    const timeout = setTimeout(resolve, AUTH_LOADING_TIMEOUT_MS)
 
     // *** STRATEGY: Use BOTH getSession() (instant, local) and
     // onAuthStateChange (reactive, reliable) to ensure we never
@@ -193,7 +195,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     let lastFetch = 0
     const onVisibilityChange = () => {
       const now = Date.now()
-      if (document.visibilityState === "visible" && user?.id && now - lastFetch > 30_000) {
+      if (document.visibilityState === "visible" && user?.id && now - lastFetch > PROFILE_REFRESH_THROTTLE_MS) {
         lastFetch = now
         fetchProfileDirect(user.id)
       }

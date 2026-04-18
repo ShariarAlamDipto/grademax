@@ -47,20 +47,14 @@ export async function DELETE(
     for (const url of [paper.pdf_url, paper.markscheme_pdf_url]) {
       if (!url?.startsWith(baseUrl + "/")) continue
       const key = url.slice(baseUrl.length + 1)
-      // Validate the extracted key parses as a known R2 filename before deleting
-      if (key && parseR2Key(key)) {
-        toDelete.push(key)
-      } else {
-        console.warn("[delete paper] Skipping R2 delete — key failed validation:", key)
-      }
+      if (key && parseR2Key(key)) toDelete.push(key)
     }
 
     for (const key of toDelete) {
       try {
         await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: key }))
-      } catch (e) {
-        console.warn("[delete paper] R2 delete failed for key:", key, e)
-        // Non-fatal — proceed to delete DB row
+      } catch {
+        // Non-fatal — proceed to delete DB row even if R2 delete fails
       }
     }
   }
@@ -122,11 +116,9 @@ export async function PATCH(
         try {
           const r2 = getR2Client()
           await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: key }))
-        } catch (e) {
-          console.warn("[patch paper] R2 delete failed for key:", key, e)
+        } catch {
+          // Non-fatal — proceed to clear DB field even if R2 delete fails
         }
-      } else {
-        console.warn("[patch paper] Skipping R2 delete — key failed validation:", key)
       }
     }
   }

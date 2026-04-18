@@ -150,7 +150,7 @@ export default function TaggerPage() {
           {pageCount > 1 && (
             <div style={{ marginTop: "1.5rem", display: "flex", alignItems: "center", justifyContent: "center", gap: "0.75rem" }}>
               <button
-                onClick={() => setOffset(Math.max(0, offset - PAGE_SIZE))}
+                onClick={() => setOffset(prev => Math.max(0, prev - PAGE_SIZE))}
                 disabled={offset === 0}
                 style={{ padding: "0.4rem 0.875rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.5rem", color: "var(--gm-text-2)", fontSize: "0.78rem", cursor: offset === 0 ? "not-allowed" : "pointer", opacity: offset === 0 ? 0.4 : 1 }}
               >
@@ -160,7 +160,7 @@ export default function TaggerPage() {
                 Page {currentPage} of {pageCount}
               </span>
               <button
-                onClick={() => setOffset(offset + PAGE_SIZE)}
+                onClick={() => setOffset(prev => prev + PAGE_SIZE)}
                 disabled={offset + PAGE_SIZE >= total}
                 style={{ padding: "0.4rem 0.875rem", background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.5rem", color: "var(--gm-text-2)", fontSize: "0.78rem", cursor: offset + PAGE_SIZE >= total ? "not-allowed" : "pointer", opacity: offset + PAGE_SIZE >= total ? 0.4 : 1 }}
               >

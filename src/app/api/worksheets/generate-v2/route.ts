@@ -66,7 +66,7 @@ export async function POST(request: Request) {
     // First, get papers that match the subject filter
     let paperQuery = supabase
       .from('papers')
-      .select('id, year, season, paper_number, subject_id, subjects(code)');
+      .select('id, subject_id');
 
     // Filter by subject if provided
     if (subjectId) {
@@ -159,7 +159,6 @@ export async function POST(request: Request) {
     const resolvedSubjectId = subjectId || (firstPage.papers ? firstPage.papers.subject_id : null);
 
     if (!resolvedSubjectId) {
-      console.error('Could not determine subject_id');
       return NextResponse.json({ error: 'Could not determine subject' }, { status: 500 });
     }
 
@@ -174,11 +173,10 @@ export async function POST(request: Request) {
         difficulty,
         total_questions: finalPages.length
       })
-      .select()
+      .select('id')
       .single();
 
     if (worksheetError) {
-      console.error('Worksheet creation error:', worksheetError);
       return NextResponse.json(
         { error: worksheetError.message },
         { status: 500 }
@@ -197,7 +195,6 @@ export async function POST(request: Request) {
       .insert(worksheetItems);
 
     if (itemsError) {
-      console.error('Worksheet items error:', itemsError);
       return NextResponse.json(
         { error: `Failed to save worksheet questions: ${itemsError.message}` },
         { status: 500 }
@@ -231,7 +228,6 @@ export async function POST(request: Request) {
     });
 
   } catch (error: unknown) {
-    console.error('API error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

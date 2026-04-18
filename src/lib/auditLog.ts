@@ -38,8 +38,7 @@ export async function logAdminAction(entry: AuditEntry): Promise<void> {
       entity_id: entry.entity_id || null,
       details: entry.details || null,
     })
-  } catch (e) {
-    // Non-fatal — but log so ops can detect if audit table is missing
-    console.error("[auditLog] Failed to write audit entry:", e)
+  } catch {
+    // Non-fatal — silently swallow so audit failures never break user-facing flows
   }
 }
