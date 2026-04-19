@@ -34,19 +34,37 @@ export function normalizeSessionForDB(s: string): string {
 
 /** Parse a filename like "ICT_2025_Oct-Nov_Paper_2_QP.pdf" */
 export function parseR2Filename(filename: string): ParsedFilename | null {
-  // Remove .pdf extension
   const base = filename.replace(/\.pdf$/i, "")
-  // Pattern: {Subject}_{Year}_{Session}_Paper_{N}_{Type}
-  // Session can contain hyphens (Oct-Nov, May-Jun)
-  const m = base.match(/^(.+?)_(\d{4})_(Jan|May-Jun|Oct-Nov|Specimen)_Paper_(\w+)_(QP|MS)$/i)
-  if (!m) return null
-  return {
-    subject: m[1],
-    year: parseInt(m[2]),
-    session: normalizeSessionForR2(m[3]),
-    paperNumber: m[4].toUpperCase(),
-    type: m[5].toUpperCase() as PaperType,
+  // Try strict known-session match first (fastest path)
+  const strict = base.match(/^(.+?)_(\d{4})_(Jan|May-Jun|Oct-Nov|Specimen)_Paper_(\w+)_(QP|MS)$/i)
+  if (strict) {
+    return {
+      subject: strict[1],
+      year: parseInt(strict[2]),
+      session: normalizeSessionForR2(strict[3]),
+      paperNumber: strict[4].toUpperCase(),
+      type: strict[5].toUpperCase() as PaperType,
+    }
   }
+  // Flexible fallback: session is any hyphenated word segment between year and "Paper"
+  const flex = base.match(/^(.+?)_(\d{4})_([\w-]+)_Paper_(\w+)_(QP|MS)$/i)
+  if (!flex) return null
+  return {
+    subject: flex[1],
+    year: parseInt(flex[2]),
+    session: normalizeSessionForR2(flex[3]),
+    paperNumber: flex[4].toUpperCase(),
+    type: flex[5].toUpperCase() as PaperType,
+  }
+}
+
+/**
+ * Canonical subject folder name: spaces → underscores, strip everything
+ * that is not alphanumeric, underscore, or hyphen.
+ * Used by upload, sync, and r2-scan so R2 prefixes always match.
+ */
+export function buildSubjectFolder(name: string): string {
+  return name.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_\-]/g, "_")
 }
 
 /** Build R2 key from components */

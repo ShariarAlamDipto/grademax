@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getR2Client, R2_BUCKET, R2_PUBLIC_URL } from "@/lib/r2Client"
-import { buildR2Key, normalizeSessionForDB, normalizeSessionForR2, parseR2Filename } from "@/lib/r2FilenameParser"
+import { buildR2Key, buildSubjectFolder, normalizeSessionForDB, normalizeSessionForR2, parseR2Filename } from "@/lib/r2FilenameParser"
 import { DeleteObjectCommand, PutObjectCommand } from "@aws-sdk/client-s3"
 import { logAdminAction } from "@/lib/auditLog"
 
@@ -68,11 +68,11 @@ export async function POST(req: NextRequest) {
     if (!subject) {
       return NextResponse.json({ error: "Subject not found" }, { status: 404 })
     }
-    subjectFolder = subject.name?.replace(/\s+/g, "_") || subjectId
+    subjectFolder = subject.name || subjectId
   }
 
-  // Sanitize subject folder and strip characters that can break R2 key segments.
-  const safeSubjectFolder = subjectFolder.replace(/[^a-zA-Z0-9_\- ]/g, "_")
+  // Canonical sanitization: spaces → underscores, strip non-alnum/underscore/hyphen.
+  const safeSubjectFolder = buildSubjectFolder(subjectFolder)
 
   const r2Session = normalizeSessionForR2(session)
   const r2Key = buildR2Key(safeSubjectFolder, year, r2Session, paperNumber, type)

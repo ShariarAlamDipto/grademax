@@ -2,12 +2,15 @@ import { NextRequest, NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 
+export const maxDuration = 120 // seconds — needed for large classification jobs
+
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 const MODEL = "llama-3.1-8b-instant"
 const BATCH_SIZE = 4
 const BATCH_SLEEP_MS = 1200
 const GROQ_TIMEOUT_MS = 15000
-const RATE_LIMIT_BACKOFF_MS = 5000
+const RATE_LIMIT_BACKOFF_MS = 8000
+const RATE_LIMIT_MAX_RETRIES = 2
 const DEFAULT_LIMIT = 40
 const MAX_LIMIT = 100
 const MIN_LIMIT = 1
@@ -75,33 +78,22 @@ function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 
-async function classifyBatch(
-  subjectName: string,
-  topics: Topic[],
-  pages: PageRow[],
-  groqKey: string
-): Promise<ClassifyResult[]> {
-  const prompt = buildClassifyPrompt(subjectName, topics, pages)
-
+async function callGroq(prompt: string, groqKey: string): Promise<Response> {
   const controller = new AbortController()
   const timeoutId = setTimeout(() => controller.abort(), GROQ_TIMEOUT_MS)
-  let response: Response
-
   try {
-    response = await fetch(GROQ_URL, {
+    const response = await fetch(GROQ_URL, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${groqKey}`,
-        "Content-Type": "application/json",
-      },
+      headers: { Authorization: `Bearer ${groqKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
         model: MODEL,
         messages: [{ role: "user", content: prompt }],
         temperature: 0.1,
-        max_tokens: 512,
+        max_tokens: 1024,
       }),
       signal: controller.signal,
     })
+    return response
   } catch (err) {
     if (err instanceof DOMException && err.name === "AbortError") {
       throw new Error("Groq API request timed out")
@@ -110,10 +102,28 @@ async function classifyBatch(
   } finally {
     clearTimeout(timeoutId)
   }
+}
 
-  if (!response.ok) {
-    const err = await response.text()
-    throw new Error(`Groq API error ${response.status}: ${err.slice(0, 200)}`)
+async function classifyBatch(
+  subjectName: string,
+  topics: Topic[],
+  pages: PageRow[],
+  groqKey: string
+): Promise<ClassifyResult[]> {
+  const prompt = buildClassifyPrompt(subjectName, topics, pages)
+
+  let response: Response | null = null
+  for (let attempt = 0; attempt <= RATE_LIMIT_MAX_RETRIES; attempt++) {
+    response = await callGroq(prompt, groqKey)
+    if (response.status !== 429) break
+    if (attempt < RATE_LIMIT_MAX_RETRIES) {
+      await sleep(RATE_LIMIT_BACKOFF_MS * (attempt + 1))
+    }
+  }
+
+  if (!response || !response.ok) {
+    const errText = response ? await response.text() : "no response"
+    throw new Error(`Groq API error ${response?.status ?? 0}: ${errText.slice(0, 200)}`)
   }
 
   const data = await response.json()
@@ -121,7 +131,7 @@ async function classifyBatch(
 
   const start = text.indexOf("[")
   const end = text.lastIndexOf("]") + 1
-  if (start === -1) return []
+  if (start === -1 || end <= start) return []
 
   try {
     return JSON.parse(text.slice(start, end)) as ClassifyResult[]
@@ -294,11 +304,7 @@ export async function POST(req: NextRequest) {
 
       // Mark pages with no text as errors (already excluded from pagesWithText)
       errors += batch.length - pagesWithText.length
-    } catch (err) {
-      const msg = err instanceof Error ? err.message : "Unknown error"
-      if (msg.includes("429")) {
-        await sleep(RATE_LIMIT_BACKOFF_MS)
-      }
+    } catch {
       errors += batch.length
     }
 
