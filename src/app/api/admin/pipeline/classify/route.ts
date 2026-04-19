@@ -6,6 +6,12 @@ const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 const MODEL = "llama-3.1-8b-instant"
 const BATCH_SIZE = 4
 const BATCH_SLEEP_MS = 1200
+const GROQ_TIMEOUT_MS = 15000
+const RATE_LIMIT_BACKOFF_MS = 5000
+const DEFAULT_LIMIT = 40
+const MAX_LIMIT = 100
+const MIN_LIMIT = 1
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
 interface TopicGuardrails {
   include_when?: string
@@ -46,7 +52,7 @@ function buildClassifyPrompt(subjectName: string, topics: Topic[], pages: PageRo
   }).join("\n\n")
 
   const questionList = pages.map((p, i) =>
-    `Q${i + 1} [id=${p.id}]: ${(p.text_excerpt || "").slice(0, 400) || "(no text excerpt — skip this question)"}`
+    `Q${i + 1} [id=${p.id}]: ${(p.text_excerpt || "").slice(0, 400) || "(no text excerpt - skip this question)"}`
   ).join("\n\n")
 
   return `You are classifying ${subjectName} exam questions by topic.
@@ -77,19 +83,33 @@ async function classifyBatch(
 ): Promise<ClassifyResult[]> {
   const prompt = buildClassifyPrompt(subjectName, topics, pages)
 
-  const response = await fetch(GROQ_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${groqKey}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      model: MODEL,
-      messages: [{ role: "user", content: prompt }],
-      temperature: 0.1,
-      max_tokens: 512,
-    }),
-  })
+  const controller = new AbortController()
+  const timeoutId = setTimeout(() => controller.abort(), GROQ_TIMEOUT_MS)
+  let response: Response
+
+  try {
+    response = await fetch(GROQ_URL, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${groqKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        model: MODEL,
+        messages: [{ role: "user", content: prompt }],
+        temperature: 0.1,
+        max_tokens: 512,
+      }),
+      signal: controller.signal,
+    })
+  } catch (err) {
+    if (err instanceof DOMException && err.name === "AbortError") {
+      throw new Error("Groq API request timed out")
+    }
+    throw err
+  } finally {
+    clearTimeout(timeoutId)
+  }
 
   if (!response.ok) {
     const err = await response.text()
@@ -119,13 +139,18 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "GROQ_API_KEY not configured" }, { status: 500 })
   }
 
+  const body = await req.json().catch(() => null)
+  if (!body || typeof body !== "object") {
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 })
+  }
+
   const {
     subjectId,
     topics: clientTopics,
     offset = 0,
-    limit = 40,
+    limit = DEFAULT_LIMIT,
     reclassify = false,
-  } = await req.json() as {
+  } = body as {
     subjectId: string
     topics?: Topic[]
     offset?: number
@@ -136,6 +161,12 @@ export async function POST(req: NextRequest) {
   if (!subjectId) {
     return NextResponse.json({ error: "subjectId required" }, { status: 400 })
   }
+  if (!UUID_RE.test(subjectId)) {
+    return NextResponse.json({ error: "Invalid subjectId" }, { status: 400 })
+  }
+
+  const safeOffset = Math.max(0, Math.trunc(Number(offset) || 0))
+  const safeLimit = Math.min(MAX_LIMIT, Math.max(MIN_LIMIT, Math.trunc(Number(limit) || DEFAULT_LIMIT)))
 
   const db = getSupabaseAdmin()
   if (!db) return NextResponse.json({ error: "Admin client not available" }, { status: 500 })
@@ -168,7 +199,7 @@ export async function POST(req: NextRequest) {
   }
 
   // Build valid topic codes for validation
-  const validCodes = new Set(topics.map(t => t.code))
+  const validCodes = new Set(topics.map(t => t.code.toUpperCase()))
 
   // Get paper IDs for this subject
   const { data: papers } = await db
@@ -202,7 +233,7 @@ export async function POST(req: NextRequest) {
     .eq("is_question", true)
     .not("qp_page_url", "is", null)
     .order("id")
-    .range(offset, offset + limit - 1)
+    .range(safeOffset, safeOffset + safeLimit - 1)
 
   if (!reclassify) {
     pageQuery = pageQuery.or("topics.is.null,topics.eq.{}")
@@ -214,7 +245,7 @@ export async function POST(req: NextRequest) {
   if (chunk.length === 0) {
     return NextResponse.json({
       processed: 0, classified: 0, errors: 0,
-      total: total ?? 0, nextOffset: offset, done: true,
+      total: total ?? 0, nextOffset: safeOffset, done: true,
     })
   }
 
@@ -226,6 +257,7 @@ export async function POST(req: NextRequest) {
   for (let i = 0; i < chunk.length; i += BATCH_SIZE) {
     const batch = chunk.slice(i, i + BATCH_SIZE)
     const pagesWithText = batch.filter(p => p.text_excerpt && p.text_excerpt.trim())
+    const allowedIds = new Set(batch.map(p => p.id))
 
     if (pagesWithText.length === 0) {
       errors += batch.length
@@ -236,8 +268,21 @@ export async function POST(req: NextRequest) {
       const results = await classifyBatch(subject.name, topics, pagesWithText, groqKey)
 
       for (const r of results) {
+        if (!r || typeof r.id !== "string" || !UUID_RE.test(r.id)) {
+          errors++
+          continue
+        }
+        if (!allowedIds.has(r.id)) {
+          errors++
+          continue
+        }
+
         const topicCode = r.topic?.toUpperCase?.() ?? r.topic
-        if (!validCodes.has(topicCode)) continue
+        if (!validCodes.has(topicCode)) {
+          errors++
+          continue
+        }
+
         updates.push({
           id: r.id,
           topics: [topicCode],
@@ -252,7 +297,7 @@ export async function POST(req: NextRequest) {
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Unknown error"
       if (msg.includes("429")) {
-        await sleep(5000) // Rate limit backoff
+        await sleep(RATE_LIMIT_BACKOFF_MS)
       }
       errors += batch.length
     }
@@ -264,14 +309,19 @@ export async function POST(req: NextRequest) {
 
   // Batch update classified pages
   for (const u of updates) {
-    await db
+    const { error: updateError } = await db
       .from("pages")
       .update({ topics: u.topics, difficulty: u.difficulty, confidence: u.confidence })
       .eq("id", u.id)
+
+    if (updateError) {
+      errors++
+      classified = Math.max(0, classified - 1)
+    }
   }
 
-  const nextOffset = offset + chunk.length
-  const done = chunk.length < limit || nextOffset >= (total ?? 0)
+  const nextOffset = safeOffset + chunk.length
+  const done = chunk.length < safeLimit || nextOffset >= (total ?? 0)
 
   return NextResponse.json({
     processed: chunk.length,
@@ -282,3 +332,4 @@ export async function POST(req: NextRequest) {
     done,
   })
 }
+

@@ -62,15 +62,16 @@ export async function POST(req: NextRequest) {
   if (!subjectFolder) {
     const { data: subject, error: subjectError } = await db.from("subjects").select("name").eq("id", subjectId).maybeSingle()
     if (subjectError) {
-      return NextResponse.json({ error: subjectError.message }, { status: 500 })
+      console.error("[admin/papers/upload] Failed to resolve subject", subjectError)
+      return NextResponse.json({ error: "Failed to resolve subject" }, { status: 500 })
     }
     if (!subject) {
       return NextResponse.json({ error: "Subject not found" }, { status: 404 })
     }
-    subjectFolder = subject?.name?.replace(/\s+/g, "_") || subjectId
+    subjectFolder = subject.name?.replace(/\s+/g, "_") || subjectId
   }
 
-  // Sanitize subject folder — strip anything that could traverse R2 path segments
+  // Sanitize subject folder and strip characters that can break R2 key segments.
   const safeSubjectFolder = subjectFolder.replace(/[^a-zA-Z0-9_\- ]/g, "_")
 
   const r2Session = normalizeSessionForR2(session)
@@ -92,8 +93,9 @@ export async function POST(req: NextRequest) {
       Body: Buffer.from(bytes),
       ContentType: "application/pdf",
     }))
-  } catch (e) {
-    return NextResponse.json({ error: `R2 upload failed: ${e}` }, { status: 500 })
+  } catch (error) {
+    console.error("[admin/papers/upload] R2 upload failed", error)
+    return NextResponse.json({ error: "R2 upload failed" }, { status: 500 })
   }
 
   // Upsert papers table
@@ -119,7 +121,8 @@ export async function POST(req: NextRequest) {
     } catch {
       // Keep original DB error as the primary response.
     }
-    return NextResponse.json({ error: existingError.message }, { status: 500 })
+    console.error("[admin/papers/upload] Failed to query existing paper", existingError)
+    return NextResponse.json({ error: "Failed to query existing paper" }, { status: 500 })
   }
 
   let paperId: string | null = null
@@ -132,7 +135,8 @@ export async function POST(req: NextRequest) {
       } catch {
         // Keep original DB error as the primary response.
       }
-      return NextResponse.json({ error: updateError.message }, { status: 500 })
+      console.error("[admin/papers/upload] Failed to update existing paper", updateError)
+      return NextResponse.json({ error: "Failed to update existing paper" }, { status: 500 })
     }
     paperId = existing.id
   } else {
@@ -148,9 +152,10 @@ export async function POST(req: NextRequest) {
       } catch {
         // Keep original DB error as the primary response.
       }
-      return NextResponse.json({ error: insertError?.message || "Failed to insert paper row" }, { status: 500 })
+      console.error("[admin/papers/upload] Failed to insert paper row", insertError)
+      return NextResponse.json({ error: "Failed to insert paper row" }, { status: 500 })
     }
-    paperId = inserted?.id
+    paperId = inserted.id
   }
 
   if (!paperId) {
