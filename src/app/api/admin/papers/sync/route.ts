@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getR2Client, R2_BUCKET, R2_PUBLIC_URL } from "@/lib/r2Client"
-import { parseR2Key, normalizeSessionForDB } from "@/lib/r2FilenameParser"
+import { parseR2Key, normalizeSessionForDB, buildSubjectFolder } from "@/lib/r2FilenameParser"
 import { ListObjectsV2Command } from "@aws-sdk/client-s3"
 
 export const dynamic = "force-dynamic"
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
   }
   if (!subject) return NextResponse.json({ error: "Subject not found" }, { status: 404 })
 
-  const subjectFolder = subject.name.replace(/\s+/g, "_")
+  const subjectFolder = buildSubjectFolder(subject.name)
 
   // Collect all R2 objects
   const r2Objects: Array<{ key: string; type: "QP" | "MS"; year: number; season: string; paperNumber: string }> = []

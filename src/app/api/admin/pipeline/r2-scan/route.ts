@@ -3,7 +3,7 @@ import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getR2Client, R2_BUCKET } from "@/lib/r2Client"
 import { ListObjectsV2Command } from "@aws-sdk/client-s3"
-import { parseR2Key, normalizeSessionForDB } from "@/lib/r2FilenameParser"
+import { parseR2Key, normalizeSessionForDB, buildSubjectFolder } from "@/lib/r2FilenameParser"
 
 export interface R2PaperGroup {
   groupKey: string
@@ -26,10 +26,6 @@ export interface R2ScanResult {
   comparison: R2PaperGroup[]
   dbOnly: Array<{ year: number; season: string; paperNumber: string }>
   stats: { inBoth: number; r2Only: number; dbOnly: number }
-}
-
-function buildSubjectFolder(name: string): string {
-  return name.replace(/\s+/g, "_").replace(/[^a-zA-Z0-9_\-]/g, "_")
 }
 
 export async function GET(req: NextRequest) {
