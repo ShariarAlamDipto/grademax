@@ -76,31 +76,9 @@ export async function GET(request: Request) {
       ? normalizeTopicCodes(topicsParam.split(',').map(t => t.trim()).filter(Boolean))
       : [];
 
-    // Step 2: Count total matching pages (for pagination)
-    let countQuery = supabase
-      .from('pages')
-      .select('id', { count: 'exact', head: true })
-      .eq('is_question', true)
-      .not('qp_page_url', 'is', null)
-      .in('paper_id', paperIds);
-
-    if (topicCodes.length > 0) countQuery = countQuery.overlaps('topics', topicCodes);
-    if (difficulty) countQuery = countQuery.eq('difficulty', difficulty);
-
-    const { count, error: countError } = await countQuery;
-
-    if (countError) {
-      return NextResponse.json(
-        { error: 'Failed to count questions', details: countError.message },
-        { status: 500 }
-      );
-    }
-
-    const total = count || 0;
-    const totalPages = Math.ceil(total / limit);
     const offset = (page - 1) * limit;
 
-    // Step 3: Fetch the actual page data with paper details
+    // Single query: fetch page data + total count in one round-trip
     let dataQuery = supabase
       .from('pages')
       .select(`
@@ -121,7 +99,7 @@ export async function GET(request: Request) {
           paper_number,
           subject_id
         )
-      `)
+      `, { count: 'exact' })
       .eq('is_question', true)
       .not('qp_page_url', 'is', null)
       .in('paper_id', paperIds)
@@ -131,7 +109,7 @@ export async function GET(request: Request) {
     if (topicCodes.length > 0) dataQuery = dataQuery.overlaps('topics', topicCodes);
     if (difficulty) dataQuery = dataQuery.eq('difficulty', difficulty);
 
-    const { data: pages, error: pagesError } = await dataQuery;
+    const { data: pages, count, error: pagesError } = await dataQuery;
 
     if (pagesError) {
       return NextResponse.json(
@@ -139,6 +117,9 @@ export async function GET(request: Request) {
         { status: 500 }
       );
     }
+
+    const total = count || 0;
+    const totalPages = Math.ceil(total / limit);
 
     // Step 4: Format response
     interface PaperData {

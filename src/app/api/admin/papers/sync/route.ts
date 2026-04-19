@@ -21,7 +21,10 @@ export async function POST(req: NextRequest) {
   if (!db) return NextResponse.json({ error: "Server misconfiguration: admin client unavailable" }, { status: 500 })
 
   const { data: subject, error: subjectError } = await db.from("subjects").select("name").eq("id", subjectId).maybeSingle()
-  if (subjectError) return NextResponse.json({ error: subjectError.message }, { status: 500 })
+  if (subjectError) {
+    console.error("[admin/papers/sync] Failed to load subject", subjectError)
+    return NextResponse.json({ error: "Failed to load subject" }, { status: 500 })
+  }
   if (!subject) return NextResponse.json({ error: "Subject not found" }, { status: 404 })
 
   const subjectFolder = subject.name.replace(/\s+/g, "_")
@@ -46,8 +49,9 @@ export async function POST(req: NextRequest) {
       }
       token = res.NextContinuationToken
     } while (token)
-  } catch (e) {
-    return NextResponse.json({ error: `R2 listing failed: ${e}` }, { status: 500 })
+  } catch (error) {
+    console.error("[admin/papers/sync] R2 listing failed", error)
+    return NextResponse.json({ error: "R2 listing failed" }, { status: 500 })
   }
 
   let inserted = 0
