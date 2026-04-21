@@ -70,6 +70,9 @@ export default function PipelinePage() {
   })
   const [reclassify, setReclassify] = useState(false)
   const [toast, setToast] = useState<{ msg: string; type: "ok" | "err" } | null>(null)
+  const [specPdfBase64, setSpecPdfBase64] = useState("")
+  const [specPdfName, setSpecPdfName] = useState("")
+  const [specInputMode, setSpecInputMode] = useState<"pdf" | "text">("pdf")
   const fileInputRef = useRef<HTMLInputElement>(null)
   const cancelRef = useRef(false)
 
@@ -190,19 +193,45 @@ export default function PipelinePage() {
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (!file) return
-    const reader = new FileReader()
-    reader.onload = evt => setSpecText(evt.target?.result as string)
-    reader.readAsText(file)
+    if (file.name.toLowerCase().endsWith(".pdf")) {
+      const reader = new FileReader()
+      reader.onload = evt => {
+        const dataUrl = evt.target?.result as string
+        setSpecPdfBase64(dataUrl.split(",")[1] ?? "")
+        setSpecPdfName(file.name)
+        setSpecText("")
+      }
+      reader.readAsDataURL(file)
+    } else {
+      const reader = new FileReader()
+      reader.onload = evt => {
+        setSpecText(evt.target?.result as string ?? "")
+        setSpecPdfBase64("")
+        setSpecPdfName("")
+      }
+      reader.readAsText(file)
+    }
   }
 
   const analyzeSpec = async () => {
-    if (!specText.trim() || !selectedSubject) return
+    const hasPdf = !!specPdfBase64
+    const hasText = !!specText.trim()
+    if ((!hasPdf && !hasText) || !selectedSubject) return
     setAnalyzing(true)
     try {
+      const payload: Record<string, string> = {
+        subjectName: selectedSubject.name,
+        level: selectedSubject.level,
+      }
+      if (hasPdf) {
+        payload.specPdfBase64 = specPdfBase64
+      } else {
+        payload.specText = specText
+      }
       const res = await fetch("/api/admin/pipeline/analyze-spec", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ specText, subjectName: selectedSubject.name, level: selectedSubject.level }),
+        body: JSON.stringify(payload),
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error || "Unknown error")
@@ -327,7 +356,7 @@ export default function PipelinePage() {
       {/* ── STEP 2: Upload Specification ─────────────────────────────────── */}
       {step === "spec" && (
         <div style={cardStyle}>
-          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.75rem" }}>
             <h2 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--gm-text)" }}>
               Upload Specification — {selectedSubject?.name}
             </h2>
@@ -336,51 +365,103 @@ export default function PipelinePage() {
             </button>
           </div>
 
-          <div style={{ background: "rgba(110,168,254,0.08)", border: "1px solid rgba(110,168,254,0.25)", borderRadius: "0.5rem", padding: "0.75rem 1rem", marginBottom: "1rem", fontSize: "0.8rem", color: "var(--gm-text-2)" }}>
-            The specification text is the <strong>sole source of truth</strong> for topic guardrails.
-            Claude reads it and extracts include/exclude rules used during classification.
+          <div style={{ background: "rgba(110,168,254,0.08)", border: "1px solid rgba(110,168,254,0.25)", borderRadius: "0.5rem", padding: "0.625rem 0.875rem", marginBottom: "1.25rem", fontSize: "0.8rem", color: "var(--gm-text-2)" }}>
+            The specification is the <strong>sole source of truth</strong> for topic guardrails.
+            Groq reads it and extracts include/exclude rules used during classification.
           </div>
 
-          <div
-            style={{ border: "2px dashed var(--gm-border-2)", borderRadius: "0.5rem", padding: "2rem", textAlign: "center", marginBottom: "1rem", cursor: "pointer" }}
-            onClick={() => fileInputRef.current?.click()}
-          >
-            <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>📄</div>
-            <p style={{ color: "var(--gm-text-2)", fontSize: "0.85rem" }}>Click to upload a .txt specification file</p>
-            <p style={{ color: "var(--gm-text-3)", fontSize: "0.75rem" }}>or paste the text below</p>
-          </div>
-          <input ref={fileInputRef} type="file" accept=".txt,.md" style={{ display: "none" }} onChange={handleFileUpload} />
-
-          <textarea
-            value={specText}
-            onChange={e => setSpecText(e.target.value)}
-            placeholder="Paste the subject specification text here (chapters, topic names, learning objectives, assessment criteria)..."
-            style={{
-              width: "100%", minHeight: 220, padding: "0.75rem",
-              background: "var(--gm-surface-2)", border: "1px solid var(--gm-border-input)",
-              borderRadius: "0.5rem", color: "var(--gm-text)", fontSize: "0.82rem",
-              resize: "vertical", outline: "none", boxSizing: "border-box", fontFamily: "monospace",
-            }}
-          />
-          <div style={{ marginTop: "0.5rem", fontSize: "0.75rem", color: "var(--gm-text-3)" }}>
-            {specText.length.toLocaleString()} characters · Claude Sonnet will extract 6–12 topics with guardrails
+          {/* Input mode tabs */}
+          <div style={{ display: "flex", marginBottom: "1.25rem", border: "1px solid var(--gm-border)", borderRadius: "0.5rem", overflow: "hidden" }}>
+            {(["pdf", "text"] as const).map(m => (
+              <button
+                key={m}
+                onClick={() => setSpecInputMode(m)}
+                style={{
+                  flex: 1, padding: "0.55rem 0", fontSize: "0.82rem", fontWeight: 600,
+                  cursor: "pointer", border: "none",
+                  background: specInputMode === m ? "var(--gm-blue)" : "var(--gm-surface-2)",
+                  color: specInputMode === m ? "#fff" : "var(--gm-text-3)",
+                  transition: "all 0.15s",
+                }}
+              >
+                {m === "pdf" ? "📄 Upload PDF" : "📝 Paste Text"}
+              </button>
+            ))}
           </div>
 
-          <div style={{ marginTop: "1rem", display: "flex", gap: "0.75rem" }}>
+          {/* PDF upload */}
+          {specInputMode === "pdf" && (
+            <>
+              <div
+                style={{ border: "2px dashed var(--gm-border-2)", borderRadius: "0.5rem", padding: "2.5rem 2rem", textAlign: "center", cursor: "pointer", transition: "border-color 0.15s", marginBottom: "0.75rem" }}
+                onClick={() => fileInputRef.current?.click()}
+                onDragOver={e => e.preventDefault()}
+                onDrop={e => {
+                  e.preventDefault()
+                  const file = e.dataTransfer.files?.[0]
+                  if (file) handleFileUpload({ target: { files: [file] } } as unknown as React.ChangeEvent<HTMLInputElement>)
+                }}
+              >
+                <div style={{ fontSize: "2.5rem", marginBottom: "0.625rem" }}>{specPdfName ? "📕" : "📄"}</div>
+                {specPdfName ? (
+                  <>
+                    <p style={{ color: "var(--gm-green)", fontSize: "0.88rem", fontWeight: 700 }}>{specPdfName}</p>
+                    <p style={{ color: "var(--gm-text-3)", fontSize: "0.75rem", marginTop: "0.25rem" }}>Click or drag to replace</p>
+                  </>
+                ) : (
+                  <>
+                    <p style={{ color: "var(--gm-text-2)", fontSize: "0.875rem", fontWeight: 600 }}>Click or drag &amp; drop the specification PDF</p>
+                    <p style={{ color: "var(--gm-text-3)", fontSize: "0.75rem", marginTop: "0.25rem" }}>Text will be extracted and sent to Groq</p>
+                  </>
+                )}
+              </div>
+              <input ref={fileInputRef} type="file" accept=".pdf" style={{ display: "none" }} onChange={handleFileUpload} />
+              {specPdfBase64 && (
+                <p style={{ fontSize: "0.75rem", color: "var(--gm-green)", marginBottom: "0.5rem" }}>
+                  ✓ PDF ready — Groq will extract topics from its text content
+                </p>
+              )}
+            </>
+          )}
+
+          {/* Text paste */}
+          {specInputMode === "text" && (
+            <>
+              <textarea
+                value={specText}
+                onChange={e => setSpecText(e.target.value)}
+                placeholder="Paste the subject specification text here — topic names, learning objectives, assessment criteria..."
+                style={{
+                  width: "100%", minHeight: 240, padding: "0.75rem",
+                  background: "var(--gm-surface-2)", border: "1px solid var(--gm-border-input)",
+                  borderRadius: "0.5rem", color: "var(--gm-text)", fontSize: "0.82rem",
+                  resize: "vertical", outline: "none", boxSizing: "border-box", fontFamily: "monospace",
+                }}
+              />
+              <p style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", marginTop: "0.4rem", marginBottom: "0.25rem" }}>
+                {specText.length.toLocaleString()} characters
+              </p>
+            </>
+          )}
+
+          <div style={{ marginTop: "1rem", display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap" }}>
             <button
               onClick={analyzeSpec}
-              disabled={!specText.trim() || analyzing}
+              disabled={(!specText.trim() && !specPdfBase64) || analyzing}
               style={{
                 padding: "0.6rem 1.25rem", borderRadius: "0.5rem", fontSize: "0.85rem",
-                fontWeight: 600, cursor: !specText.trim() || analyzing ? "not-allowed" : "pointer",
-                background: !specText.trim() || analyzing ? "var(--gm-border)" : "var(--gm-amber)",
-                color: !specText.trim() || analyzing ? "var(--gm-text-3)" : "#000", border: "none",
-                display: "flex", alignItems: "center", gap: "0.4rem",
+                fontWeight: 600, cursor: (!specText.trim() && !specPdfBase64) || analyzing ? "not-allowed" : "pointer",
+                background: (!specText.trim() && !specPdfBase64) || analyzing ? "var(--gm-border)" : "var(--gm-amber)",
+                color: (!specText.trim() && !specPdfBase64) || analyzing ? "var(--gm-text-3)" : "#000", border: "none",
+                display: "flex", alignItems: "center", gap: "0.5rem",
               }}
             >
-              {analyzing ? <><span style={{ animation: "spin 1s linear infinite", display: "inline-block" }}>⟳</span> Analyzing...</> : "Analyze with Claude"}
+              {analyzing
+                ? <><span style={{ animation: "spin 1s linear infinite", display: "inline-block" }}>⟳</span> Analyzing with Groq…</>
+                : "Analyze with Groq"}
             </button>
-            <Btn onClick={() => { setTopics([]); setStep("topics") }}>Skip (manual topics)</Btn>
+            <span style={{ fontSize: "0.72rem", color: "var(--gm-text-3)" }}>llama-3.3-70b-versatile · 6–12 topics with guardrails</span>
+            <Btn onClick={() => { setTopics([]); setStep("topics") }}>Skip (manual)</Btn>
           </div>
         </div>
       )}
