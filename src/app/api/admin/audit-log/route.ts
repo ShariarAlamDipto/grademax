@@ -29,7 +29,12 @@ export async function GET(req: NextRequest) {
     if (entityType) query = query.eq("entity_type", entityType)
 
     const { data, error, count } = await query
-    if (error) return NextResponse.json({ error: error.message }, { status: 500 })
+    if (error) {
+      if (error.message?.includes("does not exist")) {
+        return NextResponse.json({ entries: [], total: 0, note: "Audit log table not yet created" })
+      }
+      return NextResponse.json({ error: error.message }, { status: 500 })
+    }
     return NextResponse.json({ entries: data || [], total: count ?? 0 })
   } catch {
     // Table doesn't exist yet

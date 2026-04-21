@@ -44,6 +44,7 @@ export default function AuditLogPage() {
     setEntries(data.entries || [])
     setTotal(data.total || 0)
     if (data.note) setNote(data.note)
+    if (!res.ok && data.error) setNote(data.error)
     setLoading(false)
   }, [offset, filterAction, filterType])
 
