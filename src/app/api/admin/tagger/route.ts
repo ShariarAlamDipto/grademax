@@ -4,10 +4,6 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 
 export const dynamic = "force-dynamic"
 
-/**
- * GET /api/admin/tagger?offset=0&limit=50&untagged=true&minConf=0
- * Returns paginated questions with their topic tags.
- */
 export async function GET(req: NextRequest) {
   const auth = await requireAdmin()
   if ("error" in auth) return auth.error
@@ -17,66 +13,101 @@ export async function GET(req: NextRequest) {
   const limit = Math.min(parseInt(req.nextUrl.searchParams.get("limit") || "50"), 200)
   const untaggedOnly = req.nextUrl.searchParams.get("untagged") === "true"
   const minConf = parseFloat(req.nextUrl.searchParams.get("minConf") || "0")
+  const subjectId = req.nextUrl.searchParams.get("subjectId") || ""
+
+  // Resolve paper IDs for the subject filter
+  let paperIdFilter: string[] | null = null
+  if (subjectId) {
+    const { data: papers, error: pErr } = await db
+      .from("papers")
+      .select("id")
+      .eq("subject_id", subjectId)
+    if (pErr) return NextResponse.json({ error: pErr.message }, { status: 500 })
+    if (!papers || papers.length === 0) {
+      return NextResponse.json({ questions: [], topics: [], total: 0 })
+    }
+    paperIdFilter = papers.map((p: { id: string }) => p.id)
+  }
 
   let query = db
-    .from("questions")
-    .select("id, question_number, text, difficulty, marks, question_topics(topic_id, confidence, topics(id, name))", { count: "exact" })
+    .from("pages")
+    .select("id, question_number, text_excerpt, difficulty, confidence, topics, paper_id", { count: "exact" })
+    .eq("is_question", true)
     .order("id", { ascending: false })
-    .range(offset, offset + limit - 1)
 
-  const { data: qs, error: qErr, count } = await query
+  if (paperIdFilter) query = query.in("paper_id", paperIdFilter)
+  if (untaggedOnly) query = query.or("topics.is.null,topics.eq.{}")
+
+  const { data: pages, error: qErr, count } = await query.range(offset, offset + limit - 1)
   if (qErr) return NextResponse.json({ error: qErr.message }, { status: 500 })
 
-  const { data: topics, error: tErr } = await db.from("topics").select("id, name").order("name")
+  // Get topics for the subject
+  let topicsQuery = db.from("topics").select("id, name, code").order("code")
+  if (subjectId) topicsQuery = topicsQuery.eq("subject_id", subjectId)
+  const { data: topicsData, error: tErr } = await topicsQuery
   if (tErr) return NextResponse.json({ error: tErr.message }, { status: 500 })
 
-  type RawQT = { topic_id: number; confidence: number; topics: { id: number; name: string } | { id: number; name: string }[] | null }
-  type RawQ = { id: number; question_number: string; text: string; difficulty: number; marks: number; question_topics: RawQT[] | null }
+  // Build lookup maps: both code→topic and id→topic
+  const byCode: Record<string, { code: string; name: string }> = {}
+  const byId: Record<string, { code: string; name: string }> = {}
+  for (const t of (topicsData || [])) {
+    const entry = { code: String(t.code), name: t.name }
+    byCode[String(t.code)] = entry
+    byId[String(t.id)] = entry
+  }
 
-  let questions = ((qs || []) as RawQ[]).map(q => {
-    const predictedTopics = (q.question_topics || [])
-      .map(qt => {
-        const topic = Array.isArray(qt.topics) ? qt.topics[0] : qt.topics
-        if (!topic?.id || !topic?.name) return null
-        return { id: topic.id, name: topic.name, confidence: qt.confidence }
+  const questions = (pages || []).map((p: {
+    id: string; question_number: string; text_excerpt: string | null
+    difficulty: string | null; confidence: number | null; topics: string[] | null
+  }) => {
+    const topicCodes: string[] = Array.isArray(p.topics) ? p.topics : []
+    const conf = typeof p.confidence === "number" ? p.confidence : 0
+
+    const predicted_topics = topicCodes
+      .map(code => {
+        const t = byCode[code] || byId[code]
+        return t ? { code: t.code, name: t.name, confidence: conf } : null
       })
-      .filter((t): t is { id: number; name: string; confidence: number } => t !== null)
-    return { id: q.id, question_number: q.question_number, text: q.text, difficulty: q.difficulty, marks: q.marks, predicted_topics: predictedTopics }
-  })
+      .filter((t): t is { code: string; name: string; confidence: number } => t !== null)
 
-  if (untaggedOnly) questions = questions.filter(q => q.predicted_topics.length === 0)
-  if (minConf > 0) questions = questions.filter(q =>
-    q.predicted_topics.length === 0 || q.predicted_topics.some(t => t.confidence < minConf)
-  )
+    if (minConf > 0 && predicted_topics.length > 0 && predicted_topics.every(t => t.confidence >= minConf)) {
+      return null
+    }
 
-  return NextResponse.json({ questions, topics: topics || [], total: count ?? 0 })
+    return {
+      id: p.id,
+      question_number: p.question_number || "",
+      text: p.text_excerpt || "",
+      difficulty: p.difficulty || "",
+      predicted_topics,
+    }
+  }).filter(Boolean)
+
+  const topics = (topicsData || []).map((t: { id: string; code: string; name: string }) => ({
+    code: String(t.code),
+    name: t.name,
+  }))
+
+  return NextResponse.json({ questions, topics, total: count ?? 0 })
 }
 
-/**
- * POST /api/admin/tagger
- * Body: { question_id: number, topic_ids: number[] }
- * Replaces all tags for the given question.
- */
 export async function POST(req: NextRequest) {
   const auth = await requireAdmin()
   if ("error" in auth) return auth.error
 
   const db = getSupabaseAdmin() || auth.db
   const body = await req.json().catch(() => ({}))
-  const { question_id, topic_ids } = body as { question_id?: number; topic_ids?: number[] }
+  const { question_id, topic_codes } = body as { question_id?: string; topic_codes?: string[] }
 
   if (!question_id) return NextResponse.json({ error: "question_id required" }, { status: 400 })
-  if (!Array.isArray(topic_ids)) return NextResponse.json({ error: "topic_ids must be an array" }, { status: 400 })
+  if (!Array.isArray(topic_codes)) return NextResponse.json({ error: "topic_codes must be an array" }, { status: 400 })
 
-  const { error: deleteError } = await db.from("question_topics").delete().eq("question_id", question_id)
-  if (deleteError) return NextResponse.json({ error: deleteError.message }, { status: 500 })
+  const { error } = await db
+    .from("pages")
+    .update({ topics: topic_codes })
+    .eq("id", question_id)
 
-  if (topic_ids.length > 0) {
-    const { error: insertError } = await db
-      .from("question_topics")
-      .insert(topic_ids.map(tid => ({ question_id, topic_id: tid, confidence: 1.0 })))
-    if (insertError) return NextResponse.json({ error: insertError.message }, { status: 500 })
-  }
+  if (error) return NextResponse.json({ error: error.message }, { status: 500 })
 
-  return NextResponse.json({ success: true, question_id, tagged: topic_ids.length })
+  return NextResponse.json({ success: true, question_id, tagged: topic_codes.length })
 }

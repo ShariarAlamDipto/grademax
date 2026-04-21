@@ -9,6 +9,7 @@ function LoginForm() {
   const searchParams = useSearchParams()
   const nextUrl = searchParams.get("next") || "/dashboard"
   const callbackError = searchParams.get("error")
+  const isAdminRedirect = nextUrl.startsWith("/admin")
   const [mode, setMode] = useState<"signin" | "signup">("signin")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -74,29 +75,31 @@ function LoginForm() {
         </p>
       </div>
 
-      {/* Tab switcher */}
-      <div className="flex rounded-lg bg-gray-100 dark:bg-white/5 p-1 mb-6">
-        <button
-          onClick={() => { setMode("signin"); setError(""); setSuccess("") }}
-          className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
-            mode === "signin"
-              ? "bg-white dark:bg-white text-gray-900 dark:text-black shadow-sm"
-              : "text-gray-500 dark:text-white/70 hover:text-gray-900 dark:hover:text-white"
-          }`}
-        >
-          Sign In
-        </button>
-        <button
-          onClick={() => { setMode("signup"); setError(""); setSuccess("") }}
-          className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
-            mode === "signup"
-              ? "bg-white dark:bg-white text-gray-900 dark:text-black shadow-sm"
-              : "text-gray-500 dark:text-white/70 hover:text-gray-900 dark:hover:text-white"
-          }`}
-        >
-          Sign Up
-        </button>
-      </div>
+      {/* Tab switcher — hidden for admin redirects (accounts not self-registrable) */}
+      {!isAdminRedirect && (
+        <div className="flex rounded-lg bg-gray-100 dark:bg-white/5 p-1 mb-6">
+          <button
+            onClick={() => { setMode("signin"); setError(""); setSuccess("") }}
+            className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
+              mode === "signin"
+                ? "bg-white dark:bg-white text-gray-900 dark:text-black shadow-sm"
+                : "text-gray-500 dark:text-white/70 hover:text-gray-900 dark:hover:text-white"
+            }`}
+          >
+            Sign In
+          </button>
+          <button
+            onClick={() => { setMode("signup"); setError(""); setSuccess("") }}
+            className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
+              mode === "signup"
+                ? "bg-white dark:bg-white text-gray-900 dark:text-black shadow-sm"
+                : "text-gray-500 dark:text-white/70 hover:text-gray-900 dark:hover:text-white"
+            }`}
+          >
+            Sign Up
+          </button>
+        </div>
+      )}
 
       {/* Google button */}
       <button
@@ -181,7 +184,7 @@ function LoginForm() {
         </button>
       </form>
 
-      {mode === "signin" && (
+      {!isAdminRedirect && mode === "signin" && (
         <p className="mt-4 text-center text-sm text-gray-500 dark:text-white/50">
           Don&apos;t have an account?{" "}
           <button onClick={() => setMode("signup")} className="text-gray-900 dark:text-white underline underline-offset-4 hover:no-underline">
@@ -189,7 +192,7 @@ function LoginForm() {
           </button>
         </p>
       )}
-      {mode === "signup" && (
+      {!isAdminRedirect && mode === "signup" && (
         <p className="mt-4 text-center text-sm text-gray-500 dark:text-white/50">
           Already have an account?{" "}
           <button onClick={() => setMode("signin")} className="text-gray-900 dark:text-white underline underline-offset-4 hover:no-underline">
