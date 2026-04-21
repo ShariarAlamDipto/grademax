@@ -39,7 +39,6 @@ export default function Navbar() {
   const extraLinks = [
     { href: "/subjects",  label: "Subjects" },
     { href: "/lectures",  label: "Lectures" },
-    { href: "/dashboard", label: "Dashboard" },
   ]
 
   const allLinks = [...coreLinks, ...extraLinks]
