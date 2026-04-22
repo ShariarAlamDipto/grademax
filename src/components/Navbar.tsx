@@ -63,68 +63,65 @@ export default function Navbar() {
     >
       {/* ── Main bar ── */}
       <div style={{
-        position: "relative",
         display: "flex",
         alignItems: "center",
-        justifyContent: "space-between",
         padding: "0 1.25rem",
         height: "68px",
       }}>
 
-        {/* Logo */}
-        <Link
-          href="/"
-          style={{
-            color: "var(--gm-text)",
-            fontWeight: 800,
-            fontSize: "1.35rem",
-            letterSpacing: "-0.04em",
-            textDecoration: "none",
-            lineHeight: 1,
-            whiteSpace: "nowrap",
-            flexShrink: 0,
-          }}
-        >
-          Grade<span style={{ color: "var(--gm-amber)" }}>Max</span>
-        </Link>
-
-        {/* Center pill — absolutely positioned so it's always centered on the navbar */}
-        <div style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", pointerEvents: "none" }}>
-          <div style={{ pointerEvents: "auto" }}>
-            {/* Desktop (lg+): all links */}
-            <ul className="hidden lg:flex" style={pillBase}>
-              {allLinks.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className="gradient-hover-sea"
-                    style={{ padding: "0.5rem 0.85rem", display: "block", borderRadius: "99px", fontSize: "0.875rem" }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            {/* Tablet (sm–lg): core links only */}
-            <ul className="hidden sm:flex lg:hidden" style={pillBase}>
-              {coreLinks.map(({ href, label }) => (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    className="gradient-hover-sea"
-                    style={{ padding: "0.45rem 0.9rem", display: "block", borderRadius: "99px", fontSize: "0.83rem" }}
-                  >
-                    {label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        {/* Left: logo — flex:1 so it mirrors the right section width */}
+        <div style={{ flex: 1, display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
+          <Link
+            href="/"
+            style={{
+              color: "var(--gm-text)",
+              fontWeight: 800,
+              fontSize: "1.35rem",
+              letterSpacing: "-0.04em",
+              textDecoration: "none",
+              lineHeight: 1,
+              whiteSpace: "nowrap",
+            }}
+          >
+            Grade<span style={{ color: "var(--gm-amber)" }}>Max</span>
+          </Link>
         </div>
 
-        {/* Right: theme toggle + auth + hamburger */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.4rem", flexShrink: 0 }}>
+        {/* Center pill — flex:1 + justify-content:center = always geometrically centered */}
+        <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+          {/* Desktop (lg+): all links */}
+          <ul className="hidden lg:flex" style={pillBase}>
+            {allLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="gradient-hover-sea"
+                  style={{ padding: "0.5rem 0.85rem", display: "block", borderRadius: "99px", fontSize: "0.875rem" }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* Tablet (sm–lg): core links only */}
+          <ul className="hidden sm:flex lg:hidden" style={pillBase}>
+            {coreLinks.map(({ href, label }) => (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className="gradient-hover-sea"
+                  style={{ padding: "0.45rem 0.9rem", display: "block", borderRadius: "99px", fontSize: "0.83rem" }}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Right: theme toggle + auth + hamburger — flex:1 mirrors the left */}
+        <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "0.4rem" }}>
           <ThemeToggle />
           <NavAuthSection />
           <button
