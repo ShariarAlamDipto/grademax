@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
-import pdfParse from "pdf-parse"
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 const GROQ_MODEL = "llama-3.3-70b-versatile"
@@ -64,10 +63,11 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "GROQ_API_KEY not configured" }, { status: 500 })
   }
 
-  // Extract text from PDF if needed
+  // Extract text from PDF if needed (dynamic import avoids pdf-parse reading test files at build time)
   let specContent = specText
   if (specPdfBase64) {
     try {
+      const pdfParse = (await import("pdf-parse")).default
       const pdfBuffer = Buffer.from(specPdfBase64, "base64")
       const parsed = await pdfParse(pdfBuffer)
       specContent = parsed.text || ""
