@@ -63,32 +63,32 @@ export default function Navbar() {
     >
       {/* ── Main bar ── */}
       <div style={{
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns: "1fr auto 1fr",
         alignItems: "center",
         padding: "0 1.25rem",
         height: "68px",
       }}>
 
-        {/* Left: logo — flex:1 so it mirrors the right section width */}
-        <div style={{ flex: 1, display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
-          <Link
-            href="/"
-            style={{
-              color: "var(--gm-text)",
-              fontWeight: 800,
-              fontSize: "1.35rem",
-              letterSpacing: "-0.04em",
-              textDecoration: "none",
-              lineHeight: 1,
-              whiteSpace: "nowrap",
-            }}
-          >
-            Grade<span style={{ color: "var(--gm-amber)" }}>Max</span>
-          </Link>
-        </div>
+        {/* Left: logo */}
+        <Link
+          href="/"
+          style={{
+            color: "var(--gm-text)",
+            fontWeight: 800,
+            fontSize: "1.35rem",
+            letterSpacing: "-0.04em",
+            textDecoration: "none",
+            lineHeight: 1,
+            whiteSpace: "nowrap",
+            justifySelf: "start",
+          }}
+        >
+          Grade<span style={{ color: "var(--gm-amber)" }}>Max</span>
+        </Link>
 
-        {/* Center pill — flex:1 + justify-content:center = always geometrically centered */}
-        <div style={{ flex: 1, display: "flex", justifyContent: "center" }}>
+        {/* Center: pill — auto column, always between two equal 1fr columns */}
+        <div>
           {/* Desktop (lg+): all links */}
           <ul className="hidden lg:flex" style={pillBase}>
             {allLinks.map(({ href, label }) => (
@@ -120,8 +120,8 @@ export default function Navbar() {
           </ul>
         </div>
 
-        {/* Right: theme toggle + auth + hamburger — flex:1 mirrors the left */}
-        <div style={{ flex: 1, display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "0.4rem" }}>
+        {/* Right: theme toggle + auth + hamburger */}
+        <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "0.4rem" }}>
           <ThemeToggle />
           <NavAuthSection />
           <button

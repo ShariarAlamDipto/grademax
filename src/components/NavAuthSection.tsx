@@ -22,7 +22,7 @@ export default function NavAuthSection() {
     ? displayName.split(" ").map((n: string) => n[0]).join("").toUpperCase().slice(0, 2)
     : "?"
 
-  if (loading) return null
+  if (loading) return <div style={{ width: "80px", height: "34px" }} />
 
   if (!user) {
     return (
