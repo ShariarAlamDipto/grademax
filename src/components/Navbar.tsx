@@ -63,12 +63,12 @@ export default function Navbar() {
     >
       {/* ── Main bar ── */}
       <div style={{
-        display: "grid",
-        gridTemplateColumns: "auto 1fr auto",
+        position: "relative",
+        display: "flex",
         alignItems: "center",
+        justifyContent: "space-between",
         padding: "0 1.25rem",
         height: "68px",
-        gap: "0.75rem",
       }}>
 
         {/* Logo */}
@@ -82,45 +82,45 @@ export default function Navbar() {
             textDecoration: "none",
             lineHeight: 1,
             whiteSpace: "nowrap",
+            flexShrink: 0,
           }}
         >
           Grade<span style={{ color: "var(--gm-amber)" }}>Max</span>
         </Link>
 
-        {/* Center pill — Tailwind controls display; NO inline display property */}
-        <div style={{ display: "flex", justifyContent: "center", minWidth: 0, overflow: "hidden" }}>
+        {/* Center pill — absolutely positioned so it's always centered on the navbar */}
+        <div style={{ position: "absolute", left: "50%", transform: "translateX(-50%)", pointerEvents: "none" }}>
+          <div style={{ pointerEvents: "auto" }}>
+            {/* Desktop (lg+): all links */}
+            <ul className="hidden lg:flex" style={pillBase}>
+              {allLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="gradient-hover-sea"
+                    style={{ padding: "0.5rem 0.85rem", display: "block", borderRadius: "99px", fontSize: "0.875rem" }}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
-          {/* Desktop (lg+): all 6 links */}
-          <ul className="hidden lg:flex" style={pillBase}>
-            {allLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="gradient-hover-sea"
-                  style={{ padding: "0.5rem 0.85rem", display: "block", borderRadius: "99px", fontSize: "0.875rem" }}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Tablet (sm–lg): core 3 only */}
-          <ul className="hidden sm:flex lg:hidden" style={pillBase}>
-            {coreLinks.map(({ href, label }) => (
-              <li key={href}>
-                <Link
-                  href={href}
-                  className="gradient-hover-sea"
-                  style={{ padding: "0.45rem 0.9rem", display: "block", borderRadius: "99px", fontSize: "0.83rem" }}
-                >
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile (<sm): nothing in center row — links shown in row below */}
+            {/* Tablet (sm–lg): core links only */}
+            <ul className="hidden sm:flex lg:hidden" style={pillBase}>
+              {coreLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className="gradient-hover-sea"
+                    style={{ padding: "0.45rem 0.9rem", display: "block", borderRadius: "99px", fontSize: "0.83rem" }}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Right: theme toggle + auth + hamburger */}
