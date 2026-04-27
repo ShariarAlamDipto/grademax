@@ -9,7 +9,7 @@
  *
  * Maths B / new subjects: topics table stores numeric codes ("1"–"10"); no mapping needed.
  *
- * Chemistry/Bio: topics table stores "1.1", "1.2" etc.; regex extracts leading digit.
+ * Chemistry/Bio: topics table stores "1.1", "1.2" etc.; passed through unchanged to match pages.topics.
  */
 const CODE_TO_ID: Record<string, string> = {
   // Further Pure Maths (4PM1 / 9FM0)
@@ -25,8 +25,11 @@ export function normalizeTopicCodes(codes: string[]): string[] {
   for (const code of codes) {
     if (CODE_TO_ID[code]) {
       normalized.add(CODE_TO_ID[code])
+    } else if (code.includes('.')) {
+      // Chemistry/Bio granular codes ("1.1", "2.4", etc.) — stored as-is in pages.topics
+      normalized.add(code)
     } else {
-      // Chemistry/Bio: "1.1" → "1". Plain numerics ("1", "2") pass through unchanged.
+      // Plain numerics ("1", "2") pass through unchanged
       const match = code.match(/^(\d+)/)
       normalized.add(match ? match[1] : code)
     }

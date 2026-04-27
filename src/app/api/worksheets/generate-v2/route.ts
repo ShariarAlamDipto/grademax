@@ -58,7 +58,7 @@ export async function POST(request: Request) {
       );
     }
 
-    // Normalize topic codes: FPM YAML codes → numeric IDs; Physics codes pass through; Chemistry/Bio extracts leading digit
+    // Normalize topic codes: FPM/Physics descriptive codes → numeric IDs; Chemistry/Bio "1.1" style → pass through as-is
     const topics = normalizeTopicCodes(rawTopics);
 
     const supabase = getSupabaseAdmin() || auth.db;
