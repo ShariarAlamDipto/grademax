@@ -1,0 +1,1035 @@
+# IGCSE Human Biology Topic Catalogue v1.0
+# Edexcel IGCSE Human Biology Specification (4HB1) — 12 chapters
+# Papers: 4HB1/01 and 4HB1/02
+
+version: "1.0"
+subject:
+  code: "4HB1"
+  name: "Human Biology"
+  board: "Edexcel"
+  level: "International GCSE"
+
+schema:
+  tag_unit: "question"
+  keep_context: true
+  allow_multi_tag: false
+  output_format: "json"
+
+topics:
+  - id: "1"
+    code: "CT"
+    name: "Cells and tissues"
+    description: "Cell ultrastructure, DNA structure and replication, protein synthesis, mitosis, stem cells, tissue and organ organisation, genetic engineering"
+    keywords:
+      - nucleus
+      - chromosome
+      - cell membrane
+      - mitochondria
+      - endoplasmic reticulum
+      - ribosome
+      - cytoplasm
+      - cell wall
+      - vacuole
+      - electron microscope
+      - light microscope
+      - ultrastructure
+      - DNA
+      - double helix
+      - nucleotide
+      - base pair
+      - complementary bases
+      - adenine
+      - thymine
+      - guanine
+      - cytosine
+      - uracil
+      - hydrogen bond
+      - gene
+      - allele
+      - mutation
+      - DNA replication
+      - DNA polymerase
+      - base sequence
+      - RNA
+      - mRNA
+      - tRNA
+      - transcription
+      - translation
+      - codon
+      - anticodon
+      - amino acid
+      - polypeptide
+      - protein synthesis
+      - mitosis
+      - prophase
+      - metaphase
+      - anaphase
+      - telophase
+      - diploid
+      - daughter cell
+      - stem cell
+      - embryonic stem cell
+      - adult stem cell
+      - differentiation
+      - pluripotent
+      - totipotent
+      - tissue
+      - organ
+      - epithelium
+      - squamous epithelium
+      - ciliated epithelium
+      - cardiac muscle
+      - nervous tissue
+      - sperm cell
+      - ovum
+      - gamete
+      - acrosome
+      - flagellum
+      - haploid
+      - genetic engineering
+      - genetically modified
+      - GM bacteria
+      - human insulin GM
+      - golden rice
+      - recombinant DNA
+      - restriction enzyme
+      - ligase
+    synonyms:
+      - cell biology
+      - cell structure
+      - gene expression
+      - cell division
+
+  - id: "2"
+    code: "BM"
+    name: "Biological molecules"
+    description: "Structure of carbohydrates, proteins and lipids; food tests; enzyme action and kinetics; factors affecting enzyme activity; immobilised enzymes"
+    keywords:
+      - carbohydrate
+      - monosaccharide
+      - disaccharide
+      - polysaccharide
+      - glucose
+      - fructose
+      - sucrose
+      - maltose
+      - starch
+      - glycogen
+      - cellulose
+      - protein
+      - peptide bond
+      - lipid
+      - fat
+      - oil
+      - fatty acid
+      - glycerol
+      - triglyceride
+      - saturated
+      - unsaturated
+      - monomer
+      - polymer
+      - Benedict's test
+      - reducing sugar
+      - iodine test
+      - starch test
+      - Biuret test
+      - emulsion test
+      - food test
+      - colour change
+      - brick red
+      - blue-black
+      - purple
+      - vitamin C
+      - DCPIP
+      - titration
+      - energy content
+      - calorimeter
+      - combustion
+      - enzyme
+      - biological catalyst
+      - substrate
+      - active site
+      - enzyme-substrate complex
+      - lock and key
+      - induced fit
+      - denatured
+      - optimum temperature
+      - optimum pH
+      - substrate concentration
+      - rate of reaction
+      - competitive inhibitor
+      - non-competitive inhibitor
+      - activation energy
+      - immobilised enzyme
+      - alginate bead
+      - lactose-free milk
+      - lactase
+      - sucrase
+    synonyms:
+      - biological chemistry
+      - food test
+      - enzyme kinetics
+
+  - id: "3"
+    code: "MS"
+    name: "Movement of substances in and out of cells"
+    description: "Diffusion, osmosis and water potential, active transport, surface area to volume ratio, factors affecting rate of movement"
+    keywords:
+      - diffusion
+      - concentration gradient
+      - high concentration
+      - low concentration
+      - passive movement
+      - random movement
+      - net movement
+      - osmosis
+      - water potential
+      - partially permeable membrane
+      - semi-permeable membrane
+      - solute
+      - solvent
+      - water molecule
+      - turgid
+      - flaccid
+      - plasmolysed
+      - hypertonic
+      - hypotonic
+      - isotonic
+      - turgor pressure
+      - Visking tubing
+      - dialysis tubing
+      - active transport
+      - against concentration gradient
+      - carrier protein
+      - protein pump
+      - surface area to volume ratio
+      - SA:V ratio
+      - fick's law
+    synonyms:
+      - membrane transport
+      - transport across membrane
+
+  - id: "4"
+    code: "BMJ"
+    name: "Bones, muscles and joints"
+    description: "Axial and appendicular skeleton, bone structure, types of joints, antagonistic muscle action, bone health and osteoporosis"
+    keywords:
+      - skeleton
+      - axial skeleton
+      - appendicular skeleton
+      - vertebral column
+      - spine
+      - ribcage
+      - skull
+      - scapula
+      - clavicle
+      - pelvis
+      - humerus
+      - radius
+      - ulna
+      - femur
+      - tibia
+      - fibula
+      - long bone
+      - compact bone
+      - spongy bone
+      - epiphysis
+      - diaphysis
+      - periosteum
+      - bone marrow
+      - red marrow
+      - yellow marrow
+      - joint
+      - synovial joint
+      - cartilage
+      - synovial fluid
+      - synovial membrane
+      - ligament
+      - tendon
+      - elbow joint
+      - shoulder joint
+      - ball and socket
+      - hinge joint
+      - biceps
+      - triceps
+      - antagonistic muscles
+      - flexion
+      - extension
+      - contraction
+      - relaxation
+      - skeletal muscle
+      - osteoporosis
+      - bone density
+      - calcium diet
+      - vitamin D
+      - fracture risk
+    synonyms:
+      - musculoskeletal system
+      - skeletal system
+
+  - id: "5"
+    code: "CO"
+    name: "Coordination"
+    description: "Nervous system, nerve impulses and synapses, reflex arc, endocrine system, eye, ear, drugs and their effects, mental illness, neurodegenerative diseases"
+    keywords:
+      - neurone
+      - sensory neurone
+      - motor neurone
+      - relay neurone
+      - central nervous system
+      - CNS
+      - peripheral nervous system
+      - brain
+      - spinal cord
+      - cerebral hemisphere
+      - cerebellum
+      - medulla oblongata
+      - hypothalamus
+      - pituitary gland
+      - reflex arc
+      - reflex action
+      - involuntary action
+      - receptor
+      - effector
+      - stimulus
+      - response
+      - nerve impulse
+      - action potential
+      - axon
+      - dendrite
+      - myelin sheath
+      - node of Ranvier
+      - synapse
+      - neurotransmitter
+      - acetylcholine
+      - synaptic cleft
+      - synaptic vesicle
+      - hormone
+      - endocrine gland
+      - target organ
+      - adrenaline
+      - adrenal gland
+      - thyroid gland
+      - thyroxine
+      - FSH
+      - LH
+      - oestrogen
+      - progesterone
+      - testosterone
+      - growth hormone
+      - eye
+      - cornea
+      - lens
+      - retina
+      - iris
+      - pupil
+      - ciliary muscle
+      - suspensory ligament
+      - sclera
+      - choroid
+      - optic nerve
+      - rods
+      - cones
+      - accommodation
+      - near vision
+      - distant vision
+      - short sight
+      - myopia
+      - long sight
+      - hyperopia
+      - astigmatism
+      - cataract
+      - ear
+      - cochlea
+      - semi-circular canal
+      - ossicles
+      - malleus
+      - incus
+      - stapes
+      - eardrum
+      - tympanic membrane
+      - auditory nerve
+      - hearing
+      - drug
+      - heroin
+      - cannabis
+      - cocaine
+      - painkiller
+      - analgesic
+      - opioid
+      - depressant
+      - stimulant
+      - hallucinogen
+      - addiction
+      - withdrawal
+      - alcohol
+      - reaction time
+      - mental illness
+      - schizophrenia
+      - depression
+      - antidepressant
+      - serotonin
+      - dopamine
+      - Alzheimer's disease
+      - dementia
+      - Parkinson's disease
+    synonyms:
+      - nervous control
+      - hormonal control
+      - coordination and response
+
+  - id: "6"
+    code: "NE"
+    name: "Nutrition and energy"
+    description: "Balanced diet, deficiency diseases, digestive system, enzymes in digestion, absorption in small intestine, dental health, obesity and cardiovascular risk"
+    keywords:
+      - balanced diet
+      - dietary fibre
+      - roughage
+      - water intake
+      - energy requirements
+      - vitamin A
+      - vitamin C
+      - vitamin D
+      - iron
+      - deficiency disease
+      - scurvy
+      - anaemia
+      - iron deficiency
+      - blindness
+      - Kwashiorkor
+      - protein deficiency
+      - rickets
+      - night blindness
+      - alimentary canal
+      - gut
+      - mouth
+      - salivary gland
+      - oesophagus
+      - stomach
+      - small intestine
+      - duodenum
+      - ileum
+      - large intestine
+      - colon
+      - rectum
+      - anus
+      - pancreas
+      - liver digestion
+      - gall bladder
+      - bile
+      - peristalsis
+      - gastric juice
+      - mechanical digestion
+      - chemical digestion
+      - chyme
+      - bolus
+      - salivary amylase
+      - amylase
+      - maltase
+      - pepsin
+      - trypsin
+      - protease
+      - lipase
+      - enzyme digestion
+      - starch to glucose
+      - protein to amino acid
+      - lipid to fatty acid
+      - lipid to glycerol
+      - emulsification
+      - bile salt
+      - villus
+      - villi
+      - microvillus
+      - lacteal
+      - blood capillary villus
+      - absorption products
+      - incisor
+      - canine
+      - premolar
+      - molar
+      - enamel
+      - dentine
+      - pulp cavity
+      - tooth decay
+      - dental caries
+      - plaque
+      - fluoride
+      - BMI
+      - body mass index
+      - obesity
+      - overweight
+      - cholesterol
+      - atherosclerosis
+      - cardiovascular risk
+      - LDL
+      - HDL
+      - food hygiene
+      - pasteurisation
+      - food poisoning
+      - Salmonella
+    synonyms:
+      - human digestion
+      - digestive system
+      - nutrition
+
+  - id: "7"
+    code: "RS"
+    name: "Respiration"
+    description: "Aerobic and anaerobic respiration, ATP and energy transfer, oxygen debt"
+    keywords:
+      - aerobic respiration
+      - oxygen respiration
+      - glucose respiration
+      - carbon dioxide respiration
+      - water respiration
+      - energy release
+      - mitochondria respiration
+      - word equation aerobic
+      - symbol equation
+      - C6H12O6
+      - ATP production aerobic
+      - complete oxidation
+      - anaerobic respiration
+      - lactic acid
+      - lactate
+      - ethanol
+      - fermentation
+      - yeast
+      - no oxygen
+      - word equation anaerobic
+      - muscle fatigue
+      - oxygen debt
+      - EPOC
+      - repay oxygen debt
+      - breathing hard after exercise
+      - ATP
+      - adenosine triphosphate
+      - ADP
+      - phosphate group
+      - energy currency
+      - energy transfer
+      - hydrolysis ATP
+      - phosphorylation
+    synonyms:
+      - cellular respiration
+      - energy release
+      - aerobic vs anaerobic
+
+  - id: "8"
+    code: "GE"
+    name: "Gas exchange"
+    description: "Ventilation mechanism, gas exchange in alveoli, lung volumes, exercise and cardiovascular response, effects of smoking"
+    keywords:
+      - thorax
+      - rib
+      - intercostal muscle
+      - external intercostal
+      - internal intercostal
+      - diaphragm
+      - trachea
+      - bronchus
+      - bronchi
+      - bronchiole
+      - alveolus
+      - alveoli
+      - pleural membrane
+      - pleural cavity
+      - pleural fluid
+      - inhalation
+      - exhalation
+      - inspiration
+      - expiration
+      - ventilation
+      - breathing movement
+      - pressure change
+      - volume change
+      - gas exchange
+      - diffusion lung
+      - oxygen absorption
+      - carbon dioxide removal
+      - large surface area alveoli
+      - thin walls alveoli
+      - moist surface
+      - good blood supply
+      - capillary network lung
+      - concentration gradient lung
+      - haemoglobin oxygenation
+      - oxyhaemoglobin
+      - tidal volume
+      - vital capacity
+      - lung capacity
+      - residual volume
+      - spirometer
+      - spirometer trace
+      - breathing rate
+      - depth breathing
+      - exercise
+      - pulse rate
+      - heart rate exercise
+      - resting pulse
+      - physical fitness
+      - aerobic exercise
+      - cardiovascular benefit
+      - cardiac output
+      - stroke volume
+      - adrenaline heart
+      - oxygen demand
+      - chemoreceptor
+      - carotid body
+      - CO2 level blood
+      - breathing control
+      - medulla oblongata breathing
+      - oxygen debt exercise
+      - recovery rate
+      - smoking
+      - cigarette
+      - tar
+      - nicotine
+      - carbon monoxide
+      - carcinogen
+      - lung cancer
+      - emphysema
+      - bronchitis
+      - cilia damage
+      - mucus smoking
+      - reduced gas exchange
+    synonyms:
+      - lung ventilation
+      - breathing mechanism
+      - respiratory system
+
+  - id: "9"
+    code: "IT"
+    name: "Internal transport"
+    description: "Blood composition and function, blood vessels, heart structure and function, cardiovascular disease, blood pressure, monoclonal antibodies"
+    keywords:
+      - blood
+      - red blood cell
+      - erythrocyte
+      - white blood cell
+      - leucocyte
+      - phagocyte
+      - lymphocyte
+      - platelet
+      - plasma
+      - haemoglobin
+      - biconcave disc
+      - no nucleus red blood cell
+      - oxygen carrying
+      - carbon dioxide transport
+      - urea transport
+      - hormone transport
+      - tissue fluid
+      - lymph
+      - lymphatic system
+      - lymph node
+      - lymph vessel
+      - ABO blood group
+      - antigen red blood cell
+      - blood transfusion
+      - compatible blood
+      - clotting
+      - fibrin
+      - fibrinogen
+      - thrombin
+      - thromboplastin
+      - platelet plug
+      - artery
+      - vein
+      - capillary
+      - arteriole
+      - venule
+      - lumen
+      - elastic fibre
+      - muscle layer
+      - valve vein
+      - one cell thick capillary
+      - high pressure artery
+      - pulse artery
+      - blood pressure vessel
+      - heart
+      - atrium
+      - ventricle
+      - left atrium
+      - right atrium
+      - left ventricle
+      - right ventricle
+      - atrioventricular valve
+      - semilunar valve
+      - bicuspid valve
+      - tricuspid valve
+      - pulmonary artery
+      - pulmonary vein
+      - aorta
+      - vena cava
+      - coronary artery
+      - heartbeat
+      - cardiac cycle
+      - systole
+      - diastole
+      - pacemaker
+      - sinoatrial node
+      - double circulation
+      - pulmonary circulation
+      - systemic circulation
+      - heart disease
+      - coronary heart disease
+      - atherosclerosis coronary
+      - plaque coronary
+      - myocardial infarction
+      - heart attack
+      - angina
+      - stent
+      - artificial heart
+      - heart transplant
+      - rejection transplant
+      - immunosuppressant
+      - statin
+      - plant stanol ester
+      - beta-blocker
+      - ACE inhibitor
+      - blood pressure
+      - systolic
+      - diastolic
+      - hypertension
+      - stroke
+      - monoclonal antibody
+      - hybridoma cell
+      - B lymphocyte
+      - myeloma cell
+      - antibody production
+      - specific antigen
+      - cancer treatment
+      - targeted therapy
+      - diagnostic test
+      - pregnancy test
+      - ELISA
+      - tumour marker
+    synonyms:
+      - circulatory system
+      - cardiovascular system
+      - blood circulation
+
+  - id: "10"
+    code: "HM"
+    name: "Homeostatic mechanisms"
+    description: "Homeostasis and negative feedback, temperature regulation, kidney structure and function, osmoregulation and ADH, blood glucose regulation, liver functions"
+    keywords:
+      - homeostasis
+      - negative feedback
+      - set point
+      - deviation
+      - corrective mechanism
+      - internal environment
+      - constant conditions
+      - thermoregulation
+      - temperature regulation
+      - sweat gland
+      - sweating
+      - evaporation cooling
+      - vasoconstriction
+      - vasodilation
+      - shivering
+      - hair erect
+      - goosebumps
+      - subcutaneous fat
+      - dermis
+      - epidermis
+      - hair follicle
+      - sebaceous gland
+      - capillary loop skin
+      - hypothalamus temperature
+      - thermoreceptor
+      - core temperature
+      - excretion
+      - metabolic waste
+      - urea excretion
+      - kidney
+      - nephron
+      - Bowman's capsule
+      - glomerulus
+      - proximal tubule
+      - loop of Henle
+      - distal tubule
+      - collecting duct
+      - renal cortex
+      - renal medulla
+      - pelvis kidney
+      - ureter
+      - bladder
+      - urethra
+      - ultrafiltration
+      - selective reabsorption
+      - urine
+      - urine composition
+      - glucose in urine
+      - urea in urine
+      - kidney dialysis
+      - kidney transplant
+      - renal failure
+      - haemodialysis
+      - peritoneal dialysis
+      - osmoregulation
+      - water potential blood
+      - ADH
+      - antidiuretic hormone
+      - posterior pituitary
+      - collecting duct permeability
+      - concentrated urine
+      - dilute urine
+      - dehydration
+      - blood glucose
+      - blood sugar
+      - insulin
+      - glucagon
+      - pancreas islets
+      - glycogen
+      - glycogenesis
+      - glycogenolysis
+      - liver blood glucose
+      - diabetes mellitus
+      - type 1 diabetes
+      - type 2 diabetes
+      - insulin injection
+      - hyperglycaemia
+      - hypoglycaemia
+      - liver
+      - bile production liver
+      - detoxification
+      - urea formation
+      - deamination
+      - glycogen liver
+      - alcohol breakdown
+      - drug breakdown liver
+      - plasma protein liver
+    synonyms:
+      - internal regulation
+      - temperature control
+      - blood sugar control
+      - kidney function
+
+  - id: "11"
+    code: "RH"
+    name: "Reproduction and heredity"
+    description: "Meiosis, reproductive systems, menstrual cycle, pregnancy, contraception, IVF, genetics and inheritance, inherited conditions, gene therapy"
+    keywords:
+      - fertilisation
+      - zygote
+      - embryo
+      - fetus
+      - foetus
+      - implantation
+      - meiosis
+      - crossing over
+      - independent assortment
+      - random fertilisation
+      - testis
+      - ovary
+      - uterus
+      - fallopian tube
+      - oviduct
+      - cervix
+      - vagina
+      - penis
+      - sperm duct
+      - epididymis
+      - seminal vesicle
+      - prostate gland
+      - seminiferous tubule
+      - menstrual cycle
+      - menstruation
+      - ovulation
+      - oestrogen cycle
+      - progesterone cycle
+      - FSH cycle
+      - LH cycle
+      - follicle
+      - corpus luteum
+      - uterine lining
+      - endometrium
+      - pregnancy
+      - placenta
+      - umbilical cord
+      - amniotic fluid
+      - amniotic sac
+      - gestation
+      - birth
+      - labour
+      - oxytocin
+      - breastfeeding
+      - colostrum
+      - growth curve
+      - puberty
+      - secondary sexual characteristics
+      - menarche
+      - contraception
+      - contraceptive pill
+      - hormonal contraception
+      - condom
+      - barrier method
+      - diaphragm
+      - IUD
+      - intrauterine device
+      - sterilisation
+      - vasectomy
+      - tubal ligation
+      - IVF
+      - in vitro fertilisation
+      - fertility treatment
+      - embryo transfer
+      - dominant
+      - recessive
+      - homozygous
+      - heterozygous
+      - phenotype
+      - genotype
+      - co-dominance
+      - sex chromosome
+      - XX female
+      - XY male
+      - sex determination
+      - Punnett square
+      - genetic diagram
+      - monohybrid cross
+      - ratio offspring
+      - pedigree chart
+      - family tree genetics
+      - ABO blood group inheritance
+      - multiple allele
+      - IA IB i alleles
+      - sex-linked
+      - X-linked
+      - haemophilia
+      - colour blindness
+      - red-green colour blindness
+      - polydactyly
+      - cystic fibrosis
+      - recessive disorder
+      - dominant disorder
+      - carrier
+      - gene therapy
+      - viral vector
+      - variation genetic
+      - variation environmental
+      - continuous variation
+      - discontinuous variation
+    synonyms:
+      - human reproduction
+      - genetics
+      - inheritance
+      - Mendelian genetics
+
+  - id: "12"
+    code: "HDI"
+    name: "Health, disease and immunity"
+    description: "Types of disease, pathogens, spread and prevention, physical and chemical barriers, phagocytosis, antibodies and lymphocytes, vaccination, antibiotics and resistance"
+    keywords:
+      - health
+      - disease
+      - communicable disease
+      - non-communicable disease
+      - infectious disease
+      - pathogen
+      - bacteria disease
+      - virus disease
+      - fungi disease
+      - parasite
+      - transmission
+      - vector
+      - Anopheles mosquito
+      - malaria
+      - HIV
+      - AIDS
+      - tuberculosis
+      - TB
+      - cholera
+      - influenza
+      - measles
+      - typhoid
+      - droplet infection
+      - contaminated water
+      - sexually transmitted
+      - STI
+      - contact transmission
+      - physical barrier
+      - chemical barrier
+      - skin barrier
+      - mucus
+      - ciliated epithelium barrier
+      - stomach acid
+      - immune response
+      - phagocytosis
+      - phagocyte
+      - engulf
+      - pathogen destruction
+      - antigen
+      - antibody
+      - B lymphocyte
+      - T lymphocyte
+      - immunological memory
+      - secondary immune response
+      - immunity
+      - active immunity
+      - passive immunity
+      - natural immunity
+      - artificial immunity
+      - vaccination
+      - vaccine
+      - dead pathogen
+      - attenuated pathogen
+      - herd immunity
+      - antibiotic
+      - penicillin
+      - antibiotic resistance
+      - MRSA
+      - overuse of antibiotics
+      - antifungal
+      - antiviral
+      - cancer
+      - tumour
+      - benign tumour
+      - malignant tumour
+      - carcinogen
+      - risk factor cancer
+      - coronary heart disease risk
+      - lifestyle disease
+    synonyms:
+      - immunity
+      - infectious disease
+      - disease prevention
+
+# ── NEGATIVE KEYWORDS ──────────────────────────────────────────────────────────
+negatives:
+  - "organic chemistry"
+  - "inorganic"
+  - "atomic structure"
+  - "electron configuration"
+  - "molar"
+  - "acid base reaction"
+  - "periodic table"
+  - "halogen"
+  - "electrolysis"
+  - "ionic bonding"
+  - "covalent bonding"
+  - "plant cell"
+  - "photosynthesis"
+  - "xylem"
+  - "phloem"
+  - "transpiration"
+  - "ecosystem"
+  - "food web"
+  - "nitrogen cycle"
+  - "carbon cycle"
+
+# ── DIFFICULTY INDICATORS ──────────────────────────────────────────────────────
+difficulty:
+  easy:
+    command_words: ["define", "state", "name", "identify", "label", "give", "list", "write down", "complete the table", "write the formula"]
+    characteristics: ["single recall", "direct labelling", "simple identification"]
+  medium:
+    command_words: ["calculate", "explain", "describe", "compare", "suggest", "draw", "predict", "show that", "write an equation", "balance"]
+    characteristics: ["multi-step", "application", "linking concepts"]
+  hard:
+    command_words: ["design an experiment", "evaluate", "discuss", "assess", "justify", "suggest why", "analyse", "deduce", "devise"]
+    characteristics: ["experimental design", "evaluation", "synthesis", "unfamiliar context"]
