@@ -148,40 +148,6 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     }
   }, [worksheetUrl, isMobile, fullscreenPdf]);
 
-  // Auto-download PDFs on mobile after worksheet is generated
-  useEffect(() => {
-    if (isMobile && worksheetId && !worksheetUrl && !pdfProgress && !loading) {
-      const autoDownload = async () => {
-        setPdfProgress({ step: 1, total: 3, label: 'Building worksheet PDF...' });
-        try {
-          const worksheetResponse = await fetch(`/api/worksheets/${worksheetId}/download?type=worksheet`);
-          if (!worksheetResponse.ok) {
-            const errorData = await worksheetResponse.json();
-            throw new Error(errorData.error || 'Failed to generate worksheet PDF');
-          }
-          const worksheetBlob = await worksheetResponse.blob();
-          const wUrl = URL.createObjectURL(worksheetBlob);
-          setWorksheetUrl(wUrl);
-
-          setPdfProgress({ step: 2, total: 3, label: 'Building markscheme PDF...' });
-          const markschemeResponse = await fetch(`/api/worksheets/${worksheetId}/download?type=markscheme`);
-          if (markschemeResponse.ok) {
-            const markschemeBlob = await markschemeResponse.blob();
-            const msUrl = URL.createObjectURL(markschemeBlob);
-            setMarkschemeUrl(msUrl);
-          }
-
-          setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
-          setTimeout(() => setPdfProgress(null), 2000);
-        } catch (err: unknown) {
-          setError(err instanceof Error ? err.message : 'Failed to generate PDFs');
-          setPdfProgress(null);
-        }
-      };
-      autoDownload();
-    }
-  }, [worksheetId, isMobile, worksheetUrl, pdfProgress, loading]);
-
   const toggleTopic = (code: string) => {
     setSelectedTopics(prev =>
       prev.includes(code)
