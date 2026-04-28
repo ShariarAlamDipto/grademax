@@ -114,9 +114,11 @@ export default function QuestionPreviewModal({
           <div className="flex-1 min-h-0 p-3">
             <iframe
               key={currentUrl}
-              src={`${currentUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+              src={`${currentUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH&pagemode=none`}
               className="w-full h-full rounded-lg border border-gray-700 bg-white"
               title={`Q${question.questionNumber} ${activeTab === 'ms' ? 'Mark Scheme' : 'Question Paper'}`}
+              allowFullScreen
+              style={{ display: 'block' }}
             />
           </div>
 
@@ -216,9 +218,11 @@ export default function QuestionPreviewModal({
         <div className="flex-1 min-h-0 overflow-hidden">
           <iframe
             key={currentUrl}
-            src={`${currentUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+            src={`${currentUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH&pagemode=none`}
             className="w-full h-full border-0 bg-white"
             title={`Q${question.questionNumber} ${activeTab === 'ms' ? 'Mark Scheme' : 'Question Paper'}`}
+            allowFullScreen
+            style={{ display: 'block' }}
           />
         </div>
 
