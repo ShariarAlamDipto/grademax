@@ -215,6 +215,10 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   };
 
   const clearBasket = () => {
+    // Revoke object URLs to prevent memory leaks
+    if (worksheetUrl) URL.revokeObjectURL(worksheetUrl);
+    if (markschemeUrl) URL.revokeObjectURL(markschemeUrl);
+
     setBasketItems([]);
     setWorksheetUrl(null);
     setMarkschemeUrl(null);
@@ -229,6 +233,11 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
     setGenerating(true);
     setError(null);
+
+    // Revoke previous object URLs before creating new ones
+    if (worksheetUrl) URL.revokeObjectURL(worksheetUrl);
+    if (markschemeUrl) URL.revokeObjectURL(markschemeUrl);
+
     setWorksheetUrl(null);
     setMarkschemeUrl(null);
 
@@ -298,7 +307,9 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             sequenceOrder: index + 1,
           })),
         }),
-      }).catch(err => console.warn('[test-builder] Background save failed:', err));
+      }).catch(() => {
+        // Silent error — background save is non-critical
+      });
 
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Failed to generate PDF');
