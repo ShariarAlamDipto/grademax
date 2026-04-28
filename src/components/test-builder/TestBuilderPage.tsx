@@ -68,7 +68,9 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
   // ── Preview ──
   const [previewQuestion, setPreviewQuestion] = useState<QuestionItem | null>(null);
-  
+  const [showMobilePreview, setShowMobilePreview] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
   // ── PDF Generation ──
   const [generating, setGenerating] = useState(false);
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
@@ -117,6 +119,20 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     setSearchTriggered(false);
     setError(null);
   }, [selectedSubject]);
+
+  // Detect mobile and auto-open drawer when first item added
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile && basketItems.length === 1) {
+      setShowMobilePreview(true);
+    }
+  }, [basketItems, isMobile]);
 
   // ─────────────────────────────────────────────
   // Fetch questions
@@ -509,7 +525,77 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             />
           </div>
         </div>
+
+        {/* Mobile Preview Drawer Overlay */}
+        {isMobile && showMobilePreview && (
+          <>
+            {/* Backdrop */}
+            <div
+              className="fixed inset-0 z-30 bg-black/50 backdrop-blur-sm"
+              onClick={() => setShowMobilePreview(false)}
+            />
+
+            {/* Drawer Panel */}
+            <div className="fixed bottom-0 left-0 right-0 top-[60px] z-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col rounded-t-2xl overflow-hidden">
+              {/* Header */}
+              <div className="shrink-0 flex items-center justify-between px-4 py-3 border-b border-gray-700 bg-gray-800/80">
+                <h2 className="text-base font-bold text-white flex items-center gap-2">
+                  <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                  Preview ({basketItems.length})
+                </h2>
+                <button
+                  onClick={() => setShowMobilePreview(false)}
+                  className="p-1.5 text-gray-400 hover:text-white hover:bg-gray-700 rounded transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 min-h-0 overflow-hidden">
+                <PaperPreview
+                  items={basketItems}
+                  testTitle={testTitle}
+                  onTitleChange={setTestTitle}
+                  onRemove={removeFromBasket}
+                  onMoveUp={moveUp}
+                  onMoveDown={moveDown}
+                  onClearAll={clearBasket}
+                  onGenerate={handleGenerate}
+                  generating={generating}
+                  worksheetUrl={worksheetUrl}
+                  markschemeUrl={markschemeUrl}
+                  onDownloadQP={() => worksheetUrl && downloadFile(worksheetUrl, `${testTitle || 'test'}_question_paper.pdf`)}
+                  onDownloadMS={() => markschemeUrl && downloadFile(markschemeUrl, `${testTitle || 'test'}_mark_scheme.pdf`)}
+                  pdfProgress={pdfProgress}
+                  error={error}
+                  isAdmin={isAdmin}
+                  questionLimit={NON_ADMIN_QUESTION_LIMIT}
+                />
+              </div>
+            </div>
+          </>
+        )}
+
+        {/* Mobile FAB Button */}
+        {isMobile && basketItems.length > 0 && !showMobilePreview && (
+          <button
+            onClick={() => setShowMobilePreview(true)}
+            className="fixed bottom-6 right-6 z-30 flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95 font-bold text-2xl"
+            title="Show preview"
+          >
+            <div className="relative w-8 h-8">
+              <svg className="absolute inset-0 w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <div className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full">
+                {basketItems.length}
+              </div>
+            </div>
+          </button>
+        )}
       </div>
-    </div>
-  );
-}
