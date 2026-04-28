@@ -516,6 +516,58 @@ export const igcseBiology: SEOSubject = {
 }
 
 // ============================================================================
+// IGCSE Human Biology (4HB1)
+// ============================================================================
+
+export const igcseHumanBiology: SEOSubject = {
+  slug: "human-biology",
+  name: "Human Biology",
+  level: "igcse",
+  levelDisplay: "IGCSE",
+  examBoard: "Edexcel",
+  examCode: "4HB1",
+  colorKey: "biology",
+
+  metaTitle: "Edexcel IGCSE Human Biology Past Papers (4HB1) – Topic Questions & Mark Schemes",
+  metaDescription: "Free Edexcel IGCSE Human Biology (4HB1) past papers, topic-wise questions, and mark schemes. Cells, coordination, respiration, reproduction. 2011–2025.",
+  h1: "IGCSE Human Biology: Complete Study Guide & Past Papers",
+  shortDescription: "Master Edexcel IGCSE Human Biology with organised past paper questions and detailed mark schemes.",
+  longDescription: "GradeMax provides comprehensive IGCSE Human Biology revision with real past paper questions organised by chapter. Practice cells & tissues, biological molecules, coordination, nutrition, respiration, internal transport, homeostasis, and reproduction with full mark schemes.",
+  keywords: [
+    "IGCSE Human Biology",
+    "IGCSE Human Biology past papers",
+    "Edexcel Human Biology",
+    "4HB1 past papers",
+    "IGCSE Human Biology revision",
+    "human biology questions",
+  ],
+
+  topics: [
+    { code: "1",  name: "Cells and tissues",                         slug: "cells-and-tissues",                          description: "Cell ultrastructure, DNA structure and replication, protein synthesis, mitosis, stem cells, tissue and organ organisation, genetic engineering.",        keywords: ["cell structure", "DNA", "protein synthesis", "mitosis", "stem cells", "transcription", "translation"] },
+    { code: "2",  name: "Biological molecules",                      slug: "biological-molecules",                        description: "Structure of carbohydrates, proteins and lipids; food tests (Benedict's, iodine, Biuret); enzyme action and kinetics; immobilised enzymes.",         keywords: ["carbohydrates", "proteins", "lipids", "food tests", "enzymes", "enzyme activity", "Benedict's test"] },
+    { code: "3",  name: "Movement of substances in and out of cells",slug: "movement-of-substances",                     description: "Diffusion, osmosis and water potential, active transport, surface area to volume ratio.",                                                           keywords: ["diffusion", "osmosis", "active transport", "water potential", "concentration gradient"] },
+    { code: "4",  name: "Bones, muscles and joints",                 slug: "bones-muscles-joints",                        description: "Axial and appendicular skeleton, bone structure, synovial joints, antagonistic muscle action, osteoporosis.",                                        keywords: ["skeleton", "joints", "synovial joint", "biceps", "triceps", "antagonistic muscles", "osteoporosis"] },
+    { code: "5",  name: "Coordination",                              slug: "coordination",                                description: "Nervous system, nerve impulses and synapses, reflex arc, endocrine system, eye, ear, drugs and their effects, mental illness, neurodegenerative diseases.", keywords: ["nervous system", "neurone", "synapse", "reflex arc", "hormones", "eye", "ear", "drugs", "Alzheimer's"] },
+    { code: "6",  name: "Nutrition and energy",                      slug: "nutrition-and-energy",                        description: "Balanced diet, deficiency diseases, digestive system, enzymes in digestion, absorption in small intestine, dental health, obesity.",                  keywords: ["balanced diet", "digestion", "digestive system", "villi", "enzymes", "deficiency diseases", "BMI"] },
+    { code: "7",  name: "Respiration",                               slug: "respiration",                                 description: "Aerobic and anaerobic respiration, ATP and energy transfer, oxygen debt.",                                                                          keywords: ["aerobic respiration", "anaerobic respiration", "ATP", "lactic acid", "oxygen debt", "fermentation"] },
+    { code: "8",  name: "Gas exchange",                              slug: "gas-exchange",                                description: "Ventilation mechanism, gas exchange in alveoli, lung volumes, exercise and cardiovascular response, effects of smoking.",                            keywords: ["alveoli", "ventilation", "breathing", "spirometer", "tidal volume", "smoking", "exercise"] },
+    { code: "9",  name: "Internal transport",                        slug: "internal-transport",                          description: "Blood composition, blood vessels, heart structure and function, cardiovascular disease, blood pressure, monoclonal antibodies.",                    keywords: ["blood", "heart", "arteries", "veins", "capillaries", "heart disease", "blood pressure", "monoclonal antibodies"] },
+    { code: "10", name: "Homeostatic mechanisms",                    slug: "homeostatic-mechanisms",                      description: "Homeostasis and negative feedback, temperature regulation, kidney structure and function, osmoregulation, blood glucose regulation, liver.",         keywords: ["homeostasis", "negative feedback", "kidney", "ADH", "insulin", "glucagon", "thermoregulation", "diabetes"] },
+    { code: "11", name: "Reproduction and heredity",                 slug: "reproduction-and-heredity",                   description: "Meiosis, reproductive systems, menstrual cycle, pregnancy, contraception, IVF, genetics and inheritance, inherited conditions, gene therapy.",      keywords: ["meiosis", "menstrual cycle", "pregnancy", "genetics", "Punnett square", "inheritance", "cystic fibrosis"] },
+    { code: "12", name: "Health, disease and immunity",              slug: "health-disease-immunity",                     description: "Types of disease, pathogens, disease transmission, immune response, phagocytosis, antibodies, vaccination, antibiotics and resistance, cancer.",    keywords: ["disease", "pathogens", "immunity", "vaccination", "antibodies", "phagocytosis", "antibiotics", "cancer"] },
+  ],
+
+  faqs: [
+    { question: "What topics are in Edexcel IGCSE Human Biology (4HB1)?", answer: "Edexcel IGCSE Human Biology has 12 chapters: Cells and tissues, Biological molecules, Movement of substances, Bones and muscles, Coordination, Nutrition and energy, Respiration, Gas exchange, Internal transport, Homeostatic mechanisms, Reproduction and heredity, and Health, disease and immunity." },
+    { question: "How many papers are in IGCSE Human Biology?", answer: "Edexcel IGCSE Human Biology has two papers: Paper 1 (4HB1/01) and Paper 2 (4HB1/02), each worth 50%, lasting 1 hour 45 minutes, and marked out of 90." },
+    { question: "What is the difference between mitosis and meiosis in IGCSE Human Biology?", answer: "Mitosis produces 2 identical diploid cells for growth and repair. Meiosis produces 4 genetically different haploid cells (gametes — sperm and eggs) for sexual reproduction. Meiosis creates genetic variation through crossing over and independent assortment." },
+    { question: "What years of IGCSE Human Biology past papers are available?", answer: "GradeMax provides Edexcel IGCSE Human Biology past papers from 2011 to 2025, covering both Paper 1 and Paper 2 with mark schemes." },
+  ],
+
+  yearsAvailable: [2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
+}
+
+// ============================================================================
 // IAL — Mathematics additional modules
 // ============================================================================
 
@@ -966,6 +1018,7 @@ export const seoSubjects: SEOSubject[] = [
   igcseMathsB,
   igcseChemistry,
   igcseBiology,
+  igcseHumanBiology,
   igcseICT,
 
   // IAL — Mathematics
