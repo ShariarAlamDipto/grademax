@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import PdfPageViewer from './PdfPageViewer';
 
 interface QuestionPreviewModalProps {
   question: {
@@ -110,16 +111,11 @@ export default function QuestionPreviewModal({
             </div>
           )}
 
-          {/* PDF preview via iframe — most reliable cross-browser */}
-          <div className="flex-1 min-h-0 p-3">
-            <iframe
-              key={currentUrl}
-              src={`${currentUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH&pagemode=none`}
-              className="w-full h-full rounded-lg border border-gray-700 bg-white"
-              title={`Q${question.questionNumber} ${activeTab === 'ms' ? 'Mark Scheme' : 'Question Paper'}`}
-              allowFullScreen
-              style={{ display: 'block' }}
-            />
+          {/* PDF preview via canvas — avoids mobile "Open" prompt */}
+          <div className="flex-1 min-h-0 p-3 overflow-hidden">
+            <div className="w-full h-full rounded-lg border border-gray-700 overflow-hidden">
+              <PdfPageViewer key={currentUrl} url={currentUrl} />
+            </div>
           </div>
 
           {/* Footer action */}
@@ -214,16 +210,9 @@ export default function QuestionPreviewModal({
           </div>
         )}
 
-        {/* PDF preview via iframe */}
+        {/* PDF preview via canvas — avoids mobile "Open" prompt */}
         <div className="flex-1 min-h-0 overflow-hidden">
-          <iframe
-            key={currentUrl}
-            src={`${currentUrl}#toolbar=0&navpanes=0&scrollbar=0&view=FitH&pagemode=none`}
-            className="w-full h-full border-0 bg-white"
-            title={`Q${question.questionNumber} ${activeTab === 'ms' ? 'Mark Scheme' : 'Question Paper'}`}
-            allowFullScreen
-            style={{ display: 'block' }}
-          />
+          <PdfPageViewer key={currentUrl} url={currentUrl} />
         </div>
 
         {/* Footer actions */}
