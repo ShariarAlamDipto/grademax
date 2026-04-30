@@ -111,13 +111,16 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     fetchTopics();
   }, [selectedSubject]);
 
-  // Reset when subject changes
+  // Reset when subject changes — clear basket and any previously generated PDFs
   useEffect(() => {
     setSelectedTopics([]);
     setQuestions([]);
     setPagination({ page: 1, limit: 20, total: 0, totalPages: 0 });
     setSearchTriggered(false);
     setError(null);
+    setBasketItems([]);
+    setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
   }, [selectedSubject]);
 
   // Detect mobile and auto-open drawer when first item added
