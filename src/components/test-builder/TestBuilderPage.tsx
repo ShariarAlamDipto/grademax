@@ -610,3 +610,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           </button>
         )}
       </div>
+    </div>
+  );
+}
