@@ -7,6 +7,7 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
+    "test:headers": "node --test --loader tsx tests/worksheet-headers.test.ts",
     "ingest:papers": "tsx --env-file=.env.ingest ingest/ingest_papers.ts",
     "upload:papers": "tsx --env-file=.env.local scripts/upload-papers-r2.ts",
     "upload:final": "tsx --env-file=.env.local scripts/upload-final-to-r2.ts",
