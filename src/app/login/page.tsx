@@ -1,9 +1,16 @@
 "use client"
 import { supabase } from "@/lib/supabaseClient"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Suspense } from "react"
+
+function isInAppBrowser(): boolean {
+  if (typeof navigator === "undefined") return false
+  return /FBAN|FBAV|FBIOS|FB_IAB|Instagram|Twitter\/|LinkedInApp|MicroMessenger|BytedanceWebview|musical_ly|Snapchat|Line\//i.test(
+    navigator.userAgent
+  )
+}
 
 function LoginForm() {
   const searchParams = useSearchParams()
@@ -17,8 +24,14 @@ function LoginForm() {
   const [error, setError] = useState(callbackError || "")
   const [success, setSuccess] = useState("")
   const [loading, setLoading] = useState(false)
+  const [inAppBrowser, setInAppBrowser] = useState(false)
+
+  useEffect(() => {
+    setInAppBrowser(isInAppBrowser())
+  }, [])
 
   const signInWithGoogle = useCallback(async () => {
+    if (isInAppBrowser()) return
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: { redirectTo: `${window.location.origin}/auth/callback?next=${encodeURIComponent(nextUrl)}` },
@@ -101,10 +114,27 @@ function LoginForm() {
         </div>
       )}
 
+      {/* In-app browser warning */}
+      {inAppBrowser && (
+        <div className="rounded-lg bg-amber-50 dark:bg-amber-500/10 border border-amber-300 dark:border-amber-500/30 p-4 mb-4 text-sm text-amber-800 dark:text-amber-300">
+          <p className="font-semibold mb-1">Open in your browser to use Google sign-in</p>
+          <p className="mb-2 text-amber-700 dark:text-amber-400">Google blocks sign-in from Messenger and other in-app browsers.</p>
+          <p className="text-amber-700 dark:text-amber-400">
+            Tap <strong>⋮</strong> (three dots) then <strong>&quot;Open in browser&quot;</strong> — or use your email and password below instead.
+          </p>
+        </div>
+      )}
+
       {/* Google button */}
       <button
         onClick={signInWithGoogle}
-        className="w-full flex items-center justify-center gap-3 rounded-lg border border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-white/5 py-2.5 text-sm font-medium text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10 transition-colors mb-4"
+        disabled={inAppBrowser}
+        title={inAppBrowser ? "Open this page in your browser to use Google sign-in" : undefined}
+        className={`w-full flex items-center justify-center gap-3 rounded-lg border py-2.5 text-sm font-medium transition-colors mb-4 ${
+          inAppBrowser
+            ? "border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 text-gray-400 dark:text-white/30 cursor-not-allowed opacity-60"
+            : "border-gray-200 dark:border-white/20 bg-gray-50 dark:bg-white/5 text-gray-700 dark:text-white hover:bg-gray-100 dark:hover:bg-white/10"
+        }`}
       >
         <svg className="w-5 h-5" viewBox="0 0 24 24">
           <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/>
