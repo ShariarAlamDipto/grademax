@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
+import { trackUsage } from '@/lib/trackUsage';
 
 interface GenerateRequest {
   subjectId?: string;
@@ -49,7 +50,7 @@ export async function POST(request: Request) {
       limit: rawLimit = 50,
       shuffle = false
     } = body;
-    const limit = Math.min(Math.max(1, Number(rawLimit) || 50), 200);
+    const limit = Math.max(1, Number(rawLimit) || 50);
 
     if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json(
@@ -200,6 +201,16 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+
+    // Fire-and-forget usage tracking
+    const { data: subjectRow } = await supabase.from('subjects').select('name').eq('id', resolvedSubjectId).single();
+    trackUsage({
+      user_id: auth.user.id,
+      feature: 'worksheet_generate',
+      subject_id: resolvedSubjectId,
+      subject_name: subjectRow?.name ?? null,
+      metadata: { total_questions: finalPages.length, topics },
+    });
 
     // Format response
     const formattedPages = finalPages.map((page) => ({

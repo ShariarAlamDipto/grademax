@@ -1,7 +1,7 @@
 "use client"
 import { useAuth } from "@/context/AuthContext"
 import { supabase } from "@/lib/supabaseClient"
-import { useCallback, useEffect, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import Link from "next/link"
 
 interface Subject {
@@ -14,6 +14,7 @@ interface Subject {
 interface Lecture {
   id: string
   subject_id: string
+  teacher_id: string
   week_number: number
   lesson_name: string
   file_name: string
@@ -43,18 +44,29 @@ function formatSize(bytes: number | null): string {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`
 }
 
+function fireTrack(feature: string, payload?: Record<string, unknown>) {
+  fetch("/api/track", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ feature, ...payload }),
+  }).catch(() => undefined)
+}
+
 export default function LecturesPage() {
-  const { user, isTeacher, loading: authLoading } = useAuth()
+  const { user, isTeacher, isAdmin, profileLoaded, loading: authLoading } = useAuth()
   const [subjects, setSubjects] = useState<Subject[]>([])
   const [lectures, setLectures] = useState<Lecture[]>([])
   const [selectedSubject, setSelectedSubject] = useState<string>("")
   const [selectedWeek, setSelectedWeek] = useState<string>("")
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [deleteError, setDeleteError] = useState<string | null>(null)
+  const [deletingId, setDeletingId] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState("")
   const [initialLoadDone, setInitialLoadDone] = useState(false)
   const [collapsedSubjects, setCollapsedSubjects] = useState<Set<string>>(new Set())
   const [collapsedWeeks, setCollapsedWeeks] = useState<Set<string>>(new Set())
+  const viewTracked = useRef(false)
 
   const toggleSubject = useCallback((name: string) => {
     setCollapsedSubjects((prev) => {
@@ -110,6 +122,33 @@ export default function LecturesPage() {
     fetchLectures(controller.signal)
     return () => controller.abort()
   }, [user, authLoading, fetchLectures])
+
+  // Track lecture tab view once per session after first successful load
+  useEffect(() => {
+    if (initialLoadDone && !viewTracked.current) {
+      viewTracked.current = true
+      fireTrack("lecture_view")
+    }
+  }, [initialLoadDone])
+
+  const handleDelete = useCallback(async (lectureId: string) => {
+    if (!confirm("Delete this lecture file? This cannot be undone.")) return
+    setDeletingId(lectureId)
+    setDeleteError(null)
+    try {
+      const res = await fetch(`/api/lectures/${lectureId}`, { method: "DELETE" })
+      if (!res.ok) {
+        const err = await res.json().catch(() => null)
+        setDeleteError(err?.error || "Failed to delete lecture")
+      } else {
+        fetchLectures()
+      }
+    } catch {
+      setDeleteError("Failed to delete lecture")
+    } finally {
+      setDeletingId(null)
+    }
+  }, [fetchLectures])
 
   const filteredLectures = useMemo(() => lectures.filter((l) => {
     if (!searchQuery) return true
@@ -223,6 +262,21 @@ export default function LecturesPage() {
             </Link>
           </div>
         </div>
+
+        {/* Temporary auth debug — remove after confirming */}
+        {process.env.NODE_ENV === "development" && (
+          <div style={{ marginBottom: "0.75rem", padding: "0.5rem 0.75rem", borderRadius: "0.5rem", background: "rgba(255,255,0,0.08)", border: "1px solid rgba(255,255,0,0.2)", fontSize: "0.72rem", color: "rgba(255,255,200,0.7)", fontFamily: "monospace" }}>
+            Auth debug: isAdmin={String(isAdmin)} | isTeacher={String(isTeacher)} | profileLoaded={String(profileLoaded)} | userId={user?.id?.slice(0, 8) ?? "none"}
+          </div>
+        )}
+
+        {/* Delete error */}
+        {deleteError && (
+          <div style={{ marginBottom: "1rem", padding: "0.75rem 1rem", borderRadius: "0.625rem", background: "rgba(239,68,68,0.08)", border: "1px solid rgba(239,68,68,0.2)", color: "#EF4444", fontSize: "0.82rem", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "0.5rem" }}>
+            {deleteError}
+            <button onClick={() => setDeleteError(null)} style={{ background: "none", border: "none", cursor: "pointer", color: "#EF4444", fontSize: "1rem", lineHeight: 1 }}>✕</button>
+          </div>
+        )}
 
         {/* Filters */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "0.75rem", marginBottom: "2rem" }}>
@@ -365,47 +419,79 @@ export default function LecturesPage() {
                                             <h4 style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--gm-text)", margin: 0 }}>{lesson}</h4>
                                           </div>
                                           <div>
-                                            {files.map((file) => (
-                                              <a
-                                                key={file.id}
-                                                href={file.file_url}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                style={{
-                                                  display: "flex",
-                                                  alignItems: "center",
-                                                  gap: "0.75rem",
-                                                  padding: "0.625rem 1rem",
-                                                  borderBottom: "1px solid var(--gm-border)",
-                                                  textDecoration: "none",
-                                                  transition: "background 0.15s",
-                                                }}
-                                                className="gm-link"
-                                              >
-                                                <span style={{
-                                                  fontSize: "0.55rem",
-                                                  fontWeight: 800,
-                                                  letterSpacing: "0.04em",
-                                                  padding: "0.2rem 0.4rem",
-                                                  borderRadius: "4px",
-                                                  background: "var(--gm-blue-bg)",
-                                                  color: "var(--gm-blue)",
-                                                  border: "1px solid var(--gm-blue-ring)",
-                                                  flexShrink: 0,
-                                                }}>
-                                                  {getFileIcon(file.file_type)}
-                                                </span>
-                                                <span style={{ fontSize: "0.82rem", color: "var(--gm-text-2)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                                                  {file.file_name}
-                                                </span>
-                                                <span style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", flexShrink: 0 }}>
-                                                  {formatSize(file.file_size)}
-                                                </span>
-                                                <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", flexShrink: 0 }}>
-                                                  {new Date(file.created_at).toLocaleDateString()}
-                                                </span>
-                                              </a>
-                                            ))}
+                                            {files.map((file) => {
+                                              const canDelete = isAdmin || (isTeacher && file.teacher_id === user?.id)
+                                              return (
+                                                <div key={file.id} style={{ display: "flex", alignItems: "center", borderBottom: "1px solid var(--gm-border)" }}>
+                                                  <a
+                                                    href={file.file_url}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    onClick={() => fireTrack("lecture_download", {
+                                                      subject_id: file.subject_id,
+                                                      subject_name: subjects.find(s => s.id === file.subject_id)?.name ?? null,
+                                                      metadata: { file_name: file.file_name, lecture_id: file.id },
+                                                    })}
+                                                    style={{
+                                                      display: "flex",
+                                                      alignItems: "center",
+                                                      gap: "0.75rem",
+                                                      padding: "0.625rem 1rem",
+                                                      textDecoration: "none",
+                                                      transition: "background 0.15s",
+                                                      flex: 1,
+                                                      minWidth: 0,
+                                                    }}
+                                                    className="gm-link"
+                                                  >
+                                                    <span style={{
+                                                      fontSize: "0.55rem",
+                                                      fontWeight: 800,
+                                                      letterSpacing: "0.04em",
+                                                      padding: "0.2rem 0.4rem",
+                                                      borderRadius: "4px",
+                                                      background: "var(--gm-blue-bg)",
+                                                      color: "var(--gm-blue)",
+                                                      border: "1px solid var(--gm-blue-ring)",
+                                                      flexShrink: 0,
+                                                    }}>
+                                                      {getFileIcon(file.file_type)}
+                                                    </span>
+                                                    <span style={{ fontSize: "0.82rem", color: "var(--gm-text-2)", flex: 1, overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                                                      {file.file_name}
+                                                    </span>
+                                                    <span style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", flexShrink: 0 }}>
+                                                      {formatSize(file.file_size)}
+                                                    </span>
+                                                    <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", flexShrink: 0 }}>
+                                                      {new Date(file.created_at).toLocaleDateString()}
+                                                    </span>
+                                                  </a>
+                                                  {canDelete && (
+                                                    <button
+                                                      onClick={() => handleDelete(file.id)}
+                                                      disabled={deletingId === file.id}
+                                                      title="Delete lecture"
+                                                      style={{
+                                                        flexShrink: 0,
+                                                        padding: "0.5rem 0.75rem",
+                                                        background: "none",
+                                                        border: "none",
+                                                        cursor: deletingId === file.id ? "not-allowed" : "pointer",
+                                                        color: deletingId === file.id ? "var(--gm-text-3)" : "rgba(239,68,68,0.45)",
+                                                        fontSize: "0.85rem",
+                                                        lineHeight: 1,
+                                                        transition: "color 0.15s",
+                                                      }}
+                                                      onMouseEnter={(e) => { if (deletingId !== file.id) (e.currentTarget as HTMLButtonElement).style.color = "#EF4444" }}
+                                                      onMouseLeave={(e) => { if (deletingId !== file.id) (e.currentTarget as HTMLButtonElement).style.color = "rgba(239,68,68,0.45)" }}
+                                                    >
+                                                      {deletingId === file.id ? "…" : "🗑"}
+                                                    </button>
+                                                  )}
+                                                </div>
+                                              )
+                                            })}
                                           </div>
                                         </div>
                                       ))}

@@ -1,6 +1,14 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+
+function fireTrack(feature: string, payload?: Record<string, unknown>) {
+  fetch("/api/track", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ feature, ...payload }),
+  }).catch(() => undefined);
+}
 import SubjectSelector from './SubjectSelector';
 import TopicTree from './TopicTree';
 import FilterBar from './FilterBar';
@@ -121,7 +129,15 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     setBasketItems([]);
     setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
-  }, [selectedSubject]);
+
+    if (selectedSubject) {
+      const subject = initialSubjects.find(s => s.id === selectedSubject);
+      fireTrack("test_builder_session", {
+        subject_id: selectedSubject,
+        subject_name: subject?.name ?? null,
+      });
+    }
+  }, [selectedSubject]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Detect mobile and auto-open drawer when first item added
   useEffect(() => {
@@ -297,6 +313,12 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       // Step 3: Done
       setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
       setTimeout(() => setPdfProgress(null), 2000);
+
+      fireTrack("test_builder_download", {
+        subject_id: selectedSubject,
+        subject_name: initialSubjects.find(s => s.id === selectedSubject)?.name ?? null,
+        metadata: { question_count: basketItems.length, title: testTitle || 'Untitled Test' },
+      });
 
       // Background save — persist test to DB (non-blocking, failure doesn't affect the user)
       fetch('/api/test-builder/tests', {
