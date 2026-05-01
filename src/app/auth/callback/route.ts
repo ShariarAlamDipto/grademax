@@ -1,10 +1,6 @@
-// src/app/auth/callback/route.ts
-// CRITICAL: This route exchanges the OAuth code for a session and sets
-// auth cookies directly on the redirect response. Using NextRequest/
-// NextResponse ensures cookies survive the redirect (next/headers
-// cookies().set() does NOT propagate to NextResponse.redirect()).
 import { type NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@supabase/ssr"
+import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -13,10 +9,9 @@ export async function GET(request: NextRequest) {
   const url = new URL(request.url)
   const code = url.searchParams.get("code")
   const rawNext = url.searchParams.get("next") || ""
-  // Reject absolute URLs to prevent open redirect (new URL(abs, origin) ignores origin)
+  // Reject absolute URLs to prevent open redirect
   const next = rawNext.startsWith("/") ? rawNext : "/dashboard"
 
-  // Build the redirect response FIRST so we can attach cookies to it
   const redirectTo = new URL(next, url.origin)
 
   if (code) {
@@ -31,7 +26,6 @@ export async function GET(request: NextRequest) {
             return request.cookies.getAll()
           },
           setAll(cookiesToSet) {
-            // Write cookies onto the outgoing redirect response
             cookiesToSet.forEach(({ name, value, options }) => {
               response.cookies.set(name, value, options)
             })
@@ -42,15 +36,37 @@ export async function GET(request: NextRequest) {
 
     const { error } = await supabase.auth.exchangeCodeForSession(code)
     if (!error) {
-      return response // cookies are attached
+      // Ensure a profiles row exists for new users (Google OAuth creates
+      // auth.users but nothing auto-creates the public.profiles row)
+      try {
+        const { data: { user: authUser } } = await supabase.auth.getUser()
+        if (authUser) {
+          const db = getSupabaseAdmin() || supabase
+          await db.from("profiles").upsert(
+            {
+              id: authUser.id,
+              email: authUser.email ?? null,
+              full_name:
+                (authUser.user_metadata?.full_name as string) ||
+                (authUser.user_metadata?.name as string) ||
+                null,
+              avatar_url: (authUser.user_metadata?.avatar_url as string) || null,
+              role: "student",
+            },
+            { onConflict: "id", ignoreDuplicates: true }
+          )
+        }
+      } catch {
+        // Non-fatal — profile can be created later via profile page
+      }
+
+      return response
     }
 
-    // Exchange failed — redirect to login with error
     return NextResponse.redirect(
       new URL(`/login?error=${encodeURIComponent(error.message)}`, url.origin)
     )
   }
 
-  // No code param — just redirect
   return NextResponse.redirect(redirectTo)
 }
