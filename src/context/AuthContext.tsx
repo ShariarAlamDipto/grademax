@@ -121,11 +121,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       // Sync server-side cookies — fire and forget
       fetch("/api/auth/refresh", { method: "POST" }).catch(() => {})
 
-      // Bootstrap admin once per page load — fire and forget
-      if (!bootstrappedRef.current && s.user.email?.toLowerCase() === process.env.NEXT_PUBLIC_SUPER_ADMIN_EMAIL?.toLowerCase()) {
+      // Bootstrap admin once per page load — server decides if user is super admin
+      if (!bootstrappedRef.current) {
         bootstrappedRef.current = true
         fetch("/api/admin/bootstrap", { method: "POST" })
-          .then(() => fetchProfileDirect(s.user!.id))
+          .then((res) => { if (res.ok) fetchProfileDirect(s.user!.id) })
           .catch(() => {})
       }
 
