@@ -12,6 +12,7 @@ interface PaperRow {
   season: string
   pdf_url: string | null
   markscheme_pdf_url: string | null
+  data_file_url: string | null
 }
 
 interface SessionEntry {
@@ -78,11 +79,11 @@ export async function PaperHubPage({ subject: slug, paperNumber }: PaperHubPageP
   if (subjectRow) {
     const { data } = await supabase
       .from("papers")
-      .select("id, year, season, pdf_url, markscheme_pdf_url")
+      .select("id, year, season, pdf_url, markscheme_pdf_url, data_file_url")
       .eq("subject_id", subjectRow.id)
       .eq("paper_number", paperNumber)
       .in("season", Array.from(VALID_SEASONS))
-      .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
+      .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null,data_file_url.not.is.null")
       .order("year", { ascending: false })
 
     papers = ((data as PaperRow[]) ?? [])
@@ -93,7 +94,7 @@ export async function PaperHubPage({ subject: slug, paperNumber }: PaperHubPageP
         markscheme_pdf_url: isValidPublicUrl(p.markscheme_pdf_url) ? p.markscheme_pdf_url : null,
       }))
       .filter((p) => VALID_SEASONS.has(p.season))
-      .filter((p) => Boolean(p.pdf_url) || Boolean(p.markscheme_pdf_url))
+      .filter((p) => Boolean(p.pdf_url) || Boolean(p.markscheme_pdf_url) || Boolean(p.data_file_url))
   }
 
   // Group by year → sort by season within each year
@@ -477,6 +478,43 @@ export async function PaperHubPage({ subject: slug, paperNumber }: PaperHubPageP
                             >
                               MS —
                             </span>
+                          )}
+
+                          {paper.data_file_url && (
+                            <a
+                              href={paper.data_file_url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                display: "inline-flex",
+                                alignItems: "center",
+                                gap: "0.35rem",
+                                padding: "0.35rem 0.75rem",
+                                fontSize: "0.75rem",
+                                fontWeight: 600,
+                                borderRadius: "0.5rem",
+                                background: "rgba(251,191,36,0.1)",
+                                color: "var(--gm-amber)",
+                                border: "1px solid rgba(251,191,36,0.25)",
+                                textDecoration: "none",
+                              }}
+                            >
+                              <svg
+                                width="12"
+                                height="12"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                                />
+                              </svg>
+                              Data Files
+                            </a>
                           )}
                         </div>
                       </div>
