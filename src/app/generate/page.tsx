@@ -1,4 +1,6 @@
-﻿import { createClient } from "@supabase/supabase-js"
+﻿import { redirect } from "next/navigation"
+import { getSupabaseServer } from "@/lib/supabaseServer"
+import { createClient } from "@supabase/supabase-js"
 import WorksheetGenerator from "@/components/generate/WorksheetGenerator"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
@@ -18,6 +20,10 @@ const WORKSHEET_SUBJECT_SLOTS = [
 const ALLOWED_WORKSHEET_SUBJECT_CODES = WORKSHEET_SUBJECT_SLOTS.flat()
 
 export default async function GeneratePage() {
+  const serverClient = getSupabaseServer()
+  const { data: { user } } = await serverClient.auth.getUser()
+  if (!user) redirect("/login?next=/generate")
+
   const supabase = createClient(supabaseUrl, supabaseKey)
 
   // Fetch subjects and first subject's topics in parallel on the server
