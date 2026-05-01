@@ -3,6 +3,7 @@ import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
+import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
 interface GenerateRequest {
   subjectId?: string;
@@ -218,8 +219,8 @@ export async function POST(request: Request) {
       questionNumber: page.question_number,
       topics: page.topics,
       difficulty: page.difficulty,
-      qpPageUrl: page.qp_page_url,
-      msPageUrl: page.ms_page_url,
+      qpPageUrl: toAbsolutePdfUrl(page.qp_page_url)!,
+      msPageUrl: toAbsolutePdfUrl(page.ms_page_url),
       hasDiagram: page.has_diagram,
       year: page.papers?.year,
       season: page.papers?.season,

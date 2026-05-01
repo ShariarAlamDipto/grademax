@@ -1,5 +1,17 @@
 import { PDFDocument, PageSizes } from 'pdf-lib';
 
+const SUPABASE_STORAGE_BASE = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/question-pdfs`;
+
+/**
+ * Converts a relative storage path (e.g. "subjects/Chemistry/pages/.../q1.pdf")
+ * into a full URL. Already-absolute URLs (https://...) are returned unchanged.
+ */
+export function toAbsolutePdfUrl(url: string | null | undefined): string | null {
+  if (!url) return null;
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  return `${SUPABASE_STORAGE_BASE}/${url.replace(/^\/+/, '')}`;
+}
+
 export async function downloadPDF(url: string): Promise<ArrayBuffer | null> {
   try {
     const response = await fetch(url, { signal: AbortSignal.timeout(15000) });

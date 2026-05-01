@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
-import { mergePagePdfs } from '@/lib/pdfUtils';
+import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
 async function buildCoverPage(
   doc: PDFDocument,
@@ -127,7 +127,7 @@ export async function POST(request: Request) {
     }
 
     const pdfUrls = pages
-      .map(p => type === 'markscheme' ? p.msPageUrl : p.qpPageUrl)
+      .map(p => toAbsolutePdfUrl(type === 'markscheme' ? p.msPageUrl : p.qpPageUrl))
       .filter(Boolean) as string[];
 
     if (pdfUrls.length === 0) {
