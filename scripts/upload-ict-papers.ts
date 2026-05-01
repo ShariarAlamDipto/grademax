@@ -95,11 +95,30 @@ async function uploadToR2(r2: S3Client, localPath: string, r2Key: string): Promi
 }
 
 /**
- * Parse filename: ICT_2024_May-Jun_Paper_1_QP.pdf → { paperNumber: "1", type: "QP" }
- * Works for: 1, 2, 1R, 2R, 3H, etc.
+ * Parse scraped filename into paper number and type.
+ *
+ * Scraped convention (from grademax-scraper):
+ *   Paper.pdf        → Paper 1 QP
+ *   Paper_MS.pdf     → Paper 1 MS
+ *   Paper_P2.pdf     → Paper 2 QP
+ *   Paper_MS_P2.pdf  → Paper 2 MS
+ *
+ * Legacy upload convention (kept for backwards compatibility):
+ *   ICT_2024_May-Jun_Paper_1_QP.pdf → Paper 1 QP
  */
 function parseFilename(filename: string): { paperNumber: string; type: "QP" | "MS" } | null {
   const base = filename.replace(/\.pdf$/i, "")
+
+  // ── Scraped convention ──────────────────────────────────────────────────────
+  // Match: Paper[_MS][_P{N}]
+  const scrapedMatch = base.match(/^Paper(_MS)?(_P(\d+))?$/i)
+  if (scrapedMatch) {
+    const isMS      = Boolean(scrapedMatch[1])
+    const paperNum  = scrapedMatch[3] ?? "1"
+    return { paperNumber: paperNum, type: isMS ? "MS" : "QP" }
+  }
+
+  // ── Legacy upload convention ────────────────────────────────────────────────
   const paperIdx = base.lastIndexOf("_Paper_")
   if (paperIdx === -1) return null
   const afterPaper = base.substring(paperIdx + "_Paper_".length)
