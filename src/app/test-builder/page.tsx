@@ -1,3 +1,5 @@
+import { redirect } from "next/navigation"
+import { getSupabaseServer } from "@/lib/supabaseServer"
 import { createClient } from "@supabase/supabase-js"
 import TestBuilderPage from "@/components/test-builder/TestBuilderPage"
 
@@ -5,6 +7,10 @@ const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 
 export default async function TestBuilderRoute() {
+  const serverClient = getSupabaseServer()
+  const { data: { user } } = await serverClient.auth.getUser()
+  if (!user) redirect("/login?next=/test-builder")
+
   const supabase = createClient(supabaseUrl, supabaseKey)
 
   // Fetch subjects and first subject's topics in parallel on the server
