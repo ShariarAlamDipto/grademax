@@ -15,6 +15,14 @@ interface CoverageRow {
   qpPct: number; msPct: number
 }
 
+interface UsageData {
+  totals: Record<string, number>
+  uniqueUsers: Record<string, number>
+  worksheetBySubject: Record<string, Record<string, number>>
+  testBuilderBySubject: Record<string, Record<string, number>>
+  daily: { date: string; [key: string]: number | string }[]
+}
+
 const Bar = ({ value, max, color }: { value: number; max: number; color: string }) => (
   <div style={{ height: "6px", background: "var(--gm-border)", borderRadius: "99px", overflow: "hidden" }}>
     <div style={{ height: "100%", width: `${max > 0 ? Math.round((value / max) * 100) : 0}%`, background: color, borderRadius: "99px", transition: "width 0.4s ease" }} />
@@ -27,14 +35,24 @@ const PctBar = ({ pct, color }: { pct: number; color: string }) => (
   </div>
 )
 
-type AnalyticsTab = "overview" | "coverage"
+const UsageStat = ({ label, total, unique, color }: { label: string; total: number; unique: number; color: string }) => (
+  <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", padding: "1.25rem" }}>
+    <p style={{ fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.5rem" }}>{label}</p>
+    <p style={{ fontSize: "2rem", fontWeight: 800, color, lineHeight: 1 }}>{total.toLocaleString()}</p>
+    <p style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", marginTop: "0.3rem" }}>{unique.toLocaleString()} unique users</p>
+  </div>
+)
+
+type AnalyticsTab = "overview" | "coverage" | "usage"
 
 export default function AnalyticsAdminPage() {
   const [stats, setStats] = useState<Stats | null>(null)
   const [subjects, setSubjects] = useState<Subject[]>([])
   const [coverage, setCoverage] = useState<CoverageRow[]>([])
+  const [usage, setUsage] = useState<UsageData | null>(null)
   const [loading, setLoading] = useState(true)
   const [coverageLoading, setCoverageLoading] = useState(false)
+  const [usageLoading, setUsageLoading] = useState(false)
   const [activeTab, setActiveTab] = useState<AnalyticsTab>("overview")
   const [coverageSort, setCoverageSort] = useState<"name" | "total" | "qp" | "ms">("total")
 
@@ -61,9 +79,22 @@ export default function AnalyticsAdminPage() {
     }
   }
 
+  const loadUsage = async () => {
+    if (usage) return
+    setUsageLoading(true)
+    try {
+      const res = await fetch("/api/admin/analytics/usage")
+      const data = await res.json()
+      setUsage(data)
+    } finally {
+      setUsageLoading(false)
+    }
+  }
+
   const handleTabChange = (tab: AnalyticsTab) => {
     setActiveTab(tab)
     if (tab === "coverage") loadCoverage()
+    if (tab === "usage") loadUsage()
   }
 
   const qpPct = stats && stats.papers > 0 ? Math.round((stats.papersWithQP / stats.papers) * 100) : 0
@@ -91,14 +122,14 @@ export default function AnalyticsAdminPage() {
 
       {/* Tabs */}
       <div style={{ display: "flex", borderBottom: "1px solid var(--gm-border)", marginBottom: "1.5rem" }}>
-        {(["overview", "coverage"] as const).map(tab => (
+        {(["overview", "coverage", "usage"] as const).map(tab => (
           <button key={tab} onClick={() => handleTabChange(tab)} style={{
             padding: "0.625rem 1.25rem", fontSize: "0.8rem", fontWeight: activeTab === tab ? 600 : 400,
             color: activeTab === tab ? "var(--gm-text)" : "var(--gm-text-3)",
             borderBottom: activeTab === tab ? "2px solid var(--gm-blue)" : "2px solid transparent",
             background: "transparent", border: "none", cursor: "pointer", textTransform: "capitalize",
           }}>
-            {tab === "coverage" ? "Per-Subject Coverage" : "Overview"}
+            {tab === "coverage" ? "Per-Subject Coverage" : tab === "usage" ? "Feature Usage" : "Overview"}
           </button>
         ))}
       </div>
@@ -235,6 +266,106 @@ export default function AnalyticsAdminPage() {
                 </div>
               ))}
             </div>
+          )}
+        </div>
+      )}
+
+      {/* Feature Usage tab */}
+      {activeTab === "usage" && (
+        <div>
+          {usageLoading ? (
+            <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Loading usage data…</div>
+          ) : !usage ? (
+            <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>No data yet.</div>
+          ) : (
+            <>
+              {/* Lectures */}
+              <h2 style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>Lectures</h2>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem", marginBottom: "2rem" }}>
+                <UsageStat label="Tab Views" total={usage.totals.lecture_view ?? 0} unique={usage.uniqueUsers.lecture_view ?? 0} color="var(--gm-blue)" />
+                <UsageStat label="File Downloads" total={usage.totals.lecture_download ?? 0} unique={usage.uniqueUsers.lecture_download ?? 0} color="#06b6d4" />
+              </div>
+
+              {/* Worksheets */}
+              <h2 style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>Worksheet Generator</h2>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem", marginBottom: "1.25rem" }}>
+                <UsageStat label="Worksheets Generated" total={usage.totals.worksheet_generate ?? 0} unique={usage.uniqueUsers.worksheet_generate ?? 0} color="#22c55e" />
+                <UsageStat label="Worksheets Downloaded" total={usage.totals.worksheet_download ?? 0} unique={usage.uniqueUsers.worksheet_download ?? 0} color="#a855f7" />
+              </div>
+
+              {/* Worksheet by subject */}
+              {Object.keys(usage.worksheetBySubject).length > 0 && (
+                <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden", marginBottom: "2rem" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 80px 80px", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                    <span>Subject</span>
+                    <span style={{ textAlign: "right" }}>Generated</span>
+                    <span style={{ textAlign: "right" }}>Downloaded</span>
+                  </div>
+                  {Object.entries(usage.worksheetBySubject).map(([name, counts], i, arr) => (
+                    <div key={name} style={{ display: "grid", gridTemplateColumns: "1fr 80px 80px", padding: "0.625rem 1rem", borderBottom: i < arr.length - 1 ? "1px solid var(--gm-border)" : "none", alignItems: "center" }}>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--gm-text)" }}>{name}</span>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "#22c55e", textAlign: "right" }}>{counts.worksheet_generate ?? 0}</span>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "#a855f7", textAlign: "right" }}>{counts.worksheet_download ?? 0}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Test Builder */}
+              <h2 style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>Test Builder</h2>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem", marginBottom: "1.25rem" }}>
+                <UsageStat label="Sessions Started" total={usage.totals.test_builder_session ?? 0} unique={usage.uniqueUsers.test_builder_session ?? 0} color="#f59e0b" />
+                <UsageStat label="Tests Downloaded" total={usage.totals.test_builder_download ?? 0} unique={usage.uniqueUsers.test_builder_download ?? 0} color="#ef4444" />
+              </div>
+
+              {/* Test Builder by subject */}
+              {Object.keys(usage.testBuilderBySubject).length > 0 && (
+                <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden", marginBottom: "2rem" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 80px 80px", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                    <span>Subject</span>
+                    <span style={{ textAlign: "right" }}>Sessions</span>
+                    <span style={{ textAlign: "right" }}>Downloads</span>
+                  </div>
+                  {Object.entries(usage.testBuilderBySubject).map(([name, counts], i, arr) => (
+                    <div key={name} style={{ display: "grid", gridTemplateColumns: "1fr 80px 80px", padding: "0.625rem 1rem", borderBottom: i < arr.length - 1 ? "1px solid var(--gm-border)" : "none", alignItems: "center" }}>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--gm-text)" }}>{name}</span>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "#f59e0b", textAlign: "right" }}>{counts.test_builder_session ?? 0}</span>
+                      <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "#ef4444", textAlign: "right" }}>{counts.test_builder_download ?? 0}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* 30-day activity */}
+              {usage.daily.length > 0 && (
+                <>
+                  <h2 style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>Last 30 Days — Daily Activity</h2>
+                  <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "auto" }}>
+                    <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.75rem" }}>
+                      <thead>
+                        <tr style={{ borderBottom: "1px solid var(--gm-border)" }}>
+                          {["Date", "Lec Views", "Lec DL", "WS Gen", "WS DL", "TB Sessions", "TB DL"].map(h => (
+                            <th key={h} style={{ padding: "0.5rem 0.75rem", textAlign: h === "Date" ? "left" : "right", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", whiteSpace: "nowrap" }}>{h}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[...usage.daily].reverse().map((row, i) => (
+                          <tr key={row.date as string} style={{ borderBottom: i < usage.daily.length - 1 ? "1px solid var(--gm-border)" : "none" }}>
+                            <td style={{ padding: "0.5rem 0.75rem", color: "var(--gm-text-2)", fontWeight: 500 }}>{row.date}</td>
+                            {["lecture_view", "lecture_download", "worksheet_generate", "worksheet_download", "test_builder_session", "test_builder_download"].map(f => (
+                              <td key={f} style={{ padding: "0.5rem 0.75rem", textAlign: "right", color: (row[f] as number) > 0 ? "var(--gm-text)" : "var(--gm-text-3)", fontWeight: (row[f] as number) > 0 ? 600 : 400 }}>
+                                {(row[f] as number) || 0}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </>
+              )}
+            </>
           )}
         </div>
       )}

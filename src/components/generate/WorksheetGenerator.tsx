@@ -63,6 +63,14 @@ interface WorksheetGeneratorProps {
   initialTopics: Topic[];
 }
 
+function fireTrack(feature: string, payload?: Record<string, unknown>) {
+  fetch("/api/track", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ feature, ...payload }),
+  }).catch(() => undefined);
+}
+
 export default function WorksheetGenerator({ initialSubjects, initialTopics }: WorksheetGeneratorProps) {
   // Subject and topic states — pre-populated from server, no loading needed
   const [subjects] = useState<Subject[]>(initialSubjects);
@@ -246,6 +254,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
       // Step 3: Done
       setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
       setTimeout(() => setPdfProgress(null), 2000);
+
+      const subject = subjects.find(s => s.id === selectedSubject);
+      fireTrack("worksheet_download", {
+        subject_id: selectedSubject,
+        subject_name: subject?.name ?? null,
+        metadata: { worksheet_id: worksheetId },
+      });
 
     } catch (err: unknown) {
       setError(err instanceof Error ? err.message : 'Failed to generate PDFs');
@@ -434,7 +449,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                 value={limit}
                 onChange={(e) => setLimit(parseInt(e.target.value) || 20)}
                 min="1"
-                max="100"
+                max="500"
                 className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>
