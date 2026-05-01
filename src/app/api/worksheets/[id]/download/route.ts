@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
-import { mergePagePdfs } from '@/lib/pdfUtils';
+import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -207,9 +207,9 @@ export async function GET(
 
     let pdfUrls: string[];
     if (type === 'markscheme') {
-      pdfUrls = items.map(item => item.pages.ms_page_url).filter(Boolean) as string[];
+      pdfUrls = items.map(item => toAbsolutePdfUrl(item.pages.ms_page_url)).filter(Boolean) as string[];
     } else {
-      pdfUrls = items.map(item => item.pages.qp_page_url).filter(Boolean) as string[];
+      pdfUrls = items.map(item => toAbsolutePdfUrl(item.pages.qp_page_url)).filter(Boolean) as string[];
     }
 
     if (pdfUrls.length === 0) {

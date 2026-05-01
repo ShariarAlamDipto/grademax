@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
+import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
 /**
  * GET /api/test-builder/questions
@@ -149,8 +150,8 @@ export async function GET(request: Request) {
       questionNumber: p.question_number || String(p.page_number),
       topics: p.topics || [],
       difficulty: p.difficulty || 'unknown',
-      qpPageUrl: p.qp_page_url,
-      msPageUrl: p.ms_page_url,
+      qpPageUrl: toAbsolutePdfUrl(p.qp_page_url)!,
+      msPageUrl: toAbsolutePdfUrl(p.ms_page_url),
       hasDiagram: p.has_diagram || false,
       textExcerpt: p.text_excerpt || '',
       year: p.papers?.year,
