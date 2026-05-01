@@ -587,8 +587,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                   onDownloadMS={() => markschemeUrl && downloadFile(markschemeUrl, `${testTitle || 'test'}_mark_scheme.pdf`)}
                   pdfProgress={pdfProgress}
                   error={error}
-                  isAdmin={isAdmin}
-                  questionLimit={NON_ADMIN_QUESTION_LIMIT}
                 />
               </div>
             </div>
