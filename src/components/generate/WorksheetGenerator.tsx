@@ -86,11 +86,20 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
   const [fullscreenPdf, setFullscreenPdf] = useState<{ url: string; title: string } | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   // Cache topics per subject to avoid re-fetching
   const topicsCache = useRef<Record<string, Topic[]>>({
     [initialSubjects[0]?.id || '']: initialTopics,
   });
+
+  // Detect mobile breakpoint
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Fetch topics only when subject changes (with cache)
   useEffect(() => {
@@ -131,6 +140,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setError(null);
   }, [selectedSubject]);
+
+  // Auto-show PDF preview modal on mobile when PDFs are ready
+  useEffect(() => {
+    if (isMobile && worksheetUrl && !fullscreenPdf) {
+      setFullscreenPdf({ url: worksheetUrl, title: 'Worksheet Preview' });
+    }
+  }, [worksheetUrl, isMobile, fullscreenPdf]);
 
   const toggleTopic = (code: string) => {
     setSelectedTopics(prev =>
