@@ -29,6 +29,7 @@ export async function GET(request: Request) {
           level
         )
       `)
+      .eq('user_id', auth.user.id)
       .order('updated_at', { ascending: false })
       .limit(50);
 
@@ -89,6 +90,7 @@ export async function POST(request: Request) {
     const { data: test, error: testError } = await db
       .from('tests')
       .insert({
+        user_id: auth.user.id,
         title: title || 'Untitled Test',
         subject_id: subjectId,
         total_questions: items.length,
