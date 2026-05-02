@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
+import type { SupabaseClient } from '@supabase/supabase-js';
 import { requireAuth } from '@/lib/apiAuth';
-import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
@@ -15,16 +15,14 @@ interface GenerateRequest {
   shuffle?: boolean;
 }
 
-interface PageData {
+interface QuestionRow {
   id: string;
   paper_id: string;
-  page_number: number;
   question_number: string;
-  topics: string[];
-  difficulty: string;
-  qp_page_url: string;
-  ms_page_url: string | null;
-  has_diagram: boolean;
+  difficulty: string | null;
+  page_pdf_url: string | null;
+  ms_pdf_url: string | null;
+  has_diagram: boolean | null;
   papers: {
     year: number;
     season: string;
@@ -36,11 +34,14 @@ interface PageData {
   };
 }
 
+type AuthSupabase = SupabaseClient;
+
 export async function POST(request: Request) {
   try {
     const auth = await requireAuth();
     if ('error' in auth) return auth.error;
 
+    const supabase = auth.supabase as AuthSupabase;
     const body: GenerateRequest = await request.json();
     const {
       subjectId,
@@ -49,71 +50,44 @@ export async function POST(request: Request) {
       yearEnd,
       difficulty,
       limit: rawLimit = 50,
-      shuffle = false
+      shuffle = false,
     } = body;
+
     const limit = Math.max(1, Number(rawLimit) || 50);
 
     if (!rawTopics || rawTopics.length === 0) {
-      return NextResponse.json(
-        { error: 'Topics are required' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Topics are required' }, { status: 400 });
     }
 
-    // Normalize topic codes: FPM/Physics descriptive codes → numeric IDs; Chemistry/Bio "1.1" style → pass through as-is
     const topics = normalizeTopicCodes(rawTopics);
 
-    const supabase = getSupabaseAdmin() || auth.db;
-
-    // First, get papers that match the subject filter
-    let paperQuery = supabase
-      .from('papers')
-      .select('id, subject_id');
-
-    // Filter by subject if provided
-    if (subjectId) {
-      paperQuery = paperQuery.eq('subject_id', subjectId);
-    }
-
-    // Apply year filters to papers
-    if (yearStart) {
-      paperQuery = paperQuery.gte('year', yearStart);
-    }
-    if (yearEnd) {
-      paperQuery = paperQuery.lte('year', yearEnd);
-    }
-
-    const { data: matchingPapers, error: paperError } = await paperQuery;
+    const { matchingPapers, error: paperError } = await fetchMatchingPapers(
+      supabase,
+      subjectId,
+      yearStart,
+      yearEnd,
+    );
 
     if (paperError) {
-      return NextResponse.json(
-        { error: 'Failed to fetch papers', details: paperError.message },
-        { status: 500 }
-      );
+      return paperError;
     }
 
-    if (!matchingPapers || matchingPapers.length === 0) {
-      return NextResponse.json(
-        { error: 'No papers found matching the criteria' },
-        { status: 404 }
-      );
+    const paperIds = matchingPapers.map((paper) => paper.id);
+    const resolvedSubjectId = subjectId || matchingPapers[0]?.subject_id || null;
+
+    if (!resolvedSubjectId) {
+      return NextResponse.json({ error: 'Could not determine subject' }, { status: 500 });
     }
 
-    // Get the paper IDs
-    const paperIds = matchingPapers.map(p => p.id);
-
-    // Now query pages that match the criteria
-    let query = supabase
-      .from('pages')
+    const { data: questionRows, error: questionError } = await supabase
+      .from('questions')
       .select(`
         id,
         paper_id,
-        page_number,
         question_number,
-        topics,
         difficulty,
-        qp_page_url,
-        ms_page_url,
+        page_pdf_url,
+        ms_pdf_url,
         has_diagram,
         papers (
           year,
@@ -125,98 +99,95 @@ export async function POST(request: Request) {
           )
         )
       `)
-      .eq('is_question', true)
-      .not('qp_page_url', 'is', null)
-      .in('paper_id', paperIds)  // Filter by matching paper IDs
-      .overlaps('topics', topics)  // Array overlap - matches any topic
-      .limit(limit);
+      .in('paper_id', paperIds)
+      .limit(Math.max(limit * 10, limit));
 
-    // Apply difficulty filter
+    if (questionError) {
+      return NextResponse.json({ error: questionError.message }, { status: 500 });
+    }
+
+    const questionIds = (questionRows ?? []).map((question) => question.id);
+    const { data: tagRows, error: tagError } = await supabase
+      .from('question_tags')
+      .select('question_id, topic')
+      .in('question_id', questionIds);
+
+    if (tagError) {
+      return NextResponse.json({ error: tagError.message }, { status: 500 });
+    }
+
+    const topicMap = new Map<string, string[]>();
+    for (const row of tagRows ?? []) {
+      if (!topicMap.has(row.question_id)) {
+        topicMap.set(row.question_id, []);
+      }
+      if (topics.includes(row.topic)) {
+        topicMap.get(row.question_id)?.push(row.topic);
+      }
+    }
+
+    let finalQuestions = (questionRows ?? [])
+      .map((question) => ({
+        ...question,
+        topics: topicMap.get(question.id) ?? [],
+      }))
+      .filter((question) => question.topics.length > 0) as unknown as Array<QuestionRow & { topics: string[] }>;
+
     if (difficulty) {
-      query = query.eq('difficulty', difficulty);
+      finalQuestions = finalQuestions.filter((question) => question.difficulty === difficulty);
     }
 
-    const { data: pages, error } = await query;
-
-    if (error) {
-      return NextResponse.json({ error: error.message }, { status: 500 });
+    if (shuffle) {
+      finalQuestions = [...finalQuestions].sort(() => Math.random() - 0.5);
     }
 
-    if (!pages || pages.length === 0) {
-      // Diagnose why — check if pages exist without topic filter
-      const { count: totalPages } = await supabase
-        .from('pages')
-        .select('id', { count: 'exact', head: true })
-        .eq('is_question', true)
-        .in('paper_id', paperIds);
+    finalQuestions = finalQuestions.slice(0, limit);
 
-      const { count: classifiedPages } = await supabase
-        .from('pages')
-        .select('id', { count: 'exact', head: true })
-        .eq('is_question', true)
-        .in('paper_id', paperIds)
-        .not('topics', 'eq', '{}');
-
-      if (!totalPages || totalPages === 0) {
-        return NextResponse.json(
-          { error: 'No question pages found for this subject. The past paper data may not have been ingested yet.' },
-          { status: 404 }
-        );
-      }
-
-      if (!classifiedPages || classifiedPages === 0) {
-        return NextResponse.json(
-          { error: 'Questions for this subject have not been classified into topics yet. Please contact support.' },
-          { status: 404 }
-        );
-      }
-
+    if (finalQuestions.length === 0) {
       return NextResponse.json(
-        { error: `No questions found for the selected topics. Try selecting different topics or a wider year range. (${classifiedPages} classified questions exist for this subject)` },
+        { error: 'No questions found for the selected topics. Try selecting different topics or a wider year range.' },
         { status: 404 }
       );
     }
 
-    // Shuffle if requested
-    let finalPages = pages as unknown as PageData[];
-    if (shuffle) {
-      finalPages = [...pages as unknown as PageData[]].sort(() => Math.random() - 0.5);
-    }
+    const { data: subjectRow } = await supabase
+      .from('subjects')
+      .select('name')
+      .eq('id', resolvedSubjectId)
+      .single();
 
-    // Use subjectId from request, fall back to the value embedded in page data
-    const firstPage = pages[0] as unknown as PageData;
-    const resolvedSubjectId = subjectId || (firstPage.papers ? firstPage.papers.subject_id : null);
+    const worksheetPayload = {
+      user_id: auth.user.id,
+      title: `${subjectRow?.name ?? 'Worksheet'} Worksheet`,
+      description: topics.length > 0 ? `Topics: ${topics.join(', ')}` : null,
+      params: {
+        subjectId: resolvedSubjectId,
+        topics,
+        yearStart: yearStart ?? null,
+        yearEnd: yearEnd ?? null,
+        difficulty: difficulty ?? null,
+        limit,
+        shuffle,
+      },
+    };
 
-    if (!resolvedSubjectId) {
-      return NextResponse.json({ error: 'Could not determine subject' }, { status: 500 });
-    }
-
-    // Create worksheet record
     const { data: worksheet, error: worksheetError } = await supabase
       .from('worksheets')
-      .insert({
-        subject_id: resolvedSubjectId,
-        topics,
-        year_start: yearStart,
-        year_end: yearEnd,
-        difficulty,
-        total_questions: finalPages.length
-      })
+      .insert(worksheetPayload)
       .select('id')
       .single();
 
-    if (worksheetError) {
+    if (worksheetError || !worksheet) {
       return NextResponse.json(
-        { error: worksheetError.message },
+        { error: worksheetError?.message || 'Failed to create worksheet' },
         { status: 500 }
       );
     }
 
-    // Create worksheet items
-    const worksheetItems = finalPages.map((page, index) => ({
+    const worksheetItems = finalQuestions.map((question, index) => ({
       worksheet_id: worksheet.id,
-      page_id: page.id,
-      sequence: index + 1
+      question_id: question.id,
+      position: index + 1,
     }));
 
     const { error: itemsError } = await supabase
@@ -230,28 +201,25 @@ export async function POST(request: Request) {
       );
     }
 
-    // Fire-and-forget usage tracking
-    const { data: subjectRow } = await supabase.from('subjects').select('name').eq('id', resolvedSubjectId).single();
     trackUsage({
       user_id: auth.user.id,
       feature: 'worksheet_generate',
       subject_id: resolvedSubjectId,
       subject_name: subjectRow?.name ?? null,
-      metadata: { total_questions: finalPages.length, topics },
+      metadata: { total_questions: finalQuestions.length, topics },
     });
 
-    // Format response
-    const formattedPages = finalPages.map((page) => ({
-      id: page.id,
-      questionNumber: page.question_number,
-      topics: page.topics,
-      difficulty: page.difficulty,
-      qpPageUrl: toAbsolutePdfUrl(page.qp_page_url)!,
-      msPageUrl: toAbsolutePdfUrl(page.ms_page_url),
-      hasDiagram: page.has_diagram,
-      year: page.papers?.year,
-      season: page.papers?.season,
-      paper: page.papers?.paper_number
+    const formattedPages = finalQuestions.map((question) => ({
+      id: question.id,
+      questionNumber: question.question_number,
+      topics: question.topics,
+      difficulty: question.difficulty ?? 'unknown',
+      qpPageUrl: toAbsolutePdfUrl(question.page_pdf_url)!,
+      msPageUrl: toAbsolutePdfUrl(question.ms_pdf_url),
+      hasDiagram: question.has_diagram ?? false,
+      year: question.papers?.year,
+      season: question.papers?.season,
+      paper: question.papers?.paper_number,
     }));
 
     return NextResponse.json({
@@ -262,14 +230,63 @@ export async function POST(request: Request) {
         topics,
         yearStart,
         yearEnd,
-        difficulty
-      }
+        difficulty,
+      },
     });
-
   } catch (error: unknown) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }
     );
   }
+}
+
+async function fetchMatchingPapers(
+  supabase: AuthSupabase,
+  subjectId: string | undefined,
+  yearStart: number | undefined,
+  yearEnd: number | undefined,
+): Promise<{ matchingPapers: Array<{ id: string; subject_id: string }>; error: null } | { matchingPapers: []; error: NextResponse }> {
+  let paperQuery = supabase
+    .from('papers')
+    .select('id, subject_id');
+
+  if (subjectId) {
+    paperQuery = paperQuery.eq('subject_id', subjectId);
+  }
+
+  if (yearStart) {
+    paperQuery = paperQuery.gte('year', yearStart);
+  }
+
+  if (yearEnd) {
+    paperQuery = paperQuery.lte('year', yearEnd);
+  }
+
+  const { data: matchingPapers, error: paperError } = await paperQuery;
+
+  if (paperError) {
+    return {
+      matchingPapers: [],
+      error: NextResponse.json(
+        { error: 'Failed to fetch papers', details: paperError.message },
+        { status: 500 }
+      ),
+    };
+  }
+
+  if (!matchingPapers || matchingPapers.length === 0) {
+    return {
+      matchingPapers: [],
+      error: NextResponse.json(
+        { error: 'No papers found matching the criteria' },
+        { status: 404 }
+      ),
+    };
+  }
+
+  return {
+    matchingPapers: matchingPapers as Array<{ id: string; subject_id: string }>,
+    error: null,
+  };
 }
