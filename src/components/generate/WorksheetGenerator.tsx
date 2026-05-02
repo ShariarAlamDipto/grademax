@@ -71,6 +71,38 @@ function fireTrack(feature: string, payload?: Record<string, unknown>) {
   }).catch(() => undefined);
 }
 
+/**
+ * Fetch wrapper that survives flaky mobile networks:
+ *   - retries once on network-level failure (the case that surfaces as
+ *     `TypeError: Failed to fetch` on phones when the connection drops)
+ *   - rewrites that opaque message into something the user can act on
+ *
+ * On a non-network failure (HTTP error, parse error) we surface the
+ * underlying message unchanged so the caller can still react.
+ */
+async function fetchWithRetry(
+  input: RequestInfo | URL,
+  init?: RequestInit,
+): Promise<Response> {
+  try {
+    return await fetch(input, init);
+  } catch (err) {
+    if (err instanceof TypeError) {
+      try {
+        return await fetch(input, init);
+      } catch (retryErr) {
+        if (retryErr instanceof TypeError) {
+          throw new Error(
+            "Couldn't reach the server. Check your internet connection and try again.",
+          );
+        }
+        throw retryErr;
+      }
+    }
+    throw err;
+  }
+}
+
 export default function WorksheetGenerator({ initialSubjects, initialTopics }: WorksheetGeneratorProps) {
   // Subject and topic states — pre-populated from server, no loading needed
   const [subjects] = useState<Subject[]>(initialSubjects);
@@ -172,7 +204,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
 
     try {
-      const response = await fetch('/api/worksheets/generate-v2', {
+      const response = await fetchWithRetry('/api/worksheets/generate-v2', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -182,15 +214,24 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
           yearEnd,
           difficulty: difficulty || undefined,
           limit,
-          shuffle
-        })
+          shuffle,
+        }),
       });
 
-      const data = await response.json();
-
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to generate worksheet');
+        const text = await response.text();
+        let serverMessage = text;
+        try {
+          serverMessage = JSON.parse(text)?.error ?? text;
+        } catch {
+          // Non-JSON error body (e.g., HTML 504 page) — keep raw text.
+        }
+        throw new Error(
+          `Server returned ${response.status}: ${serverMessage || response.statusText}`,
+        );
       }
+
+      const data = await response.json();
 
       if (!data.pages || data.pages.length === 0) {
         setError('No questions found matching your criteria. Try different filters.');
@@ -199,8 +240,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
       setWorksheetId(data.worksheet_id);
       setQuestions(data.pages);
-
     } catch (err: unknown) {
+      console.error('[WorksheetGenerator] generate failed', err);
       setError(err instanceof Error ? err.message : 'Failed to generate worksheet');
     } finally {
       setLoading(false);
@@ -218,25 +259,40 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     try {
       // Step 1: Download worksheet PDF
       setPdfProgress({ step: 1, total: 3, label: 'Building worksheet PDF...' });
-      const worksheetResponse = await fetch(`/api/worksheets/${worksheetId}/download?type=worksheet`);
-      
+      const worksheetResponse = await fetchWithRetry(
+        `/api/worksheets/${worksheetId}/download?type=worksheet`,
+      );
+
       if (!worksheetResponse.ok) {
-        const error = await worksheetResponse.json();
-        throw new Error(error.error || 'Failed to generate worksheet PDF');
+        const text = await worksheetResponse.text();
+        let serverMessage = text;
+        try {
+          serverMessage = JSON.parse(text)?.error ?? text;
+        } catch {
+          // Non-JSON error body — keep raw text.
+        }
+        throw new Error(
+          `Server returned ${worksheetResponse.status}: ${serverMessage || worksheetResponse.statusText}`,
+        );
       }
 
       const worksheetBlob = await worksheetResponse.blob();
       const wUrl = URL.createObjectURL(worksheetBlob);
       setWorksheetUrl(wUrl);
 
-      // Step 2: Download markscheme PDF
+      // Step 2: Download markscheme PDF (best-effort — failure here is non-fatal)
       setPdfProgress({ step: 2, total: 3, label: 'Building markscheme PDF...' });
-      const markschemeResponse = await fetch(`/api/worksheets/${worksheetId}/download?type=markscheme`);
-      
-      if (markschemeResponse.ok) {
-        const markschemeBlob = await markschemeResponse.blob();
-        const msUrl = URL.createObjectURL(markschemeBlob);
-        setMarkschemeUrl(msUrl);
+      try {
+        const markschemeResponse = await fetchWithRetry(
+          `/api/worksheets/${worksheetId}/download?type=markscheme`,
+        );
+        if (markschemeResponse.ok) {
+          const markschemeBlob = await markschemeResponse.blob();
+          const msUrl = URL.createObjectURL(markschemeBlob);
+          setMarkschemeUrl(msUrl);
+        }
+      } catch (msErr) {
+        console.warn('[WorksheetGenerator] markscheme download failed', msErr);
       }
 
       // Step 3: Done
@@ -249,8 +305,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         subject_name: subject?.name ?? null,
         metadata: { worksheet_id: worksheetId },
       });
-
     } catch (err: unknown) {
+      console.error('[WorksheetGenerator] download failed', err);
       setError(err instanceof Error ? err.message : 'Failed to generate PDFs');
       setPdfProgress(null);
     }
