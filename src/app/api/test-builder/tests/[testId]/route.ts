@@ -1,28 +1,22 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
+import { requireAuth } from '@/lib/apiAuth';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+interface UpdateTestBody {
+  title?: string;
+  items?: { pageId: string; sequenceOrder: number }[];
+}
 
-/**
- * GET /api/test-builder/tests/[testId]
- * Get a single test with its items
- * 
- * PUT /api/test-builder/tests/[testId]
- * Update a test (reorder items, change title)
- * 
- * DELETE /api/test-builder/tests/[testId]
- * Delete a test
- */
 export async function GET(
-  request: Request,
+  _request: Request,
   context: { params: Promise<{ testId: string }> }
 ) {
   try {
-    const { testId } = await context.params;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const auth = await requireAuth();
+    if ('error' in auth) return auth.error;
 
-    const { data: test, error } = await supabase
+    const { testId } = await context.params;
+
+    const { data: test, error } = await auth.db
       .from('tests')
       .select(`
         id,
@@ -60,19 +54,16 @@ export async function GET(
         )
       `)
       .eq('id', testId)
+      .eq('user_id', auth.user.id)
       .single();
 
     if (error || !test) {
-      return NextResponse.json(
-        { error: 'Test not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: 'Test not found' }, { status: 404 });
     }
 
     return NextResponse.json({ test });
 
   } catch (error: unknown) {
-    console.error('Test builder get API error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }
@@ -80,26 +71,35 @@ export async function GET(
   }
 }
 
-interface UpdateTestBody {
-  title?: string;
-  items?: { pageId: string; sequenceOrder: number }[];
-}
-
 export async function PUT(
   request: Request,
   context: { params: Promise<{ testId: string }> }
 ) {
   try {
+    const auth = await requireAuth();
+    if ('error' in auth) return auth.error;
+
     const { testId } = await context.params;
     const body: UpdateTestBody = await request.json();
-    const supabase = createClient(supabaseUrl, supabaseKey);
 
-    // Update title if provided
+    // Verify ownership before any mutation
+    const { data: existing } = await auth.db
+      .from('tests')
+      .select('id')
+      .eq('id', testId)
+      .eq('user_id', auth.user.id)
+      .single();
+
+    if (!existing) {
+      return NextResponse.json({ error: 'Test not found' }, { status: 404 });
+    }
+
     if (body.title !== undefined) {
-      const { error } = await supabase
+      const { error } = await auth.db
         .from('tests')
         .update({ title: body.title, updated_at: new Date().toISOString() })
-        .eq('id', testId);
+        .eq('id', testId)
+        .eq('user_id', auth.user.id);
 
       if (error) {
         return NextResponse.json(
@@ -109,10 +109,8 @@ export async function PUT(
       }
     }
 
-    // Replace items if provided (delete all, re-insert)
     if (body.items) {
-      // Delete existing items
-      const { error: deleteError } = await supabase
+      const { error: deleteError } = await auth.db
         .from('test_items')
         .delete()
         .eq('test_id', testId);
@@ -124,7 +122,6 @@ export async function PUT(
         );
       }
 
-      // Insert new items
       if (body.items.length > 0) {
         const testItems = body.items.map((item) => ({
           test_id: testId,
@@ -132,7 +129,7 @@ export async function PUT(
           sequence_order: item.sequenceOrder,
         }));
 
-        const { error: insertError } = await supabase
+        const { error: insertError } = await auth.db
           .from('test_items')
           .insert(testItems);
 
@@ -144,20 +141,19 @@ export async function PUT(
         }
       }
 
-      // Update cached count
-      await supabase
+      await auth.db
         .from('tests')
         .update({
           total_questions: body.items.length,
           updated_at: new Date().toISOString(),
         })
-        .eq('id', testId);
+        .eq('id', testId)
+        .eq('user_id', auth.user.id);
     }
 
     return NextResponse.json({ success: true });
 
   } catch (error: unknown) {
-    console.error('Test builder update API error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }
@@ -166,18 +162,20 @@ export async function PUT(
 }
 
 export async function DELETE(
-  request: Request,
+  _request: Request,
   context: { params: Promise<{ testId: string }> }
 ) {
   try {
-    const { testId } = await context.params;
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const auth = await requireAuth();
+    if ('error' in auth) return auth.error;
 
-    // CASCADE will delete test_items too
-    const { error } = await supabase
+    const { testId } = await context.params;
+
+    const { error } = await auth.db
       .from('tests')
       .delete()
-      .eq('id', testId);
+      .eq('id', testId)
+      .eq('user_id', auth.user.id);
 
     if (error) {
       return NextResponse.json(
@@ -189,7 +187,6 @@ export async function DELETE(
     return NextResponse.json({ success: true });
 
   } catch (error: unknown) {
-    console.error('Test builder delete API error:', error);
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

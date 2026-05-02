@@ -1,25 +1,25 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
+import { requireAuth } from '@/lib/apiAuth';
 import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
-
 interface WorksheetItem {
-  sequence: number;
-  pages: {
-    qp_page_url: string;
-    ms_page_url: string | null;
-  };
+  position: number;
+  questions: {
+    page_pdf_url: string | null;
+    ms_pdf_url: string | null;
+  } | null;
 }
 
 interface WorksheetData {
   id: string;
-  topics: string[];
-  year_start: number | null;
-  year_end: number | null;
-  difficulty: string | null;
+  title: string | null;
+  params: {
+    topics?: string[];
+    yearStart?: number | null;
+    yearEnd?: number | null;
+    difficulty?: string | null;
+  } | null;
   worksheet_items: WorksheetItem[];
   subjects: { name: string; level: string } | null;
 }
@@ -165,26 +165,25 @@ export async function GET(
   context: { params: Promise<{ id: string }> }
 ) {
   try {
+    const auth = await requireAuth();
+    if ('error' in auth) return auth.error;
+
     const { id: worksheetId } = await context.params;
     const url = new URL(request.url);
     const type = url.searchParams.get('type') || 'worksheet';
-
-    const supabase = createClient(supabaseUrl, supabaseKey);
+    const supabase = auth.supabase;
 
     const { data: worksheet, error: worksheetError } = await supabase
       .from('worksheets')
       .select(`
         id,
-        topics,
-        year_start,
-        year_end,
-        difficulty,
-        total_questions,
+        title,
+        params,
         worksheet_items (
-          sequence,
-          pages (
-            qp_page_url,
-            ms_page_url
+          position,
+          questions (
+            page_pdf_url,
+            ms_pdf_url
           )
         ),
         subjects (
@@ -193,39 +192,43 @@ export async function GET(
         )
       `)
       .eq('id', worksheetId)
+      .eq('user_id', auth.user.id)
       .single();
 
     if (worksheetError || !worksheet) {
-      return NextResponse.json(
-        { error: 'Worksheet not found' },
-        { status: 404 }
-      );
+      return NextResponse.json({ error: 'Worksheet not found' }, { status: 404 });
     }
 
     const worksheetData = worksheet as unknown as WorksheetData;
-    const items = worksheetData.worksheet_items.sort((a, b) => a.sequence - b.sequence);
+    const items = worksheetData.worksheet_items.sort((a, b) => a.position - b.position);
 
-    let pdfUrls: string[];
-    if (type === 'markscheme') {
-      pdfUrls = items.map(item => item.pages ? toAbsolutePdfUrl(item.pages.ms_page_url) : null).filter(Boolean) as string[];
-    } else {
-      pdfUrls = items.map(item => item.pages ? toAbsolutePdfUrl(item.pages.qp_page_url) : null).filter(Boolean) as string[];
-    }
+    const pdfUrls = items
+      .map((item) => {
+        if (!item.questions) return null;
+        if (type === 'markscheme') {
+          return toAbsolutePdfUrl(item.questions.ms_pdf_url);
+        }
+        return toAbsolutePdfUrl(item.questions.page_pdf_url);
+      })
+      .filter(Boolean) as string[];
 
     if (pdfUrls.length === 0) {
       return NextResponse.json({ error: 'No PDFs found' }, { status: 404 });
     }
 
+    const params = worksheetData.params ?? {};
+    const coverTitle = worksheetData.title || worksheetData.subjects?.name || 'Worksheet';
+
     const mergedPdf = await PDFDocument.create();
 
     await buildCoverPage(mergedPdf, {
       type: type as 'worksheet' | 'markscheme',
-      subjectName: worksheetData.subjects?.name ?? '',
+      subjectName: coverTitle,
       level: worksheetData.subjects?.level ?? '',
-      topics: worksheetData.topics ?? [],
-      yearStart: worksheetData.year_start,
-      yearEnd: worksheetData.year_end,
-      difficulty: worksheetData.difficulty,
+      topics: params.topics ?? [],
+      yearStart: params.yearStart ?? null,
+      yearEnd: params.yearEnd ?? null,
+      difficulty: params.difficulty ?? null,
       totalQuestions: items.length,
     });
 
@@ -246,7 +249,6 @@ export async function GET(
         'Content-Disposition': `attachment; filename="${type}-${worksheetId}.pdf"`,
       },
     });
-
   } catch (error: unknown) {
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to generate PDF' },
