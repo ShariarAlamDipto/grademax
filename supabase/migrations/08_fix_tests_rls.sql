@@ -64,6 +64,10 @@ DROP POLICY IF EXISTS "Public read tests"   ON tests;
 DROP POLICY IF EXISTS "Public insert tests" ON tests;
 DROP POLICY IF EXISTS "Public update tests" ON tests;
 DROP POLICY IF EXISTS "Public delete tests" ON tests;
+DROP POLICY IF EXISTS "Owner read tests"    ON tests;
+DROP POLICY IF EXISTS "Owner insert tests"  ON tests;
+DROP POLICY IF EXISTS "Owner update tests"  ON tests;
+DROP POLICY IF EXISTS "Owner delete tests"  ON tests;
 
 CREATE POLICY "Owner read tests"
   ON tests FOR SELECT
@@ -90,6 +94,10 @@ DROP POLICY IF EXISTS "Public read test_items"   ON test_items;
 DROP POLICY IF EXISTS "Public insert test_items" ON test_items;
 DROP POLICY IF EXISTS "Public update test_items" ON test_items;
 DROP POLICY IF EXISTS "Public delete test_items" ON test_items;
+DROP POLICY IF EXISTS "Owner read test_items"    ON test_items;
+DROP POLICY IF EXISTS "Owner insert test_items"  ON test_items;
+DROP POLICY IF EXISTS "Owner update test_items"  ON test_items;
+DROP POLICY IF EXISTS "Owner delete test_items"  ON test_items;
 
 CREATE POLICY "Owner read test_items"
   ON test_items FOR SELECT
