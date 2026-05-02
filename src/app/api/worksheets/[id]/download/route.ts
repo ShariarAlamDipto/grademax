@@ -207,9 +207,9 @@ export async function GET(
 
     let pdfUrls: string[];
     if (type === 'markscheme') {
-      pdfUrls = items.map(item => toAbsolutePdfUrl(item.pages.ms_page_url)).filter(Boolean) as string[];
+      pdfUrls = items.map(item => item.pages ? toAbsolutePdfUrl(item.pages.ms_page_url) : null).filter(Boolean) as string[];
     } else {
-      pdfUrls = items.map(item => toAbsolutePdfUrl(item.pages.qp_page_url)).filter(Boolean) as string[];
+      pdfUrls = items.map(item => item.pages ? toAbsolutePdfUrl(item.pages.qp_page_url) : null).filter(Boolean) as string[];
     }
 
     if (pdfUrls.length === 0) {
