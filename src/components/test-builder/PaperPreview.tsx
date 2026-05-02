@@ -14,10 +14,13 @@ interface PaperPreviewProps {
   onTitleChange: (title: string) => void;
   worksheetUrl: string | null;
   markschemeUrl: string | null;
-  onDownloadQP: () => void;
-  onDownloadMS: () => void;
   pdfProgress: { step: number; total: number; label: string } | null;
   error?: string | null;
+}
+
+function safeFilename(title: string, suffix: string): string {
+  const base = (title || 'test').replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, '_') || 'test';
+  return `${base}_${suffix}.pdf`;
 }
 
 /** A4 aspect ratio: 210 × 297 mm ≈ 1 : 1.4142 */
@@ -26,7 +29,7 @@ const A4_RATIO = 297 / 210;
 export default function PaperPreview({
   items, testTitle, onRemove, onMoveUp, onMoveDown, onClearAll,
   onGenerate, generating, onTitleChange, worksheetUrl, markschemeUrl,
-  onDownloadQP, onDownloadMS, pdfProgress, error,
+  pdfProgress, error,
 }: PaperPreviewProps) {
   const totalMarks = items.length * 4;
   return (
@@ -163,26 +166,39 @@ export default function PaperPreview({
           </div>
         )}
 
-        {/* Download buttons — shown after generate succeeds */}
+        {/* Download links — shown after generate succeeds.
+            Rendered as real <a> tags (not programmatic clicks) so iOS Safari
+            opens the PDF in its native viewer instead of showing the
+            broken-page icon you get from a programmatic blob-URL navigation. */}
         {(worksheetUrl || markschemeUrl) && (
           <div className="flex gap-2">
             {worksheetUrl && (
-              <button onClick={onDownloadQP}
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+              <a
+                href={worksheetUrl}
+                download={safeFilename(testTitle, 'question_paper')}
+                target="_blank"
+                rel="noopener"
+                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+              >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
                 Download Question Paper
-              </button>
+              </a>
             )}
             {markschemeUrl && (
-              <button onClick={onDownloadMS}
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5">
+              <a
+                href={markschemeUrl}
+                download={safeFilename(testTitle, 'mark_scheme')}
+                target="_blank"
+                rel="noopener"
+                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+              >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
                 Download Mark Scheme
-              </button>
+              </a>
             )}
           </div>
         )}

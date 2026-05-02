@@ -345,20 +345,13 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   };
 
   // ─────────────────────────────────────────────
-  // Download helpers
-  // ─────────────────────────────────────────────
-
-  const downloadFile = (url: string, filename: string) => {
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  };
-
-  // ─────────────────────────────────────────────
   // Render
+  //
+  // Note: download links are rendered inside <PaperPreview> as real <a> tags
+  // (with target="_blank") rather than via programmatic anchor clicks. iOS
+  // Safari ignores the `download` attribute on blob: URLs and treats a
+  // scripted click as a navigation it can't render — that's what produced
+  // the "broken page" icon previously reported on phones.
   // ─────────────────────────────────────────────
 
   return (
@@ -540,8 +533,11 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             )}
           </div>
 
-          {/* ═══ RIGHT COLUMN: Live Paper Preview ═══ */}
-          <div className="lg:sticky lg:top-24 lg:self-start lg:h-[calc(100vh-7rem)] lg:max-h-[calc(100vh-7rem)]">
+          {/* ═══ RIGHT COLUMN: Live Paper Preview ═══
+              Hidden on phones — the mobile drawer below renders its own
+              instance. Without `hidden lg:block` the inline column
+              duplicates the drawer content under the question grid. */}
+          <div className="hidden lg:block lg:sticky lg:top-24 lg:self-start lg:h-[calc(100vh-7rem)] lg:max-h-[calc(100vh-7rem)]">
             <PaperPreview
               items={basketItems}
               testTitle={testTitle}
@@ -554,8 +550,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               generating={generating}
               worksheetUrl={worksheetUrl}
               markschemeUrl={markschemeUrl}
-              onDownloadQP={() => worksheetUrl && downloadFile(worksheetUrl, `${testTitle || 'test'}_question_paper.pdf`)}
-              onDownloadMS={() => markschemeUrl && downloadFile(markschemeUrl, `${testTitle || 'test'}_mark_scheme.pdf`)}
               pdfProgress={pdfProgress}
               error={error}
             />
@@ -605,8 +599,6 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                   generating={generating}
                   worksheetUrl={worksheetUrl}
                   markschemeUrl={markschemeUrl}
-                  onDownloadQP={() => worksheetUrl && downloadFile(worksheetUrl, `${testTitle || 'test'}_question_paper.pdf`)}
-                  onDownloadMS={() => markschemeUrl && downloadFile(markschemeUrl, `${testTitle || 'test'}_mark_scheme.pdf`)}
                   pdfProgress={pdfProgress}
                   error={error}
                 />
