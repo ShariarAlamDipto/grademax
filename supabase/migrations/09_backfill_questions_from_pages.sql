@@ -22,6 +22,48 @@
 BEGIN;
 
 -- ─────────────────────────────────────────────────────────────────────────────
+-- 0. Reset question_tags to the canonical schema
+--
+-- The existing `question_tags` table was created with an extra NOT NULL
+-- `confidence` column (and possibly others) that have no defaults, which
+-- blocks any plain INSERT that doesn't supply a confidence value.
+--
+-- The table is empty (0 rows in the prior diagnostic), so dropping and
+-- recreating it loses no data.  CASCADE removes any dependent FKs/views.
+-- ─────────────────────────────────────────────────────────────────────────────
+DO $$
+DECLARE
+  existing_rows INT := 0;
+BEGIN
+  IF EXISTS (
+    SELECT 1 FROM information_schema.tables
+    WHERE table_schema = 'public' AND table_name = 'question_tags'
+  ) THEN
+    EXECUTE 'SELECT COUNT(*) FROM question_tags' INTO existing_rows;
+    IF existing_rows > 0 THEN
+      RAISE EXCEPTION 'Refusing to drop question_tags: it has % rows. Manual review required.', existing_rows;
+    END IF;
+    RAISE NOTICE 'Dropping empty question_tags table to reset its schema.';
+  END IF;
+END $$;
+
+DROP TABLE IF EXISTS question_tags CASCADE;
+
+CREATE TABLE question_tags (
+  id          UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  question_id UUID NOT NULL REFERENCES questions(id) ON DELETE CASCADE,
+  topic       TEXT NOT NULL,
+  created_at  TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(question_id, topic)
+);
+
+CREATE INDEX idx_question_tags_question ON question_tags(question_id);
+CREATE INDEX idx_question_tags_topic    ON question_tags(topic);
+
+ALTER TABLE question_tags ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "Public read question_tags" ON question_tags FOR SELECT USING (true);
+
+-- ─────────────────────────────────────────────────────────────────────────────
 -- 1. Project pages → questions
 -- ─────────────────────────────────────────────────────────────────────────────
 INSERT INTO questions (
