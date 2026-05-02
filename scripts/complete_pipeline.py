@@ -254,21 +254,24 @@ class CompletePipeline:
         paper_record = self.db.insert('papers', paper_data)
         paper_id_db = paper_record[0]['id']
         
-        # Insert question records
+        # Insert question records + topic tags
         for pq in processed_questions:
             question_data = {
                 'paper_id': paper_id_db,
                 'question_number': pq.question_number,
-                'topic_code': pq.topic_code,
                 'difficulty': pq.difficulty,
                 'page_pdf_url': pq.qp_storage_url,
                 'ms_pdf_url': pq.ms_storage_url,
                 'has_diagram': pq.has_diagram,
-                'page_count': pq.page_count,
-                'confidence': pq.confidence
             }
-            
-            self.db.insert('questions', question_data)
+
+            result = self.db.insert('questions', question_data)
+            question_id = result[0]['id']
+
+            self.db.insert('question_tags', {
+                'question_id': question_id,
+                'topic': pq.topic_code,
+            })
         
         print(f"   ✅ Stored {len(processed_questions)} questions")
         
