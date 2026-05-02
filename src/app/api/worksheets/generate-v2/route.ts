@@ -143,11 +143,38 @@ export async function POST(request: Request) {
     }
 
     if (!pages || pages.length === 0) {
-      return NextResponse.json({
-        worksheet_id: null,
-        pages: [],
-        message: 'No questions found matching criteria'
-      });
+      // Diagnose why — check if pages exist without topic filter
+      const { count: totalPages } = await supabase
+        .from('pages')
+        .select('id', { count: 'exact', head: true })
+        .eq('is_question', true)
+        .in('paper_id', paperIds);
+
+      const { count: classifiedPages } = await supabase
+        .from('pages')
+        .select('id', { count: 'exact', head: true })
+        .eq('is_question', true)
+        .in('paper_id', paperIds)
+        .not('topics', 'eq', '{}');
+
+      if (!totalPages || totalPages === 0) {
+        return NextResponse.json(
+          { error: 'No question pages found for this subject. The past paper data may not have been ingested yet.' },
+          { status: 404 }
+        );
+      }
+
+      if (!classifiedPages || classifiedPages === 0) {
+        return NextResponse.json(
+          { error: 'Questions for this subject have not been classified into topics yet. Please contact support.' },
+          { status: 404 }
+        );
+      }
+
+      return NextResponse.json(
+        { error: `No questions found for the selected topics. Try selecting different topics or a wider year range. (${classifiedPages} classified questions exist for this subject)` },
+        { status: 404 }
+      );
     }
 
     // Shuffle if requested
