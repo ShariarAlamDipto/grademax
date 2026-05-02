@@ -94,20 +94,11 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
   const [fullscreenPdf, setFullscreenPdf] = useState<{ url: string; title: string } | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
 
   // Cache topics per subject to avoid re-fetching
   const topicsCache = useRef<Record<string, Topic[]>>({
     [initialSubjects[0]?.id || '']: initialTopics,
   });
-
-  // Detect mobile breakpoint
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   // Fetch topics only when subject changes (with cache)
   useEffect(() => {
@@ -149,12 +140,9 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     setError(null);
   }, [selectedSubject]);
 
-  // Auto-show PDF preview modal on mobile when PDFs are ready
-  useEffect(() => {
-    if (isMobile && worksheetUrl && !fullscreenPdf) {
-      setFullscreenPdf({ url: worksheetUrl, title: 'Worksheet Preview' });
-    }
-  }, [worksheetUrl, isMobile, fullscreenPdf]);
+  // Note: we deliberately do NOT auto-open a PDF iframe on mobile.
+  // iOS Safari can't render PDF blob URLs inside iframes — it shows a
+  // broken-page icon. The download anchors below work natively instead.
 
   const toggleTopic = (code: string) => {
     setSelectedTopics(prev =>
@@ -560,6 +548,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     <a
                       href={worksheetUrl}
                       download="worksheet.pdf"
+                      target="_blank"
+                      rel="noopener"
                       className="flex-1 bg-gray-700 border-2 border-green-500 text-green-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors text-center text-sm md:text-base"
                     >
                       Download Worksheet.pdf
@@ -569,6 +559,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     <a
                       href={markschemeUrl}
                       download="markscheme.pdf"
+                      target="_blank"
+                      rel="noopener"
                       className="flex-1 bg-gray-700 border-2 border-blue-500 text-blue-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-900 transition-colors text-center text-sm md:text-base"
                     >
                       Download Markscheme.pdf
@@ -576,8 +568,11 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                   )}
                 </div>
 
-                {/* PDF Previews */}
-                <div className="flex flex-col items-center gap-6 md:gap-8">
+                {/* PDF Previews — desktop/tablet only.
+                    iOS Safari renders blob:application/pdf in iframes as a
+                    broken-page icon, so we hide previews on phones and
+                    surface only the download anchors above. */}
+                <div className="hidden md:flex flex-col items-center gap-6 md:gap-8">
                   {worksheetUrl && (
                     <div className="w-full flex flex-col items-center">
                       <div className="flex items-center justify-between w-full mb-3 md:mb-4">
@@ -589,8 +584,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                           Fullscreen
                         </button>
                       </div>
-                      <iframe 
-                        src={worksheetUrl} 
+                      <iframe
+                        src={worksheetUrl}
                         className="w-full md:w-[85vw] lg:w-[80vw] h-[50vh] md:h-[70vh] lg:h-[85vh] border-2 border-green-500 rounded-lg bg-white shadow-2xl"
                         title="Worksheet Preview"
                       />
@@ -607,8 +602,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                           Fullscreen
                         </button>
                       </div>
-                      <iframe 
-                        src={markschemeUrl} 
+                      <iframe
+                        src={markschemeUrl}
                         className="w-full md:w-[85vw] lg:w-[80vw] h-[50vh] md:h-[70vh] lg:h-[85vh] border-2 border-blue-500 rounded-lg bg-white shadow-2xl"
                         title="Markscheme Preview"
                       />
