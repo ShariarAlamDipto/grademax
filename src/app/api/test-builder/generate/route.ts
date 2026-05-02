@@ -2,6 +2,14 @@ import { NextResponse } from 'next/server';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
+// Merging many source PDFs from Supabase storage can take longer than the
+// default 10 s function budget, especially on cold starts behind a slow
+// mobile uplink. Pin the runtime and extend the duration so the connection
+// isn't killed mid-response.
+export const runtime = 'nodejs';
+export const maxDuration = 60;
+export const dynamic = 'force-dynamic';
+
 async function buildCoverPage(
   doc: PDFDocument,
   opts: {

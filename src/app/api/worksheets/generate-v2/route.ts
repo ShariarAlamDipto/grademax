@@ -5,6 +5,14 @@ import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
+// Several Supabase round-trips happen here. On a cold serverless start over a
+// slow mobile connection the default 10 s budget is tight enough that the
+// connection can be dropped mid-flight, surfacing as `Failed to fetch` in the
+// browser. Bump the budget and pin the runtime.
+export const runtime = 'nodejs';
+export const maxDuration = 30;
+export const dynamic = 'force-dynamic';
+
 interface GenerateRequest {
   subjectId?: string;
   topics: string[];

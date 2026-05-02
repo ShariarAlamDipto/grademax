@@ -9,6 +9,34 @@ function fireTrack(feature: string, payload?: Record<string, unknown>) {
     body: JSON.stringify({ feature, ...payload }),
   }).catch(() => undefined);
 }
+
+/**
+ * Mobile networks frequently surface a dropped connection as
+ * `TypeError: Failed to fetch`. Retry once on that, and rewrite the
+ * opaque message into something the user can act on.
+ */
+async function fetchWithRetry(
+  input: RequestInfo | URL,
+  init?: RequestInit,
+): Promise<Response> {
+  try {
+    return await fetch(input, init);
+  } catch (err) {
+    if (err instanceof TypeError) {
+      try {
+        return await fetch(input, init);
+      } catch (retryErr) {
+        if (retryErr instanceof TypeError) {
+          throw new Error(
+            "Couldn't reach the server. Check your internet connection and try again.",
+          );
+        }
+        throw retryErr;
+      }
+    }
+    throw err;
+  }
+}
 import SubjectSelector from './SubjectSelector';
 import TopicTree from './TopicTree';
 import FilterBar from './FilterBar';
@@ -270,7 +298,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     try {
       // Step 1: Generate question paper PDF
       setPdfProgress({ step: 1, total: 3, label: 'Building question paper...' });
-      const qpRes = await fetch('/api/test-builder/generate', {
+      const qpRes = await fetchWithRetry('/api/test-builder/generate', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -284,30 +312,42 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       });
 
       if (!qpRes.ok) {
-        const err = await qpRes.json().catch(() => ({ error: `Server error (${qpRes.status})` }));
-        throw new Error(err.error || 'Failed to generate question paper');
+        const text = await qpRes.text();
+        let serverMessage = text;
+        try {
+          serverMessage = JSON.parse(text)?.error ?? text;
+        } catch {
+          // Non-JSON error body — keep raw text.
+        }
+        throw new Error(
+          `Server returned ${qpRes.status}: ${serverMessage || qpRes.statusText}`,
+        );
       }
       const qpBlob = await qpRes.blob();
       setWorksheetUrl(URL.createObjectURL(qpBlob));
 
-      // Step 2: Generate mark scheme PDF
+      // Step 2: Generate mark scheme PDF (best-effort)
       setPdfProgress({ step: 2, total: 3, label: 'Building mark scheme...' });
-      const msRes = await fetch('/api/test-builder/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: testTitle || 'Untitled Test',
-          type: 'markscheme',
-          totalMarks,
-          subjectName: subject?.name || '',
-          level: subject?.level || '',
-          pages: pagesPayload,
-        }),
-      });
+      try {
+        const msRes = await fetchWithRetry('/api/test-builder/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: testTitle || 'Untitled Test',
+            type: 'markscheme',
+            totalMarks,
+            subjectName: subject?.name || '',
+            level: subject?.level || '',
+            pages: pagesPayload,
+          }),
+        });
 
-      if (msRes.ok) {
-        const msBlob = await msRes.blob();
-        setMarkschemeUrl(URL.createObjectURL(msBlob));
+        if (msRes.ok) {
+          const msBlob = await msRes.blob();
+          setMarkschemeUrl(URL.createObjectURL(msBlob));
+        }
+      } catch (msErr) {
+        console.warn('[TestBuilder] mark scheme generation failed', msErr);
       }
 
       // Step 3: Done
@@ -337,6 +377,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       });
 
     } catch (err: unknown) {
+      console.error('[TestBuilder] generate failed', err);
       setError(err instanceof Error ? err.message : 'Failed to generate PDF');
       setPdfProgress(null);
     } finally {

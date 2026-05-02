@@ -3,6 +3,13 @@ import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { requireAuth } from '@/lib/apiAuth';
 import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
+// Same reason as /api/test-builder/generate — PDF merging across many source
+// files can run long, particularly on cold starts. Without these the default
+// budget can kill the response mid-flight on slow mobile uplinks.
+export const runtime = 'nodejs';
+export const maxDuration = 60;
+export const dynamic = 'force-dynamic';
+
 interface WorksheetItem {
   position: number;
   questions: {
