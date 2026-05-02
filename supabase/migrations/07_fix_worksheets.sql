@@ -79,9 +79,18 @@ ALTER TABLE worksheet_items ALTER COLUMN position DROP DEFAULT;
 ALTER TABLE worksheet_items
   DROP CONSTRAINT IF EXISTS worksheet_items_worksheet_id_page_id_key;
 
-ALTER TABLE worksheet_items
-  ADD CONSTRAINT IF NOT EXISTS worksheet_items_worksheet_id_question_id_key
-  UNIQUE (worksheet_id, question_id);
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint
+    WHERE conname = 'worksheet_items_worksheet_id_question_id_key'
+      AND conrelid = 'worksheet_items'::regclass
+  ) THEN
+    ALTER TABLE worksheet_items
+      ADD CONSTRAINT worksheet_items_worksheet_id_question_id_key
+      UNIQUE (worksheet_id, question_id);
+  END IF;
+END $$;
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- 6. WORKSHEET_ITEMS — update indexes
