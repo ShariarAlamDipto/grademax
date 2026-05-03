@@ -10,58 +10,13 @@ function fireTrack(feature: string, payload?: Record<string, unknown>) {
   }).catch(() => undefined);
 }
 
-/**
- * Mobile networks frequently surface a dropped connection as
- * `TypeError: Failed to fetch`. Retry once on that, and rewrite the
- * opaque message into something the user can act on.
- *
- * `timeoutMs` guards against the request hanging silently — without it the
- * Generate button can sit on "Generating…" forever when the server stops
- * responding mid-flight (which is what was happening in Test Builder on
- * phones).
- */
-async function fetchWithRetry(
-  input: RequestInfo | URL,
-  init: RequestInit & { timeoutMs?: number } = {},
-): Promise<Response> {
-  const { timeoutMs = 75000, ...rest } = init;
-
-  const callOnce = () => fetch(input, { ...rest, signal: AbortSignal.timeout(timeoutMs) });
-
-  try {
-    return await callOnce();
-  } catch (err) {
-    if (err instanceof DOMException && err.name === 'TimeoutError') {
-      throw new Error(
-        `The server took longer than ${Math.round(timeoutMs / 1000)} s to respond. Try a smaller test or reconnect to a stronger network.`,
-      );
-    }
-    if (err instanceof TypeError) {
-      try {
-        return await callOnce();
-      } catch (retryErr) {
-        if (retryErr instanceof DOMException && retryErr.name === 'TimeoutError') {
-          throw new Error(
-            `The server took longer than ${Math.round(timeoutMs / 1000)} s to respond. Try a smaller test or reconnect to a stronger network.`,
-          );
-        }
-        if (retryErr instanceof TypeError) {
-          throw new Error(
-            "Couldn't reach the server. Check your internet connection and try again.",
-          );
-        }
-        throw retryErr;
-      }
-    }
-    throw err;
-  }
-}
 import SubjectSelector from './SubjectSelector';
 import TopicTree from './TopicTree';
 import FilterBar from './FilterBar';
 import QuestionCard, { QuestionItem } from './QuestionCard';
 import PaperPreview from './PaperPreview';
 import QuestionPreviewModal from './QuestionPreviewModal';
+import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 
 // ─────────────────────────────────────────────
 // Types
@@ -315,62 +270,61 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     }));
 
     try {
-      // Step 1: Generate question paper PDF
-      setPdfProgress({ step: 1, total: 3, label: 'Building question paper...' });
-      const qpRes = await fetchWithRetry('/api/test-builder/generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          title: testTitle || 'Untitled Test',
-          type: 'worksheet',
-          totalMarks,
-          subjectName: subject?.name || '',
-          level: subject?.level || '',
-          pages: pagesPayload,
-        }),
+      // Step 1: Build question paper PDF entirely in the browser.
+      // (See src/lib/clientPdfBuild.ts for why we no longer round-trip through
+      // the server PDF-merge route — short version: phones over cellular kept
+      // dropping the long single response, so the merge now happens locally
+      // with parallel fetches from Supabase storage.)
+      const qpResult = await buildPdfInBrowser(pagesPayload, {
+        kind: 'worksheet',
+        title: testTitle || 'Untitled Test',
+        subjectName: subject?.name || '',
+        level: subject?.level || '',
+        totalMarks,
+        brand: 'GradeMax Exams',
+      }, (p) => {
+        setPdfProgress({
+          step: 1,
+          total: 2,
+          label: `Question paper · ${p.label}`,
+        });
       });
 
-      if (!qpRes.ok) {
-        const text = await qpRes.text();
-        let serverMessage = text;
-        try {
-          serverMessage = JSON.parse(text)?.error ?? text;
-        } catch {
-          // Non-JSON error body — keep raw text.
-        }
-        throw new Error(
-          `Server returned ${qpRes.status}: ${serverMessage || qpRes.statusText}`,
-        );
+      if (qpResult.successCount === 0) {
+        throw new Error('No question PDFs could be downloaded. Please try again or check your connection.');
       }
-      const qpBlob = await qpRes.blob();
-      setWorksheetUrl(URL.createObjectURL(qpBlob));
 
-      // Step 2: Generate mark scheme PDF (best-effort)
-      setPdfProgress({ step: 2, total: 3, label: 'Building mark scheme...' });
+      setWorksheetUrl(URL.createObjectURL(qpResult.blob));
+
+      // Step 2: Mark scheme is best-effort — failure here keeps the QP we
+      // already produced and just warns.
       try {
-        const msRes = await fetchWithRetry('/api/test-builder/generate', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
+        const hasAnyMs = pagesPayload.some((p) => p.msPageUrl);
+        if (hasAnyMs) {
+          const msResult = await buildPdfInBrowser(pagesPayload, {
+            kind: 'markscheme',
             title: testTitle || 'Untitled Test',
-            type: 'markscheme',
-            totalMarks,
             subjectName: subject?.name || '',
             level: subject?.level || '',
-            pages: pagesPayload,
-          }),
-        });
-
-        if (msRes.ok) {
-          const msBlob = await msRes.blob();
-          setMarkschemeUrl(URL.createObjectURL(msBlob));
+            totalMarks,
+            brand: 'GradeMax Exams',
+          }, (p) => {
+            setPdfProgress({
+              step: 2,
+              total: 2,
+              label: `Mark scheme · ${p.label}`,
+            });
+          });
+          if (msResult.successCount > 0) {
+            setMarkschemeUrl(URL.createObjectURL(msResult.blob));
+          }
         }
       } catch (msErr) {
         console.warn('[TestBuilder] mark scheme generation failed', msErr);
       }
 
       // Step 3: Done
-      setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
+      setPdfProgress({ step: 2, total: 2, label: 'PDFs ready!' });
       setTimeout(() => setPdfProgress(null), 2000);
 
       fireTrack("test_builder_download", {
