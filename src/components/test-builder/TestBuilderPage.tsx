@@ -14,18 +14,37 @@ function fireTrack(feature: string, payload?: Record<string, unknown>) {
  * Mobile networks frequently surface a dropped connection as
  * `TypeError: Failed to fetch`. Retry once on that, and rewrite the
  * opaque message into something the user can act on.
+ *
+ * `timeoutMs` guards against the request hanging silently — without it the
+ * Generate button can sit on "Generating…" forever when the server stops
+ * responding mid-flight (which is what was happening in Test Builder on
+ * phones).
  */
 async function fetchWithRetry(
   input: RequestInfo | URL,
-  init?: RequestInit,
+  init: RequestInit & { timeoutMs?: number } = {},
 ): Promise<Response> {
+  const { timeoutMs = 75000, ...rest } = init;
+
+  const callOnce = () => fetch(input, { ...rest, signal: AbortSignal.timeout(timeoutMs) });
+
   try {
-    return await fetch(input, init);
+    return await callOnce();
   } catch (err) {
+    if (err instanceof DOMException && err.name === 'TimeoutError') {
+      throw new Error(
+        `The server took longer than ${Math.round(timeoutMs / 1000)} s to respond. Try a smaller test or reconnect to a stronger network.`,
+      );
+    }
     if (err instanceof TypeError) {
       try {
-        return await fetch(input, init);
+        return await callOnce();
       } catch (retryErr) {
+        if (retryErr instanceof DOMException && retryErr.name === 'TimeoutError') {
+          throw new Error(
+            `The server took longer than ${Math.round(timeoutMs / 1000)} s to respond. Try a smaller test or reconnect to a stronger network.`,
+          );
+        }
         if (retryErr instanceof TypeError) {
           throw new Error(
             "Couldn't reach the server. Check your internet connection and try again.",
