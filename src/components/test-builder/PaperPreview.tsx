@@ -174,39 +174,69 @@ export default function PaperPreview({
           </div>
         )}
 
-        {/* Download links — shown after generate succeeds.
+        {/* Preview + Download links — shown after generate succeeds.
             Rendered as real <a> tags (not programmatic clicks) so iOS Safari
             opens the PDF in its native viewer instead of showing the
-            broken-page icon you get from a programmatic blob-URL navigation. */}
+            broken-page icon you get from a programmatic blob-URL navigation.
+            "Preview" omits the `download` attribute so desktop browsers open
+            the PDF in a new tab; "Download" sets it for an actual save. */}
         {(worksheetUrl || markschemeUrl) && (
-          <div className="flex gap-2">
+          <div className="space-y-2">
             {worksheetUrl && (
-              <a
-                href={worksheetUrl}
-                download={safeFilename(testTitle, 'question_paper')}
-                target="_blank"
-                rel="noopener"
-                className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Download Question Paper
-              </a>
+              <div className="flex gap-2">
+                <a
+                  href={worksheetUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex-1 bg-green-600/30 border border-green-500/60 text-green-200 hover:bg-green-600/50 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Preview QP
+                </a>
+                <a
+                  href={worksheetUrl}
+                  download={safeFilename(testTitle, 'question_paper')}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download QP
+                </a>
+              </div>
             )}
             {markschemeUrl && (
-              <a
-                href={markschemeUrl}
-                download={safeFilename(testTitle, 'mark_scheme')}
-                target="_blank"
-                rel="noopener"
-                className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Download Mark Scheme
-              </a>
+              <div className="flex gap-2">
+                <a
+                  href={markschemeUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex-1 bg-blue-600/30 border border-blue-500/60 text-blue-200 hover:bg-blue-600/50 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                  </svg>
+                  Preview MS
+                </a>
+                <a
+                  href={markschemeUrl}
+                  download={safeFilename(testTitle, 'mark_scheme')}
+                  target="_blank"
+                  rel="noopener"
+                  className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  Download MS
+                </a>
+              </div>
             )}
           </div>
         )}
