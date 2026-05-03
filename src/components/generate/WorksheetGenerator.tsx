@@ -73,24 +73,40 @@ function fireTrack(feature: string, payload?: Record<string, unknown>) {
 
 /**
  * Fetch wrapper that survives flaky mobile networks:
+ *   - applies an explicit timeout so the UI never hangs forever waiting
+ *     on a request the platform has silently abandoned
  *   - retries once on network-level failure (the case that surfaces as
  *     `TypeError: Failed to fetch` on phones when the connection drops)
- *   - rewrites that opaque message into something the user can act on
+ *   - rewrites the opaque message into something the user can act on
  *
  * On a non-network failure (HTTP error, parse error) we surface the
  * underlying message unchanged so the caller can still react.
  */
 async function fetchWithRetry(
   input: RequestInfo | URL,
-  init?: RequestInit,
+  init: RequestInit & { timeoutMs?: number } = {},
 ): Promise<Response> {
+  const { timeoutMs = 75000, ...rest } = init;
+
+  const callOnce = () => fetch(input, { ...rest, signal: AbortSignal.timeout(timeoutMs) });
+
   try {
-    return await fetch(input, init);
+    return await callOnce();
   } catch (err) {
+    if (err instanceof DOMException && err.name === 'TimeoutError') {
+      throw new Error(
+        `The server took longer than ${Math.round(timeoutMs / 1000)} s to respond. Try a smaller worksheet or reconnect to a stronger network.`,
+      );
+    }
     if (err instanceof TypeError) {
       try {
-        return await fetch(input, init);
+        return await callOnce();
       } catch (retryErr) {
+        if (retryErr instanceof DOMException && retryErr.name === 'TimeoutError') {
+          throw new Error(
+            `The server took longer than ${Math.round(timeoutMs / 1000)} s to respond. Try a smaller worksheet or reconnect to a stronger network.`,
+          );
+        }
         if (retryErr instanceof TypeError) {
           throw new Error(
             "Couldn't reach the server. Check your internet connection and try again.",
