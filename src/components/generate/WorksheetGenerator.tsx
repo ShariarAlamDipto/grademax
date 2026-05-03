@@ -2,30 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
-
-// Fullscreen modal component for PDF preview
-function FullscreenPdfModal({ url, title, onClose }: { url: string; title: string; onClose: () => void }) {
-  return (
-    <div className="fixed inset-0 z-50 bg-black bg-opacity-95 flex flex-col">
-      <div className="flex items-center justify-between p-3 md:p-4 bg-gray-900 border-b border-gray-700">
-        <h3 className="text-white font-semibold text-sm md:text-lg truncate">{title}</h3>
-        <button
-          onClick={onClose}
-          className="text-white bg-red-600 hover:bg-red-700 px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-sm transition-colors"
-        >
-          Close
-        </button>
-      </div>
-      <div className="flex-1 p-2 md:p-4">
-        <iframe
-          src={url}
-          className="w-full h-full border-0 rounded-lg bg-white"
-          title={title}
-        />
-      </div>
-    </div>
-  );
-}
+import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 
 interface Subject {
   id: string;
@@ -142,7 +119,6 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
-  const [fullscreenPdf, setFullscreenPdf] = useState<{ url: string; title: string } | null>(null);
 
   // Cache topics per subject to avoid re-fetching
   const topicsCache = useRef<Record<string, Topic[]>>({
@@ -358,15 +334,6 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 p-4 md:p-8">
-      {/* Fullscreen PDF Modal */}
-      {fullscreenPdf && (
-        <FullscreenPdfModal
-          url={fullscreenPdf.url}
-          title={fullscreenPdf.title}
-          onClose={() => setFullscreenPdf(null)}
-        />
-      )}
-      
       <div className="max-w-7xl mx-auto">
         <h1 className="text-2xl md:text-5xl font-bold mb-2 text-white">Worksheet Generator</h1>
         <p className="text-gray-300 mb-4 md:mb-8 text-sm md:text-base">
@@ -668,48 +635,42 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                   )}
                 </div>
 
-                {/* PDF Previews — desktop/tablet only.
-                    iOS Safari renders blob:application/pdf in iframes as a
-                    broken-page icon, so we hide previews on phones and
-                    surface only the download anchors above. */}
-                <div className="hidden md:flex flex-col items-center gap-6 md:gap-8">
-                  {worksheetUrl && (
-                    <div className="w-full flex flex-col items-center">
-                      <div className="flex items-center justify-between w-full mb-3 md:mb-4">
-                        <h4 className="text-green-300 font-semibold text-base md:text-xl">Worksheet Preview</h4>
-                        <button
-                          onClick={() => setFullscreenPdf({ url: worksheetUrl, title: 'Worksheet Preview' })}
-                          className="bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
-                        >
-                          Fullscreen
-                        </button>
-                      </div>
-                      <iframe
-                        src={worksheetUrl}
-                        className="w-full md:w-[85vw] lg:w-[80vw] h-[50vh] md:h-[70vh] lg:h-[85vh] border-2 border-green-500 rounded-lg bg-white shadow-2xl"
-                        title="Worksheet Preview"
-                      />
+                {/* PDF Previews — canvas-based, works on iOS where PDF
+                    iframes render as a broken-page icon. Visible on all
+                    screen sizes; on phones the canvases are sized to the
+                    container and rendered sequentially to bound memory. */}
+                {worksheetUrl && (
+                  <div className="w-full flex flex-col mb-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="text-green-300 font-semibold text-base md:text-xl">Worksheet Preview</h4>
+                      <a
+                        href={worksheetUrl}
+                        target="_blank"
+                        rel="noopener"
+                        className="bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
+                      >
+                        Open in viewer
+                      </a>
                     </div>
-                  )}
-                  {markschemeUrl && (
-                    <div className="w-full flex flex-col items-center mt-4 md:mt-8">
-                      <div className="flex items-center justify-between w-full mb-3 md:mb-4">
-                        <h4 className="text-blue-300 font-semibold text-base md:text-xl">Markscheme Preview</h4>
-                        <button
-                          onClick={() => setFullscreenPdf({ url: markschemeUrl, title: 'Markscheme Preview' })}
-                          className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
-                        >
-                          Fullscreen
-                        </button>
-                      </div>
-                      <iframe
-                        src={markschemeUrl}
-                        className="w-full md:w-[85vw] lg:w-[80vw] h-[50vh] md:h-[70vh] lg:h-[85vh] border-2 border-blue-500 rounded-lg bg-white shadow-2xl"
-                        title="Markscheme Preview"
-                      />
+                    <MultiPagePdfPreview url={worksheetUrl} className="border-2 border-green-500/60 max-h-[70vh] overflow-y-auto" />
+                  </div>
+                )}
+                {markschemeUrl && (
+                  <div className="w-full flex flex-col">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="text-blue-300 font-semibold text-base md:text-xl">Markscheme Preview</h4>
+                      <a
+                        href={markschemeUrl}
+                        target="_blank"
+                        rel="noopener"
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
+                      >
+                        Open in viewer
+                      </a>
                     </div>
-                  )}
-                </div>
+                    <MultiPagePdfPreview url={markschemeUrl} className="border-2 border-blue-500/60 max-h-[70vh] overflow-y-auto" />
+                  </div>
+                )}
               </div>
             )}
 
