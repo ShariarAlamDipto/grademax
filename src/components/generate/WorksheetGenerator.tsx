@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 
 // Fullscreen modal component for PDF preview
 function FullscreenPdfModal({ url, title, onClose }: { url: string; title: string; onClose: () => void }) {
@@ -265,57 +266,84 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   };
 
   const handleDownload = async () => {
-    if (!worksheetId) return;
+    if (!worksheetId || questions.length === 0) return;
 
     setError(null);
-    // Revoke any previously created object URLs
     setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
 
-    try {
-      // Step 1: Download worksheet PDF
-      setPdfProgress({ step: 1, total: 3, label: 'Building worksheet PDF...' });
-      const worksheetResponse = await fetchWithRetry(
-        `/api/worksheets/${worksheetId}/download?type=worksheet`,
-      );
+    const subject = subjects.find(s => s.id === selectedSubject);
+    const subjectName = subject?.name ?? '';
+    const subjectLevel = subject?.level ?? '';
 
-      if (!worksheetResponse.ok) {
-        const text = await worksheetResponse.text();
-        let serverMessage = text;
-        try {
-          serverMessage = JSON.parse(text)?.error ?? text;
-        } catch {
-          // Non-JSON error body — keep raw text.
-        }
-        throw new Error(
-          `Server returned ${worksheetResponse.status}: ${serverMessage || worksheetResponse.statusText}`,
-        );
+    // Map the questions returned by /generate-v2 onto the shape the
+    // browser-side merger expects.
+    const pagesPayload = questions.map((q) => ({
+      qpPageUrl: q.qpPageUrl,
+      msPageUrl: q.msPageUrl,
+    }));
+
+    try {
+      // Step 1: Build worksheet PDF in the browser (no server round-trip
+      // for the merge — see src/lib/clientPdfBuild.ts).
+      const wsResult = await buildPdfInBrowser(pagesPayload, {
+        kind: 'worksheet',
+        title: `${subjectName || 'Worksheet'} Worksheet`,
+        subjectName,
+        level: subjectLevel,
+        totalMarks: questions.length * 4,
+        brand: 'GradeMax Worksheets',
+        topics: selectedTopics,
+        yearStart,
+        yearEnd,
+        difficulty: difficulty || null,
+      }, (p) => {
+        setPdfProgress({
+          step: 1,
+          total: 2,
+          label: `Worksheet · ${p.label}`,
+        });
+      });
+
+      if (wsResult.successCount === 0) {
+        throw new Error('No question PDFs could be downloaded. Please try again or check your connection.');
       }
 
-      const worksheetBlob = await worksheetResponse.blob();
-      const wUrl = URL.createObjectURL(worksheetBlob);
-      setWorksheetUrl(wUrl);
+      setWorksheetUrl(URL.createObjectURL(wsResult.blob));
 
-      // Step 2: Download markscheme PDF (best-effort — failure here is non-fatal)
-      setPdfProgress({ step: 2, total: 3, label: 'Building markscheme PDF...' });
+      // Step 2: Markscheme — best effort.
       try {
-        const markschemeResponse = await fetchWithRetry(
-          `/api/worksheets/${worksheetId}/download?type=markscheme`,
-        );
-        if (markschemeResponse.ok) {
-          const markschemeBlob = await markschemeResponse.blob();
-          const msUrl = URL.createObjectURL(markschemeBlob);
-          setMarkschemeUrl(msUrl);
+        const hasAnyMs = pagesPayload.some((p) => p.msPageUrl);
+        if (hasAnyMs) {
+          const msResult = await buildPdfInBrowser(pagesPayload, {
+            kind: 'markscheme',
+            title: `${subjectName || 'Worksheet'} Worksheet`,
+            subjectName,
+            level: subjectLevel,
+            totalMarks: questions.length * 4,
+            brand: 'GradeMax Worksheets',
+            topics: selectedTopics,
+            yearStart,
+            yearEnd,
+            difficulty: difficulty || null,
+          }, (p) => {
+            setPdfProgress({
+              step: 2,
+              total: 2,
+              label: `Markscheme · ${p.label}`,
+            });
+          });
+          if (msResult.successCount > 0) {
+            setMarkschemeUrl(URL.createObjectURL(msResult.blob));
+          }
         }
       } catch (msErr) {
-        console.warn('[WorksheetGenerator] markscheme download failed', msErr);
+        console.warn('[WorksheetGenerator] markscheme build failed', msErr);
       }
 
-      // Step 3: Done
-      setPdfProgress({ step: 3, total: 3, label: 'PDFs ready!' });
+      setPdfProgress({ step: 2, total: 2, label: 'PDFs ready!' });
       setTimeout(() => setPdfProgress(null), 2000);
 
-      const subject = subjects.find(s => s.id === selectedSubject);
       fireTrack("worksheet_download", {
         subject_id: selectedSubject,
         subject_name: subject?.name ?? null,
