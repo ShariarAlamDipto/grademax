@@ -6,9 +6,20 @@ import { useEffect, useRef, useState } from 'react';
 let pdfjsCache: typeof import('pdfjs-dist') | null = null;
 async function getPdfjsLib() {
   if (!pdfjsCache) {
-    pdfjsCache = await import('pdfjs-dist');
+    try {
+      pdfjsCache = await import('pdfjs-dist');
+      console.log('[PdfThumbnail] pdfjs-dist loaded');
+    } catch (err) {
+      console.error('[PdfThumbnail] Failed to import pdfjs-dist:', err);
+      throw new Error('Failed to load pdfjs-dist library');
+    }
+  }
+  
+  // Always ensure worker source is set correctly
+  if (pdfjsCache && pdfjsCache.GlobalWorkerOptions) {
     pdfjsCache.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
   }
+  
   return pdfjsCache;
 }
 

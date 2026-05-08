@@ -17,9 +17,23 @@ type PdfDocumentProxy = any;
 let pdfjsCache: typeof import('pdfjs-dist') | null = null;
 async function getPdfjsLib() {
   if (!pdfjsCache) {
-    pdfjsCache = await import('pdfjs-dist');
-    pdfjsCache.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+    try {
+      pdfjsCache = await import('pdfjs-dist');
+      console.log('[getPdfjsLib] pdfjs-dist version:', (pdfjsCache as any).version);
+    } catch (err) {
+      console.error('[getPdfjsLib] Failed to import pdfjs-dist:', err);
+      throw new Error('Failed to load pdfjs-dist library');
+    }
   }
+  
+  // Always ensure worker source is set correctly
+  if (pdfjsCache && pdfjsCache.GlobalWorkerOptions) {
+    pdfjsCache.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+    console.log('[getPdfjsLib] Worker source set to:', pdfjsCache.GlobalWorkerOptions.workerSrc);
+  } else {
+    console.warn('[getPdfjsLib] Could not set GlobalWorkerOptions');
+  }
+  
   return pdfjsCache;
 }
 
@@ -44,32 +58,44 @@ export default function MultiPagePdfPreview({
   const [numPages, setNumPages] = useState(0);
   const [renderedCount, setRenderedCount] = useState(0);
   const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [totalPagesInDoc, setTotalPagesInDoc] = useState(0);
 
   // Phase 1: load the PDF and discover its page count.
   useEffect(() => {
     if (!url) {
       setError(true);
+      setErrorMessage('No PDF URL provided');
       return;
     }
 
     const gen = ++generationRef.current;
     setError(false);
+    setErrorMessage('');
     setNumPages(0);
     setRenderedCount(0);
     setTotalPagesInDoc(0);
 
     (async () => {
       try {
+        console.log('[MultiPagePdfPreview] Loading PDF from:', url);
         const pdfjsLib = await getPdfjsLib();
+        console.log('[MultiPagePdfPreview] pdfjs-dist loaded successfully');
+        
         const loadingTask = pdfjsLib.getDocument({
           url,
           disableAutoFetch: true,
           disableStream: true,
           isEvalSupported: false,
         });
+        
+        console.log('[MultiPagePdfPreview] Starting PDF load task...');
         const pdf = await loadingTask.promise;
+        
+        console.log('[MultiPagePdfPreview] PDF loaded, page count:', pdf.numPages);
+        
         if (gen !== generationRef.current) {
+          console.log('[MultiPagePdfPreview] PDF load invalidated (newer request in progress)');
           pdf.destroy();
           return;
         }
@@ -77,8 +103,13 @@ export default function MultiPagePdfPreview({
         setTotalPagesInDoc(pdf.numPages);
         setNumPages(Math.min(pdf.numPages, maxPages));
       } catch (err) {
-        console.warn('[MultiPagePdfPreview] load failed:', err);
-        if (gen === generationRef.current) setError(true);
+        const errorMsg = err instanceof Error ? err.message : String(err);
+        console.error('[MultiPagePdfPreview] load failed:', err);
+        console.error('[MultiPagePdfPreview] error details:', errorMsg);
+        if (gen === generationRef.current) {
+          setError(true);
+          setErrorMessage(`Failed to load PDF: ${errorMsg}`);
+        }
       }
     })();
 
@@ -148,8 +179,9 @@ export default function MultiPagePdfPreview({
 
   if (error) {
     return (
-      <div className={`flex items-center justify-center p-6 text-sm text-gray-500 bg-gray-100 rounded-lg ${className}`}>
-        Unable to load preview
+      <div className={`flex flex-col items-center justify-center p-6 text-sm text-gray-600 bg-gray-100 rounded-lg ${className}`}>
+        <p className="font-semibold text-red-600 mb-1">Unable to load preview</p>
+        {errorMessage && <p className="text-xs text-gray-500">{errorMessage}</p>}
       </div>
     );
   }
