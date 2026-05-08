@@ -51,8 +51,24 @@ export default function PdfThumbnail({ url, width = 280, className = '', onClick
       try {
         const pdfjsLib = await getPdfjsLib();
 
+        // For blob URLs, fetch the data directly instead of passing URL
+        let loadData: any;
+        if (url.startsWith('blob:')) {
+          try {
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
+            const arrayBuffer = await response.arrayBuffer();
+            loadData = { data: new Uint8Array(arrayBuffer) };
+          } catch (fetchErr) {
+            console.warn('[PdfThumbnail] Failed to fetch blob:', fetchErr);
+            throw fetchErr;
+          }
+        } else {
+          loadData = { url };
+        }
+
         const loadingTask = pdfjsLib.getDocument({
-          url,
+          ...loadData,
           disableAutoFetch: true,
           disableStream: true,
           isEvalSupported: false,
