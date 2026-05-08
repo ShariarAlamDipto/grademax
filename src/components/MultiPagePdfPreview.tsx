@@ -82,8 +82,29 @@ export default function MultiPagePdfPreview({
         const pdfjsLib = await getPdfjsLib();
         console.log('[MultiPagePdfPreview] pdfjs-dist loaded successfully');
         
+        // For blob URLs, fetch the data directly instead of passing URL
+        let loadData: any;
+        if (url.startsWith('blob:')) {
+          console.log('[MultiPagePdfPreview] Loading blob URL data directly');
+          try {
+            const response = await fetch(url);
+            if (!response.ok) {
+              throw new Error(`Failed to fetch blob: ${response.status} ${response.statusText}`);
+            }
+            const arrayBuffer = await response.arrayBuffer();
+            console.log('[MultiPagePdfPreview] Blob fetched, size:', arrayBuffer.byteLength, 'bytes');
+            loadData = { data: new Uint8Array(arrayBuffer) };
+          } catch (fetchErr) {
+            console.error('[MultiPagePdfPreview] Failed to fetch blob:', fetchErr);
+            throw fetchErr;
+          }
+        } else {
+          console.log('[MultiPagePdfPreview] Loading URL directly');
+          loadData = { url };
+        }
+        
         const loadingTask = pdfjsLib.getDocument({
-          url,
+          ...loadData,
           disableAutoFetch: true,
           disableStream: true,
           isEvalSupported: false,
