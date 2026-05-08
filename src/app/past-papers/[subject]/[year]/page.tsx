@@ -4,7 +4,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, pastPaperSubjects, seasonDisplay, subjectColorClasses } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
-import { toPaperSlug } from "@/lib/paper-slugs"
+import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
 
 export const revalidate = 3600
 
@@ -302,10 +302,10 @@ export default async function SubjectYearPapersPage({
                             href={`/past-papers/${slug}/${yearLabel}/${session.season}/${paperSlug}`}
                             className="font-semibold text-white hover:text-white/80 transition-colors"
                           >
-                            Paper {paper.paper_number}
+                            {formatPaperLabel(paper.paper_number)}
                           </Link>
                         ) : (
-                          <span className="font-semibold text-white/80">Paper {paper.paper_number}</span>
+                          <span className="font-semibold text-white/80">{formatPaperLabel(paper.paper_number)}</span>
                         )}
 
                         <div className="flex gap-2 flex-wrap">

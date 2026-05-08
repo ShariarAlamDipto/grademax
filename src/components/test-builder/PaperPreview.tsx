@@ -199,8 +199,6 @@ export default function PaperPreview({
                 <a
                   href={worksheetUrl}
                   download={safeFilename(testTitle, 'question_paper')}
-                  target="_blank"
-                  rel="noopener"
                   className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -227,8 +225,6 @@ export default function PaperPreview({
                 <a
                   href={markschemeUrl}
                   download={safeFilename(testTitle, 'mark_scheme')}
-                  target="_blank"
-                  rel="noopener"
                   className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

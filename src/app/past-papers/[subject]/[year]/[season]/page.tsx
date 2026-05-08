@@ -3,7 +3,7 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
-import { toPaperSlug } from "@/lib/paper-slugs"
+import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
 
 export const revalidate = 3600
 
@@ -336,10 +336,10 @@ export default async function SessionPapersPage({
                         href={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${paperSlug}`}
                         className="font-semibold text-white hover:text-white/80 transition-colors"
                       >
-                        Paper {paper.paper_number}
+                        {formatPaperLabel(paper.paper_number)}
                       </Link>
                     ) : (
-                      <span className="font-semibold text-white/80">Paper {paper.paper_number}</span>
+                      <span className="font-semibold text-white/80">{formatPaperLabel(paper.paper_number)}</span>
                     )}
                     <span className="ml-2 text-xs text-white/30">{subj.name} · {yearLabel} · {seasonName}</span>
                   </div>
