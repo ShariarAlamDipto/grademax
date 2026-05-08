@@ -4,10 +4,10 @@ import { notFound } from "next/navigation"
 import {
   pastPaperSubjects,
   getSubjectBySlug,
-  subjectColorClasses,
   seasonDisplay,
 } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
+import { formatPaperLabel } from "@/lib/paper-slugs"
 
 export const revalidate = 3600
 
@@ -82,7 +82,9 @@ interface PaperRow {
   season: string
   pdf_url: string | null
   markscheme_pdf_url: string | null
+  data_file_url: string | null
 }
+
 
 interface SessionGroup {
   season: string
@@ -116,8 +118,13 @@ function dedupeSessionPapers(sessionPapers: PaperRow[]): PaperRow[] {
       continue
     }
 
-    const existingScore = Number(Boolean(existing.pdf_url)) + Number(Boolean(existing.markscheme_pdf_url))
-    const paperScore = Number(Boolean(paper.pdf_url)) + Number(Boolean(paper.markscheme_pdf_url))
+    const score = (p: PaperRow) =>
+      Number(Boolean(p.pdf_url)) +
+      Number(Boolean(p.markscheme_pdf_url)) +
+      Number(Boolean(p.data_file_url))
+
+    const existingScore = score(existing)
+    const paperScore = score(paper)
 
     if (paperScore > existingScore || (paperScore === existingScore && paper.id > existing.id)) {
       byPaperNumber.set(paper.paper_number, paper)
@@ -210,7 +217,6 @@ export default async function SubjectPapersPage({
   if (!subj) notFound()
 
   const level = subj.level === "ial" ? "A Level" : "IGCSE"
-  const colorClass = subjectColorClasses[subj.colorKey]
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -218,23 +224,41 @@ export default async function SubjectPapersPage({
     { auth: { autoRefreshToken: false, persistSession: false } }
   )
 
-  const { data: subjectRow } = await supabase
+  // Use ilike + ordering instead of strict eq so we tolerate duplicate subject
+  // rows (e.g. legacy "International GCSE" + new "IGCSE" with the same name).
+  const { data: subjectRows } = await supabase
     .from("subjects")
     .select("id")
-    .eq("name", subj.name)
-    .maybeSingle()
+    .ilike("name", subj.name)
+
+  const subjectIds = (subjectRows ?? []).map((r) => r.id)
 
   let papers: PaperRow[] = []
 
-  if (subjectRow) {
-    const { data } = await supabase
+  if (subjectIds.length > 0) {
+    const selectCols = "id, paper_number, year, season, pdf_url, markscheme_pdf_url, data_file_url"
+    const initial = await supabase
       .from("papers")
-      .select("id, paper_number, year, season, pdf_url, markscheme_pdf_url")
-      .eq("subject_id", subjectRow.id)
+      .select(selectCols)
+      .in("subject_id", subjectIds)
       .in("season", Array.from(VALID_SEASONS))
       .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
       .order("year", { ascending: false })
       .order("season", { ascending: false })
+
+    // Fallback for environments where `data_file_url` hasn't been added yet.
+    let data: PaperRow[] | null = (initial.data as unknown as PaperRow[]) ?? null
+    if (initial.error?.code === "42703") {
+      const fallback = await supabase
+        .from("papers")
+        .select("id, paper_number, year, season, pdf_url, markscheme_pdf_url")
+        .in("subject_id", subjectIds)
+        .in("season", Array.from(VALID_SEASONS))
+        .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
+        .order("year", { ascending: false })
+        .order("season", { ascending: false })
+      data = (fallback.data as unknown as PaperRow[]) ?? null
+    }
 
     papers = ((data as PaperRow[]) ?? [])
       .map((paper) => ({
@@ -242,6 +266,7 @@ export default async function SubjectPapersPage({
         season: normalizeSeason(paper.season),
         pdf_url: isValidPublicUrl(paper.pdf_url) ? paper.pdf_url : null,
         markscheme_pdf_url: isValidPublicUrl(paper.markscheme_pdf_url) ? paper.markscheme_pdf_url : null,
+        data_file_url: isValidPublicUrl(paper.data_file_url ?? null) ? paper.data_file_url : null,
       }))
       .filter((paper) => VALID_SEASONS.has(paper.season))
       .filter((paper) => Boolean(paper.pdf_url) || Boolean(paper.markscheme_pdf_url))
@@ -307,31 +332,6 @@ export default async function SubjectPapersPage({
             <p style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>
               Free Edexcel {level} {subj.name} question papers and mark schemes.
             </p>
-
-            {/* Paper number quick-filter */}
-            <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap", marginTop: "1.25rem" }}>
-              <span style={{ fontSize: "0.7rem", fontWeight: 600, color: "var(--gm-text-3)", textTransform: "uppercase", letterSpacing: "0.06em" }}>
-                Filter by paper:
-              </span>
-              {["1", "2", "3", "4"].map((n) => (
-                <Link
-                  key={n}
-                  href={`/past-papers/${slug}/paper-${n}`}
-                  style={{
-                    fontSize: "0.75rem",
-                    fontWeight: 600,
-                    padding: "0.3rem 0.875rem",
-                    borderRadius: "99px",
-                    background: "transparent",
-                    color: "var(--gm-text-2)",
-                    border: "1px solid var(--gm-border-2)",
-                    textDecoration: "none",
-                  }}
-                >
-                  Paper {n}
-                </Link>
-              ))}
-            </div>
           </div>
 
           {/* Empty State */}
@@ -375,6 +375,7 @@ export default async function SubjectPapersPage({
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                         {sess.papers.map((paper) => {
                           const paperPageSlug = `paper-${paper.paper_number.toLowerCase()}`
+                          const paperLabel = formatPaperLabel(paper.paper_number)
                           return (
                           <div
                             key={paper.id}
@@ -396,7 +397,7 @@ export default async function SubjectPapersPage({
                               style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)", textDecoration: "none" }}
                               className="gm-link"
                             >
-                              Paper {paper.paper_number}
+                              {paperLabel}
                             </Link>
 
                             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
@@ -456,6 +457,34 @@ export default async function SubjectPapersPage({
                                 </a>
                               ) : (
                                 <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", padding: "0.35rem 0.75rem" }}>MS —</span>
+                              )}
+
+                              {paper.data_file_url && (
+                                <a
+                                  href={paper.data_file_url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  style={{
+                                    display: "inline-flex",
+                                    alignItems: "center",
+                                    gap: "0.35rem",
+                                    padding: "0.35rem 0.75rem",
+                                    fontSize: "0.75rem",
+                                    fontWeight: 600,
+                                    borderRadius: "0.5rem",
+                                    background: "rgba(168,85,247,0.12)",
+                                    color: "var(--gm-violet, #c4b5fd)",
+                                    border: "1px solid rgba(168,85,247,0.3)",
+                                    textDecoration: "none",
+                                    transition: "background 0.15s",
+                                  }}
+                                >
+                                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
+                                  </svg>
+                                  Data Files
+                                </a>
                               )}
                             </div>
                           </div>

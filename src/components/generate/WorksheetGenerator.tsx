@@ -615,8 +615,6 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     <a
                       href={worksheetUrl}
                       download="worksheet.pdf"
-                      target="_blank"
-                      rel="noopener"
                       className="flex-1 bg-gray-700 border-2 border-green-500 text-green-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors text-center text-sm md:text-base"
                     >
                       Download Worksheet.pdf
@@ -626,8 +624,6 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     <a
                       href={markschemeUrl}
                       download="markscheme.pdf"
-                      target="_blank"
-                      rel="noopener"
                       className="flex-1 bg-gray-700 border-2 border-blue-500 text-blue-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-900 transition-colors text-center text-sm md:text-base"
                     >
                       Download Markscheme.pdf

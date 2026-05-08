@@ -88,19 +88,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }))
 
-  // ─── Paper number hub pages (/past-papers/{subject}/paper-N) ─────────────────
-  // These aggregate all years for a specific paper number — high-value SEO targets
-  // e.g. "Physics Paper 1 past papers" → /past-papers/physics/paper-1
-
-  const paperHubPages: MetadataRoute.Sitemap = pastPaperSubjects.flatMap((s) =>
-    ["1", "2", "3", "4"].map((n) => ({
-      url: `${BASE_URL}/past-papers/${s.slug}/paper-${n}`,
-      lastModified: now,
-      changeFrequency: 'monthly' as const,
-      priority: 0.88,
-    }))
-  )
-
   // ─── Dynamic: session pages + individual paper pages (fetched from Supabase) ──
   // Session pages  → /past-papers/{slug}/{year}/{season}
   // Paper pages    → /past-papers/{slug}/{year}/{season}/paper-{number}
@@ -229,7 +216,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...subjectPages,
     ...topicPages,
     ...pastPaperSubjectPages,
-    ...paperHubPages,          // ← paper number hubs (paper-1 through paper-4)
     ...(yearPages.length > 0 ? yearPages : fallbackYearPages),
     ...sessionPages,
     ...paperPages,             // ← individual paper pages (year/season/paper-N)
