@@ -54,13 +54,17 @@ export default function PdfThumbnail({ url, width = 280, className = '', onClick
         // For blob URLs, fetch the data directly instead of passing URL
         let loadData: any;
         if (url.startsWith('blob:')) {
+          console.log('[PdfThumbnail] Loading blob URL data directly');
           try {
             const response = await fetch(url);
             if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
             const arrayBuffer = await response.arrayBuffer();
+            console.log('[PdfThumbnail] Blob fetched, size:', arrayBuffer.byteLength, 'bytes');
             loadData = { data: new Uint8Array(arrayBuffer) };
           } catch (fetchErr) {
-            console.warn('[PdfThumbnail] Failed to fetch blob:', fetchErr);
+            const blobError = fetchErr instanceof TypeError ? 
+              ' (blob may have been revoked or is inaccessible)' : '';
+            console.warn(`[PdfThumbnail] Failed to fetch blob: ${fetchErr}${blobError}`);
             throw fetchErr;
           }
         } else {
