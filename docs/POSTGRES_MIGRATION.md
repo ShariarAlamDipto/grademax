@@ -56,6 +56,15 @@ Supabase-specific references that must be rewritten:
 
 Docker Compose includes an internal PostgreSQL service at `postgres:5432` and persists data in `../postgres_data`. It is not exposed on a host port.
 
+Run:
+
+```bash
+npm run persistent:prepare
+docker compose --env-file docker.env up -d postgres
+docker compose --env-file docker.env run --rm grademax npm run postgres:migrate
+docker compose --env-file docker.env run --rm grademax npm run postgres:seed
+```
+
 The app still runs on the current Supabase code until the data layer is migrated.
 
 ### Phase 2: Normalize Schema

@@ -72,6 +72,8 @@ RUN python3 -m venv /opt/venv \
   && /opt/venv/bin/pip install --no-cache-dir -r requirements.txt
 ENV PATH="/opt/venv/bin:$PATH"
 
+RUN npm install --omit=dev --ignore-scripts --no-audit --no-fund pg dotenv
+
 RUN groupadd --system --gid 1001 nodejs \
   && useradd --system --uid 1001 --gid nodejs nextjs \
   && mkdir -p /app/data /app/logs /app/output /app/config \
@@ -83,6 +85,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 COPY --from=builder --chown=nextjs:nodejs /app/scripts ./scripts
 COPY --from=builder --chown=nextjs:nodejs /app/ingest ./ingest
 COPY --from=builder --chown=nextjs:nodejs /app/config ./config
+COPY --from=builder --chown=nextjs:nodejs /app/db ./db
+COPY --from=builder --chown=nextjs:nodejs /app/src/lib/subjects.ts ./src/lib/subjects.ts
 
 USER nextjs
 EXPOSE 3000
