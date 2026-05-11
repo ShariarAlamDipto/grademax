@@ -20,9 +20,7 @@ Change the host location with `GRADEMAX_PERSIST_DIR` in `docker.env`.
 
 ```bash
 cp docker.env.example docker.env
-mkdir -p ../grademax-persistent/{data,logs,output,config}
-mkdir -p ../postgres_data
-cp -R config/. ../grademax-persistent/config/
+npm run persistent:prepare
 ```
 
 Fill `docker.env` with the real Supabase and R2 values. The `NEXT_PUBLIC_*` values are needed at build time as well as runtime, so rebuild after changing them:
@@ -50,6 +48,14 @@ Run one-off project scripts inside the same image:
 ```bash
 docker compose --env-file docker.env run --rm grademax npm run ingest:papers -- --data-dir=/app/data/raw
 docker compose --env-file docker.env run --rm grademax python scripts/preflight_check.py
+```
+
+Initialize the internal PostgreSQL database:
+
+```bash
+docker compose --env-file docker.env up -d postgres
+docker compose --env-file docker.env run --rm grademax npm run postgres:migrate
+docker compose --env-file docker.env run --rm grademax npm run postgres:seed
 ```
 
 ## Notes
