@@ -10,7 +10,7 @@ By default, Docker Compose mounts these folders from `../grademax-persistent`:
 - `logs` -> `/app/logs`
 - `output` -> `/app/output`
 - `config` -> `/app/config`
-- `postgres` -> PostgreSQL data directory
+- `../postgres_data` -> PostgreSQL data directory
 
 Change the host location with `GRADEMAX_PERSIST_DIR` in `docker.env`.
 
@@ -19,7 +19,7 @@ Change the host location with `GRADEMAX_PERSIST_DIR` in `docker.env`.
 ```bash
 cp docker.env.example docker.env
 mkdir -p ../grademax-persistent/{data,logs,output,config}
-mkdir -p ../grademax-persistent/postgres
+mkdir -p ../postgres_data
 cp -R config/. ../grademax-persistent/config/
 ```
 
