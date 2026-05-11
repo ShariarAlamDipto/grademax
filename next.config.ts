@@ -15,6 +15,7 @@ const baseCsp = [
 ].join("; ");
 
 const nextConfig: NextConfig = {
+  output: "standalone",
   trailingSlash: false,
   serverExternalPackages: [
     "canvas",

@@ -1,0 +1,36 @@
+services:
+  grademax:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL:-http://localhost}
+        NEXT_PUBLIC_SUPABASE_ANON_KEY: ${NEXT_PUBLIC_SUPABASE_ANON_KEY:-placeholder}
+        NEXT_PUBLIC_R2_PUBLIC_URL: ${NEXT_PUBLIC_R2_PUBLIC_URL:-http://localhost}
+        SUPABASE_SERVICE_ROLE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:-placeholder}
+        SUPABASE_SERVICE_KEY: ${SUPABASE_SERVICE_KEY:-placeholder}
+        R2_ACCOUNT_ID: ${R2_ACCOUNT_ID:-placeholder}
+        R2_ACCESS_KEY_ID: ${R2_ACCESS_KEY_ID:-placeholder}
+        R2_SECRET_ACCESS_KEY: ${R2_SECRET_ACCESS_KEY:-placeholder}
+        R2_BUCKET_NAME: ${R2_BUCKET_NAME:-grademax-papers}
+    image: grademax:latest
+    container_name: grademax-app
+    restart: unless-stopped
+    env_file:
+      - docker.env
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+    ports:
+      - "${GRADEMAX_PORT:-3000}:3000"
+    volumes:
+      - ${GRADEMAX_PERSIST_DIR:-../grademax-persistent}/data:/app/data
+      - ${GRADEMAX_PERSIST_DIR:-../grademax-persistent}/logs:/app/logs
+      - ${GRADEMAX_PERSIST_DIR:-../grademax-persistent}/output:/app/output
+      - ${GRADEMAX_PERSIST_DIR:-../grademax-persistent}/config:/app/config
+    healthcheck:
+      test: ["CMD-SHELL", "node -e \"fetch('http://127.0.0.1:3000/').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))\""]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
