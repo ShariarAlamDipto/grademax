@@ -1,4 +1,22 @@
 services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: grademax-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-grademax}
+      POSTGRES_USER: ${POSTGRES_USER:-grademax}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-grademax_dev_password}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5434}:5432"
+    volumes:
+      - ${GRADEMAX_PERSIST_DIR:-../grademax-persistent}/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-grademax} -d ${POSTGRES_DB:-grademax}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
   grademax:
     build:
       context: .
@@ -21,6 +39,7 @@ services:
       NODE_ENV: production
       PORT: 3000
       HOSTNAME: 0.0.0.0
+      DATABASE_URL: ${DATABASE_URL:-postgresql://grademax:grademax_dev_password@postgres:5432/grademax}
     ports:
       - "127.0.0.1:${GRADEMAX_PORT:-3004}:3000"
     volumes:
@@ -34,3 +53,6 @@ services:
       timeout: 10s
       retries: 3
       start_period: 30s
+    depends_on:
+      postgres:
+        condition: service_healthy
