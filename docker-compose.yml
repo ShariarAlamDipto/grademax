@@ -22,7 +22,7 @@ services:
       PORT: 3000
       HOSTNAME: 0.0.0.0
     ports:
-      - "${GRADEMAX_PORT:-3000}:3000"
+      - "127.0.0.1:${GRADEMAX_PORT:-3004}:3000"
     volumes:
       - ${GRADEMAX_PERSIST_DIR:-../grademax-persistent}/data:/app/data
       - ${GRADEMAX_PERSIST_DIR:-../grademax-persistent}/logs:/app/logs
