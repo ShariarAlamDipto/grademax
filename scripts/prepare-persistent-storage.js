@@ -2,11 +2,20 @@
 
 const fs = require("fs")
 const path = require("path")
-const dotenv = require("dotenv")
 
 for (const file of ["docker.env", ".env.local", ".env"]) {
   const envPath = path.resolve(process.cwd(), file)
-  if (fs.existsSync(envPath)) dotenv.config({ path: envPath, override: false })
+  if (!fs.existsSync(envPath)) continue
+  const lines = fs.readFileSync(envPath, "utf8").split(/\r?\n/)
+  for (const line of lines) {
+    const trimmed = line.trim()
+    if (!trimmed || trimmed.startsWith("#")) continue
+    const equalsIndex = trimmed.indexOf("=")
+    if (equalsIndex === -1) continue
+    const key = trimmed.slice(0, equalsIndex).trim()
+    const value = trimmed.slice(equalsIndex + 1).trim().replace(/^['"]|['"]$/g, "")
+    if (key && process.env[key] === undefined) process.env[key] = value
+  }
 }
 
 const persistRoot = path.resolve(process.env.GRADEMAX_PERSIST_DIR || "../grademax-persistent")
