@@ -12,6 +12,8 @@ By default, Docker Compose mounts these folders from `../grademax-persistent`:
 - `config` -> `/app/config`
 - `../postgres_data` -> PostgreSQL data directory
 
+PostgreSQL is internal to Docker Compose only. It is reachable by the app at `postgres:5432`; it is not published on a host port.
+
 Change the host location with `GRADEMAX_PERSIST_DIR` in `docker.env`.
 
 ## First Run

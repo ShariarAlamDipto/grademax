@@ -54,7 +54,7 @@ Supabase-specific references that must be rewritten:
 
 ### Phase 1: Local PostgreSQL Foundation
 
-Docker Compose includes a PostgreSQL service bound to `127.0.0.1:5434` and persisted in `../postgres_data`.
+Docker Compose includes an internal PostgreSQL service at `postgres:5432` and persists data in `../postgres_data`. It is not exposed on a host port.
 
 The app still runs on the current Supabase code until the data layer is migrated.
 
