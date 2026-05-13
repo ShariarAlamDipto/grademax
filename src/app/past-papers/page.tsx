@@ -54,7 +54,12 @@ const jsonLd = {
   ],
 }
 
-export const revalidate = 3600
+// Re-render on every request so a transient Supabase error (eg. quota
+// restriction) doesn't cause us to serve an empty "No papers available" page
+// for an hour after the issue is fixed. The query itself is tiny (we only
+// pull paper ids + subject names), so dynamic rendering is cheap.
+export const dynamic = "force-dynamic"
+export const revalidate = 0
 
 const accentMap: Record<Subject["colorKey"], string> = {
   physics:   "accent-orange",
@@ -103,7 +108,16 @@ export default async function PastPapersPage() {
 
       const { data: paperRows, error } = await query
 
-      if (error || !paperRows || paperRows.length === 0) break
+      // Supabase returns errors (eg. quota restriction 402) via the `error`
+      // field rather than throwing. Treat that the same as the catch below:
+      // fall back to listing all known subjects so we never serve an empty
+      // page just because the API was momentarily unavailable.
+      if (error) {
+        pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
+        break
+      }
+
+      if (!paperRows || paperRows.length === 0) break
 
       const typedRows = paperRows as Array<{ id: string; subjects: { name: string } | { name: string }[] }>
       for (const row of typedRows) {
@@ -115,8 +129,7 @@ export default async function PastPapersPage() {
       if (typedRows.length < pageSize) break
     }
   } catch {
-    // If Supabase is unreachable at build time, fall back to showing all subjects.
-    // The page will revalidate at runtime (revalidate = 3600).
+    // Same fallback for transport-level errors (no network, DNS failure, etc.)
     pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
   }
 
