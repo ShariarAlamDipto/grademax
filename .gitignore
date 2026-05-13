@@ -48,3 +48,4 @@ scripts/check-r2.js
 config/google-service-account.json
 config/*.json
 data/processed/upload_manifest.json
+scripts/email_send_log.json
