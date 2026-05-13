@@ -37,8 +37,9 @@ export default function Navbar() {
   ]
 
   const extraLinks = [
-    { href: "/subjects",  label: "Subjects" },
-    { href: "/lectures",  label: "Lectures" },
+    { href: "/subjects",     label: "Subjects" },
+    { href: "/lectures",     label: "Lectures" },
+    { href: "/improvements", label: "Improvements" },
   ]
 
   const allLinks = [...coreLinks, ...extraLinks]
