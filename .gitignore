@@ -47,3 +47,4 @@ check_pages.js
 scripts/check-r2.js
 config/google-service-account.json
 config/*.json
+data/processed/upload_manifest.json
