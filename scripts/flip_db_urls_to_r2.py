@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """
-Update Supabase pages.qp_page_url + ms_page_url + lectures.file_url to point at R2/Appwrite.
+Update Supabase pages.qp_page_url + ms_page_url to point at R2.
 
 Uses direct PostgreSQL (bypasses PostgREST quota restriction).
 
 Two passes:
   1. Bio/Chem case-fix:    /pages/2012_jan_1/  ->  /pages/2012_Jan_1/
   2. Provider flip:         supabase.co/storage/v1/object/public/question-pdfs/  ->  R2 base
-                            supabase.co/storage/v1/object/public/lectures/        ->  Appwrite base
+
+The lectures bucket stays on Supabase — only inventoried here, never flipped.
 
 Idempotent — safe to re-run.
 
@@ -112,18 +113,11 @@ if not DRY_RUN and n_pages > 0:
           f"{QP_BASE}%", f"{QP_BASE}%"))
     print(f"  Flipped {cur.rowcount} pages rows")
 
-# ── 3. lectures.file_url flip ───────────────────────────────────────────────
-print(f"\n[3] lectures.file_url:  Supabase -> Appwrite")
-APPWRITE_ENDPOINT = os.getenv("NEXT_PUBLIC_APPWRITE_ENDPOINT", "https://sgp.cloud.appwrite.io/v1")
-APPWRITE_PROJECT  = os.getenv("NEXT_PUBLIC_APPWRITE_PROJECT_ID")
-APPWRITE_BUCKET   = os.getenv("NEXT_PUBLIC_APPWRITE_BUCKET_ID", "grademax-lectures")
-
+# ── 3. lectures bucket inventory (kept on Supabase, no flip needed) ────────
+print(f"\n[3] lectures.file_url:  inventory only (kept on Supabase)")
 cur.execute("SELECT count(*) FROM lectures WHERE file_url LIKE %s", (f"{LEC_BASE}%",))
 n_lec = cur.fetchone()[0]
-print(f"  lectures still on Supabase storage: {n_lec}")
-if n_lec:
-    print("  NOTE: lectures must be re-uploaded to Appwrite individually — they need")
-    print("        new Appwrite file IDs. Run: scripts/migrate_lectures_to_appwrite.py")
+print(f"  lectures still on Supabase storage: {n_lec} (no action — Supabase is the lectures provider)")
 
 # ── 3b. Disable Bio/Chem/HumanBio (their PDFs are still on locked Supabase) ──
 # When --disable-orphaned-subjects is passed, we NULL-out qp_page_url/ms_page_url
