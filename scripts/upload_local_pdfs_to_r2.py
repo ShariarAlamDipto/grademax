@@ -71,6 +71,10 @@ SUBJECT_MAP = {
     "Maths B":                       "MathsB",                    # run-together
     "Mechanics_1":                   "Mechanics_1",               # underscore
     "Physics":                       "Physics",                   # plain
+    # Downloaded from Supabase S3 by scripts/download_bio_chem_via_s3.py:
+    "Biology":                       "Biology",
+    "Chemistry":                     "Chemistry",
+    "Human_Biology":                 "Human_Biology",
 }
 
 r2 = boto3.client(
@@ -119,69 +123,62 @@ for local_subject, db_subject in SUBJECT_MAP.items():
     if not subj_root.exists():
         print(f"\n  {db_subject}: SKIP (no local folder {subj_root})"); continue
 
-    subj_ok = subj_skip = subj_fail = 0
     print(f"\n[{db_subject}]  source: {subj_root}")
+
+    counts = {"ok": 0, "skip": 0, "fail": 0}
+
+    def upload_pdf(pdf_path: Path, r2_key: str, file_type: str, paper: str) -> str:
+        """Upload one PDF, update counts dict in place, return status."""
+        if r2_exists(r2_key):
+            counts["skip"] += 1
+            manifest.append({
+                "local_path": str(pdf_path), "r2_key": r2_key,
+                "url": f"{R2_PUBLIC_URL}/{r2_key}",
+                "type": file_type, "subject": db_subject, "paper": paper,
+                "status": "skipped_already_in_r2",
+            })
+            return "skip"
+        data = pdf_path.read_bytes()
+        if r2_upload(r2_key, data):
+            counts["ok"] += 1
+            manifest.append({
+                "local_path": str(pdf_path), "r2_key": r2_key,
+                "url": f"{R2_PUBLIC_URL}/{r2_key}",
+                "type": file_type, "subject": db_subject, "paper": paper,
+                "size": len(data), "status": "uploaded",
+            })
+            return "ok"
+        counts["fail"] += 1
+        return "fail"
 
     paper_folders = sorted(p for p in subj_root.iterdir() if p.is_dir())
     for paper_dir in paper_folders:
         paper_id = paper_dir.name  # e.g. 2019_May-Jun_P1
-
-        # ── Question-paper pages ────────────────────────────────────────────
         pages_dir = paper_dir / "pages"
-        if pages_dir.exists():
-            for pdf in sorted(pages_dir.glob("*.pdf")):
+        ms_dir    = paper_dir / "markschemes"
+
+        if pages_dir.exists() or ms_dir.exists():
+            # Layout A: separate pages/ and markschemes/ subfolders
+            # (FPM, MathsB, Mechanics_1, Physics — locally segmented)
+            if pages_dir.exists():
+                for pdf in sorted(pages_dir.glob("*.pdf")):
+                    key = f"subjects/{db_subject}/pages/{paper_id}/{pdf.name}"
+                    upload_pdf(pdf, key, "qp", paper_id)
+            if ms_dir.exists():
+                for pdf in sorted(ms_dir.glob("*.pdf")):
+                    # local q1.pdf -> r2 q1_ms.pdf
+                    key = f"subjects/{db_subject}/pages/{paper_id}/{pdf.stem}_ms.pdf"
+                    upload_pdf(pdf, key, "ms", paper_id)
+        else:
+            # Layout B: flat — q*.pdf and q*_ms.pdf intermixed in paper folder
+            # (Biology, Chemistry, Human_Biology — downloaded from Supabase S3)
+            for pdf in sorted(paper_dir.glob("*.pdf")):
                 key = f"subjects/{db_subject}/pages/{paper_id}/{pdf.name}"
-                if r2_exists(key):
-                    subj_skip += 1
-                    manifest.append({
-                        "local_path": str(pdf), "r2_key": key,
-                        "url": f"{R2_PUBLIC_URL}/{key}",
-                        "type": "qp", "subject": db_subject, "paper": paper_id,
-                        "status": "skipped_already_in_r2",
-                    })
-                    continue
-                data = pdf.read_bytes()
-                if r2_upload(key, data):
-                    subj_ok += 1
-                    manifest.append({
-                        "local_path": str(pdf), "r2_key": key,
-                        "url": f"{R2_PUBLIC_URL}/{key}",
-                        "type": "qp", "subject": db_subject, "paper": paper_id,
-                        "size": len(data), "status": "uploaded",
-                    })
-                else:
-                    subj_fail += 1
+                file_type = "ms" if pdf.stem.endswith("_ms") else "qp"
+                upload_pdf(pdf, key, file_type, paper_id)
 
-        # ── Mark-scheme pages ───────────────────────────────────────────────
-        ms_dir = paper_dir / "markschemes"
-        if ms_dir.exists():
-            for pdf in sorted(ms_dir.glob("*.pdf")):
-                # local: q1.pdf  ->  r2: q1_ms.pdf
-                stem = pdf.stem
-                key = f"subjects/{db_subject}/pages/{paper_id}/{stem}_ms.pdf"
-                if r2_exists(key):
-                    subj_skip += 1
-                    manifest.append({
-                        "local_path": str(pdf), "r2_key": key,
-                        "url": f"{R2_PUBLIC_URL}/{key}",
-                        "type": "ms", "subject": db_subject, "paper": paper_id,
-                        "status": "skipped_already_in_r2",
-                    })
-                    continue
-                data = pdf.read_bytes()
-                if r2_upload(key, data):
-                    subj_ok += 1
-                    manifest.append({
-                        "local_path": str(pdf), "r2_key": key,
-                        "url": f"{R2_PUBLIC_URL}/{key}",
-                        "type": "ms", "subject": db_subject, "paper": paper_id,
-                        "size": len(data), "status": "uploaded",
-                    })
-                else:
-                    subj_fail += 1
-
-    print(f"  {db_subject}: ok={subj_ok}  skip={subj_skip}  fail={subj_fail}")
-    total_ok += subj_ok; total_skip += subj_skip; total_fail += subj_fail
+    print(f"  {db_subject}: ok={counts['ok']}  skip={counts['skip']}  fail={counts['fail']}")
+    total_ok += counts['ok']; total_skip += counts['skip']; total_fail += counts['fail']
 
 # ── Manifest output ─────────────────────────────────────────────────────────
 manifest_path = PROCESSED_DIR / "upload_manifest.json"
