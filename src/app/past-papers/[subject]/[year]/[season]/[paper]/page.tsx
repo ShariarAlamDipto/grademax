@@ -1,11 +1,15 @@
-import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
 import { extractPaperTokenFromSlug, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
+import { getPapersIndex, leafKey } from "@/lib/papersIndex"
 
-export const revalidate = 3600
+export const revalidate = false
+// Every reachable paper URL is enumerated by generateStaticParams below from the
+// DB-backed index. Unknown URLs return 404 instead of falling through to ISR,
+// which keeps the route entirely off the ISR write meter.
+export const dynamicParams = false
 
 function parseYearParam(value: string): number | null {
   if (!/^\d{4}$/.test(value)) return null
@@ -14,26 +18,13 @@ function parseYearParam(value: string): number | null {
   return year
 }
 
-// Pre-render popular paper combos for fast initial indexing.
-// ISR handles everything else on-demand.
-export function generateStaticParams() {
-  const popularSubjects = [
-    "physics", "chemistry", "biology", "maths-a", "maths-b",
-    "pure-mathematics-1", "mechanics-1", "statistics-1",
-  ]
-  const recentYears = ["2025", "2024", "2023", "2022"]
-  const mainSeasons = ["may-jun", "oct-nov", "jan"]
-  const commonPapers = ["paper-1", "paper-2", "paper-1r", "paper-2r"]
+export async function generateStaticParams() {
+  const { byLeaf } = await getPapersIndex()
   const params: { subject: string; year: string; season: string; paper: string }[] = []
-
-  for (const subject of popularSubjects) {
-    for (const year of recentYears) {
-      for (const season of mainSeasons) {
-        for (const paper of commonPapers) {
-          params.push({ subject, year, season, paper })
-        }
-      }
-    }
+  for (const key of byLeaf.keys()) {
+    const [subject, year, season, paper] = key.split("/")
+    if (!subject || !year || !season || !paper) continue
+    params.push({ subject, year, season, paper })
   }
   return params
 }
@@ -118,11 +109,6 @@ const VALID_SEASONS = new Set(["jan", "jan-feb", "feb-mar", "may-jun", "oct-nov"
 
 function normalizeSeason(value: string): string {
   return value.trim().toLowerCase()
-}
-
-function isValidPublicUrl(url: string | null): url is string {
-  if (!url) return false
-  return /^https?:\/\//i.test(url)
 }
 
 // ─── JSON-LD ──────────────────────────────────────────────────────────────────
@@ -249,50 +235,23 @@ export default async function PaperPage({
   const colorClass = subjectColorClasses[subj.colorKey]
   const seasonName = seasonDisplay(normalizedSeason)
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { auth: { autoRefreshToken: false, persistSession: false } }
-  )
+  // Look up the paper from the memoized build-time index — avoids per-page
+  // Supabase queries (and the ISR writes that came from cold cache fills).
+  const normalizedPaperSlug = toPaperSlug(paperToken)
+  if (!normalizedPaperSlug) notFound()
+  const { byLeaf } = await getPapersIndex()
+  const hit = byLeaf.get(leafKey(slug, yearLabel, normalizedSeason, normalizedPaperSlug))
+  if (!hit) notFound()
 
-  const { data: subjectRow } = await supabase
-    .from("subjects")
-    .select("id")
-    .eq("name", subj.name)
-    .maybeSingle()
-
-  if (!subjectRow) notFound()
-
-  // Fetch this specific paper, prefer the row with both PDFs
-  const { data: rows } = await supabase
-    .from("papers")
-    .select("id, paper_number, pdf_url, markscheme_pdf_url")
-    .eq("subject_id", subjectRow.id)
-    .eq("year", parsedYear)
-    .eq("season", normalizedSeason)
-    .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
-    .order("id", { ascending: false })
-    .limit(150)
-
-  if (!rows?.length) notFound()
-
-  const matchedRows = rows.filter((row) => normalizePaperToken(row.paper_number) === paperToken)
-  if (matchedRows.length === 0) notFound()
-
-  // Pick the best row (most files)
-  const best = matchedRows.reduce((a, b) => {
-    const scoreA = Number(Boolean(a.pdf_url)) + Number(Boolean(a.markscheme_pdf_url))
-    const scoreB = Number(Boolean(b.pdf_url)) + Number(Boolean(b.markscheme_pdf_url))
-    return scoreB > scoreA ? b : a
-  })
-
-  const validPdf = isValidPublicUrl(best.pdf_url) ? best.pdf_url : null
-  const validMs = isValidPublicUrl(best.markscheme_pdf_url) ? best.markscheme_pdf_url : null
-  if (!validPdf && !validMs) notFound()
-
-  const paper: PaperRow = { ...best, pdf_url: validPdf, markscheme_pdf_url: validMs }
+  const paper: PaperRow = {
+    id: hit.id,
+    paper_number: hit.paperNumber,
+    pdf_url: hit.pdfUrl,
+    markscheme_pdf_url: hit.markschemePdfUrl,
+  }
+  const validPdf = paper.pdf_url
+  const validMs = paper.markscheme_pdf_url
   const displayPaper = `Paper ${paper.paper_number}`
-  const normalizedPaperSlug = toPaperSlug(paper.paper_number) ?? `paper-${paperToken}`
   const jsonLd = buildJsonLd(
     slug, subj.name, level, yearLabel, normalizedSeason, seasonName, paper.paper_number, paper, examCode
   )
@@ -438,26 +397,33 @@ export default async function PaperPage({
                 </div>
               </div>
 
-              {/* Other years */}
-              <div>
-                <h2 className="text-base font-bold mb-3 text-white/80">
-                  {displayPaper} – Other Years
-                </h2>
-                <div className="flex flex-wrap gap-2">
-                  {seoData.yearsAvailable
-                    .filter(y => y !== parsedYear)
-                    .slice(-6)
-                    .map(y => (
-                      <Link
-                        key={y}
-                        href={`/past-papers/${slug}/${y}/${normalizedSeason}/${normalizedPaperSlug}`}
-                        className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
-                      >
-                        {subj.name} {y} {seasonName} {displayPaper}
-                      </Link>
-                    ))}
-                </div>
-              </div>
+              {/* Other years — filtered against the index so we only link to
+                  combos that actually exist (avoids soft-404s for Googlebot). */}
+              {(() => {
+                const otherYears = seoData.yearsAvailable
+                  .filter((y) => y !== parsedYear)
+                  .filter((y) => byLeaf.has(leafKey(slug, y, normalizedSeason, normalizedPaperSlug)))
+                  .slice(-6)
+                if (otherYears.length === 0) return null
+                return (
+                  <div>
+                    <h2 className="text-base font-bold mb-3 text-white/80">
+                      {displayPaper} – Other Years
+                    </h2>
+                    <div className="flex flex-wrap gap-2">
+                      {otherYears.map((y) => (
+                        <Link
+                          key={y}
+                          href={`/past-papers/${slug}/${y}/${normalizedSeason}/${normalizedPaperSlug}`}
+                          className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                        >
+                          {subj.name} {y} {seasonName} {displayPaper}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )
+              })()}
             </div>
           )}
 

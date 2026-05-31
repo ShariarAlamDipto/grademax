@@ -1,29 +1,24 @@
-import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
 import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
+import { getPapersIndex, sessionKey } from "@/lib/papersIndex"
 
-export const revalidate = 3600
+export const revalidate = false
+// Every reachable session URL is enumerated from the DB-backed index at build
+// time. Unknown URLs return 404 instead of falling through to ISR, keeping the
+// route off the ISR write meter.
+export const dynamicParams = false
 
-export function generateStaticParams() {
-  const popularSubjects = [
-    "physics", "chemistry", "biology", "maths-a", "maths-b", "ict",
-    "pure-mathematics-1", "mechanics-1", "statistics-1",
-  ]
-  const recentYears = ["2025", "2024", "2023", "2022", "2021"]
-  const mainSeasons = ["may-jun", "oct-nov", "jan"]
+export async function generateStaticParams() {
+  const { bySession } = await getPapersIndex()
   const params: { subject: string; year: string; season: string }[] = []
-
-  for (const subject of popularSubjects) {
-    for (const year of recentYears) {
-      for (const season of mainSeasons) {
-        params.push({ subject, year, season })
-      }
-    }
+  for (const key of bySession.keys()) {
+    const [subject, year, season] = key.split("/")
+    if (!subject || !year || !season) continue
+    params.push({ subject, year, season })
   }
-
   return params
 }
 
@@ -45,39 +40,6 @@ function parseYearParam(value: string): number | null {
 
 function normalizeSeason(value: string): string {
   return value.trim().toLowerCase()
-}
-
-function isValidPublicUrl(url: string | null): url is string {
-  if (!url) return false
-  return /^https?:\/\//i.test(url)
-}
-
-function paperSort(a: string, b: string): number {
-  const na = parseInt(a, 10)
-  const nb = parseInt(b, 10)
-  if (na !== nb) return na - nb
-  return a.localeCompare(b)
-}
-
-function dedupePapers(rows: PaperRow[]): PaperRow[] {
-  const byPaperNumber = new Map<string, PaperRow>()
-
-  for (const row of rows) {
-    const existing = byPaperNumber.get(row.paper_number)
-    if (!existing) {
-      byPaperNumber.set(row.paper_number, row)
-      continue
-    }
-
-    const existingScore = Number(Boolean(existing.pdf_url)) + Number(Boolean(existing.markscheme_pdf_url))
-    const rowScore = Number(Boolean(row.pdf_url)) + Number(Boolean(row.markscheme_pdf_url))
-
-    if (rowScore > existingScore || (rowScore === existingScore && row.id > existing.id)) {
-      byPaperNumber.set(row.paper_number, row)
-    }
-  }
-
-  return Array.from(byPaperNumber.values()).sort((a, b) => paperSort(a.paper_number, b.paper_number))
 }
 
 export async function generateMetadata({
@@ -256,41 +218,17 @@ export default async function SessionPapersPage({
   if (!VALID_SEASONS.has(normalizedSeason)) notFound()
   const seasonName = seasonDisplay(normalizedSeason)
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { auth: { autoRefreshToken: false, persistSession: false } }
-  )
-
-  const { data: subjectRow } = await supabase
-    .from("subjects")
-    .select("id")
-    .eq("name", subj.name)
-    .maybeSingle()
-
-  let papers: PaperRow[] = []
-
-  if (subjectRow) {
-    const { data } = await supabase
-      .from("papers")
-      .select("id, paper_number, pdf_url, markscheme_pdf_url")
-      .eq("subject_id", subjectRow.id)
-      .eq("year", parsedYear)
-      .eq("season", normalizedSeason)
-      .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
-
-    papers = dedupePapers(
-      ((data as PaperRow[]) ?? [])
-        .map((paper) => ({
-          ...paper,
-          pdf_url: isValidPublicUrl(paper.pdf_url) ? paper.pdf_url : null,
-          markscheme_pdf_url: isValidPublicUrl(paper.markscheme_pdf_url) ? paper.markscheme_pdf_url : null,
-        }))
-        .filter((paper) => Boolean(paper.pdf_url) || Boolean(paper.markscheme_pdf_url))
-    )
-  }
-
-  if (papers.length === 0) notFound()
+  // Look up the session's papers from the memoized build-time index — avoids
+  // per-page Supabase queries and the ISR writes from cold cache fills.
+  const { bySession } = await getPapersIndex()
+  const indexed = bySession.get(sessionKey(slug, yearLabel, normalizedSeason))
+  if (!indexed || indexed.length === 0) notFound()
+  const papers: PaperRow[] = indexed.map((p) => ({
+    id: p.id,
+    paper_number: p.paperNumber,
+    pdf_url: p.pdfUrl,
+    markscheme_pdf_url: p.markschemePdfUrl,
+  }))
 
   const jsonLd = buildJsonLd(slug, subj.name, level, yearLabel, normalizedSeason, seasonName, papers, examCode)
 
@@ -421,11 +359,14 @@ export default async function SessionPapersPage({
                 </ol>
               </div>
 
+              {/* Other years — filtered against the index so we only link to
+                  sessions that actually exist (avoids soft-404s for Googlebot). */}
               <div>
                 <h2 className="text-base font-bold mb-3 text-white/80">Other {subj.name} Past Papers</h2>
                 <div className="flex flex-wrap gap-2">
                   {seoData.yearsAvailable
                     .filter((y) => y !== parsedYear)
+                    .filter((y) => bySession.has(sessionKey(slug, y, normalizedSeason)))
                     .slice(-6)
                     .map((y) => (
                       <Link

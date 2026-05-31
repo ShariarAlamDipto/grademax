@@ -4,8 +4,9 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { cache } from 'react'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
-import { 
-  generateOrganizationSchema, 
+import { getPapersIndex } from '@/lib/papersIndex'
+import {
+  generateOrganizationSchema,
   generateBreadcrumbSchema,
   generateWebPageSchema,
   generateFAQSchema,
@@ -172,7 +173,12 @@ export default async function SubjectQPPage({ params }: PageProps) {
   const baseUrl = 'https://grademax.me'
   const levelDisplay = subject.levelDisplay
   const availableYears = await getAvailableYearsForSubject(subject.name)
-  const yearLinks = availableYears.length > 0 ? availableYears : [...subject.yearsAvailable].reverse()
+  const candidateYears = availableYears.length > 0 ? availableYears : [...subject.yearsAvailable].reverse()
+  // Filter against the index so we never emit a /past-papers link to a year
+  // the subject hub didn't actually build (avoids soft-404s for Googlebot).
+  const { yearsBySubject } = await getPapersIndex()
+  const realYears = yearsBySubject.get(subject.slug) ?? new Set<number>()
+  const yearLinks = candidateYears.filter((y) => realYears.has(y))
 
   const schema = {
     '@context': 'https://schema.org',
