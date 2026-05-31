@@ -8,8 +8,11 @@ import {
   seasonDisplay,
 } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
+import { toPaperSlug } from "@/lib/paper-slugs"
 
-export const revalidate = 3600
+// Subject hub pages are pre-rendered at build time and stay static until the
+// next deploy. New papers added between deploys are picked up on the next push.
+export const revalidate = false
 
 // ─── Static params ─────────────────────────────────────────────────────────────
 
@@ -374,7 +377,10 @@ export default async function SubjectPapersPage({
 
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
                         {sess.papers.map((paper) => {
-                          const paperPageSlug = `paper-${paper.paper_number.toLowerCase()}`
+                          // Use the canonical slug helper so it matches the static-build paths
+                          // (the index keys leaves with toPaperSlug, which normalises `_` and spaces to `-`).
+                          const paperPageSlug = toPaperSlug(paper.paper_number)
+                          if (!paperPageSlug) return null
                           return (
                           <div
                             key={paper.id}

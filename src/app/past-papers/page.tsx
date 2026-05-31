@@ -54,12 +54,10 @@ const jsonLd = {
   ],
 }
 
-// Re-render on every request so a transient Supabase error (eg. quota
-// restriction) doesn't cause us to serve an empty "No papers available" page
-// for an hour after the issue is fixed. The query itself is tiny (we only
-// pull paper ids + subject names), so dynamic rendering is cheap.
-export const dynamic = "force-dynamic"
-export const revalidate = 0
+// Statically rendered at build time. The set of subjects with papers only
+// changes when the ingest pipeline runs, and the next deploy picks that up —
+// no on-demand revalidation needed. Keeps this page off the ISR write meter.
+export const revalidate = false
 
 const accentMap: Record<Subject["colorKey"], string> = {
   physics:   "accent-orange",

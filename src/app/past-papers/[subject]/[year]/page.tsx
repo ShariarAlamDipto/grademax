@@ -2,11 +2,16 @@ import { createClient } from "@supabase/supabase-js"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getSubjectBySlug, pastPaperSubjects, seasonDisplay, subjectColorClasses } from "@/lib/subjects"
+import { getSubjectBySlug, seasonDisplay, subjectColorClasses } from "@/lib/subjects"
 import { seoSubjects } from "@/lib/seo-subjects"
 import { toPaperSlug } from "@/lib/paper-slugs"
+import { getPapersIndex } from "@/lib/papersIndex"
 
-export const revalidate = 3600
+export const revalidate = false
+// Year-level params are enumerated from the DB-backed index so we cover every
+// year that actually has papers (including any outside the legacy 2011-2025
+// window). Unknown URLs return 404 instead of falling through to ISR.
+export const dynamicParams = false
 
 function parseYearParam(value: string): number | null {
   if (!/^\d{4}$/.test(value)) return null
@@ -15,9 +20,13 @@ function parseYearParam(value: string): number | null {
   return year
 }
 
-export function generateStaticParams() {
-  const allYears = Array.from({ length: 15 }, (_, i) => String(2011 + i))
-  return pastPaperSubjects.flatMap((s) => allYears.map((year) => ({ subject: s.slug, year })))
+export async function generateStaticParams() {
+  const { yearsBySubject } = await getPapersIndex()
+  const params: { subject: string; year: string }[] = []
+  for (const [subject, years] of yearsBySubject) {
+    for (const y of years) params.push({ subject, year: String(y) })
+  }
+  return params
 }
 
 export async function generateMetadata({
@@ -187,6 +196,10 @@ export default async function SubjectYearPapersPage({
   const level = subj.level === "ial" ? "A Level" : "IGCSE"
   const colorClass = subjectColorClasses[subj.colorKey]
 
+  // Years that actually have papers for this subject — used to filter "Other years" links.
+  const { yearsBySubject } = await getPapersIndex()
+  const indexYearsForSubject = yearsBySubject.get(slug)
+
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
@@ -347,9 +360,14 @@ export default async function SubjectYearPapersPage({
             </Link>
 
             {(() => {
+              // Filter "Other years" against the index so we only link to years
+              // that actually have published papers for this subject.
               const seoData = seoSubjects.find((s) => s.slug === slug)
-              const years = seoData?.yearsAvailable ?? Array.from({ length: 15 }, (_, i) => 2011 + i)
-              const otherYears = years.filter((y) => y !== parsedYear)
+              const candidateYears = seoData?.yearsAvailable ?? Array.from({ length: 15 }, (_, i) => 2011 + i)
+              const realYears = indexYearsForSubject ?? new Set<number>()
+              const otherYears = candidateYears
+                .filter((y) => y !== parsedYear)
+                .filter((y) => realYears.has(y))
               if (otherYears.length === 0) return null
               return (
                 <div>
