@@ -8,6 +8,7 @@ import {
   type Level
 } from '@/lib/seo-subjects'
 import { generateSubjectPageSchema } from '@/lib/seo-schema'
+import { getPapersIndex } from '@/lib/papersIndex'
 
 interface PageProps {
   params: Promise<{ level: string; slug: string }>
@@ -59,6 +60,13 @@ export default async function SubjectPage({ params }: PageProps) {
   const schema = generateSubjectPageSchema(subject)
   const accentColor = level === 'ial' ? '#A78BFA' : '#6EA8FE'
   const hasWorksheet = WORKSHEET_SLUGS.has(slug)
+
+  // Years that actually have published papers for this subject — used to filter
+  // the hidden SEO year-link soup so we never emit a /past-papers link Google
+  // would treat as a soft-404.
+  const { yearsBySubject } = await getPapersIndex()
+  const realYears = yearsBySubject.get(slug) ?? new Set<number>()
+  const seoYearLinks = subject.yearsAvailable.filter((y) => realYears.has(y))
 
   return (
     <>
@@ -156,7 +164,7 @@ export default async function SubjectPage({ params }: PageProps) {
 
         {/* ── Past Papers by Year (SEO only — visually hidden) ── */}
         <div aria-hidden="true" style={{ position: "absolute", width: "1px", height: "1px", overflow: "hidden", clip: "rect(0,0,0,0)", whiteSpace: "nowrap" }}>
-          {subject.yearsAvailable.map(year => (
+          {seoYearLinks.map(year => (
             <Link key={year} href={`/past-papers/${slug}/${year}`} tabIndex={-1}>{subject.name} past papers {year}</Link>
           ))}
         </div>
