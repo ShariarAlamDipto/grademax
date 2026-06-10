@@ -106,6 +106,13 @@ const getAvailableYearsForSubject = cache(async (subjectName: string): Promise<n
   }
 })
 
+// Fully static. generateStaticParams below enumerates every real slug (the same
+// set the sitemap advertises), so unknown /qp/* URLs return an instant
+// build-manifest 404 instead of triggering an on-demand ISR cache fill — which
+// Vercel meters as an ISR write + function CPU. Mirrors the past-papers routes.
+export const dynamicParams = false
+export const revalidate = false
+
 export async function generateStaticParams() {
   return Object.keys(slugMap).map(slug => ({ slug }))
 }
