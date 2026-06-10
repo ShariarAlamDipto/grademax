@@ -19,6 +19,12 @@ function isValidLevel(level: string): level is Level {
   return validLevels.includes(level as Level)
 }
 
+// Fully static: every (level, slug, topic) comes from seoSubjects — the same
+// source the sitemap uses — so unknown URLs 404 instantly instead of triggering
+// an ISR cache fill (ISR write + function CPU on Vercel). Mirrors past-papers.
+export const dynamicParams = false
+export const revalidate = false
+
 export async function generateStaticParams() {
   return seoSubjects.flatMap(subject =>
     subject.topics.map(topic => ({

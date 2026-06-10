@@ -23,6 +23,12 @@ function isValidLevel(level: string): level is Level {
   return validLevels.includes(level as Level)
 }
 
+// Fully static: only the two valid levels exist, so any other /subjects/* URL
+// 404s instantly instead of triggering an ISR cache fill (ISR write + function
+// CPU on Vercel). Mirrors the past-papers routes.
+export const dynamicParams = false
+export const revalidate = false
+
 export async function generateStaticParams() {
   return validLevels.map(level => ({ level }))
 }
