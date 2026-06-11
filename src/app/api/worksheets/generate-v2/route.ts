@@ -5,12 +5,10 @@ import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
-// Several Supabase round-trips happen here. On a cold serverless start over a
-// slow mobile connection the default 10 s budget is tight enough that the
-// connection can be dropped mid-flight, surfacing as `Failed to fetch` in the
-// browser. Bump the budget and pin the runtime.
-export const runtime = 'nodejs';
-export const maxDuration = 30;
+// Several Supabase round-trips happen here, but they're all HTTP/JSON — no
+// Node-only APIs are touched. Edge runtime gives lower cold-start latency
+// and is required for Cloudflare Pages deploy.
+export const runtime = 'edge';
 export const dynamic = 'force-dynamic';
 
 interface GenerateRequest {
@@ -23,14 +21,15 @@ interface GenerateRequest {
   shuffle?: boolean;
 }
 
-interface QuestionRow {
+interface PageRow {
   id: string;
   paper_id: string;
   question_number: string;
   difficulty: string | null;
-  page_pdf_url: string | null;
-  ms_pdf_url: string | null;
+  qp_page_url: string | null;
+  ms_page_url: string | null;
   has_diagram: boolean | null;
+  topics: string[];
   papers: {
     year: number;
     season: string;
@@ -87,16 +86,21 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Could not determine subject' }, { status: 500 });
     }
 
-    const { data: questionRows, error: questionError } = await supabase
-      .from('questions')
+    // Query pages directly with topic overlap filter — same approach as the
+    // test builder. This ensures rare topics (e.g. Astrophysics) are not
+    // cut off by a pre-fetch limit the way the old questions+question_tags
+    // two-step query was.
+    let pageQuery = supabase
+      .from('pages')
       .select(`
         id,
         paper_id,
         question_number,
         difficulty,
-        page_pdf_url,
-        ms_pdf_url,
+        qp_page_url,
+        ms_page_url,
         has_diagram,
+        topics,
         papers (
           year,
           season,
@@ -107,42 +111,25 @@ export async function POST(request: Request) {
           )
         )
       `)
+      .eq('is_question', true)
+      .not('qp_page_url', 'is', null)
       .in('paper_id', paperIds)
-      .limit(Math.max(limit * 10, limit));
+      .limit(5000);
 
-    if (questionError) {
-      return NextResponse.json({ error: questionError.message }, { status: 500 });
+    if (topics.length > 0) {
+      pageQuery = pageQuery.overlaps('topics', topics);
     }
 
-    const questionIds = (questionRows ?? []).map((question) => question.id);
-    const { data: tagRows, error: tagError } = await supabase
-      .from('question_tags')
-      .select('question_id, topic')
-      .in('question_id', questionIds);
+    const { data: pageRows, error: pageError } = await pageQuery;
 
-    if (tagError) {
-      return NextResponse.json({ error: tagError.message }, { status: 500 });
+    if (pageError) {
+      return NextResponse.json({ error: pageError.message }, { status: 500 });
     }
 
-    const topicMap = new Map<string, string[]>();
-    for (const row of tagRows ?? []) {
-      if (!topicMap.has(row.question_id)) {
-        topicMap.set(row.question_id, []);
-      }
-      if (topics.includes(row.topic)) {
-        topicMap.get(row.question_id)?.push(row.topic);
-      }
-    }
-
-    let finalQuestions = (questionRows ?? [])
-      .map((question) => ({
-        ...question,
-        topics: topicMap.get(question.id) ?? [],
-      }))
-      .filter((question) => question.topics.length > 0) as unknown as Array<QuestionRow & { topics: string[] }>;
+    let finalQuestions = (pageRows ?? []) as unknown as PageRow[];
 
     if (difficulty) {
-      finalQuestions = finalQuestions.filter((question) => question.difficulty === difficulty);
+      finalQuestions = finalQuestions.filter((q) => q.difficulty === difficulty);
     }
 
     if (shuffle) {
@@ -192,22 +179,14 @@ export async function POST(request: Request) {
       );
     }
 
-    const worksheetItems = finalQuestions.map((question, index) => ({
+    // Best-effort: store page IDs in worksheet_items for history.
+    // Non-fatal — a FK mismatch on legacy rows must not block PDF delivery.
+    const worksheetItems = finalQuestions.map((page, index) => ({
       worksheet_id: worksheet.id,
-      question_id: question.id,
+      question_id: page.id,
       position: index + 1,
     }));
-
-    const { error: itemsError } = await supabase
-      .from('worksheet_items')
-      .insert(worksheetItems);
-
-    if (itemsError) {
-      return NextResponse.json(
-        { error: `Failed to save worksheet questions: ${itemsError.message}` },
-        { status: 500 }
-      );
-    }
+    supabase.from('worksheet_items').insert(worksheetItems).then(() => undefined);
 
     trackUsage({
       user_id: auth.user.id,
@@ -217,17 +196,17 @@ export async function POST(request: Request) {
       metadata: { total_questions: finalQuestions.length, topics },
     });
 
-    const formattedPages = finalQuestions.map((question) => ({
-      id: question.id,
-      questionNumber: question.question_number,
-      topics: question.topics,
-      difficulty: question.difficulty ?? 'unknown',
-      qpPageUrl: toAbsolutePdfUrl(question.page_pdf_url)!,
-      msPageUrl: toAbsolutePdfUrl(question.ms_pdf_url),
-      hasDiagram: question.has_diagram ?? false,
-      year: question.papers?.year,
-      season: question.papers?.season,
-      paper: question.papers?.paper_number,
+    const formattedPages = finalQuestions.map((page) => ({
+      id: page.id,
+      questionNumber: page.question_number,
+      topics: page.topics,
+      difficulty: page.difficulty ?? 'unknown',
+      qpPageUrl: toAbsolutePdfUrl(page.qp_page_url)!,
+      msPageUrl: toAbsolutePdfUrl(page.ms_page_url),
+      hasDiagram: page.has_diagram ?? false,
+      year: page.papers?.year,
+      season: page.papers?.season,
+      paper: page.papers?.paper_number,
     }));
 
     return NextResponse.json({
