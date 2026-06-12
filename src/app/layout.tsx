@@ -2,9 +2,7 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { Analytics } from '@vercel/analytics/react'
 import { Playfair_Display } from 'next/font/google'
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
@@ -29,10 +27,8 @@ const jsonLd = {
       description: 'Free Edexcel past papers, topic-wise question papers, and custom worksheet generator for IGCSE and A Level students. Access mark schemes, practice papers, and revision resources for Physics, Maths, Chemistry, Biology, ICT and more.',
       foundingDate: '2024',
       knowsAbout: ['Edexcel past papers', 'IGCSE', 'A Level', 'Pearson Edexcel', 'Past paper questions', 'Mark schemes'],
-      sameAs: [
-        'https://twitter.com/grademax',
-        'https://www.linkedin.com/company/grademax',
-      ]
+      // sameAs intentionally omitted — only add social profiles that actually
+      // exist and are controlled by GradeMax; fake profile links hurt E-E-A-T.
     },
     {
       '@type': 'WebSite',
@@ -51,7 +47,7 @@ const jsonLd = {
         },
         'query-input': 'required name=search_term_string'
       },
-      inLanguage: 'en-US'
+      inLanguage: 'en-GB'
     },
     {
       '@type': 'WebPage',
@@ -67,7 +63,7 @@ const jsonLd = {
         '@id': 'https://grademax.me/#organization'
       },
       description: 'Free Edexcel past papers with mark schemes for IGCSE and A Level (2010-2025). Generate custom worksheets, practice topic-wise questions, and revise with 14+ years of real Pearson Edexcel exam papers.',
-      inLanguage: 'en-US',
+      inLanguage: 'en-GB',
       speakable: {
         '@type': 'SpeakableSpecification',
         cssSelector: ['h1', '.hero-line-1', '.hero-line-2', '.hero-sub']
@@ -207,7 +203,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_GB',
     url: 'https://grademax.me',
     siteName: 'GradeMax',
     title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level | GradeMax',
@@ -226,8 +222,7 @@ export const metadata: Metadata = {
     title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level Questions | GradeMax',
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes (2010-2025). Generate custom worksheets, practice topic-wise, and ace your exams.',
     images: ['/opengraph-image'],
-    creator: '@grademax',
-    site: '@grademax',
+    // creator/site omitted — re-add only if the @grademax handle is actually owned.
   },
   robots: {
     index: true,
@@ -245,7 +240,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={playfair.className} suppressHydrationWarning>
+    <html lang="en-GB" className={playfair.className} suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -269,8 +264,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </AuthProvider>
         </ThemeProvider>
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   )

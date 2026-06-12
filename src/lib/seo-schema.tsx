@@ -50,7 +50,7 @@ export function generateWebSiteSchema() {
       },
       'query-input': 'required name=search_term_string'
     },
-    inLanguage: 'en-US'
+    inLanguage: 'en-GB'
   }
 }
 
@@ -137,7 +137,7 @@ export function generateWebPageSchema(
     description,
     isPartOf: { '@id': WEBSITE_ID },
     about: { '@id': ORG_ID },
-    inLanguage: 'en-US'
+    inLanguage: 'en-GB'
   }
   
   if (breadcrumbs) {
@@ -177,7 +177,7 @@ export function generateLearningResourceSchema(
     },
     provider: { '@id': ORG_ID },
     isAccessibleForFree: true,
-    inLanguage: 'en-US'
+    inLanguage: 'en-GB'
   }
 }
 

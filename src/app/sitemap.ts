@@ -34,38 +34,39 @@ function isValidPublicUrl(value: unknown): boolean {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const now = new Date()
+  // NOTE: evergreen pages intentionally omit lastModified. Claiming every URL
+  // changed "right now" on every build trains crawlers to distrust lastmod;
+  // dynamic paper pages below report their real papers.created_at instead.
 
   // ─── Core pages ──────────────────────────────────────────────────────────────
 
   const corePages: MetadataRoute.Sitemap = [
-    { url: BASE_URL,                              lastModified: now, changeFrequency: 'weekly',  priority: 1    },
-    { url: `${BASE_URL}/edexcel-past-papers`,     lastModified: now, changeFrequency: 'weekly',  priority: 0.95 },
-    { url: `${BASE_URL}/edexcel-igcse-past-papers`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
-    { url: `${BASE_URL}/edexcel-a-level-past-papers`, lastModified: now, changeFrequency: 'weekly', priority: 0.95 },
-    { url: `${BASE_URL}/edexcel-worksheets`,      lastModified: now, changeFrequency: 'weekly',  priority: 0.95 },
-    { url: `${BASE_URL}/subjects`,                lastModified: now, changeFrequency: 'weekly',  priority: 0.9  },
-    { url: `${BASE_URL}/generate`,                lastModified: now, changeFrequency: 'weekly',  priority: 0.9  },
-    { url: `${BASE_URL}/browse`,                  lastModified: now, changeFrequency: 'weekly',  priority: 0.8  },
-    { url: `${BASE_URL}/past-papers`,             lastModified: now, changeFrequency: 'weekly',  priority: 0.9  },
-    { url: `${BASE_URL}/about`,                   lastModified: now, changeFrequency: 'monthly', priority: 0.6  },
-    { url: `${BASE_URL}/contact`,                 lastModified: now, changeFrequency: 'monthly', priority: 0.5  },
-    { url: `${BASE_URL}/privacy`,                 lastModified: now, changeFrequency: 'yearly',  priority: 0.3  },
-    { url: `${BASE_URL}/terms`,                   lastModified: now, changeFrequency: 'yearly',  priority: 0.3  },
+    { url: BASE_URL,                              changeFrequency: 'weekly',  priority: 1    },
+    { url: `${BASE_URL}/edexcel-past-papers`,     changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE_URL}/edexcel-igcse-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/edexcel-a-level-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/edexcel-worksheets`,      changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE_URL}/subjects`,                changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/generate`,                changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/browse`,                  changeFrequency: 'weekly',  priority: 0.8  },
+    { url: `${BASE_URL}/past-papers`,             changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/about`,                   changeFrequency: 'monthly', priority: 0.6  },
+    { url: `${BASE_URL}/contact`,                 changeFrequency: 'monthly', priority: 0.5  },
+    { url: `${BASE_URL}/privacy`,                 changeFrequency: 'yearly',  priority: 0.3  },
+    { url: `${BASE_URL}/terms`,                   changeFrequency: 'yearly',  priority: 0.3  },
   ]
 
   // ─── Level landing pages ──────────────────────────────────────────────────────
 
   const levelPages: MetadataRoute.Sitemap = [
-    { url: `${BASE_URL}/subjects/igcse`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${BASE_URL}/subjects/ial`,   lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE_URL}/subjects/igcse`, changeFrequency: 'weekly', priority: 0.9 },
+    { url: `${BASE_URL}/subjects/ial`,   changeFrequency: 'weekly', priority: 0.9 },
   ]
 
   // ─── SEO subject pages ───────────────────────────────────────────────────────
 
   const subjectPages: MetadataRoute.Sitemap = seoSubjects.map((s: SEOSubject) => ({
     url: `${BASE_URL}/subjects/${s.level}/${s.slug}`,
-    lastModified: now,
     changeFrequency: 'weekly' as const,
     priority: 0.85,
   }))
@@ -73,7 +74,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const topicPages: MetadataRoute.Sitemap = seoSubjects.flatMap((s: SEOSubject) =>
     s.topics.map(t => ({
       url: `${BASE_URL}/subjects/${s.level}/${s.slug}/${t.slug}`,
-      lastModified: now,
       changeFrequency: 'weekly' as const,
       priority: 0.75,
     }))
@@ -83,7 +83,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const pastPaperSubjectPages: MetadataRoute.Sitemap = pastPaperSubjects.map(s => ({
     url: `${BASE_URL}/past-papers/${s.slug}`,
-    lastModified: now,
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }))
@@ -108,13 +107,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Fetch all papers with at least one file, including paper_number for individual pages
     const { data } = await supabase
       .from('papers')
-      .select('year, season, paper_number, pdf_url, markscheme_pdf_url, subjects!inner(name)')
+      .select('year, season, paper_number, pdf_url, markscheme_pdf_url, created_at, subjects!inner(name)')
       .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
 
     if (data) {
-      const seenYears = new Set<string>()
-      const seenSessions = new Set<string>()
-      const seenPapers = new Set<string>()
+      // key → most recent papers.created_at in that group, so lastmod reflects
+      // when content actually changed rather than when the site last built.
+      const yearDates = new Map<string, Date>()
+      const sessionDates = new Map<string, Date>()
+      const paperDates = new Map<string, Date>()
+
+      const bumpDate = (map: Map<string, Date>, key: string, date: Date | null) => {
+        const existing = map.get(key)
+        if (!existing || (date && date > existing)) {
+          map.set(key, date ?? existing ?? new Date(0))
+        }
+      }
 
       for (const row of data) {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -128,44 +136,32 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const season = normalizeSeason(row.season)
         if (!VALID_SEASONS.has(season)) continue
 
-        // Year-level page
-        const yearKey = `${slug}/${year}`
-        if (!seenYears.has(yearKey)) {
-          seenYears.add(yearKey)
-          yearPages.push({
-            url: `${BASE_URL}/past-papers/${yearKey}`,
-            lastModified: now,
-            changeFrequency: 'monthly' as const,
-            priority: 0.88,
-          })
-        }
+        const createdAt = row.created_at ? new Date(row.created_at) : null
+        const validCreatedAt = createdAt && !Number.isNaN(createdAt.getTime()) ? createdAt : null
 
-        // Session-level page
-        const sessionKey = `${slug}/${year}/${season}`
-        if (!seenSessions.has(sessionKey)) {
-          seenSessions.add(sessionKey)
-          sessionPages.push({
-            url: `${BASE_URL}/past-papers/${sessionKey}`,
-            lastModified: now,
-            changeFrequency: 'monthly' as const,
-            priority: 0.9,
-          })
-        }
+        bumpDate(yearDates, `${slug}/${year}`, validCreatedAt)
+        bumpDate(sessionDates, `${slug}/${year}/${season}`, validCreatedAt)
 
-        // Individual paper page
         const paperSlug = toPaperSlug(row.paper_number)
         if (!paperSlug) continue
-        const paperKey = `${slug}/${year}/${season}/${paperSlug}`
-        if (!seenPapers.has(paperKey)) {
-          seenPapers.add(paperKey)
-          paperPages.push({
-            url: `${BASE_URL}/past-papers/${paperKey}`,
-            lastModified: now,
-            changeFrequency: 'yearly' as const,
-            priority: 0.85,
-          })
-        }
+        bumpDate(paperDates, `${slug}/${year}/${season}/${paperSlug}`, validCreatedAt)
       }
+
+      const toEntry = (
+        key: string,
+        date: Date,
+        changeFrequency: 'monthly' | 'yearly',
+        priority: number,
+      ): MetadataRoute.Sitemap[number] => ({
+        url: `${BASE_URL}/past-papers/${key}`,
+        ...(date.getTime() > 0 ? { lastModified: date } : {}),
+        changeFrequency,
+        priority,
+      })
+
+      for (const [key, date] of yearDates)    yearPages.push(toEntry(key, date, 'monthly', 0.88))
+      for (const [key, date] of sessionDates) sessionPages.push(toEntry(key, date, 'monthly', 0.9))
+      for (const [key, date] of paperDates)   paperPages.push(toEntry(key, date, 'yearly', 0.85))
     }
   } catch {
     // Non-fatal — sitemap will still generate without dynamic pages
@@ -189,7 +185,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
         fallbackYearPages.push({
           url: `${BASE_URL}/past-papers/${key}`,
-          lastModified: now,
           changeFrequency: 'monthly' as const,
           priority: 0.84,
         })
@@ -202,11 +197,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const qpPages: MetadataRoute.Sitemap = seoSubjects.flatMap((s: SEOSubject) => {
     const levelPrefix = s.level === 'igcse' ? 'igcse' : 'a-level'
     return [
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}`,                     lastModified: now, changeFrequency: 'weekly' as const, priority: 0.9 },
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-past-papers`,         lastModified: now, changeFrequency: 'weekly' as const, priority: 0.9 },
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-question-papers`,     lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
-      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}`,                  lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
-      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}-past-papers`,      lastModified: now, changeFrequency: 'weekly' as const, priority: 0.85 },
+      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}`,                     changeFrequency: 'weekly' as const, priority: 0.9 },
+      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-past-papers`,         changeFrequency: 'weekly' as const, priority: 0.9 },
+      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-question-papers`,     changeFrequency: 'weekly' as const, priority: 0.85 },
+      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}`,                  changeFrequency: 'weekly' as const, priority: 0.85 },
+      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}-past-papers`,      changeFrequency: 'weekly' as const, priority: 0.85 },
     ]
   })
 
