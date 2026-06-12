@@ -27,6 +27,7 @@ import sys
 sys.path.append(str(Path(__file__).parent))
 from splitting_config_loader import SplittingConfigLoader, ConfigurableQuestionDetector
 from extract_paper_metadata import extract_metadata_from_pdf, PaperMetadata
+from lib.subquestion_parser import parse_question_structure, structure_to_dict
 
 
 @dataclass
@@ -330,7 +331,21 @@ class MathsBPaperProcessor:
         
         return questions
     
-    def save_question_pdf(self, pdf_path: Path, question: QuestionInfo, 
+    def extract_question_texts(self, questions: List[QuestionInfo]) -> Dict[str, str]:
+        """Plain text of each question (all its pages joined), keyed by number."""
+        doc = fitz.open(str(self.qp_path))
+        try:
+            page_texts = [doc[i].get_text() for i in range(len(doc))]
+        finally:
+            doc.close()
+        return {
+            q.question_number: "\n".join(
+                page_texts[i] for i in q.pages if 0 <= i < len(page_texts)
+            )
+            for q in questions
+        }
+
+    def save_question_pdf(self, pdf_path: Path, question: QuestionInfo,
                           output_subdir: str, prefix: str = "q",
                           watermark_text: str = None) -> Path:
         """Save a question as a separate PDF with optional watermark"""
@@ -395,6 +410,9 @@ class MathsBPaperProcessor:
             ms_questions = self.detect_questions(self.ms_path, is_markscheme=True)
             print(f"   Markscheme questions: {len(ms_questions)}")
         
+        # Sub-question structure (parts/marks) parsed from each question's text
+        question_texts = self.extract_question_texts(qp_questions)
+
         # Save QP questions with watermark
         questions_data = []
         for q in qp_questions:
@@ -411,6 +429,9 @@ class MathsBPaperProcessor:
                     ms_pages = ms_q.pages
                     break
             
+            structure = parse_question_structure(question_texts.get(q.question_number, ""))
+            structure_dict = structure_to_dict(structure)
+
             questions_data.append({
                 'question_number': q.question_number,
                 'qp_pages': q.pages,
@@ -419,7 +440,10 @@ class MathsBPaperProcessor:
                 'ms_pages': ms_pages,
                 'ms_pdf_path': str(ms_pdf_path.relative_to(self.output_dir.parent)) if ms_pdf_path else None,
                 'has_markscheme': ms_pdf_path is not None,
-                'watermark': qp_watermark  # Store watermark for reference
+                'watermark': qp_watermark,  # Store watermark for reference
+                'parts': structure_dict['parts'],
+                'total_marks': structure.total_marks,
+                'marks_consistent': structure.is_consistent,
             })
         
         # Save manifest with enhanced metadata
