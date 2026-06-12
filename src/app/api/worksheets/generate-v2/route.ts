@@ -43,6 +43,57 @@ interface PageRow {
 
 type AuthSupabase = SupabaseClient;
 
+function fisherYatesShuffle<T>(items: readonly T[]): T[] {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+/**
+ * Stratified selection: groups candidates by primary topic and picks
+ * round-robin across the groups so a multi-topic worksheet covers every
+ * requested topic instead of clustering on whichever paper sorted first.
+ * Within a group, deterministic mode prefers recent years.
+ */
+function stratifiedSelect(
+  candidates: readonly PageRow[],
+  requestedTopics: readonly string[],
+  limit: number,
+  shuffle: boolean,
+): PageRow[] {
+  const groups = new Map<string, PageRow[]>();
+  for (const page of candidates) {
+    const primaryTopic =
+      page.topics?.find((t) => requestedTopics.includes(t)) ?? page.topics?.[0] ?? '';
+    const group = groups.get(primaryTopic);
+    if (group) group.push(page);
+    else groups.set(primaryTopic, [page]);
+  }
+
+  const orderedGroups = [...groups.values()].map((group) =>
+    shuffle
+      ? fisherYatesShuffle(group)
+      : [...group].sort((a, b) => (b.papers?.year ?? 0) - (a.papers?.year ?? 0)),
+  );
+
+  const selected: PageRow[] = [];
+  for (let round = 0; selected.length < limit; round++) {
+    let pickedAny = false;
+    for (const group of orderedGroups) {
+      if (round < group.length && selected.length < limit) {
+        selected.push(group[round]);
+        pickedAny = true;
+      }
+    }
+    if (!pickedAny) break;
+  }
+
+  return shuffle ? fisherYatesShuffle(selected) : selected;
+}
+
 export async function POST(request: Request) {
   try {
     const auth = await requireAuth();
@@ -120,23 +171,18 @@ export async function POST(request: Request) {
       pageQuery = pageQuery.overlaps('topics', topics);
     }
 
+    if (difficulty) {
+      pageQuery = pageQuery.eq('difficulty', difficulty);
+    }
+
     const { data: pageRows, error: pageError } = await pageQuery;
 
     if (pageError) {
       return NextResponse.json({ error: pageError.message }, { status: 500 });
     }
 
-    let finalQuestions = (pageRows ?? []) as unknown as PageRow[];
-
-    if (difficulty) {
-      finalQuestions = finalQuestions.filter((q) => q.difficulty === difficulty);
-    }
-
-    if (shuffle) {
-      finalQuestions = [...finalQuestions].sort(() => Math.random() - 0.5);
-    }
-
-    finalQuestions = finalQuestions.slice(0, limit);
+    const candidates = (pageRows ?? []) as unknown as PageRow[];
+    const finalQuestions = stratifiedSelect(candidates, topics, limit, shuffle);
 
     if (finalQuestions.length === 0) {
       return NextResponse.json(
