@@ -21,18 +21,17 @@ export async function GET() {
 
   const missingPapers = (missingQPRes.count ?? 0) + (missingMSRes.count ?? 0)
 
-  // Count untagged questions — gracefully skips if table doesn't exist
+  // Count question pages with no topic classification yet
   let unreviewedQuestions = 0
   try {
-    // Questions that have no rows in question_topics
-    const { data: allQIds } = await db.from("questions").select("id")
-    const { data: taggedQIds } = await db.from("question_topics").select("question_id")
-    if (allQIds && taggedQIds) {
-      const tagged = new Set(taggedQIds.map((r: { question_id: number }) => r.question_id))
-      unreviewedQuestions = allQIds.filter((r: { id: number }) => !tagged.has(r.id)).length
-    }
+    const { count } = await db
+      .from("pages")
+      .select("id", { count: "exact", head: true })
+      .eq("is_question", true)
+      .or("topics.is.null,topics.eq.{}")
+    unreviewedQuestions = count ?? 0
   } catch {
-    // Tables may not exist
+    // Non-fatal — badge simply shows 0
   }
 
   return NextResponse.json({ missingPapers, unreviewedQuestions })
