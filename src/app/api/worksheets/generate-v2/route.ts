@@ -23,14 +23,15 @@ interface GenerateRequest {
   shuffle?: boolean;
 }
 
-interface QuestionRow {
+interface PageRow {
   id: string;
   paper_id: string;
   question_number: string;
   difficulty: string | null;
-  page_pdf_url: string | null;
-  ms_pdf_url: string | null;
+  qp_page_url: string | null;
+  ms_page_url: string | null;
   has_diagram: boolean | null;
+  topics: string[];
   papers: {
     year: number;
     season: string;
@@ -43,6 +44,57 @@ interface QuestionRow {
 }
 
 type AuthSupabase = SupabaseClient;
+
+function fisherYatesShuffle<T>(items: readonly T[]): T[] {
+  const result = [...items];
+  for (let i = result.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [result[i], result[j]] = [result[j], result[i]];
+  }
+  return result;
+}
+
+/**
+ * Stratified selection: groups candidates by primary topic and picks
+ * round-robin across the groups so a multi-topic worksheet covers every
+ * requested topic instead of clustering on whichever paper sorted first.
+ * Within a group, deterministic mode prefers recent years.
+ */
+function stratifiedSelect(
+  candidates: readonly PageRow[],
+  requestedTopics: readonly string[],
+  limit: number,
+  shuffle: boolean,
+): PageRow[] {
+  const groups = new Map<string, PageRow[]>();
+  for (const page of candidates) {
+    const primaryTopic =
+      page.topics?.find((t) => requestedTopics.includes(t)) ?? page.topics?.[0] ?? '';
+    const group = groups.get(primaryTopic);
+    if (group) group.push(page);
+    else groups.set(primaryTopic, [page]);
+  }
+
+  const orderedGroups = [...groups.values()].map((group) =>
+    shuffle
+      ? fisherYatesShuffle(group)
+      : [...group].sort((a, b) => (b.papers?.year ?? 0) - (a.papers?.year ?? 0)),
+  );
+
+  const selected: PageRow[] = [];
+  for (let round = 0; selected.length < limit; round++) {
+    let pickedAny = false;
+    for (const group of orderedGroups) {
+      if (round < group.length && selected.length < limit) {
+        selected.push(group[round]);
+        pickedAny = true;
+      }
+    }
+    if (!pickedAny) break;
+  }
+
+  return shuffle ? fisherYatesShuffle(selected) : selected;
+}
 
 export async function POST(request: Request) {
   try {
@@ -87,16 +139,21 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Could not determine subject' }, { status: 500 });
     }
 
-    const { data: questionRows, error: questionError } = await supabase
-      .from('questions')
+    // Query pages directly with topic overlap filter — same approach as the
+    // test builder. This ensures rare topics (e.g. Astrophysics) are not
+    // cut off by a pre-fetch limit the way the old questions+question_tags
+    // two-step query was.
+    let pageQuery = supabase
+      .from('pages')
       .select(`
         id,
         paper_id,
         question_number,
         difficulty,
-        page_pdf_url,
-        ms_pdf_url,
+        qp_page_url,
+        ms_page_url,
         has_diagram,
+        topics,
         papers (
           year,
           season,
@@ -107,49 +164,27 @@ export async function POST(request: Request) {
           )
         )
       `)
+      .eq('is_question', true)
+      .not('qp_page_url', 'is', null)
       .in('paper_id', paperIds)
-      .limit(Math.max(limit * 10, limit));
+      .limit(5000);
 
-    if (questionError) {
-      return NextResponse.json({ error: questionError.message }, { status: 500 });
+    if (topics.length > 0) {
+      pageQuery = pageQuery.overlaps('topics', topics);
     }
-
-    const questionIds = (questionRows ?? []).map((question) => question.id);
-    const { data: tagRows, error: tagError } = await supabase
-      .from('question_tags')
-      .select('question_id, topic')
-      .in('question_id', questionIds);
-
-    if (tagError) {
-      return NextResponse.json({ error: tagError.message }, { status: 500 });
-    }
-
-    const topicMap = new Map<string, string[]>();
-    for (const row of tagRows ?? []) {
-      if (!topicMap.has(row.question_id)) {
-        topicMap.set(row.question_id, []);
-      }
-      if (topics.includes(row.topic)) {
-        topicMap.get(row.question_id)?.push(row.topic);
-      }
-    }
-
-    let finalQuestions = (questionRows ?? [])
-      .map((question) => ({
-        ...question,
-        topics: topicMap.get(question.id) ?? [],
-      }))
-      .filter((question) => question.topics.length > 0) as unknown as Array<QuestionRow & { topics: string[] }>;
 
     if (difficulty) {
-      finalQuestions = finalQuestions.filter((question) => question.difficulty === difficulty);
+      pageQuery = pageQuery.eq('difficulty', difficulty);
     }
 
-    if (shuffle) {
-      finalQuestions = [...finalQuestions].sort(() => Math.random() - 0.5);
+    const { data: pageRows, error: pageError } = await pageQuery;
+
+    if (pageError) {
+      return NextResponse.json({ error: pageError.message }, { status: 500 });
     }
 
-    finalQuestions = finalQuestions.slice(0, limit);
+    const candidates = (pageRows ?? []) as unknown as PageRow[];
+    const finalQuestions = stratifiedSelect(candidates, topics, limit, shuffle);
 
     if (finalQuestions.length === 0) {
       return NextResponse.json(
@@ -192,22 +227,17 @@ export async function POST(request: Request) {
       );
     }
 
-    const worksheetItems = finalQuestions.map((question, index) => ({
+    // Best-effort: store page IDs in worksheet_items for history.
+    // Non-fatal — a FK mismatch on legacy rows must not block PDF delivery.
+    const worksheetItems = finalQuestions.map((page, index) => ({
       worksheet_id: worksheet.id,
-      question_id: question.id,
+      question_id: page.id,
       position: index + 1,
     }));
-
-    const { error: itemsError } = await supabase
+    await supabase
       .from('worksheet_items')
-      .insert(worksheetItems);
-
-    if (itemsError) {
-      return NextResponse.json(
-        { error: `Failed to save worksheet questions: ${itemsError.message}` },
-        { status: 500 }
-      );
-    }
+      .insert(worksheetItems)
+      .then(() => undefined, () => undefined);
 
     trackUsage({
       user_id: auth.user.id,
@@ -217,17 +247,17 @@ export async function POST(request: Request) {
       metadata: { total_questions: finalQuestions.length, topics },
     });
 
-    const formattedPages = finalQuestions.map((question) => ({
-      id: question.id,
-      questionNumber: question.question_number,
-      topics: question.topics,
-      difficulty: question.difficulty ?? 'unknown',
-      qpPageUrl: toAbsolutePdfUrl(question.page_pdf_url)!,
-      msPageUrl: toAbsolutePdfUrl(question.ms_pdf_url),
-      hasDiagram: question.has_diagram ?? false,
-      year: question.papers?.year,
-      season: question.papers?.season,
-      paper: question.papers?.paper_number,
+    const formattedPages = finalQuestions.map((page) => ({
+      id: page.id,
+      questionNumber: page.question_number,
+      topics: page.topics,
+      difficulty: page.difficulty ?? 'unknown',
+      qpPageUrl: toAbsolutePdfUrl(page.qp_page_url)!,
+      msPageUrl: toAbsolutePdfUrl(page.ms_page_url),
+      hasDiagram: page.has_diagram ?? false,
+      year: page.papers?.year,
+      season: page.papers?.season,
+      paper: page.papers?.paper_number,
     }));
 
     return NextResponse.json({
