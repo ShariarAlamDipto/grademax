@@ -16,6 +16,24 @@ if (!databaseUrl) {
   process.exit(1)
 }
 
+// Same production guard as postgres-migrate.js — the seed targets the
+// self-hosted Docker Postgres schema, never production Supabase.
+let seedTargetHost = ""
+try {
+  seedTargetHost = new URL(databaseUrl).hostname
+} catch {
+  console.error("DATABASE_URL is not a parseable URL — refusing to seed blind")
+  process.exit(1)
+}
+if (
+  /supabase/i.test(seedTargetHost) &&
+  process.env.ALLOW_SUPABASE_MIGRATIONS !== "I_UNDERSTAND_THIS_CAN_DESTROY_PRODUCTION"
+) {
+  console.error(`REFUSING TO RUN: DATABASE_URL points at a Supabase host (${seedTargetHost}).`)
+  console.error("This seed is for the self-hosted Docker Postgres only.")
+  process.exit(1)
+}
+
 function extractSubjects() {
   const source = fs.readFileSync(path.resolve("src/lib/subjects.ts"), "utf8")
   const block = source.match(/export const subjects: Subject\[\] = \[([\s\S]*?)\]\n/)?.[1]

@@ -16,6 +16,45 @@ if (!databaseUrl) {
   process.exit(1)
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// PRODUCTION GUARD
+//
+// These migrations build the NEW self-hosted schema and contain destructive
+// statements (DROP TABLE ... CASCADE). Running them against the production
+// Supabase database destroyed the live tables on 2026-06-01 AND 2026-06-11
+// (both times via a DATABASE_URL in docker.env / .env.local that pointed at
+// Supabase). They are only ever meant for the local/VM Docker Postgres.
+//
+// If you are CERTAIN you want to run them against a Supabase host, set:
+//   ALLOW_SUPABASE_MIGRATIONS=I_UNDERSTAND_THIS_CAN_DESTROY_PRODUCTION
+// ─────────────────────────────────────────────────────────────────────────────
+let targetHost = ""
+try {
+  targetHost = new URL(databaseUrl).hostname
+} catch {
+  console.error("DATABASE_URL is not a parseable URL — refusing to run migrations blind")
+  process.exit(1)
+}
+
+const isSupabaseHost = /supabase/i.test(targetHost)
+const override =
+  process.env.ALLOW_SUPABASE_MIGRATIONS === "I_UNDERSTAND_THIS_CAN_DESTROY_PRODUCTION"
+
+console.log(`migration target host: ${targetHost}`)
+
+if (isSupabaseHost && !override) {
+  console.error("")
+  console.error("REFUSING TO RUN: DATABASE_URL points at a Supabase host.")
+  console.error(`  host: ${targetHost}`)
+  console.error("")
+  console.error("These db/migrations are for the self-hosted Docker Postgres only.")
+  console.error("Applying them to production Supabase dropped the live tables twice")
+  console.error("(2026-06-01, 2026-06-11). If you really intend this, set")
+  console.error("  ALLOW_SUPABASE_MIGRATIONS=I_UNDERSTAND_THIS_CAN_DESTROY_PRODUCTION")
+  console.error("and take a backup first: python scripts/dump_supabase_schema.py")
+  process.exit(1)
+}
+
 const migrationsDir = path.resolve(process.cwd(), "db", "migrations")
 const migrations = fs
   .readdirSync(migrationsDir)
