@@ -49,3 +49,24 @@ config/google-service-account.json
 config/*.json
 data/processed/upload_manifest.json
 scripts/email_send_log.json
+test_api.js
+test_maths_b_api.py
+
+# pipeline data — R2 + manifests are the source of truth, never commit PDFs
+/data/
+
+# local run artifacts / logs
+/logs/
+/output/
+debug_output.txt
+m1_*.txt
+physics_test.txt
+IMPLEMENTATION_STATUS.txt
+
+# Shape-classifier datasets (regenerable via scripts/shape-data-gen.ts)
+training-data/
+
+# Supabase data export — contains user PII (emails, OAuth provider IDs, etc.)
+# Keep it local, back it up to encrypted private storage, never commit.
+data/supabase-export/
+__pycache__/
