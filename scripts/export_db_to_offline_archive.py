@@ -96,15 +96,11 @@ print("GRADEMAX OFFLINE ARCHIVE - DB EXPORT")
 print(f"Output: {OUTPUT_BASE}")
 print("=" * 72)
 
-# ── Connect ─────────────────────────────────────────────────────────────────
-print("\nConnecting via direct PostgreSQL...")
-try:
-    conn = psycopg2.connect(DB_URL, connect_timeout=15)
-    conn.set_session(readonly=True)
-except Exception as e:
-    print(f"  FAILED: {e}")
-    print("  Check DATABASE_URL has the correct password and pooler endpoint.")
-    sys.exit(1)
+# ── Connect (direct, with automatic Supabase pooler fallback) ───────────────
+sys.path.append(str(Path(__file__).resolve().parent))
+from lib.db_connect import connect_db
+
+conn = connect_db(readonly=True, url=DB_URL)
 print("  OK\n")
 
 cur = conn.cursor(cursor_factory=psycopg2.extras.RealDictCursor)
@@ -122,10 +118,13 @@ manifest = {
 }
 
 # ── Export each table ───────────────────────────────────────────────────────
-for table in FULL_TABLES:
-    if table not in existing:
-        print(f"  {table}: SKIP (not in DB)")
-        continue
+# FULL_TABLES first (stable order for diffing), then every other public table
+# discovered live, so newly added tables are never silently missed.
+export_order = [t for t in FULL_TABLES if t in existing] + sorted(existing - set(FULL_TABLES))
+skipped = [t for t in FULL_TABLES if t not in existing]
+for table in skipped:
+    print(f"  {table}: SKIP (not in DB)")
+for table in export_order:
     print(f"  {table}: ", end="", flush=True)
     try:
         cur.execute(f'SELECT * FROM "{table}"')
@@ -143,6 +142,28 @@ for table in FULL_TABLES:
     except Exception as e:
         print(f"FAILED: {e}")
         manifest["tables"][table] = {"error": str(e)}
+
+# ── Export auth schema (users + OAuth identities) ───────────────────────────
+# Without these, a from-scratch rebuild loses every account and all rows that
+# FK auth.users (profiles, worksheets, lectures, ...). encrypted_password is a
+# bcrypt hash; identities carry the Google OAuth links. PII — local only.
+for schema_table, stem in (("auth.users", "auth_users"), ("auth.identities", "auth_identities")):
+    print(f"  {schema_table}: ", end="", flush=True)
+    try:
+        cur.execute(f"SELECT * FROM {schema_table}")
+        rows = cur.fetchall()
+        out = OUTPUT / f"{stem}.json"
+        with open(out, "w", encoding="utf-8") as f:
+            json.dump([dict(r) for r in rows], f, default=json_default, indent=2)
+        manifest["tables"][stem] = {
+            "rows": len(rows),
+            "file": f"db_export/{stem}.json",
+            "size_mb": round(out.stat().st_size / 1024 / 1024, 2),
+        }
+        print(f"{len(rows):>6,d} rows")
+    except Exception as e:
+        print(f"FAILED: {e}")
+        manifest["tables"][stem] = {"error": str(e)}
 
 # ── Copy classification YAMLs ───────────────────────────────────────────────
 config_src = Path("config")
