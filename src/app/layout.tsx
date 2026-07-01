@@ -2,6 +2,7 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { Analytics } from '@vercel/analytics/next'
 import { Playfair_Display } from 'next/font/google'
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
@@ -264,6 +265,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </AuthProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
