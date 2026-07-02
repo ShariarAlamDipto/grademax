@@ -1,7 +1,38 @@
 import { NextResponse, type NextRequest } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Canonicalization (SEO). Runs before auth so a non-canonical URL 301s in a
+// single hop without any Supabase work.
+//
+// Host canonicalization (apex grademax.me → www.grademax.me) is enforced by Vercel
+// at the domain level, so this proxy MUST NOT touch the host — doing www→apex here
+// would fight Vercel's apex→www redirect and create an infinite redirect loop.
+//
+// What remains: the past-paper routes force lowercase seasons and set
+// `dynamicParams=false`, so historically-indexed capitalized URLs (…/2025/May-Jun)
+// now hard-404. Those earned the ranking, so we 301 them to their lowercase
+// canonical (same host) to preserve and consolidate the equity. Query strings are
+// preserved (we clone nextUrl). Scoped to /past-papers/* whose only valid segments
+// (slug, year, season, paper-N) are all lowercase.
+// ─────────────────────────────────────────────────────────────────────────────
+function canonicalRedirect(request: NextRequest): NextResponse | null {
+  const url = request.nextUrl.clone()
+  if (
+    url.pathname.startsWith("/past-papers/") &&
+    url.pathname !== url.pathname.toLowerCase()
+  ) {
+    url.pathname = url.pathname.toLowerCase()
+    return NextResponse.redirect(url, 301)
+  }
+  return null
+}
+
 export async function proxy(request: NextRequest) {
+  // Canonicalize /past-papers/* path casing first — a single same-host 301.
+  const canonical = canonicalRedirect(request)
+  if (canonical) return canonical
+
   // Create a response we can mutate
   const response = NextResponse.next({
     request: { headers: request.headers },

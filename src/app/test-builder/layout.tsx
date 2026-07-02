@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GradeMax Test Builder',
     description: 'Build custom test papers from real past paper questions.',
-    url: 'https://grademax.me/test-builder',
+    url: 'https://www.grademax.me/test-builder',
   },
   alternates: {
-    canonical: 'https://grademax.me/test-builder',
+    canonical: 'https://www.grademax.me/test-builder',
   },
 }
 

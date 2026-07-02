@@ -16,12 +16,12 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://grademax.me/#organization',
+      '@id': 'https://www.grademax.me/#organization',
       name: 'GradeMax',
-      url: 'https://grademax.me',
+      url: 'https://www.grademax.me',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://grademax.me/logo.png',
+        url: 'https://www.grademax.me/logo.png',
         width: 512,
         height: 512
       },
@@ -33,18 +33,18 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://grademax.me/#website',
-      url: 'https://grademax.me',
+      '@id': 'https://www.grademax.me/#website',
+      url: 'https://www.grademax.me',
       name: 'GradeMax',
       description: 'Free Edexcel IGCSE and A Level Past Papers 2025, Custom Worksheets and Topic-Wise Questions with Mark Schemes',
       publisher: {
-        '@id': 'https://grademax.me/#organization'
+        '@id': 'https://www.grademax.me/#organization'
       },
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://grademax.me/browse?q={search_term_string}'
+          urlTemplate: 'https://www.grademax.me/browse?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       },
@@ -52,16 +52,16 @@ const jsonLd = {
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://grademax.me/#webpage',
-      url: 'https://grademax.me',
+      '@id': 'https://www.grademax.me/#webpage',
+      url: 'https://www.grademax.me',
       name: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
       datePublished: '2024-01-15T00:00:00+00:00',
       dateModified: new Date().toISOString(),
       isPartOf: {
-        '@id': 'https://grademax.me/#website'
+        '@id': 'https://www.grademax.me/#website'
       },
       about: {
-        '@id': 'https://grademax.me/#organization'
+        '@id': 'https://www.grademax.me/#organization'
       },
       description: 'Free Edexcel past papers with mark schemes for IGCSE and A Level (2010-2025). Generate custom worksheets, practice topic-wise questions, and revise with 14+ years of real Pearson Edexcel exam papers.',
       inLanguage: 'en-GB',
@@ -72,9 +72,9 @@ const jsonLd = {
     },
     {
       '@type': 'EducationalOrganization',
-      '@id': 'https://grademax.me/#educationalorg',
+      '@id': 'https://www.grademax.me/#educationalorg',
       name: 'GradeMax',
-      url: 'https://grademax.me',
+      url: 'https://www.grademax.me',
       description: 'Free online platform for Edexcel IGCSE and A Level exam preparation with past papers, custom worksheets, and topic-wise practice questions.',
       areaServed: 'Worldwide',
       audience: {
@@ -86,9 +86,9 @@ const jsonLd = {
     // WebApplication schema for worksheet generator tool
     {
       '@type': 'WebApplication',
-      '@id': 'https://grademax.me/#webapp',
+      '@id': 'https://www.grademax.me/#webapp',
       name: 'GradeMax Worksheet Generator',
-      url: 'https://grademax.me/generate',
+      url: 'https://www.grademax.me/generate',
       applicationCategory: 'EducationalApplication',
       operatingSystem: 'Any',
       offers: {
@@ -102,22 +102,22 @@ const jsonLd = {
     {
       '@type': 'ItemList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'IGCSE Physics Past Papers', url: 'https://grademax.me/subjects/igcse/physics' },
-        { '@type': 'ListItem', position: 2, name: 'IGCSE Maths A Past Papers', url: 'https://grademax.me/subjects/igcse/maths-a' },
-        { '@type': 'ListItem', position: 3, name: 'IGCSE Maths B Past Papers', url: 'https://grademax.me/subjects/igcse/maths-b' },
-        { '@type': 'ListItem', position: 4, name: 'IGCSE Chemistry Past Papers', url: 'https://grademax.me/subjects/igcse/chemistry' },
-        { '@type': 'ListItem', position: 5, name: 'IGCSE Biology Past Papers', url: 'https://grademax.me/subjects/igcse/biology' },
-        { '@type': 'ListItem', position: 6, name: 'IGCSE ICT Past Papers', url: 'https://grademax.me/subjects/igcse/ict' },
-        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://grademax.me/subjects/ial/pure-mathematics-1' },
-        { '@type': 'ListItem', position: 8, name: 'A Level Mechanics 1 Past Papers', url: 'https://grademax.me/subjects/ial/mechanics-1' },
-        { '@type': 'ListItem', position: 9, name: 'A Level Statistics 1 Past Papers', url: 'https://grademax.me/subjects/ial/statistics-1' },
+        { '@type': 'ListItem', position: 1, name: 'IGCSE Physics Past Papers', url: 'https://www.grademax.me/subjects/igcse/physics' },
+        { '@type': 'ListItem', position: 2, name: 'IGCSE Maths A Past Papers', url: 'https://www.grademax.me/subjects/igcse/maths-a' },
+        { '@type': 'ListItem', position: 3, name: 'IGCSE Maths B Past Papers', url: 'https://www.grademax.me/subjects/igcse/maths-b' },
+        { '@type': 'ListItem', position: 4, name: 'IGCSE Chemistry Past Papers', url: 'https://www.grademax.me/subjects/igcse/chemistry' },
+        { '@type': 'ListItem', position: 5, name: 'IGCSE Biology Past Papers', url: 'https://www.grademax.me/subjects/igcse/biology' },
+        { '@type': 'ListItem', position: 6, name: 'IGCSE ICT Past Papers', url: 'https://www.grademax.me/subjects/igcse/ict' },
+        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/pure-mathematics-1' },
+        { '@type': 'ListItem', position: 8, name: 'A Level Mechanics 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/mechanics-1' },
+        { '@type': 'ListItem', position: 9, name: 'A Level Statistics 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/statistics-1' },
       ]
     }
   ]
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://grademax.me'),
+  metadataBase: new URL('https://www.grademax.me'),
   title: {
     default: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
     template: '%s | GradeMax'
@@ -200,12 +200,12 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://grademax.me',
+    canonical: 'https://www.grademax.me',
   },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://grademax.me',
+    url: 'https://www.grademax.me',
     siteName: 'GradeMax',
     title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level | GradeMax',
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real Pearson Edexcel exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology, ICT and more.',

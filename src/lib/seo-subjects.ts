@@ -1080,3 +1080,13 @@ export const getAllTopics = (): { subject: SEOSubject; topic: Topic }[] => {
 export const getLevelDisplay = (level: Level): string => {
   return level === "igcse" ? "IGCSE" : "A Level"
 }
+
+/**
+ * True for single-unit Edexcel qualification codes that students search verbatim
+ * (e.g. 4PH1, 4MA1, WME01, WMA11, WST01). Used to lead <title> tags with the code
+ * so page-1 results actually earn the click on code queries. Multi-unit IAL
+ * sciences (codes WBI11–16, name "IAL Biology") deliberately do NOT match — those
+ * keep a descriptive, all-units title instead.
+ */
+export const isSingleUnitEdexcelCode = (code: string): boolean =>
+  /^(4[A-Z]{2}\d|W[A-Z]{2}\d{2})$/.test(code)

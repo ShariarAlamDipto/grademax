@@ -20,12 +20,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'All Edexcel Subjects – IGCSE & A Level Past Papers by Topic',
     description: 'Browse all Edexcel IGCSE and A Level subjects. Topic-wise past papers and custom worksheets.',
-    url: 'https://grademax.me/subjects',
+    url: 'https://www.grademax.me/subjects',
     siteName: 'GradeMax',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://grademax.me/subjects',
+    canonical: 'https://www.grademax.me/subjects',
   },
 }
 
@@ -33,7 +33,7 @@ export default function SubjectsIndexPage() {
   const igcseSubjects = getSubjectsByLevel('igcse')
   const ialSubjects   = getSubjectsByLevel('ial')
 
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [

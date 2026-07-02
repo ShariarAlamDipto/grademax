@@ -5,7 +5,7 @@
 
 import { SEOSubject, Topic, getLevelDisplay } from './seo-subjects'
 
-const BASE_URL = 'https://grademax.me'
+const BASE_URL = 'https://www.grademax.me'
 const ORG_ID = `${BASE_URL}/#organization`
 const WEBSITE_ID = `${BASE_URL}/#website`
 

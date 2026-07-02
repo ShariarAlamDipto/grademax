@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
-import { seoSubjects } from "@/lib/seo-subjects"
+import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { extractPaperTokenFromSlug, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
 import { getPapersIndex, leafKey } from "@/lib/papersIndex"
 
@@ -56,9 +56,16 @@ export async function generateMetadata({
   const examCode = seoData?.examCode ?? ""
   const codeStr = examCode ? ` (${examCode})` : ""
   const displayPaper = `Paper ${paperToken.toUpperCase().replace(/-/g, " ")}`
+  const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith("IAL ")
+  // Lead with code + year + session + paper for queries like "wst01/01 jan 2025 qp".
+  // The /past-papers layout's plain-string title blocks the root template here, so
+  // the brand suffix is added explicitly.
+  const title = codeLed
+    ? `${examCode} ${yearLabel} ${seasonName} ${displayPaper} – QP + Mark Scheme (Edexcel ${subj.name})`
+    : `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} ${displayPaper} – Free PDF`
 
   return {
-    title: `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} ${displayPaper} – Free PDF | GradeMax`,
+    title: `${title} | GradeMax`,
     description: `Download free Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} ${displayPaper} question paper and mark scheme as PDF. Official Pearson Edexcel past paper.`,
     keywords: [
       `${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`,
@@ -79,9 +86,9 @@ export async function generateMetadata({
       `${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`,
     ],
     openGraph: {
-      title: `${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} ${displayPaper} | GradeMax`,
+      title: `${title} | GradeMax`,
       description: `Free Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper} question paper and mark scheme – PDF download.`,
-      url: `https://grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
+      url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
       siteName: "GradeMax",
       type: "website",
     },
@@ -91,7 +98,7 @@ export async function generateMetadata({
       description: `Free download: ${subj.name} ${yearLabel} ${seasonName} ${displayPaper} QP & mark scheme.`,
     },
     alternates: {
-      canonical: `https://grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
+      canonical: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
     },
   }
 }
@@ -124,7 +131,7 @@ function buildJsonLd(
   paper: PaperRow,
   examCode: string
 ) {
-  const BASE = "https://grademax.me"
+  const BASE = "https://www.grademax.me"
   const paperSlug = toPaperSlug(paperNumber) ?? `paper-${normalizePaperToken(paperNumber)}`
   const pageUrl = `${BASE}/past-papers/${slug}/${year}/${season}/${paperSlug}`
   const sessionUrl = `${BASE}/past-papers/${slug}/${year}/${season}`
