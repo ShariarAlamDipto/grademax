@@ -31,7 +31,8 @@ const features = [
     label: "Worksheets",
     heading: "Custom worksheets in seconds.",
     body: "Pick a subject, choose topics, set a year range — and get a targeted PDF worksheet with full mark scheme instantly.",
-    href: "/generate",
+    // Public landing (indexable) rather than the auth-walled /generate tool.
+    href: "/edexcel-worksheets",
     cta: "Build Worksheet →",
   },
   {

@@ -47,7 +47,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/edexcel-a-level-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE_URL}/edexcel-worksheets`,      changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE_URL}/subjects`,                changeFrequency: 'weekly',  priority: 0.9  },
-    { url: `${BASE_URL}/generate`,                changeFrequency: 'weekly',  priority: 0.9  },
+    // /generate is auth-gated (307 → /login) so it must NOT be in the sitemap;
+    // /edexcel-worksheets above is its public, indexable landing page.
+    // /test-builder renders a public landing for logged-out visitors.
+    { url: `${BASE_URL}/test-builder`,            changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/browse`,                  changeFrequency: 'weekly',  priority: 0.8  },
     { url: `${BASE_URL}/past-papers`,             changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/about`,                   changeFrequency: 'monthly', priority: 0.6  },

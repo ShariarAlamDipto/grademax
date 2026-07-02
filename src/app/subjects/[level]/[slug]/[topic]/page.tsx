@@ -47,16 +47,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const topic = subject.topics.find(t => t.slug === topicSlug)
   if (!topic) return {}
 
-  const title = `${topic.name} - ${subject.levelDisplay} ${subject.name} | GradeMax`
-  const description = `Master ${topic.name} for ${subject.levelDisplay} ${subject.name}. ${topic.description} Practice with real exam questions and mark schemes.`
+  // Root template appends "| GradeMax" — no manual suffix here (it double-branded before).
+  // Lead with "<topic> Questions" + "Topic Wise": the phrasing students actually search
+  // ("electricity igcse physics past paper questions", "chapterwise questions").
+  const title = `${topic.name} Questions – Edexcel ${subject.levelDisplay} ${subject.name} Topic Wise`
+  const description = `Free ${topic.name} past paper questions for Edexcel ${subject.levelDisplay} ${subject.name} (${subject.examCode}) — topic wise and chapterwise practice with mark schemes.`
 
   return {
     title,
     description,
     keywords: [
       topic.name,
+      `${topic.name} past paper questions`,
+      `${topic.name} questions by topic`,
       `${subject.levelDisplay} ${topic.name}`,
-      `${subject.name} ${topic.name}`,
+      `${subject.name} ${topic.name} questions`,
+      `${subject.examCode} ${topic.name}`,
+      `${topic.name} chapterwise questions`,
       ...topic.keywords,
       ...subject.keywords.slice(0, 3)
     ],

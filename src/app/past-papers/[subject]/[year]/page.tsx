@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, seasonDisplay, subjectColorClasses } from "@/lib/subjects"
-import { seoSubjects } from "@/lib/seo-subjects"
+import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
 import { getPapersIndex } from "@/lib/papersIndex"
 
@@ -45,9 +45,16 @@ export async function generateMetadata({
   const seoData = seoSubjects.find((s) => s.slug === slug)
   const examCode = seoData?.examCode ?? ""
   const codeStr = examCode ? ` (${examCode})` : ""
+  const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith("IAL ")
+  // Lead with code + year for queries like "4ph1 2023 past papers" — same pattern
+  // as the session/paper pages. /past-papers layout blocks the root template, so
+  // the brand suffix stays explicit.
+  const title = codeLed
+    ? `${examCode} ${yearLabel} Past Papers – Edexcel ${level} ${subj.name} by Session`
+    : `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} Past Papers by Session – Free PDF`
 
   return {
-    title: `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} Past Papers by Session – Free PDF | GradeMax`,
+    title: `${title} | GradeMax`,
     description:
       `Download free Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} past papers and mark schemes. ` +
       "Browse all available sessions and access official question papers as PDF.",

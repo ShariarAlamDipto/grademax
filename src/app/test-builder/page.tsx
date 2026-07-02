@@ -1,7 +1,7 @@
-import { redirect } from "next/navigation"
 import { getSupabaseServer } from "@/lib/supabaseServer"
 import { createClient } from "@supabase/supabase-js"
 import TestBuilderPage from "@/components/test-builder/TestBuilderPage"
+import TestBuilderLanding from "@/components/test-builder/TestBuilderLanding"
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
@@ -9,7 +9,9 @@ const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
 export default async function TestBuilderRoute() {
   const serverClient = getSupabaseServer()
   const { data: { user } } = await serverClient.auth.getUser()
-  if (!user) redirect("/login?next=/test-builder")
+  // Logged-out visitors (and crawlers) get the indexable landing page instead of
+  // a 307 to /login — the tool itself still requires a session.
+  if (!user) return <TestBuilderLanding />
 
   const supabase = createClient(supabaseUrl, supabaseKey)
 

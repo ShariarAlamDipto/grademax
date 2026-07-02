@@ -10,6 +10,10 @@ import { ThemeProvider } from '@/context/ThemeContext'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700','800'], display: 'swap' });
 
+// Evaluated at build time; every deploy refreshes it, so titles never advertise a
+// stale year (the hardcoded "2025" sat live well into 2026).
+const CURRENT_YEAR = new Date().getFullYear()
+
 // JSON-LD Structured Data for Brand Recognition & Edexcel SEO
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -36,7 +40,7 @@ const jsonLd = {
       '@id': 'https://www.grademax.me/#website',
       url: 'https://www.grademax.me',
       name: 'GradeMax',
-      description: 'Free Edexcel IGCSE and A Level Past Papers 2025, Custom Worksheets and Topic-Wise Questions with Mark Schemes',
+      description: `Free Edexcel IGCSE and A Level Past Papers ${CURRENT_YEAR}, Custom Worksheets and Topic-Wise Questions with Mark Schemes`,
       publisher: {
         '@id': 'https://www.grademax.me/#organization'
       },
@@ -54,7 +58,7 @@ const jsonLd = {
       '@type': 'WebPage',
       '@id': 'https://www.grademax.me/#webpage',
       url: 'https://www.grademax.me',
-      name: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
+      name: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level | GradeMax`,
       datePublished: '2024-01-15T00:00:00+00:00',
       dateModified: new Date().toISOString(),
       isPartOf: {
@@ -119,7 +123,7 @@ const jsonLd = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.grademax.me'),
   title: {
-    default: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
+    default: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level | GradeMax`,
     template: '%s | GradeMax'
   },
   description: 'Free Edexcel IGCSE & A Level past papers with mark schemes (2010–2025). Generate custom worksheets from real Pearson exam questions. Topic-wise practice for Physics, Maths, Chemistry & more.',
@@ -207,7 +211,7 @@ export const metadata: Metadata = {
     locale: 'en_GB',
     url: 'https://www.grademax.me',
     siteName: 'GradeMax',
-    title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level | GradeMax',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} | Free IGCSE & A Level | GradeMax`,
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real Pearson Edexcel exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology, ICT and more.',
     images: [
       {
@@ -220,7 +224,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level Questions | GradeMax',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} | Free IGCSE & A Level Questions | GradeMax`,
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes (2010-2025). Generate custom worksheets, practice topic-wise, and ace your exams.',
     images: ['/opengraph-image'],
     // creator/site omitted — re-add only if the @grademax handle is actually owned.

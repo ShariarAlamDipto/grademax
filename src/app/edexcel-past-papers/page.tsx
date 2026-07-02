@@ -7,12 +7,15 @@ import PastPaperCatalog from '@/components/PastPaperCatalog'
 // Static hub — links are built from the DB index at build time (no ISR writes).
 export const revalidate = false
 
+// Build-time year so the title never advertises a stale year.
+const CURRENT_YEAR = new Date().getFullYear()
+
 export const metadata: Metadata = {
-  title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
+  title: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level with Mark Schemes`,
   description: 'Download free Edexcel past papers for IGCSE and A Level with mark schemes. Physics, Maths, Chemistry, Biology, ICT, Statistics & more. Topic-wise questions from 2010-2025.',
   keywords: [
-    'Edexcel past papers', 'Edexcel past papers free', 'Edexcel past papers 2025',
-    'Edexcel past papers 2024', 'Edexcel past papers 2023', 'Edexcel past papers with answers',
+    'Edexcel past papers', 'Edexcel past papers free', `Edexcel past papers ${CURRENT_YEAR}`,
+    `Edexcel past papers ${CURRENT_YEAR - 1}`, `Edexcel past papers ${CURRENT_YEAR - 2}`, 'Edexcel past papers with answers',
     'Pearson Edexcel past papers', 'Edexcel exam papers',
     'Edexcel IGCSE past papers', 'Edexcel A Level past papers',
     'Edexcel past papers with mark scheme', 'Edexcel question papers',
@@ -20,8 +23,8 @@ export const metadata: Metadata = {
     'past papers Edexcel free download', 'Edexcel past papers online',
   ],
   openGraph: {
-    title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
-    description: 'Free Edexcel past papers for all subjects with mark schemes. IGCSE and A Level. Updated 2025.',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level with Mark Schemes`,
+    description: `Free Edexcel past papers for all subjects with mark schemes. IGCSE and A Level. Updated ${CURRENT_YEAR}.`,
     url: 'https://www.grademax.me/edexcel-past-papers',
     siteName: 'GradeMax',
     type: 'website',
@@ -29,7 +32,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel Past Papers 2025 – Free with Mark Schemes',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} – Free with Mark Schemes`,
     description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Topic-wise questions from 2010–2025.',
     images: ['/opengraph-image'],
   },
