@@ -6,7 +6,7 @@ import {
   getSubjectBySlug,
   seasonDisplay,
 } from "@/lib/subjects"
-import { seoSubjects } from "@/lib/seo-subjects"
+import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
 
 // Subject hub pages are pre-rendered at build time and stay static until the
@@ -34,9 +34,16 @@ export async function generateMetadata({
   const seoData = seoSubjects.find(s => s.slug === slug)
   const examCode = seoData?.examCode ?? ''
   const codeStr = examCode ? ` (${examCode})` : ''
+  const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith('IAL ')
+  // Lead with the code for code-searched subjects. The /past-papers layout sets a
+  // plain-string title, which blocks the root "%s | GradeMax" template from this
+  // subtree, so the brand suffix must be included explicitly.
+  const title = codeLed
+    ? `${examCode} Past Papers – Edexcel ${level} ${subj.name} Mark Schemes`
+    : `Edexcel ${level} ${subj.name}${codeStr} Past Papers – Free PDF with Mark Schemes`
 
   return {
-    title: `Edexcel ${level} ${subj.name}${codeStr} Past Papers – Free Download | GradeMax`,
+    title: `${title} | GradeMax`,
     description: `Download free Edexcel ${level} ${subj.name}${codeStr} past papers and mark schemes from 2011 to 2025. All question papers organised by year and session – free PDF download.`,
     keywords: [
       `${subj.name} past papers`,
@@ -58,9 +65,9 @@ export async function generateMetadata({
       `free ${subj.name} past papers`,
     ],
     openGraph: {
-      title: `Edexcel ${level} ${subj.name}${codeStr} Past Papers – Free Download | GradeMax`,
+      title: `${title} | GradeMax`,
       description: `Download free Edexcel ${level} ${subj.name}${codeStr} past papers and mark schemes from 2011 to 2025. All sessions available as free PDF.`,
-      url: `https://grademax.me/past-papers/${slug}`,
+      url: `https://www.grademax.me/past-papers/${slug}`,
       siteName: "GradeMax",
       type: "website",
     },
@@ -70,7 +77,7 @@ export async function generateMetadata({
       description: `Free Edexcel ${level} ${subj.name} past papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://grademax.me/past-papers/${slug}`,
+      canonical: `https://www.grademax.me/past-papers/${slug}`,
     },
   }
 }
@@ -151,7 +158,7 @@ const SEASON_ORDER: Record<string, number> = {
 // ─── JSON-LD ───────────────────────────────────────────────────────────────────
 
 function buildJsonLd(slug: string, subjectName: string, level: string, yearGroups: YearGroup[]) {
-  const BASE = "https://grademax.me"
+  const BASE = "https://www.grademax.me"
   const pageUrl = `${BASE}/past-papers/${slug}`
 
   // ItemList of all available sessions

@@ -4,7 +4,7 @@ import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
 import { pastPaperSubjects, subjects } from '@/lib/subjects'
 import { toPaperSlug } from '@/lib/paper-slugs'
 
-const BASE_URL = 'https://grademax.me'
+const BASE_URL = 'https://www.grademax.me'
 const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
 
 // Build a slug → subject map for quick lookup

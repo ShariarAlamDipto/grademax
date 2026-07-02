@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const INDEXNOW_KEY = process.env.INDEXNOW_API_KEY || ''
-const SITE_URL = 'https://grademax.me'
+const SITE_URL = 'https://www.grademax.me'
 
 const INDEXNOW_ENDPOINTS = [
   'https://api.indexnow.org/indexnow',

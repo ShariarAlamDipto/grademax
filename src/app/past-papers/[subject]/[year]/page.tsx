@@ -54,7 +54,7 @@ export async function generateMetadata({
     openGraph: {
       title: `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} Past Papers | GradeMax`,
       description: `Free Edexcel ${level} ${subj.name} ${yearLabel} past papers by session with mark schemes.`,
-      url: `https://grademax.me/past-papers/${slug}/${yearLabel}`,
+      url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}`,
       siteName: "GradeMax",
       type: "website",
     },
@@ -64,7 +64,7 @@ export async function generateMetadata({
       description: `Free Edexcel ${level} ${subj.name} ${yearLabel} papers by session.`,
     },
     alternates: {
-      canonical: `https://grademax.me/past-papers/${slug}/${yearLabel}`,
+      canonical: `https://www.grademax.me/past-papers/${slug}/${yearLabel}`,
     },
   }
 }
@@ -130,7 +130,7 @@ function dedupeSessionPapers(sessionPapers: PaperRow[]): PaperRow[] {
 }
 
 function buildJsonLd(slug: string, subjectName: string, level: string, year: string, sessions: SessionGroup[]) {
-  const base = "https://grademax.me"
+  const base = "https://www.grademax.me"
   const pageUrl = `${base}/past-papers/${slug}/${year}`
 
   return {

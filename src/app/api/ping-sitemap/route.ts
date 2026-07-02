@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const PING_URLS = [
-  'https://www.google.com/ping?sitemap=https://grademax.me/sitemap.xml',
-  'https://www.bing.com/ping?sitemap=https://grademax.me/sitemap.xml',
+  'https://www.google.com/ping?sitemap=https://www.grademax.me/sitemap.xml',
+  'https://www.bing.com/ping?sitemap=https://www.grademax.me/sitemap.xml',
 ]
 
 export async function GET(request: NextRequest) {

@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { cache } from 'react'
-import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
+import { seoSubjects, isSingleUnitEdexcelCode, type SEOSubject } from '@/lib/seo-subjects'
 import { getPapersIndex } from '@/lib/papersIndex'
 import {
   generateOrganizationSchema,
@@ -128,14 +128,21 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const levelDisplay = subject.levelDisplay
   const isQP = slug.includes('question-papers')
-  const isPP = slug.includes('past-papers') || !isQP
+  const kind = isQP ? 'Question Papers' : 'Past Papers'
+  const codeLed = isSingleUnitEdexcelCode(subject.examCode) && !subject.name.startsWith('IAL ')
 
-  const titlePrefix = isPP 
-    ? `Edexcel ${levelDisplay} ${subject.name} Past Papers`
-    : `Edexcel ${levelDisplay} ${subject.name} Question Papers`
-  
-  const title = `${titlePrefix} – Free Download with Mark Schemes (${subject.examCode})`
-  const description = `Download free Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers and mark schemes from ${subject.yearsAvailable[0]} to ${subject.yearsAvailable[subject.yearsAvailable.length - 1]}. ${subject.topics.length} topics covered. Practice topic-wise questions and generate custom worksheets.`
+  const firstYear = subject.yearsAvailable[0]
+  const lastYear = subject.yearsAvailable[subject.yearsAvailable.length - 1]
+
+  // Lead the title with the exam code (WME01, 4PH1…) since that is the exact term
+  // students search — these pages rank on page 1 but earn no clicks when the code
+  // is buried. Layout template appends " | GradeMax".
+  const title = codeLed
+    ? `${subject.examCode} ${kind} – Edexcel ${levelDisplay} ${subject.name} Mark Schemes`
+    : `Edexcel ${levelDisplay} ${subject.name} ${kind} (${subject.examCode}) – Free with Mark Schemes`
+  const description = codeLed
+    ? `${subject.examCode} (Edexcel ${levelDisplay} ${subject.name}) past papers ${firstYear}–${lastYear} with mark schemes. Free PDF question papers, all sessions, topic-wise practice.`
+    : `Free Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers and mark schemes, ${firstYear}–${lastYear}. ${subject.topics.length} topics, all sessions, free PDF download.`
 
   return {
     title,
@@ -157,17 +164,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://grademax.me/qp/${slug}`,
+      url: `https://www.grademax.me/qp/${slug}`,
       siteName: 'GradeMax',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${titlePrefix} | GradeMax`,
+      title: `${title} | GradeMax`,
       description: `Free ${levelDisplay} ${subject.name} past papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://grademax.me/qp/${slug}`,
+      canonical: `https://www.grademax.me/qp/${slug}`,
     },
   }
 }
@@ -177,7 +184,7 @@ export default async function SubjectQPPage({ params }: PageProps) {
   const subject = slugMap[slug]
   if (!subject) notFound()
 
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
   const levelDisplay = subject.levelDisplay
   const availableYears = await getAvailableYearsForSubject(subject.name)
   const candidateYears = availableYears.length > 0 ? availableYears : [...subject.yearsAvailable].reverse()

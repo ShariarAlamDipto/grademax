@@ -5,6 +5,7 @@ import {
   getSubjectBySlug,
   seoSubjects,
   getLevelDisplay,
+  isSingleUnitEdexcelCode,
   type Level
 } from '@/lib/seo-subjects'
 import { generateSubjectPageSchema } from '@/lib/seo-schema'
@@ -38,18 +39,22 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!isValidLevel(level)) return {}
   const subject = getSubjectBySlug(level, slug)
   if (!subject) return {}
+  const codeLed = isSingleUnitEdexcelCode(subject.examCode) && !subject.name.startsWith('IAL ')
+  const title = codeLed
+    ? `${subject.examCode} Past Papers – Edexcel ${subject.levelDisplay} ${subject.name} Mark Schemes`
+    : subject.metaTitle
   return {
-    title: subject.metaTitle,
+    title,
     description: subject.metaDescription,
     keywords: subject.keywords,
     openGraph: {
-      title: subject.metaTitle,
+      title,
       description: subject.metaDescription,
-      url: `https://grademax.me/subjects/${level}/${slug}`,
+      url: `https://www.grademax.me/subjects/${level}/${slug}`,
       siteName: 'GradeMax',
       type: 'website',
     },
-    alternates: { canonical: `https://grademax.me/subjects/${level}/${slug}` },
+    alternates: { canonical: `https://www.grademax.me/subjects/${level}/${slug}` },
   }
 }
 

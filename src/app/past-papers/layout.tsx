@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Free Edexcel Past Papers 2025 – IGCSE & A Level | GradeMax',
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Physics, Maths, Chemistry, Biology, ICT – all sessions 2011–2025.',
-    url: 'https://grademax.me/past-papers',
+    url: 'https://www.grademax.me/past-papers',
     siteName: 'GradeMax',
     type: 'website',
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes (2011–2025).',
   },
   alternates: {
-    canonical: 'https://grademax.me/past-papers',
+    canonical: 'https://www.grademax.me/past-papers',
   },
 }
 

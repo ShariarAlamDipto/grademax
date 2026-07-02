@@ -1,7 +1,11 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { seoSubjects, getSubjectsByLevel } from '@/lib/seo-subjects'
+import { getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
+import PastPaperCatalog from '@/components/PastPaperCatalog'
+
+// Static hub — links are built from the DB index at build time (no ISR writes).
+export const revalidate = false
 
 export const metadata: Metadata = {
   title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
@@ -18,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
     description: 'Free Edexcel past papers for all subjects with mark schemes. IGCSE and A Level. Updated 2025.',
-    url: 'https://grademax.me/edexcel-past-papers',
+    url: 'https://www.grademax.me/edexcel-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Free Edexcel Past Papers' }],
@@ -30,7 +34,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://grademax.me/edexcel-past-papers',
+    canonical: 'https://www.grademax.me/edexcel-past-papers',
   },
 }
 
@@ -61,10 +65,10 @@ const faqs = [
   },
 ]
 
-export default function EdexcelPastPapersPage() {
+export default async function EdexcelPastPapersPage() {
   const igcse = getSubjectsByLevel('igcse')
   const ial = getSubjectsByLevel('ial')
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
 
   const schema = {
     '@context': 'https://schema.org',
@@ -181,6 +185,19 @@ export default function EdexcelPastPapersPage() {
               View all A Level units and topics →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Full catalog: every subject that has papers, by year, + paper-code table.
+          Makes the whole /past-papers tree reachable from this head-term hub. */}
+      <section className="px-4 md:px-8 py-12" id="all-subjects">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">All Edexcel Past Papers by Subject</h2>
+          <p className="text-gray-400 mb-8 text-sm">
+            Every Edexcel IGCSE and International A Level subject with papers on GradeMax, linked by
+            year and by qualification code.
+          </p>
+          <PastPaperCatalog levelLabel="Edexcel" />
         </div>
       </section>
 

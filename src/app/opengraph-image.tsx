@@ -54,7 +54,7 @@ export default function OGImage() {
           {/* Icon */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://grademax.me/favicon.png"
+            src="https://www.grademax.me/favicon.png"
             width={140}
             height={140}
             alt="GradeMax logo"

@@ -14,10 +14,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Worksheet Generator – Create Custom Past Paper Worksheets Free',
     description: 'Create custom Edexcel IGCSE and A Level practice worksheets from real past papers. Free with mark schemes.',
-    url: 'https://grademax.me/generate',
+    url: 'https://www.grademax.me/generate',
   },
   alternates: {
-    canonical: 'https://grademax.me/generate',
+    canonical: 'https://www.grademax.me/generate',
   },
 }
 

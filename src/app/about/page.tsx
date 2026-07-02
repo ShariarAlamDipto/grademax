@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'About GradeMax – Free Edexcel Past Papers Platform',
     description: 'Learn about GradeMax and how we help students prepare for Edexcel IGCSE and A Level exams.',
-    url: 'https://grademax.me/about',
+    url: 'https://www.grademax.me/about',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'About GradeMax' }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://grademax.me/about',
+    canonical: 'https://www.grademax.me/about',
   },
 }
 
