@@ -7,12 +7,15 @@ import PastPaperCatalog from '@/components/PastPaperCatalog'
 // Static hub — links are built from the DB index at build time (no ISR writes).
 export const revalidate = false
 
+// Build-time year so the title never advertises a stale year.
+const CURRENT_YEAR = new Date().getFullYear()
+
 export const metadata: Metadata = {
-  title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+  title: `Edexcel A Level Past Papers ${CURRENT_YEAR} – Free IAL with Mark Schemes`,
   description: 'Free Edexcel A Level (IAL) past papers with mark schemes. Pure Maths 1 (WMA11), Mechanics 1 (WME01), Statistics 1 (WST01). Topic-wise questions from 2012-2025.',
   keywords: [
     'A Level past papers', 'A Level past papers Edexcel', 'Edexcel A Level past papers',
-    'A Level past papers 2025', 'A Level past papers 2024', 'A Level past papers 2023', 'A Level past papers free',
+    `A Level past papers ${CURRENT_YEAR}`, `A Level past papers ${CURRENT_YEAR - 1}`, `A Level past papers ${CURRENT_YEAR - 2}`, 'A Level past papers free',
     'IAL past papers', 'International A Level past papers', 'Edexcel IAL past papers',
     'A Level Maths past papers', 'A Level Maths past papers Edexcel',
     'A Level Maths past papers by topic', 'A Level Maths topic wise',
@@ -27,7 +30,7 @@ export const metadata: Metadata = {
     'A Level worksheets', 'A Level practice papers',
   ],
   openGraph: {
-    title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+    title: `Edexcel A Level Past Papers ${CURRENT_YEAR} – Free IAL with Mark Schemes`,
     description: 'Free A Level past papers for all Edexcel IAL units with mark schemes. Organized by topic and year.',
     url: 'https://www.grademax.me/edexcel-a-level-past-papers',
     siteName: 'GradeMax',
@@ -36,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+    title: `Edexcel A Level Past Papers ${CURRENT_YEAR} – Free IAL with Mark Schemes`,
     description: 'Free A Level past papers for Pure Maths, Mechanics, Statistics with mark schemes.',
     images: ['/opengraph-image'],
   },

@@ -86,7 +86,8 @@ export default function Footer() {
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {([
-                ["/generate",    "Worksheet Generator"],
+                // Public landing (indexable) rather than the auth-walled /generate tool.
+                ["/edexcel-worksheets", "Worksheet Generator"],
                 ["/test-builder","Test Builder"],
                 ["/past-papers", "Past Papers by Year"],
                 ["/subjects",    "All Subjects"],

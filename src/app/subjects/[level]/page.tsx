@@ -44,7 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const subjectNames = subjects.map(s => s.name).join(', ')
   
   return {
-    title: `${levelDisplay} Subjects – Past Papers & Study Resources | GradeMax`,
+    // Root template appends "| GradeMax" — no manual suffix (it double-branded before).
+    title: `${levelDisplay} Subjects – Past Papers & Study Resources`,
     description: `Master ${levelDisplay} with GradeMax. Access past papers, topic questions, and practice for ${subjectNames}. Free study resources for exam success.`,
     keywords: [
       `${levelDisplay} past papers`,
