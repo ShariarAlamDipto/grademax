@@ -2,8 +2,9 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
-import { extractPaperTokenFromSlug, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
-import { getPapersIndex, leafKey } from "@/lib/papersIndex"
+import { extractPaperTokenFromSlug, formatPaperLabel, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
+import { getPapersIndex, leafKey, sessionKey } from "@/lib/papersIndex"
+import { buildViewerHref } from "@/lib/viewer-link"
 
 export const revalidate = false
 // Every reachable paper URL is enumerated by generateStaticParams below from the
@@ -246,7 +247,7 @@ export default async function PaperPage({
   // Supabase queries (and the ISR writes that came from cold cache fills).
   const normalizedPaperSlug = toPaperSlug(paperToken)
   if (!normalizedPaperSlug) notFound()
-  const { byLeaf } = await getPapersIndex()
+  const { byLeaf, bySession } = await getPapersIndex()
   const hit = byLeaf.get(leafKey(slug, yearLabel, normalizedSeason, normalizedPaperSlug))
   if (!hit) notFound()
 
@@ -259,6 +260,20 @@ export default async function PaperPage({
   const validPdf = paper.pdf_url
   const validMs = paper.markscheme_pdf_url
   const displayPaper = `Paper ${paper.paper_number}`
+  const paperPagePath = `/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`
+  const viewerTitle = `${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`
+  const viewerQpHref = buildViewerHref({
+    doc: "qp", qpUrl: validPdf, msUrl: validMs, title: viewerTitle, backPath: paperPagePath,
+  })
+  const viewerMsHref = buildViewerHref({
+    doc: "ms", qpUrl: validPdf, msUrl: validMs, title: viewerTitle, backPath: paperPagePath,
+  })
+  // Sibling papers from the same sitting — the strongest "second click" a
+  // visitor landing from Google can take from this page.
+  const siblings = (bySession.get(sessionKey(slug, yearLabel, normalizedSeason)) ?? [])
+    .filter((p) => p.paperNumber !== paper.paper_number)
+    .map((p) => ({ paperNumber: p.paperNumber, paperSlug: toPaperSlug(p.paperNumber) }))
+    .filter((p): p is { paperNumber: string; paperSlug: string } => p.paperSlug !== null)
   const jsonLd = buildJsonLd(
     slug, subj.name, level, yearLabel, normalizedSeason, seasonName, paper.paper_number, paper, examCode
   )
@@ -313,51 +328,105 @@ export default async function PaperPage({
           {/* Download cards */}
           <div className="space-y-3">
             {validPdf && (
-              <a
-                href={validPdf}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between gap-4 bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 hover:bg-white/[0.06] transition-colors"
-              >
+              <div className="flex items-center justify-between gap-4 bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4">
                 <div>
                   <p className="font-semibold text-white">
                     {subj.name} {yearLabel} {seasonName} {displayPaper} – Question Paper
                   </p>
                   <p className="text-xs text-white/40 mt-0.5">Edexcel {level}{examCode ? ` · ${examCode}` : ""} · PDF</p>
                 </div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30 flex-shrink-0">
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                  </svg>
-                  Download QP
-                </span>
-              </a>
+                <div className="flex gap-2 flex-shrink-0 flex-wrap justify-end">
+                  <Link
+                    href={viewerQpHref}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30 hover:bg-blue-500/25 transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    View QP
+                  </Link>
+                  <a
+                    href={validPdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Download
+                  </a>
+                </div>
+              </div>
             )}
 
             {validMs && (
-              <a
-                href={validMs}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-between gap-4 bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 hover:bg-white/[0.06] transition-colors"
-              >
+              <div className="flex items-center justify-between gap-4 bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4">
                 <div>
                   <p className="font-semibold text-white">
                     {subj.name} {yearLabel} {seasonName} {displayPaper} – Mark Scheme
                   </p>
                   <p className="text-xs text-white/40 mt-0.5">Edexcel {level}{examCode ? ` · ${examCode}` : ""} · PDF</p>
                 </div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30 flex-shrink-0">
-                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Download MS
-                </span>
-              </a>
+                <div className="flex gap-2 flex-shrink-0 flex-wrap justify-end">
+                  <Link
+                    href={viewerMsHref}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30 hover:bg-emerald-500/25 transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    View MS
+                  </Link>
+                  <a
+                    href={validMs}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round"
+                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Download
+                  </a>
+                </div>
+              </div>
             )}
           </div>
+
+          {/* Sibling papers from the same sitting — rendered for every subject */}
+          {siblings.length > 0 && (
+            <div className="mt-6">
+              <h2 className="text-sm font-semibold text-white/60 mb-2.5">
+                More {subj.name} {yearLabel} {seasonName} papers
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {siblings.map((s) => (
+                  <Link
+                    key={s.paperSlug}
+                    href={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${s.paperSlug}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                  >
+                    {formatPaperLabel(s.paperNumber)}
+                  </Link>
+                ))}
+                {seoData && (
+                  <Link
+                    href={`/subjects/${subj.level}/${slug}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-blue-400/30 text-blue-300 hover:bg-blue-500/10 transition-colors"
+                  >
+                    Practice {subj.name} by topic →
+                  </Link>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* SEO content block */}
           {seoData && (

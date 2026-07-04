@@ -4,6 +4,7 @@ import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subj
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
 import { getPapersIndex, sessionKey } from "@/lib/papersIndex"
+import { buildViewerHref } from "@/lib/viewer-link"
 
 export const revalidate = false
 // Every reachable session URL is enumerated from the DB-backed index at build
@@ -269,6 +270,12 @@ export default async function SessionPapersPage({
           <div className="space-y-3">
             {papers.map((paper) => {
               const paperSlug = toPaperSlug(paper.paper_number)
+              const viewerInput = {
+                qpUrl: paper.pdf_url,
+                msUrl: paper.markscheme_pdf_url,
+                title: `${subj.name} ${yearLabel} ${seasonName} ${formatPaperLabel(paper.paper_number)}`,
+                backPath: `/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
+              }
               return (
                 <div
                   key={paper.id}
@@ -291,10 +298,8 @@ export default async function SessionPapersPage({
 
                   <div className="flex gap-2 flex-shrink-0">
                     {paper.pdf_url ? (
-                      <a
-                        href={paper.pdf_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        href={buildViewerHref({ doc: "qp", ...viewerInput })}
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30 hover:bg-blue-500/25 transition-colors"
                       >
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -305,23 +310,21 @@ export default async function SessionPapersPage({
                           />
                         </svg>
                         Question Paper
-                      </a>
+                      </Link>
                     ) : (
                       <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">QP —</span>
                     )}
 
                     {paper.markscheme_pdf_url ? (
-                      <a
-                        href={paper.markscheme_pdf_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <Link
+                        href={buildViewerHref({ doc: "ms", ...viewerInput })}
                         className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30 hover:bg-emerald-500/25 transition-colors"
                       >
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         Mark Scheme
-                      </a>
+                      </Link>
                     ) : (
                       <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">MS —</span>
                     )}
