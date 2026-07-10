@@ -2,32 +2,31 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { useSearchParams } from "next/navigation"
 import { track } from "@vercel/analytics"
-import { isAllowedPdfUrl, type ViewerDoc } from "@/lib/viewer-link"
+import type { ViewerDoc } from "@/lib/viewer-link"
 
 const DOC_LABELS: Record<ViewerDoc, string> = {
   qp: "Question Paper",
   ms: "Mark Scheme",
 }
 
-function safeBackPath(raw: string | null): string {
-  // Same-site paths only — reject absolute/protocol-relative URLs.
-  if (raw && raw.startsWith("/") && !raw.startsWith("//")) return raw
-  return "/past-papers"
+interface ViewerClientProps {
+  qpUrl: string | null
+  msUrl: string | null
+  title: string
+  backPath: string
+  requestedDoc: ViewerDoc
 }
 
-export default function ViewerClient() {
-  const searchParams = useSearchParams()
-
-  const qpParam = searchParams.get("qp")
-  const msParam = searchParams.get("ms")
-  const qpUrl = isAllowedPdfUrl(qpParam) ? qpParam : null
-  const msUrl = isAllowedPdfUrl(msParam) ? msParam : null
-  const title = searchParams.get("title") ?? "Past Paper"
-  const backPath = safeBackPath(searchParams.get("back"))
-
-  const requestedDoc: ViewerDoc = searchParams.get("doc") === "ms" ? "ms" : "qp"
+export default function ViewerClient({
+  qpUrl,
+  msUrl,
+  title,
+  backPath,
+  requestedDoc,
+}: ViewerClientProps) {
+  // Server and client compute the same initial doc from the same props, so the
+  // first paint already shows the right PDF (no hydration mismatch).
   const initialDoc: ViewerDoc =
     requestedDoc === "ms" ? (msUrl ? "ms" : "qp") : qpUrl ? "qp" : "ms"
   const [doc, setDoc] = useState<ViewerDoc>(initialDoc)

@@ -38,9 +38,8 @@ export default function SubjectGrid({ subjects, title }: Props) {
       </p>
       <div ref={gridRef} className="subject-float-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(160px, 1fr))", gap: "0.75rem" }}>
         {subjects.map((s, i) => (
-          <Link
+          <div
             key={s.slug}
-            href={`/subjects/${s.level}/${s.slug}`}
             className="subject-float-item"
             style={{
               ["--delay" as string]: `${i * 0.07}s`,
@@ -51,16 +50,23 @@ export default function SubjectGrid({ subjects, title }: Props) {
               display: "flex",
               flexDirection: "column",
               gap: "0.35rem",
-              textDecoration: "none",
             }}
           >
-            <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "var(--gm-text)", lineHeight: 1.2 }}>{s.name}</p>
-            <p style={{ fontSize: "0.6rem", fontWeight: 700, color: s.color, letterSpacing: "0.08em", textTransform: "uppercase" }}>{s.code}</p>
+            {/* Primary link on the subject name/code. Kept separate from the
+                two action links below — nesting an <a> inside an <a> is invalid
+                HTML and caused a homepage hydration mismatch (React #418). */}
+            <Link
+              href={`/subjects/${s.level}/${s.slug}`}
+              style={{ display: "block", textDecoration: "none" }}
+            >
+              <p style={{ fontSize: "0.9rem", fontWeight: 700, color: "var(--gm-text)", lineHeight: 1.2 }}>{s.name}</p>
+              <p style={{ fontSize: "0.6rem", fontWeight: 700, color: s.color, letterSpacing: "0.08em", textTransform: "uppercase" }}>{s.code}</p>
+            </Link>
             <div style={{ display: "flex", gap: "0.75rem", marginTop: "0.625rem" }}>
-              <Link href={`/past-papers/${s.slug}`} onClick={e => e.stopPropagation()} style={{ fontSize: "0.7rem", color: s.color, opacity: 0.85, textDecoration: "none" }}>Papers →</Link>
-              <Link href={`/subjects/${s.level}/${s.slug}`} onClick={e => e.stopPropagation()} style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", textDecoration: "none" }}>Topics →</Link>
+              <Link href={`/past-papers/${s.slug}`} style={{ fontSize: "0.7rem", color: s.color, opacity: 0.85, textDecoration: "none" }}>Papers →</Link>
+              <Link href={`/subjects/${s.level}/${s.slug}`} style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", textDecoration: "none" }}>Topics →</Link>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
