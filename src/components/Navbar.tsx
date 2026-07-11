@@ -31,9 +31,10 @@ export default function Navbar() {
   }, [])
 
   const coreLinks = [
-    { href: "/past-papers",  label: "Past Papers" },
-    { href: "/generate",     label: "Worksheets" },
-    { href: "/test-builder", label: "Test Builder" },
+    { href: "/past-papers",           label: "Edexcel" },
+    { href: "/past-papers/cambridge", label: "Cambridge" },
+    { href: "/generate",              label: "Worksheets" },
+    { href: "/test-builder",          label: "Test Builder" },
   ]
 
   const extraLinks = [

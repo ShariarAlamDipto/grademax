@@ -2,9 +2,9 @@ import { createClient } from "@supabase/supabase-js"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getSubjectBySlug, seasonDisplay, subjectColorClasses } from "@/lib/subjects"
+import { getSubjectBySlug, seasonDisplay, subjectColorClasses, boardOf, boardDisplay, levelShort, catalogHref, dbNameOf } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
-import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
+import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode } from "@/lib/paper-slugs"
 import { getPapersIndex } from "@/lib/papersIndex"
 
 export const revalidate = false
@@ -41,9 +41,10 @@ export async function generateMetadata({
   if (parsedYear === null) return {}
   const yearLabel = String(parsedYear)
 
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
   const seoData = seoSubjects.find((s) => s.slug === slug)
-  const examCode = seoData?.examCode ?? ""
+  const examCode = seoData?.examCode ?? subj.examCode ?? ""
   const codeStr = examCode ? ` (${examCode})` : ""
   const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith("IAL ")
   // Lead with code + year for queries like "4ph1 2023 past papers" — same pattern
@@ -51,16 +52,16 @@ export async function generateMetadata({
   // the brand suffix stays explicit.
   const title = codeLed
     ? `${examCode} ${yearLabel} Past Papers – Edexcel ${level} ${subj.name} by Session`
-    : `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} Past Papers by Session – Free PDF`
+    : `${board} ${level} ${subj.name}${codeStr} ${yearLabel} Past Papers by Session – Free PDF`
 
   return {
     title: `${title} | GradeMax`,
     description:
-      `Download free Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} past papers and mark schemes. ` +
+      `Download free ${board} ${level} ${subj.name}${codeStr} ${yearLabel} past papers and mark schemes. ` +
       "Browse all available sessions and access official question papers as PDF.",
     openGraph: {
-      title: `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} Past Papers | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${yearLabel} past papers by session with mark schemes.`,
+      title: `${board} ${level} ${subj.name}${codeStr} ${yearLabel} Past Papers | GradeMax`,
+      description: `Free ${board} ${level} ${subj.name} ${yearLabel} past papers by session with mark schemes.`,
       url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}`,
       siteName: "GradeMax",
       type: "website",
@@ -68,7 +69,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${level} ${subj.name}${codeStr} ${yearLabel} Past Papers | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${yearLabel} papers by session.`,
+      description: `Free ${board} ${level} ${subj.name} ${yearLabel} papers by session.`,
     },
     alternates: {
       canonical: `https://www.grademax.me/past-papers/${slug}/${yearLabel}`,
@@ -136,7 +137,7 @@ function dedupeSessionPapers(sessionPapers: PaperRow[]): PaperRow[] {
   return Array.from(byPaperNumber.values()).sort((a, b) => paperSort(a.paper_number, b.paper_number))
 }
 
-function buildJsonLd(slug: string, subjectName: string, level: string, year: string, sessions: SessionGroup[]) {
+function buildJsonLd(slug: string, subjectName: string, level: string, board: string, catalogPath: string, year: string, sessions: SessionGroup[]) {
   const base = "https://www.grademax.me"
   const pageUrl = `${base}/past-papers/${slug}/${year}`
 
@@ -146,8 +147,8 @@ function buildJsonLd(slug: string, subjectName: string, level: string, year: str
       {
         "@type": "LearningResource",
         "@id": `${pageUrl}#resource`,
-        name: `Edexcel ${level} ${subjectName} ${year} Past Papers`,
-        description: `Free Edexcel ${level} ${subjectName} ${year} past papers organised by session.`,
+        name: `${board} ${level} ${subjectName} ${year} Past Papers`,
+        description: `Free ${board} ${level} ${subjectName} ${year} past papers organised by session.`,
         url: pageUrl,
         educationalLevel: level,
         learningResourceType: ["Past Paper", "Examination"],
@@ -174,7 +175,7 @@ function buildJsonLd(slug: string, subjectName: string, level: string, year: str
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: base },
-          { "@type": "ListItem", position: 2, name: "Past Papers", item: `${base}/past-papers` },
+          { "@type": "ListItem", position: 2, name: `${board} Past Papers`, item: `${base}${catalogPath}` },
           { "@type": "ListItem", position: 3, name: subjectName, item: `${base}/past-papers/${slug}` },
           { "@type": "ListItem", position: 4, name: year, item: pageUrl },
         ],
@@ -200,7 +201,10 @@ export default async function SubjectYearPapersPage({
   if (parsedYear === null) notFound()
   const yearLabel = String(parsedYear)
 
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const catalogPath = catalogHref(subj.level)
+  const isCambridge = boardOf(subj.level) === "cambridge"
   const colorClass = subjectColorClasses[subj.colorKey]
 
   // Years that actually have papers for this subject — used to filter "Other years" links.
@@ -216,7 +220,7 @@ export default async function SubjectYearPapersPage({
   const { data: subjectRow } = await supabase
     .from("subjects")
     .select("id")
-    .eq("name", subj.name)
+    .eq("name", dbNameOf(subj))
     .maybeSingle()
 
   if (!subjectRow) notFound()
@@ -258,7 +262,7 @@ export default async function SubjectYearPapersPage({
 
   if (sessions.length === 0) notFound()
 
-  const jsonLd = buildJsonLd(slug, subj.name, level, yearLabel, sessions)
+  const jsonLd = buildJsonLd(slug, subj.name, level, board, catalogPath, yearLabel, sessions)
 
   return (
     <>
@@ -270,7 +274,7 @@ export default async function SubjectYearPapersPage({
       <main className="min-h-screen bg-black text-white">
         <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky top-0 z-10">
           <div className="max-w-4xl mx-auto px-6 py-3 flex items-center gap-2 text-sm flex-wrap">
-            <Link href="/past-papers" className="text-white/50 hover:text-white transition-colors">
+            <Link href={catalogPath} className="text-white/50 hover:text-white transition-colors">
               Past Papers
             </Link>
             <span className="text-white/20">›</span>
@@ -286,13 +290,13 @@ export default async function SubjectYearPapersPage({
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-3">
               <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${colorClass}`}>
-                Edexcel {level}
+                {board} {level}
               </span>
               <span className="text-white/30 text-sm">{yearLabel}</span>
             </div>
             <h1 className="text-3xl font-extrabold mb-2">{subj.name} {yearLabel} Past Papers</h1>
             <p className="text-white/50">
-              Browse all available {yearLabel} sessions for Edexcel {level} {subj.name}, with free question papers and mark schemes.
+              Browse all available {yearLabel} sessions for {board} {level} {subj.name}, with free question papers and mark schemes.
             </p>
           </div>
 
@@ -312,6 +316,8 @@ export default async function SubjectYearPapersPage({
                 <div className="space-y-2">
                   {session.papers.map((paper) => {
                     const paperSlug = toPaperSlug(paper.paper_number)
+                    const pLabel = isCambridge ? formatCambridgePaperLabel(paper.paper_number) : formatPaperLabel(paper.paper_number)
+                    const pCode = isCambridge ? cambridgePaperCode(subj.examCode, paper.paper_number) : ""
                     return (
                       <div
                         key={paper.id}
@@ -322,10 +328,10 @@ export default async function SubjectYearPapersPage({
                             href={`/past-papers/${slug}/${yearLabel}/${session.season}/${paperSlug}`}
                             className="font-semibold text-white hover:text-white/80 transition-colors"
                           >
-                            {formatPaperLabel(paper.paper_number)}
+                            {pLabel}{pCode && <span className="ml-2 text-xs font-mono text-white/40">{pCode}</span>}
                           </Link>
                         ) : (
-                          <span className="font-semibold text-white/80">{formatPaperLabel(paper.paper_number)}</span>
+                          <span className="font-semibold text-white/80">{pLabel}</span>
                         )}
 
                         <div className="flex gap-2 flex-wrap">

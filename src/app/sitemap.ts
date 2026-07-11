@@ -1,14 +1,15 @@
 import { MetadataRoute } from 'next'
 import { createClient } from '@supabase/supabase-js'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
-import { pastPaperSubjects, subjects } from '@/lib/subjects'
+import { pastPaperSubjects, subjects, dbNameOf, boardOf } from '@/lib/subjects'
 import { toPaperSlug } from '@/lib/paper-slugs'
 
 const BASE_URL = 'https://www.grademax.me'
 const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
 
-// Build a slug → subject map for quick lookup
-const slugByName = new Map(subjects.map(s => [s.name, s.slug]))
+// Build a DB-name → slug map for quick lookup (Cambridge subjects store a
+// board-prefixed name in the DB, so key on dbNameOf rather than display name)
+const slugByName = new Map(subjects.map(s => [dbNameOf(s), s.slug]))
 
 function normalizeSeason(value: unknown): string {
   return String(value ?? '').trim().toLowerCase()
@@ -53,6 +54,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/test-builder`,            changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/browse`,                  changeFrequency: 'weekly',  priority: 0.8  },
     { url: `${BASE_URL}/past-papers`,             changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/past-papers/cambridge`,   changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/about`,                   changeFrequency: 'monthly', priority: 0.6  },
     { url: `${BASE_URL}/contact`,                 changeFrequency: 'monthly', priority: 0.5  },
     { url: `${BASE_URL}/privacy`,                 changeFrequency: 'yearly',  priority: 0.3  },

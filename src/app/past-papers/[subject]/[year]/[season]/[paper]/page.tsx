@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
+import { getSubjectBySlug, subjectColorClasses, seasonDisplay, boardDisplay, boardOf, levelShort, catalogHref } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
-import { extractPaperTokenFromSlug, formatPaperLabel, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
+import { extractPaperTokenFromSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
 import { getPapersIndex, leafKey, sessionKey } from "@/lib/papersIndex"
 import { buildViewerHref } from "@/lib/viewer-link"
 
@@ -51,27 +51,35 @@ export async function generateMetadata({
   const normalizedPaperSlug = toPaperSlug(paperToken)
   if (!normalizedPaperSlug) return {}
 
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const boardLong = board === "Cambridge" ? "Cambridge International" : "Pearson Edexcel"
+  const isCambridge = boardOf(subj.level) === "cambridge"
   const seasonName = seasonDisplay(normalizedSeason)
   const seoData = seoSubjects.find(s => s.slug === slug)
-  const examCode = seoData?.examCode ?? ""
+  const examCode = seoData?.examCode ?? subj.examCode ?? ""
   const codeStr = examCode ? ` (${examCode})` : ""
-  const displayPaper = `Paper ${paperToken.toUpperCase().replace(/-/g, " ")}`
+  const component = paperToken.toUpperCase().replace(/-/g, " ")
+  // Cambridge: "Paper 2 Variant 2" (component 22) + the "9702/22" code students search.
+  const displayPaper = isCambridge ? formatCambridgePaperLabel(component) : `Paper ${component}`
+  const fullCode = isCambridge ? cambridgePaperCode(examCode, component) : ""
   const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith("IAL ")
-  // Lead with code + year + session + paper for queries like "wst01/01 jan 2025 qp".
-  // The /past-papers layout's plain-string title blocks the root template here, so
-  // the brand suffix is added explicitly.
+  // Lead with code + year + session + paper for queries like "wst01/01 jan 2025 qp"
+  // (Edexcel) or "9702/22 may/june 2023" (Cambridge). The /past-papers layout's
+  // plain-string title blocks the root template here, so the brand suffix is explicit.
   const title = codeLed
     ? `${examCode} ${yearLabel} ${seasonName} ${displayPaper} – QP + Mark Scheme (Edexcel ${subj.name})`
+    : isCambridge
+    ? `${fullCode} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper} – QP + Mark Scheme`
     : `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} ${displayPaper} – Free PDF`
 
   return {
     title: `${title} | GradeMax`,
-    description: `Download free Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} ${displayPaper} question paper and mark scheme as PDF. Official Pearson Edexcel past paper.`,
+    description: `Download free ${board} ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} ${displayPaper}${fullCode ? ` (${fullCode})` : ""} question paper and mark scheme as PDF. Official ${boardLong} past paper.`,
     keywords: [
       `${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`,
       `${subj.name} ${yearLabel} paper ${paperToken}`,
-      `Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`,
+      `${board} ${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`,
       `${subj.name} ${yearLabel} ${seasonName} paper ${paperToken} question paper`,
       `${subj.name} ${yearLabel} ${seasonName} paper ${paperToken} mark scheme`,
       `${subj.name} ${yearLabel} paper ${paperToken} free download`,
@@ -83,12 +91,13 @@ export async function generateMetadata({
             `${examCode} paper ${paperToken} mark scheme ${yearLabel}`,
           ]
         : []),
-      `Edexcel ${level} ${subj.name} ${yearLabel} ${displayPaper}`,
+      ...(fullCode ? [fullCode, `${fullCode} ${yearLabel}`, `${fullCode} ${seasonName} ${yearLabel}`] : []),
+      `${board} ${level} ${subj.name} ${yearLabel} ${displayPaper}`,
       `${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`,
     ],
     openGraph: {
       title: `${title} | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper} question paper and mark scheme – PDF download.`,
+      description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper} question paper and mark scheme – PDF download.`,
       url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
       siteName: "GradeMax",
       type: "website",
@@ -125,9 +134,12 @@ function buildJsonLd(
   slug: string,
   subjectName: string,
   level: string,
+  board: string,
+  catalogPath: string,
   year: string,
   season: string,
   seasonName: string,
+  displayPaper: string,
   paperNumber: string,
   paper: PaperRow,
   examCode: string
@@ -136,7 +148,6 @@ function buildJsonLd(
   const paperSlug = toPaperSlug(paperNumber) ?? `paper-${normalizePaperToken(paperNumber)}`
   const pageUrl = `${BASE}/past-papers/${slug}/${year}/${season}/${paperSlug}`
   const sessionUrl = `${BASE}/past-papers/${slug}/${year}/${season}`
-  const displayPaper = `Paper ${paperNumber}`
 
   return {
     "@context": "https://schema.org",
@@ -144,8 +155,8 @@ function buildJsonLd(
       {
         "@type": "LearningResource",
         "@id": `${pageUrl}#resource`,
-        name: `Edexcel ${level} ${subjectName} ${year} ${seasonName} ${displayPaper}`,
-        description: `Free Edexcel ${level} ${subjectName} ${year} ${seasonName} ${displayPaper} question paper and mark scheme.`,
+        name: `${board} ${level} ${subjectName} ${year} ${seasonName} ${displayPaper}`,
+        description: `Free ${board} ${level} ${subjectName} ${year} ${seasonName} ${displayPaper} question paper and mark scheme.`,
         url: pageUrl,
         educationalLevel: level,
         learningResourceType: ["Past Paper", "Examination"],
@@ -173,7 +184,7 @@ function buildJsonLd(
         },
         isPartOf: {
           "@type": "LearningResource",
-          name: `Edexcel ${level} ${subjectName} ${year} ${seasonName} Past Papers`,
+          name: `${board} ${level} ${subjectName} ${year} ${seasonName} Past Papers`,
           url: sessionUrl,
         },
         hasPart: [
@@ -203,7 +214,7 @@ function buildJsonLd(
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home",                     item: BASE },
-          { "@type": "ListItem", position: 2, name: "Past Papers",              item: `${BASE}/past-papers` },
+          { "@type": "ListItem", position: 2, name: `${board} Past Papers`,     item: `${BASE}${catalogPath}` },
           { "@type": "ListItem", position: 3, name: subjectName,                item: `${BASE}/past-papers/${slug}` },
           { "@type": "ListItem", position: 4, name: `${year} ${seasonName}`,    item: sessionUrl },
           { "@type": "ListItem", position: 5, name: displayPaper,               item: pageUrl },
@@ -237,9 +248,13 @@ export default async function PaperPage({
   const normalizedSeason = normalizeSeason(season)
   if (!VALID_SEASONS.has(normalizedSeason)) notFound()
 
+  const isCambridge = boardOf(subj.level) === "cambridge"
   const seoData = seoSubjects.find(s => s.slug === slug)
-  const examCode = seoData?.examCode ?? ""
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const examCode = seoData?.examCode ?? subj.examCode ?? ""
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const boardLong = board === "Cambridge" ? "Cambridge International" : "Pearson Edexcel"
+  const catalogPath = catalogHref(subj.level)
   const colorClass = subjectColorClasses[subj.colorKey]
   const seasonName = seasonDisplay(normalizedSeason)
 
@@ -259,7 +274,10 @@ export default async function PaperPage({
   }
   const validPdf = paper.pdf_url
   const validMs = paper.markscheme_pdf_url
-  const displayPaper = `Paper ${paper.paper_number}`
+  const displayPaper = isCambridge
+    ? formatCambridgePaperLabel(paper.paper_number)
+    : `Paper ${paper.paper_number}`
+  const fullCode = isCambridge ? cambridgePaperCode(examCode, paper.paper_number) : ""
   const paperPagePath = `/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`
   const viewerTitle = `${subj.name} ${yearLabel} ${seasonName} ${displayPaper}`
   const viewerQpHref = buildViewerHref({
@@ -275,7 +293,7 @@ export default async function PaperPage({
     .map((p) => ({ paperNumber: p.paperNumber, paperSlug: toPaperSlug(p.paperNumber) }))
     .filter((p): p is { paperNumber: string; paperSlug: string } => p.paperSlug !== null)
   const jsonLd = buildJsonLd(
-    slug, subj.name, level, yearLabel, normalizedSeason, seasonName, paper.paper_number, paper, examCode
+    slug, subj.name, level, board, catalogPath, yearLabel, normalizedSeason, seasonName, displayPaper, paper.paper_number, paper, examCode
   )
 
   return (
@@ -289,7 +307,7 @@ export default async function PaperPage({
         {/* Sticky breadcrumb */}
         <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky top-0 z-10">
           <div className="max-w-4xl mx-auto px-6 py-3 flex items-center gap-2 text-sm flex-wrap">
-            <Link href="/past-papers" className="text-white/50 hover:text-white transition-colors">
+            <Link href={catalogPath} className="text-white/50 hover:text-white transition-colors">
               Past Papers
             </Link>
             <span className="text-white/20">›</span>
@@ -310,10 +328,10 @@ export default async function PaperPage({
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-3 flex-wrap">
               <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${colorClass}`}>
-                Edexcel {level}
+                {board} {level}
               </span>
-              {examCode && (
-                <span className="text-white/30 text-sm font-mono">{examCode}</span>
+              {(fullCode || examCode) && (
+                <span className="text-white/30 text-sm font-mono">{fullCode || examCode}</span>
               )}
               <span className="text-white/30 text-sm">{yearLabel} · {seasonName}</span>
             </div>
@@ -321,7 +339,7 @@ export default async function PaperPage({
               {subj.name} {yearLabel} {seasonName} {displayPaper}
             </h1>
             <p className="text-white/50 text-sm leading-relaxed">
-              Download the free Edexcel {level} {subj.name}{examCode ? ` (${examCode})` : ""} {yearLabel} {seasonName} {displayPaper} question paper and mark scheme as PDF.
+              Download the free {board} {level} {subj.name}{examCode ? ` (${examCode})` : ""} {yearLabel} {seasonName} {displayPaper}{fullCode ? ` — ${fullCode}` : ""} question paper and mark scheme as PDF.
             </p>
           </div>
 
@@ -333,7 +351,7 @@ export default async function PaperPage({
                   <p className="font-semibold text-white">
                     {subj.name} {yearLabel} {seasonName} {displayPaper} – Question Paper
                   </p>
-                  <p className="text-xs text-white/40 mt-0.5">Edexcel {level}{examCode ? ` · ${examCode}` : ""} · PDF</p>
+                  <p className="text-xs text-white/40 mt-0.5">{board} {level}{fullCode ? ` · ${fullCode}` : examCode ? ` · ${examCode}` : ""} · PDF</p>
                 </div>
                 <div className="flex gap-2 flex-shrink-0 flex-wrap justify-end">
                   <Link
@@ -370,7 +388,7 @@ export default async function PaperPage({
                   <p className="font-semibold text-white">
                     {subj.name} {yearLabel} {seasonName} {displayPaper} – Mark Scheme
                   </p>
-                  <p className="text-xs text-white/40 mt-0.5">Edexcel {level}{examCode ? ` · ${examCode}` : ""} · PDF</p>
+                  <p className="text-xs text-white/40 mt-0.5">{board} {level}{fullCode ? ` · ${fullCode}` : examCode ? ` · ${examCode}` : ""} · PDF</p>
                 </div>
                 <div className="flex gap-2 flex-shrink-0 flex-wrap justify-end">
                   <Link
@@ -413,7 +431,7 @@ export default async function PaperPage({
                     href={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${s.paperSlug}`}
                     className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
                   >
-                    {formatPaperLabel(s.paperNumber)}
+                    {isCambridge ? formatCambridgePaperLabel(s.paperNumber) : formatPaperLabel(s.paperNumber)}
                   </Link>
                 ))}
                 {seoData && (

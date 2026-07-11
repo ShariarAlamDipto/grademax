@@ -1,4 +1,4 @@
-import { subjects, type Level } from "@/lib/subjects"
+import { subjects, boardOf, type Board, type Level } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { getPapersIndex } from "@/lib/papersIndex"
 
@@ -33,15 +33,18 @@ export interface HubData {
  * Subjects (optionally filtered by level) that actually have published papers,
  * each with its available years, plus a single-unit exam-code → subject map for
  * the paper-code reference table. One index read serves both.
+ *
+ * `board` defaults to "edexcel" — these hubs are Edexcel head-term pages and
+ * must not leak Cambridge subjects into their catalogs.
  */
-export async function getHubData(level?: Level): Promise<HubData> {
+export async function getHubData(level?: Level, board: Board = "edexcel"): Promise<HubData> {
   const { yearsBySubject } = await getPapersIndex()
   const yearsFor = (slug: string): number[] =>
     Array.from(yearsBySubject.get(slug) ?? []).sort((a, b) => b - a)
   const hasPapers = (slug: string): boolean => (yearsBySubject.get(slug)?.size ?? 0) > 0
 
   const subjectEntries: HubSubjectEntry[] = subjects
-    .filter((s) => (!level || s.level === level) && hasPapers(s.slug))
+    .filter((s) => boardOf(s.level) === board && (!level || s.level === level) && hasPapers(s.slug))
     .map((s) => ({ slug: s.slug, name: s.name, level: s.level, years: yearsFor(s.slug) }))
     .sort((a, b) => a.name.localeCompare(b.name))
 
