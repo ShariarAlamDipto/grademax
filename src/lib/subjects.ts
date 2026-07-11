@@ -1,4 +1,8 @@
-export type Level = "igcse" | "ial"
+import { cambridgeSubjects } from "./subjects-cambridge"
+
+export type Level = "igcse" | "ial" | "cambridge-igcse" | "cambridge-a-level"
+
+export type Board = "edexcel" | "cambridge"
 
 export type Subject = {
   slug: string
@@ -7,6 +11,35 @@ export type Subject = {
   colorKey: "physics" | "maths" | "biology" | "chemistry" | "ict" | "english" | "other"
   /** Folder name in the FINAL data directory */
   dataFolder?: string
+  /** Supabase subjects.name when it differs from the display name (Cambridge). */
+  dbName?: string
+  /** Cambridge syllabus code (e.g. "9702", "0625") — shown as "{code}/{component}". */
+  examCode?: string
+}
+
+/** Exam board a level belongs to. */
+export function boardOf(level: Level): Board {
+  return level.startsWith("cambridge") ? "cambridge" : "edexcel"
+}
+
+/** Board display name for titles/badges, e.g. "Edexcel IGCSE Physics". */
+export function boardDisplay(level: Level): string {
+  return boardOf(level) === "cambridge" ? "Cambridge" : "Edexcel"
+}
+
+/** Short level label used after the board name: "IGCSE" or "A Level". */
+export function levelShort(level: Level): string {
+  return level === "igcse" || level === "cambridge-igcse" ? "IGCSE" : "A Level"
+}
+
+/** Root catalog page for a subject's board. */
+export function catalogHref(level: Level): string {
+  return boardOf(level) === "cambridge" ? "/past-papers/cambridge" : "/past-papers"
+}
+
+/** The Supabase subjects.name value for a subject. */
+export function dbNameOf(s: Subject): string {
+  return s.dbName ?? s.name
 }
 
 export const subjectColorClasses: Record<Subject["colorKey"], string> = {
@@ -19,7 +52,7 @@ export const subjectColorClasses: Record<Subject["colorKey"], string> = {
   other:     "bg-indigo-500/15 text-indigo-200 ring-1 ring-indigo-400/30 hover:bg-indigo-400/20",
 }
 
-export const subjects: Subject[] = [
+const edexcelSubjects: Subject[] = [
   // ─── IGCSE ────────────────────────────────────────────────────────────────
   { slug: "physics",              name: "Physics",                  level: "igcse", colorKey: "physics",   dataFolder: "Physics" },
   { slug: "chemistry",            name: "Chemistry",                level: "igcse", colorKey: "chemistry", dataFolder: "Chemistry" },
@@ -82,6 +115,8 @@ export const subjects: Subject[] = [
   { slug: "ial-spanish",             name: "IAL Spanish",                     level: "ial", colorKey: "other" },
   { slug: "ial-sociology",           name: "IAL Sociology",                   level: "ial", colorKey: "other" },
 ]
+
+export const subjects: Subject[] = [...edexcelSubjects, ...cambridgeSubjects]
 
 /** Subjects that have past papers available for download */
 export const pastPaperSubjects = subjects

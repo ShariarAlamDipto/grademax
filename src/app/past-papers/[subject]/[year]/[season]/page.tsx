@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
+import { getSubjectBySlug, subjectColorClasses, seasonDisplay, boardOf, boardDisplay, levelShort, catalogHref } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
-import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
+import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode } from "@/lib/paper-slugs"
 import { getPapersIndex, sessionKey } from "@/lib/papersIndex"
 import { buildViewerHref } from "@/lib/viewer-link"
 
@@ -58,10 +58,12 @@ export async function generateMetadata({
   const normalizedSeason = normalizeSeason(season)
   if (!VALID_SEASONS.has(normalizedSeason)) return {}
 
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const boardLong = boardOf(subj.level) === "cambridge" ? "Cambridge International" : "Pearson Edexcel"
   const seasonName = seasonDisplay(normalizedSeason)
   const seoData = seoSubjects.find((s) => s.slug === slug)
-  const examCode = seoData?.examCode ?? ""
+  const examCode = seoData?.examCode ?? subj.examCode ?? ""
   const codeStr = examCode ? ` (${examCode})` : ""
   const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith("IAL ")
   // Lead with code + year + session for queries like "4ma1/1hr may 2025". The
@@ -69,14 +71,14 @@ export async function generateMetadata({
   // brand suffix is added explicitly.
   const title = codeLed
     ? `${examCode} ${yearLabel} ${seasonName} Past Paper + Mark Scheme – Edexcel ${subj.name}`
-    : `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers – Free PDF`
+    : `${board} ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers – Free PDF`
 
   return {
     title: `${title} | GradeMax`,
-    description: `Download free Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} past papers with mark schemes. Official Pearson Edexcel question papers and mark schemes available as free PDF.`,
+    description: `Download free ${board} ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} past papers with mark schemes. Official ${boardLong} question papers and mark schemes available as free PDF.`,
     keywords: [
       `${subj.name} ${yearLabel} ${seasonName} past paper`,
-      `Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName}`,
+      `${board} ${level} ${subj.name} ${yearLabel} ${seasonName}`,
       `${subj.name} ${yearLabel} ${seasonName} mark scheme`,
       `${subj.name} past papers ${yearLabel}`,
       ...(examCode
@@ -89,14 +91,14 @@ export async function generateMetadata({
         : []),
       `${subj.name} ${yearLabel} paper 1`,
       `${subj.name} ${yearLabel} paper 2`,
-      `Edexcel ${subj.name} ${yearLabel} free download`,
+      `${board} ${subj.name} ${yearLabel} free download`,
       `${subj.name} ${yearLabel} past paper PDF`,
-      `Edexcel ${level} ${subj.name} ${yearLabel}`,
+      `${board} ${level} ${subj.name} ${yearLabel}`,
       `${level} ${subj.name} ${yearLabel} ${seasonName}`,
     ],
     openGraph: {
       title: `${title} | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName} past papers with mark schemes. Download question papers and answer booklets as PDF.`,
+      description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} past papers with mark schemes. Download question papers and answer booklets as PDF.`,
       url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
       siteName: "GradeMax",
       type: "website",
@@ -104,7 +106,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName} papers with mark schemes.`,
+      description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} papers with mark schemes.`,
     },
     alternates: {
       canonical: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
@@ -116,6 +118,8 @@ function buildJsonLd(
   slug: string,
   subjectName: string,
   level: string,
+  board: string,
+  catalogPath: string,
   year: string,
   seasonSlug: string,
   seasonName: string,
@@ -131,8 +135,8 @@ function buildJsonLd(
       {
         "@type": "LearningResource",
         "@id": `${pageUrl}#resource`,
-        name: `Edexcel ${level} ${subjectName} ${year} ${seasonName} Past Papers`,
-        description: `Free Edexcel ${level} ${subjectName} ${year} ${seasonName} question papers and mark schemes.`,
+        name: `${board} ${level} ${subjectName} ${year} ${seasonName} Past Papers`,
+        description: `Free ${board} ${level} ${subjectName} ${year} ${seasonName} question papers and mark schemes.`,
         url: pageUrl,
         educationalLevel: level,
         learningResourceType: ["Past Paper", "Examination"],
@@ -159,7 +163,7 @@ function buildJsonLd(
         about: examCode
           ? {
               "@type": "Thing",
-              name: `Edexcel ${level} ${subjectName} (${examCode})`,
+              name: `${board} ${level} ${subjectName} (${examCode})`,
               identifier: examCode,
             }
           : undefined,
@@ -167,7 +171,7 @@ function buildJsonLd(
           "@type": "AlignmentObject",
           alignmentType: "educationalSubject",
           targetName: subjectName,
-          educationalFramework: "Edexcel",
+          educationalFramework: board,
         },
         hasPart: [
           ...papers
@@ -192,7 +196,7 @@ function buildJsonLd(
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: base },
-          { "@type": "ListItem", position: 2, name: "Past Papers", item: `${base}/past-papers` },
+          { "@type": "ListItem", position: 2, name: `${board} Past Papers`, item: `${base}${catalogPath}` },
           { "@type": "ListItem", position: 3, name: subjectName, item: `${base}/past-papers/${slug}` },
           { "@type": "ListItem", position: 4, name: `${year} ${seasonName}`, item: pageUrl },
         ],
@@ -219,8 +223,12 @@ export default async function SessionPapersPage({
   const yearLabel = String(parsedYear)
 
   const seoData = seoSubjects.find((s) => s.slug === slug)
-  const examCode = seoData?.examCode ?? ""
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const examCode = seoData?.examCode ?? subj.examCode ?? ""
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const boardLong = boardOf(subj.level) === "cambridge" ? "Cambridge International" : "Pearson Edexcel"
+  const catalogPath = catalogHref(subj.level)
+  const isCambridge = boardOf(subj.level) === "cambridge"
   const colorClass = subjectColorClasses[subj.colorKey]
   const normalizedSeason = normalizeSeason(season)
   if (!VALID_SEASONS.has(normalizedSeason)) notFound()
@@ -238,7 +246,7 @@ export default async function SessionPapersPage({
     markscheme_pdf_url: p.markschemePdfUrl,
   }))
 
-  const jsonLd = buildJsonLd(slug, subj.name, level, yearLabel, normalizedSeason, seasonName, papers, examCode)
+  const jsonLd = buildJsonLd(slug, subj.name, level, board, catalogPath, yearLabel, normalizedSeason, seasonName, papers, examCode)
 
   return (
     <>
@@ -247,7 +255,7 @@ export default async function SessionPapersPage({
       <main className="min-h-screen bg-black text-white">
         <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky top-0 z-10">
           <div className="max-w-4xl mx-auto px-6 py-3 flex items-center gap-2 text-sm flex-wrap">
-            <Link href="/past-papers" className="text-white/50 hover:text-white transition-colors">Past Papers</Link>
+            <Link href={catalogPath} className="text-white/50 hover:text-white transition-colors">Past Papers</Link>
             <span className="text-white/20">›</span>
             <Link href={`/past-papers/${slug}`} className="text-white/50 hover:text-white transition-colors">{subj.name}</Link>
             <span className="text-white/20">›</span>
@@ -258,22 +266,24 @@ export default async function SessionPapersPage({
         <div className="max-w-4xl mx-auto px-6 py-10">
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-3">
-              <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${colorClass}`}>Edexcel {level}</span>
+              <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${colorClass}`}>{board} {level}</span>
               <span className="text-white/30 text-sm">{yearLabel} · {seasonName}</span>
             </div>
             <h1 className="text-3xl font-extrabold mb-2">{subj.name} {yearLabel} {seasonName}</h1>
             <p className="text-white/50">
-              Download free Edexcel {level} {subj.name} {yearLabel} {seasonName} question papers and mark schemes.
+              Download free {board} {level} {subj.name} {yearLabel} {seasonName} question papers and mark schemes.
             </p>
           </div>
 
           <div className="space-y-3">
             {papers.map((paper) => {
               const paperSlug = toPaperSlug(paper.paper_number)
+              const paperLabel = isCambridge ? formatCambridgePaperLabel(paper.paper_number) : formatPaperLabel(paper.paper_number)
+              const paperCode = isCambridge ? cambridgePaperCode(subj.examCode, paper.paper_number) : ""
               const viewerInput = {
                 qpUrl: paper.pdf_url,
                 msUrl: paper.markscheme_pdf_url,
-                title: `${subj.name} ${yearLabel} ${seasonName} ${formatPaperLabel(paper.paper_number)}`,
+                title: `${subj.name} ${yearLabel} ${seasonName} ${paperLabel}`,
                 backPath: `/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
               }
               return (
@@ -288,11 +298,12 @@ export default async function SessionPapersPage({
                         href={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${paperSlug}`}
                         className="font-semibold text-white hover:text-white/80 transition-colors"
                       >
-                        {formatPaperLabel(paper.paper_number)}
+                        {paperLabel}
                       </Link>
                     ) : (
-                      <span className="font-semibold text-white/80">{formatPaperLabel(paper.paper_number)}</span>
+                      <span className="font-semibold text-white/80">{paperLabel}</span>
                     )}
+                    {paperCode && <span className="ml-2 text-xs font-mono text-white/40">{paperCode}</span>}
                     <span className="ml-2 text-xs text-white/30">{subj.name} · {yearLabel} · {seasonName}</span>
                   </div>
 

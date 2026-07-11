@@ -1,5 +1,5 @@
 import { createClient } from "@supabase/supabase-js"
-import { subjects } from "@/lib/subjects"
+import { subjects, dbNameOf } from "@/lib/subjects"
 import { normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
 
 const VALID_SEASONS = new Set(["jan", "jan-feb", "feb-mar", "may-jun", "oct-nov"])
@@ -53,7 +53,7 @@ async function loadIndex(): Promise<PapersIndex> {
   const empty: PapersIndex = { bySession: new Map(), byLeaf: new Map(), yearsBySubject: new Map() }
   if (!url || !key) return empty
 
-  const subjectNameToSlug = new Map(subjects.map((s) => [s.name, s.slug]))
+  const subjectNameToSlug = new Map(subjects.map((s) => [dbNameOf(s), s.slug]))
   const supabase = createClient(url, key, {
     auth: { autoRefreshToken: false, persistSession: false },
   })

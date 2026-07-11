@@ -5,9 +5,14 @@ import {
   pastPaperSubjects,
   getSubjectBySlug,
   seasonDisplay,
+  boardOf,
+  boardDisplay,
+  levelShort,
+  catalogHref,
+  dbNameOf,
 } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
-import { toPaperSlug, formatPaperLabel } from "@/lib/paper-slugs"
+import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode } from "@/lib/paper-slugs"
 
 // Subject hub pages are pre-rendered at build time and stay static until the
 // next deploy. New papers added between deploys are picked up on the next push.
@@ -30,9 +35,11 @@ export async function generateMetadata({
   const subj = getSubjectBySlug(slug)
   if (!subj) return {}
 
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const yearRange = boardOf(subj.level) === "cambridge" ? "2015 to 2025" : "2011 to 2025"
   const seoData = seoSubjects.find(s => s.slug === slug)
-  const examCode = seoData?.examCode ?? ''
+  const examCode = seoData?.examCode ?? subj.examCode ?? ''
   const codeStr = examCode ? ` (${examCode})` : ''
   const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith('IAL ')
   // Lead with the code for code-searched subjects. The /past-papers layout sets a
@@ -40,15 +47,15 @@ export async function generateMetadata({
   // subtree, so the brand suffix must be included explicitly.
   const title = codeLed
     ? `${examCode} Past Papers – Edexcel ${level} ${subj.name} Mark Schemes`
-    : `Edexcel ${level} ${subj.name}${codeStr} Past Papers – Free PDF with Mark Schemes`
+    : `${board} ${level} ${subj.name}${codeStr} Past Papers – Free PDF with Mark Schemes`
 
   return {
     title: `${title} | GradeMax`,
-    description: `Download free Edexcel ${level} ${subj.name}${codeStr} past papers and mark schemes from 2011 to 2025. All question papers organised by year and session – free PDF download.`,
+    description: `Download free ${board} ${level} ${subj.name}${codeStr} past papers and mark schemes from ${yearRange}. All question papers organised by year and session – free PDF download.`,
     keywords: [
       `${subj.name} past papers`,
       `${level} ${subj.name} past papers`,
-      `Edexcel ${subj.name} past papers`,
+      `${board} ${subj.name} past papers`,
       `${subj.name} question papers`,
       `${subj.name} mark scheme`,
       `${subj.name} past papers free download`,
@@ -56,9 +63,9 @@ export async function generateMetadata({
         `${examCode} past papers`,
         `${examCode} question papers`,
         `${examCode} mark scheme`,
-        `Edexcel ${examCode}`,
+        `${board} ${examCode}`,
       ] : []),
-      `Edexcel ${level} ${subj.name}`,
+      `${board} ${level} ${subj.name}`,
       `${subj.name} past papers 2025`,
       `${subj.name} past papers 2024`,
       `${subj.name} past papers 2023`,
@@ -66,7 +73,7 @@ export async function generateMetadata({
     ],
     openGraph: {
       title: `${title} | GradeMax`,
-      description: `Download free Edexcel ${level} ${subj.name}${codeStr} past papers and mark schemes from 2011 to 2025. All sessions available as free PDF.`,
+      description: `Download free ${board} ${level} ${subj.name}${codeStr} past papers and mark schemes from ${yearRange}. All sessions available as free PDF.`,
       url: `https://www.grademax.me/past-papers/${slug}`,
       siteName: "GradeMax",
       type: "website",
@@ -74,7 +81,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${level} ${subj.name}${codeStr} Past Papers | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} past papers with mark schemes.`,
+      description: `Free ${board} ${level} ${subj.name} past papers with mark schemes.`,
     },
     alternates: {
       canonical: `https://www.grademax.me/past-papers/${slug}`,
@@ -157,7 +164,7 @@ const SEASON_ORDER: Record<string, number> = {
 
 // ─── JSON-LD ───────────────────────────────────────────────────────────────────
 
-function buildJsonLd(slug: string, subjectName: string, level: string, yearGroups: YearGroup[]) {
+function buildJsonLd(slug: string, subjectName: string, level: string, board: string, catalogPath: string, yearGroups: YearGroup[]) {
   const BASE = "https://www.grademax.me"
   const pageUrl = `${BASE}/past-papers/${slug}`
 
@@ -177,8 +184,8 @@ function buildJsonLd(slug: string, subjectName: string, level: string, yearGroup
       {
         "@type": "LearningResource",
         "@id": `${pageUrl}#resource`,
-        name: `Edexcel ${level} ${subjectName} Past Papers`,
-        description: `Free Edexcel ${level} ${subjectName} past papers and mark schemes from 2011 to 2025, organised by year and session.`,
+        name: `${board} ${level} ${subjectName} Past Papers`,
+        description: `Free ${board} ${level} ${subjectName} past papers and mark schemes, organised by year and session.`,
         url: pageUrl,
         educationalLevel: level,
         learningResourceType: ["Past Paper", "Examination"],
@@ -193,7 +200,7 @@ function buildJsonLd(slug: string, subjectName: string, level: string, yearGroup
           "@type": "AlignmentObject",
           alignmentType: "educationalSubject",
           targetName: subjectName,
-          educationalFramework: "Edexcel",
+          educationalFramework: board,
         },
       },
       {
@@ -206,7 +213,7 @@ function buildJsonLd(slug: string, subjectName: string, level: string, yearGroup
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home",        item: BASE },
-          { "@type": "ListItem", position: 2, name: "Past Papers", item: `${BASE}/past-papers` },
+          { "@type": "ListItem", position: 2, name: `${board} Past Papers`, item: `${BASE}${catalogPath}` },
           { "@type": "ListItem", position: 3, name: subjectName,   item: pageUrl },
         ],
       },
@@ -225,7 +232,10 @@ export default async function SubjectPapersPage({
   const subj = getSubjectBySlug(slug)
   if (!subj) notFound()
 
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const catalogPath = catalogHref(subj.level)
+  const isEdexcel = boardOf(subj.level) === "edexcel"
 
   const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -235,10 +245,11 @@ export default async function SubjectPapersPage({
 
   // Use ilike + ordering instead of strict eq so we tolerate duplicate subject
   // rows (e.g. legacy "International GCSE" + new "IGCSE" with the same name).
+  // Cambridge subjects store a board-prefixed name in the DB (dbNameOf).
   const { data: subjectRows } = await supabase
     .from("subjects")
     .select("id")
-    .ilike("name", subj.name)
+    .ilike("name", dbNameOf(subj))
 
   const subjectIds = (subjectRows ?? []).map((r) => r.id)
 
@@ -308,7 +319,7 @@ export default async function SubjectPapersPage({
     }))
     .filter((group) => group.sessions.length > 0)
 
-  const jsonLd = buildJsonLd(slug, subj.name, level, yearGroups)
+  const jsonLd = buildJsonLd(slug, subj.name, level, board, catalogPath, yearGroups)
 
   return (
     <>
@@ -321,14 +332,19 @@ export default async function SubjectPapersPage({
         {/* Header */}
         <div style={{ borderBottom: "1px solid var(--gm-border)", background: "var(--gm-nav-bg)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", position: "sticky", top: "68px", zIndex: 10 }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", gap: "0.875rem", flexWrap: "wrap" }}>
-            <Link href="/past-papers" className="gm-link" style={{ fontSize: "0.82rem" }}>
+            <Link href={catalogPath} className="gm-link" style={{ fontSize: "0.82rem" }}>
               ← Past Papers
             </Link>
             <span style={{ color: "var(--gm-border-2)" }}>|</span>
             <h1 style={{ fontSize: "1rem", fontWeight: 700, color: "var(--gm-text)", margin: 0 }}>{subj.name}</h1>
             <span style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.08em", padding: "0.2rem 0.625rem", borderRadius: "99px", background: "var(--gm-blue-bg)", color: "var(--gm-blue)", border: "1px solid var(--gm-blue-ring)" }}>
-              Edexcel {level}
+              {board} {level}
             </span>
+            {!isEdexcel && subj.examCode && (
+              <span style={{ fontSize: "0.6rem", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.04em", padding: "0.2rem 0.5rem", borderRadius: "5px", background: "var(--gm-card-bg)", color: "var(--gm-text-2)", border: "1px solid var(--gm-border-2)" }}>
+                {subj.examCode}
+              </span>
+            )}
           </div>
         </div>
 
@@ -339,7 +355,8 @@ export default async function SubjectPapersPage({
               {subj.name} Past Papers
             </h2>
             <p style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>
-              Free Edexcel {level} {subj.name} question papers and mark schemes.
+              Free {board} {level} {subj.name}{!isEdexcel && subj.examCode ? ` (${subj.examCode})` : ""} question papers and mark schemes.
+              {!isEdexcel && " Papers are labelled by component and variant (e.g. Paper 2 · Variant 2 = 22)."}
             </p>
           </div>
 
@@ -387,7 +404,8 @@ export default async function SubjectPapersPage({
                           // (the index keys leaves with toPaperSlug, which normalises `_` and spaces to `-`).
                           const paperPageSlug = toPaperSlug(paper.paper_number)
                           if (!paperPageSlug) return null
-                          const paperLabel = formatPaperLabel(paper.paper_number)
+                          const paperLabel = isEdexcel ? formatPaperLabel(paper.paper_number) : formatCambridgePaperLabel(paper.paper_number)
+                          const paperCode = isEdexcel ? "" : cambridgePaperCode(subj.examCode, paper.paper_number)
                           return (
                           <div
                             key={paper.id}
@@ -406,10 +424,13 @@ export default async function SubjectPapersPage({
                           >
                             <Link
                               href={`/past-papers/${slug}/${yg.year}/${sess.season}/${paperPageSlug}`}
-                              style={{ fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)", textDecoration: "none" }}
+                              style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)", textDecoration: "none", flexWrap: "wrap" }}
                               className="gm-link"
                             >
                               {paperLabel}
+                              {paperCode && (
+                                <span style={{ fontSize: "0.7rem", fontFamily: "monospace", fontWeight: 700, color: "var(--gm-text-3)" }}>{paperCode}</span>
+                              )}
                             </Link>
 
                             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>

@@ -24,10 +24,11 @@ export default function Footer() {
             </p>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {([
-                ["/about",              "About Us"],
-                ["/contact",            "Contact"],
-                ["/edexcel-past-papers","Edexcel Past Papers"],
-                ["/edexcel-worksheets", "Worksheet Generator"],
+                ["/about",                  "About Us"],
+                ["/contact",                "Contact"],
+                ["/edexcel-past-papers",    "Edexcel Past Papers"],
+                ["/past-papers/cambridge",  "Cambridge Past Papers"],
+                ["/edexcel-worksheets",     "Worksheet Generator"],
               ] as [string, string][]).map(([href, label]) => (
                 <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}
@@ -87,10 +88,11 @@ export default function Footer() {
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.5rem" }}>
               {([
                 // Public landing (indexable) rather than the auth-walled /generate tool.
-                ["/edexcel-worksheets", "Worksheet Generator"],
-                ["/test-builder","Test Builder"],
-                ["/past-papers", "Past Papers by Year"],
-                ["/subjects",    "All Subjects"],
+                ["/edexcel-worksheets",    "Worksheet Generator"],
+                ["/test-builder",          "Test Builder"],
+                ["/past-papers",           "Edexcel Papers by Year"],
+                ["/past-papers/cambridge", "Cambridge Papers by Year"],
+                ["/subjects",              "All Subjects"],
               ] as [string, string][]).map(([href, label]) => (
                 <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}

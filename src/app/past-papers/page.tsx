@@ -2,7 +2,7 @@
 import type { Metadata } from "next"
 import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
-import { pastPaperSubjects, type Subject } from "@/lib/subjects"
+import { pastPaperSubjects, dbNameOf, type Subject } from "@/lib/subjects"
 
 export const metadata: Metadata = {
   title: "Free Edexcel Past Papers – IGCSE & A Level by Year | GradeMax",
@@ -111,7 +111,7 @@ export default async function PastPapersPage() {
       // fall back to listing all known subjects so we never serve an empty
       // page just because the API was momentarily unavailable.
       if (error) {
-        pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
+        pastPaperSubjects.forEach(s => subjectsWithPapers.add(dbNameOf(s)))
         break
       }
 
@@ -131,9 +131,12 @@ export default async function PastPapersPage() {
     pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
   }
 
-  const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(s.name))
+  const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(dbNameOf(s)))
   const igcse = availableSubjects.filter((s) => s.level === "igcse")
   const ial  = availableSubjects.filter((s) => s.level === "ial")
+  const hasCambridge = availableSubjects.some(
+    (s) => s.level === "cambridge-igcse" || s.level === "cambridge-a-level"
+  )
 
   return (
     <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
@@ -209,6 +212,23 @@ export default async function PastPapersPage() {
           <div style={{ textAlign: "center", padding: "5rem 0", color: "var(--gm-text-3)" }}>
             <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--gm-text-2)", marginBottom: "0.5rem" }}>No papers available yet</p>
             <p style={{ fontSize: "0.85rem" }}>Papers are being uploaded. Check back soon.</p>
+          </div>
+        )}
+
+        {/* Cambridge cross-link */}
+        {hasCambridge && (
+          <div style={{ border: "1px solid var(--gm-border-2)", background: "var(--gm-card-bg)", borderRadius: "1rem", padding: "1.25rem 1.5rem", marginBottom: "3rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+            <div>
+              <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "0.2rem" }}>
+                Studying the Cambridge curriculum?
+              </p>
+              <p style={{ fontSize: "0.8rem", color: "var(--gm-text-3)" }}>
+                Cambridge IGCSE and International A Level past papers are catalogued separately.
+              </p>
+            </div>
+            <Link href="/past-papers/cambridge" className="btn-ghost-blue" style={{ fontSize: "0.8rem", padding: "0.5rem 1.25rem", minHeight: "36px" }}>
+              Cambridge Past Papers →
+            </Link>
           </div>
         )}
 
