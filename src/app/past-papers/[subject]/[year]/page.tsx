@@ -8,10 +8,16 @@ import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePape
 import { getPapersIndex } from "@/lib/papersIndex"
 
 export const revalidate = false
-// Year-level params are enumerated from the DB-backed index so we cover every
-// year that actually has papers (including any outside the legacy 2011-2025
-// window). Unknown URLs return 404 instead of falling through to ISR.
-export const dynamicParams = false
+// Edexcel year params are enumerated from the DB-backed index so we cover every
+// year that actually has papers. Cambridge pages are NOT prerendered — they
+// render on demand and cache permanently (revalidate=false), because
+// prerendering all ~10k Cambridge routes pushed the deploy output past Vercel's
+// limit (post-build "Maximum call stack size exceeded"). dynamicParams must be
+// true for that fall-through; invalid URLs still 404 via the guards below.
+export const dynamicParams = true
+// First on-demand render loads the whole papers index from Supabase — give it
+// headroom beyond Vercel's default function timeout.
+export const maxDuration = 60
 
 function parseYearParam(value: string): number | null {
   if (!/^\d{4}$/.test(value)) return null
@@ -24,6 +30,8 @@ export async function generateStaticParams() {
   const { yearsBySubject } = await getPapersIndex()
   const params: { subject: string; year: string }[] = []
   for (const [subject, years] of yearsBySubject) {
+    const subj = getSubjectBySlug(subject)
+    if (!subj || boardOf(subj.level) === "cambridge") continue
     for (const y of years) params.push({ subject, year: String(y) })
   }
   return params
