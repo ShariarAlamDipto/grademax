@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 import { createClient } from '@supabase/supabase-js'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
-import { pastPaperSubjects, subjects, dbNameOf, boardOf } from '@/lib/subjects'
+import { pastPaperSubjects, subjects, dbNameOf } from '@/lib/subjects'
 import { toPaperSlug } from '@/lib/paper-slugs'
 
 const BASE_URL = 'https://www.grademax.me'
@@ -109,13 +109,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { auth: { autoRefreshToken: false, persistSession: false } }
     )
 
-    // Fetch all papers with at least one file, including paper_number for individual pages
-    const { data } = await supabase
-      .from('papers')
-      .select('year, season, paper_number, pdf_url, markscheme_pdf_url, created_at, subjects!inner(name)')
-      .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
+    // Fetch ALL papers with a file. Supabase caps a single response at 1000 rows
+    // and there are ~11k qualifying papers, so page through by id — otherwise the
+    // sitemap silently omits ~90% of the individual paper/session/year pages.
+    type PaperRow = {
+      year: string | number | null
+      season: string | null
+      paper_number: string | number | null
+      pdf_url: string | null
+      markscheme_pdf_url: string | null
+      created_at: string | null
+      subjects: { name: string } | { name: string }[] | null
+    }
+    const PAGE_SIZE = 1000
+    const data: PaperRow[] = []
+    for (let from = 0; ; from += PAGE_SIZE) {
+      const { data: page, error } = await supabase
+        .from('papers')
+        .select('year, season, paper_number, pdf_url, markscheme_pdf_url, created_at, subjects!inner(name)')
+        .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
+        .order('id', { ascending: true })
+        .range(from, from + PAGE_SIZE - 1)
+      if (error) throw error
+      if (!page || page.length === 0) break
+      data.push(...(page as PaperRow[]))
+      if (page.length < PAGE_SIZE) break
+    }
 
-    if (data) {
+    if (data.length > 0) {
       // key → most recent papers.created_at in that group, so lastmod reflects
       // when content actually changed rather than when the site last built.
       const yearDates = new Map<string, Date>()
