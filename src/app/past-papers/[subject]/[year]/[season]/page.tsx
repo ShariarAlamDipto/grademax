@@ -7,10 +7,15 @@ import { getPapersIndex, sessionKey } from "@/lib/papersIndex"
 import { buildViewerHref } from "@/lib/viewer-link"
 
 export const revalidate = false
-// Every reachable session URL is enumerated from the DB-backed index at build
-// time. Unknown URLs return 404 instead of falling through to ISR, keeping the
-// route off the ISR write meter.
-export const dynamicParams = false
+// Edexcel session URLs are enumerated from the DB-backed index at build time.
+// Cambridge sessions render on demand and cache permanently (revalidate=false)
+// — prerendering all ~10k Cambridge routes pushed the deploy output past
+// Vercel's limit (post-build "Maximum call stack size exceeded"). Invalid URLs
+// still 404 via the guards below.
+export const dynamicParams = true
+// First on-demand render loads the whole papers index from Supabase — give it
+// headroom beyond Vercel's default function timeout.
+export const maxDuration = 60
 
 export async function generateStaticParams() {
   const { bySession } = await getPapersIndex()
@@ -18,6 +23,8 @@ export async function generateStaticParams() {
   for (const key of bySession.keys()) {
     const [subject, year, season] = key.split("/")
     if (!subject || !year || !season) continue
+    const subj = getSubjectBySlug(subject)
+    if (!subj || boardOf(subj.level) === "cambridge") continue
     params.push({ subject, year, season })
   }
   return params

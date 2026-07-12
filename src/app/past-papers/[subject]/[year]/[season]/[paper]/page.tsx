@@ -7,10 +7,15 @@ import { getPapersIndex, leafKey, sessionKey } from "@/lib/papersIndex"
 import { buildViewerHref } from "@/lib/viewer-link"
 
 export const revalidate = false
-// Every reachable paper URL is enumerated by generateStaticParams below from the
-// DB-backed index. Unknown URLs return 404 instead of falling through to ISR,
-// which keeps the route entirely off the ISR write meter.
-export const dynamicParams = false
+// Edexcel paper URLs are enumerated by generateStaticParams below from the
+// DB-backed index. Cambridge papers render on demand and cache permanently
+// (revalidate=false) — prerendering all ~9k Cambridge leaf routes pushed the
+// deploy output past Vercel's limit (post-build "Maximum call stack size
+// exceeded"). Invalid URLs still 404 via the guards below.
+export const dynamicParams = true
+// First on-demand render loads the whole papers index from Supabase — give it
+// headroom beyond Vercel's default function timeout.
+export const maxDuration = 60
 
 function parseYearParam(value: string): number | null {
   if (!/^\d{4}$/.test(value)) return null
@@ -25,6 +30,8 @@ export async function generateStaticParams() {
   for (const key of byLeaf.keys()) {
     const [subject, year, season, paper] = key.split("/")
     if (!subject || !year || !season || !paper) continue
+    const subj = getSubjectBySlug(subject)
+    if (!subj || boardOf(subj.level) === "cambridge") continue
     params.push({ subject, year, season, paper })
   }
   return params
