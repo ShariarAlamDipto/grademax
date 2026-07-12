@@ -1,0 +1,37 @@
+# Predictor config — Edexcel IGCSE Further Pure Mathematics (4PM1)
+subject:
+  code: "4PM1"
+  name: "Further Pure Mathematics"
+  level: "International GCSE"
+  processed_dir: "Further Pure Maths Processed"   # under data/processed/
+
+topics_source: "classification/further_pure_maths_topics.yaml"
+
+# Analysis window (inclusive). Pre-2019 papers are a different specification.
+window: { start_year: 2015, end_year: 2026 }
+
+# Specification eras — every question is tagged with its era; legacy is down-weighted.
+spec_eras:
+  - { name: "legacy", code: "4PM0", start_year: 2011, end_year: 2018, weight: 0.2 }
+  - { name: "9-1",    code: "4PM1", start_year: 2019, end_year: 2026, weight: 1.0 }
+
+# Session normalisation handled in lib/folders.py -> {summer, autumn, winter}.
+# Target is the autumn (Oct/Nov) 2026 sitting, so up-weight autumn analogues.
+session_weights: { autumn: 1.3, summer: 1.0, winter: 1.0 }
+
+# Recency half-life (years) for weighting historical questions toward the present.
+recency_half_life_years: 3.0
+
+target: { session: "autumn", year: 2026, label: "October/November 2026" }
+
+# Real paper shape (Pearson 4PM1): both papers 2h, 100 marks.
+papers:
+  - { id: "1", name: "Paper 1", duration_min: 120, total_marks: 100, typical_questions: [9, 11] }
+  - { id: "2", name: "Paper 2", duration_min: 120, total_marks: 100, typical_questions: [9, 11] }
+
+# Include retake (R) papers as extra data points (tagged variant=R).
+include_retakes: true
+
+llm:
+  extract:  { provider: "groq",       model: "llama-3.3-70b-versatile" }
+  generate: { provider: "openrouter", model: "anthropic/claude-sonnet-4" }
