@@ -79,6 +79,35 @@ const codeColorMap: Record<Subject["colorKey"], string> = {
   other:     "#A78BFA",
 }
 
+// Subjects students search for most — surfaced first within each section (order
+// matters). Matched as a case-insensitive substring so every variant is grouped,
+// e.g. "Additional Mathematics" under Maths, "English Literature" under English.
+const POPULAR_ORDER = [
+  "Mathematics", "Chemistry", "Biology", "Physics", "English",
+  "Economics", "Accounting", "Computer Science",
+]
+
+function popularRank(name: string): number {
+  const n = name.toLowerCase()
+  const i = POPULAR_ORDER.findIndex((k) => n.includes(k.toLowerCase()))
+  return i === -1 ? POPULAR_ORDER.length : i
+}
+
+// Popular subjects first (in POPULAR_ORDER), the exact-name match ahead of its
+// variants, then alphabetical for everything else.
+function byPopularity(a: Subject, b: Subject): number {
+  const ra = popularRank(a.name)
+  const rb = popularRank(b.name)
+  if (ra !== rb) return ra - rb
+  if (ra < POPULAR_ORDER.length) {
+    const kw = POPULAR_ORDER[ra].toLowerCase()
+    const ea = a.name.toLowerCase() === kw ? 0 : 1
+    const eb = b.name.toLowerCase() === kw ? 0 : 1
+    if (ea !== eb) return ea - eb
+  }
+  return a.name.localeCompare(b.name)
+}
+
 export default async function CambridgePastPapersPage() {
   const subjectsWithPapers = new Set<string>()
 
@@ -131,8 +160,8 @@ export default async function CambridgePastPapersPage() {
   }
 
   const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(dbNameOf(s)))
-  const igcse = availableSubjects.filter((s) => s.level === "cambridge-igcse")
-  const aLevel = availableSubjects.filter((s) => s.level === "cambridge-a-level")
+  const igcse = availableSubjects.filter((s) => s.level === "cambridge-igcse").sort(byPopularity)
+  const aLevel = availableSubjects.filter((s) => s.level === "cambridge-a-level").sort(byPopularity)
 
   return (
     <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
