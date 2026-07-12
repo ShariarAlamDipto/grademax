@@ -1,0 +1,3193 @@
+{
+  "subject_code": "4PM1",
+  "subject_name": "Further Pure Mathematics",
+  "target": {
+    "session": "autumn",
+    "year": 2026,
+    "label": "October/November 2026"
+  },
+  "generated_at": "2026-06-13T17:27:07.164160+00:00",
+  "n_questions": 655,
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "papers": {
+    "1": {
+      "name": "Paper 1",
+      "marks_target": 100,
+      "typical_question_count": [
+        9,
+        11
+      ],
+      "n_questions": 325,
+      "n_questions_9_1": 234,
+      "topic_frequency": [
+        {
+          "topic": "9",
+          "name": "Calculus",
+          "raw_count": 57,
+          "weighted": 28.0,
+          "freq_share": 0.2521,
+          "avg_marks": 8.9,
+          "marks_share": 0.251,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 57
+          }
+        },
+        {
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "raw_count": 31,
+          "weighted": 13.64,
+          "freq_share": 0.1229,
+          "avg_marks": 9.6,
+          "marks_share": 0.1403,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 31
+          }
+        },
+        {
+          "topic": "10",
+          "name": "Trigonometry",
+          "raw_count": 27,
+          "weighted": 13.42,
+          "freq_share": 0.1209,
+          "avg_marks": 9.0,
+          "marks_share": 0.1255,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 27
+          }
+        },
+        {
+          "topic": "2",
+          "name": "Quadratic function",
+          "raw_count": 24,
+          "weighted": 11.41,
+          "freq_share": 0.1028,
+          "avg_marks": 8.2,
+          "marks_share": 0.0975,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 24
+          }
+        },
+        {
+          "topic": "5",
+          "name": "Series",
+          "raw_count": 22,
+          "weighted": 10.63,
+          "freq_share": 0.0957,
+          "avg_marks": 8.3,
+          "marks_share": 0.0886,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 22
+          }
+        },
+        {
+          "topic": "1",
+          "name": "Logarithmic functions & indices",
+          "raw_count": 22,
+          "weighted": 10.33,
+          "freq_share": 0.0931,
+          "avg_marks": 7.1,
+          "marks_share": 0.0811,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 22
+          }
+        },
+        {
+          "topic": "6",
+          "name": "Binomial series",
+          "raw_count": 13,
+          "weighted": 6.81,
+          "freq_share": 0.0614,
+          "avg_marks": 9.2,
+          "marks_share": 0.0593,
+          "years": [
+            2019,
+            2020,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 13
+          }
+        },
+        {
+          "topic": "3",
+          "name": "Identities & inequalities",
+          "raw_count": 14,
+          "weighted": 6.38,
+          "freq_share": 0.0574,
+          "avg_marks": 7.4,
+          "marks_share": 0.0481,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 14
+          }
+        },
+        {
+          "topic": "7",
+          "name": "Vectors (position, displacement, magnitude)",
+          "raw_count": 14,
+          "weighted": 5.66,
+          "freq_share": 0.0509,
+          "avg_marks": 11.4,
+          "marks_share": 0.0632,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 14
+          }
+        },
+        {
+          "topic": "4",
+          "name": "Graphs",
+          "raw_count": 10,
+          "weighted": 4.76,
+          "freq_share": 0.0429,
+          "avg_marks": 10,
+          "marks_share": 0.0455,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 10
+          }
+        }
+      ],
+      "topic_by_year": {
+        "9": {
+          "2015": 6,
+          "2016": 5,
+          "2017": 6,
+          "2018": 3,
+          "2019": 5,
+          "2020": 6,
+          "2021": 5,
+          "2022": 11,
+          "2023": 16,
+          "2024": 6,
+          "2025": 8
+        },
+        "8": {
+          "2015": 1,
+          "2016": 2,
+          "2017": 5,
+          "2018": 2,
+          "2019": 5,
+          "2020": 7,
+          "2021": 1,
+          "2022": 8,
+          "2023": 3,
+          "2024": 4,
+          "2025": 3
+        },
+        "1": {
+          "2015": 1,
+          "2016": 3,
+          "2017": 3,
+          "2019": 3,
+          "2020": 4,
+          "2021": 2,
+          "2022": 3,
+          "2023": 4,
+          "2024": 2,
+          "2025": 4
+        },
+        "10": {
+          "2015": 3,
+          "2016": 4,
+          "2017": 3,
+          "2018": 4,
+          "2019": 3,
+          "2020": 4,
+          "2021": 3,
+          "2022": 4,
+          "2023": 5,
+          "2024": 4,
+          "2025": 4
+        },
+        "3": {
+          "2015": 1,
+          "2016": 1,
+          "2017": 2,
+          "2018": 1,
+          "2019": 1,
+          "2020": 3,
+          "2021": 1,
+          "2022": 2,
+          "2023": 5,
+          "2024": 1,
+          "2025": 1
+        },
+        "2": {
+          "2015": 2,
+          "2016": 4,
+          "2017": 4,
+          "2018": 3,
+          "2019": 4,
+          "2020": 4,
+          "2021": 3,
+          "2022": 1,
+          "2023": 6,
+          "2024": 3,
+          "2025": 3
+        },
+        "5": {
+          "2015": 1,
+          "2016": 2,
+          "2017": 3,
+          "2018": 2,
+          "2019": 2,
+          "2020": 3,
+          "2021": 1,
+          "2022": 5,
+          "2023": 5,
+          "2024": 4,
+          "2025": 2
+        },
+        "6": {
+          "2015": 1,
+          "2016": 2,
+          "2017": 1,
+          "2018": 1,
+          "2019": 1,
+          "2020": 2,
+          "2022": 3,
+          "2023": 3,
+          "2024": 2,
+          "2025": 2
+        },
+        "4": {
+          "2015": 1,
+          "2016": 2,
+          "2017": 3,
+          "2018": 2,
+          "2019": 1,
+          "2020": 2,
+          "2021": 1,
+          "2022": 2,
+          "2023": 1,
+          "2024": 1,
+          "2025": 2
+        },
+        "7": {
+          "2018": 1,
+          "2019": 1,
+          "2020": 3,
+          "2021": 2,
+          "2022": 3,
+          "2023": 4,
+          "2025": 1
+        }
+      },
+      "slot_patterns": [
+        {
+          "slot": 1,
+          "n": 24,
+          "avg_marks": 4.4,
+          "marks_range": [
+            0,
+            9
+          ],
+          "top_topics": [
+            {
+              "topic": "3",
+              "name": "Identities & inequalities",
+              "weight": 2.23
+            },
+            {
+              "topic": "1",
+              "name": "Logarithmic functions & indices",
+              "weight": 1.69
+            },
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 1.65
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "calculate",
+            "solve"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 2,
+          "n": 24,
+          "avg_marks": 7.0,
+          "marks_range": [
+            0,
+            13
+          ],
+          "top_topics": [
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 4.12
+            },
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 2.21
+            },
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 2.19
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "hence",
+            "calculate"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 3,
+          "n": 21,
+          "avg_marks": 6.9,
+          "marks_range": [
+            0,
+            10
+          ],
+          "top_topics": [
+            {
+              "topic": "10",
+              "name": "Trigonometry",
+              "weight": 2.68
+            },
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 1.85
+            },
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 1.53
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "calculate",
+            "solve"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 4,
+          "n": 21,
+          "avg_marks": 7.6,
+          "marks_range": [
+            0,
+            12
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 2.71
+            },
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 2.49
+            },
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 1.74
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "calculate",
+            "draw"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 5,
+          "n": 23,
+          "avg_marks": 8.7,
+          "marks_range": [
+            0,
+            16
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 3.19
+            },
+            {
+              "topic": "3",
+              "name": "Identities & inequalities",
+              "weight": 2.19
+            },
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 1.69
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "use",
+            "calculate"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 6,
+          "n": 22,
+          "avg_marks": 9.6,
+          "marks_range": [
+            6,
+            16
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 3.67
+            },
+            {
+              "topic": "6",
+              "name": "Binomial series",
+              "weight": 2.11
+            },
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 1.53
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "calculate",
+            "show that"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 7,
+          "n": 22,
+          "avg_marks": 9.4,
+          "marks_range": [
+            0,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 4.28
+            },
+            {
+              "topic": "1",
+              "name": "Logarithmic functions & indices",
+              "weight": 2.97
+            },
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 1.28
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "calculate",
+            "show that"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 8,
+          "n": 21,
+          "avg_marks": 10.6,
+          "marks_range": [
+            7,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 4.04
+            },
+            {
+              "topic": "1",
+              "name": "Logarithmic functions & indices",
+              "weight": 1.35
+            },
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 1.13
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "use",
+            "justify"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 9,
+          "n": 18,
+          "avg_marks": 9.9,
+          "marks_range": [
+            0,
+            16
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 3.46
+            },
+            {
+              "topic": "6",
+              "name": "Binomial series",
+              "weight": 1.8
+            },
+            {
+              "topic": "1",
+              "name": "Logarithmic functions & indices",
+              "weight": 1.08
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "solve",
+            "expand"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 10,
+          "n": 23,
+          "avg_marks": 13.4,
+          "marks_range": [
+            9,
+            18
+          ],
+          "top_topics": [
+            {
+              "topic": "10",
+              "name": "Trigonometry",
+              "weight": 2.99
+            },
+            {
+              "topic": "7",
+              "name": "Vectors (position, displacement, magnitude)",
+              "weight": 2.21
+            },
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 1.65
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "using",
+            "use"
+          ],
+          "difficulty_mode": "hard"
+        },
+        {
+          "slot": 11,
+          "n": 15,
+          "avg_marks": 10.8,
+          "marks_range": [
+            0,
+            17
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 2.83
+            },
+            {
+              "topic": "10",
+              "name": "Trigonometry",
+              "weight": 1.35
+            },
+            {
+              "topic": "7",
+              "name": "Vectors (position, displacement, magnitude)",
+              "weight": 0.75
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "use",
+            "solve"
+          ],
+          "difficulty_mode": "hard"
+        }
+      ],
+      "command_words": [
+        {
+          "word": "find",
+          "count": 178
+        },
+        {
+          "word": "show",
+          "count": 95
+        },
+        {
+          "word": "calculate",
+          "count": 41
+        },
+        {
+          "word": "solve",
+          "count": 33
+        },
+        {
+          "word": "use",
+          "count": 27
+        },
+        {
+          "word": "hence",
+          "count": 26
+        },
+        {
+          "word": "show that",
+          "count": 18
+        },
+        {
+          "word": "draw",
+          "count": 14
+        },
+        {
+          "word": "expand",
+          "count": 11
+        },
+        {
+          "word": "determine",
+          "count": 11
+        },
+        {
+          "word": "using",
+          "count": 10
+        },
+        {
+          "word": "estimate",
+          "count": 10
+        },
+        {
+          "word": "obtain",
+          "count": 10
+        },
+        {
+          "word": "sketch",
+          "count": 9
+        },
+        {
+          "word": "complete",
+          "count": 9
+        }
+      ],
+      "difficulty_dist": {
+        "medium": 157,
+        "hard": 73,
+        "easy": 4
+      },
+      "cycles": [
+        {
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 31,
+          "per_year_counts": {
+            "2019": 5,
+            "2020": 7,
+            "2021": 1,
+            "2022": 8,
+            "2023": 3,
+            "2024": 4,
+            "2025": 3
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "5",
+          "name": "Series",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 22,
+          "per_year_counts": {
+            "2019": 2,
+            "2020": 3,
+            "2021": 1,
+            "2022": 5,
+            "2023": 5,
+            "2024": 4,
+            "2025": 2
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "2",
+          "name": "Quadratic function",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 24,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 4,
+            "2021": 3,
+            "2022": 1,
+            "2023": 6,
+            "2024": 3,
+            "2025": 3
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "9",
+          "name": "Calculus",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 57,
+          "per_year_counts": {
+            "2019": 5,
+            "2020": 6,
+            "2021": 5,
+            "2022": 11,
+            "2023": 16,
+            "2024": 6,
+            "2025": 8
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "4",
+          "name": "Graphs",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 10,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 2,
+            "2021": 1,
+            "2022": 2,
+            "2023": 1,
+            "2024": 1,
+            "2025": 2
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "3",
+          "name": "Identities & inequalities",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 14,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 3,
+            "2021": 1,
+            "2022": 2,
+            "2023": 5,
+            "2024": 1,
+            "2025": 1
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "1",
+          "name": "Logarithmic functions & indices",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 22,
+          "per_year_counts": {
+            "2019": 3,
+            "2020": 4,
+            "2021": 2,
+            "2022": 3,
+            "2023": 4,
+            "2024": 2,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "10",
+          "name": "Trigonometry",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 27,
+          "per_year_counts": {
+            "2019": 3,
+            "2020": 4,
+            "2021": 3,
+            "2022": 4,
+            "2023": 5,
+            "2024": 4,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "6",
+          "name": "Binomial series",
+          "appearance_years": [
+            2019,
+            2020,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 13,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 2,
+            "2022": 3,
+            "2023": 3,
+            "2024": 2,
+            "2025": 2
+          },
+          "coverage": 0.86,
+          "mean_gap": 1.2,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 0.83,
+          "cadence": "annual"
+        },
+        {
+          "topic": "7",
+          "name": "Vectors (position, displacement, magnitude)",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2025
+          ],
+          "total_appearances": 14,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 3,
+            "2021": 2,
+            "2022": 3,
+            "2023": 4,
+            "2025": 1
+          },
+          "coverage": 0.86,
+          "mean_gap": 1.2,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 0.83,
+          "cadence": "annual"
+        }
+      ],
+      "templates": [
+        {
+          "signature": "8|find,show|hi",
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "size": 7,
+          "years": [
+            2019,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "weighted": 3.71,
+          "common_skills": [
+            "coordinate geometry",
+            "perpendicular lines",
+            "line equation",
+            "distance calculation",
+            "simultaneous equations"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:summer:1:q2",
+            "context_tag": "Coordinate Geometry",
+            "marks": 13,
+            "command_words": [
+              "show",
+              "find"
+            ],
+            "skills": [
+              "distance calculation",
+              "midpoint calculation",
+              "line equation"
+            ],
+            "text_excerpt": "\n\n2 The point A has coordinates 3 2\n,\n, the point B has coordinates 8 3\n,\nand\nthe point C has coordinates 4 7\n,\n(a) Show that ABC is an isosceles triangle.\n(2)\nThe midpoint of BC is M\n(b) Find an equation of the line that passes through A and M\nGive your answer in the form y\nmx\nc\n(3)\nThe points"
+          }
+        },
+        {
+          "signature": "9|find,show|hi",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 6,
+          "years": [
+            2019,
+            2023,
+            2025
+          ],
+          "weighted": 3.52,
+          "common_skills": [
+            "differentiation",
+            "differentiate",
+            "integration",
+            "substitution",
+            "apply product rule"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:autumn:1:q9",
+            "context_tag": "Liquid Filling Cone",
+            "marks": 13,
+            "command_words": [
+              "show",
+              "find"
+            ],
+            "skills": [
+              "differentiation",
+              "integration",
+              "chain rule",
+              "substitution"
+            ],
+            "text_excerpt": "\n\nh cm\n60°\nX\nDiagram NOT\naccurately drawn\nFigure 2\nFigure 2 shows a hollow right circular cone fixed with its axis of symmetry vertical.\nThe vertical angle of the cone is 60°\nInitially the cone is empty.\nAt time t = 0 liquid starts to fill the cone at a constant rate of 0.2 cm3/s\nAt time t seco"
+          }
+        },
+        {
+          "signature": "9|calculate,find|mid",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 6,
+          "years": [
+            2021,
+            2022,
+            2024,
+            2025
+          ],
+          "weighted": 3.42,
+          "common_skills": [
+            "differentiate",
+            "apply chain rule",
+            "differentiation",
+            "integration",
+            "substitution"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:summer:1:q7",
+            "context_tag": "Liquid dripping",
+            "marks": 6,
+            "command_words": [
+              "find",
+              "calculate"
+            ],
+            "skills": [
+              "differentiate",
+              "apply chain rule",
+              "solve equation"
+            ],
+            "text_excerpt": "\n\n20 cm\nDiagram NOT\naccurately drawn\nh\nA\nFigure 2\nFigure 2 shows a hollow hemisphere with radius 20 cm\nThe hemisphere contains liquid, which is dripping out of a small hole at the lowest\npoint A at a constant rate of k cm3/s\nAt time t seconds after the liquid starts to drip from the hemisphere,"
+          }
+        },
+        {
+          "signature": "9|calculate,find|hi",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 4,
+          "years": [
+            2020,
+            2023,
+            2024
+          ],
+          "weighted": 2.2,
+          "common_skills": [
+            "differentiation",
+            "substitution",
+            "integration",
+            "chain rule",
+            "algebraic manipulation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:autumn:1:q5",
+            "context_tag": "Particle motion",
+            "marks": 10,
+            "command_words": [
+              "find",
+              "calculate"
+            ],
+            "skills": [
+              "differentiate",
+              "integrate",
+              "solve equation"
+            ],
+            "text_excerpt": "\n\n5 A particle P is moving along a straight line.\nAt time t seconds t 0\n, the velocity, v m/s, of P is given by\nv\nt\nt\n(a) Find the values of t when P is instantaneously at rest.\n(3)\nAt time t seconds the acceleration of P is a m/s2\n(b) Find the range of values of t for which a > 0\n(2)\n(c) Find"
+          }
+        },
+        {
+          "signature": "2|find,hence|mid",
+          "topic": "2",
+          "name": "Quadratic function",
+          "size": 4,
+          "years": [
+            2022,
+            2023,
+            2024
+          ],
+          "weighted": 2.03,
+          "common_skills": [
+            "completing the square",
+            "solving inequalities",
+            "comparing coefficients",
+            "quadratic equation manipulation",
+            "coordinate geometry"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:summer:1:q2",
+            "context_tag": "Quadratic Functions",
+            "marks": 5,
+            "command_words": [
+              "find",
+              "hence"
+            ],
+            "skills": [
+              "quadratic function analysis",
+              "maxima finding",
+              "function manipulation"
+            ],
+            "text_excerpt": "\n\nf( )\nx\nx\nx\nGiven that f( )\nx can be written in the form A x\nB\nC\n, where A, B and C\nare integers,\n(a) find the value of A, the value of B and the value of C\n(3)\n(b) Hence, or otherwise, find\n(i) the value of x for which 1\nf( )\nx is a maximum\n(ii) the maximum value of 1\nf( )\nx\n(2)\n............."
+          }
+        },
+        {
+          "signature": "9|find|mid",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 3,
+          "years": [
+            2021,
+            2024,
+            2025
+          ],
+          "weighted": 1.74,
+          "common_skills": [
+            "differentiate",
+            "find gradient",
+            "form equation",
+            "integrate",
+            "apply chain rule"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:summer:1R:q11",
+            "context_tag": "Water cone",
+            "marks": 8,
+            "command_words": [
+              "find"
+            ],
+            "skills": [
+              "differentiation",
+              "chain rule",
+              "related rates"
+            ],
+            "text_excerpt": "\n\nDiagram NOT\naccurately drawn\n3 m\n4 m\nh m\nA\nFigure 3\nFigure 3 shows a hollow right circular cone with radius 3 metres and height\n4 metres above the vertex A\nThe cone is fixed with its axis of symmetry vertical.\nThe cone is initially empty.\nWater pours into the cone at a constant rate of 9\nπ m "
+          }
+        },
+        {
+          "signature": "5|calculate,find|hi",
+          "topic": "5",
+          "name": "Series",
+          "size": 3,
+          "years": [
+            2020,
+            2023,
+            2024
+          ],
+          "weighted": 1.72,
+          "common_skills": [
+            "series sum calculation",
+            "sum of series",
+            "nth term",
+            "simultaneous equations",
+            "inequality solving"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:autumn:1:q2",
+            "context_tag": "Arithmetic series",
+            "marks": 13,
+            "command_words": [
+              "find",
+              "calculate"
+            ],
+            "skills": [
+              "series sum calculation",
+              "arithmetic series manipulation",
+              "algebraic manipulation",
+              "equation solving"
+            ],
+            "text_excerpt": "\n\n2 The sum of the fifth, sixth and seventh terms of an arithmetic series A is\nnine times the sum of the first and second terms.\nThe third term of A is 12\n(a) Find the first term and common difference of A\n(5)\nThe nth term of A is un\n(b) Find the value of\nur\nr\n(4)\nThe sum to n terms of A is Sn\n"
+          }
+        },
+        {
+          "signature": "1|solve|mid",
+          "topic": "1",
+          "name": "Logarithmic functions & indices",
+          "size": 4,
+          "years": [
+            2020,
+            2023
+          ],
+          "weighted": 1.65,
+          "common_skills": [
+            "change of base",
+            "solve equation",
+            "apply log rules",
+            "algebraic manipulation",
+            "index laws"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:autumn:1:q11",
+            "context_tag": "Logarithmic equations",
+            "marks": 8,
+            "command_words": [
+              "solve"
+            ],
+            "skills": [
+              "logarithmic manipulation",
+              "simultaneous equation solving"
+            ],
+            "text_excerpt": "\n11 Solve the simultaneous equations\n2log4\nx\ny\nx\ny\nlog\nlog\nlog\nShow your working clearly.\n(8)\n.........................................................................................................................................................................................................."
+          }
+        },
+        {
+          "signature": "9|find,justify,show,use|hi",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 4,
+          "years": [
+            2020,
+            2022,
+            2023
+          ],
+          "weighted": 1.54,
+          "common_skills": [
+            "differentiation",
+            "optimization",
+            "substitution",
+            "justification",
+            "calculation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:winter:1:q8",
+            "context_tag": "Badge design",
+            "marks": 13,
+            "command_words": [
+              "show",
+              "find",
+              "justify",
+              "use"
+            ],
+            "skills": [
+              "calculus optimization",
+              "algebraic manipulation",
+              "justification",
+              "minimization"
+            ],
+            "text_excerpt": "\n\nA\n0.5 rad\nx cm\ny cm\nD\nE\nF\nG\nB\nC\nDiagram NOT\naccurately drawn\nFigure 1\nFigure 1 shows a badge, shown shaded, made from two identical rectangles, ABCD and\nDEFG, and a sector DCG of a circle with centre D.\nEach rectangle measures x cm by y cm.\nThe radius of the sector is x cm and the angle CDG i"
+          }
+        },
+        {
+          "signature": "5|calculate,find,show|hi",
+          "topic": "5",
+          "name": "Series",
+          "size": 3,
+          "years": [
+            2020,
+            2023,
+            2024
+          ],
+          "weighted": 1.38,
+          "common_skills": [
+            "series manipulation",
+            "algebraic substitution",
+            "equation solving",
+            "geometric series sum",
+            "nth term calculation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:summer:1:q8",
+            "context_tag": "Geometric series",
+            "marks": 12,
+            "command_words": [
+              "show",
+              "find",
+              "calculate"
+            ],
+            "skills": [
+              "series sum",
+              "geometric series",
+              "logarithm application"
+            ],
+            "text_excerpt": "\n\n8 The sum of the first and second terms of a geometric series G is 400\nThe sum of the second and third terms of G is 100\n(a) Show that the common ratio of G is 1\n(4)\n(b) Show that the first term of G is 320\n(2)\n(c) Find the sum to infinity of G\n(2)\nThe sum to n terms of G is Sn\n(d) Find, usin"
+          }
+        },
+        {
+          "signature": "10|find,show|hi",
+          "topic": "10",
+          "name": "Trigonometry",
+          "size": 3,
+          "years": [
+            2021,
+            2022,
+            2023
+          ],
+          "weighted": 1.31,
+          "common_skills": [
+            "apply trigonometric identities",
+            "use cosine rule",
+            "calculate area of triangle",
+            "use given ratios",
+            "solve for unknowns"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:winter:1R:q9",
+            "context_tag": "Right pyramid",
+            "marks": 13,
+            "command_words": [
+              "Find",
+              "Show",
+              "Find",
+              "Find"
+            ],
+            "skills": [
+              "Trigonometric calculation",
+              "Pythagoras theorem",
+              "Surface area calculation",
+              "Angle calculation"
+            ],
+            "text_excerpt": "\n\nDiagram NOT\naccurately drawn\nA\n30°\n12 cm\nx cm\nD\nO\nB\nC\nFigure 2\nFigure 2 shows the right pyramid OABCD with a square base ABCD of side 12 cm.\nOA = OB = OC = OD = x cm and ∠OAC = ∠ODB = ∠OCA = ∠OBD = 30°\n(a) Find the exact length of AC\n(2)\n(b) Show that  x = 4 6\n(2)\n(c) Find the total surface a"
+          }
+        },
+        {
+          "signature": "9|find,show,use|hi",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 3,
+          "years": [
+            2021,
+            2022,
+            2023
+          ],
+          "weighted": 1.31,
+          "common_skills": [
+            "differentiation",
+            "integration",
+            "algebraic manipulation",
+            "trigonometric identities",
+            "calculus application"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:winter:1R:q8",
+            "context_tag": "Curve and line intersection",
+            "marks": 15,
+            "command_words": [
+              "show",
+              "find",
+              "use"
+            ],
+            "skills": [
+              "integration",
+              "differentiation",
+              "equation manipulation"
+            ],
+            "text_excerpt": "\n\ny\n(a, 0)\n(–1, 0)\n(b, 0)\n(0, c)\nR\nO\nx\nC\nDiagram NOT\naccurately drawn\nl\nFigure 1\nFigure 1 shows part of the curve C with equation y = f(x)\nThe curve C passes through the points with coordinates\n(a, 0), (–1, 0), (b, 0) and (0, c)\nGiven that  f′(x) = 17 + 2x – 3x2\n(a) show that the equation of C "
+          }
+        },
+        {
+          "signature": "7|find,using|hi",
+          "topic": "7",
+          "name": "Vectors (position, displacement, magnitude)",
+          "size": 3,
+          "years": [
+            2021,
+            2022,
+            2023
+          ],
+          "weighted": 1.21,
+          "common_skills": [
+            "vector operations",
+            "simplifying expressions",
+            "applying vector methods",
+            "midpoint calculation",
+            "ratio application"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:winter:1:q11",
+            "context_tag": "Triangle geometry",
+            "marks": 10,
+            "command_words": [
+              "find",
+              "using"
+            ],
+            "skills": [
+              "vector operations",
+              "ratio calculation",
+              "equating components"
+            ],
+            "text_excerpt": "\n\nDiagram NOT\naccurately drawn\nA\nM\nX\nN\nB\nO\nFigure 3\nFigure 3 shows triangle OAB with  OA\n→ = a and OB\n→ = b\nM is the midpoint of OA.\nN is the point on OB such that  ON : NB = 3 : 1\nThe lines AN and BM intersect at the point X.\n(a) Find expressions, in terms of a and b, for\n(i) AN\n→\n(ii)  BM\n→\n("
+          }
+        }
+      ]
+    },
+    "2": {
+      "name": "Paper 2",
+      "marks_target": 100,
+      "typical_question_count": [
+        9,
+        11
+      ],
+      "n_questions": 330,
+      "n_questions_9_1": 237,
+      "topic_frequency": [
+        {
+          "topic": "9",
+          "name": "Calculus",
+          "raw_count": 59,
+          "weighted": 26.76,
+          "freq_share": 0.2412,
+          "avg_marks": 8.2,
+          "marks_share": 0.2169,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 59
+          }
+        },
+        {
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "raw_count": 29,
+          "weighted": 13.77,
+          "freq_share": 0.1241,
+          "avg_marks": 8.9,
+          "marks_share": 0.1175,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 29
+          }
+        },
+        {
+          "topic": "10",
+          "name": "Trigonometry",
+          "raw_count": 27,
+          "weighted": 11.64,
+          "freq_share": 0.1049,
+          "avg_marks": 10.6,
+          "marks_share": 0.1255,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 27
+          }
+        },
+        {
+          "topic": "2",
+          "name": "Quadratic function",
+          "raw_count": 26,
+          "weighted": 11.56,
+          "freq_share": 0.1042,
+          "avg_marks": 9.4,
+          "marks_share": 0.1006,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 26
+          }
+        },
+        {
+          "topic": "5",
+          "name": "Series",
+          "raw_count": 22,
+          "weighted": 9.98,
+          "freq_share": 0.09,
+          "avg_marks": 9.9,
+          "marks_share": 0.0987,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 22
+          }
+        },
+        {
+          "topic": "3",
+          "name": "Identities & inequalities",
+          "raw_count": 19,
+          "weighted": 9.92,
+          "freq_share": 0.0894,
+          "avg_marks": 7.1,
+          "marks_share": 0.0704,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 19
+          }
+        },
+        {
+          "topic": "4",
+          "name": "Graphs",
+          "raw_count": 18,
+          "weighted": 8.62,
+          "freq_share": 0.0777,
+          "avg_marks": 11.9,
+          "marks_share": 0.1062,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 18
+          }
+        },
+        {
+          "topic": "7",
+          "name": "Vectors (position, displacement, magnitude)",
+          "raw_count": 15,
+          "weighted": 8.32,
+          "freq_share": 0.075,
+          "avg_marks": 8.8,
+          "marks_share": 0.0793,
+          "years": [
+            2019,
+            2020,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 15
+          }
+        },
+        {
+          "topic": "1",
+          "name": "Logarithmic functions & indices",
+          "raw_count": 14,
+          "weighted": 7.02,
+          "freq_share": 0.0633,
+          "avg_marks": 8.4,
+          "marks_share": 0.06,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 14
+          }
+        },
+        {
+          "topic": "6",
+          "name": "Binomial series",
+          "raw_count": 8,
+          "weighted": 3.36,
+          "freq_share": 0.0302,
+          "avg_marks": 7.6,
+          "marks_share": 0.0247,
+          "years": [
+            2019,
+            2020,
+            2022,
+            2023,
+            2024
+          ],
+          "era_counts": {
+            "9-1": 8
+          }
+        }
+      ],
+      "topic_by_year": {
+        "8": {
+          "2015": 5,
+          "2016": 2,
+          "2017": 2,
+          "2018": 4,
+          "2019": 3,
+          "2020": 3,
+          "2021": 3,
+          "2022": 7,
+          "2023": 7,
+          "2024": 2,
+          "2025": 4
+        },
+        "2": {
+          "2015": 3,
+          "2016": 3,
+          "2017": 3,
+          "2018": 1,
+          "2019": 3,
+          "2020": 3,
+          "2021": 3,
+          "2022": 5,
+          "2023": 9,
+          "2024": 2,
+          "2025": 1
+        },
+        "10": {
+          "2015": 1,
+          "2016": 3,
+          "2017": 4,
+          "2018": 2,
+          "2019": 4,
+          "2020": 4,
+          "2021": 2,
+          "2022": 8,
+          "2023": 3,
+          "2024": 4,
+          "2025": 2
+        },
+        "4": {
+          "2015": 1,
+          "2016": 3,
+          "2017": 3,
+          "2019": 3,
+          "2020": 3,
+          "2021": 1,
+          "2022": 2,
+          "2023": 4,
+          "2024": 2,
+          "2025": 3
+        },
+        "5": {
+          "2015": 3,
+          "2016": 3,
+          "2017": 2,
+          "2018": 2,
+          "2019": 3,
+          "2020": 5,
+          "2021": 2,
+          "2022": 3,
+          "2023": 4,
+          "2024": 2,
+          "2025": 3
+        },
+        "6": {
+          "2015": 1,
+          "2017": 1,
+          "2018": 1,
+          "2019": 1,
+          "2020": 2,
+          "2022": 1,
+          "2023": 2,
+          "2024": 2
+        },
+        "9": {
+          "2015": 3,
+          "2016": 7,
+          "2017": 5,
+          "2018": 7,
+          "2019": 8,
+          "2020": 10,
+          "2021": 5,
+          "2022": 10,
+          "2023": 14,
+          "2024": 6,
+          "2025": 6
+        },
+        "7": {
+          "2015": 1,
+          "2016": 2,
+          "2017": 2,
+          "2019": 2,
+          "2020": 1,
+          "2022": 4,
+          "2023": 2,
+          "2024": 3,
+          "2025": 3
+        },
+        "1": {
+          "2015": 1,
+          "2016": 1,
+          "2017": 3,
+          "2018": 1,
+          "2019": 2,
+          "2020": 2,
+          "2021": 2,
+          "2022": 1,
+          "2023": 2,
+          "2024": 3,
+          "2025": 2
+        },
+        "3": {
+          "2016": 3,
+          "2017": 3,
+          "2018": 1,
+          "2019": 2,
+          "2020": 2,
+          "2021": 2,
+          "2022": 1,
+          "2023": 5,
+          "2024": 3,
+          "2025": 4
+        }
+      },
+      "slot_patterns": [
+        {
+          "slot": 1,
+          "n": 23,
+          "avg_marks": 4.9,
+          "marks_range": [
+            3,
+            7
+          ],
+          "top_topics": [
+            {
+              "topic": "3",
+              "name": "Identities & inequalities",
+              "weight": 2.54
+            },
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 2.18
+            },
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 2.1
+            }
+          ],
+          "common_commands": [
+            "find",
+            "solve",
+            "show",
+            "calculate"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 2,
+          "n": 24,
+          "avg_marks": 6.0,
+          "marks_range": [
+            3,
+            11
+          ],
+          "top_topics": [
+            {
+              "topic": "3",
+              "name": "Identities & inequalities",
+              "weight": 3.61
+            },
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 1.98
+            },
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 1.65
+            }
+          ],
+          "common_commands": [
+            "find",
+            "solve",
+            "hence",
+            "use"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 3,
+          "n": 20,
+          "avg_marks": 6.9,
+          "marks_range": [
+            5,
+            13
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 3.66
+            },
+            {
+              "topic": "4",
+              "name": "Graphs",
+              "weight": 1.44
+            },
+            {
+              "topic": "7",
+              "name": "Vectors (position, displacement, magnitude)",
+              "weight": 1.23
+            }
+          ],
+          "common_commands": [
+            "find",
+            "calculate",
+            "hence",
+            "write down"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 4,
+          "n": 21,
+          "avg_marks": 7.9,
+          "marks_range": [
+            4,
+            11
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 1.73
+            },
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 1.7
+            },
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 1.59
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "calculate",
+            "solve"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 5,
+          "n": 23,
+          "avg_marks": 8.0,
+          "marks_range": [
+            5,
+            12
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 4.81
+            },
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 1.79
+            },
+            {
+              "topic": "3",
+              "name": "Identities & inequalities",
+              "weight": 0.99
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "draw",
+            "use"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 6,
+          "n": 19,
+          "avg_marks": 8.6,
+          "marks_range": [
+            6,
+            13
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 4.03
+            },
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 1.93
+            },
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 1.19
+            }
+          ],
+          "common_commands": [
+            "find",
+            "calculate",
+            "show",
+            "differentiate"
+          ],
+          "difficulty_mode": "hard"
+        },
+        {
+          "slot": 7,
+          "n": 23,
+          "avg_marks": 10.4,
+          "marks_range": [
+            7,
+            16
+          ],
+          "top_topics": [
+            {
+              "topic": "5",
+              "name": "Series",
+              "weight": 2.38
+            },
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 2.15
+            },
+            {
+              "topic": "1",
+              "name": "Logarithmic functions & indices",
+              "weight": 1.94
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "use",
+            "obtain"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 8,
+          "n": 22,
+          "avg_marks": 10.9,
+          "marks_range": [
+            5,
+            17
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 2.19
+            },
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 1.69
+            },
+            {
+              "topic": "2",
+              "name": "Quadratic function",
+              "weight": 1.61
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "use",
+            "solve"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 9,
+          "n": 22,
+          "avg_marks": 11.3,
+          "marks_range": [
+            6,
+            18
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 2.89
+            },
+            {
+              "topic": "10",
+              "name": "Trigonometry",
+              "weight": 1.85
+            },
+            {
+              "topic": "8",
+              "name": "Rectangular Cartesian coordinates",
+              "weight": 1.5
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "use",
+            "sketch"
+          ],
+          "difficulty_mode": "hard"
+        },
+        {
+          "slot": 10,
+          "n": 22,
+          "avg_marks": 13.2,
+          "marks_range": [
+            5,
+            18
+          ],
+          "top_topics": [
+            {
+              "topic": "4",
+              "name": "Graphs",
+              "weight": 3.7
+            },
+            {
+              "topic": "10",
+              "name": "Trigonometry",
+              "weight": 1.66
+            },
+            {
+              "topic": "1",
+              "name": "Logarithmic functions & indices",
+              "weight": 1.4
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "solve",
+            "write"
+          ],
+          "difficulty_mode": "hard"
+        },
+        {
+          "slot": 11,
+          "n": 18,
+          "avg_marks": 12.6,
+          "marks_range": [
+            8,
+            17
+          ],
+          "top_topics": [
+            {
+              "topic": "9",
+              "name": "Calculus",
+              "weight": 2.9
+            },
+            {
+              "topic": "10",
+              "name": "Trigonometry",
+              "weight": 2.8
+            },
+            {
+              "topic": "7",
+              "name": "Vectors (position, displacement, magnitude)",
+              "weight": 2.08
+            }
+          ],
+          "common_commands": [
+            "find",
+            "show",
+            "show that",
+            "use"
+          ],
+          "difficulty_mode": "hard"
+        }
+      ],
+      "command_words": [
+        {
+          "word": "find",
+          "count": 202
+        },
+        {
+          "word": "show",
+          "count": 81
+        },
+        {
+          "word": "use",
+          "count": 35
+        },
+        {
+          "word": "solve",
+          "count": 33
+        },
+        {
+          "word": "calculate",
+          "count": 29
+        },
+        {
+          "word": "hence",
+          "count": 24
+        },
+        {
+          "word": "show that",
+          "count": 19
+        },
+        {
+          "word": "sketch",
+          "count": 15
+        },
+        {
+          "word": "write",
+          "count": 13
+        },
+        {
+          "word": "draw",
+          "count": 10
+        },
+        {
+          "word": "obtain",
+          "count": 9
+        },
+        {
+          "word": "expand",
+          "count": 8
+        },
+        {
+          "word": "using",
+          "count": 8
+        },
+        {
+          "word": "complete",
+          "count": 7
+        },
+        {
+          "word": "estimate",
+          "count": 7
+        }
+      ],
+      "difficulty_dist": {
+        "medium": 151,
+        "hard": 82,
+        "easy": 4
+      },
+      "cycles": [
+        {
+          "topic": "1",
+          "name": "Logarithmic functions & indices",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 14,
+          "per_year_counts": {
+            "2019": 2,
+            "2020": 2,
+            "2021": 2,
+            "2022": 1,
+            "2023": 2,
+            "2024": 3,
+            "2025": 2
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "4",
+          "name": "Graphs",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 18,
+          "per_year_counts": {
+            "2019": 3,
+            "2020": 3,
+            "2021": 1,
+            "2022": 2,
+            "2023": 4,
+            "2024": 2,
+            "2025": 3
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "10",
+          "name": "Trigonometry",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 27,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 4,
+            "2021": 2,
+            "2022": 8,
+            "2023": 3,
+            "2024": 4,
+            "2025": 2
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "9",
+          "name": "Calculus",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 59,
+          "per_year_counts": {
+            "2019": 8,
+            "2020": 10,
+            "2021": 5,
+            "2022": 10,
+            "2023": 14,
+            "2024": 6,
+            "2025": 6
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "2",
+          "name": "Quadratic function",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 26,
+          "per_year_counts": {
+            "2019": 3,
+            "2020": 3,
+            "2021": 3,
+            "2022": 5,
+            "2023": 9,
+            "2024": 2,
+            "2025": 1
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 29,
+          "per_year_counts": {
+            "2019": 3,
+            "2020": 3,
+            "2021": 3,
+            "2022": 7,
+            "2023": 7,
+            "2024": 2,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "5",
+          "name": "Series",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 22,
+          "per_year_counts": {
+            "2019": 3,
+            "2020": 5,
+            "2021": 2,
+            "2022": 3,
+            "2023": 4,
+            "2024": 2,
+            "2025": 3
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "3",
+          "name": "Identities & inequalities",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 19,
+          "per_year_counts": {
+            "2019": 2,
+            "2020": 2,
+            "2021": 2,
+            "2022": 1,
+            "2023": 5,
+            "2024": 3,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "7",
+          "name": "Vectors (position, displacement, magnitude)",
+          "appearance_years": [
+            2019,
+            2020,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 15,
+          "per_year_counts": {
+            "2019": 2,
+            "2020": 1,
+            "2022": 4,
+            "2023": 2,
+            "2024": 3,
+            "2025": 3
+          },
+          "coverage": 0.86,
+          "mean_gap": 1.2,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 0.83,
+          "cadence": "annual"
+        },
+        {
+          "topic": "6",
+          "name": "Binomial series",
+          "appearance_years": [
+            2019,
+            2020,
+            2022,
+            2023,
+            2024
+          ],
+          "total_appearances": 8,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 2,
+            "2022": 1,
+            "2023": 2,
+            "2024": 2
+          },
+          "coverage": 0.71,
+          "mean_gap": 1.25,
+          "last_seen": 2024,
+          "years_since": 2,
+          "overdue_score": 1.6,
+          "cadence": "sparse"
+        }
+      ],
+      "templates": [
+        {
+          "signature": "9|find,use|mid",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 7,
+          "years": [
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "weighted": 3.73,
+          "common_skills": [
+            "algebraic integration",
+            "differentiation",
+            "integration",
+            "volume calculation",
+            "substitution"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:summer:2R:q8",
+            "context_tag": "Calculus curve",
+            "marks": 5,
+            "command_words": [
+              "use",
+              "find"
+            ],
+            "skills": [
+              "differentiation",
+              "substitution",
+              "simplification"
+            ],
+            "text_excerpt": "\n\n8 Use calculus to find the gradient of the curve with equation\ny\nx\nx\ne3\nat the point on the curve where x =1\nGive your answer to 3 significant figures.\n(5)\n........................................................................................................................................."
+          }
+        },
+        {
+          "signature": "8|find|mid",
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "size": 7,
+          "years": [
+            2020,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "weighted": 3.66,
+          "common_skills": [
+            "apply trigonometry",
+            "calculate angle",
+            "apply trigonometric concepts",
+            "use area formula",
+            "calculate lengths"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:autumn:2:q1",
+            "context_tag": "Circle sector",
+            "marks": 5,
+            "command_words": [
+              "Find"
+            ],
+            "skills": [
+              "Apply formula",
+              "Rearrange formula",
+              "Calculate perimeter"
+            ],
+            "text_excerpt": "\n\nAnswer all TEN questions.\nWrite your answers in the spaces provided.\nYou must write down all the stages in your working.\nrad\nO\n2 cm\nS\nR\nDiagram NOT\naccurately drawn\nθ\nFigure 1\nFigure 1 shows sector ROS of a circle with centre O and radius 2 cm\nThe size of angle ROS is θ radians.\nThe area of s"
+          }
+        },
+        {
+          "signature": "9|calculate,find|mid",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 9,
+          "years": [
+            2019,
+            2021,
+            2022,
+            2023,
+            2024
+          ],
+          "weighted": 3.35,
+          "common_skills": [
+            "differentiation",
+            "substitution",
+            "chain rule",
+            "differentiate",
+            "integration"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:summer:2R:q5",
+            "context_tag": "magnetic poles",
+            "marks": 6,
+            "command_words": [
+              "find",
+              "calculate"
+            ],
+            "skills": [
+              "differentiate",
+              "apply chain rule",
+              "substitute values"
+            ],
+            "text_excerpt": "\n\n5 The force F newtons between two magnetic poles is given by the formula\nF\nr\n=\n20 2\nwhere r is the distance, in centimetres, between the poles.\nThe distance between the two poles is increasing at a constant rate of 0.7 cm/s\nFind the rate of change of F, in newtons/s to 3 significant figures, "
+          }
+        },
+        {
+          "signature": "4|find,show,sketch,write|hi",
+          "topic": "4",
+          "name": "Graphs",
+          "size": 6,
+          "years": [
+            2020,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "weighted": 3.01,
+          "common_skills": [
+            "asymptote identification",
+            "graph sketching",
+            "coordinate geometry",
+            "algebraic manipulation",
+            "curve sketching"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:autumn:2:q10",
+            "context_tag": "Curve analysis",
+            "marks": 18,
+            "command_words": [
+              "find",
+              "write",
+              "sketch",
+              "show"
+            ],
+            "skills": [
+              "curve sketching",
+              "asymptote identification",
+              "coordinate geometry",
+              "gradient calculation"
+            ],
+            "text_excerpt": "\n\n10 A curve C has equation\ny\nx\nx\nx\n(a) Find the coordinates of the point where C intersects the\n(i) x-axis\n(ii) y-axis\n(2)\n(b) Write down an equation of the asymptote to C that is\n(i) parallel to the x-axis\n(ii) parallel to the y-axis\n(2)\n(c) Sketch C on the opposite page.\nShow and label the a"
+          }
+        },
+        {
+          "signature": "3|find,solve|mid",
+          "topic": "3",
+          "name": "Identities & inequalities",
+          "size": 6,
+          "years": [
+            2019,
+            2021,
+            2022,
+            2023
+          ],
+          "weighted": 2.41,
+          "common_skills": [
+            "inequality solving",
+            "algebraic manipulation",
+            "quadratic equation analysis",
+            "quadratic inequality",
+            "interval notation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:winter:2:q1",
+            "context_tag": "Algebraic Inequalities",
+            "marks": 7,
+            "command_words": [
+              "find",
+              "solve"
+            ],
+            "skills": [
+              "algebraic manipulation",
+              "inequality solving",
+              "quadratic factorization"
+            ],
+            "text_excerpt": "\n\nAnswer all ELEVEN questions.\nWrite your answers in the spaces provided.\nYou must write down all the stages in your working.\n1 Find the set of values of x for which\n(a) 2(3x – 1) < 4 – 3x\n(2)\n(b) 3x2 – 8x – 3 < 0\n(4)\n(c) both 2(3x – 1) < 4 – 3x and 3x2 – 8x – 3 < 0\n(1)\n........................"
+          }
+        },
+        {
+          "signature": "3|find|mid",
+          "topic": "3",
+          "name": "Identities & inequalities",
+          "size": 3,
+          "years": [
+            2024,
+            2025
+          ],
+          "weighted": 2.41,
+          "common_skills": [
+            "inequality manipulation",
+            "quadratic inequality solution",
+            "critical value identification",
+            "inequality solving",
+            "quadratic manipulation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:autumn:2:q2",
+            "context_tag": "Rectangle dimensions",
+            "marks": 6,
+            "command_words": [
+              "find"
+            ],
+            "skills": [
+              "inequality manipulation",
+              "quadratic inequality solution",
+              "critical value identification"
+            ],
+            "text_excerpt": "\n\n2 The length of rectangle R is 2 cm greater than its width.\nThe area of R is greater than 8 cm2 and the perimeter of R is less than 30 cm.\nGiven that the width of R is w cm,\nfind the set of possible values of w\nGive your answer in the form a\nw\nb\n<\n<\nwhere a and b are rational numbers.\n(6)\n..."
+          }
+        },
+        {
+          "signature": "9|calculate,find|hi",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 4,
+          "years": [
+            2020,
+            2022,
+            2024,
+            2025
+          ],
+          "weighted": 2.31,
+          "common_skills": [
+            "integration",
+            "differentiate",
+            "apply chain rule",
+            "substitute values",
+            "Differentiation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:autumn:2:q4",
+            "context_tag": "Particle motion",
+            "marks": 9,
+            "command_words": [
+              "find",
+              "calculate"
+            ],
+            "skills": [
+              "differentiation",
+              "integration",
+              "substitution"
+            ],
+            "text_excerpt": "\n\n4 A particle P is moving along a straight line. At time t seconds t\n0\n,\nits velocity, v m/s, is given by v\nt\nt\n(a) Find the minimum speed of P\n(3)\nThe acceleration of P at time T seconds is 18 m/s2\n(b) Find the value of T\n(2)\nWhen t = 0, P is at the point X, and when t = 3 , P is at the poin"
+          }
+        },
+        {
+          "signature": "1|solve|mid",
+          "topic": "1",
+          "name": "Logarithmic functions & indices",
+          "size": 5,
+          "years": [
+            2019,
+            2020,
+            2023,
+            2025
+          ],
+          "weighted": 2.23,
+          "common_skills": [
+            "apply logarithmic properties",
+            "apply log rules",
+            "change of base",
+            "solve equation",
+            "change base"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:autumn:2:q8",
+            "context_tag": "Logarithmic equations",
+            "marks": 8,
+            "command_words": [
+              "solve"
+            ],
+            "skills": [
+              "algebraic manipulation",
+              "logarithmic properties",
+              "equation solving"
+            ],
+            "text_excerpt": "\n\n8 Solve, using an algebraic method, the simultaneous equations\nlog\nlog\nlog\nx\ny\nx\ny\n\u001b\n(8)\n............................................................................................................................................................................................................"
+          }
+        },
+        {
+          "signature": "9|find|mid",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 5,
+          "years": [
+            2019,
+            2022,
+            2023,
+            2024
+          ],
+          "weighted": 2.11,
+          "common_skills": [
+            "differentiation",
+            "substitution",
+            "chain rule",
+            "tangent equation",
+            "Differentiate"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:autumn:2:q5",
+            "context_tag": "Liquid vessel",
+            "marks": 5,
+            "command_words": [
+              "Find"
+            ],
+            "skills": [
+              "Differentiate",
+              "Apply chain rule",
+              "Substitute values"
+            ],
+            "text_excerpt": "\n\n5 The height of liquid in a vessel P is h\nThe volume, V, of the liquid in P is given by V\nh\n= 6\nLiquid is leaking from P at a constant rate of 36 cm3/s\nFind the exact rate of change, in cm/s, of h when V = 384\ncm\n(5)\n............................................................................"
+          }
+        },
+        {
+          "signature": "8|find|hi",
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "size": 3,
+          "years": [
+            2022,
+            2023,
+            2025
+          ],
+          "weighted": 1.69,
+          "common_skills": [
+            "3D geometry",
+            "Trigonometry",
+            "Angle calculation",
+            "Equation of line",
+            "Distance calculation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:summer:2R:q2",
+            "context_tag": "Coordinate geometry",
+            "marks": 10,
+            "command_words": [
+              "Find"
+            ],
+            "skills": [
+              "Line equation",
+              "Area calculation",
+              "Coordinate geometry"
+            ],
+            "text_excerpt": "\n\n2 The point P has coordinates\n7 3\n,\nand the point Q has coordinates 3 18\n,\nThe point R divides the line PQ in the ratio 2 3\n:\nThe line l passes through R and is perpendicular to the line PQ\n(a) Find an equation of line l\nGive your answer in the form ay\nbx\nc\n0 where a, b and c are integers.\n(5"
+          }
+        },
+        {
+          "signature": "9|show that|mid",
+          "topic": "9",
+          "name": "Calculus",
+          "size": 4,
+          "years": [
+            2020,
+            2023,
+            2024
+          ],
+          "weighted": 1.63,
+          "common_skills": [
+            "differentiate using product rule",
+            "apply chain rule",
+            "simplify expression",
+            "substitute derivatives",
+            "substitute into equation"
+          ],
+          "representative": {
+            "q_id": "4PM1:2024:summer:2:q5",
+            "context_tag": "Calculus",
+            "marks": 7,
+            "command_words": [
+              "show that"
+            ],
+            "skills": [
+              "apply product rule",
+              "differentiate"
+            ],
+            "text_excerpt": "\n\ny\nx\nx\nx\ne2\nShow that 2\ne\nd\nd\nd\nd\nx\ny\nx\ny\nx\ny\n(7)\n..................................................................................................................................................................................................................................................\n."
+          }
+        },
+        {
+          "signature": "5|find,show|hi",
+          "topic": "5",
+          "name": "Series",
+          "size": 3,
+          "years": [
+            2020,
+            2023
+          ],
+          "weighted": 1.4,
+          "common_skills": [
+            "series sum",
+            "series term calculation",
+            "convergence testing",
+            "sum to infinity calculation",
+            "equation solving"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:autumn:2:q8",
+            "context_tag": "Arithmetic series",
+            "marks": 10,
+            "command_words": [
+              "show",
+              "find"
+            ],
+            "skills": [
+              "series sum",
+              "term identification",
+              "simultaneous equations"
+            ],
+            "text_excerpt": "\n8 The sum to n terms of an arithmetic series A is Sn\nThe sum of the first four terms of A is 42 and the fifth term of A is 23\n(a) Show that S\nPr\nQ\nn\nr\nn\n\u001b\nwhere P and Q are prime numbers.\n(6)\nS\nU\nn\nn\nwhere U n is the nth term of A\n(b) Find the value of n\n(4)\n...................................."
+          }
+        },
+        {
+          "signature": "5|calculate,find|hi",
+          "topic": "5",
+          "name": "Series",
+          "size": 3,
+          "years": [
+            2019,
+            2022,
+            2025
+          ],
+          "weighted": 1.39,
+          "common_skills": [
+            "series sum calculation",
+            "identifying series parameters",
+            "equating series sums",
+            "algebraic manipulation",
+            "equation solving"
+          ],
+          "representative": {
+            "q_id": "4PM1:2025:summer:2R:q4",
+            "context_tag": "Geometric series",
+            "marks": 11,
+            "command_words": [
+              "find",
+              "calculate"
+            ],
+            "skills": [
+              "geometric series sum",
+              "convergence check",
+              "term calculation"
+            ],
+            "text_excerpt": "\n\n(i) Find the value of\n3 2\n\u001b\nk\nk\n(4)\n(ii) The common ratio of a geometric series G is positive.\nThe third term of G is 7\nand the ninth term of G is 448\nG is convergent with sum to infinity S\nFind the exact value of S\n(7)\n........................................................................."
+          }
+        },
+        {
+          "signature": "10|show,solve|hi",
+          "topic": "10",
+          "name": "Trigonometry",
+          "size": 3,
+          "years": [
+            2021,
+            2022,
+            2023
+          ],
+          "weighted": 1.21,
+          "common_skills": [
+            "apply trigonometric identities",
+            "solve trigonometric equations",
+            "trig equation solving",
+            "identity manipulation",
+            "inverse trig functions"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:summer:2R:q11",
+            "context_tag": "Trigonometry",
+            "marks": 12,
+            "command_words": [
+              "show",
+              "solve"
+            ],
+            "skills": [
+              "apply trigonometric identities",
+              "manipulate equations",
+              "solve trigonometric equations"
+            ],
+            "text_excerpt": "\n\n11 (a) Use a formula on page 2 to show that sin\ncos\n2 1\nA\nA\n(3)\n(b) Show that sin\ncos\ncos\nx\nx\nx\n(5)\n(c) Hence solve, in degrees to one decimal place, the equation\nsin\ncos\nsin\nθ\nθ\nθ\nθ\nfor 0\no\no\n(4)\n................................................................................................"
+          }
+        },
+        {
+          "signature": "8|find,show|hi",
+          "topic": "8",
+          "name": "Rectangular Cartesian coordinates",
+          "size": 3,
+          "years": [
+            2019,
+            2022,
+            2023
+          ],
+          "weighted": 1.1,
+          "common_skills": [
+            "apply trigonometry",
+            "use Pythagoras",
+            "calculate lengths",
+            "find angles",
+            "equation of line"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:summer:2R:q8",
+            "context_tag": "Coordinate geometry",
+            "marks": 16,
+            "command_words": [
+              "Find",
+              "Show",
+              "Find",
+              "Find",
+              "Find"
+            ],
+            "skills": [
+              "Coordinate geometry",
+              "Line equation",
+              "Perpendicular lines",
+              "Parallelogram properties",
+              "Area calculation"
+            ],
+            "text_excerpt": "\n\n8 The points A and B have coordinates 1 5\n,\nand 9 9\n,\nrespectively.\n(a) Find an equation of line AB, giving your answer in the form ax\nby\nc\n0, where\na, b and c are integers to be found.\n(3)\nThe line l is perpendicular to AB and passes through the point X which lies on AB\nsuch that AX : XB = 3"
+          }
+        },
+        {
+          "signature": "5|find|mid",
+          "topic": "5",
+          "name": "Series",
+          "size": 3,
+          "years": [
+            2020,
+            2021,
+            2023
+          ],
+          "weighted": 1.06,
+          "common_skills": [
+            "Solving simultaneous equations",
+            "Identifying series terms",
+            "solving equations",
+            "geometric series sum",
+            "convergence condition"
+          ],
+          "representative": {
+            "q_id": "4PM1:2023:summer:2:q2",
+            "context_tag": "Geometric Series",
+            "marks": 6,
+            "command_words": [
+              "find"
+            ],
+            "skills": [
+              "apply geometric series sum formula",
+              "identify series parameters",
+              "calculate sum to infinity"
+            ],
+            "text_excerpt": "\n\n2 The nth term of a convergent geometric series is 8(1–2n)\nFind the sum to infinity of the series.\nGive your answer in the form p\nq where p and q are integers to be found.\n(6)\n....................................................................................................................."
+          }
+        }
+      ]
+    }
+  },
+  "spec_shift": {
+    "n_legacy": 184,
+    "n_nine_one": 471,
+    "legacy_share": {
+      "9": 0.228,
+      "8": 0.125,
+      "1": 0.071,
+      "10": 0.13,
+      "3": 0.065,
+      "2": 0.125,
+      "4": 0.082,
+      "5": 0.098,
+      "6": 0.043,
+      "7": 0.033
+    },
+    "nine_one_share": {
+      "8": 0.127,
+      "5": 0.093,
+      "2": 0.106,
+      "9": 0.246,
+      "4": 0.059,
+      "6": 0.045,
+      "1": 0.076,
+      "7": 0.062,
+      "10": 0.115,
+      "3": 0.07
+    },
+    "grew_under_9_1": [],
+    "shrank_under_9_1": []
+  }
+}
