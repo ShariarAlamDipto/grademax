@@ -40,6 +40,7 @@ export default function Navbar() {
   const extraLinks = [
     { href: "/subjects",     label: "Subjects" },
     { href: "/lectures",     label: "Lectures" },
+    { href: "/blog",         label: "Blog" },
     { href: "/improvements", label: "Improvements" },
   ]
 

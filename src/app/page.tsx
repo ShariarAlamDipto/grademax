@@ -136,11 +136,31 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          § 2  FEATURE CARDS
+          § 2  STATS STRIP
+          ════════════════════════════════════════ */}
+      <section style={{ borderTop: "1px solid var(--gm-border)", background: "var(--gm-surface)", padding: "2.5rem 1.5rem" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))", gap: "1.5rem", textAlign: "center" }}>
+          {([
+            { value: "15+",   label: "Years of papers", sub: "2010 – 2025" },
+            { value: "9",     label: "Subjects",         sub: "IGCSE & A Level" },
+            { value: "100%",  label: "Free",             sub: "No subscription" },
+            { value: "2",     label: "Exam boards",      sub: "Edexcel & Cambridge" },
+          ]).map(({ value, label, sub }) => (
+            <div key={label}>
+              <p style={{ fontSize: "clamp(2rem, 5vw, 2.8rem)", fontWeight: 800, color: "var(--gm-amber)", lineHeight: 1, letterSpacing: "-0.03em" }}>{value}</p>
+              <p style={{ fontWeight: 700, color: "var(--gm-text)", marginTop: "0.3rem", fontSize: "0.9rem" }}>{label}</p>
+              <p style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", marginTop: "0.1rem" }}>{sub}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════
+          § 3  FEATURE CARDS
           ════════════════════════════════════════ */}
       <section style={{
         borderTop: "1px solid var(--gm-border)",
-        background: "var(--gm-surface)",
+        background: "var(--gm-bg)",
         padding: "4rem 1.5rem",
       }}>
         <div style={{ maxWidth: "1080px", margin: "0 auto" }}>
@@ -206,6 +226,104 @@ export default function Home() {
           Click on your worries to catch them.
         </p>
         <LazyWorryCatcher />
+      </section>
+
+      {/* ════════════════════════════════════════
+          § 6  FAQ  (FAQPage rich snippet)
+          ════════════════════════════════════════ */}
+      <section style={{ borderTop: "1px solid var(--gm-border)", padding: "4rem 1.5rem", background: "var(--gm-surface)" }}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Is GradeMax completely free?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. All past papers, mark schemes, the worksheet generator, and the test builder on GradeMax are 100% free. There are no subscriptions, no paywalls, and no hidden costs." }
+              },
+              {
+                "@type": "Question",
+                "name": "Which Edexcel subjects are available on GradeMax?",
+                "acceptedAnswer": { "@type": "Answer", "text": "GradeMax covers Edexcel IGCSE Physics (4PH1), Maths A (4MA1), Maths B (4MB1), Chemistry (4CH1), Biology (4BI1), and ICT (4IT1), plus Edexcel International A Level Pure Mathematics 1 (WMA11), Mechanics 1 (WME01), and Statistics 1 (WST01). Cambridge IGCSE papers are also available." }
+              },
+              {
+                "@type": "Question",
+                "name": "How far back do the past papers go?",
+                "acceptedAnswer": { "@type": "Answer", "text": "GradeMax hosts Edexcel IGCSE and A Level past papers from 2010 all the way through to the most recent 2025 exam series, giving you over 15 years of real exam questions to practise with." }
+              },
+              {
+                "@type": "Question",
+                "name": "Are mark schemes included with the past papers?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every past paper on GradeMax is accompanied by the official Pearson Edexcel or Cambridge mark scheme so you can check your answers immediately after practising." }
+              },
+              {
+                "@type": "Question",
+                "name": "How does the worksheet generator work?",
+                "acceptedAnswer": { "@type": "Answer", "text": "The GradeMax worksheet generator lets you select a subject, choose specific topics, pick a year range and difficulty level, and instantly generates a PDF worksheet made up of real past paper questions — together with a mark scheme. No registration required for basic access." }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I practise questions by topic?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. GradeMax organises every question by topic and chapter so you can drill specific areas of the syllabus. Navigate to any subject page and select a topic to see all past paper questions on that topic sorted by year." }
+              },
+              {
+                "@type": "Question",
+                "name": "Does GradeMax cover Cambridge IGCSE as well as Edexcel?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. In addition to Edexcel IGCSE and A Level papers, GradeMax also hosts Cambridge IGCSE past papers. You can find them under the Past Papers section." }
+              },
+            ]
+          })}}
+        />
+        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>
+            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.5rem" }}>
+              Got questions?
+            </p>
+            <h2 style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.03em", lineHeight: 1.1 }}>
+              Frequently asked questions
+            </h2>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
+            {([
+              ["Is GradeMax completely free?", "Yes. All past papers, mark schemes, the worksheet generator, and the test builder are 100% free — no subscriptions, no paywalls."],
+              ["Which subjects are available?", "Edexcel IGCSE: Physics, Maths A & B, Chemistry, Biology, ICT. Edexcel A Level: Pure Maths 1, Mechanics 1, Statistics 1. Cambridge IGCSE papers are also available."],
+              ["How far back do the papers go?", "GradeMax covers 2010 through the most recent 2025 exam series — over 15 years of real Pearson Edexcel exam questions."],
+              ["Are mark schemes included?", "Yes. Every paper comes with the official Pearson Edexcel or Cambridge mark scheme so you can check your answers immediately."],
+              ["How does the worksheet generator work?", "Choose a subject, pick topics, set a year range and difficulty, and get a downloadable PDF of real past paper questions with a mark scheme — ready in seconds."],
+              ["Can I practise questions by topic?", "Yes. Every question is tagged by topic and chapter. Open any subject page, select a topic, and see all past exam questions on exactly that area of the syllabus."],
+            ] as [string, string][]).map(([q, a], i, arr) => (
+              <details
+                key={q}
+                style={{
+                  borderTop: "1px solid var(--gm-border)",
+                  borderBottom: i === arr.length - 1 ? "1px solid var(--gm-border)" : undefined,
+                  padding: "1.1rem 0",
+                }}
+              >
+                <summary style={{
+                  cursor: "pointer",
+                  fontWeight: 600,
+                  color: "var(--gm-text)",
+                  fontSize: "0.95rem",
+                  listStyle: "none",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  gap: "1rem",
+                  userSelect: "none",
+                }}>
+                  {q}
+                  <span aria-hidden style={{ flexShrink: 0, fontSize: "1.1rem", color: "var(--gm-text-3)" }}>+</span>
+                </summary>
+                <p style={{ marginTop: "0.75rem", color: "var(--gm-text-2)", fontSize: "0.875rem", lineHeight: 1.7, paddingRight: "1rem" }}>
+                  {a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* ════════════════════════════════════════
