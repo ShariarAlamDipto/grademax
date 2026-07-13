@@ -57,9 +57,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/past-papers/cambridge`,   changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/about`,                   changeFrequency: 'monthly', priority: 0.6  },
     { url: `${BASE_URL}/contact`,                 changeFrequency: 'monthly', priority: 0.5  },
+    { url: `${BASE_URL}/blog`,                    changeFrequency: 'weekly',  priority: 0.7  },
     { url: `${BASE_URL}/privacy`,                 changeFrequency: 'yearly',  priority: 0.3  },
     { url: `${BASE_URL}/terms`,                   changeFrequency: 'yearly',  priority: 0.3  },
   ]
+
+  // ─── Blog article pages ───────────────────────────────────────────────────────
+
+  const blogSlugs = [
+    'how-to-use-past-papers-effectively',
+    'edexcel-igcse-physics-revision-guide',
+    'edexcel-igcse-maths-a-revision-guide',
+    'how-to-get-a-star-igcse-chemistry',
+    'pure-maths-1-wma11-revision-tips',
+    'edexcel-vs-cambridge-igcse-differences',
+    'igcse-biology-paper-2-tips',
+    'revision-timetable-igcse-a-level',
+  ]
+
+  const blogPages: MetadataRoute.Sitemap = blogSlugs.map(slug => ({
+    url: `${BASE_URL}/blog/${slug}`,
+    changeFrequency: 'monthly' as const,
+    priority: 0.65,
+  }))
 
   // ─── Level landing pages ──────────────────────────────────────────────────────
 
@@ -233,6 +253,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...corePages,
+    ...blogPages,
     ...levelPages,
     ...subjectPages,
     ...topicPages,
