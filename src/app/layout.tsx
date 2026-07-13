@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Playfair_Display } from 'next/font/google'
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
@@ -247,8 +248,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB" className={playfair.className} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        {/* next/font self-hosts Playfair Display — no runtime request to Google
+            Fonts, so no preconnect needed (removed: it opened a dead TLS
+            connection on every visit). */}
         {/* Theme init — runs before paint to prevent flash */}
         <script
           dangerouslySetInnerHTML={{
@@ -270,6 +272,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </AuthProvider>
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
