@@ -108,11 +108,14 @@ export default async function EdexcelPastPapersPage() {
           Pure Maths, Mechanics, Statistics and more — completely free.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/generate" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
-            Generate Custom Worksheet
-          </Link>
-          <Link href="#igcse" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-gray-700">
+          <Link href="#igcse" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
             Browse Past Papers ↓
+          </Link>
+          {/* Secondary CTA points to the PUBLIC worksheet landing, not /generate
+              (proxy-protected → 307 to /login) — a login wall as the hero CTA was
+              bouncing visitors who searched for papers, not an account. */}
+          <Link href="/edexcel-worksheets" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-gray-700">
+            Generate Custom Worksheet
           </Link>
         </div>
       </section>
@@ -128,9 +131,9 @@ export default async function EdexcelPastPapersPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {igcse.map((subj) => (
-              <Link 
+              <Link
                 key={subj.slug}
-                href={`/subjects/igcse/${subj.slug}`}
+                href={`/past-papers/${subj.slug}`}
                 className="bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-blue-600 transition-colors group"
               >
                 <div className="flex justify-between items-start mb-2">
@@ -141,8 +144,9 @@ export default async function EdexcelPastPapersPage() {
                 </div>
                 <p className="text-sm text-gray-400 mb-2">{subj.shortDescription}</p>
                 <p className="text-xs text-gray-500">
-                  {subj.topics.length} topics · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]} · Mark schemes included
+                  Question papers &amp; mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
                 </p>
+                <p className="text-xs text-blue-400/80 mt-2 group-hover:text-blue-400 transition-colors">Browse papers by year →</p>
               </Link>
             ))}
           </div>
@@ -165,9 +169,9 @@ export default async function EdexcelPastPapersPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {ial.map((subj) => (
-              <Link 
+              <Link
                 key={subj.slug}
-                href={`/subjects/ial/${subj.slug}`}
+                href={`/past-papers/${subj.slug}`}
                 className="bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-purple-600 transition-colors group"
               >
                 <div className="flex justify-between items-start mb-2">
@@ -178,8 +182,9 @@ export default async function EdexcelPastPapersPage() {
                 </div>
                 <p className="text-sm text-gray-400 mb-2">{subj.shortDescription}</p>
                 <p className="text-xs text-gray-500">
-                  {subj.topics.length} topics · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]} · Mark schemes included
+                  Question papers &amp; mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
                 </p>
+                <p className="text-xs text-purple-400/80 mt-2 group-hover:text-purple-400 transition-colors">Browse papers by year →</p>
               </Link>
             ))}
           </div>
@@ -200,7 +205,9 @@ export default async function EdexcelPastPapersPage() {
             Every Edexcel IGCSE and International A Level subject with papers on GradeMax, linked by
             year and by qualification code.
           </p>
-          <PastPaperCatalog levelLabel="Edexcel" />
+          {/* levelLabel intentionally empty — the component prefixes the board name
+              itself (was "Edexcel Edexcel Paper Codes" when this passed "Edexcel"). */}
+          <PastPaperCatalog levelLabel="" />
         </div>
       </section>
 
@@ -256,8 +263,9 @@ export default async function EdexcelPastPapersPage() {
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/edexcel-igcse-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">IGCSE Past Papers</Link>
             <Link href="/edexcel-a-level-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">A Level Past Papers</Link>
+            <Link href="/cambridge-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Cambridge Past Papers</Link>
             <Link href="/edexcel-worksheets" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Custom Worksheets</Link>
-            <Link href="/generate" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Worksheet Generator</Link>
+            <Link href="/edexcel-worksheets" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Worksheet Generator</Link>
             <Link href="/subjects" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">All Subjects</Link>
           </div>
         </div>
