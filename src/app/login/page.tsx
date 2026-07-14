@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Suspense } from "react"
+import { safeNextPath } from "@/lib/safeRedirect"
 
 function isInAppBrowser(): boolean {
   if (typeof navigator === "undefined") return false
@@ -14,7 +15,9 @@ function isInAppBrowser(): boolean {
 
 function LoginForm() {
   const searchParams = useSearchParams()
-  const nextUrl = searchParams.get("next") || "/dashboard"
+  // Sanitize the redirect target: a crafted ?next=//evil.com would otherwise
+  // send a just-authenticated user to an external origin.
+  const nextUrl = safeNextPath(searchParams.get("next"))
   const callbackError = searchParams.get("error")
   const isAdminRedirect = nextUrl.startsWith("/admin")
   const [mode, setMode] = useState<"signin" | "signup">("signin")
