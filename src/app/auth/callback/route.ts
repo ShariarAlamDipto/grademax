@@ -1,6 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
+import { safeNextPath } from "@/lib/safeRedirect"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -8,9 +9,8 @@ export const dynamic = "force-dynamic"
 export async function GET(request: NextRequest) {
   const url = new URL(request.url)
   const code = url.searchParams.get("code")
-  const rawNext = url.searchParams.get("next") || ""
-  // Reject absolute URLs to prevent open redirect
-  const next = rawNext.startsWith("/") ? rawNext : "/dashboard"
+  // Same-site relative paths only — blocks open-redirect via ?next=//evil.com
+  const next = safeNextPath(url.searchParams.get("next"))
 
   const redirectTo = new URL(next, url.origin)
 
