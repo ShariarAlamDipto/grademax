@@ -9,7 +9,7 @@ interface Stats {
   papersWithMS: number
   pages: number
   questionPages: number
-  r2Objects: number
+  r2Objects: number | null
   users: { total: number; admins: number; teachers: number; students: number }
 }
 
@@ -24,6 +24,7 @@ const QUICK_ACTIONS = [
 
 export default function AdminOverviewPage() {
   const [stats, setStats] = useState<Stats | null>(null)
+  const [r2Count, setR2Count] = useState<number | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -31,6 +32,12 @@ export default function AdminOverviewPage() {
       .then(r => r.json())
       .then(d => { setStats(d); setLoading(false) })
       .catch(() => setLoading(false))
+    // R2 count is slow (full bucket listing) — loaded separately so the
+    // dashboard never blocks on it.
+    fetch("/api/admin/stats/r2")
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d && typeof d.r2Objects === "number") setR2Count(d.r2Objects) })
+      .catch(() => {})
   }, [])
 
   const qpPct = stats && stats.papers > 0 ? Math.round((stats.papersWithQP / stats.papers) * 100) : 0
@@ -51,7 +58,7 @@ export default function AdminOverviewPage() {
           { label: "QP Coverage", value: loading ? "—" : `${qpPct}%`, color: "#22c55e", sub: `${stats?.papersWithQP ?? 0} papers` },
           { label: "MS Coverage", value: loading ? "—" : `${msPct}%`, color: "#f97316", sub: `${stats?.papersWithMS ?? 0} papers` },
           { label: "Question Pages", value: stats?.questionPages, color: "#22c55e", sub: `${stats?.pages ?? 0} total pages` },
-          { label: "R2 Files", value: stats?.r2Objects, color: "var(--gm-amber)" },
+          { label: "R2 Files", value: r2Count ?? "…", color: "var(--gm-amber)" },
           { label: "Users", value: stats?.users.total, color: "#a855f7", sub: `${stats?.users.admins ?? 0} admin · ${stats?.users.teachers ?? 0} teacher` },
         ].map(item => (
           <div key={item.label} style={{

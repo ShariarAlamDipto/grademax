@@ -7,6 +7,7 @@ export type UsageFeature =
   | "worksheet_download"
   | "test_builder_session"
   | "test_builder_download"
+  | "paper_view"
 
 export interface UsageEvent {
   user_id?: string | null
