@@ -5,6 +5,7 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 export const dynamic = "force-dynamic"
 
 const FEATURES = [
+  "paper_view",
   "lecture_view",
   "lecture_download",
   "worksheet_generate",
@@ -15,11 +16,26 @@ const FEATURES = [
 
 type Feature = (typeof FEATURES)[number]
 
-interface SubjectRow {
-  subject_name: string | null
-  subject_id: string | null
-  feature: Feature
-  count: number
+// PostgREST caps every select at 1000 rows, silently. Page through results —
+// aggregate functions are disabled on this instance, so aggregation happens
+// here. MAX_ROWS bounds the work; queries order newest-first so a capped
+// result keeps the most recent events.
+const PAGE_SIZE = 1000
+const MAX_ROWS = 20000
+
+interface PageResult<T> {
+  data: T[] | null
+}
+
+async function fetchPaged<T>(fetchPage: (from: number, to: number) => PromiseLike<PageResult<T>>): Promise<T[]> {
+  const rows: T[] = []
+  for (let from = 0; from < MAX_ROWS; from += PAGE_SIZE) {
+    const { data } = await fetchPage(from, from + PAGE_SIZE - 1)
+    const page = data ?? []
+    rows.push(...page)
+    if (page.length < PAGE_SIZE) break
+  }
+  return rows
 }
 
 export async function GET() {
@@ -28,7 +44,7 @@ export async function GET() {
 
   const db = getSupabaseAdmin() || auth.db
 
-  // Total counts per feature (parallel)
+  // Total counts per feature (head requests — exact and cheap)
   const featureCounts = await Promise.all(
     FEATURES.map(f =>
       db.from("usage_events")
@@ -41,67 +57,62 @@ export async function GET() {
   // Unique user counts per feature
   const uniqueUserCounts = await Promise.all(
     FEATURES.map(async f => {
-      const { data } = await db
-        .from("usage_events")
-        .select("user_id")
-        .eq("feature", f)
-        .not("user_id", "is", null)
-      const unique = new Set((data ?? []).map(r => r.user_id)).size
-      return { feature: f, unique }
+      const rows = await fetchPaged<{ user_id: string }>((from, to) =>
+        db.from("usage_events")
+          .select("user_id")
+          .eq("feature", f)
+          .not("user_id", "is", null)
+          .order("created_at", { ascending: false })
+          .range(from, to)
+      )
+      return { feature: f, unique: new Set(rows.map(r => r.user_id)).size }
     })
   )
 
-  // Worksheet events by subject (generate + download)
-  const { data: worksheetRaw } = await db
-    .from("usage_events")
-    .select("feature, subject_name, subject_id")
-    .in("feature", ["worksheet_generate", "worksheet_download"])
-    .not("subject_name", "is", null)
+  const bySubjectRows = (features: Feature[]) =>
+    fetchPaged<{ feature: Feature; subject_name: string | null }>((from, to) =>
+      db.from("usage_events")
+        .select("feature, subject_name")
+        .in("feature", features)
+        .not("subject_name", "is", null)
+        .order("created_at", { ascending: false })
+        .range(from, to)
+    )
 
-  // Test builder events by subject (session + download)
-  const { data: testBuilderRaw } = await db
-    .from("usage_events")
-    .select("feature, subject_name, subject_id")
-    .in("feature", ["test_builder_session", "test_builder_download"])
-    .not("subject_name", "is", null)
-
-  // Last 30 days — daily breakdown
   const thirtyDaysAgo = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString()
-  const { data: recentRaw } = await db
-    .from("usage_events")
-    .select("feature, created_at")
-    .gte("created_at", thirtyDaysAgo)
 
-  // Aggregate totals
-  const totals = Object.fromEntries(featureCounts.map(r => [r.feature, r.count]))
-  const uniqueUsers = Object.fromEntries(uniqueUserCounts.map(r => [r.feature, r.unique]))
-
-  // Aggregate worksheet by subject
-  const worksheetBySubject = aggregateBySubject(
-    (worksheetRaw ?? []) as SubjectRow[],
-    ["worksheet_generate", "worksheet_download"]
-  )
-
-  // Aggregate test builder by subject
-  const testBuilderBySubject = aggregateBySubject(
-    (testBuilderRaw ?? []) as SubjectRow[],
-    ["test_builder_session", "test_builder_download"]
-  )
-
-  // Daily breakdown
-  const daily = buildDaily((recentRaw ?? []) as { feature: Feature; created_at: string }[])
+  const [worksheetRaw, testBuilderRaw, recentRaw, paperViewRaw] = await Promise.all([
+    bySubjectRows(["worksheet_generate", "worksheet_download"]),
+    bySubjectRows(["test_builder_session", "test_builder_download"]),
+    fetchPaged<{ feature: Feature; created_at: string }>((from, to) =>
+      db.from("usage_events")
+        .select("feature, created_at")
+        .gte("created_at", thirtyDaysAgo)
+        .order("created_at", { ascending: false })
+        .range(from, to)
+    ),
+    fetchPaged<{ created_at: string; subject_name: string | null; metadata: { title?: string } | null }>((from, to) =>
+      db.from("usage_events")
+        .select("created_at, subject_name, metadata")
+        .eq("feature", "paper_view")
+        .order("created_at", { ascending: false })
+        .range(from, to)
+    ),
+  ])
 
   return NextResponse.json({
-    totals,
-    uniqueUsers,
-    worksheetBySubject,
-    testBuilderBySubject,
-    daily,
+    totals: Object.fromEntries(featureCounts.map(r => [r.feature, r.count])),
+    uniqueUsers: Object.fromEntries(uniqueUserCounts.map(r => [r.feature, r.unique])),
+    worksheetBySubject: aggregateBySubject(worksheetRaw, ["worksheet_generate", "worksheet_download"]),
+    testBuilderBySubject: aggregateBySubject(testBuilderRaw, ["test_builder_session", "test_builder_download"]),
+    daily: buildDaily(recentRaw),
+    topPapers: buildTopPapers(paperViewRaw, thirtyDaysAgo),
+    paperViewsBySubject: buildPaperViewsBySubject(paperViewRaw),
   })
 }
 
 function aggregateBySubject(
-  rows: { feature: Feature; subject_name: string | null; subject_id: string | null }[],
+  rows: { feature: Feature; subject_name: string | null }[],
   features: Feature[]
 ): Record<string, Record<string, number>> {
   const map: Record<string, Record<string, number>> = {}
@@ -136,4 +147,34 @@ function buildDaily(
   return Object.entries(map)
     .sort(([a], [b]) => a.localeCompare(b))
     .map(([date, counts]) => ({ date, ...counts }))
+}
+
+function buildTopPapers(
+  rows: { created_at: string; metadata: { title?: string } | null }[],
+  thirtyDaysAgo: string
+): { title: string; total: number; last30: number }[] {
+  const map: Record<string, { total: number; last30: number }> = {}
+  for (const row of rows) {
+    const title = row.metadata?.title || "Unknown"
+    if (!map[title]) map[title] = { total: 0, last30: 0 }
+    map[title].total += 1
+    if (row.created_at >= thirtyDaysAgo) map[title].last30 += 1
+  }
+  return Object.entries(map)
+    .map(([title, counts]) => ({ title, ...counts }))
+    .sort((a, b) => b.total - a.total)
+    .slice(0, 30)
+}
+
+function buildPaperViewsBySubject(
+  rows: { subject_name: string | null }[]
+): { subject: string; views: number }[] {
+  const map: Record<string, number> = {}
+  for (const row of rows) {
+    const name = row.subject_name ?? "Unknown"
+    map[name] = (map[name] ?? 0) + 1
+  }
+  return Object.entries(map)
+    .map(([subject, views]) => ({ subject, views }))
+    .sort((a, b) => b.views - a.views)
 }

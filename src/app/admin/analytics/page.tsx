@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 interface Stats {
   subjects: number; papers: number; papersWithQP: number; papersWithMS: number
-  r2Objects: number; tests: number; worksheets: number
+  r2Objects: number | null; tests: number; worksheets: number
   users: { total: number; admins: number; teachers: number; students: number }
 }
 
@@ -21,6 +21,8 @@ interface UsageData {
   worksheetBySubject: Record<string, Record<string, number>>
   testBuilderBySubject: Record<string, Record<string, number>>
   daily: { date: string; [key: string]: number | string }[]
+  topPapers: { title: string; total: number; last30: number }[]
+  paperViewsBySubject: { subject: string; views: number }[]
 }
 
 const Bar = ({ value, max, color }: { value: number; max: number; color: string }) => (
@@ -50,6 +52,7 @@ export default function AnalyticsAdminPage() {
   const [subjects, setSubjects] = useState<Subject[]>([])
   const [coverage, setCoverage] = useState<CoverageRow[]>([])
   const [usage, setUsage] = useState<UsageData | null>(null)
+  const [r2Count, setR2Count] = useState<number | null>(null)
   const [loading, setLoading] = useState(true)
   const [coverageLoading, setCoverageLoading] = useState(false)
   const [usageLoading, setUsageLoading] = useState(false)
@@ -65,6 +68,12 @@ export default function AnalyticsAdminPage() {
       setSubjects(sub.subjects || [])
       setLoading(false)
     }).catch(() => setLoading(false))
+    // R2 count is slow (full bucket listing) — load it separately so the
+    // dashboard never blocks on it.
+    fetch("/api/admin/stats/r2")
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d && typeof d.r2Objects === "number") setR2Count(d.r2Objects) })
+      .catch(() => {})
   }, [])
 
   const loadCoverage = async () => {
@@ -143,13 +152,13 @@ export default function AnalyticsAdminPage() {
             {[
               { label: "Total Subjects", value: stats?.subjects ?? 0, color: "var(--gm-blue)" },
               { label: "Total Papers", value: stats?.papers ?? 0, color: "var(--gm-text)" },
-              { label: "R2 Storage Files", value: stats?.r2Objects ?? 0, color: "#f59e0b" },
+              { label: "R2 Storage Files", value: r2Count, color: "#f59e0b" },
               { label: "Tests Created", value: stats?.tests ?? 0, color: "#a855f7" },
               { label: "Worksheets Created", value: stats?.worksheets ?? 0, color: "#06b6d4" },
             ].map(s => (
               <div key={s.label} style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", padding: "1.25rem" }}>
                 <p style={{ fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.5rem" }}>{s.label}</p>
-                <p style={{ fontSize: "2rem", fontWeight: 800, color: s.color }}>{s.value.toLocaleString()}</p>
+                <p style={{ fontSize: "2rem", fontWeight: 800, color: s.color }}>{s.value === null ? "…" : s.value.toLocaleString()}</p>
               </div>
             ))}
           </div>
@@ -279,6 +288,58 @@ export default function AnalyticsAdminPage() {
             <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>No data yet.</div>
           ) : (
             <>
+              {/* Paper views */}
+              <h2 style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>Paper Views</h2>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem", marginBottom: "1.25rem" }}>
+                <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", padding: "1.25rem" }}>
+                  <p style={{ fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.5rem" }}>Papers Opened</p>
+                  <p style={{ fontSize: "2rem", fontWeight: 800, color: "var(--gm-blue)", lineHeight: 1 }}>{(usage.totals.paper_view ?? 0).toLocaleString()}</p>
+                  <p style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", marginTop: "0.3rem" }}>via the on-site viewer, incl. anonymous visitors</p>
+                </div>
+              </div>
+
+              {(usage.topPapers ?? []).length === 0 ? (
+                <p style={{ fontSize: "0.8rem", color: "var(--gm-text-3)", marginBottom: "2rem" }}>
+                  No paper views recorded yet — tracking starts with the next deploy. Views appear here as visitors open papers.
+                </p>
+              ) : (
+                <>
+                  {/* Most viewed papers */}
+                  <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden", marginBottom: "1.25rem" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "auto 1fr 90px 90px", gap: "0.875rem", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                      <span style={{ width: "1.5rem" }}></span>
+                      <span>Paper</span>
+                      <span style={{ textAlign: "right" }}>30 Days</span>
+                      <span style={{ textAlign: "right" }}>All Time</span>
+                    </div>
+                    {(usage.topPapers ?? []).map((p, i, arr) => (
+                      <div key={p.title} style={{ display: "grid", gridTemplateColumns: "auto 1fr 90px 90px", gap: "0.875rem", padding: "0.625rem 1rem", borderBottom: i < arr.length - 1 ? "1px solid var(--gm-border)" : "none", alignItems: "center" }}>
+                        <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", width: "1.5rem", textAlign: "right" }}>{i + 1}</span>
+                        <span style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--gm-text)" }}>{p.title}</span>
+                        <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--gm-blue)", textAlign: "right" }}>{p.last30.toLocaleString()}</span>
+                        <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--gm-text-2)", textAlign: "right" }}>{p.total.toLocaleString()}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Paper views by subject */}
+                  {(usage.paperViewsBySubject ?? []).length > 0 && (
+                    <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden", marginBottom: "2rem" }}>
+                      <div style={{ display: "grid", gridTemplateColumns: "1fr 90px", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+                        <span>Subject</span>
+                        <span style={{ textAlign: "right" }}>Views</span>
+                      </div>
+                      {(usage.paperViewsBySubject ?? []).map((row, i, arr) => (
+                        <div key={row.subject} style={{ display: "grid", gridTemplateColumns: "1fr 90px", padding: "0.625rem 1rem", borderBottom: i < arr.length - 1 ? "1px solid var(--gm-border)" : "none", alignItems: "center" }}>
+                          <span style={{ fontSize: "0.82rem", fontWeight: 500, color: "var(--gm-text)" }}>{row.subject}</span>
+                          <span style={{ fontSize: "0.82rem", fontWeight: 600, color: "var(--gm-blue)", textAlign: "right" }}>{row.views.toLocaleString()}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+
               {/* Lectures */}
               <h2 style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>Lectures</h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem", marginBottom: "2rem" }}>
@@ -344,7 +405,7 @@ export default function AnalyticsAdminPage() {
                     <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.75rem" }}>
                       <thead>
                         <tr style={{ borderBottom: "1px solid var(--gm-border)" }}>
-                          {["Date", "Lec Views", "Lec DL", "WS Gen", "WS DL", "TB Sessions", "TB DL"].map(h => (
+                          {["Date", "Paper Views", "Lec Views", "Lec DL", "WS Gen", "WS DL", "TB Sessions", "TB DL"].map(h => (
                             <th key={h} style={{ padding: "0.5rem 0.75rem", textAlign: h === "Date" ? "left" : "right", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em", whiteSpace: "nowrap" }}>{h}</th>
                           ))}
                         </tr>
@@ -353,7 +414,7 @@ export default function AnalyticsAdminPage() {
                         {[...usage.daily].reverse().map((row, i) => (
                           <tr key={row.date as string} style={{ borderBottom: i < usage.daily.length - 1 ? "1px solid var(--gm-border)" : "none" }}>
                             <td style={{ padding: "0.5rem 0.75rem", color: "var(--gm-text-2)", fontWeight: 500 }}>{row.date}</td>
-                            {["lecture_view", "lecture_download", "worksheet_generate", "worksheet_download", "test_builder_session", "test_builder_download"].map(f => (
+                            {["paper_view", "lecture_view", "lecture_download", "worksheet_generate", "worksheet_download", "test_builder_session", "test_builder_download"].map(f => (
                               <td key={f} style={{ padding: "0.5rem 0.75rem", textAlign: "right", color: (row[f] as number) > 0 ? "var(--gm-text)" : "var(--gm-text-3)", fontWeight: (row[f] as number) > 0 ? 600 : 400 }}>
                                 {(row[f] as number) || 0}
                               </td>
