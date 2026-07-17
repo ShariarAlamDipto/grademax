@@ -25,6 +25,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["recharts", "@supabase/supabase-js", "pdf-lib", "zod"],
   },
+  // The prebuild papers-index snapshot (src/generated/papers-index.json) is read
+  // with fs at runtime by on-demand past-papers renders (Cambridge deep pages),
+  // so it must be traced into those function bundles. Missing file = DB fallback.
+  outputFileTracingIncludes: {
+    "/past-papers/**": ["./src/generated/**"],
+  },
   compress: true,
   productionBrowserSourceMaps: false,
   images: {
@@ -82,7 +88,7 @@ const nextConfig: NextConfig = {
       },
       // Cache static SEO pages for better Core Web Vitals
       {
-        source: "/:path(edexcel-past-papers|edexcel-igcse-past-papers|edexcel-a-level-past-papers|edexcel-worksheets|subjects|about|privacy|terms|contact)",
+        source: "/:path(edexcel-past-papers|edexcel-igcse-past-papers|edexcel-a-level-past-papers|edexcel-worksheets|cambridge-past-papers|cambridge-igcse-past-papers|cambridge-a-level-past-papers|subjects|about|privacy|terms|contact)",
         headers: [
           { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
         ],

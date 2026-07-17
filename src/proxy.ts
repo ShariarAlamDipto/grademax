@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server"
 import { createServerClient } from "@supabase/ssr"
+import { isPublicToolsTrialActive } from "@/lib/publicToolsTrial"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Canonicalization (SEO). Runs before auth so a non-canonical URL 301s in a
@@ -29,6 +30,14 @@ function canonicalRedirect(request: NextRequest): NextResponse | null {
 }
 
 export async function proxy(request: NextRequest) {
+  // The MCP connector (/api/mcp) is a POST-based JSON-RPC endpoint with its own
+  // (currently anonymous) auth model. It must never be redirected or have
+  // Supabase cookie work run against it — a 301/308 on a POST silently breaks
+  // MCP clients. Bypass everything below.
+  if (request.nextUrl.pathname.startsWith("/api/mcp")) {
+    return NextResponse.next({ request: { headers: request.headers } })
+  }
+
   // Canonicalize /past-papers/* path casing first — a single same-host 301.
   const canonical = canonicalRedirect(request)
   if (canonical) return canonical
@@ -63,7 +72,10 @@ export async function proxy(request: NextRequest) {
   // IMPORTANT: always call getUser() so the session gets refreshed
   // and cookies are written. Do NOT use getSession() — it doesn't
   // validate the JWT with the Supabase Auth server.
-  const protectedPaths = ["/dashboard", "/profile", "/generate", "/admin", "/lectures"]
+  // /generate is public while the free-access trial runs (see publicToolsTrial.ts)
+  const protectedPaths = isPublicToolsTrialActive()
+    ? ["/dashboard", "/profile", "/admin", "/lectures"]
+    : ["/dashboard", "/profile", "/generate", "/admin", "/lectures"]
   const isProtected = protectedPaths.some((p) =>
     request.nextUrl.pathname.startsWith(p)
   )
