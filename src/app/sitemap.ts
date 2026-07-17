@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { createClient } from '@supabase/supabase-js'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
 import { pastPaperSubjects, subjects, dbNameOf } from '@/lib/subjects'
+import { cambridgeSeoSubjects, cambridgeQpSlugs } from '@/lib/cambridge-seo'
 import { toPaperSlug } from '@/lib/paper-slugs'
 
 const BASE_URL = 'https://www.grademax.me'
@@ -46,6 +47,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/edexcel-past-papers`,     changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE_URL}/edexcel-igcse-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE_URL}/edexcel-a-level-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/cambridge-past-papers`,   changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE_URL}/cambridge-igcse-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/cambridge-a-level-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE_URL}/edexcel-worksheets`,      changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE_URL}/subjects`,                changeFrequency: 'weekly',  priority: 0.9  },
     // /generate is auth-gated (307 → /login) so it must NOT be in the sitemap;
@@ -231,6 +235,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ]
   })
 
+  // Cambridge syllabus-code landing pages (/qp/0620, /qp/9702-past-papers…) —
+  // the code long-tail students search verbatim. Same static /qp route.
+  const cambridgeQpPages: MetadataRoute.Sitemap = cambridgeSeoSubjects.flatMap((s) =>
+    cambridgeQpSlugs(s).map((slug) => ({
+      url: `${BASE_URL}/qp/${slug}`,
+      changeFrequency: 'weekly' as const,
+      priority: 0.85,
+    }))
+  )
+
   return [
     ...corePages,
     ...levelPages,
@@ -241,5 +255,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...sessionPages,
     ...paperPages,             // ← individual paper pages (year/season/paper-N)
     ...qpPages,
+    ...cambridgeQpPages,       // ← Cambridge syllabus-code pages (/qp/0620…)
   ]
 }

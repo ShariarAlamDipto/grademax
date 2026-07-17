@@ -1,4 +1,4 @@
-import { subjects, boardOf, type Board, type Level } from "@/lib/subjects"
+import { subjects, boardOf, levelShort, type Board, type Level } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { getPapersIndex } from "@/lib/papersIndex"
 
@@ -48,16 +48,34 @@ export async function getHubData(level?: Level, board: Board = "edexcel"): Promi
     .map((s) => ({ slug: s.slug, name: s.name, level: s.level, years: yearsFor(s.slug) }))
     .sort((a, b) => a.name.localeCompare(b.name))
 
-  const codeRefs: ExamCodeRef[] = seoSubjects
-    .filter(
-      (s) =>
-        (!level || s.level === level) &&
-        isSingleUnitEdexcelCode(s.examCode) &&
-        !s.name.startsWith("IAL ") &&
-        hasPapers(s.slug),
-    )
-    .map((s) => ({ code: s.examCode, subjectLabel: `${s.levelDisplay} ${s.name}`, slug: s.slug }))
-    .sort((a, b) => a.code.localeCompare(b.code))
+  // Edexcel: single-unit qualification codes from the curated SEO subjects.
+  // Cambridge: every verified subject carries its CAIE syllabus code directly.
+  const codeRefs: ExamCodeRef[] =
+    board === "cambridge"
+      ? subjects
+          .filter(
+            (s) =>
+              boardOf(s.level) === "cambridge" &&
+              (!level || s.level === level) &&
+              Boolean(s.examCode) &&
+              hasPapers(s.slug),
+          )
+          .map((s) => ({
+            code: s.examCode as string,
+            subjectLabel: `${levelShort(s.level)} ${s.name}`,
+            slug: s.slug,
+          }))
+          .sort((a, b) => a.code.localeCompare(b.code))
+      : seoSubjects
+          .filter(
+            (s) =>
+              (!level || s.level === level) &&
+              isSingleUnitEdexcelCode(s.examCode) &&
+              !s.name.startsWith("IAL ") &&
+              hasPapers(s.slug),
+          )
+          .map((s) => ({ code: s.examCode, subjectLabel: `${s.levelDisplay} ${s.name}`, slug: s.slug }))
+          .sort((a, b) => a.code.localeCompare(b.code))
 
   return { subjects: subjectEntries, codeRefs }
 }

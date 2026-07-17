@@ -1,7 +1,12 @@
+import type { Metadata } from "next"
 import { redirect } from "next/navigation"
 import { getSupabaseServer } from "@/lib/supabaseServer"
 import { isSuperAdmin } from "@/lib/supabaseAdmin"
 import AdminNav from "@/components/admin/AdminNav"
+
+export const metadata: Metadata = {
+  title: "Admin",
+}
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const supabase = getSupabaseServer()

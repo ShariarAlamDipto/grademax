@@ -1,6 +1,11 @@
 // Page is implicitly dynamic due to cookies() usage in getSupabaseServer()
 
+import type { Metadata } from "next"
 import { redirect } from "next/navigation"
+
+export const metadata: Metadata = {
+  title: "Dashboard",
+}
 import { getSupabaseServer } from "@/lib/supabaseServer"
 import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 import LevelAndGoal from "@/components/dashboard/LevelAndGoal"

@@ -39,6 +39,13 @@ interface PaperRow {
 
 const VALID_SEASONS = new Set(["jan", "jan-feb", "feb-mar", "may-jun", "oct-nov"])
 
+// Cambridge series shorthand (m/s/w) — "0620 s23" is how CAIE students search.
+const CAMBRIDGE_SERIES_LETTER: Record<string, string> = {
+  "feb-mar": "m",
+  "may-jun": "s",
+  "oct-nov": "w",
+}
+
 function parseYearParam(value: string): number | null {
   if (!/^\d{4}$/.test(value)) return null
   const year = Number.parseInt(value, 10)
@@ -73,11 +80,15 @@ export async function generateMetadata({
   const examCode = seoData?.examCode ?? subj.examCode ?? ""
   const codeStr = examCode ? ` (${examCode})` : ""
   const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith("IAL ")
+  const isCambridge = boardOf(subj.level) === "cambridge"
   // Lead with code + year + session for queries like "4ma1/1hr may 2025". The
   // /past-papers layout's plain-string title blocks the root template here, so the
-  // brand suffix is added explicitly.
+  // brand suffix is added explicitly. Cambridge: winning SERP titles put the name
+  // immediately before the syllabus code ("Chemistry 0620") plus the session.
   const title = codeLed
     ? `${examCode} ${yearLabel} ${seasonName} Past Paper + Mark Scheme – Edexcel ${subj.name}`
+    : isCambridge && examCode
+    ? `${subj.name} ${examCode} ${seasonName} ${yearLabel} Past Papers – Cambridge ${level} QP & MS`
     : `${board} ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers – Free PDF`
 
   return {
@@ -94,6 +105,14 @@ export async function generateMetadata({
             `${examCode} ${yearLabel} past paper`,
             `${examCode} mark scheme ${yearLabel}`,
             `${examCode} past papers`,
+          ]
+        : []),
+      // Cambridge series shorthand students type verbatim: "0620 s23" = May/June 2023.
+      ...(isCambridge && examCode && CAMBRIDGE_SERIES_LETTER[normalizedSeason]
+        ? [
+            `${subj.name} ${examCode} ${seasonName} ${yearLabel}`,
+            `${examCode} ${CAMBRIDGE_SERIES_LETTER[normalizedSeason]}${yearLabel.slice(2)}`,
+            `CAIE ${subj.name} ${yearLabel} ${seasonName}`,
           ]
         : []),
       `${subj.name} ${yearLabel} paper 1`,

@@ -1,8 +1,8 @@
 
 import type { Metadata } from "next"
-import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
-import { pastPaperSubjects, dbNameOf, type Subject } from "@/lib/subjects"
+import { pastPaperSubjects, type Subject } from "@/lib/subjects"
+import { getSubjectSlugsWithPapers } from "@/lib/papersIndex"
 
 export const metadata: Metadata = {
   title: "Free Edexcel Past Papers – IGCSE & A Level by Year | GradeMax",
@@ -80,58 +80,19 @@ const codeColorMap: Record<Subject["colorKey"], string> = {
 }
 
 export default async function PastPapersPage() {
-  const subjectsWithPapers = new Set<string>()
+  // Which subjects have papers comes from the shared, memoized papers index
+  // (see getSubjectSlugsWithPapers) instead of re-scanning all ~11k paper rows
+  // here — the index is already built by the leaf/session pages in the same
+  // render pass, so this catalog page adds no extra DB round-trips.
+  const slugsWithPapers = await getSubjectSlugsWithPapers()
 
-  try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!,
-      { auth: { autoRefreshToken: false, persistSession: false } }
-    )
+  // An empty set means the index failed to load (never the case in prod, where
+  // papers always exist). Fall back to listing every known subject rather than
+  // serving an empty catalog — matches the previous error-handling behaviour.
+  const availableSubjects = slugsWithPapers.size > 0
+    ? pastPaperSubjects.filter(s => slugsWithPapers.has(s.slug))
+    : pastPaperSubjects
 
-    const pageSize = 1000
-    let lastSeenId: string | null = null
-
-    while (true) {
-      let query = supabase
-        .from("papers")
-        .select("id,subjects!inner(name)")
-        .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
-        .order("id", { ascending: true })
-        .limit(pageSize)
-
-      if (lastSeenId) {
-        query = query.gt("id", lastSeenId)
-      }
-
-      const { data: paperRows, error } = await query
-
-      // Supabase returns errors (eg. quota restriction 402) via the `error`
-      // field rather than throwing. Treat that the same as the catch below:
-      // fall back to listing all known subjects so we never serve an empty
-      // page just because the API was momentarily unavailable.
-      if (error) {
-        pastPaperSubjects.forEach(s => subjectsWithPapers.add(dbNameOf(s)))
-        break
-      }
-
-      if (!paperRows || paperRows.length === 0) break
-
-      const typedRows = paperRows as Array<{ id: string; subjects: { name: string } | { name: string }[] }>
-      for (const row of typedRows) {
-        const s = Array.isArray(row.subjects) ? row.subjects[0] : row.subjects
-        if (s?.name) subjectsWithPapers.add(s.name)
-      }
-
-      lastSeenId = typedRows[typedRows.length - 1].id
-      if (typedRows.length < pageSize) break
-    }
-  } catch {
-    // Same fallback for transport-level errors (no network, DNS failure, etc.)
-    pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
-  }
-
-  const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(dbNameOf(s)))
   const igcse = availableSubjects.filter((s) => s.level === "igcse")
   const ial  = availableSubjects.filter((s) => s.level === "ial")
   const hasCambridge = availableSubjects.some(
