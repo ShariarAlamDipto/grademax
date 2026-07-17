@@ -134,6 +134,7 @@ export async function listTopics(
 
 interface PageRow {
   id: string
+  paper_id?: string
   page_number: number
   question_number: string | null
   topics: string[] | null
@@ -143,6 +144,40 @@ interface PageRow {
   has_diagram: boolean | null
   text_excerpt: string | null
   papers: { year: number; season: string; paper_number: string } | null
+}
+
+/** Columns fetched for every question row (shared by search + practice test). */
+const PAGE_SELECT =
+  "id,paper_id,page_number,question_number,topics,difficulty,qp_page_url,ms_page_url,has_diagram,text_excerpt,papers(year,season,paper_number)"
+
+/** Map a `pages` row to the public QuestionResult shape (URLs + viewer link). */
+function mapPageRow(subjectName: string, p: PageRow): QuestionResult {
+  const qp = toAbsolutePdfUrl(p.qp_page_url)
+  const ms = toAbsolutePdfUrl(p.ms_page_url)
+  const viewerHref =
+    isAllowedPdfUrl(qp) || isAllowedPdfUrl(ms)
+      ? buildViewerHref({
+          doc: isAllowedPdfUrl(qp) ? "qp" : "ms",
+          qpUrl: qp,
+          msUrl: ms,
+          title: `${subjectName} ${p.papers?.year ?? ""} ${p.papers?.season ?? ""} Q${p.question_number ?? p.page_number}`.trim(),
+          backPath: "/test-builder",
+        })
+      : null
+  return {
+    id: p.id,
+    questionNumber: p.question_number || String(p.page_number),
+    topics: p.topics ?? [],
+    difficulty: p.difficulty || "unknown",
+    year: p.papers?.year ?? null,
+    season: p.papers?.season ?? null,
+    paper: p.papers?.paper_number ?? null,
+    hasDiagram: p.has_diagram ?? false,
+    textExcerpt: (p.text_excerpt ?? "").slice(0, 500),
+    questionPdfUrl: qp,
+    markSchemePdfUrl: ms,
+    viewerUrl: viewerHref ? `${SITE_ORIGIN}${viewerHref}` : null,
+  }
 }
 
 export async function searchQuestions(opts: {
@@ -204,11 +239,7 @@ export async function searchQuestions(opts: {
   // Step 2: page rows + exact count in one round-trip.
   let q = sb
     .from("pages")
-    .select(
-      `id,page_number,question_number,topics,difficulty,qp_page_url,ms_page_url,has_diagram,text_excerpt,
-       papers(year,season,paper_number)`,
-      { count: "exact" }
-    )
+    .select(PAGE_SELECT, { count: "exact" })
     .eq("is_question", true)
     .not("qp_page_url", "is", null)
     .in("paper_id", paperIds)
@@ -222,34 +253,7 @@ export async function searchQuestions(opts: {
 
   const total = count ?? 0
   const rows = (pages ?? []) as unknown as PageRow[]
-  const questions: QuestionResult[] = rows.map((p) => {
-    const qp = toAbsolutePdfUrl(p.qp_page_url)
-    const ms = toAbsolutePdfUrl(p.ms_page_url)
-    const viewerHref =
-      isAllowedPdfUrl(qp) || isAllowedPdfUrl(ms)
-        ? buildViewerHref({
-            doc: isAllowedPdfUrl(qp) ? "qp" : "ms",
-            qpUrl: qp,
-            msUrl: ms,
-            title: `${resolved.subject.name} ${p.papers?.year ?? ""} ${p.papers?.season ?? ""} Q${p.question_number ?? p.page_number}`.trim(),
-            backPath: "/test-builder",
-          })
-        : null
-    return {
-      id: p.id,
-      questionNumber: p.question_number || String(p.page_number),
-      topics: p.topics ?? [],
-      difficulty: p.difficulty || "unknown",
-      year: p.papers?.year ?? null,
-      season: p.papers?.season ?? null,
-      paper: p.papers?.paper_number ?? null,
-      hasDiagram: p.has_diagram ?? false,
-      textExcerpt: (p.text_excerpt ?? "").slice(0, 500),
-      questionPdfUrl: qp,
-      markSchemePdfUrl: ms,
-      viewerUrl: viewerHref ? `${SITE_ORIGIN}${viewerHref}` : null,
-    }
-  })
+  const questions = rows.map((p) => mapPageRow(resolved.subject.name, p))
 
   return {
     ok: true,
@@ -259,5 +263,156 @@ export async function searchQuestions(opts: {
     page,
     totalPages: Math.ceil(total / limit),
     questions,
+  }
+}
+
+/**
+ * Round-robin pick across buckets: takes one item from each bucket in turn
+ * until `count` is reached or all buckets are exhausted. Gives an even spread
+ * across topics (or papers) rather than a run from a single source.
+ */
+function roundRobin<T>(buckets: T[][], count: number): T[] {
+  const out: T[] = []
+  let progressed = true
+  for (let i = 0; out.length < count && progressed; i++) {
+    progressed = false
+    for (const bucket of buckets) {
+      if (i < bucket.length) {
+        out.push(bucket[i]!)
+        progressed = true
+        if (out.length >= count) break
+      }
+    }
+  }
+  return out
+}
+
+export interface PracticeTest {
+  subject: string
+  classified: boolean
+  requestedCount: number
+  selectedCount: number
+  topicBreakdown: Record<string, number>
+  difficultyBreakdown: Record<string, number>
+  yearsCovered: number[]
+  testBuilderUrl: string
+  questions: QuestionResult[]
+}
+
+export async function buildPracticeTest(opts: {
+  subject: string
+  topics?: string[]
+  difficulty?: Difficulty
+  yearStart?: number
+  yearEnd?: number
+  count?: number
+}): Promise<{ ok: true; test: PracticeTest } | { ok: false; error: string }> {
+  const sb = anon()
+  if (!sb) return { ok: false, error: "Server is not configured for database access." }
+
+  const resolved = await resolveSubjectId(sb, opts.subject)
+  if ("error" in resolved) return { ok: false, error: resolved.error }
+
+  const classified = CLASSIFIED_SUBJECT_SLUGS.has(resolved.subject.slug)
+  const requestedCount = Math.min(30, Math.max(1, opts.count ?? 10))
+
+  const emptyTest = (): PracticeTest => ({
+    subject: resolved.subject.name,
+    classified,
+    requestedCount,
+    selectedCount: 0,
+    topicBreakdown: {},
+    difficultyBreakdown: {},
+    yearsCovered: [],
+    testBuilderUrl: `${SITE_ORIGIN}/test-builder`,
+    questions: [],
+  })
+
+  if (!classified) return { ok: true, test: emptyTest() }
+
+  // Paper IDs for this subject (optional year window).
+  let paperQuery = sb.from("papers").select("id").eq("subject_id", resolved.id)
+  if (opts.yearStart) paperQuery = paperQuery.gte("year", opts.yearStart)
+  if (opts.yearEnd) paperQuery = paperQuery.lte("year", opts.yearEnd)
+  const { data: papers, error: paperErr } = await paperQuery
+  if (paperErr) return { ok: false, error: `Failed to fetch papers: ${paperErr.message}` }
+  if (!papers || papers.length === 0) return { ok: true, test: emptyTest() }
+  const paperIds = papers.map((p) => p.id as string)
+
+  // Map each requested topic code to its normalized numeric id, keeping the
+  // original code for the breakdown labels.
+  const requestedTopics = (opts.topics ?? []).map((t) => t.trim()).filter(Boolean)
+  const idToCode = new Map<string, string>()
+  for (const code of requestedTopics) {
+    for (const id of normalizeTopicCodes([code])) idToCode.set(id, code)
+  }
+  const topicIds = Array.from(idToCode.keys())
+
+  // Candidate pool (larger than the final set so selection can spread it out).
+  let q = sb
+    .from("pages")
+    .select(PAGE_SELECT)
+    .eq("is_question", true)
+    .not("qp_page_url", "is", null)
+    .in("paper_id", paperIds)
+    .order("page_number", { ascending: true })
+    .limit(300)
+  if (topicIds.length > 0) q = q.overlaps("topics", topicIds)
+  if (opts.difficulty) q = q.eq("difficulty", opts.difficulty)
+
+  const { data: pool, error: poolErr } = await q
+  if (poolErr) return { ok: false, error: `Failed to fetch questions: ${poolErr.message}` }
+  const rows = (pool ?? []) as unknown as PageRow[]
+  if (rows.length === 0) return { ok: true, test: emptyTest() }
+
+  // Bucket for an even spread: by requested topic when several are asked for,
+  // otherwise by source paper so the set isn't all from one exam.
+  const buckets = new Map<string, PageRow[]>()
+  const bucketKey = (r: PageRow): string => {
+    if (topicIds.length > 1) {
+      const hit = topicIds.find((id) => (r.topics ?? []).includes(id))
+      return hit ?? "other"
+    }
+    return r.paper_id ?? "other"
+  }
+  for (const r of rows) {
+    const k = bucketKey(r)
+    const b = buckets.get(k)
+    if (b) b.push(r)
+    else buckets.set(k, [r])
+  }
+
+  const selected = roundRobin(Array.from(buckets.values()), requestedCount)
+  const questions = selected.map((p) => mapPageRow(resolved.subject.name, p))
+
+  // Breakdowns for the summary.
+  const topicBreakdown: Record<string, number> = {}
+  const difficultyBreakdown: Record<string, number> = {}
+  const years = new Set<number>()
+  for (const p of selected) {
+    for (const tid of p.topics ?? []) {
+      const label = idToCode.get(tid) ?? tid
+      // Only count requested topics when a topic filter was given.
+      if (topicIds.length > 0 && !idToCode.has(tid)) continue
+      topicBreakdown[label] = (topicBreakdown[label] ?? 0) + 1
+    }
+    const d = p.difficulty || "unknown"
+    difficultyBreakdown[d] = (difficultyBreakdown[d] ?? 0) + 1
+    if (p.papers?.year) years.add(p.papers.year)
+  }
+
+  return {
+    ok: true,
+    test: {
+      subject: resolved.subject.name,
+      classified,
+      requestedCount,
+      selectedCount: questions.length,
+      topicBreakdown,
+      difficultyBreakdown,
+      yearsCovered: Array.from(years).sort((a, b) => b - a),
+      testBuilderUrl: `${SITE_ORIGIN}/test-builder`,
+      questions,
+    },
   }
 }

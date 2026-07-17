@@ -28,6 +28,7 @@ import {
 import {
   listTopics,
   searchQuestions,
+  buildPracticeTest,
   DIFFICULTIES,
 } from "@/lib/mcp/questions"
 
@@ -209,6 +210,53 @@ const handler = createMcpHandler(
           count: res.questions.length,
           questions: res.questions,
         })
+      }
+    )
+
+    server.registerTool(
+      "build_practice_test",
+      {
+        title: "Build a practice test for a subject",
+        description:
+          "Assemble a ready-to-use practice test: given a subject and optionally " +
+          "topics, difficulty, and a year range, this selects a balanced set of " +
+          "questions (spread across the chosen topics and across different papers) " +
+          "and returns them with question-paper and mark-scheme PDF links plus a " +
+          "viewer link for each, a topic/difficulty breakdown, and a link to the " +
+          "on-site test builder. Use this when the user asks you to \"make\", " +
+          "\"build\", or \"put together\" a practice test, mock, or problem set. " +
+          "Only the six classified subjects work: physics, maths-b, chemistry, " +
+          "biology, human-biology, further-pure-maths. Pass topic codes from " +
+          "list_topics; default is 10 questions (max 30).",
+        inputSchema: {
+          subject: z.string().describe("Subject slug from list_subjects."),
+          topics: z
+            .array(z.string())
+            .optional()
+            .describe("Topic codes from list_topics to include."),
+          difficulty: difficultyEnum.optional(),
+          yearStart: z.number().int().min(2000).max(2100).optional(),
+          yearEnd: z.number().int().min(2000).max(2100).optional(),
+          count: z
+            .number()
+            .int()
+            .min(1)
+            .max(30)
+            .optional()
+            .describe("How many questions to include (default 10, max 30)."),
+        },
+      },
+      async ({ subject, topics, difficulty, yearStart, yearEnd, count }) => {
+        const res = await buildPracticeTest({
+          subject,
+          topics,
+          difficulty,
+          yearStart,
+          yearEnd,
+          count,
+        })
+        if (!res.ok) return error(res.error)
+        return json(res.test)
       }
     )
   },
