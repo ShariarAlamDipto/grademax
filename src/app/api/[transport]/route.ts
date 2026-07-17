@@ -25,6 +25,11 @@ import {
   getPaper,
   VALID_SEASONS,
 } from "@/lib/mcp/catalog"
+import {
+  listTopics,
+  searchQuestions,
+  DIFFICULTIES,
+} from "@/lib/mcp/questions"
 
 // catalog.ts reads a local file via node:fs; keep this off the Edge runtime.
 export const runtime = "nodejs"
@@ -34,6 +39,7 @@ export const maxDuration = 60
 const boardEnum = z.enum(["edexcel", "cambridge"])
 const levelEnum = z.enum(["igcse", "ial", "cambridge-igcse", "cambridge-a-level"])
 const seasonEnum = z.enum(VALID_SEASONS)
+const difficultyEnum = z.enum(DIFFICULTIES)
 
 function json(data: unknown) {
   return { content: [{ type: "text" as const, text: JSON.stringify(data, null, 2) }] }
@@ -128,6 +134,81 @@ const handler = createMcpHandler(
         const res = await getPaper({ subject, year, season, paper })
         if (!res.ok) return error(res.error)
         return json(res.paper)
+      }
+    )
+
+    server.registerTool(
+      "list_topics",
+      {
+        title: "List syllabus topics for a subject",
+        description:
+          "List the syllabus topics (chapters) for a subject, so you can then " +
+          "filter questions by topic with search_questions. Call this when the user " +
+          "wants to revise a specific chapter or topic. `subject` is a slug from " +
+          "list_subjects. Note: question-level topic data exists only for these six " +
+          "subjects: physics, maths-b, chemistry, biology, human-biology, " +
+          "further-pure-maths. Each topic returns a `code` to pass to search_questions.",
+        inputSchema: {
+          subject: z.string().describe("Subject slug from list_subjects."),
+        },
+      },
+      async ({ subject }) => {
+        const res = await listTopics(subject)
+        if (!res.ok) return error(res.error)
+        return json({
+          subject: res.subject,
+          questionLevelSearchAvailable: res.classified,
+          topicCount: res.topics.length,
+          topics: res.topics,
+        })
+      }
+    )
+
+    server.registerTool(
+      "search_questions",
+      {
+        title: "Search individual exam questions by topic",
+        description:
+          "Find individual past-paper questions for a subject, optionally filtered by " +
+          "topic, difficulty, and year range. Use this to build topic-based revision " +
+          "(e.g. \"give me hard Physics waves questions\"). Each result includes the " +
+          "question-page PDF, its mark-scheme PDF, and a viewer link. Pass topic " +
+          "`code`s from list_topics. Question-level data exists only for physics, " +
+          "maths-b, chemistry, biology, human-biology, and further-pure-maths; other " +
+          "subjects return no questions (use search_papers for whole papers instead).",
+        inputSchema: {
+          subject: z.string().describe("Subject slug from list_subjects."),
+          topics: z
+            .array(z.string())
+            .optional()
+            .describe("Topic codes from list_topics, e.g. [\"3\",\"4\"]."),
+          difficulty: difficultyEnum.optional(),
+          yearStart: z.number().int().min(2000).max(2100).optional(),
+          yearEnd: z.number().int().min(2000).max(2100).optional(),
+          page: z.number().int().min(1).optional(),
+          limit: z.number().int().min(1).max(50).optional(),
+        },
+      },
+      async ({ subject, topics, difficulty, yearStart, yearEnd, page, limit }) => {
+        const res = await searchQuestions({
+          subject,
+          topics,
+          difficulty,
+          yearStart,
+          yearEnd,
+          page,
+          limit,
+        })
+        if (!res.ok) return error(res.error)
+        return json({
+          subject: res.subject,
+          questionLevelSearchAvailable: res.classified,
+          total: res.total,
+          page: res.page,
+          totalPages: res.totalPages,
+          count: res.questions.length,
+          questions: res.questions,
+        })
       }
     )
   },
