@@ -1,5 +1,6 @@
 ﻿import { redirect } from "next/navigation"
 import { getSupabaseServer } from "@/lib/supabaseServer"
+import { isPublicToolsTrialActive } from "@/lib/publicToolsTrial"
 import { createClient } from "@supabase/supabase-js"
 import WorksheetGenerator from "@/components/generate/WorksheetGenerator"
 
@@ -22,7 +23,7 @@ const ALLOWED_WORKSHEET_SUBJECT_CODES = WORKSHEET_SUBJECT_SLOTS.flat()
 export default async function GeneratePage() {
   const serverClient = getSupabaseServer()
   const { data: { user } } = await serverClient.auth.getUser()
-  if (!user) redirect("/login?next=/generate")
+  if (!user && !isPublicToolsTrialActive()) redirect("/login?next=/generate")
 
   const supabase = createClient(supabaseUrl, supabaseKey)
 

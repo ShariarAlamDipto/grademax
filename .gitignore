@@ -46,3 +46,6 @@ check_pages.js
 scripts/check-r2.js
 config/google-service-account.json
 config/*.json
+
+# build-time papers-index snapshot (regenerated every build by prebuild)
+/src/generated/

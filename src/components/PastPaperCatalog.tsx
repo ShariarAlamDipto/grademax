@@ -1,12 +1,14 @@
 import Link from "next/link"
 import { getHubData } from "@/lib/hub-index"
-import type { Level } from "@/lib/subjects"
+import type { Board, Level } from "@/lib/subjects"
 
 interface PastPaperCatalogProps {
   /** Restrict to one level; omit for all subjects (top-level hub). */
   level?: Level
   /** Human label used in headings, e.g. "IGCSE", "A Level", "Edexcel". */
   levelLabel: string
+  /** Exam board whose subjects to list. Defaults to Edexcel (original hubs). */
+  board?: Board
 }
 
 const headingStyle: React.CSSProperties = {
@@ -25,18 +27,24 @@ const headingStyle: React.CSSProperties = {
  * makes the full /past-papers catalog reachable from each hub. All links are
  * filtered against the DB index in getHubData(), so none point at empty pages.
  */
-export default async function PastPaperCatalog({ level, levelLabel }: PastPaperCatalogProps) {
-  const { subjects, codeRefs } = await getHubData(level)
+export default async function PastPaperCatalog({ level, levelLabel, board = "edexcel" }: PastPaperCatalogProps) {
+  const { subjects, codeRefs } = await getHubData(level, board)
   if (subjects.length === 0) return null
+
+  const boardName = board === "cambridge" ? "Cambridge" : "Edexcel"
+  // Cambridge calls them syllabus codes (0620, 9702); Edexcel paper codes (4PH1).
+  const codeNoun = board === "cambridge" ? "syllabus code" : "paper code"
+  // "Edexcel IGCSE", or just the board name when no level qualifier is given.
+  const scopeLabel = [boardName, levelLabel].filter(Boolean).join(" ")
 
   return (
     <>
       {codeRefs.length > 0 && (
         <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
-          <h2 style={headingStyle}>Edexcel {levelLabel} Paper Codes</h2>
+          <h2 style={headingStyle}>{scopeLabel} {board === "cambridge" ? "Syllabus Codes" : "Paper Codes"}</h2>
           <p style={{ color: "var(--gm-text-2)", fontSize: "0.85rem", lineHeight: 1.6, maxWidth: "640px", marginBottom: "1.25rem" }}>
-            Every Edexcel qualification has a code that students often search by. Here is what each
-            Edexcel {levelLabel} paper code stands for — tap any code to open its past papers.
+            Every {boardName} qualification has a {codeNoun} that students often search by. Here is what each
+            {" "}{scopeLabel} {codeNoun} stands for — tap any code to open its past papers.
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: "0.5rem" }}>
             {codeRefs.map((ref) => (
@@ -57,7 +65,7 @@ export default async function PastPaperCatalog({ level, levelLabel }: PastPaperC
       )}
 
       <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
-        <h2 style={headingStyle}>Browse Every Edexcel {levelLabel} Subject by Year</h2>
+        <h2 style={headingStyle}>Browse Every {scopeLabel} Subject by Year</h2>
         <p style={{ color: "var(--gm-text-2)", fontSize: "0.85rem", lineHeight: 1.6, maxWidth: "640px", marginBottom: "1.5rem" }}>
           Pick a subject to see every session, or jump straight to a year. Each session page has the
           question papers and official mark schemes as free PDFs.

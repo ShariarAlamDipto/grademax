@@ -27,7 +27,8 @@ export default function Footer() {
                 ["/about",                  "About Us"],
                 ["/contact",                "Contact"],
                 ["/edexcel-past-papers",    "Edexcel Past Papers"],
-                ["/past-papers/cambridge",  "Cambridge Past Papers"],
+                // Head-term landing; the by-year catalog stays linked under Features.
+                ["/cambridge-past-papers",  "Cambridge Past Papers"],
                 ["/edexcel-worksheets",     "Worksheet Generator"],
               ] as [string, string][]).map(([href, label]) => (
                 <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>

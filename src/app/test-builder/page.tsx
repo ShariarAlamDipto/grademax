@@ -1,5 +1,6 @@
 import { getSupabaseServer } from "@/lib/supabaseServer"
 import { createClient } from "@supabase/supabase-js"
+import { isPublicToolsTrialActive } from "@/lib/publicToolsTrial"
 import TestBuilderPage from "@/components/test-builder/TestBuilderPage"
 import TestBuilderLanding from "@/components/test-builder/TestBuilderLanding"
 
@@ -10,8 +11,9 @@ export default async function TestBuilderRoute() {
   const serverClient = getSupabaseServer()
   const { data: { user } } = await serverClient.auth.getUser()
   // Logged-out visitors (and crawlers) get the indexable landing page instead of
-  // a 307 to /login — the tool itself still requires a session.
-  if (!user) return <TestBuilderLanding />
+  // a 307 to /login — the tool itself still requires a session, except while the
+  // free-access trial runs (see publicToolsTrial.ts).
+  if (!user && !isPublicToolsTrialActive()) return <TestBuilderLanding />
 
   const supabase = createClient(supabaseUrl, supabaseKey)
 

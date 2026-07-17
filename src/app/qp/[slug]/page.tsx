@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
-import { createClient } from '@supabase/supabase-js'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { cache } from 'react'
 import { seoSubjects, isSingleUnitEdexcelCode, type SEOSubject } from '@/lib/seo-subjects'
 import { getPapersIndex } from '@/lib/papersIndex'
+import { getCambridgeQpMap, cambridgeLevelSeo } from '@/lib/cambridge-seo'
+import CambridgeQpLanding from '@/components/CambridgeQpLanding'
 import {
   generateOrganizationSchema,
   generateBreadcrumbSchema,
@@ -37,74 +37,16 @@ function getSlugMapping(): Record<string, SEOSubject> {
 
 const slugMap = getSlugMapping()
 
+// Cambridge syllabus-code slugs (/qp/0620, /qp/9702-past-papers…). Codes are
+// numeric and unique, so they can never collide with the alphanumeric Edexcel
+// slugs above — but Edexcel wins on any overlap, as the established pages.
+const cambridgeQpMap = Object.fromEntries(
+  Object.entries(getCambridgeQpMap()).filter(([key]) => !(key in slugMap))
+)
+
 function serializeJsonLd(schema: object): string {
   return JSON.stringify(schema).replace(/</g, '\\u003c')
 }
-
-function parseYearParam(value: unknown): number | null {
-  if (typeof value === 'number') {
-    if (!Number.isInteger(value)) return null
-    if (value < 2000 || value > 2100) return null
-    return value
-  }
-
-  const raw = String(value ?? '').trim()
-  if (!/^\d{4}$/.test(raw)) return null
-  const year = Number.parseInt(raw, 10)
-  if (year < 2000 || year > 2100) return null
-  return year
-}
-
-function isValidPublicUrl(url: string | null): boolean {
-  if (!url) return false
-  return /^https?:\/\//i.test(url)
-}
-
-const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
-
-function normalizeSeason(value: unknown): string {
-  return String(value ?? '').trim().toLowerCase()
-}
-
-const getAvailableYearsForSubject = cache(async (subjectName: string): Promise<number[]> => {
-  try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!,
-      { auth: { autoRefreshToken: false, persistSession: false } }
-    )
-
-    const { data: subjectRow } = await supabase
-      .from('subjects')
-      .select('id')
-      .eq('name', subjectName)
-      .maybeSingle()
-
-    if (!subjectRow) return []
-
-    const { data } = await supabase
-      .from('papers')
-      .select('year, season, pdf_url, markscheme_pdf_url')
-      .eq('subject_id', subjectRow.id)
-      .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
-
-    const years = new Set<number>()
-    for (const row of data ?? []) {
-      const hasRenderableFile = isValidPublicUrl(row.pdf_url) || isValidPublicUrl(row.markscheme_pdf_url)
-      if (!hasRenderableFile) continue
-
-      const season = normalizeSeason(row.season)
-      if (!VALID_SEASONS.has(season)) continue
-
-      const year = parseYearParam(row.year)
-      if (year !== null) years.add(year)
-    }
-
-    return Array.from(years).sort((a, b) => b - a)
-  } catch {
-    return []
-  }
-})
 
 // Fully static. generateStaticParams below enumerates every real slug (the same
 // set the sitemap advertises), so unknown /qp/* URLs return an instant
@@ -114,7 +56,7 @@ export const dynamicParams = false
 export const revalidate = false
 
 export async function generateStaticParams() {
-  return Object.keys(slugMap).map(slug => ({ slug }))
+  return [...Object.keys(slugMap), ...Object.keys(cambridgeQpMap)].map(slug => ({ slug }))
 }
 
 type PageProps = {
@@ -123,6 +65,49 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
+
+  // Cambridge syllabus-code pages. SERP research: winning titles put the subject
+  // name immediately before the code ("Chemistry 0620") and carry a CAIE token.
+  // Root layout template appends " | GradeMax".
+  const cambridge = cambridgeQpMap[slug]
+  if (cambridge) {
+    const code = cambridge.examCode ?? ''
+    const lvlSeo = cambridgeLevelSeo(cambridge)
+    const title = `${cambridge.name} ${code} Past Papers – Cambridge ${lvlSeo} Mark Schemes (CAIE)`
+    const description = `Free Cambridge ${lvlSeo} ${cambridge.name} (${code}) past papers with mark schemes, 2015–2025. Feb/March, May/June and Oct/Nov series, all variants — free PDF download.`
+    return {
+      title,
+      description,
+      keywords: [
+        `${code} past papers`,
+        `${cambridge.name} ${code}`,
+        `${code} mark scheme`,
+        `${code} question papers`,
+        `Cambridge ${lvlSeo} ${cambridge.name} past papers`,
+        `CAIE ${cambridge.name} past papers`,
+        `CIE ${code}`,
+        `${code} past papers free download`,
+        `${cambridge.name} ${code} may june`,
+        `${cambridge.name} ${code} oct nov`,
+      ],
+      openGraph: {
+        title,
+        description,
+        url: `https://www.grademax.me/qp/${slug}`,
+        siteName: 'GradeMax',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${cambridge.name} ${code} Past Papers | GradeMax`,
+        description: `Free Cambridge ${lvlSeo} ${cambridge.name} (${code}) past papers with mark schemes.`,
+      },
+      alternates: {
+        canonical: `https://www.grademax.me/qp/${slug}`,
+      },
+    }
+  }
+
   const subject = slugMap[slug]
   if (!subject) return {}
 
@@ -181,18 +166,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function SubjectQPPage({ params }: PageProps) {
   const { slug } = await params
+
+  // Cambridge code pages render their own board-specific landing — the Edexcel
+  // layout below is SEOSubject-shaped (topics, worksheet CTAs) which Cambridge
+  // subjects don't have.
+  const cambridge = cambridgeQpMap[slug]
+  if (cambridge) {
+    return <CambridgeQpLanding subject={cambridge} slug={slug} />
+  }
+
   const subject = slugMap[slug]
   if (!subject) notFound()
 
   const baseUrl = 'https://www.grademax.me'
   const levelDisplay = subject.levelDisplay
-  const availableYears = await getAvailableYearsForSubject(subject.name)
-  const candidateYears = availableYears.length > 0 ? availableYears : [...subject.yearsAvailable].reverse()
-  // Filter against the index so we never emit a /past-papers link to a year
-  // the subject hub didn't actually build (avoids soft-404s for Googlebot).
+  // Years come straight from the shared papers index — the exact set the
+  // /past-papers hub built from, so every link targets a page that exists
+  // (no soft-404s for Googlebot). Replaces a per-page 2-query DB lookup that
+  // could only ever agree with the index.
   const { yearsBySubject } = await getPapersIndex()
-  const realYears = yearsBySubject.get(subject.slug) ?? new Set<number>()
-  const yearLinks = candidateYears.filter((y) => realYears.has(y))
+  const yearLinks = Array.from(yearsBySubject.get(subject.slug) ?? []).sort((a, b) => b - a)
 
   const schema = {
     '@context': 'https://schema.org',

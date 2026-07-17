@@ -1,7 +1,16 @@
 // src/app/page.tsx
+import type { Metadata } from "next"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import LazyWorryCatcher from "@/components/LazyWorryCatcher"
+
+const CURRENT_YEAR = new Date().getFullYear()
+
+// Brand-first on the homepage tab; the keyword-first default in layout.tsx
+// still covers every page that doesn't set its own title.
+export const metadata: Metadata = {
+  title: { absolute: `GradeMax – Free Edexcel Past Papers ${CURRENT_YEAR} | IGCSE & A Level` },
+}
 
 const SubjectGrid = dynamic(() => import("@/components/SubjectGrid"))
 const FeatureCards = dynamic(() => import("@/components/FeatureCards"))
@@ -225,6 +234,7 @@ export default function Home() {
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.25rem 1rem", marginTop: "1.25rem" }}>
           {([
             ["/edexcel-past-papers",         "Edexcel Past Papers"],
+            ["/cambridge-past-papers",       "Cambridge Past Papers"],
             ["/edexcel-igcse-past-papers",   "IGCSE Past Papers"],
             ["/edexcel-a-level-past-papers", "A Level Past Papers"],
             ["/edexcel-worksheets",          "Worksheet Generator"],
