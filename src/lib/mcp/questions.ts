@@ -44,13 +44,23 @@ export interface TopicSummary {
 export interface QuestionResult {
   id: string
   questionNumber: string
+  /** Raw topic ids as stored in pages.topics (kept for reference/filtering). */
   topics: string[]
+  /** Human-readable topic names resolved from the topics table. */
+  topicNames: string[]
   difficulty: string
   year: number | null
   season: string | null
   paper: string | null
   hasDiagram: boolean
-  textExcerpt: string
+  /**
+   * Extracted question text when the subject was ingested with text (Chemistry,
+   * Biology, Human Biology, Further Pure Maths, Maths B). `null` for image-only
+   * subjects (Physics, Mechanics 1) that have no text in the database.
+   */
+  questionText: string | null
+  /** False when the question is image-only — the PDF is the sole source. */
+  textAvailable: boolean
   questionPdfUrl: string | null
   markSchemePdfUrl: string | null
   viewerUrl: string | null
@@ -151,8 +161,42 @@ interface PageRow {
 const PAGE_SELECT =
   "id,paper_id,page_number,question_number,topics,difficulty,qp_page_url,ms_page_url,has_diagram,text_excerpt,papers(year,season,paper_number)"
 
+/**
+ * Build a map from the topic ids stored in pages.topics to human-readable
+ * topic names. pages.topics stores normalized ids (e.g. "3", "M1.1", "1.2"),
+ * while the topics table stores codes (e.g. "WAVE", "M1.1", "1.2"); running
+ * each code through normalizeTopicCodes yields the same id the pages use, so
+ * we can resolve "3" -> "Waves" for the client.
+ */
+async function loadTopicIdToName(
+  sb: SupabaseClient,
+  subjectId: string
+): Promise<Map<string, string>> {
+  const { data } = await sb
+    .from("topics")
+    .select("code,name")
+    .eq("subject_id", subjectId)
+  const map = new Map<string, string>()
+  for (const t of data ?? []) {
+    const code = t.code as string
+    const name = t.name as string
+    map.set(code, name)
+    for (const id of normalizeTopicCodes([code])) map.set(id, name)
+  }
+  return map
+}
+
+function normalizeDifficulty(raw: string | null): string {
+  if (!raw || raw === "None") return "unspecified"
+  return raw
+}
+
 /** Map a `pages` row to the public QuestionResult shape (URLs + viewer link). */
-function mapPageRow(subjectName: string, p: PageRow): QuestionResult {
+function mapPageRow(
+  subjectName: string,
+  idToName: Map<string, string>,
+  p: PageRow
+): QuestionResult {
   const qp = toAbsolutePdfUrl(p.qp_page_url)
   const ms = toAbsolutePdfUrl(p.ms_page_url)
   const viewerHref =
@@ -165,16 +209,21 @@ function mapPageRow(subjectName: string, p: PageRow): QuestionResult {
           backPath: "/test-builder",
         })
       : null
+  const ids = p.topics ?? []
+  const rawText = (p.text_excerpt ?? "").trim()
+  const textAvailable = rawText.length > 20
   return {
     id: p.id,
     questionNumber: p.question_number || String(p.page_number),
-    topics: p.topics ?? [],
-    difficulty: p.difficulty || "unknown",
+    topics: ids,
+    topicNames: ids.map((id) => idToName.get(id) ?? id),
+    difficulty: normalizeDifficulty(p.difficulty),
     year: p.papers?.year ?? null,
     season: p.papers?.season ?? null,
     paper: p.papers?.paper_number ?? null,
     hasDiagram: p.has_diagram ?? false,
-    textExcerpt: (p.text_excerpt ?? "").slice(0, 500),
+    questionText: textAvailable ? rawText : null,
+    textAvailable,
     questionPdfUrl: qp,
     markSchemePdfUrl: ms,
     viewerUrl: viewerHref ? `${SITE_ORIGIN}${viewerHref}` : null,
@@ -254,7 +303,8 @@ export async function searchQuestions(opts: {
 
   const total = count ?? 0
   const rows = (pages ?? []) as unknown as PageRow[]
-  const questions = rows.map((p) => mapPageRow(resolved.subject.name, p))
+  const idToName = await loadTopicIdToName(sb, resolved.id)
+  const questions = rows.map((p) => mapPageRow(resolved.subject.name, idToName, p))
 
   return {
     ok: true,
@@ -384,21 +434,22 @@ export async function buildPracticeTest(opts: {
   }
 
   const selected = roundRobin(Array.from(buckets.values()), requestedCount)
-  const questions = selected.map((p) => mapPageRow(resolved.subject.name, p))
+  const idToName = await loadTopicIdToName(sb, resolved.id)
+  const questions = selected.map((p) => mapPageRow(resolved.subject.name, idToName, p))
 
-  // Breakdowns for the summary.
+  // Breakdowns for the summary (topic names for readability).
   const topicBreakdown: Record<string, number> = {}
   const difficultyBreakdown: Record<string, number> = {}
   const years = new Set<number>()
   for (const p of selected) {
     for (const tid of p.topics ?? []) {
-      const label = idToCode.get(tid) ?? tid
       // Only count requested topics when a topic filter was given.
       if (topicIds.length > 0 && !idToCode.has(tid)) continue
+      const label = idToName.get(tid) ?? idToCode.get(tid) ?? tid
       topicBreakdown[label] = (topicBreakdown[label] ?? 0) + 1
     }
-    const d = p.difficulty || "unknown"
-    difficultyBreakdown[d] = (difficultyBreakdown[d] ?? 0) + 1
+    difficultyBreakdown[p.difficulty || "unspecified"] =
+      (difficultyBreakdown[p.difficulty || "unspecified"] ?? 0) + 1
     if (p.papers?.year) years.add(p.papers.year)
   }
 
