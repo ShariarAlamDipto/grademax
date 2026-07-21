@@ -42,6 +42,23 @@ const levelEnum = z.enum(["igcse", "ial", "cambridge-igcse", "cambridge-a-level"
 const seasonEnum = z.enum(VALID_SEASONS)
 const difficultyEnum = z.enum(DIFFICULTIES)
 
+// Shared instruction appended to every question-returning tool. The whole point
+// is that the model selects and delivers real exam questions without rewriting
+// them — the returned PDFs are the authoritative artifacts. Each question ships
+// with topicNames + difficulty for understanding/selection and questionText when
+// it exists; for image-only questions (textAvailable=false) the PDF is the ONLY
+// source and must be handed to the student verbatim.
+const QUESTION_USAGE_GUIDANCE =
+  "How to use these results: select questions using topicNames and difficulty " +
+  "(and questionText when textAvailable is true). Deliver each question by " +
+  "giving the student its questionPdfUrl and markSchemePdfUrl (or viewerUrl) — " +
+  "these PDFs ARE the exam questions. Do NOT rewrite, rephrase, renumber, " +
+  "summarise, or invent question wording, marks, or answers. When " +
+  "textAvailable is false (image-based questions, e.g. Physics and Mechanics), " +
+  "you have no reliable text for the question — do not attempt to transcribe or " +
+  "describe its contents from the PDF; present the PDF link as-is and rely only " +
+  "on topicNames and difficulty to reason about it."
+
 function json(data: unknown) {
   return { content: [{ type: "text" as const, text: JSON.stringify(data, null, 2) }] }
 }
@@ -172,11 +189,14 @@ const handler = createMcpHandler(
         description:
           "Find individual past-paper questions for a subject, optionally filtered by " +
           "topic, difficulty, and year range. Use this to build topic-based revision " +
-          "(e.g. \"give me hard Physics waves questions\"). Each result includes the " +
-          "question-page PDF, its mark-scheme PDF, and a viewer link. Pass topic " +
-          "`code`s from list_topics. Question-level data exists only for physics, " +
-          "maths-b, chemistry, biology, human-biology, and further-pure-maths; other " +
-          "subjects return no questions (use search_papers for whole papers instead).",
+          "(e.g. \"give me hard Physics waves questions\"). Each result includes " +
+          "topicNames (what the question tests), difficulty, questionText when " +
+          "available (textAvailable), the question-page PDF, its mark-scheme PDF, and " +
+          "a viewer link. Pass topic `code`s from list_topics. Question-level data " +
+          "exists only for physics, maths-b, chemistry, biology, human-biology, " +
+          "further-pure-maths, and mechanics-1; other subjects return no questions " +
+          "(use search_papers for whole papers instead). " +
+          QUESTION_USAGE_GUIDANCE,
         inputSchema: {
           subject: z.string().describe("Subject slug from list_subjects."),
           topics: z
@@ -208,6 +228,7 @@ const handler = createMcpHandler(
           page: res.page,
           totalPages: res.totalPages,
           count: res.questions.length,
+          guidance: QUESTION_USAGE_GUIDANCE,
           questions: res.questions,
         })
       }
@@ -225,9 +246,10 @@ const handler = createMcpHandler(
           "viewer link for each, a topic/difficulty breakdown, and a link to the " +
           "on-site test builder. Use this when the user asks you to \"make\", " +
           "\"build\", or \"put together\" a practice test, mock, or problem set. " +
-          "Only the six classified subjects work: physics, maths-b, chemistry, " +
-          "biology, human-biology, further-pure-maths. Pass topic codes from " +
-          "list_topics; default is 10 questions (max 30).",
+          "Only the seven classified subjects work: physics, maths-b, chemistry, " +
+          "biology, human-biology, further-pure-maths, mechanics-1. Pass topic codes " +
+          "from list_topics; default is 10 questions (max 30). " +
+          QUESTION_USAGE_GUIDANCE,
         inputSchema: {
           subject: z.string().describe("Subject slug from list_subjects."),
           topics: z
@@ -256,12 +278,12 @@ const handler = createMcpHandler(
           count,
         })
         if (!res.ok) return error(res.error)
-        return json(res.test)
+        return json({ ...res.test, guidance: QUESTION_USAGE_GUIDANCE })
       }
     )
   },
   {
-    serverInfo: { name: "grademax", version: "1.0.0" },
+    serverInfo: { name: "grademax", version: "1.1.0" },
   },
   {
     basePath: "/api",
