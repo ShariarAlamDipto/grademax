@@ -16,6 +16,7 @@ const WORKSHEET_SUBJECT_SLOTS = [
   ['4BI1', '4BI0'],   // IGCSE Biology
   ['4HB1', '4HB0'],   // IGCSE Human Biology
   ['4PM1', '9FM0'],   // IGCSE Further Pure Mathematics (9FM0 retained as legacy alias)
+  ['WME01'],          // IAL Mechanics 1 (M1) -- NOT 4ME1, which is a separate IGCSE subject
 ] as const
 
 const ALLOWED_WORKSHEET_SUBJECT_CODES = WORKSHEET_SUBJECT_SLOTS.flat()

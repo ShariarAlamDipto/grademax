@@ -16,7 +16,7 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Optional, Set
 from statistics import median
 from collections import defaultdict
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from PyPDF2 import PdfReader, PdfWriter
 
 @dataclass
@@ -28,6 +28,10 @@ class PageData:
     height: float
     words: List[Dict]
     lines: List[Dict]
+    # First-column cells of any ruled tables on the page. On Pearson mark
+    # schemes these are the question labels ("1i.", "2a", ...) which text-flow
+    # extraction jumbles but table extraction recovers cleanly.
+    table_first_col: List[str] = field(default_factory=list)
 
 class M1Processor:
     def __init__(self):
@@ -37,8 +41,17 @@ class M1Processor:
             r'Q(\d{1,2})\s*(?:\n|\r\n?|\s|_)*\(Total\s+(\d+)\s+marks?\)',
             re.IGNORECASE | re.MULTILINE
         )
-        # Question starts: "1. " or "2. " at line start
-        self.QP_START = re.compile(r'(?m)^(\d{1,2})\.\s+')
+        # 2018+ Edexcel template instead writes "(Total for Question 3 = 10 marks)".
+        # Without this the end of every question is undetected on modern papers and
+        # each span silently falls back to the whole document.
+        self.QP_END_MODERN = re.compile(
+            r'Total\s+for\s+Question\s+(\d{1,2})\s*(?:=|:)?\s*(\d+)?\s*marks?',
+            re.IGNORECASE
+        )
+        # Question starts: "1. " or "2. " at line start. The trailing content is
+        # optional: when a question opens with a figure the number is extracted as
+        # a line of its own ("2."), which a required \s+ would miss entirely.
+        self.QP_START = re.compile(r'(?m)^(\d{1,2})\.(?:\s|$)')
         self.MS_HEADER = re.compile(r'(?i)Question\s*Number.*Scheme.*Marks(?:.*Notes)?')
         # MS row pattern: Allow no space between number and subpart (e.g., "6(a)")
         self.MS_ROW = re.compile(
@@ -79,6 +92,31 @@ class M1Processor:
         
         return text
     
+    # Header fragments that pdfplumber merges into the SAME line as the question
+    # number on some templates, e.g. "GradeMax June 2012 Leave blank 2. A box ..."
+    # Left un-stripped these defeat the "^N." question-start match. Note the
+    # GradeMax stamp is added by our own ingest, so it pollutes our own detection.
+    _LINE_HEADER_TOKEN = re.compile(
+        r'^\s*(?:GradeMax'
+        r'|Leave\s+blank'
+        r'|Turn\s+over'
+        r'|DO\s+NOT\s+WRITE(?:\s+IN\s+THIS\s+AREA)?'
+        r'|\*[A-Z0-9]+\*'
+        r'|(?:January|February|March|April|May|June|July|August|September|October|'
+        r'November|December)(?:/[A-Za-z]{3,9})?\s+\d{4}'
+        r'|[A-Za-z_ ]+·[^·]*·[^·]*·[^·]*·\s*QP'
+        r')\s*',
+        re.IGNORECASE,
+    )
+
+    def strip_line_header(self, text: str) -> str:
+        """Remove any run of leading header tokens from a single extracted line."""
+        prev = None
+        while prev != text:
+            prev = text
+            text = self._LINE_HEADER_TOKEN.sub('', text, count=1)
+        return text
+
     def scrub_qp_headers(self, text: str) -> str:
         """Aggressive QP header/footer scrubbing"""
         lines = []
@@ -113,7 +151,17 @@ class M1Processor:
                 
                 # Group words into lines (simple grouping by y-position)
                 lines = self._group_words_into_lines(words, width)
-                
+
+                # First-column table cells (question labels on MS scheme pages)
+                table_first_col = []
+                try:
+                    for table in (page.extract_tables() or []):
+                        for row in table:
+                            if row and row[0]:
+                                table_first_col.append(row[0].strip())
+                except Exception:
+                    pass
+
                 pages_data.append(PageData(
                     index=i,
                     text=clean_text,
@@ -121,7 +169,8 @@ class M1Processor:
                     width=width,
                     height=height,
                     words=words,
-                    lines=lines
+                    lines=lines,
+                    table_first_col=table_first_col
                 ))
         
         return pages_data
@@ -230,34 +279,52 @@ class M1Processor:
             'marks_col': _window(mx)
         }
     
+    @staticmethod
+    def _contiguous_from_one(qnums: Set[int]) -> Set[int]:
+        """Largest {1,2,...,k} fully contained in qnums (exam Qs are contiguous).
+
+        Drops stray table misreads like a spurious '16' cell.
+        """
+        k = 0
+        while (k + 1) in qnums:
+            k += 1
+        return set(range(1, k + 1))
+
+    def _ms_table_qnums(self, ms_pages: List[PageData]) -> Set[int]:
+        """Question numbers from mark-scheme table first-column labels."""
+        qs = set()
+        for page in ms_pages:
+            for cell in page.table_first_col:
+                m = re.match(r'^\s*(\d{1,2})', cell)
+                if m and 1 <= int(m.group(1)) <= 20:
+                    qs.add(int(m.group(1)))
+        return qs
+
     def build_authoritative_n_qp(self, qp_pages: List[PageData], ms_pages: List[PageData]) -> Set[int]:
-        """Dual-authority N_QP: prefer QP totals, fallback to MS"""
-        n_qp = set()
-        
-        # Try QP totals first
+        """Dual-authority N_QP: QP totals + MS table labels, whichever is more complete.
+
+        Compact PMT-format QPs often omit the "Q(n) (Total ... marks)" end markers,
+        so the QP-only count is short. The mark-scheme table lists every question,
+        so we also derive N_QP from it and keep the larger contiguous 1..k run.
+        """
+        qp_n = set()
         for page in qp_pages:
             for m in self.QP_END_AUTHORITY.finditer(page.text):
                 qnum = int(m.group(1))
-                if 1 <= qnum <= 20:  # Reasonable range
-                    n_qp.add(qnum)
-        
-        if n_qp:
-            print(f"   Built N_QP from QP totals: {sorted(n_qp)}")
-            return n_qp
-        
-        # Fallback to MS first-column numbers
-        print("   ⚠️  No QP totals found, using MS as authority...")
-        for page in ms_pages:
-            for m in self.MS_ROW.finditer(page.text):
-                qnum = int(m.group(1))
                 if 1 <= qnum <= 20:
-                    n_qp.add(qnum)
-        
+                    qp_n.add(qnum)
+
+        ms_n = self._contiguous_from_one(self._ms_table_qnums(ms_pages))
+        qp_contig = self._contiguous_from_one(qp_n)
+
+        # Prefer whichever authority yields the more complete contiguous set.
+        n_qp = ms_n if len(ms_n) >= len(qp_contig) else (qp_n or qp_contig)
+
         if n_qp:
-            print(f"   Built N_QP from MS rows: {sorted(n_qp)}")
+            print(f"   Built N_QP: {sorted(n_qp)} (qp={sorted(qp_n)}, ms={sorted(ms_n)})")
         else:
             print("   ❌ Could not build N_QP from QP or MS!")
-        
+
         return n_qp
     
     def detect_qp_spans(self, qp_pages: List[PageData], n_qp: Set[int], margin_window: Tuple[float, float]) -> Dict[int, Dict]:
@@ -269,28 +336,40 @@ class M1Processor:
         # Detect starts (position-aware)
         for page in qp_pages:
             for line in page.lines:
-                m = self.QP_START.match(line['text'])
+                raw = line['text']
+                m = self.QP_START.match(raw)
+                stripped = False
+                if not m:
+                    cleaned = self.strip_line_header(raw)
+                    if cleaned != raw:
+                        m = self.QP_START.match(cleaned)
+                        stripped = True
                 if not m:
                     continue
-                
+
                 qnum = int(m.group(1))
                 if qnum not in n_qp:
                     continue
-                
-                # Position validation
-                x_rel = line['leftmost_word']['x0'] / page.width
-                if not (lo <= x_rel <= hi):
-                    continue
-                
+
+                # Position validation. Skipped when a header was stripped: the
+                # merged header owns the leftmost word, so its x0 says nothing
+                # about where the question number actually sits.
+                if not stripped:
+                    x_rel = line['leftmost_word']['x0'] / page.width
+                    if not (lo <= x_rel <= hi):
+                        continue
+
                 if qnum not in starts:
                     starts[qnum] = page.index
         
-        # Detect ends from totals
+        # Detect ends from totals (legacy "Q3 (Total 10 marks)" and modern
+        # "(Total for Question 3 = 10 marks)" phrasings)
         for page in qp_pages:
-            for m in self.QP_END_AUTHORITY.finditer(page.text):
-                qnum = int(m.group(1))
-                if qnum in n_qp:
-                    ends[qnum] = page.index
+            for pattern in (self.QP_END_AUTHORITY, self.QP_END_MODERN):
+                for m in pattern.finditer(page.text):
+                    qnum = int(m.group(1))
+                    if qnum in n_qp:
+                        ends[qnum] = max(ends.get(qnum, -1), page.index)
         
         # Recover missing starts (search backward from end)
         for qnum in n_qp:
@@ -321,6 +400,40 @@ class M1Processor:
                 qnum = int(m.group(1))
                 if qnum in n_qp and qnum in ends:
                     ends[qnum] = max(ends[qnum], page.index)
+
+        # --- structural fallback ---------------------------------------------
+        # On the 2023+ template the leading "1." is not recoverable from the text
+        # layer at all (the glyph is drawn separately and the rotated "DO NOT WRITE
+        # IN THIS AREA" margin corrupts line grouping), so no start is ever found
+        # and every span would collapse to the whole document. "Question N
+        # continued" / "Total for Question N" ARE reliable there: a question owns
+        # the marker pages, and begins on the page just before its first marker.
+        marker_pages: Dict[int, List[int]] = {}
+        for page in qp_pages:
+            found = {int(m.group(1)) for m in self.RE_CONT.finditer(page.text)}
+            found |= {int(m.group(1)) for m in self.QP_END_MODERN.finditer(page.text)}
+            for qnum in found:
+                if qnum in n_qp:
+                    marker_pages.setdefault(qnum, []).append(page.index)
+
+        for qnum, pidx in marker_pages.items():
+            # A question begins on the page just before its first continuation /
+            # total marker, so that page is the LATEST its start can legitimately
+            # be. A QP_START detected AFTER it is a false positive (a bare "N."
+            # matched a coordinate or sub-part inside another question) and must be
+            # overridden -- otherwise start > end yields an EMPTY span and the whole
+            # question is dropped (this is what silently lost 2021_Oct Q4).
+            implied_start = max(0, min(pidx) - 1)
+            if qnum not in starts or starts[qnum] > implied_start:
+                starts[qnum] = implied_start
+            if qnum not in ends or ends[qnum] < max(pidx):
+                ends[qnum] = max(pidx)
+
+        # Never let a question start before the previous one ends.
+        for qnum in sorted(n_qp):
+            prev_end = ends.get(qnum - 1)
+            if prev_end is not None and starts.get(qnum, 0) <= prev_end:
+                starts[qnum] = prev_end + 1
         
         # Build spans with clamping
         spans = {}
@@ -329,79 +442,97 @@ class M1Processor:
         for i, qnum in enumerate(sorted_qnums):
             start = starts.get(qnum, 0)
             end = ends.get(qnum, len(qp_pages) - 1)
-            
+
             # Clamp by next start
             if i + 1 < len(sorted_qnums):
                 next_qnum = sorted_qnums[i + 1]
                 if next_qnum in starts:
                     end = min(end, starts[next_qnum] - 1)
-            
+
+            # Cover-page trim: the first question must not swallow the front
+            # cover / formulae / instructions pages. Advance its start to the
+            # first page in range that actually contains the "1." question start.
+            if i == 0 and start < end:
+                q_start = re.compile(rf'(?m)^\s*{qnum}\.\s+')
+                for pidx in range(start, end + 1):
+                    if q_start.search(qp_pages[pidx].text):
+                        start = pidx
+                        break
+
             spans[qnum] = {
                 'start': start,
                 'end': end,
                 'pages': list(range(start, end + 1))
             }
-        
+
         return spans
     
     def segment_ms_questions(self, ms_pages: List[PageData], n_qp: Set[int], columns: Dict) -> Dict[int, Dict]:
-        """Segment MS with shared page handling"""
-        # Find header page
-        header_page = 0
-        for i, page in enumerate(ms_pages):
-            if self.MS_HEADER.search(page.text):
-                header_page = i
-                break
-        
-        # Get column windows
-        qwin = columns.get('question_col')
-        q_lo, q_hi = (qwin[0], qwin[1]) if qwin else (0.0, 0.25)
-        
-        # Collect rows by page
-        rows_by_page = defaultdict(set)
-        
+        """Segment the mark scheme by question using ruled-table first-column labels.
+
+        Pearson mark schemes are multi-column tables (Question | Scheme | Marks |
+        Notes). Text-flow extraction jumbles the columns, so the question labels
+        ("1i.", "2a", ...) are unrecoverable from `page.text`. pdfplumber's table
+        extraction recovers the first column cleanly; we take the first page on
+        which each question's label appears, then clamp each span to the next
+        question's start page.
+        """
+        # First page on which each question number's label appears
+        start_page: Dict[int, int] = {}
         for page in ms_pages:
-            if page.index < header_page:
-                continue
-            
-            for m in self.MS_ROW.finditer(page.text):
-                qnum = int(m.group(1))
-                if qnum not in n_qp:
+            for cell in page.table_first_col:
+                m = re.match(r'^\s*(\d{1,2})', cell)
+                if not m:
                     continue
-                
-                # Optional position validation (commented out for now - MS layouts vary)
-                # x_rel = ... position check ...
-                
-                rows_by_page[page.index].add(qnum)
-        
-        # Build spans (pages can be shared between questions)
-        ms_spans = {}
-        
-        for qnum in n_qp:
-            # Find all pages with this question
-            pages_with_q = [p for p, qs in rows_by_page.items() if qnum in qs]
-            
-            if not pages_with_q:
+                qnum = int(m.group(1))
+                if qnum in n_qp and qnum not in start_page:
+                    start_page[qnum] = page.index
+
+        # Positional fallback for questions the table extractor missed. pdfplumber
+        # sometimes fails to detect the ruled table for a single-part question
+        # (e.g. a bare "1." with no (a)/(b) sub-parts), leaving it unlinked. The
+        # column text is jumbled so the label can't be found reliably, but the MS
+        # is sequential: a missing question's scheme sits on the scheme-header page
+        # immediately before the next detected question. Scanning backwards from
+        # there takes the real scheme page, not the general-marking-guidance pages.
+        def _is_scheme_page(page) -> bool:
+            flat = " ".join(page.text.split())
+            return all(w in flat for w in ("Question", "Scheme", "Marks", "Number"))
+
+        assigned = set(start_page.values())
+        for qnum in sorted(n_qp):
+            if qnum in start_page:
                 continue
-            
-            start_page = min(pages_with_q)
-            end_page = start_page
-            
-            # Extend to total marker
-            for page_idx in range(start_page, len(ms_pages)):
-                text = ms_pages[page_idx].text
-                if self.MS_END.search(text):
-                    for m in self.MS_END.finditer(text):
-                        if int(m.group(1)) == qnum:
-                            end_page = page_idx
-                            break
-            
+            nxt = min((start_page[q] for q in start_page if q > qnum), default=len(ms_pages))
+            prev = max((start_page[q] for q in start_page if q < qnum), default=-1)
+            for idx in range(nxt - 1, prev, -1):
+                if idx in assigned:
+                    continue
+                if _is_scheme_page(ms_pages[idx]):
+                    start_page[qnum] = idx
+                    assigned.add(idx)
+                    break
+
+        if not start_page:
+            return {}
+
+        # Build spans: each question spans from its start page up to (but not
+        # including) the next detected question's start page.
+        detected = sorted(start_page)
+        ms_spans: Dict[int, Dict] = {}
+        for i, qnum in enumerate(detected):
+            start = start_page[qnum]
+            if i + 1 < len(detected):
+                end = start_page[detected[i + 1]] - 1
+            else:
+                end = len(ms_pages) - 1
+            end = max(start, end)
             ms_spans[qnum] = {
-                'start': start_page,
-                'end': end_page,
-                'pages': list(range(start_page, end_page + 1))
+                'start': start,
+                'end': end,
+                'pages': list(range(start, end + 1))
             }
-        
+
         return ms_spans
     
     def sum_marks_for_question(self, ms_pages: List[PageData], qnum: int, qpages: List[int], mwin: Optional[Tuple]) -> Tuple[Optional[int], Dict]:
