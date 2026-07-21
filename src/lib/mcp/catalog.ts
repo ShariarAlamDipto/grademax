@@ -85,7 +85,7 @@ function findSubject(slugOrName: string): Subject | undefined {
 function catalogUrlForSubject(s: Subject): string {
   const base =
     boardOf(s.level) === "cambridge" ? "/past-papers/cambridge" : "/past-papers"
-  return `${SITE_ORIGIN}${base === "/past-papers" ? `/past-papers/${s.slug}` : `${base}`}`
+  return `${SITE_ORIGIN}${base}/${s.slug}`
 }
 
 export async function listSubjects(opts: {
