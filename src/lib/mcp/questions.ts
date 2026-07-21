@@ -6,7 +6,7 @@
 // /api/topics, which use the same key). No service-role client, no cookies.
 //
 // Question-level data lives in the `pages` table (is_question = true), keyed to
-// `papers` by paper_id. Only six subjects are classified with topics; the rest
+// `papers` by paper_id. Only seven subjects are classified with topics; the rest
 // are download-only. CLASSIFIED_SUBJECT_SLUGS lets the tools tell the user when
 // a subject simply has no question-level data rather than failing opaquely.
 
@@ -29,6 +29,7 @@ export const CLASSIFIED_SUBJECT_SLUGS = new Set([
   "biology",
   "human-biology",
   "further-pure-maths",
+  "mechanics-1",
 ])
 
 export const DIFFICULTIES = ["easy", "medium", "hard"] as const
