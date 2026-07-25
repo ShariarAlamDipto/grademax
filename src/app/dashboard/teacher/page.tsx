@@ -3,6 +3,7 @@ import { useAuth } from "@/context/AuthContext"
 import { supabase } from "@/lib/supabaseClient"
 import { useCallback, useEffect, useState, useRef, useMemo } from "react"
 import Link from "next/link"
+import { uploadLectureFile } from "@/lib/uploadLecture"
 
 
 interface Subject {
@@ -156,38 +157,49 @@ export default function TeacherDashboardPage() {
     setError("")
     setSuccess("")
     setUploadProgress([])
+
+    const target = {
+      subjectId: selectedSubject,
+      weekNumber,
+      lessonName: lessonName.trim(),
+    }
     const progressMessages: string[] = []
+    let succeeded = 0
 
-    for (const file of uploadQueue) {
-      progressMessages.push(`Uploading ${file.name}...`)
-      setUploadProgress([...progressMessages])
-
-      const formData = new FormData()
-      formData.append("file", file)
-      formData.append("subject_id", selectedSubject)
-      formData.append("week_number", weekNumber.toString())
-      formData.append("lesson_name", lessonName.trim())
-
-      const res = await fetch("/api/lectures/upload", {
-        method: "POST",
-        body: formData,
-      })
-
-      if (!res.ok) {
-        const err = await res.json()
-        progressMessages[progressMessages.length - 1] = `✗ ${file.name}: ${err.error}`
+    // Everything below runs inside try/finally: whatever goes wrong, the
+    // uploading flag must be cleared or the button stays stuck on
+    // "Uploading..." with no way to retry.
+    try {
+      for (const file of uploadQueue) {
+        const slot = progressMessages.length
+        progressMessages.push(`Uploading ${file.name}...`)
         setUploadProgress([...progressMessages])
-      } else {
-        progressMessages[progressMessages.length - 1] = `✓ ${file.name} uploaded`
+
+        const outcome = await uploadLectureFile(file, target, (percent) => {
+          progressMessages[slot] = `Uploading ${file.name}... ${percent}%`
+          setUploadProgress([...progressMessages])
+        })
+
+        progressMessages[slot] = outcome.ok
+          ? `✓ ${file.name} uploaded`
+          : `✗ ${file.name}: ${outcome.error}`
         setUploadProgress([...progressMessages])
+        if (outcome.ok) succeeded += 1
       }
+    } finally {
+      setUploading(false)
     }
 
-    setUploading(false)
-    setSuccess("Upload complete!")
-    setUploadQueue([])
-    setLessonName("")
-    if (fileInputRef.current) fileInputRef.current.value = ""
+    if (succeeded === uploadQueue.length) {
+      setSuccess("Upload complete!")
+      setUploadQueue([])
+      setLessonName("")
+      if (fileInputRef.current) fileInputRef.current.value = ""
+    } else if (succeeded > 0) {
+      setError(`${uploadQueue.length - succeeded} of ${uploadQueue.length} files failed — see details above.`)
+    } else {
+      setError("No files were uploaded — see details above.")
+    }
     fetchLectures()
   }
 
