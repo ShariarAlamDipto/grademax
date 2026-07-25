@@ -2,9 +2,8 @@ import { NextRequest, NextResponse } from "next/server"
 import { requireTeacher } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getR2Client, R2_BUCKET } from "@/lib/r2Client"
-import { PutObjectCommand } from "@aws-sdk/client-s3"
+import { HeadObjectCommand } from "@aws-sdk/client-s3"
 import {
-  PROXY_UPLOAD_LIMIT_BYTES,
   buildLectureKey,
   publicUrlForKey,
   validateLectureFields,
@@ -13,12 +12,12 @@ import {
 export const dynamic = "force-dynamic"
 
 /**
- * POST /api/lectures/upload — stream a small lecture file through this function
- * and on to Cloudflare R2.
+ * POST /api/lectures/record — write the `lectures` row for a file the browser
+ * already PUT straight to R2 via /api/lectures/upload-url.
  *
- * Only used for files under PROXY_UPLOAD_LIMIT_BYTES. Anything larger is
- * rejected here and must go through /api/lectures/upload-url instead, because
- * Vercel caps serverless request bodies at ~4.5 MB.
+ * The object key is recomputed here from the same validated fields rather than
+ * being accepted from the client, so a caller cannot point a lecture row at an
+ * arbitrary URL.
  */
 export async function POST(req: NextRequest) {
   const auth = await requireTeacher()
@@ -31,7 +30,7 @@ export async function POST(req: NextRequest) {
   const admin = getSupabaseAdmin()
   if (!admin) {
     console.error(
-      "[lectures/upload] Service role client unavailable.",
+      "[lectures/record] Service role client unavailable.",
       "SUPABASE_SERVICE_ROLE_KEY set:", !!process.env.SUPABASE_SERVICE_ROLE_KEY,
     )
     return NextResponse.json(
@@ -40,54 +39,41 @@ export async function POST(req: NextRequest) {
     )
   }
 
-  let formData: FormData
+  let body: Record<string, unknown>
   try {
-    formData = await req.formData()
-  } catch (error: unknown) {
-    console.error("[lectures/upload] could not read request body", error)
-    return NextResponse.json(
-      { error: "Could not read the uploaded file. It may be too large." },
-      { status: 400 }
-    )
-  }
-
-  const file = formData.get("file")
-  if (!(file instanceof File)) {
-    return NextResponse.json({ error: "No file was received." }, { status: 400 })
+    body = await req.json()
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 })
   }
 
   const validated = validateLectureFields({
-    subjectId: formData.get("subject_id"),
-    weekNumber: formData.get("week_number"),
-    lessonName: formData.get("lesson_name"),
-    fileName: file.name,
+    subjectId: body.subject_id,
+    weekNumber: body.week_number,
+    lessonName: body.lesson_name,
+    fileName: body.file_name,
   })
   if (!validated.ok) {
     return NextResponse.json({ error: validated.error }, { status: 400 })
   }
 
-  // Guard the platform limit ourselves so the client gets JSON it can parse
-  // instead of Vercel's HTML "payload too large" page.
-  if (file.size > PROXY_UPLOAD_LIMIT_BYTES) {
-    return NextResponse.json(
-      { error: "File is too large for this endpoint — use the direct upload." },
-      { status: 413 }
-    )
-  }
-
   const key = buildLectureKey(validated.fields)
 
+  // Confirm the object really landed before creating a row that points at it —
+  // otherwise a failed browser PUT leaves a lecture linking to a 404.
+  let contentLength: number | undefined
+  let contentType: string | undefined
   try {
-    const bytes = await file.arrayBuffer()
-    await getR2Client().send(new PutObjectCommand({
-      Bucket: R2_BUCKET,
-      Key: key,
-      Body: Buffer.from(bytes),
-      ContentType: file.type || "application/octet-stream",
-    }))
+    const head = await getR2Client().send(
+      new HeadObjectCommand({ Bucket: R2_BUCKET, Key: key })
+    )
+    contentLength = head.ContentLength
+    contentType = head.ContentType
   } catch (error: unknown) {
-    console.error("[lectures/upload] R2 upload failed", error)
-    return NextResponse.json({ error: "R2 upload failed." }, { status: 500 })
+    console.error("[lectures/record] object missing in R2", key, error)
+    return NextResponse.json(
+      { error: "Upload did not complete — the file was not found in storage." },
+      { status: 409 }
+    )
   }
 
   const { data: lecture, error: insertError } = await admin
@@ -99,8 +85,8 @@ export async function POST(req: NextRequest) {
       lesson_name: validated.fields.lessonName,
       file_name: validated.fields.fileName,
       file_url: publicUrlForKey(key),
-      file_size: file.size,
-      file_type: file.type,
+      file_size: contentLength ?? null,
+      file_type: contentType ?? null,
     })
     .select()
     .single()

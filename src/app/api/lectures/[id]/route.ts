@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireTeacher } from "@/lib/apiAuth"
 import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
+import { getR2Client, R2_BUCKET, R2_PUBLIC_URL } from "@/lib/r2Client"
+import { DeleteObjectCommand } from "@aws-sdk/client-s3"
 
 // PATCH /api/lectures/[id] - Update lecture metadata
 export async function PATCH(
@@ -87,12 +89,23 @@ export async function DELETE(
     return NextResponse.json({ error: "Forbidden" }, { status: 403 })
   }
 
-  // Delete from storage if it's a Supabase storage URL
-  if (lecture.file_url.includes("/storage/")) {
-    const path = lecture.file_url.split("/lectures/").pop()
-    if (path) {
-      await db.storage.from("lectures").remove([decodeURIComponent(path)])
+  // Delete the underlying file. New uploads land in R2 under a `lectures/`
+  // prefix; older rows may still point at Supabase Storage, so route by URL host.
+  try {
+    if (R2_PUBLIC_URL && lecture.file_url.startsWith(R2_PUBLIC_URL)) {
+      const r2Key = decodeURIComponent(lecture.file_url.slice(R2_PUBLIC_URL.length + 1))
+      const r2 = getR2Client()
+      await r2.send(new DeleteObjectCommand({ Bucket: R2_BUCKET, Key: r2Key }))
+    } else if (lecture.file_url.includes("/storage/")) {
+      const path = lecture.file_url.split("/lectures/").pop()
+      if (path) {
+        await db.storage.from("lectures").remove([decodeURIComponent(path)])
+      }
     }
+  } catch (err) {
+    // Storage cleanup is best-effort — failing to remove an orphan blob
+    // should not block the DB-level delete.
+    console.warn("[lectures/delete] failed to remove underlying file", err)
   }
 
   // Delete the record
