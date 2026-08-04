@@ -49,3 +49,7 @@ config/*.json
 
 # build-time papers-index snapshot (regenerated every build by prebuild)
 /src/generated/
+
+# Python
+__pycache__/
+*.pyc
