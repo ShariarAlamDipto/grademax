@@ -1,0 +1,1349 @@
+[
+  {
+    "section": "1.1",
+    "label": "simplifying surds",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1:1"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "rationalising the denominator with surds",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1:2"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "graph and estimate",
+    "size": 5,
+    "question_ids": [
+      "2016_jan_2:11",
+      "2016_may-jun_1:7",
+      "2017_jan_1:7",
+      "2019_jan_2:7",
+      "2019_may-jun_1R:8"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "log laws and exponential equations",
+    "size": 4,
+    "question_ids": [
+      "2020_jan_1R:1",
+      "2020_jan_1R:5",
+      "2021_may-jun_1:8",
+      "2022_jan_1:7"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "log equation with base change",
+    "size": 2,
+    "question_ids": [
+      "2020_oct-nov_2R:8",
+      "2022_may-jun_2:10"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "logarithmic identities and series",
+    "size": 1,
+    "question_ids": [
+      "2017_may-jun_2:11"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "logarithm properties and equation",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1R:3"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "log equation system",
+    "size": 1,
+    "question_ids": [
+      "2021_may-jun_2:8"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "log equation with multiple terms",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1R:7"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "exponential and logarithmic equations",
+    "size": 13,
+    "question_ids": [
+      "2016_jan_1:10",
+      "2016_may-jun_1:6",
+      "2016_specimen_1:7",
+      "2016_specimen_2:6",
+      "2017_jan_2:7",
+      "2017_may-jun_1:1",
+      "2017_may-jun_1:7",
+      "2018_jan_2:7",
+      "2019_jan_2:1",
+      "2020_jan_1:7",
+      "2020_oct-nov_1R:9",
+      "2020_oct-nov_2:4",
+      "2021_oct-nov_1:5"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "logarithmic equation and graph",
+    "size": 2,
+    "question_ids": [
+      "2021_may-jun_2:7",
+      "2022_may-jun_2R:5"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "solve exponential equation and find intersection points",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2:4"
+    ]
+  },
+  {
+    "section": "2.1",
+    "label": "completing the square and integration",
+    "size": 7,
+    "question_ids": [
+      "2016_specimen_2:9",
+      "2019_jan_1:5",
+      "2019_may-jun_1:5",
+      "2019_may-jun_1R:10",
+      "2020_jan_1R:2",
+      "2020_oct-nov_1:7",
+      "2022_jan_1:2"
+    ]
+  },
+  {
+    "section": "2.1",
+    "label": "simple algebraic equation",
+    "size": 1,
+    "question_ids": [
+      "2016_jan_2:1"
+    ]
+  },
+  {
+    "section": "2.1",
+    "label": "solve simultaneous equations",
+    "size": 1,
+    "question_ids": [
+      "2017_may-jun_2:2"
+    ]
+  },
+  {
+    "section": "2.1",
+    "label": "completing the square and maxima",
+    "size": 1,
+    "question_ids": [
+      "2018_jan_1:1"
+    ]
+  },
+  {
+    "section": "2.1",
+    "label": "sum and product of roots",
+    "size": 1,
+    "question_ids": [
+      "2018_jan_1:9"
+    ]
+  },
+  {
+    "section": "2.1",
+    "label": "completing the square and graphing",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_1R:2"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "discriminant and nature of roots",
+    "size": 6,
+    "question_ids": [
+      "2017_may-jun_2:3",
+      "2018_jan_2:4",
+      "2020_oct-nov_2R:7",
+      "2021_may-jun_1:1",
+      "2021_oct-nov_1:2",
+      "2022_may-jun_2:1"
+    ]
+  },
+  {
+    "section": "2.3",
+    "label": "sum and product of roots",
+    "size": 13,
+    "question_ids": [
+      "2016_jan_2:5",
+      "2016_specimen_1:9",
+      "2017_jan_1:9",
+      "2017_may-jun_2:8",
+      "2019_jan_2:8",
+      "2019_may-jun_2:10",
+      "2019_may-jun_2R:11",
+      "2020_jan_2:5",
+      "2020_jan_2R:5",
+      "2021_may-jun_1:6",
+      "2022_jan_2:7",
+      "2022_jan_2R:4",
+      "2022_may-jun_2:5"
+    ]
+  },
+  {
+    "section": "2.3",
+    "label": "complete the square",
+    "size": 1,
+    "question_ids": [
+      "2021_may-jun_2:2"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "new equation from roots",
+    "size": 6,
+    "question_ids": [
+      "2016_may-jun_1:9",
+      "2018_may-jun_1:2",
+      "2020_oct-nov_1R:8",
+      "2020_oct-nov_2:6",
+      "2021_oct-nov_1:1",
+      "2022_may-jun_1R:8"
+    ]
+  },
+  {
+    "section": "3.1",
+    "label": "algebraic division",
+    "size": 4,
+    "question_ids": [
+      "2016_may-jun_1:2",
+      "2017_jan_1:3",
+      "2019_jan_1:3",
+      "2019_may-jun_2:5"
+    ]
+  },
+  {
+    "section": "3.1",
+    "label": "cubic equation and factorisation",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2R:1"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "factor theorem and remainder",
+    "size": 13,
+    "question_ids": [
+      "2016_jan_2:10",
+      "2016_may-jun_1:1",
+      "2016_specimen_2:4",
+      "2017_jan_1:2",
+      "2019_may-jun_1:1",
+      "2020_jan_1:3",
+      "2020_jan_1R:4",
+      "2020_oct-nov_2R:2",
+      "2021_may-jun_2:6",
+      "2021_oct-nov_1:11",
+      "2022_jan_1:5",
+      "2022_jan_1R:10",
+      "2022_may-jun_2R:4"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "algebraic method and volume of solid",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_2R:10"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "linear and quadratic inequalities",
+    "size": 8,
+    "question_ids": [
+      "2016_jan_1:2",
+      "2016_specimen_2:2",
+      "2018_jan_1:2",
+      "2019_jan_2:2",
+      "2019_may-jun_2R:5",
+      "2020_jan_2:2",
+      "2021_may-jun_2:1",
+      "2022_jan_2R:1"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "linear inequalities with perimeter and area",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1R:4"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "graphical solution of cubic equation",
+    "size": 7,
+    "question_ids": [
+      "2017_may-jun_2:1",
+      "2018_jan_1:5",
+      "2020_jan_1R:6",
+      "2020_oct-nov_2R:4",
+      "2021_oct-nov_2:8",
+      "2022_jan_1:4",
+      "2022_jan_1R:9"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "asymptotes and intercepts",
+    "size": 4,
+    "question_ids": [
+      "2016_specimen_2:7",
+      "2018_may-jun_1:6",
+      "2020_jan_2:9",
+      "2021_oct-nov_2:3"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "sketching lines and shading region",
+    "size": 1,
+    "question_ids": [
+      "2017_jan_2:1"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "curve sketch and max min",
+    "size": 1,
+    "question_ids": [
+      "2017_may-jun_1:10"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "asymptotes and curve sketching",
+    "size": 3,
+    "question_ids": [
+      "2019_jan_1:8",
+      "2019_may-jun_2R:2",
+      "2020_jan_2R:11"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "inequalities from graph",
+    "size": 1,
+    "question_ids": [
+      "2020_jan_2R:2"
+    ]
+  },
+  {
+    "section": "4.3",
+    "label": "curve sketching with asymptotes",
+    "size": 5,
+    "question_ids": [
+      "2016_may-jun_2:8",
+      "2017_jan_1:6",
+      "2021_may-jun_1:3",
+      "2022_jan_2:10",
+      "2022_may-jun_2R:10"
+    ]
+  },
+  {
+    "section": "4.4",
+    "label": "graphical solution of equation",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_1:4",
+      "2020_oct-nov_1:4"
+    ]
+  },
+  {
+    "section": "4.4",
+    "label": "area between curve and line",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1:8"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "arithmetic series sum",
+    "size": 20,
+    "question_ids": [
+      "2016_jan_1:4",
+      "2016_jan_2:8",
+      "2016_may-jun_1:4",
+      "2016_specimen_1:8",
+      "2017_jan_2:6",
+      "2018_jan_2:2",
+      "2018_may-jun_1:9",
+      "2019_jan_1:2",
+      "2019_may-jun_1R:6",
+      "2019_may-jun_2:7",
+      "2020_jan_1:1",
+      "2020_jan_1R:7",
+      "2020_oct-nov_1:6",
+      "2020_oct-nov_1R:3",
+      "2020_oct-nov_2R:1",
+      "2021_may-jun_1:4",
+      "2021_oct-nov_1:9",
+      "2022_jan_1R:2",
+      "2022_jan_2:6",
+      "2022_may-jun_1R:1"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "geometric series sum to infinity",
+    "size": 17,
+    "question_ids": [
+      "2016_may-jun_2:3",
+      "2016_specimen_2:1",
+      "2017_jan_1:4",
+      "2017_may-jun_1:6",
+      "2018_jan_1:8",
+      "2018_may-jun_2:5",
+      "2019_jan_2:10",
+      "2019_may-jun_2R:7",
+      "2020_jan_2:7",
+      "2020_jan_2R:7",
+      "2020_oct-nov_2:7",
+      "2021_may-jun_2:5",
+      "2021_oct-nov_2:7",
+      "2022_jan_1:3",
+      "2022_jan_2R:5",
+      "2022_may-jun_1:4",
+      "2022_may-jun_2R:3"
+    ]
+  },
+  {
+    "section": "5.3",
+    "label": "sigma notation and series sum",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_2:5"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "binomial series expansion",
+    "size": 8,
+    "question_ids": [
+      "2016_jan_1:5",
+      "2016_specimen_2:8",
+      "2017_jan_1:8",
+      "2017_may-jun_2:6",
+      "2019_jan_1:10",
+      "2020_oct-nov_1R:5",
+      "2021_may-jun_1:5",
+      "2022_jan_1R:5"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "binomial expansion and integration",
+    "size": 9,
+    "question_ids": [
+      "2018_jan_1:7",
+      "2019_may-jun_2R:6",
+      "2020_jan_1:9",
+      "2020_jan_2R:9",
+      "2020_oct-nov_2:3",
+      "2021_oct-nov_2:10",
+      "2022_jan_1:9",
+      "2022_may-jun_1:5",
+      "2022_may-jun_2R:9"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector magnitude and unit vector",
+    "size": 10,
+    "question_ids": [
+      "2016_may-jun_2:2",
+      "2016_specimen_1:10",
+      "2016_specimen_2:3",
+      "2018_jan_2:6",
+      "2018_may-jun_1:10",
+      "2019_jan_2:3",
+      "2020_jan_2:4",
+      "2022_jan_1R:6",
+      "2022_may-jun_2:3",
+      "2022_may-jun_2R:1"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector and distance calculations",
+    "size": 2,
+    "question_ids": [
+      "2016_may-jun_1:3",
+      "2019_may-jun_2:11"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector and geometry in 3d space",
+    "size": 2,
+    "question_ids": [
+      "2021_oct-nov_2:9",
+      "2022_jan_2:4"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector and trigonometry in 3d",
+    "size": 1,
+    "question_ids": [
+      "2016_jan_2:12"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector algebra and geometry",
+    "size": 1,
+    "question_ids": [
+      "2016_may-jun_1:8"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector magnitude and direction",
+    "size": 1,
+    "question_ids": [
+      "2017_may-jun_2:10"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector and trigonometric applications",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1:11"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector proof in geometry",
+    "size": 1,
+    "question_ids": [
+      "2020_jan_1R:10"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector operations and ratios",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_1:11"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector operations in geometry",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1:8"
+    ]
+  },
+  {
+    "section": "7.1",
+    "label": "vector method for collinearity",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2R:11"
+    ]
+  },
+  {
+    "section": "7.2",
+    "label": "vector midpoint and ratio",
+    "size": 4,
+    "question_ids": [
+      "2017_may-jun_1:3",
+      "2021_may-jun_1:10",
+      "2022_jan_2:9",
+      "2022_may-jun_1:10"
+    ]
+  },
+  {
+    "section": "7.2",
+    "label": "vectors and collinearity",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1R:7"
+    ]
+  },
+  {
+    "section": "7.2",
+    "label": "vector operations",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2:1"
+    ]
+  },
+  {
+    "section": "7.2",
+    "label": "vector division",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1R:9"
+    ]
+  },
+  {
+    "section": "7.3",
+    "label": "vector proof of parallel lines",
+    "size": 1,
+    "question_ids": [
+      "2016_jan_2:9"
+    ]
+  },
+  {
+    "section": "7.3",
+    "label": "collinearity and vector ratios",
+    "size": 1,
+    "question_ids": [
+      "2017_jan_2:8"
+    ]
+  },
+  {
+    "section": "7.4",
+    "label": "vector proof in geometry",
+    "size": 2,
+    "question_ids": [
+      "2020_jan_1:10",
+      "2020_oct-nov_1R:11"
+    ]
+  },
+  {
+    "section": "7.4",
+    "label": "vector proof in geometry",
+    "size": 2,
+    "question_ids": [
+      "2020_jan_2:3",
+      "2022_may-jun_2R:6"
+    ]
+  },
+  {
+    "section": "7.4",
+    "label": "vector and volume calculation",
+    "size": 1,
+    "question_ids": [
+      "2020_jan_2R:4"
+    ]
+  },
+  {
+    "section": "7.4",
+    "label": "pyramid edge length and angles",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_1:3"
+    ]
+  },
+  {
+    "section": "8.1",
+    "label": "right prism dimensions",
+    "size": 1,
+    "question_ids": [
+      "2017_jan_2:10"
+    ]
+  },
+  {
+    "section": "8.1",
+    "label": "line equation and coordinates",
+    "size": 1,
+    "question_ids": [
+      "2017_may-jun_1:8"
+    ]
+  },
+  {
+    "section": "8.1",
+    "label": "distance and circle properties",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2:8"
+    ]
+  },
+  {
+    "section": "8.1",
+    "label": "perpendicular lines and quadrilateral area",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_1:5"
+    ]
+  },
+  {
+    "section": "8.1",
+    "label": "area of flag design",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1:2"
+    ]
+  },
+  {
+    "section": "8.2",
+    "label": "finding equation of line",
+    "size": 12,
+    "question_ids": [
+      "2016_may-jun_1:10",
+      "2017_jan_2:9",
+      "2018_jan_2:10",
+      "2019_jan_1:9",
+      "2019_may-jun_1R:11",
+      "2020_jan_1:6",
+      "2020_jan_1R:9",
+      "2021_may-jun_2:4",
+      "2022_jan_1:10",
+      "2022_jan_1R:3",
+      "2022_jan_2R:2",
+      "2022_may-jun_2:9"
+    ]
+  },
+  {
+    "section": "8.2",
+    "label": "sketch and shade region",
+    "size": 2,
+    "question_ids": [
+      "2016_specimen_1:1",
+      "2020_oct-nov_1:2"
+    ]
+  },
+  {
+    "section": "8.2",
+    "label": "graphing linear inequalities",
+    "size": 2,
+    "question_ids": [
+      "2020_jan_1:2",
+      "2022_jan_1R:1"
+    ]
+  },
+  {
+    "section": "8.2",
+    "label": "circle and line intersection",
+    "size": 1,
+    "question_ids": [
+      "2016_jan_2:3"
+    ]
+  },
+  {
+    "section": "8.2",
+    "label": "line equation and perpendicularity",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2:11"
+    ]
+  },
+  {
+    "section": "8.3",
+    "label": "area of triangle",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2:9"
+    ]
+  },
+  {
+    "section": "8.4",
+    "label": "pyramid with rectangular base",
+    "size": 1,
+    "question_ids": [
+      "2018_jan_2:11"
+    ]
+  },
+  {
+    "section": "8.4",
+    "label": "area of triangle",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1R:11"
+    ]
+  },
+  {
+    "section": "8.4",
+    "label": "area of region between circles",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2:4"
+    ]
+  },
+  {
+    "section": "9.1",
+    "label": "differentiate exponential function",
+    "size": 2,
+    "question_ids": [
+      "2016_jan_1:1",
+      "2022_jan_2R:3"
+    ]
+  },
+  {
+    "section": "9.1",
+    "label": "stationary point on curve",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2:4"
+    ]
+  },
+  {
+    "section": "9.1",
+    "label": "graphical solution of equation",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1:6"
+    ]
+  },
+  {
+    "section": "9.1",
+    "label": "curve sketching with asymptotes",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2:11"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "product rule differentiation",
+    "size": 10,
+    "question_ids": [
+      "2016_may-jun_2:4",
+      "2017_jan_2:5",
+      "2018_jan_2:5",
+      "2018_jan_2:9",
+      "2019_jan_1:6",
+      "2019_may-jun_1R:4",
+      "2019_may-jun_2:6",
+      "2020_jan_1R:3",
+      "2020_oct-nov_1:1",
+      "2022_may-jun_1R:5"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "differentiate exponential function",
+    "size": 3,
+    "question_ids": [
+      "2016_jan_2:4",
+      "2016_specimen_1:6",
+      "2021_oct-nov_1:4"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "differentiate product and quotient",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2:2"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "minimisation using calculus",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1R:9"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "find and classify turning points",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2:9"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "second order differential equation",
+    "size": 1,
+    "question_ids": [
+      "2020_jan_2:8"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "second derivative with product rule",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_2R:9"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "maximise volume",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1R:7"
+    ]
+  },
+  {
+    "section": "9.2",
+    "label": "minimise surface area using calculus",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2:8"
+    ]
+  },
+  {
+    "section": "9.3",
+    "label": "stationary points on curve",
+    "size": 3,
+    "question_ids": [
+      "2016_jan_2:7",
+      "2017_jan_1:11",
+      "2020_oct-nov_1R:4"
+    ]
+  },
+  {
+    "section": "9.3",
+    "label": "tangent to curve and perpendicular lines",
+    "size": 1,
+    "question_ids": [
+      "2016_jan_1:11"
+    ]
+  },
+  {
+    "section": "9.3",
+    "label": "minimise function using calculus",
+    "size": 1,
+    "question_ids": [
+      "2016_specimen_1:5"
+    ]
+  },
+  {
+    "section": "9.3",
+    "label": "minimise function with calculus",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2:6"
+    ]
+  },
+  {
+    "section": "9.3",
+    "label": "maxima and minima using calculus",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1:7"
+    ]
+  },
+  {
+    "section": "9.3",
+    "label": "max and min using derivatives",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1:7"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "related rates of change",
+    "size": 19,
+    "question_ids": [
+      "2016_jan_1:3",
+      "2016_may-jun_2:10",
+      "2016_specimen_2:10",
+      "2016_specimen_2:11",
+      "2017_jan_2:3",
+      "2017_may-jun_1:2",
+      "2018_jan_1:3",
+      "2018_may-jun_2:3",
+      "2019_jan_2:6",
+      "2019_may-jun_2:2",
+      "2019_may-jun_2R:3",
+      "2020_jan_2:10",
+      "2020_jan_2R:6",
+      "2020_oct-nov_1:10",
+      "2020_oct-nov_1R:7",
+      "2021_may-jun_2:9",
+      "2021_oct-nov_1:6",
+      "2022_may-jun_1:8",
+      "2022_may-jun_2R:2"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "tangent to curve at point",
+    "size": 5,
+    "question_ids": [
+      "2017_may-jun_2:9",
+      "2020_oct-nov_2R:6",
+      "2021_may-jun_1:9",
+      "2022_jan_1R:8",
+      "2022_jan_2R:6"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "minimisation using calculus",
+    "size": 4,
+    "question_ids": [
+      "2018_jan_2:8",
+      "2020_jan_1:11",
+      "2022_jan_1:8",
+      "2022_may-jun_2R:11"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "related rates using chain rule",
+    "size": 2,
+    "question_ids": [
+      "2020_oct-nov_1:8",
+      "2021_oct-nov_2:5"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "stationary points on curve",
+    "size": 2,
+    "question_ids": [
+      "2020_oct-nov_2:9",
+      "2021_may-jun_1:7"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "minimising surface area",
+    "size": 1,
+    "question_ids": [
+      "2016_may-jun_2:5"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "maximise volume with surface area constraint",
+    "size": 1,
+    "question_ids": [
+      "2017_may-jun_2:7"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "related rates and circle properties",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1R:5"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "tangents and areas under curves",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_2:8"
+    ]
+  },
+  {
+    "section": "9.4",
+    "label": "related rates of change",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2R:8"
+    ]
+  },
+  {
+    "section": "9.5",
+    "label": "calculus integration",
+    "size": 3,
+    "question_ids": [
+      "2018_may-jun_2:8",
+      "2019_may-jun_2R:10",
+      "2022_jan_1:1"
+    ]
+  },
+  {
+    "section": "9.5",
+    "label": "integration and area under curve",
+    "size": 1,
+    "question_ids": [
+      "2016_specimen_1:11"
+    ]
+  },
+  {
+    "section": "9.5",
+    "label": "integration using trig substitution",
+    "size": 1,
+    "question_ids": [
+      "2018_jan_1:10"
+    ]
+  },
+  {
+    "section": "9.5",
+    "label": "integration and definite integral",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1:5"
+    ]
+  },
+  {
+    "section": "9.5",
+    "label": "integration of binomial expansion",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2:7"
+    ]
+  },
+  {
+    "section": "9.5",
+    "label": "curve and line intersection area",
+    "size": 1,
+    "question_ids": [
+      "2020_jan_2R:10"
+    ]
+  },
+  {
+    "section": "9.5",
+    "label": "algebraic integration and area",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1:9"
+    ]
+  },
+  {
+    "section": "9.6",
+    "label": "volume of solid of revolution",
+    "size": 20,
+    "question_ids": [
+      "2016_jan_1:9",
+      "2016_may-jun_2:6",
+      "2018_jan_2:3",
+      "2018_may-jun_2:10",
+      "2019_jan_2:9",
+      "2019_may-jun_2R:9",
+      "2020_jan_1:5",
+      "2020_jan_1R:11",
+      "2020_jan_2:6",
+      "2020_oct-nov_1R:12",
+      "2020_oct-nov_2:2",
+      "2021_may-jun_2:11",
+      "2021_oct-nov_1:10",
+      "2021_oct-nov_2:2",
+      "2022_jan_1:11",
+      "2022_jan_1R:11",
+      "2022_jan_2:3",
+      "2022_jan_2R:10",
+      "2022_may-jun_1R:10",
+      "2022_may-jun_2R:8"
+    ]
+  },
+  {
+    "section": "9.7",
+    "label": "particle motion with velocity and acceleration",
+    "size": 17,
+    "question_ids": [
+      "2016_jan_1:8",
+      "2016_may-jun_2:7",
+      "2016_specimen_1:4",
+      "2017_jan_1:10",
+      "2017_may-jun_2:4",
+      "2018_jan_1:4",
+      "2018_may-jun_1:7",
+      "2019_jan_2:4",
+      "2019_may-jun_2:3",
+      "2019_may-jun_2R:4",
+      "2020_jan_1R:8",
+      "2020_jan_2:1",
+      "2020_oct-nov_2:1",
+      "2021_oct-nov_2:6",
+      "2022_jan_2:5",
+      "2022_may-jun_1R:2",
+      "2022_may-jun_2:2"
+    ]
+  },
+  {
+    "section": "10.1",
+    "label": "sector area and triangle length",
+    "size": 1,
+    "question_ids": [
+      "2016_specimen_1:2"
+    ]
+  },
+  {
+    "section": "10.1",
+    "label": "sine function evaluation",
+    "size": 1,
+    "question_ids": [
+      "2020_oct-nov_1R:1"
+    ]
+  },
+  {
+    "section": "10.1",
+    "label": "graph of trig function",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2:8"
+    ]
+  },
+  {
+    "section": "10.1",
+    "label": "trigonometric ratios in pyramid",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2R:9"
+    ]
+  },
+  {
+    "section": "10.2",
+    "label": "sine rule and triangle area",
+    "size": 13,
+    "question_ids": [
+      "2016_jan_1:7",
+      "2016_may-jun_2:1",
+      "2017_may-jun_1:5",
+      "2017_may-jun_2:5",
+      "2018_may-jun_1:3",
+      "2018_may-jun_2:1",
+      "2019_may-jun_1R:2",
+      "2019_may-jun_2:4",
+      "2020_jan_2R:3",
+      "2020_oct-nov_2R:3",
+      "2021_oct-nov_1:7",
+      "2022_jan_1:6",
+      "2022_may-jun_1R:6"
+    ]
+  },
+  {
+    "section": "10.2",
+    "label": "trigonometry in 3d geometry",
+    "size": 2,
+    "question_ids": [
+      "2018_jan_1:6",
+      "2019_jan_2:5"
+    ]
+  },
+  {
+    "section": "10.2",
+    "label": "trigonometry in quadrilateral",
+    "size": 1,
+    "question_ids": [
+      "2017_jan_1:5"
+    ]
+  },
+  {
+    "section": "10.2",
+    "label": "trigonometry right prism",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2R:8"
+    ]
+  },
+  {
+    "section": "10.2",
+    "label": "area of triangle in rectangle",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1:3"
+    ]
+  },
+  {
+    "section": "10.3",
+    "label": "trigonometric identities",
+    "size": 19,
+    "question_ids": [
+      "2016_jan_2:6",
+      "2016_may-jun_1:5",
+      "2016_may-jun_2:9",
+      "2016_specimen_2:5",
+      "2017_jan_2:2",
+      "2017_jan_2:4",
+      "2017_may-jun_1:9",
+      "2019_jan_2:11",
+      "2020_jan_2:11",
+      "2020_jan_2R:8",
+      "2020_oct-nov_1:9",
+      "2020_oct-nov_1R:6",
+      "2020_oct-nov_2:10",
+      "2021_may-jun_1:11",
+      "2021_may-jun_1:2",
+      "2021_oct-nov_2:1",
+      "2022_jan_2R:7",
+      "2022_may-jun_2:6",
+      "2022_may-jun_2:7"
+    ]
+  },
+  {
+    "section": "10.4",
+    "label": "r formula and trigonometric equation solving",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1:4"
+    ]
+  },
+  {
+    "section": "10.5",
+    "label": "trigonometric equation",
+    "size": 4,
+    "question_ids": [
+      "2016_jan_1:6",
+      "2017_may-jun_1:4",
+      "2020_oct-nov_1R:10",
+      "2022_may-jun_2R:7"
+    ]
+  },
+  {
+    "section": "10.5",
+    "label": "trig equation with double angle",
+    "size": 1,
+    "question_ids": [
+      "2016_specimen_1:3"
+    ]
+  },
+  {
+    "section": "10.5",
+    "label": "trig equation with multiple solutions",
+    "size": 1,
+    "question_ids": [
+      "2020_jan_1:8"
+    ]
+  },
+  {
+    "section": "10.5",
+    "label": "trig equation solve",
+    "size": 1,
+    "question_ids": [
+      "2021_may-jun_2:10"
+    ]
+  },
+  {
+    "section": "10.5",
+    "label": "trigonometric equation with compound angle",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2:2"
+    ]
+  },
+  {
+    "section": "10.6",
+    "label": "sector area and arc length",
+    "size": 14,
+    "question_ids": [
+      "2016_jan_2:2",
+      "2017_jan_1:1",
+      "2018_jan_2:1",
+      "2018_may-jun_1:1",
+      "2019_jan_1:1",
+      "2019_may-jun_1R:1",
+      "2020_jan_1:4",
+      "2020_jan_2R:1",
+      "2020_oct-nov_2R:5",
+      "2021_may-jun_2:3",
+      "2021_oct-nov_1:3",
+      "2022_jan_1R:4",
+      "2022_jan_2:1",
+      "2022_may-jun_1R:3"
+    ]
+  }
+]

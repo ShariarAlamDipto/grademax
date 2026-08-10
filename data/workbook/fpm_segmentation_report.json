@@ -1,0 +1,429 @@
+{
+  "papers": [
+    {
+      "key": "2016_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [9]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2016_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [4, 6]"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2016_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2016_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2016_specimen_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [3, 5, 7]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2016_specimen_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [2, 4, 6]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [3]"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 2: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [4, 7, 4, 4, 8], expected 5) -- block dropped",
+        "no mark scheme block found for questions [2, 3, 4, 5]"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 4: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [5, 3, 8, 3], expected 6) -- block dropped",
+        "question 5: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [6, 9], expected 8) -- block dropped",
+        "question 7: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [4, 2, 5, 11], expected 9) -- block dropped",
+        "question 8: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [4, 5, 1, 5, 15], expected 11) -- block dropped",
+        "question 9: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [4], expected 15) -- block dropped",
+        "no mark scheme block found for questions [2, 4, 5, 7, 8, 9]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_oct-nov_1",
+      "status": "excluded",
+      "skipped_reason": "Extracted text is byte-identical to 2016 Specimen Paper 1 -- these are the specimen papers refiled under a session that was never sat. Including them duplicates ~10 questions.",
+      "issues": [],
+      "warnings": [],
+      "questions": 0,
+      "marks": 0
+    },
+    {
+      "key": "2017_oct-nov_2",
+      "status": "excluded",
+      "skipped_reason": "Extracted text is byte-identical to 2016 Specimen Paper 2 -- see 2017_oct-nov_1.",
+      "issues": [],
+      "warnings": [],
+      "questions": 0,
+      "marks": 0
+    },
+    {
+      "key": "2018_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2018_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 7: QP fence says 9 marks but the mark scheme total line give [8]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 8: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [3, 4, 4], expected 16) -- block dropped",
+        "question 9: mark scheme block inferred from sequence and its marks do not confirm it (bracketed part tallies give [5, 16], expected 17) -- block dropped",
+        "no mark scheme block found for questions [2, 8, 9]"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 2: derived start page 3 carries no printed '2' marker (markers seen on no pages)",
+        "no mark scheme block found for questions [5]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "image-only scan: using hand-verified page ranges and mark-scheme marks for 11 questions",
+        "question 6: QP fence says 11 marks but the mark scheme bracketed part tallies give [4, 5, 2]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [4]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 11: QP fence says 12 marks but the mark scheme bracketed part tallies give [5, 2, 5, 0]",
+        "no mark scheme block found for questions [1]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [4]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [8]"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2021_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2021_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 4: QP fence says 16 marks but the mark scheme bracketed part tallies give [4, 3, 2, 2, 6, 21, 4, 2, 4, 3, 4, 3, 21, 21]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no mark scheme block found for questions [11]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 4: QP fence says 7 marks but the mark scheme bracketed part tallies give [2, 6, 5]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [],
+      "questions": 11,
+      "marks": 100
+    }
+  ]
+}
