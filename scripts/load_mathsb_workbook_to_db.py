@@ -75,6 +75,26 @@ R2_PREFIX = "workbook/mathsb"
 # Session ordering within a year, for the chronological tiebreak.
 SESSION_ORDER = {"specimen": 0, "jan": 1, "may-jun": 2, "oct-nov": 3}
 
+# What the column's CHECK constraint actually permits (migration 12).
+#
+# The enricher grew a fourth status, `partially_garbled`, for the 15 stems whose
+# second CMap variant leaves some capitals wrong. The database had never heard
+# of it, so the load inserted 295 rows and then aborted on the first one that
+# carried it -- a failure the dry run could not have predicted, because a dry
+# run never attempts an insert and so never meets a constraint.
+#
+# It maps to `repaired`, which is true: the text was repaired, just not
+# perfectly. The precise status stays in mathsb_questions.json, which is where
+# it is used, and the book prints the PDF rather than the stem in any case.
+DB_TEXT_STATUS = {"ok", "repaired", "needs_vision"}
+TEXT_STATUS_FALLBACK = {"partially_garbled": "repaired"}
+
+
+def db_text_status(status: str | None) -> str | None:
+    if status is None or status in DB_TEXT_STATUS:
+        return status
+    return TEXT_STATUS_FALLBACK.get(status, "repaired")
+
 
 def session_rank(question: dict) -> tuple[int, int, str]:
     return (
@@ -215,6 +235,33 @@ def main() -> int:
 
     ordered = build_print_order(classified, cluster_of)
 
+    # Fail before writing, not 295 rows in. Everything the database constrains
+    # and this script can check locally goes here -- a dry run that reports
+    # "would write 1046 rows" and then dies a quarter of the way through is
+    # worse than useless, because it was believed.
+    problems: list[str] = []
+    for question in ordered:
+        mapped = db_text_status(question["text_status"])
+        if mapped is not None and mapped not in DB_TEXT_STATUS:
+            problems.append(f"{question['_id']}: text_status {question['text_status']!r}")
+        if question["_section"] not in section_id_by_code:
+            problems.append(f"{question['_id']}: section {question['_section']} not in the database")
+        if not isinstance(question["marks"], int) or question["marks"] <= 0:
+            problems.append(f"{question['_id']}: marks {question['marks']!r}")
+    raw_statuses = {q["text_status"] for q in ordered}
+    unmapped = raw_statuses - DB_TEXT_STATUS - set(TEXT_STATUS_FALLBACK) - {None}
+    if unmapped:
+        problems.append(f"text_status values with no database mapping: {sorted(unmapped)}")
+
+    if problems:
+        print(f"\n  ABORT: {len(problems)} row(s) would violate a database constraint:")
+        for problem in problems[:15]:
+            print(f"    {problem}")
+        if len(problems) > 15:
+            print(f"    ... and {len(problems) - 15} more")
+        return 1
+    print(f"  pre-flight   : OK ({len(ordered)} rows check out against the schema)")
+
     # Existing rows keep their slug and ordinal -- attempts reference them.
     # `verified_at` decides whether this script may overwrite the section.
     existing = supabase.table("workbook_questions").select(
@@ -340,7 +387,7 @@ def main() -> int:
             "qp_pdf_url": qp_url,
             "ms_pdf_url": ms_url,
             "stem": question["stem"][:4000],
-            "text_status": question["text_status"],
+            "text_status": db_text_status(question["text_status"]),
         }
 
         classifier_section_id = section_id_by_code[question["_section"]]

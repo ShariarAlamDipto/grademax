@@ -71,9 +71,21 @@ def main() -> int:
         if s["chapter_id"] in number_by_chapter_id
     }
 
-    rows = supabase.table("workbook_questions").select(
-        "id,source_paper_key,source_question_number"
-    ).eq("subject_id", subject_id).execute().data
+    # PostgREST caps a response at 1000 rows and says nothing about it, so a
+    # plain .execute() silently returned 1000 of the 1046 Maths B questions --
+    # the last 46 would have kept a NULL review_priority and sorted to the back
+    # of the queue as though they had been agreed on. Page explicitly.
+    rows: list[dict] = []
+    page = 0
+    while True:
+        batch = supabase.table("workbook_questions").select(
+            "id,source_paper_key,source_question_number"
+        ).eq("subject_id", subject_id).range(page * 1000, page * 1000 + 999).execute().data
+        rows.extend(batch)
+        if len(batch) < 1000:
+            break
+        page += 1
+
     id_by_source = {(r["source_paper_key"], r["source_question_number"]): r["id"] for r in rows}
     print(f"  questions in database : {len(rows)}")
 
