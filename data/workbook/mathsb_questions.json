@@ -2347,6 +2347,678 @@
     "sub_parts_verified": false
   },
   {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 1,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q1.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q1.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "WRITE IN THIS AREA\nDO N\n1 Write down 1\n24 as a decimal\n(a) correct to 3 decimal places,\n(1)\n(b) correct to 3 significant figures.\n(1)",
+    "stem_chars": 133,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 2,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q2.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q2.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "NOT WRITE IN THIS AREA\n2 Sarah wants to change 385 US dollars into British pounds (\u00a3).\nGiven that \u00a31 = 1.54 US dollars, calculate how much she should get for 385 US dollars.\n\u00a3",
+    "stem_chars": 175,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 3,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q3.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q3.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "3 The nth term of a sequence is 2 \u2013 7n\nFind the difference between the 4th term and the 8th term of this sequence.",
+    "stem_chars": 114,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 4,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q4.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q4.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "4 Express\n832 in the form 4 n , where n is an integer.\nShow all your working.",
+    "stem_chars": 77,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 5,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q5.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q5.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "5 a =\n6\n2\n\u2212\n\u239b\n\u239d\u239c\n\u239e\n\u23a0\u239f b = 2\n3\n\u239b\n\u239d\u239c\n\u239e\n\u23a0\u239f\nGiven that 3a = 4b \u2013 x, find x\nx =\n\u239b\n\u239d\n\u239c\n\u239c\n\u239c\n\u239c\n\u239e\n\u23a0\n\u239f\n\u239f\n\u239f\n\u239f",
+    "stem_chars": 98,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 6,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q6.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q6.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "6 The selling price of a TV is the cost price of the TV plus profit. The profit is 20% of the\ncost price.\nThe selling price of the TV is \u00a3450\nCalculate the cost price of the TV.\n\u00a3",
+    "stem_chars": 179,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 7,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q7.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q7.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "7\n25 cm\n12\u00b0\nDiagram NOT\naccurately drawn\nThe radius of a circle is 25 cm.\nAn arc of the circle subtends an angle of 12\u00b0 at the centre of the circle.\nCalculate the length, in cm to 1 decimal place, of this arc.\ncm",
+    "stem_chars": 212,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 8,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q8.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q8.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "8 Solve the inequality 3 \u2013 5x : 2x + 17",
+    "stem_chars": 39,
+    "text_status": "repaired",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 9,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q9.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q9.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "5\n9\n3 cm\nDiagram NOT\naccurately drawn\n4 cm\n5 cm\nD\nA\nB\nX\nC\nThe diagram shows a circle ABCD.\nThe point X is such that ABX and DCX are straight lines.\nBX = 3 cm, DC = 5 cm and CX = 4 cm.\nCalculate the length, in cm, of AX.\ncm",
+    "stem_chars": 222,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 10,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q10.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q10.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "10 The sum of the interior angles of a polygon is 1980\u00b0\nCalculate the number of sides of this polygon.",
+    "stem_chars": 102,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 11,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q11.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q11.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 2,
+    "cropped": true,
+    "stem": "6\n11 Use set notation to describe the shaded region in each of these Venn diagrams.\n(a)\nA\nC\nE\nB\n(1)\n7\n(b)\nA\nC\nE\nB\n(1)\n(c)\nA\nC\nE\nB\n(1)",
+    "stem_chars": 133,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 12,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q12.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q12.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "8\n12 The price of potatoes on Monday was \u00a32.20 for 2.5 kg.\nThe price of potatoes on Friday was \u00a32.10 for 3 kg.\nThe price per kilogram of the potatoes on Friday was less than the price per kilogram of\nthe potatoes on Monday.\nExpress the difference in these prices per kilogram as a fraction of the price per kilogram\non Monday.",
+    "stem_chars": 326,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 13,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q13.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q13.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "9\n13 Here is a fair spinner labelled 1, 6, 4, 4, 2, 6\nDiagram NOT\naccurately drawn\n6\n1\n4\n4\n2\n6\nThe spinner is spun twice and the score for each spin is recorded.\nThe two scores are added together to get the Total.\nCalculate the probability that the Total will be 6",
+    "stem_chars": 264,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 14,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q14.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q14.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "10\n14 E = {p, q, r, s, t}\nA = {p, r, t}\nTwo other sets, B and C, each contain four elements.\nA \u0088 B = {p, r}\nA \u0088 C = {p, t}\nSet B does not equal set C.\n(a) Write down set B.\nB = { }\n(1)\n(b) Write down set C.\nC = { }\n(1)\n(c) Write down set (B \u0088 C)'\n(B \u0088 C)' = { }\n(1)",
+    "stem_chars": 265,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 15,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q15.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q15.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "11\n15 A =\n1\n5\n3\n7\n\u2212\n\u2212\n\u239b\n\u239d\u239c\n\u239e\n\u23a0\u239f B =\n2\n3\n1\n6\n\u2212\n\u2212\n\u239b\n\u239d\u239c\n\u239e\n\u23a0\u239f\n(a) Find 5A \u2013 2B\n(2)\nC =\n1\n2\n3\n1\n1\n3\n\u2212\n\u239b\n\u239d\u239c\n\u239e\n\u23a0\u239f\n(b) Find BC\n(2)",
+    "stem_chars": 122,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 16,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q16.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q16.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "12\n16\nD\nC\nB\nA\nABCD is a rectangle. Showing all your construction lines,\n(a) construct the locus of points inside the rectangle that are equidistant from A and B.\n(2)\nThe point P is inside the rectangle and 5.5 cm from both the points A and B.\n(b) Find and mark with a cross (\u00d7) the point P.\nLabel the point P.\n(1)\nThe point M is the midpoint of the side AB of the rectangle.\n(c) Measure and write down the size, in degrees to the nearest degree, of \u0091APM.\n\u0091APM = \u00b0\n(1)",
+    "stem_chars": 467,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 17,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q17.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q17.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "13\n17 Given that, for all values of x,\n(x + 3)(5x + a) = 5x2 + 21x + b\nfind the value of a and the value of b.\na = , b =",
+    "stem_chars": 120,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 18,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q18.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q18.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "14\n18\nB\nC\nD\nA\n110\u00b0\n50\u00b0\nDiagram NOT\naccurately drawn\nIn the diagram, ABCD is a circle with \u0091ABC = 110\u00b0 and \u0091ACD = 50\u00b0\nBC is parallel to AD.\nCalculate, giving your reasons, the size in degrees of \u0091BAC.\n\u0091BAC = \u00b0",
+    "stem_chars": 208,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 19,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q19.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q19.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "TE IN THIS AREA\n19 Solve the simultaneous equations\n3x \u2013 4y = 5\n2x \u2013 y = 5\nShow clear algebraic working.",
+    "stem_chars": 104,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 20,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q20.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q20.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "OT WRITE IN THIS AREA\nDO NOT WRIT\n20 y varies inversely as the cube of x.\nGiven that y = 24 when x = 2\nfind the value of x when y = \u20133\nx =",
+    "stem_chars": 138,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 21,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q21.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q21.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "16\n21 60 apples are shared between Abha, Banu and Carma in the ratios 1 : 3 : x, where x > 3\n(a) Write down an expression, in terms of x, for the number of apples in Carma\u2019s share.\n(1)\n(b) Write down an expression, in terms of x, for the number of apples in Banu\u2019s share.\n(1)\nThe number of apples in Carma\u2019s share is 18 more than the number of apples in Banu\u2019s\nshare.\n(c) Find the value of x.\nx =\n(2)",
+    "stem_chars": 400,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 22,
+    "marks": 5,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q22.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q22.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "17\n22 The scale of a map is such that 3 cm on the map represents an actual distance of 15.6 km.\n(a) Express the scale of the map as a ratio in the form 1 : n where n is an integer.\n(2)\nThe actual area of a park is 676 km2\n(b) Calculate the area, in cm2, of the park on the map.\ncm2\n(3)",
+    "stem_chars": 285,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 23,
+    "marks": 5,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q23.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q23.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "DO NOT WRITE IN TH\n23 Solve the equation\n(2x \u2013 5)(3x + 1) = 4\nGive your solutions to 3 significant figures.\nShow your working clearly.",
+    "stem_chars": 134,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 24,
+    "marks": 6,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q24.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q24.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "IS AREA\n24 a = 1.2 \u00d7 10101 and b = 2 \u00d7 1034\nShowing all your working, calculate, giving your answer in standard form, the value of\n(a) ab\n(2)\n(b) b3 \u2013 a\n(2)\n(c) a\nb3\n(2)",
+    "stem_chars": 169,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 25,
+    "marks": 6,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q25.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q25.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "19\n25 A particle P is moving along a straight line. At time t seconds, the displacement, s metres,\nof P from a fixed point O of the line is given by\ns = 6t3 \u2013 t4\nAt time t seconds, the velocity of P is v m/s.\n(a) Find an expression for v in terms of t.\n(2)\nFor t > 0, the particle comes to instantaneous rest at the point A.\n(b) Find the distance, in metres to 3 significant figures, of A from O.\nmetres\n(4)",
+    "stem_chars": 407,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 26,
+    "marks": 5,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q26.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q26.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 2,
+    "cropped": false,
+    "stem": "20\n26 A lorry leaves Tower Bridge at 1200 and is driven at a constant speed for 90 km, arriving\nin Ashford at 1315.\nThe lorry is parked in Ashford for 15 minutes.\nThe lorry is then driven at a constant speed to Folkestone.\nThe lorry arrives in Folkestone at 1400, having been driven a total distance of 120 km.\n(a) Represent, on the grid opposite, the journey of the lorry as a distance-time graph.\nLabel your graph clearly.\n(1)\nA car is driven from Folkestone to Tower Bridge through Ashford, along the same roads\nas the lorry.\nThe car leaves Folkestone at 1200 and is driven at a constant speed to Tower Bridge,\narriving at 1330.\n(b) Represent on the same grid the journey of the car as a distance-time graph.\nLabel your graph clearly.\n(1)\n21\nFolkestone 120 km \u2013\n100 km \u2013\nAshford 90 km \u2013\n50 km \u2013\nTower Bridge 0 km \u2013\nDistance (km)\n1200\n\u2013\n1230\n\u2013\n1300\n\u2013\n1330\n\u2013\n1400\n\u2013\nTime\n(c) Calculate the speed, in km/h, of the lorry from Tower Bridge to Ashford.\nkm/h\n(2)\n(d) Use your graph to write down the distance between the lorry and the car at 1230.\nkm\n(1)",
+    "stem_chars": 1049,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 27,
+    "marks": 7,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q27.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q27.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 2,
+    "cropped": false,
+    "stem": "22\n27 The table shows information about the circumferences of 41 trees.\nCircumference (L cm)\nNumber of trees\n0 : L - 30\n9\n30 : L - 40\n8\n40 : L - 65\n10\n65 : L - 85\n14\n(a) Find the class interval that contains the median.\n(1)\n(b) Calculate an estimate, to the nearest cm, for the mean circumference of the 41 trees.\n(3)\n23\n(c) For the information in the table, complete the histogram.\nOne bar has been drawn for you.\n\u2013\n\u2013\n\u2013\n0\n\u2013\n50\n\u2013\n100\n\u2013\n0\nCircumference (cm)\nFrequency\ndensity\n(3)\nfor Question 28",
+    "stem_chars": 494,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2016_may-jun_1R",
+    "year": 2016,
+    "season": "may-jun",
+    "paper_number": "1R",
+    "question_number": 28,
+    "marks": 6,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2016_may-jun_1R/questions/q28.pdf",
+    "ms_pdf": "data/workbook/mathsb/2016_may-jun_1R/markschemes/q28.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "24\n28\nB\nC\nD\nA\n3 cm\n20\u00b0\nDiagram NOT\naccurately drawn\n50\u00b0\nE\nThe diagram shows \u00a8ABC with \u0091BCA = 90\u0083 and \u00a8ABD with \u0091BAD = 90\u00b0 and \u0091BDA = 50\u00b0\nThe point E is the intersection of AC and BD.\nThe diagram also shows \u00a8BCE in which CE = 3 cm and \u0091CBE = 20\u00b0\nCalculate the length, in cm to 3 significant figures, of\n(a) BC,\ncm\n(2)\n(b) AD.\ncm\n(4)",
+    "stem_chars": 331,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
     "paper_key": "2016_may-jun_2",
     "year": 2016,
     "season": "may-jun",
@@ -10874,6 +11546,595 @@
     "sub_parts_verified": true
   },
   {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 1,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q1.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q1.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "T WRITE IN THIS AREA\nDO NOT\nIS AREA\nDO NOT WRITE IN TH\n1 Express 15 centimetres as a percentage of 3 metres.\n%",
+    "stem_chars": 110,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 2,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q2.pdf",
+    "ms_pdf": null,
+    "has_markscheme": false,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "T WRITE IN THIS AREA\nDO NOT WRITE IN THI\n2\nA\nB\nThe diagram shows shape A and shape B.\nWrite down,\n(a) the number of lines of symmetry of shape A,\n(1)\n(b) the order of rotational symmetry of shape B.\n(1)",
+    "stem_chars": 202,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 3,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q3.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q3.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "al=klq=to\nN THIS AREA\n3 The bearing of ship P from ship Q is 057\u00b0\nFind the bearing of ship Q from ship P.\n\u00b0",
+    "stem_chars": 107,
+    "text_status": "repaired",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 4,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q4.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q4.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "TE IN THIS AREA\nDO NOT WRITE\n4\nA\u2004=\n2\n1\n3\n5\n\u2212\n\u2212\n\uf8eb\n\uf8ed\uf8ec\n\uf8f6\n\uf8f8\uf8f7\u2002 \u2002 \u2002 \u2002 \u2002 \u2002 B\u2004=\n\u2212\n\u2212\n\uf8eb\n\uf8ed\uf8ec\n\uf8f6\n\uf8f8\uf8f7\n1\n2\n3\n3\nCalculate 3A\u2004+ 2B\n\uf8eb\n\uf8ed\n\uf8ec\n\uf8ec\n\uf8f6\n\uf8f8\n\uf8f7\n\uf8f7",
+    "stem_chars": 127,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 5,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q5.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q5.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "DO NOT WRITE IN T\nWRITE IN THIS AREA\n5 Without using a calculator and showing all your working, evaluate\n2 1\n4 \u00d7\u20042 2\n3\nGive your answer in its simplest form.",
+    "stem_chars": 157,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 6,
+    "marks": 2,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q6.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q6.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "HIS AREA\nDO NOT W\n6 Given that y\u2004=\u20047x2\u2004\u2212 3\nx\nfind d\nd\ny\nx\nd\nd\ny\nx =",
+    "stem_chars": 67,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 7,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q7.pdf",
+    "ms_pdf": null,
+    "has_markscheme": false,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "7 Here are the first 4 terms of a sequence.\n4096\u2002 \u2002 \u2002 \u2002 \u2002 \u2002 \u22121024\u2002 \u2002 \u2002 \u2002 \u2002 \u2002 256\u2002 \u2002 \u2002 \u2002 \u2002 \u2002 \u221264\n(i) Write down the next 2 terms of the sequence.\n,\n(ii) Explain how you found your answer.",
+    "stem_chars": 186,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 8,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q8.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q8.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "DO NOT WRITE IN THIS AR\nO NOT WRITE IN THIS AREA\n8 Ying has 4 black counters and 3 white counters.\nThere is a number on each counter.\nThe mean of the numbers on the black counters is 11.5\nThe mean of the numbers on the white counters is 9\nCalculate the mean, to 3 significant figures, of the numbers on all 7 counters.",
+    "stem_chars": 318,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 9,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q9.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q9.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "al=klq=to\nTHIS AREA\n9 Find the largest integer value of x such that 17\u2004\u2212\u20042x\u2004\uf085\u20044(x\u2004\u2013\u20045)\nShow clear algebraic working.",
+    "stem_chars": 116,
+    "text_status": "repaired",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 10,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q10.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q10.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "RITE IN THIS AREA\nDO NOT WRITE IN\n10 A regular polygon has n sides.\nEach interior angle of the regular polygon is 135\u00b0 greater than each exterior angle of\nthe\u00a0polygon.\nFind the value of n.\nn =",
+    "stem_chars": 192,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 11,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q11.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q11.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "DO NOT WRITE IN THIS\nOT WRITE IN THIS AREA\n11 A piece of ribbon 9 metres long is cut into 3 parts in the ratios 3\u2009:\u20095\u2009:\u20097 by length.\nCalculate the length, in metres, of the longest piece.\nm",
+    "stem_chars": 189,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 12,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q12.pdf",
+    "ms_pdf": null,
+    "has_markscheme": false,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "S AREA\nDO NO\n12 (a) Write 9.6\u2004\u00d7\u200410\u22127 as an ordinary number.\n(1)\n(b) Calculate 2 4\n10\n9 6\n10\n199\n7\n.\n.\n\u00d7\n\u00d7\n\u2212\nGive your answer in standard form.\n(2)",
+    "stem_chars": 146,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 13,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q13.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q13.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "DO NOT WRITE IN\nRITE IN THIS AREA\n13 Without using a calculator and showing all your working, express\n605\n80\n\u2212\nin the form\nn where n is an integer.",
+    "stem_chars": 147,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 14,
+    "marks": 3,
+    "difficulty": "easy",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q14.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q14.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "THIS AREA\nal=klq=to\n14 Solve the equation\n5x2\u2004=\u20047\u2004\u2212\u20049x\nGive your solutions to 3 significant figures.\nShow your working clearly.",
+    "stem_chars": 127,
+    "text_status": "repaired",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 15,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q15.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q15.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "9\n15\nA\nD\nB\nC\nThe diagram shows quadrilateral ABCD.\nThe point P lies inside the quadrilateral, such that P is 5.5\u2009cm from C and equidistant\nfrom AD and AB.\nUsing ruler and compasses only and showing all your construction lines, show the point\nP on the diagram.",
+    "stem_chars": 259,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 16,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q16.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q16.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "10\n16 t varies inversely as the square of a where a\u2004>\u20040\nt\u2004=\u200414 when a\u2004=\u20045\nCalculate the value of a when t\u2004=\u2004224\na =",
+    "stem_chars": 115,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 17,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q17.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q17.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "",
+    "stem_chars": 0,
+    "text_status": "needs_vision",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 18,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q18.pdf",
+    "ms_pdf": null,
+    "has_markscheme": false,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "12\n18 E\u2004=\u2004{positive integers from 1 to 15 inclusive}\nA\u2004=\u2004{multiples of 3}\nB\u2004=\u2004{even numbers}\n(a) Find A\u2004\u222a\u2004B\nA\u2004\u222a\u2004B\u2004=\u2004{\n}\n(1)\n(b) (i) Find A\u2004\u2229\u2004B\nA\u2004\u2229\u2004B\u2004=\u2004{\n}\n(1)\n(ii) Find n([A\u2004\u2229\u2004B]\u02b9)\nn([A\u2004\u2229\u2004B]\u02b9)\u2004=\n(1)\nThe set C has 8 elements and B\u2004\u2229\u2004C\u2004=\u2004\u2205\n(c) Write down the elements of set C.\nC\u2004=\u2004{\n}\n(1)",
+    "stem_chars": 287,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 19,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q19.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q19.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "19 Solve the simultaneous equations\n10x\u2004+\u20042y\u2004=\u200417\n15x\u2004\u2212\u20043y\u2004=\u200439\nx =\n, y =",
+    "stem_chars": 73,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 20,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q20.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q20.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": true,
+    "stem": "A\nD\n20 The coordinates of point A=are=ETI=OF=and=the=coordinates=of=point=B are (\u22125, y).\nThe modulus of the vector AB\n\u2192 is 13\nCalculate the possible values of y.\ny =",
+    "stem_chars": 165,
+    "text_status": "repaired",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 21,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q21.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q21.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "14\n21 The straight line joining the points with coordinates (\u2212a, \u221222) and (3a, 38)\nhas equation y\u2004=\u2004mx\u2004+\u2004a\nCalculate the value of a and the value of m.\na =\nm =",
+    "stem_chars": 159,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 22,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q22.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q22.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "15\n22\nA\nD\nB\nE\nC\nDiagram NOT\naccurately drawn\nIn the diagram ACE and BCD are straight lines such that the point C is the midpoint of\u00a0BD.\nAB is parallel to DE.\nProve that the triangles ABC and EDC are congruent.",
+    "stem_chars": 209,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 23,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q23.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q23.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "16\n23 A right circular cone has a curved surface area of 136\u2009\u03c0\u2009cm2\nThe radius of the base of the cone is 8\u2009cm\nThe volume of the cone is k\u2009\u03c0\u2009cm3\nFind the value of k.\nk =",
+    "stem_chars": 168,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 24,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q24.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q24.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "17\n24 Solve 3\n1\n2\n9\n5\n2\n1\n5\n1\n2\n\u2212\n+\n+\n\u2212\n\u2212\n\u2212\n+\n=\nx\nx\nx\nx\nx\nShow clear algebraic working.\nx =",
+    "stem_chars": 91,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 25,
+    "marks": 5,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q25.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q25.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "18\n25 There are 20 counters in a bag.\nThere are 7 red counters.\nThe rest of the counters are green or white.\nBernard takes at random 2 counters from the bag.\nThe probability that Bernard will take 2 white counters is 1\n19\nCalculate the probability that Bernard will take 1 green counter and 1 white counter.",
+    "stem_chars": 307,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 26,
+    "marks": 6,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q26.pdf",
+    "ms_pdf": null,
+    "has_markscheme": false,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "19\n26 The table below gives information about the lengths of time that 50 people have been\nwaiting for a train.\nWaiting time (m minutes)\nFrequency\n0\u2004<\u2004m\u2004\uf084\u2004\u2002 5\n4\n5\u2004<\u2004m\u2004\uf084\u200410\n5\n10\u2004<\u2004m\u2004\uf084\u200415\n11\n15\u2004<\u2004m\u2004\uf084\u200420\n8\n20\u2004<\u2004m\u2004\uf084\u200425\n22\n(a) Find the modal class.\n(1)\n(b) Find the class interval that contains the median waiting time.\n(2)\n(c) Calculate an estimate for the mean waiting time.\nminutes\n(3)",
+    "stem_chars": 383,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 27,
+    "marks": 6,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q27.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_1R/markschemes/q27.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "20\n27\nDiagram NOT\naccurately drawn\nA\nB\nC\n30\u00b0\n(x\u2004+\u20045)\u2009cm\n(2x\u2004\u2212\u20045)\u2009cm\nThe diagram shows \uf021\u200aABC in which\nAB\u2004=\u2004(2x\u2004\u2212\u20045)\u2009cm\u2002 \u2002 \u2002 \u2002 \u2002 \u2002 BC\u2004=\u2004(x\u2004+\u20045)\u2009cm\u2002 \u2002 \u2002 \u2002 \u2002 \u2002 \u00d0\u200aABC\u2004=\u200430\u00b0\nThe area of \uf021\u200aABC is 15.75\u2009cm2\nCalculate the length, in cm to 3 significant figures, of AC.\ncm",
+    "stem_chars": 262,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_1R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "1R",
+    "question_number": 28,
+    "marks": 7,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_1R/questions/q28.pdf",
+    "ms_pdf": null,
+    "has_markscheme": false,
+    "qp_page_count": 1,
+    "cropped": false,
+    "stem": "21\n28 (a) Factorise fully 15x3\u2009y\u2004\u2212\u200420x2\u2009y2\n(2)\n(b) Simplify fully (\n)\n27\n18\n6\n2\n3\n3\nx\nx\n(3)\n(c) Given that (x\u2004\u2212\u2004OF=is=a=factor=of==Ox3\u2004+\u20043x2\u2004+\u2004kx\u2004\u2212\u20046\nfind the value of k.\nk =\n(2)",
+    "stem_chars": 178,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
     "paper_key": "2019_jan_2",
     "year": 2019,
     "season": "jan",
@@ -11238,6 +12499,364 @@
       }
     ],
     "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 1,
+    "marks": 4,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q1.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q1.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 2,
+    "cropped": false,
+    "stem": "2\nAnswer ALL ELEVEN questions.\nWrite your answers in the spaces provided.\nYou must write down all the stages in your working.\n1\nDiagram NOT\naccurately drawn\nZ\nX\nY\nh\u2009cm\nFigure 1\nIn Figure 1, \uf021XYZ has base XY and height h\u2009cm.\nThe length of XY is 7.2\u2009cm, to 2 significant figures.\n(a) Write down the lower bound for the length of XY.\n(1)\nThe area of \uf021XYZ is 29\u2009cm2, to 2 significant figures.\n(b) Write down the upper bound for the area of \uf021XYZ.\n(1)\n(c) Calculate, to 3 decimal places, the upper bound of h.\n(2)\n3\n.",
+    "stem_chars": 511,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 2,
+    "marks": 9,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q2.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q2.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 4,
+    "cropped": false,
+    "stem": "4\n2 (a) Complete the table of values for y\u2004=\u2004x2\u2004\u2212\u20043x\u2004+\u20041\nx\n\u22121\n0\n1\n2\n3\n4\n5\ny\n\u22121\n1\n5\n(2)\n(b) On the grid opposite, plot the points from your completed table and join them to form\na smooth curve.\n(2)\n(c) Use your graph to find an estimate for the minimum value of y.\n(1)\n(d) Use your graph to find estimates, to one decimal place, for the solutions of the\nequation x2\u2004\u2212\u20043x\u2004+\u20041\u2004=\u20040\n(1)\n(e) By drawing a suitable straight line on your grid, find estimates, to one decimal place,\nfor the solutions of the equation x2\u2004\u2212\u20044x\u2004+\u20042\u2004=\u20040\n(3)\n5\ny\nx\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\nO\n\u22121\n\u22122\n\u22123\n1\n2\n3\n4\n5\n\u22121\n\u22122\nfor a spare grid if you need to redraw your graph.\n6\n7\nOnly use this grid if you need to redraw your graph.\ny\nx\n11\n10\n9\n8\n7\n6\n5\n4\n3\n2\n1\nO\n\u22121\n\u22122\n\u22123\n1\n2\n3\n4\n5\n\u22121\n\u22122",
+    "stem_chars": 747,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 1
+      },
+      {
+        "label": "d",
+        "marks": 1
+      },
+      {
+        "label": "e",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 3,
+    "marks": 9,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q3.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q3.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 4,
+    "cropped": false,
+    "stem": "8\n3 Hugh and Pau are planning to sell ice creams at a charity event.\nThey buy enough ingredients to make exactly 270 ice creams.\nHugh and Pau make vanilla flavour, strawberry flavour and chocolate flavour ice creams.\nThe numbers of vanilla flavour, strawberry flavour and chocolate flavour ice creams they\nmake are in the ratios 2 : 3 : 4\n(a) Calculate the number of chocolate flavour ice creams they make.\n(3)\nHugh and Pau buy all the ingredients for the 270 ice creams at a total cost of \u00a364.80\nThey calculate the selling price of each ice cream so that if they sell all 270 ice creams,\nthey would make a profit of \u00a31.20 on each ice cream.\n(b) Calculate the percentage profit that Hugh and Pau would make if they sell all 270\nice\u00a0creams at their calculated selling price.\n(3)\nAt the charity event, Hugh and Pau sell 8\n9 of the 270 ice creams at their calculated\nselling price.\nThey then sell the remainder of the ice creams at half this selling price.\n(c) Calculate the total profit, in pounds, that they make by selling all 270 ice creams.\n(3)\n9\n10\n11",
+    "stem_chars": 1054,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 4,
+    "marks": 10,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q4.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q4.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 4,
+    "cropped": false,
+    "stem": "12\n4\nB\nC\nO\nA\n3a\nM\n6b\n6a\nDiagram NOT\naccurately drawn\nFigure 2\nIn Figure 2, OACB is a trapezium in which OA\n\u2192 = 6a, OB\n\u2192 = 6b and BC\n\u2192 = 3a\nM is the point on AC such that AM : AC = 1 : 3\n(a) Find, in terms of a and b, simplifying your answer where possible,\n(i)\u2002 AB\n\u2192\u2002 \u2002 \u2002 \u2002 (ii)\u2002 AC\n\u2192\u2002 \u2002 \u2002 \u2002 (iii)\u2002 AM\n\u2192\n(3)\nThe point N is such that ON\n\u2192 = \u03bcOM\n\u2192 where \u03bc\u2004>\u20041 and such that BCN is a straight line.\n(b) Find and simplify an expression, in terms of a and b, for ON\n\u2192.\n(4)\nGiven that the area of \uf021OAM is 12\u2009cm2\n(c) find the area, in cm2, of \uf021NMC.\n(3)\n13\n14\n15",
+    "stem_chars": 554,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 5,
+    "marks": 11,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q5.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q5.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 4,
+    "cropped": false,
+    "stem": "16\n5 On the grid opposite, triangle B is the image of triangle A under a single transformation.\n(a) Describe fully the single transformation.\n(3)\nTriangle B is transformed to triangle C under the transformation with matrix M where\nM\u2004=\n\u2212\n\u2212\n\u2212\n\uf8eb\n\uf8ed\uf8ec\n\uf8f6\n\uf8f8\uf8f7\n1\n0\n3\n1\n(b) On the grid, draw and label triangle C.\n(3)\nTriangle C is transformed to triangle D under the transformation with matrix N where\nN\u2004=\n3\n1\n1\n0\n\u2212\n\u2212\n\uf8eb\n\uf8ed\uf8ec\n\uf8f6\n\uf8f8\uf8f7\n(c) On the grid, draw and label triangle D.\n(3)\nTriangle D is the image of triangle B under a single transformation.\n(d) Describe fully this transformation.\n(2)\n18",
+    "stem_chars": 581,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 6,
+    "marks": 11,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q6.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q6.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 4,
+    "cropped": false,
+    "stem": "20\n6 All 35 students in class 11T were asked which of rugby (R), cricket (C\u200a) and football (F\u200a)\nthey like.\nOf these 35 students\n14 like rugby\n20 like cricket\n12 like football\n6 like both cricket and football\n7 like both rugby and football\n4 like all three sports\n5 do not like any of rugby, cricket or football.\nLet x be the number of students in class 11T who like both rugby and cricket.\n(a) Show all this information on the Venn diagram, giving the number of elements in\neach appropriate subset, in terms of x where necessary.\n(3)\nE\nR\nC\nF\n(b) Find the value of x.\n(2)\n(c) Find\n(i) n(R \u222a F\u200a)\n(ii) n(R \u2229 [C \u222a F\u200a])\n(2)\n21\nQuestion 6 continues on the next page.\n22\nSome of the 14 students in class 11T, who like rugby, play for a rugby club team.\nThe incomplete probability tree diagram gives information about these 14 students.\nplays for a club team\ndoes not play for a club team\nboy\ngirl\n9\n14\n6\n9\nplays for a club team\ndoes not play for a club team\n4\n5\n(d) Complete the probability tree diagram.\n(2)\nA student who likes rugby in class 11T is to be chosen at random.\n(e) Find the probability that this student plays rugby for a club team.\n(2)\n23",
+    "stem_chars": 1146,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 2
+      },
+      {
+        "label": "e",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 7,
+    "marks": 14,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q7.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q7.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 4,
+    "cropped": false,
+    "stem": "24\n7\nA\nB\nC\nD\nE\nF\nO\n27\u00b0\n59\u00b0\n12\u2009cm\nDiagram NOT\naccurately drawn\nFigure 3\nIn Figure 3, ABCD is a circle, centre O.\nEA is the tangent to the circle at A.\nECF is the tangent to the circle at C.\nEDO is a straight line.\n\u00d0OEC = 27\u00b0\u2002 \u2002 \u2002 \u2002 \u00d0BCF = 59\u00b0\u2002 \u2002 \u2002 \u2002 EC = 12 cm\n(a) Explain why \u00d0OCE = 90\u00b0\n(1)\n(b) Calculate the area, in cm2 to 3 significant figures, of \uf021OEC.\n(4)\n(c) Giving reasons, calculate the size, in degrees, of \u00d0ABC.\n(4)\n(d) Calculate the size, in degrees, of \u00d0ADC.\n(2)\n(e) Calculate the size, in degrees, of \u00d0BAO.\n(3)\n25\n26\n27",
+    "stem_chars": 532,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 4
+      },
+      {
+        "label": "d",
+        "marks": 2
+      },
+      {
+        "label": "e",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 8,
+    "marks": 6,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q8.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q8.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 2,
+    "cropped": false,
+    "stem": "28\n8 Solve the simultaneous equations\n2x2\u2004+\u2004y2\u2004=\u20046\nx\u2004\u2212\u20042y\u2004=\u20043\nShow clear algebraic working.\n(6)\n.\n29",
+    "stem_chars": 100,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 9,
+    "marks": 5,
+    "difficulty": "medium",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q9.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q9.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 2,
+    "cropped": false,
+    "stem": "30\n9\nFrequency\ndensity\n00\n10\n20\n30\n40\n50\n60\nTime (minutes)\nFigure 4\nFigure 4 shows a histogram that gives information about the time, in minutes, each of\n440 people spent in a supermarket.\nTwo people are chosen at random from the 440 people.\nCalculate an estimate, to 3 significant figures, for the probability that both of these people\nspent more than 45 minutes in the supermarket.\n(5)\n31",
+    "stem_chars": 390,
+    "text_status": "ok",
+    "sub_parts": null,
+    "sub_parts_verified": false
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 10,
+    "marks": 7,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q10.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q10.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 2,
+    "cropped": false,
+    "stem": "32\n10\n2x\u2009cm\n2x\u2009cm\ny\u2009cm\nDiagram NOT\naccurately drawn\nFigure 5\nFigure 5 shows a cuboid with width 2x\u2009cm, height 2x\u2009cm and length y\u2009cm.\nGiven that the total surface area of the cuboid is 240\u2009cm2\n(a) show that\nx2\u2004+\u2004xy\u2004\u2212\u200430\u2004=\u20040\n(2)\n(b) Using calculus, calculate the exact value of x for which the volume of the cuboid is\na\u00a0maximum.\n(5)\n33",
+    "stem_chars": 333,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true
+  },
+  {
+    "paper_key": "2019_jan_2R",
+    "year": 2019,
+    "season": "jan",
+    "paper_number": "2R",
+    "question_number": 11,
+    "marks": 14,
+    "difficulty": "hard",
+    "qp_pdf": "data/workbook/mathsb/2019_jan_2R/questions/q11.pdf",
+    "ms_pdf": "data/workbook/mathsb/2019_jan_2R/markschemes/q11.pdf",
+    "has_markscheme": true,
+    "qp_page_count": 3,
+    "cropped": false,
+    "stem": "34\n11 The three functions, f, g and h, are defined as\nf : x\u2004\u200a\uf061\u2004x2\u2004+\u20043x\u2004\u2212\u20044\ng : x\u2004\uf061\u20042x\u2004+\u20043\nh : x\u2004\uf061\nx\nx\n3\n25\n\u2212\n(a) Write down the value of x that must be excluded from any domain of h.\n(1)\n(b) Find f(6)\n(1)\n(c) Solve the equation h(x) = 7\n(3)\n(d) Find hg(4)\n(2)\n(e) Express the inverse function h\u22121 in the form h\u22121 : x\u2004\uf061\u2004\u2026\n(3)\n(f) Solve the equation fg(x) = 0\n(4)\n35\n36",
+    "stem_chars": 367,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      },
+      {
+        "label": "e",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": false
   },
   {
     "paper_key": "2019_may-jun_1",

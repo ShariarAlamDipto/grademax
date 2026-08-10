@@ -142,6 +142,37 @@ def repair_span(text: str) -> tuple[str, bool]:
     return text, False
 
 
+# A SECOND, OPPOSITE CMap variant, found while auditing cropped segments.
+#
+# The variant CMAP_OFFSET handles stores each character 29 BELOW its true value,
+# which is detectable because space (32) lands on 3, a control character.
+#
+# This one stores characters 29 ABOVE, and only for characters whose true value
+# was <= 90 -- so uppercase, digits, space and punctuation shift while lowercase
+# is left intact:
+#
+#     "19 Solve the simultaneous equations"
+#     -> "19&=polve=the=simultaneous=equations"
+#         space(32) -> "="(61)      "S"(83) -> "p"(112)      "olve" untouched
+#
+# Nothing lands in the control range, so the existing detector never fires. A
+# blanket -29 is NOT the answer: it would also rewrite the intact lowercase
+# ("the" -> "QEB"). Per character the two cases are genuinely ambiguous.
+#
+# So only the unambiguous part is repaired -- "=" acting as a word separator
+# between two letters is a shifted space and nothing else. The rest is left
+# alone and the question is flagged, because inventing the missing capitals
+# would be guessing at the text of an exam question.
+GARBLED_SEPARATOR_RE = re.compile(r"(?<=[A-Za-z])=(?=[A-Za-z])")
+
+
+def repair_shifted_separators(text: str) -> tuple[str, bool]:
+    """Turn the shifted spaces back into spaces. Returns (text, was_garbled)."""
+    if len(GARBLED_SEPARATOR_RE.findall(text)) < 3:
+        return text, False
+    return GARBLED_SEPARATOR_RE.sub(" ", text), True
+
+
 def strip_boilerplate(text: str) -> str:
     for pattern in BOILERPLATE_PATTERNS:
         text = pattern.sub(" ", text)
@@ -214,11 +245,18 @@ def extract_stem(pdf_path: Path) -> tuple[str, str]:
                         lines.append(joined)
 
     cleaned = strip_boilerplate("\n".join(lines))
+    cleaned, was_garbled = repair_shifted_separators(cleaned)
 
     # Maths B Paper 1 stems are genuinely short -- "Factorise 6x + 9x - 4" is a
     # complete question -- so the readability floor is lower than FPM's.
     if len(cleaned) < 20 or word_score(cleaned) < 1:
         return cleaned, "needs_vision"
+
+    if was_garbled:
+        # Readable enough to classify and to search, but some capitals are
+        # still wrong. Flagged so it is never presented as the exam's own
+        # wording -- the book prints the PDF, which renders correctly.
+        return cleaned, "partially_garbled"
 
     return cleaned, "repaired" if repaired_spans else "ok"
 
@@ -351,7 +389,7 @@ def main() -> int:
         print(f"    from Paper {paper:<11}: {by_paper[paper]}")
 
     print("\n  Text")
-    for status in ("ok", "repaired", "needs_vision"):
+    for status in ("ok", "repaired", "partially_garbled", "needs_vision"):
         print(f"    {status:<20} : {status_counts.get(status, 0)}")
     usable = total - status_counts.get("needs_vision", 0)
     print(f"    usable for Phase 3   : {usable} ({usable / total:.0%})")

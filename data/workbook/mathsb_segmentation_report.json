@@ -59,17 +59,14 @@
     },
     {
       "key": "2016_may-jun_1R",
-      "status": "failed",
+      "status": "ok",
       "skipped_reason": null,
-      "issues": [
-        "question 5: derived start page 3 is after its fence page 2",
-        "28 questions fenced but only 27 produced regions"
-      ],
+      "issues": [],
       "warnings": [
         "mark scheme read as per-question tallies: 28/28 aligned by marks"
       ],
-      "questions": 27,
-      "marks": 98
+      "questions": 28,
+      "marks": 100
     },
     {
       "key": "2016_may-jun_2",
@@ -282,6 +279,7 @@
         "marks sum to 94, expected 100 ({1:2, 2:2, 3:2, 4:2, 5:2, 6:2, 7:2, 10:3, 11:3, 12:3, 13:3, 14:3, 15:4, 16:4, 17:4, 18:4, 19:4, 20:4, 21:5, 22:5, 23:5, 24:6, 25:8, 26:6, 27:6})"
       ],
       "warnings": [
+        "question 8: fence unreadable and question 9 has no printed start marker -- cannot place the boundary",
         "mark scheme read as a continuous table: 25 numbered rows, 1 also confirmed by their printed mark"
       ],
       "questions": 25,
@@ -289,18 +287,16 @@
     },
     {
       "key": "2019_jan_1R",
-      "status": "failed",
+      "status": "ok",
       "skipped_reason": null,
-      "issues": [
-        "question numbers are not contiguous from 1: missing [17], unexpected [28]",
-        "marks sum to 96, expected 100 ({1:2, 2:2, 3:2, 4:2, 5:2, 6:2, 7:3, 8:3, 9:3, 10:3, 11:3, 12:3, 13:3, 14:3, 15:4, 16:4, 18:4, 19:4, 20:4, 21:4, 22:4, 23:4, 24:4, 25:5, 26:6, 27:6, 28:7})"
-      ],
+      "issues": [],
       "warnings": [
-        "mark scheme read as a continuous table: 21 numbered rows, 1 also confirmed by their printed mark -- 6 question(s) unmatched",
+        "question 17: fence unreadable -- marks (4) from the 100-mark paper total, boundary from question 18's printed start marker on page 11",
+        "mark scheme read as a continuous table: 22 numbered rows, 1 also confirmed by their printed mark -- 6 question(s) unmatched",
         "no mark scheme block found for questions [2, 7, 12, 18, 26, 28]"
       ],
-      "questions": 27,
-      "marks": 96
+      "questions": 28,
+      "marks": 100
     },
     {
       "key": "2019_jan_2",
@@ -315,17 +311,15 @@
     },
     {
       "key": "2019_jan_2R",
-      "status": "failed",
+      "status": "ok",
       "skipped_reason": null,
-      "issues": [
-        "question numbers are not contiguous from 1: missing [5], unexpected [11]",
-        "marks sum to 89, expected 100 ({1:4, 2:9, 3:9, 4:10, 6:11, 7:14, 8:6, 9:5, 10:7, 11:14})"
-      ],
+      "issues": [],
       "warnings": [
-        "mark scheme read as a continuous table: 10 numbered rows, 0 also confirmed by their printed mark"
+        "question 5: fence unreadable -- marks (11) from the 100-mark paper total, boundary from question 6's printed start marker on page 19",
+        "mark scheme read as a continuous table: 11 numbered rows, 0 also confirmed by their printed mark"
       ],
-      "questions": 10,
-      "marks": 89
+      "questions": 11,
+      "marks": 100
     },
     {
       "key": "2019_may-jun_1",

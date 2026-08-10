@@ -140,6 +140,7 @@ TAXONOMY: dict[str, str] = {
     "3.5": 'Algebraic fractions',
     "3.6": 'Rearranging formulae and changing the subject',
     "3.7": 'Sequences and the nth term',
+    "3.8": 'Factor and remainder theorem',
     "4.1": 'Function notation, domain and range',
     "4.2": 'Composite functions',
     "4.3": 'Inverse functions',
@@ -153,6 +154,8 @@ TAXONOMY: dict[str, str] = {
     "6.3": 'Circle theorems',
     "6.4": "Pythagoras' theorem",
     "6.5": 'Constructions and loci',
+    "6.6": 'Coordinate geometry: gradient, length and midpoint',
+    "6.7": 'Equations of straight lines, parallel and perpendicular',
     "7.1": 'Perimeter and area of plane shapes',
     "7.2": 'Circles, arcs and sectors',
     "7.3": 'Volume and surface area of solids',
@@ -221,8 +224,9 @@ Rules:
 - Reply with a JSON array and nothing else. No prose, no markdown fences.
 
 Disambiguation - these pairs are confused most often:
-- 5.4 Matrix transformations applies ONLY when a MATRIX represents the transformation, or one is asked for. A reflection, rotation, translation or enlargement described geometrically is 8.3, and a composition of them is 8.4.
+- 5.4 Matrix transformations is the primary whenever a matrix DEFINES the transformation, is given for it, or is asked for - including "triangle B is the image of A under the transformation with matrix M" and "find the matrix representing...". Only use 8.3 or 8.4 when no matrix appears anywhere in the question. This pair was got wrong most often on the first pass: 24 matrix-transformation questions, only 2 reached 5.4.
 - A Venn diagram asking for a PROBABILITY is 10.5, or 10.6 if it is conditional. Chapter 2 is for set notation, regions, shading and counting elements.
+- Count the sets before choosing between 2.2 and 2.3. THREE named sets (or three overlapping circles) is 2.3, however the question is worded; 2.2 is only for two.
 - 6.4 Pythagoras is for right-angled triangles where only SIDES are involved. Bring in 9.1 as soon as an angle is used or asked for.
 - 9.2 is the sine rule, 9.3 the cosine rule and the (1/2)ab sin C area formula. Use 9.4 when the question is set in bearings or in three dimensions, even though a rule is applied.
 - 7.4 Similar shapes is for AREA or VOLUME scale factors between similar figures. Simple similar-triangle side lengths are 6.2.
@@ -234,34 +238,55 @@ Disambiguation - these pairs are confused most often:
 - 3.4 Quadratic equations is for solving algebraically. Use 4.4 only when the demand is to draw, complete or read values from a graph.
 - 4.2 is fg(x) style composition; 4.3 is finding an inverse. Evaluating f(3) alone is 4.1.
 
+- 6.6 covers gradient, length/distance and midpoint of a line segment between two coordinate points. 6.7 covers finding or using the EQUATION of a straight line, including parallel and perpendicular conditions. Neither belongs in 6.1, which is angle facts in polygons and parallel lines, nor in chapter 11 - finding a gradient BETWEEN TWO POINTS is 6.6, while finding the gradient of a CURVE by differentiating is 11.2.
+- 3.8 is for the factor theorem and the remainder theorem, including "show that (x - a) is a factor" and factorising a cubic that follows from it. Do not send these to 3.4, which is for solving quadratics.
+
 Format: [{{"id":"<id>","primary":"9.4","secondary":["8.2"],"archetype":"tangent to curve at point","confidence":0.9}}]"""
 
 
+def section_migrations(subject_code: str = "4MB1") -> list[Path]:
+    """
+    Every migration seeding `workbook_sections` for this subject, in order.
+
+    Accumulating is correct HERE because Maths B's migrations are purely
+    additive: 15 seeded 50 sections and 16 added 3 more. It would be wrong for
+    FPM, whose migration 13 renumbered the sections rather than extending them,
+    so accumulating 12 and 13 would leave stale codes behind. That script
+    therefore still reads only its newest migration -- the difference is in the
+    migrations, not an inconsistency between the scripts.
+    """
+    return [
+        path
+        for path in sorted(MIGRATIONS_DIR.glob("*.sql"))
+        if "INSERT INTO workbook_sections" in (text := path.read_text(encoding="utf-8"))
+        and f"'{subject_code}'" in text
+    ]
+
+
 def check_taxonomy() -> int:
-    """Diff TAXONOMY against the section seed in migration 12. 0 if identical."""
-    migration_path = latest_section_migration()
-    if migration_path is None:
+    """Diff TAXONOMY against the sections seeded by the migrations. 0 if identical."""
+    migration_paths = section_migrations()
+    if not migration_paths:
         print(f"No migration seeding workbook_sections found in {MIGRATIONS_DIR}")
         return 1
 
-    print(f"checking against {migration_path.name}")
-    sql = migration_path.read_text(encoding="utf-8")
-    try:
-        block = sql.split("INSERT INTO workbook_sections")[1].split(") AS v(chapter_number")[0]
-    except IndexError:
-        print("Could not locate the workbook_sections seed block in the migration.")
-        return 1
+    print(f"checking against {', '.join(p.name for p in migration_paths)}")
 
-    seeded = {
-        f"{chapter}.{section}": title
-        # `''` is SQL's escape for a literal apostrophe, so a section titled
-        # "Pythagoras'' theorem" in the migration must be read as one value and
-        # unescaped -- a naive [^']+ stops at the first quote and drops it.
-        for chapter, section, title in (
-            (c, s, t.replace("''", "'"))
-            for c, s, t in re.findall(r"\((\d+),\s*(\d+),\s*'((?:[^']|'')+)'\)", block)
-        )
-    }
+    # Accumulate across migrations in order. A subject's taxonomy is not confined
+    # to one file: 15 seeded 50 sections for Maths B and 16 added 3 more, so
+    # diffing against only the newest reports the other 50 as missing.
+    seeded: dict[str, str] = {}
+    for migration_path in migration_paths:
+        sql = migration_path.read_text(encoding="utf-8")
+        for chunk in sql.split("INSERT INTO workbook_sections")[1:]:
+            block = chunk.split(") AS v(chapter_number")[0]
+            # `''` is SQL's escape for a literal apostrophe, so a section titled
+            # "Pythagoras'' theorem" must be read as one value and unescaped --
+            # a naive [^']+ stops at the first quote and drops it.
+            for chapter, section, title in re.findall(
+                r"\((\d+),\s*(\d+),\s*'((?:[^']|'')+)'\)", block
+            ):
+                seeded[f"{chapter}.{section}"] = title.replace("''", "'")
 
     missing = sorted(set(TAXONOMY) - set(seeded), key=lambda c: [int(p) for p in c.split(".")])
     extra = sorted(set(seeded) - set(TAXONOMY), key=lambda c: [int(p) for p in c.split(".")])

@@ -598,31 +598,51 @@ def build_regions(
     A page owned outright is taken whole, so diagrams and rubric that sit above
     the question number or below the fence are never clipped.
     """
-    starts_on = {q: start[0] for q, (start, _) in bounds.items()}
-    ends_on = {q: end[0] for q, (_, end) in bounds.items()}
-
     # How many questions touch each page.
     occupancy: dict[int, set[int]] = {}
     for question, (start, end) in bounds.items():
         for page in range(start[0], end[0] + 1):
             occupancy.setdefault(page, set()).add(question)
 
+    # ONE boundary per adjacent pair, not two independent pads.
+    #
+    # Padding each side separately (fence + 10 below, marker - 8 above) let the
+    # two bands overlap wherever the real gap was under 18pt -- 70 of 208
+    # adjacent pairs, each by 0.65pt. Harmless at 10pt type, but it meant the
+    # boundary between two questions had two different answers depending on
+    # which one you asked. The midpoint of the gap is a single answer, always
+    # below the fence it must keep and above the question number it must
+    # exclude.
+    bottom_at: dict[int, float] = {}
+    top_at: dict[int, float] = {}
+
+    ordered = sorted(bounds)
+    for above, below in zip(ordered, ordered[1:]):
+        _, (above_page, above_y) = bounds[above]
+        (below_page, below_y), _ = bounds[below]
+        if below_page != above_page or below_y is None:
+            continue  # the next question starts on a fresh page
+        boundary = (
+            (above_y + below_y) / 2.0
+            if below_y > above_y
+            else above_y + CROP_PAD_BOTTOM
+        )
+        bottom_at[above] = boundary
+        top_at[below] = boundary
+
     regions: dict[int, tuple[Region, ...]] = {}
 
-    for question, ((start_page, start_y), (end_page, end_y)) in sorted(bounds.items()):
+    for question, ((start_page, _), (end_page, _)) in sorted(bounds.items()):
         pages: list[Region] = []
 
         for page in range(start_page, end_page + 1):
             shared = len(occupancy.get(page, set())) > 1
 
-            top = None
-            bottom = None
-
-            if shared:
-                if page == start_page and starts_on[question] == page and start_y is not None:
-                    top = max(0.0, start_y - CROP_PAD_TOP)
-                if page == end_page and ends_on[question] == page:
-                    bottom = end_y + CROP_PAD_BOTTOM
+            # A question that opens a shared page keeps everything above it
+            # (rubric, a diagram sitting over the number); one that closes a
+            # shared page keeps everything below. Only the seam is cut.
+            top = top_at.get(question) if shared and page == start_page else None
+            bottom = bottom_at.get(question) if shared and page == end_page else None
 
             pages.append(Region(page=page, top=top, bottom=bottom))
 
@@ -760,8 +780,10 @@ def locate_ms_blocks(
     workbook, so a neighbour's scheme is not the answer to anything nearby. The
     QP side, which is what a student actually attempts, is cropped exactly.
 
-    Whichever delimiter is used, the marks must agree with the QP fence before a
-    block is kept. A wrong mark scheme is worse than a missing one.
+    A block is attached only when the mapping from questions to blocks is
+    FORCED, not merely consistent -- see the note on skipped tallies below,
+    which is the real safeguard. A wrong mark scheme is worse than a missing
+    one.
     """
     warnings: list[str] = []
     numbers = sorted(fences)
@@ -771,16 +793,51 @@ def locate_ms_blocks(
     note = ""
 
     # ── Format A: align the tally sequence against the paper's marks ─────────
+    #
+    # NOTE ON WHAT THIS DOES AND DOES NOT PROVE. Aligning on marks and then
+    # "checking" the marks agree is circular -- LCS guarantees agreement by
+    # construction. The real safeguard is how much had to be skipped to reach
+    # that agreement:
+    #
+    #   skipped questions = 0  every question found a tally, so any extra
+    #                          tallies are noise (a stray "Total ... marks" in
+    #                          the guidance) and the mapping is forced.
+    #   skipped tallies   = 0  every tally was consumed, so unmatched questions
+    #                          simply have no mark scheme. Also forced.
+    #
+    # Only when BOTH sides skip is the mapping genuinely ambiguous, because a
+    # question could then have been paired with a different tally of equal
+    # value. Measured across the archive: 32 papers match exactly and never
+    # reach this path, 5 skip on one side only, and 2 skip on both -- of which
+    # one (2016 May-Jun 2R, 3 skipped each way) is rejected outright rather
+    # than risk attaching another question's mark scheme.
     totals = ms_totals_in_order(ms_path)
     if totals:
         alignment = align_sequences(expected_marks, [m for _, m in totals])
-        if len(alignment) >= 0.6 * len(numbers):
+        skipped_questions = len(numbers) - len(alignment)
+        skipped_tallies = len(totals) - len(alignment)
+        unambiguous = (
+            min(skipped_questions, skipped_tallies) == 0
+            or skipped_questions + skipped_tallies <= 2
+        )
+
+        if len(alignment) >= 0.6 * len(numbers) and unambiguous:
             for position, total_index in alignment.items():
                 anchors[numbers[position]] = totals[total_index][0]
             note = (
                 f"mark scheme read as per-question tallies: "
-                f"{len(alignment)}/{len(numbers)} aligned by marks"
+                f"{len(alignment)}/{len(numbers)} aligned "
+                f"(skipped {skipped_questions} question(s), "
+                f"{skipped_tallies} tally/tallies)"
             )
+        elif len(alignment) >= 0.6 * len(numbers):
+            warnings.append(
+                f"mark scheme tallies align only ambiguously "
+                f"({skipped_questions} question(s) and {skipped_tallies} "
+                f"tally/tallies unmatched, so a question could pair with the "
+                f"wrong tally of equal value) -- no mark schemes attached"
+            )
+            return {}, warnings
 
     # ── Format B: the continuous table's own numbered rows ───────────────────
     if not anchors:
