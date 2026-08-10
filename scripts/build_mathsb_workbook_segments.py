@@ -837,8 +837,28 @@ def extract_regions(source_pdf: Path, regions: tuple[Region, ...], target: Path)
     """
     Write `regions` of `source_pdf` to `target` as a new PDF.
 
-    A region with no band is copied whole. A banded region is copied and then
-    its crop box narrowed, which keeps the text layer intact -- so the audit can
+    A region with no band is copied whole, which preserves the page exactly. A
+    banded region is drawn onto a fresh page of the band's size.
+
+    WHY NOT set_cropbox
+    -------------------
+    The obvious implementation -- copy the page, then narrow its crop box -- is
+    wrong on this archive, and wrong in a way that looks fine until the audit
+    reads it back. From 2020 these papers carry a MediaBox of 652x899 with a
+    CropBox inset 28.3pt inside it:
+
+        page.rect     (0, 0, 595.3, 841.9)      <- what get_text measures against
+        page.cropbox  (28.3, 28.3, 623.6, 870.2)
+        page.mediabox (0, 0, 652.0, 898.6)
+
+    Text coordinates are relative to the CropBox, but set_cropbox takes MediaBox
+    coordinates, so every band landed 28.3pt off. The visible symptom was a
+    question's PDF holding its predecessor's end fence and not its own -- 137
+    audit defects, all of them a one-question shift.
+
+    show_pdf_page's `clip` is in the source page's own coordinate space, the
+    same space get_text reports, so no conversion is involved and there is
+    nothing to get backwards. Text stays extractable, so the audit can still
     read the result back and confirm what it holds.
     """
     target.parent.mkdir(parents=True, exist_ok=True)
@@ -847,16 +867,29 @@ def extract_regions(source_pdf: Path, regions: tuple[Region, ...], target: Path)
         out = fitz.open()
         try:
             for region in regions:
-                out.insert_pdf(src, from_page=region.page, to_page=region.page)
                 if not region.cropped:
+                    out.insert_pdf(src, from_page=region.page, to_page=region.page)
                     continue
-                page = out[-1]
-                rect = page.rect
-                top = rect.y0 if region.top is None else max(rect.y0, region.top)
-                bottom = rect.y1 if region.bottom is None else min(rect.y1, region.bottom)
+
+                page_rect = src[region.page].rect
+                top = page_rect.y0 if region.top is None else max(page_rect.y0, region.top)
+                bottom = (
+                    page_rect.y1
+                    if region.bottom is None
+                    else min(page_rect.y1, region.bottom)
+                )
                 if bottom - top < 20:  # a band this thin means a bad coordinate
+                    out.insert_pdf(src, from_page=region.page, to_page=region.page)
                     continue
-                page.set_cropbox(fitz.Rect(rect.x0, top, rect.x1, bottom))
+
+                clip = fitz.Rect(page_rect.x0, top, page_rect.x1, bottom)
+                band = out.new_page(width=clip.width, height=clip.height)
+                band.show_pdf_page(
+                    fitz.Rect(0, 0, clip.width, clip.height),
+                    src,
+                    region.page,
+                    clip=clip,
+                )
             out.save(target)
         finally:
             out.close()
