@@ -275,6 +275,10 @@ def main() -> int:
              "description": f"{cluster['size']} question(s) in section {cluster['section']}"}
         ).execute().data[0]
         archetype_id_by_key[key] = row["id"]
+        # Record it immediately -- clustering can emit two clusters sharing a
+        # (section, label), and without this each inserts again because the map
+        # is otherwise only consulted for rows that existed before the run.
+        archetype_id_by_pair[(section_id, cluster["label"])] = row["id"]
         created += 1
     print(f"  archetypes: {created} created, {len(archetype_id_by_key) - created} reused")
 

@@ -64,7 +64,12 @@ HARD_LABEL = "hard"
 # barcode, and our own GradeMax stamp. None of it describes the question.
 BOILERPLATE_PATTERNS = (
     re.compile(r"\*[A-Z]?\d{5,}[A-Z]?\d*\*"),           # printer barcode
-    re.compile(r"DO NOT WRITE IN THIS AREA", re.I),
+    # The sidebar warning is set rotated in the margin, so a crop clips it and
+    # the text layer yields fragments: "WRITE IN THIS AREA", "RITE IN THIS
+    # AREA", a stranded "DO N". Matching only the full phrase left the pieces
+    # behind in front of the question.
+    re.compile(r"[A-Z ]*RITE\s+IN\s+THIS\s+AREA", re.I),
+    re.compile(r"^\s*DO\s*N(?:O(?:T)?)?\s*$", re.I | re.M),
     re.compile(r"Question\s+\d+\s+continued", re.I),
     re.compile(r"\(?\s*Total for Question\s+\d+\s*(?:is|=|:)?\s*\d+\s+marks?\s*\)?", re.I),
     re.compile(r"TOTAL FOR PAPER.*", re.I),
@@ -75,7 +80,24 @@ BOILERPLATE_PATTERNS = (
     re.compile(r"\.{4,}"),                               # dotted answer leaders
     re.compile(r"_{4,}"),
     re.compile(r"BLANK PAGE", re.I),
+    # Front-of-paper rubric. A question that opens a shared page keeps the top
+    # of that page (so a diagram sitting above its number is not clipped), which
+    # also drags in whatever the page header says. None of it is the question.
+    re.compile(r"Answer\s+ALL\s+[A-Z\- ]+\s+questions\.?", re.I),
+    re.compile(r"Write\s+your\s+answers?\s+in\s+the\s+spaces\s+provided\.?", re.I),
+    re.compile(r"You\s+must\s+write\s+down\s+all\s+the\s+stages\s+in\s+your\s+working\.?", re.I),
+    re.compile(r"Answer\s+ALL\s+questions\.?", re.I),
 )
+
+# The printed page number sits alone at the top of a kept page, so it lands in
+# front of the question: "3\n5 Here are the equations...".
+#
+# Requiring a digit on the next line was too strict -- it missed "8\nWRITE IN
+# THIS AREA\n18 Here are 8 numbers". A question number is printed inline with
+# its text ("16 Find the largest integer"), so a line holding ONLY one or two
+# digits is a page number, and dropping it costs nothing even in the rare case
+# it is not: the number carries no mathematics.
+LEADING_PAGE_NUMBER_RE = re.compile(r"^\s*\d{1,2}\s*\n")
 
 # Sub-part label, e.g. "(a)" / "(b)". Roman sub-sub-parts "(i)" are deliberately
 # excluded -- the workbook's unit is the lettered part.
@@ -176,7 +198,8 @@ def repair_shifted_separators(text: str) -> tuple[str, bool]:
 def strip_boilerplate(text: str) -> str:
     for pattern in BOILERPLATE_PATTERNS:
         text = pattern.sub(" ", text)
-    return re.sub(r"[ \t]+", " ", re.sub(r"\s*\n\s*", "\n", text)).strip()
+    text = re.sub(r"[ \t]+", " ", re.sub(r"\s*\n\s*", "\n", text)).strip()
+    return LEADING_PAGE_NUMBER_RE.sub("", text).strip()
 
 
 @dataclass(frozen=True)

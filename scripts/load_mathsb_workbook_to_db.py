@@ -275,8 +275,16 @@ def main() -> int:
              "description": f"{cluster['size']} question(s) in section {cluster['section']}"}
         ).execute().data[0]
         archetype_id_by_key[key] = row["id"]
+        # Record it immediately. Clustering can emit two clusters with the same
+        # (section, label) -- 16 of them here, "ratio and proportion" in 1.2
+        # seven times over -- and without this the map is only consulted for
+        # rows that existed BEFORE the run, so each one inserts again. That is
+        # what produced "409 created, -26 reused": 409 inserts collapsing into
+        # 383 distinct keys, the negative count being the giveaway.
+        archetype_id_by_pair[(section_id, cluster["label"])] = row["id"]
         created += 1
-    print(f"  archetypes: {created} created, {len(archetype_id_by_key) - created} reused")
+    print(f"  archetypes: {created} created, {len(archetype_id_by_key) - created} reused "
+          f"({len(clusters)} clusters)")
 
     # ── Questions ────────────────────────────────────────────────────────────
     uploaded = inserted = updated = protected = 0
