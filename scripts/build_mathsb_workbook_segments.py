@@ -1,0 +1,1124 @@
+"""
+Re-segment Edexcel IGCSE Mathematics B (4MB1) past papers into one PDF per
+question, for the chapterwise workbook.
+
+This is the Maths B counterpart of build_fpm_workbook_segments.py. The method is
+the same -- read boundaries from the paper's own end-of-question fences, and
+require three independent signals to agree before writing anything -- but Maths B
+needs one genuine extension, described below.
+
+WHY PAGE RANGES ARE NOT ENOUGH HERE
+-----------------------------------
+Further Pure Maths has 11 long questions across ~30 pages, so every question owns
+its pages outright and a page range isolates it exactly.
+
+Maths B Paper 1 has ~28 short questions across ~24 pages. A third of its pages
+carry two or three questions:
+
+    page 4 of 2016 Jan 1R:  Q6 [y 60-251]   Q7 [y 275-424]   Q8 [y 449-768]
+
+A page range would staple all three into one PDF -- the exact defect this whole
+rebuild exists to remove. So a segment is a list of REGIONS, not a page range:
+each region is a page plus an optional vertical band, and a band is applied only
+where a page is genuinely shared. A question that owns its pages still gets whole
+pages, so nothing is cropped that does not have to be.
+
+Paper 2 is structurally like FPM -- ~11 long questions, zero shared pages -- and
+comes out of this untouched.
+
+The bands come from coordinates already on the page: the top is the printed
+question number in the left margin, the bottom is the fence text. Both are read,
+neither is guessed.
+
+THREE SIGNALS
+-------------
+1. Fences      "(Total for Question 7 is 2 marks)" -- defines the boundary and
+               states the marks. The label is READ, never inferred.
+2. Start marks The printed question number in the left margin. Confirms the
+               derived start; also supplies the crop top on shared pages.
+3. MS marks    The mark scheme's own "Total N marks" must equal the fence marks.
+               Agreement proves QP and MS segments describe the same question.
+
+Plus two paper-level invariants: numbering contiguous from 1, and marks summing
+to 100. A paper failing either is held back WHOLE -- never written partially,
+because a partially written paper is indistinguishable from a complete one later.
+
+OUTPUT
+------
+    data/workbook/mathsb/<paper_key>/questions/qN.pdf
+    data/workbook/mathsb/<paper_key>/markschemes/qN.pdf
+    data/workbook/mathsb/<paper_key>/manifest.json
+
+Nothing here touches data/processed/, which still feeds the test builder.
+
+USAGE
+-----
+    python scripts/build_mathsb_workbook_segments.py                 # dry run
+    python scripts/build_mathsb_workbook_segments.py --execute
+    python scripts/build_mathsb_workbook_segments.py --audit
+    python scripts/build_mathsb_workbook_segments.py --paper 2016_jan_1 --verbose
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import re
+import sys
+from dataclasses import dataclass, field
+from pathlib import Path
+
+import fitz
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Configuration
+# ─────────────────────────────────────────────────────────────────────────────
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+SOURCE_DIR = REPO_ROOT / "data" / "Ultimate Final IGCSE" / "Mathematics_B"
+OUTPUT_DIR = REPO_ROOT / "data" / "workbook" / "mathsb"
+REPORT_PATH = REPO_ROOT / "data" / "workbook" / "mathsb_segmentation_report.json"
+
+# Matches the FPM workbook window. Widening this is a one-line change: the
+# archive holds 2011-2025 and the later years segment just as cleanly.
+YEAR_START = 2016
+YEAR_END = 2022
+
+TOTAL_PAPER_MARKS = 100
+
+SEASON_FROM_FOLDER = {
+    "Jan": "jan",
+    "May-Jun": "may-jun",
+    "Oct-Nov": "oct-nov",
+    "Specimen": "specimen",
+}
+
+# Papers deliberately excluded, with the reason recorded so the exclusion is
+# auditable rather than folklore.
+EXCLUDED_PAPERS: dict[str, str] = {}
+
+# Papers whose QP carries no usable text layer, so no fence can be read. Each
+# entry maps question number -> (first_page, last_page, marks), 0-indexed
+# inclusive, established by eye from a rendered contact sheet.
+#
+# Entries here are subject to exactly the same validation as parsed papers:
+# contiguous numbering from 1 and marks summing to 100. A typo fails the paper
+# rather than corrupting the workbook.
+MANUAL_QP_RANGES: dict[str, dict[int, tuple[int, int, int]]] = {}
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Text patterns
+# ─────────────────────────────────────────────────────────────────────────────
+
+# "(Total for Question 7 is 2 marks)". The connector varies across the series,
+# so "is", "=" and ":" are all accepted -- and it is allowed to be absent, which
+# some Maths B papers do.
+FENCE_RE = re.compile(
+    r"Total\s+for\s+Question\s+(\d{1,2})\s*(?:is|=|:)?\s*(\d{1,3})\s+marks?", re.I
+)
+
+# A bare fence with no mark tally -- used only to detect that we under-matched.
+FENCE_LOOSE_RE = re.compile(r"Total\s+for\s+Question\s+(\d{1,2})", re.I)
+
+# Mark scheme table head. Maths B prints "Question / Working / Answer / Mark /
+# Notes"; the FPM variants are kept because the earlier Maths B years drift
+# toward them.
+MS_HEADER_ROW_RE = re.compile(
+    r"Question(?:\s+Working)?\s*\n\s*(?:Number\s*\n\s*)?(?:Scheme|Answer|Working)", re.I
+)
+
+# Read immediately after a header row: "1", "2 (a)(i)", "4(a)".
+MS_NUMBER_RE = re.compile(
+    r"^[^\S\n]*\n?(?:[^\S\n]*(?:Marks?|AO|Notes|Scheme|Answer|Working)[^\S\n]*\n)*"
+    r"\s*(\d{1,2})\s*\.?\s*(?:\(\s*[a-z]\s*\)\s*)*",
+)
+
+# Mark scheme per-question tally: "Total 2 marks".
+MS_TOTAL_RE = re.compile(r"Total\s+(\d{1,3})\s+marks?", re.I)
+
+# Older mark schemes close each part with a bracketed tally instead.
+MS_BRACKET_RE = re.compile(r"[\[(]\s*(\d{1,3})\s*[\])]")
+
+# The printed question number sits hard against the left margin. Page-number
+# footers sit at a similar x, so the bottom strip of the page is excluded --
+# unlike FPM this cannot be done with a fixed y ceiling, because a legitimate
+# Paper 1 marker can appear anywhere down the page.
+START_MARKER_MAX_X = 80.0
+FOOTER_BAND = 60.0  # points above the page bottom to ignore
+
+# Breathing room around a cropped band so the question number and the fence
+# line are never clipped by a rounding error.
+CROP_PAD_TOP = 8.0
+CROP_PAD_BOTTOM = 10.0
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Data model
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+@dataclass(frozen=True)
+class PaperSource:
+    """One question paper plus its mark scheme, located on disk."""
+
+    key: str  # "2016_jan_1R"
+    year: int
+    season: str  # "jan"
+    paper_number: str  # "1" | "1R" | "2" | "2R"
+    qp_path: Path
+    ms_path: Path | None
+
+
+@dataclass(frozen=True)
+class Region:
+    """
+    One page of a segment. `top`/`bottom` are None where the segment owns the
+    full page and a float where the page is shared and must be cropped.
+    """
+
+    page: int
+    top: float | None = None
+    bottom: float | None = None
+
+    @property
+    def cropped(self) -> bool:
+        return self.top is not None or self.bottom is not None
+
+
+@dataclass(frozen=True)
+class QuestionSegment:
+    number: int
+    marks: int
+    qp_regions: tuple[Region, ...]
+    ms_regions: tuple[Region, ...] | None
+
+
+@dataclass
+class PaperResult:
+    source: PaperSource
+    segments: list[QuestionSegment] = field(default_factory=list)
+    issues: list[str] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)
+    skipped_reason: str | None = None
+
+    @property
+    def ok(self) -> bool:
+        return not self.issues and self.skipped_reason is None
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Discovery
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def parse_paper_number(filename: str) -> str | None:
+    """`..._Paper_1R_QP.pdf` -> `1R`."""
+    match = re.search(r"_Paper_(\d+R?)_QP\.pdf$", filename, re.I)
+    return match.group(1).upper() if match else None
+
+
+def discover_papers() -> list[PaperSource]:
+    """Find every QP in the year range, pairing each with its mark scheme."""
+    if not SOURCE_DIR.is_dir():
+        raise FileNotFoundError(f"Source archive not found: {SOURCE_DIR}")
+
+    papers: list[PaperSource] = []
+
+    for year in range(YEAR_START, YEAR_END + 1):
+        year_dir = SOURCE_DIR / str(year)
+        if not year_dir.is_dir():
+            continue
+
+        for session_dir in sorted(p for p in year_dir.iterdir() if p.is_dir()):
+            season = SEASON_FROM_FOLDER.get(session_dir.name)
+            if season is None:
+                print(f"  ! unknown session folder, skipped: {session_dir}")
+                continue
+
+            for qp_path in sorted(session_dir.glob("*_QP.pdf")):
+                paper_number = parse_paper_number(qp_path.name)
+                if paper_number is None:
+                    print(f"  ! unparseable paper number, skipped: {qp_path.name}")
+                    continue
+
+                ms_path = qp_path.with_name(qp_path.name.replace("_QP.pdf", "_MS.pdf"))
+                papers.append(
+                    PaperSource(
+                        key=f"{year}_{season}_{paper_number}",
+                        year=year,
+                        season=season,
+                        paper_number=paper_number,
+                        qp_path=qp_path,
+                        ms_path=ms_path if ms_path.is_file() else None,
+                    )
+                )
+
+    return papers
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Extraction primitives
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def normalise(text: str) -> str:
+    return re.sub(r"\s+", " ", text)
+
+
+def page_lines(page: fitz.Page) -> list[tuple[str, float, float]]:
+    """Every text line as (text, y_top, y_bottom), in reading order."""
+    lines: list[tuple[str, float, float]] = []
+    try:
+        blocks = page.get_text("dict")["blocks"]
+    except Exception:  # noqa: BLE001 - a bad page must not kill the paper
+        return lines
+
+    for block in blocks:
+        for line in block.get("lines", []):
+            text = "".join(span["text"] for span in line.get("spans", []))
+            if text.strip():
+                lines.append((text, line["bbox"][1], line["bbox"][3]))
+
+    lines.sort(key=lambda row: row[1])
+    return lines
+
+
+def page_texts(pdf_path: Path) -> list[str]:
+    """Raw per-page text. Never raises -- an unreadable page yields ''."""
+    with fitz.open(pdf_path) as doc:
+        out = []
+        for page in doc:
+            try:
+                out.append(page.get_text())
+            except Exception:  # noqa: BLE001
+                out.append("")
+        return out
+
+
+def find_fences(
+    pdf_path: Path,
+) -> tuple[dict[int, tuple[int, int, float]], list[str]]:
+    """
+    Map question number -> (end_page_index, marks, fence_bottom_y).
+
+    The y coordinate is what makes shared pages separable, so it is captured
+    here rather than recovered later. A fence that wraps across two lines is
+    joined before matching, otherwise the mark tally is lost.
+    """
+    fences: dict[int, tuple[int, int, float]] = {}
+    problems: list[str] = []
+
+    with fitz.open(pdf_path) as doc:
+        for index, page in enumerate(doc):
+            lines = page_lines(page)
+            seen_here: set[int] = set()
+
+            for position, (text, _, bottom) in enumerate(lines):
+                joined, end_y = text, bottom
+                match = FENCE_RE.search(normalise(joined))
+
+                if not match and position + 1 < len(lines):
+                    following = lines[position + 1]
+                    joined = f"{text} {following[0]}"
+                    match = FENCE_RE.search(normalise(joined))
+                    if match:
+                        end_y = following[2]
+
+                if not match:
+                    continue
+
+                question, marks = int(match.group(1)), int(match.group(2))
+                if question in seen_here:
+                    continue  # the wrap-join can see the same fence twice
+                seen_here.add(question)
+
+                if question in fences:
+                    problems.append(
+                        f"question {question} fenced twice "
+                        f"(pages {fences[question][0]} and {index})"
+                    )
+                    continue
+
+                fences[question] = (index, marks, end_y)
+
+            flat = normalise(page.get_text())
+            loose = {int(q) for q in FENCE_LOOSE_RE.findall(flat)}
+            for question in sorted(loose - seen_here):
+                if question not in fences:
+                    problems.append(
+                        f"page {index}: found 'Total for Question {question}' but "
+                        f"could not read its mark tally"
+                    )
+
+    return fences, problems
+
+
+def find_start_markers(pdf_path: Path) -> dict[int, list[tuple[int, float]]]:
+    """
+    Map question number -> [(page_index, y_top)] for the printed left-margin
+    question number.
+
+    This is the independent second signal. It never defines a boundary on its
+    own -- it confirms the fence-derived one, and supplies the crop top where a
+    page is shared.
+    """
+    markers: dict[int, list[tuple[int, float]]] = {}
+
+    with fitz.open(pdf_path) as doc:
+        for index, page in enumerate(doc):
+            floor = page.rect.height - FOOTER_BAND
+            try:
+                blocks = page.get_text("dict")["blocks"]
+            except Exception:  # noqa: BLE001
+                continue
+
+            for block in blocks:
+                for line in block.get("lines", []):
+                    for span in line.get("spans", []):
+                        text = span["text"].strip().rstrip(".")
+                        if not re.fullmatch(r"\d{1,2}", text):
+                            continue
+                        x0, y0 = span["bbox"][0], span["bbox"][1]
+                        if x0 < START_MARKER_MAX_X and y0 < floor:
+                            markers.setdefault(int(text), []).append((index, y0))
+
+    for entries in markers.values():
+        entries.sort()
+
+    return markers
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Boundary derivation
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def derive_bounds(
+    fences: dict[int, tuple[int, int, float]],
+    start_markers: dict[int, list[tuple[int, float]]],
+) -> tuple[dict[int, tuple[tuple[int, float | None], tuple[int, float]]], list[str]]:
+    """
+    Turn fences into (start, end) positions, each a (page, y) pair.
+
+    Question N ends at its fence. It starts either at its own printed marker on
+    the page where the previous question ended -- the shared-page case -- or at
+    the top of the page after it.
+    """
+    problems: list[str] = []
+    numbers = sorted(fences)
+    if not numbers:
+        return {}, ["no fences found at all"]
+
+    bounds: dict[int, tuple[tuple[int, float | None], tuple[int, float]]] = {}
+    previous: tuple[int, float] | None = None
+
+    for question in numbers:
+        end_page, _, end_y = fences[question]
+        candidates = start_markers.get(question, [])
+
+        if previous is None:
+            # Nothing fences the cover pages off, so question 1 must be located
+            # by its own printed marker.
+            usable = [(p, y) for p, y in candidates if p <= end_page]
+            if not usable:
+                problems.append(
+                    f"question {question} is the first question but has no printed "
+                    f"start marker at or before its fence on page {end_page}"
+                )
+                continue
+            start = usable[0]
+        else:
+            previous_page, previous_y = previous
+            on_shared_page = [
+                (p, y) for p, y in candidates if p == previous_page and y > previous_y
+            ]
+            if on_shared_page:
+                # Continues below the previous question on the same page.
+                start = on_shared_page[0]
+            else:
+                start = (previous_page + 1, None)  # type: ignore[assignment]
+
+        start_page = start[0]
+        if start_page > end_page:
+            problems.append(
+                f"question {question}: derived start page {start_page} is after "
+                f"its fence page {end_page}"
+            )
+            continue
+
+        bounds[question] = (start, (end_page, end_y))
+        previous = (end_page, end_y)
+
+    return bounds, problems
+
+
+def build_regions(
+    bounds: dict[int, tuple[tuple[int, float | None], tuple[int, float]]],
+) -> dict[int, tuple[Region, ...]]:
+    """
+    Turn (start, end) positions into per-page regions, cropping only where a
+    page is actually shared with another question.
+
+    A page owned outright is taken whole, so diagrams and rubric that sit above
+    the question number or below the fence are never clipped.
+    """
+    starts_on = {q: start[0] for q, (start, _) in bounds.items()}
+    ends_on = {q: end[0] for q, (_, end) in bounds.items()}
+
+    # How many questions touch each page.
+    occupancy: dict[int, set[int]] = {}
+    for question, (start, end) in bounds.items():
+        for page in range(start[0], end[0] + 1):
+            occupancy.setdefault(page, set()).add(question)
+
+    regions: dict[int, tuple[Region, ...]] = {}
+
+    for question, ((start_page, start_y), (end_page, end_y)) in sorted(bounds.items()):
+        pages: list[Region] = []
+
+        for page in range(start_page, end_page + 1):
+            shared = len(occupancy.get(page, set())) > 1
+
+            top = None
+            bottom = None
+
+            if shared:
+                if page == start_page and starts_on[question] == page and start_y is not None:
+                    top = max(0.0, start_y - CROP_PAD_TOP)
+                if page == end_page and ends_on[question] == page:
+                    bottom = end_y + CROP_PAD_BOTTOM
+
+            pages.append(Region(page=page, top=top, bottom=bottom))
+
+        regions[question] = tuple(pages)
+
+    return regions
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Mark schemes
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def ms_totals_in_order(ms_path: Path) -> list[tuple[int, int]]:
+    """
+    Format A delimiter: every "Total N marks" line as (page_index, marks), in
+    document order.
+
+    Used by the 2016, 2017 and 2020-2022 mark schemes, which box each question
+    separately and close each box with its own tally.
+    """
+    found: list[tuple[int, int]] = []
+    with fitz.open(ms_path) as doc:
+        for index, page in enumerate(doc):
+            for match in MS_TOTAL_RE.finditer(normalise(page.get_text())):
+                found.append((index, int(match.group(1))))
+    return found
+
+
+def ms_question_rows(ms_path: Path) -> list[tuple[int, int, int | None]]:
+    """
+    Format B delimiter: the question-number rows of a continuous mark scheme
+    table, as (page_index, question, marks_or_None).
+
+    The 2018 and 2019 mark schemes print no per-question total at all. Instead
+    one table runs the length of the document with the question number in the
+    leftmost column and the question's mark in the rightmost numeric column:
+
+        x=77.6  "3"   ...working...   x=536.6  "2"
+
+    So a row is a standalone integer hard against the left edge, and its mark is
+    the standalone integer on the far side of the page at the same height. Both
+    columns are located per page rather than hardcoded, since the layout shifts
+    between portrait and landscape pages.
+    """
+    rows: list[tuple[int, int, int | None]] = []
+
+    with fitz.open(ms_path) as doc:
+        for index, page in enumerate(doc):
+            width = page.rect.width
+            left_limit = page.rect.x0 + width * 0.14
+            right_floor = page.rect.x0 + width * 0.55
+
+            left: list[tuple[float, int]] = []
+            right: list[tuple[float, int]] = []
+
+            try:
+                blocks = page.get_text("dict")["blocks"]
+            except Exception:  # noqa: BLE001
+                continue
+
+            for block in blocks:
+                for line in block.get("lines", []):
+                    text = "".join(s["text"] for s in line.get("spans", [])).strip()
+                    if not re.fullmatch(r"\d{1,2}", text):
+                        continue
+                    x0, y0 = line["bbox"][0], line["bbox"][1]
+                    if x0 < left_limit:
+                        left.append((y0, int(text)))
+                    elif x0 > right_floor:
+                        right.append((y0, int(text)))
+
+            for y0, question in sorted(left):
+                mark = next(
+                    (value for my, value in sorted(right) if abs(my - y0) <= 6), None
+                )
+                rows.append((index, question, mark))
+
+    return rows
+
+
+def align_sequences(expected: list[int], observed: list[int]) -> dict[int, int]:
+    """
+    Longest common subsequence between the paper's per-question marks and the
+    mark scheme's tallies, as {index_in_expected: index_in_observed}.
+
+    Demanding an exact whole-sequence match was too brittle: several papers
+    print one tally more or fewer than they have questions -- an extra "Total
+    ... marks" in the general guidance, or one question whose tally is missing.
+    A strict comparison threw away the entire mark scheme over a single
+    discrepancy. Aligning instead keeps every question whose marks agree in
+    order and drops only the ones that genuinely do not line up.
+    """
+    n, k = len(expected), len(observed)
+    table = [[0] * (k + 1) for _ in range(n + 1)]
+    for i in range(n - 1, -1, -1):
+        for j in range(k - 1, -1, -1):
+            table[i][j] = (
+                table[i + 1][j + 1] + 1
+                if expected[i] == observed[j]
+                else max(table[i + 1][j], table[i][j + 1])
+            )
+
+    pairs: dict[int, int] = {}
+    i = j = 0
+    while i < n and j < k:
+        if expected[i] == observed[j]:
+            pairs[i] = j
+            i += 1
+            j += 1
+        elif table[i + 1][j] >= table[i][j + 1]:
+            i += 1
+        else:
+            j += 1
+    return pairs
+
+
+def locate_ms_blocks(
+    ms_path: Path, fences: dict[int, tuple[int, int, float]]
+) -> tuple[dict[int, tuple[Region, ...]], list[str]]:
+    """
+    Map question number -> the mark scheme pages that hold it.
+
+    Maths B mark schemes come in two layouts and neither can be read
+    geometrically with any confidence: pages mix portrait and landscape, and
+    several print their table cells as rotated text, so "the line below this one"
+    is not a well-defined idea. Blocks are therefore delimited by CONTENT -- the
+    tally that closes each question, or the numbered row that opens it -- and
+    emitted as whole pages.
+
+    That means a Paper 1 mark scheme page shared by three questions is attached
+    to all three. This is deliberate. Cropping it would mean trusting
+    coordinates that have already proved unreliable, and the cost of the
+    imprecision is small: adjacent questions land in different chapters of the
+    workbook, so a neighbour's scheme is not the answer to anything nearby. The
+    QP side, which is what a student actually attempts, is cropped exactly.
+
+    Whichever delimiter is used, the marks must agree with the QP fence before a
+    block is kept. A wrong mark scheme is worse than a missing one.
+    """
+    warnings: list[str] = []
+    numbers = sorted(fences)
+    expected_marks = [fences[q][1] for q in numbers]
+
+    anchors: dict[int, int] = {}  # question -> page where its block starts
+    note = ""
+
+    # ── Format A: align the tally sequence against the paper's marks ─────────
+    totals = ms_totals_in_order(ms_path)
+    if totals:
+        alignment = align_sequences(expected_marks, [m for _, m in totals])
+        if len(alignment) >= 0.6 * len(numbers):
+            for position, total_index in alignment.items():
+                anchors[numbers[position]] = totals[total_index][0]
+            note = (
+                f"mark scheme read as per-question tallies: "
+                f"{len(alignment)}/{len(numbers)} aligned by marks"
+            )
+
+    # ── Format B: the continuous table's own numbered rows ───────────────────
+    if not anchors:
+        rows = ms_question_rows(ms_path)
+        confirmed = 0
+        seen_page = -1
+        for page, question, mark in rows:
+            if question not in fences or question in anchors:
+                continue
+            # Blocks run in question order, so a row that jumps backwards is a
+            # stray integer from the working column, not a question row.
+            if page < seen_page:
+                continue
+            anchors[question] = page
+            seen_page = page
+            if mark is not None and mark == fences[question][1]:
+                confirmed += 1
+
+        if len(anchors) < 0.6 * len(numbers):
+            anchors = {}
+        else:
+            note = (
+                f"mark scheme read as a continuous table: {len(anchors)} numbered "
+                f"rows, {confirmed} also confirmed by their printed mark"
+            )
+
+    if not anchors:
+        warnings.append(
+            f"mark scheme could not be aligned to the paper "
+            f"({len(totals)} tallies for {len(numbers)} questions, and no readable "
+            f"numbered table) -- no mark schemes attached"
+        )
+        return {}, warnings
+
+    if len(anchors) < len(numbers):
+        note += f" -- {len(numbers) - len(anchors)} question(s) unmatched"
+    warnings.append(note)
+
+    # A block runs from its own anchor page to the page before the next one.
+    ordered = sorted(anchors.items())
+    blocks: dict[int, tuple[int, int]] = {}
+    for position, (question, page) in enumerate(ordered):
+        end = ordered[position + 1][1] if position + 1 < len(ordered) else page
+        blocks[question] = (page, max(page, end))
+
+    kept: dict[int, tuple[Region, ...]] = {}
+    with fitz.open(ms_path) as doc:
+        last_page = doc.page_count - 1
+
+    for question, (start, end) in sorted(blocks.items()):
+        if question not in fences:
+            warnings.append(f"mark scheme has question {question} but the QP does not")
+            continue
+        start = max(0, min(start, last_page))
+        end = max(start, min(end, last_page))
+        kept[question] = tuple(Region(page=p) for p in range(start, end + 1))
+
+    missing = sorted(set(fences) - set(kept))
+    if missing:
+        warnings.append(f"no mark scheme block found for questions {missing}")
+
+    return kept, warnings
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Validation
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def validate_paper(
+    fences: dict[int, tuple[int, int, float]],
+    regions: dict[int, tuple[Region, ...]],
+) -> list[str]:
+    """Paper-level invariants. Anything failing here blocks the whole paper."""
+    issues: list[str] = []
+    numbers = sorted(fences)
+
+    if not numbers:
+        return ["no questions detected"]
+
+    expected = list(range(1, len(numbers) + 1))
+    if numbers != expected:
+        missing = sorted(set(expected) - set(numbers))
+        extra = sorted(set(numbers) - set(expected))
+        detail = []
+        if missing:
+            detail.append(f"missing {missing}")
+        if extra:
+            detail.append(f"unexpected {extra}")
+        issues.append(f"question numbers are not contiguous from 1: {', '.join(detail)}")
+
+    total = sum(marks for _, marks, _ in fences.values())
+    if total != TOTAL_PAPER_MARKS:
+        per_question = ", ".join(f"{q}:{m}" for q, (_, m, _) in sorted(fences.items()))
+        issues.append(
+            f"marks sum to {total}, expected {TOTAL_PAPER_MARKS} ({{{per_question}}})"
+        )
+
+    if len(regions) != len(fences):
+        issues.append(
+            f"{len(fences)} questions fenced but only {len(regions)} produced regions"
+        )
+
+    # Consecutive questions must be contiguous: either the next starts on the
+    # same page below this one, or on the page immediately after.
+    ordered = sorted(regions.items())
+    for (q_a, regions_a), (q_b, regions_b) in zip(ordered, ordered[1:]):
+        last_page = regions_a[-1].page
+        first_page = regions_b[0].page
+        if first_page not in (last_page, last_page + 1):
+            issues.append(
+                f"page gap between question {q_a} (ends on page {last_page}) and "
+                f"question {q_b} (starts on page {first_page})"
+            )
+
+    return issues
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Processing
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def process_paper(source: PaperSource) -> PaperResult:
+    result = PaperResult(source=source)
+
+    if source.key in EXCLUDED_PAPERS:
+        result.skipped_reason = EXCLUDED_PAPERS[source.key]
+        return result
+
+    fences, fence_problems = find_fences(source.qp_path)
+    result.warnings.extend(fence_problems)
+
+    manual = MANUAL_QP_RANGES.get(source.key)
+
+    if not fences and manual is None:
+        pages = page_texts(source.qp_path)
+        volume = sum(len(p.strip()) for p in pages)
+        result.issues.append(
+            f"no question fences found in {len(pages)} pages ({volume} chars of "
+            f"text -- an image-only scan or a broken text layer; add an entry to "
+            f"MANUAL_QP_RANGES)"
+        )
+        return result
+
+    if manual is not None:
+        regions = {
+            q: tuple(Region(page=p) for p in range(start, end + 1))
+            for q, (start, end, _) in manual.items()
+        }
+        fences = {q: (end, marks, 0.0) for q, (_, end, marks) in manual.items()}
+        result.warnings.append(
+            f"no usable text layer: using hand-verified page ranges and "
+            f"mark-scheme marks for {len(regions)} questions"
+        )
+    else:
+        start_markers = find_start_markers(source.qp_path)
+        bounds, problems = derive_bounds(fences, start_markers)
+        result.issues.extend(problems)
+        regions = build_regions(bounds)
+
+    result.issues.extend(validate_paper(fences, regions))
+
+    ms_regions: dict[int, tuple[Region, ...]] = {}
+    if source.ms_path is None:
+        result.warnings.append("no mark scheme file found")
+    else:
+        ms_regions, ms_warnings = locate_ms_blocks(source.ms_path, fences)
+        result.warnings.extend(ms_warnings)
+
+    result.segments = [
+        QuestionSegment(
+            number=question,
+            marks=fences[question][1] if question in fences else 0,
+            qp_regions=question_regions,
+            ms_regions=ms_regions.get(question),
+        )
+        for question, question_regions in sorted(regions.items())
+    ]
+
+    return result
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Writing
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def extract_regions(source_pdf: Path, regions: tuple[Region, ...], target: Path) -> None:
+    """
+    Write `regions` of `source_pdf` to `target` as a new PDF.
+
+    A region with no band is copied whole. A banded region is copied and then
+    its crop box narrowed, which keeps the text layer intact -- so the audit can
+    read the result back and confirm what it holds.
+    """
+    target.parent.mkdir(parents=True, exist_ok=True)
+
+    with fitz.open(source_pdf) as src:
+        out = fitz.open()
+        try:
+            for region in regions:
+                out.insert_pdf(src, from_page=region.page, to_page=region.page)
+                if not region.cropped:
+                    continue
+                page = out[-1]
+                rect = page.rect
+                top = rect.y0 if region.top is None else max(rect.y0, region.top)
+                bottom = rect.y1 if region.bottom is None else min(rect.y1, region.bottom)
+                if bottom - top < 20:  # a band this thin means a bad coordinate
+                    continue
+                page.set_cropbox(fitz.Rect(rect.x0, top, rect.x1, bottom))
+            out.save(target)
+        finally:
+            out.close()
+
+
+def write_paper(result: PaperResult) -> int:
+    """Write every segment of a validated paper. Returns files written."""
+    paper_dir = OUTPUT_DIR / result.source.key
+    written = 0
+
+    for segment in result.segments:
+        extract_regions(
+            result.source.qp_path,
+            segment.qp_regions,
+            paper_dir / "questions" / f"q{segment.number}.pdf",
+        )
+        written += 1
+
+        if segment.ms_regions and result.source.ms_path is not None:
+            extract_regions(
+                result.source.ms_path,
+                segment.ms_regions,
+                paper_dir / "markschemes" / f"q{segment.number}.pdf",
+            )
+            written += 1
+
+    def describe(regions: tuple[Region, ...] | None) -> list[dict] | None:
+        if regions is None:
+            return None
+        return [
+            {"page": r.page, "top": r.top, "bottom": r.bottom, "cropped": r.cropped}
+            for r in regions
+        ]
+
+    manifest = {
+        "key": result.source.key,
+        "year": result.source.year,
+        "season": result.source.season,
+        "paper_number": result.source.paper_number,
+        "source_qp": str(result.source.qp_path.relative_to(REPO_ROOT)),
+        "source_ms": (
+            str(result.source.ms_path.relative_to(REPO_ROOT))
+            if result.source.ms_path
+            else None
+        ),
+        "total_questions": len(result.segments),
+        "total_marks": sum(s.marks for s in result.segments),
+        "warnings": result.warnings,
+        "questions": [
+            {
+                "question_number": s.number,
+                "marks": s.marks,
+                "qp_regions": describe(s.qp_regions),
+                "ms_regions": describe(s.ms_regions),
+                "has_markscheme": s.ms_regions is not None,
+                "cropped": any(r.cropped for r in s.qp_regions),
+            }
+            for s in result.segments
+        ],
+    }
+    (paper_dir / "manifest.json").write_text(
+        json.dumps(manifest, indent=2), encoding="utf-8"
+    )
+
+    return written
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Audit -- the Phase 1 gate
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def audit_output() -> int:
+    """
+    Re-open every written segment and confirm it holds exactly one question, and
+    that it is the question named on the file.
+
+    Deliberately independent of everything above: it reads only the written
+    PDFs, so it catches a bug in the region logic rather than inheriting one.
+    Cropping is what makes this possible on Maths B -- a cropped page reports
+    only the text inside its crop box, so a segment that still holds its
+    neighbour shows up here as BUNDLED.
+
+    Returns the number of defects.
+    """
+    if not OUTPUT_DIR.is_dir():
+        print(f"No output to audit at {OUTPUT_DIR}")
+        return 0
+
+    checked = bundled = mislabelled = unverifiable = hand_verified = 0
+    defects: list[str] = []
+
+    for paper_dir in sorted(OUTPUT_DIR.iterdir()):
+        questions_dir = paper_dir / "questions"
+        if not questions_dir.is_dir():
+            continue
+
+        is_manual = paper_dir.name in MANUAL_QP_RANGES
+
+        for pdf_path in sorted(questions_dir.glob("q*.pdf")):
+            match = re.fullmatch(r"q(\d+)\.pdf", pdf_path.name)
+            if not match:
+                continue
+            expected = int(match.group(1))
+            checked += 1
+
+            flat = normalise(" ".join(page_texts(pdf_path)))
+            found = sorted({int(q) for q, _ in FENCE_RE.findall(flat)})
+
+            if not found:
+                if is_manual:
+                    hand_verified += 1
+                else:
+                    unverifiable += 1
+                    defects.append(
+                        f"UNVERIFIABLE {paper_dir.name}/{pdf_path.name}: no fence"
+                    )
+            elif len(found) > 1:
+                bundled += 1
+                defects.append(
+                    f"BUNDLED      {paper_dir.name}/{pdf_path.name}: holds {found}"
+                )
+            elif found[0] != expected:
+                mislabelled += 1
+                defects.append(
+                    f"MISLABELLED  {paper_dir.name}/{pdf_path.name}: holds Q{found[0]}"
+                )
+
+    verified = checked - hand_verified - bundled - mislabelled - unverifiable
+    print(f"\n{'=' * 74}\nAUDIT\n{'=' * 74}")
+    print(f"  segments checked      : {checked}")
+    print(f"  text-verified         : {verified}")
+    print(f"  hand-verified (scans) : {hand_verified}")
+    print(f"  bundled               : {bundled}")
+    print(f"  mislabelled           : {mislabelled}")
+    print(f"  unverifiable          : {unverifiable}")
+
+    if defects:
+        print(f"\n  {len(defects)} defect(s):")
+        for defect in defects[:60]:
+            print(f"    {defect}")
+        if len(defects) > 60:
+            print(f"    ... and {len(defects) - 60} more")
+
+    total = bundled + mislabelled + unverifiable
+    print(f"\n  GATE: {'PASS' if total == 0 else 'FAIL'} "
+          f"(bundled + mislabelled + unverifiable = {total})")
+    return total
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLI
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--execute", action="store_true", help="write PDFs (default: dry run)")
+    parser.add_argument("--paper", help="process only this paper key, e.g. 2016_jan_1")
+    parser.add_argument("--audit", action="store_true", help="audit existing output and exit")
+    parser.add_argument("--verbose", action="store_true", help="show per-paper warnings")
+    args = parser.parse_args()
+
+    if args.audit:
+        return 1 if audit_output() else 0
+
+    papers = discover_papers()
+    if args.paper:
+        papers = [p for p in papers if p.key == args.paper]
+        if not papers:
+            print(f"No paper matching key '{args.paper}'")
+            return 1
+
+    mode = "EXECUTE" if args.execute else "DRY RUN"
+    print(f"{'=' * 74}")
+    print(f"MATHS B WORKBOOK SEGMENTATION  [{mode}]  {YEAR_START}-{YEAR_END}")
+    print(f"  source: {SOURCE_DIR.relative_to(REPO_ROOT)}")
+    print(f"  output: {OUTPUT_DIR.relative_to(REPO_ROOT)}")
+    print(f"{'=' * 74}\n")
+
+    results = [process_paper(p) for p in papers]
+
+    written_files = 0
+    for result in results:
+        key = result.source.key
+
+        if result.skipped_reason:
+            print(f"  SKIP  {key:<20} {result.skipped_reason[:70]}")
+            continue
+
+        if result.issues:
+            print(f"  FAIL  {key:<20} {len(result.segments)} segments held back")
+            for issue in result.issues:
+                print(f"          - {issue[:150]}")
+            continue
+
+        marks = sum(s.marks for s in result.segments)
+        with_ms = sum(1 for s in result.segments if s.ms_regions)
+        cropped = sum(1 for s in result.segments if any(r.cropped for r in s.qp_regions))
+        flag = f"  ({len(result.warnings)} warnings)" if result.warnings else ""
+        print(
+            f"  OK    {key:<20} {len(result.segments):>2} questions, {marks} marks, "
+            f"{with_ms:>2} mark schemes, {cropped:>2} cropped{flag}"
+        )
+
+        if args.verbose:
+            for warning in result.warnings:
+                print(f"          ~ {warning}")
+
+        if args.execute:
+            written_files += write_paper(result)
+
+    ok = [r for r in results if r.ok]
+    failed = [r for r in results if r.issues]
+    skipped = [r for r in results if r.skipped_reason]
+
+    print(f"\n{'=' * 74}\nSUMMARY\n{'=' * 74}")
+    print(f"  papers found      : {len(results)}")
+    print(f"  passed validation : {len(ok)}")
+    print(f"  failed validation : {len(failed)}")
+    print(f"  excluded          : {len(skipped)}")
+    print(f"  questions         : {sum(len(r.segments) for r in ok)}")
+    print(f"  with mark scheme  : {sum(1 for r in ok for s in r.segments if s.ms_regions)}")
+    print(f"  cropped segments  : {sum(1 for r in ok for s in r.segments if any(x.cropped for x in s.qp_regions))}")
+    print(f"  warnings          : {sum(len(r.warnings) for r in ok)}")
+
+    if args.execute:
+        print(f"  files written     : {written_files}")
+        REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        REPORT_PATH.write_text(
+            json.dumps(
+                {
+                    "papers": [
+                        {
+                            "key": r.source.key,
+                            "status": (
+                                "excluded" if r.skipped_reason
+                                else "failed" if r.issues
+                                else "ok"
+                            ),
+                            "skipped_reason": r.skipped_reason,
+                            "issues": r.issues,
+                            "warnings": r.warnings,
+                            "questions": len(r.segments),
+                            "marks": sum(s.marks for s in r.segments),
+                        }
+                        for r in results
+                    ]
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
+        print(f"  report            : {REPORT_PATH.relative_to(REPO_ROOT)}")
+    else:
+        print("\n  Dry run -- nothing written. Re-run with --execute.")
+
+    if failed:
+        print(f"\n  {len(failed)} paper(s) need attention before the gate can pass.")
+
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
