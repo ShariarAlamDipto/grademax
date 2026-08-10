@@ -26,8 +26,19 @@ point of clustering them at all.
 
 VERIFICATION
 ------------
-`verified_at` is left NULL. The RLS policy on `workbook_questions` only exposes
-verified rows publicly, so nothing reaches a student until Phase 4 signs it off.
+`verified_at` is left NULL on new rows. The RLS policy on `workbook_questions`
+only exposes verified rows publicly, so nothing reaches a student until Phase 4
+signs it off.
+
+A row that a human has already signed off is TREATED AS AUTHORITATIVE. Re-running
+this script refreshes its mechanical fields (marks, PDFs, stem) but never touches
+`section_id`, `secondary_section_ids` or `archetype_id` -- the classifier's newer
+opinion goes to `proposed_section_id` instead, where the review UI can surface it.
+
+Without that split a re-run would silently revert every manual reassignment while
+leaving `verified_at` set, so the question would look signed off while carrying
+the section a human had already rejected. That is worse than losing the work
+outright, because nothing about it looks wrong.
 
 USAGE
 -----
@@ -205,13 +216,15 @@ def main() -> int:
     ordered = build_print_order(classified, cluster_of)
 
     # Existing rows keep their slug and ordinal -- attempts reference them.
+    # `verified_at` decides whether this script may overwrite the section.
     existing = supabase.table("workbook_questions").select(
-        "id,slug,source_paper_key,source_question_number,ordinal_in_chapter"
+        "id,slug,source_paper_key,source_question_number,ordinal_in_chapter,verified_at"
     ).eq("subject_id", subject_id).execute().data
     existing_by_source = {
         (row["source_paper_key"], row["source_question_number"]): row for row in existing
     }
-    print(f"  already in DB: {len(existing)}")
+    already_verified = sum(1 for row in existing if row["verified_at"])
+    print(f"  already in DB: {len(existing)}  ({already_verified} human-verified, protected)")
 
     papers = supabase.table("papers").select("id,year,season,paper_number").eq(
         "subject_id", subject_id
@@ -239,19 +252,34 @@ def main() -> int:
     bucket = os.environ["R2_BUCKET_NAME"]
 
     # ── Archetypes ───────────────────────────────────────────────────────────
+    # There is no unique constraint on (section_id, label), so a blind insert
+    # would create a fresh duplicate set on every run and repoint every question
+    # at it, orphaning the previous rows. Match on the pair instead.
+    section_ids = [sid for sid in section_id_by_code.values()]
+    prior = supabase.table("workbook_archetypes").select(
+        "id,section_id,label"
+    ).in_("section_id", section_ids).execute().data
+    archetype_id_by_pair = {(row["section_id"], row["label"]): row["id"] for row in prior}
+
     archetype_id_by_key: dict[str, str] = {}
+    created = 0
     for cluster in clusters:
         key = f"{cluster['section']}|{cluster['label']}"
         section_id = section_id_by_code.get(cluster["section"])
+        existing_id = archetype_id_by_pair.get((section_id, cluster["label"]))
+        if existing_id:
+            archetype_id_by_key[key] = existing_id
+            continue
         row = supabase.table("workbook_archetypes").insert(
             {"section_id": section_id, "label": cluster["label"],
              "description": f"{cluster['size']} question(s) in section {cluster['section']}"}
         ).execute().data[0]
         archetype_id_by_key[key] = row["id"]
-    print(f"  archetypes written: {len(archetype_id_by_key)}")
+        created += 1
+    print(f"  archetypes: {created} created, {len(archetype_id_by_key) - created} reused")
 
     # ── Questions ────────────────────────────────────────────────────────────
-    uploaded = inserted = updated = 0
+    uploaded = inserted = updated = protected = 0
 
     for question in ordered:
         chapter, section_number = question["_section"].split(".")
@@ -289,11 +317,11 @@ def main() -> int:
             f"{SLUG_PREFIX}.CH{int(chapter):02d}.S{int(section_number):02d}.Q{question['_ordinal']:03d}"
         )
 
+        # Mechanical fields, safe to refresh on any row: they describe the PDF,
+        # not the judgement about where it belongs.
         payload = {
             "slug": slug,
             "subject_id": subject_id,
-            "section_id": section_id_by_code[question["_section"]],
-            "archetype_id": archetype_id_by_key.get(cluster_of.get(question["_id"], "")),
             "ordinal_in_chapter": previous["ordinal_in_chapter"] if previous else question["_ordinal"],
             "source_paper_id": paper_id_by_key.get(question["paper_key"]),
             "source_paper_key": question["paper_key"],
@@ -305,8 +333,19 @@ def main() -> int:
             "ms_pdf_url": ms_url,
             "stem": question["stem"][:4000],
             "text_status": question["text_status"],
-            "secondary_section_ids": secondary_ids,
         }
+
+        classifier_section_id = section_id_by_code[question["_section"]]
+
+        if previous and previous["verified_at"]:
+            # A human has ruled on this one. Record what the classifier now
+            # thinks, but leave the ruling alone.
+            payload["proposed_section_id"] = classifier_section_id
+            protected += 1
+        else:
+            payload["section_id"] = classifier_section_id
+            payload["secondary_section_ids"] = secondary_ids
+            payload["archetype_id"] = archetype_id_by_key.get(cluster_of.get(question["_id"], ""))
 
         if previous:
             supabase.table("workbook_questions").update(payload).eq("id", previous["id"]).execute()
@@ -321,7 +360,7 @@ def main() -> int:
     print(f"\n  PDFs uploaded : {uploaded}")
     print(f"  rows inserted : {inserted}")
     print(f"  rows updated  : {updated}")
-    print(f"  verified      : 0 (Phase 4 sets verified_at; nothing is public yet)")
+    print(f"  of which verified, section left untouched: {protected}")
 
     return 0
 
