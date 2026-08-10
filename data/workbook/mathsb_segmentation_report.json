@@ -6,7 +6,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 29/29 aligned by marks"
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 29,
       "marks": 100
@@ -17,7 +17,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 27/28 aligned by marks -- 1 question(s) unmatched",
+        "mark scheme read as per-question tallies: 27/28 aligned (skipped 1 question(s), 0 tally/tallies) -- 1 question(s) unmatched",
         "no mark scheme block found for questions [26]"
       ],
       "questions": 28,
@@ -29,7 +29,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 1 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -51,7 +51,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 27/28 aligned by marks -- 1 question(s) unmatched",
+        "mark scheme read as per-question tallies: 27/28 aligned (skipped 1 question(s), 0 tally/tallies) -- 1 question(s) unmatched",
         "no mark scheme block found for questions [28]"
       ],
       "questions": 28,
@@ -63,7 +63,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 28/28 aligned by marks"
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 28,
       "marks": 100
@@ -74,7 +74,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -85,8 +85,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 8/11 aligned by marks -- 3 question(s) unmatched",
-        "no mark scheme block found for questions [3, 6, 9]"
+        "mark scheme tallies align only ambiguously (3 question(s) and 3 tally/tallies unmatched, so a question could pair with the wrong tally of equal value) -- no mark schemes attached"
       ],
       "questions": 11,
       "marks": 100
@@ -97,7 +96,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 28/28 aligned by marks"
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 28,
       "marks": 100
@@ -108,7 +107,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 29/29 aligned by marks"
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 29,
       "marks": 100
@@ -119,7 +118,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -141,7 +140,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 29/29 aligned by marks"
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 1 tally/tallies)"
       ],
       "questions": 29,
       "marks": 100
@@ -152,7 +151,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 28/28 aligned by marks"
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 28,
       "marks": 100
@@ -163,7 +162,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 3 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -174,7 +173,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -265,7 +264,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 12/12 aligned by marks"
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 12,
       "marks": 100
@@ -327,7 +326,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 28/28 aligned by marks"
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 28,
       "marks": 100
@@ -338,7 +337,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 29/29 aligned by marks"
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 29,
       "marks": 100
@@ -349,7 +348,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -371,7 +370,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 26/27 aligned by marks -- 1 question(s) unmatched",
+        "mark scheme read as per-question tallies: 26/27 aligned (skipped 1 question(s), 1 tally/tallies) -- 1 question(s) unmatched",
         "no mark scheme block found for questions [25]"
       ],
       "questions": 27,
@@ -383,7 +382,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 29/29 aligned by marks"
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 29,
       "marks": 100
@@ -394,7 +393,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 12/12 aligned by marks"
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 12,
       "marks": 100
@@ -405,7 +404,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -428,7 +427,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 26/26 aligned by marks"
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 26,
       "marks": 100
@@ -439,7 +438,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 12/12 aligned by marks"
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 12,
       "marks": 100
@@ -450,7 +449,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 12/12 aligned by marks"
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 12,
       "marks": 100
@@ -461,7 +460,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 26/26 aligned by marks"
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 26,
       "marks": 100
@@ -472,7 +471,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 28/28 aligned by marks"
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 28,
       "marks": 100
@@ -483,7 +482,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 12/12 aligned by marks"
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 12,
       "marks": 100
@@ -494,7 +493,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -505,7 +504,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 27/27 aligned by marks"
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 27,
       "marks": 100
@@ -516,7 +515,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 12/12 aligned by marks"
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 12,
       "marks": 100
@@ -539,7 +538,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -550,7 +549,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 27/27 aligned by marks"
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 27,
       "marks": 100
@@ -573,7 +572,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 12/12 aligned by marks"
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 12,
       "marks": 100
@@ -584,7 +583,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -595,7 +594,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 27/27 aligned by marks"
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 27,
       "marks": 100
@@ -606,7 +605,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 27/27 aligned by marks"
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 27,
       "marks": 100
@@ -617,7 +616,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
@@ -628,7 +627,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 11/11 aligned by marks"
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 11,
       "marks": 100
