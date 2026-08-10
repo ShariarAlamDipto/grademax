@@ -1,0 +1,4271 @@
+{
+  "2016_jan_1:1": {
+    "primary": "9.1",
+    "secondary": [
+      "9.5"
+    ],
+    "archetype": "differentiate and integrate function",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:2": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "solve quadratic inequality",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:3": {
+    "primary": "9.4",
+    "secondary": [
+      "9.5"
+    ],
+    "archetype": "related rates sphere volume",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:4": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "arithmetic and geometric series comparison",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:5": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2",
+      "1.2"
+    ],
+    "archetype": "binomial expansion and validity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:6": {
+    "primary": "10.5",
+    "secondary": [],
+    "archetype": "solve trigonometric equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:7": {
+    "primary": "10.2",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "sine rule in triangle",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:8": {
+    "primary": "9.7",
+    "secondary": [
+      "9.2",
+      "9.4"
+    ],
+    "archetype": "particle motion with acceleration",
+    "confidence": 0.95,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:9": {
+    "primary": "9.6",
+    "secondary": [
+      "9.1",
+      "9.5"
+    ],
+    "archetype": "area under curve using calculus",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:10": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "exponential and logarithmic equations",
+    "confidence": 0.85,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_1:11": {
+    "primary": "9.3",
+    "secondary": [
+      "9.2",
+      "9.4",
+      "8.2"
+    ],
+    "archetype": "tangent to curve and perpendicular lines",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:1": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "simple algebraic equation",
+    "confidence": 0.95,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:2": {
+    "primary": "10.6",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "sector area and arc length",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:3": {
+    "primary": "8.2",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "circle and line intersection",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:4": {
+    "primary": "9.2",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "differentiate exponential function",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:5": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4",
+      "3.2"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:6": {
+    "primary": "10.3",
+    "secondary": [],
+    "archetype": "trigonometric identities",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:7": {
+    "primary": "9.3",
+    "secondary": [
+      "4.1",
+      "9.2"
+    ],
+    "archetype": "stationary points on curve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:8": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "sum of arithmetic series",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:9": {
+    "primary": "7.3",
+    "secondary": [
+      "7.2",
+      "7.4"
+    ],
+    "archetype": "vector proof of parallel lines",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:10": {
+    "primary": "3.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "factor theorem and remainder",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:11": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3",
+      "4.1"
+    ],
+    "archetype": "exponential and log graphing",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_jan_2:12": {
+    "primary": "7.1",
+    "secondary": [
+      "8.1",
+      "9.4"
+    ],
+    "archetype": "vector and trigonometry in 3d",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:1": {
+    "primary": "3.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "factor theorem and polynomial factorisation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:2": {
+    "primary": "3.1",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "algebraic division and expansion",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:3": {
+    "primary": "7.1",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "vector and distance calculations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "arithmetic series sum and term",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:5": {
+    "primary": "10.3",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "trigonometric identities and equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:7": {
+    "primary": "1.2",
+    "secondary": [
+      "4.1",
+      "1.1"
+    ],
+    "archetype": "logarithmic and exponential functions",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:8": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "8.1"
+    ],
+    "archetype": "vector algebra and geometry",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:9": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "forming new equation from roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:10": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1",
+      "7.2"
+    ],
+    "archetype": "finding equation of line",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:1": {
+    "primary": "10.2",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "sine rule and area of triangle",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:2": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "vector operations and unit vector",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:3": {
+    "primary": "5.2",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "geometric series and sum to infinity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:4": {
+    "primary": "9.2",
+    "secondary": [],
+    "archetype": "product rule differentiation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:5": {
+    "primary": "9.4",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "minimising surface area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:6": {
+    "primary": "9.6",
+    "secondary": [
+      "2.1",
+      "4.4"
+    ],
+    "archetype": "area between curve and line",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:7": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "particle motion with velocity function",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:8": {
+    "primary": "4.3",
+    "secondary": [
+      "9.4",
+      "8.4"
+    ],
+    "archetype": "curve sketching with asymptotes",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:9": {
+    "primary": "10.3",
+    "secondary": [
+      "9.5",
+      "9.6"
+    ],
+    "archetype": "trigonometric identities and integrals",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_2:10": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "related rates with volume and area",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:1": {
+    "primary": "8.2",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "sketch and shade region",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:2": {
+    "primary": "10.1",
+    "secondary": [
+      "8.1",
+      "9.6"
+    ],
+    "archetype": "sector area and triangle length",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:3": {
+    "primary": "10.5",
+    "secondary": [
+      "10.3"
+    ],
+    "archetype": "trig equation with double angle",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:4": {
+    "primary": "9.7",
+    "secondary": [
+      "9.1",
+      "9.4"
+    ],
+    "archetype": "particle motion with velocity and acceleration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:5": {
+    "primary": "9.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "minimise function using calculus",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:6": {
+    "primary": "9.2",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "differentiate exponential function",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:7": {
+    "primary": "1.3",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "log equation with root finding",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:8": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "arithmetic series sum and term",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:9": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3",
+      "7.4"
+    ],
+    "archetype": "vector and pyramid geometry",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_1:11": {
+    "primary": "9.5",
+    "secondary": [
+      "9.2"
+    ],
+    "archetype": "integration and area under curve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:1": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "sum to infinity of geometric series",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:2": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "linear and quadratic inequalities",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:3": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "vector magnitude and unit vector",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:4": {
+    "primary": "3.2",
+    "secondary": [
+      "2.3",
+      "9.5"
+    ],
+    "archetype": "factor theorem and polynomial roots",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:5": {
+    "primary": "10.3",
+    "secondary": [
+      "10.4",
+      "9.6"
+    ],
+    "archetype": "trigonometric identities and integration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:6": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "exponential and logarithmic equations",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:7": {
+    "primary": "4.1",
+    "secondary": [
+      "4.2",
+      "8.1"
+    ],
+    "archetype": "sketching rational curves and asymptotes",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:8": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "binomial expansion with given terms",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:9": {
+    "primary": "2.1",
+    "secondary": [
+      "9.5",
+      "9.6",
+      "8.2"
+    ],
+    "archetype": "completing the square and integration",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:10": {
+    "primary": "9.4",
+    "secondary": [
+      "9.1",
+      "8.2"
+    ],
+    "archetype": "tangent and normal to curve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_specimen_2:11": {
+    "primary": "9.4",
+    "secondary": [
+      "9.7",
+      "7.1"
+    ],
+    "archetype": "related rates of change",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:1": {
+    "primary": "10.6",
+    "secondary": [],
+    "archetype": "sector area and arc length",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:2": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1",
+      "2.3"
+    ],
+    "archetype": "factor theorem and remainder",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:3": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "algebraic division",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:4": {
+    "primary": "5.2",
+    "secondary": [
+      "5.1",
+      "5.3"
+    ],
+    "archetype": "geometric series sum",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:5": {
+    "primary": "10.2",
+    "secondary": [
+      "8.4",
+      "4.1"
+    ],
+    "archetype": "trigonometry in quadrilateral",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:6": {
+    "primary": "4.3",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "curve asymptotes and intercepts",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:7": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3",
+      "9.5"
+    ],
+    "archetype": "logarithmic equation estimation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:8": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2",
+      "5.3"
+    ],
+    "archetype": "binomial series expansion",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:9": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:10": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "particle motion with velocity and acceleration",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_1:11": {
+    "primary": "9.3",
+    "secondary": [
+      "9.4",
+      "8.2",
+      "9.6"
+    ],
+    "archetype": "stationary point and volume of solid",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:1": {
+    "primary": "4.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "sketching lines and shading region",
+    "confidence": 0.6,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:2": {
+    "primary": "10.3",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "trigonometric equation with double angle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:3": {
+    "primary": "9.4",
+    "secondary": [],
+    "archetype": "related rates with radius and area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:4": {
+    "primary": "10.3",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "tan double angle identity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:5": {
+    "primary": "9.2",
+    "secondary": [
+      "8.2",
+      "9.4"
+    ],
+    "archetype": "normal to curve at point",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:6": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "arithmetic series sum and terms",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:7": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2",
+      "3.2"
+    ],
+    "archetype": "exponential and logarithmic equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:8": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1",
+      "7.2",
+      "8.1"
+    ],
+    "archetype": "collinearity and vector ratios",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:9": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1",
+      "8.4"
+    ],
+    "archetype": "line equations and coordinates",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_jan_2:10": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2",
+      "8.4"
+    ],
+    "archetype": "right prism dimensions",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:1": {
+    "primary": "1.3",
+    "secondary": [],
+    "archetype": "exponential equation solve",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:2": {
+    "primary": "9.4",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "related rates cone volume",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:3": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "vector midpoint and ratio",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:4": {
+    "primary": "10.5",
+    "secondary": [
+      "10.1",
+      "10.3"
+    ],
+    "archetype": "trigonometric equation solve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:5": {
+    "primary": "10.2",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "triangle angles and sides",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:6": {
+    "primary": "5.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "geometric series sum",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:7": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "logarithmic equation solve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:8": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "line equation and coordinates",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:9": {
+    "primary": "10.3",
+    "secondary": [
+      "9.5",
+      "9.6"
+    ],
+    "archetype": "trigonometric identity and integral",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_1:10": {
+    "primary": "4.1",
+    "secondary": [
+      "9.2",
+      "9.3"
+    ],
+    "archetype": "curve sketch and max min",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:1": {
+    "primary": "4.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "graph and inequality region",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:2": {
+    "primary": "2.1",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "solve simultaneous equations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:3": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "discriminant and nature of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:4": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "kinematics with velocity and acceleration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:5": {
+    "primary": "10.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "cosine rule and triangle properties",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:6": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "binomial expansion with conditions",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:7": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "maximise volume with surface area constraint",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:8": {
+    "primary": "2.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:9": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1",
+      "8.2"
+    ],
+    "archetype": "tangent to curve at point",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector magnitude and direction",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2017_may-jun_2:11": {
+    "primary": "1.2",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "logarithmic identities and series",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:1": {
+    "primary": "2.1",
+    "secondary": [
+      "9.3"
+    ],
+    "archetype": "completing the square and maxima",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:2": {
+    "primary": "3.4",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "linear inequalities and region shading",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:3": {
+    "primary": "9.4",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "related rates cone volume",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:4": {
+    "primary": "9.7",
+    "secondary": [
+      "9.2",
+      "9.4"
+    ],
+    "archetype": "particle motion on x axis",
+    "confidence": 0.95,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:5": {
+    "primary": "4.1",
+    "secondary": [
+      "2.1",
+      "3.4"
+    ],
+    "archetype": "graph and root estimation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:6": {
+    "primary": "10.2",
+    "secondary": [
+      "8.2",
+      "8.4"
+    ],
+    "archetype": "triangle trigonometry and area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:7": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1",
+      "9.5"
+    ],
+    "archetype": "binomial expansion and integration",
+    "confidence": 0.85,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:8": {
+    "primary": "5.2",
+    "secondary": [
+      "5.1",
+      "5.3"
+    ],
+    "archetype": "geometric series sum and term",
+    "confidence": 0.95,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:9": {
+    "primary": "2.1",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_1:10": {
+    "primary": "9.5",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "integration using trig substitution",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:1": {
+    "primary": "10.6",
+    "secondary": [],
+    "archetype": "sector area and arc length",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "sum of arithmetic series",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:3": {
+    "primary": "9.6",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "volume of solid of revolution",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:4": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "discriminant and nature of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:5": {
+    "primary": "9.2",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "product rule differentiation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:6": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector operations and properties",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:7": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "exponential and logarithmic equations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:8": {
+    "primary": "9.4",
+    "secondary": [
+      "9.5",
+      "8.1"
+    ],
+    "archetype": "minimisation using calculus",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:9": {
+    "primary": "9.2",
+    "secondary": [
+      "2.3",
+      "9.6"
+    ],
+    "archetype": "tangent to curve and area under curve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:10": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1",
+      "8.3"
+    ],
+    "archetype": "line equations and properties",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_jan_2:11": {
+    "primary": "8.4",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "pyramid with rectangular base",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:1": {
+    "primary": "10.6",
+    "secondary": [],
+    "archetype": "sector area and arc length",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:2": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "forming new equation from roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:3": {
+    "primary": "10.2",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "sine rule and area of triangle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:4": {
+    "primary": "4.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "graphical solution of equation",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:5": {
+    "primary": "9.5",
+    "secondary": [
+      "9.6"
+    ],
+    "archetype": "integration and definite integral",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:6": {
+    "primary": "4.1",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "asymptotes and intercepts",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:7": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "particle motion with velocity and acceleration",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:8": {
+    "primary": "4.4",
+    "secondary": [
+      "9.6",
+      "2.1"
+    ],
+    "archetype": "area between curve and line",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:9": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "arithmetic series sum",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector operations and properties",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_1:11": {
+    "primary": "7.1",
+    "secondary": [
+      "8.1",
+      "10.1"
+    ],
+    "archetype": "vector and trigonometric applications",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:1": {
+    "primary": "10.2",
+    "secondary": [],
+    "archetype": "cosine rule in triangle",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:2": {
+    "primary": "9.2",
+    "secondary": [],
+    "archetype": "differentiate product and quotient",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:3": {
+    "primary": "9.4",
+    "secondary": [
+      "9.5"
+    ],
+    "archetype": "related rates of change",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:4": {
+    "primary": "1.3",
+    "secondary": [
+      "9.1",
+      "9.2"
+    ],
+    "archetype": "solve exponential equation and find intersection points",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "geometric series sum to infinity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:6": {
+    "primary": "9.3",
+    "secondary": [
+      "9.2",
+      "8.1"
+    ],
+    "archetype": "minimise function with calculus",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:7": {
+    "primary": "9.5",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "integration of binomial expansion",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:8": {
+    "primary": "9.5",
+    "secondary": [
+      "10.3"
+    ],
+    "archetype": "integration of trigonometric functions",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:9": {
+    "primary": "8.3",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "area of triangle",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2018_may-jun_2:10": {
+    "primary": "9.6",
+    "secondary": [
+      "4.1",
+      "8.2"
+    ],
+    "archetype": "volume of solid",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:1": {
+    "primary": "10.6",
+    "secondary": [],
+    "archetype": "sector perimeter",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "arithmetic series term",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:3": {
+    "primary": "3.1",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "algebraic division and equation solving",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:4": {
+    "primary": "10.4",
+    "secondary": [
+      "10.1",
+      "8.2"
+    ],
+    "archetype": "r formula and trigonometric equation solving",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:5": {
+    "primary": "2.1",
+    "secondary": [
+      "2.3",
+      "9.4"
+    ],
+    "archetype": "completing the square and quadratic equation solving",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:6": {
+    "primary": "9.2",
+    "secondary": [
+      "9.4",
+      "8.2"
+    ],
+    "archetype": "chain rule and normal to curve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:7": {
+    "primary": "9.3",
+    "secondary": [
+      "9.5",
+      "8.1"
+    ],
+    "archetype": "maxima and minima using calculus",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:8": {
+    "primary": "4.2",
+    "secondary": [
+      "9.2",
+      "8.2"
+    ],
+    "archetype": "asymptotes and curve sketching",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:9": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1",
+      "8.4"
+    ],
+    "archetype": "line equation and perpendiculars",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_1:10": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2",
+      "9.5"
+    ],
+    "archetype": "binomial expansion and area estimation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:1": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "logarithmic equation solving",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:3": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "vector operations and unit vector",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:4": {
+    "primary": "9.7",
+    "secondary": [
+      "9.2",
+      "9.4"
+    ],
+    "archetype": "kinematics and acceleration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:5": {
+    "primary": "10.2",
+    "secondary": [
+      "10.1",
+      "10.3"
+    ],
+    "archetype": "trigonometry in 3d geometry",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:6": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "related rates cone",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:7": {
+    "primary": "1.2",
+    "secondary": [
+      "4.1",
+      "4.2"
+    ],
+    "archetype": "graph and estimate",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:8": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:9": {
+    "primary": "9.6",
+    "secondary": [
+      "4.1",
+      "8.1"
+    ],
+    "archetype": "volume of solid",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:10": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "geometric series",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_jan_2:11": {
+    "primary": "10.3",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "trigonometric identities",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:1": {
+    "primary": "10.6",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "sector area and radius",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:2": {
+    "primary": "10.2",
+    "secondary": [
+      "10.3"
+    ],
+    "archetype": "sine rule and triangle area",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:3": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "logarithm properties and equation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:4": {
+    "primary": "9.2",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "differentiation and normal to curve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:5": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "related rates and circle properties",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:6": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3",
+      "9.1"
+    ],
+    "archetype": "arithmetic series and summation",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.3",
+      "7.4"
+    ],
+    "archetype": "vectors and collinearity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:8": {
+    "primary": "1.2",
+    "secondary": [
+      "4.1",
+      "4.4"
+    ],
+    "archetype": "logarithmic graph and equation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:9": {
+    "primary": "9.2",
+    "secondary": [
+      "8.1",
+      "9.5"
+    ],
+    "archetype": "minimisation using calculus",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:10": {
+    "primary": "2.1",
+    "secondary": [
+      "9.1",
+      "4.1"
+    ],
+    "archetype": "completing the square and integration",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_1R:11": {
+    "primary": "8.2",
+    "secondary": [
+      "7.2",
+      "8.4"
+    ],
+    "archetype": "line and circle equations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:1": {
+    "primary": "7.2",
+    "secondary": [],
+    "archetype": "vector operations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:2": {
+    "primary": "9.4",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "related rates circle",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:3": {
+    "primary": "9.7",
+    "secondary": [
+      "9.2",
+      "9.1"
+    ],
+    "archetype": "particle motion",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:4": {
+    "primary": "10.2",
+    "secondary": [],
+    "archetype": "cosine rule",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:5": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "algebraic equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:6": {
+    "primary": "9.2",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "differentiation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:7": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "arithmetic and geometric series",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:8": {
+    "primary": "8.1",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "distance and circle properties",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:9": {
+    "primary": "9.2",
+    "secondary": [
+      "9.3"
+    ],
+    "archetype": "find and classify turning points",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:10": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2:11": {
+    "primary": "7.1",
+    "secondary": [
+      "8.1",
+      "9.4"
+    ],
+    "archetype": "vector and trigonometric calculations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:1": {
+    "primary": "3.1",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "cubic equation and factorisation",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:2": {
+    "primary": "4.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "asymptotes and curve properties",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:3": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "related rates volume increase",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:4": {
+    "primary": "9.7",
+    "secondary": [
+      "9.2"
+    ],
+    "archetype": "particle motion acceleration",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:5": {
+    "primary": "3.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "linear inequalities region",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:6": {
+    "primary": "6.2",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "binomial expansion negative index",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:7": {
+    "primary": "5.2",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "geometric series sum",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:8": {
+    "primary": "10.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "archetype": "trigonometry right prism",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:9": {
+    "primary": "9.6",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "volume of solid of revolution",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:10": {
+    "primary": "9.5",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "integration of trigonometric function",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2019_may-jun_2R:11": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:1": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "arithmetic series sum",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:2": {
+    "primary": "8.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "graphing linear inequalities",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:3": {
+    "primary": "3.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "factor theorem and polynomial equation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:4": {
+    "primary": "10.6",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "area of sector and triangle",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:5": {
+    "primary": "9.6",
+    "secondary": [
+      "2.1",
+      "4.1"
+    ],
+    "archetype": "area under curve and line",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:6": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1",
+      "8.3"
+    ],
+    "archetype": "line equation and triangle area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:7": {
+    "primary": "1.3",
+    "secondary": [],
+    "archetype": "log equation with quadratic",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:8": {
+    "primary": "10.5",
+    "secondary": [
+      "10.1",
+      "10.3"
+    ],
+    "archetype": "trig equation with multiple solutions",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:9": {
+    "primary": "6.2",
+    "secondary": [
+      "5.1",
+      "5.3"
+    ],
+    "archetype": "binomial expansion and estimation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:10": {
+    "primary": "7.4",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector proof in geometry",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1:11": {
+    "primary": "9.4",
+    "secondary": [
+      "9.5",
+      "10.1"
+    ],
+    "archetype": "minimisation using calculus",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:1": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "manipulating log laws",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "completing the square to find max",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:3": {
+    "primary": "9.2",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "tangent to curve at point",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:4": {
+    "primary": "3.2",
+    "secondary": [
+      "2.4",
+      "9.5"
+    ],
+    "archetype": "factor theorem and remainder",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:5": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "log laws and exponential equations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:6": {
+    "primary": "4.1",
+    "secondary": [
+      "2.4",
+      "4.4"
+    ],
+    "archetype": "graphical solution of cubic equation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:7": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "arithmetic series sum and terms",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:8": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "maximising particle displacement",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:9": {
+    "primary": "8.2",
+    "secondary": [
+      "8.4",
+      "7.1"
+    ],
+    "archetype": "line and circle geometry",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector proof in geometry",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_1R:11": {
+    "primary": "9.6",
+    "secondary": [
+      "1.3",
+      "8.4"
+    ],
+    "archetype": "volume of solid of revolution",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:1": {
+    "primary": "9.7",
+    "secondary": [],
+    "archetype": "kinematics velocity",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:2": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "linear and quadratic inequalities",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:3": {
+    "primary": "7.4",
+    "secondary": [
+      "8.1",
+      "10.1"
+    ],
+    "archetype": "vector proof in geometry",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:4": {
+    "primary": "7.1",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "vector algebra and properties",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:5": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:6": {
+    "primary": "9.6",
+    "secondary": [
+      "1.1",
+      "8.2"
+    ],
+    "archetype": "volume of solid of revolution",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:7": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "geometric series sum to infinity",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:8": {
+    "primary": "9.2",
+    "secondary": [],
+    "archetype": "second order differential equation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:9": {
+    "primary": "4.1",
+    "secondary": [
+      "9.2",
+      "8.4"
+    ],
+    "archetype": "curve sketching with asymptotes",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:10": {
+    "primary": "9.4",
+    "secondary": [],
+    "archetype": "related rates of change",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2:11": {
+    "primary": "10.3",
+    "secondary": [
+      "10.1",
+      "10.4"
+    ],
+    "archetype": "trigonometric identities and equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:1": {
+    "primary": "10.6",
+    "secondary": [],
+    "archetype": "arc length and sector area",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:2": {
+    "primary": "4.2",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "inequalities from graph",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:3": {
+    "primary": "10.2",
+    "secondary": [],
+    "archetype": "sine rule for triangle sides",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:4": {
+    "primary": "7.4",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "vector and volume calculation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:5": {
+    "primary": "2.3",
+    "secondary": [
+      "3.3"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:6": {
+    "primary": "9.4",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "related rates of change",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:7": {
+    "primary": "5.2",
+    "secondary": [
+      "1.2",
+      "1.3"
+    ],
+    "archetype": "geometric series sum to infinity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:8": {
+    "primary": "10.3",
+    "secondary": [
+      "10.1",
+      "10.4"
+    ],
+    "archetype": "trig identity and equation solving",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:9": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1",
+      "1.2"
+    ],
+    "archetype": "binomial expansion and series",
+    "confidence": 0.85,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:10": {
+    "primary": "9.5",
+    "secondary": [
+      "9.1",
+      "8.2"
+    ],
+    "archetype": "curve and line intersection area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_jan_2R:11": {
+    "primary": "4.2",
+    "secondary": [
+      "4.1",
+      "4.3"
+    ],
+    "archetype": "asymptotes and curve sketching",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:1": {
+    "primary": "9.2",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "product rule differentiation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:2": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "sketching lines on axes",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:3": {
+    "primary": "7.4",
+    "secondary": [
+      "7.1",
+      "7.2"
+    ],
+    "archetype": "pyramid edge length and angles",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:4": {
+    "primary": "4.4",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "graphical solution of equations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:5": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2",
+      "8.3"
+    ],
+    "archetype": "perpendicular lines and quadrilateral area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:6": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "arithmetic series sum and term",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:7": {
+    "primary": "2.1",
+    "secondary": [
+      "9.5",
+      "9.6"
+    ],
+    "archetype": "completing the square and area under curve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:8": {
+    "primary": "9.4",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "related rates using chain rule",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:9": {
+    "primary": "10.3",
+    "secondary": [
+      "8.1",
+      "8.2"
+    ],
+    "archetype": "trigonometric identities in triangle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:10": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1",
+      "9.6"
+    ],
+    "archetype": "related rates with surface area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1:11": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector operations and ratios",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:1": {
+    "primary": "10.1",
+    "secondary": [],
+    "archetype": "sine function evaluation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.2",
+      "4.1"
+    ],
+    "archetype": "completing the square and graphing",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:3": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "arithmetic series with logarithms",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:4": {
+    "primary": "9.3",
+    "secondary": [
+      "9.2",
+      "9.4"
+    ],
+    "archetype": "stationary points on curve",
+    "confidence": 0.95,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:5": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2",
+      "10.4"
+    ],
+    "archetype": "binomial expansion and approximation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:6": {
+    "primary": "10.3",
+    "secondary": [
+      "9.5",
+      "10.4"
+    ],
+    "archetype": "trigonometric identities and integration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:7": {
+    "primary": "9.4",
+    "secondary": [
+      "9.7"
+    ],
+    "archetype": "related rates of change",
+    "confidence": 0.95,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:8": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "forming new equations from roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:9": {
+    "primary": "1.3",
+    "secondary": [],
+    "archetype": "exponential equation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:10": {
+    "primary": "10.5",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "trigonometric equation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:11": {
+    "primary": "7.4",
+    "secondary": [
+      "7.1",
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector proof in geometry",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_1R:12": {
+    "primary": "9.6",
+    "secondary": [
+      "10.1",
+      "8.1"
+    ],
+    "archetype": "area under curve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:1": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "kinematics particle at rest",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:2": {
+    "primary": "9.6",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "volume of revolution",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:3": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "binomial expansion with negative index",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:4": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "exponential and logarithmic equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:5": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1",
+      "5.2"
+    ],
+    "archetype": "sigma notation and series sum",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:6": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3",
+      "2.1"
+    ],
+    "archetype": "forming new equations from roots",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:7": {
+    "primary": "5.2",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "geometric series convergence and sum",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:8": {
+    "primary": "9.4",
+    "secondary": [
+      "8.2",
+      "9.1",
+      "9.5"
+    ],
+    "archetype": "tangents and areas under curves",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:9": {
+    "primary": "9.4",
+    "secondary": [
+      "8.2",
+      "2.3"
+    ],
+    "archetype": "curve with stationary points",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2:10": {
+    "primary": "10.3",
+    "secondary": [
+      "10.4",
+      "9.5"
+    ],
+    "archetype": "trig identities and integrals",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:1": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "arithmetic and geometric series",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:2": {
+    "primary": "3.2",
+    "secondary": [
+      "2.1",
+      "9.5"
+    ],
+    "archetype": "remainder theorem and polynomial roots",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:3": {
+    "primary": "10.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "sine rule and triangle area",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:4": {
+    "primary": "4.1",
+    "secondary": [
+      "2.2",
+      "9.4"
+    ],
+    "archetype": "graphical solution of equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:5": {
+    "primary": "10.6",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "sector area and tangents",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:6": {
+    "primary": "9.4",
+    "secondary": [
+      "2.1",
+      "4.3"
+    ],
+    "archetype": "tangents and normals to curve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:7": {
+    "primary": "2.2",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "real roots and new equation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:8": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "log equation with base change",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:9": {
+    "primary": "9.2",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "second derivative with product rule",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2020_oct-nov_2R:10": {
+    "primary": "3.2",
+    "secondary": [
+      "9.5",
+      "8.1"
+    ],
+    "archetype": "algebraic method and volume of solid",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:1": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "discriminant for real roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:2": {
+    "primary": "10.3",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "tan sum identity",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:3": {
+    "primary": "4.3",
+    "secondary": [
+      "9.1",
+      "4.2"
+    ],
+    "archetype": "curve sketching with asymptotes",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "sum of arithmetic series",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:5": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "binomial expansion with coefficients",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:6": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:7": {
+    "primary": "9.4",
+    "secondary": [
+      "9.1",
+      "9.2"
+    ],
+    "archetype": "stationary points on curve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:8": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "log laws and exponential equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:9": {
+    "primary": "9.4",
+    "secondary": [
+      "9.1"
+    ],
+    "archetype": "normal to curve at point",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:10": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "archetype": "vector method for line intersection",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_1:11": {
+    "primary": "10.3",
+    "secondary": [
+      "9.5",
+      "9.6"
+    ],
+    "archetype": "trigonometric identities and calculus",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:1": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "linear and quadratic inequalities",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:2": {
+    "primary": "2.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "complete the square",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:3": {
+    "primary": "10.6",
+    "secondary": [
+      "8.4",
+      "9.6"
+    ],
+    "archetype": "sector area and arc length",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:4": {
+    "primary": "8.2",
+    "secondary": [
+      "7.2",
+      "8.3"
+    ],
+    "archetype": "line equation and coordinates",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:5": {
+    "primary": "5.2",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "geometric series sum to infinity",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:6": {
+    "primary": "3.2",
+    "secondary": [
+      "2.4",
+      "9.1"
+    ],
+    "archetype": "factor theorem and polynomial factorisation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:7": {
+    "primary": "1.3",
+    "secondary": [
+      "4.1",
+      "10.2"
+    ],
+    "archetype": "logarithmic equation and graph",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:8": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "log equation system",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:9": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1",
+      "9.5"
+    ],
+    "archetype": "related rates triangle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:10": {
+    "primary": "10.5",
+    "secondary": [
+      "10.1",
+      "10.4"
+    ],
+    "archetype": "trig equation solve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_may-jun_2:11": {
+    "primary": "9.6",
+    "secondary": [
+      "1.1",
+      "4.1"
+    ],
+    "archetype": "volume of solid",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:1": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "new equation from roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:2": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "discriminant condition",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:3": {
+    "primary": "10.6",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "sector area and perimeter",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:4": {
+    "primary": "9.2",
+    "secondary": [],
+    "archetype": "differentiate absolute value function",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:5": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "solve logarithmic equation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:6": {
+    "primary": "9.4",
+    "secondary": [],
+    "archetype": "related rates sphere surface area",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:7": {
+    "primary": "10.2",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "triangle area and cosine rule",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:8": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3",
+      "8.4"
+    ],
+    "archetype": "vector operations in geometry",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:9": {
+    "primary": "5.1",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "sum of arithmetic series",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:10": {
+    "primary": "9.6",
+    "secondary": [
+      "10.1",
+      "9.4",
+      "8.2"
+    ],
+    "archetype": "area under curve and tangent",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_1:11": {
+    "primary": "3.2",
+    "secondary": [
+      "2.4",
+      "9.2"
+    ],
+    "archetype": "factor theorem and remainder",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:1": {
+    "primary": "10.3",
+    "secondary": [],
+    "archetype": "trigonometric identities",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:2": {
+    "primary": "9.6",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "volume of solid of revolution",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:3": {
+    "primary": "4.1",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "rational curve and asymptotes",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:4": {
+    "primary": "9.1",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "stationary point on curve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:5": {
+    "primary": "9.4",
+    "secondary": [],
+    "archetype": "related rates using chain rule",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:6": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "particle motion on x axis",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:7": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "geometric series sum and infinity",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:8": {
+    "primary": "4.1",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "graphical solution of cubic equation",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:9": {
+    "primary": "7.1",
+    "secondary": [
+      "7.4",
+      "8.4"
+    ],
+    "archetype": "vector and geometry in 3d space",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:10": {
+    "primary": "6.2",
+    "secondary": [
+      "1.2",
+      "9.5"
+    ],
+    "archetype": "binomial expansion and integration",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2021_oct-nov_2:11": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1",
+      "8.4"
+    ],
+    "archetype": "line equation and perpendicularity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:1": {
+    "primary": "9.5",
+    "secondary": [],
+    "archetype": "calculus integration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:2": {
+    "primary": "2.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "completing the square and inequality",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:3": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "geometric series sum to infinity",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:4": {
+    "primary": "4.1",
+    "secondary": [
+      "4.2",
+      "3.4"
+    ],
+    "archetype": "graphical region and linear inequality",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:5": {
+    "primary": "3.2",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "factor theorem and remainder",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:6": {
+    "primary": "10.2",
+    "secondary": [
+      "10.3"
+    ],
+    "archetype": "sine rule and trig identities",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:7": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "log laws and exponential equations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:8": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1",
+      "9.5"
+    ],
+    "archetype": "related rates and optimization",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:9": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1",
+      "10.4"
+    ],
+    "archetype": "binomial expansion and approximation",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:10": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1",
+      "4.3"
+    ],
+    "archetype": "equations of lines and coordinate geometry",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1:11": {
+    "primary": "9.6",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "volume of solid of revolution",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:1": {
+    "primary": "8.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "graphing linear inequalities",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "arithmetic series sum",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:3": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "perpendicular bisector and triangle area",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:4": {
+    "primary": "10.6",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "sector area and perimeter",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:5": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "binomial expansion coefficients",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:6": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector parallelogram",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:7": {
+    "primary": "9.2",
+    "secondary": [
+      "9.3",
+      "8.1"
+    ],
+    "archetype": "maximise volume",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:8": {
+    "primary": "9.4",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "tangent to curve at point",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:9": {
+    "primary": "4.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "graphical root finding",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:10": {
+    "primary": "3.2",
+    "secondary": [
+      "10.3",
+      "10.4"
+    ],
+    "archetype": "factor theorem trig substitution",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_1R:11": {
+    "primary": "9.6",
+    "secondary": [
+      "9.1",
+      "8.1"
+    ],
+    "archetype": "volume of solid",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:1": {
+    "primary": "10.6",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "area and perimeter of sector",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:2": {
+    "primary": "10.5",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "trigonometric equation with compound angle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:3": {
+    "primary": "9.6",
+    "secondary": [],
+    "archetype": "area under curve using algebraic integration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:4": {
+    "primary": "7.1",
+    "secondary": [
+      "7.3",
+      "8.1"
+    ],
+    "archetype": "vector and geometry in 3d space",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:5": {
+    "primary": "9.7",
+    "secondary": [
+      "9.4"
+    ],
+    "archetype": "particle motion with velocity and acceleration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:6": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "arithmetic series sum and comparison",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:7": {
+    "primary": "2.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:8": {
+    "primary": "10.1",
+    "secondary": [
+      "10.4",
+      "4.1"
+    ],
+    "archetype": "graph of trig function",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:9": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "archetype": "vector midpoint and ratio",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2:10": {
+    "primary": "4.3",
+    "secondary": [
+      "9.4",
+      "4.1"
+    ],
+    "archetype": "tangent to curve at point",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:1": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "linear inequality solution",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:2": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "line equation and perpendicular",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:3": {
+    "primary": "9.1",
+    "secondary": [],
+    "archetype": "differentiate exponential function",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:4": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:5": {
+    "primary": "5.2",
+    "secondary": [
+      "1.2",
+      "5.1"
+    ],
+    "archetype": "geometric series sum and term",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:6": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "tangent and normal to curve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:7": {
+    "primary": "10.3",
+    "secondary": [],
+    "archetype": "trigonometric identity and equation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:8": {
+    "primary": "9.4",
+    "secondary": [
+      "8.4"
+    ],
+    "archetype": "related rates of change",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:9": {
+    "primary": "10.1",
+    "secondary": [
+      "7.1",
+      "8.4"
+    ],
+    "archetype": "trigonometric ratios in pyramid",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:10": {
+    "primary": "9.6",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "area between curves",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_jan_2R:11": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector method for collinearity",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:1": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "simplifying surds",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:2": {
+    "primary": "8.1",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "area of flag design",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:3": {
+    "primary": "10.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "area of triangle in rectangle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:4": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "sum to infinity of gp",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:5": {
+    "primary": "6.2",
+    "secondary": [
+      "1.2",
+      "10.4"
+    ],
+    "archetype": "binomial expansion with fractional index",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:6": {
+    "primary": "9.1",
+    "secondary": [
+      "1.3",
+      "10.1"
+    ],
+    "archetype": "graphical solution of equation",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:7": {
+    "primary": "9.3",
+    "secondary": [
+      "9.2",
+      "9.4"
+    ],
+    "archetype": "max and min using derivatives",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:8": {
+    "primary": "9.4",
+    "secondary": [
+      "9.5"
+    ],
+    "archetype": "related rates of change",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:9": {
+    "primary": "9.5",
+    "secondary": [
+      "3.2",
+      "9.6"
+    ],
+    "archetype": "algebraic integration and area",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1:10": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.4"
+    ],
+    "archetype": "vector midpoint and ratio",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:1": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "arithmetic series sum",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:2": {
+    "primary": "9.7",
+    "secondary": [
+      "9.2",
+      "9.4"
+    ],
+    "archetype": "particle motion with velocity and acceleration",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:3": {
+    "primary": "10.6",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "sector area and perimeter",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:4": {
+    "primary": "3.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "linear inequalities with perimeter and area",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:5": {
+    "primary": "9.2",
+    "secondary": [],
+    "archetype": "differentiation of exponential and trigonometric functions",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:6": {
+    "primary": "10.2",
+    "secondary": [
+      "10.1"
+    ],
+    "archetype": "area of triangle using sine",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:7": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "log equation with multiple terms",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:8": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "new equation from roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:9": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "vector division",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:10": {
+    "primary": "9.6",
+    "secondary": [
+      "10.3"
+    ],
+    "archetype": "area under curve",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_1R:11": {
+    "primary": "8.4",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "area of triangle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:1": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "quadratic has real roots",
+    "confidence": 1.0,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:2": {
+    "primary": "9.7",
+    "secondary": [
+      "9.2",
+      "9.3",
+      "9.4"
+    ],
+    "archetype": "particle motion along axis",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:3": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "7.3"
+    ],
+    "archetype": "vector magnitude and unit vector",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:4": {
+    "primary": "8.4",
+    "secondary": [
+      "9.6"
+    ],
+    "archetype": "area of region between circles",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:5": {
+    "primary": "2.3",
+    "secondary": [
+      "2.2",
+      "2.4"
+    ],
+    "archetype": "sum and product of roots",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:6": {
+    "primary": "10.3",
+    "secondary": [
+      "9.6"
+    ],
+    "archetype": "trigonometric identity and volume of solid",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:7": {
+    "primary": "10.3",
+    "secondary": [
+      "10.4"
+    ],
+    "archetype": "trig identity proof then solve",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:8": {
+    "primary": "9.2",
+    "secondary": [
+      "8.1",
+      "5.1"
+    ],
+    "archetype": "minimise surface area using calculus",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:9": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "perpendicular lines and isosceles triangle",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:10": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "log equation using change of base",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2:11": {
+    "primary": "9.1",
+    "secondary": [
+      "9.4",
+      "8.4"
+    ],
+    "archetype": "curve sketching with asymptotes",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:1": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "vector magnitude and unit vector",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:2": {
+    "primary": "9.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "related rates of change",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:3": {
+    "primary": "5.2",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "geometric series sum to infinity",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:4": {
+    "primary": "3.2",
+    "secondary": [
+      "2.3",
+      "2.4"
+    ],
+    "archetype": "factor theorem and remainder",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:5": {
+    "primary": "1.3",
+    "secondary": [
+      "9.1"
+    ],
+    "archetype": "exponential and logarithmic equations",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:6": {
+    "primary": "7.4",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "vector proof in geometry",
+    "confidence": 0.7,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:7": {
+    "primary": "10.5",
+    "secondary": [
+      "10.1",
+      "10.3"
+    ],
+    "archetype": "trigonometric equations",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:8": {
+    "primary": "9.6",
+    "secondary": [
+      "1.3",
+      "2.3"
+    ],
+    "archetype": "area between curves",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:9": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1",
+      "10.4"
+    ],
+    "archetype": "binomial expansion approximation",
+    "confidence": 0.8,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:10": {
+    "primary": "4.3",
+    "secondary": [
+      "9.2",
+      "9.4"
+    ],
+    "archetype": "curve sketching with asymptotes",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2022_may-jun_2R:11": {
+    "primary": "9.4",
+    "secondary": [
+      "9.5",
+      "8.1"
+    ],
+    "archetype": "maximising volume with calculus",
+    "confidence": 0.9,
+    "model": "llama-3.3-70b-versatile",
+    "route": "text"
+  },
+  "2016_may-jun_1:6": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "solve logarithmic equations",
+    "confidence": 0.95,
+    "model": "gemini-flash-latest",
+    "route": "vision"
+  },
+  "2019_jan_2:2": {
+    "primary": "3.4",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "shading region defined by linear inequalities",
+    "confidence": 0.95,
+    "model": "gemini-flash-latest",
+    "route": "vision"
+  },
+  "2019_may-jun_1:1": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "factor theorem show quadratic factor",
+    "confidence": 0.95,
+    "model": "gemini-flash-latest",
+    "route": "vision"
+  },
+  "2019_may-jun_1:2": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "rationalising the denominator with surds",
+    "confidence": 1.0,
+    "model": "gemini-flash-latest",
+    "route": "vision"
+  },
+  "2019_may-jun_1:5": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "completing the square quadratic minimum",
+    "confidence": 1.0,
+    "model": "gemini-flash-latest",
+    "route": "vision"
+  }
+}
