@@ -44,9 +44,9 @@ resumes where it stopped.
 
 USAGE
 -----
-    python scripts/classify_fpm_workbook_sections.py --limit 20   # sample first
-    python scripts/classify_fpm_workbook_sections.py              # full run
-    python scripts/classify_fpm_workbook_sections.py --report     # from cache
+    python scripts/classify_mathsb_workbook_sections.py --limit 20   # sample first
+    python scripts/classify_mathsb_workbook_sections.py              # full run
+    python scripts/classify_mathsb_workbook_sections.py --report     # from cache
 """
 
 from __future__ import annotations
@@ -66,10 +66,10 @@ import requests
 from dotenv import load_dotenv
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "fpm_questions.json"
-CACHE_PATH = REPO_ROOT / "data" / "workbook" / "fpm_classification_cache.json"
-SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "fpm_classification_second.json"
-OUTPUT_PATH = REPO_ROOT / "data" / "workbook" / "fpm_classifications.json"
+QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "mathsb_questions.json"
+CACHE_PATH = REPO_ROOT / "data" / "workbook" / "mathsb_classification_cache.json"
+SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "mathsb_classification_second.json"
+OUTPUT_PATH = REPO_ROOT / "data" / "workbook" / "mathsb_classifications.json"
 
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
 # `gemini-2.5-flash` is capped at 20 requests PER DAY on this project's free
@@ -104,7 +104,7 @@ RENDER_DPI = 110
 MIGRATIONS_DIR = REPO_ROOT / "supabase" / "migrations"
 
 
-def latest_section_migration(subject_code: str = "4PM1") -> Path | None:
+def latest_section_migration(subject_code: str = "4MB1") -> Path | None:
     """
     The highest-numbered migration that seeds `workbook_sections` FOR THIS
     SUBJECT.
@@ -126,60 +126,70 @@ def latest_section_migration(subject_code: str = "4PM1") -> Path | None:
     ]
     return candidates[-1] if candidates else None
 TAXONOMY: dict[str, str] = {
-    "1.1": "Laws of indices and surds",
-    "1.2": "Laws of logarithms and change of base",
-    "1.3": "Exponential and logarithmic equations",
-    "2.1": "Completing the square",
-    "2.2": "The discriminant and the nature of roots",
-    "2.3": "Sum and product of roots",
-    "2.4": "Forming new equations from roots",
-    "3.1": "Algebraic division",
-    "3.2": "Factor and remainder theorem",
-    "3.3": "Proving identities",
-    "3.4": "Linear and quadratic inequalities",
-    "4.1": "Sketching polynomial and rational curves",
-    "4.2": "Asymptotes and intercepts",
-    "4.3": "Transformations of graphs",
-    "4.4": "Graphical solution of equations",
-    "5.1": "Arithmetic series",
-    "5.2": "Geometric series and sum to infinity",
-    "5.3": "Sigma notation and standard results",
-    "6.1": "Binomial expansion and the general term",
-    "6.2": "Fractional and negative indices, validity and approximations",
-    "7.1": "Vector algebra and magnitude",
-    "7.2": "Position vectors and ratio division",
-    "7.3": "Collinearity and parallel vectors",
-    "7.4": "Vector proof in geometry",
-    "8.1": "Distance, midpoint and gradient",
-    "8.2": "Equations of straight lines, parallel and perpendicular",
-    "8.3": "Areas of rectilinear figures",
-    "8.4": "Loci and the circle",
-    "9.1": "First principles and standard results",
-    "9.2": "Product, quotient and chain rules",
-    "9.3": "Stationary points and their nature",
-    "9.4": "Tangents, normals and rates of change",
-    "9.5": "Integration as the reverse process",
-    "9.6": "Definite integrals, area and volumes of revolution",
-    "9.7": "Kinematics",
-    "10.1": "Exact values and the unit circle",
-    "10.2": "Sine rule, cosine rule and area of a triangle",
-    "10.3": "Identities and compound angles",
-    "10.4": "The R-formula",
-    "10.5": "Solving trigonometric equations",
-    "10.6": "Radians, arc length and sector area",
+    "1.1": 'Fractions, decimals and percentages',
+    "1.2": 'Ratio, proportion and rates of change',
+    "1.3": 'Indices, surds and standard form',
+    "1.4": 'Accuracy, bounds and estimation',
+    "2.1": 'Set notation and Venn diagrams',
+    "2.2": 'Two-set problems',
+    "2.3": 'Three-set problems',
+    "3.1": 'Expanding, factorising and simplifying',
+    "3.2": 'Linear equations and inequalities',
+    "3.3": 'Simultaneous equations',
+    "3.4": 'Quadratic equations',
+    "3.5": 'Algebraic fractions',
+    "3.6": 'Rearranging formulae and changing the subject',
+    "3.7": 'Sequences and the nth term',
+    "4.1": 'Function notation, domain and range',
+    "4.2": 'Composite functions',
+    "4.3": 'Inverse functions',
+    "4.4": 'Graphs of functions and graphical solutions',
+    "5.1": 'Matrix arithmetic',
+    "5.2": 'Determinants and inverse matrices',
+    "5.3": 'Solving simultaneous equations with matrices',
+    "5.4": 'Matrix transformations',
+    "6.1": 'Angles, parallel lines and polygons',
+    "6.2": 'Triangles, congruence and similarity',
+    "6.3": 'Circle theorems',
+    "6.4": "Pythagoras' theorem",
+    "6.5": 'Constructions and loci',
+    "7.1": 'Perimeter and area of plane shapes',
+    "7.2": 'Circles, arcs and sectors',
+    "7.3": 'Volume and surface area of solids',
+    "7.4": 'Similar shapes: length, area and volume',
+    "8.1": 'Vector arithmetic and magnitude',
+    "8.2": 'Position vectors and geometric proof',
+    "8.3": 'Single transformations',
+    "8.4": 'Combined and inverse transformations',
+    "9.1": 'Right-angled triangle trigonometry',
+    "9.2": 'The sine rule',
+    "9.3": 'The cosine rule and the area of a triangle',
+    "9.4": 'Bearings and three-dimensional problems',
+    "9.5": 'Trigonometric graphs and equations',
+    "10.1": 'Presenting and interpreting data',
+    "10.2": 'Averages and measures of spread',
+    "10.3": 'Cumulative frequency and box plots',
+    "10.4": 'Histograms and frequency density',
+    "10.5": 'Probability of single and combined events',
+    "10.6": 'Tree diagrams and conditional probability',
+    "11.1": 'Differentiating polynomials',
+    "11.2": 'Gradients, tangents and normals',
+    "11.3": 'Turning points and their nature',
+    "11.4": 'Kinematics: displacement, velocity and acceleration',
 }
 
 CHAPTER_NAMES = {
-    "1": "Logarithmic functions and indices",
-    "2": "The quadratic function",
-    "3": "Identities and inequalities",
-    "4": "Graphs",
-    "5": "Series",
-    "6": "The binomial series",
-    "7": "Scalar and vector quantities",
-    "8": "Rectangular Cartesian coordinates",
-    "9": "Calculus",
-    "10": "Trigonometry",
+    "1": 'Number',
+    "2": 'Sets',
+    "3": 'Algebra',
+    "4": 'Functions',
+    "5": 'Matrices',
+    "6": 'Geometry',
+    "7": 'Mensuration',
+    "8": 'Vectors and transformation geometry',
+    "9": 'Trigonometry',
+    "10": 'Statistics and probability',
+    "11": 'Calculus',
 }
 
 
@@ -195,7 +205,7 @@ def taxonomy_block() -> str:
     return "\n".join(lines)
 
 
-SYSTEM_PROMPT = f"""You classify Edexcel International GCSE Further Pure Mathematics (4PM1) exam questions into a fixed syllabus taxonomy.
+SYSTEM_PROMPT = f"""You classify Edexcel International GCSE Mathematics B (4MB1) exam questions into a fixed syllabus taxonomy.
 
 {taxonomy_block()}
 
@@ -211,15 +221,18 @@ Rules:
 - Reply with a JSON array and nothing else. No prose, no markdown fences.
 
 Disambiguation - these pairs are confused most often:
-- 9.7 Kinematics means a PARTICLE OR BODY IN MOTION described by displacement, velocity or acceleration - use it even though the work is differentiating or integrating. It does NOT cover a growing or shrinking quantity such as a volume, radius or area changing with time: that is 9.4 related rates.
-- Binomial with a negative or fractional index, or asking for a validity range or an approximation, is 6.2 -- NOT 6.1, which covers expansions for positive integer n and picking out a general or named term.
-- Finding an area, a volume of revolution, or evaluating a definite integral is 9.6. 9.5 is only for finding an antiderivative with no limits.
-- Anything about a circle's equation, centre, radius or a locus is 8.4, not 8.1 or 8.2.
-- "Express a sin x + b cos x in the form R sin(x + a)" is 10.4, even when it goes on to solve an equation.
-- Manipulating log laws, including change of base, is 1.2; solving for an unknown inside an exponential or logarithm is 1.3.
-- Given roots, finding their sum/product is 2.3; building a NEW equation whose roots are a function of the originals is 2.4.
-- Rate of change with respect to time via the chain rule (related rates) is 9.4.
-- 3.3 Proving identities is for ALGEBRAIC identities. A "show that" built on trigonometric formulae belongs in chapter 10 - use 10.3 for compound-angle and identity manipulation. Do not send trigonometric proofs to 3.3.
+- 5.4 Matrix transformations applies ONLY when a MATRIX represents the transformation, or one is asked for. A reflection, rotation, translation or enlargement described geometrically is 8.3, and a composition of them is 8.4.
+- A Venn diagram asking for a PROBABILITY is 10.5, or 10.6 if it is conditional. Chapter 2 is for set notation, regions, shading and counting elements.
+- 6.4 Pythagoras is for right-angled triangles where only SIDES are involved. Bring in 9.1 as soon as an angle is used or asked for.
+- 9.2 is the sine rule, 9.3 the cosine rule and the (1/2)ab sin C area formula. Use 9.4 when the question is set in bearings or in three dimensions, even though a rule is applied.
+- 7.4 Similar shapes is for AREA or VOLUME scale factors between similar figures. Simple similar-triangle side lengths are 6.2.
+- 7.2 covers anything where an arc, sector, circumference or circle area is central; 7.1 is straight-edged plane shapes.
+- 11.4 Kinematics means a PARTICLE OR BODY IN MOTION described by displacement, velocity or acceleration - use it even though the work is differentiating. A growing or shrinking volume, radius or area is 11.1 or 11.2.
+- 11.3 is for finding turning points and determining their nature; 11.2 is for gradients, tangents and normals at a given point.
+- 10.4 Histograms applies whenever frequency density or unequal class widths appear.
+- 1.4 covers upper and lower bounds and "to the nearest"; ordinary rounding of a final answer is incidental and should not drive the classification.
+- 3.4 Quadratic equations is for solving algebraically. Use 4.4 only when the demand is to draw, complete or read values from a graph.
+- 4.2 is fg(x) style composition; 4.3 is finding an inverse. Evaluating f(3) alone is 4.1.
 
 Format: [{{"id":"<id>","primary":"9.4","secondary":["8.2"],"archetype":"tangent to curve at point","confidence":0.9}}]"""
 
