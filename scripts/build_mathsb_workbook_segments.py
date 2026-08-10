@@ -106,6 +106,20 @@ EXCLUDED_PAPERS: dict[str, str] = {}
 # rather than corrupting the workbook.
 MANUAL_QP_RANGES: dict[str, dict[int, tuple[int, int, int]]] = {}
 
+# Marks for questions whose end fence exists on the page but cannot be read out
+# of the text layer. Supplying the marks lets recover_missing_fence rebuild the
+# boundary from the next question's printed start marker.
+#
+# These are READ OFF THE RENDERED PAGE, not inferred. Each entry must still
+# satisfy the paper's 100-mark total or the paper fails, so a misread here is
+# caught rather than propagated.
+MANUAL_QUESTION_MARKS: dict[str, dict[int, int]] = {
+    # Two consecutive fences unreadable, so the 100-mark total cannot split the
+    # 6-mark shortfall on its own. Rendered page 4 shows "(Total for Question 8
+    # is 3 marks)" and "(Total for Question 9 is 3 marks)".
+    "2019_jan_1": {8: 3, 9: 3},
+}
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Text patterns
 # ─────────────────────────────────────────────────────────────────────────────
@@ -145,6 +159,19 @@ MS_BRACKET_RE = re.compile(r"[\[(]\s*(\d{1,3})\s*[\])]")
 # Paper 1 marker can appear anywhere down the page.
 START_MARKER_MAX_X = 80.0
 FOOTER_BAND = 60.0  # points above the page bottom to ignore
+
+# The marker is not always a span of its own. Where a question opens directly
+# on an algebraic expression the typesetter runs the two together, so the span
+# reads "5 a" rather than "5" and an exact match silently loses that question:
+#
+#     x0=42.4  '4'            <- Q4, matches either way
+#     x0=42.4  '5 a'          <- Q5, lost by an exact match
+#     x0=42.4  '6 '           <- Q6, matches either way
+#
+# Requiring whitespace or end-of-span after the digits keeps "832 in the form"
+# out (its "83" is followed by "2", so the match backtracks and fails), and the
+# left-margin x limit already excludes anything from the body column.
+START_MARKER_RE = re.compile(r"^(\d{1,2})(?:[\s.]|$)")
 
 # Breathing room around a cropped band so the question number and the fence
 # line are never clipped by a rounding error.
@@ -191,6 +218,10 @@ class QuestionSegment:
     marks: int
     qp_regions: tuple[Region, ...]
     ms_regions: tuple[Region, ...] | None
+    # True when this question's end fence was unreadable and its boundary came
+    # from the next question's start marker. Such a segment carries no fence, so
+    # the audit reports it separately rather than counting it a defect.
+    fence_recovered: bool = False
 
 
 @dataclass
@@ -353,6 +384,111 @@ def find_fences(
     return fences, problems
 
 
+def recover_missing_fence(
+    fences: dict[int, tuple[int, int, float]],
+    start_markers: dict[int, list[tuple[int, float]]],
+    page_heights: list[float],
+    manual_marks: dict[int, int] | None = None,
+) -> tuple[dict[int, tuple[int, int, float]], list[str]]:
+    """
+    Reconstruct unreadable fences from the paper's own invariants.
+
+    A few papers print a question's end fence in glyphs the text layer cannot
+    map, so the fence is absent while every other question reads cleanly. The
+    whole paper was being held back over one line.
+
+    A fence can be put back only when BOTH unknowns are pinned down
+    independently:
+
+      marks     the paper must total 100, so a SINGLE gap in an otherwise
+                complete sequence has exactly one possible value. Where two or
+                more are missing the shortfall could be split several ways, and
+                the marks must instead be supplied by MANUAL_QUESTION_MARKS,
+                read off the rendered page. Their sum still has to equal the
+                shortfall, so a misread is caught here rather than propagated.
+      boundary  the NEXT question's printed start marker says where this one
+                stops -- the same second signal used to confirm every other
+                boundary, here used to supply one. This works even for
+                consecutive gaps, because markers are read independently of
+                fences.
+
+    Refuses outright rather than guessing when the marks cannot be established.
+    """
+    notes: list[str] = []
+    if not fences:
+        return fences, notes
+
+    manual_marks = manual_marks or {}
+    highest = max(fences)
+    missing = [q for q in range(1, highest + 1) if q not in fences]
+    if not missing:
+        return fences, notes
+
+    shortfall = TOTAL_PAPER_MARKS - sum(marks for _, marks, _ in fences.values())
+    if shortfall <= 0:
+        return fences, notes
+
+    if len(missing) == 1 and missing[0] not in manual_marks:
+        marks_for = {missing[0]: shortfall}
+        source = "the 100-mark paper total"
+    else:
+        if not all(q in manual_marks for q in missing):
+            notes.append(
+                f"{len(missing)} fences unreadable ({missing}) and the "
+                f"{shortfall}-mark shortfall cannot be split between them -- add "
+                f"them to MANUAL_QUESTION_MARKS after reading the rendered pages"
+            )
+            return fences, notes
+        marks_for = {q: manual_marks[q] for q in missing}
+        if sum(marks_for.values()) != shortfall:
+            notes.append(
+                f"MANUAL_QUESTION_MARKS for {missing} sum to "
+                f"{sum(marks_for.values())} but the paper is short by {shortfall}"
+            )
+            return fences, notes
+        source = "MANUAL_QUESTION_MARKS (read off the rendered page)"
+
+    recovered = dict(fences)
+
+    for question in missing:
+        candidates = start_markers.get(question + 1, [])
+        if not candidates:
+            notes.append(
+                f"question {question}: fence unreadable and question "
+                f"{question + 1} has no printed start marker -- cannot place the "
+                f"boundary"
+            )
+            return fences, notes
+
+        previous_page = recovered[question - 1][0] if question - 1 in recovered else 0
+        usable = [(page, y) for page, y in candidates if page >= previous_page]
+        if not usable:
+            notes.append(
+                f"question {question}: no start marker for question "
+                f"{question + 1} at or after page {previous_page}"
+            )
+            return fences, notes
+
+        next_page, next_y = usable[0]
+
+        if next_y < 100 and next_page - 1 >= previous_page:
+            # The next question opens at the top of its page, so this one ends
+            # with the page before it -- no crop needed.
+            end_page = next_page - 1
+            end_y = page_heights[end_page] if end_page < len(page_heights) else 800.0
+        else:
+            end_page, end_y = next_page, max(0.0, next_y - CROP_PAD_TOP)
+
+        recovered[question] = (end_page, marks_for[question], end_y)
+        notes.append(
+            f"question {question}: fence unreadable -- marks "
+            f"({marks_for[question]}) from {source}, boundary from question "
+            f"{question + 1}'s printed start marker on page {next_page}"
+        )
+
+    return recovered, notes
+
+
 def find_start_markers(pdf_path: Path) -> dict[int, list[tuple[int, float]]]:
     """
     Map question number -> [(page_index, y_top)] for the printed left-margin
@@ -375,12 +511,12 @@ def find_start_markers(pdf_path: Path) -> dict[int, list[tuple[int, float]]]:
             for block in blocks:
                 for line in block.get("lines", []):
                     for span in line.get("spans", []):
-                        text = span["text"].strip().rstrip(".")
-                        if not re.fullmatch(r"\d{1,2}", text):
+                        match = START_MARKER_RE.match(span["text"].strip())
+                        if not match:
                             continue
                         x0, y0 = span["bbox"][0], span["bbox"][1]
                         if x0 < START_MARKER_MAX_X and y0 < floor:
-                            markers.setdefault(int(text), []).append((index, y0))
+                            markers.setdefault(int(match.group(1)), []).append((index, y0))
 
     for entries in markers.values():
         entries.sort()
@@ -770,6 +906,7 @@ def validate_paper(
 
 def process_paper(source: PaperSource) -> PaperResult:
     result = PaperResult(source=source)
+    recovered_numbers: set[int] = set()
 
     if source.key in EXCLUDED_PAPERS:
         result.skipped_reason = EXCLUDED_PAPERS[source.key]
@@ -802,6 +939,19 @@ def process_paper(source: PaperSource) -> PaperResult:
         )
     else:
         start_markers = find_start_markers(source.qp_path)
+
+        with fitz.open(source.qp_path) as doc:
+            page_heights = [page.rect.height for page in doc]
+        before = set(fences)
+        fences, recovery_notes = recover_missing_fence(
+            fences,
+            start_markers,
+            page_heights,
+            MANUAL_QUESTION_MARKS.get(source.key),
+        )
+        recovered_numbers = set(fences) - before
+        result.warnings.extend(recovery_notes)
+
         bounds, problems = derive_bounds(fences, start_markers)
         result.issues.extend(problems)
         regions = build_regions(bounds)
@@ -821,6 +971,7 @@ def process_paper(source: PaperSource) -> PaperResult:
             marks=fences[question][1] if question in fences else 0,
             qp_regions=question_regions,
             ms_regions=ms_regions.get(question),
+            fence_recovered=question in recovered_numbers,
         )
         for question, question_regions in sorted(regions.items())
     ]
@@ -946,6 +1097,7 @@ def write_paper(result: PaperResult) -> int:
                 "ms_regions": describe(s.ms_regions),
                 "has_markscheme": s.ms_regions is not None,
                 "cropped": any(r.cropped for r in s.qp_regions),
+                "fence_recovered": s.fence_recovered,
             }
             for s in result.segments
         ],
@@ -989,6 +1141,19 @@ def audit_output() -> int:
 
         is_manual = paper_dir.name in MANUAL_QP_RANGES
 
+        # Questions whose fence was unreadable carry no fence to check against,
+        # so they are reported in their own line. Counting them as defects would
+        # be false; counting them as passes would be dishonest.
+        manifest_path = paper_dir / "manifest.json"
+        recovered: set[int] = set()
+        if manifest_path.is_file():
+            manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+            recovered = {
+                entry["question_number"]
+                for entry in manifest.get("questions", [])
+                if entry.get("fence_recovered")
+            }
+
         for pdf_path in sorted(questions_dir.glob("q*.pdf")):
             match = re.fullmatch(r"q(\d+)\.pdf", pdf_path.name)
             if not match:
@@ -1000,7 +1165,7 @@ def audit_output() -> int:
             found = sorted({int(q) for q, _ in FENCE_RE.findall(flat)})
 
             if not found:
-                if is_manual:
+                if is_manual or expected in recovered:
                     hand_verified += 1
                 else:
                     unverifiable += 1
@@ -1022,7 +1187,7 @@ def audit_output() -> int:
     print(f"\n{'=' * 74}\nAUDIT\n{'=' * 74}")
     print(f"  segments checked      : {checked}")
     print(f"  text-verified         : {verified}")
-    print(f"  hand-verified (scans) : {hand_verified}")
+    print(f"  boundary-inferred     : {hand_verified}")
     print(f"  bundled               : {bundled}")
     print(f"  mislabelled           : {mislabelled}")
     print(f"  unverifiable          : {unverifiable}")

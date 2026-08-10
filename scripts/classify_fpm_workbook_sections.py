@@ -104,18 +104,25 @@ RENDER_DPI = 110
 MIGRATIONS_DIR = REPO_ROOT / "supabase" / "migrations"
 
 
-def latest_section_migration() -> Path | None:
+def latest_section_migration(subject_code: str = "4PM1") -> Path | None:
     """
-    The highest-numbered migration that seeds `workbook_sections`.
+    The highest-numbered migration that seeds `workbook_sections` FOR THIS
+    SUBJECT.
 
     Resolved by glob rather than pinned to a filename: sections have already
     been reshaped once (12 seeded 47, 13 merged them to 41) and a pinned path
     silently checks a stale taxonomy the moment another migration lands.
+
+    The subject filter is not optional. Migration 15 seeds 50 sections for Maths
+    B, so an unfiltered glob returns that file and diffs FPM's taxonomy against
+    another subject's -- reporting every FPM section as missing and every Maths B
+    section as unexpected, for a taxonomy that had not changed at all.
     """
     candidates = [
         path
         for path in sorted(MIGRATIONS_DIR.glob("*.sql"))
-        if "INSERT INTO workbook_sections" in path.read_text(encoding="utf-8")
+        if "INSERT INTO workbook_sections" in (text := path.read_text(encoding="utf-8"))
+        and f"'{subject_code}'" in text
     ]
     return candidates[-1] if candidates else None
 TAXONOMY: dict[str, str] = {
@@ -234,7 +241,13 @@ def check_taxonomy() -> int:
 
     seeded = {
         f"{chapter}.{section}": title
-        for chapter, section, title in re.findall(r"\((\d+),\s*(\d+),\s*'([^']+)'\)", block)
+        # `''` is SQL's escape for a literal apostrophe, so a section titled
+        # "Pythagoras'' theorem" in the migration must be read as one value and
+        # unescaped -- a naive [^']+ stops at the first quote and drops it.
+        for chapter, section, title in (
+            (c, s, t.replace("''", "'"))
+            for c, s, t in re.findall(r"\((\d+),\s*(\d+),\s*'((?:[^']|'')+)'\)", block)
+        )
     }
 
     missing = sorted(set(TAXONOMY) - set(seeded), key=lambda c: [int(p) for p in c.split(".")])
