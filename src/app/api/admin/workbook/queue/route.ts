@@ -85,46 +85,96 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: sectionError.message }, { status: 500 })
   }
 
-  let query = db
-    .from("workbook_questions")
-    .select(
-      `id, slug, section_id, proposed_section_id, review_priority, classifier_confidence,
+  const COLUMNS = `id, slug, section_id, proposed_section_id, review_priority, classifier_confidence,
        secondary_section_ids, ordinal_in_chapter, marks, difficulty, sub_parts,
-       qp_pdf_url, ms_pdf_url, text_status, source_paper_key, source_question_number, verified_at`,
-      { count: "exact" }
-    )
-    .eq("subject_id", subjectId)
+       qp_pdf_url, ms_pdf_url, text_status, source_paper_key, source_question_number, verified_at`
 
-  if (!includeVerified) query = query.is("verified_at", null)
-  if (priority && (PRIORITY_ORDER as readonly string[]).includes(priority)) {
-    query = query.eq("review_priority", priority)
-  }
+  // Fill the page one priority at a time, HARDEST FIRST, letting the database
+  // do the filtering.
+  //
+  // The previous version fetched `limit * 4` rows with no ORDER BY and ranked
+  // them in memory, on the assumption that a few hundred rows covered the whole
+  // working set. It did not. With 1046 unverified Maths B questions the query
+  // returned 320 arbitrary rows -- and because physical order put them there,
+  // all 320 were `agreed`. The reviewer would have been shown 320 questions the
+  // models already agreed on while all 151 disputed ones sat unreachable, which
+  // is precisely backwards: the two-model disagreement signal exists to put the
+  // doubtful questions first.
+  const wanted: readonly Priority[] =
+    priority && (PRIORITY_ORDER as readonly string[]).includes(priority)
+      ? [priority as Priority]
+      : PRIORITY_ORDER
 
-  const { data: questions, count, error } = await query.limit(limit * 4)
-
-  if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
-  }
-
-  // Postgres cannot order by an arbitrary enum sequence without a CASE, and the
-  // working set is a few hundred rows, so rank in memory instead.
-  const rank = (row: QuestionRow) => {
-    const index = PRIORITY_ORDER.indexOf((row.review_priority ?? "agreed") as Priority)
-    return index === -1 ? PRIORITY_ORDER.length : index
-  }
-
-  const ordered = ((questions ?? []) as QuestionRow[])
-    .sort((a, b) => rank(a) - rank(b) || a.slug.localeCompare(b.slug))
-    .slice(0, limit)
-
+  const collected: QuestionRow[] = []
   const remaining: Record<string, number> = {}
-  for (const row of (questions ?? []) as QuestionRow[]) {
-    const key = row.review_priority ?? "unconfirmed"
-    remaining[key] = (remaining[key] ?? 0) + 1
+
+  for (const bucket of wanted) {
+    // Count every question in this bucket, not just the ones fetched, so the
+    // progress readout reflects the work left rather than the page size.
+    let counter = db
+      .from("workbook_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("subject_id", subjectId)
+      .eq("review_priority", bucket)
+    if (!includeVerified) counter = counter.is("verified_at", null)
+    const { count: bucketCount } = await counter
+    if (bucketCount) remaining[bucket] = bucketCount
+
+    if (collected.length >= limit) continue
+
+    let query = db
+      .from("workbook_questions")
+      .select(COLUMNS)
+      .eq("subject_id", subjectId)
+      .eq("review_priority", bucket)
+      .order("slug")
+      .limit(limit - collected.length)
+    if (!includeVerified) query = query.is("verified_at", null)
+
+    const { data, error } = await query
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 })
+    }
+    collected.push(...((data ?? []) as unknown as QuestionRow[]))
   }
+
+  // A row whose priority was never backfilled would otherwise be invisible --
+  // it matches no bucket, so it could never be reviewed at all.
+  if (!priority) {
+    let orphanCounter = db
+      .from("workbook_questions")
+      .select("id", { count: "exact", head: true })
+      .eq("subject_id", subjectId)
+      .is("review_priority", null)
+    if (!includeVerified) orphanCounter = orphanCounter.is("verified_at", null)
+    const { count: orphanCount } = await orphanCounter
+
+    if (orphanCount) {
+      remaining.unset = orphanCount
+      if (collected.length < limit) {
+        let orphans = db
+          .from("workbook_questions")
+          .select(COLUMNS)
+          .eq("subject_id", subjectId)
+          .is("review_priority", null)
+          .order("slug")
+          .limit(limit - collected.length)
+        if (!includeVerified) orphans = orphans.is("verified_at", null)
+        const { data } = await orphans
+        collected.push(...((data ?? []) as unknown as QuestionRow[]))
+      }
+    }
+  }
+
+  let totalQuery = db
+    .from("workbook_questions")
+    .select("id", { count: "exact", head: true })
+    .eq("subject_id", subjectId)
+  if (!includeVerified) totalQuery = totalQuery.is("verified_at", null)
+  const { count } = await totalQuery
 
   return NextResponse.json({
-    questions: ordered,
+    questions: collected.slice(0, limit),
     chapters,
     sections: sections ?? [],
     totalUnverified: count ?? 0,
