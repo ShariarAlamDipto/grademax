@@ -31,10 +31,15 @@ finished work.
 
 PAGE LAYOUT
 -----------
-Every source page is scaled onto a fresh A4 sheet with a header band above it
-and a page number below. The segment is never drawn over: a cropped Paper 1
-segment begins exactly at its question number, so stamping onto it would cover
-the number the header is there to replace.
+The book decides the working space; it does not inherit it. An exam paper is
+sized for the worst-case candidate writing large, so reprinting its pages
+verbatim gives a book that measures 90% white -- 1,279 FPM source pages carrying
+124 pages of actual question.
+
+So each segment is reduced to its bands of real content (lib/workbook_ink), and
+each question is then given room to work as a function of its marks
+(lib/workbook_layout). `--space compact|standard|generous` moves that dial;
+mark schemes get none, being read rather than written on.
 
 USAGE
 -----
@@ -42,6 +47,7 @@ USAGE
     python scripts/build_mathsb_workbook_pdf.py --execute
     python scripts/build_mathsb_workbook_pdf.py --execute --include-unverified
     python scripts/build_mathsb_workbook_pdf.py --execute --chapter 6
+    python scripts/build_mathsb_workbook_pdf.py --execute --space compact
 """
 
 from __future__ import annotations
@@ -53,9 +59,14 @@ from collections import defaultdict
 from pathlib import Path
 
 import fitz
-import requests
 from dotenv import load_dotenv
 from supabase import create_client
+
+from lib.workbook_ink import Band, content_bands
+from lib.workbook_layout import (
+    DEFAULT_POLICY, DRAFT, INK, MARGIN, MUTED, NO_SPACE, PAGE_HEIGHT, PAGE_WIDTH,
+    POLICIES, RULE, Flow, add_page_numbers,
+)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SEGMENT_DIR = REPO_ROOT / "data" / "workbook" / "mathsb"
@@ -63,16 +74,6 @@ BOOK_DIR = SEGMENT_DIR / "book"
 
 SUBJECT_CODE = "4MB1"
 SUBJECT_TITLE = "Edexcel International GCSE Mathematics B (4MB1)"
-
-PAGE_WIDTH, PAGE_HEIGHT = fitz.paper_size("a4")
-MARGIN = 34.0
-HEADER_HEIGHT = 30.0
-FOOTER_HEIGHT = 26.0
-
-INK = (0.09, 0.11, 0.15)
-MUTED = (0.42, 0.45, 0.52)
-RULE = (0.80, 0.82, 0.86)
-DRAFT = (0.72, 0.11, 0.11)
 
 SESSION_LABEL = {
     "jan": "January",
@@ -168,139 +169,6 @@ def source_label(question: dict) -> str:
     return f"{year} {SESSION_LABEL.get(season, season.title())} Paper {paper} Q{question['source_question_number']}"
 
 
-def draw_header(page: fitz.Page, left: str, right: str, draft: bool) -> None:
-    page.insert_text(
-        (MARGIN, MARGIN + 2), left, fontname="hebo", fontsize=9.5, color=INK
-    )
-    if right:
-        width = fitz.get_text_length(right, fontname="helv", fontsize=8.5)
-        page.insert_text(
-            (PAGE_WIDTH - MARGIN - width, MARGIN + 2), right,
-            fontname="helv", fontsize=8.5, color=DRAFT if draft else MUTED,
-        )
-    y = MARGIN + 9
-    page.draw_line(fitz.Point(MARGIN, y), fitz.Point(PAGE_WIDTH - MARGIN, y),
-                   color=RULE, width=0.6)
-
-
-LABEL_HEIGHT = 20.0
-QUESTION_GAP = 16.0
-
-
-class Flow:
-    """
-    Lays questions down the page, several to a sheet where they fit.
-
-    One question per sheet was the obvious first cut and it is unusable: a
-    2-mark Paper 1 question is a band a few centimetres tall, so 36 questions
-    filled 93 pages and the whole book would have run to roughly 2,500. Most of
-    a practice book would have been white space, and the student would spend the
-    chapter turning pages.
-
-    Each SOURCE page is a block. Blocks flow down the sheet; a block that does
-    not fit starts a new one. A question that spans pages therefore stays
-    contiguous without needing to own a sheet of its own.
-    """
-
-    def __init__(self, doc: fitz.Document, running_header: str) -> None:
-        self.doc = doc
-        self.running_header = running_header
-        self.page: fitz.Page | None = None
-        self.cursor = 0.0
-        self.content_top = MARGIN + HEADER_HEIGHT
-        self.content_bottom = PAGE_HEIGHT - FOOTER_HEIGHT
-        self.width = PAGE_WIDTH - 2 * MARGIN
-
-    def _start_page(self) -> None:
-        self.page = self.doc.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
-        self.page.insert_text(
-            (MARGIN, MARGIN + 2), self.running_header,
-            fontname="helv", fontsize=8, color=MUTED,
-        )
-        y = MARGIN + 9
-        self.page.draw_line(fitz.Point(MARGIN, y), fitz.Point(PAGE_WIDTH - MARGIN, y),
-                            color=RULE, width=0.6)
-        self.cursor = self.content_top
-
-    def _room(self) -> float:
-        return self.content_bottom - self.cursor
-
-    def add(self, source: fitz.Document, label: str, right: str, draft: bool) -> None:
-        for index in range(source.page_count):
-            rect = source[index].rect
-            if rect.width <= 0 or rect.height <= 0:
-                continue
-
-            scale = min(self.width / rect.width, 1.0)
-            height = rect.height * scale
-            needed = height + (LABEL_HEIGHT if index == 0 else 0)
-
-            # A block taller than a whole sheet is scaled to fit one.
-            usable = self.content_bottom - self.content_top - (LABEL_HEIGHT if index == 0 else 0)
-            if height > usable:
-                scale = min(scale, usable / rect.height)
-                height = rect.height * scale
-                needed = height + (LABEL_HEIGHT if index == 0 else 0)
-
-            if self.page is None or needed > self._room():
-                self._start_page()
-
-            assert self.page is not None
-            if index == 0:
-                self.page.insert_text((MARGIN, self.cursor + 10), label,
-                                      fontname="hebo", fontsize=9, color=INK)
-                tail_width = fitz.get_text_length(right, fontname="helv", fontsize=7.6)
-                self.page.insert_text(
-                    (PAGE_WIDTH - MARGIN - tail_width, self.cursor + 10), right,
-                    fontname="helv", fontsize=7.6, color=DRAFT if draft else MUTED,
-                )
-                self.cursor += LABEL_HEIGHT
-
-            width = rect.width * scale
-            self.page.show_pdf_page(
-                fitz.Rect(MARGIN, self.cursor, MARGIN + width, self.cursor + height),
-                source, index,
-            )
-            self.cursor += height
-
-        # Separator so two questions sharing a sheet do not read as one.
-        if self.page is not None and self._room() > QUESTION_GAP:
-            y = self.cursor + QUESTION_GAP / 2
-            self.page.draw_line(fitz.Point(MARGIN + 60, y), fitz.Point(PAGE_WIDTH - MARGIN - 60, y),
-                                color=RULE, width=0.5)
-            self.cursor += QUESTION_GAP
-
-    def section_break(self, title: str) -> None:
-        """
-        Open a section with its own heading, so a student can find "6.3 Circle
-        theorems" by flicking rather than by consulting the contents page.
-        """
-        needed = 44.0
-        if self.page is None or needed + 90 > self._room():
-            self._start_page()
-        else:
-            self.cursor += 10
-
-        assert self.page is not None
-        self.page.draw_rect(
-            fitz.Rect(MARGIN, self.cursor, PAGE_WIDTH - MARGIN, self.cursor + 26),
-            color=None, fill=(0.95, 0.96, 0.97),
-        )
-        self.page.insert_text((MARGIN + 8, self.cursor + 17), title,
-                              fontname="hebo", fontsize=10.5, color=INK)
-        self.cursor += 26 + 12
-
-
-def add_page_numbers(doc: fitz.Document, footer: str) -> None:
-    for number, page in enumerate(doc, 1):
-        label = f"{footer}   ·   {number}"
-        width = fitz.get_text_length(label, fontname="helv", fontsize=8)
-        page.insert_text(
-            ((PAGE_WIDTH - width) / 2, PAGE_HEIGHT - FOOTER_HEIGHT + 12),
-            label, fontname="helv", fontsize=8, color=MUTED,
-        )
-
-
 def title_page(doc: fitz.Document, chapter: dict, questions: list[dict],
                kind: str, draft_count: int) -> None:
     page = doc.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
@@ -351,7 +219,21 @@ def title_page(doc: fitz.Document, chapter: dict, questions: list[dict],
         )
 
 
-def build_chapter(chapter: dict, questions: list[dict], kind: str) -> tuple[fitz.Document | None, int, list[str]]:
+def whole_pages(source: fitz.Document) -> list[Band]:
+    """
+    Last resort when the trim finds nothing to keep.
+
+    Printing the untrimmed pages wastes paper; printing nothing loses the
+    question. A question missing from the book is the worse failure, so the
+    fallback is deliberately the wasteful one.
+    """
+    return [Band(index, 0.0, source[index].rect.height,
+                 source[index].rect.x0, source[index].rect.x1)
+            for index in range(source.page_count)]
+
+
+def build_chapter(chapter: dict, questions: list[dict], kind: str,
+                  policy) -> tuple[fitz.Document | None, int, list[str]]:
     """Assemble one chapter. Returns (document, questions placed, warnings)."""
     warnings: list[str] = []
     draft_count = sum(1 for q in questions if not q["verified_at"])
@@ -362,7 +244,8 @@ def build_chapter(chapter: dict, questions: list[dict], kind: str) -> tuple[fitz
     running = f"Chapter {chapter['number']}  ·  {chapter['title']}"
     if kind == "ms":
         running += "  ·  Mark schemes"
-    flow = Flow(doc, running)
+    # A mark scheme is read, not written on, so it gets no working space.
+    flow = Flow(doc, running, NO_SPACE if kind == "ms" else policy)
 
     placed = 0
     current_section: int | None = None
@@ -386,7 +269,11 @@ def build_chapter(chapter: dict, questions: list[dict], kind: str) -> tuple[fitz
 
         try:
             with fitz.open(path) as source:
-                flow.add(source, label, right, not question["verified_at"])
+                bands = content_bands(source)
+                if not bands:
+                    warnings.append(f"{question['slug']}: no content found; printing whole pages")
+                    bands = whole_pages(source)
+                flow.add(source, bands, label, right, question["marks"], not question["verified_at"])
             placed += 1
         except Exception as error:  # noqa: BLE001 - one bad PDF must not lose the chapter
             warnings.append(f"{question['slug']}: {error}")
@@ -451,7 +338,11 @@ def main() -> int:
     parser.add_argument("--include-unverified", action="store_true",
                         help="print unverified questions, stamped DRAFT")
     parser.add_argument("--chapter", type=int, help="build only this chapter number")
+    parser.add_argument("--space", choices=sorted(POLICIES), default=DEFAULT_POLICY,
+                        help="how much working space each question gets, per mark")
     args = parser.parse_args()
+
+    policy = POLICIES[args.space]
 
     supabase = create_client(
         os.environ["NEXT_PUBLIC_SUPABASE_URL"], os.environ["SUPABASE_SERVICE_ROLE_KEY"]
@@ -469,6 +360,8 @@ def main() -> int:
     print(f"  source   : the database, so human verification decides the chapter")
     print(f"  scope    : {scope}")
     print(f"  questions: {total_questions}")
+    print(f"  space    : {policy.name} — {policy.points_per_mark:.0f}pt per mark, "
+          f"floor {policy.minimum:.0f}pt, cap {policy.maximum:.0f}pt")
 
     if total_questions == 0:
         print("\n  Nothing to print.")
@@ -499,7 +392,7 @@ def main() -> int:
 
         safe = "".join(ch if ch.isalnum() else "_" for ch in chapter["title"]).strip("_")
         for kind, suffix in (("qp", ""), ("ms", "_MarkScheme")):
-            doc, placed, warnings = build_chapter(chapter, questions, kind)
+            doc, placed, warnings = build_chapter(chapter, questions, kind, policy)
             all_warnings.extend(warnings)
             if doc is None:
                 print(f"      {kind}: nothing to place")
