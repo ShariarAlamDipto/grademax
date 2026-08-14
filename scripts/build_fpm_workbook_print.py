@@ -37,6 +37,18 @@ USAGE
 -----
     python scripts/build_fpm_workbook_print.py                 # dry run
     python scripts/build_fpm_workbook_print.py --execute
+    python scripts/build_fpm_workbook_print.py --execute --edition verbatim
+
+TWO EDITIONS
+------------
+`trimmed` reduces each question to its printed content and gives it a fixed
+block of working space, which cuts the book from about 1,780 sheets to 495.
+
+`verbatim` assembles the papers exactly as the board printed them -- every page,
+at full size, nothing dropped, no reflow. It is the larger book by far, and it
+is the one to use when the pages must look like the exam a student will sit.
+Both editions carry the same branding, the same per-section numbering and the
+same contents; they differ only in what happens to the page in between.
 """
 
 from __future__ import annotations
@@ -52,10 +64,10 @@ import fitz
 from dotenv import load_dotenv
 from supabase import create_client
 
-from lib.workbook_ink import Band, content_layout, question_number_box
+from lib.workbook_ink import Band, content_layout, paper_box, question_number_box
 from lib.workbook_layout import (
     INK, MARGIN, MUTED, NO_SPACE, PAGE_HEIGHT, PAGE_WIDTH, PRINT_POLICY, RULE,
-    Flow,
+    Flow, number_patch,
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -64,6 +76,18 @@ BOOK_DIR = SEGMENT_DIR / "print"
 
 # How far in from a band's edge the hanging indent reaches.
 NUMBER_ZONE = 30.0
+
+# The strip at the foot of every exam page carrying the board's page number,
+# item barcode and subject code. Measured: the lowest real question content in
+# the corpus ends at y=779, so this is safe to paint over.
+FOOTER_BAND = 54.0
+
+# Where to look for a question number on a page with no text layer: the hanging
+# indent of the first line, relative to the paper box.
+NUMBER_PROBE_TOP = 46.0
+NUMBER_PROBE_BOTTOM = 96.0
+NUMBER_PROBE_LEFT = 34.0
+NUMBER_PROBE_RIGHT = 164.0
 
 SUBJECT_CODE = "4PM1"
 SUBJECT_TITLE = "Edexcel International GCSE"
@@ -162,6 +186,124 @@ def chapter_divider(doc: fitz.Document, chapter: dict, sections: list[tuple[int,
         y += 22
         if y > CONTENTS_BOTTOM:
             break
+
+
+def place_verbatim(doc: fitz.Document, source: fitz.Document, index: int,
+                   footer: str, renumber: tuple[fitz.Rect | None, str] | None) -> None:
+    """
+    One source page, whole and at full size, on one A4 sheet.
+
+    The verbatim edition changes nothing about the question: no trimming, no
+    reflow, no page dropped. What it does change is the furniture GradeMax is
+    replacing -- the board's footer strip is covered with white, which on white
+    stock is seamless, and the book's own footer is written into the space that
+    frees up.
+
+    The page is clipped to its PAPER BOX rather than its media box, so the
+    652x899 sheets contribute their A4 area at 1:1 and leave their bleed --
+    including the printer's registration marks -- outside the book.
+    """
+    page = doc.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
+    box = paper_box(source[index])
+    page.show_pdf_page(fitz.Rect(0, 0, PAGE_WIDTH, PAGE_HEIGHT), source, index, clip=box)
+
+    # The board's page number, item barcode and subject code all live in this
+    # strip; the lowest real question content measured across the corpus ends at
+    # y=779, so the strip is safe to paint over.
+    page.draw_rect(fitz.Rect(0, PAGE_HEIGHT - FOOTER_BAND, PAGE_WIDTH, PAGE_HEIGHT),
+                   color=None, fill=(1, 1, 1))
+    page.insert_text((MARGIN, PAGE_HEIGHT - FOOTER_BAND + 22), footer,
+                     fontname="helv", fontsize=7.6, color=MUTED)
+
+    if renumber is not None and renumber[0] is not None:
+        source_box, printed = renumber
+        rect = fitz.Rect(source_box.x0 - box.x0, source_box.y0 - box.y0,
+                         source_box.x1 - box.x0, source_box.y1 - box.y0)
+        page.draw_rect(number_patch(rect) & page.rect, color=None, fill=(1, 1, 1))
+        size = max(7.5, min(11.0, rect.height * 0.86))
+        page.insert_text((rect.x0, rect.y1 - rect.height * 0.12), printed,
+                         fontname="hebo", fontsize=size, color=INK)
+
+
+def number_box_for(source: fitz.Document, number: int) -> fitz.Rect | None:
+    """Where the paper printed its question number, text layer or not."""
+    box = paper_box(source[0]) if source.page_count else None
+    probe = None
+    if box is not None:
+        probe = Band(0, box.y0 + NUMBER_PROBE_TOP, box.y0 + NUMBER_PROBE_BOTTOM,
+                     box.x0 + NUMBER_PROBE_LEFT, box.x0 + NUMBER_PROBE_RIGHT)
+    return question_number_box(source, number, probe)
+
+
+def build_body_verbatim(chapters: list[dict], by_chapter: dict[str, list[dict]],
+                        kind: str) -> tuple[fitz.Document, list[dict], list[str]]:
+    """
+    Assemble the papers chapterwise, page for page, editing nothing out.
+
+    There is no section heading page: adding 39 of them to a book whose premise
+    is "nothing added, nothing removed" would be its own kind of edit, so the
+    section is named in the footer of every sheet instead, and the contents
+    carry the page numbers.
+    """
+    warnings: list[str] = []
+    doc = fitz.open()
+    entries: list[dict] = []
+
+    for chapter in chapters:
+        questions = by_chapter.get(chapter["id"], [])
+        if not questions:
+            continue
+
+        grouped: dict[int, list[dict]] = defaultdict(list)
+        for question in questions:
+            grouped[question["_section"]["number"]].append(question)
+        summary = [(number, grouped[number][0]["_section"]["title"], len(grouped[number]),
+                    sum(q["marks"] for q in grouped[number]))
+                   for number in sorted(grouped)]
+
+        chapter_divider(doc, chapter, summary)
+        entries.append({"level": "chapter", "number": chapter["number"],
+                        "title": chapter["title"], "page": doc.page_count - 1,
+                        "count": len(questions),
+                        "marks": sum(q["marks"] for q in questions)})
+
+        for number in sorted(grouped):
+            rows = grouped[number]
+            section = rows[0]["_section"]
+            label = f"{chapter['number']}.{number}"
+            entries.append({"level": "section", "number": label,
+                            "title": section["title"], "page": doc.page_count,
+                            "count": len(rows),
+                            "marks": sum(r["marks"] for r in rows)})
+
+            for printed, question in enumerate(rows, 1):
+                question["_printed"] = printed
+                question["_section_label"] = label
+                path = segment_path(question, kind)
+                if not path.is_file():
+                    if kind == "qp":
+                        warnings.append(f"{question['slug']}: missing {path.name}")
+                    continue
+
+                footer = (f"{BRAND}   ·   {SUBJECT_NAME}   ·   {label} {section['title']}"
+                          f"   ·   Question {printed}")
+                if kind == "ms":
+                    footer += "   ·   Mark scheme"
+                try:
+                    with fitz.open(path) as source:
+                        renumber = None
+                        if kind == "qp":
+                            box = number_box_for(source, question["source_question_number"])
+                            renumber = (box, str(printed))
+                        question[f"_page_{kind}"] = doc.page_count
+                        for index in range(source.page_count):
+                            # Only the first page carries the question number.
+                            place_verbatim(doc, source, index, footer,
+                                           renumber if index == 0 else None)
+                except Exception as error:  # noqa: BLE001
+                    warnings.append(f"{question['slug']}: {error}")
+
+    return doc, entries, warnings
 
 
 def build_body(chapters: list[dict], by_chapter: dict[str, list[dict]],
@@ -311,24 +453,27 @@ def contents_pages(entries: list[dict], offset: int, kind: str) -> fitz.Document
     return doc
 
 
-def stamp_page_numbers(doc: fitz.Document, kind: str) -> None:
+def stamp_page_numbers(doc: fitz.Document, kind: str, tail: bool = True) -> None:
     """
     Number every sheet, so the contents can be trusted and a reader can be told
     "turn to page 148" without qualification.
     """
-    tail = f"{BRAND}  ·  {SUBJECT_NAME}" + ("  ·  Mark Schemes" if kind == "ms" else "")
+    running = f"{BRAND}  ·  {SUBJECT_NAME}" + ("  ·  Mark Schemes" if kind == "ms" else "")
     for number, page in enumerate(doc, 1):
         label = str(number)
         width = fitz.get_text_length(label, fontname="hebo", fontsize=9)
         page.insert_text(((PAGE_WIDTH - width) / 2, FOOTER_BASELINE), label,
                          fontname="hebo", fontsize=9, color=INK)
-        page.insert_text((MARGIN, FOOTER_BASELINE), tail,
-                         fontname="helv", fontsize=7.4, color=MUTED)
+        if tail:
+            page.insert_text((MARGIN, FOOTER_BASELINE), running,
+                             fontname="helv", fontsize=7.4, color=MUTED)
 
 
-def assemble(chapters, by_chapter, kind: str) -> tuple[fitz.Document, int, list[str]]:
+def assemble(chapters, by_chapter, kind: str,
+             verbatim: bool = False) -> tuple[fitz.Document, int, list[str]]:
     """Returns the finished book, the front-matter length, and any warnings."""
-    body, entries, warnings = build_body(chapters, by_chapter, kind)
+    builder = build_body_verbatim if verbatim else build_body
+    body, entries, warnings = builder(chapters, by_chapter, kind)
 
     # The contents shift the body, and their own length depends on the entry
     # count -- which is already known, so one pass settles it. Laying them out
@@ -345,7 +490,10 @@ def assemble(chapters, by_chapter, kind: str) -> tuple[fitz.Document, int, list[
 
     front.insert_pdf(body)
     body.close()
-    stamp_page_numbers(front, kind)
+    # The verbatim edition writes its own richer footer on every question page
+    # (chapter, section and question number), so a second line here would just
+    # double up.
+    stamp_page_numbers(front, kind, tail=not verbatim)
     return front, offset, warnings
 
 
@@ -375,7 +523,11 @@ def main() -> int:
     load_dotenv(REPO_ROOT / ".env.local")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true", help="write the PDFs")
+    parser.add_argument("--edition", choices=("trimmed", "verbatim"), default="trimmed",
+                        help="trimmed: question plus fixed working space. "
+                             "verbatim: the papers exactly as printed, nothing removed")
     args = parser.parse_args()
+    verbatim = args.edition == "verbatim"
 
     supabase = create_client(os.environ["NEXT_PUBLIC_SUPABASE_URL"],
                              os.environ["SUPABASE_SERVICE_ROLE_KEY"])
@@ -384,8 +536,13 @@ def main() -> int:
 
     print(f"{'=' * 74}\nFPM WORKBOOK — PRINT EDITION  "
           f"[{'EXECUTE' if args.execute else 'DRY RUN'}]\n{'=' * 74}")
+    print(f"  edition            : {args.edition}")
     print(f"  verified questions : {total}")
-    print(f"  working space      : {PRINT_POLICY.describe()}")
+    if verbatim:
+        print(f"  pages              : every source page, at full size, nothing removed")
+        print(f"  furniture          : board footer strip covered in white")
+    else:
+        print(f"  working space      : {PRINT_POLICY.describe()}")
     print(f"  numbering          : restarts at 1 in every section")
     print(f"  mark schemes       : separate book; linked digitally by slug")
 
@@ -401,9 +558,10 @@ def main() -> int:
     outputs: dict[str, Path] = {}
     all_warnings: list[str] = []
 
-    for kind, name in (("qp", "GradeMax_FPM_Workbook.pdf"),
-                       ("ms", "GradeMax_FPM_Workbook_MarkSchemes.pdf")):
-        doc, offset, warnings = assemble(chapters, by_chapter, kind)
+    suffix = "_Verbatim" if verbatim else ""
+    for kind, name in (("qp", f"GradeMax_FPM_Workbook{suffix}.pdf"),
+                       ("ms", f"GradeMax_FPM_Workbook_MarkSchemes{suffix}.pdf")):
+        doc, offset, warnings = assemble(chapters, by_chapter, kind, verbatim)
         all_warnings.extend(warnings)
         target = BOOK_DIR / name
         doc.save(target, deflate=True, garbage=3)
@@ -414,7 +572,8 @@ def main() -> int:
         doc.close()
 
     index = write_index(chapters, by_chapter, offsets)
-    index_path = BOOK_DIR / "print_index.json"
+    index["edition"] = args.edition
+    index_path = BOOK_DIR / f"print_index{suffix.lower()}.json"
     index_path.write_text(json.dumps(index, indent=2), encoding="utf-8")
     print(f"\n  print_index.json   {len(index['questions'])} questions "
           f"(slug -> chapter, section, printed number, both page numbers)")

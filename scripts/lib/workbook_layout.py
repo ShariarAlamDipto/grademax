@@ -47,6 +47,23 @@ ORPHAN_GUARD = 96.0
 FALLBACK_NUMBER_WIDTH = 17.0
 FALLBACK_NUMBER_HEIGHT = 14.0
 NUMBER_PAD = 1.6
+# The detected box hugs the ink, and on a scanned digit the ink is measured
+# short -- which left the tail of the original "2" showing under the new "1".
+# The hanging indent holds nothing but the number, so the patch is grown to a
+# full line and a full digit width regardless of what was measured.
+NUMBER_PATCH_MIN_HEIGHT = 16.0
+NUMBER_PATCH_MIN_WIDTH = 14.0
+
+
+def number_patch(rect: fitz.Rect) -> fitz.Rect:
+    """The area to paint white so no trace of the paper's number survives."""
+    height = max(rect.height, NUMBER_PATCH_MIN_HEIGHT)
+    width = max(rect.width, NUMBER_PATCH_MIN_WIDTH)
+    centre_y = (rect.y0 + rect.y1) / 2
+    return fitz.Rect(rect.x0 - NUMBER_PAD,
+                     centre_y - height / 2 - NUMBER_PAD,
+                     rect.x0 + width + NUMBER_PAD,
+                     centre_y + height / 2 + NUMBER_PAD)
 
 
 @dataclass(frozen=True)
@@ -267,8 +284,7 @@ class Flow:
             x0, y0 = target.x0, target.y0
             x1, y1 = x0 + FALLBACK_NUMBER_WIDTH, y0 + FALLBACK_NUMBER_HEIGHT
 
-        patch = fitz.Rect(x0 - NUMBER_PAD, y0 - NUMBER_PAD, x1 + NUMBER_PAD, y1 + NUMBER_PAD)
-        patch = patch & self.page.rect
+        patch = number_patch(fitz.Rect(x0, y0, x1, y1)) & self.page.rect
         if not patch.is_empty:
             self.page.draw_rect(patch, color=None, fill=(1, 1, 1))
 
