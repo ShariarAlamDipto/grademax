@@ -41,6 +41,8 @@ QUESTION_GAP = 16.0
 BAND_GAP = 8.0
 # Never start a question that cannot keep this much of its working space with it.
 ORPHAN_GUARD = 96.0
+# Section band plus the air beneath it.
+SECTION_HEADING_HEIGHT = 38.0
 
 # Patch size used when the paper's question number cannot be located, which
 # happens only on the image-only scan. Sized to the widest two-digit number.
@@ -224,6 +226,80 @@ class Flow:
         self._reserve(space)
         self._separator()
 
+    def add_paged(self, source: fitz.Document, bands, label: str, right: str,
+                  pages: int, draft: bool,
+                  renumber: tuple[fitz.Rect | None, str] | None = None,
+                  masks: dict[int, list[fitz.Rect]] | None = None,
+                  heading: str | None = None) -> tuple[int, float]:
+        """
+        Give this question exactly `pages` sheets, to itself.
+
+        Nothing shares a sheet with it and nothing runs past its allocation: the
+        question opens a fresh page, and blank sheets are added afterwards until
+        the count is exact. Where the content cannot fit the allocation it is
+        shrunk uniformly rather than allowed to spill, because the promise this
+        edition makes -- one sheet under five marks, two above -- is the whole
+        point of it. The shrink factor is returned so the caller can say which
+        questions paid for that promise.
+        """
+        bands = [b for b in bands if b.width > 0 and b.height > 0]
+        if not bands:
+            return 0, 1.0
+
+        self._start_page()
+        first_page = self.doc.page_count - 1
+        self.last_start_page = first_page
+
+        # A section opens on the first question of that section rather than on a
+        # sheet of its own: 39 near-blank pages in an 871-page book read as a
+        # binding fault, not as structure. The heading comes out of this
+        # question's allocation, which costs it about 6% of one sheet.
+        heading_height = 0.0
+        if heading:
+            self._draw_heading(heading)
+            heading_height = SECTION_HEADING_HEIGHT
+
+        self._draw_label(label, right, draft)
+
+        shrink = self._fit(source, bands, pages, heading_height)
+
+        for index, band in enumerate(bands):
+            scale = self._scale(source, band) * shrink
+            height = band.height * scale
+            if index and height + BAND_GAP > self._room():
+                self._start_page()
+            elif index:
+                self.cursor += BAND_GAP
+
+            assert self.page is not None
+            width = band.width * scale
+            target = fitz.Rect(MARGIN, self.cursor, MARGIN + width, self.cursor + height)
+            self.page.show_pdf_page(
+                target, source, band.page,
+                clip=fitz.Rect(band.x0, band.y0, band.x1, band.y1),
+            )
+            if masks:
+                self._paint_out(band, target, scale, masks.get(band.page, ()))
+            if index == 0 and renumber is not None:
+                self._replace_number(band, target, scale, *renumber)
+            self.cursor += height
+
+        used = self.doc.page_count - first_page
+        while used < pages:
+            self._start_page()
+            used += 1
+        return used, shrink
+
+    def _fit(self, source: fitz.Document, bands, pages: int,
+             heading: float = 0.0) -> float:
+        """How much the content must shrink to sit inside `pages` sheets."""
+        budget = (pages * self._usable - LABEL_HEIGHT - heading
+                  - BAND_GAP * max(0, len(bands) - 1))
+        natural = sum(self._scaled_height(source, band) for band in bands)
+        if natural <= 0 or natural <= budget:
+            return 1.0
+        return budget / natural
+
     def _scale(self, source: fitz.Document, band) -> float:
         scale = min(self.width / band.width, 1.0) if band.width > 0 else 1.0
         # A band taller than a whole sheet is scaled down until it fits one.
@@ -320,12 +396,29 @@ class Flow:
                             color=RULE, width=0.5)
         self.cursor += QUESTION_GAP
 
-    def section_break(self, title: str) -> None:
+    def _draw_heading(self, title: str) -> None:
+        """The section band, drawn wherever the cursor currently sits."""
+        assert self.page is not None
+        self.page.draw_rect(
+            fitz.Rect(MARGIN, self.cursor, PAGE_WIDTH - MARGIN, self.cursor + 26),
+            color=None, fill=(0.95, 0.96, 0.97),
+        )
+        self.page.insert_text((MARGIN + 8, self.cursor + 17), title,
+                              fontname="hebo", fontsize=10.5, color=INK)
+        self.cursor += SECTION_HEADING_HEIGHT
+
+    def section_break(self, title: str, force_page: bool = False) -> None:
         """
         Open a section with its own heading, so a student can find "6.3 Circle
         theorems" by flicking rather than by consulting the contents page.
+
+        `force_page` starts a fresh sheet for it. The paged edition needs that:
+        there, the sheet still open is the previous question's working space,
+        and dropping a section heading into the middle of it both defaces that
+        space and misplaces the section. Only 10 of 39 headings got a page of
+        their own without this.
         """
-        if self.page is None or 44.0 + 90 > self._room():
+        if force_page or self.page is None or 44.0 + 90 > self._room():
             self._start_page()
         else:
             self.cursor += 10
