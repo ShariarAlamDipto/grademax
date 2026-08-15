@@ -77,6 +77,12 @@ BOOK_DIR = SEGMENT_DIR / "print"
 # How far in from a band's edge the hanging indent reaches.
 NUMBER_ZONE = 30.0
 
+# The paged edition's split: below this tariff a question gets one sheet, at or
+# above it two.
+PAGE_BREAK_MARKS = 5
+# Report any question squeezed below this to fit its allocation.
+SHRINK_WARN = 0.92
+
 # The strip at the foot of every exam page carrying the board's page number,
 # item barcode and subject code. Measured: the lowest real question content in
 # the corpus ends at y=779, so this is safe to paint over.
@@ -306,6 +312,89 @@ def build_body_verbatim(chapters: list[dict], by_chapter: dict[str, list[dict]],
     return doc, entries, warnings
 
 
+def build_body_paged(chapters: list[dict], by_chapter: dict[str, list[dict]],
+                     kind: str) -> tuple[fitz.Document, list[dict], list[str]]:
+    """
+    One sheet per question under five marks, two sheets above.
+
+    Every question owns whole sheets and shares with nothing, so a student can
+    tear one out, and the space each gets is decided by the tariff rather than
+    by whatever the flow happened to leave. Mark schemes are not laid out this
+    way -- they are read, not written on, so they stay packed.
+    """
+    warnings: list[str] = []
+    doc = fitz.open()
+    entries: list[dict] = []
+
+    for chapter in chapters:
+        questions = by_chapter.get(chapter["id"], [])
+        if not questions:
+            continue
+
+        grouped: dict[int, list[dict]] = defaultdict(list)
+        for question in questions:
+            grouped[question["_section"]["number"]].append(question)
+        summary = [(number, grouped[number][0]["_section"]["title"], len(grouped[number]),
+                    sum(q["marks"] for q in grouped[number]))
+                   for number in sorted(grouped)]
+
+        chapter_divider(doc, chapter, summary)
+        entries.append({"level": "chapter", "number": chapter["number"],
+                        "title": chapter["title"], "page": doc.page_count - 1,
+                        "count": len(questions),
+                        "marks": sum(q["marks"] for q in questions)})
+
+        running = f"{BRAND}  ·  {SUBJECT_NAME}  ·  Chapter {chapter['number']}  {chapter['title']}"
+        flow = Flow(doc, running, NO_SPACE)
+
+        for number in sorted(grouped):
+            rows = grouped[number]
+            section = rows[0]["_section"]
+            heading = f"{chapter['number']}.{number}   {section['title']}"
+            entries.append({"level": "section",
+                            "number": f"{chapter['number']}.{number}",
+                            "title": section["title"],
+                            "page": doc.page_count,
+                            "count": len(rows),
+                            "marks": sum(r["marks"] for r in rows)})
+
+            for printed, question in enumerate(rows, 1):
+                question["_printed"] = printed
+                question["_section_label"] = f"{chapter['number']}.{number}"
+                path = segment_path(question, kind)
+                if not path.is_file():
+                    warnings.append(f"{question['slug']}: missing {path.name}")
+                    continue
+
+                right = f"{question['marks']} marks   ·   {source_label(question)}"
+                pages = 1 if question["marks"] < PAGE_BREAK_MARKS else 2
+                try:
+                    with fitz.open(path) as source:
+                        bands, masks = content_layout(source)
+                        if not bands:
+                            warnings.append(f"{question['slug']}: no content found")
+                            continue
+                        renumber = None
+                        label = f"{printed}"
+                        box = question_number_box(
+                            source, question["source_question_number"], bands[0])
+                        if box is not None and box.x0 <= bands[0].x0 + NUMBER_ZONE:
+                            renumber, label = (box, str(printed)), ""
+                        _, shrink = flow.add_paged(
+                            source, bands, label, right, pages, False,
+                            renumber=renumber, masks=masks,
+                            heading=heading if printed == 1 else None)
+                        question[f"_page_{kind}"] = flow.last_start_page
+                        if shrink < SHRINK_WARN:
+                            warnings.append(
+                                f"{question['slug']}: {question['marks']} marks, content "
+                                f"shrunk to {shrink:.0%} to fit {pages} page(s)")
+                except Exception as error:  # noqa: BLE001
+                    warnings.append(f"{question['slug']}: {error}")
+
+    return doc, entries, warnings
+
+
 def build_body(chapters: list[dict], by_chapter: dict[str, list[dict]],
                kind: str) -> tuple[fitz.Document, list[dict], list[str]]:
     """
@@ -470,9 +559,15 @@ def stamp_page_numbers(doc: fitz.Document, kind: str, tail: bool = True) -> None
 
 
 def assemble(chapters, by_chapter, kind: str,
-             verbatim: bool = False) -> tuple[fitz.Document, int, list[str]]:
+             edition: str = "trimmed") -> tuple[fitz.Document, int, list[str]]:
     """Returns the finished book, the front-matter length, and any warnings."""
-    builder = build_body_verbatim if verbatim else build_body
+    builder = build_body
+    if edition == "verbatim":
+        builder = build_body_verbatim
+    elif edition == "paged" and kind == "qp":
+        # Mark schemes are read, not written on, so they stay packed whatever
+        # the question book does.
+        builder = build_body_paged
     body, entries, warnings = builder(chapters, by_chapter, kind)
 
     # The contents shift the body, and their own length depends on the entry
@@ -493,7 +588,7 @@ def assemble(chapters, by_chapter, kind: str,
     # The verbatim edition writes its own richer footer on every question page
     # (chapter, section and question number), so a second line here would just
     # double up.
-    stamp_page_numbers(front, kind, tail=not verbatim)
+    stamp_page_numbers(front, kind, tail=edition != "verbatim")
     return front, offset, warnings
 
 
@@ -523,11 +618,14 @@ def main() -> int:
     load_dotenv(REPO_ROOT / ".env.local")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true", help="write the PDFs")
-    parser.add_argument("--edition", choices=("trimmed", "verbatim"), default="trimmed",
+    parser.add_argument("--edition", choices=("trimmed", "verbatim", "paged"),
+                        default="trimmed",
                         help="trimmed: question plus fixed working space. "
-                             "verbatim: the papers exactly as printed, nothing removed")
+                             "verbatim: the papers exactly as printed, nothing removed. "
+                             "paged: one whole sheet per question under 5 marks, two above")
     args = parser.parse_args()
     verbatim = args.edition == "verbatim"
+    paged = args.edition == "paged"
 
     supabase = create_client(os.environ["NEXT_PUBLIC_SUPABASE_URL"],
                              os.environ["SUPABASE_SERVICE_ROLE_KEY"])
@@ -541,6 +639,12 @@ def main() -> int:
     if verbatim:
         print(f"  pages              : every source page, at full size, nothing removed")
         print(f"  furniture          : board footer strip covered in white")
+    elif paged:
+        small = sum(1 for c in chapters
+                    for q in by_chapter.get(c["id"], []) if q["marks"] < PAGE_BREAK_MARKS)
+        print(f"  pages              : 1 sheet under {PAGE_BREAK_MARKS} marks, 2 sheets at or above")
+        print(f"  split              : {small} questions on 1 sheet, "
+              f"{total - small} on 2  ->  {small + (total - small) * 2} question sheets")
     else:
         print(f"  working space      : {PRINT_POLICY.describe()}")
     print(f"  numbering          : restarts at 1 in every section")
@@ -558,10 +662,10 @@ def main() -> int:
     outputs: dict[str, Path] = {}
     all_warnings: list[str] = []
 
-    suffix = "_Verbatim" if verbatim else ""
+    suffix = {"verbatim": "_Verbatim", "paged": "_Paged"}.get(args.edition, "")
     for kind, name in (("qp", f"GradeMax_FPM_Workbook{suffix}.pdf"),
                        ("ms", f"GradeMax_FPM_Workbook_MarkSchemes{suffix}.pdf")):
-        doc, offset, warnings = assemble(chapters, by_chapter, kind, verbatim)
+        doc, offset, warnings = assemble(chapters, by_chapter, kind, args.edition)
         all_warnings.extend(warnings)
         target = BOOK_DIR / name
         doc.save(target, deflate=True, garbage=3)
