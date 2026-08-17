@@ -64,6 +64,8 @@ import fitz
 from dotenv import load_dotenv
 from supabase import create_client
 
+from lib.fpm_formulas import flow_blocks as formula_blocks
+from lib.formula_render import render as render_formulas
 from lib.workbook_ink import Band, content_layout, paper_box, question_number_box
 from lib.workbook_layout import (
     INK, MARGIN, MUTED, NO_SPACE, PAGE_HEIGHT, PAGE_WIDTH, PRINT_POLICY, RULE,
@@ -98,7 +100,7 @@ NUMBER_PROBE_RIGHT = 164.0
 SUBJECT_CODE = "4PM1"
 SUBJECT_TITLE = "Edexcel International GCSE"
 SUBJECT_NAME = "Further Pure Mathematics"
-SUBJECT_SUB = "Chapterwise Practice Workbook  ·  2016–2022"
+SUBJECT_SUB = "Chapterwise Practice Workbook"
 BRAND = "GradeMax"
 
 SESSION_LABEL = {
@@ -106,10 +108,86 @@ SESSION_LABEL = {
     "oct-nov": "October/November", "specimen": "Specimen",
 }
 
+FONT_DIR = Path("C:/Windows/Fonts")
+FORMULA_TOP = 118.0
+FORMULA_GAP = 4.0
+CHAPTER_GAP = 13.0
+
+# End matter. The diary is what a student fills in each week; the blank sheets
+# are for working that outgrew the space beside the question.
+DIARY_PAGES = 2
+BLANK_PAGES = 10
+DIARY_ROWS = 16
+DIARY_COLUMNS = ((0.13, "Date"), (0.30, "Chapter / section"),
+                 (0.34, "Questions set"), (0.13, "Due"), (0.10, "Done"))
+
 FOOTER_BASELINE = PAGE_HEIGHT - 26.0 + 12.0
 CONTENTS_ROW = 20.0
 CONTENTS_TOP = 132.0
 CONTENTS_BOTTOM = PAGE_HEIGHT - 90.0
+
+
+def formula_sheet(chapters: list[dict]) -> tuple[fitz.Document, list[str]]:
+    """
+    Every chapter's results, in the book's own order, before the questions.
+
+    Rendered to a temporary PDF by lib.formula_render (matplotlib mathtext) and
+    then read back in, because real mathematical typesetting is not something
+    PyMuPDF's text drawing can do: no fraction bars, no radical vinculum, no
+    limits above and below an integral.
+    """
+    titles = {c["number"]: c["title"] for c in chapters}
+    target = BOOK_DIR / "_formula_sheet.pdf"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    overflow = render_formulas(formula_blocks(titles), target)
+    doc = fitz.open(target)
+    sheet = fitz.open()
+    sheet.insert_pdf(doc)
+    doc.close()
+    target.unlink(missing_ok=True)
+    return sheet, overflow
+
+
+def diary_page(doc: fitz.Document, index: int) -> None:
+    """A week of homework, for the teacher to set and the student to tick off."""
+    page = doc.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
+    page.insert_text((MARGIN, 96), "Homework Record",
+                     fontname="hebo", fontsize=19, color=INK)
+    page.insert_text((PAGE_WIDTH - MARGIN - 52, 96), f"{index} of {DIARY_PAGES}",
+                     fontname="helv", fontsize=9, color=MUTED)
+    page.draw_line(fitz.Point(MARGIN, 108), fitz.Point(PAGE_WIDTH - MARGIN, 108),
+                   color=RULE, width=0.8)
+
+    width = PAGE_WIDTH - 2 * MARGIN
+    top = 132.0
+    row = (PAGE_HEIGHT - 90 - top) / DIARY_ROWS
+
+    x = MARGIN
+    for fraction, label in DIARY_COLUMNS:
+        page.insert_text((x + 4, top - 8), label, fontname="hebo", fontsize=8, color=MUTED)
+        x += width * fraction
+
+    page.draw_rect(fitz.Rect(MARGIN, top, PAGE_WIDTH - MARGIN, top + row * DIARY_ROWS),
+                   color=RULE, width=0.7)
+    for line in range(1, DIARY_ROWS):
+        y = top + row * line
+        page.draw_line(fitz.Point(MARGIN, y), fitz.Point(PAGE_WIDTH - MARGIN, y),
+                       color=RULE, width=0.5)
+    x = MARGIN
+    for fraction, _ in DIARY_COLUMNS[:-1]:
+        x += width * fraction
+        page.draw_line(fitz.Point(x, top), fitz.Point(x, top + row * DIARY_ROWS),
+                       color=RULE, width=0.5)
+
+
+def end_matter(doc: fitz.Document) -> None:
+    """The diary, then blank sheets to work on."""
+    for index in range(1, DIARY_PAGES + 1):
+        diary_page(doc, index)
+    for index in range(1, BLANK_PAGES + 1):
+        page = doc.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
+        page.insert_text((MARGIN, 96), f"Working   ·   {index} of {BLANK_PAGES}",
+                         fontname="helv", fontsize=9, color=MUTED)
 
 
 def fetch_all(query_builder, page_size: int = 1000) -> list[dict]:
@@ -125,7 +203,7 @@ def fetch_all(query_builder, page_size: int = 1000) -> list[dict]:
         page += 1
 
 
-def load_book(supabase) -> tuple[list[dict], dict[str, list[dict]]]:
+def load_book(supabase, from_year: int = 0) -> tuple[list[dict], dict[str, list[dict]]]:
     subject_id = (supabase.table("subjects").select("id")
                   .eq("code", SUBJECT_CODE).single().execute().data["id"])
 
@@ -148,6 +226,9 @@ def load_book(supabase) -> tuple[list[dict], dict[str, list[dict]]]:
     for question in fetch_all(question_query):
         section = section_by_id.get(question["section_id"])
         if section is None:
+            continue
+        # The paper key leads with its year: 2019_may-jun_1.
+        if from_year and int(question["source_paper_key"].split("_")[0]) < from_year:
             continue
         question["_section"] = section
         by_chapter[section["chapter_id"]].append(question)
@@ -231,6 +312,29 @@ def place_verbatim(doc: fitz.Document, source: fitz.Document, index: int,
                          fontname="hebo", fontsize=size, color=INK)
 
 
+def blank_sheet(doc: fitz.Document, footer: str) -> None:
+    """An empty working sheet, carrying the book's footer like any other page."""
+    page = doc.new_page(width=PAGE_WIDTH, height=PAGE_HEIGHT)
+    page.insert_text((MARGIN, PAGE_HEIGHT - FOOTER_BAND + 22), footer,
+                     fontname="helv", fontsize=7.6, color=MUTED)
+
+
+def pages_to_keep(source: fitz.Document, bands, allowance: int) -> list[int]:
+    """
+    Which source pages this question prints.
+
+    The allowance decides how many sheets a question gets, but it never decides
+    whether a page of the QUESTION survives: a page carrying content is kept
+    whatever the allowance says. Everything else is answer space, and answer
+    space is what the allowance is rationing -- so the pages dropped are the
+    blank continuation sheets at the end, which is exactly what "two pages for
+    the longer questions" means.
+    """
+    content = sorted({band.page for band in bands}) or [0]
+    keep = set(content) | set(range(min(allowance, source.page_count)))
+    return sorted(keep)
+
+
 def number_box_for(source: fitz.Document, number: int) -> fitz.Rect | None:
     """Where the paper printed its question number, text layer or not."""
     box = paper_box(source[0]) if source.page_count else None
@@ -242,7 +346,8 @@ def number_box_for(source: fitz.Document, number: int) -> fitz.Rect | None:
 
 
 def build_body_verbatim(chapters: list[dict], by_chapter: dict[str, list[dict]],
-                        kind: str) -> tuple[fitz.Document, list[dict], list[str]]:
+                        kind: str,
+                        allocate: bool = False) -> tuple[fitz.Document, list[dict], list[str]]:
     """
     Assemble the papers chapterwise, page for page, editing nothing out.
 
@@ -301,94 +406,26 @@ def build_body_verbatim(chapters: list[dict], by_chapter: dict[str, list[dict]],
                         if kind == "qp":
                             box = number_box_for(source, question["source_question_number"])
                             renumber = (box, str(printed))
+
+                        indices = list(range(source.page_count))
+                        allowance = 0
+                        if allocate and kind == "qp":
+                            allowance = (1 if question["marks"] < PAGE_BREAK_MARKS else 2)
+                            bands, _ = content_layout(source)
+                            indices = pages_to_keep(source, bands, allowance)
+                            if len(indices) > allowance:
+                                warnings.append(
+                                    f"{question['slug']}: {question['marks']} marks, question "
+                                    f"content runs to {len(indices)} pages; kept over the "
+                                    f"{allowance}-page allowance")
+
                         question[f"_page_{kind}"] = doc.page_count
-                        for index in range(source.page_count):
+                        for position, index in enumerate(indices):
                             # Only the first page carries the question number.
                             place_verbatim(doc, source, index, footer,
-                                           renumber if index == 0 else None)
-                except Exception as error:  # noqa: BLE001
-                    warnings.append(f"{question['slug']}: {error}")
-
-    return doc, entries, warnings
-
-
-def build_body_paged(chapters: list[dict], by_chapter: dict[str, list[dict]],
-                     kind: str) -> tuple[fitz.Document, list[dict], list[str]]:
-    """
-    One sheet per question under five marks, two sheets above.
-
-    Every question owns whole sheets and shares with nothing, so a student can
-    tear one out, and the space each gets is decided by the tariff rather than
-    by whatever the flow happened to leave. Mark schemes are not laid out this
-    way -- they are read, not written on, so they stay packed.
-    """
-    warnings: list[str] = []
-    doc = fitz.open()
-    entries: list[dict] = []
-
-    for chapter in chapters:
-        questions = by_chapter.get(chapter["id"], [])
-        if not questions:
-            continue
-
-        grouped: dict[int, list[dict]] = defaultdict(list)
-        for question in questions:
-            grouped[question["_section"]["number"]].append(question)
-        summary = [(number, grouped[number][0]["_section"]["title"], len(grouped[number]),
-                    sum(q["marks"] for q in grouped[number]))
-                   for number in sorted(grouped)]
-
-        chapter_divider(doc, chapter, summary)
-        entries.append({"level": "chapter", "number": chapter["number"],
-                        "title": chapter["title"], "page": doc.page_count - 1,
-                        "count": len(questions),
-                        "marks": sum(q["marks"] for q in questions)})
-
-        running = f"{BRAND}  ·  {SUBJECT_NAME}  ·  Chapter {chapter['number']}  {chapter['title']}"
-        flow = Flow(doc, running, NO_SPACE)
-
-        for number in sorted(grouped):
-            rows = grouped[number]
-            section = rows[0]["_section"]
-            heading = f"{chapter['number']}.{number}   {section['title']}"
-            entries.append({"level": "section",
-                            "number": f"{chapter['number']}.{number}",
-                            "title": section["title"],
-                            "page": doc.page_count,
-                            "count": len(rows),
-                            "marks": sum(r["marks"] for r in rows)})
-
-            for printed, question in enumerate(rows, 1):
-                question["_printed"] = printed
-                question["_section_label"] = f"{chapter['number']}.{number}"
-                path = segment_path(question, kind)
-                if not path.is_file():
-                    warnings.append(f"{question['slug']}: missing {path.name}")
-                    continue
-
-                right = f"{question['marks']} marks   ·   {source_label(question)}"
-                pages = 1 if question["marks"] < PAGE_BREAK_MARKS else 2
-                try:
-                    with fitz.open(path) as source:
-                        bands, masks = content_layout(source)
-                        if not bands:
-                            warnings.append(f"{question['slug']}: no content found")
-                            continue
-                        renumber = None
-                        label = f"{printed}"
-                        box = question_number_box(
-                            source, question["source_question_number"], bands[0])
-                        if box is not None and box.x0 <= bands[0].x0 + NUMBER_ZONE:
-                            renumber, label = (box, str(printed)), ""
-                        _, shrink = flow.add_paged(
-                            source, bands, label, right, pages, False,
-                            renumber=renumber, masks=masks,
-                            heading=heading if printed == 1 else None)
-                        question[f"_page_{kind}"] = flow.last_start_page
-                        if shrink < SHRINK_WARN:
-                            warnings.append(
-                                f"{question['slug']}: {question['marks']} marks, content "
-                                f"shrunk to {shrink:.0%} to fit {pages} page(s)")
+                                           renumber if position == 0 else None)
+                        for _ in range(allowance - len(indices)):
+                            blank_sheet(doc, footer)
                 except Exception as error:  # noqa: BLE001
                     warnings.append(f"{question['slug']}: {error}")
 
@@ -561,34 +598,50 @@ def stamp_page_numbers(doc: fitz.Document, kind: str, tail: bool = True) -> None
 def assemble(chapters, by_chapter, kind: str,
              edition: str = "trimmed") -> tuple[fitz.Document, int, list[str]]:
     """Returns the finished book, the front-matter length, and any warnings."""
-    builder = build_body
-    if edition == "verbatim":
-        builder = build_body_verbatim
-    elif edition == "paged" and kind == "qp":
-        # Mark schemes are read, not written on, so they stay packed whatever
-        # the question book does.
-        builder = build_body_paged
-    body, entries, warnings = builder(chapters, by_chapter, kind)
+    if edition in ("verbatim", "paged"):
+        # The paged edition IS the verbatim edition, rationed. The question
+        # paper's own formatting is the point, so nothing is reflowed and no
+        # page carrying question content is dropped -- only the trailing blank
+        # continuation sheets, until the allowance is met. Mark schemes are read
+        # rather than written on and keep every page in both editions.
+        body, entries, warnings = build_body_verbatim(
+            chapters, by_chapter, kind, allocate=edition == "paged")
+    else:
+        body, entries, warnings = build_body(chapters, by_chapter, kind)
+
+    # Only the question book carries the reference matter; a mark scheme needs
+    # neither a formula sheet nor somewhere to record homework.
+    formulas = None
+    if kind == "qp":
+        formulas, overflow = formula_sheet(chapters)
+        warnings.extend(f"formula sheet: line too wide — {line}" for line in overflow)
+        end_matter(body)
 
     # The contents shift the body, and their own length depends on the entry
     # count -- which is already known, so one pass settles it. Laying them out
-    # once with a zero offset just measures how long they are.
+    # once with a zero offset just measures how long they are. The formula sheet
+    # sits between the two and shifts everything again, so its length is part of
+    # the offset the contents are written with.
     probe = contents_pages(entries, 0, kind)
-    offset = probe.page_count
+    contents_length = probe.page_count
     probe.close()
+    offset = contents_length + (formulas.page_count if formulas else 0)
 
     front = contents_pages(entries, offset, kind)
-    if front.page_count != offset:
+    if front.page_count != contents_length:
         raise RuntimeError(
-            f"contents length changed between passes ({offset} -> {front.page_count}); "
-            "every page reference in the book would be wrong")
+            f"contents length changed between passes ({contents_length} -> "
+            f"{front.page_count}); every page reference in the book would be wrong")
 
+    if formulas:
+        front.insert_pdf(formulas)
+        formulas.close()
     front.insert_pdf(body)
     body.close()
     # The verbatim edition writes its own richer footer on every question page
     # (chapter, section and question number), so a second line here would just
     # double up.
-    stamp_page_numbers(front, kind, tail=edition != "verbatim")
+    stamp_page_numbers(front, kind, tail=edition not in ("verbatim", "paged"))
     return front, offset, warnings
 
 
@@ -618,6 +671,8 @@ def main() -> int:
     load_dotenv(REPO_ROOT / ".env.local")
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--execute", action="store_true", help="write the PDFs")
+    parser.add_argument("--from-year", type=int, default=2018,
+                        help="earliest paper year to include (default 2018)")
     parser.add_argument("--edition", choices=("trimmed", "verbatim", "paged"),
                         default="trimmed",
                         help="trimmed: question plus fixed working space. "
@@ -629,12 +684,13 @@ def main() -> int:
 
     supabase = create_client(os.environ["NEXT_PUBLIC_SUPABASE_URL"],
                              os.environ["SUPABASE_SERVICE_ROLE_KEY"])
-    chapters, by_chapter = load_book(supabase)
+    chapters, by_chapter = load_book(supabase, args.from_year)
     total = sum(len(by_chapter.get(c["id"], [])) for c in chapters)
 
     print(f"{'=' * 74}\nFPM WORKBOOK — PRINT EDITION  "
           f"[{'EXECUTE' if args.execute else 'DRY RUN'}]\n{'=' * 74}")
     print(f"  edition            : {args.edition}")
+    print(f"  papers             : {args.from_year} onwards")
     print(f"  verified questions : {total}")
     if verbatim:
         print(f"  pages              : every source page, at full size, nothing removed")
@@ -649,6 +705,8 @@ def main() -> int:
         print(f"  working space      : {PRINT_POLICY.describe()}")
     print(f"  numbering          : restarts at 1 in every section")
     print(f"  mark schemes       : separate book; linked digitally by slug")
+    print(f"  front matter       : contents, then a formula sheet for every chapter")
+    print(f"  end matter         : {DIARY_PAGES} homework pages, {BLANK_PAGES} blank")
 
     if total == 0:
         print("\n  Nothing verified to print.")
