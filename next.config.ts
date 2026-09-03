@@ -1,16 +1,35 @@
 import type { NextConfig } from "next";
 
+// Google AdSense origins. Without these the loader in the root layout's <head>
+// is blocked outright, ads never render and — because the review crawler runs
+// the page — site verification fails with no visible error but a CSP console
+// warning.
+//
+// This stays a list of Google's own origins rather than a blanket `https:`
+// because ad creatives are rendered *inside* Google's cross-origin iframes,
+// which carry their own policy; this document's CSP does not reach into them.
+// So allowing Google here is enough to serve ads without opening the page to
+// every advertiser domain on the internet.
+const GOOGLE_ADS_ORIGINS = [
+  "https://*.googlesyndication.com", // pagead2 (the loader), tpc (creatives)
+  "https://*.doubleclick.net", // ad requests, securepubads
+  "https://*.googleadservices.com",
+  "https://*.googletagservices.com",
+  "https://adservice.google.com",
+  "https://fundingchoicesmessages.google.com", // EEA/UK consent messaging
+].join(" ");
+
 const baseCsp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live",
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live ${GOOGLE_ADS_ORIGINS}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' data: https://fonts.gstatic.com",
-  "img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev",
+  `img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev ${GOOGLE_ADS_ORIGINS} https://*.google.com https://*.gstatic.com`,
   "worker-src 'self' blob:",
   // *.r2.cloudflarestorage.com is the S3 API endpoint teachers PUT large
   // lecture files to with a presigned URL, bypassing the 4.5 MB serverless cap.
-  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com",
-  "frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev",
+  `connect-src 'self' https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
+  `frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self' https://accounts.google.com",
