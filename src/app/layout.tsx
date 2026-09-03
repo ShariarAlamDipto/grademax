@@ -8,6 +8,7 @@ import { Playfair_Display } from 'next/font/google'
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
+import { ADSENSE_SCRIPT_SRC } from '@/lib/ads'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700','800'], display: 'swap' });
 
@@ -261,6 +262,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* AdSense loader. It sits in the root layout's <head> deliberately:
+            AdSense's site review requires the snippet in the server-rendered
+            HTML of every page, so next/script (which injects it client-side,
+            into the body) would not satisfy it. async, so it never blocks the
+            first paint. */}
+        <script async src={ADSENSE_SCRIPT_SRC} crossOrigin="anonymous" />
       </head>
       <body className="min-h-screen flex flex-col" style={{ background: 'var(--gm-bg)', color: 'var(--gm-text)' }}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
