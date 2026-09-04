@@ -6,7 +6,7 @@
 // <head> snippet and ads.txt name different publishers, AdSense stops serving
 // and the site fails review.
 
-export const ADSENSE_CLIENT_ID = 'ca-pub-9054237287762899'
+export const ADSENSE_CLIENT_ID = 'ca-pub-4441517118234823'
 
 // The loader from the AdSense console. Rendered server-side into <head> (see
 // app/layout.tsx) rather than through next/script, so it is present in the raw
