@@ -17,6 +17,10 @@ const GOOGLE_ADS_ORIGINS = [
   "https://*.googletagservices.com",
   "https://adservice.google.com",
   "https://fundingchoicesmessages.google.com", // EEA/UK consent messaging
+  // Ad Traffic Quality (ep1/ep2.adtrafficquality.google) — AdSense's invalid-traffic
+  // beacon. Its TLD is bare `.google`, so the `https://*.google.com` entries below
+  // never matched it and every page load logged a blocked-connection CSP error.
+  "https://*.adtrafficquality.google",
 ].join(" ");
 
 const baseCsp = [
