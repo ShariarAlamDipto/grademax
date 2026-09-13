@@ -36,6 +36,7 @@ import fitz
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+from lib.ial_ms_parse import extract_blocks  # noqa: E402
 from lib.ial_qp_parse import (  # noqa: E402
     QUESTION_CONT_RE,
     QUESTION_START_RE,
@@ -184,7 +185,7 @@ def extract_range(source_pdf: Path, page_range: tuple[int, int], target: Path) -
             out.close()
 
 
-def write_paper(result: PaperResult) -> int:
+def write_paper(result: PaperResult) -> tuple[int, dict[str, int]]:
     paper_dir = OUTPUT_DIR / result.source.key
     written = 0
     for question in result.questions:
@@ -195,8 +196,26 @@ def write_paper(result: PaperResult) -> int:
         )
         written += 1
 
+    # Mark schemes are attached ONLY where their marks reconcile with the
+    # question paper's. A question with no entry here gets no mark scheme file
+    # and `has_markscheme: false` -- a blank slot a student can act on, rather
+    # than another question's scheme presented as this one's.
+    blocks: dict[int, object] = {}
+    ms_stats: dict[str, int] = {}
+    if result.source.ms_path is not None:
+        expected = {q.number: q.marks for q in result.questions}
+        blocks, ms_stats = extract_blocks(result.source.ms_path, expected)
+        for number, block in blocks.items():
+            extract_range(
+                result.source.ms_path,
+                block.pages,
+                paper_dir / "markschemes" / f"q{number}.pdf",
+            )
+            written += 1
+
     manifest = {
         "key": result.source.key,
+        "markscheme_stats": ms_stats,
         "unit": UNIT,
         "subject_code": "WST01",
         "year": result.source.year,
@@ -215,18 +234,20 @@ def write_paper(result: PaperResult) -> int:
                 "marks": q.marks,
                 "qp_pages": list(q.pages),
                 "mark_source": q.mark_source,
-                # Mark schemes are the second half of Phase 1 and are not
-                # attached yet. The key is present so downstream code can rely
-                # on its shape rather than on its absence.
-                "ms_pages": None,
-                "has_markscheme": False,
+                "ms_pages": (
+                    list(blocks[q.number].pages) if q.number in blocks else None
+                ),
+                "ms_extractor": (
+                    blocks[q.number].extractor if q.number in blocks else None
+                ),
+                "has_markscheme": q.number in blocks,
             }
             for q in result.questions
         ],
     }
     paper_dir.mkdir(parents=True, exist_ok=True)
     (paper_dir / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-    return written
+    return written, ms_stats
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -332,6 +353,7 @@ def main() -> int:
     results = [process_paper(source) for source in sources]
 
     written = 0
+    ms_totals: dict[str, int] = {}
     for result in sorted(results, key=lambda r: r.source.key):
         status = "OK  " if result.ok else "FAIL"
         marks = sum(q.marks for q in result.questions)
@@ -342,7 +364,10 @@ def main() -> int:
         for problem in result.problems:
             print(f"         ! {problem}")
         if result.ok and args.execute:
-            written += write_paper(result)
+            count, stats = write_paper(result)
+            written += count
+            for key, value in stats.items():
+                ms_totals[key] = ms_totals.get(key, 0) + value
 
     good = [r for r in results if r.ok]
     total_questions = sum(len(r.questions) for r in good)
@@ -357,6 +382,12 @@ def main() -> int:
     print(f"mark provenance   : {sources_used}")
     if args.execute:
         print(f"segment PDFs      : {written} written to {OUTPUT_DIR}")
+        attached = ms_totals.get("ruled", 0) + ms_totals.get("unruled", 0)
+        print(
+            f"mark schemes      : {attached}/{total_questions} attached "
+            f"({attached * 100 // max(total_questions, 1)}%), "
+            f"{ms_totals.get('rejected', 0)} dropped as unreconciled  {ms_totals}"
+        )
 
     REPORT_PATH.parent.mkdir(parents=True, exist_ok=True)
     REPORT_PATH.write_text(
