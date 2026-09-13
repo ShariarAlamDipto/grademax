@@ -430,3 +430,116 @@ def content_fingerprint(pdf_path: Path) -> str:
     text = re.sub(r"[^A-Za-z0-9]+", "", text)
     text = _SESSION_TOKENS.sub("", text)
     return re.sub(r"\d{4}", "", text)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Phase 2: stems and sub-parts
+# ─────────────────────────────────────────────────────────────────────────────
+
+#: '(a)' / '(b)' opening a line, the printed sub-part label.
+SUBPART_RE = re.compile(r"^\(\s*([a-z])\s*\)")
+
+#: Furniture that is on every page and is never part of a question stem.
+#:
+#: `Leave` and `blank` are listed SEPARATELY and not as the phrase. The words
+#: sit stacked in the right-hand margin box, so the text layer emits them as two
+#: independent lines; matching only `Leave\s*blank` left the pair in 125 of 179
+#: WST01 stems, where they are the first thing a classifier would read.
+_NOISE_RE = re.compile(
+    r"^(?:_{5,}"
+    r"|Question\s+\d{1,2}\s+continued"
+    r"|Leave|blank|Leave\s*blank|DO NOT WRITE IN THIS AREA"
+    r"|Turn over|\*[A-Z0-9]+\*"
+    r"|Mathematics\s*[·.]\s*\d{4}.*"        # our own watermark
+    r"|GradeMax"
+    r"|\(\s*Total\s+\d+\s+marks?\s*\)"
+    r"|Total\s+for\s+Question\s+\d+.*"
+    r"|\d{1,3}"                              # bare page numbers
+    r")\s*$",
+    re.I,
+)
+
+
+@dataclass(frozen=True)
+class SubPart:
+    label: str  # 'a'
+    marks: int | None
+
+
+def _body_lines(doc: fitz.Document, pages: tuple[int, int]) -> list[Line]:
+    lo, hi = pages
+    out: list[Line] = []
+    for index in range(lo, min(hi + 1, doc.page_count)):
+        out.extend(page_lines(doc[index]))
+    return out
+
+
+def extract_stem(doc: fitz.Document, pages: tuple[int, int], question: int) -> str:
+    """
+    The readable text of a question, for classifier input only.
+
+    The workbook prints the original PDF pages, never this text, so cosmetic
+    residue (stray Symbol-font glyphs) is left alone rather than scrubbed at the
+    risk of eating a real character.
+    """
+    kept: list[str] = []
+    for line in _body_lines(doc, pages):
+        text = line.text.strip()
+        if not text or _NOISE_RE.match(text):
+            continue
+        # Drop the leading question number on the opening line: '1.\t(a) Find...'
+        text = re.sub(rf"^{question}\s*\.\s*", "", text)
+        if text:
+            kept.append(text)
+    return re.sub(r"\s+", " ", " ".join(kept)).strip()
+
+
+def extract_subparts(doc: fitz.Document, pages: tuple[int, int]) -> list[SubPart]:
+    """
+    Sub-part labels and their marks, paired the way the page reads.
+
+    Each bold right-margin tally closes the most recently opened sub-part, which
+    is exactly how a candidate reads the paper. A question with no printed
+    sub-parts returns an empty list rather than one synthetic part.
+    """
+    events: list[tuple[float, float, str, object]] = []
+    lo, hi = pages
+
+    for index in range(lo, min(hi + 1, doc.page_count)):
+        for line in page_lines(doc[index]):
+            text = line.text.strip()
+            match = SUBPART_RE.match(text)
+            if match and line.x0 < TALLY_MIN_X:
+                events.append((index, line.y0, "part", match.group(1)))
+            if line.x0 > TALLY_MIN_X and line.y0 < TALLY_MAX_Y and line.bold:
+                tally = TALLY_RE.match(text)
+                if tally:
+                    events.append((index, line.y0, "marks", int(tally.group(1))))
+
+    events.sort(key=lambda e: (e[0], e[1]))
+
+    parts: list[list] = []
+    for _, _, kind, value in events:
+        if kind == "part":
+            if not any(p[0] == value for p in parts):
+                parts.append([value, None])
+        elif parts and parts[-1][1] is None:
+            parts[-1][1] = value
+
+    return [SubPart(label=label, marks=marks) for label, marks in parts]
+
+
+def difficulty_for(marks: int, easy_max: int, medium_max: int) -> str:
+    """
+    Band a question by its mark tariff.
+
+    Bands are per-subject and must be derived from that subject's own measured
+    distribution -- S1 questions run roughly twice the tariff of P4's, so one
+    shared set of cut points would call almost every S1 question hard or almost
+    every P4 question easy.
+    """
+    if marks <= easy_max:
+        return "easy"
+    if marks <= medium_max:
+        return "medium"
+    return "hard"
