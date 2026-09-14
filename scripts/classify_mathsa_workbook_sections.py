@@ -39,6 +39,34 @@ agreement signal meaningless. This Qwen was checked for the failure the older
 one had -- emitting a <think> block that ate the token budget before reaching
 the JSON -- and does not do it; it returns pretty-printed JSON that parses.
 
+THE MARK-SCHEME FALLBACK WAS TRIED AND REJECTED -- measured, not assumed
+------------------------------------------------------------------------
+When the vision quota is spent, the four 2019 Jan image-only questions have no
+stem to classify. Their MARK SCHEMES do have text, and a mark scheme states the
+method outright, so reading those instead looked like the obvious way to avoid
+classifying an empty string.
+
+It was built, run, and checked against three questions whose rendered pages had
+already been read by hand during Phase 1. It got roughly ONE of four right:
+
+  2019_jan_1H:3   biased spinner, estimate times it lands on yellow (6.3)
+                  -> returned 1.6 Percentages
+  2019_jan_1HR:7  scale model of two water towers (4.11)
+                  -> returned 2.6 Simultaneous equations, lifted from a
+                     NEIGHBOURING block on the same page
+  2019_jan_2H:10  -> returned 3.3 from a block the page prints as Q9
+
+The cause is structural: these are Format B whole-page attachments, so the page
+carries two or three questions and the numbers printed on it are offset from
+ours. Pinning the right block by its mark total does not work, because several
+blocks on a page share a total -- the same lesson already recorded for the S1/P4
+mark schemes, that block matching is not evidence the block is right.
+
+Vision, by contrast, got its one completed case right (2019_jan_1HR:10, area
+between concentric semicircles -> 4.9 Mensuration). So the route was removed and
+those questions are left UNCLASSIFIED until the quota resets. A wrong section is
+worse than a missing one: it looks reviewed and it is not.
+
 Every cached result records which model answered, and the run prints the
 breakdown. That is not decoration: an earlier version fell back silently from a
 dead primary model and classified 180 questions before anyone noticed.
@@ -400,7 +428,25 @@ def call_gemini(model: str, parts: list[dict]) -> str | None:
             continue
 
         if response.status_code == 429 or response.status_code >= 500:
-            time.sleep(6 * (attempt + 1))  # free tier is per-minute; wait it out
+            # A 429 body states how long to wait ("Please retry in 31.2s") and
+            # the free tier's 20-requests-per-minute window is longer than a
+            # short fixed backoff, so 6/12/18/24s never cleared it and all four
+            # vision questions failed every run. Honour the server's own number
+            # when it gives one, with a floor that actually crosses the window.
+            if response.status_code == 429 and "free_tier_requests" in response.text:
+                # The daily allowance, not a per-minute burst. Waiting cannot
+                # clear it, so stop trying for the rest of the run.
+                global _VISION_QUOTA_SPENT
+                _VISION_QUOTA_SPENT = True
+                print("  ! Gemini free-tier vision quota spent -- skipping vision")
+                return None
+            delay = 6 * (attempt + 1)
+            stated = re.search(r"retry in ([\d.]+)s", response.text)
+            if stated:
+                delay = max(delay, float(stated.group(1)) + 2)
+            elif response.status_code == 429:
+                delay = max(delay, 35)
+            time.sleep(delay)
             continue
         if response.status_code != 200:
             return None
@@ -542,7 +588,18 @@ def classify_text_batch(batch: list[dict], provider: str = "gemini") -> dict[str
     return results
 
 
+# Gemini's free tier caps vision at 20 requests PER DAY, so once it is spent no
+# amount of backoff clears it -- the earlier code burned 4 retries x 35s on each
+# of four questions before giving up. Latched once, then every later question
+# goes straight to the mark-scheme route.
+_VISION_QUOTA_SPENT = False
+
+
 def classify_vision(question: dict) -> dict | None:
+    global _VISION_QUOTA_SPENT
+    if _VISION_QUOTA_SPENT:
+        return None
+
     image = render_first_page(Path(question["qp_pdf"]))
 
     raw = call_gemini(
@@ -764,8 +821,11 @@ def main() -> int:
         key = question_id(question)
         result = classify_vision(question)
         if result is None:
+            # Left UNCLASSIFIED on purpose. A mark-scheme-text fallback was
+            # built and measured here and it is not good enough -- see the
+            # module docstring. Re-run once the daily vision quota resets.
             failed += 1
-            print(f"  ! vision failed for {key}")
+            print(f"  ! vision failed for {key} -- left unclassified")
         else:
             cache[key] = result
             done += 1
