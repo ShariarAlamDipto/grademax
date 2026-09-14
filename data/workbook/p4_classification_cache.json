@@ -1,0 +1,887 @@
+{
+  "P4.2018_specimen.Q001": {
+    "id": "P4.2018_specimen.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q002": {
+    "id": "P4.2018_specimen.Q002",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q003": {
+    "id": "P4.2018_specimen.Q003",
+    "primary": "6.2",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q004": {
+    "id": "P4.2018_specimen.Q004",
+    "primary": "5.2",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q005": {
+    "id": "P4.2018_specimen.Q005",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q006": {
+    "id": "P4.2018_specimen.Q006",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q007": {
+    "id": "P4.2018_specimen.Q007",
+    "primary": "3.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q008": {
+    "id": "P4.2018_specimen.Q008",
+    "primary": "6.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2018_specimen.Q009": {
+    "id": "P4.2018_specimen.Q009",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q001": {
+    "id": "P4.2020_may-jun.Q001",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q002": {
+    "id": "P4.2020_may-jun.Q002",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q003": {
+    "id": "P4.2020_may-jun.Q003",
+    "primary": "6.4",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q004": {
+    "id": "P4.2020_may-jun.Q004",
+    "primary": "5.2",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q005": {
+    "id": "P4.2020_may-jun.Q005",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q006": {
+    "id": "P4.2020_may-jun.Q006",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q007": {
+    "id": "P4.2020_may-jun.Q007",
+    "primary": "6.1",
+    "secondary": [
+      "6.2"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q008": {
+    "id": "P4.2020_may-jun.Q008",
+    "primary": "7.2",
+    "secondary": [
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2020_may-jun.Q009": {
+    "id": "P4.2020_may-jun.Q009",
+    "primary": "6.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q001": {
+    "id": "P4.2021_jan.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q002": {
+    "id": "P4.2021_jan.Q002",
+    "primary": "7.1",
+    "secondary": [
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q003": {
+    "id": "P4.2021_jan.Q003",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q004": {
+    "id": "P4.2021_jan.Q004",
+    "primary": "3.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q005": {
+    "id": "P4.2021_jan.Q005",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q006": {
+    "id": "P4.2021_jan.Q006",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q007": {
+    "id": "P4.2021_jan.Q007",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q008": {
+    "id": "P4.2021_jan.Q008",
+    "primary": "7.2",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q009": {
+    "id": "P4.2021_jan.Q009",
+    "primary": "6.4",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_jan.Q010": {
+    "id": "P4.2021_jan.Q010",
+    "primary": "2.1",
+    "secondary": [
+      "6.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q001": {
+    "id": "P4.2021_may-jun.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q002": {
+    "id": "P4.2021_may-jun.Q002",
+    "primary": "6.4",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q003": {
+    "id": "P4.2021_may-jun.Q003",
+    "primary": "5.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q004": {
+    "id": "P4.2021_may-jun.Q004",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q005": {
+    "id": "P4.2021_may-jun.Q005",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q006": {
+    "id": "P4.2021_may-jun.Q006",
+    "primary": "6.5",
+    "secondary": [
+      "3.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q007": {
+    "id": "P4.2021_may-jun.Q007",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q008": {
+    "id": "P4.2021_may-jun.Q008",
+    "primary": "6.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_may-jun.Q009": {
+    "id": "P4.2021_may-jun.Q009",
+    "primary": "1.1",
+    "secondary": [
+      "7.2"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q001": {
+    "id": "P4.2021_oct-nov.Q001",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q002": {
+    "id": "P4.2021_oct-nov.Q002",
+    "primary": "6.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q003": {
+    "id": "P4.2021_oct-nov.Q003",
+    "primary": "2.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q004": {
+    "id": "P4.2021_oct-nov.Q004",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q005": {
+    "id": "P4.2021_oct-nov.Q005",
+    "primary": "5.2",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q006": {
+    "id": "P4.2021_oct-nov.Q006",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q007": {
+    "id": "P4.2021_oct-nov.Q007",
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q008": {
+    "id": "P4.2021_oct-nov.Q008",
+    "primary": "6.4",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q009": {
+    "id": "P4.2021_oct-nov.Q009",
+    "primary": "6.3",
+    "secondary": [
+      "5.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2021_oct-nov.Q010": {
+    "id": "P4.2021_oct-nov.Q010",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q001": {
+    "id": "P4.2022_jan.Q001",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q002": {
+    "id": "P4.2022_jan.Q002",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q003": {
+    "id": "P4.2022_jan.Q003",
+    "primary": "3.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q004": {
+    "id": "P4.2022_jan.Q004",
+    "primary": "5.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q005": {
+    "id": "P4.2022_jan.Q005",
+    "primary": "6.5",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q006": {
+    "id": "P4.2022_jan.Q006",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q007": {
+    "id": "P4.2022_jan.Q007",
+    "primary": "6.4",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q008": {
+    "id": "P4.2022_jan.Q008",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_jan.Q009": {
+    "id": "P4.2022_jan.Q009",
+    "primary": "6.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q001": {
+    "id": "P4.2022_may-jun.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q002": {
+    "id": "P4.2022_may-jun.Q002",
+    "primary": "6.3",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q003": {
+    "id": "P4.2022_may-jun.Q003",
+    "primary": "5.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q004": {
+    "id": "P4.2022_may-jun.Q004",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q005": {
+    "id": "P4.2022_may-jun.Q005",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q006": {
+    "id": "P4.2022_may-jun.Q006",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q007": {
+    "id": "P4.2022_may-jun.Q007",
+    "primary": "5.2",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q008": {
+    "id": "P4.2022_may-jun.Q008",
+    "primary": "6.4",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_may-jun.Q009": {
+    "id": "P4.2022_may-jun.Q009",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q001": {
+    "id": "P4.2022_oct-nov.Q001",
+    "primary": "3.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q002": {
+    "id": "P4.2022_oct-nov.Q002",
+    "primary": "2.1",
+    "secondary": [
+      "6.2"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q003": {
+    "id": "P4.2022_oct-nov.Q003",
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q004": {
+    "id": "P4.2022_oct-nov.Q004",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q005": {
+    "id": "P4.2022_oct-nov.Q005",
+    "primary": "6.4",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q006": {
+    "id": "P4.2022_oct-nov.Q006",
+    "primary": "5.2",
+    "secondary": [
+      "3.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q007": {
+    "id": "P4.2022_oct-nov.Q007",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q008": {
+    "id": "P4.2022_oct-nov.Q008",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q009": {
+    "id": "P4.2022_oct-nov.Q009",
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q010": {
+    "id": "P4.2022_oct-nov.Q010",
+    "primary": "6.3",
+    "secondary": [
+      "5.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2022_oct-nov.Q011": {
+    "id": "P4.2022_oct-nov.Q011",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q001": {
+    "id": "P4.2023_jan.Q001",
+    "primary": "4.1",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q002": {
+    "id": "P4.2023_jan.Q002",
+    "primary": "3.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q003": {
+    "id": "P4.2023_jan.Q003",
+    "primary": "6.4",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q004": {
+    "id": "P4.2023_jan.Q004",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q005": {
+    "id": "P4.2023_jan.Q005",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q006": {
+    "id": "P4.2023_jan.Q006",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q007": {
+    "id": "P4.2023_jan.Q007",
+    "primary": "6.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q008": {
+    "id": "P4.2023_jan.Q008",
+    "primary": "5.2",
+    "secondary": [
+      "6.5"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_jan.Q009": {
+    "id": "P4.2023_jan.Q009",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q001": {
+    "id": "P4.2023_oct-nov.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q002": {
+    "id": "P4.2023_oct-nov.Q002",
+    "primary": "5.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q003": {
+    "id": "P4.2023_oct-nov.Q003",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q004": {
+    "id": "P4.2023_oct-nov.Q004",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q005": {
+    "id": "P4.2023_oct-nov.Q005",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q006": {
+    "id": "P4.2023_oct-nov.Q006",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q007": {
+    "id": "P4.2023_oct-nov.Q007",
+    "primary": "6.3",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2023_oct-nov.Q008": {
+    "id": "P4.2023_oct-nov.Q008",
+    "primary": "6.4",
+    "secondary": [
+      "5.2"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q001": {
+    "id": "P4.2024_jan.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q002": {
+    "id": "P4.2024_jan.Q002",
+    "primary": "6.1",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q003": {
+    "id": "P4.2024_jan.Q003",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q004": {
+    "id": "P4.2024_jan.Q004",
+    "primary": "5.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q005": {
+    "id": "P4.2024_jan.Q005",
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q006": {
+    "id": "P4.2024_jan.Q006",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q007": {
+    "id": "P4.2024_jan.Q007",
+    "primary": "6.4",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q008": {
+    "id": "P4.2024_jan.Q008",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_jan.Q009": {
+    "id": "P4.2024_jan.Q009",
+    "primary": "3.1",
+    "secondary": [
+      "5.2"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q001": {
+    "id": "P4.2024_may-jun.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q002": {
+    "id": "P4.2024_may-jun.Q002",
+    "primary": "7.1",
+    "secondary": [
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q003": {
+    "id": "P4.2024_may-jun.Q003",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q004": {
+    "id": "P4.2024_may-jun.Q004",
+    "primary": "5.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q005": {
+    "id": "P4.2024_may-jun.Q005",
+    "primary": "6.5",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q006": {
+    "id": "P4.2024_may-jun.Q006",
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q007": {
+    "id": "P4.2024_may-jun.Q007",
+    "primary": "6.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q008": {
+    "id": "P4.2024_may-jun.Q008",
+    "primary": "4.1",
+    "secondary": [
+      "1.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_may-jun.Q009": {
+    "id": "P4.2024_may-jun.Q009",
+    "primary": "6.4",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q001": {
+    "id": "P4.2024_oct-nov.Q001",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q002": {
+    "id": "P4.2024_oct-nov.Q002",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q003": {
+    "id": "P4.2024_oct-nov.Q003",
+    "primary": "5.2",
+    "secondary": [
+      "3.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q004": {
+    "id": "P4.2024_oct-nov.Q004",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q005": {
+    "id": "P4.2024_oct-nov.Q005",
+    "primary": "5.3",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q006": {
+    "id": "P4.2024_oct-nov.Q006",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q007": {
+    "id": "P4.2024_oct-nov.Q007",
+    "primary": "6.4",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q008": {
+    "id": "P4.2024_oct-nov.Q008",
+    "primary": "7.2",
+    "secondary": [
+      "7.1",
+      "7.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q009": {
+    "id": "P4.2024_oct-nov.Q009",
+    "primary": "6.3",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2024_oct-nov.Q010": {
+    "id": "P4.2024_oct-nov.Q010",
+    "primary": "6.5",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q001": {
+    "id": "P4.2025_jan.Q001",
+    "primary": "6.4",
+    "secondary": [
+      "6.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q002": {
+    "id": "P4.2025_jan.Q002",
+    "primary": "5.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q003": {
+    "id": "P4.2025_jan.Q003",
+    "primary": "4.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q004": {
+    "id": "P4.2025_jan.Q004",
+    "primary": "6.3",
+    "secondary": [
+      "5.3"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q005": {
+    "id": "P4.2025_jan.Q005",
+    "primary": "6.2",
+    "secondary": [
+      "2.1"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q006": {
+    "id": "P4.2025_jan.Q006",
+    "primary": "1.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q007": {
+    "id": "P4.2025_jan.Q007",
+    "primary": "6.1",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q008": {
+    "id": "P4.2025_jan.Q008",
+    "primary": "7.3",
+    "secondary": [
+      "7.1",
+      "7.2"
+    ],
+    "model": "openai/gpt-oss-120b"
+  },
+  "P4.2025_jan.Q009": {
+    "id": "P4.2025_jan.Q009",
+    "primary": "5.2",
+    "secondary": [],
+    "model": "openai/gpt-oss-120b"
+  }
+}

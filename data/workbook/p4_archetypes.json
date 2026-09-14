@@ -1,0 +1,740 @@
+[
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q006"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "contradiction even prove algebra",
+    "size": 3,
+    "slugs": [
+      "P4.2020_may-jun.Q001",
+      "P4.2021_oct-nov.Q010",
+      "P4.2025_jan.Q006"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_jan.Q003"
+    ],
+    "min_marks": 2
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_may-jun.Q009"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_jan.Q006"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_may-jun.Q009"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_oct-nov.Q008"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_jan.Q009"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_oct-nov.Q004"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "1.1",
+    "label": "contradiction has curve prove",
+    "size": 2,
+    "slugs": [
+      "P4.2024_jan.Q008",
+      "P4.2024_oct-nov.Q002"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_jan.Q010"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_oct-nov.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_oct-nov.Q002"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q007"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_jan.Q004"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "3.1",
+    "label": "parametric found constants curve",
+    "size": 3,
+    "slugs": [
+      "P4.2022_jan.Q003",
+      "P4.2022_oct-nov.Q001",
+      "P4.2024_jan.Q009"
+    ],
+    "min_marks": 3
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_jan.Q002"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q001"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.1",
+    "label": "binomial ascending expansion powers",
+    "size": 7,
+    "slugs": [
+      "P4.2020_may-jun.Q002",
+      "P4.2021_may-jun.Q001",
+      "P4.2022_jan.Q002",
+      "P4.2023_jan.Q001",
+      "P4.2024_jan.Q001",
+      "P4.2024_oct-nov.Q001",
+      "P4.2025_jan.Q003"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "4.1",
+    "label": "binomial coefficient ascending expansion",
+    "size": 2,
+    "slugs": [
+      "P4.2021_jan.Q001",
+      "P4.2021_oct-nov.Q004"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_may-jun.Q001"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.1",
+    "label": "range binomial ascending four",
+    "size": 2,
+    "slugs": [
+      "P4.2022_oct-nov.Q004",
+      "P4.2023_oct-nov.Q001"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_may-jun.Q001"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_may-jun.Q008"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q002"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2020_may-jun.Q006"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.1",
+    "label": "curve equation point has",
+    "size": 6,
+    "slugs": [
+      "P4.2021_jan.Q006",
+      "P4.2021_may-jun.Q005",
+      "P4.2021_oct-nov.Q001",
+      "P4.2022_jan.Q001",
+      "P4.2024_may-jun.Q003",
+      "P4.2024_oct-nov.Q004"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "5.1",
+    "label": "equation curve relying calculator",
+    "size": 3,
+    "slugs": [
+      "P4.2022_may-jun.Q004",
+      "P4.2023_jan.Q005",
+      "P4.2024_jan.Q003"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_oct-nov.Q011"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_oct-nov.Q005"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2025_jan.Q002"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q004"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "5.2",
+    "label": "parametric tangent curve equations",
+    "size": 4,
+    "slugs": [
+      "P4.2020_may-jun.Q004",
+      "P4.2022_may-jun.Q007",
+      "P4.2022_oct-nov.Q006",
+      "P4.2025_jan.Q009"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_oct-nov.Q005"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_jan.Q008"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_oct-nov.Q003"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "5.3",
+    "label": "constant rate when flows",
+    "size": 2,
+    "slugs": [
+      "P4.2021_may-jun.Q003",
+      "P4.2024_oct-nov.Q005"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "5.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_jan.Q004"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "5.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_may-jun.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "5.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_oct-nov.Q002"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_jan.Q004"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "5.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_may-jun.Q004"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q005"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "6.1",
+    "label": "axis area bounded sketch",
+    "size": 3,
+    "slugs": [
+      "P4.2020_may-jun.Q005",
+      "P4.2021_jan.Q007",
+      "P4.2021_oct-nov.Q006"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "6.1",
+    "label": "relying entirely calculator solutions",
+    "size": 3,
+    "slugs": [
+      "P4.2020_may-jun.Q007",
+      "P4.2021_may-jun.Q004",
+      "P4.2025_jan.Q007"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "6.1",
+    "label": "calculator solutions stages acceptable",
+    "size": 3,
+    "slugs": [
+      "P4.2021_jan.Q005",
+      "P4.2022_may-jun.Q005",
+      "P4.2023_oct-nov.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "6.1",
+    "label": "constant arbitrary found substitution",
+    "size": 2,
+    "slugs": [
+      "P4.2022_oct-nov.Q007",
+      "P4.2024_oct-nov.Q006"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_jan.Q004"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_jan.Q002"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q003"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2025_jan.Q005"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q008"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2020_may-jun.Q009"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_may-jun.Q008"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.3",
+    "label": "particular equation differential solution",
+    "size": 2,
+    "slugs": [
+      "P4.2021_oct-nov.Q002",
+      "P4.2022_jan.Q009"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_oct-nov.Q009"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_may-jun.Q002"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_oct-nov.Q010"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "6.3",
+    "label": "radius formula rate when",
+    "size": 2,
+    "slugs": [
+      "P4.2023_jan.Q007",
+      "P4.2025_jan.Q004"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_oct-nov.Q007"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_jan.Q005"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_may-jun.Q007"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "6.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2024_oct-nov.Q009"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.4",
+    "label": "axis solid about volume",
+    "size": 10,
+    "slugs": [
+      "P4.2020_may-jun.Q003",
+      "P4.2021_jan.Q009",
+      "P4.2021_may-jun.Q002",
+      "P4.2021_oct-nov.Q008",
+      "P4.2022_oct-nov.Q005",
+      "P4.2023_oct-nov.Q008",
+      "P4.2024_jan.Q007",
+      "P4.2024_may-jun.Q009",
+      "P4.2024_oct-nov.Q007",
+      "P4.2025_jan.Q001"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "6.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_jan.Q007"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "6.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_may-jun.Q008"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2023_jan.Q003"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "6.5",
+    "label": "equations bounded sketch curve",
+    "size": 4,
+    "slugs": [
+      "P4.2021_may-jun.Q006",
+      "P4.2022_jan.Q005",
+      "P4.2024_may-jun.Q005",
+      "P4.2024_oct-nov.Q010"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "7.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2021_jan.Q002"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "7.1",
+    "label": "vector possible origin fixed",
+    "size": 2,
+    "slugs": [
+      "P4.2024_may-jun.Q002",
+      "P4.2024_may-jun.Q006"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "7.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2018_specimen.Q009"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "7.2",
+    "label": "point vector origin fixed",
+    "size": 8,
+    "slugs": [
+      "P4.2020_may-jun.Q008",
+      "P4.2021_may-jun.Q007",
+      "P4.2021_oct-nov.Q007",
+      "P4.2022_may-jun.Q006",
+      "P4.2023_jan.Q006",
+      "P4.2023_oct-nov.Q006",
+      "P4.2024_jan.Q006",
+      "P4.2024_oct-nov.Q008"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "7.2",
+    "label": "scalar lines parameters origin",
+    "size": 2,
+    "slugs": [
+      "P4.2021_jan.Q008",
+      "P4.2022_oct-nov.Q009"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "7.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_jan.Q008"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "7.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2022_oct-nov.Q003"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "7.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P4.2025_jan.Q008"
+    ],
+    "min_marks": 12
+  }
+]
