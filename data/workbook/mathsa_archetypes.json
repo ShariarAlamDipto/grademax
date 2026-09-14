@@ -1,0 +1,6332 @@
+[
+  {
+    "section": "1.1",
+    "label": "prime factorisation",
+    "size": 12,
+    "question_ids": [
+      "2018_may-jun_1H:8",
+      "2019_jan_2H:6",
+      "2019_may-jun_2HR:8",
+      "2022_jan_1HR:6",
+      "2022_may-jun_1H:3",
+      "2022_may-jun_2HR:2",
+      "2023_jan_2HR:7",
+      "2023_may-jun_1H:8",
+      "2023_may-jun_1HR:1",
+      "2024_may-jun_1HR:11",
+      "2024_may-jun_2HR:1",
+      "2025_may-jun_2HR:2"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "lowest common multiple",
+    "size": 2,
+    "question_ids": [
+      "2022_jan_2H:7",
+      "2025_may-jun_1HR:1"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "sum of multiples of 3",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:23"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "quadratic expression prime test",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:5"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "mean range integers",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:1"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "prime factors to make square",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:5"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "list integers in interval",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:1"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "integer sum from expression",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:17"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "hcf and simplify product",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:12"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "hcf of two sets",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:7"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "highest common factor calculation",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:3"
+    ]
+  },
+  {
+    "section": "1.1",
+    "label": "solve for missing integer",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:8"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "fraction division simplification",
+    "size": 2,
+    "question_ids": [
+      "2019_may-jun_1H:1",
+      "2023_jan_2H:1"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "recurring decimal to fraction",
+    "size": 2,
+    "question_ids": [
+      "2019_may-jun_1H:15",
+      "2025_may-jun_1HR:16"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "compare fractions inequality",
+    "size": 2,
+    "question_ids": [
+      "2023_may-jun_2H:1",
+      "2024_oct-nov_2H:1"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "income from fractional parts",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:13"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "prove fraction equality",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:4"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "simplify fraction sum",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:1"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "km per hour to metres per second",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:8"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "fraction subtraction to mixed number",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:17"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "divide mixed numbers",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:2"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "subtract mixed numbers",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:4"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "multiply fractions simplify",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:23"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "decimal to fraction conversion",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:13"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "fraction to integer sum",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:17"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "prove inequality between fractions",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:4"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "simplify nested fractions",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:26"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "compare mixed numbers",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:3"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "add fractions simplify",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:16"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "order fractions",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:5"
+    ]
+  },
+  {
+    "section": "1.2",
+    "label": "midpoint of segment",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:1"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "convert kmh to ms",
+    "size": 6,
+    "question_ids": [
+      "2018_may-jun_1HR:11",
+      "2019_may-jun_1HR:10",
+      "2022_may-jun_2H:7",
+      "2023_jan_2H:2",
+      "2024_may-jun_2H:6",
+      "2025_may-jun_1HR:7"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "recurring decimal to fraction",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:18"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "measurement bounds nearest 0.5",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:4"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "average speed from distance",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:3"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "fraction to decimal conversion",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:17"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "average speed distance time",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:3"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "speed time distance calculation",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:3"
+    ]
+  },
+  {
+    "section": "1.3",
+    "label": "density volume calculation",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:7"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "solve index equation",
+    "size": 4,
+    "question_ids": [
+      "2018_may-jun_2H:10",
+      "2023_jan_1H:12",
+      "2023_oct-nov_2H:12",
+      "2024_oct-nov_2H:23"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "rewrite expression as power form",
+    "size": 2,
+    "question_ids": [
+      "2019_jan_1HR:18",
+      "2025_oct-nov_1H:23"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "prime factorisation of expression",
+    "size": 2,
+    "question_ids": [
+      "2019_jan_1HR:9",
+      "2019_may-jun_1H:10"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "laws of indices simplification",
+    "size": 2,
+    "question_ids": [
+      "2022_may-jun_1H:9",
+      "2025_oct-nov_2H:13"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "simplify indices expression",
+    "size": 2,
+    "question_ids": [
+      "2023_jan_2HR:1",
+      "2023_may-jun_1HR:6"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "simplify radical to integer",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:17"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "rationalise denominator surd",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:16"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "solve variables using powers",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:14"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "standard form and index simplification",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:7"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "raise scientific notation to power",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:20"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "rewrite expression as fraction plus two",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:16"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "simplify fractional exponents",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:2"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "prime factorisation of scientific notation",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:7"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "apply index laws",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:1"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "cube number standard form",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:12"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "solve exponent equation",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:6"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "numeric simplification with powers",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:16"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "prove numeric power equality",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:6"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "express surd in a+b\u221a2 form",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:17"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "index laws and factoring",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:9"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "simplify surd expression",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:11"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "surd to a+sqrt a form",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:16"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "exponent zero solve variable",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:7"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "simplify numeric powers expression",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:23"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "prove power identity",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:4"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "simplify surd to fraction",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:15"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "evaluate powers and simplify",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:6"
+    ]
+  },
+  {
+    "section": "1.4",
+    "label": "numeric expression integer difference",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:17"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "set complement union",
+    "size": 3,
+    "question_ids": [
+      "2019_may-jun_2H:3",
+      "2022_may-jun_2HR:4",
+      "2024_may-jun_1H:7"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram set counts",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2HR:15",
+      "2022_jan_1HR:17"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram find intersection",
+    "size": 2,
+    "question_ids": [
+      "2019_jan_2H:4",
+      "2024_oct-nov_2H:21"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn set operations probability",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:4"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram probability",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:16"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "set intersection and subset selection",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:14"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram shade region",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:13"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "list set operations",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:3"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "three\u2011set venn diagram counts",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:16"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram completion",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:7"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram set counts",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:16"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram set operations",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:3"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram fill numbers",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:20"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram missing element",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:16"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram set elements",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:2"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "list set elements",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:1"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "set operations and reasoning",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:4"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "list union and complement",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:5"
+    ]
+  },
+  {
+    "section": "1.5",
+    "label": "venn diagram probability",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:20"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest calculation",
+    "size": 5,
+    "question_ids": [
+      "2022_jan_2HR:5",
+      "2022_may-jun_2H:9",
+      "2024_may-jun_1HR:5",
+      "2024_may-jun_2H:9",
+      "2024_oct-nov_2H:9"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse percentage original price",
+    "size": 2,
+    "question_ids": [
+      "2024_may-jun_2HR:8",
+      "2025_may-jun_1H:5"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage depreciation and reverse increase",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:7"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase reverse",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:12"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "unknown percentage increase",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:3"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "discounted price total revenue",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:3"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest total",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:6"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase price",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest future value",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:7"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage share of total",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:13"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase calculation",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest total interest",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:9"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound depreciation three years",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:8"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase and reverse",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:6"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase then decrease",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:11"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage profit reverse increase",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:5"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound depreciation percentage",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:10"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse percentage total population",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:8"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage profit",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:6"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound vs simple interest difference",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:7"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest find rate",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:11"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage profit mixed items",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase reverse",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:8"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "choose larger percentage discount",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:2"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage of total cost",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:13"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase and depreciation",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:6"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage of italian/spanish of french/german",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound depreciation over years",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:8"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse percentage increase",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:8"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase and reverse depreciation",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:6"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "equal price after different percentage discounts",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest simple interest difference",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:8"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage area reduction",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:13"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest reverse percentage",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:9"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage profit from cost and sale",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:3"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound depreciation calculation",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:9"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound percentage growth",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:8"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest rate from interest",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:13"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase reverse percentage",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:6"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage profit calculation",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:3"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compare original prices after discount",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:6"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound depreciation calculation",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:7"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "combined savings reverse percentage",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:14"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse percentage original amount",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse percentage original",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound percentage reverse",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:13"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage profit with bounds",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:2"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound interest difference calculation",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:11"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "compound percentage growth",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:7"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse compound depreciation rate",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:12"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage profit",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:4"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse percentage price",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:9"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "reverse percentage original value",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:9"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage of items weight",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:3"
+    ]
+  },
+  {
+    "section": "1.6",
+    "label": "percentage increase depreciation",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:5"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "pressure force area",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2HR:2",
+      "2019_may-jun_1HR:12"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio children and gender",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:2"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio share and fraction",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:4"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "largest minus smallest share",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:2"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "scale drawing proportion",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:8"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "speed time distance",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:5"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "combined mean of groups",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:11"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio proportion instrument fraction",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:2"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "average speed from distance and time",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:5"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "scale factor length conversion",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:1"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio red blue to achieve probability",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:3"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "unit conversion calculations",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:8"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "age ratio find unknown",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:11"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio games won lost difference",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:7"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio conversion standard form",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:9"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio share difference",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:2"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "overall average speed from segments",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:7"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "combined direct inverse proportion",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:20"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio with percentages cards",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:8"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "combined ratio total items",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:5"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio share difference find total",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:5"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio find third quantity",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:1"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio coins find difference",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:5"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "speed unit conversion",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:9"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "minimum common multiple cost",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:2"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "compound ratio ingredient weights",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:5"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "profit calculation using ratio",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:3"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio proportion then percentage",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:8"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "find missing number pattern",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:7"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio share after transfer",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:6"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "segment division ratio expression",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:18"
+    ]
+  },
+  {
+    "section": "1.7",
+    "label": "ratio share with fractional donation",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:6"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "upper bound side length",
+    "size": 8,
+    "question_ids": [
+      "2018_may-jun_2HR:19",
+      "2019_may-jun_1H:11",
+      "2019_may-jun_2HR:20",
+      "2021_oct-nov_1H:13",
+      "2022_jan_1HR:22",
+      "2022_may-jun_2H:18",
+      "2023_jan_1HR:14",
+      "2023_oct-nov_2H:17"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "lower bound subtraction",
+    "size": 3,
+    "question_ids": [
+      "2018_may-jun_2H:15",
+      "2022_jan_1H:18",
+      "2024_may-jun_2H:19"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "bounds from significant figures",
+    "size": 2,
+    "question_ids": [
+      "2019_jan_2H:18",
+      "2019_jan_2HR:17"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "bounds for derived quantity",
+    "size": 2,
+    "question_ids": [
+      "2023_jan_1H:19",
+      "2025_oct-nov_2H:24"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "bounds compare average speeds",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:18"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "upper lower bounds of rounded measurement",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:5"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "maximum cost variation due to bounds",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:18"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "upper bound distance",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:19"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "upper lower bounds",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:2"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "upper lower bound",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:2"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "area bounds degree accuracy",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:22"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "estimate by rounding to 1sf",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:2"
+    ]
+  },
+  {
+    "section": "1.8",
+    "label": "write bounds for measured quantity",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:7"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "standard form conversion",
+    "size": 8,
+    "question_ids": [
+      "2018_may-jun_1H:5",
+      "2018_may-jun_1HR:8",
+      "2019_may-jun_2HR:9",
+      "2022_may-jun_1H:8",
+      "2023_may-jun_1HR:8",
+      "2023_may-jun_2H:6",
+      "2024_may-jun_2HR:9",
+      "2025_may-jun_1H:8"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "convert to/from standard form",
+    "size": 3,
+    "question_ids": [
+      "2022_jan_1HR:8",
+      "2023_jan_1H:9",
+      "2025_oct-nov_2H:8"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "convert to/from standard form",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:7"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "standard form multiplication",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:8"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "difference per capita spending",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:10"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "standard form conversion and difference",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:9"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "scientific notation arithmetic operations",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:7"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "standard form conversion",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:9"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "standard form conversion",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:9"
+    ]
+  },
+  {
+    "section": "1.9",
+    "label": "numeric calculation standard form",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:14"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "expand and simplify polynomial",
+    "size": 21,
+    "question_ids": [
+      "2018_may-jun_1H:11",
+      "2018_may-jun_1HR:14",
+      "2018_may-jun_2HR:4",
+      "2019_may-jun_1HR:9",
+      "2019_may-jun_2HR:14",
+      "2021_oct-nov_2H:12",
+      "2022_jan_1H:13",
+      "2022_jan_1HR:12",
+      "2022_jan_2H:1",
+      "2022_may-jun_1HR:16",
+      "2022_may-jun_2H:14",
+      "2023_jan_1H:13",
+      "2023_jan_2HR:12",
+      "2023_may-jun_1HR:23",
+      "2023_may-jun_1HR:7",
+      "2023_may-jun_2H:15",
+      "2023_oct-nov_2H:16",
+      "2024_may-jun_1H:10",
+      "2024_may-jun_1HR:14",
+      "2025_may-jun_2H:12",
+      "2025_oct-nov_1H:14"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "complete square quadratic",
+    "size": 8,
+    "question_ids": [
+      "2019_may-jun_2HR:22",
+      "2021_oct-nov_1H:17",
+      "2022_jan_1H:20",
+      "2022_jan_1HR:19",
+      "2022_may-jun_1H:24",
+      "2022_may-jun_1HR:23",
+      "2023_may-jun_2H:19",
+      "2025_oct-nov_1H:21"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "rearrange formula for variable",
+    "size": 4,
+    "question_ids": [
+      "2022_jan_2HR:15",
+      "2022_may-jun_2HR:7",
+      "2025_may-jun_2H:16",
+      "2025_may-jun_2HR:17"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify algebraic fraction",
+    "size": 3,
+    "question_ids": [
+      "2019_may-jun_2H:22",
+      "2023_oct-nov_1H:11",
+      "2025_may-jun_2H:15"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify rational expression",
+    "size": 3,
+    "question_ids": [
+      "2022_may-jun_2H:19",
+      "2023_jan_2H:26",
+      "2024_may-jun_2H:20"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify complex fraction",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2HR:22",
+      "2023_jan_2HR:26"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "powers simplification and rearrangement",
+    "size": 2,
+    "question_ids": [
+      "2019_jan_2H:12",
+      "2022_jan_1H:1"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "expand cubic and isolate variable",
+    "size": 2,
+    "question_ids": [
+      "2019_may-jun_1HR:18",
+      "2023_may-jun_2H:17"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "quadratic factorisation",
+    "size": 2,
+    "question_ids": [
+      "2019_may-jun_2HR:5",
+      "2022_jan_1H:6"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "consecutive even numbers identity",
+    "size": 2,
+    "question_ids": [
+      "2022_jan_1HR:15",
+      "2023_jan_2HR:19"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "arithmetic series sum formula",
+    "size": 2,
+    "question_ids": [
+      "2022_jan_2H:26",
+      "2023_jan_1H:22"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "convert decimal to fraction",
+    "size": 2,
+    "question_ids": [
+      "2023_jan_2H:16",
+      "2023_may-jun_1HR:16"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify algebraic expression with indices",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:15"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "cube difference multiple of 6 proof",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:21"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "make a subject and factorise",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:1"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify surds complete square",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:21"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "make variable subject linear",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:7"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "combine rational expressions",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:11"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "arithmetic sequence common difference",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:21"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "algebraic manipulation multiple parts",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:15"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "complete square axis of symmetry",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:20"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "exponential laws factorisation",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:3"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "solve for x",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:15"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify exponential and expand binomial",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:1"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "area product dimensions",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:5"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "area proportion rectangle",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:2"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify indices and factorise quadratic",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:9"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "odd squares sum remainder 8",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:18"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "expand product to single term",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:13"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "difference of squares",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:11"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "convert fraction to mixed number",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:21"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "solve for x algebraic",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:24"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "kite diagonal equation coordinates",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:23"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "common factor factorisation",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:8"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "factorise quadratic expression",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:14"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "solve exponential expression for variable",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:24"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "cuboid volume surd solve",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:23"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "kite coordinates reflection",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:24"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "evaluate and expand linear",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:1"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "rearrange linear equation for x",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:17"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "prove inequality using algebra",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:15"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "solve complex fractional equation",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:24"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "factorise quadratic simplify powers",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:12"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "complete square rational expression",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:25"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "proportion and fraction simplification",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:17"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "prove algebraic identity",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:18"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify and factorise expressions",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:6"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "biology count difference algebra",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:10"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "inequality solving and formula rearrangement",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:12"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "algebraic inequality proof",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:15"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "combine algebraic fractions",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:12"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "solve linear equation simplify power",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:4"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "prove property of consecutive multiples",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:17"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "quadratic vertex form and graph",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:25"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "factorise and rewrite expression",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:13"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "simplify expression and solve inequality",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:10"
+    ]
+  },
+  {
+    "section": "2.2",
+    "label": "show fraction equals decimal",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:16"
+    ]
+  },
+  {
+    "section": "2.3",
+    "label": "rearrange formula for n",
+    "size": 4,
+    "question_ids": [
+      "2019_jan_2HR:10",
+      "2023_oct-nov_1H:15",
+      "2024_may-jun_2H:15",
+      "2025_oct-nov_1H:18"
+    ]
+  },
+  {
+    "section": "2.3",
+    "label": "inverse function find expression",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:18"
+    ]
+  },
+  {
+    "section": "2.3",
+    "label": "total width linear expression",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:2"
+    ]
+  },
+  {
+    "section": "2.3",
+    "label": "calculate pressure from force",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:8"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "solve linear equation",
+    "size": 4,
+    "question_ids": [
+      "2018_may-jun_2HR:14",
+      "2019_may-jun_1HR:4",
+      "2023_jan_1H:2",
+      "2023_jan_1HR:12"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "factor expand solve linear",
+    "size": 3,
+    "question_ids": [
+      "2019_jan_1H:1",
+      "2022_may-jun_1H:5",
+      "2024_may-jun_1H:6"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "perpendicular line through point",
+    "size": 3,
+    "question_ids": [
+      "2019_may-jun_1HR:15",
+      "2024_oct-nov_2H:18",
+      "2025_oct-nov_1H:20"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "line through two points",
+    "size": 2,
+    "question_ids": [
+      "2023_may-jun_1H:13",
+      "2023_oct-nov_2H:9"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "powers and linear equation",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:3"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "perpendicular lines slope",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:21"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "factor quadratic and solve linear",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:12"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "line equation and region inequalities",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:10"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "line equation from grid",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:11"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "solve linear equation inequality",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:15"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "linear equation and simplifications",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:6"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "solve linear equation with fractions",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:18"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "solve rational linear equation",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:13"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "mean score round difference",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:10"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "midpoint using perpendicular bisector",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:25"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "solve linear equation word problem",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:2"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "expand expression and solve equation",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:14"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "parallel line through point",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:10"
+    ]
+  },
+  {
+    "section": "2.4",
+    "label": "perpendicular bisector of line",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:24"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "inverse square proportionality",
+    "size": 6,
+    "question_ids": [
+      "2019_may-jun_2HR:16",
+      "2023_jan_1H:17",
+      "2023_jan_1HR:19",
+      "2023_may-jun_1HR:17",
+      "2025_may-jun_1HR:18",
+      "2025_oct-nov_2H:17"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "direct proportion cubic",
+    "size": 2,
+    "question_ids": [
+      "2019_jan_1H:14",
+      "2019_may-jun_2H:17"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "direct proportional quadratic formula",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:16"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "inverse proportion solve constant",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:15"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "direct variation cube",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:17"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "direct proportion constant and percentage change",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:16"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "direct proportion square root formula",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:17"
+    ]
+  },
+  {
+    "section": "2.5",
+    "label": "inverse proportion find variable",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:18"
+    ]
+  },
+  {
+    "section": "2.6",
+    "label": "solve simultaneous linear equations",
+    "size": 20,
+    "question_ids": [
+      "2018_may-jun_1HR:10",
+      "2018_may-jun_2H:9",
+      "2019_jan_1HR:8",
+      "2019_jan_2H:9",
+      "2019_may-jun_2H:9",
+      "2022_jan_2H:10",
+      "2022_may-jun_1HR:14",
+      "2022_may-jun_2H:10",
+      "2022_may-jun_2HR:21",
+      "2023_jan_1HR:6",
+      "2023_jan_2H:7",
+      "2023_may-jun_1H:9",
+      "2024_may-jun_1HR:12",
+      "2024_may-jun_2H:10",
+      "2024_may-jun_2HR:22",
+      "2024_oct-nov_2H:22",
+      "2025_may-jun_1HR:22",
+      "2025_may-jun_2H:8",
+      "2025_may-jun_2HR:3",
+      "2025_oct-nov_2H:2"
+    ]
+  },
+  {
+    "section": "2.6",
+    "label": "simultaneous equations substitution",
+    "size": 4,
+    "question_ids": [
+      "2023_jan_2H:20",
+      "2023_jan_2HR:22",
+      "2023_may-jun_2HR:21",
+      "2025_may-jun_1H:22"
+    ]
+  },
+  {
+    "section": "2.6",
+    "label": "solve quadratic simultaneous system",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2HR:18",
+      "2019_may-jun_1HR:22"
+    ]
+  },
+  {
+    "section": "2.6",
+    "label": "simultaneous linear price problem",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:6"
+    ]
+  },
+  {
+    "section": "2.6",
+    "label": "simultaneous linear equations",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:12"
+    ]
+  },
+  {
+    "section": "2.6",
+    "label": "graphical solution of simultaneous equations",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:14"
+    ]
+  },
+  {
+    "section": "2.6",
+    "label": "line and ellipse intersection",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:22"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "factorise quadratic and solve",
+    "size": 7,
+    "question_ids": [
+      "2021_oct-nov_2H:8",
+      "2022_may-jun_1HR:5",
+      "2022_may-jun_2H:11",
+      "2024_may-jun_2H:11",
+      "2025_may-jun_1H:6",
+      "2025_may-jun_1HR:8",
+      "2025_oct-nov_2H:7"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "solve line curve intersection",
+    "size": 3,
+    "question_ids": [
+      "2019_may-jun_2H:20",
+      "2022_jan_2HR:18",
+      "2023_oct-nov_2H:21"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "complete square to solve quadratic",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:24"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "midpoint of intersecting curve points",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:21"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "midpoint of line\u2011curve intersections",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:19"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "simultaneous equations substitution",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:19"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "algebraic simplification and factorisation",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:6"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "solve simultaneous quadratic system",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:21"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "second intersection of line and circle",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:28"
+    ]
+  },
+  {
+    "section": "2.7",
+    "label": "find coefficients from given roots",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:20"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "solve linear inequality",
+    "size": 15,
+    "question_ids": [
+      "2018_may-jun_2HR:20",
+      "2019_may-jun_2HR:1",
+      "2022_jan_2HR:3",
+      "2022_may-jun_1HR:9",
+      "2022_may-jun_2HR:19",
+      "2023_jan_1H:10",
+      "2023_jan_2H:22",
+      "2024_may-jun_1HR:7",
+      "2024_oct-nov_2H:20",
+      "2025_may-jun_1H:16",
+      "2025_may-jun_1HR:15",
+      "2025_may-jun_1HR:6",
+      "2025_may-jun_2H:19",
+      "2025_may-jun_2HR:1",
+      "2025_oct-nov_1H:25"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "inequalities for bounded region",
+    "size": 8,
+    "question_ids": [
+      "2021_oct-nov_2H:13",
+      "2022_jan_2H:13",
+      "2023_jan_1H:11",
+      "2023_may-jun_1H:7",
+      "2023_may-jun_2HR:8",
+      "2023_oct-nov_1H:8",
+      "2025_may-jun_2H:9",
+      "2025_oct-nov_2H:10"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "inequalities region shading",
+    "size": 3,
+    "question_ids": [
+      "2018_may-jun_1H:12",
+      "2022_jan_2HR:7",
+      "2024_oct-nov_2H:7"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "solve double inequality",
+    "size": 2,
+    "question_ids": [
+      "2021_oct-nov_1H:9",
+      "2025_may-jun_2HR:21"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "indices simplification and linear inequality",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:8"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "inequality for rectangle area",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:22"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "integer solutions inequality",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:3"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "inequality solve and percentage",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:15"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "inequality solving simplification",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:4"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "numeric inequality proof",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:6"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "solve compound inequality",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:20"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "solve power inequality",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:14"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "prove inequality using algebra",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:18"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "solve chained inequality integer",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:23"
+    ]
+  },
+  {
+    "section": "2.8",
+    "label": "prove inequality with fractions",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:3"
+    ]
+  },
+  {
+    "section": "3.1",
+    "label": "arithmetic series sum relation",
+    "size": 15,
+    "question_ids": [
+      "2018_may-jun_2H:23",
+      "2019_jan_2HR:23",
+      "2019_may-jun_1H:16",
+      "2019_may-jun_1HR:19",
+      "2021_oct-nov_2H:20",
+      "2022_jan_1HR:16",
+      "2022_may-jun_1HR:25",
+      "2023_jan_1HR:24",
+      "2023_may-jun_1H:20",
+      "2023_may-jun_2HR:23",
+      "2023_oct-nov_1H:19",
+      "2024_may-jun_1HR:23",
+      "2025_may-jun_1H:24",
+      "2025_may-jun_1HR:24",
+      "2025_oct-nov_2H:25"
+    ]
+  },
+  {
+    "section": "3.1",
+    "label": "arithmetic sequence nth term",
+    "size": 6,
+    "question_ids": [
+      "2018_may-jun_1HR:7",
+      "2019_jan_2H:2",
+      "2019_jan_2HR:3",
+      "2022_may-jun_1H:1",
+      "2023_may-jun_2HR:4",
+      "2024_may-jun_1H:1"
+    ]
+  },
+  {
+    "section": "3.1",
+    "label": "fraction sequence nth term",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:12"
+    ]
+  },
+  {
+    "section": "3.1",
+    "label": "consecutive terms sum square",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:17"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "inverse of quadratic function",
+    "size": 12,
+    "question_ids": [
+      "2018_may-jun_1H:14",
+      "2018_may-jun_1HR:20",
+      "2019_jan_1H:19",
+      "2019_may-jun_2H:24",
+      "2021_oct-nov_2H:15",
+      "2022_jan_2H:25",
+      "2022_jan_2HR:23",
+      "2022_may-jun_1H:14",
+      "2023_jan_1H:18",
+      "2023_jan_1HR:16",
+      "2023_jan_2H:25",
+      "2023_oct-nov_2H:19"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "function turning point shift",
+    "size": 2,
+    "question_ids": [
+      "2023_may-jun_1H:21",
+      "2025_oct-nov_1H:24"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "minimum point under transformation",
+    "size": 2,
+    "question_ids": [
+      "2024_oct-nov_2H:19",
+      "2025_may-jun_1H:19"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "function composition evaluate",
+    "size": 2,
+    "question_ids": [
+      "2025_may-jun_2HR:19",
+      "2025_oct-nov_2H:19"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "inverse composition solving",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:23"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "function evaluation and composition",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:17"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "sine function parameters from graph",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:21"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "horizontal vertical shift of function",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:23"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "function transformation coordinates",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:20"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "function domain exclusion",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:17"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "find excluded value and inverse",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:15"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "minimum point translation",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:21"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "solve composition value",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:17"
+    ]
+  },
+  {
+    "section": "3.2",
+    "label": "transformed function minimum point",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:23"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "match graph to equation",
+    "size": 6,
+    "question_ids": [
+      "2022_may-jun_2HR:16",
+      "2023_jan_2H:11",
+      "2023_may-jun_2H:18",
+      "2023_may-jun_2HR:12",
+      "2024_may-jun_2HR:16",
+      "2025_may-jun_2H:14"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "quadratic function table plot",
+    "size": 4,
+    "question_ids": [
+      "2019_may-jun_1H:4",
+      "2019_may-jun_2HR:3",
+      "2022_jan_1HR:4",
+      "2023_may-jun_2H:4"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "cubic function table and graph",
+    "size": 3,
+    "question_ids": [
+      "2023_jan_1H:14",
+      "2023_oct-nov_1H:12",
+      "2025_may-jun_1H:10"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "estimate gradient from graph",
+    "size": 2,
+    "question_ids": [
+      "2022_jan_2HR:17",
+      "2023_jan_2HR:21"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "line equation from points",
+    "size": 2,
+    "question_ids": [
+      "2022_may-jun_1HR:10",
+      "2024_may-jun_1HR:9"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "graphical estimate cubic roots",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:14"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "graph vertical stretch",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:21"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "sketch inverse function",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:18"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "graph quadratic and find roots",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:6"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "average speed from distance-time graph",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:2"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "sine graph shift stretch",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:22"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "triangle area from coordinates",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:20"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "function translation and parameters",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:21"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "line gradient y\u2011intercept",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:10"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "graphical estimation of quadratic roots",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:21"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "reciprocal function graph",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:11"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "function graph shift and stretch",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:20"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "graph linear inequalities region",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:2"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "read coordinates cosine graph",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:23"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "estimate cubic root from graph",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:15"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "determine amplitude and vertical shift from sine graph",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:24"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "plot linear equation",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:5"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "max point under function transformations",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:20"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "function translation values",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:24"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "perpendicular line gradient",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:18"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "graph three lines and shade intersection",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:2"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "function graph translation coordinates",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:21"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "find sine function parameters",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:25"
+    ]
+  },
+  {
+    "section": "3.3",
+    "label": "graph rational function and estimate roots",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:12"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "cubic max min y difference",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:19"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "negative gradient cubic derivative",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:17"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "differentiate rational function and sign",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:12"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "derivative turning points",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:13"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "acceleration from displacement polynomial",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:24"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "differentiate displacement to velocity",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:16"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "maximise cuboid surface area",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:18"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "determine cubic coefficients using derivative",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:24"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "same direction via velocity",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:23"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "acceleration at turning point",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:24"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "position when velocity zero",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:17"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "turning point find constant",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:22"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "maximise cylinder volume",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:20"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "tangent gradient perpendicular line",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:23"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "derivative equal to constant",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:11"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "positive gradient interval cubic",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:21"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "find points with given gradient",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:16"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "find time from acceleration via calculus",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:18"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "gradient equals given value",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:18"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "stationary point of curve",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:19"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "rewrite rational expression minimum",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:20"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "differentiate rational function turning points",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:17"
+    ]
+  },
+  {
+    "section": "3.4",
+    "label": "tangent line intercepts",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:22"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "line through square vertices",
+    "size": 2,
+    "question_ids": [
+      "2024_may-jun_2HR:21",
+      "2025_may-jun_1H:25"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "parallel lines isosceles angle",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:6"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "perpendicular line x\u2011intercept",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:13"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "isosceles triangle angle solve",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:6"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "check perpendicular lines via slopes",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:11"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "find line equation from points",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:23"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "coordinates from given slope",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:22"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "angle in regular hexagon",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:10"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "parallel lines proportion problem",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:12"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "midpoint coordinate solve",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:6"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "largest trapezium angle",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:3"
+    ]
+  },
+  {
+    "section": "4.1",
+    "label": "missing quadrilateral interior angle",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:19"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "regular polygon interior angle",
+    "size": 4,
+    "question_ids": [
+      "2019_may-jun_1HR:2",
+      "2022_jan_2HR:4",
+      "2022_may-jun_1H:4",
+      "2025_may-jun_1H:3"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "angle between regular polygons",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2HR:9",
+      "2024_oct-nov_2H:11"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "interior angle of pentagon",
+    "size": 2,
+    "question_ids": [
+      "2023_jan_1H:4",
+      "2024_may-jun_1H:5"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "parallel lines interior angle",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:12"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "angle chase regular polygons",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:5"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "regular polygon angle equality",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:11"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "polygon interior angles arithmetic",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:23"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "regular polygon sides from angles",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:11"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "determine polygon sides from angles",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:15"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "regular polygon central angle",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:11"
+    ]
+  },
+  {
+    "section": "4.2",
+    "label": "polygon interior exterior angle find n",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:12"
+    ]
+  },
+  {
+    "section": "4.5",
+    "label": "perpendicular bisector construction",
+    "size": 5,
+    "question_ids": [
+      "2019_may-jun_2H:2",
+      "2023_jan_1H:3",
+      "2023_jan_2HR:4",
+      "2025_may-jun_2H:4",
+      "2025_oct-nov_1H:3"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "tangent chord angle theorem",
+    "size": 8,
+    "question_ids": [
+      "2018_may-jun_1H:13",
+      "2018_may-jun_2H:5",
+      "2018_may-jun_2HR:12",
+      "2019_jan_1HR:19",
+      "2019_may-jun_1H:20",
+      "2021_oct-nov_2H:11",
+      "2023_jan_2H:14",
+      "2023_may-jun_2HR:20"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "intersecting chords length",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2H:22",
+      "2023_may-jun_2HR:18"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "perimeter of shaded sector region",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:22"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "find angle in circle diagram",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:23"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "circle angle from diameter",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:15"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "area from arc length",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:16"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "angle subtended by same chord",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:14"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "angle in same segment",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:16"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "circle centre distance intersect",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:10"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "angle in semicircle",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:15"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "tangent to circle at point",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:20"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "chord lengths angle calculation",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:23"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "circle angles from diameter",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:14"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "tangent angle reflex central",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:7"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "inscribed angle from chord",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:14"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "tangent intercept length",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:22"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "segment area to perimeter",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:20"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "centre angle from inscribed angle",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:13"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "central angle from inscribed",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:16"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "intersecting chords relation",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:23"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "angle in same segment circle",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:15"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "angles from same chord in circle",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:15"
+    ]
+  },
+  {
+    "section": "4.6",
+    "label": "area of small circle inside large",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:6"
+    ]
+  },
+  {
+    "section": "4.7",
+    "label": "line of symmetry of isosceles triangle",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:20"
+    ]
+  },
+  {
+    "section": "4.7",
+    "label": "prove lines parallel using angles",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:5"
+    ]
+  },
+  {
+    "section": "4.7",
+    "label": "tangent circle angle proof",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:20"
+    ]
+  },
+  {
+    "section": "4.7",
+    "label": "symmetry angle in regular polygon",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:6"
+    ]
+  },
+  {
+    "section": "4.7",
+    "label": "symmetry line coordinate of trapezium",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:25"
+    ]
+  },
+  {
+    "section": "4.7",
+    "label": "polygon interior angles arithmetic",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:24"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "sine rule side length",
+    "size": 5,
+    "question_ids": [
+      "2019_may-jun_2HR:12",
+      "2022_jan_1H:3",
+      "2022_may-jun_1H:18",
+      "2024_may-jun_2H:5",
+      "2025_may-jun_1HR:9"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "law of sines angle",
+    "size": 3,
+    "question_ids": [
+      "2019_jan_1H:17",
+      "2023_oct-nov_1H:10",
+      "2025_may-jun_1H:20"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "area quadrilateral using sine",
+    "size": 3,
+    "question_ids": [
+      "2019_jan_2HR:19",
+      "2019_may-jun_2H:19",
+      "2021_oct-nov_2H:18"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "trapezium side from angle",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2HR:10",
+      "2019_jan_2HR:7"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle line to plane cuboid",
+    "size": 2,
+    "question_ids": [
+      "2019_may-jun_2H:21",
+      "2023_may-jun_2HR:22"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "find sinusoid parameters from graph",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:18"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "circle diameter right triangle",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:6"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "perimeter of composite right\u2011triangle shape",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:9"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "circle chord length quadratic",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:16"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "quadrilateral angle via law of cosines",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:18"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "largest angle cosine rule",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:18"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle line to plane",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:19"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "right triangle diagonal distance",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:8"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "find angle using interior point",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:10"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "perimeter from side relation",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:21"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "right triangle find missing side",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:3"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "cone surface ratio vertex angle",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:22"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "bearing and distance from scale drawing",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:5"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "law of cosines side",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:18"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "combined bearings",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:25"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "isosceles triangle area using pythagoras",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:7"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "trapezium perimeter via trigonometry",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:12"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "sector to segment perimeter",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:19"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "pyramid edge angle from surface area",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:23"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle of elevation distance",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:12"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "right triangle missing side using pythagoras",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:2"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "isosceles triangle perimeter altitude",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:10"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "tan from prism cross\u2011section",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:21"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "minimum post height for angle",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:14"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "radius from chord and diameter",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:19"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "triangle area using sine",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:23"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle of depression between masts",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:12"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "area to angle using sine",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:16"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle between line and plane",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:19"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "semicircle on triangle side",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:9"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "right triangle area find side",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:11"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "parallelogram diagonal using area",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:17"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "midpoint distance in cube",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:18"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "find side using trigonometry",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:6"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "law of sines side length",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:16"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "semicircle perimeter from triangle",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:8"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "radius from chord and angle",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:10"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "perimeter from sides and area",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:17"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "amplitude and phase shift",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:20"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle line to plane",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:21"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "largest angle from side-area",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:25"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "segment length via trigonometry",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:12"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle of elevation from foot",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:22"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "find cosine function parameters",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:26"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "total distance from bearings",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:18"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "determine side length cost",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:11"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "area to side using sine",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:15"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "sine graph coordinates",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:25"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "area triangle using sine formula",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:15"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "bearing calculation using triangle",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:24"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "solve triangle side",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:3"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "space diagonal edge length",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:20"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "right triangle similarity side length",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:10"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "pyramid apex angle calculation",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:24"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle cme in prism",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:23"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "angle with interior point",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:11"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "law of cosines angle",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:19"
+    ]
+  },
+  {
+    "section": "4.8",
+    "label": "right triangle perimeter from area",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:11"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area of irregular hexagon",
+    "size": 3,
+    "question_ids": [
+      "2018_may-jun_1HR:1",
+      "2023_oct-nov_2H:10",
+      "2024_may-jun_2HR:10"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "triangle area solve side length",
+    "size": 3,
+    "question_ids": [
+      "2019_jan_1H:8",
+      "2023_jan_1HR:9",
+      "2023_jan_2H:10"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "sector perimeter calculation",
+    "size": 3,
+    "question_ids": [
+      "2022_may-jun_2HR:13",
+      "2023_jan_2HR:14",
+      "2024_may-jun_2HR:13"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "density of sphere",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_2H:11",
+      "2023_may-jun_2H:25"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "sector area calculation",
+    "size": 2,
+    "question_ids": [
+      "2025_may-jun_1H:11",
+      "2025_oct-nov_1H:15"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "cylinder curved surface area",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:6"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area between concentric semicircles",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:10"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "trapezium area quadratic",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:15"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "tiles around rectangle area",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:5"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "mass from density and volume",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:6"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area triangle plus semicircle",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:9"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area of composite shape",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:19"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "door area with semicircular window varnish amount",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:4"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "triangle area from sides",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:9"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "paint surface area cost calculation",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:10"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area of circle sector",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:11"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "perimeter of composite shape",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:3"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "sector area twice circle area",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:19"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "square with four circles",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:20"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "missing side from area",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:5"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "kite area sine formula",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:15"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "square with semicircle area",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:5"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "sector area water volume",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:21"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "rectangle perimeter algebraic",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:4"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "density of combined solids",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:10"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "radius from equal shaded area",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:22"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "perimeter of composite shape",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:5"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "density mass volume solve",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:11"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "perimeter of three semicircles triangle",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:4"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "trapezium area price per hectare",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:5"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "cylinder volume from rectangle",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:9"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "perimeter of composite semicircles",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:5"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area of triangle minus incircle",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:20"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "trapezium perimeter from area",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:8"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "square minus circle area diagonal",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:21"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "trapezium area height",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:7"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "square circle wire length",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:5"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area of shaded region with incircle",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:25"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "trapezium area from side angle",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:9"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "arc length from segment area",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:25"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "cuboid surface area from volume",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:21"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "area of triangle from sides",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:11"
+    ]
+  },
+  {
+    "section": "4.9",
+    "label": "surface area of hemispherical bowl",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:26"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cylinder volume find height",
+    "size": 4,
+    "question_ids": [
+      "2019_may-jun_2H:4",
+      "2021_oct-nov_1H:10",
+      "2024_may-jun_1HR:6",
+      "2025_may-jun_1H:7"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "surface area to volume ratio",
+    "size": 3,
+    "question_ids": [
+      "2019_jan_1HR:17",
+      "2023_jan_2H:21",
+      "2023_may-jun_2HR:24"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "triangular prism surface area",
+    "size": 2,
+    "question_ids": [
+      "2023_jan_1HR:2",
+      "2024_oct-nov_2H:6"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "hollow sphere thickness from mass",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:22"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cuboid fill time calculation",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:9"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "volume ratio from surface area",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:15"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "line to plane angle",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:20"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "volume comparison triangular prism half cylinder",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:2"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "volume of composite solid",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:21"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cylinder water depth from volume",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:1"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "pyramid surface area",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:22"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "metal identification by density",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:21"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cone plus hemisphere volume",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:22"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cylinder volume from pressure",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:7"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cylinder density calculation",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:7"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cone sphere volume to surface area",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:24"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "surface area of square pyramid frustum",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:23"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "triangular prism volume",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:21"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "hemisphere removed surface area",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:23"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "composite solid volume ratio",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:24"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "cylinder volume vs cuboid capacity",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:10"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "maximise cuboid volume",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:22"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "prism volume from elevation",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:26"
+    ]
+  },
+  {
+    "section": "4.10",
+    "label": "density of composite solid",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:26"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar solids volume scale factor",
+    "size": 9,
+    "question_ids": [
+      "2019_jan_2H:16",
+      "2019_may-jun_1H:17",
+      "2019_may-jun_2HR:21",
+      "2022_jan_1H:17",
+      "2023_jan_2H:19",
+      "2023_oct-nov_1H:23",
+      "2024_may-jun_1HR:18",
+      "2025_may-jun_1HR:26",
+      "2025_may-jun_2H:26"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar triangles side ratio",
+    "size": 4,
+    "question_ids": [
+      "2019_may-jun_2H:6",
+      "2019_may-jun_2HR:4",
+      "2021_oct-nov_2H:4",
+      "2022_jan_2H:3"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "frustum similar cones radius",
+    "size": 2,
+    "question_ids": [
+      "2018_may-jun_1H:16",
+      "2023_oct-nov_2H:23"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar solids height ratio",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:18"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "scale diagram bearing",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:5"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar solids surface area from volume change",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:20"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "frustum cone volume via similarity",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:24"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar solids volume scale factor",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:18"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar quadrilateral side scale",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:3"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "missing side similar triangles",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:2"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "parallel lines similar triangles length",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:12"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar quadrilaterals find missing sides",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:5"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar solids volume scale factor",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:23"
+    ]
+  },
+  {
+    "section": "4.11",
+    "label": "similar quadrilaterals scale factor",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:4"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector internal division",
+    "size": 2,
+    "question_ids": [
+      "2019_may-jun_1HR:24",
+      "2022_may-jun_2H:21"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "find missing vertex using vectors",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:17"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "prove collinear using vectors",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:23"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "hexagon vector expression",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:22"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector magnitude from linear relations",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:23"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "magnitude of resultant vector",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:14"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "express vectors using given vectors",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:14"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector intersection using position vectors",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:22"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector ratio using midpoint",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:24"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "kite diagonal coordinates",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:22"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector collinearity find ratio",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:25"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector ratio oc ce",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:24"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector expression collinearity",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:22"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "angle line to plane in prism",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:23"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector addition from components",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:16"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector expression ratio",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:19"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "path length difference via vectors",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:19"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector section ratio",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:22"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "angle between lines using vectors",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:22"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector addition find diagonal",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:24"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vectors on parallelogram division",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:25"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector magnitude calculation",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:17"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector expression from given vectors",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:23"
+    ]
+  },
+  {
+    "section": "5.1",
+    "label": "vector bc from position vectors",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:27"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "single transformation description",
+    "size": 2,
+    "question_ids": [
+      "2022_may-jun_2HR:1",
+      "2024_may-jun_2HR:2"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "reflection then translation of triangle",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:3"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "translate triangle by vector",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:2"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "point image under translation",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:22"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "rotate then translate triangle",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:2"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "coordinate transformation of shapes",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:4"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "enlarge shape scale factor",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:10"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "reflection across y equals x",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:3"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "enlarge shape and describe transformation",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:2"
+    ]
+  },
+  {
+    "section": "5.2",
+    "label": "reflection and enlargement",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:5"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph median",
+    "size": 5,
+    "question_ids": [
+      "2019_may-jun_2H:13",
+      "2022_jan_1H:12",
+      "2023_jan_1HR:11",
+      "2023_may-jun_1HR:14",
+      "2025_may-jun_2H:13"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph median",
+    "size": 3,
+    "question_ids": [
+      "2022_may-jun_2H:13",
+      "2022_may-jun_2HR:11",
+      "2025_may-jun_1HR:12"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "draw histogram grouped data",
+    "size": 2,
+    "question_ids": [
+      "2019_may-jun_1H:19",
+      "2024_may-jun_1HR:16"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "estimate iqr from cumulative frequency graph",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:10"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram from frequency table",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:17"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram interval count",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:20"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph estimates",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:11"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph iqr estimate",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:9"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative freq median estimate",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:14"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram proportion estimate",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:19"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram total and probability",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:17"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph estimate",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:13"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph estimate",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:11"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram probability estimate",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:14"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram total count from density",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:21"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram interval estimate",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:21"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "estimate count from histogram",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:19"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph median",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:12"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram probability estimate",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:18"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram probability estimate",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:17"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "median from cumulative frequency graph",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:12"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram frequency density",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:18"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "percentage above age from histogram",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:22"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "median from cumulative frequency",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:13"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "estimate number from histogram",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:17"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "complete histogram frequencies",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:22"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph iqr",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:13"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph analysis",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:11"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "cumulative frequency graph median",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:13"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram proportion above value",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:17"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram probability estimate",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:20"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "estimate median and iqr from cumulative frequency",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:14"
+    ]
+  },
+  {
+    "section": "6.1",
+    "label": "histogram estimate tail count",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:21"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "missing values from range median mode",
+    "size": 3,
+    "question_ids": [
+      "2022_may-jun_2H:1",
+      "2023_jan_1HR:3",
+      "2024_may-jun_2H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "modal class and mean estimate",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "estimate mean from grouped data",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:2"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "mean of combined classes",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:7"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "find numbers from range median",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:4"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "compare medians and iqrs",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:11"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "find missing frequency from mean",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:13"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "grouped data mean and modal class",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range from raw data",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:12"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "adjusted mean after removal",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:8"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "grouped data mean",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "mean of subgroup from overall",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:7"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "grouped data mean estimate",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:3"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "median mode set construction",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:5"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "missing marks from mode median range",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:5"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range of data",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:15"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "mean from frequency table",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:9"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "estimate median from cumulative graph",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:14"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "weighted mean calculation",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:8"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range from data",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:13"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "find missing value from mean",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:3"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "find unknown from group mean",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2H:12"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "median range missing values",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:3"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "grouped data mean estimate",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "modal class grouped mean",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1HR:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "compare interquartile ranges",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2H:15"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range comparison",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:15"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "overall mean from class means",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:8"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range from data",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:10"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "estimate total from grouped frequency",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1H:2"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "missing day from weekly mean",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:10"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range comparison",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:14"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "modal class total estimate",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range calculation",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:13"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "mean after extra matches",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:8"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "missing number for target mean",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range from data",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:10"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "combined mean of two groups",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:12"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "median and range integer set",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:3"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "missing value from mean",
+    "size": 1,
+    "question_ids": [
+      "2024_oct-nov_2H:8"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "modal class and grouped mean estimate",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "calculate interquartile range",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:13"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "complete data set from range median mode",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "mean of remaining numbers",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:8"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "estimate mean from frequency table",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:1"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "interquartile range from raw data",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:16"
+    ]
+  },
+  {
+    "section": "6.2",
+    "label": "determine integers from range median mean",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:4"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "estimate frequency from probability",
+    "size": 2,
+    "question_ids": [
+      "2022_may-jun_1H:2",
+      "2024_oct-nov_2H:5"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability of union",
+    "size": 2,
+    "question_ids": [
+      "2022_may-jun_1HR:1",
+      "2025_may-jun_1HR:4"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability both wins",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1H:19"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree independent draws",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_1HR:15"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "at least one blue no green",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2H:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability odd sum three draws",
+    "size": 1,
+    "question_ids": [
+      "2018_may-jun_2HR:16"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "venn diagram probability of not g",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability unknown total fruit",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1H:20"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability without replacement",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_1HR:16"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree at least one success",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2H:14"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "binomial probability exactly k successes",
+    "size": 1,
+    "question_ids": [
+      "2019_jan_2HR:15"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree two-stage selection",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "biased dice probability estimate",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1H:5"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree late estimate",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_1HR:14"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability one red two draws",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2H:23"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability both yellow without replacement",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:24"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "add simple probabilities",
+    "size": 1,
+    "question_ids": [
+      "2019_may-jun_2HR:6"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree equal points",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:15"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability change after adding items",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_1H:3"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability same colour replacement",
+    "size": 1,
+    "question_ids": [
+      "2021_oct-nov_2H:16"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree two events",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1H:14"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree both red",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "expected number of successes",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_1HR:2"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability from histogram estimate",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:20"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability ratio sweets count",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2H:6"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability from given distribution",
+    "size": 1,
+    "question_ids": [
+      "2022_jan_2HR:1"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree joint event",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:12"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability total score zero",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1H:15"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability with red\u2011green counters",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_1HR:24"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability at least one even",
+    "size": 1,
+    "question_ids": [
+      "2022_may-jun_2HR:14"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "two draws without replacement probability",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:15"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability table solve unknown",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_1H:7"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "bag probability variable counts",
+    "size": 1,
+    "question_ids": [
+      "2023_jan_2HR:6"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree two events",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "expected number of losses",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_1HR:5"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree both yellow",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "expected count from probability",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:2"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability at least one red remains",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2H:20"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "biased coin three tails probability",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:15"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability both breakfast dinner",
+    "size": 1,
+    "question_ids": [
+      "2023_may-jun_2HR:19"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "mean of two coins probability",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:20"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "determine missing probability value",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_1H:4"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability both same colour",
+    "size": 1,
+    "question_ids": [
+      "2023_oct-nov_2H:11"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree same colour",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability at least one each colour",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:16"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability table solve for x",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1H:2"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "expected count from spinner odds",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:2"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability with unknown counts",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_1HR:21"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "venn diagram probability calculations",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2H:16"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "joint probability missing outcome",
+    "size": 1,
+    "question_ids": [
+      "2024_may-jun_2HR:14"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree both lose",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:14"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "exactly two same colour",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1H:21"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability without replacement sum condition",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_1HR:19"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability from proportion to find count",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2H:11"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree with replacement",
+    "size": 1,
+    "question_ids": [
+      "2025_may-jun_2HR:14"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability tree different colours",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:13"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "probability at least one pink remaining",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_1H:22"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "venn probability latin or sanskrit",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:18"
+    ]
+  },
+  {
+    "section": "6.3",
+    "label": "combined probability from mixed bags",
+    "size": 1,
+    "question_ids": [
+      "2025_oct-nov_2H:9"
+    ]
+  }
+]
