@@ -123,13 +123,14 @@ export default function WorkbookVerifyPage() {
   }, [sections, chapterById])
 
   useEffect(() => {
-    fetch("/api/subjects")
+    // Only subjects that actually have a workbook -- the full subject list is
+    // ~98 entries, and every one without a taxonomy 404s from the queue.
+    fetch("/api/admin/workbook/subjects")
       .then((r) => r.json())
       .then((d) => {
-        const list = (d.subjects ?? d ?? []) as { id: string; code: string; name: string }[]
+        const list = (d.subjects ?? []) as { id: string; code: string; name: string }[]
         setSubjects(list)
-        const fpm = list.find((s) => s.code === "4PM1")
-        if (fpm) setSubjectId(fpm.id)
+        if (list.length > 0) setSubjectId(list[0].id)
       })
       .catch(() => setMessage("Could not load subjects"))
   }, [])
