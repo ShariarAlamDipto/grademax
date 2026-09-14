@@ -228,7 +228,7 @@ def main() -> int:
         else:
             unclassified.append(question["_id"])
 
-    print(f"{'=' * 74}\nLOAD MATHS B WORKBOOK\n{'=' * 74}")
+    print(f"{'=' * 74}\nLOAD MATHS A (4MA1) HIGHER WORKBOOK\n{'=' * 74}")
     print(f"  classified   : {len(classified)}")
     if unclassified:
         print(f"  NOT loaded   : {len(unclassified)} unclassified -> {', '.join(unclassified[:4])}...")
