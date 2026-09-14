@@ -53,14 +53,33 @@ OUTPUT_PATH = REPO_ROOT / "data" / "workbook" / "mathsa_archetypes.json"
 
 # Similarity above which two questions in the same section are the same shape.
 #
-# Tuned by inspection, not by a metric. At 0.38 section 9.4 collapsed into a
-# single 28-question blob that mixed genuine related-rates questions (sphere,
-# cone, oil pool, sand pile) with implicit differentiation and "find the normal
-# to the curve" -- one section, but three different shapes to practise. At 0.45
-# those separate into related rates (19), tangent to curve (5) and minimisation
-# (4), which is what a student actually needs grouped. Above 0.55 obvious
-# repeats start splitting apart again.
-DEFAULT_THRESHOLD = 0.45
+# Tuned by inspection on THIS corpus, not carried over. FPM and Maths B use
+# 0.45; at that value Maths A section 2.2 collapsed into a single 68-question
+# blob whose modal phrase was "complete square quadratic" but whose members were
+# index laws, expanding brackets, factorising, making x the subject, algebraic
+# fractions and surds -- six shapes, one cluster, and a label that described
+# almost none of them.
+#
+# The cause is structural, not a bad threshold guess: 4MA1 Higher questions are
+# SHORT and MULTI-PART ("(a) simplify (b) factorise (c) make t the subject"), so
+# nearly every algebra question shares the same generic vocabulary and TF-IDF
+# cosine stops discriminating. Longer FPM questions do not have this problem.
+#
+# Measured sweep (largest cluster / share of questions in a repeated shape):
+#
+#   0.45 -> 68 / 72%     0.62 -> 33 / 47%
+#   0.55 -> 48 / 59%     0.70 -> 21 / 36%     0.78 -> 20 / 27%
+#
+# Chosen on coherence rather than on the numbers. At 0.70 the largest cluster is
+# 21 questions that genuinely are "expand and simplify a product of brackets",
+# and completing the square has separated out into its own group of 8. Below
+# that, distinct shapes are still merged; above it, genuine repeats start
+# splitting and the share in a repeated shape falls away for nothing.
+#
+# 36% in a repeated shape is lower than FPM's, and that is a real property of
+# the subject rather than a clustering failure -- a compound question with three
+# unrelated parts has no exact twin.
+DEFAULT_THRESHOLD = 0.70
 
 # The archetype phrase is already a distilled description of the shape, so it
 # counts for more than raw stem wording.
