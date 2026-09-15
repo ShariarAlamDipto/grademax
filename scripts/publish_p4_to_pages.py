@@ -49,7 +49,15 @@ def main() -> int:
     parser.add_argument(
         "--include-unverified",
         action="store_true",
-        help="publish machine classifications no human has checked",
+        help="publish every classification, reviewed or not",
+    )
+    parser.add_argument(
+        "--agreed-only",
+        action="store_true",
+        help=(
+            "publish unverified questions ONLY where both classifier families "
+            "agreed on the section; holds back disputed and same-chapter ones"
+        ),
     )
     args = parser.parse_args()
 
@@ -96,11 +104,24 @@ def main() -> int:
 
     rows = fetch_all(
         lambda o, l: supabase.table("workbook_questions")
-        .select("slug,verified_at,section_id,secondary_section_ids,qp_pdf_url,ms_pdf_url")
+        .select(
+            "slug,verified_at,section_id,secondary_section_ids,"
+            "qp_pdf_url,ms_pdf_url,review_priority"
+        )
         .eq("subject_id", subject_id)
         .range(o, o + l - 1)
     )
-    verified_slugs = {r["slug"] for r in rows if r["verified_at"]}
+    human_verified = {r["slug"] for r in rows if r["verified_at"]}
+    verified_slugs = set(human_verified)
+
+    # --agreed-only treats two independent model families agreeing as evidence
+    # good enough to publish, which is weaker than a human check but much
+    # stronger than a single opinion. Disputed and same_chapter rows are held
+    # back for the verify queue.
+    if args.agreed_only:
+        agreed = {r["slug"] for r in rows if r["review_priority"] == "agreed"}
+        verified_slugs = verified_slugs | agreed
+        print(f"--agreed-only : {len(agreed)} questions where both models agreed")
     by_slug = {r["slug"]: r for r in rows}
 
     # Section ids -> codes, so the DB's verified assignment is what gets
@@ -154,9 +175,12 @@ def main() -> int:
         args.include_unverified,
     )
 
-    print(f"workbook rows: {len(rows)} ({len(verified_slugs)} verified)")
+    print(
+        f"workbook rows: {len(rows)}  "
+        f"human-verified: {len(human_verified)}  publishable: {len(verified_slugs)}"
+    )
     print(f"pages to write: {len(plan.pages)}")
-    print(f"skipped (unverified): {plan.skipped_unverified}")
+    print(f"held back     : {plan.skipped_unverified}")
     if plan.missing_papers:
         print(f"  !! no papers row for: {plan.missing_papers}")
 
