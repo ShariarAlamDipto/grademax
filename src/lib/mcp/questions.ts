@@ -44,8 +44,14 @@ export interface TopicSummary {
 export interface QuestionResult {
   id: string
   questionNumber: string
-  /** Raw topic ids as stored in pages.topics (kept for reference/filtering). */
+  /** Raw topic ids as stored in pages.topics (internal reference). */
   topics: string[]
+  /**
+   * The `code`s exposed by list_topics (e.g. "WAVE", "M1.1"). These — not the
+   * raw `topics` ids — are what search_questions/build_practice_test accept, so
+   * they round-trip cleanly.
+   */
+  topicCodes: string[]
   /** Human-readable topic names resolved from the topics table. */
   topicNames: string[]
   difficulty: string
@@ -64,6 +70,17 @@ export interface QuestionResult {
   questionPdfUrl: string | null
   markSchemePdfUrl: string | null
   viewerUrl: string | null
+}
+
+/**
+ * Log the real database error server-side and hand the caller a generic
+ * message. This is an anonymous, public endpoint — raw PostgREST/Postgres error
+ * strings can disclose table/column shape and should not reach the client.
+ */
+function dbError(context: string, err: unknown): string {
+  const detail = err instanceof Error ? err.message : String(err)
+  console.error(`[mcp] ${context}: ${detail}`)
+  return `${context}. Please try again or adjust your query.`
 }
 
 let cachedClient: SupabaseClient | null = null
@@ -105,7 +122,7 @@ async function resolveSubjectId(
     .eq("name", dbNameOf(subject))
     .limit(1)
     .maybeSingle()
-  if (error) return { error: `Database error resolving subject: ${error.message}` }
+  if (error) return { error: dbError("Could not resolve subject", error) }
   if (!data) {
     return { error: `Subject "${slug}" is not present in the database.` }
   }
@@ -129,7 +146,7 @@ export async function listTopics(
     .select("code,name,description")
     .eq("subject_id", resolved.id)
     .order("code")
-  if (error) return { ok: false, error: `Failed to fetch topics: ${error.message}` }
+  if (error) return { ok: false, error: dbError("Failed to fetch topics", error) }
 
   return {
     ok: true,
@@ -161,29 +178,40 @@ interface PageRow {
 const PAGE_SELECT =
   "id,paper_id,page_number,question_number,topics,difficulty,qp_page_url,ms_page_url,has_diagram,text_excerpt,papers(year,season,paper_number)"
 
+interface TopicMaps {
+  /** Topic id (as stored in pages.topics) -> human-readable name. */
+  idToName: Map<string, string>
+  /** Topic id -> the `code` list_topics exposes (e.g. "3" -> "WAVE"). */
+  idToCode: Map<string, string>
+}
+
 /**
- * Build a map from the topic ids stored in pages.topics to human-readable
- * topic names. pages.topics stores normalized ids (e.g. "3", "M1.1", "1.2"),
- * while the topics table stores codes (e.g. "WAVE", "M1.1", "1.2"); running
- * each code through normalizeTopicCodes yields the same id the pages use, so
- * we can resolve "3" -> "Waves" for the client.
+ * Build lookups from the topic ids stored in pages.topics back to the topics
+ * table's codes and names. pages.topics stores normalized ids (e.g. "3",
+ * "M1.1", "1.2") while the topics table stores codes (e.g. "WAVE", "M1.1",
+ * "1.2"); running each code through normalizeTopicCodes yields the same id the
+ * pages use, so we can resolve "3" -> "WAVE" / "Waves" for the client.
  */
-async function loadTopicIdToName(
+async function loadTopicMaps(
   sb: SupabaseClient,
   subjectId: string
-): Promise<Map<string, string>> {
+): Promise<TopicMaps> {
   const { data } = await sb
     .from("topics")
     .select("code,name")
     .eq("subject_id", subjectId)
-  const map = new Map<string, string>()
+  const idToName = new Map<string, string>()
+  const idToCode = new Map<string, string>()
   for (const t of data ?? []) {
     const code = t.code as string
     const name = t.name as string
-    map.set(code, name)
-    for (const id of normalizeTopicCodes([code])) map.set(id, name)
+    idToName.set(code, name)
+    for (const id of normalizeTopicCodes([code])) {
+      idToName.set(id, name)
+      idToCode.set(id, code)
+    }
   }
-  return map
+  return { idToName, idToCode }
 }
 
 function normalizeDifficulty(raw: string | null): string {
@@ -191,10 +219,24 @@ function normalizeDifficulty(raw: string | null): string {
   return raw
 }
 
+/**
+ * Tolerate a back-to-front year window (yearStart > yearEnd) by swapping the
+ * bounds instead of silently matching nothing.
+ */
+function normalizeYearWindow(
+  yearStart?: number,
+  yearEnd?: number
+): { yearStart?: number; yearEnd?: number } {
+  if (yearStart != null && yearEnd != null && yearStart > yearEnd) {
+    return { yearStart: yearEnd, yearEnd: yearStart }
+  }
+  return { yearStart, yearEnd }
+}
+
 /** Map a `pages` row to the public QuestionResult shape (URLs + viewer link). */
 function mapPageRow(
   subjectName: string,
-  idToName: Map<string, string>,
+  maps: TopicMaps,
   p: PageRow
 ): QuestionResult {
   const qp = toAbsolutePdfUrl(p.qp_page_url)
@@ -216,7 +258,8 @@ function mapPageRow(
     id: p.id,
     questionNumber: p.question_number || String(p.page_number),
     topics: ids,
-    topicNames: ids.map((id) => idToName.get(id) ?? id),
+    topicCodes: ids.map((id) => maps.idToCode.get(id) ?? id),
+    topicNames: ids.map((id) => maps.idToName.get(id) ?? id),
     difficulty: normalizeDifficulty(p.difficulty),
     year: p.papers?.year ?? null,
     season: p.papers?.season ?? null,
@@ -261,11 +304,12 @@ export async function searchQuestions(opts: {
   const limit = Math.min(50, Math.max(1, opts.limit ?? 20))
 
   // Step 1: paper IDs for this subject (with optional year window).
+  const { yearStart, yearEnd } = normalizeYearWindow(opts.yearStart, opts.yearEnd)
   let paperQuery = sb.from("papers").select("id").eq("subject_id", resolved.id)
-  if (opts.yearStart) paperQuery = paperQuery.gte("year", opts.yearStart)
-  if (opts.yearEnd) paperQuery = paperQuery.lte("year", opts.yearEnd)
+  if (yearStart) paperQuery = paperQuery.gte("year", yearStart)
+  if (yearEnd) paperQuery = paperQuery.lte("year", yearEnd)
   const { data: papers, error: paperErr } = await paperQuery
-  if (paperErr) return { ok: false, error: `Failed to fetch papers: ${paperErr.message}` }
+  if (paperErr) return { ok: false, error: dbError("Failed to fetch papers", paperErr) }
 
   if (!papers || papers.length === 0) {
     return {
@@ -286,10 +330,39 @@ export async function searchQuestions(opts: {
       : []
   const offset = (page - 1) * limit
 
-  // Step 2: page rows + exact count in one round-trip.
+  // Step 2: exact count first. Asking PostgREST for a .range() past the end of
+  // the result set returns a 416 "Requested range not satisfiable"; counting up
+  // front lets an out-of-range page return an empty page with correct totals.
+  let countQuery = sb
+    .from("pages")
+    .select("id", { count: "exact", head: true })
+    .eq("is_question", true)
+    .not("qp_page_url", "is", null)
+    .in("paper_id", paperIds)
+  if (topicCodes.length > 0) countQuery = countQuery.overlaps("topics", topicCodes)
+  if (opts.difficulty) countQuery = countQuery.eq("difficulty", opts.difficulty)
+
+  const { count, error: countErr } = await countQuery
+  if (countErr) return { ok: false, error: dbError("Failed to fetch questions", countErr) }
+
+  const total = count ?? 0
+  const totalPages = Math.ceil(total / limit)
+  if (offset >= total) {
+    return {
+      ok: true,
+      subject: resolved.subject.name,
+      classified,
+      total,
+      page,
+      totalPages,
+      questions: [],
+    }
+  }
+
+  // Step 3: the requested page of rows (now guaranteed to be in range).
   let q = sb
     .from("pages")
-    .select(PAGE_SELECT, { count: "exact" })
+    .select(PAGE_SELECT)
     .eq("is_question", true)
     .not("qp_page_url", "is", null)
     .in("paper_id", paperIds)
@@ -298,13 +371,12 @@ export async function searchQuestions(opts: {
   if (topicCodes.length > 0) q = q.overlaps("topics", topicCodes)
   if (opts.difficulty) q = q.eq("difficulty", opts.difficulty)
 
-  const { data: pages, count, error: pagesErr } = await q
-  if (pagesErr) return { ok: false, error: `Failed to fetch questions: ${pagesErr.message}` }
+  const { data: pages, error: pagesErr } = await q
+  if (pagesErr) return { ok: false, error: dbError("Failed to fetch questions", pagesErr) }
 
-  const total = count ?? 0
   const rows = (pages ?? []) as unknown as PageRow[]
-  const idToName = await loadTopicIdToName(sb, resolved.id)
-  const questions = rows.map((p) => mapPageRow(resolved.subject.name, idToName, p))
+  const maps = await loadTopicMaps(sb, resolved.id)
+  const questions = rows.map((p) => mapPageRow(resolved.subject.name, maps, p))
 
   return {
     ok: true,
@@ -312,7 +384,7 @@ export async function searchQuestions(opts: {
     classified,
     total,
     page,
-    totalPages: Math.ceil(total / limit),
+    totalPages,
     questions,
   }
 }
@@ -382,11 +454,12 @@ export async function buildPracticeTest(opts: {
   if (!classified) return { ok: true, test: emptyTest() }
 
   // Paper IDs for this subject (optional year window).
+  const { yearStart, yearEnd } = normalizeYearWindow(opts.yearStart, opts.yearEnd)
   let paperQuery = sb.from("papers").select("id").eq("subject_id", resolved.id)
-  if (opts.yearStart) paperQuery = paperQuery.gte("year", opts.yearStart)
-  if (opts.yearEnd) paperQuery = paperQuery.lte("year", opts.yearEnd)
+  if (yearStart) paperQuery = paperQuery.gte("year", yearStart)
+  if (yearEnd) paperQuery = paperQuery.lte("year", yearEnd)
   const { data: papers, error: paperErr } = await paperQuery
-  if (paperErr) return { ok: false, error: `Failed to fetch papers: ${paperErr.message}` }
+  if (paperErr) return { ok: false, error: dbError("Failed to fetch papers", paperErr) }
   if (!papers || papers.length === 0) return { ok: true, test: emptyTest() }
   const paperIds = papers.map((p) => p.id as string)
 
@@ -412,7 +485,7 @@ export async function buildPracticeTest(opts: {
   if (opts.difficulty) q = q.eq("difficulty", opts.difficulty)
 
   const { data: pool, error: poolErr } = await q
-  if (poolErr) return { ok: false, error: `Failed to fetch questions: ${poolErr.message}` }
+  if (poolErr) return { ok: false, error: dbError("Failed to fetch questions", poolErr) }
   const rows = (pool ?? []) as unknown as PageRow[]
   if (rows.length === 0) return { ok: true, test: emptyTest() }
 
@@ -434,8 +507,9 @@ export async function buildPracticeTest(opts: {
   }
 
   const selected = roundRobin(Array.from(buckets.values()), requestedCount)
-  const idToName = await loadTopicIdToName(sb, resolved.id)
-  const questions = selected.map((p) => mapPageRow(resolved.subject.name, idToName, p))
+  const maps = await loadTopicMaps(sb, resolved.id)
+  const idToName = maps.idToName
+  const questions = selected.map((p) => mapPageRow(resolved.subject.name, maps, p))
 
   // Breakdowns for the summary (topic names for readability).
   const topicBreakdown: Record<string, number> = {}
