@@ -67,6 +67,19 @@ function error(message: string) {
   return { content: [{ type: "text" as const, text: message }], isError: true }
 }
 
+/**
+ * Explain an empty question/test result so the model can recover instead of
+ * reporting a bare zero: an unclassified subject can never return questions,
+ * while a classified one usually just has filters that are too narrow.
+ */
+function emptyResultNote(subject: string, classified: boolean): string {
+  return classified
+    ? "No questions matched these filters. Try removing the difficulty or topic " +
+        "filter, or widening the year range."
+    : `${subject} has no question-level data (it is download-only). Use ` +
+        "search_papers for whole papers instead."
+}
+
 const handler = createMcpHandler(
   (server) => {
     server.registerTool(
@@ -103,7 +116,9 @@ const handler = createMcpHandler(
           "exam PDF for an Edexcel or Cambridge subject. Returns each paper with links " +
           "to the question-paper PDF, the mark-scheme PDF, and the on-site viewer. " +
           "`subject` is a slug from list_subjects (e.g. \"physics\", \"ial-chemistry\"). " +
-          "Narrow with year, season, or paper as needed.",
+          "Narrow with year, season, or paper as needed. Results are paginated: the " +
+          "response reports `total` and `totalPages`; request further pages with " +
+          "`page` rather than a large `limit`.",
         inputSchema: {
           subject: z
             .string()
@@ -116,15 +131,30 @@ const handler = createMcpHandler(
             .string()
             .optional()
             .describe('Paper/unit/component, e.g. "1", "1R", "22", "P3".'),
-          limit: z.number().int().min(1).max(100).optional(),
+          page: z
+            .number()
+            .int()
+            .min(1)
+            .optional()
+            .describe("1-based page of results (default 1)."),
+          limit: z
+            .number()
+            .int()
+            .min(1)
+            .max(100)
+            .optional()
+            .describe("Results per page (default 40, max 100)."),
         },
       },
-      async ({ subject, year, season, paper, limit }) => {
-        const res = await searchPapers({ subject, year, season, paper, limit })
+      async ({ subject, year, season, paper, page, limit }) => {
+        const res = await searchPapers({ subject, year, season, paper, page, limit })
         if (!res.ok) return error(res.error)
         return json({
           subject: res.subject.name,
           subjectSlug: res.subject.slug,
+          total: res.total,
+          page: res.page,
+          totalPages: res.totalPages,
           count: res.papers.length,
           papers: res.papers,
         })
@@ -163,9 +193,10 @@ const handler = createMcpHandler(
           "List the syllabus topics (chapters) for a subject, so you can then " +
           "filter questions by topic with search_questions. Call this when the user " +
           "wants to revise a specific chapter or topic. `subject` is a slug from " +
-          "list_subjects. Note: question-level topic data exists only for these six " +
+          "list_subjects. Note: question-level topic data exists only for these seven " +
           "subjects: physics, maths-b, chemistry, biology, human-biology, " +
-          "further-pure-maths. Each topic returns a `code` to pass to search_questions.",
+          "further-pure-maths, mechanics-1. Each topic returns a `code` to pass to " +
+          "search_questions (the same codes appear as `topicCodes` on each question).",
         inputSchema: {
           subject: z.string().describe("Subject slug from list_subjects."),
         },
@@ -202,7 +233,10 @@ const handler = createMcpHandler(
           topics: z
             .array(z.string())
             .optional()
-            .describe("Topic codes from list_topics, e.g. [\"3\",\"4\"]."),
+            .describe(
+              "Topic `code`s from list_topics (e.g. [\"WAVE\",\"ELEC\"]); these " +
+              "match the `topicCodes` field on each returned question."
+            ),
           difficulty: difficultyEnum.optional(),
           yearStart: z.number().int().min(2000).max(2100).optional(),
           yearEnd: z.number().int().min(2000).max(2100).optional(),
@@ -228,6 +262,7 @@ const handler = createMcpHandler(
           page: res.page,
           totalPages: res.totalPages,
           count: res.questions.length,
+          ...(res.total === 0 ? { note: emptyResultNote(res.subject, res.classified) } : {}),
           guidance: QUESTION_USAGE_GUIDANCE,
           questions: res.questions,
         })
@@ -278,7 +313,14 @@ const handler = createMcpHandler(
           count,
         })
         if (!res.ok) return error(res.error)
-        return json({ ...res.test, guidance: QUESTION_USAGE_GUIDANCE })
+        const { test } = res
+        return json({
+          ...test,
+          ...(test.selectedCount === 0
+            ? { note: emptyResultNote(test.subject, test.classified) }
+            : {}),
+          guidance: QUESTION_USAGE_GUIDANCE,
+        })
       }
     )
   },
