@@ -1,0 +1,29 @@
+[
+  {
+    "subject": "IAL Economics",
+    "year": 2022,
+    "season": "jan",
+    "paper_number": "Unit_2",
+    "kind": "QP",
+    "source": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Economics/2018/Exam-materials/WEC12_01_que_20220122.pdf",
+    "target": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/ial/ial-economics/2022/jan/Economics_Unit_2_2022_Jan_QP.pdf"
+  },
+  {
+    "subject": "IAL Economics",
+    "year": 2022,
+    "season": "jan",
+    "paper_number": "Unit_3",
+    "kind": "QP",
+    "source": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Economics/2018/Exam-materials/WEC13_01_que_20220111.pdf",
+    "target": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/ial/ial-economics/2022/jan/Economics_Unit_3_2022_Jan_QP.pdf"
+  },
+  {
+    "subject": "IAL Physics",
+    "year": 2021,
+    "season": "may-jun",
+    "paper_number": "Unit_4",
+    "kind": "MS",
+    "source": "https://qualifications.pearson.com/content/dam/pdf/International%20Advanced%20Level/Physics/2018/Exam-materials/WPH14_01_rms_20210604.pdf",
+    "target": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/ial/ial-physics/2021/may-jun/Physics_Unit_4_2021_May-Jun_MS.pdf"
+  }
+]

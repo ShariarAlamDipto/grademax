@@ -1,0 +1,636 @@
+{
+  "papers": [
+    {
+      "key": "2016_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2016_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 27/28 aligned (skipped 1 question(s), 0 tally/tallies) -- 1 question(s) unmatched",
+        "no mark scheme block found for questions [26]"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2016_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2016_jan_2R",
+      "status": "failed",
+      "skipped_reason": null,
+      "issues": [
+        "no question fences found in 32 pages (147715 chars of text -- an image-only scan or a broken text layer; add an entry to MANUAL_QP_RANGES)"
+      ],
+      "warnings": [],
+      "questions": 0,
+      "marks": 0
+    },
+    {
+      "key": "2016_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 27/28 aligned (skipped 1 question(s), 0 tally/tallies) -- 1 question(s) unmatched",
+        "no mark scheme block found for questions [28]"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2016_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2016_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2016_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme tallies align only ambiguously (3 question(s) and 3 tally/tallies unmatched, so a question could pair with the wrong tally of equal value) -- no mark schemes attached"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme could not be aligned to the paper (0 tallies for 11 questions, and no readable numbered table) -- no mark schemes attached"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 3 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 25 numbered rows, 15 also confirmed by their printed mark -- 2 question(s) unmatched",
+        "no mark scheme block found for questions [22, 25]"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2018_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme could not be aligned to the paper (0 tallies for 27 questions, and no readable numbered table) -- no mark schemes attached"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2018_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme could not be aligned to the paper (0 tallies for 11 questions, and no readable numbered table) -- no mark schemes attached"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 11 numbered rows, 2 also confirmed by their printed mark"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 20 numbered rows, 20 also confirmed by their printed mark -- 8 question(s) unmatched",
+        "no mark scheme block found for questions [5, 12, 16, 17, 24, 25, 26, 28]"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 19 numbered rows, 0 also confirmed by their printed mark -- 8 question(s) unmatched",
+        "no mark scheme block found for questions [14, 16, 18, 22, 23, 24, 25, 26]"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme could not be aligned to the paper (0 tallies for 11 questions, and no readable numbered table) -- no mark schemes attached"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_1",
+      "status": "failed",
+      "skipped_reason": null,
+      "issues": [
+        "question numbers are not contiguous from 1: missing [8, 9], unexpected [26, 27]",
+        "marks sum to 94, expected 100 ({1:2, 2:2, 3:2, 4:2, 5:2, 6:2, 7:2, 10:3, 11:3, 12:3, 13:3, 14:3, 15:4, 16:4, 17:4, 18:4, 19:4, 20:4, 21:5, 22:5, 23:5, 24:6, 25:8, 26:6, 27:6})"
+      ],
+      "warnings": [
+        "question 8: fence unreadable and question 9 has no printed start marker -- cannot place the boundary",
+        "mark scheme read as a continuous table: 25 numbered rows, 1 also confirmed by their printed mark"
+      ],
+      "questions": 25,
+      "marks": 94
+    },
+    {
+      "key": "2019_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 17: fence unreadable -- marks (4) from the 100-mark paper total, boundary from question 18's printed start marker on page 11",
+        "mark scheme read as a continuous table: 22 numbered rows, 1 also confirmed by their printed mark -- 6 question(s) unmatched",
+        "no mark scheme block found for questions [2, 7, 12, 18, 26, 28]"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme could not be aligned to the paper (0 tallies for 12 questions, and no readable numbered table) -- no mark schemes attached"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 5: fence unreadable -- marks (11) from the 100-mark paper total, boundary from question 6's printed start marker on page 19",
+        "mark scheme read as a continuous table: 11 numbered rows, 0 also confirmed by their printed mark"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2R",
+      "status": "failed",
+      "skipped_reason": null,
+      "issues": [
+        "no question fences found in 36 pages (3600 chars of text -- an image-only scan or a broken text layer; add an entry to MANUAL_QP_RANGES)"
+      ],
+      "warnings": [],
+      "questions": 0,
+      "marks": 0
+    },
+    {
+      "key": "2020_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/27 aligned (skipped 1 question(s), 1 tally/tallies) -- 1 question(s) unmatched",
+        "no mark scheme block found for questions [25]"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 29/29 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 22 numbered rows, 0 also confirmed by their printed mark -- 7 question(s) unmatched",
+        "no mark scheme block found for questions [4, 13, 20, 24, 25, 27, 29]"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2021_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2021_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2021_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2021_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2021_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2021_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 23 numbered rows, 1 also confirmed by their printed mark -- 6 question(s) unmatched",
+        "no mark scheme block found for questions [1, 10, 16, 17, 21, 26]"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 25 numbered rows, 1 also confirmed by their printed mark -- 4 question(s) unmatched",
+        "no mark scheme block found for questions [22, 25, 26, 29]"
+      ],
+      "questions": 29,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 12/12 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 27/27 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 27,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 11/11 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 11,
+      "marks": 100
+    }
+  ]
+}

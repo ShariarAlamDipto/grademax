@@ -1,0 +1,3705 @@
+[
+  {
+    "slug": "P4.2018_specimen.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 1,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q1.pdf",
+    "stem": "Answer ALL questions. Write your answers in the spaces provided. Use the binomial series to find the expansion of ( ) + x ½x½ < 2 in ascending powers of x, up to and including the term in x3 Give each coefficient as a fraction in its simplest form. (6) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q1 (Total for Question 1 is 6 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 717,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 2,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q2.pdf",
+    "stem": "A curve C has the equation x3 + 2xy – x – y3 – 20 = 0 (a) Find d d y x in terms of x and y. (5) (b) Find an equation of the tangent to C at the point (3, –2), giving your answer in the form ax + by + c = 0, where a, b and c are integers. (2) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q2 (Total for Question 2 is 7 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 706,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 3,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q3.pdf",
+    "stem": "f(x) = − = + − + − x x A x B x C x ( ) ( ) ( ) (a) Find the values of the constants A, B and C (4) (b) (i) Hence find ∫f(x) dx (ii) Find 2∫f(x) dx, giving your answer in the form a + ln b, where a and b are constants. (6) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q3 (Total for Question 3 is 10 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1115,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 4,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q4.pdf",
+    "stem": "y C O x Figure 1 Figure 1 shows a sketch of the curve C with parametric equations x = 3 sin 2t y = 4 cos2 t 0 - t - π (a) Show that d d y x = k 3 tan 2t, where k is a constant to be found. (5) (b) Find an equation of the tangent to C at the point where t = 3 π Give your answer in the form y = ax + b, where a and b are constants. (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q4 (Total for Question 4 is 9 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1227,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 5,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      17
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q5.pdf",
+    "stem": "y A R O x Figure 2 Figure 2 shows a sketch of part of the curve with equation y = 4x – x x e 2 , x . 0 The curve meets the x-axis at the origin O and cuts the x-axis at the point A. (a) Find, in terms of ln 2, the x coordinate of the point A. (2) (b) Find x x x e d ∫ (3) The finite region R, shown shaded in Figure 2, is bounded by the x-axis and the curve with equation y = 4x – x x e 2 , x . 0 (c) Find, by integration, the exact value for the area of R. Give your answer in terms of ln 2 (3) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q5 (Total for Question 5 is 8 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1602,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 6,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      18,
+      19
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q6.pdf",
+    "stem": "Prove by contradiction that, if a, b are positive real numbers, then a + b . 2 ab (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q6 (Total for Question 6 is 4 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 550,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 7,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      20,
+      21
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q7.pdf",
+    "stem": "y C O x Figure 3 Figure 3 shows a sketch of the curve C with parametric equations x = 4 cos π t⎛ ⎞ + ⎜ ⎟ ⎝ ⎠ y = 2 sin t 0 - t - 2π (a) Show that x + y = 2 3 cos t (3) (b) Show that a cartesian equation of C is (x + y)2 + ay2 = b where a and b are integers to be found. (2) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q7 (Total for Question 7 is 5 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 738,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 8,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      22,
+      25
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q8.pdf",
+    "stem": "Water is being heated in a kettle. At time t seconds, the temperature of the water is ș °C. The rate of increase of the temperature of the water at time t is modelled by the differential equation d d θ t = Ȝ(120 – ș) ș - 100 where Ȝ is a positive constant. Given that ș = 20 when t = 0 (a) solve this differential equation to show that ș = 120 – 100e–Ȝt (8) When the temperature of the water reaches 100 °C, the kettle switches off. (b) Given that Ȝ = 0.01, find the time, to the nearest second, when the kettle switches off. (3) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q8 (Total for Question 8 is 11 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1423,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 8
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2018_specimen.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 9,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 15,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      26,
+      29
+    ],
+    "qp_pdf": "p4/2018_specimen/questions/q9.pdf",
+    "stem": "With respect to a fixed origin O, the line l1 is given by the equation r = − ⎛ ⎝ ⎜ ⎜ ⎞ ⎠ ⎟ ⎟ + ȝ − ⎛ ⎝ ⎜ ⎜ ⎞ ⎠ ⎟ ⎟ where ȝ is a scalar parameter. The point A lies on l1 where ȝ = 1 (a) Find the coordinates of A. (1) The point P has position vector ⎛ ⎝ ⎜ ⎜ ⎞ ⎠ ⎟ ⎟ The line l2 passes through the point P and is parallel to the line l1 (b) Write down a vector equation for the line l2 (2) (c) Find the exact value of the distance AP. Give your answer in the form k 2 , where k is a constant to be found. (2) The acute angle between AP and l2 is ș (d) Find the value of cos ș (3) A point E lies on the line l2 Given that AP = PE, (e) find the area of triangle APE, (2) (f) find the coordinates of the two possible positions of E. (5) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 TOTAL FOR PAPER IS 75 MARKS Q9 (Total for Question 9 is 15 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1652,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 3
+      },
+      {
+        "label": "e",
+        "marks": 2
+      },
+      {
+        "label": "f",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 1,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q1.pdf",
+    "stem": "Given that n is an integer, use algebra, to prove by contradiction, that if n3 is even then n is even. (4) Q1",
+    "stem_chars": 109,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 2,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q2.pdf",
+    "stem": "(a) Use the binomial expansion to expand − ( ) − x x < in ascending powers of x, up to and including the term in x2 giving each coefficient as a fully simplified fraction. (4) f x kx x < ; : where k is a constant and x < 4 Given that the series expansion of f(x), in ascending powers of x, is + + + x mx ... where m is a constant (b) find the value of k, (2) (c) find the value of m. (2) Q2",
+    "stem_chars": 390,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 3,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q3.pdf",
+    "stem": "y x R O y = e 0.5x −2 Figure 1 Figure 1 shows a sketch of part of the curve with equation y = e 0.5x −2 The region R, shown shaded in Figure 1, is bounded by the curve, the x-axis and the y-axis. The region R is rotated 360° about the x-axis to form a solid of revolution. Show that the volume of this solid can be written in the form a ln 2 + b, where a and b are constants to be found. (6) Q3",
+    "stem_chars": 394,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 4,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q4.pdf",
+    "stem": "A y B O x Figure 2 Figure 2 shows a sketch of part of the curve with parametric equations x = 2t2 − 6t, y = t 3 − 4t, t ∈  The curve cuts the x-axis at the origin and at the points A and B, as shown in Figure 2. (a) Find the coordinates of A and show that B has coordinates (20, 0). (3) (b) Show that the equation of the tangent to the curve at B is 7y + 4x − 80 = 0 (5) The tangent to the curve at B cuts the curve again at the point P. (c) Find, using algebra, the x coordinate of P. (4) Q4",
+    "stem_chars": 493,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 5,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q5.pdf",
+    "stem": "y O R x Figure 3 (a) Find ln x x x 2 d ∫ (3) Figure 3 shows a sketch of part of the curve with equation y x x x < ; ; ln x > 0.5 The finite region R, shown shaded in Figure 3, is bounded by the curve, the line with equation x = 2, the x-axis and the line with equation x = 4 (b) Use the answer to part (a) to find the exact area of R, writing your answer in simplest form. (4) Q5",
+    "stem_chars": 379,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 6,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q6.pdf",
+    "stem": "A curve C has equation y = xsin x x > 0 y > 0 (a) Find, by firstly taking natural logarithms, an expression for d d y x in terms of x and y. (5) (b) Hence show that the x coordinates of the stationary points of C are solutions of the equation tan x + x ln x = 0 (2) Q6",
+    "stem_chars": 268,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 7,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q7.pdf",
+    "stem": "(i) Using a suitable substitution, find, using calculus, the value of x x x − ∫ d (Solutions relying entirely on calculator technology are not acceptable.) (6) (ii) Find 1 2 2x x x x − + − ∫( )( ) d (6) Q7",
+    "stem_chars": 205,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 8,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q8.pdf",
+    "stem": "Relative to a fixed origin O, the lines l1 and l2 are given by the equations l1: r = < ; : + λ < < ; : where λ is a scalar parameter l2: r = < ; : + μ < < ; : where μ is a scalar parameter Given that l1 and l2 meet at the point X, (a) find the position vector of X. (5) The point P (10, −7, 0) lies on l1 The point Q lies on l2 Given that PQ → is perpendicular to l2 (b) calculate the coordinates of Q. (5) Q8",
+    "stem_chars": 409,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2020_may-jun.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 9,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p4/2020_may-jun/questions/q9.pdf",
+    "stem": "Bacteria are growing on the surface of a dish in a laboratory. The area of the dish, A cm2, covered by the bacteria, t days after the bacteria start to grow, is modelled by the differential equation d d A t A t = t > 0 Given that A = 2.25 when t = 3 (a) show that A pt qt r < ; : where p, q and r are integers to be found. (7) According to the model, there is a limit to the area that will be covered by the bacteria. (b) Find the value of this limit. (2) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 490,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 7
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_jan.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q1.pdf",
+    "stem": "(a) Find the first 4 terms, in ascending powers of x, of the binomial expansion of −     < x x giving each coefficient in its simplest form. (5) By substituting x = into the answer for (a), (b) find an approximation for Give your answer in the form a b where a and b are integers to be found. (2) Q1",
+    "stem_chars": 305,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_jan.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q2.pdf",
+    "stem": "A B C D Figure 1 Figure 1 shows a sketch of parallelogram ABCD. Given that AB → = 6i – 2j + 3k and BC → = 2i + 5j + 8k (a) find the size of angle ABC, giving your answer in degrees, to 2 decimal places. (3) (b) Find the area of parallelogram ABCD, giving your answer to one decimal place. (2) Q2",
+    "stem_chars": 295,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_jan.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "jan",
+    "marks": 2,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q3.pdf",
+    "stem": "Prove by contradiction that there is no greatest odd integer. (2) Q3",
+    "stem_chars": 68,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_jan.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q4.pdf",
+    "stem": "The curve C is defined by the parametric equations x t y t t t = + = − + > (a) Show that the equation of C can be written in the form y = g(x) where g is the function g( ) x ax b cx d x k = + + > where a, b, c, d and k are integers to be found. (5) (b) Hence, or otherwise, state the range of g. (2) Q4",
+    "stem_chars": 302,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_jan.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q5.pdf",
+    "stem": "In this question you should show all stages of your working. Solutions relying on calculator technology are not acceptable. Using the substitution u x = + − 1 find the exact value of + − ∫ x x d giving your answer in the form p + q ln 2, where p and q are integers to be found. (8) Q5",
+    "stem_chars": 284,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_jan.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q6.pdf",
+    "stem": "A curve has equation 4y 2 + 3x = 6ye–2x (a) Find d d y x in terms of x and y. (5) The curve crosses the y-axis at the origin and at the point P. (b) Find the equation of the normal to the curve at P, writing your answer in the form y = mx + c where m and c are constants to be found. (4) Q6",
+    "stem_chars": 290,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_jan.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q7.pdf",
+    "stem": "x O y R Figure 2 (a) Find e d 2x x x sin ∫ (5) Figure 2 shows a sketch of part of the curve with equation y = e2x sin x x  0 The finite region R is bounded by the curve and the x-axis and is shown shaded in Figure 2. (b) Show that the exact area of R is 2e + π (Solutions relying on calculator technology are not acceptable.) (2) Q7",
+    "stem_chars": 333,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_jan.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q8.pdf",
+    "stem": "With respect to a fixed origin O, the lines l1 and l2 are given by the equations : : l λ l μ b −                 = + − = − + −         −         r r where λ and μ are scalar parameters and b is a constant. Prove that for all values of b ≠ 7, the lines l1 and l2 are skew. (6) Q8",
+    "stem_chars": 310,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_jan.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q9.pdf",
+    "stem": "x O y Figure 3 Figure 3 shows a sketch of part of the curve with parametric equations tan 2sin 2 x θ y θ θ = = < The finite region, shown shaded in Figure 3, is bounded by the curve, the x-axis and the line with equation x = The region is rotated through 2π radians about the x-axis to form a solid of revolution. (a) Show that the exact volume of this solid of revolution is given by (1 cos2 ) d k p θ θ − ∫ where p and k are constants to be found. (7) (b) Hence find, by algebraic integration, the exact volume of this solid of revolution. (3) Q9",
+    "stem_chars": 548,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 7
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_jan.Q010",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 10,
+    "year": 2021,
+    "season": "jan",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      27
+    ],
+    "qp_pdf": "p4/2021_jan/questions/q10.pdf",
+    "stem": "(a) Write ( )( ) H H − + in partial fraction form. (3) The depth of water in a storage tank is being monitored. The depth of water in the tank, H metres, is modelled by the differential equation d d H t H H = − − + ( )( ) where t is the time, in days, from when monitoring began. Given that the initial depth of water in the tank was 13 m, (b) solve the differential equation to show that H t t = + − − − 0 2 0 2 e e . . (7) (c) Hence find the time taken for the depth of water in the tank to fall to 8 m. (Solutions relying entirely on calculator technology are not acceptable.) (3) According to the model, the depth of water in the tank will eventually fall to k metres. (d) State the value of the constant k. (1) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 751,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_may-jun.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      4
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q1.pdf",
+    "stem": "Given that k is a constant and the binomial expansion of 1 + kx | kx | < 1 in ascending powers of x up to the term in x3 is 1 + 1 8 x + Ax2 + Bx3 (a) (i) find the value of k, (ii) find the value of the constant A and the constant B. (5) (b) Use the expansion to find an approximate value to 1 15 . Show your working and give your answer to 6 decimal places. (2) Q1",
+    "stem_chars": 364,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_may-jun.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q2.pdf",
+    "stem": "Diagram NOT drawn to scale y x R O Figure 1 Figure 1 shows a sketch of part of the curve with equation y = 3 1 25 ( ) . x − x > 3 The finite region R, shown shaded in Figure 1, is bounded by the curve, the line with equation y = 9 and the line with equation x = 6 This region is rotated through 2π radians about the x‑axis to form a solid of revolution. Find, by algebraic integration, the exact volume of the solid generated. (7) Q2",
+    "stem_chars": 433,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_may-jun.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q3.pdf",
+    "stem": "20 cm h cm Figure 2 A bowl with circular cross section and height 20 cm is shown in Figure 2. The bowl is initially empty and water starts flowing into the bowl. When the depth of water is h cm, the volume of water in the bowl, V cm3, is modelled by the equation V = 1 3 h 2 (h + 4) 0  h  20 Given that the water flows into the bowl at a constant rate of 160 cm3 s−1, find, according to the model, (a) the time taken to fill the bowl, (2) (b) the rate of change of the depth of the water, in cm s−1, when h = 5 (5) Q3",
+    "stem_chars": 519,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_may-jun.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q4.pdf",
+    "stem": "Use algebraic integration and the substitution u = x to find the exact value of x x x x + ∫ d Write your answer in the form 4ln a b    , where a and b are integers to be found. (Solutions relying entirely on calculator technology are not acceptable.) (8) Q4",
+    "stem_chars": 263,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_may-jun.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q5.pdf",
+    "stem": "A curve has equation y2 = y e−2x − 3x (a) Show that d d y x = 2 y y x x e e − − + − (4) The curve crosses the y‑axis at the origin and at the point P. The tangent to the curve at the origin and the tangent to the curve at P meet at the point R. (b) Find the coordinates of R. (5) Q5",
+    "stem_chars": 282,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_may-jun.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q6.pdf",
+    "stem": "x O R y Figure 3 Figure 3 shows a sketch of the curve C with parametric equations x = 2 cos 2t y = 4 sin t 0  t  2 π The region R, shown shaded in Figure 3, is bounded by the curve, the x‑axis and the y‑axis. (a) (i) Show, making your working clear, that the area of R = 32sin cos d ∫ π t t t (ii) Hence find, by algebraic integration, the exact value of the area of R. (6) (b) Show that all points on C satisfy y = ax b + , where a and b are constants to be found. (3) The curve C has equation y = f (x) where f is the function f (x) = ax b + −2  x  2 and a and b are the constants found in part (b). (c) State the range of f. (1) Q6",
+    "stem_chars": 638,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 6
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_may-jun.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q7.pdf",
+    "stem": "Relative to a fixed origin O, the line l has equation r = − −         + λ         where λ is a scalar parameter Given that OA → is a unit vector parallel to l, (a) find OA → (2) The point X lies on l. Given that X is the point on l that is closest to the origin, (b) find the coordinates of X. (5) The points O, X and A form the triangle OXA. (c) Find the exact area of triangle OXA. (3) Q7",
+    "stem_chars": 406,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_may-jun.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q8.pdf",
+    "stem": "(a) Given that y = 1 at x = 0, solve the differential equation d d y x = 6 xy x e y  0 giving your answer in the form y2 = g(x). (7) (b) Hence find the equation of the horizontal asymptote to the curve with equation y2 = g(x) . (2) Q8",
+    "stem_chars": 235,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_may-jun.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p4/2021_may-jun/questions/q9.pdf",
+    "stem": "(i) Relative to a fixed origin O, the points A, B and C have position vectors a, b and c respectively. Points A, B and C lie in a straight line, with B lying between A and C. Given AB : AC = 1 : 3 show that c = 3b − 2a (3) (ii) Given that n   , prove by contradiction that if n2 is a multiple of 3 then n is a multiple of 3 (5) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 364,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q1.pdf",
+    "stem": "The curve C has equation 2x − 4y 2 + 3x 2 y = 4x 2 + 8 The point P (3, 2) lies on C. Find the equation of the normal to C at the point P, writing your answer in the form ax + by + c = 0 where a, b and c are integers to be found. (7) Q1",
+    "stem_chars": 235,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q2.pdf",
+    "stem": "Find the particular solution of the differential equation d d y x = 2y x + x > −5 for which y = 1 3 at x = −1 4 giving your answer in the form y = f (x) (6) Q2",
+    "stem_chars": 159,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q3.pdf",
+    "stem": "g (x) = 3 x x x x x + − − + ( ) ≡ Ax + B + C x + D x + 3 (a) Find the values of the constants A, B, C and D. (5) A curve has equation y = g (x) x > 0 Using the answer to part (a), (b) find g ′(x). (2) (c) Hence, explain why g ′(x) > 3 for all values of x in the domain of g. (1) Q3",
+    "stem_chars": 281,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q4.pdf",
+    "stem": "f (x) = 1 − x |x| < 1 (a) Find, in ascending powers of x, the first four non-zero terms of the binomial expansion of f (x) . Give each coefficient in simplest form. (4) (b) By substituting x = 1 4 into the binomial expansion of f (x) , obtain an approximation for Give your answer to 4 decimal places. (2) Q4",
+    "stem_chars": 308,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q5.pdf",
+    "stem": "C x O y Figure 1 Figure 1 shows a sketch of the curve C with parametric equations x = 5 + 2 tan t y = 8 sec2 t −3 π  t  4 π (a) Use parametric differentiation to find the gradient of C at x = 3 (4) The curve C has equation y = f (x) , where f is a quadratic function. (b) Find f (x) in the form a (x + b)2 + c , where a, b and c are constants to be found. (3) (c) Find the range of f. (2) Q5",
+    "stem_chars": 393,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q6.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. O R x y π π Figure 2 Figure 2 shows a sketch of the curve with equation y = sin ( sin ) x x + 0  x  2 π The region R, shown shaded in Figure 2, is bounded by the curve, the x-axis and the line with equation x = 6 π Using the substitution u = 3 + 4 sin x , show that the area of R can be written in the form a + ln b , where a and b are rational constants to be found. (7) Q6",
+    "stem_chars": 498,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q7.pdf",
+    "stem": "With respect to a fixed origin O, • the line l has equation r = −         + λ − −         where λ is a scalar constant • the point A has position vector 9i − 3j + 2k Given that X is the point on l nearest to A, (a) find (i) the coordinates of X (ii) the shortest distance from A to l. Give your answer in the form d , where d is an integer. (7) The point B is the image of A after reflection in l. (b) Find the position vector of B. (2) Q7",
+    "stem_chars": 455,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q8.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. y = x ln x R e O x y Figure 3 (a) Find x x x 2 ln d ∫ (3) Figure 3 shows a sketch of part of the curve with equation y = x ln x x > 0 The region R, shown shaded in Figure 3, lies entirely above the x-axis and is bounded by the curve, the x-axis and the line with equation x = e. This region is rotated through 2π radians about the x-axis to form a solid of revolution. (b) Find the exact volume of the solid formed, giving your answer in simplest form. (4) Q8",
+    "stem_chars": 581,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      32
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q9.pdf",
+    "stem": "4.2 metres T h metres 8 metres Figure 4 Figure 4 shows a cylindrical tank that contains some water. The tank has an internal diameter of 8 m and an internal height of 4.2 m. Water is flowing into the tank at a constant rate of (0.6π) m3 per minute. There is a tap at point T at the bottom of the tank. At time t minutes after the tap has been opened, • the depth of the water is h metres • the water is leaving the tank at a rate of (0.15π h) m3 per minute (a) Show that d d h t = 12 −h (4) Given that the depth of the water in the tank is 0.5 m when the tap is opened, (b) find the time taken for the depth of water in the tank to reach 3.5 m. (6) Q9",
+    "stem_chars": 651,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q010",
+    "subject_code": "WMA14",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 10,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      33,
+      35
+    ],
+    "qp_pdf": "p4/2021_oct-nov/questions/q10.pdf",
+    "stem": "(a) A studentʼs attempt to answer the question ‟Prove by contradiction that if n3 is even, then n is even” is shown below. Line 5 of the proof is missing. Assume that there exists a number n such that n3 is even, but n is odd. If n is odd then n = 2 p + 1 where p ∈  So n3 = (2 p + 1)3 = 8 p3 + 12 p2 + 6 p + 1 = This contradicts our initial assumption, so if n3 is even, then n is even. Complete this proof by filling in line 5. (1) (b) Hence, prove by contradiction that is irrational. (5) TOTAL FOR PAPER: 75 MARKS END Q10",
+    "stem_chars": 526,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q1.pdf",
+    "stem": "  The curve C has equation xy2 = x2 y + 6 x ≠ 0 y ≠ 0 Find an equation for the tangent to C at the point P (2, 3), giving your answer in the form ax + by + c = 0 where a, b and c are integers. (6)   Q1",
+    "stem_chars": 211,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q2.pdf",
+    "stem": "  (a) Find, in ascending powers of x, the first three non-zero terms of the binomial series expansion of + x | x | < 1 giving each coefficient as a simplified fraction. (4) (b) Use the expansion from part (a) with x = 1 3 to find a rational approximation to (3)   Q2",
+    "stem_chars": 276,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q3.pdf",
+    "stem": "  The curve C has parametric equations x = 3 + 2 sin t y = + cos t −2 π  t  2 π (a) Show that C has Cartesian equation y = ( )( ) − + x x p  x  q where p and q are constants to be found. (6) (b) Hence, find a Cartesian equation for C in the form y = a x b c x d + + + p  x  q where a, b, c and d are constants. (3)       Q3",
+    "stem_chars": 349,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 6
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q4.pdf",
+    "stem": "  Figure 1 A regular icosahedron of side length x cm, shown in Figure 1, is expanding uniformly. The icosahedron consists of 20 congruent equilateral triangular faces of side length x cm. (a) Show that the surface area, A cm2, of the icosahedron is given by A = 5 3x2 (2) Given that the volume, V cm3, of the icosahedron is given by V = 5 12 3 + ( )x (b) show that d d V A x = + ( ) 8 3 (3) The surface area of the icosahedron is increasing at a constant rate of 0.025 cm2 s−1 (c) Find the rate of change of the volume of the icosahedron when x = 2 , giving your answer to 2 significant figures. (3)       Q4",
+    "stem_chars": 628,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q5.pdf",
+    "stem": "  y x t = 9 O R t = 0 Figure 2 Figure 2 shows a sketch of the curve with parametric equations x = 9 −t y = t t + 0  t  9 The curve touches the x-axis when t = 0 and meets the y-axis when t = 9 The region R, shown shaded in Figure 2, is bounded by the curve, the x-axis and the y-axis. (a) Show that the area of R is given by K t t t − ∫ d where K is a constant to be found. (4) (b) Using the substitution u = 81 − 16t2 , or otherwise, find the exact area of R. (Solutions relying on calculator technology are not acceptable.) (6)       Q5",
+    "stem_chars": 560,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q6.pdf",
+    "stem": "  Three consecutive terms in a sequence of real numbers are given by k, 1 + 2k and 3 + 3k where k is a constant. Use proof by contradiction to show that this sequence is not a geometric sequence. (5)   Q6",
+    "stem_chars": 214,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q7.pdf",
+    "stem": "  f (x) = 1 4 (4 − x)e x x O y 4 cm 2 cm Figure 3 Figure 4 Figure 3 shows the design of a doorknob. The shape of the doorknob is formed by rotating the curve shown in Figure 4 through 360° about the x-axis, where the units are centimetres. The equation of the curve is given by f (x) = 1 4 (4 − x)e x 0  x  4 (a) Show that the volume, V cm3, of the doorknob is given by V = K x x x x − + ( ) ∫ e d where K is a constant to be found. (3) (b) Hence, find the exact value of the volume of the doorknob. Give your answer in the form pπ (e q + r) cm3 where p, q and r are simplified rational numbers to be found. (5)       Q7",
+    "stem_chars": 642,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q8.pdf",
+    "stem": "  With respect to a fixed origin O the points A and B have position vectors         and         respectively. The line l1 passes through the points A and B. (a) Write down an equation for l1 Give your answer in the form r = p + λq , where λ is a scalar parameter. (2) The line l2 has equation r =         + μ         where μ is a scalar parameter. (b) Show that l1 and l2 do not meet. (4) The point C is on l2 where μ = −1 (c) Find the acute angle between AC and l2 Give your answer in degrees to one decimal place. (5)       Q8",
+    "stem_chars": 580,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_jan.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p4/2022_jan/questions/q9.pdf",
+    "stem": "  (a) Find the derivative with respect to y of + ( ) ln y (2) (b) Hence find a general solution to the differential equation 3cosec(2x) d d y x = y (1 + 2 ln y) 3 y > 0 −2 π < x < 2 π (4) (c) Show that the particular solution of this differential equation for which y = 1 at x = 6 π is given by y = e A x sec −1 where A is an irrational number to be found. (5)         TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 428,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2022_may-jun.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q1.pdf",
+    "stem": "  The binomial expansion of (3 + kx) –2 ½kx½ < 3 where k is a non-zero constant, may be written in the form A + Bx + Cx 2 + Dx 3 + ... where A, B, C and D are constants. (a) Find the value of A (1) Given that C = 3B (b) show that k 2 + 6k = 0 (3) (c) Hence $(i) find the value of k (ii) find the value of D (3)   (Total for Question 1 is 7 marks)",
+    "stem_chars": 356,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q2.pdf",
+    "stem": "  (a) Express ( )( ) + − x x in partial fractions. (3) (b) Hence find the solution of the differential equation (1 + 3x)(1 – x) d d y x = tan y – 1 3 < x  1 for which x = 1 when y = 2 π Give your answer in the form sin n y = f(x) where n is an integer to be found. (6)       (Total for Question 2 is 9 marks)",
+    "stem_chars": 329,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q3.pdf",
+    "stem": "  3x x Figure 1 A tablet is dissolving in water. The tablet is modelled as a cylinder, shown in Figure 1. At t seconds after the tablet is dropped into the water, the radius of the tablet is x mm and the length of the tablet is 3x mm. The cross-sectional area of the tablet is decreasing at a constant rate of 0.5 mm 2 s –1 (a) Find d d x t when x = 7 (4) (b) Find, according to the model, the rate of decrease of the volume of the tablet when x = 4 (4)   (Total for Question 3 is 8 marks)",
+    "stem_chars": 499,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. A curve has equation 16x 3 – 9kx 2y + 8y 3 = 875 where k is a constant. (a) Show that d d y x kxy x y kx = − − (4) Given that the curve has a turning point at x = 5 (b) find the value of k (4)       (Total for Question 4 is 8 marks)",
+    "stem_chars": 376,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) Use the substitution x = 2 sin u to show that x x x u u u u p + − = +     ( ) sec tan sec d d where p is a constant to be found. (4) (b) Hence find the exact value of x x x + − ( ) d (4)       (Total for Question 5 is 8 marks)",
+    "stem_chars": 380,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q6.pdf",
+    "stem": "  Relative to a fixed origin O, • the point A has position vector i – 4j + 3k • the point B has position vector 5i + 3j – 2k • the point C has position vector 3i + pj – k where p is a constant. The line l passes through A and B. (a) Find a vector equation for the line l (3) Given that AC → is perpendicular to l (b) find the value of p (3) (c) Hence find the area of triangle ABC, giving your answer as a surd in simplest form. (3)       (Total for Question 6 is 9 marks)",
+    "stem_chars": 492,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve C has parametric equations x = sin t – 3 cos 2 t y = 3 sin t + 2 cos t 0  t  5 (a) Show that d d y x = 3 where t = π (4) The point P lies on C where t = π (b) Find the equation of the tangent to the curve at P in the form y = mx + c where m and c are constants to be found. (3) Given that the tangent to the curve at P cuts C at the point Q (c) show that the value of t at point Q satisfies the equation 9 cos 2 t + 2 cos t – 7 = 0 (2) (d) Hence find the exact value of the y coordinate of Q (3)       (Total for Question 7 is 12 marks)",
+    "stem_chars": 701,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q8.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. R 20 cm O 10 x y Figure 2 Figure 3 Figure 2 shows the curve with equation y = 10xe −1 2 x 0  x  10 The finite region R, shown shaded in Figure 2, is bounded by the curve, the x-axis and the line with equation x = 10 The region R is rotated through 2π radians about the x-axis to form a solid of revolution. (a) Show that the volume, V, of this solid is given by V = k 10∫x 2e –x dx where k is a constant to be found. (2) (b) Find ∫x 2e –x dx (3) Figure 3 represents an exercise weight formed by joining two of these solids together. The exercise weight has mass 5 kg and is 20 cm long. Given that density = mass volume and using your answers to part (a) and part (b), (c) find the density of this exercise weight. Give your answer in grams per cm 3 to 3 significant figures. (5)       (Total for Question 8 is 10 marks)",
+    "stem_chars": 974,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_may-jun.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p4/2022_may-jun/questions/q9.pdf",
+    "stem": "  Use proof by contradiction to show that, when n is an integer, n 2 – 2 is never divisible by 4 (4)     (Total for Question 9 is 4 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 181,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q1.pdf",
+    "stem": "A curve C has parametric equations x = t t −3 y = 1 t + 2 t ∈  t > 3 Show that all points on C lie on the curve with Cartesian equation y = ax bx −1 where a and b are constants to be found. (3) (Total for Question 1 is 3 marks)",
+    "stem_chars": 228,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q2.pdf",
+    "stem": "(a) Express x x x − ( ) − ( ) in partial fraction form. (3) (b) Hence show that x x x x k − ( ) − ( ) = ∫ d ln where k is a fully simplified fraction to be found. (Solutions relying entirely on calculator technology are not acceptable.) (4) (Total for Question 2 is 7 marks)",
+    "stem_chars": 274,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q3.pdf",
+    "stem": "P Q R Figure 1 Figure 1 shows a sketch of triangle PQR. Given that • PQ → = 2i – 3j + 4k • PR → = 8i – 5j + 3k (a) Find RQ → (2) (b) Find the size of angle PQR, in degrees, to three significant figures. (3) (Total for Question 3 is 5 marks)",
+    "stem_chars": 240,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q4.pdf",
+    "stem": "g (x) = −x (a) Find, in ascending powers of x, the first four non-zero terms of the binomial expansion of g (x). Give each coefficient in simplest form. (5) (b) State the range of values of x for which this expansion is valid. (1) (c) Use the expansion from part (a) to find a fully simplified rational approximation for Show your working and make your method clear. (2) (Total for Question 4 is 8 marks)",
+    "stem_chars": 404,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q5.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. y x O k R Figure 2 Figure 2 shows a sketch of part of the curve with equation y = 1 5 x x + ( ) . The region R, shown shaded in Figure 2, is bounded by the curve, the line with equation x = 1 2 , the x-axis and the line with equation x = k. This region is rotated through 360° about the x-axis to form a solid of revolution. Given that the volume of this solid is 713 648 π , use algebraic integration to find the exact value of the constant k. (6) (Total for Question 5 is 6 marks)",
+    "stem_chars": 613,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q6.pdf",
+    "stem": "y x C P O Figure 3 Figure 3 shows a sketch of the curve C with parametric equations x = 1 + 3 tan t y = 2 cos 2t – 6 π  t  3 π The curve crosses the x-axis at point P, as shown in Figure 3. (a) Find the equation of the tangent to C at P, writing your answer in the form y = mx + c , where m and c are constants to be found. (5) The curve C has equation y = f (x), where f is a function with domain  k, 1 + 3 3   (b) Find the exact value of the constant k. (1) (c) Find the range of f. (2) (Total for Question 6 is 8 marks)",
+    "stem_chars": 530,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q7.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Use the substitution u = ex – 3 to show that e e d x x x a b − = + ∫ ln ln ln where a and b are constants to be found. (7) (ii) Show, by integration, that ∫ 3ex cos 2x dx = pex sin 2x + qex cos 2x + c where p and q are constants to be found and c is an arbitrary constant. (5) (Total for Question 7 is 12 marks)",
+    "stem_chars": 446,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      21,
+      22
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q8.pdf",
+    "stem": "A student was asked to prove by contradiction that “there are no positive integers x and y such that 3x2 + 2xy – y2 = 25” The start of the student’s proof is shown in the box below. Assume that integers x and y exist such that 3x2 + 2xy – y2 = 25 ⇒ − ( ) + ( ) = x y x y If 3 x y x y − ( ) = + ( ) = and 6 5 18 5 x y x y x x y − = + =    ⇒ = ⇒ = = . , . Not integers Show the calculations and statements that are needed to complete the proof. (4) (Total for Question 8 is 4 marks)",
+    "stem_chars": 483,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q9.pdf",
+    "stem": "With respect to a fixed origin O, the equations of lines l1 and l2 are given by l1 : r =         + λ −         l2 : r = − −         + μ         where λ and μ are scalar parameters. Prove that lines l1 and l2 are skew. (5) (Total for Question 9 is 5 marks)",
+    "stem_chars": 287,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q010",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 10,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q10.pdf",
+    "stem": "A spherical ball of ice of radius 12 cm is placed in a bucket of water. In a model of the situation, • the ball remains spherical as it melts • t minutes after the ball of ice is placed in the bucket, its radius is r cm • the rate of decrease of the radius of the ball of ice is inversely proportional to the square of the radius • the radius of the ball of ice is 6 cm after 15 minutes Using the model and the information given, (a) find an equation linking r and t, (5) (b) find the time taken for the ball of ice to melt completely. (2) (c) On Diagram 1 on page 27, sketch a graph of r against t. (1) r t O Diagram 1 (Total for Question 10 is 8 marks)",
+    "stem_chars": 654,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q011",
+    "subject_code": "WMA14",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 11,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p4/2022_oct-nov/questions/q11.pdf",
+    "stem": "y x O P Q North East Figure 4 Figure 4 shows a sketch of the closed curve with equation (x + y) 3 + 10y 2 = 108x (a) Show that d d y x x y y x y = − + ( ) + + ( ) (5) The curve is used to model the shape of a cycle track with both x and y measured in km. The points P and Q represent points that are furthest north and furthest south of the origin O, as shown in Figure 4. Using the result given in part (a), (b) find how far the point Q is south of O. Give your answer to the nearest 100 m. (4) (Total for Question 11 is 9 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 558,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_jan.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      1,
+      4
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q1.pdf",
+    "stem": "  f (x) = x x x + − + ( )( ) (a) Write f (x) in partial fraction form. (3) (b) (i) Hence find, in ascending powers of x up to and including the terms in x2, the binomial series expansion of f (x). Give each coefficient as a simplified fraction. (5) (ii) Find the range of values of x for which this expansion is valid. (1)       (Total for Question 1 is 9 marks)",
+    "stem_chars": 382,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2023_jan.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q2.pdf",
+    "stem": "  A set of points P(x, y) is defined by the parametric equations x t t y t t = − + = + ≠− (a) Show that all points P(x, y) lie on a straight line. (4) (b) Hence or otherwise, find the x coordinate of the point of intersection of this line and the line with equation y = x + 12 (2)   (Total for Question 2 is 6 marks)",
+    "stem_chars": 326,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2023_jan.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q3.pdf",
+    "stem": "  O R x y Figure 1 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 1 shows a sketch of the curve with equation y = x x + x  0 The finite region R, shown shaded in Figure 1, is bounded by the curve, the x-axis and the lines with equations x = 5 and x = 5 The region R is rotated through 360° about the x-axis. Use integration to find the exact volume of the solid generated. Give your answer in the form a ln b, where a is an irrational number and b is a prime number. (5)   (Total for Question 3 is 5 marks)",
+    "stem_chars": 608,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2023_jan.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q4.pdf",
+    "stem": "  (a) Using the substitution u = x + , show that x x x + + ∫ e d may be expressed in the form ku u u a b 2e d ∫ where a, b and k are constants to be found. (4) (b) Hence find, by algebraic integration, the exact value of x x x + + ∫ e d giving your answer in simplest form. (5)       (Total for Question 4 is 9 marks)",
+    "stem_chars": 337,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_jan.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q5.pdf",
+    "stem": "  O x = p x = q x y Figure 2 Figure 2 shows a sketch of the curve with equation y2 = 2x2 + 15x + 10y (a) Find d d y x in terms of x and y. (4) The curve is not defined for values of x in the interval ( p, q), as shown in Figure 2. (b) Using your answer to part (a) or otherwise, find the value of p and the value of q. (Solutions relying entirely on calculator technology are not acceptable.) (3)       (Total for Question 5 is 7 marks)",
+    "stem_chars": 456,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_jan.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q6.pdf",
+    "stem": "  Relative to a fixed origin O. • the point A has position vector 2i – 3j + 5k • the point B has position vector 8i + 3j – 7k The line l passes through A and B. (a) (i) Find AB → (ii) Find a vector equation for the line l (3) The point C has position vector 3i + 5j + 2k The point P lies on l Given that CP → is perpendicular to l (b) find the position vector of the point P (5)       (Total for Question 6 is 8 marks)",
+    "stem_chars": 438,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_jan.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "jan",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q7.pdf",
+    "stem": "  The volume V cm3 of a spherical balloon with radius r cm is given by the formula V = 4 3 πr3 (a) Find d d V r giving your answer in simplest form. (1) At time t seconds, the volume of the balloon is increasing according to the differential equation d d V t t = + 3 2 ( ) t  0 Given that V = 0 when t = 0 (b) (i) solve this differential equation to show that V t t = + (ii) Hence find the upper limit to the volume of the balloon. (5) (c) Find the radius of the balloon at t = 3, giving your answer in cm to 3 significant figures. (3) (d) Find the rate of increase of the radius of the balloon at t = 3, giving your answer to 2 significant figures. Show your working and state the units of your answer. (3)       (Total for Question 7 is 12 marks)",
+    "stem_chars": 769,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_jan.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q8.pdf",
+    "stem": "  O S l P C x y Figure 3 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. A curve C has parametric equations x = sin2 t y = 2 tan t 0  t < 2 π The point P with parameter t = 4 π lies on C. The line l is the normal to C at P, as shown in Figure 3. (a) Show, using calculus, that an equation for l is 8y + 2x = 17 (5) The region S, shown shaded in Figure 3, is bounded by C, l and the x-axis. (b) Find, using calculus, the exact area of S. (6)       (Total for Question 8 is 11 marks)",
+    "stem_chars": 585,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2023_jan.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p4/2023_jan/questions/q9.pdf",
+    "stem": "  A student was asked to prove, for p ∈ , that “if p3 is a multiple of 3, then p must be a multiple of 3” The start of the student’s proof by contradiction is shown in the box below. Assumption: There exists a number p, p ∈ , such that p3 is a multiple of 3, and p is NOT a multiple of 3 Let p = 3k + 1, k ∈ . Consider p3 = (3k + 1)3 $= 27k3 + 27k2 + 9k + 1 = 3(9k3 + 9k2 + 3k) +1 which is not a multiple of 3 (a) Show the calculations and statements that are required to complete the proof. (3) (b) Hence prove, by contradiction, that is an irrational number. (5)     (Total for Question 9 is 8 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 648,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q1.pdf",
+    "stem": " (a) Find the first four terms, in ascending powers of x, of the binomial expansion of < ; : x writing each term in simplest form. (4) (b) Find the range of values of x for which this expansion is valid. (1)  (Total for Question 1 is 5 marks)",
+    "stem_chars": 250,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q2.pdf",
+    "stem": " x cm Figure 1 Figure 1 shows a cube which is increasing in size. At time t seconds, • the length of each edge of the cube is x cm • the surface area of the cube is S cm • the volume of the cube is V cm Given that the surface area of the cube is increasing at a constant rate of 4 cm 2 s –1 (a) show that d d x t k x = where k is a constant to be found, (4) (b) show that d d V t V p = where p is a constant to be found. (3)  (Total for Question 2 is 7 marks)",
+    "stem_chars": 467,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q3.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions based on calculator technology are not acceptable. (i) Use integration by parts to find the exact value of x x x 2 2 e d ∫ giving your answer in simplest form. (5) (ii) Use integration by substitution to show that x x x a b < ; : d ln where a and b are constants to be found. (7)    (Total for Question 3 is 12 marks)",
+    "stem_chars": 403,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q4.pdf",
+    "stem": " (a) Prove by contradiction that for all positive numbers k k k + 9  (4) (b) Show that the result in part (a) is not true for all real numbers. (1)  (Total for Question 4 is 5 marks)",
+    "stem_chars": 191,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q5.pdf",
+    "stem": " y = x P O C x y Figure 2 Figure 2 shows a sketch of the curve C with equation y x x y k < ; : where k is a positive constant greater than 1 (a) Find d d y x in terms of x and y. (5) The point P lies on C. Given that the normal to C at P has equation y = x, as shown in Figure 2, (b) find the value of k. (5)    (Total for Question 5 is 10 marks)",
+    "stem_chars": 362,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q6.pdf",
+    "stem": " The line l1 has equation < ; : ; : 9 8 9 8 9 8 4 3 r where λ is a scalar parameter. The line l2 has equation < ; : ; : r where μ is a scalar parameter. Given that l1 and l2 meet at the point P (a) state the coordinates of P (1) Given that the angle between lines l1 and l2 is θ (b) find the value of cos θ, giving the answer as a fully simplified fraction. (3) The point Q lies on l1 where λ = 6 Given that point R lies on l2 such that triangle QPR is an isosceles triangle with PQ = PR (c) find the exact area of triangle QPR (3) (d) find the coordinates of the possible positions of point R (3)    (Total for Question 6 is 10 marks)",
+    "stem_chars": 651,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q7.pdf",
+    "stem": " The number of goats on an island is being monitored. When monitoring began there were 3000 goats on the island. In a simple model, the number of goats, x, in thousands, is modelled by the equation x k t t < ; : ; where k is a constant and t is the number of years after monitoring began. (a) Show that k = 1.8 (2) (b) Hence calculate the long-term population of goats predicted by this model. (1) In a second model, the number of goats, x, in thousands, is modelled by the differential equation d d x t x x < ; : (c) Write x x < ; : in partial fraction form. (3) (d) Solve the differential equation with the initial condition to show that x t < ; : e (5) (e) Find the long-term population of goats predicted by this second model. (1)    (Total for Question 7 is 12 marks)",
+    "stem_chars": 788,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 5
+      },
+      {
+        "label": "e",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      27
+    ],
+    "qp_pdf": "p4/2023_oct-nov/questions/q8.pdf",
+    "stem": " k O C x y Figure 3 Figure 3 shows a sketch of the curve C with parametric equations 3sin 2 2cos π x t t y t t < ; < < < The curve meets the y-axis at 2 and the x-axis at k, where k is a constant. (a) State the value of k. (1) (b) Use parametric differentiation to show that d cosec d y λ t x < where λ is a constant to be found. (4) The point P with parameter t < ; lies on C. The tangent to C at the point P cuts the y-axis at the point N. (c) Find the exact y coordinate of N, giving your answer in simplest form. (3) The region bounded by the curve, the x-axis and the y-axis is rotated through 2π radians about the x-axis to form a solid of revolution. (d) (i) Show that the volume of this solid is given by < ; cos4 d t t : where α and β are constants to be found. (ii) Hence, using algebraic integration, find the exact volume of this solid. (6)     (Total for Question 8 is 14 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 939,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_jan.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q1.pdf",
+    "stem": "  Find, in ascending powers of x up to and including the term in x 3, the binomial expansion of ( ) − − x x < fully simplifying each term. (4)   (Total for Question 1 is 4 marks)",
+    "stem_chars": 188,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_jan.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q2.pdf",
+    "stem": "  Given that 2 2 x x x x A x B x C < ; < : < ; < < < ( )( ) ( ) (a) find the values of the constants A, B and C. (4) (b) Hence find the exact value of 2 2 x x x x < ; < : ( )( ) d giving your answer in the form p ln q + r where p, q and r are rational numbers. (6)       (Total for Question 2 is 10 marks)",
+    "stem_chars": 325,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_jan.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q3.pdf",
+    "stem": "  y C P x O Figure 1 The curve C, shown in Figure 1, has equation y 2 x + 3y = 4x 2 + k y > 0 where k is a constant. (a) Find d d y x in terms of x and y (5) The point P (p, 2) , where p is a constant, lies on C. Given that P is the minimum turning point on C, (b) find (i) the value of p (ii) the value of k (4)       (Total for Question 3 is 9 marks)",
+    "stem_chars": 372,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_jan.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q4.pdf",
+    "stem": "  5 cm r cm l cm Figure 2 A cone, shown in Figure 2, has • fixed height 5 cm • base radius r cm • slant height l cm (a) Find an expression for l in terms of r (1) Given that the base radius is increasing at a constant rate of 3 cm per minute, (b) find the rate at which the total surface area of the cone is changing when the radius of the cone is 1.5 cm. Give your answer in cm 2 per minute to one decimal place. [The total surface area, S, of a cone is given by the formula S = πr 2 + πrl] (4)   (Total for Question 4 is 5 marks)",
+    "stem_chars": 541,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_jan.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q5.pdf",
+    "stem": "  (a) Find x x x cos d ∫ (4) (b) Hence solve the differential equation d d y t t t y < ; :9 cos giving your answer in the form yn = f(t) where n is an integer. (5)       (Total for Question 5 is 9 marks)",
+    "stem_chars": 223,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_jan.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "jan",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q6.pdf",
+    "stem": "  Relative to a fixed origin O, the lines l1 and l2 are given by the equations l1 : r = (3i + pj + 7k) + λ (2i – 5j + 4k) l2 : r = (8i – 2j + 5k) + μ (4i + j + 2k) where λ and μ are scalar parameters and p is a constant. Given that l1 and l2 intersect, (a) find the value of p, (4) (b) find the position vector of the point of intersection. (2) (c) Find the acute angle between l1 and l2 Give your answer in degrees to one decimal place. (3) The point A lies on l1 with parameter λ = 2 The point B lies on l2 with AB → perpendicular to l2 (d) Find the coordinates of B (5)       (Total for Question 6 is 14 marks)",
+    "stem_chars": 633,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_jan.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q7.pdf",
+    "stem": "  (a) Using the substitution u = 4x + 2 sin 2x , or otherwise, show that e d e x x x x < ; : sin cos (5) π y x O R Figure 3 The curve shown in Figure 3, has equation y x x x < ; e sin cos The region R, shown shaded in Figure 3, is bounded by the positive x-axis, the positive y-axis and the curve. The region R is rotated through 2π radians about the x-axis to form a solid. (b) Use the answer to part (a) to find the volume of the solid formed, giving the answer in simplest form. (3)       (Total for Question 7 is 8 marks)",
+    "stem_chars": 545,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_jan.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      25,
+      26
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q8.pdf",
+    "stem": "  Use proof by contradiction to prove that the curve with equation y = 2x + x 3 + cos x has no stationary points. (4)   (Total for Question 8 is 4 marks)",
+    "stem_chars": 163,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_jan.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "jan",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p4/2024_jan/questions/q9.pdf",
+    "stem": "  y C O x Figure 4 Figure 4 shows a sketch of the curve C with parametric equations x t y t t < < ; : sec tan < < (a) Find d d y x in terms of t (3) (b) Find an equation for the tangent to C at the point where t = π Give your answer in the form y = mx + c , where m and c are constants. (4) (c) Show that all points on C satisfy the equation y B Ax x x < ; ; : where A and B are constants to be found. (5)         (Total for Question 9 is 12 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 501,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_may-jun.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q1.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Find cos3 d π x x x < giving your answer in simplest form. (5)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 241,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_may-jun.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q2.pdf",
+    "stem": "  With respect to a fixed origin, O, the point A has position vector OA → = < ; : Given that AB → = < ; : (a) find the coordinates of the point B. (2) The point C has position vector OC → = a < ; : where a is a constant. Given that OC → is perpendicular to BC → (b) find the possible values of a. (4)   (Total for Question 2 is 6 marks)",
+    "stem_chars": 346,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_may-jun.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q3.pdf",
+    "stem": "  The curve C is defined by the equation x y xy < ; : Find an equation of the normal to C at the point (2, 5), giving your answer in the form ax + by + c = 0, where a, b and c are integers. (7)   (Total for Question 3 is 7 marks)",
+    "stem_chars": 239,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_may-jun.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q4.pdf",
+    "stem": "  R 5 cm O θ Q P Figure 1 Figure 1 shows a sketch of a segment PQRP of a circle with centre O and radius 5 cm. Given that • angle POR is θ radians • θ is increasing, from 0 to π, at a constant rate of 0.1 radians per second • the area of the segment PQRP is A cm (a) show that < ; d cos d θ A K θ : where K is a constant to be found. (2) (b) Find, in cm 2 s –1, the rate of increase of the area of the segment when π θ < (4)   (Total for Question 4 is 6 marks)",
+    "stem_chars": 470,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_may-jun.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 13,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q5.pdf",
+    "stem": "  t = a t = b R x y O Figure 2 Figure 2 shows a sketch of the curve defined by the parametric equations x t t y t t a t b < ; < : ( )   where a and b are constants. The ends of the curve lie on the line with equation y = 1 (a) Find the value of a and the value of b (2) The region R, shown shaded in Figure 2, is bounded by the curve and the line with equation y = 1 (b) Show that the area of region R is given by M k t t t t a b < ; < : ( ) d where M and k are constants to be found. (5) (c) (i) Write t t t < ; ( ) in partial fractions. (ii) Use algebraic integration to find the exact area of R, giving your answer in simplest form. (6)       (Total for Question 5 is 13 marks)",
+    "stem_chars": 702,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_may-jun.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q6.pdf",
+    "stem": "  With respect to a fixed origin O, the line l1 is given by the equation r = i + 2j + 5k + λ(8i – j + 4k) where λ is a scalar parameter. The point A lies on l1 Given that OA → = 5 10 (a) show that at A the parameter λ satisfies 81λ 2 + 52λ – 220 = 0 (3) Hence (b) (i) show that one possible position vector for A is –15i + 4j – 3k (ii) find the other possible position vector for A. (3) The line l2 is parallel to l1 and passes through O. Given that • OA → = –15i + 4j – 3k • point B lies on l2 where OB → = 4 10 (c) find the area of triangle OAB, giving your answer to one decimal place. (4)       (Total for Question 6 is 10 marks)",
+    "stem_chars": 657,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P4.2024_may-jun.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q7.pdf",
+    "stem": "  The current, x amps, at time t seconds after a switch is closed in a particular electric circuit is modelled by the equation d d x t k x < ; 3 where k is a constant. Initially there is zero current in the circuit. (a) Solve the differential equation to find an equation, in terms of k, for the current in the circuit at time t seconds. Give your answer in the form x = f(t). (6) Given that in the long term the current in the circuit approaches 7 amps, (b) find the value of k. (2) (c) Hence find the time in seconds it takes for the current to reach 5 amps, giving your answer to 2 significant figures. (3)       (Total for Question 7 is 11 marks)",
+    "stem_chars": 670,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 6
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_may-jun.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q8.pdf",
+    "stem": "  f(x) = ( ) < ; ; x x (a) Show that the binomial expansion of f(x) in ascending powers of x up to and including the term in x 3 is A x x Bx < ; ; ; ... where A and B are constants to be found. (4) (b) Use proof by contradiction to prove that the curve with equation y x x < ; : does not intersect the curve with equation y A x x Bx x < ; : : where A and B are the constants found in part (a). (Solutions relying on calculator technology are not acceptable.) (4)       (Total for Question 8 is 8 marks)",
+    "stem_chars": 522,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_may-jun.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p4/2024_may-jun/questions/q9.pdf",
+    "stem": "  R C x y O Figure 3 The curve C, shown in Figure 3, has equation y x x x < ; : 8 1 arctan The region R, shown shaded in Figure 3, is bounded by C, the line with equation x = 3, the x‑axis and the line with equation x = 1 The region R is rotated through 360° about the x‑axis to form a solid. Using the substitution tan u = x (a) show that the volume V of the solid formed is given by k u u a b 1 2 d ∫ where k, a and b are constants to be found. (6) (b) Hence, using algebraic integration, find the value of V in simplest form. (3)     (Total for Question 9 is 9 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 613,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 6
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q1.pdf",
+    "stem": "  (a) Find the first 4 terms of the binomial expansion, in ascending powers of x, of < ; : < x x giving each coefficient as a simplified fraction. (4) (b) Use the answer from part (a) with x = 2 3 to find a rational approximation to (2)   (Total for Question 1 is 6 marks)",
+    "stem_chars": 282,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q2.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. The curve C1 has equation y x x < ; ; 8 x ∈  The curve C2 has equation y x < ; x ∈  Use algebra to prove by contradiction that C1 and C2 do not intersect. (4)   (Total for Question 2 is 4 marks)",
+    "stem_chars": 330,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q3.pdf",
+    "stem": "  O x y Figure 1 Figure 1 shows a sketch of the curve C with parametric equations 3sin cos2 π π x θ y θ θ < < ; : < < (a) Show that d cosec d y k θ x < θ ≠ 0 where k is a constant to be found. (3) The point P lies on C where π θ < (b) Find the equation of the tangent to C at P, giving your answer in the form ax + by + c = 0 where a, b and c are integers. (3) (c) Show that C has Cartesian equation 9 2 x y q x q < ; : ;   where q is a constant to be found. (3)       (Total for Question 3 is 9 marks)",
+    "stem_chars": 524,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q4.pdf",
+    "stem": "  O P C x y Figure 2 Figure 2 shows a sketch of the curve C with equation x y xy x < ; < ; : The point P has coordinates (1, 2). (a) Verify that P lies on C. (1) (b) Find d d y x in terms of x and y. (5) The normal to C at P crosses the x-axis at a point Q. (c) Find the x coordinate of Q, giving your answer in the form a + b ln 2 where a and b are integers. (3)       (Total for Question 4 is 9 marks)",
+    "stem_chars": 423,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q5.pdf",
+    "stem": "  h cm 30 cm 12 cm r cm Figure 3 Figure 3 shows a container in the shape of a hollow, inverted, right circular cone. The height of the container is 30 cm and the radius is 12 cm, as shown in Figure 3. The container is initially empty when water starts flowing into it. When the height of water is h cm, the surface of the water has radius r cm and the volume of water is V cm (a) Show that πh V < [The volume V of a right circular cone with vertical height h and base radius r is given by the formula V = 1 3 πr 2h] (2) Given that water flows into the container at a constant rate of 2π cm 3 s –1 (b) find, in cm s –1, the rate at which h is changing, exactly 1.5 minutes after water starts flowing into the container. (4)   (Total for Question 5 is 6 marks)",
+    "stem_chars": 768,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q6.pdf",
+    "stem": "  Use the substitution u x < ; 1 to show that x x x x x A c k < ; < : : 9 < d where k and A are constants to be found and c is an arbitrary constant. (5)   (Total for Question 6 is 5 marks)",
+    "stem_chars": 199,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q7.pdf",
+    "stem": "  R x y O Figure 4 Figure 4 shows a sketch of part of the curve with equation y x x x < ; : 9 ; (a) Show that x x A B x < ; : ; ; where A and B are constants to be found. (2) The finite region R, shown shaded in Figure 4, is bounded by the curve, the line with equation x = 4, the x-axis and the line with equation x = 1 This region is rotated through 2π radians about the x-axis to form a solid of revolution. (b) Use the answer to part (a) and algebraic integration to find the exact volume of the solid generated, giving your answer in the form π( p + q ln 2) where p and q are rational constants. (6)       (Total for Question 7 is 8 marks)",
+    "stem_chars": 664,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q8.pdf",
+    "stem": "  Relative to a fixed origin O • the point A has coordinates (–10, 5, –4) • the point B has coordinates (–6, 4, –1) The straight line l1 passes through A and B. (a) Find a vector equation for l1 (2) The line l2 has equation p μ q < ; < ; : : : : : : r where p and q are constants and μ is a scalar parameter. Given that l1 and l2 intersect at B, (b) find the value of p and the value of q. (3) The acute angle between l1 and l2 is θ (c) Find the exact value of cos θ (3) Given that the point C lies on l2 such that AC is perpendicular to l2 (d) find the exact length of AC, giving your answer as a surd. (2)       (Total for Question 8 is 10 marks)",
+    "stem_chars": 668,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q9.pdf",
+    "stem": "  (a) Express x x < ; : in partial fractions. (2) The height above ground, h metres, of a carriage on a fairground ride is modelled by the differential equation d d h t h h t < ; : cos where t seconds is the time after the start of the ride. Given that, at the start of the ride, the carriage is 2.5 m above ground, (b) solve the differential equation to show that, according to the model, h k t < ; : e sin where k is a constant to be found. (6) (c) Hence find, according to the model, the time taken for the carriage to reach its maximum height above ground for the 3rd time. Give your answer to the nearest second. (Solutions relying entirely on calculator technology are not acceptable.) (2)       (Total for Question 9 is 10 marks)",
+    "stem_chars": 756,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q010",
+    "subject_code": "WMA14",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 10,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p4/2024_oct-nov/questions/q10.pdf",
+    "stem": "  R x y O Figure 5 Figure 5 shows a sketch of the curve with parametric equations sin sin 2 π x t y t t t < < < < The region R, shown shaded in Figure 5, is bounded by the curve and the x-axis. (a) Show that the area of R is sin cos d π k t t t t < where k is a constant to be found. (3) (b) Hence, using algebraic integration, find the exact area of R, giving your answer in the form pπ + q where p and q are constants. (5)     (Total for Question 10 is 8 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 506,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q001",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 1,
+    "year": 2025,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q1.pdf",
+    "stem": "  y R O x Figure 1 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve shown in Figure 1 has equation y x < ; x > –2 The region R, bounded by the curve, the y‑axis, the x‑axis and the line with equation x = 8 is shown shaded in Figure 1 Region R is rotated through 360 degrees about the x‑axis. Use calculus to find the exact value of the volume of the solid generated, writing your answer in simplest form. (5)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 546,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q002",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 2,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q2.pdf",
+    "stem": "  The curve C has equation 10 2 x y x y x < < ; < ( ) y > 0 (a) Find an expression for d d y x in terms of x and y (6) Curve C cuts the y‑axis at the point P (b) Find the exact value of the gradient of the tangent to C at P (2)   (Total for Question 2 is 8 marks)",
+    "stem_chars": 273,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 6
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q003",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 3,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q3.pdf",
+    "stem": "  Given that the binomial expansion, in ascending powers of x, of 6 4 < ; : Ax is B x Cx < ; ;: (a) find the values of the constants A, B and C. (5) (b) State the range of values of x for which this expansion is valid. (1) For the expansion, (c) find the coefficient of the term in x (2)   (Total for Question 3 is 8 marks)",
+    "stem_chars": 333,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q004",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 4,
+    "year": 2025,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) The volume, V, of a spherical balloon is increasing at a constant rate of 70π cm 3 s –1 Find the rate of increase of the radius of the balloon, in cm s –1, at the instant when the radius of the balloon is 5 cm. [The volume V of a sphere of radius r is given by the formula V r < 4 ; ] (4) (ii) The depth of water in a cave is being monitored. The rate of increase in the depth of water, h cm, at a particular point in the cave is modelled by the differential equation d d h t k h = where k is a constant and t hours is the time after monitoring began. Given that • initially the depth of water was 4 cm • 5 hours after monitoring began, the depth of water was 6 cm • T hours after monitoring began, the depth of water was 10 cm solve the differential equation to find the value of T. Give your answer to one decimal place. (6)       (Total for Question 4 is 10 marks)",
+    "stem_chars": 1024,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q005",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 5,
+    "year": 2025,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q5.pdf",
+    "stem": "  (i) Find x x x ∫ e d writing the answer in simplest form. (4) (ii) Use partial fractions and algebraic integration to show that 1 2 x x x x k < < ; : ; : d ln where k is a fully simplified rational constant to be found. (6)       (Total for Question 5 is 10 marks)",
+    "stem_chars": 286,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q006",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 6,
+    "year": 2025,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q6.pdf",
+    "stem": "  Given that n ∈ , use algebra to prove by contradiction that “ if n 2 – 4n + 5 is even then n is odd” (4)   (Total for Question 6 is 4 marks)",
+    "stem_chars": 153,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q007",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 7,
+    "year": 2025,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Use the substitution x = 4 sin θ to find the exact value of 2 3 < ; : x x d (6)   (Total for Question 7 is 6 marks)",
+    "stem_chars": 258,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q008",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 8,
+    "year": 2025,
+    "season": "jan",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q8.pdf",
+    "stem": "  Relative to a fixed origin O, the line l has equation r < ; : ; : where λ is a scalar parameter. The point A and the point B lie on line l Given that • A has coordinates (–2, a, 4) • B has coordinates (b, 3, 1) (a) find the value of the constant a and the value of the constant b. (2) (b) Hence find vector AB → (2) The point C has coordinates (4, 7, –2). (c) Find the size of angle CAB, giving your answer in degrees to one decimal place. (4) The point D lies on the line l so that the area of triangle CAD is twice the area of triangle CAB. (d) Find the coordinates of the two possible positions of D. (4)       (Total for Question 8 is 12 marks)",
+    "stem_chars": 670,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      },
+      {
+        "label": "d",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P4.2025_jan.Q009",
+    "subject_code": "WMA14",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 9,
+    "year": 2025,
+    "season": "jan",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      27
+    ],
+    "qp_pdf": "p4/2025_jan/questions/q9.pdf",
+    "stem": "  y P x O l C Figure 2 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 2 shows a sketch of the curve C with parametric equations x = 2 cos 2t y = sin 3 t π π t < < < where t is a parameter. The point P lies on C where t < ; The line l, shown in Figure 2, is the tangent to C at P. (a) Use parametric differentiation to show that (i) d d y x k t = sin where k is a constant to be found (ii) an equation for l is 3x + 16y – 5 = 0 (6) The line l intersects the curve C again at the point Q. (b) Using algebra and showing detailed reasoning, find the exact coordinates of Q. (6)         (Total for Question 9 is 12 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 760,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  }
+]

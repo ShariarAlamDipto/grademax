@@ -1,0 +1,1357 @@
+[
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_jan.Q002"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_jan.Q002"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_jan.Q006"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_may-jun.Q001"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_jan.Q001"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_may-jun.Q001"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_jan.Q003"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_jan.Q002"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_may-jun.Q003"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2025_jan.Q002"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "2.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_may-jun.Q004"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "2.2",
+    "label": "same numbers lands constants",
+    "size": 2,
+    "slugs": [
+      "S1.2021_jan.Q004",
+      "S1.2024_may-jun.Q002"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "2.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_oct-nov.Q003"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "2.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_oct-nov.Q002"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "2.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2025_jan.Q007"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_jan.Q008"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_may-jun.Q002"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_may-jun.Q008"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_may-jun.Q002"
+    ],
+    "min_marks": 3
+  },
+  {
+    "section": "2.4",
+    "label": "part weight estimate have",
+    "size": 2,
+    "slugs": [
+      "S1.2017_jan.Q001",
+      "S1.2018_may-jun.Q005"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_oct-nov.Q003"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_jan.Q004"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_may-jun.Q003"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_oct-nov.Q001"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_jan.Q001"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_jan.Q001"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_oct-nov.Q005"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_jan.Q002"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_oct-nov.Q006"
+    ],
+    "min_marks": 17
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_may-jun.Q002"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_oct-nov.Q001"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_may-jun.Q002"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_oct-nov.Q002"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_may-jun.Q002"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2020_may-jun.Q004"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "2.5",
+    "label": "quartile leaf iqr box",
+    "size": 2,
+    "slugs": [
+      "S1.2021_jan.Q002",
+      "S1.2021_may-jun.Q003"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_may-jun.Q001"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "2.5",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_oct-nov.Q001"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "2.6",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_may-jun.Q001"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2021_jan.Q006"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_jan.Q006"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_jan.Q005"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_may-jun.Q006"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_jan.Q004"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.2",
+    "label": "exclusive mutually venn events",
+    "size": 4,
+    "slugs": [
+      "S1.2016_may-jun.Q006",
+      "S1.2018_may-jun.Q007",
+      "S1.2022_may-jun.Q004",
+      "S1.2023_jan.Q004"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_oct-nov.Q003"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_jan.Q002"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.2",
+    "label": "student exclusive event probabilities",
+    "size": 2,
+    "slugs": [
+      "S1.2017_oct-nov.Q002",
+      "S1.2019_jan.Q001"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_jan.Q002"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_oct-nov.Q004"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "3.2",
+    "label": "venn probabilities associated events",
+    "size": 2,
+    "slugs": [
+      "S1.2021_jan.Q001",
+      "S1.2021_may-jun.Q001"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_jan.Q001"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_oct-nov.Q006"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_oct-nov.Q003"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_may-jun.Q006"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_oct-nov.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "3.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2025_jan.Q004"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_jan.Q007"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_may-jun.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_may-jun.Q004"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_jan.Q004"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_jan.Q005"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_may-jun.Q004"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_oct-nov.Q004"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_may-jun.Q003"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_may-jun.Q003"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2020_may-jun.Q002"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2021_may-jun.Q004"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_jan.Q002"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_oct-nov.Q001"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_jan.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_oct-nov.Q007"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2025_jan.Q003"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_jan.Q006"
+    ],
+    "min_marks": 18
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_oct-nov.Q006"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_jan.Q001"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_may-jun.Q001"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_jan.Q003"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_may-jun.Q007"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_oct-nov.Q004"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_oct-nov.Q005"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_jan.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_oct-nov.Q001"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_may-jun.Q006"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_jan.Q002"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_may-jun.Q002"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_oct-nov.Q002"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_jan.Q006"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "4.2",
+    "label": "product estimate moment records",
+    "size": 2,
+    "slugs": [
+      "S1.2024_may-jun.Q004",
+      "S1.2024_oct-nov.Q002"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_jan.Q003"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_jan.Q005"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_may-jun.Q002"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_jan.Q003"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_may-jun.Q001"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_jan.Q003"
+    ],
+    "min_marks": 17
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_may-jun.Q005"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_jan.Q005"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_may-jun.Q001"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2020_may-jun.Q005"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2021_jan.Q005"
+    ],
+    "min_marks": 17
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2021_may-jun.Q002"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_jan.Q006"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_jan.Q004"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2025_jan.Q006"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "5.1",
+    "label": "score variable random distribution",
+    "size": 4,
+    "slugs": [
+      "S1.2014_may-jun.Q003",
+      "S1.2016_may-jun.Q005",
+      "S1.2024_oct-nov.Q006",
+      "S1.2025_jan.Q001"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_jan.Q001"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "5.1",
+    "label": "cumulative variable discrete random",
+    "size": 4,
+    "slugs": [
+      "S1.2015_may-jun.Q001",
+      "S1.2017_jan.Q007",
+      "S1.2018_oct-nov.Q005",
+      "S1.2024_jan.Q007"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_jan.Q006"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_jan.Q005"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_jan.Q007"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "5.2",
+    "label": "has variable function random",
+    "size": 2,
+    "slugs": [
+      "S1.2014_jan.Q004",
+      "S1.2015_jan.Q006"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "5.2",
+    "label": "has variable discrete random",
+    "size": 8,
+    "slugs": [
+      "S1.2014_may-jun.Q005",
+      "S1.2016_jan.Q001",
+      "S1.2016_may-jun.Q003",
+      "S1.2016_oct-nov.Q002",
+      "S1.2018_may-jun.Q004",
+      "S1.2019_jan.Q002",
+      "S1.2021_may-jun.Q005",
+      "S1.2023_oct-nov.Q004"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_jan.Q004"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_may-jun.Q006"
+    ],
+    "min_marks": 17
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_oct-nov.Q006"
+    ],
+    "min_marks": 17
+  },
+  {
+    "section": "5.2",
+    "label": "variable possible discrete random",
+    "size": 2,
+    "slugs": [
+      "S1.2018_jan.Q004",
+      "S1.2023_jan.Q003"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "5.2",
+    "label": "spin game wins spinner",
+    "size": 2,
+    "slugs": [
+      "S1.2019_may-jun.Q005",
+      "S1.2022_may-jun.Q005"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "5.2",
+    "label": "only variable takes discrete",
+    "size": 2,
+    "slugs": [
+      "S1.2020_may-jun.Q001",
+      "S1.2022_oct-nov.Q004"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_oct-nov.Q007"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "5.3",
+    "label": "uniform has variable discrete",
+    "size": 2,
+    "slugs": [
+      "S1.2015_may-jun.Q006",
+      "S1.2022_jan.Q004"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_jan.Q006"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.1",
+    "label": "variable random",
+    "size": 3,
+    "slugs": [
+      "S1.2014_may-jun.Q004",
+      "S1.2016_oct-nov.Q001",
+      "S1.2024_jan.Q008"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2014_may-jun.Q007"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.1",
+    "label": "breed particular end distributed",
+    "size": 2,
+    "slugs": [
+      "S1.2015_jan.Q007",
+      "S1.2018_jan.Q007"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2015_may-jun.Q005"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_jan.Q006"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "6.1",
+    "label": "long achieved jump competition",
+    "size": 2,
+    "slugs": [
+      "S1.2017_may-jun.Q003",
+      "S1.2020_may-jun.Q003"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_may-jun.Q006"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2018_oct-nov.Q006"
+    ],
+    "min_marks": 16
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_jan.Q003"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2019_may-jun.Q004"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2020_may-jun.Q006"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2021_jan.Q003"
+    ],
+    "min_marks": 13
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2021_may-jun.Q006"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_jan.Q005"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2022_may-jun.Q006"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "6.1",
+    "label": "weight distributed large mean",
+    "size": 2,
+    "slugs": [
+      "S1.2022_oct-nov.Q005",
+      "S1.2023_oct-nov.Q005"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2023_jan.Q005"
+    ],
+    "min_marks": 17
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_jan.Q005"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_may-jun.Q005"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_oct-nov.Q004"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "6.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2024_oct-nov.Q008"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_jan.Q005"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_may-jun.Q007"
+    ],
+    "min_marks": 15
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2016_oct-nov.Q005"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2017_oct-nov.Q003"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "S1.2025_jan.Q005"
+    ],
+    "min_marks": 13
+  }
+]

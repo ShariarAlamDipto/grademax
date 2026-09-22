@@ -88,6 +88,32 @@ function catalogUrlForSubject(s: Subject): string {
   return `${SITE_ORIGIN}${base}/${s.slug}`
 }
 
+/** Broad tier a level belongs to, ignoring the board taxonomy prefix. */
+function tierOf(level: Level): "igcse" | "a-level" {
+  return level === "igcse" || level === "cambridge-igcse" ? "igcse" : "a-level"
+}
+
+/**
+ * The `level` enum unions both taxonomies (Edexcel `igcse`/`ial`, Cambridge
+ * `cambridge-igcse`/`cambridge-a-level`). A caller who pairs `board=cambridge`
+ * with the Edexcel-style `level=igcse` clearly means "Cambridge IGCSE", but an
+ * exact string compare drops every row and returns nothing. When a board is
+ * given, match on tier so cross-taxonomy pairs resolve; with no board, keep the
+ * exact match so `level=igcse` alone still means Edexcel IGCSE only.
+ */
+function levelMatches(
+  subjectLevel: Level,
+  board: Board | undefined,
+  level: Level | undefined
+): boolean {
+  if (!level) return true
+  if (subjectLevel === level) return true
+  if (board && boardOf(subjectLevel) === board) {
+    return tierOf(subjectLevel) === tierOf(level)
+  }
+  return false
+}
+
 export async function listSubjects(opts: {
   board?: Board
   level?: Level
@@ -96,7 +122,7 @@ export async function listSubjects(opts: {
   const withPapers = await getSubjectSlugsWithPapers()
   return subjects
     .filter((s) => (opts.board ? boardOf(s.level) === opts.board : true))
-    .filter((s) => (opts.level ? s.level === opts.level : true))
+    .filter((s) => levelMatches(s.level, opts.board, opts.level))
     .filter((s) => (opts.withPapersOnly ? withPapers.has(s.slug) : true))
     .map((s) => ({
       slug: s.slug,
@@ -160,9 +186,17 @@ export async function searchPapers(opts: {
   year?: number
   season?: Season
   paper?: string
+  page?: number
   limit?: number
 }): Promise<
-  | { ok: true; subject: Subject; papers: PaperResult[] }
+  | {
+      ok: true
+      subject: Subject
+      papers: PaperResult[]
+      total: number
+      page: number
+      totalPages: number
+    }
   | { ok: false; error: string }
 > {
   const s = findSubject(opts.subject)
@@ -175,6 +209,7 @@ export async function searchPapers(opts: {
 
   const { bySession } = await getPapersIndex()
   const limit = Math.min(Math.max(opts.limit ?? 40, 1), 100)
+  const page = Math.max(1, opts.page ?? 1)
   const paperToken = opts.paper ? normalizePaperToken(opts.paper) : null
 
   const results: PaperResult[] = []
@@ -202,7 +237,16 @@ export async function searchPapers(opts: {
       a.paper.localeCompare(b.paper, undefined, { numeric: true })
   )
 
-  return { ok: true, subject: s, papers: results.slice(0, limit) }
+  const total = results.length
+  const offset = (page - 1) * limit
+  return {
+    ok: true,
+    subject: s,
+    total,
+    page,
+    totalPages: Math.ceil(total / limit),
+    papers: results.slice(offset, offset + limit),
+  }
 }
 
 export async function getPaper(opts: {

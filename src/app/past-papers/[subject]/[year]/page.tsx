@@ -4,8 +4,9 @@ import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getSubjectBySlug, seasonDisplay, subjectColorClasses, boardOf, boardDisplay, levelShort, catalogHref, dbNameOf } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
-import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode } from "@/lib/paper-slugs"
+import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode, comparePaperNumbers } from "@/lib/paper-slugs"
 import { getPapersIndex } from "@/lib/papersIndex"
+import PaperRow from "@/components/past-papers/PaperRow"
 
 export const revalidate = false
 // Edexcel year params are enumerated from the DB-backed index so we cover every
@@ -117,13 +118,6 @@ function isValidPublicUrl(url: string | null): url is string {
   return /^https?:\/\//i.test(url)
 }
 
-function paperSort(a: string, b: string): number {
-  const na = parseInt(a, 10)
-  const nb = parseInt(b, 10)
-  if (na !== nb) return na - nb
-  return a.localeCompare(b)
-}
-
 function dedupeSessionPapers(sessionPapers: PaperRow[]): PaperRow[] {
   const byPaperNumber = new Map<string, PaperRow>()
 
@@ -142,7 +136,7 @@ function dedupeSessionPapers(sessionPapers: PaperRow[]): PaperRow[] {
     }
   }
 
-  return Array.from(byPaperNumber.values()).sort((a, b) => paperSort(a.paper_number, b.paper_number))
+  return Array.from(byPaperNumber.values()).sort((a, b) => comparePaperNumbers(a.paper_number, b.paper_number))
 }
 
 function buildJsonLd(slug: string, subjectName: string, level: string, board: string, catalogPath: string, year: string, sessions: SessionGroup[]) {
@@ -321,50 +315,22 @@ export default async function SubjectYearPapersPage({
                   </Link>
                 </div>
 
-                <div className="space-y-2">
+                <div>
                   {session.papers.map((paper) => {
                     const paperSlug = toPaperSlug(paper.paper_number)
                     const pLabel = isCambridge ? formatCambridgePaperLabel(paper.paper_number) : formatPaperLabel(paper.paper_number)
                     const pCode = isCambridge ? cambridgePaperCode(subj.examCode, paper.paper_number) : ""
                     return (
-                      <div
+                      <PaperRow
                         key={paper.id}
-                        className="bg-white/[0.03] border border-white/10 rounded-lg px-4 py-3 flex items-center justify-between gap-3"
-                      >
-                        {paperSlug ? (
-                          <Link
-                            href={`/past-papers/${slug}/${yearLabel}/${session.season}/${paperSlug}`}
-                            className="font-semibold text-white hover:text-white/80 transition-colors"
-                          >
-                            {pLabel}{pCode && <span className="ml-2 text-xs font-mono text-white/40">{pCode}</span>}
-                          </Link>
-                        ) : (
-                          <span className="font-semibold text-white/80">{pLabel}</span>
-                        )}
-
-                        <div className="flex gap-2 flex-wrap">
-                          {paper.pdf_url && (
-                            <a
-                              href={paper.pdf_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30 hover:bg-blue-500/25 transition-colors"
-                            >
-                              Question Paper
-                            </a>
-                          )}
-                          {paper.markscheme_pdf_url && (
-                            <a
-                              href={paper.markscheme_pdf_url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30 hover:bg-emerald-500/25 transition-colors"
-                            >
-                              Mark Scheme
-                            </a>
-                          )}
-                        </div>
-                      </div>
+                        href={paperSlug ? `/past-papers/${slug}/${yearLabel}/${session.season}/${paperSlug}` : null}
+                        label={pLabel}
+                        code={pCode}
+                        qpUrl={paper.pdf_url}
+                        msUrl={paper.markscheme_pdf_url}
+                        viewerTitle={`${subj.name} ${yearLabel} ${session.displaySeason} ${pLabel}`}
+                        backPath={`/past-papers/${slug}/${yearLabel}`}
+                      />
                     )
                   })}
                 </div>

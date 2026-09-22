@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { seoSubjects, isSingleUnitEdexcelCode, type SEOSubject } from '@/lib/seo-subjects'
 import { getPapersIndex } from '@/lib/papersIndex'
 import { getCambridgeQpMap, cambridgeLevelSeo } from '@/lib/cambridge-seo'
+import { canonicalEdexcelQpSlug, canonicalCambridgeQpSlug } from '@/lib/qp-slugs'
 import CambridgeQpLanding from '@/components/CambridgeQpLanding'
 import {
   generateOrganizationSchema,
@@ -73,6 +74,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (cambridge) {
     const code = cambridge.examCode ?? ''
     const lvlSeo = cambridgeLevelSeo(cambridge)
+    // `{code}` and `{code}-past-papers` render the same page — consolidate on the
+    // bare syllabus code rather than letting both self-canonicalise.
+    const canonicalSlug = canonicalCambridgeQpSlug(code) ?? slug
     const title = `${cambridge.name} ${code} Past Papers – Cambridge ${lvlSeo} Mark Schemes (CAIE)`
     const description = `Free Cambridge ${lvlSeo} ${cambridge.name} (${code}) past papers with mark schemes, 2015–2025. Feb/March, May/June and Oct/Nov series, all variants — free PDF download.`
     return {
@@ -93,7 +97,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       openGraph: {
         title,
         description,
-        url: `https://www.grademax.me/qp/${slug}`,
+        url: `https://www.grademax.me/qp/${canonicalSlug}`,
         siteName: 'GradeMax',
         type: 'website',
       },
@@ -103,7 +107,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: `Free Cambridge ${lvlSeo} ${cambridge.name} (${code}) past papers with mark schemes.`,
       },
       alternates: {
-        canonical: `https://www.grademax.me/qp/${slug}`,
+        canonical: `https://www.grademax.me/qp/${canonicalSlug}`,
       },
     }
   }
@@ -115,6 +119,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const isQP = slug.includes('question-papers')
   const kind = isQP ? 'Question Papers' : 'Past Papers'
   const codeLed = isSingleUnitEdexcelCode(subject.examCode) && !subject.name.startsWith('IAL ')
+  // All five /qp variants for a subject render identical copy under an identical
+  // <title>, so they consolidate onto one URL instead of self-canonicalising and
+  // competing. Only this slug is published in sitemap.xml.
+  const canonicalSlug = canonicalEdexcelQpSlug(subject)
 
   const firstYear = subject.yearsAvailable[0]
   const lastYear = subject.yearsAvailable[subject.yearsAvailable.length - 1]
@@ -149,7 +157,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://www.grademax.me/qp/${slug}`,
+      url: `https://www.grademax.me/qp/${canonicalSlug}`,
       siteName: 'GradeMax',
       type: 'website',
     },
@@ -159,7 +167,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `Free ${levelDisplay} ${subject.name} past papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://www.grademax.me/qp/${slug}`,
+      canonical: `https://www.grademax.me/qp/${canonicalSlug}`,
     },
   }
 }
@@ -179,6 +187,9 @@ export default async function SubjectQPPage({ params }: PageProps) {
   if (!subject) notFound()
 
   const baseUrl = 'https://www.grademax.me'
+  // Schema must name the same URL as the canonical tag, or the two disagree about
+  // which of the five identical variants is the real page.
+  const canonicalSlug = canonicalEdexcelQpSlug(subject)
   const levelDisplay = subject.levelDisplay
   // Years come straight from the shared papers index — the exact set the
   // /past-papers hub built from, so every link targets a page that exists
@@ -197,10 +208,10 @@ export default async function SubjectQPPage({ params }: PageProps) {
       generateBreadcrumbSchema([
         { name: 'Home', url: baseUrl },
         { name: `Edexcel Past Papers`, url: `${baseUrl}/edexcel-past-papers` },
-        { name: `${levelDisplay} ${subject.name}`, url: `${baseUrl}/qp/${slug}` },
+        { name: `${levelDisplay} ${subject.name}`, url: `${baseUrl}/qp/${canonicalSlug}` },
       ]),
       generateWebPageSchema(
-        `${baseUrl}/qp/${slug}`,
+        `${baseUrl}/qp/${canonicalSlug}`,
         `Edexcel ${levelDisplay} ${subject.name} Past Papers`,
         `Free Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers with mark schemes.`
       ),
@@ -209,7 +220,7 @@ export default async function SubjectQPPage({ params }: PageProps) {
         '@type': 'CollectionPage',
         name: `Edexcel ${levelDisplay} ${subject.name} Past Papers Collection`,
         description: `Complete collection of Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers from ${subject.yearsAvailable[0]} to ${subject.yearsAvailable[subject.yearsAvailable.length - 1]}.`,
-        url: `${baseUrl}/qp/${slug}`,
+        url: `${baseUrl}/qp/${canonicalSlug}`,
         isPartOf: { '@id': `${baseUrl}/#website` },
         about: {
           '@type': 'Course',
@@ -371,11 +382,12 @@ export default async function SubjectQPPage({ params }: PageProps) {
             {seoSubjects
               .filter(s => s.level === subject.level && s.slug !== subject.slug)
               .map(s => {
-                const prefix = s.level === 'igcse' ? 'igcse' : 'a-level'
+                // Link the canonical variant so internal links, sitemap and the
+                // canonical tag all point at the same URL.
                 return (
-                  <Link 
+                  <Link
                     key={s.slug}
-                    href={`/qp/${prefix}-${s.slug}`}
+                    href={`/qp/${canonicalEdexcelQpSlug(s)}`}
                     className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors"
                   >
                     {s.levelDisplay} {s.name}
