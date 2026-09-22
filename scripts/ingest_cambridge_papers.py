@@ -206,6 +206,7 @@ THIRD_PARTY_PATTERNS = [
     r"savemyexams", r"smartexamresources", r"exam-mate", r"cienotes",
     r"igcseexamguru", r"physicsandmathstutor", r"\bpmt\b", r"paperlords",
     r"revisely", r"vedantu", r"tutopiya", r"pastpapers\.co",
+    r"automatepapers", r"automate\s*papers",
 ]
 THIRD_PARTY_RE = re.compile("|".join(THIRD_PARTY_PATTERNS), re.IGNORECASE)
 
