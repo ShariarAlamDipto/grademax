@@ -7,6 +7,7 @@ import { cylinder } from "../shapes/cylinder"
 import { sphere } from "../shapes/sphere"
 import { hemisphere } from "../shapes/hemisphere"
 import { pyramid } from "../shapes/pyramid"
+import { tripyramid } from "../shapes/tripyramid"
 import { rectpyramid } from "../shapes/rectpyramid"
 import { prism } from "../shapes/prism"
 import { frustum } from "../shapes/frustum"
@@ -15,7 +16,8 @@ import { graph } from "../shapes/graph"
 import { area } from "../shapes/area"
 
 // Order matters for the picker AND for keyword tie-breaks (earlier wins ties):
-// "square pyramid" must resolve before the generic rectangular pyramid.
+// "square pyramid" and "triangular based pyramid" must both resolve before the
+// generic rectangular pyramid, which claims the bare keyword "pyramid".
 export const shapeList: ShapeTemplate[] = [
   cuboid,
   cone,
@@ -23,6 +25,7 @@ export const shapeList: ShapeTemplate[] = [
   sphere,
   hemisphere,
   pyramid,
+  tripyramid,
   rectpyramid,
   prism,
   frustum,
@@ -38,6 +41,7 @@ export const shapes: Record<ShapeId, ShapeTemplate> = {
   sphere,
   hemisphere,
   pyramid,
+  tripyramid,
   rectpyramid,
   prism,
   frustum,

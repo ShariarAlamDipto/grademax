@@ -12,7 +12,8 @@ import {
   dbNameOf,
 } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
-import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode } from "@/lib/paper-slugs"
+import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode, comparePaperNumbers } from "@/lib/paper-slugs"
+import PaperRow from "@/components/past-papers/PaperRow"
 
 // Subject hub pages are pre-rendered at build time and stay static until the
 // next deploy. New papers added between deploys are picked up on the next push.
@@ -147,16 +148,10 @@ function dedupeSessionPapers(sessionPapers: PaperRow[]): PaperRow[] {
     }
   }
 
-  return Array.from(byPaperNumber.values()).sort((a, b) => paperSort(a.paper_number, b.paper_number))
+  return Array.from(byPaperNumber.values()).sort((a, b) => comparePaperNumbers(a.paper_number, b.paper_number))
 }
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
-
-function paperSort(a: string, b: string): number {
-  const na = parseInt(a), nb = parseInt(b)
-  if (na !== nb) return na - nb
-  return a.localeCompare(b)
-}
 
 const SEASON_ORDER: Record<string, number> = {
   jan: 0, "jan-feb": 0, "feb-mar": 1, "may-jun": 2, "oct-nov": 3,
@@ -319,6 +314,13 @@ export default async function SubjectPapersPage({
     }))
     .filter((group) => group.sessions.length > 0)
 
+  // Which year accordions start expanded. Anchored to the subject's own newest
+  // year, not to the wall-clock year: subjects whose archive stops earlier (IAL
+  // French ends at 2022, Mechanics 1 at 2019) previously rendered every group
+  // collapsed, so the page looked empty even though the papers were all there.
+  const newestYear = yearGroups[0]?.year ?? 0
+  const firstOpenYear = newestYear - 1
+
   const jsonLd = buildJsonLd(slug, subj.name, level, board, catalogPath, yearGroups)
 
   return (
@@ -374,7 +376,7 @@ export default async function SubjectPapersPage({
               <details
                 key={yg.year}
                 style={{ background: "var(--gm-card-bg)", border: "1px solid var(--gm-border-2)", borderRadius: "1rem", overflow: "hidden" }}
-                open={yg.year >= new Date().getFullYear() - 2}
+                open={yg.year >= firstOpenYear}
               >
                 <summary style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "1rem 1.25rem", cursor: "pointer", userSelect: "none", listStyle: "none" }}>
                   <span style={{ fontSize: "1.1rem", fontWeight: 700, color: "var(--gm-text)" }}>{yg.year}</span>
@@ -398,7 +400,7 @@ export default async function SubjectPapersPage({
                         </Link>
                       </div>
 
-                      <div style={{ display: "flex", flexDirection: "column", gap: "0.4rem" }}>
+                      <div>
                         {sess.papers.map((paper) => {
                           // Use the canonical slug helper so it matches the static-build paths
                           // (the index keys leaves with toPaperSlug, which normalises `_` and spaces to `-`).
@@ -407,121 +409,20 @@ export default async function SubjectPapersPage({
                           const paperLabel = isEdexcel ? formatPaperLabel(paper.paper_number) : formatCambridgePaperLabel(paper.paper_number)
                           const paperCode = isEdexcel ? "" : cambridgePaperCode(subj.examCode, paper.paper_number)
                           return (
-                          <div
-                            key={paper.id}
-                            id={`${yg.year}-${sess.season}-${paperPageSlug}`}
-                            style={{
-                              display: "flex",
-                              flexWrap: "wrap",
-                              alignItems: "center",
-                              justifyContent: "space-between",
-                              gap: "0.5rem",
-                              background: "var(--gm-surface)",
-                              borderRadius: "0.625rem",
-                              padding: "0.75rem 1rem",
-                              border: "1px solid var(--gm-border)",
-                            }}
-                          >
-                            <Link
+                            <PaperRow
+                              key={paper.id}
+                              id={`${yg.year}-${sess.season}-${paperPageSlug}`}
                               href={`/past-papers/${slug}/${yg.year}/${sess.season}/${paperPageSlug}`}
-                              style={{ display: "flex", alignItems: "baseline", gap: "0.5rem", fontWeight: 600, fontSize: "0.875rem", color: "var(--gm-text)", textDecoration: "none", flexWrap: "wrap" }}
-                              className="gm-link"
-                            >
-                              {paperLabel}
-                              {paperCode && (
-                                <span style={{ fontSize: "0.7rem", fontFamily: "monospace", fontWeight: 700, color: "var(--gm-text-3)" }}>{paperCode}</span>
-                              )}
-                            </Link>
-
-                            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
-                              {paper.pdf_url ? (
-                                <a
-                                  href={paper.pdf_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "0.35rem",
-                                    padding: "0.35rem 0.75rem",
-                                    fontSize: "0.75rem",
-                                    fontWeight: 600,
-                                    borderRadius: "0.5rem",
-                                    background: "var(--gm-blue-bg)",
-                                    color: "var(--gm-blue)",
-                                    border: "1px solid var(--gm-blue-ring)",
-                                    textDecoration: "none",
-                                    transition: "background 0.15s",
-                                  }}
-                                >
-                                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                                  </svg>
-                                  Question Paper
-                                </a>
-                              ) : (
-                                <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", padding: "0.35rem 0.75rem" }}>QP —</span>
-                              )}
-
-                              {paper.markscheme_pdf_url ? (
-                                <a
-                                  href={paper.markscheme_pdf_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "0.35rem",
-                                    padding: "0.35rem 0.75rem",
-                                    fontSize: "0.75rem",
-                                    fontWeight: 600,
-                                    borderRadius: "0.5rem",
-                                    background: "var(--gm-green-bg)",
-                                    color: "var(--gm-green)",
-                                    border: "1px solid rgba(52,211,153,0.25)",
-                                    textDecoration: "none",
-                                    transition: "background 0.15s",
-                                  }}
-                                >
-                                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                  </svg>
-                                  Mark Scheme
-                                </a>
-                              ) : (
-                                <span style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", padding: "0.35rem 0.75rem" }}>MS —</span>
-                              )}
-
-                              {paper.data_file_url && (
-                                <a
-                                  href={paper.data_file_url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  style={{
-                                    display: "inline-flex",
-                                    alignItems: "center",
-                                    gap: "0.35rem",
-                                    padding: "0.35rem 0.75rem",
-                                    fontSize: "0.75rem",
-                                    fontWeight: 600,
-                                    borderRadius: "0.5rem",
-                                    background: "rgba(168,85,247,0.12)",
-                                    color: "var(--gm-violet, #c4b5fd)",
-                                    border: "1px solid rgba(168,85,247,0.3)",
-                                    textDecoration: "none",
-                                    transition: "background 0.15s",
-                                  }}
-                                >
-                                  <svg width="12" height="12" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
-                                    <path strokeLinecap="round" strokeLinejoin="round" d="M3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" />
-                                  </svg>
-                                  Data Files
-                                </a>
-                              )}
-                            </div>
-                          </div>
-                        )})}
+                              label={paperLabel}
+                              code={paperCode}
+                              qpUrl={paper.pdf_url}
+                              msUrl={paper.markscheme_pdf_url}
+                              dataUrl={paper.data_file_url}
+                              viewerTitle={`${subj.name} ${yg.year} ${sess.displaySeason} ${paperLabel}`}
+                              backPath={`/past-papers/${slug}`}
+                            />
+                          )
+                        })}
                       </div>
                     </div>
                   ))}

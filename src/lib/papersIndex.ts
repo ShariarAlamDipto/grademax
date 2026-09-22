@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js"
 import { readFile } from "node:fs/promises"
 import path from "node:path"
 import { subjects, dbNameOf } from "@/lib/subjects"
-import { normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
+import { normalizePaperToken, toPaperSlug, comparePaperNumbers } from "@/lib/paper-slugs"
 
 const VALID_SEASONS = new Set(["jan", "jan-feb", "feb-mar", "may-jun", "oct-nov"])
 
@@ -25,13 +25,6 @@ export interface PapersIndex {
 function isValidPublicUrl(url: string | null): url is string {
   if (!url) return false
   return /^https?:\/\//i.test(url)
-}
-
-function paperSort(a: string, b: string): number {
-  const na = parseInt(a, 10)
-  const nb = parseInt(b, 10)
-  if (!Number.isNaN(na) && !Number.isNaN(nb) && na !== nb) return na - nb
-  return a.localeCompare(b)
 }
 
 function pickBetter(a: IndexedPaper, b: IndexedPaper): IndexedPaper {
@@ -214,7 +207,7 @@ async function loadIndex(): Promise<PapersIndex> {
     }
     bySession.set(
       key,
-      Array.from(byNum.values()).sort((a, b) => paperSort(a.paperNumber, b.paperNumber))
+      Array.from(byNum.values()).sort((a, b) => comparePaperNumbers(a.paperNumber, b.paperNumber))
     )
     // key = subjectSlug/year/season — pull year out
     const [subjectSlug, yearStr] = key.split("/")

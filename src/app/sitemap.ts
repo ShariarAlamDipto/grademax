@@ -2,7 +2,8 @@ import { MetadataRoute } from 'next'
 import { createClient } from '@supabase/supabase-js'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
 import { pastPaperSubjects, subjects, dbNameOf } from '@/lib/subjects'
-import { cambridgeSeoSubjects, cambridgeQpSlugs } from '@/lib/cambridge-seo'
+import { cambridgeSeoSubjects } from '@/lib/cambridge-seo'
+import { canonicalEdexcelQpSlug, canonicalCambridgeQpSlug } from '@/lib/qp-slugs'
 import { toPaperSlug } from '@/lib/paper-slugs'
 
 const BASE_URL = 'https://www.grademax.me'
@@ -224,26 +225,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // ─── SEO "QP" landing pages ───────────────────────────────────────────────────
 
-  const qpPages: MetadataRoute.Sitemap = seoSubjects.flatMap((s: SEOSubject) => {
-    const levelPrefix = s.level === 'igcse' ? 'igcse' : 'a-level'
-    return [
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}`,                     changeFrequency: 'weekly' as const, priority: 0.9 },
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-past-papers`,         changeFrequency: 'weekly' as const, priority: 0.9 },
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-question-papers`,     changeFrequency: 'weekly' as const, priority: 0.85 },
-      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}`,                  changeFrequency: 'weekly' as const, priority: 0.85 },
-      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}-past-papers`,      changeFrequency: 'weekly' as const, priority: 0.85 },
-    ]
-  })
+  // A sitemap advertises canonical URLs only. Each subject answers on several
+  // /qp slugs (see src/lib/qp-slugs.ts) but they render identical pages, so
+  // listing all five asked Google to crawl ~200 duplicates of ~86 real pages and
+  // pick a winner itself. The variants stay live and still resolve — they just
+  // carry a canonical tag pointing here instead of being submitted for indexing.
+  const qpPages: MetadataRoute.Sitemap = seoSubjects.map((s: SEOSubject) => ({
+    url: `${BASE_URL}/qp/${canonicalEdexcelQpSlug(s)}`,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }))
 
-  // Cambridge syllabus-code landing pages (/qp/0620, /qp/9702-past-papers…) —
-  // the code long-tail students search verbatim. Same static /qp route.
-  const cambridgeQpPages: MetadataRoute.Sitemap = cambridgeSeoSubjects.flatMap((s) =>
-    cambridgeQpSlugs(s).map((slug) => ({
-      url: `${BASE_URL}/qp/${slug}`,
-      changeFrequency: 'weekly' as const,
-      priority: 0.85,
-    }))
-  )
+  // Cambridge syllabus-code landing pages (/qp/0620, /qp/9702…) — the code
+  // long-tail students search verbatim. Same static /qp route, bare code only.
+  const cambridgeQpPages: MetadataRoute.Sitemap = cambridgeSeoSubjects.flatMap((s) => {
+    const slug = canonicalCambridgeQpSlug(s.examCode)
+    return slug
+      ? [{ url: `${BASE_URL}/qp/${slug}`, changeFrequency: 'weekly' as const, priority: 0.85 }]
+      : []
+  })
 
   return [
     ...corePages,

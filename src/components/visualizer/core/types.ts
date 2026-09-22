@@ -11,6 +11,7 @@ export type ShapeId =
   | "sphere"
   | "hemisphere"
   | "pyramid"
+  | "tripyramid"
   | "rectpyramid"
   | "prism"
   | "frustum"
