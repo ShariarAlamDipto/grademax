@@ -1,0 +1,209 @@
+{
+  "unit": "S1",
+  "subject_code": "WST01",
+  "mode": "EXECUTE",
+  "notes": [
+    "excluded 2018_specimen: arbitrary per-font subset encoding -- the text layer decodes to '!\"#$\"%' for 'Leave', and it is not the +29 CMap shift, so no arithmetic repair recovers it. Recoverable later via MANUAL_QP_RANGES read off a rendered contact sheet; ~7 questions.",
+    "duplicate: 2020_oct-nov is the same paper as 2020_may-jun (identical text once the watermark session token is stripped)",
+    "duplicate: 2021_oct-nov is the same paper as 2021_may-jun (identical text once the watermark session token is stripped)",
+    "duplicate: 2023_may-jun is the same paper as 2023_jan (identical text once the watermark session token is stripped)"
+  ],
+  "papers_clean": 27,
+  "papers_total": 27,
+  "questions": 179,
+  "mark_provenance": {
+    "fence+tally": 148,
+    "tally": 31
+  },
+  "papers": [
+    {
+      "key": "2014_jan",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2014_may-jun",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2015_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2015_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2016_jan",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2016_may-jun",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2016_oct-nov",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2017_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2017_may-jun",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2017_oct-nov",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2018_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2018_may-jun",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2018_oct-nov",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2019_jan",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2019_may-jun",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2020_may-jun",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_jan",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_may-jun",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_may-jun",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_oct-nov",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2023_jan",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2023_oct-nov",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_jan",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_may-jun",
+      "ok": true,
+      "questions": 6,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_oct-nov",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2025_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    }
+  ]
+}

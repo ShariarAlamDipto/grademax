@@ -19,6 +19,23 @@ export function extractPaperTokenFromSlug(slug: string): string | null {
 }
 
 /**
+ * Natural-order comparator for raw `paper_number` values.
+ *
+ * Sorts the embedded number as a number, so:
+ *   Unit_1 < Unit_2 < … < Unit_6 < Unit_10   (IAL multi-unit subjects)
+ *   1 < 1R < 2 < 10                            (Edexcel IGCSE / single-unit)
+ *
+ * A bare `parseInt("Unit_1")` returns `NaN`, and `NaN !== NaN` is `true`, so the
+ * old `parseInt`-based comparators returned `NaN` from the comparator for every
+ * pair of IAL unit papers — an invalid comparator that yields an unstable,
+ * effectively random order. Numeric-aware collation fixes this while preserving
+ * the existing IGCSE ordering (where `parseInt` happened to work).
+ */
+export function comparePaperNumbers(a: string, b: string): number {
+  return String(a ?? "").localeCompare(String(b ?? ""), "en", { numeric: true })
+}
+
+/**
  * Human-readable label for a raw paper_number value.
  *
  * Examples:

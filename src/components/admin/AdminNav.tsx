@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 interface Badges {
   missingPapers: number
   unreviewedQuestions: number
+  pendingOrders: number
 }
 
 const NAV_ITEMS = [
@@ -14,6 +15,7 @@ const NAV_ITEMS = [
   { href: "/admin/scraper", label: "Scraper", icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4", badge: null as keyof Badges | null },
   { href: "/admin/subjects", label: "Subjects", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253", badge: null as keyof Badges | null },
   { href: "/admin/users", label: "Users", icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z", badge: null as keyof Badges | null },
+  { href: "/admin/store", label: "Store", icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z", badge: "pendingOrders" as keyof Badges | null },
   { href: "/admin/analytics", label: "Analytics", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", badge: null as keyof Badges | null },
   { href: "/admin/tagger", label: "Tagger", icon: "M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z", badge: "unreviewedQuestions" as keyof Badges | null },
   { href: "/admin/pipeline", label: "Pipeline", icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4", badge: null as keyof Badges | null },
@@ -24,14 +26,18 @@ const NAV_ITEMS = [
 
 export default function AdminNav() {
   const pathname = usePathname()
-  const [badges, setBadges] = useState<Badges>({ missingPapers: 0, unreviewedQuestions: 0 })
+  const [badges, setBadges] = useState<Badges>({ missingPapers: 0, unreviewedQuestions: 0, pendingOrders: 0 })
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     fetch("/api/admin/nav-badges")
       .then(r => r.json())
-      .then(d => setBadges({ missingPapers: d.missingPapers ?? 0, unreviewedQuestions: d.unreviewedQuestions ?? 0 }))
+      .then(d => setBadges({
+        missingPapers: d.missingPapers ?? 0,
+        unreviewedQuestions: d.unreviewedQuestions ?? 0,
+        pendingOrders: d.pendingOrders ?? 0,
+      }))
       .catch(() => {})
   }, [])
 
@@ -136,9 +142,9 @@ export default function AdminNav() {
             </svg>
           </button>
           <span style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)" }}>Admin Portal</span>
-          {(badges.missingPapers > 0 || badges.unreviewedQuestions > 0) && (
+          {(badges.missingPapers > 0 || badges.unreviewedQuestions > 0 || badges.pendingOrders > 0) && (
             <span style={{ background: "#ef444430", color: "#ef4444", borderRadius: "0.25rem", padding: "0 0.4rem", fontSize: "0.65rem", fontWeight: 700 }}>
-              {badges.missingPapers + badges.unreviewedQuestions} alerts
+              {badges.missingPapers + badges.unreviewedQuestions + badges.pendingOrders} alerts
             </span>
           )}
         </div>

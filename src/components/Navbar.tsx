@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import NavAuthSection from "./NavAuthSection"
 import ThemeToggle from "./ThemeToggle"
+import CartLink from "./store/CartLink"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -35,6 +36,7 @@ export default function Navbar() {
     { href: "/past-papers/cambridge", label: "Cambridge" },
     { href: "/generate",              label: "Worksheets" },
     { href: "/test-builder",          label: "Test Builder" },
+    { href: "/store",                 label: "Books" },
   ]
 
   const extraLinks = [
@@ -124,6 +126,7 @@ export default function Navbar() {
 
         {/* Right: theme toggle + auth + hamburger */}
         <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "0.4rem" }}>
+          <CartLink />
           <ThemeToggle />
           <NavAuthSection />
           <button

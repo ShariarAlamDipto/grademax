@@ -563,3 +563,90 @@ html.light .border-b-2.border-white         { border-bottom-color: var(--gm-blue
 html.light body {
   color: var(--gm-text);
 }
+
+/* ── PDF viewer ──────────────────────────────────────────────────────────────
+   Side-by-side needs real width; below the split breakpoint the control is
+   hidden rather than disabled (ViewerClient also forces single view there). */
+@media (max-width: 1023px) {
+  .gm-split-segment { display: none; }
+}
+
+/* ── Past-paper listings ─────────────────────────────────────────────────────
+   One compact row per paper, shared by the subject / year / session pages so
+   every level of the tree reads the same way. */
+.gm-paper-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--gm-border);
+  transition: background 0.12s ease;
+}
+.gm-paper-row:last-child { border-bottom: none; }
+.gm-paper-row:hover { background: var(--gm-card-hover); }
+
+.gm-paper-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  min-width: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gm-text);
+  text-decoration: none;
+}
+.gm-paper-name:hover { color: var(--gm-blue); }
+
+.gm-paper-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gm-text-3);
+}
+
+.gm-paper-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* Text-first actions: no pill chrome, so a long session reads as a clean list. */
+.gm-paper-action {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gm-text-3);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.12s ease;
+}
+.gm-paper-action:hover { color: var(--gm-blue); }
+.gm-paper-action[data-muted="true"] {
+  color: var(--gm-text-3);
+  opacity: 0.35;
+  cursor: default;
+}
+.gm-paper-action[data-muted="true"]:hover { color: var(--gm-text-3); }
+
+/* ── Store ──────────────────────────────────────────────────────────────────
+   The product, cart and checkout pages put a sticky summary beside the main
+   column. Below 60rem there is no room for two columns, so the summary drops
+   underneath and the sticky positioning is released -- a sticky panel in a
+   single-column phone layout pins itself over the content the buyer is
+   scrolling through. */
+.gm-store-product-grid {
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+}
+
+@media (max-width: 60rem) {
+  .gm-store-product-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .gm-store-product-grid > aside {
+    position: static !important;
+    top: auto !important;
+  }
+}

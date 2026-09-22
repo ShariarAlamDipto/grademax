@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { after } from "next/server"
 import { headers } from "next/headers"
 import ViewerClient from "./ViewerClient"
-import { isAllowedPdfUrl, type ViewerDoc } from "@/lib/viewer-link"
+import { isAllowedPdfUrl, parseViewerView, type ViewerDoc, type ViewerView } from "@/lib/viewer-link"
 import { trackUsage } from "@/lib/trackUsage"
 
 // Dynamic: the whole page is derived from query params, which are only known
@@ -55,6 +55,9 @@ export default async function ViewerPage({ searchParams }: { searchParams: Searc
   const title = first(sp.title) ?? "Past Paper"
   const backPath = safeBackPath(first(sp.back))
   const requestedDoc: ViewerDoc = first(sp.doc) === "ms" ? "ms" : "qp"
+  // Split needs both documents; asking for it with only one falls back to single.
+  const requestedView: ViewerView =
+    qpUrl && msUrl ? parseViewerView(first(sp.view)) : "single"
 
   // Record which paper was opened. `after()` runs once the response has been
   // sent, so tracking never adds latency to the render; trackUsage itself
@@ -69,7 +72,7 @@ export default async function ViewerPage({ searchParams }: { searchParams: Searc
       trackUsage({
         feature: "paper_view",
         subject_name: subjectFromBackPath(backPath),
-        metadata: { title, doc: requestedDoc, path: pdfPath, back: backPath },
+        metadata: { title, doc: requestedDoc, view: requestedView, path: pdfPath, back: backPath },
       })
     )
   }
@@ -81,6 +84,7 @@ export default async function ViewerPage({ searchParams }: { searchParams: Searc
       title={title}
       backPath={backPath}
       requestedDoc={requestedDoc}
+      requestedView={requestedView}
     />
   )
 }

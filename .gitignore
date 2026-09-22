@@ -49,3 +49,16 @@ config/*.json
 
 # build-time papers-index snapshot (regenerated every build by prebuild)
 /src/generated/
+
+# Python
+__pycache__/
+*.pyc
+
+# Workbook segment PDFs (~103 MB). Deliberately not tracked, unlike the older
+# data/processed corpus which predates the R2 migration:
+#   - the app serves them from R2 (workbook/fpm/...), never from the repo
+#   - they are deterministically regenerable:
+#       python scripts/build_fpm_workbook_segments.py --execute
+# The JSON alongside them IS tracked — it is the classification work product and
+# costs API calls to rebuild.
+/data/workbook/*/

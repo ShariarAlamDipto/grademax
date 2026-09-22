@@ -1,0 +1,1407 @@
+[
+  {
+    "slug": "P4.2018_specimen.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q002",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q003",
+    "subject_code": "WMA14",
+    "section": "6.2",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "6.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q004",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [],
+    "proposed_section": "5.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q005",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q006",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q007",
+    "subject_code": "WMA14",
+    "section": "3.1",
+    "secondary_sections": [],
+    "proposed_section": "3.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q008",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2018_specimen.Q009",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q001",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q002",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q003",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q004",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [],
+    "proposed_section": "5.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q005",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q006",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q007",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [
+      "6.2"
+    ],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q008",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2020_may-jun.Q009",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q002",
+    "subject_code": "WMA14",
+    "section": "7.1",
+    "secondary_sections": [
+      "7.3"
+    ],
+    "proposed_section": "7.3",
+    "review_priority": "same_chapter",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q003",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q004",
+    "subject_code": "WMA14",
+    "section": "3.1",
+    "secondary_sections": [],
+    "proposed_section": "3.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q005",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q006",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q007",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q008",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q009",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_jan.Q010",
+    "subject_code": "WMA14",
+    "section": "2.1",
+    "secondary_sections": [
+      "6.3"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "disputed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q002",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q003",
+    "subject_code": "WMA14",
+    "section": "5.3",
+    "secondary_sections": [],
+    "proposed_section": "5.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q004",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q005",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q006",
+    "subject_code": "WMA14",
+    "section": "6.5",
+    "secondary_sections": [
+      "3.1"
+    ],
+    "proposed_section": "6.5",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q007",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q008",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_may-jun.Q009",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [
+      "7.2"
+    ],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "section": "2.1",
+    "secondary_sections": [],
+    "proposed_section": "2.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [],
+    "proposed_section": "5.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q009",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [
+      "5.3"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2021_oct-nov.Q010",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q001",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q002",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q003",
+    "subject_code": "WMA14",
+    "section": "3.1",
+    "secondary_sections": [],
+    "proposed_section": "3.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q004",
+    "subject_code": "WMA14",
+    "section": "5.3",
+    "secondary_sections": [],
+    "proposed_section": "5.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q005",
+    "subject_code": "WMA14",
+    "section": "6.5",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.5",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q006",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q007",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q008",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_jan.Q009",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q002",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q003",
+    "subject_code": "WMA14",
+    "section": "5.3",
+    "secondary_sections": [],
+    "proposed_section": "5.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q004",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q005",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q006",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q007",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [],
+    "proposed_section": "5.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q008",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_may-jun.Q009",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "section": "3.1",
+    "secondary_sections": [],
+    "proposed_section": "3.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "section": "2.1",
+    "secondary_sections": [
+      "6.2"
+    ],
+    "proposed_section": "6.2",
+    "review_priority": "disputed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "section": "7.3",
+    "secondary_sections": [
+      "7.1"
+    ],
+    "proposed_section": "7.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [
+      "3.1"
+    ],
+    "proposed_section": "5.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q009",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q010",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [
+      "5.3"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2022_oct-nov.Q011",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q002",
+    "subject_code": "WMA14",
+    "section": "3.1",
+    "secondary_sections": [],
+    "proposed_section": "3.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q003",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q004",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q005",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q006",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q007",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q008",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [
+      "6.5"
+    ],
+    "proposed_section": "6.5",
+    "review_priority": "disputed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_jan.Q009",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "section": "5.3",
+    "secondary_sections": [],
+    "proposed_section": "5.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2023_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "5.2"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q002",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "6.2",
+    "review_priority": "same_chapter",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q003",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q004",
+    "subject_code": "WMA14",
+    "section": "5.3",
+    "secondary_sections": [],
+    "proposed_section": "5.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q005",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q006",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q007",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q008",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_jan.Q009",
+    "subject_code": "WMA14",
+    "section": "3.1",
+    "secondary_sections": [
+      "5.2"
+    ],
+    "proposed_section": "5.2",
+    "review_priority": "disputed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "disputed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q002",
+    "subject_code": "WMA14",
+    "section": "7.1",
+    "secondary_sections": [
+      "7.3"
+    ],
+    "proposed_section": "7.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q003",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q004",
+    "subject_code": "WMA14",
+    "section": "5.3",
+    "secondary_sections": [],
+    "proposed_section": "5.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q005",
+    "subject_code": "WMA14",
+    "section": "6.5",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "6.5",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q006",
+    "subject_code": "WMA14",
+    "section": "7.1",
+    "secondary_sections": [
+      "7.2"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "same_chapter",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q007",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q008",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [
+      "1.1"
+    ],
+    "proposed_section": "1.1",
+    "review_priority": "disputed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_may-jun.Q009",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q001",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q002",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q003",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [
+      "3.1"
+    ],
+    "proposed_section": "5.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q004",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q005",
+    "subject_code": "WMA14",
+    "section": "5.3",
+    "secondary_sections": [],
+    "proposed_section": "5.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q006",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q007",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q008",
+    "subject_code": "WMA14",
+    "section": "7.2",
+    "secondary_sections": [
+      "7.1",
+      "7.3"
+    ],
+    "proposed_section": "7.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q009",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2024_oct-nov.Q010",
+    "subject_code": "WMA14",
+    "section": "6.5",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.5",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q001",
+    "subject_code": "WMA14",
+    "section": "6.4",
+    "secondary_sections": [
+      "6.1"
+    ],
+    "proposed_section": "6.4",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q002",
+    "subject_code": "WMA14",
+    "section": "5.1",
+    "secondary_sections": [],
+    "proposed_section": "5.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q003",
+    "subject_code": "WMA14",
+    "section": "4.1",
+    "secondary_sections": [],
+    "proposed_section": "4.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q004",
+    "subject_code": "WMA14",
+    "section": "6.3",
+    "secondary_sections": [
+      "5.3"
+    ],
+    "proposed_section": "6.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q005",
+    "subject_code": "WMA14",
+    "section": "6.2",
+    "secondary_sections": [
+      "2.1"
+    ],
+    "proposed_section": "6.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q006",
+    "subject_code": "WMA14",
+    "section": "1.1",
+    "secondary_sections": [],
+    "proposed_section": "1.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q007",
+    "subject_code": "WMA14",
+    "section": "6.1",
+    "secondary_sections": [],
+    "proposed_section": "6.1",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q008",
+    "subject_code": "WMA14",
+    "section": "7.3",
+    "secondary_sections": [
+      "7.1",
+      "7.2"
+    ],
+    "proposed_section": "7.3",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  },
+  {
+    "slug": "P4.2025_jan.Q009",
+    "subject_code": "WMA14",
+    "section": "5.2",
+    "secondary_sections": [],
+    "proposed_section": "5.2",
+    "review_priority": "agreed",
+    "model": "openai/gpt-oss-120b",
+    "second_model": "qwen/qwen3.8-27b"
+  }
+]
