@@ -664,6 +664,60 @@ recorded.
 
 ---
 
+## 9. Mark-scheme matching re-checked, and the test-builder bridge
+
+### Matching: 216/216, zero wrong
+
+`scripts/check_s1_p4_markscheme_matching.py` reads the question number each
+scheme **prints**, from flat text — independent of both the marks signal used to
+attach and the parser's geometric cell reader. S1 127/127, P4 89/89, **0
+disagreements, 0 unreadable**.
+
+A content-overlap check was tried first and was worthless: it reported 66
+suspects and every one hand-checked was correct. Maths mark schemes are almost
+pure notation (~1,400 chars against a ~9,000-char question), so there is no
+prose to match on — P4's median margin was **+0.008**, i.e. none. That is the
+fifth probe in this project to produce false alarms; the rule stands that a
+flagged case gets hand-checked before it is believed.
+
+### Bridge to the test builder and worksheet generator
+
+Those tools read `topics` + `pages`, not `workbook_questions`.
+
+**Done:** topics created — **19 for WST01, 15 for WMA14**, one per workbook
+section, code = section code. `normalizeTopicCodes` already passes dotted codes
+through, so no UI change was needed.
+
+**Deliberately not done: no `pages` rows written.** `pages` has **no RLS gate on
+verification** — anything there is instantly live in the test builder, unlike
+`workbook_questions`. The publisher defaults to verified-only and currently
+writes nothing, because all 309 questions are still awaiting review.
+
+### Live in both tools (2026-09-15)
+
+Three separate blockers, all of which apply to any future subject:
+
+1. **Public access had silently lapsed** — `publicToolsTrial.ts` had a hardcoded
+   end date of 2026-08-14 that passed a month ago, quietly putting both tools
+   back behind `/login`. Now driven by `PUBLIC_TOOLS_ACCESS_UNTIL`; an
+   unparseable value fails **open**, since failing closed is what caused this.
+2. **Both pages carry a hardcoded subject allowlist** — a subject does not
+   appear however much data it has until it is in both lists.
+3. The questions must be in `pages`.
+
+**Published 262 of 309 with `--agreed-only`** (S1 141, P4 121) — only questions
+where both classifier families agreed; the 47 disputed/same-chapter are held
+back. Nothing is human-verified yet and the script reports that rather than
+calling them verified.
+
+Verified by replaying the test builder's own query path: 19 and 15 distinct
+topics tagged, topic filters return expected counts, PDFs return 200.
+
+To publish the remaining 47: verify at `/admin/workbook/verify`, then
+`python scripts/publish_{s1,p4}_to_pages.py --execute`.
+
+---
+
 ## 9. Closed decision: the legacy C4/C34 papers
 
 

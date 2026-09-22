@@ -19,6 +19,17 @@ export function isAllowedPdfUrl(raw: string | null | undefined): raw is string {
 
 export type ViewerDoc = "qp" | "ms"
 
+/**
+ * "single" shows one document at a time; "split" shows the question paper and
+ * its mark scheme side by side. Split needs both PDFs, so callers that only
+ * have one still get a working single view.
+ */
+export type ViewerView = "single" | "split"
+
+export function parseViewerView(raw: string | null | undefined): ViewerView {
+  return raw === "split" ? "split" : "single"
+}
+
 export interface ViewerLinkInput {
   /** Which document the viewer should open first. */
   doc: ViewerDoc
@@ -28,6 +39,8 @@ export interface ViewerLinkInput {
   title: string
   /** Same-site path the viewer's back link returns to. */
   backPath: string
+  /** Open straight into the side-by-side layout. Defaults to "single". */
+  view?: ViewerView
 }
 
 export function buildViewerHref(input: ViewerLinkInput): string {
@@ -37,5 +50,13 @@ export function buildViewerHref(input: ViewerLinkInput): string {
   params.set("doc", input.doc)
   params.set("title", input.title)
   params.set("back", input.backPath)
+  // Only emitted for split so existing single-view links keep their exact URL
+  // (and stay a cache hit against anything keyed on the query string).
+  if (input.view === "split") params.set("view", "split")
   return `/viewer?${params.toString()}`
+}
+
+/** True when a paper has both documents, i.e. side-by-side is meaningful. */
+export function canSplit(qpUrl: string | null, msUrl: string | null): boolean {
+  return isAllowedPdfUrl(qpUrl) && isAllowedPdfUrl(msUrl)
 }

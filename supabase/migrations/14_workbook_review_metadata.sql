@@ -17,7 +17,7 @@
 --      54 disputed      -> read it properly
 --      13 unconfirmed   -> no second opinion (scanned questions)
 --
--- These columns carry that signal so the review queue can be ordered by it.
+-- These columns carry that signal so the review queue can be ordeared by it.
 -- They are scaffolding for the verification pass, not part of the book: once
 -- every row has verified_at set they stop being read, and they stay nullable so
 -- a subject onboarded without a second pass is unaffected.

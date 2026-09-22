@@ -4,7 +4,13 @@ import { getSubjectBySlug, subjectColorClasses, seasonDisplay, boardDisplay, boa
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { extractPaperTokenFromSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
 import { getPapersIndex, leafKey, sessionKey } from "@/lib/papersIndex"
-import { buildViewerHref } from "@/lib/viewer-link"
+import { getCambridgeQpMap } from "@/lib/cambridge-seo"
+import { buildViewerHref, canSplit } from "@/lib/viewer-link"
+
+// Syllabus codes that actually have a /qp landing page. The /qp route is
+// `dynamicParams = false`, so linking a code it does not enumerate would hard
+// 404 — exactly the soft-404 link class the rest of this tree avoids.
+const CAMBRIDGE_QP_SLUGS = new Set(Object.keys(getCambridgeQpMap()))
 
 export const revalidate = false
 // Edexcel paper URLs are enumerated by generateStaticParams below from the
@@ -269,7 +275,7 @@ export default async function PaperPage({
   // Supabase queries (and the ISR writes that came from cold cache fills).
   const normalizedPaperSlug = toPaperSlug(paperToken)
   if (!normalizedPaperSlug) notFound()
-  const { byLeaf, bySession } = await getPapersIndex()
+  const { byLeaf, bySession, yearsBySubject } = await getPapersIndex()
   const hit = byLeaf.get(leafKey(slug, yearLabel, normalizedSeason, normalizedPaperSlug))
   if (!hit) notFound()
 
@@ -293,12 +299,44 @@ export default async function PaperPage({
   const viewerMsHref = buildViewerHref({
     doc: "ms", qpUrl: validPdf, msUrl: validMs, title: viewerTitle, backPath: paperPagePath,
   })
+  // Side-by-side only makes sense when this sitting has both documents.
+  const splitAvailable = canSplit(validPdf, validMs)
+  const viewerSplitHref = buildViewerHref({
+    doc: "qp", view: "split", qpUrl: validPdf, msUrl: validMs, title: viewerTitle, backPath: paperPagePath,
+  })
   // Sibling papers from the same sitting — the strongest "second click" a
   // visitor landing from Google can take from this page.
   const siblings = (bySession.get(sessionKey(slug, yearLabel, normalizedSeason)) ?? [])
     .filter((p) => p.paperNumber !== paper.paper_number)
     .map((p) => ({ paperNumber: p.paperNumber, paperSlug: toPaperSlug(p.paperNumber) }))
     .filter((p): p is { paperNumber: string; paperSlug: string } => p.paperSlug !== null)
+
+  // Years in which this exact paper number also ran. Derived from the papers
+  // index rather than seoSubjects.yearsAvailable — that list only exists for the
+  // 38 Edexcel SEO subjects, so every Cambridge leaf page (the bulk of the tree)
+  // used to render no cross-year links at all. Filtered against byLeaf so we
+  // never link a combination that would 404.
+  const otherYears = Array.from(yearsBySubject.get(slug) ?? [])
+    .filter((y) => y !== parsedYear)
+    .filter((y) => byLeaf.has(leafKey(slug, y, normalizedSeason, normalizedPaperSlug)))
+    .sort((a, b) => a - b)
+
+  // Cambridge components encode paper *and* time-zone variant: "43" is Paper 4,
+  // Variant 3. The other variants of the same paper are the closest thing to
+  // this exact sitting, so they earn their own block instead of being mixed in
+  // with every other component in the series.
+  // Only two-digit components carry a variant; "1" is a whole paper, not Paper 1
+  // Variant something. Matching on length as well as the leading digit stops a
+  // session that mixes the two shapes from listing "12" as a variant of "1".
+  const componentRaw = paper.paper_number.trim()
+  const hasVariant = /^\d{2}$/.test(componentRaw)
+  const componentFamily = hasVariant ? componentRaw.charAt(0) : ""
+  const variantSiblings = isCambridge && hasVariant
+    ? siblings.filter(
+        (s) => /^\d{2}$/.test(s.paperNumber.trim()) && s.paperNumber.trim().charAt(0) === componentFamily
+      )
+    : []
+
   const jsonLd = buildJsonLd(
     slug, subj.name, level, board, catalogPath, yearLabel, normalizedSeason, seasonName, displayPaper, paper.paper_number, paper, examCode
   )
@@ -349,6 +387,22 @@ export default async function PaperPage({
               Download the free {board} {level} {subj.name}{examCode ? ` (${examCode})` : ""} {yearLabel} {seasonName} {displayPaper}{fullCode ? ` — ${fullCode}` : ""} question paper and mark scheme as PDF.
             </p>
           </div>
+
+          {/* Side-by-side — the fastest way to mark your own attempt, so it leads. */}
+          {splitAvailable && (
+            <Link
+              href={viewerSplitHref}
+              className="flex items-center justify-between gap-4 mb-3 rounded-xl px-5 py-4 bg-blue-500/10 ring-1 ring-blue-400/30 hover:bg-blue-500/20 transition-colors"
+            >
+              <span>
+                <span className="block font-semibold text-white">Open question paper &amp; mark scheme side by side</span>
+                <span className="block text-xs text-white/40 mt-0.5">
+                  Mark your own attempt without switching tabs
+                </span>
+              </span>
+              <span className="text-blue-300 text-sm font-semibold flex-shrink-0">Open →</span>
+            </Link>
+          )}
 
           {/* Download cards */}
           <div className="space-y-3">
@@ -453,6 +507,91 @@ export default async function PaperPage({
             </div>
           )}
 
+          {/* Cambridge content block. Cambridge subjects have no SEOSubject
+              record, so ~9k leaf pages previously ended at the download cards —
+              nav chrome plus one templated sentence. Everything below is
+              interpolated from this paper's own values (component code, variant,
+              series, what's published, which other variants and years exist) so
+              it reads differently on every page rather than adding a second
+              identical block to the whole tree. */}
+          {isCambridge && !seoData && (
+            <div className="mt-12 space-y-8">
+              <div className="pt-6 border-t border-white/10">
+                <h2 className="text-lg font-bold mb-3">
+                  About {fullCode || displayPaper} — {subj.name} {yearLabel} {seasonName}
+                </h2>
+                <p className="text-white/60 text-sm leading-relaxed mb-2">
+                  This page hosts the {boardLong} {level} {subj.name} ({examCode}){" "}
+                  {displayPaper} from the {seasonName} {yearLabel} series
+                  {fullCode ? `, component ${fullCode}` : ""}.{" "}
+                  {validPdf && validMs
+                    ? "Both the question paper and the mark scheme are free PDF downloads."
+                    : validPdf
+                    ? "The question paper is a free PDF download; the mark scheme for this sitting is not published here yet."
+                    : "The mark scheme is a free PDF download; the question paper for this sitting is not published here yet."}
+                </p>
+                {variantSiblings.length > 0 && (
+                  <p className="text-white/50 text-sm leading-relaxed">
+                    Cambridge sets several variants of each component for different
+                    exam time zones. Paper {componentFamily} also ran in this series as{" "}
+                    {variantSiblings
+                      .map((s) => cambridgePaperCode(examCode, s.paperNumber))
+                      .join(", ")}
+                    {" "}— same syllabus content at equivalent difficulty, so any
+                    variant is worth attempting as extra practice.
+                  </p>
+                )}
+              </div>
+
+              {variantSiblings.length > 0 && (
+                <div>
+                  <h2 className="text-base font-bold mb-3 text-white/80">
+                    Other variants of Paper {componentFamily} — {yearLabel} {seasonName}
+                  </h2>
+                  <div className="flex flex-wrap gap-2">
+                    {variantSiblings.map((s) => (
+                      <Link
+                        key={s.paperSlug}
+                        href={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${s.paperSlug}`}
+                        className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                      >
+                        {cambridgePaperCode(examCode, s.paperNumber)} · {formatCambridgePaperLabel(s.paperNumber)}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <div>
+                <h2 className="text-base font-bold mb-3 text-white/80">
+                  More {subj.name} ({examCode}) past papers
+                </h2>
+                <div className="flex flex-wrap gap-2">
+                  <Link
+                    href={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                  >
+                    All {yearLabel} {seasonName} papers →
+                  </Link>
+                  <Link
+                    href={`/past-papers/${slug}/${yearLabel}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                  >
+                    All {yearLabel} series →
+                  </Link>
+                  {examCode && CAMBRIDGE_QP_SLUGS.has(examCode.toLowerCase()) && (
+                    <Link
+                      href={`/qp/${examCode.toLowerCase()}`}
+                      className="text-xs px-3 py-1.5 rounded-full border border-blue-400/30 text-blue-300 hover:bg-blue-500/10 transition-colors"
+                    >
+                      {examCode} syllabus overview →
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* SEO content block */}
           {seoData && (
             <div className="mt-12 space-y-8">
@@ -498,33 +637,26 @@ export default async function PaperPage({
                 </div>
               </div>
 
-              {/* Other years — filtered against the index so we only link to
-                  combos that actually exist (avoids soft-404s for Googlebot). */}
-              {(() => {
-                const otherYears = seoData.yearsAvailable
-                  .filter((y) => y !== parsedYear)
-                  .filter((y) => byLeaf.has(leafKey(slug, y, normalizedSeason, normalizedPaperSlug)))
-                  .slice(-6)
-                if (otherYears.length === 0) return null
-                return (
-                  <div>
-                    <h2 className="text-base font-bold mb-3 text-white/80">
-                      {displayPaper} – Other Years
-                    </h2>
-                    <div className="flex flex-wrap gap-2">
-                      {otherYears.map((y) => (
-                        <Link
-                          key={y}
-                          href={`/past-papers/${slug}/${y}/${normalizedSeason}/${normalizedPaperSlug}`}
-                          className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
-                        >
-                          {subj.name} {y} {seasonName} {displayPaper}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )
-              })()}
+            </div>
+          )}
+
+          {/* Same paper, other years — rendered for every board. */}
+          {otherYears.length > 0 && (
+            <div className="mt-12 pt-6 border-t border-white/10">
+              <h2 className="text-base font-bold mb-3 text-white/80">
+                {displayPaper} – Other Years
+              </h2>
+              <div className="flex flex-wrap gap-2">
+                {otherYears.map((y) => (
+                  <Link
+                    key={y}
+                    href={`/past-papers/${slug}/${y}/${normalizedSeason}/${normalizedPaperSlug}`}
+                    className="text-xs px-3 py-1.5 rounded-full border border-white/15 text-white/50 hover:text-white hover:border-white/30 transition-colors"
+                  >
+                    {subj.name} {y} {seasonName} {displayPaper}
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
 

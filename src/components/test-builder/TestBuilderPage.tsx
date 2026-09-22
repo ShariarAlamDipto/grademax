@@ -85,6 +85,11 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   const [generating, setGenerating] = useState(false);
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
+  // The blobs are kept alongside their object URLs because iOS saves via the
+  // Web Share API, which needs the bytes as a File — and it must be handed
+  // them synchronously inside the click, so re-fetching the URL is too late.
+  const [worksheetBlob, setWorksheetBlob] = useState<Blob | null>(null);
+  const [markschemeBlob, setMarkschemeBlob] = useState<Blob | null>(null);
   const [pdfProgress, setPdfProgress] = useState<{ step: number; total: number; label: string } | null>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -131,6 +136,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     setBasketItems([]);
     setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setWorksheetBlob(null);
+    setMarkschemeBlob(null);
 
     if (selectedSubject) {
       const subject = initialSubjects.find(s => s.id === selectedSubject);
@@ -243,6 +250,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     setBasketItems([]);
     setWorksheetUrl(null);
     setMarkschemeUrl(null);
+    setWorksheetBlob(null);
+    setMarkschemeBlob(null);
   };
 
   // ─────────────────────────────────────────────
@@ -261,6 +270,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
     setWorksheetUrl(null);
     setMarkschemeUrl(null);
+    setWorksheetBlob(null);
+    setMarkschemeBlob(null);
 
     const subject = initialSubjects.find(s => s.id === selectedSubject);
     const totalMarks = basketItems.length * 4;
@@ -294,6 +305,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
         throw new Error('No question PDFs could be downloaded. Please try again or check your connection.');
       }
 
+      setWorksheetBlob(qpResult.blob);
       setWorksheetUrl(URL.createObjectURL(qpResult.blob));
 
       // Step 2: Mark scheme is best-effort — failure here keeps the QP we
@@ -316,6 +328,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             });
           });
           if (msResult.successCount > 0) {
+            setMarkschemeBlob(msResult.blob);
             setMarkschemeUrl(URL.createObjectURL(msResult.blob));
           }
         }
@@ -362,10 +375,11 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   // Render
   //
   // Note: download links are rendered inside <PaperPreview> as real <a> tags
-  // (with target="_blank") rather than via programmatic anchor clicks. iOS
-  // Safari ignores the `download` attribute on blob: URLs and treats a
-  // scripted click as a navigation it can't render — that's what produced
-  // the "broken page" icon previously reported on phones.
+  // so desktop and Android use the browser's native download path untouched.
+  // iOS honours neither `download` nor `target="_blank"` on a blob: URL, so
+  // the handlers in @/lib/savePdf intercept the click there and hand the PDF
+  // to the native share sheet ("Save to Files") instead. Both blobs are held
+  // in state because that share call must receive a File synchronously.
   // ─────────────────────────────────────────────
 
   return (
@@ -564,6 +578,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               generating={generating}
               worksheetUrl={worksheetUrl}
               markschemeUrl={markschemeUrl}
+              worksheetBlob={worksheetBlob}
+              markschemeBlob={markschemeBlob}
               pdfProgress={pdfProgress}
               error={error}
             />
@@ -613,6 +629,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                   generating={generating}
                   worksheetUrl={worksheetUrl}
                   markschemeUrl={markschemeUrl}
+                  worksheetBlob={worksheetBlob}
+                  markschemeBlob={markschemeBlob}
                   pdfProgress={pdfProgress}
                   error={error}
                 />

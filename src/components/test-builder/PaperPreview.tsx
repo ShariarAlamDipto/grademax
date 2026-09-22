@@ -2,6 +2,8 @@
 
 import { QuestionItem } from './QuestionCard';
 import PdfThumbnail from './PdfThumbnail';
+import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
+
 interface PaperPreviewProps {
   items: QuestionItem[];
   testTitle: string;
@@ -14,6 +16,10 @@ interface PaperPreviewProps {
   onTitleChange: (title: string) => void;
   worksheetUrl: string | null;
   markschemeUrl: string | null;
+  /** The QP blob behind `worksheetUrl` — needed for the iOS share sheet. */
+  worksheetBlob: Blob | null;
+  /** The MS blob behind `markschemeUrl` — needed for the iOS share sheet. */
+  markschemeBlob: Blob | null;
   pdfProgress: { step: number; total: number; label: string } | null;
   error?: string | null;
 }
@@ -29,7 +35,7 @@ const A4_RATIO = 297 / 210;
 export default function PaperPreview({
   items, testTitle, onRemove, onMoveUp, onMoveDown, onClearAll,
   onGenerate, generating, onTitleChange, worksheetUrl, markschemeUrl,
-  pdfProgress, error,
+  worksheetBlob, markschemeBlob, pdfProgress, error,
 }: PaperPreviewProps) {
   const totalMarks = items.length * 4;
   return (
@@ -175,11 +181,11 @@ export default function PaperPreview({
         )}
 
         {/* Preview + Download links — shown after generate succeeds.
-            Rendered as real <a> tags (not programmatic clicks) so iOS Safari
-            opens the PDF in its native viewer instead of showing the
-            broken-page icon you get from a programmatic blob-URL navigation.
-            "Preview" omits the `download` attribute so desktop browsers open
-            the PDF in a new tab; "Download" sets it for an actual save. */}
+            Rendered as real <a> tags so desktop keeps native downloading and
+            right-click "Save link as". iOS can honour neither `download` nor
+            `target="_blank"` on a blob: URL, so the handlers from
+            @/lib/savePdf intercept there and route through the native share
+            sheet ("Save to Files") instead. They are no-ops elsewhere. */}
         {(worksheetUrl || markschemeUrl) && (
           <div className="space-y-2">
             {worksheetUrl && (
@@ -188,6 +194,7 @@ export default function PaperPreview({
                   href={worksheetUrl}
                   target="_blank"
                   rel="noopener"
+                  onClick={(e) => handlePdfPreviewClick(e, worksheetUrl)}
                   className="flex-1 bg-green-600/30 border border-green-500/60 text-green-200 hover:bg-green-600/50 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -199,6 +206,14 @@ export default function PaperPreview({
                 <a
                   href={worksheetUrl}
                   download={safeFilename(testTitle, 'question_paper')}
+                  onClick={(e) =>
+                    handlePdfDownloadClick(
+                      e,
+                      worksheetBlob,
+                      safeFilename(testTitle, 'question_paper'),
+                      worksheetUrl,
+                    )
+                  }
                   className="flex-1 bg-green-600 hover:bg-green-700 text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -214,6 +229,7 @@ export default function PaperPreview({
                   href={markschemeUrl}
                   target="_blank"
                   rel="noopener"
+                  onClick={(e) => handlePdfPreviewClick(e, markschemeUrl)}
                   className="flex-1 bg-blue-600/30 border border-blue-500/60 text-blue-200 hover:bg-blue-600/50 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -225,6 +241,14 @@ export default function PaperPreview({
                 <a
                   href={markschemeUrl}
                   download={safeFilename(testTitle, 'mark_scheme')}
+                  onClick={(e) =>
+                    handlePdfDownloadClick(
+                      e,
+                      markschemeBlob,
+                      safeFilename(testTitle, 'mark_scheme'),
+                      markschemeUrl,
+                    )
+                  }
                   className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
