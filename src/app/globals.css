@@ -9,6 +9,11 @@
 /* ── Dark Mode (default) ── */
 :root,
 html.dark {
+  /* Tells the browser to paint its OWN widgets dark: the popup list a <select>
+     opens, date pickers, scrollbars, autofill backgrounds. Those are drawn by
+     the browser, not by us, so no amount of CSS on the element reaches them —
+     without this line a dropdown opens as black text on a black list. */
+  color-scheme: dark;
   --gm-bg:           #060912;
   --gm-surface:      #0C1120;
   --gm-surface-2:    #101829;
@@ -47,6 +52,7 @@ html.dark {
 
 /* ── Light Mode ── */
 html.light {
+  color-scheme: light;
   --gm-bg:           #F5F7FB;
   --gm-surface:      #FFFFFF;
   --gm-surface-2:    #EEF2F8;
@@ -430,7 +436,60 @@ body {
 }
 .gm-input:focus { border-color: var(--gm-blue); }
 .gm-input::placeholder { color: var(--gm-text-3); }
-.gm-select { appearance: none; }
+/* `appearance: none` removes the native background, text colour AND the arrow,
+   so all three have to be supplied here. Previously only the stripping was
+   done, which left the control invisible against a dark page. */
+.gm-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--gm-surface);
+  color: var(--gm-text);
+  border: 1px solid var(--gm-border-2);
+  border-radius: 0.625rem;
+  /* Right padding leaves room for the arrow drawn below. */
+  padding: 0.5rem 2rem 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  line-height: 1.4;
+  outline: none;
+  cursor: pointer;
+  max-width: 100%;
+  background-repeat: no-repeat;
+  background-position: right 0.65rem center;
+  background-size: 0.7rem;
+  /* Chevron, stroked in the dark-mode text colour. */
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%23EDF0F7' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  transition: border-color 0.15s ease;
+}
+/* A data-URI cannot read currentColor, so the light-mode arrow is its own rule. */
+html.light .gm-select {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8' fill='none'%3E%3Cpath d='M1 1.5 6 6.5l5-5' stroke='%23111827' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+.gm-select:focus,
+.gm-select:focus-visible { border-color: var(--gm-blue); }
+.gm-select:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* The popup list is the browser's, and `color-scheme` above is what themes it.
+   These two are the belt-and-braces for Windows/Linux Chrome, which paints an
+   option's background from the rule rather than from the scheme. */
+select option,
+select optgroup {
+  background-color: var(--gm-surface);
+  color: var(--gm-text);
+}
+
+/* Any <select> that carries no styling of its own — several admin screens —
+   still has to be legible in both themes. Anything with inline styles or its
+   own class overrides this, so it is a floor, not a constraint. */
+select:not([class]):not([style]) {
+  background-color: var(--gm-surface);
+  color: var(--gm-text);
+  border: 1px solid var(--gm-border-2);
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  font-family: inherit;
+  font-size: 0.85rem;
+}
 
 /* ── Page section backgrounds (use CSS vars to support themes) ── */
 .page-bg        { background: var(--gm-bg); }
