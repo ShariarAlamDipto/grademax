@@ -72,6 +72,13 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "*.supabase.co",
       },
+      {
+        // Store book covers. Already allowed by img-src in the CSP above; this
+        // is what lets next/image resize and re-encode them, which matters
+        // because the source is a 150 dpi render of a print cover.
+        protocol: "https",
+        hostname: "*.r2.dev",
+      },
     ],
   },
   poweredByHeader: false,

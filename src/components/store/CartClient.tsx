@@ -14,7 +14,18 @@ import type { PricedCart } from "@/lib/store/types"
  * withdrawn — the message it returns is shown as-is, because it already
  * explains which item is the problem.
  */
-export default function CartClient() {
+interface CartClientProps {
+  deliveryMetroBdt: number
+  deliveryOutsideBdt: number
+  /** 0 means "never free"; see calculateDelivery, which guards the same way. */
+  freeDeliveryOverBdt: number
+}
+
+export default function CartClient({
+  deliveryMetroBdt,
+  deliveryOutsideBdt,
+  freeDeliveryOverBdt,
+}: CartClientProps) {
   const { lines, ready, setQuantity, remove, clear } = useCart()
   const [cart, setCart] = useState<PricedCart | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -58,6 +69,20 @@ export default function CartClient() {
       </Shell>
     )
   }
+
+  // Delivery depends on a district that has not been chosen yet, so the exact
+  // charge is unknown here. Rather than hide it and surprise the buyer at
+  // checkout, quote the cheapest band and label the total "from". The free
+  // threshold is guarded the same way calculateDelivery guards it: 0 means
+  // never free, not always free.
+  const subtotal = cart?.subtotalBdt ?? 0
+  const hasPrint = cart?.hasPrint ?? false
+  const freeDelivery = hasPrint && freeDeliveryOverBdt > 0 && subtotal >= freeDeliveryOverBdt
+  const cheapestDelivery = !hasPrint || freeDelivery
+    ? 0
+    : Math.min(deliveryMetroBdt, deliveryOutsideBdt)
+  const estimatedTotal = subtotal + cheapestDelivery
+  const showsRange = hasPrint && !freeDelivery && deliveryMetroBdt !== deliveryOutsideBdt
 
   return (
     <Shell>
@@ -119,19 +144,41 @@ export default function CartClient() {
             <span style={{ color: "var(--gm-text-2)" }}>Subtotal</span>
             <strong>{formatBdt(cart?.subtotalBdt ?? 0)}</strong>
           </div>
-          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", marginBottom: "0.9rem" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", fontSize: "0.85rem", marginBottom: "0.4rem" }}>
             <span style={{ color: "var(--gm-text-2)" }}>Delivery</span>
             <span style={{ color: "var(--gm-text-3)", fontSize: "0.8rem" }}>
-              {cart?.hasPrint ? "At checkout" : "Free"}
+              {!cart?.hasPrint
+                ? "Free"
+                : freeDelivery
+                  ? "Free"
+                  : `${formatBdt(deliveryMetroBdt)}–${formatBdt(deliveryOutsideBdt)}`}
             </span>
           </div>
+
+          {/* The total must carry the delivery charge, not leave it to be
+              discovered at checkout. The exact band depends on the district, so
+              until one is chosen this quotes the cheapest it can be and says
+              so. */}
+          <div style={{
+            display: "flex", justifyContent: "space-between", alignItems: "baseline",
+            fontSize: "0.95rem", marginBottom: "0.9rem", paddingTop: "0.6rem",
+            borderTop: "1px solid var(--gm-border)",
+          }}>
+            <span style={{ color: "var(--gm-text-2)", fontWeight: 600 }}>Total</span>
+            <strong style={{ fontSize: "1.1rem", fontWeight: 800 }}>
+              {showsRange ? "from " : ""}{formatBdt(estimatedTotal)}
+            </strong>
+          </div>
+
           <Button full href="/checkout" variant="primary">Checkout</Button>
           <p style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", marginTop: "0.8rem", lineHeight: 1.6 }}>
             {cart?.hasDigital && cart?.hasPrint
               ? "Your cart mixes a printed book with a PDF, so payment must be by bKash or Nagad."
               : cart?.hasDigital
                 ? "Digital orders have no delivery charge."
-                : "Delivery is calculated once you choose your district."}
+                : freeDelivery
+                  ? `Delivery is free on orders over ${formatBdt(freeDeliveryOverBdt)}.`
+                  : `Delivery is ${formatBdt(deliveryMetroBdt)} inside Dhaka and ${formatBdt(deliveryOutsideBdt)} elsewhere — the exact charge is set once you choose your district.`}
           </p>
         </aside>
       </div>

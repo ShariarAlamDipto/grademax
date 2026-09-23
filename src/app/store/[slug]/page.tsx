@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { getProductBySlug, listActiveProducts } from "@/lib/store/catalogue"
 import { getSettings } from "@/lib/store/settings"
 import ProductBuyPanel from "@/components/store/ProductBuyPanel"
@@ -41,6 +42,30 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       <div style={{ display: "grid", gap: "1.5rem", alignItems: "start" }}
            className="gm-store-product-grid">
         <div>
+          {/* The cover, at the size a buyer would hold it. Capped in height so
+              a tall A4 render cannot push the buy panel below the fold. */}
+          {product.cover_image_url ? (
+            <div style={{
+              position: "relative",
+              aspectRatio: "210 / 297",
+              maxHeight: "26rem",
+              marginBottom: "1.1rem",
+              borderRadius: "0.6rem",
+              overflow: "hidden",
+              border: "1px solid var(--gm-border)",
+              background: "var(--gm-surface-2)",
+            }}>
+              <Image
+                src={product.cover_image_url}
+                alt={`Front cover of ${product.title}`}
+                fill
+                sizes="(max-width: 640px) 100vw, 26rem"
+                style={{ objectFit: "contain" }}
+                priority
+              />
+            </div>
+          ) : null}
+
           {product.description ? (
             <div style={{ ...card, marginBottom: "1.1rem" }}>
               <p style={{ fontSize: "0.92rem", lineHeight: 1.7, color: "var(--gm-text-2)" }}>
