@@ -62,3 +62,6 @@ __pycache__/
 # The JSON alongside them IS tracked — it is the classification work product and
 # costs API calls to rebuild.
 /data/workbook/*/
+
+# Harvested third-party paper links: local working data, not for publication.
+data/manifest/paperlords_*
