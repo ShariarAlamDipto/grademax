@@ -73,12 +73,19 @@ export async function PATCH(req: NextRequest) {
   const merged = new Map(current)
   for (const [k, v] of Object.entries(updates)) merged.set(k, v)
 
+  // The shop must have at least one way to take money. A wallet covers every
+  // cart; cash on delivery covers printed orders only, so it is sufficient on
+  // its own precisely when downloads are not being sold.
   if ((merged.get("store_enabled") ?? "").toLowerCase() === "true") {
     const bkash = (merged.get("bkash_number") ?? "").trim()
     const nagad = (merged.get("nagad_number") ?? "").trim()
-    if (!bkash && !nagad) {
+    const digitalOn = (merged.get("digital_sales_enabled") ?? "").toLowerCase() === "true"
+    if (!bkash && !nagad && digitalOn) {
       return NextResponse.json(
-        { error: "Add a bKash or Nagad number before opening the store — buyers need somewhere to send payment." },
+        {
+          error: "Add a bKash or Nagad number before opening the store, or turn off digital sales — "
+            + "a download cannot be paid for on delivery, so there would be no way to pay for one.",
+        },
         { status: 409 }
       )
     }

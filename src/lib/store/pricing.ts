@@ -174,9 +174,15 @@ export async function priceCart(
   // Cash on delivery cannot collect money for a download, so a cart holding any
   // digital item loses that option entirely. Mixing the two would otherwise
   // hand over the PDF before any money changed hands.
-  const allowedPaymentMethods: PaymentMethod[] = hasDigital
-    ? ["bkash", "nagad"]
-    : ["bkash", "nagad", "cod"]
+  //
+  // A wallet is only offered when its number is actually configured. Offering
+  // bKash with no bKash number to pay leaves the buyer on a method the shop
+  // cannot complete — which is exactly what a cash-on-delivery-only shop would
+  // have shown, since it has no wallet set at all.
+  const allowedPaymentMethods: PaymentMethod[] = []
+  if (settings.bkashNumber.trim()) allowedPaymentMethods.push("bkash")
+  if (settings.nagadNumber.trim()) allowedPaymentMethods.push("nagad")
+  if (!hasDigital) allowedPaymentMethods.push("cod")
 
   return {
     ok: true,
