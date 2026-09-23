@@ -11,8 +11,8 @@ For each product it:
     PRINT_SPEC files -- to a JPEG, and uploads it as the shop cover;
   * extracts the first N pages (`preview_pages` on the product row) into a
     preview PDF and uploads that;
-  * measures the real page count of both volumes and writes it to the printed
-    variant, so the listing quotes a measured figure rather than a claim;
+  * measures the real page count of the questions volume and writes it to the
+    printed variant, so the listing quotes a measured figure rather than a claim;
   * sets `is_active` once its cover and preview are both in place.
 
 Covers and previews go to the PUBLIC bucket: they are advertising, and
@@ -55,21 +55,50 @@ H = {"apikey": SUPABASE_KEY, "Authorization": f"Bearer {SUPABASE_KEY}"}
 
 WORKBOOK = ROOT / "data" / "workbook"
 
-# slug -> (questions volume, mark-scheme volume)
+# What is actually sold: the questions volume only. The mark-scheme volumes are
+# built and kept alongside it, but they are NOT part of the product and must not
+# appear in the page count, the spec line or the description.
+#
+# slug -> (questions volume, "N volumes" wording for the variant label)
 PRODUCTS = {
-    "mathematics-b-part-1": (
-        WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part1.pdf",
-        WORKBOOK / "mathsb/print/final/Mathematics_B_MarkSchemes_PRINT_Part1.pdf",
-    ),
-    "mathematics-b-part-2": (
-        WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part2.pdf",
-        WORKBOOK / "mathsb/print/final/Mathematics_B_MarkSchemes_PRINT_Part2.pdf",
-    ),
-    "further-pure-mathematics": (
-        WORKBOOK / "fpm/print/final/Further_Pure_Mathematics_Workbook_PRINT.pdf",
-        WORKBOOK / "fpm/print/final/Further_Pure_Mathematics_MarkSchemes_PRINT.pdf",
-    ),
+    "mathematics-b-part-1": WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part1.pdf",
+    "mathematics-b-part-2": WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part2.pdf",
+    "further-pure-mathematics": WORKBOOK / "fpm/print/final/Further_Pure_Mathematics_Workbook_PRINT.pdf",
 }
+
+# Copy that must not promise a mark scheme. Keyed by slug; `{pp}` is filled with
+# the measured page count of the questions volume.
+COPY = {
+    "mathematics-b-part-1": {
+        "spec_summary": "{pp} pages of questions",
+        "description":
+            "Every Mathematics B past-paper question from chapters 1 to 5 — Number, Sets, "
+            "Algebra, Functions and Matrices — regrouped chapter by chapter and section by "
+            "section, so you practise one skill until it is finished instead of meeting it "
+            "once per paper. Reproduced at 1:1 from the board's own sheets, so the ruled "
+            "answer lines and the original spacing are intact.",
+    },
+    "mathematics-b-part-2": {
+        "spec_summary": "{pp} pages of questions",
+        "description":
+            "The second volume of the Mathematics B chapterwise workbook, covering chapters 6 "
+            "to 11 — Geometry, Mensuration, Vectors and transformation geometry, and the rest "
+            "of the specification. A complete book in its own right, with its own contents, "
+            "summary-and-formulae section and question index.",
+    },
+    "further-pure-mathematics": {
+        "spec_summary": "{pp} pages of questions",
+        "description":
+            "The whole of Further Pure Mathematics, every past-paper question sorted into the "
+            "specification's own chapter order — logarithms and indices, the quadratic "
+            "function, identities and inequalities, graphs, series, the binomial series, "
+            "vectors, coordinate geometry, calculus and trigonometry. Recurring question "
+            "shapes are clustered together on purpose: meeting the same archetype four times "
+            "in four papers' clothing is how pattern recognition gets built.",
+    },
+}
+
+PRINT_VARIANT_LABEL = "Printed copy — spiral bound"
 
 COVER_DPI = 150
 DEFAULT_PREVIEW_PAGES = 12
@@ -151,17 +180,16 @@ def main() -> None:
     print(f"{'COMMIT' if args.commit else 'dry-run'} — {len(PRODUCTS)} products\n")
 
     activated = 0
-    for slug, (q_pdf, ms_pdf) in PRODUCTS.items():
+    for slug, q_pdf in PRODUCTS.items():
         product = products.get(slug)
         if not product:
             print(f"!! {slug}: no such product row — skipping")
             continue
-        missing = [p for p in (q_pdf, ms_pdf) if not p.exists()]
-        if missing:
-            print(f"!! {slug}: missing file(s) {[m.name for m in missing]} — skipping")
+        if not q_pdf.exists():
+            print(f"!! {slug}: missing {q_pdf.name} — skipping")
             continue
 
-        q_pages, ms_pages = page_count(q_pdf), page_count(ms_pdf)
+        q_pages = page_count(q_pdf)
         want_preview = product.get("preview_pages") or DEFAULT_PREVIEW_PAGES
         cover = render_cover(q_pdf)
         preview, preview_n = build_preview(q_pdf, want_preview)
@@ -170,11 +198,15 @@ def main() -> None:
         preview_key = f"store/{slug}/preview.pdf"
         cover_url = f"{R2_PUBLIC_URL}/{cover_key}"
 
+        copy = COPY[slug]
+        spec = copy["spec_summary"].format(pp=q_pages)
         print(f"=== {slug}")
-        print(f"    questions {q_pages}pp + mark schemes {ms_pages}pp = {q_pages + ms_pages}pp")
+        print(f"    questions volume: {q_pages}pp (mark schemes are not sold and are excluded)")
+        print(f"    spec line: {spec}")
         print(f"    cover   {len(cover)//1024:>5} KB -> {cover_key}")
         print(f"    preview {len(preview)//1024:>5} KB, {preview_n} pages -> {preview_key}")
-        print(f"    printed variant: page_count {q_pages + ms_pages}, stock_qty -> {args.stock}")
+        print(f"    printed variant: page_count {q_pages}, stock_qty -> {args.stock}, "
+              f"label {PRINT_VARIANT_LABEL!r}")
 
         if not args.commit:
             print("    would activate the product and set the printed variant's page count\n")
@@ -186,6 +218,8 @@ def main() -> None:
             "cover_image_url": cover_url,
             "preview_r2_key": preview_key,
             "preview_pages": preview_n,
+            "spec_summary": spec,
+            "description": copy["description"],
             "is_active": True,
         })
         for v in fetch_variants(product["id"]):
@@ -193,8 +227,11 @@ def main() -> None:
                 # stock_qty is seeded at 0, and pricing.ts refuses any line where
                 # stock is below the quantity ordered -- so without this every
                 # order would come back "out of stock".
-                patch("store_variants", v["id"],
-                      {"page_count": q_pages + ms_pages, "stock_qty": args.stock})
+                patch("store_variants", v["id"], {
+                    "page_count": q_pages,
+                    "stock_qty": args.stock,
+                    "label": PRINT_VARIANT_LABEL,
+                })
         activated += 1
         print("    published\n")
 

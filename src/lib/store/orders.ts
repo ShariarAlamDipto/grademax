@@ -6,6 +6,7 @@
  * act on, and it owns the one thing SQL cannot do — generating a download token
  * whose plaintext is never stored.
  */
+import { notifyNewOrder } from "./notify"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { generateOrderNumber } from "./tokens"
 import type { CheckoutInput } from "./schemas"
@@ -116,10 +117,18 @@ export async function createOrder(
   }
 
   const r = data as Record<string, unknown>
+  const orderId = String(r.order_id)
+
+  // Tell the shopkeeper. Deliberately awaited rather than left dangling: on a
+  // serverless host the function can be frozen the moment this handler returns,
+  // which would drop a detached request. It is bounded by its own timeout and
+  // never throws, so the order is safe either way.
+  await notifyOrderPlaced(orderId)
+
   return {
     ok: true,
     order: {
-      orderId: String(r.order_id),
+      orderId,
       orderNumber: String(r.order_number),
       subtotalBdt: Number(r.subtotal_bdt),
       deliveryBdt: Number(r.delivery_bdt),
@@ -142,6 +151,20 @@ export type SubmitPaymentResult =
    * first. The collision is flagged for the admin instead.
    */
   | { ok: false; reason: "not_found" | "wrong_state" | "duplicate" | "error"; message: string }
+
+/**
+ * Push a new order to the shopkeeper's phone. Never throws, for the same reason
+ * `recordOrderEvent` does not: the buyer's order has already been written, and
+ * a notification problem must not be reported to them as a failed checkout.
+ */
+async function notifyOrderPlaced(orderId: string): Promise<void> {
+  try {
+    const view = await getOrderById(orderId)
+    if (view) await notifyNewOrder(view)
+  } catch {
+    // Non-fatal by design.
+  }
+}
 
 /**
  * Append a line to an order's history. Never throws: it is a diagnostic trail,
