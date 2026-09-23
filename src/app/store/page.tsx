@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import Link from "next/link"
+import Image from "next/image"
 import { listActiveProducts } from "@/lib/store/catalogue"
 import { getSettings } from "@/lib/store/settings"
 import { formatBdt } from "@/lib/store/format"
@@ -60,6 +61,35 @@ export default async function StorePage() {
               href={`/store/${product.slug}`}
               style={{ ...card, display: "flex", flexDirection: "column", gap: "0.7rem", textDecoration: "none", color: "inherit" }}
             >
+              {/* The cover leads the card: a buyer recognises the book before
+                  they read its title. A2-ratio box so a missing cover cannot
+                  make one card taller than its neighbours. */}
+              <div style={{
+                position: "relative",
+                aspectRatio: "210 / 297",
+                borderRadius: "0.5rem",
+                overflow: "hidden",
+                background: "var(--gm-surface-2)",
+                border: "1px solid var(--gm-border)",
+              }}>
+                {product.cover_image_url ? (
+                  <Image
+                    src={product.cover_image_url}
+                    alt={`Front cover of ${product.title}`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 20rem"
+                    style={{ objectFit: "cover" }}
+                  />
+                ) : (
+                  <span style={{
+                    position: "absolute", inset: 0, display: "flex", alignItems: "center",
+                    justifyContent: "center", fontSize: "0.75rem", color: "var(--gm-text-3)",
+                  }}>
+                    Cover coming soon
+                  </span>
+                )}
+              </div>
+
               <div style={{ display: "flex", gap: "0.4rem", flexWrap: "wrap" }}>
                 {product.subject_code ? <Badge tone="blue">{product.subject_code}</Badge> : null}
                 {product.preview_url ? <Badge tone="amber">Preview</Badge> : null}
@@ -102,7 +132,14 @@ export default async function StorePage() {
         <h2 style={{ fontSize: "0.95rem", fontWeight: 700, marginBottom: "0.6rem" }}>Delivery and payment</h2>
         <ul style={{ fontSize: "0.85rem", color: "var(--gm-text-2)", lineHeight: 1.7, paddingLeft: "1.1rem" }}>
           <li>We deliver anywhere in Bangladesh — {formatBdt(settings.deliveryBdtMetro)} inside Dhaka, {formatBdt(settings.deliveryBdtOutside)} elsewhere.</li>
-          <li><strong>Cash on delivery</strong> — pay the courier when your book arrives. You can also pay ahead with bKash or Nagad.</li>
+          {/* Only promise a wallet that is actually configured — otherwise a
+              buyer picks bKash and finds no number to send money to. */}
+          <li>
+            <strong>Cash on delivery</strong> — pay the courier when your book arrives.
+            {settings.bkashNumber.trim() || settings.nagadNumber.trim()
+              ? " You can also pay ahead with bKash or Nagad."
+              : null}
+          </li>
           <li>You will need an account, so you can track your order and we can reach you about delivery.</li>
           {settings.digitalSalesEnabled ? (
             <li>Digital downloads unlock as soon as your payment is confirmed, usually within {settings.verificationSlaHours} hours.</li>
