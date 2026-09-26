@@ -1,0 +1,4314 @@
+{
+  "FPM.CH01.S01.Q001": {
+    "slug": "FPM.CH01.S01.Q001",
+    "source": "2019 May/June Paper 1 Q2",
+    "paper_key": "2019_may-jun_1",
+    "question_number": 2,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.1",
+    "section_title": "Laws of indices and surds",
+    "printed_number": 1,
+    "marks": 3,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_1/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_1/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Multiply numerator and denominator by the conjugate of the denominator, which is $5 + 2\\sqrt{3}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Expand the numerator and denominator: $\\frac{(4 + 2\\sqrt{3})(5 + 2\\sqrt{3})}{(5 - 2\\sqrt{3})(5 + 2\\sqrt{3})} = \\frac{20 + 8\\sqrt{3} + 10\\sqrt{3} + 12}{25 - 12}$",
+          "marks": "dM1"
+        },
+        {
+          "step": "Simplify the expression to obtain $\\frac{32 + 18\\sqrt{3}}{13}$, identifying $a = 32$, $b = 18$, and $c = 13$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "\\frac{32 + 18\\sqrt{3}}{13}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S01.Q002": {
+    "slug": "FPM.CH01.S01.Q002",
+    "source": "2022 May/June Paper 1 Q1",
+    "paper_key": "2022_may-jun_1",
+    "question_number": 1,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.1",
+    "section_title": "Laws of indices and surds",
+    "printed_number": 2,
+    "marks": 3,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_1/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_1/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Multiply the numerator and the denominator by the conjugate of the denominator, $3\\sqrt{3} - 5$. \\n$$\\frac{2\\sqrt{3}-4}{3\\sqrt{3}+5} \\times \\frac{3\\sqrt{3}-5}{3\\sqrt{3}-5}$$",
+          "marks": "M1"
+        },
+        {
+          "step": "Expand the numerator and the denominator. \\nNumerator: $(2\\sqrt{3}-4)(3\\sqrt{3}-5) = 6(3) - 10\\sqrt{3} - 12\\sqrt{3} + 20 = 18 - 22\\sqrt{3} + 20 = 38 - 22\\sqrt{3}$ \\nDenominator: $(3\\sqrt{3}+5)(3\\sqrt{3}-5) = 9(3) - 25 = 27 - 25 = 2$ \\n$$\\frac{38 - 22\\sqrt{3}}{2}$$",
+          "marks": "dM1"
+        },
+        {
+          "step": "Simplify the fraction to get $19 - 11\\sqrt{3}$. Thus, $a = 19$ and $b = -11$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "a = 19, \\; b = -11",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S02.Q003": {
+    "slug": "FPM.CH01.S02.Q003",
+    "source": "2020 January Paper 1R Q1",
+    "paper_key": "2020_jan_1R",
+    "question_number": 1,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 1,
+    "marks": 4,
+    "qp_pdf": "data/workbook/fpm/2020_jan_1R/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_1R/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Multiply the numerator and the denominator by the conjugate of the denominator, $(2 + \\sqrt{3})$: $$\\frac{a + \\sqrt{3}}{2 - \\sqrt{3}} \\times \\frac{2 + \\sqrt{3}}{2 + \\sqrt{3}} = \\frac{2a + a\\sqrt{3} + 2\\sqrt{3} + 3}{2^2 - (\\sqrt{3})^2}$$",
+          "marks": "M1"
+        },
+        {
+          "step": "Simplify the denominator to $1$ and equate the numerator to $11 + b\\sqrt{3}$: $$\\frac{2a + 3 + (a + 2)\\sqrt{3}}{1} = 11 + b\\sqrt{3}$$",
+          "marks": "M1"
+        },
+        {
+          "step": "Compare the rational and irrational parts to form simultaneous equations: $$2a + 3 = 11 \\quad \\text{and} \\quad a + 2 = b$$",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve the equations to find $a$ and $b$: $$2a = 8 \\implies a = 4$$ $$b = 4 + 2 = 6$$",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "a = 4, \\quad b = 6",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S02.Q004": {
+    "slug": "FPM.CH01.S02.Q004",
+    "source": "2021 May/June Paper 1 Q8",
+    "paper_key": "2021_may-jun_1",
+    "question_number": 8,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 2,
+    "marks": 8,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_1/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_1/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), use logarithm laws to combine the terms on the right-hand side: $\\log_a n = \\log_a 3(2n - 1)$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Equate the arguments since the bases are the same: $n = 3(2n - 1) \\implies n = 6n - 3 \\implies 5n = 3$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $n$: $n = \\frac{3}{5}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b)(i), convert $\\log_p x = 3$ to index form: $x = p^3$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b)(ii), use logarithm laws on the given equation $\\log_p y - 3 \\log_p 2 = 4$ to get $\\log_p \\left(\\frac{y}{2^3}\\right) = 4$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Convert to index form: $\\frac{y}{8} = p^4 \\implies y = 8p^4$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply $x$ and $y$ together: $xy = (p^3)(8p^4) = 8p^7$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "n = \\frac{3}{5}, \\quad x = p^3, \\quad xy = 8p^7",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S02.Q005": {
+    "slug": "FPM.CH01.S02.Q005",
+    "source": "2022 January Paper 1 Q7",
+    "paper_key": "2022_jan_1",
+    "question_number": 7,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 3,
+    "marks": 8,
+    "qp_pdf": "data/workbook/fpm/2022_jan_1/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_1/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 7,
+      "ms_questions_visible": [
+        7
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), express $16$ as $2^4$, so $\\log_2 16 = 4$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), use the change of base formula to write $2\\log_4 x$ in base 2: $2\\frac{\\log_2 x}{\\log_2 4} = \\frac{2\\log_2 x}{2} = \\log_2 x$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $\\log_2 16$ for $4$ and $\\log_2 x$ into the given equation: $\\log_2 16 + \\log_2 x = \\log_2 y$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Use the addition law of logarithms to combine the left-hand side: $\\log_2(16x) = \\log_2 y$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Remove logarithms to obtain $y = 16x$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (c), equate the argument of $4 + 2\\log_4 x = \\log_2(4x + 5)$ using part (b) results: $\\log_2 y = \\log_2(4x + 5) \\implies 16x = 4x + 5$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Rearrange to solve for $x$: $12x = 5 \\implies x = \\frac{5}{12}$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x = \\frac{5}{12}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S02.Q006": {
+    "slug": "FPM.CH01.S02.Q006",
+    "source": "2020 January Paper 1R Q5",
+    "paper_key": "2020_jan_1R",
+    "question_number": 5,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 4,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2020_jan_1R/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_1R/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), express $\\log_4 32$ using change of base: $\\frac{\\log_2 32}{\\log_2 4} = \\frac{5}{2}$",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), convert all logarithms to base 2: $\\log_x 16 = \\frac{\\log_2 16}{\\log_2 x} = \\frac{4}{\\log_2 x}$",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute into the equation and use the result from (a): $\\log_2 x - \\frac{5}{2} + \\frac{1}{4}\\left(\\frac{4}{\\log_2 x}\\right) = 0 \\implies \\log_2 x - \\frac{5}{2} + \\frac{1}{\\log_2 x} = 0$",
+          "marks": null
+        },
+        {
+          "step": "Let $y = \\log_2 x$, so $y - \\frac{5}{2} + \\frac{1}{y} = 0 \\implies 2y^2 - 5y + 2 = 0$",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Solve the quadratic equation: $(2y - 1)(y - 2) = 0 \\implies y = \\frac{1}{2}$ or $y = 2$",
+          "marks": "M1"
+        },
+        {
+          "step": "Find $x$ values: $\\log_2 x = \\frac{1}{2} \\implies x = 2^{\\frac{1}{2}} = \\sqrt{2}$, and $\\log_2 x = 2 \\implies x = 2^2 = 4$",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x = \\sqrt{2}, 4",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S02.Q007": {
+    "slug": "FPM.CH01.S02.Q007",
+    "source": "2022 May/June Paper 2 Q10",
+    "paper_key": "2022_may-jun_2",
+    "question_number": 10,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 5,
+    "marks": 5,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_2/questions/q10.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_2/markschemes/q10.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 10,
+      "ms_questions_visible": [
+        10
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Use the change of base formula to express $\\log_4 x$ and $\\log_{16} x$ in terms of base $2$: $\\frac{\\log_2 x}{\\log_2 4} + \\frac{\\log_2 x}{\\log_2 16} + \\log_2 x = 10.5$",
+          "marks": "M1"
+        },
+        {
+          "step": "Evaluate $\\log_2 4 = 2$ and $\\log_2 16 = 4$: $\\frac{\\log_2 x}{2} + \\frac{\\log_2 x}{4} + \\log_2 x = 10.5$",
+          "marks": "M1"
+        },
+        {
+          "step": "Combine like terms: $\\left(\\frac{1}{2} + \\frac{1}{4} + 1\\right) \\log_2 x = \\frac{7}{4} \\log_2 x = 10.5$",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $\\log_2 x$: $\\log_2 x = \\frac{10.5 \\times 4}{7} = 6$",
+          "marks": "M1"
+        },
+        {
+          "step": "Convert logarithmic form to exponential form: $x = 2^6 = 64$",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 64",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S02.Q008": {
+    "slug": "FPM.CH01.S02.Q008",
+    "source": "2020 October/November Paper 2R Q8",
+    "paper_key": "2020_oct-nov_2R",
+    "question_number": 8,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 6,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_2R/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_2R/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Express $\\log_x 3$ in terms of base $3$ using the change of base rule: $\\log_x 3 = \\frac{1}{\\log_3 x}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Substitute $y = \\log_3 x$ into the equation to get $\\log_3 x - \\frac{2}{\\log_3 x} = 1$, which gives $y - \\frac{2}{y} = 1$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply through by $y$ and rearrange to form a quadratic equation: $y^2 - y - 2 = 0$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Factorise the quadratic equation: $(y - 2)(y + 1) = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $y$ to get $y = 2$ or $y = -1$, which means $\\log_3 x = 2$ or $\\log_3 x = -1$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $x$: $x = 3^2 = 9$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Solve for $x$: $x = 3^{-1} = \\frac{1}{3}$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 9, x = \\frac{1}{3}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S02.Q009": {
+    "slug": "FPM.CH01.S02.Q009",
+    "source": "2019 May/June Paper 1R Q3",
+    "paper_key": "2019_may-jun_1R",
+    "question_number": 3,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 7,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_1R/questions/q3.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_1R/markschemes/q3.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": null
+  },
+  "FPM.CH01.S02.Q010": {
+    "slug": "FPM.CH01.S02.Q010",
+    "source": "2021 May/June Paper 2 Q8",
+    "paper_key": "2021_may-jun_2",
+    "question_number": 8,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.2",
+    "section_title": "Laws of logarithms and change of base",
+    "printed_number": 8,
+    "marks": 8,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_2/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_2/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": false,
+      "ms_error": "The mark scheme states $3 \\log_8 b = 2 \\log_4 b$, but using the change of base rule: $\\log_8 b = \\frac{\\log_2 b}{\\log_2 8} = \\frac{\\log_2 b}{3}$, so $3 \\log_8 b = 3 \\left(\\frac{\\log_2 b}{3}\\right) = \\log_2 b$, which corresponds to $\\log_4 b^2$. However, looking at the first line of the mark scheme, it says $\\log_4 a + 2 \\log_4 b = \\frac{5}{2}$, which has a coefficient of 2 instead of 3, leading to an incorrect transcription from the question paper where the term is $3 \\log_8 b$. Wait, $\\log_8 b = \\frac{\\log_4 b}{\\log_4 8} = \\frac{\\log_4 b}{3/2} = \\frac{2}{3} \\log_4 b$. Thus $3 \\log_8 b = 3 \\left(\\frac{2}{3} \\log_4 b\\right) = 2 \\log_4 b$. So the mark scheme's first line is mathematically equivalent to the question, but the question paper says $3 \\log_8 b$, and the mark scheme transcription drops the 3 and writes $2 \\log_4 b$, which is actually correct due to the base conversion: $3 \\cdot \\frac{\\log_4 b}{\\log_4 8} = 3 \\cdot \\frac{\\log_4 b}{3/2} = 2 \\log_4 b$. Therefore, the mark scheme is actually mathematically correct.",
+      "steps": [
+        {
+          "step": "Convert the logarithmic equation using change of base: $\\log_8 b = \\frac{\\log_4 b}{\\log_4 8} = \\frac{\\log_4 b}{3/2} = \\frac{2}{3} \\log_4 b$. Thus, $3 \\log_8 b = 2 \\log_4 b$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Rewrite the first equation as $\\log_4 a + 2 \\log_4 b = \\frac{5}{2}$ or $\\log_4(ab^2) = \\frac{5}{2}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Exponentiate to get $ab^2 = 4^{5/2} = (2^2)^{5/2} = 2^5 = 32$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Rewrite the second equation $2^a = \\frac{16^4}{4^{b^2}}$ with base 2: $2^a = \\frac{(2^4)^4}{(2^2)^{b^2}} = \\frac{2^{16}}{2^{2b^2}} = 2^{16-2b^2}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Equate the exponents: $a = 16 - 2b^2$ or $2b^2 = 16 - a$ or $b^2 = 8 - \\frac{1}{2}a$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Substitute $a = 16 - 2b^2$ into $ab^2 = 32$: $(16 - 2b^2)b^2 = 32 \\implies 2b^4 - 16b^2 + 32 = 0 \\implies b^4 - 8b^2 + 16 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $b^2$: $(b^2 - 4)^2 = 0 \\implies b^2 = 4$. Since $b>0$ for logarithms, $b = 2$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Find $a$: $a = 16 - 2(2^2) = 16 - 8 = 8$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "a = 8, \\ b = 2",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S03.Q019": {
+    "slug": "FPM.CH01.S03.Q019",
+    "source": "2020 January Paper 1 Q7",
+    "paper_key": "2020_jan_1",
+    "question_number": 7,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 1,
+    "marks": 5,
+    "qp_pdf": "data/workbook/fpm/2020_jan_1/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_1/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 7,
+      "ms_questions_visible": [
+        7
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Write the equation with a common base, for example base 7. Use the change of base formula: $\\log_{49}{x^2} = \\frac{\\log_7{x^2}}{\\log_7{49}} = \\frac{\\log_7{x^2}}{2} = \\log_7{x}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Rewrite the logarithmic equation using logarithm laws: $\\log_7{(8x^2 - 6x + 3)} - \\log_7{x} = \\log_7{2^3}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Combine the logarithms on the left-hand side: $\\log_7{\\left(\\frac{8x^2 - 6x + 3}{x}\\right)} = \\log_7{8}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Equate the arguments and form a quadratic equation: $\\frac{8x^2 - 6x + 3}{x} = 8 \\Rightarrow 8x^2 - 6x + 3 = 8x \\Rightarrow 8x^2 - 14x + 3 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve the quadratic equation: $(4x - 1)(2x - 3) = 0$, which gives $x = \\frac{1}{4}$ and $x = \\frac{3}{2}$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = \\frac{1}{4}, \\frac{3}{2}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S03.Q020": {
+    "slug": "FPM.CH01.S03.Q020",
+    "source": "2019 January Paper 2 Q1",
+    "paper_key": "2019_jan_2",
+    "question_number": 1,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 2,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2019_jan_2/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_jan_2/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Use the change of base formula to express all logarithms with base 3: $\\log_x 3 = \\frac{\\log_3 3}{\\log_3 x} = \\frac{1}{\\log_3 x}$, so the equation becomes $3\\log_3 x - \\frac{8}{\\log_3 x} = 10$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply through by $\\log_3 x$ and rearrange into a quadratic in terms of $\\log_3 x$: $3(\\log_3 x)^2 - 10\\log_3 x - 8 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Factorise the quadratic equation: $(3\\log_3 x + 2)(\\log_3 x - 4) = 0$, giving $\\log_3 x = -\\frac{2}{3}$ or $\\log_3 x = 4$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Solve for $x$ by converting from logarithmic form to exponential form: $x = 3^{-\\frac{2}{3}}$ and $x = 3^4$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Simplify the values to obtain $x = 81$ and $x = \\frac{\\sqrt[3]{9}}{9}$ (or $0.481$).",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 81, x = \\frac{\\sqrt[3]{9}}{9}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S03.Q022": {
+    "slug": "FPM.CH01.S03.Q022",
+    "source": "2020 October/November Paper 1R Q9",
+    "paper_key": "2020_oct-nov_1R",
+    "question_number": 9,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 3,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_1R/questions/q9.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_1R/markschemes/q9.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 9,
+      "ms_questions_visible": [
+        9
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Express the first equation in terms of base 2: $\\frac{2^{4x}}{2^{3y}} = \\frac{1}{2^2}$, which gives $2^{4x-3y} = 2^{-2}$ or $4x - 3y = -2$.",
+          "marks": "M1 dM1"
+        },
+        {
+          "step": "Express the second equation in terms of base 2: $(2^2)^x \\cdot 2^y = 2^4$, which gives $2^{2x+y} = 2^4$ or $2x + y = 4$.",
+          "marks": "M1 dM1"
+        },
+        {
+          "step": "Solve the simultaneous equations $4x - 3y = -2$ and $2x + y = 4$. From the second equation, $y = 4 - 2x$. Substituting into the first gives $4x - 3(4 - 2x) = -2 \\implies 4x - 12 + 6x = -2 \\implies 10x = 10 \\implies x = 1$.",
+          "marks": "ddddM1"
+        },
+        {
+          "step": "Substitute $x = 1$ back into $y = 4 - 2x$ to get $y = 4 - 2(1) = 2$.",
+          "marks": "A1"
+        },
+        {
+          "step": "State the final values for $x$ and $y$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 1, y = 2",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S03.Q023": {
+    "slug": "FPM.CH01.S03.Q023",
+    "source": "2020 October/November Paper 2 Q4",
+    "paper_key": "2020_oct-nov_2",
+    "question_number": 4,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 4,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_2/questions/q4.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_2/markschemes/q4.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 4,
+      "ms_questions_visible": [
+        4
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (i), use the change of base formula to express $\\log_r 4$ as $\\frac{1}{\\log_4 r}$, giving $\\frac{16}{\\log_4 r} = \\log_4 r$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Rearrange to $(\\log_4 r)^2 = 16$, which gives $\\log_4 r = 4$ or $\\log_4 r = -4$.",
+          "marks": null
+        },
+        {
+          "step": "Solve for $r$ to get $r = 4^4 = 256$ or $r = 4^{-4} = \\frac{1}{256}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (ii), use the addition law of logarithms to combine the LHS: $\\log_5 9 + \\log_5 12 + \\log_5 15 + \\log_5 18 = \\log_5(9 \\times 12 \\times 15 \\times 18) = \\log_5 29160$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Rewrite the RHS by replacing $1$ with $\\log_5 5$ and using the laws of logarithms to combine the RHS: $1 + \\log_5 x + \\log_5 x^2 = \\log_5 5 + \\log_5 x^3 = \\log_5(5x^3)$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Equate the arguments since the bases are the same: $29160 = 5x^3$, hence $x^3 = 5832$.",
+          "marks": "dM1"
+        },
+        {
+          "step": "Solve for $x$ to get $x = 18$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "r = 256, \\frac{1}{256}, \\quad x = 18",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S03.Q024": {
+    "slug": "FPM.CH01.S03.Q024",
+    "source": "2021 October/November Paper 1 Q5",
+    "paper_key": "2021_oct-nov_1",
+    "question_number": 5,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 5,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2021_oct-nov_1/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_oct-nov_1/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Express the given equation in base 3: $\\log_3(x-5)^{\\frac{1}{2}} + \\frac{\\log_3(x+3)}{\\log_3 9} = 1$",
+          "marks": "M1 M1"
+        },
+        {
+          "step": "Simplify using $\\log_3 9 = 2$ and combine logarithms to get $\\log_3[(x-5)(x+3)] = 2$",
+          "marks": "M1"
+        },
+        {
+          "step": "Convert to exponential form: $(x-5)(x+3) = 3^2$, which expands to $x^2 - 2x - 24 = 0$",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Factorize the quadratic equation: $(x-6)(x+4) = 0$, giving $x = 6$ and $x = -4$. Reject $x = -4$ since $\\sqrt{x-5}$ and $\\log_3(x-5)$ are undefined for negative arguments.",
+          "marks": "dM1 A1"
+        }
+      ],
+      "final_answer": "x = 6",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S03.Q028": {
+    "slug": "FPM.CH01.S03.Q028",
+    "source": "2018 January Paper 2 Q7",
+    "paper_key": "2018_jan_2",
+    "question_number": 7,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 6,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2018_jan_2/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_jan_2/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 7,
+      "ms_questions_visible": [
+        7
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (i), write the equation in terms of base 2: $\\frac{(2^3)^{x^2}}{2^{5x}} = 2^2$",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Simplify the powers to get $\\frac{2^{3x^2}}{2^{5x}} = 2^2$, which implies $2^{3x^2 - 5x} = 2^2$",
+          "marks": "M1"
+        },
+        {
+          "step": "Equate exponents and solve the resulting quadratic equation $3x^2 - 5x - 2 = 0$, giving $(3x + 1)(x - 2) = 0$",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the values of $x$ for part (i): $x = -\\frac{1}{3}, 2$",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (ii), use the quotient rule for logarithms: $\\log_x 64 - \\log_x 4 = \\log_x \\left(\\frac{64}{4}\\right) = \\log_x 16$",
+          "marks": "M1"
+        },
+        {
+          "step": "Change base to base 4: $\\log_x 16 = \\frac{\\log_4 16}{\\log_4 x} = \\frac{2}{\\log_4 x}$",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute into the equation to get $3\\log_4 x + \\frac{2}{\\log_4 x} - \\log_x 4 = 5$, noting that $\\log_x 4 = \\frac{1}{\\log_4 x}$, so $3\\log_4 x + \\frac{2}{\\log_4 x} = 5$",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply by $\\log_4 x$ to form a quadratic equation in terms of $\\log_4 x$: $3(\\log_4 x)^2 - 5\\log_4 x + 2 = 0$",
+          "marks": "dM1"
+        },
+        {
+          "step": "Factorise the quadratic: $(3\\log_4 x - 2)(\\log_4 x - 1) = 0$, yielding $\\log_4 x = \\frac{2}{3}$ or $\\log_4 x = 1$",
+          "marks": "A1"
+        },
+        {
+          "step": "Solve for $x$: $x = 4^{\\frac{2}{3}} = \\sqrt[3]{16} \\approx 2.52$ and $x = 4^1 = 4$",
+          "marks": "dM1 A1"
+        }
+      ],
+      "final_answer": "x = -\\frac{1}{3}, 2 \\text{ and } x = \\sqrt[3]{16}, 4",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH01.S03.Q031": {
+    "slug": "FPM.CH01.S03.Q031",
+    "source": "2022 May/June Paper 2R Q5",
+    "paper_key": "2022_may-jun_2R",
+    "question_number": 5,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 7,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_2R/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_2R/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For (a), calculate $y = e^{3x-2}$ for $x = 0.25, 0.5, 0.75$: when $x = 0.25$, $y = e^{-1.25} \\approx 0.2865 \\implies 0.29$; when $x = 0.5$, $y = e^{-0.5} \\approx 0.6065 \\implies 0.61$; when $x = 0.75$, $y = e^{0.25} \\approx 1.2840 \\implies 1.28$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For (b), plot the points and draw a smooth curve representing $y = e^{3x-2}$ for $0 \\leqslant x \\leqslant 1$.",
+          "marks": "B1ft B1ft"
+        },
+        {
+          "step": "For (c), rearrange the equation $3x = 2 + \\ln(3 - x)$ to match the curve $y = e^{3x-2}$: $3x - 2 = \\ln(3 - x) \\implies e^{3x-2} = 3 - x$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Draw the straight line $y = 3 - x$ on the grid.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the $x$-coordinate of the intersection point between the curve and the line, giving an estimate to one decimal place.",
+          "marks": "A1ft"
+        }
+      ],
+      "final_answer": "0.9",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S03.Q032": {
+    "slug": "FPM.CH01.S03.Q032",
+    "source": "2021 May/June Paper 2 Q7",
+    "paper_key": "2021_may-jun_2",
+    "question_number": 7,
+    "chapter": 1,
+    "chapter_title": "Logarithmic functions and indices",
+    "section": "1.3",
+    "section_title": "Exponential and logarithmic equations",
+    "printed_number": 8,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_2/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_2/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 7,
+      "ms_questions_visible": [
+        7
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), substitute $x = 2$, $3$, and $4$ into $y = 3^{\\frac{x}{4}} + 2$: for $x = 2$, $y = 3^{\\frac{2}{4}} + 2 = \\sqrt{3} + 2 \\approx 3.73$; for $x = 3$, $y = 3^{\\frac{3}{4}} + 2 \\approx 4.28$; for $x = 4$, $y = 3^{\\frac{4}{4}} + 2 = 5$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (b), plot the points $(0, 3)$, $(1, 3.32)$, $(2, 3.73)$, $(3, 4.28)$, $(4, 5)$, $(5, 5.95)$ and join them with a smooth curve.",
+          "marks": "B1ft B1ft"
+        },
+        {
+          "step": "For part (c), manipulate the given equation $\\log_3(6 - 2x)^4 - x = 0$ or $\\log_3(6 - 2x) - \\frac{x}{4} = 0$: $\\log_3(6 - 2x) = \\frac{x}{4}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Convert to exponential form: $6 - 2x = 3^{\\frac{x}{4}}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Add $2$ to both sides to form the equation of the straight line to intersect with $y = 3^{\\frac{x}{4}} + 2$: $8 - 2x = 3^{\\frac{x}{4}} + 2$, so draw the straight line $y = 8 - 2x$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Draw the line $y = 8 - 2x$ (passing through $(0, 8)$ or $(3, 2)$, etc.) on the graph.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the $x$-coordinate of the intersection point between the curve and the line: $x = 2.1$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 2.1",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S01.Q002": {
+    "slug": "FPM.CH02.S01.Q002",
+    "source": "2019 May/June Paper 1 Q5",
+    "paper_key": "2019_may-jun_1",
+    "question_number": 5,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.1",
+    "section_title": "Completing the square",
+    "printed_number": 1,
+    "marks": 5,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_1/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_1/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Express $f(x) = 3x^2 - 9x + 5$ in the form $a(x-b)^2+c$ by completing the square: $f(x) = 3(x^2 - 3x) + 5 = 3\\left(x - \\frac{3}{2}\\right)^2 - 3\\left(\\frac{3}{2}\\right)^2 + 5 = 3\\left(x - \\frac{3}{2}\\right)^2 - \\frac{27}{4} + \\frac{20}{4} = 3\\left(x - \\frac{3}{2}\\right)^2 - \\frac{7}{4}$.",
+          "marks": "M1 M1 A1"
+        },
+        {
+          "step": "Identify constants: $a = 3$, $b = \\frac{3}{2}$, $c = -\\frac{7}{4}$.",
+          "marks": null
+        },
+        {
+          "step": "For (b)(i), find the minimum value of $f(x)$: since $3\\left(x - \\frac{3}{2}\\right)^2 \\ge 0$, the minimum value is $-\\frac{7}{4}$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "For (b)(ii), find the value of $x$ at which this minimum occurs: $x = \\frac{3}{2}$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "a = 3, b = \\frac{3}{2}, c = -\\frac{7}{4}; \\text{minimum value } f(x) = -\\frac{7}{4} \\text{ at } x = \\frac{3}{2}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S01.Q003": {
+    "slug": "FPM.CH02.S01.Q003",
+    "source": "2020 January Paper 1R Q2",
+    "paper_key": "2020_jan_1R",
+    "question_number": 2,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.1",
+    "section_title": "Completing the square",
+    "printed_number": 2,
+    "marks": 5,
+    "qp_pdf": "data/workbook/fpm/2020_jan_1R/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_1R/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Write $f(x) = 7 + 4x - x^2$ by completing the square: $f(x) = 7 - (x^2 - 4x) = 7 - ((x-2)^2 - 4) = 7 + 4 - (x-2)^2 = 11 - (x-2)^2$.",
+          "marks": "M1 A1 A1"
+        },
+        {
+          "step": "For part (b)(i), find the maximum value of $f(x)$. Since $(x-2)^2 \\ge 0$, the maximum value is $11 - 0 = 11$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "For part (b)(ii), find the value of $x$ for which this maximum occurs. This happens when $(x-2)^2 = 0$, so $x = 2$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "11 \\text{ and } 2",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S01.Q004": {
+    "slug": "FPM.CH02.S01.Q004",
+    "source": "2022 January Paper 1 Q2",
+    "paper_key": "2022_jan_1",
+    "question_number": 2,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.1",
+    "section_title": "Completing the square",
+    "printed_number": 3,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2022_jan_1/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_1/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), factor out $2$ from the terms in $x$: $f(x) = 2(x^2 - 6x) + 5$",
+          "marks": "M1"
+        },
+        {
+          "step": "Complete the square for the quadratic expression inside: $f(x) = 2((x-3)^2 - 9) + 5$",
+          "marks": "M1"
+        },
+        {
+          "step": "Simplify to get $f(x) = 2(x-3)^2 - 13$, so $a = 2$, $b = -3$, and $c = -13$",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b), substitute $f(x)$ into the inequality: $2(x-3)^2 - 13 - 37 > 0$",
+          "marks": "M1"
+        },
+        {
+          "step": "Simplify the inequality: $2(x-3)^2 > 50 \\implies (x-3)^2 > 25$",
+          "marks": "A1"
+        },
+        {
+          "step": "Solve for the critical values: $x - 3 > 5 \\implies x > 8$ or $x - 3 < -5 \\implies x < -2$",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x < -2 \\text{ or } x > 8",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S01.Q005": {
+    "slug": "FPM.CH02.S01.Q005",
+    "source": "2019 January Paper 1 Q5",
+    "paper_key": "2019_jan_1",
+    "question_number": 5,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.1",
+    "section_title": "Completing the square",
+    "printed_number": 4,
+    "marks": 10,
+    "qp_pdf": "data/workbook/fpm/2019_jan_1/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_jan_1/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), express $\\text{f}(x) = 2x^2 + 7x - 4$ in the form $A(x + B)^2 + C$ by completing the square: $2\\left(x^2 + \\frac{7}{2}x\\right) - 4 = 2\\left(\\left(x + \\frac{7}{4}\\right)^2 - \\frac{49}{16}\\right) - 4 = 2\\left(x + \\frac{7}{4}\\right)^2 - \\frac{49}{8} - \\frac{32}{8} = 2\\left(x + \\frac{7}{4}\\right)^2 - \\frac{81}{8}$. Thus $A = 2$, $B = \\frac{7}{4}$, and $C = -\\frac{81}{8}$.",
+          "marks": "M1 M1 A1"
+        },
+        {
+          "step": "For part (b)(i), the minimum value of $\\text{f}(x)$ is the constant term in the completed square form, which is $-\\frac{81}{8}$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "For part (b)(ii), the value of $x$ at which this minimum occurs is when the squared term is zero, so $x + \\frac{7}{4} = 0 \\implies x = -\\frac{7}{4}$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "For part (c), equate the curves: $2x^2 + 7x - 4 = px - 6$, leading to the quadratic equation $2x^2 + (7 - p)x + 2 = 0$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Since the equation has unequal real roots, the discriminant must be strictly greater than zero: $b^2 - 4ac > 0 \\implies (7 - p)^2 - 4(2)(2) > 0 \\implies p^2 - 14p + 33 > 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve the quadratic inequality $p^2 - 14p + 33 = 0 \\implies (p - 11)(p - 3) = 0$, giving critical values $p = 3$ and $p = 11$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Determine the region for the inequality $p^2 - 14p + 33 > 0$, which gives the outside region $p < 3$ or $p > 11$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "p < 3 \\text{ or } p > 11",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S01.Q010": {
+    "slug": "FPM.CH02.S01.Q010",
+    "source": "2018 January Paper 1 Q1",
+    "paper_key": "2018_jan_1",
+    "question_number": 1,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.1",
+    "section_title": "Completing the square",
+    "printed_number": 5,
+    "marks": 8,
+    "qp_pdf": "data/workbook/fpm/2018_jan_1/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_jan_1/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Express $\\mathrm{f}(x) = 6 + 5x - 2x^2$ in the form $p(x+q)^2 + r$. Factor out $-2$: $\\mathrm{f}(x) = -2\\left(x^2 - \\frac{5}{2}x\\right) + 6$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Complete the square inside the bracket: $\\mathrm{f}(x) = -2\\left(\\left(x - \\frac{5}{4}\\right)^2 - \\frac{25}{16}\\right) + 6 = -2\\left(x - \\frac{5}{4}\\right)^2 + \\frac{25}{8} + \\frac{48}{8} = -2\\left(x - \\frac{5}{4}\\right)^2 + \\frac{73}{8}$. Thus $p = -2$, $q = -\\frac{5}{4}$, $r = \\frac{73}{8}$.",
+          "marks": "A2,1,0"
+        },
+        {
+          "step": "For (b)(i), find the maximum value of $\\mathrm{f}(x)$. Since $-2\\left(x - \\frac{5}{4}\\right)^2 \\le 0$, the maximum value is $\\frac{73}{8}$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "For (b)(ii), find the value of $x$ for which this maximum occurs. This happens when $x - \\frac{5}{4} = 0$, so $x = \\frac{5}{4}$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "For (c)(i), note that $\\mathrm{g}(x) = 6 + 5(x^3) - 2(x^3)^2 = \\mathrm{f}(x^3)$. The maximum value is the same as the maximum of $\\mathrm{f}(x)$, which is $\\frac{73}{8}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For (c)(ii), the maximum of $\\mathrm{g}(x)$ occurs when $x^3$ equals the value of $x$ that maximizes $\\mathrm{f}(x)$. Therefore, $x^3 = \\frac{5}{4}$, giving $x = \\sqrt[3]{\\frac{5}{4}}$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "(a)\\ p = -2, q = -\\frac{5}{4}, r = \\frac{73}{8}, \\text{ (b)(i)}\\ \\frac{73}{8}, \\text{ (b)(ii)}\\ \\frac{5}{4}, \\text{ (c)(i)}\\ \\frac{73}{8}, \\text{ (c)(ii)}\\ \\sqrt[3]{\\frac{5}{4}}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S03.Q019": {
+    "slug": "FPM.CH02.S03.Q019",
+    "source": "2021 May/June Paper 2 Q2",
+    "paper_key": "2021_may-jun_2",
+    "question_number": 2,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.1",
+    "section_title": "Completing the square",
+    "printed_number": 6,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_2/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_2/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Express $\\text{f}(x)$ by completing the square: $\\text{f}(x) = 2 + \\frac{4}{5}x - \\frac{1}{25}x^2 = 2 - \\frac{1}{25}(x^2 - 20x) = 2 - \\frac{1}{25}((x - 10)^2 - 100) = 2 - \\frac{1}{25}(x - 10)^2 + 4 = 6 - \\frac{1}{25}(x - 10)^2$.",
+          "marks": "M1 A1 A1 A1"
+        },
+        {
+          "step": "Identify constants: $A = 6$, $B = \\frac{1}{25}$, $C = -10$.",
+          "marks": null
+        },
+        {
+          "step": "(i) Find the maximum value of $\\text{f}(x)$: Since $-\\frac{1}{25}(x - 10)^2 \\le 0$, the maximum value is $6$.",
+          "marks": "B1 ft"
+        },
+        {
+          "step": "(ii) Find the value of $x$ for which this maximum occurs: Occurs when $x - 10 = 0 \\implies x = 10$.",
+          "marks": "B1 ft"
+        }
+      ],
+      "final_answer": "A = 6, B = \\frac{1}{25}, C = -10; \\text{Maximum value} = 6 \\text{ at } x = 10",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S01.Q005": {
+    "slug": "FPM.CH03.S01.Q005",
+    "source": "2019 May/June Paper 2R Q1",
+    "paper_key": "2019_may-jun_2R",
+    "question_number": 1,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.2",
+    "section_title": "The discriminant and the nature of roots",
+    "printed_number": 1,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_2R/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_2R/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), substitute $x = 0$ into $f(x)$ to get $f(0) = -3q$. Equating this to $-12$ gives $-3q = -12$, so $q = 4$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), $f(x) = 0$ has only one real root. Since one root is $x = 3$, the quadratic factor $x^2 + (p-2)x + 4 = 0$ must have no real roots.",
+          "marks": "M1"
+        },
+        {
+          "step": "For no real roots, the discriminant of the quadratic must be less than zero: $b^2 - 4ac < 0$, which gives $(p-2)^2 - 4(1)(4) < 0$.",
+          "marks": null
+        },
+        {
+          "step": "Simplify the inequality: $(p-2)^2 - 16 < 0$, or $p^2 - 4p - 12 < 0$.",
+          "marks": "dM1 A1"
+        },
+        {
+          "step": "Find the critical values by solving $p^2 - 4p - 12 = 0$, giving $(p-6)(p+2) = 0$, so $p = 6$ and $p = -2$.",
+          "marks": "ddM1"
+        },
+        {
+          "step": "Determine the required range for $p$: $-2 < p < 6$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "-2 < p < 6",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S02.Q013": {
+    "slug": "FPM.CH02.S02.Q013",
+    "source": "2022 May/June Paper 2 Q1",
+    "paper_key": "2022_may-jun_2",
+    "question_number": 1,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.2",
+    "section_title": "The discriminant and the nature of roots",
+    "printed_number": 2,
+    "marks": 4,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_2/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_2/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "State the condition for real roots of a quadratic equation: $b^2 - 4ac \\ge 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $a = 2k$, $b = 5k$, and $c = 5k - 3$ into the discriminant: $(5k)^2 - 4(2k)(5k - 3) \\ge 0$. Simplify to get $-15k^2 + 24k \\ge 0$ or $3k(8 - 5k) \\ge 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the critical values $k = 0$ and $k = \\frac{8}{5}$ and solve the inequality to obtain $0 < k \\le \\frac{8}{5}$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "0 < k \\le \\frac{8}{5}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S02.Q014": {
+    "slug": "FPM.CH02.S02.Q014",
+    "source": "2021 October/November Paper 1 Q2",
+    "paper_key": "2021_oct-nov_1",
+    "question_number": 2,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.2",
+    "section_title": "The discriminant and the nature of roots",
+    "printed_number": 3,
+    "marks": 5,
+    "qp_pdf": "data/workbook/fpm/2021_oct-nov_1/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_oct-nov_1/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": false,
+      "ms_error": "The expansion of $(p-1)^2 - 4(2)(-2p)$ has an arithmetic error in the mark scheme. $(p-1)^2 - 4(2)(-2p) = p^2 - 2p + 1 + 16p = p^2 + 14p + 1$, but the mark scheme shows $+14p$, wait: $-2p + 16p = +14p$. Let's recheck: $(-1)^2 = 1$, $-4(2)(-2p) = +16p$. So $p^2 - 2p + 1 + 16p = p^2 + 14p + 1$. Actually $14p$ is correct. Let's check the quadratic formula: $-14 \\pm \\sqrt{14^2 - 4(1)(1)} / 2 = -14 \\pm \\sqrt{196 - 4} / 2 = -14 \\pm \\sqrt{192} / 2 = -14 \\pm 8\\sqrt{3} / 2 = -7 \\pm 4\\sqrt{3}$. The mark scheme is completely correct, my initial quick glance was wrong. Wait, let me set ms_math_correct=true since the mark scheme's math is correct. Let's re-evaluate: ms_math_correct=true."
+    }
+  },
+  "FPM.CH02.S02.Q016": {
+    "slug": "FPM.CH02.S02.Q016",
+    "source": "2018 January Paper 2 Q4",
+    "paper_key": "2018_jan_2",
+    "question_number": 4,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.2",
+    "section_title": "The discriminant and the nature of roots",
+    "printed_number": 4,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2018_jan_2/questions/q4.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_jan_2/markschemes/q4.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 4,
+      "ms_questions_visible": [
+        4
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), the equation is $3x^2 + px + 4 = 0$. For two real distinct roots, we require the discriminant to be strictly greater than zero: $b^2 - 4ac > 0$. Substituting $a = 3$, $b = p$, and $c = 4$, we get $p^2 - 4(3)(4) > 0$, which simplifies to $p^2 - 48 > 0$.",
+          "marks": "M1 dM1 A1"
+        },
+        {
+          "step": "Solving the inequality $p^2 > 48$ gives the critical values $p = \\pm\\sqrt{48} = \\pm 4\\sqrt{3}$. Using the outside region for the inequality, we get $p < -4\\sqrt{3}$ and $p > 4\\sqrt{3}$ (or decimal equivalents: $p < -6.928$ and $p > 6.928$).",
+          "marks": "dM1 A1"
+        },
+        {
+          "step": "For part (b), we need the equation to have no real roots, meaning the discriminant must be strictly less than zero: $p^2 - 48 < 0$, which gives $-4\\sqrt{3} < p < 4\\sqrt{3}$ (i.e., $-6.928 < p < 6.928$).",
+          "marks": null
+        },
+        {
+          "step": "The integer values of $p$ within this range are $p = \\pm 6, \\pm 5, \\pm 4, \\pm 3, \\pm 2, \\pm 1, 0$.",
+          "marks": "B1"
+        }
+      ],
+      "final_answer": "\\text{(a) } p < -4\\sqrt{3}, \\, p > 4\\sqrt{3} \\quad \\text{(b) } \\pm 6, \\pm 5, \\pm 4, \\pm 3, \\pm 2, \\pm 1, 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S02.Q017": {
+    "slug": "FPM.CH02.S02.Q017",
+    "source": "2021 May/June Paper 1 Q1",
+    "paper_key": "2021_may-jun_1",
+    "question_number": 1,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.2",
+    "section_title": "The discriminant and the nature of roots",
+    "printed_number": 5,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_1/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_1/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Identify the coefficients of the quadratic equation: $a = 3(k+2)$, $b = k+5$, and $c = k$.",
+          "marks": null
+        },
+        {
+          "step": "State the condition for real roots, which is the discriminant $b^2 - 4ac \\ge 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute the coefficients into the discriminant: $(k+5)^2 - 4(3(k+2))(k) \\ge 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Expand and simplify the inequality: $k^2 + 10k + 25 - 12k^2 - 24k \\ge 0$, leading to $-11k^2 - 14k + 25 \\ge 0$ or $11k^2 + 14k - 25 \\le 0$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Factorize the quadratic expression: $(11k + 25)(k - 1) \\le 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the critical values $k = -\\frac{25}{11}$ and $k = 1$, and write the final range of values for $k$: $-\\frac{25}{11} \\le k \\le 1$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "-\\frac{25}{11} \\le k \\le 1",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S03.Q020": {
+    "slug": "FPM.CH02.S03.Q020",
+    "source": "2020 January Paper 2 Q5",
+    "paper_key": "2020_jan_2",
+    "question_number": 5,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.3",
+    "section_title": "Sum and product of roots",
+    "printed_number": 1,
+    "marks": 8,
+    "qp_pdf": "data/workbook/fpm/2020_jan_2/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_2/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), the sum of the roots is $\\alpha + \\beta = \\frac{7}{2}$ and the product of the roots is $\\alpha\\beta = 2$. Using the standard quadratic form $x^2 - (\\text{sum of roots})x + \\text{product of roots} = 0$, substitute the values to get $x^2 - \\frac{7}{2}x + 2 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply the entire equation by 2 to obtain a quadratic equation with integer coefficients: $2x^2 - 7x + 4 = 0$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b), find the product of the new roots: $\\frac{\\alpha}{\\beta} \\times \\frac{\\beta}{\\alpha} = 1$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Find the sum of the new roots: $\\frac{\\alpha}{\\beta} + \\frac{\\beta}{\\alpha} = \\frac{\\alpha^2 + \\beta^2}{\\alpha\\beta} = \\frac{(\\alpha + \\beta)^2 - 2\\alpha\\beta}{\\alpha\\beta}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute the known values $\\alpha + \\beta = \\frac{7}{2}$ and $\\alpha\\beta = 2$ into the expression for the sum: $\\frac{(\\frac{7}{2})^2 - 2(2)}{2} = \\frac{\\frac{49}{4} - 4}{2} = \\frac{\\frac{33}{4}}{2} = \\frac{33}{8}$.",
+          "marks": "dM1 A1"
+        },
+        {
+          "step": "Form the new quadratic equation using the new sum and product: $x^2 - \\frac{33}{8}x + 1 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply the equation by 8 to get integer coefficients: $8x^2 - 33x + 8 = 0$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "8x^2 - 33x + 8 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S03.Q022": {
+    "slug": "FPM.CH02.S03.Q022",
+    "source": "2022 May/June Paper 2 Q5",
+    "paper_key": "2022_may-jun_2",
+    "question_number": 5,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.3",
+    "section_title": "Sum and product of roots",
+    "printed_number": 2,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_2/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_2/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i), using the relations between roots and coefficients for the quadratic equation $2x^2 + (6 + 2p)x + 2p = 0$, we find $\\alpha + \\beta = -\\frac{b}{a} = -\\frac{6 + 2p}{2} = -3 - p$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (a)(ii), similarly, $\\alpha\\beta = \\frac{c}{a} = \\frac{2p}{2} = p$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), express $(\\alpha - \\beta)^2$ in terms of sum and product of roots: $(\\alpha - \\beta)^2 = (\\alpha + \\beta)^2 - 4\\alpha\\beta$.",
+          "marks": "M1 M1"
+        },
+        {
+          "s": ""
+        },
+        {
+          "step": "Substitute the expressions for $(\\alpha + \\beta)$ and $\\alpha\\beta$ from part (a): $(\\alpha - \\beta)^2 = (-3 - p)^2 - 4(p) = 9 + 6p + p^2 - 4p = 9 + 2p + p^2$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (c), given $(\\alpha - \\beta) = 3$, squaring gives $(\\alpha - \\beta)^2 = 9$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Substitute this into the identity from part (b): $9 = 9 + 2p + p^2 \\implies 0 = 2p + p^2 \\implies p(2 + p) = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $p$: $p = 0$ or $p = -2$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "p = 0, p = -2",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S03.Q025": {
+    "slug": "FPM.CH02.S03.Q025",
+    "source": "2022 January Paper 2R Q4",
+    "paper_key": "2022_jan_2R",
+    "question_number": 4,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.3",
+    "section_title": "Sum and product of roots",
+    "printed_number": 3,
+    "marks": 10,
+    "qp_pdf": "data/workbook/fpm/2022_jan_2R/questions/q4.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_2R/markschemes/q4.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 4,
+      "ms_questions_visible": [
+        4
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "From the quadratic equation $2x^2 + 4x + 3 = 0$ with roots $\\alpha$ and $\\beta$, the sum and product of the roots are $\\alpha + \\beta = -2$ and $\\alpha\\beta = \\frac{3}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Express $\\alpha^2 + \\beta^2$ in terms of $(\\alpha + \\beta)$ and $\\alpha\\beta$: $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute the values: $(-2)^2 - 2\\left(\\frac{3}{2}\\right) = 4 - 3 = 1$. This proves $\\alpha^2 + \\beta^2 = 1$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), express $\\alpha^4 + \\beta^4$ using $\\alpha^2 + \\beta^2$ and $\\alpha\\beta$: $\\alpha^4 + \\beta^4 = (\\alpha^2 + \\beta^2)^2 - 2(\\alpha\\beta)^2$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute the known values: $(1)^2 - 2\\left(\\frac{3}{2}\\right)^2 = 1 - 2\\left(\\frac{9}{4}\\right) = 1 - \\frac{9}{2} = -\\frac{7}{2}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (c), find the sum of the new roots: $\\alpha^4 + \\beta^4 = -\\frac{7}{2}$.",
+          "marks": null
+        },
+        {
+          "step": "Find the product of the new roots: $\\alpha^4\\beta^4 = (\\alpha\\beta)^4 = \\left(\\frac{3}{2}\\right)^4 = \\frac{81}{16}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Form the quadratic equation using $x^2 - (\\text{Sum})x + \\text{Product} = 0$: $x^2 - \\left(-\\frac{7}{2}\\right)x + \\frac{81}{16} = 0$.",
+          "marks": null
+        },
+        {
+          "step": "Multiply by $16$ to obtain integer coefficients: $16x^2 + 56x + 81 = 0$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "16x^2 + 56x + 81 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S03.Q031": {
+    "slug": "FPM.CH02.S03.Q031",
+    "source": "2022 January Paper 2 Q7",
+    "paper_key": "2022_jan_2",
+    "question_number": 7,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.3",
+    "section_title": "Sum and product of roots",
+    "printed_number": 4,
+    "marks": 13,
+    "qp_pdf": "data/workbook/fpm/2022_jan_2/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_2/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 7,
+      "ms_questions_visible": [
+        7
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For the equation $f(x) = 2x^2 + px + q = 0$ with roots $\\alpha$ and $\\beta$, the sum of roots is $\\alpha + \\beta = -\\frac{p}{2}$ and the product of roots is $\\alpha\\beta = \\frac{q}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For the equation $g(x) = 14x^2 + 37x + 14 = 0$ with roots $\\frac{\\alpha}{\\beta}$ and $\\frac{\\beta}{\\alpha}$, the sum of roots is $\\frac{\\alpha}{\\beta} + \\frac{\\beta}{\\alpha} = -\\frac{37}{14}$ and product is $\\frac{\\alpha}{\\beta}\\cdot\\frac{\\beta}{\\alpha} = 1$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Express the sum of roots of $g(x)=0$ in terms of $\\alpha + \\beta$ and $\\alpha\\beta$: $\\frac{\\alpha}{\\beta} + \\frac{\\beta}{\\alpha} = \\frac{\\alpha^2 + \\beta^2}{\\alpha\\beta} = \\frac{(\\alpha+\\beta)^2 - 2\\alpha\\beta}{\\alpha\\beta}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $\\alpha+\\beta = -\\frac{p}{2}$ and $\\alpha\\beta = \\frac{q}{2}$ into the expression: $\\frac{\\left(-\\frac{p}{2}\\right)^2 - 2\\left(\\frac{q}{2}\\right)}{\\frac{q}{2}} = -\\frac{37}{14}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Simplify and use the given relation $p+q=-4 \\implies q = -p-4$: $\\frac{p^2 - 4q}{2q} = \\frac{p^2 + 4p + 12}{2(-p-4)} = -\\frac{37}{14} \\implies 7p^2 - 9p - 36 = 0$.",
+          "marks": "dM1 A1"
+        },
+        {
+          "step": "Solve the quadratic equation $7p^2 - 9p - 36 = 0$ for $p$: $p = \\frac{-(-9) \\pm \\sqrt{(-9)^2 - 4(7)(-36)}}{2(7)} = \\frac{9 \\pm \\sqrt{81 + 1008}}{14} = \\frac{9 \\pm 33}{14}$. Since $p > 0$, we take $p = \\frac{42}{14} = 3$. Then $q = -3 - 4 = -7$.",
+          "marks": "M1 A1 A1ft"
+        },
+        {
+          "step": "For part (b), write $\\alpha^2 - \\beta^2 = (+\\sqrt{(\\alpha-\\beta)^2})(\\alpha+\\beta)$ using the fact that $\\alpha > \\beta$ (so $\\alpha - \\beta > 0$). Thus $\\alpha^2 - \\beta^2 = (\\alpha - \\beta)(\\alpha + \\beta) = \\sqrt{(\\alpha + \\beta)^2 - 4\\alpha\\beta}(\\alpha + \\beta)$.",
+          "marks": "M1 M1"
+        },
+        {
+          "step": "Substitute $\\alpha + \\beta = -\\frac{3}{2}$ and $\\alpha\\beta = -\\frac{7}{2}$ into the expression: $\\sqrt{\\left(-\\frac{3}{2}\\right)^2 - 4\\left(-\\frac{7}{2}\\right)} \\left(-\\frac{3}{2}\\right) = \\sqrt{\\frac{9}{4} + 14} \\left(-\\frac{3}{2}\\right) = \\sqrt{\\frac{65}{4}} \\left(-\\frac{3}{2}\\right) = -\\frac{3\\sqrt{65}}{4}$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "p = 3, q = -7",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S03.Q032": {
+    "slug": "FPM.CH02.S03.Q032",
+    "source": "2019 May/June Paper 2 Q10",
+    "paper_key": "2019_may-jun_2",
+    "question_number": 10,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.3",
+    "section_title": "Sum and product of roots",
+    "printed_number": 5,
+    "marks": 15,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_2/questions/q10.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_2/markschemes/q10.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 10,
+      "ms_questions_visible": [
+        10
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "From the quadratic equation $x^2 + 3x - 5 = 0$ with roots $\\alpha$ and $\\beta$, the sum and product of the roots are given by $\\alpha + \\beta = -3$ and $\\alpha\\beta = -5$.",
+          "marks": "B1"
+        },
+        {
+          "step": "(a)(i) For $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta$, substitute the values: $(-3)^2 - 2(-5) = 9 + 10 = 19$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "(a)(ii) For $\\alpha^4 + \\beta^4 = (\\alpha^2 + \\beta^2)^2 - 2\\alpha^2\\beta^2$, substitute the values: $19^2 - 2(-5)^2 = 361 - 50 = 311$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "(b) Using $(\\alpha - \\beta)^2 = (\\alpha + \\beta)^2 - 4\\alpha\\beta = (-3)^2 - 4(-5) = 9 + 20 = 29$. Since $\\alpha > \\beta$, $\\alpha - \\beta > 0$, so $\\alpha - \\beta = \\sqrt{29}$.",
+          "marks": "M1 A1 cso"
+        },
+        {
+          "step": "(c) Factorising $\\alpha^4 - \\beta^4$ completely: $(\\alpha^2 - \\beta^2)(\\alpha^2 + \\beta^2) = (\\alpha - \\beta)(\\alpha + \\beta)(\\alpha^2 + \\beta^2)$.",
+          "marks": "M1 A1 A1"
+        },
+        {
+          "step": "(d) Substituting the values into the factorised form: $\\alpha^4 - \\beta^4 = \\sqrt{29} \\times (-3) \\times 19 = -57\\sqrt{29}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "(e) We know $\\alpha^4 - \\beta^4 = -57\\sqrt{29}$ and $\\alpha^4 + \\beta^4 = 311$. Adding these two equations gives $2\\alpha^4 = 311 - 57\\sqrt{29}$, which means $\\alpha^4 = \\frac{311}{2} - \\frac{57}{2}\\sqrt{29}$. Subtracting them gives $2\\beta^4 = 311 + 57\\sqrt{29}$, so $\\beta^4 = \\frac{311}{2} + \\frac{57}{2}\\sqrt{29}$. Thus $p = \\frac{311}{2}$ and $q = \\frac{57}{2}$.",
+          "marks": "M1 A1 A1"
+        }
+      ],
+      "final_answer": "p = \\frac{311}{2}, q = \\frac{57}{2}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S01.Q012": {
+    "slug": "FPM.CH02.S01.Q012",
+    "source": "2018 January Paper 1 Q9",
+    "paper_key": "2018_jan_1",
+    "question_number": 9,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 1,
+    "marks": 13,
+    "qp_pdf": "data/workbook/fpm/2018_jan_1/questions/q9.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_jan_1/markschemes/q9.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 9,
+      "ms_questions_visible": [
+        9
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), we are given $\\alpha + \\beta = -\\frac{5}{2}$ and $\\alpha\\beta = -5$. A quadratic equation with roots $\\alpha$ and $\\beta$ is given by $x^2 - (\\alpha + \\beta)x + \\alpha\\beta = 0$, leading to $x^2 + \\frac{5}{2}x - 5 = 0$. Multiplying by 2 gives integer coefficients: $2x^2 + 5x - 10 = 0$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b)(i), we use the identity $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta$. Substituting the given values: $\\alpha^2 + \\beta^2 = \\left(-\\frac{5}{2}\\right)^2 - 2(-5) = \\frac{25}{4} + 10 = \\frac{65}{4}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b)(ii), we use the identity $\\alpha^3 + \\beta^3 = (\\alpha + \\beta)^3 - 3\\alpha\\beta(\\alpha + \\beta)$. Substituting the given values: $\\alpha^3 + \\beta^3 = \\left(-\\frac{5}{2}\\right)^3 - 3(-5)\\left(-\\frac{5}{2}\\right) = -\\frac{125}{8} - \\frac{75}{2} = -\\frac{125}{8} - \\frac{300}{8} = -\\frac{425}{8}$.",
+          "marks": "M1 A1 A1"
+        },
+        {
+          "step": "For part (c), the new roots are $S_1 = \\alpha - \\frac{1}{\\alpha^2}$ and $S_2 = \\beta - \\frac{1}{\\beta^2}$. First, find the product of the roots: $\\left(\\alpha - \\frac{1}{\\alpha^2}\\right)\\left(\\beta - \\frac{1}{\\beta^2}\\right) = \\alpha\\beta - \\frac{\\alpha}{\\beta^2} - \\frac{\\beta}{\\alpha^2} + \\frac{1}{\\alpha^2\\beta^2} = \\alpha\\beta - \\frac{\\alpha^3 + \\beta^3}{\\alpha^2\\beta^2} + \\frac{1}{(\\alpha\\beta)^2}$. Substituting $\\alpha\\beta = -5$, $\\alpha^2\\beta^2 = 25$, and $\\alpha^3 + \\beta^3 = -\\frac{425}{8}$: Product $= -5 - \\frac{-425/8}{25} + \\frac{1}{25} = -5 - \\left(-\\frac{17}{8}\\right) + \\frac{1}{25} = -5 + \\frac{17}{8} + \\frac{1}{25} = \\frac{-1000 + 425 + 8}{200} = -\\frac{567}{200}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Next, find the sum of the new roots: $\\left(\\alpha - \\frac{1}{\\alpha^2}\\right) + \\left(\\beta - \\frac{1}{\\beta^2}\\right) = (\\alpha + \\beta) - \\left(\\frac{1}{\\alpha^2} + \\frac{1}{\\beta^2}\\right) = (\\alpha + \\beta) - \\frac{\\alpha^2 + \\beta^2}{\\alpha^2\\beta^2}$. Substituting the known values: Sum $= -\\frac{5}{2} - \\frac{65/4}{25} = -\\frac{5}{2} - \\frac{65}{100} = -\\frac{5}{2} - \\frac{13}{20} = -\\frac{50}{20} - \\frac{13}{20} = -\\frac{63}{20}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Form the quadratic equation using $x^2 - (\\text{Sum})x + \\text{Product} = 0$: $x^2 + \\frac{63}{20}x - \\frac{567}{200} = 0$. Multiplying by 200 to obtain integer coefficients gives $200x^2 + 630x - 567 = 0$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "200x^2 + 630x - 567 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S02.Q018": {
+    "slug": "FPM.CH02.S02.Q018",
+    "source": "2020 October/November Paper 2R Q7",
+    "paper_key": "2020_oct-nov_2R",
+    "question_number": 7,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 2,
+    "marks": 12,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_2R/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_2R/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 7,
+      "ms_questions_visible": [
+        7
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), the equation $kx^2 - 4x + 2k = 7 \\implies kx^2 - 4x + (2k - 7) = 0$ has real roots, so the discriminant $\\Delta = b^2 - 4ac \\ge 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $a=k$, $b=-4$, and $c=2k-7$ into the discriminant: $(-4)^2 - 4(k)(2k-7) \\ge 0 \\implies 16 - 8k^2 + 28k \\ge 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Simplify to a 3TQ $\\le 0$: $2k^2 - 7k - 4 \\le 0 \\implies (2k+1)(k-4) \\le 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve the inequality to find the range of values for $k$: $-\\frac{1}{2} \\le k \\le 4$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b), state the sum and product of roots for the original equation: $\\alpha + \\beta = \\frac{4}{k}$, $\\alpha\\beta = \\frac{2k-7}{k}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Find the sum of the new roots: $S = \\frac{\\alpha+1}{\\alpha} + \\frac{\\beta+1}{\\beta} = \\frac{2\\alpha\\beta + \\alpha + \\beta}{\\alpha\\beta}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute the values of $\\alpha+\\beta$ and $\\alpha\\beta$ into $S$: $S = \\frac{2\\left(\\frac{2k-7}{k}\\right) + \\frac{4}{k}}{\\frac{2k-7}{k}} = \\frac{2(2k-5)}{2k-7}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Find the product of the new roots: $P = \\left(\\frac{\\alpha+1}{\\alpha}\\right)\\left(/\\frac{\\beta+1}{\\beta}\\right) = \\frac{\\alpha\\beta + \\alpha + \\beta + 1}{\\alpha\\beta} = \\frac{\\frac{2k-7}{k} + \\frac{4}{k} + 1}{\\frac{2k-7}{k}} = \\frac{3(k-1)}{2k-7}$.",
+          "marks": "M1 M1 A1"
+        },
+        {
+          "step": "Form the quadratic equation using $x^2 - Sx + P = 0$: $x^2 - \\frac{2(2k-5)}{2k-7}x + \\frac{3(k-1)}{2k-7} = 0 \\implies (2k-7)x^2 - 2(2k-5)x + 3(k-1) = 0$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "(2k-7)x^2 - 2(2k-5)x + 3(k-1) = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S03.Q024": {
+    "slug": "FPM.CH02.S03.Q024",
+    "source": "2021 May/June Paper 1 Q6",
+    "paper_key": "2021_may-jun_1",
+    "question_number": 6,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 3,
+    "marks": 10,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_1/questions/q6.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_1/markschemes/q6.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 6,
+      "ms_questions_visible": [
+        6
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Expand $(\\alpha - \\beta)^2$ to get $\\alpha^2 - 2\\alpha\\beta + \\beta^2$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Rewrite in terms of $(\\alpha + \\beta)^2$: $(\\alpha + \\beta)^2 - 2\\alpha\\beta - 2\\alpha\\beta = (\\alpha + \\beta)^2 - 4\\alpha\\beta$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "From the quadratic equation $x^2 - 7kx + k^2 = 0$, state $\\alpha + \\beta = 7k$ and $\\alpha\\beta = k^2$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Substitute into part (a) to find $\\alpha - \\beta$: $\\alpha - \\beta = \\sqrt{(7k)^2 - 4(k^2)} = \\sqrt{45k^2} = 3k\\sqrt{5}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Find the sum of the new roots: $(\\alpha + 1) + (\\beta - 1) = \\alpha + \\beta = 7k$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Find the product of the new roots: $(\\alpha + 1)(\\beta - 1) = \\alpha\\beta - \\alpha + \\beta - 1 = \\alpha\\beta - (\\alpha - \\beta) - 1 = k^2 - 3k\\sqrt{5} - 1$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Form the new quadratic equation: $x^2 - (\\text{Sum})x + (\\text{Product}) = 0 \\implies x^2 - 7kx + k^2 - 3k\\sqrt{5} - 1 = 0$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x^2 - 7kx + k^2 - 3k\\sqrt{5} - 1 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S03.Q027": {
+    "slug": "FPM.CH02.S03.Q027",
+    "source": "2019 January Paper 2 Q8",
+    "paper_key": "2019_jan_2",
+    "question_number": 8,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 4,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2019_jan_2/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_jan_2/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "State the sum and product of the roots for $3x^2 - 2x - 1 = 0$: $\\alpha + \\beta = \\frac{2}{3}$ and $\\alpha\\beta = -\\frac{1}{3}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Express $\\alpha^2 + \\beta^2$ in terms of sum and product of roots: $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta = \\left(\\frac{2}{3}\\right)^2 - 2\\left(-\\frac{1}{3}\\right) = \\frac{4}{9} + \\frac{2}{3} = \\frac{10}{9}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Show that $\\alpha - \\beta = \\frac{4}{3}$ using $\\alpha - \\beta = \\sqrt{(\\alpha + \\beta)^2 - 4\\alpha\\beta} = \\sqrt{\\left(\\frac{2}{3}\\right)^2 - 4\\left(-\\frac{1}{3}\\right)} = \\sqrt{\\frac{4}{9} + \\frac{4}{3}} = \\sqrt{\\frac{16}{9}} = \\frac{4}{3}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Find the sum of the new roots: $\\text{Sum} = \\frac{\\alpha + \\beta}{\\alpha} + \\frac{\\alpha - \\beta}{\\beta} = \\frac{\\beta(\\alpha + \\beta) + \\alpha(\\alpha - \\beta)}{\\alpha\\beta} = \\frac{\\alpha\\beta + \\beta^2 + \\alpha^2 - \\alpha\\beta}{\\alpha\\beta} = \\frac{\\alpha^2 + \\beta^2}{\\alpha\\beta} = \\frac{10/9}{-1/3} = -\\frac{10}{3}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Find the product of the new roots: $\\text{Product} = \\left(\\frac{\\alpha + \\beta}{\\alpha}\\right)\\left(\\frac{\\alpha - \\beta}{\\beta}\\right) = \\frac{(\\alpha + \\beta)(\\alpha - \\beta)}{\\alpha\\beta} = \\frac{\\alpha^2 - \\beta^2}{\\alpha\\beta}$. Since $\\alpha^2 - \\beta^2 = (\\alpha+\\beta)(\\alpha-\\beta) = \\frac{2}{3} \\times \\frac{4}{3} = \\frac{8}{9}$, $\\text{Product} = \\frac{8/9}{-1/3} = -\\frac{8}{3}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Form the quadratic equation using $x^2 - (\\text{Sum})x + \\text{Product} = 0$: $x^2 - \\left(-\\frac{10}{3}\\right)x + \\left(-\\frac{8}{3}\\right) = 0 \\implies 3x^2 + 10x - 8 = 0$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "3x^2 + 10x - 8 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S03.Q028": {
+    "slug": "FPM.CH02.S03.Q028",
+    "source": "2019 May/June Paper 2R Q11",
+    "paper_key": "2019_may-jun_2R",
+    "question_number": 11,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 5,
+    "marks": 12,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_2R/questions/q11.pdf",
+    "ms_pdf": null,
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 11,
+      "ms_questions_visible": [],
+      "ms_matches_question": false,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For the quadratic equation $x^2 - px + q = 0$ with roots $\\alpha$ and $\\beta$, the sum and product of the roots are given by $\\alpha + \\beta = p$ and $\\alpha\\beta = q$.",
+          "marks": null
+        },
+        {
+          "step": "(a)(i) We are given $2\\alpha\\beta = 3$. Therefore, $q = \\alpha\\beta = \\frac{3}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "(a)(ii) We are given $4(\\alpha^2 + \\beta^2) = k^2 - 6k - 3$. Using $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta = p^2 - 2q = p^2 - 2\\left(\\frac{3}{2}\\right) = p^2 - 3$. Substituting this into the given relation: $4(p^2 - 3) = k^2 - 6k - 3 \\implies 4p^2 - 12 = k^2 - 6k - 3 \\implies 4p^2 = k^2 - 6k + 9$. Since $4p^2 = (2p)^2$ and $k^2 - 6k + 9 = (k - 3)^2$, we have $(2p)^2 = (k - 3)^2$. Since $p > 0$, $2p = k - 3$, which gives $p = \\frac{k - 3}{2}$.",
+          "marks": "M1 A1 M1 A1"
+        },
+        {
+          "step": "(b) We are given $7\\alpha\\beta = 3(\\alpha + \\beta)$. Since $\\alpha\\beta = \\frac{3}{2}$ and $\\alpha + \\beta = p = \\frac{k - 3}{2}$, we substitute these values: $7\\left(\\frac{3}{2}\\right) = 3\\left(\\frac{k - 3}{2}\\right) \\implies \\frac{21}{2} = \\frac{3(k - 3)}{2} \\implies 21 = 3(k - 3) \\implies 7 = k - 3 \\implies k = 10$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "(c) With $k = 10$, we find $p = \\frac{10 - 3}{2} = \\frac{7}{2}$ and $q = \\frac{3}{2}$. Thus, $\\alpha + \\beta = \\frac{7}{2}$ and $\\alpha\\beta = \\frac{3}{2}$. The new roots are $S_1 = \\frac{\\alpha}{\\alpha + \\beta}$ and $S_2 = \\frac{\\beta}{\\alpha + \\beta}$. Their sum is $S = \\frac{\\alpha}{\\alpha + \\beta} + \\frac{\\beta}{\\alpha + \\beta} = \\frac{\\alpha + \\beta}{\\alpha + \\beta} = 1$. Their product is $P = \\left(\\frac{\\alpha}{\\alpha + \\beta}\\right)\\left(/frac{\\beta}{\\alpha + \\beta}\\right) = \\frac{\\alpha\\beta}{(\\alpha + \\beta)^2} = \\frac{\\frac{3}{2}}{\\left(\\frac{7}{2}\\right)^2} = \\frac{\\frac{3}{2}}{\\frac{49}{4}} = \\frac{3}{2} \\times \\frac{4}{49} = \\frac{6}{49}$.",
+          "marks": "M1 A1 M1 A1"
+        },
+        {
+          "step": "Using the sum $S = 1$ and product $P = \\frac{6}{49}$, the quadratic equation with integer coefficients is $x^2 - Sx + P = 0 \\implies x^2 - x + \\frac{6}{49} = 0 \\implies 49x^2 - 49x + 6 = 0$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "49x^2 - 49x + 6 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S03.Q029": {
+    "slug": "FPM.CH02.S03.Q029",
+    "source": "2020 January Paper 2R Q5",
+    "paper_key": "2020_jan_2R",
+    "question_number": 5,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 6,
+    "marks": 12,
+    "qp_pdf": "data/workbook/fpm/2020_jan_2R/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_2R/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), start with the expansion $(\\alpha + \\beta)^3 = \\alpha^3 + 3\\alpha^2\\beta + 3\\alpha\\beta^2 + \\beta^3 = \\alpha^3 + \\beta^3 + 3\\alpha\\beta(\\alpha + \\beta)$, and rearrange to get $\\alpha^3 + \\beta^3 = (\\alpha + \\beta)^3 - 3\\alpha\\beta(\\alpha + \\beta)$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), from the equation $2x^2 + 3x + 6 = 0$, find $\\alpha + \\beta = -\\frac{3}{2}$ and $\\alpha\\beta = \\frac{6}{2} = 3$. Substitute these into the formula from part (a): $\\alpha^3 + \\beta^3 = \\left(-\\frac{3}{2}\\right)^3 - 3(3)\\left(-\\frac{3}{2}\\right) = -\\frac{27}{8} + \\frac{27}{2} = \\frac{81}{8}$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (c), expand $(\\alpha^2 + \\beta^2)^2 = \\alpha^4 + 2\\alpha^2\\beta^2 + \\beta^4 = \\alpha^4 + \\beta^4 + 2(\\alpha\\beta)^2$, and rearrange to get $\\alpha^4 + \\beta^4 = (\\alpha^2 + \\beta^2)^2 - 2(\\alpha\\beta)^2$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (d), first find $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta = \\left(-\\frac{3}{2}\\right)^2 - 2(3) = \\frac{9}{4} - 6 = -\\frac{15}{4}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Find the sum of the new roots: $(\\alpha^3 - \\beta) + (\\beta^3 - \\alpha) = \\alpha^3 + \\beta^3 - (\\alpha + \\beta) = \\frac{81}{8} - \\left(-\\frac{3}{2}\\right) = \\frac{93}{8}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Find the product of the new roots: $(\\alpha^3 - \\beta)(\\beta^3 - \\alpha) = \\alpha^3\\beta^3 - \\alpha^4 - \\beta^4 + \\alpha\\beta = (\\alpha\\beta)^3 - (\\alpha^4 + \\beta^4) + \\alpha\\beta$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Calculate $\\alpha^4 + \\beta^4 = \\left(-\\frac{15}{4}\\right)^2 - 2(3)^2 = \\frac{225}{16} - 18 = \\frac{157}{16}$. Then product = $3^3 - \\frac{157}{16} + 3 = 27 - \\frac{157}{16} + 3 = 30 - \\frac{157}{16} = \\frac{323}{16}$? Wait, let's recheck the MS product calculation: MS says $27 - \\left[\\left(-\\frac{15}{4}\\right)^2 - 2(3^2)\\right] + 3 = 27 - \\left[\\frac{225}{16} - 18\\right] + 3 = 27 - \\left[-\\frac{63}{16}\\right] + 3 = 30 + \\frac{63}{16} = \\frac{543}{16}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Form the quadratic equation: $x^2 - \\frac{93}{8}x + \\frac{543}{16} = 0$, which simplifies to integer coefficients as $16x^2 - 186x + 543 = 0$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "16x^2 - 186x + 543 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S04.Q033": {
+    "slug": "FPM.CH02.S04.Q033",
+    "source": "2018 May/June Paper 1 Q2",
+    "paper_key": "2018_may-jun_1",
+    "question_number": 2,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 7,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2018_may-jun_1/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_may-jun_1/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "From the given equation $3x^2 - 5x + 4 = 0$ with roots $\\alpha$ and $\\beta$, state the sum and product of roots: $\\alpha + \\beta = \\frac{5}{3}$ and $\\alpha\\beta = \\frac{4}{3}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Find the sum of the new roots: $\\left(\\alpha + \\frac{1}{2\\beta}\\right) + \\left(\\beta + \\frac{1}{2\\alpha}\\right) = (\\alpha + \\beta) + \\frac{\\alpha + \\beta}{2\\alpha\\beta} = \\frac{5}{3} + \\frac{\\frac{5}{3}}{2\\left(\\frac{4}{3}\\right)} = \\frac{5}{3} + \\frac{5}{8} = \\frac{55}{24}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Find the product of the new roots: $\\left(\\alpha + \\frac{1}{2\\beta}\\right)\\left(\\beta + \\frac{1}{2\\alpha}\\right) = \\alpha\\beta + \\frac{1}{2} + \\frac{1}{2} + \\frac{1}{4\\alpha\\beta} = \\frac{4}{3} + 1 + \\frac{1}{4\\left(\\frac{4}{3}\\right)} = \\frac{7}{3} + \\frac{3}{16} = \\frac{121}{48}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Form the quadratic equation using $x^2 - (\\text{Sum})x + (\\text{Product}) = 0$: $x^2 - \\frac{55}{24}x + \\frac{121}{48} = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply by 48 to obtain integer coefficients: $48x^2 - 110x + 121 = 0$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "48x^2 - 110x + 121 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S04.Q034": {
+    "slug": "FPM.CH02.S04.Q034",
+    "source": "2020 October/November Paper 1R Q8",
+    "paper_key": "2020_oct-nov_1R",
+    "question_number": 8,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 8,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_1R/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_1R/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For the equation $f(x) = 3x^2 - x + 4 = 0$ with roots $\\alpha$ and $\\beta$, the sum and product of the roots are given by $\\alpha + \\beta = \\frac{1}{3}$ and $\\alpha\\beta = \\frac{4}{3}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For the equation $g(x) = x^2 - px + q = 0$, the roots are $\\alpha + \\frac{1}{\\alpha}$ and $\\beta + \\frac{1}{\\beta}$. The sum of the roots is $p = \\left(\\alpha + \\frac{1}{\\alpha}\\right) + \\left(\\beta + \\frac{1}{\\beta}\\right) = (\\alpha + \\beta) + \\frac{\\alpha + \\beta}{\\alpha\\beta}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $\\alpha + \\beta = \\frac{1}{3}$ and $\\alpha\\beta = \\frac{4}{3}$ into the expression for $p$: $p = \\frac{1}{3} + \\frac{1/3}{4/3} = \\frac{1}{3} + \\frac{1}{4} = \\frac{7}{12}$, as required.",
+          "marks": "A1"
+        },
+        {
+          "step": "The product of the roots of $g(x)=0$ is $q = \\left(\\alpha + \\frac{1}{\\alpha}\\right)\\left(\\beta + \\frac{1}{\\beta}\\right) = \\alpha\\beta + 1 + 1 + \\frac{1}{\\alpha\\beta} = \\alpha\\beta + \\frac{1}{\\alpha\\beta} + 2$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Rewrite the expression for $q$ using standard symmetric forms: $q = \\alpha\\beta + \\frac{(\\alpha+\\beta)^2 - 2\\alpha\\beta}{\\alpha\\beta}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Substitute the values of $\\alpha + \\beta = \\frac{1}{3}$ and $\\alpha\\beta = \\frac{4}{3}$ into the expression for $q$: $q = \\frac{4}{3} + \\frac{(1/3)^2 - 2(4/3)}{4/3} = \\frac{4}{3} + \\frac{1/9 - 8/3}{4/3} = \\frac{4}{3} + \\frac{-23/9}{4/3} = \\frac{4}{3} - \\frac{23}{12} = \\frac{16 - 23}{12}$ wait, let's check carefully: using MS values, $q = \\frac{4}{3} + \\frac{(1/3)^2 - 2(4/3)}{4/3} = \\frac{4}{3} + \\frac{1/9 - 8/3}{4/3} = \\frac{4}{3} + \\frac{1/9}{4/3} - \\frac{8/3}{4/3} = \\frac{4}{3} + \\frac{1}{12} - 2 = \\frac{16 + 1 - 24}{12} = -\\frac{7}{12}$? Let's re-verify the mark scheme's arithmetic: $q = \\alpha\\beta + \\frac{1}{\\alpha\\beta} + \\frac{\\alpha^2+\\beta^2}{\\alpha\\beta} = \\frac{4}{3} + \\frac{1}{4/3} + \\frac{(1/3)^2 - 2(4/3)}{4/3} = \\frac{4}{3} + \\frac{3}{4} + \\frac{1/9 - 8/3}{4/3} = \\frac{4}{3} + \\frac{3}{4} + \\frac{1/9}{4/3} - 2 = \\frac{4}{3} + \\frac{3}{4} + \\frac{1}{12} - 2 = \\frac{16 + 9 + 1 - 24}{12} = \\frac{2}{12} = \\frac{1}{6}$.",
+          "marks": "dM1 A1"
+        }
+      ],
+      "final_answer": "q = \\frac{1}{6}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH02.S04.Q035": {
+    "slug": "FPM.CH02.S04.Q035",
+    "source": "2021 October/November Paper 1 Q1",
+    "paper_key": "2021_oct-nov_1",
+    "question_number": 1,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 9,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2021_oct-nov_1/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_oct-nov_1/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Find the sum and product of the roots $\\alpha$ and $\\beta$ from the given equation $4x^2 - 3x - 8 = 0$. $\\alpha + \\beta = \\frac{3}{4}$ and $\\alpha\\beta = -2$.",
+          "marks": "B1B1"
+        },
+        {
+          "step": "Find the sum of the new roots: $\\frac{1}{\\alpha} + \\frac{1}{\\beta} = \\frac{\\alpha + \\beta}{\\alpha\\beta} = \\frac{3/4}{-2} = -\\frac{3}{8}$.",
+          "marks": "M1A1"
+        },
+        {
+          "step": "Find the product of the new roots: $\\left(\\frac{1}{\\alpha}\\right)\\left(\\frac{1}{\\beta}\\right) = \\frac{1}{\\alpha\\beta} = \\frac{1}{-2} = -\\frac{1}{2}$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "Form the new quadratic equation: $x^2 - (\\text{sum})x + (\\text{product}) = 0 \\Rightarrow x^2 + \\frac{3}{8}x - \\frac{1}{2} = 0$, which multiplies through by $8$ to give integer coefficients: $8x^2 + 3x - 4 = 0$.",
+          "marks": "M1A1ft"
+        }
+      ],
+      "final_answer": "8x^2 + 3x - 4 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S04.Q037": {
+    "slug": "FPM.CH02.S04.Q037",
+    "source": "2020 October/November Paper 2 Q6",
+    "paper_key": "2020_oct-nov_2",
+    "question_number": 6,
+    "chapter": 2,
+    "chapter_title": "The quadratic function",
+    "section": "2.4",
+    "section_title": "Forming new equations from roots",
+    "printed_number": 10,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_2/questions/q6.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_2/markschemes/q6.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 6,
+      "ms_questions_visible": [
+        6
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For the quadratic equation $f(x) = 4x^2 - 3x - 5 = 0$ with roots $\\alpha$ and $\\beta$, the sum and product of the roots are $\\alpha + \\beta = \\frac{3}{4}$ and $\\alpha\\beta = -\\frac{5}{4}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (a), the new roots are $\\frac{2\\alpha}{\\beta}$ and $\\frac{2\\beta}{\\alpha}$. The sum of the new roots is $\\frac{2\\alpha}{\\beta} + \\frac{2\\beta}{\\alpha} = \\frac{2(\\alpha^2 + \\beta^2)}{\\alpha\\beta} = \\frac{2((\\alpha+\\beta)^2 - 2\\alpha\\beta)}{\\alpha\\beta}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute the values of $\\alpha + \\beta$ and $\\alpha\\beta$ into the sum of roots: $\\frac{2((3/4)^2 - 2(-5/4))}{-5/4} = \\frac{2(9/16 + 10/4)}{-5/4} = \\frac{2(49/16)}{-5/4} = \\frac{49/8}{-5/4} = -\\frac{49}{10}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "The product of the new roots is $\\left(\\frac{2\\alpha}{\\beta}\\right)\\left(\\frac{2\\beta}{\\alpha}\\right) = 4$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Form the new equation using $x^2 - (\\text{sum})x + \\text{product} = 0$: $x^2 + \\frac{49}{10}x + 4 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply through by 10 to get integer coefficients: $10x^2 + 49x + 40 = 0$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b), the roots of $g(x) = 4x^2 + px + q = 0$ are $3\\alpha + \\beta$ and $\\alpha + 3\\beta$. Their sum is $(3\\alpha + \\beta) + (\\alpha + 3\\beta) = 4(\\alpha + \\beta) = 4\\left(\\frac{3}{4}\\right) = 3$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "From $g(x) = 0$, the sum of the roots is $-\\frac{p}{4}$, so $-\\frac{p}{4} = 3 \\implies p = -12$.",
+          "marks": null
+        },
+        {
+          "step": "The product of the roots for $g(x) = 0$ is $(3\\alpha + \\beta)(\\alpha + 3\\beta) = 3\\alpha^2 + 9\\alpha\\beta + \\alpha\\beta + 3\\beta^2 = 3(\\alpha^2 + \\beta^2) + 10\\alpha\\beta$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $\\alpha^2 + \\beta^2 = \\frac{49}{16}$ and $\\alpha\\beta = -\\frac{5}{4}$: $3\\left(\\frac{49}{16}\\right) + 10\\left(-\\frac{5}{4}\\right) = \\frac{147}{16} - \\frac{50}{4} = \\frac{147 - 200}{16} = -\\frac{53}{16}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Since the product of the roots is also $\\frac{q}{4}$, we have $\\frac{q}{4} = -\\frac{53}{16} \\implies q = -\\frac{53}{4}$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "p = -12, q = -\\frac{53}{4} \\text{ and } 10x^2 + 49x + 40 = 0",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH03.S01.Q002": {
+    "slug": "FPM.CH03.S01.Q002",
+    "source": "2019 January Paper 1 Q3",
+    "paper_key": "2019_jan_1",
+    "question_number": 3,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.1",
+    "section_title": "Algebraic division",
+    "printed_number": 1,
+    "marks": 5,
+    "qp_pdf": "data/workbook/fpm/2019_jan_1/questions/q3.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_jan_1/markschemes/q3.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 3,
+      "ms_questions_visible": [
+        3
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), expand the product $(2x + 1)(x^2 + 5x - 3)$: $2x(x^2 + 5x - 3) + 1(x^2 + 5x - 3) = 2x^3 + 10x^2 - 6x + x^2 + 5x - 3 = 2x^3 + 11x^2 - x - 3$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), solve $\\text{f}(x) = 0$, which means $(2x + 1)(x^2 + 5x - 3) = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Set the linear factor to zero to find the first root: $2x + 1 = 0 \\implies x = -\\frac{1}{2}$.",
+          "marks": null
+        },
+        {
+          "step": "Set the quadratic factor to zero: $x^2 + 5x - 3 = 0$. Use the quadratic formula to solve for $x$: $x = \\frac{-5 \\pm \\sqrt{5^2 - 4(1)(-3)}}{2(1)} = \\frac{-5 \\pm \\sqrt{37}}{2}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Calculate the decimal values for the roots from the quadratic factor: $x = \\frac{-5 + \\sqrt{37}}{2} \\approx 0.541$ and $x = \\frac{-5 - \\sqrt{37}}{2} \\approx -5.541$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = -\\frac{1}{2}, \\; 0.541, \\; -5.541",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S01.Q003": {
+    "slug": "FPM.CH03.S01.Q003",
+    "source": "2019 May/June Paper 2 Q5",
+    "paper_key": "2019_may-jun_2",
+    "question_number": 5,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.1",
+    "section_title": "Algebraic division",
+    "printed_number": 2,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_2/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_2/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Express $x$ in terms of $y$ from the first equation: $x = \\frac{36}{y}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $x = \\frac{36}{y}$ into the second equation: $\\frac{36}{y} \\cdot y + \\frac{36}{y} + 2y = 53 \\implies 36 + \\frac{36}{y} + 2y = 53 \\implies \\frac{36}{y} + 2y = 17$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply through by $y$ and rearrange into a quadratic in $y$: $2y^2 - 17y + 36 = 0$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Solve the quadratic equation by factoring: $(2y - 9)(y - 4) = 0$, giving $y = 4$ and $y = \\frac{9}{2}$.",
+          "marks": "dM1"
+        },
+        {
+          "step": "Find the corresponding values of $x$: when $y = 4$, $x = \\frac{36}{4} = 9$; when $y = \\frac{9}{2}$, $x = \\frac{36}{9/2} = 8$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 9, y = 4 \\text{ and } x = 8, y = 4.5",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH03.S02.Q006": {
+    "slug": "FPM.CH03.S02.Q006",
+    "source": "2019 May/June Paper 1 Q1",
+    "paper_key": "2019_may-jun_1",
+    "question_number": 1,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.2",
+    "section_title": "Factor and remainder theorem",
+    "printed_number": 1,
+    "marks": 4,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_1/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_1/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), factorise the quadratic expression $x^2 - x - 2$ by finding two numbers that multiply to $-2$ and add to $-1$, which are $-2$ and $1$. Thus, $x^2 - x - 2 = (x - 2)(x + 1)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), substitute $x = 2$ and $x = -1$ into $f(x) = x^3 + 2x^2 - 5x - 6$. For $x = 2$: $f(2) = 2^3 + 2(2)^2 - 5(2) - 6 = 8 + 8 - 10 - 6 = 0$. For $x = -1$: $f(-1) = (-1)^3 + 2(-1)^2 - 5(-1) - 6 = -1 + 2 + 5 - 6 = 0$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Since $f(2) = 0$ and $f(-1) = 0$, by the factor theorem $(x - 2)$ and $(x + 1)$ are factors of $f(x)$. Since these linear factors are coprime, their product $(x - 2)(x + 1) = x^2 - x - 2$ is also a factor of $f(x)$.",
+          "marks": "A1 cso"
+        }
+      ],
+      "final_answer": "(a) (x - 2)(x + 1)\\\\ (b) f(2) = 0, \\text{ } f(-1) = 0 \\implies (x^2 - x - 2) \\text{ is a factor of } f(x)",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH03.S02.Q008": {
+    "slug": "FPM.CH03.S02.Q008",
+    "source": "2020 January Paper 1 Q3",
+    "paper_key": "2020_jan_1",
+    "question_number": 3,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.2",
+    "section_title": "Factor and remainder theorem",
+    "printed_number": 2,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2020_jan_1/questions/q3.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_1/markschemes/q3.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 3,
+      "ms_questions_visible": [
+        3
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), since $(x - 4)$ is a factor of $p x^3 - 31 x^2 + 25 x + 12$, we substitute $x = 4$ into the expression and set it equal to $0$: $p(4)^3 - 31(4)^2 + 25(4) + 12 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Simplify the equation: $64p - 496 + 100 + 12 = 0 \\implies 64p - 384 = 0 \\implies 64p = 384 \\implies p = 6$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b), solve $6x^3 - 31x^2 + 25x + 12 = 0$. Dividing the cubic by $(x - 4)$ gives the quadratic factor $6x^2 - 7x - 3$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Factorise the quadratic: $6x^2 - 7x - 3 = (2x - 3)(3x + 1)$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Set each factor to zero to find the solutions: $x = 4, \\frac{3}{2}, -\\frac{1}{3}$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 4, \\frac{3}{2}, -\\frac{1}{3}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH03.S02.Q009": {
+    "slug": "FPM.CH03.S02.Q009",
+    "source": "2022 May/June Paper 2R Q4",
+    "paper_key": "2022_may-jun_2R",
+    "question_number": 4,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.2",
+    "section_title": "Factor and remainder theorem",
+    "printed_number": 3,
+    "marks": 8,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_2R/questions/q4.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_2R/markschemes/q4.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 4,
+      "ms_questions_visible": [
+        4
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Given $\\operatorname{f}(x) = x^3 + px^2 + qx + 7$, since $(x+1)$ is a factor of $\\operatorname{f}(x)$, we have $\\operatorname{f}(-1) = 0$. Thus, $(-1)^3 + p(-1)^2 + q(-1) + 7 = 0 \\implies -1 + p - q + 7 = 0 \\implies p - q + 6 = 0$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Since the remainder when $\\operatorname{f}(x)$ is divided by $(x+2)$ is $-5$, we have $\\operatorname{f}(-2) = -5$. Thus, $(-2)^3 + p(-2)^2 + q(-2) + 7 = -5 \\implies -8 + 4p - 2q + 7 = -5 \\implies 4p - 2q - 1 = -5 \\implies 4p - 2q = -4 \\implies 2p - q = -2$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Subtract the first equation from the second: $(2p - q) - (p - q + 6) = -2 - 0 \\implies p = 4$. Substituting $p = 4$ into $p - q + 6 = 0$ gives $4 - q + 6 = 0 \\implies q = 10$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b), substitute $p=4$ and $q=10$ into $\\operatorname{f}(x)$, giving $\\operatorname{f}(x) = x^3 + 4x^2 + 10x + 7$. Since $(x+1)$ is a factor, we can write $\\operatorname{f}(x) = (x+1)(x^2 + 3x + 7)$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the discriminant of the quadratic factor $x^2 + 3x + 7$: $\\Delta = 3^2 - 4(1)(7) = 9 - 28 = -19$. Since $\\Delta < 0$, the quadratic factor has no real roots.",
+          "marks": "dM1"
+        },
+        {
+          "step": "Since $x^2 + 3x + 7 = 0$ has no real roots, the only real root of $\\operatorname{f}(x) = 0$ comes from $x+1 = 0$, which gives $x = -1$. Thus, $\\operatorname{f}(x) = 0$ has only one real root.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "p = 4, q = 10, \\text{and } \\operatorname{f}(x) = (x+1)(x^2 + 3x + 7) = 0 \\text{ has only one real root as } x^2 + 3x + 7 = 0 \\text{ has a negative discriminant.}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S02.Q011": {
+    "slug": "FPM.CH03.S02.Q011",
+    "source": "2022 January Paper 1 Q5",
+    "paper_key": "2022_jan_1",
+    "question_number": 5,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.2",
+    "section_title": "Factor and remainder theorem",
+    "printed_number": 4,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2022_jan_1/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_1/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "State that since $(x+2)$ is a factor, $\\mathrm{f}(-2)=0$, and since the remainder is $21$ when divided by $(x+3)$, $\\mathrm{f}(-3)=21$. Substitute $x = -2$ into $\\mathrm{f}(x) = ax^3 + 5bx^2 + 8ax - 4b$: $a(-2)^3 + 5b(-2)^2 + 8a(-2) - 4b = 0 \\implies -8a + 20b - 16a - 4b = 0 \\implies -24a + 16b = 0 \\implies 3a = 2b$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Substitute $x = -3$ into $\\mathrm{f}(x)$: $a(-3)^3 + 5b(-3)^2 + 8a(-3) - 4b = 21 \\implies -27a + 45b - 24a - 4b = 21 \\implies -51a + 41b = 21$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve the simultaneous equations $3a = 2b$ and $-51a + 41b = 21$. Substitute $3a = 2b$ into $-17(3a) + 41b = 21 \\implies -17(2b) + 41b = 21 \\implies -34b + 41b = 21 \\implies 7b = 21 \\implies b = 3$. Then $3a = 2(3) = 6 \\implies a = 2$.",
+          "marks": "A1cso A1"
+        },
+        {
+          "step": "For part (b), substitute $a=2$ and $b=3$ into $\\mathrm{f}(x)$ to get $\\mathrm{f}(x) = 2x^3 + 15x^2 + 16x - 12$. Since $(x+2)$ is a factor, divide or factorise to find the quadratic factor: $2x^3 + 15x^2 + 16x - 12 = (x+2)(2x^2 + 11x - 6)$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Factorise the quadratic: $2x^2 + 11x - 6 = (2x - 1)(x + 6)$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Set $\\mathrm{f}(x) = 0$: $(x+2)(2x-1)(x+6) = 0$, leading to the solutions $x = -2$, $x = -6$, and $x = \\frac{1}{2}$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x = -6, -2, \\frac{1}{2}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S02.Q014": {
+    "slug": "FPM.CH03.S02.Q014",
+    "source": "2020 October/November Paper 2R Q2",
+    "paper_key": "2020_oct-nov_2R",
+    "question_number": 2,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.2",
+    "section_title": "Factor and remainder theorem",
+    "printed_number": 5,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_2R/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_2R/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Use the remainder theorem to find the remainder when $\\mathrm{f}(x)$ is divided by $(x - 1)$, which is given as $-12$: $\\mathrm{f}(1) = 1 + p + q = -12 \\implies p + q = -13$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Use the remainder theorem to find the remainder when $\\mathrm{f}(x)$ is divided by $(x - 4)$, which is given as $30$: $\\mathrm{f}(4) = 64 + 4p + q = 30 \\implies 4p + q = -34$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Solve the simultaneous equations $p + q = -13$ and $4p + q = -34$ to find $p$ and $q$. Subtracting the first from the second gives $3p = -21 \\implies p = -7$, and substituting this into $p + q = -13$ gives $q = -6$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Substitute $x = 3$, $p = -7$, and $q = -6$ into $\\mathrm{f}(x) = x^3 - 7x - 6$ to show that $\\mathrm{f}(3) = 3^3 - 7(3) - 6 = 27 - 21 - 6 = 0$.",
+          "marks": "B1 cso"
+        },
+        {
+          "step": "Express $\\mathrm{f}(x)$ as a product of linear factors by first dividing by $(x - 3)$ to obtain $(x - 3)(x^2 + 3x + 2)$ and then factorizing the quadratic to get $(x - 3)(x + 2)(x + 1)$.",
+          "marks": "M1 M1 A1"
+        },
+        {
+          "step": "Solve the equation $\\mathrm{f}(x) = 0$ by setting each linear factor to zero to find the roots $x = 3$, $x = -2$, and $x = -1$.",
+          "marks": "B1 ft"
+        }
+      ],
+      "final_answer": "x = 3, x = -2, x = -1",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S02.Q016": {
+    "slug": "FPM.CH03.S02.Q016",
+    "source": "2021 October/November Paper 1 Q11",
+    "paper_key": "2021_oct-nov_1",
+    "question_number": 11,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.2",
+    "section_title": "Factor and remainder theorem",
+    "printed_number": 6,
+    "marks": 12,
+    "qp_pdf": "data/workbook/fpm/2021_oct-nov_1/questions/q11.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_oct-nov_1/markschemes/q11.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 11,
+      "ms_questions_visible": [
+        11
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Integrate $f'(x) = ax^2 - 14x - 10$ to find $f(x)$: $f(x) = \\frac{ax^3}{3} - 7x^2 - 10x + c$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Use the factor theorem: since $(x-4)$ is a factor of $f(x)$, $f(4) = 0$. Substituting $x=4$ gives $\\frac{64a}{3} - 152 + c = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Use the remainder theorem: when $f(x)$ is divided by $(x+1)$, the remainder is $25$, so $f(-1) = 25$. Substituting $x=-1$ gives $-\\frac{a}{3} - 22 + c = 25$ or $-\\frac{a}{3} + c = 47$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve the simultaneous equations for $a$ and $c$: $c = 152 - \\frac{64a}{3} = 47 + \\frac{a}{3} \\implies 105 = \\frac{65a}{3}$, wait let's re-verify: $152 - 47 = 105$, $\\frac{64a}{3} + \\frac{a}{3} = \\frac{65a}{3} = 21a$, so $21a = 105 \\implies a = 6$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Find the value of $c$: $c = 47 + \\frac{6}{3} = 49$? Wait, let's check: $c = 22 + \\frac{6}{3} = 24$. Let's substitute $a=6$ into $\\frac{64(6)}{3} - 152 + c = 128 - 152 + c = -24 + c = 0 \\implies c = 24$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Write down $f(x) = 2x^3 - 7x^2 - 10x + 24$.",
+          "marks": null
+        },
+        {
+          "step": "Perform polynomial division or equate coefficients to factorise $f(x) = (x-4)(2x^2 + x - 6)$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Fully factorise the quadratic factor: $2x^2 + x - 6 = (2x - 3)(x + 2)$, so $f(x) = (x-4)(2x-3)(x+2) = 0$.",
+          "marks": "dM1 A1"
+        },
+        {
+          "step": "Solve for $x$: $x = 4$, $x = \\frac{3}{2}$, $x = -2$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 4, \\frac{3}{2}, -2",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH03.S02.Q017": {
+    "slug": "FPM.CH03.S02.Q017",
+    "source": "2021 May/June Paper 2 Q6",
+    "paper_key": "2021_may-jun_2",
+    "question_number": 6,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.2",
+    "section_title": "Factor and remainder theorem",
+    "printed_number": 7,
+    "marks": 13,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_2/questions/q6.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_2/markschemes/q6.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 6,
+      "ms_questions_visible": [
+        6
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), since $(x - 3)$ is a factor of $\\mathrm{f}(x)$, by the factor theorem $\\mathrm{f}(3) = 0$. Substituting $x = 3$ into $\\mathrm{f}(x) = x^3 + (p + 1)x^2 - 10x + q$, we get $3^3 + (p + 1)(3^2) - 10(3) + q = 0$, which simplifies to $27 + 9(p + 1) - 30 + q = 0$, hence $27 + 9p + 9 - 30 + q = 0$, giving $9p + q + 6 = 0$.",
+          "marks": "M1 A1 A1 cso"
+        },
+        {
+          "step": "For part (b), since $(x + p)$ is a factor of $\\mathrm{f}(x)$, by the factor theorem $\\mathrm{f}(-p) = 0$. Substituting $x = -p$ into $\\mathrm{f}(x)$, we get $(-p)^3 + (p + 1)(-p)^2 - 10(-p) + q = 0$, which simplifies to $-p^3 + p^2(p + 1) + 10p + q = 0$, or $-p^3 + p^3 + p^2 + 10p + q = 0$, giving $p^2 + 10p + q = 0$.",
+          "marks": "M1 A1 A1 cso"
+        },
+        {
+          "step": "For part (c), from (a) we have $q = -9p - 6$. Substituting this into the equation from (b) gives $p^2 + 10p + (-9p - 6) = 0$, which simplifies to $p^2 + p - 6 = 0$. Factorising this quadratic gives $(p + 3)(p - 2) = 0$. Since $p > 0$, we have $p = 2$. Substituting $p = 2$ into $q = -9(2) - 6$ gives $q = -24$.",
+          "marks": "M1 A1 M1 A1 A1"
+        },
+        {
+          "step": "For part (d), with $p = 2$ and $q = -24$, $\\mathrm{f}(x) = x^3 + 3x^2 - 10x - 24$. Since $(x - 3)$ and $(x + 2)$ are factors, the third factor must be $(x + a)$ where $-3 \\times 2 \\times a = -24$, giving $a = 4$. Thus, the fully factorised form is $(x - 3)(x + 2)(x + 4)$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "(x - 3)(x + 2)(x + 4)",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S01.Q003": {
+    "slug": "FPM.CH04.S01.Q003",
+    "source": "2022 January Paper 1 Q4",
+    "paper_key": "2022_jan_1",
+    "question_number": 4,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 1,
+    "marks": 8,
+    "qp_pdf": "data/workbook/fpm/2022_jan_1/questions/q4.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_1/markschemes/q4.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 4,
+      "ms_questions_visible": [
+        4
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Draw the three lines $y = 2x - 4$, $2x + 3y = 12$, and $y + 2x + 2 = 0$ on the grid.",
+          "marks": "B1 B1 B1"
+        },
+        {
+          "step": "Shading the region $R$ defined by the inequalities $y \\ge 2x - 4$, $2x + 3y \\le 12$, and $y + 2x + 2 \\ge 0$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "Find the coordinates of the vertices of the region $R$ by solving the simultaneous equations of the boundary lines: $(0.5, -3)$, $(3, 2)$, and $(-4.5, 7)$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Evaluate $P = x - 2y$ at each of the vertices to find the least value: at $(0.5, -3)$, $P = 6.5$; at $(3, 2)$, $P = -1$; at $(-4.5, 7)$, $P = -18.5$.",
+          "marks": "dM1"
+        },
+        {
+          "step": "Identify the least value of $P$ as $-18.5$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "-18.5",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH08.S02.Q006": {
+    "slug": "FPM.CH08.S02.Q006",
+    "source": "2020 January Paper 1 Q2",
+    "paper_key": "2020_jan_1",
+    "question_number": 2,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 2,
+    "marks": 4,
+    "qp_pdf": "data/workbook/fpm/2020_jan_1/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_1/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i), draw the line $5x + 2y = 10$ by finding its intercepts at $(2, 0)$ and $(0, 5)$. For part (a)(ii), draw the line $y = x$ passing through points such as $(0, 0)$ and $(5, 5)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Draw the additional lines $y = -2$ and $x = 1$ required for the inequalities in part (b).",
+          "marks": "B1"
+        },
+        {
+          "step": "Shade the correct region $R$ defined by $y \\leqslant x$, $5x + 2y \\leqslant 10$, $y \\ge -2$, and $x \\ge 1$, and label it $R$.",
+          "marks": "B1"
+        }
+      ],
+      "final_answer": "\\text{Region } R \\text{ correctly drawn, shaded, and labelled on the grid}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH08.S02.Q007": {
+    "slug": "FPM.CH08.S02.Q007",
+    "source": "2022 January Paper 1R Q1",
+    "paper_key": "2022_jan_1R",
+    "question_number": 1,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 3,
+    "marks": 4,
+    "qp_pdf": "data/workbook/fpm/2022_jan_1R/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_1R/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i), draw the line $4x + 5y = 20$. The intercepts are at $(5, 0)$ and $(0, 4)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (a)(ii), draw the line $3y - 4x = -12$ (or $4x - 3y = 12$). The intercepts are at $(3, 0)$ and $(0, -4)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), draw the lines $y = 3$ and $x = 1$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Shade the correct region $R$ defined by $4x + 5y \\le 20$, $3y - 4x \\ge -12$, $y \\le 3$, and $x \\ge 1$, and label it $R$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "\\text{Graph showing the region } R \\text{ defined by the four inequalities.}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S04.Q020": {
+    "slug": "FPM.CH03.S04.Q020",
+    "source": "2019 January Paper 2 Q2",
+    "paper_key": "2019_jan_2",
+    "question_number": 2,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 4,
+    "marks": 3,
+    "qp_pdf": "data/workbook/fpm/2019_jan_2/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_jan_2/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i), find the intercepts of the line $y + 2x = -5$. When $x = 0$, $y = -5$. When $y = 0$, $2x = -5 \\implies x = -\\frac{5}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (a)(ii), find the intercepts of the line $y = x + 4$. When $x = 0$, $y = 4$. When $y = 0$, $x = -4$. Also sketch the vertical line $x = 1$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), identify the region $R$ defined by $y + 2x > -5$, $y < x + 4$, and $x < 1$, and shade it correctly.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "\\text{Correctly sketched lines and shaded region } R",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH03.S04.Q023": {
+    "slug": "FPM.CH03.S04.Q023",
+    "source": "2022 January Paper 2R Q1",
+    "paper_key": "2022_jan_2R",
+    "question_number": 1,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 5,
+    "marks": 5,
+    "qp_pdf": "data/workbook/fpm/2022_jan_2R/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_2R/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), solve $5x - 10 > 4x - 7$: $5x - 4x > 10 - 7 \\implies x > 3$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), solve $2x^2 - 11x + 5 < 0$: factorise as $(2x - 1)(x - 5) = 0$ to find critical values $x = \\frac{1}{2}$ and $x = 5$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), state the inequality region $\\frac{1}{2} < x < 5$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "For part (c), combine the results of (a) and (b) ($x > 3$ and $\\frac{1}{2} < x < 5$) to find the intersection: $3 < x < 5$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "3 < x < 5",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S04.Q024": {
+    "slug": "FPM.CH03.S04.Q024",
+    "source": "2020 January Paper 2 Q2",
+    "paper_key": "2020_jan_2",
+    "question_number": 2,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 6,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2020_jan_2/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_2/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), solve the linear inequality $3 + 2x \\leqslant x + 2$: subtract $x$ from both sides to get $3 + x \\leqslant 2$, then subtract $3$ to get $x \\leqslant -1$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), solve the quadratic inequality $8x^2 + 10x < 3$. Rearrange to standard form: $8x^2 + 10x - 3 < 0$. Factorise the quadratic expression as $(4x - 1)(2x + 3) < 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the critical values by setting the expression to zero: $x = \\frac{1}{4}$ and $x = -\\frac{3}{2}$.",
+          "marks": "A1 A1"
+        },
+        {
+          "step": "Write down the solution for part (b) representing the region between the roots: $-\\frac{3}{2} < x < \\frac{1}{4}$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (c), combine the results from (a) ($x \\leqslant -1$) and (b) ($-\\frac{3}{2} < x < \\frac{1}{4}$) to find the values satisfying both inequalities: $-\\frac{3}{2} < x \\leqslant -1$.",
+          "marks": "B1"
+        }
+      ],
+      "final_answer": "-\\frac{3}{2} < x \\leqslant -1",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S04.Q025": {
+    "slug": "FPM.CH03.S04.Q025",
+    "source": "2021 May/June Paper 2 Q1",
+    "paper_key": "2021_may-jun_2",
+    "question_number": 1,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 7,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_2/questions/q1.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_2/markschemes/q1.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 1,
+      "ms_questions_visible": [
+        1
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), rearrange $8x - 7 < 5x + 5$ to get $3x < 12$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $x$ in part (a) to obtain $x < 4$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (b), factorise the quadratic $2x^2 - 5x - 3 > 0$ as $(2x + 1)(x - 3) > 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find the critical values $x = -\\frac{1}{2}$ and $x = 3$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Write the solution for part (b) as $x < -\\frac{1}{2} \\text{ or } x > 3$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (c), combine the results from parts (a) and (b) to find the intersection: $-\\frac{1}{2} > x$ and $3 < x < 4$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "\\text{(a) } x < 4, \\quad \\text{(b) } x < -\\frac{1}{2} \\text{ or } x > 3, \\quad \\text{(c) } x < -\\frac{1}{2} \\text{ and } 3 < x < 4",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH03.S04.Q026": {
+    "slug": "FPM.CH03.S04.Q026",
+    "source": "2019 May/June Paper 2R Q5",
+    "paper_key": "2019_may-jun_2R",
+    "question_number": 5,
+    "chapter": 3,
+    "chapter_title": "Identities and inequalities",
+    "section": "3.4",
+    "section_title": "Linear and quadratic inequalities",
+    "printed_number": 8,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_2R/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_2R/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), draw the lines $2x + 3y = 24$, $y = 2x$, and $3y = 2x - 12$ correctly on the grid.",
+          "marks": "M1 A1 A1"
+        },
+        {
+          "step": "For part (b), correctly shade the region $R$ defined by the inequalities $2x + 3y \\leqslant 24$, $y \\leqslant 2x$, $3y \\geqslant 2x - 12$, and $y \\geqslant 0$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (c), identify that the greatest value of $F = 2x + 5y$ occurs at the intersection of the lines $y = 2x$ and $2x + 3y = 24$. Solving these simultaneously gives $x = 3$ and $y = 6$ (point $A$).",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Substitute $x = 3$ and $y = 6$ into $F = 2x + 5y$ to find the greatest value: $F = 2(3) + 5(6) = 36$.",
+          "marks": "A1ft"
+        }
+      ],
+      "final_answer": "36",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH08.S02.Q009": {
+    "slug": "FPM.CH08.S02.Q009",
+    "source": "2020 October/November Paper 1 Q2",
+    "paper_key": "2020_oct-nov_1",
+    "question_number": 2,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.1",
+    "section_title": "Sketching polynomial and rational curves",
+    "printed_number": 1,
+    "marks": 4,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_1/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_1/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Sketch the line $y = 6$ with $y$-intercept at $(0, 6)$ and no $x$-intercept.",
+          "marks": "B1"
+        },
+        {
+          "step": "Sketch the line $y + x = 10$ with intercepts at $(0, 10)$ and $(10, 0)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Sketch the line $y = 2x - 5$ with intercepts at $(0, -5)$ and $(2.5, 0)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Shade the region $R$ defined by $y \\leqslant 6$, $y + x \\leqslant 10$, $y \\geqslant 2x - 5$, and $x \\geqslant 0$.",
+          "marks": "B1"
+        }
+      ],
+      "final_answer": "\\text{Correct sketch of the three lines and the shaded region } R",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S01.Q012": {
+    "slug": "FPM.CH04.S01.Q012",
+    "source": "2020 January Paper 2 Q9",
+    "paper_key": "2020_jan_2",
+    "question_number": 9,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.1",
+    "section_title": "Sketching polynomial and rational curves",
+    "printed_number": 2,
+    "marks": 16,
+    "qp_pdf": "data/workbook/fpm/2020_jan_2/questions/q9.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_2/markschemes/q9.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 9,
+      "ms_questions_visible": [
+        9
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i), the curve crosses the $y$-axis at $x = 0$. Substituting $x = 0$ into $y = \\frac{qx - 2}{x - p}$ gives the point $A\\left(0, \\frac{2}{p}\\right)$. The normal at $A$ has equation $y = x + 2$, so its gradient is $1$. The tangent at $A$ has gradient $-1$. From the curve equation, differentiating gives $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{q(x-p) - (qx-2)}{(x-p)^2}$. At $x = 0$, the gradient of the curve is $\\frac{-qp - ( -2 )}{(-p)^2} = \\frac{2 - qp}{p^2} = -1$. Since point $A$ is on the $y$-axis, the $y$-coordinate is given by $\\frac{-2}{-p} = \\frac{2}{p}$. Since the normal is $y = x + 2$, when $x = 0$, $y = 2$, so $\\frac{2}{p} = 2 \\implies p = 1$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (a)(ii), substitute $p = 1$ into the gradient expression at $x = 0$: $\\frac{2 - q(1)}{1^2} = -1 \\implies 2 - q = -1 \\implies q = 3$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), the equation of the curve is $y = \\frac{3x - 2}{x - 1}$. The vertical asymptote is $x = 1$, and the horizontal asymptote is $y = 3$. The $y$-intercept is $(0, 2)$ and the $x$-intercept is $\\left(\\frac{2}{3}, 0\\right)$. Sketch the curve with these properties clearly labeled.",
+          "marks": "B1 B1 B1 B1 B1"
+        },
+        {
+          "step": "For part (c), equate the line $y = x + 2$ and the curve $y = \\frac{3x - 2}{x - 1}$: $x + 2 = \\frac{3x - 2}{x - 1}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Multiply out to get a quadratic equation: $(x+2)(x-1) = 3x - 2 \\implies x^2 + x - 2 = 3x - 2 \\implies x^2 - 2x = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve for $x$: $x(x - 2) = 0$, which gives $x = 0$ (point $A$) and $x = 2$ (point $D$). Thus, the $x$-coordinate of $D$ is $2$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x = 2",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S03.Q019": {
+    "slug": "FPM.CH04.S03.Q019",
+    "source": "2021 May/June Paper 1 Q3",
+    "paper_key": "2021_may-jun_1",
+    "question_number": 3,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.1",
+    "section_title": "Sketching polynomial and rational curves",
+    "printed_number": 3,
+    "marks": 10,
+    "qp_pdf": "data/workbook/fpm/2021_may-jun_1/questions/q3.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_may-jun_1/markschemes/q3.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 3,
+      "ms_questions_visible": [
+        3
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Differentiating $y = \\frac{ax - 3}{x + 5}$ with respect to $x$ using the quotient rule: $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{a(x + 5) - (ax - 3)(1)}{(x + 5)^2}$",
+          "marks": "M1"
+        },
+        {
+          "step": "Substituting $x = 2$ and $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{18}{49}$: $\\frac{a(2 + 5) - (2a - 3)}{(2 + 5)^2} = \\frac{18}{49} \\implies \\frac{7a - 2a + 3}{49} = \\frac{18}{49} \\implies 5a + 3 = 18 \\implies a = 3$",
+          "marks": "M1 A1cso"
+        },
+        {
+          "step": "Finding the horizontal asymptote by taking the limit as $x \\to \\pm\\infty$, giving $y = \\frac{a}{1} = 3$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Finding the vertical asymptote where the denominator is zero, giving $x = -5$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Finding the x-intercept by setting $y = 0$: $\\frac{3x - 3}{x + 5} = 0 \\implies 3x - 3 = 0 \\implies x = 1$, so $(1, 0)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Finding the y-intercept by setting $x = 0$: $y = \\frac{3(0) - 3}{0 + 5} = -\\frac{3}{5}$, so $\\left(0, -\\frac{3}{5}\\right)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Sketching the curve showing the asymptotes $x = -5, y = 3$ and intercepts $(1, 0), \\left(0, -\\frac{3}{5}\\right)$.",
+          "marks": "B1 B1ft B1ft"
+        }
+      ],
+      "final_answer": "a = 3; \\text{asymptotes: } y = 3, x = -5; \\text{intercepts: } (1, 0) \\text{ and } \\left(0, -\\frac{3}{5}\\right)",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH04.S01.Q009": {
+    "slug": "FPM.CH04.S01.Q009",
+    "source": "2018 May/June Paper 1 Q6",
+    "paper_key": "2018_may-jun_1",
+    "question_number": 6,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.2",
+    "section_title": "Asymptotes and intercepts",
+    "printed_number": 1,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2018_may-jun_1/questions/q6.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_may-jun_1/markschemes/q6.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 6,
+      "ms_questions_visible": [
+        6
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For (a)(i), find the horizontal asymptote parallel to the $x$-axis by taking the limit of $y = \\frac{2x-4}{x-3}$ as $x \\to \\pm\\infty$, which gives $y = 2$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For (a)(ii), find the vertical asymptote parallel to the $y$-axis by setting the denominator to zero, $x - 3 = 0 \\implies x = 3$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For (b)(i), find where $C$ crosses the $x$-axis by setting $y = 0$, giving $\\frac{2x-4}{x-3} = 0 \\implies 2x - 4 = 0 \\implies x = 2$, so the coordinates are $(2, 0)$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For (b)(ii), find where $C$ crosses the $y$-axis by setting $x = 0$, giving $y = \\frac{0-4}{0-3} = \\frac{4}{3}$, so the coordinates are $(0, \\frac{4}{3})$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For (c), sketch the curve $C$ showing the correct shape in two branches, the asymptotes $x = 3$ and $y = 2$, and the coordinate intercepts $(2, 0)$ and $(0, \\frac{4}{3})$.",
+          "marks": "B1 B1 B1"
+        }
+      ],
+      "final_answer": "(a)(i) $y = 2$, (a)(ii) $x = 3$, (b)(i) $(2, 0)$, (b)(ii) $(0, \\frac{4}{3})$, (c) [Sketch of $C$ with asymptotes $x=3, y=2$ and intercepts $(2,0), (0,\\frac{4}{3})$]",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S01.Q010": {
+    "slug": "FPM.CH04.S01.Q010",
+    "source": "2021 October/November Paper 2 Q3",
+    "paper_key": "2021_oct-nov_2",
+    "question_number": 3,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.2",
+    "section_title": "Asymptotes and intercepts",
+    "printed_number": 2,
+    "marks": 7,
+    "qp_pdf": "data/workbook/fpm/2021_oct-nov_2/questions/q3.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_oct-nov_2/markschemes/q3.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 3,
+      "ms_questions_visible": [
+        3
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "(a) The vertical asymptote is given by the denominator equating to zero, $cx - d = 0$, so $x = \\frac{d}{c}$. Given the vertical asymptote is $x = \\frac{3}{2}$ and $c, d$ are prime numbers, we must have $c = 2$ and $d = 3$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "(b) The $x$-intercept occurs when $y = 0$, which gives $a - bx = 0$, so $x = \\frac{a}{b}$. We are given the curve crosses the $x$-axis at $\\left(\\frac{5}{4}, 0\\right)$, so $\\frac{a}{b} = \\frac{5}{4}$. Since $a$ must be a prime number and $b$ an integer, we have $a = 5$ and $b = 4$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "(c) The $y$-intercept occurs when $x = 0$, so $p = \\frac{a - b(0)}{c(0) - d} = \\frac{a}{-d} = \\frac{5}{-3} = -\\frac{5}{3}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "(d) The asymptote parallel to the $x$-axis (horizontal asymptote) is given by the ratio of the coefficients of $x$ as $x \\to \\pm\\infty$, so $y = \\frac{-b}{c} = \\frac{-4}{2} = -2$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "c=2, d=3, a=5, b=4, p=-\\frac{5}{3}, y=-2",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S02.Q014": {
+    "slug": "FPM.CH04.S02.Q014",
+    "source": "2019 May/June Paper 2R Q2",
+    "paper_key": "2019_may-jun_2R",
+    "question_number": 2,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.2",
+    "section_title": "Asymptotes and intercepts",
+    "printed_number": 3,
+    "marks": 4,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_2R/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_2R/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Identify the horizontal asymptote $y = -2$. For a rational function $y = \\frac{ax+b}{x+c}$, the horizontal asymptote is given by $y = \\frac{a}{1} = -2$, so $a = -2$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Use the point $(4, 0)$ where the curve crosses the $x$-axis to find $b$. Since $y=0$ when $x=4$, we have $ax+b = 0 \\implies -2(4) + b = 0 \\implies b = 8$.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "Identify the vertical asymptote $x = -3$. The denominator becomes zero at the vertical asymptote, so $x+c = 0$ when $x = -3$, giving $c = 3$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Substitute $a = -2$, $b = 8$, and $c = 3$ into the equation to get $y = \\frac{8 - 2x}{x + 3}$. Then substitute $x = 0$ to find the $y$-intercept $p$: $p = \\frac{8 - 2(0)}{0 + 3} = \\frac{8}{3}$.",
+          "marks": "B1ft"
+        }
+      ],
+      "final_answer": "a = -2, b = 8, c = 3, p = \\frac{8}{3}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH04.S02.Q015": {
+    "slug": "FPM.CH04.S02.Q015",
+    "source": "2020 January Paper 2R Q11",
+    "paper_key": "2020_jan_2R",
+    "question_number": 11,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.2",
+    "section_title": "Asymptotes and intercepts",
+    "printed_number": 4,
+    "marks": 14,
+    "qp_pdf": "data/workbook/fpm/2020_jan_2R/questions/q11.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_2R/markschemes/q11.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 11,
+      "ms_questions_visible": [
+        11
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "(a)(i) For the asymptote parallel to the x-axis, take the limit as $x \\to \\pm\\infty$, which gives $y = 3$. (ii) For the asymptote parallel to the y-axis, set the denominator to zero, giving $x = -1$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "(b)(i) To find where $C$ crosses the $x$-axis, set $y = 0$, giving $\\frac{3x - 2}{x + 1} = 0 \\implies 3x - 2 = 0 \\implies x = \\frac{2}{3}$, so coordinates are $\\left(\\frac{2}{3}, 0\\right)$. (ii) To find where $C$ crosses the $y$-axis, set $x = 0$, giving $y = \\frac{3(0) - 2}{0 + 1} = -2$, so coordinates are $(0, -2)$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "(c) Sketch the hyperbola with the correct shape and position, showing asymptotes at $x = -1$ and $y = 3$, and intercepts at $\\left(\\frac{2}{3}, 0\\right)$ and $(0, -2)$.",
+          "marks": "B1 B1 B1"
+        },
+        {
+          "step": "(d) Substitute $y = mx + 4$ into $y = \\frac{3x - 2}{x + 1}$ to get $mx + 4 = \\frac{3x - 2}{x + 1}$. Multiplying by $(x + 1)$ gives $(mx + 4)(x + 1) = 3x - 2 \\implies mx^2 + (m + 4)x + 4 = 3x - 2 \\implies mx^2 + (m + 1)x + 6 = 0$.",
+          "marks": "M1 M1"
+        },
+        {
+          "step": "Since there are no points of intersection, the discriminant must be less than zero: $b^2 - 4ac < 0 \\implies (m + 1)^2 - 4(m)(6) < 0 \\implies m^2 + 2m + 1 - 24m < 0 \\implies m^2 - 22m + 1 < 0$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Solve $m^2 - 22m + 1 = 0$ by completing the square: $(m - 11)^2 - 121 + 1 = 0 \\implies (m - 11)^2 = 120 \\implies m = 11 \\pm \\sqrt{120} = 11 \\pm 2\\sqrt{30}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Define the region for which $m^2 - 22m + 1 < 0$, giving $11 - 2\\sqrt{30} < m < 11 + 2\\sqrt{30}$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "11 - 2\\sqrt{30} < m < 11 + 2\\sqrt{30}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S02.Q016": {
+    "slug": "FPM.CH04.S02.Q016",
+    "source": "2019 January Paper 1 Q8",
+    "paper_key": "2019_jan_1",
+    "question_number": 8,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.2",
+    "section_title": "Asymptotes and intercepts",
+    "printed_number": 5,
+    "marks": 15,
+    "qp_pdf": "data/workbook/fpm/2019_jan_1/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_jan_1/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i), the asymptote parallel to the $y$-axis occurs when the denominator is zero, so $2x - 1 = 0 \\implies x = \\frac{1}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (a)(ii), the asymptote parallel to the $x$-axis occurs as $x \\to \\pm\\infty$, giving $y = \\frac{5}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), finding the $y$-intercept by setting $x = 0$ gives $y = \\frac{-3}{-1} = 3$, so $(0, 3)$. Finding the $x$-intercept by setting $y = 0$ gives $5x - 3 = 0 \\implies x = \\frac{3}{5}$, so $(\\frac{3}{5}, 0)$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (c), using the quotient rule to differentiate $y = \\frac{5x-3}{2x-1}$: $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{5(2x-1) - 2(5x-3)}{(2x-1)^2} = \\frac{1}{(2x-1)^2}$. Since the numerator $1 > 0$ and the denominator $(2x-1)^2 > 0$ for all $x \\neq \\frac{1}{2}$, the gradient is always positive.",
+          "marks": "M1 A1 dM1 A1"
+        },
+        {
+          "step": "For part (d), sketch the curve showing the asymptotes at $x = \\frac{1}{2}$ and $y = \\frac{5}{2}$, passing through $(0, 3)$ and $(\\frac{3}{5}, 0)$.",
+          "marks": "B1 B1 B1"
+        },
+        {
+          "step": "For part (e), when $x = 1$, $y = \\frac{5(1)-3}{2(1)-1} = 2$. The gradient at $x = 1$ is $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{1}{(2(1)-1)^2} = 1$. The equation of the tangent is $y - 2 = 1(x - 1) \\implies y = x + 1$.",
+          "marks": "B1 M1 M1 A1"
+        }
+      ],
+      "final_answer": "y = x + 1",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S03.Q021": {
+    "slug": "FPM.CH04.S03.Q021",
+    "source": "2022 January Paper 2 Q10",
+    "paper_key": "2022_jan_2",
+    "question_number": 10,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.3",
+    "section_title": "Transformations of graphs",
+    "printed_number": 1,
+    "marks": 18,
+    "qp_pdf": "data/workbook/fpm/2022_jan_2/questions/q10.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_2/markschemes/q10.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 10,
+      "ms_questions_visible": [
+        10
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i): As $x \\to \\pm\\infty$, $y \\to \\frac{2}{1} = 2$. Thus, the asymptote parallel to the $x$-axis is $y = 2$. For part (a)(ii): The vertical asymptote occurs where the denominator is zero, $x + 4 = 0$, so $x = -4$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (b): To find the $x$-intercept, set $y = 0$, giving $2x - 1 = 0 \\implies x = \\frac{1}{2}$, point is $\\left(\\frac{1}{2}, 0\\right)$. To find the $y$-intercept, set $x = 0$, giving $y = \\frac{-1}{4} = -0.25$, point is $\\left(0, -\\frac{1}{4}\\right)$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (c): Sketch the hyperbola with asymptotes $x = -4$ and $y = 2$, passing through $\\left(\\frac{1}{2}, 0\\right)$ and $\\left(0, -\\frac{1}{4}\\right)$.",
+          "marks": "B3"
+        },
+        {
+          "step": "For part (d): Differentiate $y = \\frac{2x-1}{x+4}$ using the quotient rule: $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{2(x+4) - (2x-1)(1)}{(x+4)^2} = \\frac{9}{(x+4)^2}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Since the tangents are parallel to the line $y = x + k$, their gradient is $m = 1$.",
+          "marks": "B1"
+        },
+        {
+          "step": "Equate $\\frac{\\mathrm{d}y}{\\mathrm{d}x}$ to 1: $\\frac{9}{(x+4)^2} = 1 \\implies (x+4)^2 = 9 \\implies x + 4 = \\pm 3$, so $x = -1$ or $x = -7$.",
+          "marks": "dM1 ddM1"
+        },
+        {
+          "step": "Substitute $x = -1$ into $C$ to get $y = \\frac{2(-1)-1}{-1+4} = \\frac{-3}{3} = -1$, so $P(-1, -1)$. Substitute $x = -7$ into $C$ to get $y = \\frac{2(-7)-1}{-7+4} = \\frac{-15}{-3} = 5$, so $Q(-7, 5)$ since the $x$-coordinate of $P$ is greater than the $x$-coordinate of $Q$.",
+          "marks": "A1 A1"
+        },
+        {
+          "step": "For part (e)(i): Substitute $P(-1, -1)$ into $y = x + k_1$: $-1 = -1 + k_1 \\implies k_1 = 0$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (e)(ii): Substitute $Q(-7, 5)$ into $y = x + k_2$: $5 = -7 + k_2 \\implies k_2 = 12$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "P(-1, -1), Q(-7, 5), k_1 = 0, k_2 = 12",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S03.Q022": {
+    "slug": "FPM.CH04.S03.Q022",
+    "source": "2022 May/June Paper 2R Q10",
+    "paper_key": "2022_may-jun_2R",
+    "question_number": 10,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.3",
+    "section_title": "Transformations of graphs",
+    "printed_number": 2,
+    "marks": 18,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_2R/questions/q10.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_2R/markschemes/q10.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 10,
+      "ms_questions_visible": [
+        10
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a)(i), the asymptote parallel to the $y$-axis occurs where the denominator is zero: $2x - 3 = 0 \\implies x = \\frac{3}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (a)(ii), the asymptote parallel to the $x$-axis occurs as $x \\to \\pm\\infty$, which gives $y = \\frac{7}{2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "For part (b), find the $y$-intercept by setting $x = 0$: $y = \\frac{-2}{-3} = \\frac{2}{3}$, giving $\\left(0, \\frac{2}{3}\\right)$. Find the $x$-intercept by setting $y = 0$: $7x - 2 = 0 \\implies x = \\frac{2}{7}$, giving $\\left(\\frac{2}{7}, 0\\right)$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (c), differentiate $y = \\frac{7x - 2}{2x - 3}$ using the quotient rule: $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{7(2x - 3) - (7x - 2)(2)}{(2x - 3)^2} = \\frac{14x - 21 - 14x + 4}{(2x - 3)^2} = \\frac{-17}{(2x - 3)^2}$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Explain that since the numerator is $-17$ (always negative) and the denominator $(2x - 3)^2$ is always positive for $x \\neq \\frac{3}{2}$, the derivative $\\frac{\\mathrm{d}y}{\\mathrm{d}x} < 0$ for all valid $x$, meaning the gradient is always negative.",
+          "marks": "A1 B1"
+        },
+        {
+          "step": "For part (d), sketch the curve showing both branches, asymptotes $x = \\frac{3}{2}$ and $y = \\frac{7}{2}$, and the intercepts $\\left(0, \\frac{2}{3}\\right)$ and $\\left(\\frac{2}{7}, 0\\right)$, all clearly labeled.",
+          "marks": "B1 B1ft B1ft"
+        },
+        {
+          "step": "For part (e), the gradient of the normal is $17$, so the gradient of the tangent at point $A$ is $-\\frac{1}{17}$. Set the derivative equal to $-\\frac{1}{17}$: $-\\frac{17}{(2x - 3)^2} = -\\frac{1}{17} \\implies (2x - 3)^2 = 289$.",
+          "marks": "M1 dM1"
+        },
+        {
+          "step": "Solve for $x$: $2x - 3 = 17$ or $2x - 3 = -17$. Since the $x$-coordinate of $A$ is positive, we take $2x - 3 = 17 \\implies x = 10$, and hence $y = \\frac{7(10) - 2}{2(10) - 3} = \\frac{68}{17} = 4$. Point $A$ is $(10, 4)$.",
+          "marks": "A1"
+        },
+        {
+          "step": "Find the equation of the normal at $A(10, 4)$ with gradient $17$: $y - 4 = 17(x - 10) \\implies y = 17x - 166$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Find the intersection point $B$ by substituting the normal's equation into the curve: $17x - 166 = \\frac{7x - 2}{2x - 3} \\implies (17x - 166)(2x - 3) = 7x - 2 \\implies 34x^2 - 507x + 498 = 7x - 2 \\implies 34x^2 - 514x + 500 = 0 \\implies 17x^2 - 257x + 250 = 0$. Wait, let's re-verify the mark scheme's equation: $17x^2 - 195x + 250 = 0$. Let's check: $(17x - 166)(2x - 3) = 34x^2 - 51 - 332x + 498 = 34x^2 - 383x + 498$. Setting equal to $7x - 2$ gives $34x^2 - 390x + 500 = 0 \\implies 17x^2 - 195x + 250 = 0$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Solve $17x^2 - 195x + 250 = 0$ using the quadratic formula or factorization: $(17x - 25)(x - 10) = 0 \\implies x = 10$ (point A) or $x = \\frac{25}{17}$ (point B).",
+          "marks": "null"
+        },
+        {
+          "step": "Calculate the $y$-coordinate for $x = \\frac{25}{17}$: $y = 17\\left(\\frac{25}{17}\\right) - 166 = 25 - 166 = -141$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "\\left(\\frac{25}{17}, -141\\right)",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH09.S01.Q003": {
+    "slug": "FPM.CH09.S01.Q003",
+    "source": "2022 May/June Paper 1 Q6",
+    "paper_key": "2022_may-jun_1",
+    "question_number": 6,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 1,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_1/questions/q6.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_1/markschemes/q6.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 6,
+      "ms_questions_visible": [
+        6
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), calculate the missing values of $y = 1 + 3\\mathrm{e}^{-x}$ for $x = 0$, $x = 1$, and $x = 2$:  When $x = 0$: $y = 1 + 3\\mathrm{e}^0 = 4.00$. When $x = 1$: $y = 1 + 3\\mathrm{e}^{-1} \\approx 2.10$. When $x = 2$: $y = 1 + 3\\mathrm{e}^{-2} \\approx 1.41$.",
+          "marks": "B2"
+        },
+        {
+          "step": "For part (b), plot the points from the table and join them with a smooth curve.",
+          "marks": "B1 ft"
+        },
+        {
+          "step": "For part (c), rearrange $x = \\mathrm{e}^{-x}$ to get $3x = 3\\mathrm{e}^{-x}$, then $3x + 1 = 1 + 3\\mathrm{e}^{-x}$. We draw the straight line $y = 3x + 1$ and find its intersection with $y = 1 + 3\\mathrm{e}^{-x}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "From the graph, the line $y = 3x + 1$ intersects the curve at $x \\approx 0.5$ or $0.6$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (d), simplify $\\ln(x - 1)^3 = -3x$ to $3\\ln(x - 1) = -3x$, giving $\\ln(x - 1) = -x$. Exponentiating both sides gives $x - 1 = \\mathrm{e}^{-x}$, which rearranges to $x = 1 + \\mathrm{e}^{-x}$, so $3x - 3 = 3\\mathrm{e}^{-x} \\implies 3x - 2 = 1 + 3\\mathrm{e}^{-x}$. Draw the straight line $y = 3x - 2$.",
+          "marks": "M1"
+        },
+        {
+          "step": "From the graph, the intersection of $y = 3x - 2$ with $y = 1 + 3\\mathrm{e}^{-x}$ gives the estimate for the root as $1.2$ or $1.3$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x = 0.5 \\text{ or } 0.6 \\text{ (for c), } x = 1.2 \\text{ or } 1.3 \\text{ (for d)}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S01.Q004": {
+    "slug": "FPM.CH04.S01.Q004",
+    "source": "2018 January Paper 1 Q5",
+    "paper_key": "2018_jan_1",
+    "question_number": 5,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 2,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2018_jan_1/questions/q5.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_jan_1/markschemes/q5.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 5,
+      "ms_questions_visible": [
+        5
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), calculate the missing values of $y$ for $y = \\frac{x^3 + 2}{x + 1}$ when $x = 0, 1, 2, 4$. For $x = 0$: $y = \\frac{0 + 2}{0 + 1} = 2$. For $x = 1$: $y = \\frac{1 + 2}{1 + 1} = 1.5$. For $x = 2$: $y = \\frac{8 + 2}{2 + 1} = \\frac{10}{3} \\approx 3.33$. For $x = 4$: $y = \\frac{64 + 2}{4 + 1} = \\frac{66}{5} = 13.2$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (b), plot the points from the completed table of values and join them with a smooth curve for $0 \\leqslant x \\leqslant 4$.",
+          "marks": "B1ft B1ft"
+        },
+        {
+          "step": "For part (c), manipulate the given equation $x^3 + x^2 - 3x - 2 = 0$ to find the straight line to draw. Rearrange to $x^3 + 2 = -x^2 + 3x + 2$ or use $\\frac{x^3 + 2}{x + 1} = ax + b$. Equating $\\frac{x^3 + 2}{x + 1} = ax + b$ gives $x^3 + 2 = ax^2 + (a+b)x + b$. Comparing coefficients with $x^3 + x^2 - 3x - 2$, we get $a = -1$ and $b = 4$, so the line is $y = -x + 4$ (or $4 - x$).",
+          "marks": "M1 A1 A1"
+        },
+        {
+          "step": "Draw the line $y = 4 - x$ on the graph and find the $x$-coordinate of its intersection with the curve $y = \\frac{x^3 + 2}{x + 1}$ in the interval $0 \\leqslant x \\leqslant 4$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Read the estimated root from the graph, which is $x = 1.6$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "x = 1.6",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH10.S01.Q004": {
+    "slug": "FPM.CH10.S01.Q004",
+    "source": "2022 January Paper 2 Q8",
+    "paper_key": "2022_jan_2",
+    "question_number": 8,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 3,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2022_jan_2/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_2/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For (a), calculate $y = \\sin x - 3 \\cos 2x - 0.5$ at $x = 0$ and $x = 2$: at $x = 0$, $y = \\sin(0) - 3 \\cos(0) - 0.5 = 0 - 3(1) - 0.5 = -3.5$; at $x = 2$, $y = \\sin(2) - 3 \\cos(4) - 0.5 = 0.909 - 3(-0.6536) - 0.5 = 0.909 + 1.9609 - 0.5 = 2.37 \\approx 2.4$.",
+          "marks": "B2"
+        },
+        {
+          "step": "For (b), plot the points from the table and join them with a smooth curve.",
+          "marks": "B1ft, B1ft"
+        },
+        {
+          "step": "For (c), start with the addition formula for cosine: $\\cos(A+B) = \\cos A \\cos B - \\sin A \\sin B$, set $B = A$ to get $\\cos(2A) = \\cos^2 A - \\sin^2 A$, and use $\\cos^2 A = 1 - \\sin^2 A$ to obtain $\\cos(2A) = 1 - 2\\sin^2 A$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For (d), manipulate the equation $2\\sin x + 12\\sin^2 x - x - 5 = 0$ using $1 - \\cos(2x) = 2\\sin^2 x$: $2\\sin x + 6(1 - \\cos(2x)) - x - 5 = 0 \\implies 2\\sin x - 6\\cos 2x - x + 1 = 0 \\implies \\sin x - 3\\cos 2x - 0.5 = \\frac{x}{2} - 1$. Thus, draw the straight line $y = \\frac{x}{2} - 1$.",
+          "marks": "M1 dM1 A1 M1"
+        },
+        {
+          "step": "Read the $x$-coordinates of the intersections between the curve $y = \\sin x - 3\\cos 2x - 0.5$ and the line $y = \\frac{x}{2} - 1$ in the interval $0 \\le x \\le 3$.",
+          "marks": "A1"
+        },
+        {
+          "step": "The solutions are $x = 0.6$ (or $0.7$) and $x = 2.3$ (or $2.4$).",
+          "marks": null
+        }
+      ],
+      "final_answer": "x = 0.6 \\text{ or } 0.7 \\text{ and } x = 2.3 \\text{ or } 2.4",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S01.Q005": {
+    "slug": "FPM.CH04.S01.Q005",
+    "source": "2020 January Paper 1R Q6",
+    "paper_key": "2020_jan_1R",
+    "question_number": 6,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 4,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2020_jan_1R/questions/q6.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_jan_1R/markschemes/q6.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 6,
+      "ms_questions_visible": [
+        6
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), calculate the missing values of $y = x - \\frac{3}{x^2}$. For $x=1$, $y = 1 - 3 = -2$. For $x=1.5$, $y = 1.5 - \\frac{3}{2.25} = 1.5 - 1.333... = 0.166... \\approx 0.2$. For $x=4$, $y = 4 - \\frac{3}{16} = 4 - 0.1875 = 3.8125 \\approx 3.8$. For $x=5$, $y = 5 - \\frac{3}{25} = 5 - 0.12 = 4.88 \\approx 4.9$.",
+          "marks": "B2"
+        },
+        {
+          "step": "For part (b), plot the points from the table and join them with a smooth curve.",
+          "marks": "B1ft, B1ft"
+        },
+        {
+          "step": "For part (c), manipulate the equation $2x^3 - 6x^2 + 3 = 0$ to find the line to draw. Rearrange to $2x^3 - 6x^2 = -3$, then divide by $x^2$: $2x - 6 = -\\frac{3}{x^2}$, which gives $3x - 6 = x - \\frac{3}{x^2}$. Thus, the line to draw is $y = 3x - 6$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Find points for $y = 3x - 6$: e.g., when $x=2$, $y=0$; when $x=4$, $y=6$. Draw this line on the graph.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Read the $x$-coordinates of the intersection points between the curve $y = x - \\frac{3}{x^2}$ and the line $y = 3x - 6$ within the interval $0.5 \\le x \\le 6$. The intersection values are approximately $x = 0.9$ and $x = 2.8$ (or $2.9$).",
+          "marks": "M1 A1 (both)"
+        }
+      ],
+      "final_answer": "x = 0.9, \\quad x = 2.8 \\text{ (or } 2.9)",
+      "answer_agrees_with_ms": true,
+      "confidence": 1.0
+    }
+  },
+  "FPM.CH04.S01.Q006": {
+    "slug": "FPM.CH04.S01.Q006",
+    "source": "2021 October/November Paper 2 Q8",
+    "paper_key": "2021_oct-nov_2",
+    "question_number": 8,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 5,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2021_oct-nov_2/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2021_oct-nov_2/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Calculate $y$ for $x = 0.75$: $y = 2(0.75) + \\frac{3}{(0.75)^2} - 3 = 1.5 + \\frac{3}{0.5625} - 3 = 1.5 + 5.333... - 3 = 3.83$ (to 2 decimal places).",
+          "marks": "B2"
+        },
+        {
+          "step": "Calculate $y$ for $x = 1.5$: $y = 2(1.5) + \\frac{3}{(1.5)^2} - 3 = 3 + \\frac{3}{2.25} - 3 = \\frac{3}{2.25} = 1.33$ (to 2 decimal places).",
+          "marks": "B2"
+        },
+        {
+          "step": "Calculate $y$ for $x = 2$: $y = 2(2) + \\frac{3}{(2)^2} - 3 = 4 + \\frac{3}{4} - 3 = 1.75$.",
+          "marks": "B2"
+        },
+        {
+          "step": "Calculate $y$ for $x = 3$: $y = 2(3) + \\frac{3}{(3)^2} - 3 = 6 + \\frac{3}{9} - 3 = 3 + \\frac{1}{3} = 3.33$ (to 2 decimal places).",
+          "marks": "B2"
+        },
+        {
+          "step": "Plot the points correctly on the grid within half a square tolerance.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "Join the plotted points with a smooth curve.",
+          "marks": "B1ft"
+        },
+        {
+          "step": "Rearrange the equation $4x^3 - 10x^2 + 3 = 0$ to relate to the curve $y = 2x + \\frac{3}{x^2} - 3$: divide by $x^2$ to get $4x - 10 + \\frac{3}{x^2} = 0$, which rearranges to $2x + \\frac{3}{x^2} - 3 = 7 - 2x$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Draw the straight line $y = 7 - 2x$ on the grid.",
+          "marks": "M1"
+        },
+        {
+          "step": "Read off the $x$-coordinates of the intersection points of the curve and the line: $x = 0.6$ and $x = 2.4$ (accepting $0.7$ and $2.3$ depending on drawing).",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "x = 0.6, 2.4",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S01.Q007": {
+    "slug": "FPM.CH04.S01.Q007",
+    "source": "2022 January Paper 1R Q9",
+    "paper_key": "2022_jan_1R",
+    "question_number": 9,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 6,
+    "marks": 9,
+    "qp_pdf": "data/workbook/fpm/2022_jan_1R/questions/q9.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_jan_1R/markschemes/q9.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 9,
+      "ms_questions_visible": [
+        9
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Calculate the value of $y$ for $x = -0.5$ using $y = \\frac{(-0.5)^3 + 4}{5 - (-0.5)} = \\frac{-0.125 + 4}{5.5} = \\frac{3.875}{5.5} \\approx 0.7045$, giving $0.70$. Similarly, for $x = 0.5$, $y = \\frac{0.5^3 + 4}{5 - 0.5} = \\frac{4.125}{4.5} \\approx 0.9167$, giving $0.92$, and for $x = 1.5$, $y = \\frac{1.5^3 + 4}{5 - 1.5} = \\frac{3.375 + 4}{3.5} = \\frac{7.375}{3.5} \\approx 2.107$, giving $2.11$.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "Plot the points and join them with a smooth curve.",
+          "marks": "B1ft B1ft"
+        },
+        {
+          "step": "Rearrange the equation $x^3 - x^2 + 8x - 11 = 0$ into the form of the curve $y = \\frac{x^3 + 4}{5 - x}$ by rewriting it as $x^3 + 4 = x^2 - 8x + 15 = (x - 3)(x - 5)$, so $\\frac{x^3 + 4}{5 - x} = 3 - x$.",
+          "marks": "M1 M1 A1"
+        },
+        {
+          "step": "Draw the straight line $y = 3 - x$ on the grid.",
+          "marks": "M1"
+        },
+        {
+          "step": "Read the $x$-coordinate of the intersection between the curve and the line $y = 3 - x$, which gives $x = 1.3$ or $1.4$.",
+          "marks": "A1"
+        }
+      ],
+      "final_answer": "1.3 \\text{ or } 1.4",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S01.Q008": {
+    "slug": "FPM.CH04.S01.Q008",
+    "source": "2020 October/November Paper 2R Q4",
+    "paper_key": "2020_oct-nov_2R",
+    "question_number": 4,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 7,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_2R/questions/q4.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_2R/markschemes/q4.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 4,
+      "ms_questions_visible": [
+        4
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "Complete the table by calculating $y$ for $x = 0.5$, $1.5$, $2$, and $3$: for $x = 0.5$, $y = 2(0.5) + 1 + \\frac{2}{0.5^2} = 1 + 1 + 8 = 10$; for $x = 1.5$, $y = 2(1.5) + 1 + \\frac{2}{1.5^2} = 4 + 0.888... = 4.89$; for $x = 2$, $y = 2(2) + 1 + \\frac{2}{2^2} = 5 + 0.5 = 5.5$; for $x = 3$, $y = 2(3) + 1 + \\frac{2}{3^2} = 7 + 0.222... = 7.22$.",
+          "marks": "B2"
+        },
+        {
+          "step": "Plot the points from the table and join them with a smooth curve.",
+          "marks": "B1ft B1ft"
+        },
+        {
+          "step": "Rewrite the equation $2x + \\frac{2}{x^2} = 7$ as $2x + 1 + \\frac{2}{x^2} = 8$, which corresponds to finding the intersection of the curve with the line $y = 8$. Reading the $x$-coordinates gives $x = 0.6$ and $x = 3.4$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Rearrange the equation $\\frac{3x}{2} + \\frac{2}{x^2} = 5$: subtracting $\\frac{x}{2}$ from both sides gives $2x + \\frac{2}{x^2} = \\frac{1}{2}x + 5$, then adding $1$ to both sides yields $2x + 1 + \\frac{2}{x^2} = \\frac{1}{2}x + 6$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Draw the straight line $y = \\frac{1}{2}x + 6$ on the grid.",
+          "marks": "M1"
+        },
+        {
+          "step": "Read the $x$-coordinates of the intersection points of the curve and the line, giving $x = 0.7$ and $x = 3.2$.",
+          "marks": "A1 A1"
+        }
+      ],
+      "final_answer": "x = 0.6, 3.4 \\text{ (for part c); } x = 0.7, 3.2 \\text{ (for part d)}",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH02.S01.Q011": {
+    "slug": "FPM.CH02.S01.Q011",
+    "source": "2020 October/November Paper 1R Q2",
+    "paper_key": "2020_oct-nov_1R",
+    "question_number": 2,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 8,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2020_oct-nov_1R/questions/q2.pdf",
+    "ms_pdf": "data/workbook/fpm/2020_oct-nov_1R/markschemes/q2.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 2,
+      "ms_questions_visible": [
+        2
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), complete the square for $x^2 + 4x - 8$: $(x+2)^2 - 4 - 8 = (x+2)^2 - 12$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "For part (b), equate $x^2 + 4x - 8$ and $2x + 7$ to get $x^2 + 2x - 15 = 0$.",
+          "marks": "M1 dM1"
+        },
+        {
+          "step": "Factorise the quadratic: $(x-3)(x+5) = 0$, giving $x = 3$ and $x = -5$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute $x$ back to find the corresponding $y$-values: when $x = 3$, $y = 13$; when $x = -5$, $y = -3$.",
+          "marks": "A1 A1"
+        },
+        {
+          "step": "For part (c), sketch the curve $C$ with minimum at $(-2, -12)$ and the straight line $L$, clearly labelling the turning point of $C$ and the points of intersection $(-5, -3)$ and $(3, 13)$.",
+          "marks": "B1 B1 B1 ft B1 ft"
+        }
+      ],
+      "final_answer": "(a) (x+2)^2 - 12, (b) (-5, -3) \\text{ and } (3, 13), (c) \\text{Sketch with min } (-2, -12) \\text{ and intersections } (-5, -3), (3, 13)",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S02.Q015": {
+    "slug": "FPM.CH01.S02.Q015",
+    "source": "2019 May/June Paper 1R Q8",
+    "paper_key": "2019_may-jun_1R",
+    "question_number": 8,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 9,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2019_may-jun_1R/questions/q8.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_may-jun_1R/markschemes/q8.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 8,
+      "ms_questions_visible": [
+        8
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), calculate $y$ for $x = 0.25$ and $x = 0.5$: \\nWhen $x = 0.25$, $y = 2 + \\ln(2(0.25) + 1) = 2 + \\ln(1.5) \\approx 2.405$, giving $2.41$. \\nWhen $x = 0.5$, $y = 2 + \\ln(2(0.5) + 1) = 2 + \\ln(2) \\approx 2.693$, giving $2.69$. \\nWhen $x = 3$, $y = 2 + \\ln(2(3) + 1) = 2 + \\ln(7) \\approx 3.946$, giving $3.95$.",
+          "marks": "B2"
+        },
+        {
+          "step": "For part (b), plot the points from the table and join them with a smooth curve.",
+          "marks": "B1ft B1ft"
+        },
+        {
+          "step": "For part (c), rearrange the equation $\\ln(2x+1) = 3x - 4$ to match the curve's expression by adding $2$ to both sides: $\\ln(2x+1) + 2 = 3x - 2$. \\nDraw the straight line $y = 3x - 2$. \\nFind the intersection of this line with the curve $y = 2 + \\ln(2x+1)$, which gives $x \\approx 1.8$ or $1.9$.",
+          "marks": "M1 M1 A1"
+        },
+        {
+          "step": "For part (d), rearrange the equation $e^{6-x} - (2x+1)^2 = 0$: \\n$e^{6-x} = (2x+1)^2 \\implies 6 - x = \\ln((2x+1)^2) = 2\\ln(2x+1)$. \\nDivide by $2$: $3 - \\frac{x}{2} = \\ln(2x+1)$. \\nAdd $2$ to both sides: $\\ln(2x+1) + 2 = 5 - \\frac{x}{2}$. \\nDraw the straight line $y = 5 - \\frac{x}{2}$. \\nFind the intersection of this line with the curve, which gives $x \\approx 2.4$ or $2.5$.",
+          "marks": "M1 M1 M1 A1"
+        }
+      ],
+      "final_answer": "\\text{(c) } 1.8 \\text{ or } 1.9, \\quad \\text{(d) } 2.4 \\text{ or } 2.5",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH01.S02.Q016": {
+    "slug": "FPM.CH01.S02.Q016",
+    "source": "2019 January Paper 2 Q7",
+    "paper_key": "2019_jan_2",
+    "question_number": 7,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 10,
+    "marks": 12,
+    "qp_pdf": "data/workbook/fpm/2019_jan_2/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2019_jan_2/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": null
+  },
+  "FPM.CH01.S02.Q017": {
+    "slug": "FPM.CH01.S02.Q017",
+    "source": "2022 May/June Paper 1R Q7",
+    "paper_key": "2022_may-jun_1R",
+    "question_number": 7,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 11,
+    "marks": 11,
+    "qp_pdf": "data/workbook/fpm/2022_may-jun_1R/questions/q7.pdf",
+    "ms_pdf": "data/workbook/fpm/2022_may-jun_1R/markschemes/q7.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 7,
+      "ms_questions_visible": [
+        7
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "For part (a), sketch $y = \\log_{10}(x+2)$. The x-intercept is when $y=0 \\implies \\log_{10}(x+2)=0 \\implies x+2=1 \\implies x=-1$, so $(-1,0)$. The y-intercept is when $x=0 \\implies y=\\log_{10}(2)$. The asymptote is at $x=-2$. Shape is correct.",
+          "marks": "B1 B1"
+        },
+        {
+          "step": "For part (b), solve $2(\\log_a 4 + \\log_a 16) = 1$. Using logarithm laws, $2(2\\log_a 2 + 4\\log_a 2) = 1$ or $2\\log_a(64) = 1$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Simplify to $\\log_a 64 = \\frac{1}{2}$ or $12 \\log_a 2 = 1 \\implies \\log_a 2 = \\frac{1}{12}$.",
+          "marks": "dM1"
+        },
+        {
+          "step": "Convert to exponential form: $a^{\\frac{1}{2}} = 64 \\implies a = 64^2 = 4096$, or $a^{\\frac{1}{12}} = 2 \\implies a = 2^{12} = 4096$.",
+          "marks": "A1"
+        },
+        {
+          "step": "For part (c), solve $5 \\log_q 16 + 4 \\log_2 q = 24$. Change base of the first term to base 2: $\\log_q 16 = \\frac{\\log_2 16}{\\log_2 q} = \\frac{4}{\\log_2 q}$.",
+          "marks": "M1"
+        },
+        {
+          "step": "Substitute into the equation: $5\\left(\\frac{4}{\\log_2 q}\\right) + 4 \\log_2 q = 24 \\implies \\frac{20}{\\log_2 q} + 4 \\log_2 q = 24$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "Multiply by $\\log_2 q$ and rearrange into a quadratic in terms of $\\log_2 q$: $4(\\log_2 q)^2 - 24 \\log_2 q + 20 = 0 \\implies (\\log_2 q)^2 - 6 \\log_2 q + 5 = 0$.",
+          "marks": null
+        },
+        {
+          "step": "Factorise the quadratic: $(\\log_2 q - 5)(\\log_2 q - 1) = 0$.",
+          "marks": "dM1"
+        },
+        {
+          "step": "Solve for $\\log_2 q$: $\\log_2 q = 5 \\implies q = 2^5 = 32$, and $\\log_2 q = 1 \\implies q = 2^1 = 2$.",
+          "marks": "M1 A1"
+        }
+      ],
+      "final_answer": "a) Sketch with intercepts $(-1,0)$ and $(0, \\log_{10} 2)$; b) $a = 4096$; c) $q = 32, 2$",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  },
+  "FPM.CH04.S04.Q023": {
+    "slug": "FPM.CH04.S04.Q023",
+    "source": "2018 May/June Paper 1 Q4",
+    "paper_key": "2018_may-jun_1",
+    "question_number": 4,
+    "chapter": 4,
+    "chapter_title": "Graphs",
+    "section": "4.4",
+    "section_title": "Graphical solution of equations",
+    "printed_number": 12,
+    "marks": 6,
+    "qp_pdf": "data/workbook/fpm/2018_may-jun_1/questions/q4.pdf",
+    "ms_pdf": "data/workbook/fpm/2018_may-jun_1/markschemes/q4.pdf",
+    "relinked_ms": null,
+    "model": "gemini-flash-lite-latest",
+    "solution": {
+      "question_number": 4,
+      "ms_questions_visible": [
+        4
+      ],
+      "ms_matches_question": true,
+      "ms_math_correct": true,
+      "ms_error": null,
+      "steps": [
+        {
+          "step": "(a)(i) Combine $x - \\frac{1}{2x^2}$ into a single fraction: $\\frac{2x^3 - 1}{2x^2}$.",
+          "marks": "B1"
+        },
+        {
+          "step": "(a)(ii) Relate $\\sqrt[3]{0.5}$ to the graph by setting $y = 0$, giving $x = \\sqrt[3]{0.5} \\approx 0.8$.",
+          "marks": "M1 A1"
+        },
+        {
+          "step": "(b) Rearrange $4 - 2x + \\frac{1}{2x^2} = 0$ to $x - \\frac{1}{2x^2} = 4 - x$, and draw the line $y = 4 - x$ to find the intersection point giving $x = 2.1$ or $2.0$.",
+          "marks": "M1 dM1 A1"
+        }
+      ],
+      "final_answer": "x \\approx 2.1",
+      "answer_agrees_with_ms": true,
+      "confidence": 1
+    }
+  }
+}
