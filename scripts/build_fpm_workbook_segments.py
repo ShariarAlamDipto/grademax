@@ -58,6 +58,8 @@ from pathlib import Path
 
 import fitz  # PyMuPDF
 
+from lib import ms_bands
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Configuration
 # ─────────────────────────────────────────────────────────────────────────────
@@ -137,33 +139,14 @@ FENCE_RE = re.compile(
 # A bare fence with no mark tally -- used only to detect that we under-matched.
 FENCE_LOOSE_RE = re.compile(r"Total\s+for\s+Question\s+(\d{1,2})", re.I)
 
-# Mark scheme block headers. The table head is printed five different ways
-# across 2016-2022 and each is followed by the question number, which may carry
-# a trailing dot and its first part: "1.", "2 (a)(i)", "4(a)".
-#
-#   Question / Scheme / Mark            2022 papers
-#   Question / Number / Scheme / Marks  2016-2018 papers
-#   Question / number / Scheme / Marks  2020-2021 papers (lowercase)
-#   Question Working / Answer / Mark / AO / Notes   the 2016 specimens
-#
-# Matching only one of these costs a whole year's mark schemes, so all are
-# tried and their results merged.
-#
-# Detecting the header row and reading the question number off it are kept
-# separate on purpose: in several papers the header row is plainly present but
-# the number that follows it is unreadable (it sits in a rotated table cell, or
-# the glyphs do not map back to digits). Requiring both in one regex loses the
-# whole block. Detect the row, then read the number if you can and fall back to
-# the question sequence if you cannot -- see find_ms_blocks.
-MS_HEADER_ROW_RE = re.compile(
-    r"Question(?:\s+Working)?\s*\n\s*(?:Number\s*\n\s*)?(?:Scheme|Answer)", re.I
-)
-
-# Read immediately after a header row: "1.", "2 (a)(i)", "4(a)".
-MS_NUMBER_RE = re.compile(
-    r"^[^\S\n]*\n?(?:[^\S\n]*(?:Marks?|AO|Notes|Scheme)[^\S\n]*\n)*"
-    r"\s*(\d{1,2})\s*\.?\s*(?:\(\s*[a-z]\s*\)\s*)*",
-)
+# Finding a mark scheme block -- its header row and the question number under
+# it -- lives in lib/ms_bands.py, which reads both WITH COORDINATES so a block
+# becomes a band rather than a range of whole pages. The flat-text regexes that
+# used to do it here are gone with the code that used them. The point they
+# recorded still holds and is kept in find_block_headers: detecting the header
+# row and reading its number are separate steps, because several papers print a
+# plainly visible header whose number cannot be read, and requiring both at once
+# loses the block entirely.
 
 # Mark scheme per-question tally: "Total 9 marks".
 MS_TOTAL_RE = re.compile(r"Total\s+(\d{1,3})\s+marks?", re.I)
@@ -196,11 +179,35 @@ class PaperSource:
 
 
 @dataclass(frozen=True)
+class Region:
+    """
+    One page of a mark scheme segment, with an optional band across it.
+
+    The question paper side still works in whole page ranges, because an FPM
+    question owns its pages outright. The mark scheme side does not: Edexcel
+    packs two short questions onto one mark scheme page, and a page range then
+    hands both of them to each question. See `locate_ms_bands`.
+    """
+
+    page: int
+    top: float | None = None
+    bottom: float | None = None
+    left: float | None = None
+    right: float | None = None
+
+    @property
+    def cropped(self) -> bool:
+        return any(
+            edge is not None for edge in (self.top, self.bottom, self.left, self.right)
+        )
+
+
+@dataclass(frozen=True)
 class QuestionSegment:
     number: int
     marks: int
     qp_pages: tuple[int, int]  # inclusive [start, end], 0-indexed
-    ms_pages: tuple[int, int] | None
+    ms_regions: tuple[Region, ...] | None
 
 
 @dataclass
@@ -425,75 +432,292 @@ def cross_check_starts(
     return warnings
 
 
-def find_ms_blocks(
-    pages: list[str], expected_questions: list[int]
-) -> tuple[dict[int, tuple[int, int]], set[int], list[str]]:
+def align_sequences(expected: list[int], observed: list[int]) -> dict[int, int]:
     """
-    Map question number -> inclusive MS page range.
+    Longest common subsequence between the paper's per-question marks and the
+    mark scheme's tallies, as {index_in_expected: index_in_observed}.
 
-    Mark scheme pages open with a table header row, and a question's block runs
-    from its header page to the page before the next header.
-
-    Where the question number can be read off the header it is trusted. Where it
-    cannot, the block is provisionally assigned the next question in sequence --
-    mark schemes always run in question order. Provisional assignments are
-    returned separately so the caller can insist they verify against the QP's
-    marks before keeping them; a wrong mark scheme is worse than a missing one.
+    Same routine the Maths B segmenter uses, for the same reason: several papers
+    print one tally more or fewer than they have questions, and a strict
+    comparison threw away a whole mark scheme over a single discrepancy.
     """
-    problems: list[str] = []
-    anchors: list[tuple[int, int, bool]] = []  # (page, question, was_explicit)
-    last_assigned = 0
+    n, k = len(expected), len(observed)
+    table = [[0] * (k + 1) for _ in range(n + 1)]
+    for i in range(n - 1, -1, -1):
+        for j in range(k - 1, -1, -1):
+            table[i][j] = (
+                table[i + 1][j + 1] + 1
+                if expected[i] == observed[j]
+                else max(table[i + 1][j], table[i][j + 1])
+            )
 
-    for index, raw in enumerate(pages):
-        for match in MS_HEADER_ROW_RE.finditer(raw):
-            tail = raw[match.end() : match.end() + 120]
-            number_match = MS_NUMBER_RE.match(tail)
-            explicit = int(number_match.group(1)) if number_match else None
+    pairs: dict[int, int] = {}
+    i = j = 0
+    while i < n and j < k:
+        if expected[i] == observed[j]:
+            pairs[i] = j
+            i += 1
+            j += 1
+        elif table[i + 1][j] >= table[i][j + 1]:
+            i += 1
+        else:
+            j += 1
+    return pairs
 
-            if explicit is not None and explicit == last_assigned:
-                continue  # a question's block may repeat its own header
 
-            if explicit is not None and explicit > last_assigned:
-                question, was_explicit = explicit, True
-            else:
-                question, was_explicit = last_assigned + 1, False
+def locate_ms_bands(
+    ms_path: Path, fences: dict[int, tuple[int, int]]
+) -> tuple[dict[int, ms_bands.Band], set[int], list[str]]:
+    """
+    Map question number -> the slice of the mark scheme that holds it, plus the
+    set of questions whose block number was inferred rather than read.
 
-            if question > max(expected_questions, default=0):
-                continue
+    WHY THIS REPLACED A PAGE RANGE
+    ------------------------------
+    A block used to be a range of whole pages, running from the page carrying
+    its header to the page before the next header. That is exact whenever a
+    question owns its pages, which is usually true of Further Pure -- 11 long
+    questions over ~16 mark scheme pages. It is wrong whenever two questions
+    share a page, and then it is wrong in both directions at once: each of the
+    two gets a PDF containing both schemes.
 
-            anchors.append((index, question, was_explicit))
-            last_assigned = question
+    Measured over the archive that was 5 segments, among them 2020 Jan 2R q1 and
+    q2, which both resolved to mark scheme page 6 and so both opened on
+    question 1's scheme followed by question 2's.
 
-    if not anchors:
+    So a block is now a band. Two delimiters are available and the more precise
+    one is preferred:
+
+      the tally      Papers from 2018 on close each block with "Total N marks".
+                     The band runs from the previous block's tally to its own,
+                     and can then be verified by reading it back -- exactly one
+                     tally inside, stating exactly the fence's marks.
+
+      the header row The older papers print no tally, so the band runs from its
+                     own "Question number / Scheme / Marks" row to the next
+                     one. Where the header does not restate the question number
+                     -- which Edexcel omits whenever a question runs on past a
+                     page break -- the block is assigned the next question in
+                     sequence and returned as provisional, for check_ms_marks to
+                     confirm or drop. That is the same rule the page-range
+                     version used; only the boundary has changed.
+    """
+    warnings: list[str] = []
+    numbers = sorted(fences)
+    if not numbers:
+        return {}, set(), ["no fences, so no mark scheme blocks"]
+
+    with fitz.open(ms_path) as doc:
+        last_page = doc.page_count - 1
+
+    # ── Preferred: the per-question tally ────────────────────────────────────
+    tallies = ms_bands.find_tallies(ms_path)
+    if tallies:
+        expected = [fences[q][1] for q in numbers]
+        alignment = align_sequences(expected, [t.marks for t in tallies])
+        if len(alignment) >= 0.6 * len(numbers):
+            assignment = {numbers[pos]: index for pos, index in alignment.items()}
+            # Headers let a band skip the previous question's Guidance table,
+            # which sits AFTER that question's tally in several papers.
+            bands = ms_bands.bands_from_tallies(
+                tallies, assignment, ms_bands.find_block_headers(ms_path)
+            )
+
+            kept: dict[int, ms_bands.Band] = {}
+            rejected: list[str] = []
+            for question, band in bands.items():
+                inside = ms_bands.verify_band(tallies, band)
+                if len(inside) == 1 and inside[0] == fences[question][1]:
+                    kept[question] = band
+                else:
+                    rejected.append(f"q{question}")
+
+            if kept:
+                warnings.append(
+                    f"mark scheme banded on per-question tallies: "
+                    f"{len(kept)}/{len(numbers)} questions"
+                )
+                if rejected:
+                    warnings.append(
+                        "tally band did not verify for " + ", ".join(sorted(rejected))
+                    )
+                filled = fill_tally_gaps(ms_path, numbers, kept, last_page, warnings)
+                return filled, set(), warnings
+
+    # ── Fallback: the block header rows ──────────────────────────────────────
+    headers = ms_bands.find_block_headers(ms_path)
+    if not headers:
         return {}, set(), ["no mark scheme question headers found"]
 
-    blocks: dict[int, tuple[int, int]] = {}
+    # A header that does not restate the question number CONTINUES the block
+    # above it rather than opening a new one. Edexcel prints such a header at
+    # the top of every notes page and at every page break inside a long
+    # question, so reading one as "the next question in sequence" walks the
+    # whole mark scheme out of step: in 2018 Jan Paper 2 that made question 8's
+    # scheme out of question 7's notes page, question 10's out of question 9's,
+    # and so on down the paper.
+    #
+    # Leaving those headers unassigned is what keeps the notes attached to their
+    # own question -- bands_from_headers ends a block at the next ASSIGNED
+    # header, so an unassigned one falls inside the block it belongs to.
+    assignment: dict[int, int] = {}
     provisional: set[int] = set()
+    last_assigned = 0
 
-    for position, (page_index, question, was_explicit) in enumerate(anchors):
-        end_page = (
-            anchors[position + 1][0] - 1
-            if position + 1 < len(anchors)
-            else len(pages) - 1
-        )
-        if question in blocks:
-            problems.append(f"mark scheme question {question} has two blocks")
+    for index, header in enumerate(headers):
+        explicit = header.question
+        if explicit is None:
             continue
-        blocks[question] = (page_index, max(page_index, end_page))
-        if not was_explicit:
-            provisional.add(question)
+        if explicit <= last_assigned or explicit > numbers[-1]:
+            continue  # a repeat of the current block's own header, or noise
+        if explicit in assignment:
+            continue
 
-    return blocks, provisional, problems
+        assignment[explicit] = index
+        last_assigned = explicit
+
+    headers, assignment = anchor_unheaded_questions(
+        ms_path, numbers, headers, assignment, warnings
+    )
+
+    bands = ms_bands.bands_from_headers(
+        headers, assignment, last_page=last_page, runs_to_end=numbers[-1]
+    )
+    warnings.append(
+        f"mark scheme banded on header rows: {len(bands)}/{len(numbers)} questions, "
+        f"{len(provisional)} inferred from sequence"
+    )
+    return bands, provisional, warnings
+
+
+def _first_anchor(
+    candidates: list[ms_bands.BlockHeader],
+    question: int,
+    after: tuple[int, float] | None,
+    before: tuple[int, float] | None,
+) -> ms_bands.BlockHeader | None:
+    """The earliest anchor naming `question` strictly between two positions."""
+    inside = [
+        c
+        for c in candidates
+        if c.question == question and ms_bands.position_between(c, after, before)
+    ]
+    return min(inside, key=lambda c: (c.page, c.lo)) if inside else None
+
+
+def anchor_unheaded_questions(
+    ms_path: Path,
+    numbers: list[int],
+    headers: list[ms_bands.BlockHeader],
+    assignment: dict[int, int],
+    warnings: list[str],
+) -> tuple[list[ms_bands.BlockHeader], dict[int, int]]:
+    """
+    Give a header-banded question with no readable header an anchor at its own
+    printed label, so it gets a band AND stops leaking into the one above.
+
+    Without this, bands_from_headers runs the previous question's block on to
+    the next assigned header, so the unheaded question's scheme is printed as
+    part of its neighbour's and it gets none of its own. That was 5 of the 9
+    printed-workbook questions with no mark scheme (2018 May-Jun P2 q2, 2019
+    Jan P2 q5, 2019 May-Jun P2 q4, 2020 Oct-Nov P1 q4 and P2 q8).
+
+    The label is only searched for strictly between the two neighbouring
+    assigned headers, so a stray digit elsewhere cannot be taken for it.
+    """
+    missing = [q for q in numbers if q not in assignment]
+    if not missing:
+        return headers, assignment
+
+    labels = ms_bands.find_question_labels(ms_path)
+    added: dict[int, ms_bands.BlockHeader] = {}
+    for question in missing:
+        lower = [q for q in assignment if q < question]
+        upper = [q for q in assignment if q > question]
+        after = None
+        if lower:
+            h = headers[assignment[max(lower)]]
+            after = (h.page, h.lo)
+        before = None
+        if upper:
+            h = headers[assignment[min(upper)]]
+            before = (h.page, h.lo)
+        label = _first_anchor(labels, question, after, before)
+        if label is not None:
+            added[question] = label
+
+    if not added:
+        return headers, assignment
+
+    by_question = {q: headers[i] for q, i in assignment.items()} | added
+    merged = sorted(set(headers) | set(added.values()), key=lambda h: (h.page, h.lo))
+    position = {h: i for i, h in enumerate(merged)}
+    warnings.append(
+        "mark scheme header unreadable, banded from the printed question label "
+        f"for questions {sorted(added)}"
+    )
+    return merged, {q: position[h] for q, h in by_question.items()}
+
+
+def fill_tally_gaps(
+    ms_path: Path,
+    numbers: list[int],
+    kept: dict[int, ms_bands.Band],
+    last_page: int,
+    warnings: list[str],
+) -> dict[int, ms_bands.Band]:
+    """
+    Band a question the tally method could not, from its own header (or label)
+    to where the next banded question begins.
+
+    A tally goes unmatched when the paper words it differently ("Total is 16
+    marks", 2021 May-Jun P2 q4) or prints none for that question (2022 May-Jun
+    P1R q4, 2019 May-Jun P2R q11). The whole block then belonged to nobody --
+    4 of the 9 printed-workbook questions with no mark scheme.
+
+    The anchor is only searched for after the previous banded question ENDS
+    and before the next one starts, so it can never overlap either neighbour.
+    """
+    missing = [q for q in numbers if q not in kept]
+    if not missing:
+        return kept
+
+    candidates = ms_bands.find_block_headers(ms_path) + ms_bands.find_question_labels(
+        ms_path
+    )
+    filled = dict(kept)
+    for question in missing:
+        lower = [q for q in filled if q < question]
+        upper = [q for q in filled if q > question]
+        after = None
+        if lower:
+            prev = filled[max(lower)]
+            after = (prev.end_page, prev.end_at if prev.end_at is not None else float("inf"))
+        following = filled[min(upper)] if upper else None
+        before = None
+        if following is not None:
+            before = (following.start_page, following.start_at or -1.0)
+        anchor = _first_anchor(candidates, question, after, before)
+        if anchor is None:
+            continue
+        filled[question] = ms_bands.band_until(anchor, following, last_page=last_page)
+
+    added = sorted(set(filled) - set(kept))
+    if added:
+        warnings.append(
+            f"tally unmatched, banded from the question's own header for {added}"
+        )
+    return filled
 
 
 def check_ms_marks(
-    pages: list[str],
-    ms_blocks: dict[int, tuple[int, int]],
+    ms_path: Path,
+    bands: dict[int, ms_bands.Band],
     provisional: set[int],
     fences: dict[int, tuple[int, int]],
-) -> tuple[dict[int, tuple[int, int]], list[str]]:
+) -> tuple[dict[int, ms_bands.Band], list[str]]:
     """
-    Third signal: the mark total inside each MS block must equal the QP fence
+    Third signal: the mark total inside each MS band must equal the QP fence
     marks for the same question. Agreement proves the QP and MS segments
     describe the same question.
 
@@ -502,25 +726,28 @@ def check_ms_marks(
     explicitly read number are kept and merely warned about, since the number on
     the page outranks a mark tally that Edexcel sometimes misprints.
 
-    Returns the surviving blocks plus any warnings.
+    This now reads the BAND rather than its pages. On a shared page the page's
+    text carries the neighbour's tally too, so the old check could pass for the
+    wrong reason -- finding the expected figure in a block that did not state
+    it.
     """
     warnings: list[str] = []
-    kept: dict[int, tuple[int, int]] = {}
+    kept: dict[int, ms_bands.Band] = {}
 
-    for question, (start, end) in sorted(ms_blocks.items()):
+    for question, band in sorted(bands.items()):
         if question not in fences:
             warnings.append(f"mark scheme has question {question} but the QP does not")
             continue
 
         expected = fences[question][1]
-        block_text = normalise(" ".join(pages[start : end + 1]))
+        text = ms_bands.band_text(ms_path, band)
 
-        totals = [int(m) for m in MS_TOTAL_RE.findall(block_text)]
+        totals = [int(m) for m in MS_TOTAL_RE.findall(text)]
         source = "total line"
         if not totals:
             # Older mark schemes tally each part in brackets and close with the
             # question total, so presence of the expected figure is the signal.
-            totals = [int(m) for m in MS_BRACKET_RE.findall(block_text)]
+            totals = [int(m) for m in MS_BRACKET_RE.findall(text)]
             source = "bracketed part tallies"
 
         verified = expected in totals
@@ -540,7 +767,7 @@ def check_ms_marks(
                 f"scheme {detail}"
             )
 
-        kept[question] = (start, end)
+        kept[question] = band
 
     missing_from_ms = sorted(set(fences) - set(kept))
     if missing_from_ms:
@@ -549,7 +776,6 @@ def check_ms_marks(
     return kept, warnings
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Validation
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -642,24 +868,27 @@ def process_paper(source: PaperSource) -> PaperResult:
 
     result.issues.extend(validate_paper(fences, ranges))
 
-    ms_blocks: dict[int, tuple[int, int]] = {}
+    ms_regions: dict[int, tuple[Region, ...]] = {}
     if source.ms_path is None:
         result.warnings.append("no mark scheme file found")
     else:
-        ms_pages = page_texts(source.ms_path)
-        ms_blocks, provisional, ms_problems = find_ms_blocks(ms_pages, sorted(fences))
+        bands, provisional, ms_problems = locate_ms_bands(source.ms_path, fences)
         result.warnings.extend(ms_problems)
-        ms_blocks, mark_warnings = check_ms_marks(
-            ms_pages, ms_blocks, provisional, fences
+        bands, mark_warnings = check_ms_marks(
+            source.ms_path, bands, provisional, fences
         )
         result.warnings.extend(mark_warnings)
+
+        for question, band in bands.items():
+            extents = ms_bands.page_extents_of(source.ms_path, band.axis)
+            ms_regions[question] = ms_bands.band_to_regions(band, Region, extents)
 
     result.segments = [
         QuestionSegment(
             number=question,
             marks=fences[question][1] if question in fences else 0,
             qp_pages=page_range,
-            ms_pages=ms_blocks.get(question),
+            ms_regions=ms_regions.get(question),
         )
         for question, page_range in sorted(ranges.items())
     ]
@@ -681,10 +910,90 @@ def extract_range(source_pdf: Path, page_range: tuple[int, int], target: Path) -
             out.close()
 
 
+def extract_regions(
+    source_pdf: Path, regions: tuple[Region, ...], target: Path
+) -> None:
+    """
+    Write `regions` of `source_pdf` to `target` as a new PDF.
+
+    A region with no band is copied whole, which preserves the page exactly. A
+    banded region is drawn onto a fresh page of the band's size with
+    show_pdf_page, whose `clip` is in the source page's own coordinate space --
+    the same space get_text reports, so no conversion is involved. Narrowing the
+    crop box instead would be wrong on the papers whose MediaBox and CropBox
+    disagree, and wrong in a way that looks fine until the audit reads it back.
+    """
+    target.parent.mkdir(parents=True, exist_ok=True)
+
+    with fitz.open(source_pdf) as src:
+        out = fitz.open()
+        try:
+            for region in regions:
+                if not region.cropped:
+                    out.insert_pdf(src, from_page=region.page, to_page=region.page)
+                    continue
+
+                page_rect = src[region.page].rect
+                top = (
+                    page_rect.y0 if region.top is None else max(page_rect.y0, region.top)
+                )
+                bottom = (
+                    page_rect.y1
+                    if region.bottom is None
+                    else min(page_rect.y1, region.bottom)
+                )
+                left = (
+                    page_rect.x0
+                    if region.left is None
+                    else max(page_rect.x0, region.left)
+                )
+                right = (
+                    page_rect.x1
+                    if region.right is None
+                    else min(page_rect.x1, region.right)
+                )
+                # A band this thin on either axis means a bad coordinate.
+                if bottom - top < 20 or right - left < 20:
+                    out.insert_pdf(src, from_page=region.page, to_page=region.page)
+                    continue
+
+                clip = fitz.Rect(left, top, right, bottom)
+                band = out.new_page(width=clip.width, height=clip.height)
+                band.show_pdf_page(
+                    fitz.Rect(0, 0, clip.width, clip.height),
+                    src,
+                    region.page,
+                    clip=clip,
+                )
+            out.save(target)
+        finally:
+            out.close()
+
+
 def write_paper(result: PaperResult) -> int:
-    """Write every segment of a validated paper. Returns files written."""
+    """
+    Write every segment of a validated paper. Returns files written.
+
+    Files this run did not produce are DELETED first, so a segment the current
+    logic declines to emit cannot silently keep whatever an earlier run left at
+    that path. Rebuilding Maths B after its mark schemes were banded turned up
+    103 such orphans, holding the very contamination the rebuild existed to
+    remove, and its audit read them back as if they were current output.
+    """
     paper_dir = OUTPUT_DIR / result.source.key
     written = 0
+
+    wanted = {
+        "questions": {f"q{s.number}.pdf" for s in result.segments},
+        "markschemes": {f"q{s.number}.pdf" for s in result.segments if s.ms_regions},
+    }
+    for subdir, keep in wanted.items():
+        directory = paper_dir / subdir
+        if not directory.is_dir():
+            continue
+        for stale in directory.glob("q*.pdf"):
+            if stale.name not in keep:
+                stale.unlink()
 
     for segment in result.segments:
         extract_range(
@@ -694,10 +1003,10 @@ def write_paper(result: PaperResult) -> int:
         )
         written += 1
 
-        if segment.ms_pages is not None and result.source.ms_path is not None:
-            extract_range(
+        if segment.ms_regions is not None and result.source.ms_path is not None:
+            extract_regions(
                 result.source.ms_path,
-                segment.ms_pages,
+                segment.ms_regions,
                 paper_dir / "markschemes" / f"q{segment.number}.pdf",
             )
             written += 1
@@ -721,8 +1030,22 @@ def write_paper(result: PaperResult) -> int:
                 "question_number": s.number,
                 "marks": s.marks,
                 "qp_pages": list(s.qp_pages),
-                "ms_pages": list(s.ms_pages) if s.ms_pages else None,
-                "has_markscheme": s.ms_pages is not None,
+                "ms_regions": (
+                    [
+                        {
+                            "page": r.page,
+                            "top": r.top,
+                            "bottom": r.bottom,
+                            "left": r.left,
+                            "right": r.right,
+                            "cropped": r.cropped,
+                        }
+                        for r in s.ms_regions
+                    ]
+                    if s.ms_regions
+                    else None
+                ),
+                "has_markscheme": s.ms_regions is not None,
             }
             for s in result.segments
         ],
@@ -753,7 +1076,9 @@ def audit_output() -> int:
         return 0
 
     checked = bundled = mislabelled = unverifiable = hand_verified = 0
+    ms_checked = ms_bundled = ms_no_header = 0
     defects: list[str] = []
+    ms_defects: list[str] = []
 
     for paper_dir in sorted(OUTPUT_DIR.iterdir()):
         questions_dir = paper_dir / "questions"
@@ -765,6 +1090,45 @@ def audit_output() -> int:
         # false; counting them as passes would be dishonest. They are reported
         # in their own line.
         is_manual = paper_dir.name in MANUAL_QP_RANGES
+
+        # ── The mark scheme side ────────────────────────────────────────────
+        #
+        # A mark scheme block opens with a header row that names its question.
+        # A segment holding a header for some OTHER question is holding another
+        # question's scheme, which is the defect banding exists to remove. Read
+        # from the written PDF only, so a bug in the band logic shows up here
+        # rather than being inherited.
+        for ms_path in sorted((paper_dir / "markschemes").glob("q*.pdf")):
+            ms_match = re.fullmatch(r"q(\d+)\.pdf", ms_path.name)
+            if not ms_match:
+                continue
+            ms_expected = int(ms_match.group(1))
+            ms_checked += 1
+
+            flat = normalise(" ".join(page_texts(ms_path)))
+            numbered = {
+                int(n)
+                for n in re.findall(
+                    r"Question\s+(?:number\s+)?Scheme\s+Marks?\s+(\d{1,2})", flat, re.I
+                )
+            }
+            # The flat text cannot tell a header's question number from the
+            # first exponent of the working under a CONTINUATION header
+            # ("4q² = 9p²" reads as "... Marks 2"), which flagged three clean
+            # 2017 May-Jun P2 schemes. So a number only counts if it is also
+            # printed as a label in the number column of the written PDF.
+            if numbered - {ms_expected}:
+                labelled = {h.question for h in ms_bands.find_question_labels(ms_path)}
+                numbered &= labelled | {ms_expected}
+            others = sorted(numbered - {ms_expected})
+
+            if others:
+                ms_bundled += 1
+                ms_defects.append(
+                    f"MS BUNDLED   {paper_dir.name}/{ms_path.name}: also holds {others}"
+                )
+            elif not numbered:
+                ms_no_header += 1
 
         for pdf_path in sorted(questions_dir.glob("q*.pdf")):
             match = re.fullmatch(r"q(\d+)\.pdf", pdf_path.name)
@@ -803,16 +1167,31 @@ def audit_output() -> int:
     print(f"  mislabelled           : {mislabelled}")
     print(f"  unverifiable          : {unverifiable}")
 
+    print(f"\n  mark schemes checked  : {ms_checked}")
+    print(f"  single-question       : {ms_checked - ms_bundled - ms_no_header}")
+    print(f"  no readable header    : {ms_no_header}")
+    print(f"  bundled               : {ms_bundled}")
+
     if defects:
-        print(f"\n  {len(defects)} defect(s):")
+        print(f"\n  {len(defects)} question defect(s):")
         for defect in defects[:60]:
             print(f"    {defect}")
         if len(defects) > 60:
             print(f"    ... and {len(defects) - 60} more")
 
-    total_defects = bundled + mislabelled + unverifiable
+    if ms_defects:
+        print(f"\n  {len(ms_defects)} mark scheme defect(s):")
+        for defect in ms_defects[:60]:
+            print(f"    {defect}")
+        if len(ms_defects) > 60:
+            print(f"    ... and {len(ms_defects) - 60} more")
+
+    total_defects = bundled + mislabelled + unverifiable + ms_bundled
     verdict = "PASS" if total_defects == 0 else "FAIL"
-    print(f"\n  GATE: {verdict} (bundled + mislabelled + unverifiable = {total_defects})")
+    print(
+        f"\n  GATE: {verdict} (question defects "
+        f"{bundled + mislabelled + unverifiable}, mark scheme defects {ms_bundled})"
+    )
     return total_defects
 
 
@@ -863,7 +1242,7 @@ def main() -> int:
             continue
 
         marks = sum(s.marks for s in result.segments)
-        with_ms = sum(1 for s in result.segments if s.ms_pages)
+        with_ms = sum(1 for s in result.segments if s.ms_regions)
         flag = f"  ({len(result.warnings)} warnings)" if result.warnings else ""
         print(
             f"  OK    {key:<22} {len(result.segments):>2} questions, "
@@ -887,7 +1266,7 @@ def main() -> int:
     print(f"  failed validation : {len(failed)}")
     print(f"  excluded          : {len(skipped)}")
     print(f"  questions         : {sum(len(r.segments) for r in ok)}")
-    print(f"  with mark scheme  : {sum(1 for r in ok for s in r.segments if s.ms_pages)}")
+    print(f"  with mark scheme  : {sum(1 for r in ok for s in r.segments if s.ms_regions)}")
     print(f"  warnings          : {sum(len(r.warnings) for r in ok)}")
 
     if args.execute:
