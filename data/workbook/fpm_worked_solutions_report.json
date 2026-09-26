@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "ms_misplaced": 0,
+    "ms_math_wrong": 0,
+    "answer_disagrees": 0,
+    "low_confidence": 0,
+    "failed": 0,
+    "total_solved": 3
+  },
+  "flags": {
+    "ms_misplaced": [],
+    "ms_math_wrong": [],
+    "answer_disagrees": [],
+    "low_confidence": [],
+    "failed": []
+  }
+}
