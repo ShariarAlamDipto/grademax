@@ -407,23 +407,6 @@
       "confidence": 1
     }
   },
-  "FPM.CH01.S02.Q009": {
-    "slug": "FPM.CH01.S02.Q009",
-    "source": "2019 May/June Paper 1R Q3",
-    "paper_key": "2019_may-jun_1R",
-    "question_number": 3,
-    "chapter": 1,
-    "chapter_title": "Logarithmic functions and indices",
-    "section": "1.2",
-    "section_title": "Laws of logarithms and change of base",
-    "printed_number": 7,
-    "marks": 7,
-    "qp_pdf": "data/workbook/fpm/2019_may-jun_1R/questions/q3.pdf",
-    "ms_pdf": "data/workbook/fpm/2019_may-jun_1R/markschemes/q3.pdf",
-    "relinked_ms": null,
-    "model": "gemini-flash-lite-latest",
-    "solution": null
-  },
   "FPM.CH01.S02.Q010": {
     "slug": "FPM.CH01.S02.Q010",
     "source": "2021 May/June Paper 2 Q8",
@@ -1974,58 +1957,6 @@
       "final_answer": "3x^2 + 10x - 8 = 0",
       "answer_agrees_with_ms": true,
       "confidence": 1
-    }
-  },
-  "FPM.CH02.S03.Q028": {
-    "slug": "FPM.CH02.S03.Q028",
-    "source": "2019 May/June Paper 2R Q11",
-    "paper_key": "2019_may-jun_2R",
-    "question_number": 11,
-    "chapter": 2,
-    "chapter_title": "The quadratic function",
-    "section": "2.4",
-    "section_title": "Forming new equations from roots",
-    "printed_number": 5,
-    "marks": 12,
-    "qp_pdf": "data/workbook/fpm/2019_may-jun_2R/questions/q11.pdf",
-    "ms_pdf": null,
-    "relinked_ms": null,
-    "model": "gemini-flash-lite-latest",
-    "solution": {
-      "question_number": 11,
-      "ms_questions_visible": [],
-      "ms_matches_question": false,
-      "ms_math_correct": true,
-      "ms_error": null,
-      "steps": [
-        {
-          "step": "For the quadratic equation $x^2 - px + q = 0$ with roots $\\alpha$ and $\\beta$, the sum and product of the roots are given by $\\alpha + \\beta = p$ and $\\alpha\\beta = q$.",
-          "marks": null
-        },
-        {
-          "step": "(a)(i) We are given $2\\alpha\\beta = 3$. Therefore, $q = \\alpha\\beta = \\frac{3}{2}$.",
-          "marks": "B1"
-        },
-        {
-          "step": "(a)(ii) We are given $4(\\alpha^2 + \\beta^2) = k^2 - 6k - 3$. Using $\\alpha^2 + \\beta^2 = (\\alpha + \\beta)^2 - 2\\alpha\\beta = p^2 - 2q = p^2 - 2\\left(\\frac{3}{2}\\right) = p^2 - 3$. Substituting this into the given relation: $4(p^2 - 3) = k^2 - 6k - 3 \\implies 4p^2 - 12 = k^2 - 6k - 3 \\implies 4p^2 = k^2 - 6k + 9$. Since $4p^2 = (2p)^2$ and $k^2 - 6k + 9 = (k - 3)^2$, we have $(2p)^2 = (k - 3)^2$. Since $p > 0$, $2p = k - 3$, which gives $p = \\frac{k - 3}{2}$.",
-          "marks": "M1 A1 M1 A1"
-        },
-        {
-          "step": "(b) We are given $7\\alpha\\beta = 3(\\alpha + \\beta)$. Since $\\alpha\\beta = \\frac{3}{2}$ and $\\alpha + \\beta = p = \\frac{k - 3}{2}$, we substitute these values: $7\\left(\\frac{3}{2}\\right) = 3\\left(\\frac{k - 3}{2}\\right) \\implies \\frac{21}{2} = \\frac{3(k - 3)}{2} \\implies 21 = 3(k - 3) \\implies 7 = k - 3 \\implies k = 10$.",
-          "marks": "M1 A1"
-        },
-        {
-          "step": "(c) With $k = 10$, we find $p = \\frac{10 - 3}{2} = \\frac{7}{2}$ and $q = \\frac{3}{2}$. Thus, $\\alpha + \\beta = \\frac{7}{2}$ and $\\alpha\\beta = \\frac{3}{2}$. The new roots are $S_1 = \\frac{\\alpha}{\\alpha + \\beta}$ and $S_2 = \\frac{\\beta}{\\alpha + \\beta}$. Their sum is $S = \\frac{\\alpha}{\\alpha + \\beta} + \\frac{\\beta}{\\alpha + \\beta} = \\frac{\\alpha + \\beta}{\\alpha + \\beta} = 1$. Their product is $P = \\left(\\frac{\\alpha}{\\alpha + \\beta}\\right)\\left(/frac{\\beta}{\\alpha + \\beta}\\right) = \\frac{\\alpha\\beta}{(\\alpha + \\beta)^2} = \\frac{\\frac{3}{2}}{\\left(\\frac{7}{2}\\right)^2} = \\frac{\\frac{3}{2}}{\\frac{49}{4}} = \\frac{3}{2} \\times \\frac{4}{49} = \\frac{6}{49}$.",
-          "marks": "M1 A1 M1 A1"
-        },
-        {
-          "step": "Using the sum $S = 1$ and product $P = \\frac{6}{49}$, the quadratic equation with integer coefficients is $x^2 - Sx + P = 0 \\implies x^2 - x + \\frac{6}{49} = 0 \\implies 49x^2 - 49x + 6 = 0$.",
-          "marks": "A1"
-        }
-      ],
-      "final_answer": "49x^2 - 49x + 6 = 0",
-      "answer_agrees_with_ms": true,
-      "confidence": 1.0
     }
   },
   "FPM.CH02.S03.Q029": {
@@ -4185,23 +4116,6 @@
       "answer_agrees_with_ms": true,
       "confidence": 1
     }
-  },
-  "FPM.CH01.S02.Q016": {
-    "slug": "FPM.CH01.S02.Q016",
-    "source": "2019 January Paper 2 Q7",
-    "paper_key": "2019_jan_2",
-    "question_number": 7,
-    "chapter": 4,
-    "chapter_title": "Graphs",
-    "section": "4.4",
-    "section_title": "Graphical solution of equations",
-    "printed_number": 10,
-    "marks": 12,
-    "qp_pdf": "data/workbook/fpm/2019_jan_2/questions/q7.pdf",
-    "ms_pdf": "data/workbook/fpm/2019_jan_2/markschemes/q7.pdf",
-    "relinked_ms": null,
-    "model": "gemini-flash-lite-latest",
-    "solution": null
   },
   "FPM.CH01.S02.Q017": {
     "slug": "FPM.CH01.S02.Q017",
