@@ -69,10 +69,11 @@ SEASON = {
     "May/June": "may-jun",
     "Oct/Nov": "oct-nov",
     "October/November": "oct-nov",
+    "Specimen": "specimen",
 }
 
 SOURCE_RE = re.compile(
-    r"(\d{4}) (January|May/June|Oct/Nov|October/November) Paper (\w+) Q(\d+)"
+    r"(\d{4}) (January|May/June|Oct/Nov|October/November|Specimen) Paper (\w+) Q(\d+)"
 )
 
 PROMPT = (
@@ -94,6 +95,11 @@ PROMPT = (
     "as ordered steps. Use LaTeX for ALL mathematics, inline as $...$ (never "
     "unicode math symbols). Attach the mark-scheme mark code (e.g. 'M1', 'A1', "
     "'B1', 'M1 A1') to the step it is earned on, or null if none.\n"
+    "   The steps are PRINTED in a book for students. Work the problem out "
+    "privately first, then write only the clean, final solution: never 'wait', "
+    "'let's recheck', second attempts or corrections inside a step. Every "
+    "symbol, vector (\\overrightarrow, \\mathbf) and expression goes inside "
+    "$...$; do not write literal \\n line breaks.\n"
     "6. Give the final answer in final_answer (LaTeX).\n"
     "7. Set answer_agrees_with_ms=true only if your final answer matches the "
     "mark scheme's stated answer.\n\n"
@@ -191,7 +197,9 @@ def call_gemini(key: str, parts: list[dict]) -> tuple[dict | None, str | None]:
         "contents": [{"role": "user", "parts": parts}],
         "generationConfig": {
             "temperature": 0,
-            "maxOutputTokens": 4096,
+            # 4096 truncated long (16-mark) solutions mid-JSON: the thinking
+            # models spend part of this budget before writing a word.
+            "maxOutputTokens": 16384,
             "responseMimeType": "application/json",
         },
     }
@@ -304,9 +312,19 @@ def main() -> None:
     ap.add_argument("--limit", type=int, default=0, help="only process N (smoke test)")
     ap.add_argument("--report", action="store_true", help="rebuild report from cache only")
     ap.add_argument("--force", action="store_true", help="re-solve cached items")
+    ap.add_argument("--index", type=Path, default=INDEX_PATH,
+                    help="question index to solve (default: the printed 2018-22 book; "
+                         "data/workbook/fpm_complete_index.json covers all 431)")
+    ap.add_argument("--only", type=Path,
+                    help="JSON list of slugs to re-solve, cached or not")
+    ap.add_argument("--prefer", choices=MODEL_CHAIN,
+                    help="try this model first (e.g. gemini-3.5-flash for stubborn questions)")
     args = ap.parse_args()
+    if args.prefer:
+        MODEL_CHAIN.remove(args.prefer)
+        MODEL_CHAIN.insert(0, args.prefer)
 
-    index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    index = json.loads(args.index.read_text(encoding="utf-8"))
     questions = index["questions"]
     index_by_slug = {q["slug"]: q for q in questions}
     cache = load_cache(CACHE_PATH)
@@ -316,7 +334,12 @@ def main() -> None:
         return
 
     key = load_env()
-    todo = [q for q in questions if args.force or q["slug"] not in cache or not cache[q["slug"]].get("solution")]
+    only = set(json.loads(args.only.read_text(encoding="utf-8"))) if args.only else None
+    if only is not None:
+        todo = [q for q in questions if q["slug"] in only]
+    else:
+        todo = [q for q in questions
+                if args.force or q["slug"] not in cache or not cache[q["slug"]].get("solution")]
     if args.limit:
         todo = todo[: args.limit]
     print(f"FPM: {len(questions)} questions, {len(cache)} cached, {len(todo)} to solve\n")
