@@ -1,17 +1,50 @@
 {
   "summary": {
     "ms_misplaced": 0,
-    "ms_math_wrong": 0,
-    "answer_disagrees": 0,
-    "low_confidence": 0,
+    "ms_math_wrong": 4,
+    "answer_disagrees": 1,
+    "low_confidence": 1,
     "failed": 0,
-    "total_solved": 3
+    "total_solved": 316
   },
   "flags": {
     "ms_misplaced": [],
-    "ms_math_wrong": [],
-    "answer_disagrees": [],
-    "low_confidence": [],
+    "ms_math_wrong": [
+      {
+        "slug": "FPM.CH01.S02.Q010",
+        "source": "2021 May/June Paper 2 Q8",
+        "error": "The mark scheme states $3 \\log_8 b = 2 \\log_4 b$, but using the change of base rule: $\\log_8 b = \\frac{\\log_2 b}{\\log_2 8} = \\frac{\\log_2 b}{3}$, so $3 \\log_8 b = 3 \\left(\\frac{\\log_2 b}{3}\\right) = \\log_2 b$, which corresponds to $\\log_4 b^2$. However, looking at the first line of the mark scheme, it says $\\log_4 a + 2 \\log_4 b = \\frac{5}{2}$, which has a coefficient of 2 instead of 3, leading to an incorrect transcription from the question paper where the term is $3 \\log_8 b$. Wait, $\\log_8 b = \\frac{\\log_4 b}{\\log_4 8} = \\frac{\\log_4 b}{3/2} = \\frac{2}{3} \\log_4 b$. Thus $3 \\log_8 b = 3 \\left(\\frac{2}{3} \\log_4 b\\right) = 2 \\log_4 b$. So the mark scheme's first line is mathematically equivalent to the question, but the question paper says $3 \\log_8 b$, and the mark scheme transcription drops the 3 and writes $2 \\log_4 b$, which is actually correct due to the base conversion: $3 \\cdot \\frac{\\log_4 b}{\\log_4 8} = 3 \\cdot \\frac{\\log_4 b}{3/2} = 2 \\log_4 b$. Therefore, the mark scheme is actually mathematically correct."
+      },
+      {
+        "slug": "FPM.CH02.S02.Q014",
+        "source": "2021 October/November Paper 1 Q2",
+        "error": "The expansion of $(p-1)^2 - 4(2)(-2p)$ has an arithmetic error in the mark scheme. $(p-1)^2 - 4(2)(-2p) = p^2 - 2p + 1 + 16p = p^2 + 14p + 1$, but the mark scheme shows $+14p$, wait: $-2p + 16p = +14p$. Let's recheck: $(-1)^2 = 1$, $-4(2)(-2p) = +16p$. So $p^2 - 2p + 1 + 16p = p^2 + 14p + 1$. Actually $14p$ is correct. Let's check the quadratic formula: $-14 \\pm \\sqrt{14^2 - 4(1)(1)} / 2 = -14 \\pm \\sqrt{196 - 4} / 2 = -14 \\pm \\sqrt{192} / 2 = -14 \\pm 8\\sqrt{3} / 2 = -7 \\pm 4\\sqrt{3}$. The mark scheme is completely correct, my initial quick glance was wrong. Wait, let me set ms_math_correct=true since the mark scheme's math is correct. Let's re-evaluate: ms_math_correct=true."
+      },
+      {
+        "slug": "FPM.CH08.S01.Q001",
+        "source": "2020 October/November Paper 1 Q5",
+        "error": "In part (b) notes, the mark scheme erroneously states √{8^2 + 8^2} = √{218} instead of √{128}."
+      },
+      {
+        "slug": "FPM.CH08.S02.Q012",
+        "source": "2022 January Paper 1R Q3",
+        "error": "In ALT2, the mark scheme calculates 56 - 31 = 35 instead of 25, leading to an incorrect final answer of 35 instead of 25."
+      }
+    ],
+    "answer_disagrees": [
+      {
+        "slug": "FPM.CH08.S02.Q012",
+        "source": "2022 January Paper 1R Q3",
+        "answer": "25"
+      }
+    ],
+    "low_confidence": [
+      {
+        "slug": "FPM.CH02.S02.Q014",
+        "source": "2021 October/November Paper 1 Q2",
+        "confidence": null
+      }
+    ],
     "failed": []
   }
 }
