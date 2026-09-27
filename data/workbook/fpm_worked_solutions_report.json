@@ -1,11 +1,11 @@
 {
   "summary": {
     "ms_misplaced": 0,
-    "ms_math_wrong": 4,
+    "ms_math_wrong": 7,
     "answer_disagrees": 1,
-    "low_confidence": 1,
+    "low_confidence": 0,
     "failed": 0,
-    "total_solved": 316
+    "total_solved": 431
   },
   "flags": {
     "ms_misplaced": [],
@@ -18,7 +18,12 @@
       {
         "slug": "FPM.CH02.S02.Q014",
         "source": "2021 October/November Paper 1 Q2",
-        "error": "The expansion of $(p-1)^2 - 4(2)(-2p)$ has an arithmetic error in the mark scheme. $(p-1)^2 - 4(2)(-2p) = p^2 - 2p + 1 + 16p = p^2 + 14p + 1$, but the mark scheme shows $+14p$, wait: $-2p + 16p = +14p$. Let's recheck: $(-1)^2 = 1$, $-4(2)(-2p) = +16p$. So $p^2 - 2p + 1 + 16p = p^2 + 14p + 1$. Actually $14p$ is correct. Let's check the quadratic formula: $-14 \\pm \\sqrt{14^2 - 4(1)(1)} / 2 = -14 \\pm \\sqrt{196 - 4} / 2 = -14 \\pm \\sqrt{192} / 2 = -14 \\pm 8\\sqrt{3} / 2 = -7 \\pm 4\\sqrt{3}$. The mark scheme is completely correct, my initial quick glance was wrong. Wait, let me set ms_math_correct=true since the mark scheme's math is correct. Let's re-evaluate: ms_math_correct=true."
+        "error": "The mark scheme expands $(p-1)^2 - 4(2)(-2p)$ as $p^2 + 14p + 1$, but it should be $p^2 - 2p + 1 + 16p = p^2 + 14p + 1$? Wait: $-2p$ and $+16p$ gives $+14p$. Let's recheck: $(p-1)^2 = p^2 - 2p + 1$, and $-4(2)(-2p) = +16p$. So $p^2 - 2p + 1 + 16p = p^2 + 14p + 1$. The mark scheme is actually correct! Let me re-read the mark scheme expression: $(p-1)^2 - 4 \\times 2 \\times -2p > 0 \\Rightarrow p^2 + 14p + 1 > 0$. Yes, $-2p + 16p = +14p$. The mark scheme is correct. Wait, why did I think it was wrong? Let me set ms_math_correct=true."
+      },
+      {
+        "slug": "FPM.CH02.S03.Q029",
+        "source": "2020 January Paper 2R Q5",
+        "error": "In part (b), the calculation for \\alpha^3 + \\beta^3 using \\alpha + \\beta = -3/2 has an error: (-3/2)^3 - 3(3)(-3/2) = -27/8 + 27/2 = 81/8, but in the mark scheme it incorrectly substitutes (-3/2) leading to the wrong sign or value if not careful; wait, let's check: (-3/2)^3 - 3(3)(-3/2) = -27/8 + 27/2 = -27/8 + 108/8 = 81/8. Actually part (b) in MS is correct. Let's check part (d): Product = (\\alpha^3 - \\beta)(\\beta^3 - \\alpha) = \\alpha^3\\beta^3 - \\alpha^4 - \\beta^4 + \\alpha\\beta = (\\alpha\\beta)^3 - (\\alpha^4 + \\beta^4) + \\alpha\\beta. Here \\alpha^4 + \\beta^4 = (\\alpha^2+\\beta^2)^2 - 2(\\alpha\\beta)^2 = (-15/4)^2 - 2(3)^2 = 225/16 - 18 = 225/16 - 288/16 = -63/16. Then Product = 27 - (-63/16) + 3 = 30 + 63/16 = 543/16. The mark scheme writes 27 - [(-15/4)^2 - 2(3)^2] + 3 which equals 27 - (-63/16) + 3 = 543/16. The mark scheme is mathematically correct."
       },
       {
         "slug": "FPM.CH08.S01.Q001",
@@ -29,6 +34,16 @@
         "slug": "FPM.CH08.S02.Q012",
         "source": "2022 January Paper 1R Q3",
         "error": "In ALT2, the mark scheme calculates 56 - 31 = 35 instead of 25, leading to an incorrect final answer of 35 instead of 25."
+      },
+      {
+        "slug": "FPM.CH03.S01.Q004",
+        "source": "2016 May/June Paper 1 Q2",
+        "error": "The mark scheme in part (c) sets the coefficient of $x^2$ to be $-(1+k) = -5$, but from the expansion $1 - (1+k)x^2 + (k+2)x^4$, the coefficient of $x^2$ is $-(1+k)$. Setting $-(1+k) = -5$ gives $1+k=5 \\implies k=4$, which fortuitously gives the correct answer of $4$, but the expression in the scheme says $=1-(1+k)x^2...$ while the coefficient is technically $-(1+k)$. Wait, let's check: $1 - kx^2 - x^2 = 1 - (k+1)x^2$. So coefficient of $x^2$ is $-(k+1)$. Equating to $-5$ gives $k+1=5 \\implies k=4$. The mark scheme does have $1-(1+k)x^2$ which correctly identifies the coefficient as $-(1+k)$. Thus the mark scheme is actually correct."
+      },
+      {
+        "slug": "FPM.CH09.S05.Q076",
+        "source": "2016 Specimen Paper 1 Q11",
+        "error": "The mark scheme has several typos in its working, such as writing $(x+1)$ instead of $(x-1)$ or missing out the negative signs in the polynomial expansion and integration, though the final answers happen to be correctly extracted as $a = \\frac{9}{2}, b = 3$ and $\\text{Area} = \\frac{2043}{32}$."
       }
     ],
     "answer_disagrees": [
@@ -38,13 +53,7 @@
         "answer": "25"
       }
     ],
-    "low_confidence": [
-      {
-        "slug": "FPM.CH02.S02.Q014",
-        "source": "2021 October/November Paper 1 Q2",
-        "confidence": null
-      }
-    ],
+    "low_confidence": [],
     "failed": []
   }
 }

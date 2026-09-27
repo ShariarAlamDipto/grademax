@@ -1,0 +1,33 @@
+{
+  "_note": "Human review of the FPM solver's 'official mark scheme is wrong' claims (ms_math_correct=false). ms_note: Only 'confirmed' (a genuine Edexcel error checked against the source) is printed; 'dismissed' records a model mistake. Read by scripts/build_fpm_solutions_pdf.py.",
+  "reviews": {
+    "FPM.CH01.S02.Q010": {
+      "ms_note": "dismissed",
+      "reason": "2021 May/June P2 Q8: 3log_8 b = log_2 b and 2log_4 b = log_2 b, so the mark scheme's step is correct; the model's change-of-base working is wrong."
+    },
+    "FPM.CH02.S02.Q014": {
+      "ms_note": "dismissed",
+      "reason": "2021 Oct/Nov P1 Q2: the model's own note computes p^2 + 14p + 1 and then agrees the mark scheme shows +14p; it contradicts itself."
+    },
+    "FPM.CH08.S01.Q001": {
+      "ms_note": "confirmed",
+      "reason": "2020 Oct/Nov P1 Q5: the scheme gives sqrt(8^2+8^2) = sqrt(128) but the notes print sqrt(218). Checked against the source mark scheme text."
+    },
+    "FPM.CH08.S02.Q012": {
+      "ms_note": "confirmed",
+      "reason": "2022 Jan P1R Q3: ALT 2 prints 56 - 31 = 35; it is 25. Checked against the source mark scheme text."
+    },
+    "FPM.CH03.S01.Q004": {
+      "ms_note": "dismissed",
+      "reason": "2016 May/June P1 Q2: the model's own note ends 'the mark scheme is actually correct'."
+    },
+    "FPM.CH02.S03.Q029": {
+      "ms_note": "dismissed",
+      "reason": "2020 Jan P2R Q5: the model's note concludes 'part (b) in MS is correct' and never establishes an error."
+    },
+    "FPM.CH09.S05.Q076": {
+      "ms_note": "dismissed",
+      "reason": "2016 Specimen P1 Q11: (x+1) is correct because (-1, 0) lies on the curve; the model is wrong."
+    }
+  }
+}

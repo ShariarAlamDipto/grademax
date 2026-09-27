@@ -13,6 +13,7 @@ notation rather than raw source.
 USAGE
   python scripts/build_fpm_solutions_pdf.py            # build the PDF
   python scripts/build_fpm_solutions_pdf.py --html-only  # just emit HTML
+  python scripts/build_fpm_solutions_pdf.py --complete   # all 431 questions, 2016-2022
 """
 
 from __future__ import annotations
@@ -20,6 +21,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -29,6 +31,10 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = REPO_ROOT / "data" / "workbook" / "fpm" / "print" / "final"
 CACHE_PATH = REPO_ROOT / "data" / "workbook" / "fpm_worked_solutions.json"
 INDEX_PATH = REPO_ROOT / "data" / "workbook" / "fpm" / "print" / "print_index_paged.json"
+COMPLETE_INDEX_PATH = REPO_ROOT / "data" / "workbook" / "fpm_complete_index.json"
+# Human review of the solver's "the official mark scheme is wrong" claims. Only
+# a "confirmed" claim is printed as a note against Edexcel.
+REVIEWS_PATH = REPO_ROOT / "data" / "workbook" / "fpm_worked_solutions_reviews.json"
 
 CSS = """
 :root { --ink:#1a1a1a; --muted:#666; --accent:#7a1f2b; --line:#e2e2e2; }
@@ -84,9 +90,17 @@ document.addEventListener("DOMContentLoaded", function () {
 """
 
 
+# The model sometimes writes a line break as a literal backslash-n. It is only a
+# break when what follows cannot start a LaTeX command (\neq, \nabla, \not all
+# continue with a lowercase letter).
+LITERAL_NEWLINE = re.compile(r"\\n(?=[A-Z\s$(\[]|$)")
+BREAK_MARK = "\u0000BR\u0000"
+
+
 def esc_with_math(text: str) -> str:
     """Escape HTML but leave $...$ math spans for KaTeX."""
-    return html.escape(text or "", quote=False)
+    marked = LITERAL_NEWLINE.sub(BREAK_MARK, text or "")
+    return html.escape(marked, quote=False).replace(BREAK_MARK, "<br>")
 
 
 def wrap_math(answer: str) -> str:
@@ -101,7 +115,7 @@ def wrap_math(answer: str) -> str:
     return "$" + esc_with_math(a) + "$"
 
 
-def render_question(rec: dict) -> str:
+def render_question(rec: dict, review: dict | None = None) -> str:
     sol = rec.get("solution") or {}
     steps = sol.get("steps") or []
     parts = ['<div class="q">']
@@ -127,7 +141,10 @@ def render_question(rec: dict) -> str:
     flags = []
     if sol and not sol.get("ms_matches_question", True):
         flags.append("Mark scheme placement was corrected for this question.")
-    if sol and not sol.get("ms_math_correct", True) and sol.get("ms_error"):
+    # Only a claim a human CONFIRMED against the source mark scheme is printed.
+    # Unreviewed claims were wrong 5 times out of 7, often self-refuting.
+    confirmed = (review or {}).get("ms_note") == "confirmed"
+    if sol and not sol.get("ms_math_correct", True) and sol.get("ms_error") and confirmed:
         flags.append("Note on the official mark scheme: " + sol["ms_error"])
     for f in flags:
         parts.append(f'<div class="flag">{esc_with_math(f)}</div>')
@@ -136,10 +153,15 @@ def render_question(rec: dict) -> str:
     return "\n".join(parts)
 
 
-def build_html(cache: dict, index: dict) -> str:
-    order = {q["slug"]: i for i, q in enumerate(index["questions"])}
-    recs = [r for r in cache.values() if r.get("slug") in order]
-    recs.sort(key=lambda r: order[r["slug"]])
+def build_html(cache: dict, index: dict, reviews: dict, complete: bool) -> str:
+    # Chapter, section and printed number come from the INDEX, not the cache:
+    # the cache records whichever edition the question was solved for, and the
+    # complete 2016-22 edition numbers its sections differently.
+    recs = []
+    for entry in index["questions"]:
+        cached = cache.get(entry["slug"])
+        if cached is not None:
+            recs.append({**cached, **entry})
 
     body = []
     cur_ch = cur_sec = None
@@ -152,15 +174,18 @@ def build_html(cache: dict, index: dict) -> str:
         if r["section"] != cur_sec:
             cur_sec = r["section"]
             body.append(f'<h2 class="section-title">{html.escape(str(cur_sec))} &nbsp;{html.escape(r["section_title"])}</h2>')
-        body.append(render_question(r))
+        body.append(render_question(r, reviews.get(r["slug"])))
     body.append("</div>")
 
     solved = sum(1 for r in recs if r.get("solution"))
+    papers = ("Complete edition &mdash; every paper 2016&ndash;2022" if complete
+              else "Papers 2018&ndash;2022")
     cover = f"""
     <div class="cover">
       <h1>Worked Solutions</h1>
       <h2>Edexcel International GCSE Further Pure Mathematics (4PM1)</h2>
       <h2>Chapterwise Workbook &mdash; Chapters 1&ndash;10</h2>
+      <h2>{papers}</h2>
       <div class="brand">GRADEMAX</div>
       <div class="note">Full step-by-step solutions with examiner mark allocations
       (M1 / A1 / B1). Every solution has been checked against the official Edexcel
@@ -198,17 +223,29 @@ def build_pdf(html_path: Path, pdf_path: Path) -> None:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--html-only", action="store_true")
+    ap.add_argument("--complete", action="store_true",
+                    help="all 431 questions, 2016-2022 (fpm_complete_index.json) "
+                         "instead of the printed 2018-22 book")
     args = ap.parse_args()
 
-    html_path = OUT_DIR / "Further_Pure_Mathematics_Worked_Solutions.html"
-    pdf_path = OUT_DIR / "Further_Pure_Mathematics_Worked_Solutions.pdf"
+    stem = "Further_Pure_Mathematics_Worked_Solutions" + ("_Complete" if args.complete else "")
+    html_path = OUT_DIR / f"{stem}.html"
+    pdf_path = OUT_DIR / f"{stem}.pdf"
 
     cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
-    index = json.loads(INDEX_PATH.read_text(encoding="utf-8"))
+    index = json.loads((COMPLETE_INDEX_PATH if args.complete else INDEX_PATH).read_text(encoding="utf-8"))
+    reviews = (json.loads(REVIEWS_PATH.read_text(encoding="utf-8"))["reviews"]
+               if REVIEWS_PATH.exists() else {})
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    html_path.write_text(build_html(cache, index), encoding="utf-8")
-    print(f"HTML -> {html_path.relative_to(REPO_ROOT)}  ({len(cache)} records)")
+    missing = [q["slug"] for q in index["questions"]
+               if not (cache.get(q["slug"]) or {}).get("solution")]
+    if missing:
+        print(f"WARNING: {len(missing)} indexed questions have no solution: {missing[:10]}")
+
+    html_path.write_text(build_html(cache, index, reviews, args.complete), encoding="utf-8")
+    print(f"HTML -> {html_path.relative_to(REPO_ROOT)}  "
+          f"({len(index['questions']) - len(missing)}/{len(index['questions'])} solved)")
     if not args.html_only:
         build_pdf(html_path, pdf_path)
 

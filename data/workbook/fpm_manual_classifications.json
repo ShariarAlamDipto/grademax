@@ -1,0 +1,13 @@
+{
+  "_note": "Hand classifications for FPM questions the Phase 3 classifier never reached. All 8 are 2019 May/June Paper 1, a scanned paper with no text, so they needed the vision route and its daily quota ran out. Classified 2026-09-27 by reading each question page. Used by scripts/build_fpm_complete_index.py; the database does not hold these yet.",
+  "questions": [
+    {"paper_key": "2019_may-jun_1", "question_number": 3, "section": "10.2", "secondary": [], "archetype": "sine rule for an angle then area of a triangle"},
+    {"paper_key": "2019_may-jun_1", "question_number": 4, "section": "10.6", "secondary": [], "archetype": "sector area ratio division, find angle then perimeter"},
+    {"paper_key": "2019_may-jun_1", "question_number": 6, "section": "9.3", "secondary": [], "archetype": "optimise area of lawn with semicircular ends"},
+    {"paper_key": "2019_may-jun_1", "question_number": 7, "section": "10.5", "secondary": ["10.3"], "archetype": "trig equation, compound-angle show-that, hence solve"},
+    {"paper_key": "2019_may-jun_1", "question_number": 8, "section": "1.3", "secondary": ["2.1"], "archetype": "quadratic in 5^x, intersection of exponential curves"},
+    {"paper_key": "2019_may-jun_1", "question_number": 9, "section": "1.2", "secondary": [], "archetype": "log equation with change of base, show-that identity"},
+    {"paper_key": "2019_may-jun_1", "question_number": 10, "section": "6.2", "secondary": ["9.6"], "archetype": "negative fractional binomial, validity, integrate the series"},
+    {"paper_key": "2019_may-jun_1", "question_number": 11, "section": "9.4", "secondary": ["9.6"], "archetype": "tangent and normal, triangle area, volume of revolution"}
+  ]
+}
