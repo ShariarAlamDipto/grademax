@@ -100,6 +100,13 @@ FENCE_NUMBERED_RE = re.compile(
 #: Before 2022. Carries the marks only -- no question number.
 FENCE_BARE_RE = re.compile(r"\(\s*Total\s+(\d{1,3})\s*marks?\s*\)", re.I)
 
+#: Marks a message as a successful RECOVERY rather than a defect. A recovered
+#: boundary still rests on printed evidence, so it must not fail the paper -- but
+#: it is not silent either, because a reader should know which boundaries came
+#: from the neighbouring page. Callers report these on their own line, the way
+#: the 4PM1 build reported its boundary-inferred questions.
+RECOVERY_PREFIX = "[recovered] "
+
 #: A right-margin per-part tally: exactly '(3)', nothing else on the line.
 TALLY_RE = re.compile(r"^\(\s*(\d{1,2})\s*\)$")
 
@@ -275,6 +282,38 @@ def derive_page_ranges(
     starts = [(f.index, f.starts) for f in facts if f.starts is not None]
     if not starts:
         return {}, ["no question start headers found at all"]
+
+    # RECOVERY: a question whose own start header did not make it into the text
+    # layer, where the NEXT page says "Question N continued".
+    #
+    # Measured on WMA13 2021 Oct-Nov: question 7 opens on page 19 with no
+    # readable '7.' marker, and page 20 states "Question 7 continued". The
+    # evidence is printed, just on the following page, so the paper still
+    # labels the page -- nothing is inferred from position.
+    #
+    # Deliberately narrow: the page must announce NOTHING itself, the next page
+    # must name a question that has no start yet, and the two must be adjacent.
+    # A paper whose headers all read cleanly is untouched.
+    seen = {q for _, q in starts}
+    by_index = {f.index: f for f in facts}
+    recovered: list[tuple[int, int]] = []
+    for fact in facts:
+        if fact.starts is not None or fact.continues is not None:
+            continue
+        nxt = by_index.get(fact.index + 1)
+        if nxt is None or nxt.continues is None or nxt.continues in seen:
+            continue
+        recovered.append((fact.index, nxt.continues))
+        seen.add(nxt.continues)
+
+    if recovered:
+        starts = sorted(starts + recovered)
+        problems.extend(
+            RECOVERY_PREFIX
+            + f"question {q} start header unreadable on page {i}; recovered from "
+            f"page {i + 1}'s 'Question {q} continued'"
+            for i, q in sorted(recovered, key=lambda r: r[1])
+        )
 
     numbers = [q for _, q in starts]
     if numbers != list(range(1, len(numbers) + 1)):

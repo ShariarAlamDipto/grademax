@@ -1,26 +1,32 @@
 #!/usr/bin/env python3
 """
-Phase 1 for the IAL Statistics 1 (WST01) chapterwise workbook: cut every
+Phase 1 for the IAL Pure Mathematics 3 (WMA13) chapterwise workbook: cut every
 question paper into one PDF per question.
 
-    python scripts/build_s1_workbook_segments.py            # dry run
-    python scripts/build_s1_workbook_segments.py --execute  # write the tree
-    python scripts/build_s1_workbook_segments.py --audit    # re-verify output
+    python scripts/build_p3_workbook_segments.py            # dry run
+    python scripts/build_p3_workbook_segments.py --execute  # write the tree
+    python scripts/build_p3_workbook_segments.py --audit    # re-verify output
 
-Writes to `data/workbook/s1/` -- a NEW tree. Nothing under `data/processed/`
+Writes to `data/workbook/p4/` -- a NEW tree. Nothing under `data/processed/`
 is touched, so this is reversible by deleting the output directory.
 
-Dedicated to S1 per the standing rule that every subject gets its own script.
-The IAL *page format* parsing it shares with P4 lives in
+Dedicated to P3 per the standing rule that every subject gets its own script.
+The IAL *page format* parsing it shares with the other IAL units lives in
 `scripts/lib/ial_qp_parse.py`; read that module's header first, it explains why
 IAL cannot be segmented the way the IGCSE papers were.
 
-WHAT MAKES THIS SUBJECT'S RUN DIFFERENT FROM P4's
--------------------------------------------------
-S1's archive reaches back to 2014, so it straddles both IAL fence eras and
-carries five papers whose `(Total N marks)` lines never made it into the text
-layer. Those five are recovered from the bold per-part tallies alone, which is
-why this script reports a `tally` mark source that the P4 run never sees.
+THE WINDOW IS JANUARY 2020 ONWARDS, AND THAT IS A CORRECTNESS CONSTRAINT
+------------------------------------------------------------------------
+WMA13's genuine run begins with the 2018 specimen and then January 2020. The
+14 files dated 2014-2019 are the legacy 125-mark WMA02 "Core Mathematics C34"
+or the 75-mark "C3".
+
+Mixing them in would put off-specification questions in front of a student, so
+`is_in_scope()` gates on the paper's own COVER, not on its filename -- every file
+here is named "P3" regardless of what it actually is. The specification
+settles the boundary independently: the trapezium rule is P2 statement 8.3 and
+numerical iteration is P3 statements 6.1-6.2, so their presence in a paper is
+evidence about which unit it belongs to.
 """
 
 from __future__ import annotations
@@ -49,26 +55,28 @@ from lib.ial_qp_parse import (  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SOURCE_DIR = REPO_ROOT / "data" / "Ultimate Final IAL" / "Mathematics"
-OUTPUT_DIR = REPO_ROOT / "data" / "workbook" / "s1"
-REPORT_PATH = REPO_ROOT / "data" / "workbook" / "s1_segmentation_report.json"
+OUTPUT_DIR = REPO_ROOT / "data" / "workbook" / "p3"
+REPORT_PATH = REPO_ROOT / "data" / "workbook" / "p3_segmentation_report.json"
 
-UNIT = "S1"
+UNIT = "P3"
+SUBJECT_CODE = "WMA13"
 PAPER_TOTAL_MARKS = 75
 
-#: Papers held out, with the reason. Nothing is dropped silently.
-EXCLUDED_PAPERS: dict[str, str] = {
-    "2018_specimen": (
-        "arbitrary per-font subset encoding -- the text layer decodes to "
-        "'!\"#$\"%' for 'Leave', and it is not the +29 CMap shift, so no "
-        "arithmetic repair recovers it. Recoverable later via MANUAL_QP_RANGES "
-        "read off a rendered contact sheet; ~7 questions."
-    ),
-}
+#: Read off the cover of the first pages. A genuine WMA14 paper says so.
+IN_SCOPE_CODE_RE = re.compile(r"WMA13", re.I)
+#: The whole legacy family, not just P4's half. Longer alternatives first so
+#: "C12" is not read as "C1". A paper naming ANY of these is pre-2018
+#: qualification content whatever the filename says -- and two files in the P2
+#: folder are WMA02 "C34", i.e. misfiled across units as well as out of date,
+#: so matching only this unit's own expected legacy code is not enough.
+OUT_OF_SCOPE_RE = re.compile(
+    r"Core\s+Mathematics\s+C(?:12|34|1|2|3|4)\b|WMA0[12]", re.I
+)
+
+EXCLUDED_PAPERS: dict[str, str] = {}
 
 #: Page ranges read off a rendered contact sheet, for papers whose text layer
-#: cannot be parsed at all. `{paper_key: {question: (start, end, marks)}}`.
-#: Empty today -- the hook exists so the specimen can be added without touching
-#: any logic.
+#: cannot be parsed at all. Empty -- every in-scope P4 paper parses cleanly.
 MANUAL_QP_RANGES: dict[str, dict[int, tuple[int, int, int]]] = {}
 
 SEASON_FROM_FOLDER = {
@@ -86,7 +94,7 @@ SEASON_FROM_FOLDER = {
 
 @dataclass(frozen=True)
 class PaperSource:
-    key: str  # '2019_jan'
+    key: str
     year: int
     season: str
     qp_path: Path
@@ -98,7 +106,6 @@ class PaperResult:
     source: PaperSource
     questions: list = field(default_factory=list)
     problems: list[str] = field(default_factory=list)
-    skipped_reason: str | None = None
 
     @property
     def defects(self) -> list[str]:
@@ -111,7 +118,7 @@ class PaperResult:
 
     @property
     def ok(self) -> bool:
-        return not self.defects and self.skipped_reason is None
+        return not self.defects
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -119,15 +126,29 @@ class PaperResult:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def discover_papers() -> tuple[list[PaperSource], list[str]]:
-    """
-    Find every WST01 question paper, dropping duplicates and exclusions.
+def cover_text(pdf_path: Path, pages: int = 3) -> str:
+    with fitz.open(pdf_path) as doc:
+        return "\n".join(doc[i].get_text() for i in range(min(pages, doc.page_count)))
 
-    Duplicate detection is by CONTENT, not filename. Three WST01 papers in this
-    archive are the same paper filed under two sessions (the COVID reuse
-    pattern) and differ only in our own watermark's session token. Kept, they
-    would put 12% of the book in twice.
+
+def is_in_scope(pdf_path: Path) -> tuple[bool, str]:
     """
+    Decide from the paper's own cover whether it is genuine WMA14.
+
+    The filename says 'P4' for all thirty files in this folder and is therefore
+    worthless as evidence. The cover names the qualification and the paper code,
+    and it is what decides.
+    """
+    text = cover_text(pdf_path)
+    if OUT_OF_SCOPE_RE.search(text):
+        legacy = OUT_OF_SCOPE_RE.search(text).group(0)
+        return False, f"legacy qualification on cover ({legacy})"
+    if IN_SCOPE_CODE_RE.search(text):
+        return True, "WMA14 on cover"
+    return False, "no WMA13 paper code found on the cover"
+
+
+def discover_papers() -> tuple[list[PaperSource], list[str]]:
     notes: list[str] = []
     candidates: list[PaperSource] = []
 
@@ -142,6 +163,11 @@ def discover_papers() -> tuple[list[PaperSource], list[str]]:
 
         if key in EXCLUDED_PAPERS:
             notes.append(f"excluded {key}: {EXCLUDED_PAPERS[key]}")
+            continue
+
+        in_scope, reason = is_in_scope(qp_path)
+        if not in_scope:
+            notes.append(f"out of scope {key}: {reason}")
             continue
 
         ms_path = qp_path.with_name(qp_path.name.replace("_QP.pdf", "_MS.pdf"))
@@ -183,7 +209,6 @@ def process_paper(source: PaperSource) -> PaperResult:
 
 
 def extract_range(source_pdf: Path, page_range: tuple[int, int], target: Path) -> None:
-    """Write pages [start, end] of `source_pdf` to `target` as a new PDF."""
     start, end = page_range
     target.parent.mkdir(parents=True, exist_ok=True)
     with fitz.open(source_pdf) as src:
@@ -227,7 +252,7 @@ def write_paper(result: PaperResult) -> tuple[int, dict[str, int]]:
         "key": result.source.key,
         "markscheme_stats": ms_stats,
         "unit": UNIT,
-        "subject_code": "WST01",
+        "subject_code": SUBJECT_CODE,
         "year": result.source.year,
         "season": result.source.season,
         "source_qp": str(result.source.qp_path.relative_to(REPO_ROOT)),
@@ -270,10 +295,9 @@ def audit_output() -> int:
     Re-open every written segment and confirm it holds the question its
     filename claims, and only that question.
 
-    This exists because both prior subjects shipped a pipeline that reported
-    success while the output was wrong -- Maths B's crop offset produced 137
-    silently mislabelled segments that every in-process check passed. Verify
-    against the artifact, not against the script's own summary.
+    Verify against the artifact, not against the script's own summary: both
+    prior subjects shipped a pipeline that reported success while the output
+    was wrong.
     """
     if not OUTPUT_DIR.exists():
         print(f"nothing to audit: {OUTPUT_DIR} does not exist")
@@ -355,10 +379,10 @@ def main() -> int:
 
     sources, notes = discover_papers()
     mode = "EXECUTE" if args.execute else "DRY RUN"
-    print(f"=== S1 (WST01) workbook segmentation  [{mode}] ===\n")
+    print(f"=== P4 (WMA14) workbook segmentation  [{mode}] ===\n")
     for note in notes:
         print(f"  note: {note}")
-    print(f"\n{len(sources)} unique papers to process\n")
+    print(f"\n{len(sources)} unique in-scope papers to process\n")
 
     results = [process_paper(source) for source in sources]
 
@@ -407,7 +431,7 @@ def main() -> int:
         json.dumps(
             {
                 "unit": UNIT,
-                "subject_code": "WST01",
+                "subject_code": SUBJECT_CODE,
                 "mode": mode,
                 "notes": notes,
                 "papers_clean": len(good),
