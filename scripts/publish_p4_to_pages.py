@@ -74,7 +74,7 @@ def main() -> int:
         raise SystemExit(f"no subject row for {SUBJECT_CODE}")
     subject_id = subject[0]["id"]
 
-    taxonomy = sections_from_migration(latest_section_migration(SUBJECT_CODE))
+    taxonomy = sections_from_migration(latest_section_migration(SUBJECT_CODE), SUBJECT_CODE)
     wanted = build_topics(taxonomy, subject_id)
 
     existing_topics = fetch_all(

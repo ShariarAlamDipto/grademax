@@ -48,7 +48,7 @@ def main() -> int:
 
     questions = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))
     cache = json.loads(CACHE_PATH.read_text(encoding="utf-8"))
-    taxonomy = sections_from_migration(latest_section_migration(SUBJECT_CODE))
+    taxonomy = sections_from_migration(latest_section_migration(SUBJECT_CODE), SUBJECT_CODE)
     section_of = {slug: entry["primary"] for slug, entry in cache.items()}
 
     archetypes = cluster_questions(questions, section_of, args.threshold)
