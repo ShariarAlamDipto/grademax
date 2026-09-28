@@ -667,7 +667,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                         Open in viewer
                       </a>
                     </div>
-                    <MultiPagePdfPreview url={worksheetUrl} className="border-2 border-green-500/60 max-h-[70vh] overflow-y-auto" />
+                    <MultiPagePdfPreview url={worksheetUrl} blob={worksheetBlob} className="border-2 border-green-500/60 max-h-[70vh] overflow-y-auto" />
                   </div>
                 )}
                 {markschemeUrl && (
@@ -684,7 +684,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                         Open in viewer
                       </a>
                     </div>
-                    <MultiPagePdfPreview url={markschemeUrl} className="border-2 border-blue-500/60 max-h-[70vh] overflow-y-auto" />
+                    <MultiPagePdfPreview url={markschemeUrl} blob={markschemeBlob} className="border-2 border-blue-500/60 max-h-[70vh] overflow-y-auto" />
                   </div>
                 )}
               </div>

@@ -40,6 +40,11 @@ async function getPdfjsLib() {
 export interface MultiPagePdfPreviewProps {
   /** Blob URL or absolute URL to the PDF. */
   url: string;
+  /**
+   * The PDF itself, when the caller already holds it (a PDF built in the
+   * browser). Read directly, so the preview never has to fetch a blob: URL.
+   */
+  blob?: Blob | null;
   /** Hard cap on rendered pages — protects phones from OOM. */
   maxPages?: number;
   className?: string;
@@ -47,6 +52,7 @@ export interface MultiPagePdfPreviewProps {
 
 export default function MultiPagePdfPreview({
   url,
+  blob = null,
   maxPages = 30,
   className = '',
 }: MultiPagePdfPreviewProps) {
@@ -63,7 +69,7 @@ export default function MultiPagePdfPreview({
 
   // Phase 1: load the PDF and discover its page count.
   useEffect(() => {
-    if (!url) {
+    if (!url && !blob) {
       setError(true);
       setErrorMessage('No PDF URL provided');
       return;
@@ -84,7 +90,9 @@ export default function MultiPagePdfPreview({
         
         // For blob URLs, fetch the data directly instead of passing URL
         let loadData: any;
-        if (url.startsWith('blob:')) {
+        if (blob) {
+          loadData = { data: new Uint8Array(await blob.arrayBuffer()) };
+        } else if (url.startsWith('blob:')) {
           console.log('[MultiPagePdfPreview] Loading blob URL data directly');
           try {
             const response = await fetch(url);
@@ -145,7 +153,7 @@ export default function MultiPagePdfPreview({
         pdfRef.current = null;
       }
     };
-  }, [url, maxPages]);
+  }, [url, blob, maxPages]);
 
   // Phase 2: once the page count is known and the canvases have mounted,
   // render each page in sequence. Sequential keeps memory bounded on
