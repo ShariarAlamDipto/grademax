@@ -5,6 +5,8 @@ import { pastPaperSubjects, subjects, dbNameOf } from '@/lib/subjects'
 import { cambridgeSeoSubjects } from '@/lib/cambridge-seo'
 import { canonicalEdexcelQpSlug, canonicalCambridgeQpSlug } from '@/lib/qp-slugs'
 import { toPaperSlug } from '@/lib/paper-slugs'
+import { listActiveProducts } from '@/lib/store/catalogue'
+import { getSettings } from '@/lib/store/settings'
 
 const BASE_URL = 'https://www.grademax.me'
 const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
@@ -65,6 +67,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/privacy`,                 changeFrequency: 'yearly',  priority: 0.3  },
     { url: `${BASE_URL}/terms`,                   changeFrequency: 'yearly',  priority: 0.3  },
   ]
+
+  // ─── Store ───────────────────────────────────────────────────────────────────
+  // The shop and each book on sale. /cart, /checkout and /store/orders are
+  // deliberately absent: they are per-visitor, already noindex, and one of them
+  // redirects to /login, which must never be advertised to a crawler.
+  //
+  // Product URLs come from the database rather than a hardcoded list, so a title
+  // withdrawn from sale drops out of the sitemap on the next build instead of
+  // leaving a 404 behind. A store that is switched off contributes nothing.
+  const storePages: MetadataRoute.Sitemap = []
+  try {
+    const settings = await getSettings()
+    if (settings.storeEnabled) {
+      storePages.push({
+        url: `${BASE_URL}/store`,
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+      })
+      for (const product of await listActiveProducts()) {
+        storePages.push({
+          url: `${BASE_URL}/store/${product.slug}`,
+          changeFrequency: 'weekly' as const,
+          priority: 0.75,
+        })
+      }
+    }
+  } catch (error) {
+    // A sitemap that loses the shop is far better than a build that fails, and
+    // the paper pages below already take this approach.
+    console.error('sitemap: could not list store products', error)
+  }
 
   // ─── Level landing pages ──────────────────────────────────────────────────────
 
@@ -247,6 +280,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...corePages,
+    ...storePages,
     ...levelPages,
     ...subjectPages,
     ...topicPages,
