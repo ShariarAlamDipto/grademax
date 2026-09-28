@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Phase 3 for the IAL Pure Mathematics 4 (WMA14) workbook: assign every question
+Phase 3 for the IAL Pure Mathematics 3 (WMA13) workbook: assign every question
 a primary taxonomy section, plus any secondary sections it also drills.
 
-    python scripts/classify_p4_workbook_sections.py --check-taxonomy
-    python scripts/classify_p4_workbook_sections.py              # pass 1
-    python scripts/classify_p4_workbook_sections.py --second-pass
-    python scripts/classify_p4_workbook_sections.py --report
-    python scripts/classify_p4_workbook_sections.py --report --write
+    python scripts/classify_p3_workbook_sections.py --check-taxonomy
+    python scripts/classify_p3_workbook_sections.py              # pass 1
+    python scripts/classify_p3_workbook_sections.py --second-pass
+    python scripts/classify_p3_workbook_sections.py --report
+    python scripts/classify_p3_workbook_sections.py --report --write
 
-Reads `data/workbook/p4_questions.json`; caches to
-`p4_classification_cache.json` (pass 1) and `p4_classification_second.json`
+Reads `data/workbook/p3_questions.json`; caches to
+`p3_classification_cache.json` (pass 1) and `p3_classification_second.json`
 (pass 2). Both resume from cache, so an interrupted run costs nothing.
 
 MULTI-LABEL IS NOT A NICETY, IT IS WHAT FIXES THE SKEW
@@ -19,18 +19,12 @@ Single-tagging put 111 of 431 4PM1 questions into one chapter. Multi-label
 spread them into a usable distribution, and 86% of questions carried a
 secondary section -- that is the mechanism that fixed it, not a better prompt.
 
-THE TWO RULES THIS SUBJECT'S TAXONOMY DEPENDS ON
-------------------------------------------------
-Measured over the 14 WMA14 papers, and the tree does not work without them:
-
-1. **Parametric equations appear in 14 of 14 papers**, but almost never as the
-   task. Chapter 3 is only for questions whose OWN subject is the parametric or
-   cartesian form of a curve. A parametric curve that is then differentiated is
-   5.2; one that is then integrated is 6.3/6.4/6.5. Without this rule chapter 3
-   absorbs most of the book -- the same failure mode as 4PM1's kinematics.
-2. **The word "implicit" is never printed.** The paper gives an equation
-   relating x and y and asks for dy/dx. Section 5.1 has to be recognised from
-   that shape. A keyword probe for it returns 0 of 14 and means nothing.
+WHAT THIS UNIT'S TAXONOMY DEPENDS ON
+-----------------------------------
+The disambiguation rules below are the load-bearing part. Without them a topic
+that appears as the SETTING of most questions absorbs the book -- the failure
+mode 4PM1 hit with one chapter taking 111 of 431 questions, and the reason P4
+scopes parametric equations explicitly. See RULES.
 """
 
 from __future__ import annotations
@@ -58,41 +52,38 @@ from lib.ial_classify import (  # noqa: E402
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p4_questions.json"
-CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p4_classification_cache.json"
-SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p4_classification_second.json"
-MERGED_PATH = REPO_ROOT / "data" / "workbook" / "p4_classifications.json"
+QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p3_questions.json"
+CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p3_classification_cache.json"
+SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p3_classification_second.json"
+MERGED_PATH = REPO_ROOT / "data" / "workbook" / "p3_classifications.json"
 
-SUBJECT_CODE = "WMA14"
+SUBJECT_CODE = "WMA13"
 
 RULES = """
 DISAMBIGUATION RULES -- these override any general impression:
 
-* Parametric equations appear in almost every paper but are usually the SETTING,
-  not the task. Use 3.1 ONLY when the question's own subject is the parametric
-  form itself: converting to cartesian, or finding the cartesian equation of a
-  parametrically-defined curve.
-  - parametric curve, then find dy/dx or a tangent or normal  -> 5.2
-  - parametric curve, then find an area under it              -> 6.5
-  - parametric curve, then find a volume of revolution        -> 6.4
-* The word "implicit" is NEVER printed. If the question gives an equation
-  relating x and y (for example x^3 + 2xy - y^3 = 20) and asks for dy/dx, or a
-  tangent or normal to it, that is 5.1 -- recognise the SHAPE, not a keyword.
-* "Prove by contradiction" or "prove that there is no ..." is always 1.1, even
-  when the subject matter is numbers or inequalities.
-* Partial fractions are 2.1 when the task is the decomposition itself. When the
-  decomposition is only a step towards an integral use 6.2, and towards a
-  binomial expansion use 4.1, listing 2.1 as secondary.
-* Forming a differential equation from a rate of change is 5.3. SOLVING a
-  separable differential equation is 6.3. A question that does both takes 5.3 or
-  6.3 as primary depending on where the marks are, and the other as secondary.
-* A vectors question usually spans several of 7.1-7.3. Choose the primary from
-  where the marks sit, and list the others as secondary.
+* 1.2 is domain, range and composition; 1.3 is specifically an INVERSE function
+  or its graph. A question doing both takes its primary from where the marks are.
+* The modulus function is 1.4, including |f(x)| sketches and solving
+  |ax + b| = c -- not 1.5, even though a transformation is involved.
+* 1.5 is a COMBINED transformation of a named curve.
+* Trigonometry: 2.1 for sec/cosec/cot and arcsin/arccos/arctan, 2.2 for proving
+  an identity, 2.3 for compound or double angle formulae, and 2.4 ONLY when
+  a cos t + b sin t is written as r cos (t +- a) or r sin (t +- a), or an
+  equation of that form is solved.
+* 3.3 is using a LOGARITHMIC GRAPH to estimate parameters of y = ax^n or
+  y = kb^x -- a plot of log y against log x or against x. Ordinary
+  exponential-equation solving is 3.2.
+* Differentiation: 4.2 when the product, quotient or chain rule is the point;
+  4.1 for the standard derivatives themselves; 4.3 for exponential growth and
+  decay in context.
+* Numerical methods are 6.1 (change of sign locating a root) and 6.2 (iteration
+  or a recurrence). These exist in NO other pure unit, so a question about
+  iteration belongs here and nowhere else.
 """
 
-
 def system_prompt(taxonomy: dict[str, str]) -> str:
-    return f"""You classify Edexcel International A Level Pure Mathematics 4 (WMA14) exam questions into workbook sections.
+    return f"""You classify Edexcel International A Level Pure Mathematics 3 (WMA13) exam questions into workbook sections.
 
 SECTIONS:
 {taxonomy_block(taxonomy)}
@@ -136,7 +127,7 @@ def run_pass(model: str, cache_path: Path, label: str) -> int:
     cache = load_cache(cache_path)
 
     todo = [q for q in questions if q["slug"] not in cache]
-    print(f"=== P4 classification [{label}] model={model} ===")
+    print(f"=== P3 classification [{label}] model={model} ===")
     print(f"{len(questions)} questions, {len(cache)} cached, {len(todo)} to do\n")
 
     prompt = system_prompt(taxonomy)
@@ -200,7 +191,7 @@ def report(write: bool) -> int:
         )
 
     total = len(questions)
-    print(f"=== P4 classification report ===\n")
+    print(f"=== P3 classification report ===\n")
     print(f"questions        : {total}")
     print(f"models used      : {models}")
     print(f"with a secondary : {with_secondary} ({with_secondary * 100 // max(total, 1)}%)")

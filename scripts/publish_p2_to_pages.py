@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Publish verified IAL Statistics 1 (WST01) workbook questions into the `topics`
+Publish verified IAL Pure Mathematics 2 (WMA12) workbook questions into the `topics`
 and `pages` layer, so the test builder and worksheet generator can use them.
 
-    python scripts/publish_s1_to_pages.py                        # dry run
-    python scripts/publish_s1_to_pages.py --topics-only --execute
-    python scripts/publish_s1_to_pages.py --execute
-    python scripts/publish_s1_to_pages.py --execute --include-unverified
+    python scripts/publish_p2_to_pages.py                        # dry run
+    python scripts/publish_p2_to_pages.py --topics-only --execute
+    python scripts/publish_p2_to_pages.py --execute
+    python scripts/publish_p2_to_pages.py --execute --include-unverified
 
 `pages` has NO row-level protection on verification -- anything written there is
 immediately live in the test builder. So this publishes only questions a human
@@ -36,10 +36,10 @@ from lib.ial_pages_publish import build_pages, build_topics, fetch_all  # noqa: 
 from lib.ial_workbook_load import with_retry  # noqa: E402
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "s1_questions.json"
+QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p2_questions.json"
 
-UNIT = "S1"
-SUBJECT_CODE = "WST01"
+UNIT = "P2"
+SUBJECT_CODE = "WMA12"
 
 
 def main() -> int:

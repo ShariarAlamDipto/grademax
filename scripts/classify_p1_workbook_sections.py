@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Phase 3 for the IAL Pure Mathematics 4 (WMA14) workbook: assign every question
+Phase 3 for the IAL Pure Mathematics 1 (WMA11) workbook: assign every question
 a primary taxonomy section, plus any secondary sections it also drills.
 
-    python scripts/classify_p4_workbook_sections.py --check-taxonomy
-    python scripts/classify_p4_workbook_sections.py              # pass 1
-    python scripts/classify_p4_workbook_sections.py --second-pass
-    python scripts/classify_p4_workbook_sections.py --report
-    python scripts/classify_p4_workbook_sections.py --report --write
+    python scripts/classify_p1_workbook_sections.py --check-taxonomy
+    python scripts/classify_p1_workbook_sections.py              # pass 1
+    python scripts/classify_p1_workbook_sections.py --second-pass
+    python scripts/classify_p1_workbook_sections.py --report
+    python scripts/classify_p1_workbook_sections.py --report --write
 
-Reads `data/workbook/p4_questions.json`; caches to
-`p4_classification_cache.json` (pass 1) and `p4_classification_second.json`
+Reads `data/workbook/p1_questions.json`; caches to
+`p1_classification_cache.json` (pass 1) and `p1_classification_second.json`
 (pass 2). Both resume from cache, so an interrupted run costs nothing.
 
 MULTI-LABEL IS NOT A NICETY, IT IS WHAT FIXES THE SKEW
@@ -19,18 +19,12 @@ Single-tagging put 111 of 431 4PM1 questions into one chapter. Multi-label
 spread them into a usable distribution, and 86% of questions carried a
 secondary section -- that is the mechanism that fixed it, not a better prompt.
 
-THE TWO RULES THIS SUBJECT'S TAXONOMY DEPENDS ON
-------------------------------------------------
-Measured over the 14 WMA14 papers, and the tree does not work without them:
-
-1. **Parametric equations appear in 14 of 14 papers**, but almost never as the
-   task. Chapter 3 is only for questions whose OWN subject is the parametric or
-   cartesian form of a curve. A parametric curve that is then differentiated is
-   5.2; one that is then integrated is 6.3/6.4/6.5. Without this rule chapter 3
-   absorbs most of the book -- the same failure mode as 4PM1's kinematics.
-2. **The word "implicit" is never printed.** The paper gives an equation
-   relating x and y and asks for dy/dx. Section 5.1 has to be recognised from
-   that shape. A keyword probe for it returns 0 of 14 and means nothing.
+WHAT THIS UNIT'S TAXONOMY DEPENDS ON
+-----------------------------------
+The disambiguation rules below are the load-bearing part. Without them a topic
+that appears as the SETTING of most questions absorbs the book -- the failure
+mode 4PM1 hit with one chapter taking 111 of 431 questions, and the reason P4
+scopes parametric equations explicitly. See RULES.
 """
 
 from __future__ import annotations
@@ -58,41 +52,36 @@ from lib.ial_classify import (  # noqa: E402
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p4_questions.json"
-CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p4_classification_cache.json"
-SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p4_classification_second.json"
-MERGED_PATH = REPO_ROOT / "data" / "workbook" / "p4_classifications.json"
+QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p1_questions.json"
+CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p1_classification_cache.json"
+SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p1_classification_second.json"
+MERGED_PATH = REPO_ROOT / "data" / "workbook" / "p1_classifications.json"
 
-SUBJECT_CODE = "WMA14"
+SUBJECT_CODE = "WMA11"
 
 RULES = """
 DISAMBIGUATION RULES -- these override any general impression:
 
-* Parametric equations appear in almost every paper but are usually the SETTING,
-  not the task. Use 3.1 ONLY when the question's own subject is the parametric
-  form itself: converting to cartesian, or finding the cartesian equation of a
-  parametrically-defined curve.
-  - parametric curve, then find dy/dx or a tangent or normal  -> 5.2
-  - parametric curve, then find an area under it              -> 6.5
-  - parametric curve, then find a volume of revolution        -> 6.4
-* The word "implicit" is NEVER printed. If the question gives an equation
-  relating x and y (for example x^3 + 2xy - y^3 = 20) and asks for dy/dx, or a
-  tangent or normal to it, that is 5.1 -- recognise the SHAPE, not a keyword.
-* "Prove by contradiction" or "prove that there is no ..." is always 1.1, even
-  when the subject matter is numbers or inequalities.
-* Partial fractions are 2.1 when the task is the decomposition itself. When the
-  decomposition is only a step towards an integral use 6.2, and towards a
-  binomial expansion use 4.1, listing 2.1 as secondary.
-* Forming a differential equation from a rate of change is 5.3. SOLVING a
-  separable differential equation is 6.3. A question that does both takes 5.3 or
-  6.3 as primary depending on where the marks are, and the other as secondary.
-* A vectors question usually spans several of 7.1-7.3. Choose the primary from
-  where the marks sit, and list the others as secondary.
+* Quadratics appear everywhere. Use 1.3 only when the task is solving or
+  completing the square on a quadratic; use 1.4 when the DISCRIMINANT decides
+  the answer (equal / distinct / no real roots, or a condition on k).
+* "Sketch the curve" is 1.8. A sketch that is asked for AFTER a transformation
+  of a named curve is 1.9.
+* An inequality solved from a quadratic is 1.6, not 1.3, even though a quadratic
+  is solved on the way.
+* 2.1 is for finding or using the equation of a line; 2.2 only when the work
+  turns on a parallel or perpendicular CONDITION (equal gradients, m1 m2 = -1).
+* A triangle problem is 3.1. A problem in radians about arc length or sector
+  area is 3.2 even when a triangle appears inside it.
+* Differentiation that ends in a tangent or normal equation is 4.2; plain
+  differentiation or a gradient value is 4.1.
+* P1 has NO stationary-point section: maxima, minima and optimisation are P2
+  content (P2 7.1/7.2). If a question asks for a stationary point it is almost
+  certainly a mis-scoped paper -- flag it rather than forcing it into 4.1.
 """
 
-
 def system_prompt(taxonomy: dict[str, str]) -> str:
-    return f"""You classify Edexcel International A Level Pure Mathematics 4 (WMA14) exam questions into workbook sections.
+    return f"""You classify Edexcel International A Level Pure Mathematics 1 (WMA11) exam questions into workbook sections.
 
 SECTIONS:
 {taxonomy_block(taxonomy)}
@@ -136,7 +125,7 @@ def run_pass(model: str, cache_path: Path, label: str) -> int:
     cache = load_cache(cache_path)
 
     todo = [q for q in questions if q["slug"] not in cache]
-    print(f"=== P4 classification [{label}] model={model} ===")
+    print(f"=== P1 classification [{label}] model={model} ===")
     print(f"{len(questions)} questions, {len(cache)} cached, {len(todo)} to do\n")
 
     prompt = system_prompt(taxonomy)
@@ -200,7 +189,7 @@ def report(write: bool) -> int:
         )
 
     total = len(questions)
-    print(f"=== P4 classification report ===\n")
+    print(f"=== P1 classification report ===\n")
     print(f"questions        : {total}")
     print(f"models used      : {models}")
     print(f"with a secondary : {with_secondary} ({with_secondary * 100 // max(total, 1)}%)")

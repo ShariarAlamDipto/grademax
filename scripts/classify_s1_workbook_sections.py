@@ -123,7 +123,7 @@ def load_taxonomy() -> dict[str, str]:
     migration = latest_section_migration(SUBJECT_CODE)
     if migration is None:
         raise SystemExit(f"no migration seeds workbook_sections for {SUBJECT_CODE}")
-    return sections_from_migration(migration)
+    return sections_from_migration(migration, SUBJECT_CODE)
 
 
 def check_taxonomy() -> int:

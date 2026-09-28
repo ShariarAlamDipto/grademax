@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-Phase 3 for S1 (WST01): group classified questions into recurring archetypes.
+Phase 3 for P1 (WMA11): group classified questions into recurring archetypes.
 
-    python scripts/cluster_s1_archetypes.py              # dry run
-    python scripts/cluster_s1_archetypes.py --execute
-    python scripts/cluster_s1_archetypes.py --threshold 0.38   # to compare
+    python scripts/cluster_p1_archetypes.py              # dry run
+    python scripts/cluster_p1_archetypes.py --execute
+    python scripts/cluster_p1_archetypes.py --threshold 0.38   # to compare
 
-Reads `s1_questions.json` and `s1_classification_cache.json`, writes
-`s1_archetypes.json`. Deterministic: no model is involved, so a re-run after
+Reads `p1_questions.json` and `p1_classification_cache.json`, writes
+`p1_archetypes.json`. Deterministic: no model is involved, so a re-run after
 re-segmentation produces the same book.
 """
 
@@ -28,17 +28,18 @@ from lib.ial_classify import (  # noqa: E402
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "s1_questions.json"
-CACHE_PATH = REPO_ROOT / "data" / "workbook" / "s1_classification_cache.json"
-OUTPUT_PATH = REPO_ROOT / "data" / "workbook" / "s1_archetypes.json"
-#: 0.32, matching P4 for consistency -- but see lib/ial_archetypes.py:
-#: WST01 clusters weakly for a STRUCTURAL reason, not a tuning one. Its
-#: questions share a statistical shape while their wording is contextual, so
-#: most come out as singletons and the SECTION carries the pattern instead.
+QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p1_questions.json"
+CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p1_classification_cache.json"
+OUTPUT_PATH = REPO_ROOT / "data" / "workbook" / "p1_archetypes.json"
+#: 0.32, matching the other IAL pure units -- verified by reading the two
+#: largest clusters per unit (P1: 'curve through P, given dy/dx, find the
+#: equation' x16 and trig-graph reading x11; P2: 'show that ... hence solve'
+#: x9 and binomial expansion x6; P3: identity-then-use x7 and modulus sketch
+#: x5) -- all genuine single shapes. See lib/ial_archetypes.py.
 THRESHOLD = 0.32
 
-SUBJECT_CODE = "WST01"
-UNIT = "S1"
+SUBJECT_CODE = "WMA11"
+UNIT = "P1"
 
 
 def main() -> int:

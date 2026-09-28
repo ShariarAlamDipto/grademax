@@ -1,0 +1,5387 @@
+[
+  {
+    "slug": "P1.2019_jan.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 1,
+    "year": 2019,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q1.pdf",
+    "stem": "Answer ALL questions. Write your answers in the spaces provided. Find ∫ − +     x x x d simplifying your answer. (4) Q1",
+    "stem_chars": 125,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 2,
+    "year": 2019,
+    "season": "jan",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q2.pdf",
+    "stem": "Given 27 3 x y = find y as a simplified function of x. (3) Q2",
+    "stem_chars": 61,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 3,
+    "year": 2019,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q3.pdf",
+    "stem": "The line l1 has equation 3x + 5y − 7 = 0 (a) Find the gradient of l1 (2) The line l2 is perpendicular to l1 and passes through the point (6, −2). (b) Find the equation of l2 in the form y = mx + c , where m and c are constants. (3) Q3",
+    "stem_chars": 234,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 4,
+    "year": 2019,
+    "season": "jan",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q4.pdf",
+    "stem": "y x R C l1 O l2 Figure 1 Figure 1 shows a line l1 with equation 2y = x and a curve C with equation y = 2x − 1 8 x2 The region R, shown unshaded in Figure 1, is bounded by the line l1 , the curve C and a line l2 Given that l2 is parallel to the y-axis and passes through the intercept of C with the positive x-axis, identify the inequalities that define R. (3) Q4",
+    "stem_chars": 362,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2019_jan.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 5,
+    "year": 2019,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q5.pdf",
+    "stem": "y x O P Figure 2 Figure 2 shows a plot of part of the curve with equation y = cos 2x with x being measured in radians. The point P, shown on Figure 2, is a minimum point on the curve. (a) State the coordinates of P. (2) A copy of Figure 2, called Diagram 1, is shown at the top of the next page. (b) Sketch, on Diagram 1, the curve with equation y = sin x (2) (c) Hence, or otherwise, deduce the number of solutions of the equation (i) cos 2x = sin x that lie in the region 0  x  20π (ii) cos 2x = sin x that lie in the region 0  x  21π (2) y x O P Diagram 1 Q5",
+    "stem_chars": 565,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 6,
+    "year": 2019,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q6.pdf",
+    "stem": "(Solutions based entirely on graphical or numerical methods are not acceptable.) Given f (x) = 2x 2 − 40x + 8 x > 0 (a) solve the equation f ʹ (x) = 0 (4) (b) solve the equation f ʺ (x) = 5 (3) Q6",
+    "stem_chars": 196,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 7,
+    "year": 2019,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q7.pdf",
+    "stem": "A B C D 35° Not to scale Figure 3 Figure 3 shows the design for a structure used to support a roof. The structure consists of four wooden beams, AB, BD, BC and AD. Given AB = 6.5 m, BC = BD = 4.7 m and angle BAC = 35° (a) find, to one decimal place, the size of angle ACB, (3) (b) find, to the nearest metre, the total length of wood required to make this structure. (3) Q7",
+    "stem_chars": 373,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 8,
+    "year": 2019,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q8.pdf",
+    "stem": "y O y = 4 y = f ( x ) (4, 9) (0, 6) (−3, 0) x Figure 4 The curve C with equation y = f ( x ) is shown in Figure 4. The curve C • has a single turning point, a maximum at (4, 9) • crosses the coordinate axes at only two places, (−3, 0) and (0, 6) • has a single asymptote with equation y = 4 as shown in Figure 4. (a) State the equation of the asymptote to the curve with equation y = f (− x ). (1) (b) State the coordinates of the turning point on the curve with equation y = f 1 4 x    . (1) Given that the line with equation y = k, where k is a constant, intersects C at exactly one point, (c) state the possible values for k. (2) The curve C is transformed to a new curve that passes through the origin. (d) (i) Given that the new curve has equation y = f ( x ) − a , state the value of the constant a. (ii) Write down an equation for another single transformation of C that also passes through the origin. (2) Q8",
+    "stem_chars": 922,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 9,
+    "year": 2019,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q9.pdf",
+    "stem": "The equation x + 5 = −2x + c where c is a constant, has no real roots. Find the range of possible values of c. (7) Q9",
+    "stem_chars": 117,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 10,
+    "year": 2019,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q10.pdf",
+    "stem": "A sector AOB, of a circle centre O, has radius r cm and angle θ radians. Given that the area of the sector is 6 cm2 and that the perimeter of the sector is 10 cm, (a) show that 3θ 2 − 13θ + 12 = 0 (4) (b) Hence find possible values of r and θ. (3) Q10",
+    "stem_chars": 251,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q011",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 11,
+    "year": 2019,
+    "season": "jan",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q11.pdf",
+    "stem": "(a) On Diagram 1 sketch the graphs of (i) y = x(3 − x) (ii) y = x(x − 2)(5 − x) showing clearly the coordinates of the points where the curves cross the coordinate axes. (4) (b) Show that the x coordinates of the points of intersection of y = x(3 − x) and y = x(x − 2)(5 − x) are given by the solutions to the equation x(x2 − 8x + 13) = 0 (3) The point P lies on both curves. Given that P lies in the first quadrant, (c) find, using algebra and showing your working, the exact coordinates of P. (5) y O x Diagram 1 Q11",
+    "stem_chars": 518,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "i",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_jan.Q012",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_jan",
+    "source_question_number": 12,
+    "year": 2019,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p1/2019_jan/questions/q12.pdf",
+    "stem": "The curve with equation y = f ( x ), x > 0, passes through the point P(4, −2). Given that d d y x x x x = − − (a) find the equation of the tangent to the curve at P, writing your answer in the form y = mx + c , where m and c are integers to be found. (4) (b) Find f ( x ). (5) TOTAL FOR PAPER IS 75 MARKS Q12",
+    "stem_chars": 308,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 1,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q1.pdf",
+    "stem": "Answer all questions. Write your answers in the spaces provided. The curve C has equation y x x = − + (a) Find d d y x , giving the answer in its simplest form. (3) The point P(4, í3) OLHV RQ C. (b) Find the equation of the tangent to C at the point P. Write your answer in the form y = mx + c, where m and c are constants to be found. (3) Q1",
+    "stem_chars": 342,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 2,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q2.pdf",
+    "stem": "Answer this question showing each stage of your working. (a) Simplify 2 2 − giving your answer in the form a + b 2 where a and b are rational numbers. (2) (b) Hence, or otherwise, solve the equation 4x = 2 2x + 20 giving your answer in the form p + q 2 where p and q are rational numbers. (3) Q2",
+    "stem_chars": 295,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 3,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q3.pdf",
+    "stem": "2x í 1 5x 2x 6x í 2 Not to scale Figure 1 )LJXUH 1 VKRZV WKH SODQ RI D JDUGHQ. 7KH PDUNHG DQJOHV DUH ULJKW DQJOHV. The six edges are straight lines. The lengths shown in the diagram are given in metres. Given that the perimeter of the garden is greater than 29 m, (a) show that x < 1.5 P (3) Given also that the area of the garden is less than 72 m2, (b) form and solve a quadratic inequality in x. (5) (c) Hence state the range of possible values of x. (1) Q3",
+    "stem_chars": 460,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 4,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q4.pdf",
+    "stem": "Find 2x x x + ∫ d giving the answer in its simplest form. (5) Q4",
+    "stem_chars": 64,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 5,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q5.pdf",
+    "stem": "(a) Find, using algebra, all real solutions of 2x3 + 3x2 í 35x = 0 (3) (b) Hence find all real solutions of 2( y í 5) 6 + 3( y í 5) 4 í 35( y í 5) 2 = 0 (4) Q5",
+    "stem_chars": 159,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 6,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q6.pdf",
+    "stem": "The line with equation y = 4x + c, where c is a constant, meets the curve with equation y = x(x í 3) DW RQO\\ RQH SRLQW. (a) Find the value of c. (4) (b) Hence find the coordinates of the point of intersection. (3) Q6",
+    "stem_chars": 216,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 7,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q7.pdf",
+    "stem": "A O C D B 6 cm 5 cm 0.7 rad Not to scale Figure 2 The shape ABCDA consists of a sector ABCOA of a circle, centre O, joined to a triangle AOD, as shown in Figure 2. The point D lies on OC. The radius of the circle is 6 cm, length AD is 5 cm and angle AOD is 0.7 radians. (a) Find the area of the sector ABCOA, giving your answer to one decimal place. (3) Given angle ADO is obtuse, (b) find the size of angle ADO, JLYLQJ \\RXU DQVZHU WR 3 GHFLPDO SODFHV. (3) (c) Hence find the perimeter of shape ABCDA, giving your answer to one decimal place. (4) Q7",
+    "stem_chars": 549,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2019_may-jun.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 8,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q8.pdf",
+    "stem": "The curve C with equation y = f(x), x < 0, passes through the point P(4, 1). *LYHQ WKDW I މ(x) = 4 x í 2 í 8 2x (a) find the equation of the normal to C at P. Write your answer in the form ax + by + c = 0, where a, b and c are integers to be found. (4) (b) Find f(x). (5) Q8",
+    "stem_chars": 274,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 9,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q9.pdf",
+    "stem": "O í1 í2 y ș 360q 270q 180q 90q Figure 3 )LJXUH 3 VKRZV D SORW RI WKH FXUYH ZLWK HTXDWLRQ y = sin ș, 0 - ș - 360q (a) State the coordinates of the minimum point on the curve with equation y = 4 sin ș, 0 - ș - 360q (2) $ FRS\\ RI )LJXUH 3, FDOOHG 'LDJUDP 1, LV VKRZQ RQ WKH QH[W SDJH. (E) 2Q 'LDJUDP 1, VNHWFK DQG ODEHO WKH FXUYHV (i) y 1 + VLQ ș, 0 - ș - 360q (ii) y = tan ș, 0 - ș - 360q (2) (c) Hence find the number of solutions of the equation (i) tan ș = 1 + sin ș that lie in the region 0 - ș - 2160q (ii) tan ș = 1 + sin ș that lie in the region 0 - ș - 1980q (3) O í1 í2 y ș 360q 270q 180q 90q Diagram 1 Q9",
+    "stem_chars": 612,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "i",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_may-jun.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_may-jun",
+    "source_question_number": 10,
+    "year": 2019,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p1/2019_may-jun/questions/q10.pdf",
+    "stem": "A curve has equation y = f(x), where f(x) = (x í 4)(2x + 1) The curve touches the x-axis at the point P and crosses the x-axis at the point Q. (a) State the coordinates of the point P. (1) (b) Find I މ(x). (4) (c) Hence show that the equation of the tangent to the curve at the point where x = 5 can be expressed in the form y = k, where k is a constant to be found. (3) The curve with equation y = f(x + a), where a is a constant, passes through the origin O. (d) State the possible values of a. (2) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 536,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 1,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q1.pdf",
+    "stem": "A B 25 rad O r cm Figure 1 Figure 1 shows a sector AOB of a circle with centre O and radius r cm. The angle AOB is 1.25 radians. Given that the area of the sector AOB is 15 cm2 (a) find the exact value of r, (2) (b) find the exact length of the perimeter of the sector. Write your answer in simplest form. (3) Q1",
+    "stem_chars": 312,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 2,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q2.pdf",
+    "stem": "A tree was planted in the ground. Exactly 2 years after it was planted, the height of the tree was 1.85 m. Exactly 7 years after it was planted, the height of the tree was 3.45 m. Given that the height, H metres, of the tree, t years after it was planted in the ground, can be modelled by the equation H = at + b where a and b are constants, (a) find the value of a and the value of b. (4) (b) State, according to the model, the height of the tree when it was planted. (1) Q2",
+    "stem_chars": 475,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 3,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q3.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. C M O N x y l Figure 2 Figure 2 shows a sketch of the curve C with equation y = x2 – 5x + 13 The point M is the minimum point of C. The straight line l passes through the origin O and intersects C at the points M and N as shown. Find, showing your working, (a) the coordinates of M, (3) (b) the coordinates of N. (5) C M O N x y l R Figure 3 Figure 3 shows the curve C and the line l. The finite region R, shown shaded in Figure 3, is bounded by C, l and the y-axis. (c) Use inequalities to define the region R. (2) Q3",
+    "stem_chars": 640,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 4,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q4.pdf",
+    "stem": "A parallelogram ABCD has area 40 cm2 Given that AB has length 10 cm, BC has length 6 cm and angle DAB is obtuse, find (a) the size of angle DAB, in degrees, to 2 decimal places, (3) (b) the length of diagonal BD, in cm, to one decimal place. (2) Q4",
+    "stem_chars": 248,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 5,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q5.pdf",
+    "stem": "A curve has equation y x x x = + − (a) Find d d y x , giving the answer in simplest form. (3) The point P 4 11 , ⎛ ⎝⎜ ⎞ ⎠⎟ lies on the curve. (b) Find the equation of the normal to the curve at P. Write your answer in the form ax + by + c = 0, where a, b and c are integers to be found. (4) Q5",
+    "stem_chars": 293,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 6,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q6.pdf",
+    "stem": "The curve C has equation y x k = + , where k is a positive constant. (a) Sketch a graph of C, stating the equation of the horizontal asymptote and the coordinates of the point of intersection with the x-axis. (3) The line with equation y = 10 – 2x is a tangent to C. (b) Find the possible values for k. (5) Q6",
+    "stem_chars": 309,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 7,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q7.pdf",
+    "stem": "y P(2, 13) O x Figure 4 Figure 4 shows part of the curve with equation y = 2x2 + 5 The point P(2,13) lies on the curve. (a) Find the gradient of the tangent to the curve at P. (2) The point Q with x coordinate 2 + h also lies on the curve. (b) Find, in terms of h, the gradient of the line PQ. Give your answer in simplest form. (3) (c) Explain briefly the relationship between the answer to (b) and the answer to (a). (1) Q7",
+    "stem_chars": 425,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 8,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q8.pdf",
+    "stem": "Solve, using algebra, the equation x x − + = Fully simplify your answers, writing them in the form a b c + , where a, b and c are integers to be found. (5) Q8",
+    "stem_chars": 158,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 9,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q9.pdf",
+    "stem": "y O x k M Į Figure 5 Figure 5 shows a sketch of part of the curve C with equation y x = ⎛ ⎝⎜ ⎞ ⎠⎟ sin , where x is measured in radians. The point M shown in Figure 5 is a minimum point on C. (a) State the period of C. (1) (b) State the coordinates of M. (1) The smallest positive solution of the equation sin , x k ⎛ ⎝⎜ ⎞ ⎠⎟= where k is a constant, is Į. Find, in terms of Į, (c) (i) the negative solution of the equation sin x k ⎛ ⎝⎜ ⎞ ⎠⎟= that is closest to zero, (ii) the smallest positive solution of the equation cos . x k ⎛ ⎝⎜ ⎞ ⎠⎟= (2) Q9",
+    "stem_chars": 545,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 10,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q10.pdf",
+    "stem": "y O x P y = f(x) Figure 6 Figure 6 shows a sketch of part of the curve with equation y = f(x), where f(x) = (2x + 5)(x – 3) (a) Deduce the values of x for which f(x) - 0 (2) The curve crosses the y-axis at the point P, as shown. (b) Expand f(x) to the form ax3 + bx2 + cx + d where a, b, c and d are integers to be found. (3) (c) Hence, or otherwise, find (i) the coordinates of P, (ii) the gradient of the curve at P. (2) The curve with equation y = f(x) is translated two units in the positive x direction to a curve with equation y = g(x). (d) (i) Find g(x), giving your answer in a simplified factorised form. (ii) Hence state the y intercept of the curve with equation y = g(x). (3) Q10",
+    "stem_chars": 691,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2019_oct-nov.Q011",
+    "subject_code": "WMA11",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 11,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p1/2019_oct-nov/questions/q11.pdf",
+    "stem": "A curve has equation y = f(x). The point P 4 32 , ⎛ ⎝⎜ ⎞ ⎠⎟ lies on the curve. Given that Ɣ Iމމ(x) = 4 x − Ɣ Iމ(x) = 5 at P find (a) the equation of the tangent to the curve at P, writing your answer in the form y = mx + c, where m and c are constants to be found, (2) (b) f(x). (8) TOTAL FOR PAPER IS 75 MARKS END Q11",
+    "stem_chars": 318,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 8
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 1,
+    "year": 2020,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q1.pdf",
+    "stem": "Find, in simplest form, 3x x x − −     ∫ d (4) Q1",
+    "stem_chars": 55,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 2,
+    "year": 2020,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q2.pdf",
+    "stem": "Given y = 3 x, express each of the following in terms of y. Write each expression in its simplest form. (a) 3 3x (1) (b) x− (2) (c) 2 3 −x (2) Q2",
+    "stem_chars": 145,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 3,
+    "year": 2020,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q3.pdf",
+    "stem": "P(3,16) O y x Figure 1 Figure 1 shows part of the curve with equation y = x2 + 3x – 2 The point P(3,16) lies on the curve. (a) Find the gradient of the tangent to the curve at P. (2) The point Q with x coordinate 3 + h also lies on the curve. (b) Find, in terms of h, the gradient of the line PQ. Write your answer in simplest form. (3) (c) Explain briefly the relationship between the answer to (b) and the answer to (a). (1) Q3",
+    "stem_chars": 429,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 4,
+    "year": 2020,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q4.pdf",
+    "stem": "A Not to scale B C O D P Figure 2 Figure 2 shows the plan view of a house ABCD and a lawn APCDA. ABCD is a rectangle with AB = 16 m. APCOA is a sector of a circle centre O with radius 12 m. The point O lies on the line DC, as shown in Figure 2. (a) Show that the size of angle AOD is 1.231 radians to 3 decimal places. (2) The lawn APCDA is shown shaded in Figure 2. (b) Find the area of the lawn, in m2, to one decimal place. (4) (c) Find the perimeter of the lawn, in metres, to one decimal place. (3) Q4",
+    "stem_chars": 506,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 5,
+    "year": 2020,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q5.pdf",
+    "stem": "(a) Find, using algebra, all solutions of 20x3 – 50x2 − 30x = 0 (3) (b) Hence find all real solutions of 20( y + 3) 2 – 50( y + 3) − 30( y + 3) 2 = 0 (4) Q5",
+    "stem_chars": 156,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 6,
+    "year": 2020,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q6.pdf",
+    "stem": "The line l1 has equation 3x – 4y + 20 = 0 The line l2 cuts the x-axis at R(8,0) and is parallel to l1 (a) Find the equation of l2, writing your answer in the form ax + by + c = 0, where a, b and c are integers to be found. (3) The line l1 cuts the x-axis at P and the y-axis at Q. Given that PQRS is a parallelogram, find (b) the area of PQRS, (3) (c) the coordinates of S. (2) Q6",
+    "stem_chars": 380,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_jan.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 7,
+    "year": 2020,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q7.pdf",
+    "stem": "y O P Q x Figure 3 Figure 3 shows part of the curve C1 with equation y = 3sinx, where x is measured in degrees. The point P and the point Q lie on C1 and are shown in Figure 3. (a) State (i) the coordinates of P, (ii) the coordinates of Q. (3) A different curve C2 has equation y = 3sinx + k, where k is a constant. The curve C2 has a maximum y value of 10 The point R is the minimum point on C2 with the smallest positive x coordinate. (b) State the coordinates of R. (2) Q7",
+    "stem_chars": 475,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 8,
+    "year": 2020,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q8.pdf",
+    "stem": "The straight line l has equation y = k(2x – 1), where k is a constant. The curve C has equation y = x2 + 2x + 11 Find the set of values of k for which l does not cross or touch C. (6) Q8",
+    "stem_chars": 186,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 9,
+    "year": 2020,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      21,
+      22
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q9.pdf",
+    "stem": "In this question you must show all stages of your working. . Solutions relying on calculator technology are not acceptable. A curve has equation . y x x x = + > Find the x coordinate of the point on the curve at which d d y x = 0 (6) Q9",
+    "stem_chars": 236,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 10,
+    "year": 2020,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q10.pdf",
+    "stem": "The curve C1 has equation y = f(x), where . f(x) = (4x – 3)(x – 5) (a) Sketch C1 showing the coordinates of any point where the curve touches or crosses the coordinate axes. (3) (b) Hence or otherwise (i) find the values of x for which f x    = (ii) find the value of the constant p such that the curve with equation y = f(x) + p passes through the origin. (2) A second curve C2 has equation y = g(x), where g(x) = f(x + 1) (c) (i) Find, in simplest form, g(x). You may leave your answer in a factorised form. (ii) Hence, or otherwise, find the y intercept of curve C2 (3) Q10",
+    "stem_chars": 582,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_jan.Q011",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 11,
+    "year": 2020,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p1/2020_jan/questions/q11.pdf",
+    "stem": "A curve has equation y = f(x), where . f ʹʹ(x) = 3x x x + > The point P(4, –50) lies on the curve. Given that fʹ(x) = –4 at P, (a) find the equation of the normal at P, writing your answer in the form y = mx + c, where m and c are constants, (3) (b) find f(x). (8) TOTAL FOR PAPER IS 75 MARKS END Q11",
+    "stem_chars": 300,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 8
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2020_may-jun.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 1,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q1.pdf",
+    "stem": "Given that (3pq2)4 ×2p q8 º apbqc find the values of the constants a, b and c. (3) Q1",
+    "stem_chars": 85,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 2,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q2.pdf",
+    "stem": "f(x) = 3 + 12x – 2x (a) Express f(x) in the form a – b(x + c)2 where a, b and c are integers to be found. (3) The curve with equation y = f(x) – 7 crosses the x‑axis at the points P and Q and crosses the y‑axis at the point R. (b) Find the area of the triangle PQR, giving your answer in the form m n where m and n are integers to be found. (4) Q2",
+    "stem_chars": 347,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 3,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q3.pdf",
+    "stem": "Diagram not drawn to scale A α 5 cm 3 cm 3 cm O B C Figure 1 Figure 1 shows the design for a badge. The design consists of two congruent triangles, AOC and BOC, joined to a sector AOB of a circle centre O.  Angle AOB = α  AO = OB = 3 cm  OC = 5 cm Given that the area of sector AOB is 7.2 cm2 (a) show that α = 1.6 radians. (2) (b) Hence find (i) the area of the badge, giving your answer in cm2 to 2 significant figures, (ii) the perimeter of the badge, giving your answer in cm to one decimal place. (8) Q3",
+    "stem_chars": 511,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 4,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q4.pdf",
+    "stem": "Use algebra to solve the simultaneous equations y – 3x = 4 x 2 + y 2 + 6x – 4y = 4 You must show all stages of your working. (7) Q4",
+    "stem_chars": 131,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 5,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q5.pdf",
+    "stem": "(i) –5 –3 y = f(x) O x y Figure 2 Figure 2 shows a sketch of the curve with equation y = f(x). The curve passes through the points (–5, 0) and (0, –3) and touches the x‑axis at the point (2, 0). On separate diagrams sketch the curve with equation (a) y = f(x + 2) (b) y = f(–x) On each diagram, show clearly the coordinates of all the points where the curve cuts or touches the coordinate axes. (6) (ii) q p O x y Figure 3 Figure 3 shows a sketch of the curve with equation y = k cos π x   +     0  x  2π where k is a constant. The curve meets the y‑axis at the point (0, 3 ) and passes through the points ( p, 0) and (q, 0). Find (a) the value of k, (b) the exact value of p and the exact value of q. (3) Q5",
+    "stem_chars": 716,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 6,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q6.pdf",
+    "stem": "The point A has coordinates (–4, 11) and the point B has coordinates (8, 2). (a) Find the gradient of the line AB, giving your answer as a fully simplified fraction. (2) The point M is the midpoint of AB. The line l passes through M and is perpendicular to AB. (b) Find an equation for l, giving your answer in the form px + qy + r = 0 where p, q and r are integers to be found. (4) The point C lies on l such that the area of triangle ABC is 37.5 square units. (c) Find the two possible pairs of coordinates of point C. (5) Q6",
+    "stem_chars": 527,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 7,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q7.pdf",
+    "stem": "The curve C has equation y = 2 −x (a) Sketch the graph of C. On your sketch you should show the coordinates of any points of intersection with the coordinate axes and state clearly the equations of any asymptotes. (3) The line l has equation y = 4x + k, where k is a constant. Given that l meets C at two distinct points, (b) show that k2 + 16k + 48 > 0 (4) (c) Hence find the range of possible values for k. (4) Q7",
+    "stem_chars": 415,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 8,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q8.pdf",
+    "stem": "The curve C has equation y = (x – 2)(x – 4) (a) Show that d d y x = 3x 2 – 20x + 32 (4) The line l1 is the tangent to C at the point where x = 6 (b) Find the equation of l1, giving your answer in the form y = mx + c, where m and c are constants to be found. (4) The line l2 is the tangent to C at the point where x = α Given that l1 and l2 are parallel and distinct, (c) find the value of α (3) Q8",
+    "stem_chars": 397,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2020_may-jun.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 9,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2020_may-jun/questions/q9.pdf",
+    "stem": "A curve with equation y = f(x) passes through the point (9, 10). Given that f′(x) = 27x 2 – 21 3x x x − x > 0 find f(x), fully simplifying each term. (6) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 188,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2021_jan.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q1.pdf",
+    "stem": "A curve has equation y x x x x = − − + > (a) Find, in simplest form, d d y x (3) The point P lies on the curve and has x coordinate 1 (b) Find an equation of the normal to the curve at P, writing your answer in the form ax + by + c = 0, where a, b and c are integers to be found. (5) Q1",
+    "stem_chars": 286,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q2.pdf",
+    "stem": "A tree was planted. Exactly 3 years after it was planted, the height of the tree was 2 m. Exactly 5 years after it was planted, the height of the tree was 2.4 m. Given that the height, H metres, of the tree, t years after it was planted, can be modelled by the equation H 3 = pt 2 + q where p and q are constants, (a) find, to 3 significant figures where necessary, the value of p and the value of q. (4) Exactly T years after the tree was planted, its height was 5 m. (b) Find the value of T according to the model, giving your answer to one decimal place. (2) Q2",
+    "stem_chars": 564,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q3.pdf",
+    "stem": "O x y P Q C1 Figure 1 Figure 1 shows a sketch of part of the curve C1 with equation y = 4 cos x° The point P and the point Q lie on C1 and are shown in Figure 1. (a) State (i) the coordinates of P, (ii) the coordinates of Q. (3) The curve C2 has equation y = 4 cos x° + k, where k is a constant. Curve C2 has a minimum y value of –1 The point R is the maximum point on C2 with the smallest positive x coordinate. (b) State the coordinates of R. (2) Q3",
+    "stem_chars": 451,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q4.pdf",
+    "stem": "O x y P Q C R l Figure 2 The points P and Q, as shown in Figure 2, have coordinates (–2, 13) and (4, –5) respectively. The straight line l passes through P and Q. (a) Find an equation for l, writing your answer in the form y = mx + c, where m and c are integers to be found. (3) The quadratic curve C passes through P and has a minimum point at Q. (b) Find an equation for C. (3) The region R, shown shaded in Figure 2, lies in the second quadrant and is bounded by C and l only. (c) Use inequalities to define region R. (2) Q4",
+    "stem_chars": 527,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q5.pdf",
+    "stem": "O D B C A Not to scale Figure 3 Figure 3 shows the plan view of a viewing platform at a tourist site. The shape of the viewing platform consists of a sector ABCOA of a circle, centre O, joined to a triangle AOD. Given that ● OA = OC = 6 m ● AD = 14 m ● angle ADC = 0.43 radians ● angle AOD is an obtuse angle ● OCD is a straight line find (a) the size of angle AOD, in radians, to 3 decimal places, (3) (b) the length of arc ABC, in metres, to one decimal place, (2) (c) the total area of the viewing platform, in m2, to one decimal place. (4) Q5",
+    "stem_chars": 546,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q6.pdf",
+    "stem": "(a) Sketch the curve with equation y k x k x = − > ≠ (2) (b) On a separate diagram, sketch the curve with equation y k x k k x = − + > ≠ stating the coordinates of the point of intersection with the x-axis and, in terms of k, the equation of the horizontal asymptote. (3) (c) Find the range of possible values of k for which the curve with equation y k x k k x = − + > ≠ does not touch or intersect the line with equation y = 3x + 4 (5) Q6",
+    "stem_chars": 439,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q7.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. f ( ) x x x x = − − > (a) Solve the equation f (x) = 9 (4) (b) Solve the equation f″ (x) = 6 (5) Q7",
+    "stem_chars": 221,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q8.pdf",
+    "stem": "O x y P Q C l Figure 4 Figure 4 shows a sketch of part of the curve C with equation y = f (x), where f (x) = (3x – 2)2 (x – 4) (a) Deduce the values of x for which f (x) > 0 (1) (b) Expand f (x) to the form ax3 + bx2 + cx + d where a, b, c and d are integers to be found. (3) The line l, also shown in Figure 4, passes through the y intercept of C and is parallel to the x-axis. The line l cuts C again at points P and Q, also shown in Figure 4. (c) Using algebra and showing your working, find the length of line PQ. Write your answer in the form k 3, where k is a constant to be found. (Solutions relying entirely on calculator technology are not acceptable.) (5) Q8",
+    "stem_chars": 668,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_jan.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2021_jan/questions/q9.pdf",
+    "stem": "(i) Find ( ) x x x + ∫ d x > 0 giving your answer in simplest form. (5) (ii) A curve C has equation y = f(x). Given ● fʹ(x) = x2 + ax + b where a and b are constants ● the y intercept of C is –8 ● the point P(3, –2) lies on C ● the gradient of C at P is 2 find, in simplest form, f(x). (6) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 324,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q1.pdf",
+    "stem": "The curve C has equation y x x x x = + + − > (a) Find d d y x, giving your answer in simplest form. (4) The point P (4, 3) lies on C. (b) Find the equation of the normal to C at the point P. Write your answer in the form ax + by + c = 0, where a, b and c are integers to be found. (4) Q1",
+    "stem_chars": 287,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q2.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. f(x) = ax3 + (6a + 8)x2 – a2x where a is a positive constant. Given f(–1) = 32 (a) (i) show that the only possible value for a is 3 (ii) Using a = 3 solve the equation f(x) = 0 (5) (b) Hence find all real solutions of (i) 3y + 26y 3 – 9y 3 = 0 (ii) 3(9 3z) + 26(9 2z) – 9(9 z) = 0 (5) Q2",
+    "stem_chars": 409,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q3.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. Not drawn to scale B q m C A p m 60° 2 2 m Figure 1 Figure 1 shows the plan view of a flower bed. The flowerbed is in the shape of a triangle ABC with ● AB = p metres ● AC = q metres ● BC = 2 2 metres ● angle BAC = 60° (a) Show that p2 + q2 – pq = 8 (2) Given that side AC is 2 metres longer than side AB, use algebra to find (b) (i) the exact value of p, (ii) the exact value of q. (5) Using the answers to part (b), (c) calculate the exact area of the flower bed. (2) Q3",
+    "stem_chars": 594,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q4.pdf",
+    "stem": "Find ( )( ) x x x x + − ∫ d writing each term in simplest form. (6) Q4",
+    "stem_chars": 70,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2021_may-jun.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q5.pdf",
+    "stem": "O t PA P PB Figure 2 The share value of two companies, company A and company B, has been monitored over a 15-year period. The share value PA of company A, in millions of pounds, is modelled by the equation PA = 53 – 0.4(t – 8) 2 t  0 where t is the number of years after monitoring began. The share value PB of company B, in millions of pounds, is modelled by the equation PB = –1.6t + 44.2 t  0 where t is the number of years after monitoring began. Figure 2 shows a graph of both models. Use the equations of one or both models to answer parts (a) to (d). (a) Find the difference between the share value of company A and the share value of company B at the point monitoring began. (2) (b) State the maximum share value of company A during the 15-year period. (1) (c) Find, using algebra and showing your working, the times during this 15-year period when the share value of company A was greater than the share value of company B. (4) (d) Explain why the model for company A should not be used to predict its share value when t = 20 (1) Q5",
+    "stem_chars": 1043,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 4
+      },
+      {
+        "label": "d",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q6.pdf",
+    "stem": "The curve C has equation y = f(x), x > 0 Given that ● C passes through the point P (8, 2) ● fʹ(x) = 32 x x + −( ) (a) find the equation of the tangent to C at P. Write your answer in the form y = mx + c, where m and c are constants to be found. (3) (b) Find, in simplest form, f(x). (5) Q6",
+    "stem_chars": 289,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q7.pdf",
+    "stem": "E l2 1.8 rad B D x y l1 C O Figure 3 The line l1 has equation 4y + 3x = 48 The line l1 cuts the y-axis at the point C, as shown in Figure 3. (a) State the y coordinate of C. (1) The point D (8, 6) lies on l1 The line l2 passes through D and is perpendicular to l1 The line l2 cuts the y-axis at the point E as shown in Figure 3. (b) Show that the y coordinate of E is −14 (3) A sector BCE of a circle with centre C is also shown in Figure 3. Given that angle BCE is 1.8 radians, (c) find the length of arc BE. (3) The region CBED, shown shaded in Figure 3, consists of the sector BCE joined to the triangle CDE. (d) Calculate the exact area of the region CBED. (3) Q7",
+    "stem_chars": 667,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q8.pdf",
+    "stem": "The curve C1 has equation y = 3x2 + 6x + 9 (a) Write 3x2 + 6x + 9 in the form a(x + b) 2 + c where a, b and c are constants to be found. (3) The point P is the minimum point of C1 (b) Deduce the coordinates of P. (1) A different curve C2 has equation y = Ax3 + Bx2 + C x + D where A, B, C and D are constants. Given that C2 ● passes through P ● intersects the x-axis at –4, –2 and 3 (c) find, making your method clear, the values of A, B, C and D. (5) Q8",
+    "stem_chars": 454,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_may-jun.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2021_may-jun/questions/q9.pdf",
+    "stem": "l x y O Figure 4 Figure 4 shows a sketch of the curve with equation y = tan x –2π  x  2π The line l, shown in Figure 4, is an asymptote to y = tan x (a) State an equation for l. (1) A copy of Figure 4, labelled Diagram 1, is shown on the next page. (b) (i) On Diagram 1, sketch the curve with equation y = 1 x + 1 –2π  x  2π stating the equation of the horizontal asymptote of this curve. (ii) Hence, giving a reason, state the number of solutions of the equation tan x = 1 x + 1 in the region –2π  x  2π (4) (c) State the number of solutions of the equation tan x = 1 x + 1 in the region (i) 0  x  40π (ii) –10π  x  5 2π (2) l x y O Diagram 1 TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 688,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q1.pdf",
+    "stem": "Find x x x x + − ∫ d giving each term in simplest form. (5) Q1",
+    "stem_chars": 62,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q2.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. A curve has equation y = 3x 5 + 4x 3 – x + 5 The points P and Q lie on the curve. The gradient of the curve at both point P and point Q is 2 Find the x coordinates of P and Q. (5) Q2",
+    "stem_chars": 304,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q3.pdf",
+    "stem": "(i) Solve x > 4 (3) (ii) y x O l R C Figure 1 Figure 1 shows a sketch of the curve C and the straight line l. The infinite region R, shown shaded in Figure 1, lies in quadrants 2 and 3 and is bounded by C and l only. Given that • l has a gradient of 3 • C has equation y = 2x 2 – 50 • C and l intersect on the negative x‑axis use inequalities to define the region R. (3) Q3",
+    "stem_chars": 373,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q4.pdf",
+    "stem": "y x O Q R Figure 2 Figure 2 shows a sketch of the curve with equation y = f(x), where f(x) = cos 2x o 0  x  k The point Q and the point R(k, 0) lie on the curve and are shown in Figure 2. (a) State (i) the coordinates of Q, (ii) the value of k. (3) (b) Given that there are exactly two solutions to the equation cos 2x o = p in the region 0  x  k find the range of possible values for p. (2) Q4",
+    "stem_chars": 398,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q5.pdf",
+    "stem": "The line l1 has equation 3y – 2x = 30 The line l2 passes through the point A(24, 0) and is perpendicular to l1 Lines l1 and l2 meet at the point P (a) Find, using algebra and showing your working, the coordinates of P. (5) Given that l1 meets the x‑axis at the point B, (b) find the area of triangle BPA. (3) Q5",
+    "stem_chars": 311,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q6.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. A curve C has equation y = f(x) where f(x) = 2(x + 1)(x – 3) (a) Sketch a graph of C. Show on your graph the coordinates of the points where C cuts or meets the coordinate axes. (3) (b) Write f(x) in the form ax 3 + bx 2 + cx + d, where a, b, c and d are constants to be found. (3) (c) Hence, find the equation of the tangent to C at the point where x = 1 (4) Q6",
+    "stem_chars": 484,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q7.pdf",
+    "stem": "A C O θ X B Figure 3 Figure 3 shows the design for a sign at a bird sanctuary. The design consists of a kite OABC joined to a sector OCXA of a circle centre O. In the design • OA = OC = 0.6 m • AB = CB = 1.4 m • Angle OAB = Angle OCB = 2 radians • Angle AOC = θ radians, as shown in Figure 3 Making your method clear, (a) show that θ = 1.64 radians to 3 significant figures, (4) (b) find the perimeter of the sign, in metres to 2 significant figures, (2) (c) find the area of the sign, in m 2 to 2 significant figures. (4) Q7",
+    "stem_chars": 525,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q8.pdf",
+    "stem": "y x O M C l1 Figure 4 Figure 4 shows a sketch of the curve C with equation y = 4 + 12x – 3x The point M is the maximum turning point on C. (a) (i) Write 4 + 12x – 3x 2 in the form a + b(x + c) where a, b and c are constants to be found. (ii) Hence, or otherwise, state the coordinates of M. (5) The line l1 passes through O and M, as shown in Figure 4. A line l2 touches C and is parallel to l1 (b) Find an equation for l2 (5) Q8",
+    "stem_chars": 429,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q9.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. y x O P(9, 3) y = f(x) Figure 5 Figure 5 shows a sketch of the curve with equation y = f(x) where f(x) = x x > 0 The point P(9, 3) lies on the curve and is shown in Figure 5. On the next page there is a copy of Figure 5 called Diagram 1. (a) On Diagram 1, sketch and clearly label the graphs of y = f(2x) and y = f(x) + 3 Show on each graph the coordinates of the point to which P is transformed. (3) The graph of y = f(2x) meets the graph of y = f(x) + 3 at the point Q. (b) Show that the x coordinate of Q is the solution of x = + ( ) (3) (c) Hence find, in simplest form, the coordinates of Q. (3) y x O P(9, 3) y = f(x) Diagram 1 Turn over for a copy of Diagram 1 if you need to redraw your graphs. Only use this copy if you need to redraw your graphs. y x O P(9, 3) y = f(x) Copy of Diagram 1 Q9",
+    "stem_chars": 922,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2021_oct-nov.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 10,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2021_oct-nov/questions/q10.pdf",
+    "stem": "A curve has equation y = f(x), x > 0 Given that • fʹ(x) = ax – 12x 3 , where a is a constant • fʹʹ(x) = 0 when x = 27 • the curve passes through the point (1, –8) (a) find the value of a. (3) (b) Hence find f(x). (4) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 252,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q1.pdf",
+    "stem": "  Find x x x − −     ∫ d giving each term in simplest form. (4)   Q1",
+    "stem_chars": 84,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q2.pdf",
+    "stem": "  f(x) = 11 – 4x – 2x (a) Express f(x) in the form a + b(x + c) where a, b and c are integers to be found. (3) (b) Sketch the graph of the curve C with equation y = f(x), showing clearly the coordinates of the point where the curve crosses the y‑axis. (2) (c) Write down the equation of the line of symmetry of C. (1)   Q2",
+    "stem_chars": 332,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q3.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (i) f(x) = (x + 2) 2 + (3x – 5 8) Express f(x) in the form ax 2 + bx 2 + c where a, b and c are integers to be found. (3) (ii) Solve the equation 3(4y – 3 3) = 5y + 3 giving your answer in the form p + q 3 where p and q are simplified fractions to be found. (4)       Q3",
+    "stem_chars": 414,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q4.pdf",
+    "stem": "  y Q l O R C x P Figure 1 In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. Figure 1 shows a line l with equation x + y = 6 and a curve C with equation y = 6x – 2x 2 + 1 The line l intersects the curve C at the points P and Q as shown in Figure 1. (a) Find, using algebra, the coordinates of P and the coordinates of Q. (4) The region R, shown shaded in Figure 1, is bounded by C, l and the x‑axis. (b) Use inequalities to define the region R. (3)   Q4",
+    "stem_chars": 535,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q5.pdf",
+    "stem": "  Not to scale A C E O R D B Figure 2 Figure 2 shows a plan view of a semicircular garden ABCDEOA The semicircle has • centre O • diameter AOE • radius 3 m The straight line BD is parallel to AE and angle BOA is 0.7 radians. (a) Show that, to 4 significant figures, angle BOD is 1.742 radians. (1) The flowerbed R, shown shaded in Figure 2, is bounded by BD and the arc BCD. (b) Find the area of the flowerbed, giving your answer in square metres to one decimal place. (3) (c) Find the perimeter of the flowerbed, giving your answer in metres to one decimal place. (3)       Q5",
+    "stem_chars": 597,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2022_jan.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q6.pdf",
+    "stem": "  The curve C has equation y = f(x) where x > 0 Given that • f′(x) = ( ) x x x + 3 2 • the point P(4, 20) lies on C (a) (i) find the value of the gradient at P (ii) Hence find the equation of the tangent to C at P, giving your answer in the form ax + by + c = 0 where a, b and c are integers to be found. (4) (b) Find f(x), simplifying your answer. (7)       Q6",
+    "stem_chars": 381,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 7
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2022_jan.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q7.pdf",
+    "stem": "  y O x Figure 3 Figure 3 shows a sketch of part of the curve with equation y = f(x), where f(x) = (x + 4)(x – 2)(2x – 9) Given that the curve with equation y = f(x) – p passes through the point with coordinates (0, 50) (a) find the value of the constant p. (2) Given that the curve with equation y = f(x + q) passes through the origin, (b) write down the possible values of the constant q. (2) (c) Find f′(x). (4) (d) Hence find the range of values of x for which the gradient of the curve with equation y = f(x) is less than –18 (3)       Q7",
+    "stem_chars": 563,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q8.pdf",
+    "stem": "  The line l1 has equation 2x – 5y + 7 = 0 (a) Find the gradient of l1 (1) Given that • the point A has coordinates (6, –2) • the line l2 passes through A and is perpendicular to l1 (b) find the equation of l2 giving your answer in the form y = mx + c, where m and c are constants to be found. (3) The lines l1 and l2 intersect at the point M. (c) Using algebra and showing all your working, find the coordinates of M. (Solutions relying on calculator technology are not acceptable.) (3) Given that the diagonals of a square ABCD meet at M, (d) find the coordinates of the point C. (2)       Q8",
+    "stem_chars": 614,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      27,
+      28
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q9.pdf",
+    "stem": "  y O P Q x Figure 4 Figure 4 shows part of the curve with equation y = A cos(x – 30)° where A is a constant. The point P is a minimum point on the curve and has coordinates (30, –3) as shown in Figure 4. (a) Write down the value of A. (1) The point Q is shown in Figure 4 and is a maximum point. (b) Find the coordinates of Q. (3)   Q9",
+    "stem_chars": 346,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_jan.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 10,
+    "year": 2022,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2022_jan/questions/q10.pdf",
+    "stem": "  The curve C has equation y = 1 x – 9 (a) Sketch the graph of C. On your sketch • show the coordinates of any points of intersection with the coordinate axes • state clearly the equations of any asymptotes (4) The curve D has equation y = kx 2 where k is a constant. Given that C meets D at 4 distinct points, (b) find the range of possible values for k. (5)     TOTAL FOR PAPER: 75 MARKS END Q10",
+    "stem_chars": 412,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q1.pdf",
+    "stem": "  Find x x x x + −     ∫ d giving your answer in simplest form. (4)   Q1",
+    "stem_chars": 88,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q2.pdf",
+    "stem": "  In the triangle ABC, • AB = 21 cm • BC = 13 cm • angle BAC = 25° • angle ACB = x° (a) Use the sine rule to find the value of sin x° , giving your answer to 4 decimal places. (2) Given also that AB is the longest side of the triangle, (b) find the value of x, giving your answer to 2 decimal places. (3)   Q2",
+    "stem_chars": 319,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q3.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (i) Show that − is an integer and find its value. (2) (ii) Simplify 4 5 3 5 − − giving your answer in the form a + b 5 where a and b are rational numbers. (3)   Q3",
+    "stem_chars": 297,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q4.pdf",
+    "stem": "  y x O y = 1 y = f(x) Q P Figure 1 Figure 1 shows a sketch of a curve with equation y = f(x) The curve has a minimum at P(−1, 0) and a maximum at Q 3 2 2 ,     The line with equation y = 1 is the only asymptote to the curve. On separate diagrams sketch the curves with equation (i) y = f(x) − 2 (3) (ii) y = f(−x) (3) On each sketch you must clearly state • the coordinates of the maximum and minimum points • the equation of the asymptote   Q4",
+    "stem_chars": 461,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q5.pdf",
+    "stem": "  The curve C has equation y = f(x) Given that • f(x) is a quadratic expression • the maximum turning point on C has coordinates (−2, 12) • C cuts the negative x-axis at −5 (a) find f(x) (4) The line l1 has equation y = 4 5 x Given that the line l2 is perpendicular to l1 and passes through (−5, 0) (b) find an equation for l2 , writing your answer in the form y = mx + c where m and c are constants to be found. (3) (−2, 12) y x O l2 R l1 C −5 Figure 2 Figure 2 shows a sketch of the curve C and the lines l1 and l2 (c) Define the region R, shown shaded in Figure 2, using inequalities. (2)       Q5",
+    "stem_chars": 620,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q6.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) Given that 2xy − 3x2 = 50 and y − x3 + 6x = 0 show that 2x4 − 15x2 − 50 = 0 (2) (b) Hence solve the simultaneous equations 2xy − 3x2 = 50 y − x3 + 6x = 0 Give your answers in fully simplified surd form. (5)       Q6",
+    "stem_chars": 363,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q7.pdf",
+    "stem": "  The curve C has equation y = f(x), x > 0 Given that • f′(x) = 2 x + A x2 + 3 , where A is a constant • f′′(x) = 0 when x = 4 (a) find the value of A. (4) Given also that • f(x) = 8 3 , when x = 12 (b) find f(x) , giving each term in simplest form. (5)       Q7",
+    "stem_chars": 282,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q8.pdf",
+    "stem": "  A O D C B Figure 3 Figure 3 shows a sketch of the outline of the face of a ceiling fan viewed from below. The fan consists of three identical sections congruent to OABCDO, shown in Figure 3, where • OABO is a sector of a circle with centre O and radius 9 cm • OBCDO is a sector of a circle with centre O and radius 84 cm • angle AOD = 2 π radians Given that the length of the arc AB is 15 cm, (a) show that the length of the arc CD is 35.9 cm to one decimal place. (3) The face of the fan is modelled to be a flat surface. Find, according to the model, (b) the perimeter of the face of the fan, giving your answer to the nearest cm, (2) (c) the surface area of the face of the fan. Give your answer to 3 significant figures and make your units clear. (5)       Q8",
+    "stem_chars": 785,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      26
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q9.pdf",
+    "stem": "  y x y = sin x O Figure 4 Figure 4 shows part of the graph of the curve with equation y = sin x Given that sin α = p , where 0 < α < 90° (a) state, in terms of p , the value of (i) 2 sin (180° − α) (ii) sin (α − 180°) (iii) 3 + sin (180° + α) (3) A copy of Figure 4, labelled Diagram 1, is shown on page 27. On Diagram 1, (b) sketch the graph of y = sin 2x (2) (c) Hence find, in terms of α, the x coordinates of any points in the interval 0 < x < 180° where sin 2x = p (3)   y x y = sin x O Diagram 1 Q9",
+    "stem_chars": 515,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_may-jun.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 10,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p1/2022_may-jun/questions/q10.pdf",
+    "stem": "  y O l C B A x Figure 5 Figure 5 shows a sketch of the curve C with equation y = 2 7 x3 + 1 7 x2 − 5 2 x + k where k is a constant. (a) Find d d y x (2) The line l, shown in Figure 5, is the normal to C at the point A with x coordinate −7 Given that l is also a tangent to C at the point B, (b) show that the x coordinate of the point B is a solution of the equation 12x2 + 4x − 33 = 0 (4) (c) Hence find the x coordinate of B, justifying your answer. (2) Given that the y intercept of l is −1 (d) find the value of k. (4)         TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 592,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q1.pdf",
+    "stem": "  The curve C has equation y x x x = − + x > 0 (a) Find d d y x , giving your answer in simplest form. (3) The point R 2 13 ,     lies on C. (b) Find the equation of the tangent to C at the point R. Write your answer in the form ax + by + c = 0, where a, b and c are integers to be found. (3)   (Total for Question 1 is 6 marks)",
+    "stem_chars": 344,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q2.pdf",
+    "stem": "  Given that (x – 5)(2x + 1)(x + 3) ≡ ax3 + bx2 –32x – 15 where a and b are constants, (a) find the value of a and the value of b. (2) (b) Hence find ( )( )( ) x x x x x − + + ∫ 5 2 d writing each term in simplest form. (5)   (Total for Question 2 is 7 marks)",
+    "stem_chars": 269,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q3.pdf",
+    "stem": "  The share price of a company is monitored. Exactly 3 years after monitoring began, the share price was £1.05 Exactly 5 years after monitoring began, the share price was £1.65 The share price, £V, of the company is modelled by the equation V = pt + q where t is the number of years after monitoring began and p and q are constants. (a) Find the value of p and the value of q. (3) Exactly T years after monitoring began, the share price was £2.50 (b) Find the value of T, according to the model, giving your answer to one decimal place. (2)   (Total for Question 3 is 5 marks)",
+    "stem_chars": 586,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q4.pdf",
+    "stem": "  In this question you must show detailed reasoning. Solutions relying on calculator technology are not acceptable. f(x) = x2(2x + 1) – 15x (a) Solve f(x) = 0 (4) (b) Hence solve y 3(2y 3 + 1) – 15y 3 = 0 y > 0 giving your answer in simplified surd form. (2)   (Total for Question 4 is 6 marks)",
+    "stem_chars": 304,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve C has equation y = f(x), x > 0 Given that • f′(x) = 12 x x + – 4 • the point P(9, 8) lies on C (a) find, in simplest form, f(x) (5) The line l is the normal to C at P (b) Find the coordinates of the point at which l crosses the y‑axis. (4)       (Total for Question 5 is 9 marks)",
+    "stem_chars": 442,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q6.pdf",
+    "stem": "  (a) Given that k is a positive constant such that 0 < k < 4 sketch, on separate axes, the graphs of (i) y = (2x – k)(x + 4)2 (ii) y = k x2 showing the coordinates of any points where the graphs cross or meet the coordinate axes, leaving coordinates in terms of k, where appropriate. (5) (b) State, with a reason, the number of roots of the equation (2x – k)(x + 4)2 = k x2 (1)   (Total for Question 6 is 6 marks)",
+    "stem_chars": 424,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "i",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q7.pdf",
+    "stem": "  O (–4, 6) (–1, 6) (2, 6) (3, 6) y = f(x) x y Figure 1 Figure 1 shows the curve with equation y = f(x). The points P(–4, 6), Q(–1, 6), R(2, 6) and S(3, 6) lie on the curve. (a) Using Figure 1, find the range of values of x for which f(x) < 6 (3) (b) State the largest solution of the equation f(2x) = 6 (1) (c) (i) Sketch the curve with equation y = f(–x). On your sketch, state the coordinates of the points to which P, Q, R and S are transformed. (ii) Hence find the set of values of x for which f(–x)  6 and x < 0 (4)       (Total for Question 7 is 8 marks)",
+    "stem_chars": 582,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q8.pdf",
+    "stem": "  A 8 m π rad π rad 3 m 3 m X O B C Diagram NOT to scale Figure 2 Figure 2 shows the plan view of a design for a pond. The design consists of a sector AOBX of a circle centre O joined to a quadrilateral AOBC. • BC = 8 m • OA = OB = 3 m • angle AOB is 2 π radians • angle BCA is 6 π radians (a) Calculate $ (i) the exact area of the sector AOBX, (ii) the exact perimeter of the sector AOBX. (5) (b) Calculate the exact area of the triangle AOB. (2) (c) Show that the length AB is 3 3 m. (2) (d) Find the total surface area of the pond. Give your answer in m2 correct to 2 significant figures. (5)       (Total for Question 8 is 14 marks)",
+    "stem_chars": 656,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2022_oct-nov.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      27
+    ],
+    "qp_pdf": "p1/2022_oct-nov/questions/q9.pdf",
+    "stem": "  O P l M C x y Figure 3 Figure 3 shows a sketch of the curve C with equation y = 1 2 x2 – 10x + 22 (a) Write 1 2 x2 – 10x + 22 in the form a(x + b) 2 + c where a, b and c are constants to be found. (3) The point M is the minimum turning point of C, as shown in Figure 3. (b) Deduce the coordinates of M (2) The line l is the normal to C at the point P, as shown in Figure 3. Given that l has equation y = k – 1 8 x, where k is a constant, (c) (i) find the coordinates of P (ii) find the value of k (6) Question 9 continues on the next page   O R P l M C x y Figure 4 Figure 4 is a copy of Figure 3. The finite region R, shown shaded in Figure 4, is bounded by l, C and the line through M parallel to the y‑axis. (d) Identify the inequalities that define R. (3)       (Total for Question 9 is 14 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 855,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 6
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q1.pdf",
+    "stem": "  A curve C has equation y = 2 + 10x 2 – 2x 2 x > 0 (a) Find d d y x giving your answer in simplest form. (3) (b) Hence find the exact value of the gradient of the tangent to C at the point where x = 2 giving your answer in simplest form. (Solutions relying on calculator technology are not acceptable.) (2)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 353,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q2.pdf",
+    "stem": "  The points P, Q and R have coordinates (–3, 7), (9, 11) and (12, 2) respectively. (a) Prove that angle PQR = 90° (3) Given that the point S is such that PQRS forms a rectangle, (b) find the coordinates of S. (2)   (Total for Question 2 is 5 marks)",
+    "stem_chars": 259,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_jan.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q3.pdf",
+    "stem": "  Find x x x + ∫ d giving your answer in simplest form. (5)   (Total for Question 3 is 5 marks)",
+    "stem_chars": 105,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q4.pdf",
+    "stem": "  Given that the equation kx 2 + 6kx + 5 = 0 where k is a non zero constant has no real roots, find the range of possible values for k. (4)   (Total for Question 4 is 4 marks)",
+    "stem_chars": 185,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) By substituting p = 3 x, show that the equation 3 × 9 x + 3 x + 2 = 1 + 3 x – 1 can be rewritten in the form 9p 2 + 26p – 3 = 0 (3) (b) Hence solve 3 × 9 x + 3 x + 2 = 1 + 3 x – 1 (3)   (Total for Question 5 is 6 marks)",
+    "stem_chars": 357,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q6.pdf",
+    "stem": "  Diagram NOT accurately drawn A D O B C Figure 1 Figure 1 shows the plan view for the design of a stage. The design consists of a sector OBC of a circle, with centre O, joined to two congruent triangles OAB and ODC. Given that • angle BOC = 2.4 radians • area of sector BOC = 40 m • AOD is a straight line of length 12.5 m (a) find the radius of the sector, giving your answer, in m, to 2 decimal places, (2) (b) find the size of angle AOB, in radians, to 2 decimal places. (1) Hence find (c) the total area of the stage, giving your answer, in m 2, to one decimal place, (3) (d) the total perimeter of the stage, giving your answer, in m, to one decimal place. (4)       (Total for Question 6 is 10 marks)",
+    "stem_chars": 727,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q7.pdf",
+    "stem": "  (a) On Diagram 1, sketch a graph of the curve C with equation y x x = ≠ (2) The curve C is transformed onto the curve with equation y x x = − ≠ (b) Fully describe this transformation. (2) The curve with equation y x x = − ≠ and the line with equation y = kx + 7 where k is a constant intersect at exactly two points, P and Q. Given that the x coordinate of point P is –4 (c) find the value of k, (2) (d) find, using algebra, the coordinates of point Q. (Solutions relying entirely on calculator technology are not acceptable.) (4)   O x y Diagram 1 Turn over for a copy of Diagram 1 if you need to redraw your graph.     Only use this copy of Diagram 1 if you need to redraw your graph. O x y Copy of Diagram 1 (Total for Question 7 is 10 marks)",
+    "stem_chars": 767,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q8.pdf",
+    "stem": "  R –12 (7, –18) l O C x y Figure 2 Figure 2 shows a sketch of the straight line l and the curve C. Given that l cuts the y‑axis at –12 and cuts the x‑axis at 4, as shown in Figure 2, (a) find an equation for l, writing your answer in the form y = mx + c, where m and c are constants to be found. (2) Given that C • has equation y = f(x) where f(x) is a quadratic expression • has a minimum point at (7, –18) • cuts the x‑axis at 4 and at k, where k is a constant (b) deduce the value of k, (1) (c) find f(x). (3) The region R is shown shaded in Figure 2. (d) Use inequalities to define R. (2)       (Total for Question 8 is 8 marks)",
+    "stem_chars": 653,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q9.pdf",
+    "stem": "  l O x y Figure 3 Figure 3 shows a sketch of • the curve with equation y = tan x • the straight line l with equation y = πx in the interval –π < x < π (a) State the period of tan x (1) (b) Write down the number of roots of the equation (i) tan x = (π + 2)x in the interval –π < x < π (1) (ii) tan x = πx in the interval –2π < x < 2π (1) (iii) tan x = πx in the interval –100π < x < 100π (1)   (Total for Question 9 is 4 marks)",
+    "stem_chars": 437,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q10.pdf",
+    "stem": "  l O C P x y Figure 4 Figure 4 shows a sketch of part of the curve C with equation y = f(x), where f(x) = (3x + 20)(x + 6)(2x – 3) (a) Use the given information to state the values of x for which f(x) > 0 (2) (b) Expand (3x + 20)(x + 6)(2x – 3), writing your answer as a polynomial in simplest form. (3) The straight line l is the tangent to C at the point where C cuts the y‑axis. Given that l cuts C at the point P, as shown in Figure 4, (c) find, using algebra, the x coordinate of P (Solutions based on calculator technology are not acceptable.) (5)       (Total for Question 10 is 10 marks)",
+    "stem_chars": 616,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_jan.Q011",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 11,
+    "year": 2023,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2023_jan/questions/q11.pdf",
+    "stem": "  A curve C has equation y = f(x), x > 0 Given that • f′′(x) = 4x + x • the point P has x coordinate 4 and lies on C • the tangent to C at P has equation y = 3x + 4 (a) find an equation of the normal to C at P (2) (b) find f(x), writing your answer in simplest form. (6)     (Total for Question 11 is 8 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 352,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_may-jun.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q1.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. Solve the inequality 4x 2 – 3x + 7  4x + 9 (4)   (Total for Question 1 is 4 marks)",
+    "stem_chars": 217,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_may-jun.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q2.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. A rectangular sports pitch has length x metres and width y metres, where x > y Given that the perimeter of the pitch is 350 m, (a) write down an equation linking x and y (1) Given also that the area of the pitch is 7350 m (b) write down a second equation linking x and y (1) (c) hence find the value of x and the value of y (4)   (Total for Question 2 is 6 marks)",
+    "stem_chars": 506,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_may-jun.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q3.pdf",
+    "stem": "  (a) Express 3x 2 + 12x + 13 in the form a(x + b) 2 + c where a, b and c are integers to be found. (3) (b) Hence sketch the curve with equation y = 3x 2 + 12x + 13 On your sketch show clearly • the coordinates of the y intercept • the coordinates of the turning point of the curve (3)   (Total for Question 3 is 6 marks)",
+    "stem_chars": 331,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_may-jun.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. (a) Write y x x x < ; in the form y = Ax p + Bx q where A, B, p and q are constants to be found. (4) (b) Hence find d d y x giving each coefficient in simplest form. (3)   (Total for Question 4 is 7 marks)",
+    "stem_chars": 276,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_may-jun.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q5.pdf",
+    "stem": "  A D B O C 6 m 4 m 1.5 m Figure 1 Figure 1 shows the plan for a garden. In the plan • OA and CD are perpendicular to OD • AB is an arc of the circle with centre O and radius 4 metres • BC is parallel to OD • OD is 6 metres, OA is 4 metres and CD is 1.5 metres (a) Show that angle AOB is 1.186 radians to 4 significant figures. (2) (b) Find the perimeter of the garden, giving your answer in metres to 3 significant figures. (4) (c) Find the area of the garden, giving your answer in square metres to 3 significant figures. (4)       (Total for Question 5 is 10 marks)",
+    "stem_chars": 588,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_may-jun.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q6.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) Expand and simplify r r < ; :9 (2) (b) Express 2 2 + in the form p + q 2 where p and q are integers. (2) (c) Use the results of parts (a) and (b), or otherwise, to show that 2 2 2 2 < ; < : (3)       (Total for Question 6 is 7 marks)",
+    "stem_chars": 381,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_may-jun.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q7.pdf",
+    "stem": "  O R1 R2 x y y = kx y = 2 x = a y = 10 – 2x Figure 2 The region R1 , shown shaded in Figure 2, is defined by the inequalities 0  y  2 y  10 – 2x y  kx where k is a constant. The line x = a, where a is a constant, passes through the intersection of the lines y = 2 and y = kx Given that the area of R1 is 27 4 square units, (a) find (i) the value of a (ii) the value of k (4) (b) Define the region R2 , also shown shaded in Figure 2, using inequalities. (2)   (Total for Question 7 is 6 marks)",
+    "stem_chars": 507,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2023_may-jun.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q8.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Find the equation of the tangent to the curve with equation y x x < ; ; at the point P(4, 12) Give your answer in the form ax + by + c = 0 where a, b and c are integers. (5) The curve with equation y = f (x) also passes through the point P(4, 12) Given that f' (x) = 1 x x − − (b) find f (x) giving the coefficients in simplest form. (5)       (Total for Question 8 is 10 marks)",
+    "stem_chars": 535,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_may-jun.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q9.pdf",
+    "stem": "  (i) –3 –2 –1 O –2π 2π –π π x y y = f(x) Figure 3 Figure 3 shows part of the graph of the trigonometric function with equation y = f(x) (a) Write down an expression for f (x) (2) On a separate diagram, (b) sketch, for –2π < x < 2π , the graph of the curve with equation f π y x   = +     Show clearly the coordinates of all the points where the curve intersects the coordinate axes. (3) (ii) –2π –π π 2π x y –1 O y = g(x) Figure 4 Figure 4 shows part of the graph of the trigonometric function with equation y = g(x) (a) Write down an expression for g(x) (2) On a separate diagram, (b) sketch, for –2π < x < 2π , the graph of the curve with equation y = g(x) – 2 Show clearly the coordinates of the y intercept. (2)       (Total for Question 9 is 9 marks)",
+    "stem_chars": 782,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_may-jun.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p1/2023_may-jun/questions/q10.pdf",
+    "stem": "  C P O l1 l2 x y Figure 5 Figure 5 shows a sketch of the quadratic curve C with equation y = – 1 4 (x + 2)(x – b) where b is a positive constant The line l1 also shown in Figure 5, • has gradient 1 • intersects C on the negative x-axis and at the point P (a) (i) Write down an equation for l1 (1) (ii) Find, in terms of b, the coordinates of P (3) Given that the line l2 is perpendicular to l1 and intersects C on the positive x-axis, (b) find, in terms of b, an equation for l2 (2) Given also that l2 intersects C at the point P (c) show that another equation for l2 is y x b < ; : ; (2) (d) Hence, or otherwise, find the value of b (2)         (Total for Question 10 is 10 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 735,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q1.pdf",
+    "stem": " Given that y x x x < ; : x > 0 find, in simplest form, (a) d d y x (3) (b) d d y x (2)  (Total for Question 1 is 5 marks)",
+    "stem_chars": 130,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q2.pdf",
+    "stem": " Given that a x b x = = express each of the following in the form kx n where k and n are simplified constants. (a) a (1) (b) 16 b (1) (c) ab < ;: (2)  (Total for Question 2 is 4 marks)",
+    "stem_chars": 192,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q3.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) Write 8 2 3 < ; in the form a b + where a and b are integers to be found. (3) (b) Hence, or otherwise, solve x x < ; : 5 3 giving your answer in simplest form. (3)  (Total for Question 3 is 6 marks)",
+    "stem_chars": 333,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q4.pdf",
+    "stem": " O C x y Figure 1 Figure 1 shows a sketch of part of the curve C with equation y = x + (a) State the equation of the asymptote of C that is parallel to the y-axis. (1) (b) Factorise fully x x x + + (2) A copy of Figure 1, labelled Diagram 1, is shown on the next page. (c) On Diagram 1, add a sketch of the curve with equation y x x x < ; ; On your sketch, state clearly the coordinates of each point where this curve cuts or meets the coordinate axes. (3) (d) Hence state the number of real solutions of the equation ( )( ) x x x x < < < ; giving a reason for your answer. (1)  O C x y O C x y Diagram 1 copy of Diagram 1 Only use the copy of Diagram 1 if you need to redraw your answer to part (c). (Total for Question 4 is 7 marks)",
+    "stem_chars": 742,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q5.pdf",
+    "stem": " Diagram NOT accurately drawn A (1 + x) m θ° 5 m x m D B C Figure 2 Figure 2 shows the plan view of a frame for a flat roof. The shape of the frame consists of triangle ABD joined to triangle BCD. Given that • BD = x m • CD = (1 + x) m • BC = 5 m • angle BCD = θ° (a) show that cos θ° = 13 + + x x (2) Given also that • x = 2 3 • angle BAC = 30° • ADC is a straight line (b) find the area of triangle ABC, giving your answer, in m 2, to one decimal place. (5)    (Total for Question 5 is 7 marks)",
+    "stem_chars": 512,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q6.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. The equation ( ) p x p x p < ; : : x ≠ –p where p is a constant, has two distinct real roots. (a) Show that p p − − > (3) (b) Hence, using algebra, find the range of possible values of p (3)  (Total for Question 6 is 6 marks)",
+    "stem_chars": 356,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q7.pdf",
+    "stem": " The curve C has equation y = f(x) where x > 0 Given that • fʹ(x) = 4 x x x < ; • the point P(4, –1) lies on C (a) (i) find the value of the gradient of C at P (ii) Hence find the equation of the normal to C at P, giving your answer in the form ax + by + c = 0 where a, b and c are integers to be found. (4) (b) Find f(x). (6)    (Total for Question 7 is 10 marks)",
+    "stem_chars": 380,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q8.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. The curve C1 has equation xy x < ; x ≠ 0 The curve C2 has equation y x x < ; ; (a) Show that C1 and C2 meet when x x < < ; (2) Given that C1 and C2 meet at points P and Q (b) find, using algebra, the exact distance PQ (5)    (Total for Question 8 is 7 marks)",
+    "stem_chars": 397,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q9.pdf",
+    "stem": " Diagram NOT accurately drawn P O Q R S C Figure 3 Figure 3 shows the plan view of the area being used for a ball‑throwing competition. Competitors must stand within the circle C and throw a ball as far as possible into the target area, PQRS, shown shaded in Figure 3. Given that • circle C has centre O • P and S are points on C • OPQRSO is a sector of a circle with centre O • the length of arc PS is 0.72 m • the size of angle POS is 0.6 radians (a) show that OP = 1.2 m (1) Given also that • the target area, PQRS, is 90 m • length PQ = x metres (b) show that 1500 x x < ; : (3) (c) Hence calculate the total perimeter of the target area, PQRS, giving your answer to the nearest metre. (3)    (Total for Question 9 is 7 marks)",
+    "stem_chars": 746,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      27,
+      28
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q10.pdf",
+    "stem": " O Q P C1 x y Figure 4 Figure 4 shows a sketch of part of the curve C1 with equation y x n < ; :9 3cos x  0 where n is a constant. The curve C1 cuts the positive x-axis for the first time at point P(270, 0), as shown in Figure 4. (a) (i) State the value of n (ii) State the period of C1 (2) The point Q, shown in Figure 4, is a minimum point of C1 (b) State the coordinates of Q. (2) The curve C2 has equation y x k < ; : 2sin , where k is a constant. The point R a, 12 < ;: 87 and the point S < < ; :9 a, 5 , both lie on C2 Given that a is a constant less than 90 (c) find the value of k. (2)  (Total for Question 10 is 6 marks)",
+    "stem_chars": 638,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2023_oct-nov.Q011",
+    "subject_code": "WMA11",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 11,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2023_oct-nov/questions/q11.pdf",
+    "stem": " O R P l C x y (–1, 28) Figure 5 Figure 5 shows part of the curve C with equation y = f(x) where f ( ) x x x < ; : (a) Write 2 x x < ; in the form a x b c ( ) + + where a, b and c are constants to be found. (3) Given that C has a minimum at the point P (b) state the coordinates of P (1) The line l intersects C at (–1, 28) and at P as shown in Figure 5. (c) Find the equation of l giving your answer in the form y = mx + c where m and c are constants to be found. (3) The finite region R, shown shaded in Figure 5, is bounded by the x-axis, l, the y-axis, and C. (d) Use inequalities to define the region R. (3)   (Total for Question 11 is 10 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 690,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q1.pdf",
+    "stem": "  Find ( )( )( ) 5 3 2 2 x x x x < ; ; : d writing your answer in simplest form. (5)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 130,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q2.pdf",
+    "stem": "  The triangle ABC is such that • AB = 15 cm • AC = 25 cm • angle BAC = θ ° • area triangle ABC = 100 cm (a) Find the value of sin θ ° (2) Given that θ > 90 (b) find the length of BC, in cm, to 3 significant figures. (3)   (Total for Question 2 is 5 marks)",
+    "stem_chars": 266,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q3.pdf",
+    "stem": "  The curve C has equation y x x x < ; > (a) Find d d y x writing your answer in simplest form. (4) The point P(2, 4) lies on C. (b) Find an equation for the tangent to C at P writing your answer in the form ax + by + c = 0, where a, b and c are integers. (3)   (Total for Question 3 is 7 marks)",
+    "stem_chars": 305,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) By substituting p = 2 x, show that the equation 2 × 4 x – 2 x + 3 = 17 × 2 x – 1 – 4 can be written in the form 4p 2 – 33p + 8 = 0 (3) (b) Hence solve 2 × 4 x – 2 x + 3 = 17 × 2 x – 1 – 4 (3)   (Total for Question 4 is 6 marks)",
+    "stem_chars": 365,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q5.pdf",
+    "stem": "  P Q R O x y l1 l2 Figure 1 In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. The straight line l1 , shown in Figure 1, passes through the points P(–2, 9) and Q(10, 6). (a) Find the equation of l1 , giving your answer in the form y = mx + c , where m and c are constants to be found. (3) The straight line l2 passes through the origin O and is perpendicular to l1 The lines l1 and l2 meet at the point R as shown in Figure 1. (b) Find the coordinates of R (4) (c) Find the exact area of triangle OPQ. (3)       (Total for Question 5 is 10 marks)",
+    "stem_chars": 638,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q6.pdf",
+    "stem": "  O P x y Figure 2 Figure 2 shows a plot of part of the curve C1 with equation y = 5 cos x with x being measured in degrees. The point P, shown in Figure 2, is a minimum point on C1 (a) State the coordinates of P (2) The point Q lies on a different curve C2 Given that point Q • is a maximum point on the curve • is the maximum point with the smallest x coordinate, x > 0 (b) find the coordinates of Q when (i) C2 has equation y = 5 cos x – 2 (ii) C2 has equation y = –5 cos x (4)   (Total for Question 6 is 6 marks)",
+    "stem_chars": 526,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q7.pdf",
+    "stem": "  (a) Sketch the graph of the curve C with equation y x k < ; where k is a positive constant. Show on your sketch • the coordinates of any points where C cuts the coordinate axes • the equation of the vertical asymptote to C (4) Given that the straight line with equation y = 9 – x does not cross or touch C (b) find the range of values of k. (5)   (Total for Question 7 is 9 marks)",
+    "stem_chars": 392,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q8.pdf",
+    "stem": "  A B C D O E Figure 3 Figure 3 shows a sketch of the plan view of a platform. The plan view of the platform consists of a sector DOC of a circle centre O joined to a sector AOBEA of a different circle, also with centre O. Given that • angle AOB = 0.8 radians • arc length CD = 9 m • DA : AO = 3 : 5 (a) show that AO = 7.03 m to 3 significant figures. (3) (b) Find the perimeter of the platform, in m, to 3 significant figures. (3) (c) Find the total area of the platform, giving your answer in m 2 to the nearest whole number. (3)       (Total for Question 8 is 9 marks)",
+    "stem_chars": 591,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q9.pdf",
+    "stem": "  The curve C1 has equation y = f (x). Given that • f (x) is a quadratic expression • C1 has a maximum turning point at (2, 20) • C1 passes through the origin (a) sketch a graph of C1 showing the coordinates of any points where C1 cuts the coordinate axes, (2) (b) find an expression for f (x). (3) The curve C2 has equation y = x(x 2 – 4) Curve C1 and C2 meet at the origin, and at the points P and Q Given that the x coordinate of the point P is negative, (c) using algebra and showing all stages of your working, find the coordinates of P (5)       (Total for Question 9 is 10 marks)",
+    "stem_chars": 606,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_jan.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 10,
+    "year": 2024,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p1/2024_jan/questions/q10.pdf",
+    "stem": "  In this question you must show all stages of your working. The curve C has equation y = f (x), x > 0 Given that • the point P 2, 8 2 < ; lies on C • f'( ) x x k x < ; 2 where k is a constant • f '' (x) = 0 at P (a) find the exact value of k, (4) (b) find f (x), giving your answer in simplest form. (4)     (Total for Question 10 is 8 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 386,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q1.pdf",
+    "stem": "  Find 3x x x < ; : d writing your answer in simplest form. (4)   (Total for Question 1 is 4 marks)",
+    "stem_chars": 109,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q2.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) Solve 5 (x + 3) > 4 (2x –5) (2) (b) (i) Write x 2 – 6x + 1 in the form (x + a) 2 + b where a and b are constants. (ii) Hence solve x 2 – 6x + 1  0 (4) (c) Hence find the values of x that satisfy both 5 (x + 3) > 4 (2x – 5) and x 2 – 6x + 1  0 (1)   (Total for Question 2 is 7 marks)",
+    "stem_chars": 422,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q3.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. y = x 3 + 96 x + 5 x > 0 (a) Find d d y x , giving each term in simplest form. (3) (b) Find the solution of the equation d d 2y x 2 = 0 writing the answer in the form 2 k where k is a constant. (3)   (Total for Question 3 is 6 marks)",
+    "stem_chars": 367,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_may-jun.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q4.pdf",
+    "stem": "  The curve C has equation y = 2 x + 3x – 4 x ≠ 0 The straight line l has equation y = kx + 2 where k is a constant. (a) Show that l meets C when (k – 3) x 2 + 6x – 2 = 0 (2) (b) Hence find the value of k for which l is a tangent to C (3)   (Total for Question 4 is 5 marks)",
+    "stem_chars": 284,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) Fully factorise 9x 3 – 10x 2 + x (2) (b) Hence solve 9 × 27 y – 10 × 9 y + 3 y = 0 (3)   (Total for Question 5 is 5 marks)",
+    "stem_chars": 260,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q6.pdf",
+    "stem": "  A B C D E F Diagram not drawn to scale Figure 1 Figure 1 shows a sketch of the entrance to a tunnel. The shape of the entrance consists of a sector BCDF, of a circle centre F, joined to two congruent (identical) triangles ABF and EDF. Given that AFE is a straight line AF = FE = 6.4 m FB = FD = 6.2 m angle BFD = 2.275 radians (a) Show that angle AFB = 0.433 radians to 3 decimal places. (1) (b) Find the perimeter of the entrance to the tunnel, ABCDEFA, in metres, to one decimal place. (4) (c) Find the cross-sectional area of the entrance to the tunnel, ABCDEFA, in m 2, to one decimal place. (4)       (Total for Question 6 is 9 marks)",
+    "stem_chars": 661,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q7.pdf",
+    "stem": "  y x A D C B O l1 l2 Figure 2 The straight line l1 shown in Figure 2 has equation 5y = 2x + 10 The points A and B lie on l1 such that • point A lies on the y-axis • point B has x coordinate 10 (a) Find the distance AB writing your answer as a fully simplified surd. (3) The straight line l2 also shown in Figure 2 • passes through B • is perpendicular to l1 (b) Find an equation for l2 writing your answer in the form ax + by + c = 0 , where a, b and c are integers. (4) Line l2 crosses the x-axis at the point C. Point D is such that the points A, B, C and D form the vertices of a rectangle, shown shaded in Figure 2. (c) Find the area of rectangle ABCD. (3)       (Total for Question 7 is 10 marks)",
+    "stem_chars": 722,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q8.pdf",
+    "stem": "  A curve C with equation y = f (x) passes through the point R(4, 13). Given that f′ (x) = 2(x – 3)(3x + 2) (a) use integration to find f (x), giving your answer in simplest form. (5) (b) Given that f (x) can be written in the form (x – 3) 2(px + q) find the value of the constant p and the value of the constant q. (2) (c) Sketch the graph of y = f (2x), showing the coordinates of any points where the curve touches or crosses the coordinate axes. (4)       (Total for Question 8 is 11 marks)",
+    "stem_chars": 514,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q9.pdf",
+    "stem": "  y x O l Q P x = a x = b Figure 3 Figure 3 shows a sketch of • the curve with equation y = tan π x < ; : for 0  x  2π • part of the straight line l with equation y = π – x (a) State the number of solutions of the equation (i) tan π x < ; : = π – x in the interval 0  x  2π (ii) tan π x < ; : = π – x in the interval 0  x  100π (iii) tan π x < ; : = π + x in the interval 0  x  2π (3) The line with equation x = a , shown in Figure 3, is the asymptote to the curve with the smallest positive x coordinate. (b) State the value of a (1) The line with equation x = b , also shown in Figure 3, is the asymptote to the curve with the second smallest positive x coordinate. The line l meets x = a at point P and meets x = b at point Q as shown in Figure 3. (c) Find the midpoint of the line segment PQ. (4)   (Total for Question 9 is 8 marks)",
+    "stem_chars": 854,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_may-jun.Q010",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 10,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p1/2024_may-jun/questions/q10.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. The curve C has equation y = 2 3 x 3 – 25x – 56 x + 194 3 x > 0 The point P, which lies on C, has coordinates (2, –8) (a) Show that an equation of the tangent to C at P is y = –3x – 2 (5) The point Q also lies on C. Given that the tangent to C at Q is parallel to the tangent to C at P, (b) find, using algebra and showing your working, the exact x coordinate of Q. (5)     (Total for Question 10 is 10 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 576,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q1.pdf",
+    "stem": "  The line l1 passes through the point A(–5, 20) and the point B(3, –4). (a) Find an equation for l1 giving your answer in the form y = mx + c, where m and c are constants. (3) The line l2 is perpendicular to l1 and passes through the midpoint of AB (b) Find an equation for l2 giving your answer in the form px qy r < < ; 0, where p, q and r are integers. (3)   (Total for Question 1 is 6 marks)",
+    "stem_chars": 406,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q2.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (i) Simplify fully y x x y ( ) (3) (ii) Find the exact value of a such that < ; < a Write your answer in the form p q 3 + where p and q are fully simplified rational constants. (4)   (Total for Question 2 is 7 marks)",
+    "stem_chars": 350,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q3.pdf",
+    "stem": "  In this question you must show all stages of your working. f(x) = ( ) x x + 5 2 x > 0 (a) Find ∫f(x) dx (4) (b) (i) Show that when f′(x) = 0 x x < ; : (ii) Hence state the value of x for which f′(x) = 0 (5)       (Total for Question 3 is 9 marks)",
+    "stem_chars": 268,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q4.pdf",
+    "stem": "  P C2 O C1 x y Figure 1 Figure 1 shows a sketch of part of the curves C1 and C2 Given that C1 • has equation y = f(x) where f(x) is a quadratic function • cuts the x‑axis at the origin and at x = 4 • has a minimum turning point at (2, –4.8) (a) find f(x) (3) Given that C2 • has equation y = g(x) where g(x) is a cubic function • cuts the x‑axis at the origin and meets the x‑axis at x = 4 • passes through the point (6, 7.2) (b) find g(x) (3) The curves C1 and C2 meet in the first quadrant at the point P, shown in Figure 1. (c) Use algebra to find the coordinates of P. (4)       (Total for Question 4 is 10 marks)",
+    "stem_chars": 638,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q5.pdf",
+    "stem": "  A plot of land OAB is in the shape of a sector of a circle with centre O. Given • OA = OB = 5 km • angle AOB = 1.2 radians (a) find the perimeter of the plot of land. (2) Diagram NOT accurately drawn A 1.2 rad 5 km R2 R1 B O P Figure 2 A point P lies on OB such that the line AP divides the plot of land into two regions R1 and R2 as shown in Figure 2. Given that area of R1 = 3 × area of R2 (b) show that the area of R2 = 3.75 km (3) (c) Find the length of AP, giving your answer to the nearest 100 m. (4)       (Total for Question 5 is 9 marks)",
+    "stem_chars": 568,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q6.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. (a) Sketch the curve C with equation y x < ; x ≠ 2 State on your sketch • the equation of the vertical asymptote • the coordinates of the intersection of C with the y‑axis (3) The straight line l has equation y = kx – 4, where k is a constant. Given that l cuts C at least once, (b) (i) show that k k < ;  (ii) find the range of possible values for k. (6)       (Total for Question 6 is 9 marks)",
+    "stem_chars": 540,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      22
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q7.pdf",
+    "stem": "  P –5 Q O C1 x y Figure 3 Figure 3 shows a plot of part of the curve C1 with equation y = –4 cos x where x is measured in radians. Points P and Q lie on the curve and are shown in Figure 3. (a) State (i) the coordinates of P (ii) the coordinates of Q (3) The curve C2 has equation y = –4 cos x + k where x is measured in radians and k is a constant. Given that C2 has a maximum y value of 11 (b) (i) state the value of k (ii) state the coordinates of the minimum point on C2 with the smallest positive x coordinate. (3) On the opposite page there is a copy of Figure 3 labelled Diagram 1. (c) Using Diagram 1, state the number of solutions of the equation 4cos < ; < x x : giving a reason for your answer. (2)   P –5 Q O C1 x y Diagram 1 (Total for Question 7 is 8 marks)",
+    "stem_chars": 782,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q8.pdf",
+    "stem": "  A curve C has equation y = f(x). The point P with x coordinate 3 lies on C Given • f′(x) = 4x 2 + kx + 3 where k is a constant • the normal to C at P has equation y x < ; : (a) show that k = –5 (3) (b) Hence find f(x). (4)   (Total for Question 8 is 7 marks)",
+    "stem_chars": 270,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2024_oct-nov.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p1/2024_oct-nov/questions/q9.pdf",
+    "stem": "  O C x y Figure 4 Figure 4 shows a sketch of the curve C with equation y = f(x), where f(x) = ( )( ) x x x < ; < (a) Deduce the range of values of x for which f(x)  0 (1) (b) Find f′(x) giving your answer in simplest form. (3) The point R(–4, 84) lies on C. Given that the tangent to C at the point P is parallel to the tangent to C at the point R (c) find the x coordinate of P. (4) (d) Find the point to which R is transformed when the curve with equation y = f(x) is transformed to the curve with equation, (i) y = f(x – 3) (ii) y = 4f(x) (2)     (Total for Question 9 is 10 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 629,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q001",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 1,
+    "year": 2025,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q1.pdf",
+    "stem": "  Find x x x x < < ; :9 d giving your answer in simplest form. (4)   (Total for Question 1 is 4 marks)",
+    "stem_chars": 112,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P1.2025_jan.Q002",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 2,
+    "year": 2025,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q2.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. Given that • the point A has coordinates <; : 2 3 5 , • the point B has coordinates 7 3 8 , < ; • the straight line l1 passes through A and B (a) show that the gradient of l1 is p 3, where p is a rational constant to be found. You must show each step of your working. (2) The straight line l2 is perpendicular to l1 and passes through A. (b) Find the equation of l2, giving your answer in the form y = mx + c, where m and c are constants. (3)   (Total for Question 2 is 5 marks)",
+    "stem_chars": 612,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q003",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 3,
+    "year": 2025,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q3.pdf",
+    "stem": "  The population of a town was monitored. Exactly 5 years after monitoring began, the population was 58 000 Exactly 10 years after monitoring began, the population was 65 000 Given that the population of the town, P thousand, t years after monitoring began can be modelled by the equation P 2 = a + bt where a and b are constants, (a) find the value of a and the value of b. (3) According to the model, exactly T years after monitoring began, the population was 85 000 Making your method clear, (b) find the value of T, giving your answer to one decimal place. (Solutions relying entirely on calculator technology are not acceptable.) (2)       (Total for Question 3 is 5 marks)",
+    "stem_chars": 698,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q004",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 4,
+    "year": 2025,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Given that y = a x where a is a positive constant express, in simplest form, in terms of y and a (a) a 3x + 1 (1) (b) a x < < ; : (3) (ii) (a) Use the substitution p = 9 t to show that the equation 3 3 t t < < ; : 9 can be rewritten as 27p 2 – 82p + 3 = 0 (2) (b) Hence solve 3 3 t t < < ; : 9 (3)       (Total for Question 4 is 9 marks)",
+    "stem_chars": 494,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q005",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 5,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. The curve C has equation y x x < ; ; x > 0 (a) Find d d y x , giving your answer in simplest form. (2) Given that • the point P lies on C • the line with equation y = k – 5x, where k is a constant, is the tangent to C at P (b) show that the x coordinate of P satisfies the equation 12x 4 + 5x 2 – 2 = 0 (2) (c) Hence find the value of k. (4)       (Total for Question 5 is 8 marks)",
+    "stem_chars": 525,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q006",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 6,
+    "year": 2025,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q6.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve C has equation y = f(x), x > 0 Given that • the point P(4, –5) lies on C • f′(x) = 2 x ax b x + + , where a and b are constants • the gradient of the tangent to C at P is 7 (a) show that 4a + b = 24 (2) Given also that a + b = –9 (b) find, in simplest form, f(x) (7) Curve C is transformed to the curve with equation y = f(x – 3) Given that point P is transformed to the point Q, (c) state the coordinates of Q. (1)       (Total for Question 6 is 10 marks)",
+    "stem_chars": 619,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 7
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q007",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 7,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve C has equation y x k < ; where k is a positive constant. (a) Sketch the graph of C. Show on your sketch • the coordinates of any points of intersection of C with the coordinate axes • the equation of the horizontal asymptote to C stating each in terms of k. (3) The line l has equation y = –kx – 6 Given that l intersects C at 2 distinct points, (b) find the range of possible values of k. (5)       (Total for Question 7 is 8 marks)",
+    "stem_chars": 596,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q008",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 8,
+    "year": 2025,
+    "season": "jan",
+    "marks": 13,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q8.pdf",
+    "stem": "  O A B C 1.9 cm 3.4 cm π Figure 1 Figure 1 shows a sketch of a design for a badge. The design consists of a triangle OAB joined to a sector OBC of a circle with centre O In the design • OB = 3.4 cm • AB = 1.9 cm • angle AOB = 6 π radians • angle OAB > 2 π radians Making your method clear, (a) find the size of angle OAB, giving your answer in radians to 4 significant figures, (3) (b) find the area of triangle OAB, in cm 2, giving your answer to 3 significant figures. (2) Given that the ratio of the area of sector OBC to the area of triangle OAB is 3 : 2 (c) show that angle BOC is 0.462 radians to 3 significant figures. (3) (d) Hence find the perimeter of the badge, in cm, to the nearest integer. (5)       (Total for Question 8 is 13 marks)",
+    "stem_chars": 769,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P1.2025_jan.Q009",
+    "subject_code": "WMA11",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 9,
+    "year": 2025,
+    "season": "jan",
+    "marks": 13,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p1/2025_jan/questions/q9.pdf",
+    "stem": "  O A B P x y C2 C1 R Figure 2 (a) Express 6 x x − − in the form a + b(x + c) 2 where a, b and c are constants to be found. (3) Figure 2 shows part of a sketch of curve C1 with equation y x x < ; ; Given that the point P is the maximum point on C1 (b) state the coordinates of P (2) Figure 2 also shows part of a sketch of curve C2 with equation y = cos (kx) where k is a constant and x is measured in radians. Given that C1 and C2 intersect on the x‑axis at point A and at point B, as shown in Figure 2, (c) (i) state the x coordinate of B (ii) state the value of k (iii) state the period of C2 (3) The line segment L joins P and B. The region R, shown shaded in Figure 2, is bounded by L, C1 and C2 (d) Use inequalities to define R. (5)     (Total for Question 9 is 13 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 820,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  }
+]

@@ -1,0 +1,4422 @@
+[
+  {
+    "slug": "P2.2018_specimen.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 1,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q1.pdf",
+    "stem": "Answer ALL questions. Write your answers in the spaces provided. f(x) = x4 + x3 + 2x2 + ax + b, where a and b are constants. When f(x) is divided by (x – 1), the remainder is 7 (a) Show that a + b = 3 (2) When f(x) is divided by (x + 2), the remainder is –8 (b) Find the value of a and the value of b (5) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q1 (Total for Question 1 is 7 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 769,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 2,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q2.pdf",
+    "stem": "The first term of a geometric series is 20 and the common ratio is 7 8 . The sum to infinity of the series is S∞ (a) Find the value of S∞ (2) The sum to N terms of the series is SN (b) Find, to 1 decimal place, the value of S12 (2) (c) Find the smallest value of N, for which S∞ – SN < 0.5 (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q2 (Total for Question 2 is 8 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1186,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 3,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      9
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q3.pdf",
+    "stem": "(3 ) x y x = + (a) Complete the table below, giving the values of y to 3 decimal places. x 0.25 0.5 0.75 y 1.251 (2) (b) Use the trapezium rule with all the values of y from your table to find an approximation for the value of ( ) x x x + ∫ d You must show clearly how you obtained your answer. (4) (c) Explain how the trapezium rule could be used to obtain a more accurate estimate for the value of ( ) x x x + ∫ d (1) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q3 (Total for Question 3 is 7 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1098,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 4,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      10,
+      11
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q4.pdf",
+    "stem": "Given n ∈ `, prove, by exhaustion, that n2 + 2 is not divisible by 4. (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q4 (Total for Question 4 is 4 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 538,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 5,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      12,
+      15
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q5.pdf",
+    "stem": "An arithmetic series has first term a and common difference d. (a) Prove that the sum of the first n terms of the series is 2 n[2a + (n – 1)d] (4) A company, which is making 200 mobile phones each week, plans to increase its production. The number of mobile phones produced is to be increased by 20 each week from 200 in week 1 to 220 in week 2, to 240 in week 3 and so on, until it is producing 600 in week N. (b) Find the value of N (2) The company then plans to continue to make 600 mobile phones each week. (c) Find the total number of mobile phones that will be made in the first 52 weeks starting from and including week 1. (5) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q5 (Total for Question 5 is 11 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1527,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 6,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      16,
+      17
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q6.pdf",
+    "stem": "(i) Find the exact value of x for which log2(2x) = log2(5x + 4) – 3 (4) (ii) Given that loga y + 3loga2 = 5 express y in terms of a. Give your answer in its simplest form. (3) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q6 (Total for Question 6 is 7 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 640,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 7,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      18,
+      21
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q7.pdf",
+    "stem": "P C y x r x = 13 Q O Figure 1 The circle with equation x2 + y2 – 20x – 16y + 139 = 0 had centre C and radius r. (a) Find the coordinates of C. (2) (b) Show that r = 5 (2) The line with equation x = 13 crosses the circle at the points P and Q as shown in Figure 1. (c) Find the y coordinate of P and the y coordinate of Q. (3) A tangent to the circle from O touches the circle at point X. (d) Find, in surd form, the length OX. (3) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q7 (Total for Question 7 is 10 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1324,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 8,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      22,
+      25
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q8.pdf",
+    "stem": "y A O y = x3 x R B y = 10x – x2 – 8 Figure 2 Figure 2 shows a sketch of part of the curves C1 and C2 with equations C1: y = 10x – x2 – 8 x < 0 C2: y = x3 x < 0 The curves C1 and C2 intersect at the points A and B. (a) Verify that the point A has coordinates (1, 1) (1) (b) Use algebra to find the coordinates of the point B (6) The finite region R is bounded by C1 and C2 (c) Use calculus to find the exact area of R (5) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q8 (Total for Question 8 is 12 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1314,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 6
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2018_specimen.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 9,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      26,
+      29
+    ],
+    "qp_pdf": "p2/2018_specimen/questions/q9.pdf",
+    "stem": "(i) Solve, for 0 - θ < π, the equation sin 3θ í 3cos3θ = 0 giving your answers in terms of π (3) (ii) Given that 4sin2x + cos x 4 í k, 0 - k - 3 (a) find cos x in terms of k (3) (b) When k = 3, find the values of x in the range 0 - x < 360° (3) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 TOTAL FOR PAPER IS 75 MARKS Q9 (Total for Question 9 is 9 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1165,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 1,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q1.pdf",
+    "stem": "A curve C has equation y = 2x2(x í 5) (D) )LQG, XVLQJ FDOFXOXV, WKH x FRRUGLQDWHV RI WKH VWDWLRQDU\\ SRLQWV RI C. (4) (E) +HQFH ILQG WKH YDOXHV RI x IRU ZKLFK y LV LQFUHDVLQJ. (2) Q1",
+    "stem_chars": 181,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 2,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q2.pdf",
+    "stem": "7KH DGXOW SRSXODWLRQ RI D WRZQ DW WKH VWDUW RI 2019 LV 25 000 $ PRGHO SUHGLFWV WKDW WKH DGXOW SRSXODWLRQ ZLOO LQFUHDVH E\\ 2% HDFK \\HDU, VR WKDW WKH QXPEHU RI DGXOWV LQ WKH SRSXODWLRQ DW WKH VWDUW RI HDFK \\HDU IROORZLQJ 2019 ZLOO IRUP D JHRPHWULF VHTXHQFH. (D) )LQG, DFFRUGLQJ WR WKH PRGHO, WKH DGXOW SRSXODWLRQ RI WKH WRZQ DW WKH VWDUW RI 2032 (3) ,W LV DOVR PRGHOOHG WKDW HYHU\\ PHPEHU RI WKH DGXOW SRSXODWLRQ JLYHV 5 WR ORFDO FKDULW\\ DW WKH VWDUW RI HDFK \\HDU. (E) )LQG, DFFRUGLQJ WR WKHVH PRGHOV, WKH WRWDO DPRXQW RI PRQH\\ WKDW ZRXOG EH JLYHQ WR ORFDO FKDULW\\ E\\ WKH DGXOW SRSXODWLRQ RI WKH WRZQ IURP 2019 WR 2032 LQFOXVLYH. *LYH \\RXU DQVZHU WR WKH QHDUHVW 1 000 (3) Q2",
+    "stem_chars": 671,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 3,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q3.pdf",
+    "stem": "(D) )LQG WKH ILUVW 4 WHUPV, LQ DVFHQGLQJ SRZHUV RI x, LQ WKH ELQRPLDO H[SDQVLRQ RI + ⎛ ⎝⎜ ⎞ ⎠⎟ x JLYLQJ HDFK FRHIILFLHQW LQ LWV VLPSOHVW IRUP. (3) (E) )LQG WKH WHUP LQGHSHQGHQW RI x LQ WKH H[SDQVLRQ RI x x x + ⎛ ⎝⎜ ⎞ ⎠⎟ + ⎛ ⎝⎜ ⎞ ⎠⎟ (3) Q3",
+    "stem_chars": 238,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 4,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q4.pdf",
+    "stem": "I௘(x) (x í 3)(3[࣠2 + x + a) í 35 ZKHUH a is a constant (D) 6WDWH WKH UHPDLQGHU ZKHQ I௘(x) LV GLYLGHG E\\ (x í 3). (1) *LYHQ (3x í 2) LV D IDFWRU RI I௘(x), (E) VKRZ WKDW a í17 (2) (F) 8VLQJ DOJHEUD DQG VKRZLQJ HDFK VWHS RI \\RXU ZRUNLQJ, IXOO\\ IDFWRULVH I௘(x). (5) Q4",
+    "stem_chars": 264,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 5,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q5.pdf",
+    "stem": "(D) *LYHQ 0 : a : 1, VNHWFK WKH FXUYH ZLWK HTXDWLRQ y = D࣠x VKRZLQJ WKH FRRUGLQDWHV RI WKH SRLQW DW ZKLFK WKH FXUYH FURVVHV WKH y-axis. (2) x 2.5 3.5 y 4.25 6.427 9.125 12.34 16.06 7KH WDEOH DERYH VKRZV FRUUHVSRQGLQJ YDOXHV RI x DQG y IRU y = [࣠2 + ⎛ ⎝⎜ ⎞ ⎠⎟ x 7KH YDOXHV RI y DUH JLYHQ WR 4 VLJQLILFDQW ILJXUHV DV DSSURSULDWH. 8VLQJ WKH WUDSH]LXP UXOH ZLWK DOO WKH YDOXHV RI y LQ WKH JLYHQ WDEOH, (E) REWDLQ DQ HVWLPDWH IRU x x x !\" # $% ! \"\" # $ %% d (3) 8VLQJ \\RXU DQVZHU WR SDUW (E) DQG PDNLQJ \\RXU PHWKRG FOHDU, HVWLPDWH (F) x x x x ( ) !\" # $% ! \"\" # $ %% d (2) Q5",
+    "stem_chars": 570,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 6,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q6.pdf",
+    "stem": "y x C l P N O Figure 1 )LJXUH 1 VKRZV D VNHWFK RI D FLUFOH C ZLWK FHQWUH N(4, í1). 7KH OLQH l ZLWK HTXDWLRQ y = 1 2 x LV D WDQJHQW WR C DW WKH SRLQW P. )LQG (D) WKH HTXDWLRQ RI OLQH PN LQ WKH IRUP y = mx + c, ZKHUH m DQG c DUH FRQVWDQWV, (2) (E) WKH HTXDWLRQ RI C. (5) Q6",
+    "stem_chars": 271,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 7,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q7.pdf",
+    "stem": "*LYHQ ORJa b = k, ILQG, LQ VLPSOHVW IRUP LQ WHUPV RI k, (L) ORJa a b ⎛ ⎝⎜ ⎞ ⎠⎟ (2) (LL) log log a a a b b (2) (LLL) ( log ) k b a n n + =∑ (3) Q7",
+    "stem_chars": 145,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 8,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q8.pdf",
+    "stem": "Solutions relying on calculator technology are not acceptable in this question. (L) y R O x Figure 2 )LJXUH 2 VKRZV D VNHWFK RI SDUW RI D FXUYH ZLWK HTXDWLRQ y = 8 x x − x < 0 7KH UHJLRQ R, VKRZQ VKDGHG LQ )LJXUH 2, LV ERXQGHG E\\ WKH FXUYH, WKH OLQH ZLWK equation x = 2, WKH x-D[LV DQG WKH OLQH ZLWK HTXDWLRQ x = 4 )LQG WKH H[DFW DUHD RI R. (5) (LL) )LQG WKH YDOXH RI WKH FRQVWDQW k such that x k x !\" # $% ( d (4) Q8",
+    "stem_chars": 417,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 9,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q9.pdf",
+    "stem": "Solutions based entirely on graphical or numerical methods are not acceptable in this question. (L) 6ROYH, IRU 0 - ș : 180, WKH HTXDWLRQ 3 VLQ (2ș í 10) = 1 JLYLQJ \\RXU DQVZHUV WR RQH GHFLPDO SODFH. (4) (LL) 7KH ILUVW WKUHH WHUPV RI DQ DULWKPHWLF VHTXHQFH DUH sin Į, tanα DQG 2 VLQ Į ZKHUH Į is a constant. (D) 6KRZ WKDW 2 FRV Į 3 VLQ2 Į (3) *LYHQ WKDW ʌ : Į : 2ʌ , (E) ILQG, VKRZLQJ DOO ZRUNLQJ, WKH YDOXH RI Į WR 3 GHFLPDO SODFHV. (5) Q9",
+    "stem_chars": 441,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2019_oct-nov.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2019_oct-nov",
+    "source_question_number": 10,
+    "year": 2019,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2019_oct-nov/questions/q10.pdf",
+    "stem": "The curve C has equation y = ax3 í 3x2 + 3x + b ZKHUH a DQG b are constants. *LYHQ WKDW  WKH SRLQW (2, 5) OLHV RQ C  WKH JUDGLHQW RI WKH FXUYH DW (2, 5) LV 7 (D) ILQG WKH YDOXH RI a DQG WKH YDOXH RI b. (4) (E) 3URYH WKDW C KDV QR WXUQLQJ SRLQWV. (3) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 287,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 1,
+    "year": 2020,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q1.pdf",
+    "stem": "The table below shows corresponding values of x and y for y = log2 (2x) The values of y are given to 2 decimal places as appropriate. x y 3.32 4.46 4.81 Using the trapezium rule with all the values of y in the given table, (a) obtain an estimate for log d 2( ) , x x ∫ giving your answer to one decimal place. (3) Using your answer to part (a) and making your method clear, estimate (b) (i) log d 2( ) x x ∫ (ii) log d x x     ∫ (4) Q1",
+    "stem_chars": 441,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 2,
+    "year": 2020,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q2.pdf",
+    "stem": "One of the terms in the binomial expansion of (3 + ax)6, where a is a constant, is 540x4 (a) Find the possible values of a. (4) (b) Hence find the term independent of x in the expansion of +     + x ax ( ) (3) Q2",
+    "stem_chars": 218,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 3,
+    "year": 2020,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q3.pdf",
+    "stem": ". f(x) = 6x3 + 17x2 + 4x – 12 (a) Use the factor theorem to show that (2x + 3) is a factor of f(x). (2) (b) Hence, using algebra, write f(x) as a product of three linear factors. (4) (c) Solve, for , π θ π < < the equation . 6 tan3 θ + 17 tan2 θ + 4 tan θ – 12 = 0 giving your answers to 3 significant figures. (2) Q3",
+    "stem_chars": 317,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 4,
+    "year": 2020,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q4.pdf",
+    "stem": "x O R y Figure 1 Figure 1 shows a sketch of the curve with equation . y = 2x2 + 7 x  0 The finite region R, shown shaded in Figure 1, is bounded by the curve, the y - axis and the line with equation y = 17 Find the exact area of R. (6) Q4",
+    "stem_chars": 239,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 5,
+    "year": 2020,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q5.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. A colony of bees is being studied. The number of bees in the colony at the start of the study was 30 000 Three years after the start of the study, the number of bees in the colony is 34 000 A model predicts that the number of bees in the colony will increase by p % each year, so that the number of bees in the colony at the end of each year of study forms a geometric sequence. Assuming the model, (a) find the value of p, giving your answer to 2 decimal places. (3) According to the model, at the end of N years of study the number of bees in the colony exceeds 75 000 (b) Find, showing all steps in your working, the smallest integer value of N. (5) Q5",
+    "stem_chars": 777,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 6,
+    "year": 2020,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q6.pdf",
+    "stem": "The circle C has equation x2 + y2 + 6x – 4y – 14 = 0 (a) Find (i) the coordinates of the centre of C, (ii) the exact radius of C. (3) The line with equation y = k, where k is a constant, is a tangent to C. (b) Find the possible values of k. (2) The line with equation y = p, where p is a negative constant, is a chord of C. Given that the length of this chord is 4 units, (c) find the value of p. (3) Q6",
+    "stem_chars": 403,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_jan.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 7,
+    "year": 2020,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q7.pdf",
+    "stem": "(a) Show that the equation 8 tan θ = 3 cos θ may be rewritten in the form 3 sin2 θ + 8 sin θ – 3 = 0 (3) (b) Hence solve, for 0  x  90°, the equation 8 tan 2x = 3 cos 2x giving your answers to 2 decimal places. (4) Q7",
+    "stem_chars": 219,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 8,
+    "year": 2020,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q8.pdf",
+    "stem": "(i) An arithmetic series has first term a and common difference d. Prove that the sum to n terms of this series is n a n d 2 2 + − ( ) { } (3) (ii) A sequence u1, u2, u3,… is given by un = 5n + 3(–1)n Find the value of (a) u5 (1) (b) un n=∑ (3) Q8",
+    "stem_chars": 247,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_jan.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 9,
+    "year": 2020,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q9.pdf",
+    "stem": "(a) Sketch the curve with equation y = 3 × 4 x showing the coordinates of any points of intersection with the coordinate axes. (2) The curve with equation y = 6 1–x meets the curve with equation y = 3 × 4 x at the point P. (b) Show that the x coordinate of P is log log (5) Q9",
+    "stem_chars": 276,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_jan.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 10,
+    "year": 2020,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p2/2020_jan/questions/q10.pdf",
+    "stem": "A curve C has equation y x x k x x = − + > where k is a constant. The point P with x coordinate 1 2 lies on C. Given that P is a stationary point of C, (a) show that k = −3 (4) (b) Determine the nature of the stationary point at P, justifying your answer. (2) The curve C has a second stationary point. (c) Using algebra, find the x coordinate of this second stationary point. (4) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 416,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2020_may-jun.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 1,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      4
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q1.pdf",
+    "stem": "(a) Find the first 4 terms, in ascending powers of x, of the binomial expansion of −     x giving each term in its simplest form. (4) (b) Hence find the constant term in the series expansion of −     −     x x (3) Q1",
+    "stem_chars": 234,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 2,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q2.pdf",
+    "stem": "y = x x ( ) + (a) Complete the table below, giving the values of y to 3 decimal places. x –0.25 0.25 0.5 0.75 y 0.462 0.653 0.698 (1) (b) Use the trapezium rule, with all the values of y from the completed table, to find an approximate value for 0 25 0 75 x x x ( ) . . + −∫ d (3) Q2",
+    "stem_chars": 283,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 3,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q3.pdf",
+    "stem": "f(x) = ax3 – x2 + bx + 4 where a and b are constants. When f(x) is divided by (x + 4), the remainder is –108 (a) Use the remainder theorem to show that 16a + b = 24 (2) Given also that (2x – 1) is a factor of f(x), (b) find the value of a and the value of b. (3) (c) Find f′(x). (1) (d) Hence find the exact coordinates of the stationary points of the curve with equation y = f(x). (4) Q3",
+    "stem_chars": 388,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      },
+      {
+        "label": "d",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 4,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q4.pdf",
+    "stem": "The points P and Q have coordinates (–11, 6) and (–3, 12) respectively. Given that PQ is a diameter of the circle C, (a) (i) find the coordinates of the centre of C, (ii) find the radius of C. (4) (b) Hence find an equation of C. (2) (c) Find an equation of the tangent to C at the point Q giving your answer in the form ax + by + c = 0 where a, b and c are integers to be found. (3) Q4",
+    "stem_chars": 386,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 5,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q5.pdf",
+    "stem": "Ben is saving for the deposit for a house over a period of 60 months. Ben saves £100 in the first month and in each subsequent month, he saves £5 more than the previous month, so that he saves £105 in the second month, £110 in the third month, and so on, forming an arithmetic sequence. (a) Find the amount Ben saves in the 40th month. (2) (b) Find the total amount Ben saves over the 60‑month period. (3) Lina is also saving for a deposit for a house. Lina saves £600 in the first month and in each subsequent month, she saves £10 less than the previous month, so that she saves £590 in the second month, £580 in the third month, and so on, forming an arithmetic sequence. Given that, after n months, Lina will have saved exactly £18 200 for her deposit, (c) form an equation in n and show that it can be written as n2 – 121n + 3640 = 0 (3) (d) Solve the equation in part (c). (2) (e) State, with a reason, which of the solutions to the equation in part (c) is not a sensible value for n. (1) Q5",
+    "stem_chars": 996,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      },
+      {
+        "label": "e",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 6,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q6.pdf",
+    "stem": "B A R C1 C2 O x y Figure 1 Figure 1 shows a sketch of part of the curves C1 and C2 with equations C1 : y = x3 – 6x + 9 x  0 C2 : y = –2x2 + 7x – 1 x  0 The curves C1 and C2 intersect at the points A and B as shown in Figure 1. The point A has coordinates (1, 4). Using algebra and showing all steps of your working, (a) find the coordinates of the point B. (4) The finite region R, shown shaded in Figure 1, is bounded by C1 and C2 (b) Use algebraic integration to find the exact area of R. (5) Q6",
+    "stem_chars": 499,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 7,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q7.pdf",
+    "stem": "(i) Show that tan θ + tan sin cos θ θ θ ≡ θ ≠ 2 nπ n ∈  (3) (ii) Solve, for 0  x < 90°, the equation 3 cos2 (2x + 10°) = 1 giving your answers in degrees to one decimal place. (Solutions based entirely on graphical or numerical methods are not acceptable.) (4) Q7",
+    "stem_chars": 265,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 8,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q8.pdf",
+    "stem": "A geometric series has first term a and common ratio r. (a) Prove that the sum of the first n terms of this series is given by Sn = a r r n ( ) − − (3) The second term of a geometric series is –320 and the fifth term is 512 (b) Find the value of the common ratio. (2) (c) Hence find the sum of the first 13 terms of the series, giving your answer to 2 decimal places. (3) Q8",
+    "stem_chars": 374,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2020_may-jun.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 9,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2020_may-jun/questions/q9.pdf",
+    "stem": "(i) Find the exact value of x for which log3(x + 5) – 4 = log3(2x – 1) (4) (ii) Given that y + 3 × 2 1 – 2y = 108 (a) show that 0.75 y = 2 (4) (b) Hence find the value of y, giving your answer to 3 decimal places. (2) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 252,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_jan.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      4
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q1.pdf",
+    "stem": "f (x) = x4 + ax3 − 3x2 + bx + 5 where a and b are constants. When f (x) is divided by (x + 1) , the remainder is 4 (a) Show that a + b = −1 (2) When f (x) is divided by (x − 2) , the remainder is −23 (b) Find the value of a and the value of b. (4) Q1",
+    "stem_chars": 250,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_jan.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q2.pdf",
+    "stem": "A curve has equation y = x3 − x2 − 16x + 2 (a) Using calculus, find the x coordinates of the stationary points of the curve. (4) (b) Justify, by further calculus, the nature of all of the stationary points of the curve. (3) Q2",
+    "stem_chars": 226,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_jan.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q3.pdf",
+    "stem": "(i) Solve x + 2 = 3 giving your answer in the form x = log7 a where a is a rational number in its simplest form. (3) (ii) Using the laws of logarithms, solve 1 + log2 y + log2 ( y + 4) = log2 (5 − y) (5) Q3",
+    "stem_chars": 206,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_jan.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q4.pdf",
+    "stem": "(a) Find the first three terms, in ascending powers of x, of the binomial expansion of + ( ) px where p is a constant. Give each term in simplest form. (4) Given that in the expansion of −     + ( ) x px the coefficient of x2 is −3 (b) find the possible values of p. (4) Q4",
+    "stem_chars": 279,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_jan.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q5.pdf",
+    "stem": "(i) Use algebra to prove that for all x  0 3x + 1  2 3x (3) (ii) Show that the following statement is not true. “The sum of three consecutive prime numbers is always a multiple of 5” (1) Q5",
+    "stem_chars": 191,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_jan.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q6.pdf",
+    "stem": "(a) Show that the equation 3sin cos 2sin θ θ θ − = 5 tan θ sin θ  1 can be written in the form 3 sin3 θ + 10 sin2 θ − 8 sin θ = 0 (4) (b) Hence solve, for −4 π < x < 4 π sin cos sin x x x − = 5 tan 2x giving your answers to 3 decimal places where appropriate. (4) Q6",
+    "stem_chars": 267,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_jan.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q7.pdf",
+    "stem": "P (kW) R t (hours) O Figure 1 Solar panels are installed on the roof of a building. The power, P, produced on a particular day, in kW, can be modelled by the equation P = 0.95 + 2 t − 12 + 2 12 − t − (t − 12) 2 8.5  t  15.2 where t is the time in hours after midnight. The graph of P against t is shown in Figure 1. A table of values of t and P is shown below, with the values of P given to 4 significant figures where appropriate. Time, t (hours) 10.5 11.5 Power, P (kW) 1.882 2.45 2.95 (a) Use the given equation to complete the table, giving the values of P to 4 significant figures where appropriate. (2) The amount of energy, in kWh, produced between 10:00 and 12:00 can be found by calculating the area of region R, shown shaded in Figure 1. (b) Use the trapezium rule, with all the values of P in the completed table, to find an estimate for the amount of energy produced between 10:00 and 12:00. Give your answer to 2 decimal places. (4) Q7",
+    "stem_chars": 950,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_jan.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q8.pdf",
+    "stem": "A sequence a1 , a2 , a3 , … is defined by an + 1 = 2(an + 3) 2 − 7 a1 = p − 3 where p is a constant. (a) Find an expression for a2 in terms of p, giving your answer in simplest form. (1) Given that an n=∑ = p + 15 (b) find the possible values of a2 (6) Q8",
+    "stem_chars": 255,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_jan.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q9.pdf",
+    "stem": "A circle C has equation (x − k) 2 + ( y − 2k) 2 = k + 7 where k is a positive constant. (a) Write down, in terms of k, (i) the coordinates of the centre of C, (ii) the radius of C. (2) Given that the point P(2, 3) lies on C (b) (i) show that 5k 2 − 17k + 6 = 0 (ii) hence find the possible values of k. (3) The tangent to the circle at P intersects the x-axis at point T. Given that k < 2 (c) calculate the exact area of triangle OPT. (5) Q9",
+    "stem_chars": 441,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_jan.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 10,
+    "year": 2021,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2021_jan/questions/q10.pdf",
+    "stem": "In this question you must show detailed reasoning. Owen wants to train for 12 weeks in preparation for running a marathon. During the 12-week period he will run every Sunday and every Wednesday. ● On Sunday in week 1 he will run 15 km ● On Sunday in week 12 he will run 37 km He considers two different 12-week training plans. In training plan A, he will increase the distance he runs each Sunday by the same amount. (a) Calculate the distance he will run on Sunday in week 5 under training plan A. (3) In training plan B, he will increase the distance he runs each Sunday by the same percentage. (b) Calculate the distance he will run on Sunday in week 5 under training plan B. Give your answer in km to one decimal place. (3) Owen will also run a fixed distance, x km, each Wednesday over the 12-week period. Given that ● x is an integer ● the total distance that Owen will run on Sundays and Wednesdays over the 12 weeks will not exceed 360 km (c) (i) find the maximum value of x, if he uses training plan A, (ii) find the maximum value of x, if he uses training plan B. (5) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 1113,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_may-jun.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q1.pdf",
+    "stem": "Adina is saving money to buy a new computer. She saves £5 in week 1, £5.25 in week 2, £5.50 in week 3 and so on until she has enough money, in total, to buy the computer. She decides to model her savings using either an arithmetic series or a geometric series. Using the information given, (a) (i) state with a reason whether an arithmetic series or a geometric series should be used, (ii) write down an expression, in terms of n, for the amount, in pounds (£), saved in week n. (3) Given that the computer Adina wants to buy costs £350 (b) find the number of weeks it will take for Adina to save enough money to buy the computer. (4) Q1",
+    "stem_chars": 637,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_may-jun.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q2.pdf",
+    "stem": "O x y y = 4 x Figure 1 Figure 1 shows a sketch of the curve with equation y = 4 x A copy of Figure 1, labelled Diagram 1, is shown on the next page. (a) On Diagram 1, sketch the curve with equation (i) y = 2 x (ii) y = 4 x – 6 Label clearly the coordinates of any points of intersection with the coordinate axes. (4) The curve with equation y = 2 x meets the curve with equation y = 4 x – 6 at the point P. (b) Using algebra, find the exact coordinates of P. (4) O x y y = 4 x Diagram 1 Q2",
+    "stem_chars": 489,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_may-jun.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q3.pdf",
+    "stem": "(i) Prove that for all single digit prime numbers, p, p3 + p is a multiple of 10 (2) (ii) Show, using algebra, that for n  ¥ (n + 1)3 – n3 is not a multiple of 3 (3) Q3",
+    "stem_chars": 169,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_may-jun.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q4.pdf",
+    "stem": "(a) Find, in ascending powers of x, up to and including the term in x3, the binomial expansion of +     x fully simplifying each coefficient. (4) (b) Use the answer to part (a) to find an approximation for 2.0125 Give your answer to 3 decimal places. (3) Without calculating 2.0125 (c) state, with a reason, whether the answer to part (b) is an overestimate or an underestimate. (1) Q4",
+    "stem_chars": 391,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_may-jun.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q5.pdf",
+    "stem": "O x y R C2 C1 2.5 Figure 2 Figure 2 shows a sketch of part of the graph of the curves C1 and C2 The curves intersect when x = 2.5 and when x = 4 A table of values for some points on the curve C1 is shown below, with y values given to 3 decimal places as appropriate. x 2.5 2.75 3.25 3.5 3.75 y 453 7.764 9.375 9.964 9.367 7.626 Using the trapezium rule with all the values of y in the table, (a) find, to 2 decimal places, an estimate for the area bounded by the curve C1, the line with equation x = 2.5, the x-axis and the line with equation x = 4 (4) The curve C2 has equation y x x x = − + > (b) Find x x x − +     ∫ d (3) The region R, shown shaded in Figure 2, is bounded by the curves C1 and C2 (c) Use the answers to part (a) and part (b) to find, to one decimal place, an estimate for the area of the region R. (3) Q5",
+    "stem_chars": 831,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_may-jun.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q6.pdf",
+    "stem": "A circle has equation x2 – 6x + y2 + 8y + k = 0 where k is a positive constant. Given that the x-axis is a tangent to this circle, (a) find the value of k. (3) The circle meets the coordinate axes at the points R, S and T. (b) Find the exact area of the triangle RST. (4) Q6",
+    "stem_chars": 274,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_may-jun.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q7.pdf",
+    "stem": "(a) Given that 3 log3(2x – 1) = 2 + log3(14x – 25) show that 2x3 – 3x2 – 30x + 56 = 0 (4) (b) Show that –4 is a root of this cubic equation. (2) (c) Hence, using algebra and showing each step of your working, solve 3 log3(2x – 1) = 2 + log3(14x – 25) (4) Q7",
+    "stem_chars": 257,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_may-jun.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q8.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for 0 < θ < 360°, the equation 3 sin (θ + 30°) = 7 cos (θ + 30°) giving your answers to one decimal place. (4) (ii) (a) Show that the equation 3 sin3 x = 5 sin x – 7 sin x cos x can be written in the form sin x (a cos 2 x + b cos x + c) = 0 where a, b and c are constants to be found. (b) Hence solve for π π x − < < the equation 3 sin3 x = 5 sin x – 7 sin x cos x (6) Q8",
+    "stem_chars": 513,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "i",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_may-jun.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2021_may-jun/questions/q9.pdf",
+    "stem": "l cm h cm l cm Figure 3 Figure 3 shows a sketch of a square based, open top box. The height of the box is h cm, and the base edges each have length l cm. Given that the volume of the box is 250 000 cm3 (a) show that the external surface area, S cm2, of the box is given by S h h = + 250000 2000 (3) (b) Use algebraic differentiation to show that S has a stationary point when h = 250 k where k is a rational constant to be found. (5) (c) Justify by further differentiation that this value of h gives the minimum external surface area of the box. (2) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 584,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q1.pdf",
+    "stem": "The first three terms, in ascending powers of x, of the binomial expansion of (1 + kx) 16 are 1, −4x and px2 where k and p are constants. (a) Find, in simplest form, (i) the value of k (ii) the value of p (3) g (x) = 2 +     + ( ) x kx Using the value of k found in part (a), (b) find the term in x2 in the expansion of g (x). (3) Q1",
+    "stem_chars": 339,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q2.pdf",
+    "stem": "A sequence is defined by u1 = 6 un+1 = kun + 3 where k is a positive constant. (a) Find, in terms of k, an expression for u3 (2) Given that un n=∑ = 117 (b) find the value of k. (3) Q2",
+    "stem_chars": 184,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q3.pdf",
+    "stem": "O R x y Figure 1 Figure 1 shows a sketch of part of the curve with equation y = log10 x The region R, shown shaded in Figure 1, is bounded by the curve, the line with equation x = 2, the x-axis and the line with equation x = 14 Using the trapezium rule with four strips of equal width, (a) show that the area of R is approximately 10.10 (3) (b) Explain how the trapezium rule could be used to obtain a more accurate estimate for the area of R. (1) (c) Using the answer to part (a) and making your method clear, estimate the value of (i) log10 x x d ∫ (ii) log10 100x x d ∫ (4) Q3",
+    "stem_chars": 579,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q4.pdf",
+    "stem": "f (x) = (x2 − 2)(2x − 3) − 21 (a) State the value of the remainder when f (x) is divided by (2x − 3) (1) (b) Use the factor theorem to show that (x − 3) is a factor of f (x) (2) (c) Hence, (i) factorise f (x) (ii) show that the equation f (x) = 0 has only one real root. (5) Q4",
+    "stem_chars": 277,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q5.pdf",
+    "stem": "A company that owned a silver mine • extracted 480 tonnes of silver from the mine in year 1 • extracted 465 tonnes of silver from the mine in year 2 • extracted 450 tonnes of silver from the mine in year 3 and so on, forming an arithmetic sequence. (a) Find the mass of silver extracted in year 14 (2) After a total of 7770 tonnes of silver was extracted, the company stopped mining. Given that this occurred at the end of year N, (b) show that N 2 − 65N + 1036 = 0 (3) (c) Hence, state the value of N. (1) Q5",
+    "stem_chars": 509,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q6.pdf",
+    "stem": "(i) The circle C1 has equation x2 + y2 + 10x − 12y = k where k is a constant (a) Find the coordinates of the centre of C1 (2) (b) State the possible range in values for k. (2) (ii) The point P( p, 0) , the point Q(−2, 10) and the point R(8, −14) lie on a different circle, C2 Given that • p is a positive constant • QR is a diameter of C2 find the exact value of p. (4) Q6",
+    "stem_chars": 372,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q7.pdf",
+    "stem": "(i) A geometric sequence has first term 4 and common ratio 6 Given that the nth term is greater than 10 100, find the minimum possible value of n. (3) (ii) A different geometric sequence has first term a and common ratio r. Given that • the second term of the sequence is −6 • the sum to infinity of the series is 25 (a) show that 25r2 − 25r − 6 = 0 (3) (b) Write down the solutions of 25r2 − 25r − 6 = 0 (1) Hence, (c) state the value of r, giving a reason for your answer, (1) (d) find the sum of the first 4 terms of the series. (2) Q7",
+    "stem_chars": 538,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q8.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. M l C x O R y Figure 2 Figure 2 shows a sketch of part of the curve C with equation y = 4 3 x3 − 11x2 + kx where k is a constant The point M is the maximum turning point of C and is shown in Figure 2. Given that the x coordinate of M is 2 (a) show that k = 28 (3) (b) Determine the range of values of x for which y is increasing. (2) The line l passes through M and is parallel to the x-axis. The region R, shown shaded in Figure 2, is bounded by the curve C, the line l and the y-axis. (c) Find, by algebraic integration, the exact area of R. (5) Q8",
+    "stem_chars": 681,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      27,
+      28
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q9.pdf",
+    "stem": "(a) Prove that for all positive values of x and y, x y +  xy (3) (b) Prove by counter-example that this inequality does not hold when x and y are both negative. (1) Q9",
+    "stem_chars": 168,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2021_oct-nov.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 10,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2021_oct-nov/questions/q10.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for −2 π < x < 2 π tan2 2 π x   +     = 3 (5) (ii) Solve, for 0 < θ < 360° (2 sin θ − cos θ)2 = 1 giving your answers, as appropriate, to one decimal place. (5) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 344,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2022_jan.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      4
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q1.pdf",
+    "stem": "  The table below shows corresponding values of x and y for y x = − The values of y are given to 3 decimal places. x 5.5 6.5 y 6.792 6.298 5.858 5.466 5.113 Using the trapezium rule with all the values of y in the given table, (a) obtain an estimate for − ∫ x x d giving your answer to 2 decimal places. (3) (b) Using your answer to part (a) and making your method clear, estimate (i) − ∫ x x d (ii) + ( ) − ∫ x x d (4)       Q1",
+    "stem_chars": 448,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q2.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve C has equation y = 27x 2 – x 2 – 20 x > 0 (a) Find d d y x , giving each term in simplest form. (2) (b) Hence find the coordinates of the stationary point of C. (4) (c) Find d d y x and hence determine the nature of the stationary point of C. (2)   Q2",
+    "stem_chars": 404,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q3.pdf",
+    "stem": "  (a) Find the first 4 terms, in ascending powers of x, of the binomial expansion of −     kx where k is a non‑zero constant. Give each term in simplest form. (4) f(x) = (5 – 3x) 2 −     kx In the expansion of f(x), the constant term is 3 times the coefficient of x. (b) Find the value of k. (3)       Q3",
+    "stem_chars": 336,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q4.pdf",
+    "stem": "  Using the laws of logarithms, solve log3 (32 – 12x) = 2 log3 (1 – x) + 3 (5)   Q4",
+    "stem_chars": 93,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q5.pdf",
+    "stem": "  f(x) = 3x 3 + Ax 2 + Bx – 10 where A and B are integers. Given that • when f(x) is divided by (x – 1) the remainder is k • when f(x) is divided by (x + 1) the remainder is –10k • k is a constant (a) show that 11A + 9B = 83 (3) Given also that (3x – 2) is a factor of f(x), (b) find the value of A and the value of B. (3) (c) Hence find the quadratic expression g(x) such that f(x) = (3x – 2) g(x) (2)       Q5",
+    "stem_chars": 431,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q6.pdf",
+    "stem": "  y x O P(23, 14) R(–7, –26) Q(15, –30) Figure 1 The points P(23, 14), Q(15, –30) and R(–7, –26) lie on the circle C, as shown in Figure 1. (a) Show that angle PQR = 90° (2) (b) Hence, or otherwise, find (i) the centre of C, (ii) the radius of C. (3) Given that the point S lies on C such that the distance QS is greatest, (c) find an equation of the tangent to C at S, giving your answer in the form ax + by + c = 0, where a, b and c are integers to be found. (3)       Q6",
+    "stem_chars": 493,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for –90° < x < 90°, the equation 3 sin (2x – 15°) = cos (2x – 15°) giving your answers to one decimal place. (4) (ii) Solve, for 0 < θ < 2π, the equation 4 sin 2 θ + 8 cos θ = 3 giving your answers to 3 significant figures. (4)       Q7",
+    "stem_chars": 400,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q8.pdf",
+    "stem": "  A metal post is repeatedly hit in order to drive it into the ground. Given that • on the 1st hit, the post is driven 100 mm into the ground • on the 2nd hit, the post is driven an additional 98 mm into the ground • on the 3rd hit, the post is driven an additional 96 mm into the ground • the additional distances the post travels on each subsequent hit form an arithmetic sequence (a) show that the post is driven an additional 62 mm into the ground with the 20th hit. (1) (b) Find the total distance that the post has been driven into the ground after 20 hits. (2) Given that for each subsequent hit after the 20th hit • the additional distances the post travels form a geometric sequence with common ratio r • on the 22nd hit, the post is driven an additional 60 mm into the ground (c) find the value of r, giving your answer to 3 decimal places. (2) After a total of N hits, the post will have been driven more than 3 m into the ground. (d) Find, showing all steps in your working, the smallest possible value of N. (4)       Q8",
+    "stem_chars": 1053,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      32
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q9.pdf",
+    "stem": "  y x O P C R1 R2 l Figure 2 Figure 2 shows • the curve C with equation y = x – x • the line l with equation y = mx, where m is a constant and 0 < m < 1 The line and the curve intersect at the origin O and at the point P. (a) Find, in terms of m, the coordinates of P. (2) The region R1, shown shaded in Figure 2, is bounded by C and l. (b) Show that the area of R1 is ( ) −m (5) The region R2, also shown shaded in Figure 2, is bounded by C, the x‑axis and l. Given that the area of R1 is equal to the area of R2 (c) find the exact value of m. (3)       Q9",
+    "stem_chars": 577,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_jan.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 10,
+    "year": 2022,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      33,
+      35
+    ],
+    "qp_pdf": "p2/2022_jan/questions/q10.pdf",
+    "stem": "  (i) Prove by counter example that the statement “if p is a prime number then 2p + 1 is also a prime number” is not true. (1) (ii) Use proof by exhaustion to prove that if n is an integer then 5n 2 + n + 12 is always even. (4)     TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 282,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_may-jun.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q1.pdf",
+    "stem": "  Find the first four terms, in ascending powers of x, of the binomial expansion of +     x Give each coefficient as an integer. (4)   Q1",
+    "stem_chars": 153,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_may-jun.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q2.pdf",
+    "stem": "  y O x Figure 1 Figure 1 shows the graph of y = 1 − log10 (sin x) 0 < x < π where x is in radians. The table below shows some values of x and y for this graph, with values of y given to 3 decimal places. x 0.5 1.5 5 y 1.319 1.001 1.223 1.850 (a) Complete the table above, giving values of y to 3 decimal places. (2) (b) Use the trapezium rule with all the y values in the completed table to find, to 2 decimal places, an estimate for 0 5 − ( ) ∫ log (sin ) . x x d (3) (c) Use your answer to part (b) to find an estimate for 0 5 + ( ) ∫ log (sin ) . x x d (3)       Q2",
+    "stem_chars": 589,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2022_may-jun.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q3.pdf",
+    "stem": "  (i) Show that the following statement is false: “ (n + 1)3 − n3 is prime for all n ∈  ” (2) (ii) Given that the points A(1, 0) , B(3, −10) and C(7, −6) lie on a circle, prove that AB is a diameter of this circle. (5)       Q3",
+    "stem_chars": 248,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2022_may-jun.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. Give your answers in fully simplified surd form. Given that a and b are positive constants, solve the simultaneous equations a − b = 8 log4 a + log4 b = 3 (6)   Q4",
+    "stem_chars": 234,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_may-jun.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Solve, for −180° < θ  180° , the equation 3 tan (θ + 43°) = 2 cos (θ + 43°) (6)   Q5",
+    "stem_chars": 228,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_may-jun.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q6.pdf",
+    "stem": "  In a geometric sequence u1 , u2 , u3 , … • the common ratio is r • u2 + u3 = 6 • u4 = 8 (a) Show that r satisfies 3r2 − 4r − 4 = 0 (3) Given that the geometric sequence has a sum to infinity, (b) find u1 (3) (c) find S∞ (2)       Q6",
+    "stem_chars": 254,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2022_may-jun.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q7.pdf",
+    "stem": "  f(x) = Ax3 + 6x2 − 4x + B where A and B are constants. Given that • (x + 2) is a factor of f(x) • f d ( ) x x = ∫ find the value of A and the value of B. (7)   Q7",
+    "stem_chars": 174,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_may-jun.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      22
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q8.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. A curve has equation y = 256x4 − 304x − 35 + 27 2x x ≠ 0 (a) Find d d y x (3) (b) Hence find the coordinates of the stationary points of the curve. (5)   Q8",
+    "stem_chars": 299,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_may-jun.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q9.pdf",
+    "stem": "  A scientist is using carbon‑14 dating to determine the age of some wooden items. The equation for carbon‑14 dating an item is given by N = kλt where • N grams is the amount of carbon‑14 currently present in the item • k grams was the initial amount of carbon‑14 present in the item • t is the number of years since the item was made • λ is a constant, with 0 < λ < 1 (a) Sketch the graph of N against t for k = 1 (2) Given that it takes 5700 years for the amount of carbon‑14 to reduce to half its initial value, (b) show that the value of the constant λ is 0.999878 to 6 decimal places. (2) Given that Item A • is known to have had 15 grams of carbon‑14 present initially • is thought to be 3250 years old (c) calculate, to 3 significant figures, how much carbon‑14 the equation predicts is currently in Item A. (2) Item B is known to have initially had 25 grams of carbon‑14 present, but only 18 grams now remain. (d) Use algebra to calculate the age of Item B to the nearest 100 years. (3)       Q9",
+    "stem_chars": 1023,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_may-jun.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 10,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p2/2022_may-jun/questions/q10.pdf",
+    "stem": "  The circle C has centre X (3, 5) and radius r The line l has equation y = 2x + k , where k is a constant. (a) Show that l and C intersect when 5x2 + (4k − 26)x + k2 − 10k + 34 − r2 = 0 (3) Given that l is a tangent to C, (b) show that 5r2 = (k + p)2 , where p is a constant to be found. (3) y l X (3, 5) O C B A x Figure 2 The line l • cuts the y-axis at the point A • touches the circle C at the point B as shown in Figure 2. Given that AB = 2r (c) find the value of k (6)         TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 544,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q1.pdf",
+    "stem": "  Given that a, b and c are integers greater than 0 such that • c = b + 2 • a + b + c = 10 Prove, by exhaustion, that the product of a, b and c is always even. You may use the table below to illustrate your answer. (3) You may not need to use all rows of this table. a b c   (Total for Question 1 is 3 marks)",
+    "stem_chars": 318,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q2.pdf",
+    "stem": "  A curve C has equation y = f(x) where f(x) = (2 – kx)5 and k is a constant. Given that when f(x) is divided by (4x – 5) the remainder is 243 (a) show that k = 2 (2) (b) Find the first three terms, in ascending powers of x, of the binomial expansion of −     x giving each term in simplest form. (3) Using the solution to part (b) and making your method clear, (c) find the gradient of C at the point where x = 0 (2)       (Total for Question 2 is 7 marks)",
+    "stem_chars": 483,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q3.pdf",
+    "stem": "  A sequence a1, a2, a3, … is defined by an = cos2       nπ Find the exact values of (a) (i) a1 (ii) a2 (iii) a3 (3) (b) Hence find the exact value of cos n nπ n =     +         ∑ You must make your method clear. (4)   (Total for Question 3 is 7 marks)",
+    "stem_chars": 280,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q4.pdf",
+    "stem": "  The weight of a baby mammal is monitored over a 16‑month period. The weight of the mammal, w kg, is given by w = loga(t + 5) – loga4 2  t  18 where t is the age of the mammal in months and a is a constant. Given that the weight of the mammal was 10 kg when t = 3 (a) show that a = 1.072 correct to 3 decimal places. (3) Using a = 1.072 (b) find an equation for t in terms of w (3) (c) find the value of t when w = 15, giving your answer to 3 significant figures. (2)   (Total for Question 4 is 8 marks)",
+    "stem_chars": 516,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q5.pdf",
+    "stem": "  In this question you must show detailed reasoning. Solutions relying entirely on calculator technology are not acceptable. (a) Show that the equation (3 cos θ – tan θ)cos θ = 2 can be written as 3 sin2 θ + sin θ – 1 = 0 (3) (b) Hence solve for – 2 π  x  2 π (3 cos 2x – tan 2x)cos 2x = 2 (5)       (Total for Question 5 is 8 marks)",
+    "stem_chars": 355,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q6.pdf",
+    "stem": "  The curve C1 has equation y = f(x). A table of values of x and y for y = f(x) is shown below, with the y values rounded to 4 decimal places where appropriate. x 0.5 1.5 y 2.6833 2.4 2.1466 1.92 (a) Use the trapezium rule with all the values of y in the table to find an approximation for 2∫f(x) dx giving your answer to 3 decimal places. (3) R R x = 2 O C1 C1 C2 C2 x y Figure 1 Figure 2 The region R, shown shaded in Figure 1, is bounded by • the curve C1 • the curve C2 with equation y = 2 – 1 4 x2 • the line with equation x = 2 • the y‑axis The region R forms part of the design for a logo shown in Figure 2. The design consists of the shaded region R inside a rectangle of width 2 and height 3 Using calculus and the answer to part (a), (b) calculate an estimate for the percentage of the logo which is shaded. (4)       (Total for Question 6 is 7 marks)",
+    "stem_chars": 881,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q7.pdf",
+    "stem": "  The curve C has equation y x x x x x = − + − 14 13 3( ) ( ) x > 0 (a) Write the equation of C in the form y = ax 2 + bx 2 + cx 2 + dx where a, b, c and d are fully simplified constants. (3) The curve C has three turning points. Using calculus, (b) show that the x coordinates of the three turning points satisfy the equation 2x3 – 10x2 + 13x – 5 = 0 (3) Given that the x coordinate of one of the turning points is 1 (c) find, using algebra, the exact x coordinates of the other two turning points. (Solutions based entirely on calculator technology are not acceptable.) (3)       (Total for Question 7 is 9 marks)",
+    "stem_chars": 635,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q8.pdf",
+    "stem": "  A geometric sequence has first term a and common ratio r Given that S∞ = 3a (a) show that r = 2 (2) Given also that u2 – u4 = 16 where uk is the kth term of this sequence, (b) find the value of S10 giving your answer to one decimal place. (5)   (Total for Question 8 is 7 marks)",
+    "stem_chars": 290,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q9.pdf",
+    "stem": "  In this question you must show detailed reasoning. Solutions relying entirely on calculator technology are not acceptable. R O A T C1 C2 x y l Figure 3 Figure 3 shows • the curve C1 with equation y = x3 – 5x2 + 3x + 14 • the circle C2 with centre T The point T is the minimum turning point of C1 Using Figure 3 and calculus, (a) find the coordinates of T (3) The curve C1 intersects the circle C2 at the point A with x coordinate 2 (b) Find an equation of the circle C2 (3) The line l shown in Figure 3, is the tangent to circle C2 at A (c) Show that an equation of l is y x = + (3) The region R, shown shaded in Figure 3, is bounded by C1, l and the y‑axis. (d) Find the exact area of R. (3)       (Total for Question 9 is 12 marks)",
+    "stem_chars": 755,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2022_oct-nov.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 10,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2022_oct-nov/questions/q10.pdf",
+    "stem": "  Given a = log2 3 (i) write, in simplest form, in terms of a, (a) log2 9 (b) log2     (3) (ii) Solve 3x × 2x + 4 = 6 giving your answer, in simplest form, in terms of a. (4)     (Total for Question 10 is 7 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 262,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q1.pdf",
+    "stem": "  O –1 x y Figure 1 Figure 1 shows a sketch of part of the curve with equation y = f (x) The table below shows some corresponding values of x and y for this curve. The values of y are given to 3 decimal places. x –1 –0.5 0.5 y 2.287 4.470 6.719 7.291 2.834 Using the trapezium rule with all the values of y in the given table, (a) obtain an estimate for f d x x ( ) −∫1 giving your answer to 2 decimal places. (3) (b) Use your answer to part (a) to estimate (i) f d x x ( ) − ( ) −∫ (ii) f d x x − ( ) ∫ (3)   (Total for Question 1 is 6 marks)",
+    "stem_chars": 553,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q2.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions based entirely on calculator technology are not acceptable. x cm h cm 3x cm Figure 2 A brick is in the shape of a cuboid with width x cm, length 3x cm and height h cm, as shown in Figure 2. The volume of the brick is 972 cm3 (a) Show that the surface area of the brick, S cm2, is given by S x x = + 2592 (3) (b) Find d d S x (1) (c) Hence find the value of x for which S is stationary. (2) (d) Find d d S x and hence show that the value of x found in part (c) gives the minimum value of S. (2) (e) Hence find the minimum surface area of the brick. (1)       (Total for Question 2 is 9 marks)",
+    "stem_chars": 682,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 2
+      },
+      {
+        "label": "e",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q3.pdf",
+    "stem": "  f x kx ( ) = +     where k is a non‑zero constant (a) Find the first 4 terms, in ascending powers of x, of the binomial expansion of f (x). Give each term in simplest form. (4) Given that, in the binomial expansion of f (x), the coefficients of x, x2 and x3 are the first 3 terms of an arithmetic progression, (b) find, using algebra, the possible values of k. (Solutions relying entirely on calculator technology are not acceptable.) (3)   (Total for Question 3 is 7 marks)",
+    "stem_chars": 492,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q4.pdf",
+    "stem": "  (i) Using the laws of logarithms, solve log3(4x) + 2 = log3(5x + 7) (3) (ii) Given that log log a r r a r r y y = = ∑ ∑ ( ) = ( ) y > 1, a > 1, y ≠ a find y in terms of a, giving your answer in simplest form. (3)   (Total for Question 4 is 6 marks)",
+    "stem_chars": 260,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q5.pdf",
+    "stem": "  f (x) = x3 + ( p + 3) x2 – x + q where p and q are constants and p > 0 Given that (x – 3) is a factor of f (x) (a) show that 9p + q = –51 (2) Given also that when f (x) is divided by (x + p) the remainder is 9 (b) show that 3p2 + p + q – 9 = 0 (2) (c) Hence find the value of p and the value of q. (3) (d) Hence find a quadratic expression g(x) such that f (x) = (x – 3) g(x) (2)       (Total for Question 5 is 9 marks)",
+    "stem_chars": 441,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q6.pdf",
+    "stem": "  The circle C has equation x2 + y2 + 8x – 4y = 0 (a) Find (i) the coordinates of the centre of C, (ii) the exact radius of C. (3) The point P lies on C. Given that the tangent to C at P has equation x + 2y + 10 = 0 (b) find the coordinates of P (4) (c) Find the equation of the normal to C at P, giving your answer in the form y = mx + c where m and c are integers to be found. (3)       (Total for Question 6 is 10 marks)",
+    "stem_chars": 443,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q7.pdf",
+    "stem": "  A geometric sequence has first term a and common ratio r, where r > 0 Given that • the 3rd term is 20 • the 5th term is 12.8 (a) show that r = 0.8 (1) (b) Hence find the value of a. (2) Given that the sum of the first n terms of this sequence is greater than 156 (c) find the smallest possible value of n. (Solutions based entirely on graphical or numerical methods are not acceptable.) (4)   (Total for Question 7 is 7 marks)",
+    "stem_chars": 438,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q8.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions based entirely on calculator technology are not acceptable. (i) Solve, for – 2 π < x < π, the equation 5 sin (3x + 0.1) + 2 = 0 giving your answers, in radians, to 2 decimal places. (4) (ii) Solve, for 0 < θ < 360°, the equation 2 tan θ sin θ = 5 + cos θ giving your answers, in degrees, to one decimal place. (5)       (Total for Question 8 is 9 marks)",
+    "stem_chars": 444,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q9.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions based entirely on calculator technology are not acceptable. R1 D O E F R2 C l x y Figure 3 Figure 3 shows • the curve C with equation y = x2 – 4x + 5 • the line l with equation y = 2 The curve C intersects the y‑axis at the point D. (a) Write down the coordinates of D. (1) The curve C intersects the line l at the points E and F, as shown in Figure 3. (b) Find the x coordinate of E and the x coordinate of F. (2) Shown shaded in Figure 3 is • the region R1 which is bounded by C, l and the y‑axis • the region R2 which is bounded by C and the line segments EF and DF Given that area of area of R R = k, where k is a constant, (c) use algebraic integration to find the exact value of k, giving your answer as a simplified fraction. (5)       (Total for Question 9 is 8 marks)",
+    "stem_chars": 867,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_jan.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2023_jan/questions/q10.pdf",
+    "stem": "  A student was asked to prove by exhaustion that if n is an integer then 2n2 + n + 1 is not divisible by 3 The start of the student’s proof is shown in the box below. Consider the case when n = 3k 2n2 + n + 1 = 18k2 + 3k + 1 = 3(6k2 + k) + 1 which is not divisible by 3 Complete this proof. (4)     (Total for Question 10 is 4 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 377,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q1.pdf",
+    "stem": " Given that a, b and c are integers greater than 0 such that • c = 3a + 1 • a + b + c = 15 prove, by exhaustion, that the product abc is always a multiple of 4 You may use the table below to illustrate your answer. (3) You may not need to use all rows of this table. a b c abc  (Total for Question 1 is 3 marks)",
+    "stem_chars": 319,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q2.pdf",
+    "stem": " A sequence u1 , u2 , u3 , … is defined by u1 = 3 un+1 = 2 – 4 un (a) Find the value of u2 , the value of u3 and the value of u4 (3) (b) Find the value of ur r<; (2)  (Total for Question 2 is 5 marks)",
+    "stem_chars": 208,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q3.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Solve, for 0 < θ  360° the equation 2 tan θ + 3 sin θ = 0 giving your answers, as appropriate, to one decimal place. (5) (b) Hence, or otherwise, find the smallest positive solution of 2 tan (2x + 40°) + 3 sin (2x + 40°) = 0 giving your answer to one decimal place. (2)  (Total for Question 3 is 7 marks)",
+    "stem_chars": 449,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q4.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. f (x) = 4x 3 + ax 2 – 29x + b where a and b are constants. Given that (2x + 1) is a factor of f (x), (a) show that a + 4b = –56 (2) Given also that when f (x) is divided by (x – 2) the remainder is –25 (b) find a second simplified equation linking a and b. (2) (c) Hence, using algebra and showing your working, (i) find the value of a and the value of b, (ii) fully factorise f (x). (5)    (Total for Question 4 is 9 marks)",
+    "stem_chars": 563,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q5.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Solve a = 70 giving the answer to 3 decimal places. (2) (ii) Find the exact value of b such that 4 + 3 log3 b = log3 5b (4)  (Total for Question 5 is 6 marks)",
+    "stem_chars": 302,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q6.pdf",
+    "stem": " (0, 0) (15, 0) (12, 3.08) (9, 3.12) (6, 2.74) (3, 1.52) y x Figure 1 A river is being studied. At one particular place, the river is 15 m wide. The depth, y metres, of the river is measured at a point x metres from one side of the river. Figure 1 shows a plot of the cross‑section of the river and the coordinate values (x, y) (a) Use the trapezium rule with all the y values given in Figure 1 to estimate the cross‑sectional area of the river. (3) The water in the river is modelled as flowing at a constant speed of 1.5 m s –1 across the whole of the cross‑section. (b) Use the model and the answer to part (a) to estimate the volume of water flowing through this section of the river each minute, giving your answer in m 3 to 2 significant figures. (2) Assuming the model, (c) state, giving a reason for your answer, whether your answer for part (b) is an overestimate or an underestimate of the true volume of water flowing through this section of the river each minute. (1)  (Total for Question 6 is 6 marks)",
+    "stem_chars": 1022,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q7.pdf",
+    "stem": " X (4, –3) O N l C x y Figure 2 Figure 2 shows a sketch of • the circle C with centre X (4, –3) • the line l with equation y x < ; Given that l is the tangent to C at the point N, (a) show that an equation for the straight line passing through X and N is 2x + 5y + 7 = 0 (3) (b) Hence find (i) the coordinates of N, (ii) an equation for C. (5)    (Total for Question 7 is 8 marks)",
+    "stem_chars": 396,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q8.pdf",
+    "stem": " In a large theatre there are n rows of seats, where n is a constant. The number of seats in the first row is a, where a is a constant. In each subsequent row there are 4 more seats than in the previous row so that • in the 2nd row there are (a + 4) seats • in the 3rd row there are (a + 8) seats • the number of seats in each row form an arithmetic sequence Given that the total number of seats in the first 10 rows is 360 (a) find the value of a. (2) Given also that the total number of seats in the n rows is 2146 (b) show that n 2 + 8n – 1073 = 0 (2) (c) Hence (i) state the number of rows of seats in the theatre, (ii) find the maximum number of seats in any one row. (3)    (Total for Question 8 is 7 marks)",
+    "stem_chars": 729,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q9.pdf",
+    "stem": " P (9, 40) y l C R O x Figure 3 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 3 shows a sketch of part of the curve C with equation y x x x < ; :  (a) Find, using calculus, the range of values of x for which y is increasing. (4) The point P lies on C and has coordinates (9, 40). The line l is the tangent to C at the point P. The finite region R, shown shaded in Figure 3, is bounded by the curve C, the line l, the x-axis and the y-axis. (b) Find, using calculus, the exact area of R. (8)    (Total for Question 9 is 12 marks)",
+    "stem_chars": 637,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 8
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2023_oct-nov.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p2/2023_oct-nov/questions/q10.pdf",
+    "stem": " (i) (a) Find, in ascending powers of x, the 2nd, 3rd and 5th terms of the binomial expansion of (3 + 2x) (3) For a particular value of x, these three terms form consecutive terms in a geometric series. (b) Find this value of x. . (3) (ii) In a different geometric series, • the first term is sin 2 θ • the common ratio is 2 cos θ • the sum to infinity is 8 (a) Show that 5 cos 2 θ – 16 cos θ + 3 = 0 (3) (b) Hence find the exact value of the 2nd term in the series. (3)     (Total for Question 10 is 12 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 558,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "jan",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q1.pdf",
+    "stem": "  f(x) = ax 3 + 3x 2 – 8x + 2 where a is a constant Given that when f(x) is divided by (x – 2) the remainder is 3, find the value of a. (3)   (Total for Question 1 is 3 marks)",
+    "stem_chars": 185,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "jan",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q2.pdf",
+    "stem": "  Find the coefficient of the term in x 7 of the binomial expansion of < ; :9 x giving your answer in simplest form. (3)   (Total for Question 2 is 3 marks)",
+    "stem_chars": 166,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q3.pdf",
+    "stem": "  The circle C • has centre A(3, 5) • passes through the point B(8, – 7) (a) Find an equation for C. (3) The points M and N lie on C such that MN is a chord of C. Given that MN • lies above the x-axis • is parallel to the x-axis • has length 4 22 (b) find an equation for the line passing through points M and N. (3)   (Total for Question 3 is 6 marks)",
+    "stem_chars": 362,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q4.pdf",
+    "stem": "  (a) Sketch the curve with equation y = a – x + 4 where a is a constant and a > 1 On your sketch show • the coordinates of the point of intersection of the curve with the y-axis • the equation of the asymptote to the curve. (3) x – 4 –1.5 3.5 8.5 y 6.280 577 146 037 009 The table above shows corresponding values of x and y for y x < ; : The values of y are given to four significant figures, as appropriate. Using the trapezium rule with all the values of y in the table, (b) find an approximate value for 8 5 < < ; : x x . d giving your answer to two significant figures. (3) (c) Using the answer to part (b), find an approximate value for (i) 8 5 < < ; : x x . d (ii) 8 5 8 5 < < < ; : ; ; : x x x x . . d d (3)       (Total for Question 4 is 9 marks)",
+    "stem_chars": 776,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q5.pdf",
+    "stem": "  (i) Find the value of 0 25 < ; : . r r (3) (ii) A sequence u1, u2, u3,... is defined by u u u u n n n n < < ; ; :  (a) Show that this sequence is periodic. (2) (b) State the order of this sequence. (1) (c) Hence find un n<; (2)       (Total for Question 5 is 8 marks)",
+    "stem_chars": 290,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q6.pdf",
+    "stem": "  (a) Given that log log log x x x < ; : < < ; : < show that x 3 + 6x 2 + x – 4 = 0 (4) (b) Given also that –1 is a root of the equation x 3 + 6x 2 + x – 4 = 0 (i) use algebra to find the other two roots of the equation. (3) (ii) Hence solve log log log x x x < ; : < < ; : < (1)       (Total for Question 6 is 8 marks)",
+    "stem_chars": 339,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q7.pdf",
+    "stem": "  Wheat is grown on a farm. • In year 1, the farm produced 300 tonnes of wheat. • In year 12, the farm is predicted to produce 4 000 tonnes of wheat. Model A assumes that the amount of wheat produced on the farm will increase by the same amount each year. (a) Using model A, find the amount of wheat produced on the farm in year 4. Give your answer to the nearest 10 tonnes. (3) Model B assumes that the amount of wheat produced on the farm will increase by the same percentage each year. (b) Using model B, find the amount of wheat produced on the farm in year 2. Give your answer to the nearest 10 tonnes. (3) (c) Calculate, according to the two models, the difference between the total amounts of wheat predicted to be produced on the farm from year 1 to year 12 inclusive. Give your answer to the nearest 10 tonnes. (3)       (Total for Question 7 is 9 marks)",
+    "stem_chars": 883,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q8.pdf",
+    "stem": "  (i) Use a counter example to show that the following statement is false “n 2 + 3n + 1 is prime for all n ∈ ” (2) (ii) Use algebra to prove by exhaustion that for all n ∈  “n 2 – 2 is not a multiple of 4” (4)   (Total for Question 8 is 6 marks)",
+    "stem_chars": 257,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "jan",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q9.pdf",
+    "stem": "  In this question you must show detailed reasoning. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for 0  x < 360°, the equation sin x tan x = 5 giving your answers to one decimal place. (6) (ii) O P Q R θ y Figure 1 Figure 1 shows a sketch of part of the curve with equation y A < ; : 65 4 sin 2 where A is a constant and θ is measured in radians. The points P, Q and R lie on the curve and are shown in Figure 1. Given that the y coordinate of P is 7 (a) state the value of A, (1) (b) find the exact coordinates of Q, (3) (c) find the value of θ at R, giving your answer to 3 significant figures. (4)       (Total for Question 9 is 14 marks)",
+    "stem_chars": 701,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "i",
+        "marks": 6
+      },
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_jan.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 10,
+    "year": 2024,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2024_jan/questions/q10.pdf",
+    "stem": "  In this question you must show detailed reasoning. Solutions relying entirely on calculator technology are not acceptable. O P x R l y Figure 2 Figure 2 shows a sketch of the curve with equation y x x < ; : 1458 x > 0 The point P is the only stationary point on the curve. (a) Use calculus to show that the x coordinate of P is 9 (4) The line l passes through the point P and is parallel to the x-axis. The region R, shown shaded in Figure 2, is bounded by the curve, the line l and the line with equation x = 4 (b) Use algebraic integration to find the exact area of R. (5)     (Total for Question 10 is 9 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 658,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_may-jun.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q1.pdf",
+    "stem": "  The sequence u1 , u2 , u3 , … satisfies un + 2 = 3un + 1 – 2un Given that • u1 = 7 • u3 = 4 (a) find the value of u2 (2) (b) find u r r r < ; : (3)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 195,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_may-jun.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q2.pdf",
+    "stem": "  The table shows corresponding values of x and y for a continuous curve with equation y = f (x) between x = –4 and x = 5, where a is a constant. x –4 –2.5 –1 0.5 3.5 y 4.16 91 a 1.73 1.37 1.43 28 The trapezium rule is used with all the y values in the table to find an approximation for f d ( ) x x <; 4 Given that the value of this approximation is 19.3 (a) find the value of the constant a to 3 significant figures. (3) (b) Use the given answer of 19.3 to find an approximate value for f d ( ) x x < ; : <9 (2)   (Total for Question 2 is 5 marks)",
+    "stem_chars": 559,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2024_may-jun.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q3.pdf",
+    "stem": "  A circle has equation x 2 + y 2 + 8x – 14y – 79 = 0 (a) Find (i) the coordinates of the centre of the circle, (ii) the radius of the circle. (3) Given that P is the point on the circle that is nearest the origin O, (b) find the exact length of OP (2)   (Total for Question 3 is 5 marks)",
+    "stem_chars": 298,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2024_may-jun.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q4.pdf",
+    "stem": "  (a) Find the first 4 terms, in ascending powers of x , of the binomial expansion of < ; : x giving each coefficient in simplest form. (4) (b) Hence find the coefficient of x 2 in the expansion of x x x < ; :9 (3)   (Total for Question 4 is 7 marks)",
+    "stem_chars": 260,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2024_may-jun.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The depth of water, D metres, in a harbour on a particular day is given by the equation D = 8 + 5 sin πt < ; : 6 0  t < 24 where t is the number of hours after midnight. (a) Show that the depth of water in the harbour at 2 am is just over 4 metres. (1) (b) Find, to the nearest minute, the first time after midday when the depth of water in the harbour is exactly 6 metres. (5)   (Total for Question 5 is 6 marks)",
+    "stem_chars": 557,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_may-jun.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q6.pdf",
+    "stem": "  f (x) = 4x 3 + px 2 + 8x + q where p and q are constants. Given that • (2x + 3) is a factor of f (x) • f (x) has a remainder of –5 when divided by (x + 2) (a) (i) show that p = 10 (ii) find the value of q. (5) (b) Hence find the range of values of x for which f (x) is decreasing. (Solutions based entirely on calculator technology are not acceptable.) (4)       (Total for Question 6 is 9 marks)",
+    "stem_chars": 418,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_may-jun.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for 0  x < 2π , the equation 3 sin x tan x = 11 + cos x giving the answers in radians to 3 decimal places. (5) (ii) Given that • 0 < θ < 90° • cos θ = find, in simplest form, the exact value of tan θ (2)   (Total for Question 7 is 7 marks)",
+    "stem_chars": 394,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2024_may-jun.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 13,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q8.pdf",
+    "stem": "  (i) (a) In an arithmetic series the first term is a and the common difference is d. Show that S n a n d n < ; : 2 2 (3) (b) Hence find 900 + 892 + 884 + … + 500 (3) (ii) Given that the first three terms of a geometric series are k + 4 k – 2 11 – k where k is a constant, (a) show that 2k 2 – 11k – 40 = 0 (3) Given also that this series is convergent, (b) find the value of S∞ (4)       (Total for Question 8 is 13 marks)",
+    "stem_chars": 443,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2024_may-jun.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q9.pdf",
+    "stem": "  Given that 3 log2 (t + 4) – 2 log2 (t – 2) = 7 (a) verify that t = 4 is a solution of the above equation, (2) (b) show that t 3 – 116t 2 + 560t – 448 = 0 (3) (c) Hence, using algebra and showing your working, solve 3 log2 (t + 4) – 2 log2 (t – 2) = 7 giving each answer in simplest form. (Solutions based entirely on calculator technology are not acceptable.) (4)       (Total for Question 9 is 9 marks)",
+    "stem_chars": 425,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2024_may-jun.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 10,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p2/2024_may-jun/questions/q10.pdf",
+    "stem": "  y O P R C x Figure 1 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 1 shows a sketch of part of the curve C with equation y = 9 x x x − x > 0 The point P is the stationary point on C. (a) Find, using calculus, the x coordinate of P. (4) The finite region R, shown shaded in Figure 1, is bounded by the curve C, the x-axis and the line with equation x = 1 (b) Using calculus, calculate the exact area of R. (5)     (Total for Question 10 is 9 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 584,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q1.pdf",
+    "stem": "  A continuous curve has equation y = f (x). A table of values of x and y for y = f (x) is shown below. x 0.5 75 4.25 5.5 y 3.479 6.101 7.448 6.823 5.182 Using the trapezium rule with all the values of y in the given table, (a) find an estimate for f d x x < ; :0 5 5 5 . . giving your answer to one decimal place. (3) (b) Using your answer to part (a) and making your method clear, estimate f d x x x < ; : < ; 0 5 5 5 . . (2)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 473,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q2.pdf",
+    "stem": "  A sequence of numbers u1, u2, u3, ... is defined by u1 = 7 un+1 = (–1) n un + k where k is a constant. (a) Show that u5 = 7 (3) Given that ur r < <; (b) find the value of k. (2) (c) Hence find the value of ur r<; (2)   (Total for Question 2 is 7 marks)",
+    "stem_chars": 264,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q3.pdf",
+    "stem": "  f (x) = 2x 3 – x 2 + Ax + B where A and B are integers. Given that when f (x) is divided by (x + 3) the remainder is 55 (a) show that 3A – B = –118 (2) Given also that (2x – 5) is a factor of f (x), (b) find the value of A and the value of B. (3) (c) Hence find the quotient when f (x) is divided by (x – 7) (2)       (Total for Question 3 is 7 marks)",
+    "stem_chars": 373,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve C has equation y x x x < ; ; : (a) Find d d y x giving each term in simplest form. (2) (b) Hence find the x coordinate of the stationary point of C. (2) (c) (i) Find d d y x giving each term in simplest form. (ii) Hence determine the nature of the stationary point of C, giving a reason for your answer. (2) (d) State the range of values of x for which y is decreasing. (1)   (Total for Question 4 is 7 marks)",
+    "stem_chars": 562,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q5.pdf",
+    "stem": "  (a) Find, in terms of a, the first 3 terms, in ascending powers of x, of the binomial expansion of (2 + ax) where a is a non‑zero constant. Give each term in simplest form. (3) f x x ax < ; : < ; Given that the constant term in the expansion of f (x) is 576 (b) find the value of a. (4)   (Total for Question 5 is 7 marks)",
+    "stem_chars": 334,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q6.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Using the laws of logarithms, solve log4 (12 – 2x) = 2 + 2log4 (x + 1) (5)   (Total for Question 6 is 5 marks)",
+    "stem_chars": 253,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q7.pdf",
+    "stem": "  Jem pays money into a savings scheme, A, over a period of 300 months. Jem pays £20 into scheme A in month 1, £20.50 in month 2, £21 in month 3 and so on, so that the amounts Jem pays each month form an arithmetic sequence. (a) Show that Jem pays £69.50 into scheme A in month 100 (1) (b) Find the total amount that Jem pays into scheme A over the period of 300 months. (2) Kim pays money into a different savings scheme, B, over the same period of 300 months. In a model, the amounts Kim pays into scheme B increase by the same percentage each month, so that the amounts Kim pays each month form a geometric sequence. Given that Kim pays • £20 into scheme B in month 1 • £250 into scheme B in month 300 (c) use the model to calculate, to the nearest £10, the difference between the total amount paid into scheme A and the total amount paid into scheme B over the period of 300 months. (3)       (Total for Question 7 is 6 marks)",
+    "stem_chars": 950,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q8.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. O x y P R Q C1 C2 Figure 1 Figure 1 shows a sketch of part of the curve C1 with equation y = x 2 + 3 x > 0 and part of the curve C2 with equation y x < ; x > 0 The curves C1 and C2 intersect at the points P and Q as shown in Figure 1. (a) Use algebra to find the x coordinate of P and the x coordinate of Q. (4) The finite region R, shown shaded in Figure 1, is bounded by C1 and C2 (b) Use algebraic integration to find the exact area of R. (4)       (Total for Question 8 is 8 marks)",
+    "stem_chars": 638,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q9.pdf",
+    "stem": "  In this question you must show detailed reasoning. Solutions relying entirely on calculator technology are not acceptable. (a) Show that the equation 2 tan θ = 3 cos θ can be written as 3 sin 2 θ + 2 sin θ – 3 = 0 (3) (b) Hence solve, for –π < x < π, the equation tan cos x x < ; :9 76 5 < ; :9 giving your answers to 3 significant figures. (4)   (Total for Question 9 is 7 marks)",
+    "stem_chars": 392,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 10,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q10.pdf",
+    "stem": "  The circle C has equation x 2 + y 2 + 4x – 30y + 209 = 0 (a) Find (i) the coordinates of the centre of C, (ii) the exact value of the radius of C. (3) The line L has equation y = mx + 1, where m is a constant. Given that L is the tangent to C at the point P, (b) show that 2m 2 – 7m – 22 = 0 (3) (c) Hence find the possible pairs of coordinates of P. (4)       (Total for Question 10 is 10 marks)",
+    "stem_chars": 418,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2024_oct-nov.Q011",
+    "subject_code": "WMA12",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 11,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2024_oct-nov/questions/q11.pdf",
+    "stem": "  (i) Prove by counter example that the statement “If n is a prime number then 3 n + 2 is also a prime number.” is false. (2) (ii) Use proof by exhaustion to prove that if m is an integer that is not divisible by 3, then m 2 – 1 is divisible by 3 (4)     (Total for Question 11 is 6 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 332,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q001",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 1,
+    "year": 2025,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q1.pdf",
+    "stem": "  The arithmetic series S is given by S < ; ; ; ; ; ......... Find (a) the number of terms in the series, (2) (b) the sum of the series. (2)   (Total for Question 1 is 4 marks)",
+    "stem_chars": 186,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q002",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 2,
+    "year": 2025,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q2.pdf",
+    "stem": "  (a) Find the first 4 terms, in ascending powers of x, of the binomial expansion of (2 – 5x) giving each term in simplest form. (4) This expansion is to be used to find an approximation for 2.05 (b) State the value of x that should be used. (There is no need to carry out this calculation.) (1)   (Total for Question 2 is 5 marks)",
+    "stem_chars": 341,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q003",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 3,
+    "year": 2025,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q3.pdf",
+    "stem": "  y x 3x Figure 1 Figure 1 shows an open‑topped container used for holding water. The container is in the shape of a cuboid and is made of sheet metal. The base of the container is a rectangle 3x metres by x metres. The height of the container is y metres as shown in Figure 1. Given that the capacity of the container is 120 m (a) show that the area A m 2 of the sheet metal used to make the container is given by A Px Q x < ; where P and Q are positive constants to be found. (4) (b) Use calculus to find the value of x for which A has a stationary value, giving your answer to 3 significant figures. (4) (c) Find d d A x and hence show that the value of x found in part (b) gives the minimum value of A. (2)       (Total for Question 3 is 10 marks)",
+    "stem_chars": 771,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q004",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 4,
+    "year": 2025,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q4.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Given that, in a particular geometric series, • the sum of the first three terms is 70.2 • the sum to infinity is 75 find, for this series, (a) the common ratio, (4) (b) the first term. . (2)   (Total for Question 4 is 6 marks)",
+    "stem_chars": 370,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q005",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 5,
+    "year": 2025,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q5.pdf",
+    "stem": "  f(x) = 3x 3 + ax 2 – 10x + b where a and b are constants. Given that (3x – 4) is a factor of f(x), (a) show that 16a + 9b = 56 (2) Given further that when f(x) is divided by (x – 2) the remainder is b, (b) find the value of a and the value of b. (4) (c) Hence, using algebra, fully factorise f(x). (3)       (Total for Question 5 is 9 marks)",
+    "stem_chars": 363,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q006",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 6,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q6.pdf",
+    "stem": "  O P M l y x A(–1, 2) B(11, 6) Figure 2 The point A (–1, 2) and the point B (11, 6) both lie on a circle with centre P. The point M is the midpoint of AB. Given that the line l passes through M and P, as shown in Figure 2, (a) find an equation for l, giving your answer in the form y = mx + c, where m and c are constants. (4) Given that P has coordinates (7, k), where k is a constant, (b) find the value of k, (1) (c) find an equation for the circle. (3)       (Total for Question 6 is 8 marks)",
+    "stem_chars": 517,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q007",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 7,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) The table below shows values of x and y, where y = log10 (x + 5), for x values between –1 and 4 x –1 y = log10 (x + 5) log10 4 log10 5 log10 6 log10 7 log10 8 log10 9 Using the trapezium rule with all the y values in the given table, show that log log x x k < ; : d where k is an integer to be found. (3) (ii) Find the value of a such that log log < ; : < ; : 8 a a (5)       (Total for Question 7 is 8 marks)",
+    "stem_chars": 566,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q008",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 8,
+    "year": 2025,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q8.pdf",
+    "stem": "  (i) A student states “If x and y are irrational numbers, x ≠ y, then xy is also irrational.” Show, by counter example, that this statement is not always true. (1) (ii) Prove, using algebra, that for all odd integers n, the value of the expression n 3 + 3n + 2 is always even but never a multiple of 4 (4)   (Total for Question 8 is 5 marks)",
+    "stem_chars": 352,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q009",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 9,
+    "year": 2025,
+    "season": "jan",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q9.pdf",
+    "stem": "  O P M R y x Figure 3 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 3 shows a sketch of part of the curve with equation y x x x < ; :  The curve has a turning point at the point M, as shown in Figure 3. (a) Using calculus, find the coordinates of M. (5) The curve crosses the x‑axis at the point P, as shown in Figure 3. (b) Use algebra to find the x coordinate of P. (2) The finite region R, shown shaded in Figure 3, is bounded by the curve, the line through M parallel to the x‑axis and the line through P parallel to the y‑axis. (c) Use algebraic integration to find the area of R, giving your answer to one decimal place. (5)       (Total for Question 9 is 12 marks)",
+    "stem_chars": 785,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P2.2025_jan.Q010",
+    "subject_code": "WMA12",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 10,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p2/2025_jan/questions/q10.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Show that cos 3tan sin tan sin n < ; : : (4) (b) Hence solve, for 0 < x < 2π, the equation cos 3tan 4sin tan x x x x < ; : giving your answers to 3 significant figures. (4)     (Total for Question 10 is 8 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 391,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  }
+]

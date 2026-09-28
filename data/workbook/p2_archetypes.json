@@ -1,0 +1,832 @@
+[
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q004"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "prime prove multiple algebra",
+    "size": 3,
+    "slugs": [
+      "P2.2021_jan.Q005",
+      "P2.2021_may-jun.Q003",
+      "P2.2024_jan.Q008"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_oct-nov.Q009"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "exhaustion prime example proof",
+    "size": 2,
+    "slugs": [
+      "P2.2022_jan.Q010",
+      "P2.2024_oct-nov.Q011"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "1.1",
+    "label": "need exhaustion table integers",
+    "size": 2,
+    "slugs": [
+      "P2.2022_oct-nov.Q001",
+      "P2.2023_oct-nov.Q001"
+    ],
+    "min_marks": 3
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2023_jan.Q010"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "1.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2025_jan.Q008"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q001"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q001"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2020_jan.Q003"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.1",
+    "label": "when divided constants remainder",
+    "size": 3,
+    "slugs": [
+      "P2.2020_may-jun.Q003",
+      "P2.2021_jan.Q001",
+      "P2.2023_jan.Q005"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_oct-nov.Q004"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "2.1",
+    "label": "when divided remainder factor",
+    "size": 3,
+    "slugs": [
+      "P2.2022_jan.Q005",
+      "P2.2024_jan.Q001",
+      "P2.2024_oct-nov.Q003"
+    ],
+    "min_marks": 3
+  },
+  {
+    "section": "2.1",
+    "label": "constants factor",
+    "size": 2,
+    "slugs": [
+      "P2.2022_may-jun.Q007",
+      "P2.2025_jan.Q005"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2023_oct-nov.Q004"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "2.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2024_may-jun.Q006"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q007"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "3.1",
+    "label": "equation centre line circle",
+    "size": 5,
+    "slugs": [
+      "P2.2020_jan.Q006",
+      "P2.2022_may-jun.Q010",
+      "P2.2023_oct-nov.Q007",
+      "P2.2024_jan.Q003",
+      "P2.2024_oct-nov.Q010"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "3.1",
+    "label": "radius tangent integers centre",
+    "size": 3,
+    "slugs": [
+      "P2.2020_may-jun.Q004",
+      "P2.2022_jan.Q006",
+      "P2.2023_jan.Q006"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "3.1",
+    "label": "equation circle has centre",
+    "size": 4,
+    "slugs": [
+      "P2.2021_jan.Q009",
+      "P2.2021_may-jun.Q006",
+      "P2.2021_oct-nov.Q006",
+      "P2.2024_may-jun.Q003"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_may-jun.Q003"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "3.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2025_jan.Q006"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "4.1",
+    "label": "sequence defined constant expression",
+    "size": 4,
+    "slugs": [
+      "P2.2021_jan.Q008",
+      "P2.2021_oct-nov.Q002",
+      "P2.2023_oct-nov.Q002",
+      "P2.2024_oct-nov.Q002"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_jan.Q008"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_oct-nov.Q003"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2024_jan.Q005"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "4.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2024_may-jun.Q001"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q005"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "4.2",
+    "label": "arithmetic series first sum",
+    "size": 3,
+    "slugs": [
+      "P2.2020_jan.Q008",
+      "P2.2024_may-jun.Q008",
+      "P2.2025_jan.Q001"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2020_may-jun.Q005"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_jan.Q010"
+    ],
+    "min_marks": 11
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_may-jun.Q001"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_oct-nov.Q005"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2023_oct-nov.Q008"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2024_jan.Q007"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "4.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2024_oct-nov.Q007"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q002"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "4.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2020_jan.Q005"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "4.3",
+    "label": "ratio series first sum",
+    "size": 3,
+    "slugs": [
+      "P2.2020_may-jun.Q008",
+      "P2.2021_oct-nov.Q007",
+      "P2.2025_jan.Q004"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.3",
+    "label": "ratio common sequence geometric",
+    "size": 3,
+    "slugs": [
+      "P2.2022_may-jun.Q006",
+      "P2.2022_oct-nov.Q008",
+      "P2.2023_jan.Q007"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q003"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "4.4",
+    "label": "expansion binomial constant possible",
+    "size": 3,
+    "slugs": [
+      "P2.2020_jan.Q002",
+      "P2.2021_jan.Q004",
+      "P2.2024_oct-nov.Q005"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.4",
+    "label": "expansion binomial first powers",
+    "size": 7,
+    "slugs": [
+      "P2.2020_may-jun.Q001",
+      "P2.2021_oct-nov.Q001",
+      "P2.2022_jan.Q003",
+      "P2.2023_jan.Q003",
+      "P2.2023_oct-nov.Q010",
+      "P2.2024_jan.Q002",
+      "P2.2024_may-jun.Q004"
+    ],
+    "min_marks": 3
+  },
+  {
+    "section": "4.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_may-jun.Q004"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "4.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_may-jun.Q001"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "4.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_oct-nov.Q002"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "4.4",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2025_jan.Q002"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "5.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q002"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "5.1",
+    "label": "sketch points axes intersection",
+    "size": 2,
+    "slugs": [
+      "P2.2020_jan.Q009",
+      "P2.2021_may-jun.Q002"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q006"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q007"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "5.2",
+    "label": "log solve paper",
+    "size": 4,
+    "slugs": [
+      "P2.2020_may-jun.Q009",
+      "P2.2022_oct-nov.Q010",
+      "P2.2023_jan.Q004",
+      "P2.2023_oct-nov.Q005"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "5.2",
+    "label": "solve log laws logarithms",
+    "size": 6,
+    "slugs": [
+      "P2.2021_jan.Q003",
+      "P2.2021_may-jun.Q007",
+      "P2.2022_jan.Q004",
+      "P2.2024_jan.Q006",
+      "P2.2024_may-jun.Q009",
+      "P2.2024_oct-nov.Q006"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_may-jun.Q004"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "5.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_oct-nov.Q004"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "5.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_may-jun.Q009"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.1",
+    "label": "solve equation cos sin",
+    "size": 2,
+    "slugs": [
+      "P2.2020_may-jun.Q007",
+      "P2.2021_jan.Q006"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q009"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q009"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "6.2",
+    "label": "solve equation cos sin",
+    "size": 9,
+    "slugs": [
+      "P2.2020_jan.Q007",
+      "P2.2021_may-jun.Q008",
+      "P2.2022_jan.Q007",
+      "P2.2022_may-jun.Q005",
+      "P2.2022_oct-nov.Q005",
+      "P2.2023_jan.Q008",
+      "P2.2024_may-jun.Q007",
+      "P2.2024_oct-nov.Q009",
+      "P2.2025_jan.Q010"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "6.2",
+    "label": "solve working one place",
+    "size": 2,
+    "slugs": [
+      "P2.2021_oct-nov.Q010",
+      "P2.2023_oct-nov.Q003"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2024_jan.Q009"
+    ],
+    "min_marks": 14
+  },
+  {
+    "section": "6.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2024_may-jun.Q005"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "7.1",
+    "label": "dqg zkhuh srlqw wkh",
+    "size": 2,
+    "slugs": [
+      "P2.2019_oct-nov.Q006",
+      "P2.2019_oct-nov.Q010"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "7.1",
+    "label": "stationary equation point curve",
+    "size": 5,
+    "slugs": [
+      "P2.2020_jan.Q010",
+      "P2.2022_jan.Q002",
+      "P2.2024_jan.Q010",
+      "P2.2024_may-jun.Q010",
+      "P2.2024_oct-nov.Q004"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "7.1",
+    "label": "points equation curve coordinates",
+    "size": 3,
+    "slugs": [
+      "P2.2021_jan.Q002",
+      "P2.2022_may-jun.Q008",
+      "P2.2022_oct-nov.Q007"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "7.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_may-jun.Q009"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "7.1",
+    "label": "sketch shaded axis through",
+    "size": 2,
+    "slugs": [
+      "P2.2021_oct-nov.Q008",
+      "P2.2025_jan.Q009"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "7.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2022_oct-nov.Q009"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "7.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2025_jan.Q003"
+    ],
+    "min_marks": 10
+  },
+  {
+    "section": "7.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2023_jan.Q002"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "7.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2023_oct-nov.Q009"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "8.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q004"
+    ],
+    "min_marks": 8
+  },
+  {
+    "section": "8.1",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q005"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "8.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q008"
+    ],
+    "min_marks": 12
+  },
+  {
+    "section": "8.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2019_oct-nov.Q008"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "8.2",
+    "label": "area shaded equation region",
+    "size": 4,
+    "slugs": [
+      "P2.2020_jan.Q004",
+      "P2.2022_jan.Q009",
+      "P2.2023_jan.Q009",
+      "P2.2024_oct-nov.Q008"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "8.2",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2020_may-jun.Q006"
+    ],
+    "min_marks": 9
+  },
+  {
+    "section": "8.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2018_specimen.Q003"
+    ],
+    "min_marks": 7
+  },
+  {
+    "section": "8.3",
+    "label": "trapezium rule estimate table",
+    "size": 6,
+    "slugs": [
+      "P2.2020_jan.Q001",
+      "P2.2021_oct-nov.Q003",
+      "P2.2022_jan.Q001",
+      "P2.2022_may-jun.Q002",
+      "P2.2024_oct-nov.Q001",
+      "P2.2025_jan.Q007"
+    ],
+    "min_marks": 5
+  },
+  {
+    "section": "8.3",
+    "label": "table trapezium approximate rule",
+    "size": 3,
+    "slugs": [
+      "P2.2020_may-jun.Q002",
+      "P2.2024_jan.Q004",
+      "P2.2024_may-jun.Q002"
+    ],
+    "min_marks": 4
+  },
+  {
+    "section": "8.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2021_jan.Q007"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "8.3",
+    "label": "estimate rule equation trapezium",
+    "size": 3,
+    "slugs": [
+      "P2.2021_may-jun.Q005",
+      "P2.2022_oct-nov.Q006",
+      "P2.2023_jan.Q001"
+    ],
+    "min_marks": 6
+  },
+  {
+    "section": "8.3",
+    "label": "assorted",
+    "size": 1,
+    "slugs": [
+      "P2.2023_oct-nov.Q006"
+    ],
+    "min_marks": 6
+  }
+]

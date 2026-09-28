@@ -96,16 +96,43 @@ def latest_section_migration(subject_code: str) -> Path | None:
     return candidates[-1] if candidates else None
 
 
-def sections_from_migration(path: Path) -> dict[str, str]:
+def sections_from_migration(path: Path, subject_code: str) -> dict[str, str]:
     """
-    Parse `(chapter, section, 'title')` rows into `{'4.2': 'title'}`.
+    Parse ONE subject's `(chapter, section, 'title')` rows into `{'4.2': title}`.
 
     Titles are read with `(?:[^']|'')+` rather than `[^']+`: the shorter form
     stops at SQL's doubled-quote escape and silently truncated
     "Pythagoras'' theorem" on a previous subject.
+
+    THE SUBJECT CODE IS REQUIRED, because one migration may seed several
+    subjects. Migration 27 seeds P1, P2 and P3 in a single file, and reading it
+    whole produced a merged 30-entry map -- the union of the three section code
+    sets, with the last subject's titles winning every collision. All three
+    classifiers were about to be prompted with P3's taxonomy.
+
+    Blocks are paired off and the pair whose CHAPTERS insert names this subject
+    is the one read. Splitting the file on the subject code instead lands
+    between a subject's own two INSERTs and yields zero sections.
     """
     text = path.read_text(encoding="utf-8")
-    body = text.split("INSERT INTO workbook_sections", 1)[1]
+
+    chapter_blocks = text.split("INSERT INTO workbook_chapters")[1:]
+    section_blocks = text.split("INSERT INTO workbook_sections")[1:]
+    if not chapter_blocks or len(chapter_blocks) != len(section_blocks):
+        raise SystemExit(
+            f"{path.name}: {len(chapter_blocks)} chapter and "
+            f"{len(section_blocks)} section INSERTs -- expected them paired"
+        )
+
+    body = None
+    for chapters, sections in zip(chapter_blocks, section_blocks):
+        found = re.search(r"s\.code = '(\w+)'", chapters)
+        if found and found.group(1) == subject_code:
+            body = sections
+            break
+    if body is None:
+        raise SystemExit(f"{path.name}: no chapters INSERT for {subject_code}")
+
     out: dict[str, str] = {}
     for chapter, section, title in re.findall(
         r"^\s*\((\d+),\s*(\d+),\s*'((?:[^']|'')+)'\)", body, re.M

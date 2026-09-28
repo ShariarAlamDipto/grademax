@@ -29,6 +29,9 @@ export default async function TestBuilderRoute() {
     ['WME01'],        // IAL Mechanics 1 (M1) -- NOT 4ME1, which is a separate IGCSE subject
     ['WST01'],       // IAL Statistics 1 (S1)
     ['WMA14'],       // IAL Pure Mathematics 4 (P4)
+    ['WMA11'],       // IAL Pure Mathematics 1 (P1)
+    ['WMA12'],       // IAL Pure Mathematics 2 (P2)
+    ['WMA13'],       // IAL Pure Mathematics 3 (P3)
   ] as const
 
   const ALLOWED_SUBJECT_CODES = TEST_BUILDER_SUBJECT_SLOTS.flat()

@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """
-Phase 3 for the IAL Pure Mathematics 4 (WMA14) workbook: assign every question
+Phase 3 for the IAL Pure Mathematics 2 (WMA12) workbook: assign every question
 a primary taxonomy section, plus any secondary sections it also drills.
 
-    python scripts/classify_p4_workbook_sections.py --check-taxonomy
-    python scripts/classify_p4_workbook_sections.py              # pass 1
-    python scripts/classify_p4_workbook_sections.py --second-pass
-    python scripts/classify_p4_workbook_sections.py --report
-    python scripts/classify_p4_workbook_sections.py --report --write
+    python scripts/classify_p2_workbook_sections.py --check-taxonomy
+    python scripts/classify_p2_workbook_sections.py              # pass 1
+    python scripts/classify_p2_workbook_sections.py --second-pass
+    python scripts/classify_p2_workbook_sections.py --report
+    python scripts/classify_p2_workbook_sections.py --report --write
 
-Reads `data/workbook/p4_questions.json`; caches to
-`p4_classification_cache.json` (pass 1) and `p4_classification_second.json`
+Reads `data/workbook/p2_questions.json`; caches to
+`p2_classification_cache.json` (pass 1) and `p2_classification_second.json`
 (pass 2). Both resume from cache, so an interrupted run costs nothing.
 
 MULTI-LABEL IS NOT A NICETY, IT IS WHAT FIXES THE SKEW
@@ -19,18 +19,12 @@ Single-tagging put 111 of 431 4PM1 questions into one chapter. Multi-label
 spread them into a usable distribution, and 86% of questions carried a
 secondary section -- that is the mechanism that fixed it, not a better prompt.
 
-THE TWO RULES THIS SUBJECT'S TAXONOMY DEPENDS ON
-------------------------------------------------
-Measured over the 14 WMA14 papers, and the tree does not work without them:
-
-1. **Parametric equations appear in 14 of 14 papers**, but almost never as the
-   task. Chapter 3 is only for questions whose OWN subject is the parametric or
-   cartesian form of a curve. A parametric curve that is then differentiated is
-   5.2; one that is then integrated is 6.3/6.4/6.5. Without this rule chapter 3
-   absorbs most of the book -- the same failure mode as 4PM1's kinematics.
-2. **The word "implicit" is never printed.** The paper gives an equation
-   relating x and y and asks for dy/dx. Section 5.1 has to be recognised from
-   that shape. A keyword probe for it returns 0 of 14 and means nothing.
+WHAT THIS UNIT'S TAXONOMY DEPENDS ON
+-----------------------------------
+The disambiguation rules below are the load-bearing part. Without them a topic
+that appears as the SETTING of most questions absorbs the book -- the failure
+mode 4PM1 hit with one chapter taking 111 of 431 questions, and the reason P4
+scopes parametric equations explicitly. See RULES.
 """
 
 from __future__ import annotations
@@ -58,41 +52,39 @@ from lib.ial_classify import (  # noqa: E402
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p4_questions.json"
-CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p4_classification_cache.json"
-SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p4_classification_second.json"
-MERGED_PATH = REPO_ROOT / "data" / "workbook" / "p4_classifications.json"
+QUESTIONS_PATH = REPO_ROOT / "data" / "workbook" / "p2_questions.json"
+CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p2_classification_cache.json"
+SECOND_CACHE_PATH = REPO_ROOT / "data" / "workbook" / "p2_classification_second.json"
+MERGED_PATH = REPO_ROOT / "data" / "workbook" / "p2_classifications.json"
 
-SUBJECT_CODE = "WMA14"
+SUBJECT_CODE = "WMA12"
 
 RULES = """
 DISAMBIGUATION RULES -- these override any general impression:
 
-* Parametric equations appear in almost every paper but are usually the SETTING,
-  not the task. Use 3.1 ONLY when the question's own subject is the parametric
-  form itself: converting to cartesian, or finding the cartesian equation of a
-  parametrically-defined curve.
-  - parametric curve, then find dy/dx or a tangent or normal  -> 5.2
-  - parametric curve, then find an area under it              -> 6.5
-  - parametric curve, then find a volume of revolution        -> 6.4
-* The word "implicit" is NEVER printed. If the question gives an equation
-  relating x and y (for example x^3 + 2xy - y^3 = 20) and asks for dy/dx, or a
-  tangent or normal to it, that is 5.1 -- recognise the SHAPE, not a keyword.
-* "Prove by contradiction" or "prove that there is no ..." is always 1.1, even
-  when the subject matter is numbers or inequalities.
-* Partial fractions are 2.1 when the task is the decomposition itself. When the
-  decomposition is only a step towards an integral use 6.2, and towards a
-  binomial expansion use 4.1, listing 2.1 as secondary.
-* Forming a differential equation from a rate of change is 5.3. SOLVING a
-  separable differential equation is 6.3. A question that does both takes 5.3 or
-  6.3 as primary depending on where the marks are, and the other as secondary.
-* A vectors question usually spans several of 7.1-7.3. Choose the primary from
-  where the marks sit, and list the others as secondary.
+* 1.1 is proof by exhaustion or disproof by counter-example. A question that
+  merely says "show that" is NOT proof -- it belongs to whatever topic the
+  working is in.
+* 2.1 is the factor and remainder theorems and algebraic division. A cubic that
+  is factorised only as a step towards a curve sketch or an area stays with the
+  destination topic and lists 2.1 as secondary.
+* Circle work is 3.1, including tangents to a circle and the perpendicular from
+  the centre -- do NOT send those to a coordinate-geometry-of-lines section,
+  which P2 does not have.
+* Sequences: 4.1 for a recurrence relation or an nth term given as a formula,
+  4.2 for arithmetic (common difference, sum), 4.3 for geometric (common ratio,
+  sum to infinity), 4.4 for a binomial expansion.
+* Logarithms: 5.2 when the work is applying the log laws, 5.3 when an equation
+  of the form a^x = b is being SOLVED.
+* 7.1 is finding a stationary point and determining its nature; 7.2 is an
+  optimisation or increasing/decreasing argument built on it.
+* Integration: 8.1 for evaluating a definite integral, 8.2 when an AREA is the
+  object, 8.3 only when the trapezium rule is used. The trapezium rule is P2
+  content and appears in no other pure unit.
 """
 
-
 def system_prompt(taxonomy: dict[str, str]) -> str:
-    return f"""You classify Edexcel International A Level Pure Mathematics 4 (WMA14) exam questions into workbook sections.
+    return f"""You classify Edexcel International A Level Pure Mathematics 2 (WMA12) exam questions into workbook sections.
 
 SECTIONS:
 {taxonomy_block(taxonomy)}
@@ -136,7 +128,7 @@ def run_pass(model: str, cache_path: Path, label: str) -> int:
     cache = load_cache(cache_path)
 
     todo = [q for q in questions if q["slug"] not in cache]
-    print(f"=== P4 classification [{label}] model={model} ===")
+    print(f"=== P2 classification [{label}] model={model} ===")
     print(f"{len(questions)} questions, {len(cache)} cached, {len(todo)} to do\n")
 
     prompt = system_prompt(taxonomy)
@@ -200,7 +192,7 @@ def report(write: bool) -> int:
         )
 
     total = len(questions)
-    print(f"=== P4 classification report ===\n")
+    print(f"=== P2 classification report ===\n")
     print(f"questions        : {total}")
     print(f"models used      : {models}")
     print(f"with a secondary : {with_secondary} ({with_secondary * 100 // max(total, 1)}%)")

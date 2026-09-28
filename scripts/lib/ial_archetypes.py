@@ -57,6 +57,13 @@ DEFAULT_THRESHOLD = 0.32
 
 #: Exam prose is full of words that carry no shape information. Without this the
 #: similarity is dominated by "find", "give", "answer", "question".
+#:
+#: The second block is the calculator rubric -- "In this question you must show
+#: all stages of your working. Solutions relying entirely on calculator
+#: technology are not acceptable" -- which Edexcel prints verbatim on a large
+#: share of the 2020+ pure papers. Left in, it is a 15-word phrase shared by
+#: questions that have nothing else in common, and it pulls unlike questions
+#: into one cluster on furniture alone.
 STOPWORDS = frozenset(
     """
     the a an and or of to in for on at by with from is are be been being was were
@@ -68,6 +75,8 @@ STOPWORDS = frozenset(
     form terms term value values using use used each all any both other another
     correct exact simplest fully full complete completely nearest decimal places
     significant figures your own
+    must stages solutions relying entirely calculator calculators technology
+    acceptable detailed reasoning algebraic algebraically
     """.split()
 )
 
