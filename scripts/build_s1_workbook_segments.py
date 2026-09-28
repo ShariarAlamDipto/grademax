@@ -38,6 +38,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from lib.ial_ms_parse import extract_blocks  # noqa: E402
 from lib.ial_qp_parse import (  # noqa: E402
+    RECOVERY_PREFIX,
     QUESTION_CONT_RE,
     QUESTION_START_RE,
     build_questions,
@@ -100,8 +101,17 @@ class PaperResult:
     skipped_reason: str | None = None
 
     @property
+    def defects(self) -> list[str]:
+        """Problems that are genuinely wrong, excluding successful recoveries."""
+        return [p for p in self.problems if not p.startswith(RECOVERY_PREFIX)]
+
+    @property
+    def recoveries(self) -> list[str]:
+        return [p for p in self.problems if p.startswith(RECOVERY_PREFIX)]
+
+    @property
     def ok(self) -> bool:
-        return not self.problems and self.skipped_reason is None
+        return not self.defects and self.skipped_reason is None
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -377,7 +387,10 @@ def main() -> int:
             sources_used[question.mark_source] = sources_used.get(question.mark_source, 0) + 1
 
     print()
+    recovered = sum(len(r.recoveries) for r in results)
     print(f"papers clean      : {len(good)}/{len(results)}")
+    if recovered:
+        print(f"recovered bounds  : {recovered} (printed evidence, not inferred)")
     print(f"questions         : {total_questions}")
     print(f"mark provenance   : {sources_used}")
     if args.execute:
