@@ -104,7 +104,7 @@ export default function Home() {
             marginBottom: "2.5rem",
             opacity: 0.75,
           }}>
-            Edexcel & Cambridge
+            Edexcel and Cambridge
           </p>
 
           {/* Subtitle — white text with subtle separators */}

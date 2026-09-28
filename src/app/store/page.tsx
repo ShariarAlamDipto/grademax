@@ -7,7 +7,7 @@ import { formatBdt } from "@/lib/store/format"
 import { Badge, Button, PageHeader, card } from "@/components/store/StoreUI"
 
 export const metadata: Metadata = {
-  title: "Books & Workbooks",
+  title: "Books and Workbooks",
   description:
     "Buy the GradeMax chapterwise workbooks and formats booklets — spiral-bound printed copies, delivered anywhere in Bangladesh, with cash on delivery available.",
 }
@@ -22,7 +22,7 @@ export default async function StorePage() {
     return (
       <main style={{ maxWidth: "62rem", margin: "0 auto", padding: "3rem 1.25rem" }}>
         <PageHeader
-          title="Books & Workbooks"
+          title="Books and Workbooks"
           lead="The shop is not open yet. The printed workbooks are being prepared — check back shortly."
         />
         <div style={card}>
@@ -39,7 +39,7 @@ export default async function StorePage() {
   return (
     <main style={{ maxWidth: "72rem", margin: "0 auto", padding: "3rem 1.25rem 4rem" }}>
       <PageHeader
-        title="Books & Workbooks"
+        title="Books and Workbooks"
         lead="Every past-paper question, regrouped chapter by chapter, as a spiral-bound book delivered anywhere in Bangladesh. Read a sample of any title before you order."
         action={<Button href="/store/orders" variant="ghost">Track an order</Button>}
       />

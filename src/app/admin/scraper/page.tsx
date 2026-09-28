@@ -114,7 +114,7 @@ export default function ScraperAdminPage() {
             <div>
               <label style={{ fontSize: "0.75rem", color: "var(--gm-text-3)", display: "block", marginBottom: "0.25rem" }}>Paper Type (optional)</label>
               <select style={inputStyle} value={paperType} onChange={e => setPaperType(e.target.value)}>
-                <option value="">— QP &amp; MS —</option>
+                <option value="">— QP and MS —</option>
                 <option value="QP">Question Paper only</option>
                 <option value="MS">Mark Scheme only</option>
               </select>

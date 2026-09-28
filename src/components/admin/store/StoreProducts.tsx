@@ -88,7 +88,7 @@ export default function StoreProducts() {
           ← Store overview
         </Link>
         <h1 style={{ fontSize: "1.5rem", fontWeight: 800, letterSpacing: "-0.02em", marginTop: "0.35rem" }}>
-          Products &amp; prices
+          Products and prices
         </h1>
       </header>
 
