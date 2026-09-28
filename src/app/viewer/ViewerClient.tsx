@@ -180,7 +180,7 @@ export default function ViewerClient({
   }
 
   const isSplit = view === "split" && bothAvailable
-  const headerLabel = isSplit ? "Question Paper & Mark Scheme" : DOC_LABELS[doc]
+  const headerLabel = isSplit ? "Question Paper and Mark Scheme" : DOC_LABELS[doc]
 
   return (
     <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>

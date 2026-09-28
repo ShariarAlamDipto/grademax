@@ -144,7 +144,7 @@ export default async function EdexcelPastPapersPage() {
                 </div>
                 <p className="text-sm text-gray-400 mb-2">{subj.shortDescription}</p>
                 <p className="text-xs text-gray-500">
-                  Question papers &amp; mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
+                  Question papers and mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
                 </p>
                 <p className="text-xs text-blue-400/80 mt-2 group-hover:text-blue-400 transition-colors">Browse papers by year →</p>
               </Link>
@@ -182,7 +182,7 @@ export default async function EdexcelPastPapersPage() {
                 </div>
                 <p className="text-sm text-gray-400 mb-2">{subj.shortDescription}</p>
                 <p className="text-xs text-gray-500">
-                  Question papers &amp; mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
+                  Question papers and mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
                 </p>
                 <p className="text-xs text-purple-400/80 mt-2 group-hover:text-purple-400 transition-colors">Browse papers by year →</p>
               </Link>

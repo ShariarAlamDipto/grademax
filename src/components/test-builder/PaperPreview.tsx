@@ -263,7 +263,7 @@ export default function PaperPreview({
 
         <button onClick={onGenerate} disabled={items.length === 0 || generating}
           className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white py-2.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed">
-          {generating ? 'Generating...' : worksheetUrl ? 'Regenerate PDF' : 'Generate & Download PDF'}
+          {generating ? 'Generating...' : worksheetUrl ? 'Regenerate PDF' : 'Generate and Download PDF'}
         </button>
       </div>
     </div>

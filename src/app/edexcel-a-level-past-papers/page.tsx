@@ -59,7 +59,7 @@ const faqs = [
   },
   {
     question: "Can I practice A Level Maths past papers by topic?",
-    answer: "Yes! Each A Level unit on GradeMax has questions organized by topic. For example, Pure Maths 1 topics include Algebra, Coordinate Geometry, Sequences & Series, Differentiation, and Integration."
+    answer: "Yes! Each A Level unit on GradeMax has questions organized by topic. For example, Pure Maths 1 topics include Algebra, Coordinate Geometry, Sequences and Series, Differentiation, and Integration."
   },
   {
     question: "Are A Level mark schemes included?",

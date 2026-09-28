@@ -117,8 +117,8 @@ export default async function CambridgePastPapersPage() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem 1rem", marginTop: "1rem" }}>
             {([
               ["/cambridge-past-papers",         "Cambridge Past Papers Guide"],
-              ["/cambridge-igcse-past-papers",   "IGCSE Subjects & Codes"],
-              ["/cambridge-a-level-past-papers", "AS & A Level Subjects & Codes"],
+              ["/cambridge-igcse-past-papers",   "IGCSE Subjects and Codes"],
+              ["/cambridge-a-level-past-papers", "AS & A Level Subjects and Codes"],
             ] as [string, string][]).map(([href, label]) => (
               <Link key={href} href={href} className="gm-link" style={{ fontSize: "0.78rem" }}>{label} →</Link>
             ))}

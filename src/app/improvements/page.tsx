@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SuggestionForm from "./SuggestionForm"
 
 export const metadata: Metadata = {
-  title: "Improvements & Suggestions",
+  title: "Improvements and Suggestions",
   description:
     "Share what you'd like to see on GradeMax. Every suggestion goes straight to the team and helps shape the platform.",
 }

@@ -410,7 +410,7 @@ export default function PipelinePage() {
                   </>
                 ) : (
                   <>
-                    <p style={{ color: "var(--gm-text-2)", fontSize: "0.875rem", fontWeight: 600 }}>Click or drag &amp; drop the specification PDF</p>
+                    <p style={{ color: "var(--gm-text-2)", fontSize: "0.875rem", fontWeight: 600 }}>Click or drag and drop the specification PDF</p>
                     <p style={{ color: "var(--gm-text-3)", fontSize: "0.75rem", marginTop: "0.25rem" }}>Text will be extracted and sent to Groq</p>
                   </>
                 )}

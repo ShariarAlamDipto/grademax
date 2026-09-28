@@ -409,7 +409,7 @@ export default function TeacherDashboardPage() {
                 />
                 <div className="text-3xl mb-2">📁</div>
                 <p className="text-sm text-white/70">
-                  {dragActive ? "Drop files here..." : "Drag & drop files here"}
+                  {dragActive ? "Drop files here..." : "Drag and drop files here"}
                 </p>
                 <p className="text-xs text-white/40 mt-1">or click to browse</p>
                 <p className="text-xs text-white/30 mt-2">
