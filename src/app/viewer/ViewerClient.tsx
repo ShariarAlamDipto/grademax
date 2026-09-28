@@ -276,6 +276,7 @@ export default function ViewerClient({
                 showLabel
                 interactive={!dragging}
                 onOpen={() => track("pdf_download", { doc: "qp", paper: title })}
+                onClose={() => selectDoc("ms")}
               />
 
               <div
@@ -311,6 +312,7 @@ export default function ViewerClient({
                 showLabel
                 interactive={!dragging}
                 onOpen={() => track("pdf_download", { doc: "ms", paper: title })}
+                onClose={() => selectDoc("qp")}
               />
             </>
           ) : (

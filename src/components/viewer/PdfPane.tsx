@@ -17,6 +17,8 @@ interface PdfPaneProps {
   /** Cleared while the split divider is being dragged so the frame stops eating pointer events. */
   interactive?: boolean
   onOpen?: () => void
+  /** Split view only: closes this pane and leaves the other one full width. */
+  onClose?: () => void
 }
 
 /**
@@ -31,6 +33,7 @@ export default function PdfPane({
   showLabel = false,
   interactive = true,
   onOpen,
+  onClose,
 }: PdfPaneProps) {
   const renderMode = usePdfRenderMode()
 
@@ -57,18 +60,45 @@ export default function PdfPane({
           >
             {label}
           </span>
-          {url && (
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={onOpen}
-              style={{ fontSize: "0.68rem", color: "var(--gm-text-3)", textDecoration: "none" }}
-              className="gm-link"
-            >
-              Open ↗
-            </a>
-          )}
+          <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+            {url && (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onOpen}
+                style={{ fontSize: "0.68rem", color: "var(--gm-text-3)", textDecoration: "none" }}
+                className="gm-link"
+              >
+                Open ↗
+              </a>
+            )}
+            {onClose && (
+              <button
+                type="button"
+                onClick={onClose}
+                aria-label={`Close ${label}`}
+                title={`Close ${label}`}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  width: "1.4rem",
+                  height: "1.4rem",
+                  padding: 0,
+                  borderRadius: "0.4rem",
+                  border: "1px solid var(--gm-border-2)",
+                  background: "var(--gm-card-bg)",
+                  color: "var(--gm-text-2)",
+                  cursor: "pointer",
+                }}
+              >
+                <svg width="11" height="11" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M18 6L6 18" />
+                </svg>
+              </button>
+            )}
+          </div>
         </div>
       )}
 
