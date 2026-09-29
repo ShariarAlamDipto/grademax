@@ -291,7 +291,7 @@
         },
         {
           "step": "Find $x$ values: $\\log_2 x = \\frac{1}{2} \\implies x = 2^{\\frac{1}{2}} = \\sqrt{2}$, and $\\log_2 x = 2 \\implies x = 2^2 = 4$",
-          "marks": "M1 A1"
+          "marks": "M1 M1 A1"
         }
       ],
       "final_answer": "x = \\sqrt{2}, 4",
@@ -753,7 +753,7 @@
         },
         {
           "step": "Simplify the powers to get $\\frac{2^{3x^2}}{2^{5x}} = 2^2$, which implies $2^{3x^2 - 5x} = 2^2$",
-          "marks": "M1"
+          "marks": null
         },
         {
           "step": "Equate exponents and solve the resulting quadratic equation $3x^2 - 5x - 2 = 0$, giving $(3x + 1)(x - 2) = 0$",
@@ -772,7 +772,7 @@
           "marks": "M1"
         },
         {
-          "step": "Substitute into the equation to get $3\\log_4 x + \\frac{2}{\\log_4 x} - \\log_x 4 = 5$, noting that $\\log_x 4 = \\frac{1}{\\log_4 x}$, so $3\\log_4 x + \\frac{2}{\\log_4 x} = 5$",
+          "step": "Substitute these into the equation. Since $\\log_x 64 - \\log_x 4 = \\log_x 16 = \\frac{2}{\\log_4 x}$, the equation becomes $3\\log_4 x + \\frac{2}{\\log_4 x} = 5$.",
           "marks": "M1"
         },
         {
@@ -834,7 +834,7 @@
           "marks": "M1"
         },
         {
-          "step": "Find the $x$-coordinate of the intersection point between the curve and the line, giving an estimate to one decimal place.",
+          "step": "Read the $x$-coordinate of the point where the line meets the curve: $x = 0.9$.",
           "marks": "A1ft"
         }
       ],
@@ -1423,7 +1423,7 @@
         },
         {
           "step": "State the condition for real roots, which is the discriminant $b^2 - 4ac \\ge 0$.",
-          "marks": "M1"
+          "marks": null
         },
         {
           "step": "Substitute the coefficients into the discriminant: $(k+5)^2 - 4(3(k+2))(k) \\ge 0$.",
@@ -1542,9 +1542,6 @@
           "marks": "M1 M1"
         },
         {
-          "s": ""
-        },
-        {
           "step": "Substitute the expressions for $(\\alpha + \\beta)$ and $\\alpha\\beta$ from part (a): $(\\alpha - \\beta)^2 = (-3 - p)^2 - 4(p) = 9 + 6p + p^2 - 4p = 9 + 2p + p^2$.",
           "marks": "M1 A1"
         },
@@ -1653,8 +1650,8 @@
         7
       ],
       "ms_matches_question": true,
-      "ms_math_correct": true,
-      "ms_error": null,
+      "ms_math_correct": false,
+      "ms_error": "The scheme's working line prints $\\frac{p^2 + 4p + 12}{2(-p-4)}$. Substituting $q = -p - 4$ into $p^2 - 4q$ gives $p^2 + 4p + 16$; the scheme's next line, $7p^2 - 9p - 36 = 0$, follows from the correct $+16$, so this is a misprint only.",
       "steps": [
         {
           "step": "For the equation $f(x) = 2x^2 + px + q = 0$ with roots $\\alpha$ and $\\beta$, the sum of roots is $\\alpha + \\beta = -\\frac{p}{2}$ and the product of roots is $\\alpha\\beta = \\frac{q}{2}$.",
@@ -1673,7 +1670,7 @@
           "marks": "A1"
         },
         {
-          "step": "Simplify and use the given relation $p+q=-4 \\implies q = -p-4$: $\\frac{p^2 - 4q}{2q} = \\frac{p^2 + 4p + 12}{2(-p-4)} = -\\frac{37}{14} \\implies 7p^2 - 9p - 36 = 0$.",
+          "step": "Simplify and use the given relation $p+q=-4 \\implies q = -p-4$: $\\frac{p^2 - 4q}{2q} = \\frac{p^2 + 4p + 16}{2(-p-4)} = -\\frac{37}{14} \\implies 7p^2 - 9p - 36 = 0$.",
           "marks": "dM1 A1"
         },
         {
@@ -1689,7 +1686,7 @@
           "marks": "M1 A1"
         }
       ],
-      "final_answer": "p = 3, q = -7",
+      "final_answer": "p = 3, \\; q = -7; \\quad \\alpha^2 - \\beta^2 = -\\frac{3\\sqrt{65}}{4}",
       "answer_agrees_with_ms": true,
       "confidence": 1.0
     }
@@ -1859,7 +1856,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "Find the product of the new roots: $P = \\left(\\frac{\\alpha+1}{\\alpha}\\right)\\left(/\\frac{\\beta+1}{\\beta}\\right) = \\frac{\\alpha\\beta + \\alpha + \\beta + 1}{\\alpha\\beta} = \\frac{\\frac{2k-7}{k} + \\frac{4}{k} + 1}{\\frac{2k-7}{k}} = \\frac{3(k-1)}{2k-7}$.",
+          "step": "Find the product of the new roots: $P = \\left(\\frac{\\alpha+1}{\\alpha}\\right)\\left(\\frac{\\beta+1}{\\beta}\\right) = \\frac{\\alpha\\beta + \\alpha + \\beta + 1}{\\alpha\\beta} = \\frac{\\frac{2k-7}{k} + \\frac{4}{k} + 1}{\\frac{2k-7}{k}} = \\frac{3(k-1)}{2k-7}$.",
           "marks": "M1 M1 A1"
         },
         {
@@ -2153,7 +2150,7 @@
           "marks": "A1"
         },
         {
-          "step": "The product of the roots of $g(x)$ is equal to $q$, so $q = \\left(\\alpha + \\frac{1}{\\alpha}\\right)\\left(\\beta + \\frac{1}{\\beta}\\right) = \\alpha\\beta + 1 + 1 + \\frac{1}{\\alpha\\beta} = \\alpha\\beta + \\frac{1}{\\alpha\\beta} + 2$.",
+          "step": "The product of the roots of $g(x)$ is equal to $q$: $q = \\left(\\alpha + \\frac{1}{\\alpha}\\right)\\left(\\beta + \\frac{1}{\\beta}\\right) = \\alpha\\beta + \\frac{\\alpha}{\\beta} + \\frac{\\beta}{\\alpha} + \\frac{1}{\\alpha\\beta}$.",
           "marks": "M1"
         },
         {
@@ -2320,7 +2317,7 @@
         },
         {
           "step": "For part (b), solve $\\text{f}(x) = 0$, which means $(2x + 1)(x^2 + 5x - 3) = 0$.",
-          "marks": "M1"
+          "marks": null
         },
         {
           "step": "Set the linear factor to zero to find the first root: $2x + 1 = 0 \\implies x = -\\frac{1}{2}$.",
@@ -2382,7 +2379,7 @@
         },
         {
           "step": "Find the corresponding values of $x$: when $y = 4$, $x = \\frac{36}{4} = 9$; when $y = \\frac{9}{2}$, $x = \\frac{36}{9/2} = 8$.",
-          "marks": "A1"
+          "marks": "A1 A1"
         }
       ],
       "final_answer": "x = 9, y = 4 \\text{ and } x = 8, y = 4.5",
@@ -2677,11 +2674,11 @@
           "marks": "M1"
         },
         {
-          "step": "Use the remainder theorem: when $f(x)$ is divided by $(x+1)$, the remainder is $25$, so $f(-1) = 25$, giving $-\\frac{a}{3} - 22 + c = 25$.",
+          "step": "Use the remainder theorem: when $f(x)$ is divided by $(x+1)$ the remainder is $25$, so $f(-1) = 25$: $-\\frac{a}{3} - 7 + 10 + c = 25$, which gives $-\\frac{a}{3} + c = 22$.",
           "marks": "M1"
         },
         {
-          "step": "Solve the simultaneous equations for $a$ and $c$ to show that $a = 6$.",
+          "step": "From part of the factor theorem, $\\frac{64a}{3} + c = 152$. Subtract the two equations: $\\frac{64a}{3} + \\frac{a}{3} = 152 - 22 \\implies \\frac{65a}{3} = 130 \\implies a = 6$.",
           "marks": "M1 A1"
         },
         {
@@ -2828,7 +2825,7 @@
       "steps": [
         {
           "step": "For part (a)(i), draw the line $5x + 2y = 10$ by finding its intercepts at $(2, 0)$ and $(0, 5)$. For part (a)(ii), draw the line $y = x$ passing through points such as $(0, 0)$ and $(5, 5)$.",
-          "marks": "B1"
+          "marks": "B1 B1"
         },
         {
           "step": "Draw the additional lines $y = -2$ and $x = 1$ required for the inequalities in part (b).",
@@ -3073,11 +3070,11 @@
           "marks": "A1"
         },
         {
-          "step": "For part (c), combine the results from parts (a) and (b) to find the intersection: $-\\frac{1}{2} > x$ and $3 < x < 4$.",
+          "step": "For part (c), combine the results of (a) and (b). The values satisfying both inequalities are $x < -\\frac{1}{2}$ or $3 < x < 4$.",
           "marks": "B1ft"
         }
       ],
-      "final_answer": "\\text{(a) } x < 4, \\quad \\text{(b) } x < -\\frac{1}{2} \\text{ or } x > 3, \\quad \\text{(c) } x < -\\frac{1}{2} \\text{ and } 3 < x < 4",
+      "final_answer": "\\text{(a) } x < 4, \\quad \\text{(b) } x < -\\frac{1}{2} \\text{ or } x > 3, \\quad \\text{(c) } x < -\\frac{1}{2} \\text{ or } 3 < x < 4",
       "answer_agrees_with_ms": true,
       "confidence": 1
     }
@@ -3200,11 +3197,11 @@
       "steps": [
         {
           "step": "For part (a)(i), the curve crosses the $y$-axis at $x = 0$. Substituting $x = 0$ into $y = \\frac{qx - 2}{x - p}$ gives the point $A\\left(0, \\frac{2}{p}\\right)$. The normal at $A$ has equation $y = x + 2$, so its gradient is $1$. The tangent at $A$ has gradient $-1$. From the curve equation, differentiating gives $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{q(x-p) - (qx-2)}{(x-p)^2}$. At $x = 0$, the gradient of the curve is $\\frac{-qp - ( -2 )}{(-p)^2} = \\frac{2 - qp}{p^2} = -1$. Since point $A$ is on the $y$-axis, the $y$-coordinate is given by $\\frac{-2}{-p} = \\frac{2}{p}$. Since the normal is $y = x + 2$, when $x = 0$, $y = 2$, so $\\frac{2}{p} = 2 \\implies p = 1$.",
-          "marks": "M1 A1"
+          "marks": "M1 A1 M1 A1"
         },
         {
           "step": "For part (a)(ii), substitute $p = 1$ into the gradient expression at $x = 0$: $\\frac{2 - q(1)}{1^2} = -1 \\implies 2 - q = -1 \\implies q = 3$.",
-          "marks": "M1 A1"
+          "marks": "M1 A1 A1"
         },
         {
           "step": "For part (b), the equation of the curve is $y = \\frac{3x - 2}{x - 1}$. The vertical asymptote is $x = 1$, and the horizontal asymptote is $y = 3$. The $y$-intercept is $(0, 2)$ and the $x$-intercept is $\\left(\\frac{2}{3}, 0\\right)$. Sketch the curve with these properties clearly labeled.",
@@ -3478,7 +3475,7 @@
         },
         {
           "step": "Define the region for which $m^2 - 22m + 1 < 0$, giving $11 - 2\\sqrt{30} < m < 11 + 2\\sqrt{30}$.",
-          "marks": "A1"
+          "marks": "M1 A1"
         }
       ],
       "final_answer": "11 - 2\\sqrt{30} < m < 11 + 2\\sqrt{30}",
@@ -3586,7 +3583,7 @@
         },
         {
           "step": "Equate $\\frac{\\mathrm{d}y}{\\mathrm{d}x}$ to 1: $\\frac{9}{(x+4)^2} = 1 \\implies (x+4)^2 = 9 \\implies x + 4 = \\pm 3$, so $x = -1$ or $x = -7$.",
-          "marks": "dM1 ddM1"
+          "marks": "dM1 ddM1 A1"
         },
         {
           "step": "Substitute $x = -1$ into $C$ to get $y = \\frac{2(-1)-1}{-1+4} = \\frac{-3}{3} = -1$, so $P(-1, -1)$. Substitute $x = -7$ into $C$ to get $y = \\frac{2(-7)-1}{-7+4} = \\frac{-15}{-3} = 5$, so $Q(-7, 5)$ since the $x$-coordinate of $P$ is greater than the $x$-coordinate of $Q$.",
@@ -3714,7 +3711,7 @@
         },
         {
           "step": "For part (b), plot the points from the table and join them with a smooth curve.",
-          "marks": "B1 ft"
+          "marks": "B1ft B1ft"
         },
         {
           "step": "For part (c), rearrange $x = \\mathrm{e}^{-x}$ to get $3x = 3\\mathrm{e}^{-x}$, then $3x + 1 = 1 + 3\\mathrm{e}^{-x}$. We draw the straight line $y = 3x + 1$ and find its intersection with $y = 1 + 3\\mathrm{e}^{-x}$.",
@@ -3726,7 +3723,7 @@
         },
         {
           "step": "For part (d), simplify $\\ln(x - 1)^3 = -3x$ to $3\\ln(x - 1) = -3x$, giving $\\ln(x - 1) = -x$. Exponentiating both sides gives $x - 1 = \\mathrm{e}^{-x}$, which rearranges to $x = 1 + \\mathrm{e}^{-x}$, so $3x - 3 = 3\\mathrm{e}^{-x} \\implies 3x - 2 = 1 + 3\\mathrm{e}^{-x}$. Draw the straight line $y = 3x - 2$.",
-          "marks": "M1"
+          "marks": "M1 M1"
         },
         {
           "step": "From the graph, the intersection of $y = 3x - 2$ with $y = 1 + 3\\mathrm{e}^{-x}$ gives the estimate for the root as $1.2$ or $1.3$.",
@@ -3813,7 +3810,7 @@
       "ms_error": null,
       "steps": [
         {
-          "step": "For (a), calculate $y = \\sin x - 3 \\cos 2x - 0.5$ at $x = 0$ and $x = 2$: at $x = 0$, $y = \\sin(0) - 3 \\cos(0) - 0.5 = 0 - 3(1) - 0.5 = -3.5$; at $x = 2$, $y = \\sin(2) - 3 \\cos(4) - 0.5 = 0.909 - 3(-0.6536) - 0.5 = 0.909 + 1.9609 - 0.5 = 2.37 \\approx 2.4$.",
+          "step": "For (a), calculate $y = \\sin x - 3\\cos 2x - 0.5$ at the missing values: at $x = 0$, $y = 0 - 3 - 0.5 = -3.5$; at $x = 0.5$, $y = \\sin 0.5 - 3\\cos 1 - 0.5 = 0.479 - 1.621 - 0.5 = -1.6$; at $x = 1.6$, $y = \\sin 1.6 - 3\\cos 3.2 - 0.5 = 1.000 + 2.995 - 0.5 = 3.5$; at $x = 2$, $y = \\sin 2 - 3\\cos 4 - 0.5 = 0.909 + 1.961 - 0.5 = 2.4$.",
           "marks": "B2"
         },
         {
@@ -3918,15 +3915,15 @@
       "steps": [
         {
           "step": "Calculate $y$ for $x = 0.75$: $y = 2(0.75) + \\frac{3}{(0.75)^2} - 3 = 1.5 + \\frac{3}{0.5625} - 3 = 1.5 + 5.333... - 3 = 3.83$ (to 2 decimal places).",
-          "marks": "B2"
+          "marks": null
         },
         {
           "step": "Calculate $y$ for $x = 1.5$: $y = 2(1.5) + \\frac{3}{(1.5)^2} - 3 = 3 + \\frac{3}{2.25} - 3 = \\frac{3}{2.25} = 1.33$ (to 2 decimal places).",
-          "marks": "B2"
+          "marks": null
         },
         {
           "step": "Calculate $y$ for $x = 2$: $y = 2(2) + \\frac{3}{(2)^2} - 3 = 4 + \\frac{3}{4} - 3 = 1.75$.",
-          "marks": "B2"
+          "marks": null
         },
         {
           "step": "Calculate $y$ for $x = 3$: $y = 2(3) + \\frac{3}{(3)^2} - 3 = 6 + \\frac{3}{9} - 3 = 3 + \\frac{1}{3} = 3.33$ (to 2 decimal places).",
@@ -4033,7 +4030,7 @@
       "ms_error": null,
       "steps": [
         {
-          "step": "Complete the table by calculating $y$ for $x = 0.5$, $1.5$, $2$, and $3$: for $x = 0.5$, $y = 2(0.5) + 1 + \\frac{2}{0.5^2} = 1 + 1 + 8 = 10$; for $x = 1.5$, $y = 2(1.5) + 1 + \\frac{2}{1.5^2} = 4 + 0.888... = 4.89$; for $x = 2$, $y = 2(2) + 1 + \\frac{2}{2^2} = 5 + 0.5 = 5.5$; for $x = 3$, $y = 2(3) + 1 + \\frac{2}{3^2} = 7 + 0.222... = 7.22$.",
+          "step": "Complete the table using $y = 2x + 1 + \\frac{2}{x^2}$: for $x = 1$, $y = 2 + 1 + 2 = 5$; for $x = 2.5$, $y = 5 + 1 + \\frac{2}{6.25} = 6.32$; for $x = 3.5$, $y = 7 + 1 + \\frac{2}{12.25} = 8.16$ (to 2 decimal places).",
           "marks": "B2"
         },
         {
@@ -4319,7 +4316,7 @@
           "marks": "B1"
         },
         {
-          "step": "Find the product of the new roots: $\\left(\\frac{\\alpha}{\\alpha+\\beta}\\right)\\left(/\\frac{\\beta}{\\alpha+\\beta}\\right) = \\frac{\\alpha\\beta}{(\\alpha+\\beta)^2} = \\frac{\\frac{3}{2}}{\\left(\\frac{7}{2}\\right)^2} = \\frac{\\frac{3}{2}}{\\frac{49}{4}} = \\frac{3}{2} \\times \\frac{4}{49} = \\frac{6}{49}$.",
+          "step": "Find the product of the new roots: $\\left(\\frac{\\alpha}{\\alpha+\\beta}\\right)\\left(\\frac{\\beta}{\\alpha+\\beta}\\right) = \\frac{\\alpha\\beta}{(\\alpha+\\beta)^2} = \\frac{\\frac{3}{2}}{\\left(\\frac{7}{2}\\right)^2} = \\frac{\\frac{3}{2}}{\\frac{49}{4}} = \\frac{3}{2} \\times \\frac{4}{49} = \\frac{6}{49}$.",
           "marks": "M1"
         },
         {
@@ -4635,7 +4632,7 @@
           "marks": "M1"
         },
         {
-          "step": "Solve $12n + 156 = 0 \\implies 12n = 156 \\implies n = 13$.",
+          "step": "Solve: $12n + 27 = 183 \\implies 12n = 156 \\implies n = 13$.",
           "marks": "A1"
         }
       ],
@@ -5033,7 +5030,7 @@
           "marks": "M1"
         },
         {
-          "expand step": "Expand and simplify: $5n + 2n^2 = 3n + 2n^2 + 252 \\implies 5n = 3n + 252$.",
+          "step": "Expand and simplify: $5n + 2n^2 = 3n + 2n^2 + 252 \\implies 2n = 252$.",
           "marks": "dM1"
         },
         {
@@ -5071,11 +5068,11 @@
       "ms_error": null,
       "steps": [
         {
-          "step": "Let the first term of the arithmetic series $A$ be $a$ and its common difference be $d$. Let the first term of the geometric series $G$ be $t_1$ and its common ratio be $r$.",
+          "step": "Let the common first term be $a$, the common difference of $A$ be $d$ and the common ratio of $G$ be $r$. The 10th term of $A$ equals the 3rd term of $G$: $a + 9d = ar^2 = 48$.",
           "marks": "B1"
         },
         {
-          "step": "From the given information, we have $a_1 = t_1 = a$ (let's use $a_1$ as the first term of both series since $a_1 = t_1$). Then $a_{10} = a + 9d = t_3 = a_1 r^2 = 48$ and $a_{10} = 4t_2 \\implies a + 9d = 4 a_1 r$.",
+          "step": "The 10th term of $A$ is also four times the 2nd term of $G$: $a + 9d = 4ar$.",
           "marks": "M1"
         },
         {
@@ -5399,11 +5396,11 @@
           "marks": "B1"
         },
         {
-          "step": "For the second condition, $ar \\times ar^2 = 4ar_5$ is a typo in mark scheme text for $ar \\times ar^2 = 4ar^5$, which simplifies to $a^2 r^3 = 4ar^5$. Since $a \\neq 0$ and $r > 0$, this gives $ar^2 = 4r^4$.",
+          "step": "The product of the 2nd and 3rd terms is four times the 5th term: $ar \\times ar^2 = 4ar^4$, so $a^2r^3 = 4ar^4$. Since $a \\neq 0$ and $r > 0$, this gives $a = 4r$.",
           "marks": "B1"
         },
         {
-          "step": "Substitute $a = \\frac{8}{1 + 3r}$ into $a = 4r^2$ to get a quadratic in $r$: $4r^2(1 + 3r) = 8 \\implies 12r^3 + 4r^2 - 8 = 0$, which factors as $(3r - 2)(r + 1)(4r^2 + \\dots) = 0$ leading to $3r - 2 = 0$ or $r + 1 = 0$.",
+          "step": "Substitute $a = 4r$ into $a + 3ar = 8$: $4r + 12r^2 = 8 \\implies 3r^2 + r - 2 = 0 \\implies (3r - 2)(r + 1) = 0$.",
           "marks": "M1"
         },
         {
@@ -5411,7 +5408,7 @@
           "marks": "A1"
         },
         {
-          "step": "Substitute $r = \\frac{2}{3}$ back into $a = 4r^2$ or $a + 3ar = 8$ to find $a = 4\\left(\\frac{2}{3}\\right) = \\frac{8}{3}$.",
+          "step": "Substitute $r = \\frac{2}{3}$ into $a = 4r$: $a = \\frac{8}{3}$.",
           "marks": "A1"
         },
         {
@@ -5531,7 +5528,7 @@
       "ms_error": null,
       "steps": [
         {
-          "step": "(a) Use the sum to infinity formula for a geometric series, $S_\\infty = \\frac{a}{1 - r}$, with $a = 12$ and $r = \\frac{3}{8}$.",
+          "step": "(a) Use the sum to infinity of a geometric series, $S_\\infty = \\frac{a}{1 - r}$, with $a = 12$ and $r = \\frac{3}{8}$: $S_\\infty = \\frac{12}{1 - \\frac{3}{8}} = \\frac{12}{\\frac{5}{8}} = \\frac{96}{5}$.",
           "marks": "M1 A1"
         },
         {
@@ -5560,10 +5557,10 @@
         },
         {
           "step": "(c) Expand and collect terms to reach the required result: $\\log_2 u_n = n \\log_2 3 - 3n + 5$.",
-          "marks": "M1 A1"
+          "marks": "A1"
         }
       ],
-      "final_answer": "\\log_2 u_n = n \\log_2 3 - 3n + 5",
+      "final_answer": "S_\\infty = \\frac{96}{5}; \\quad u_6 = \\frac{3^6}{2^{13}}; \\quad \\log_2 u_n = n \\log_2 3 - 3n + 5",
       "answer_agrees_with_ms": true,
       "confidence": 1
     }
@@ -5772,19 +5769,19 @@
       "steps": [
         {
           "step": "For part (a), the formula for the $n$-th term of a geometric series is $u_n = ar^{n-1}$. Using the given terms, $u_4 = ar^3 = \\mathrm{e}^{x+2}$ and $u_7 = ar^6 = \\mathrm{e}^{\\frac{2x+1}{2}}$. Dividing $u_7$ by $u_4$ gives $\\frac{ar^6}{ar^3} = r^3 = \\frac{\\mathrm{e}^{\\frac{2x+1}{2}}}{\\mathrm{e}^{x+2}} = \\mathrm{e}^{\\frac{2x+1}{2} - (x+2)} = \\mathrm{e}^{x + \\frac{1}{2} - x - 2} = \\mathrm{e}^{-\\frac{3}{2}}$. Taking the cube root on both sides yields $r = \\mathrm{e}^{-\\frac{1}{2}}$.",
-          "marks": "M1 A1"
+          "marks": "M1 M1 A1"
         },
         {
           "step": "For part (b), substitute $r = \\mathrm{e}^{-\\frac{1}{2}}$ into $ar^3 = \\mathrm{e}^{x+2}$. This gives $a\\left(\\mathrm{e}^{-\\frac{1}{2}}\\right)^3 = a\\mathrm{e}^{-\\frac{3}{2}} = \\mathrm{e}^{x+2}$. Therefore, $a = \\frac{\\mathrm{e}^{x+2}}{\\mathrm{e}^{-\\frac{3}{2}}} = \\mathrm{e}^{x+2+\\frac{3}{2}} = \\mathrm{e}^{x+\\frac{7}{2}}$.",
-          "marks": "M1 A1"
+          "marks": "M1 M1 A1"
         },
         {
           "step": "For part (c), the sum to infinity is $S_\\infty = \\frac{a}{1-r} = \\frac{\\mathrm{e}^{x+\\frac{7}{2}}}{1 - \\mathrm{e}^{-\\frac{1}{2}}}$. Simplifying the denominator by writing $1 - \\mathrm{e}^{-\\frac{1}{2}} = 1 - \\frac{1}{\\mathrm{e}^{1/2}} = \\frac{\\mathrm{e}^{1/2} - 1}{\\mathrm{e}^{1/2}}$ or multiplying numerator and denominator by $\\mathrm{e}^{1/2}$ gives $S_\\infty = \\frac{\\mathrm{e}^{x+\\frac{7}{2} + \\frac{1}{2}}}{\\mathrm{e}^{\\frac{1}{2}} - 1} = \\frac{\\mathrm{e}^{x+4}}{\\mathrm{e}^{\\frac{1}{2}}-1}$. Comparing this with $\\frac{\\mathrm{e}^p}{\\mathrm{e}^{\\frac{1}{2}}-1}$, we obtain $p = x+4$.",
-          "marks": "M1 A1"
+          "marks": "M1 M1 A1"
         },
         {
           "step": "For part (d), the $18$-th term is $u_{18} = ar^{17} = \\mathrm{e}^{x+\\frac{7}{2}}\\left(\\mathrm{e}^{-\\frac{1}{2}}\\right)^{17} = \\mathrm{e}^{x+\\frac{7}{2} - \\frac{17}{2}} = \\mathrm{e}^{x-5}$. Given that $u_{18} > 1.6$, we have $\\mathrm{e}^{x-5} > 1.6$. Taking natural logarithms of both sides gives $x - 5 > \\ln(1.6)$, which means $x > \\ln(1.6) + 5 \\approx 0.4700 + 5 = 5.4700$. Since $x$ is an integer, the least value of $x$ is $6$.",
-          "marks": "M1 A1 A1 A1"
+          "marks": "M1 M1 M1 A1"
         }
       ],
       "final_answer": "6",
@@ -6037,7 +6034,7 @@
           "marks": "A1"
         },
         {
-          "step": "Find the coefficient of $x^3$ by substituting $a = 6$ and $n = 2.5$ into the expression for the coefficient of $x^3$: $\\frac{2.5(1.5)(0.5)}{6} (6)^3 = \\frac{2.8125}{6} \\times 216 = 67.5$.",
+          "step": "Find the coefficient of $x^3$ by substituting $a = 6$ and $n = 2.5$ into the expression for the coefficient of $x^3$: $\\frac{2.5(1.5)(0.5)}{6} (6)^3 = \\frac{1.875}{6} \\times 216 = 67.5$.",
           "marks": "M1 A1"
         }
       ],
@@ -6461,7 +6458,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "Substitute the limits $0.3$ and $0$ into the integrated expression: $3(0.3) + \\frac{(0.3)^2}{2} + 2(0.3)^3 + \\frac{(0.3)^4}{2} + \\frac{18(0.3)^5}{5} = 0.9 + 0.045 + 0.054 + 0.00405 + 0.0008748 = 1.0039248 \\approx 1.01$ (to 3 significant figures). Note: The mark scheme writes $1.011798 \\approx 1.01$ which uses the full expansion terms up to $x^6$, giving the same 3sf rounded answer.",
+          "step": "Substitute the limits $0.3$ and $0$: $3(0.3) + \\frac{(0.3)^2}{2} + 2(0.3)^3 + \\frac{(0.3)^4}{2} + \\frac{18(0.3)^5}{5} = 0.9 + 0.045 + 0.054 + 0.00405 + 0.008748 = 1.011798 \\approx 1.01$ (to 3 significant figures).",
           "marks": "M1d A1"
         }
       ],
@@ -6507,7 +6504,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "(d) Equate $1 - 2x = 0.96$ to find $x = 0.02$. Use the expansion from (a): $\\frac{1}{\\sqrt{0.96}} \\approx 1 + (0.02) + \\frac{3}{2}(0.02)^2 + \\frac{5}{2}(0.02)^3 = 1.02062$. From (c), $\\frac{9}{5\\sqrt{6} - 12} = 9 \\left(\\frac{1}{\\sqrt{0.96}} + 2\\right) = 9(1.02062 + 2) = 36.37116$",
+          "step": "(d) Set $1 - 2x = 0.96$, so $x = 0.02$. From (a), $\\frac{1}{\\sqrt{0.96}} \\approx 1 + 0.02 + \\frac{3}{2}(0.02)^2 + \\frac{5}{2}(0.02)^3 = 1.02062$. From (b), $\\frac{5\\sqrt{6}}{12} = \\frac{1}{\\sqrt{0.96}}$, so $\\frac{5\\sqrt{6}}{6} = \\frac{2}{\\sqrt{0.96}}$. Then from (c), $\\frac{9}{5\\sqrt{6} - 12} = 9\\left(\\frac{5\\sqrt{6}}{6} + 2\\right) \\approx 9\\left(2 \\times 1.02062 + 2\\right) = 36.37116$.",
           "marks": "B1 M1 M1 A1"
         }
       ],
@@ -6711,7 +6708,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "For part (d), the plane $OPQ$ is the triangle $OPQ$ (where $P$ is the midpoint of $EB$ and $Q$ is the midpoint of $EC$, meaning $PQ$ is parallel to $BC$ and half its length, so $PQ = 9$, and $OP$ is parallel to $AE$, etc.). The plane $BCQP$ is the trapezoid $BCQP$. The angle between the plane $OPQ$ and the plane $BCQP$ can be found using vector or geometric properties. Using the mark scheme approach: let $N$ be the midpoint of $EM$. Then $EM = \\sqrt{8^2 + 12^2} = 4\\sqrt{13}$. By cosine rule in $\\triangle ONM$, $NO = \\sqrt{12^2 + (2\\sqrt{13})^2 - 2(12)(2\\sqrt{13})\\cos \\alpha} = \\sqrt{144 + 52 - 48\\sqrt{13}\\left(\\frac{3}{\\sqrt{13}}\\right)} = \\sqrt{196 - 144} = \\sqrt{52} = 2\\sqrt{13}$. Since $OM = 12$ and $EN = NM = 2\\sqrt{13}$, triangle $ONM$ is isosceles with $ON = NM = 2\\sqrt{13}$. Calculating the angle of the isosceles triangle or using standard geometry yields the angle between the planes as $112.6^\\circ$.",
+          "step": "For part (d), let $M$ be the midpoint of $BC$ and $N$ the midpoint of $EM$; the required angle is $\\angle ONM$. $EM = \\sqrt{8^2 + 12^2} = 4\\sqrt{13}$, so $NM = 2\\sqrt{13}$. In triangle $ONM$, $OM = 12$ and $\\angle OMN = \\alpha$, where $\\cos\\alpha = \\frac{3}{\\sqrt{13}}$ (since $\\tan\\alpha = \\frac{2}{3}$). By the cosine rule, $NO^2 = 12^2 + (2\\sqrt{13})^2 - 2(12)(2\\sqrt{13})\\left(\\frac{3}{\\sqrt{13}}\\right) = 144 + 52 - 144 = 52$, so $NO = 2\\sqrt{13} = NM$. Triangle $ONM$ is isosceles, so $\\angle NOM = \\angle NMO = \\tan^{-1}\\left(\\frac{2}{3}\\right) = 33.69^\\circ$ and $\\angle ONM = 180^\\circ - 2 \\times 33.69^\\circ = 112.6^\\circ$.",
           "marks": "M1 M1 M1 A1"
         }
       ],
@@ -6985,12 +6982,8 @@
           "marks": "M1 A1"
         },
         {
-          "step": "(d) Since $A, E, F$ are collinear, $\\overrightarrow{AF} = \\lambda \\overrightarrow{AE} = \\lambda \\left(\\frac{29}{13}\\mathbf{i} + \\frac{80}{13}\\mathbf{j}\\right)$. Also, since $D, C, F$ are collinear, $\\overrightarrow{AF} = \\overrightarrow{AC} + \\mu \\overrightarrow{DC} = -2\\mathbf{i} + 15\\mathbf{j} + \\mu(5\\mathbf{i} + 5\\mathbf{j})$. Equating components: $\\frac{29}{13}\\lambda = -2 + 5\\mu$ and $\\frac{80}{13}\\lambda = 15 + 5\\mu$. Solving gives $\\mu = \\frac{7}{3}$ (and $\\lambda = \\frac{13}{3}$). Since $\\overrightarrow{DF} = \\mu \\overrightarrow{DC} = \\frac{7}{3}\\overrightarrow{DC}$, we have $\\overrightarrow{CF} = \\overrightarrow{DF} - \\overrightarrow{DC} = \\frac{4}{3}\\overrightarrow{DC}$, hence $DC : CF = 1 : \\frac{7}{3} = 3 : 7$.",
+          "step": "(d) Since $A, E, F$ are collinear, $\\overrightarrow{AF} = \\lambda \\overrightarrow{AE} = \\lambda \\left(\\frac{29}{13}\\mathbf{i} + \\frac{80}{13}\\mathbf{j}\\right)$. Also, since $D, C, F$ are collinear, $\\overrightarrow{AF} = \\overrightarrow{AC} + \\mu \\overrightarrow{DC} = -2\\mathbf{i} + 15\\mathbf{j} + \\mu(5\\mathbf{i} + 5\\mathbf{j})$. Equating components: $\\frac{29}{13}\\lambda = -2 + 5\\mu$ and $\\frac{80}{13}\\lambda = 15 + 5\\mu$. Solving gives $\\mu = \\frac{7}{3}$ (and $\\lambda = \\frac{13}{3}$). Since $\\overrightarrow{AF} = \\overrightarrow{AC} + \\mu\\overrightarrow{DC}$, we have $\\overrightarrow{CF} = \\mu\\overrightarrow{DC} = \\frac{7}{3}\\overrightarrow{DC}$, hence $DC : CF = 3 : 7$.",
           "marks": "B1 M1 A1 M1 A1 A1"
-        },
-        {
-          "step": "Final Answer Calculation",
-          "marks": null
         }
       ],
       "final_answer": "3:7",
@@ -7043,7 +7036,7 @@
           "marks": "B2"
         },
         {
-          "step": "Compare vectors: $\\overrightarrow{CQ} = \\overrightarrow{OQ} - \\overrightarrow{OC} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b} - \\frac{2}{3}\\mathbf{b} = \\frac{1}{2}\\mathbf{a} - \\frac{1}{6}\\mathbf{b}$. Notice that $\\overrightarrow{CQ} = 3\\overrightarrow{PQ}$ (or $\\overrightarrow{CQ} = \\frac{3}{2}\\rightarrow{CP}$). Since they share a common point $C$ and are scalar multiples of each other, $C$, $P$ and $Q$ are collinear.",
+          "step": "Compare vectors: $\\overrightarrow{CQ} = \\overrightarrow{OQ} - \\overrightarrow{OC} = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b} - \\frac{2}{3}\\mathbf{b} = \\frac{1}{2}\\mathbf{a} - \\frac{1}{6}\\mathbf{b}$. Notice that $\\overrightarrow{CQ} = 3\\overrightarrow{PQ}$ (or $\\overrightarrow{CQ} = \\frac{3}{2}\\overrightarrow{CP}$). Since they share a common point $C$ and are scalar multiples of each other, $C$, $P$ and $Q$ are collinear.",
           "marks": "M1 A1"
         }
       ],
@@ -7139,7 +7132,7 @@
           "marks": "M1 M1 A1cso"
         },
         {
-          "step": "For part (d), let $N$ be the midpoint of $EM$. The angle between plane $OPQ$ and plane $EPQ$ is equal to the angle $\\angle ENO$ in triangle $ENO$. Using the cosine rule in triangle $ENO$ with $EN = \\sqrt{21}$, $EO = 4\\sqrt{3}$, and $ON = \\sqrt{21}$: $ON^2 = (2\\sqrt{21})^2 + (4\\sqrt{3})^2 - 2(2\\sqrt{21})(4\\sqrt{3})\\cos\\theta = 21 + 48 - 2(2\\sqrt{21})(4\\sqrt{3})\\left(\\frac{2\\sqrt{7}}{7}\\right) = 69 - 48 = 21$, so $ON = \\sqrt{21}$. Triangle $ENO$ is isosceles with $EN = ON = \\sqrt{21}$. The angle $\\angle ENO = 180^\\circ - 2 \\times \\cos^{-1}\\left(\\frac{ON^2 + EN^2 - EO^2}{2 \\times ON \\times EN}\\right)$ or using $\\cos\\left(\\frac{\\angle ENO}{2}\\right) = \\frac{EO/2}{ON} = \\frac{2\\sqrt{3}}{\\sqrt{21}} = \\frac{2}{\\sqrt{7}}$, so $\\angle ENO = 2 \\times \\cos^{-1}\\left(\\frac{2}{\\sqrt{7}}\\right) = 2 \\times 40.8933\\dots^\\circ = 98.2134\\dots^\\circ \\approx 98.2^\\circ$.",
+          "step": "For part (d), let $N$ be the midpoint of $EM$, so $EN = NM = \\sqrt{21}$. The angle between the planes is $\\angle ENO$. Use the cosine rule in triangle $ENO$ with $EO = 4\\sqrt{3}$ and $\\cos\\angle OEM = \\frac{2\\sqrt{7}}{7}$ from (c): $NO^2 = (\\sqrt{21})^2 + (4\\sqrt{3})^2 - 2(\\sqrt{21})(4\\sqrt{3})\\left(\\frac{2\\sqrt{7}}{7}\\right) = 21 + 48 - 48 = 21$, so $NO = \\sqrt{21}$. Triangle $ENO$ is isosceles with $EN = NO$, so $\\angle NOE = \\angle NEO = \\cos^{-1}\\left(\\frac{2\\sqrt{7}}{7}\\right) = 40.89^\\circ$, and $\\angle ENO = 180^\\circ - 2 \\times 40.89^\\circ = 98.2^\\circ$.",
           "marks": "M1 A1ft A1 B1"
         }
       ],
@@ -7599,7 +7592,7 @@
           "marks": "B1"
         },
         {
-          "step": "Since $N$ is the midpoint of $OP$, the area of triangle $OMN$ is $\\frac{1}{2}$ of the area of triangle $OAP$, which is $\\frac{1}{2} \\times \\frac{3}{4} \\text{ Area}(OAB) = \\frac{3}{16} \\text{ Area}(OAB)$.",
+          "step": "$M$ and $N$ are the midpoints of $OA$ and $OP$, so triangle $OMN$ is triangle $OAP$ scaled by $\\frac{1}{2}$ and has $\\frac{1}{4}$ of its area: $\\text{Area}(OMN) = \\frac{1}{4} \\times \\frac{3}{4}\\text{Area}(OAB) = \\frac{3}{16}\\text{Area}(OAB)$.",
           "marks": "B1"
         },
         {
@@ -7989,7 +7982,7 @@
       "ms_error": null,
       "steps": [
         {
-          "step": "For part (a), first find the length of the diagonal $AC$ using Pythagoras' theorem on base $ABCD$: $AC = \\sqrt{(12x)^2 + (16x)^2} = \\sqrt{144x^2 + 257x^2} = \\sqrt{400x^2} = 20x$. Since the diagonals bisect each other, $AX = \\frac{1}{2}AC = 10x$.",
+          "step": "For part (a), first find the length of the diagonal $AC$ using Pythagoras' theorem on base $ABCD$: $AC = \\sqrt{(12x)^2 + (16x)^2} = \\sqrt{144x^2 + 256x^2} = \\sqrt{400x^2} = 20x$. Since the diagonals bisect each other, $AX = \\frac{1}{2}AC = 10x$.",
           "marks": "B1"
         },
         {
@@ -8493,11 +8486,11 @@
           "marks": "M1 A1 A1"
         },
         {
-          "step": "Find the midpoint $M$ of $AC$ where $A = (3, 0)$ and $C = (-4, -1)$: $M = \\left(\\frac{3 + (-4)}{2}, \\frac{0 + (-1)}{2}\\right) = \\left(-\\frac{1}{2}, -~\\frac{1}{2}\\right)$.",
+          "step": "Find the midpoint $M$ of $AC$ where $A = (3, 0)$ and $C = (-4, -1)$: $M = \\left(\\frac{3 + (-4)}{2}, \\frac{0 + (-1)}{2}\\right) = \\left(-\\frac{1}{2}, -\\frac{1}{2}\\right)$.",
           "marks": "M1 A1"
         },
         {
-          "step": "Find the area of triangle $ABM$ using the coordinates $A(3, 0)$, $B(2, 2)$, and $M\\left(-\\frac{1}{2}, -\\frac{1}{2}\\right)$ via the determinant formula: $\\text{Area} = \\frac{1}{2}\\left|3(2 - (-~\\frac{1}{2})) + 2(-\\frac{1}{2} - 0) + (-~\\frac{1}{2})(0 - 2)\\right| = \\frac{15}{4} = 3.75$.",
+          "step": "Find the area of triangle $ABM$ using the coordinates $A(3, 0)$, $B(2, 2)$, and $M\\left(-\\frac{1}{2}, -\\frac{1}{2}\\right)$ via the determinant formula: $\\text{Area} = \\frac{1}{2}\\left|3(2 - (-\\frac{1}{2})) + 2(-\\frac{1}{2} - 0) + (-\\frac{1}{2})(0 - 2)\\right| = \\frac{15}{4} = 3.75$.",
           "marks": "M1 A1 M1 A1"
         }
       ],
@@ -9051,7 +9044,7 @@
           "marks": "B1 B1"
         },
         {
-          "step": "For part (e), calculate the area of triangle $AEC$. Since $AE$ is perpendicular to $BC$, the lengths are $EC = \\sqrt{\\left(-\\frac{1}{2} - (-2)\\right)^2 + \\left(\\frac{5}{2} - (-1)\\right)^2} = \\sqrt{\\left(\\frac{3}{2}\\right)^2 + \\left(\\frac{7}{2}\\right)^2} = \\sqrt{\\frac{9}{4} + \\frac{49}{4}} = \\sqrt{\\frac{58}{4}}$ and $AE = \\sqrt{\\left(-\\frac{1}{2} - (-4)\\right)^2 + \\left(\\frac{5}{2} - 4\\right)^2} = \\sqrt{\\left(\\frac{7}{2}\\right)^2 + \\left(-\\frac{3}{2}\\right)^2} = \\sqrt{\\frac{58}{4}}$. Alternatively, use the determinant method with coordinates $A(-4, 4)$, $E\\left(-\\frac{1}{2}, \\frac{5}{2}\\right)$, $C(-2, -1)$.",
+          "step": "For part (e), calculate the area of triangle $AEC$. Since $AE$ is perpendicular to $BC$, the lengths are $EC = \\sqrt{\\left(-\\frac{1}{2} - (-2)\\right)^2 + \\left(\\frac{5}{2} - (-1)\\right)^2} = \\sqrt{\\left(\\frac{3}{2}\\right)^2 + \\left(\\frac{7}{2}\\right)^2} = \\sqrt{\\frac{9}{4} + \\frac{49}{4}} = \\sqrt{\\frac{58}{4}}$ and $AE = \\sqrt{\\left(-\\frac{1}{2} - (-4)\\right)^2 + \\left(\\frac{5}{2} - 4\\right)^2} = \\sqrt{\\left(\\frac{7}{2}\\right)^2 + \\left(-\\frac{3}{2}\\right)^2} = \\sqrt{\\frac{58}{4}}$. Hence $\\text{Area}(\\triangle AEC) = \\frac{1}{2} \\times AE \\times EC = \\frac{1}{2} \\times \\sqrt{14.5} \\times \\sqrt{14.5} = 7.25$.",
           "marks": "M1 M1 A1 A1"
         }
       ],
@@ -9692,7 +9685,7 @@
       "steps": [
         {
           "step": "Given $y = 2e^x(3x^2 - 6)$, find the first derivative using the product rule: $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 2e^x(3x^2 - 6) + 2e^x(6x) = 2e^x(3x^2 - 6) + 12xe^x$.",
-          "marks": "M1 A1"
+          "marks": "M1 A1 A1"
         },
         {
           "step": "Find the second derivative by differentiating $\\frac{\\mathrm{d}y}{\\mathrm{d}x}$ with respect to $x$: $\\frac{\\mathrm{d}^2y}{\\mathrm{d}x^2} = [2e^x(3x^2 - 6) + 12xe^x] + [12xe^x + 12e^x] = e^x(6x^2 + 24x)$.",
@@ -9703,7 +9696,7 @@
           "marks": "dM1"
         },
         {
-          "step": "Simplify the expression: $= e^x(6x^2 + 24x - 12x^2 + 24 - 48x + 6x^2 - 12) = e^x(12) = 12e^x$, hence showing the required result.",
+          "step": "Simplify the expression: $= e^x(6x^2 + 24x - 12x^2 + 24 - 24x + 6x^2 - 12) = e^x(12) = 12e^x$, hence showing the required result.",
           "marks": "A1"
         }
       ],
@@ -9975,11 +9968,11 @@
       "ms_error": null,
       "steps": [
         {
-          "step": "For part (a), let $y = e^{3x} \\cos 2x$. Using the product rule, $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = 3e^{3x} \\cos 2x - 2e^{3x} \\sin 2x$.",
+          "step": "For part (a), let $u = e^{3x}$ and $v = \\cos 2x$, so $\\frac{\\mathrm{d}u}{\\mathrm{d}x} = 3e^{3x}$ and $\\frac{\\mathrm{d}v}{\\mathrm{d}x} = -2\\sin 2x$. By the product rule, $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = u\\frac{\\mathrm{d}v}{\\mathrm{d}x} + v\\frac{\\mathrm{d}u}{\\mathrm{d}x} = 3e^{3x}\\cos 2x - 2e^{3x}\\sin 2x$.",
           "marks": "M1 B1 A1"
         },
         {
-          "step": "For part (b), let $y = \\frac{2e^x}{2x^2 - 1}$. Using the quotient rule, $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{2e^x(2x^2 - 1) - 2e^x(4x)}{(2x^2 - 1)^2}$.",
+          "step": "For part (b), let $u = 2e^x$ and $v = 2x^2 - 1$, so $\\frac{\\mathrm{d}u}{\\mathrm{d}x} = 2e^x$ and $\\frac{\\mathrm{d}v}{\\mathrm{d}x} = 4x$. By the quotient rule, $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{v\\frac{\\mathrm{d}u}{\\mathrm{d}x} - u\\frac{\\mathrm{d}v}{\\mathrm{d}x}}{v^2} = \\frac{2e^x(2x^2 - 1) - 2e^x(4x)}{(2x^2 - 1)^2}$.",
           "marks": "M1 A1 A1"
         }
       ],
@@ -11282,7 +11275,7 @@
       "steps": [
         {
           "step": "Identify the given rate of change of volume with respect to time: $\\frac{\\mathrm{d}V}{\\mathrm{d}t} = 3\\text{ cm}^3/\\text{s}$.",
-          "marks": "B1"
+          "marks": null
         },
         {
           "step": "State the formulas for the volume and surface area of a sphere: $V = \\frac{4}{3}\\pi r^3$ and $A = 4\\pi r^2$.",
@@ -11455,9 +11448,6 @@
           "marks": "M1"
         },
         {
-          "s": ""
-        },
-        {
           "step": "Substitute $r = \\sqrt{\\frac{6}{\\pi}}$ into the expression for $\\frac{\\mathrm{d}r}{\\mathrm{d}t}$: $\\frac{\\mathrm{d}r}{\\mathrm{d}t} = \\frac{1.5}{2\\pi \\sqrt{\\frac{6}{\\pi}}}$.",
           "marks": "M1"
         },
@@ -11618,9 +11608,6 @@
         {
           "step": "Set up the chain rule for the rate of change of surface area: $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = \\frac{\\mathrm{d}A}{\\mathrm{d}r} \\times \\frac{\\mathrm{d}r}{\\mathrm{d}V} \\times \\frac{\\mathrm{d}V}{\\mathrm{d}t}$.",
           "marks": "M1"
-        },
-        {
-          "s": ""
         },
         {
           "step": "Substitute the derived expressions and given values into the chain rule: $\\frac{\\mathrm{d}A}{\\mathrm{d}t} = 8\\pi r \\times \\frac{1}{4\\pi r^2} \\times 40 = \\frac{80}{r}$.",
@@ -11810,7 +11797,7 @@
         },
         {
           "step": "Substitute $x = 1$ into the derivative: $\\frac{\\text{d}y}{\\text{d}x}\\Big|_{x=1} = -(1 - 2)e^{0} + (3(1)^2 - 2)e^{0} = -(-1)(1) + (1)(1) = 2$.",
-          "marks": "M1"
+          "marks": null
         },
         {
           "step": "Find the gradient of the normal: $m_{\\text{normal}} = -\\frac{1}{\\frac{\\text{d}y}{\\text{d}x}} = -\\frac{1}{2}$.",
@@ -11999,7 +11986,7 @@
           "marks": "M1"
         },
         {
-          "step": "The normals are vertical lines of symmetry for the normals at $A$ and $B$, meaning they also intersect at the axis of symmetry $x = \\frac{5}{2}$. Substituting $x = \\frac{5}{2}$ into the normal equation $y - 0 = \\frac{1}{3}(x - 1)$ gives $y = \\frac{1}{3}\\left(\\frac{5}{2} - 1\\right) = \\frac{1}{2}$. Thus, $N$ is $\\left(\\frac{5}{2}, \\frac{1}{2}\\right)$.",
+          "step": "The curve is symmetric about $x = \\frac{5}{2}$, so the normals at $A$ and $B$ are reflections of each other and meet on this line. Substituting $x = \\frac{5}{2}$ into the normal at $A$, $y - 0 = \\frac{1}{3}(x - 1)$, gives $y = \\frac{1}{3}\\left(\\frac{5}{2} - 1\\right) = \\frac{1}{2}$. Thus $N$ is $\\left(\\frac{5}{2}, \\frac{1}{2}\\right)$.",
           "marks": "M1 A1"
         },
         {
@@ -12092,7 +12079,7 @@
       "steps": [
         {
           "step": "Rearrange the equation to express $y$ in terms of $x$: $y = \\frac{e^x}{2x+5}$",
-          "marks": "B1"
+          "marks": null
         },
         {
           "step": "Apply the quotient rule to find $\\frac{\\mathrm{d}y}{\\mathrm{d}x}$: $\\frac{\\mathrm{d}y}{\\mathrm{d}x} = \\frac{\\mathrm{e}^x(2x+5) - 2\\mathrm{e}^x}{(2x+5)^2}$",
@@ -12264,7 +12251,7 @@
         },
         {
           "step": "Base $= x_B - x_D = \\frac{1}{2}(5 + \\ln 5) - \\frac{1}{2}(-1 + \\ln 5) = \\frac{1}{2}(5 + \\ln 5 + 1 - \\ln 5) = \\frac{1}{2}(6) = 3$.",
-          "marks": null
+          "marks": "A1"
         },
         {
           "step": "Area $= \\frac{1}{2} \\times 3 \\times 5 = \\frac{15}{2}$.",
@@ -12815,7 +12802,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "For part (b), let $A = 4x$ and $B = 3x$ (or use the product-to-sum identity derived from part (a) with $7x$ and $x$):\n$$2 \\sin 7x \\cos x = \\sin(7x + x) + \\sin(7x - x) = \\sin 8x + \\sin 6x$$",
+          "step": "For part (b), use the identity from part (a) with $A = 7x$ and $B = x$:\n$$2 \\sin 7x \\cos x = \\sin(7x + x) + \\sin(7x - x) = \\sin 8x + \\sin 6x$$",
           "marks": "B1"
         },
         {
@@ -12877,7 +12864,7 @@
           "marks": "M1"
         },
         {
-          "expand": "Expand the integrand: $(3 + 2\\sin x)^2 = 9 + 12\\sin x + 4\\sin^2 x$.",
+          "step": "Expand the integrand: $(3 + 2\\sin x)^2 = 9 + 12\\sin x + 4\\sin^2 x$.",
           "marks": "M1"
         },
         {
@@ -12893,7 +12880,7 @@
           "marks": "M1"
         },
         {
-          "step": "Evaluate the values: $\\cos\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2}$, $\\sin\\left(\\frac{\\pi}{2}\\right) = 1$, $\\cos 0 = 1$. The expression becomes $\\pi \\left( \\frac{11\\pi}{4} - 6\\sqrt{2} - 1 + 12 \\right) = \\pi \\left( \\frac{11\\pi}{4} - 6\\sqrt{2} + 11 \\right) \\approx 34.62$, which rounds to $35$.",
+          "step": "Evaluate the values: $\\cos\\left(\\frac{\\pi}{4}\\right) = \\frac{\\sqrt{2}}{2}$, $\\sin\\left(\\frac{\\pi}{2}\\right) = 1$, $\\cos 0 = 1$. The expression becomes $\\pi \\left( \\frac{11\\pi}{4} - 6\\sqrt{2} - 1 + 12 \\right) = \\pi \\left( \\frac{11\\pi}{4} - 6\\sqrt{2} + 11 \\right) \\approx 35.04$, which rounds to $35$.",
           "marks": "M1 A1"
         }
       ],
@@ -13013,7 +13000,7 @@
           "marks": "A1*"
         },
         {
-          "step": "For part (c), solve $3x^2 + 16x + 16 = 0$ (since $x \\neq 2$ at $N$ because $N$ lies between $M(-3,0)$ and $O$). Factorising gives $(3x+4)(x+4)=0$, so $x = -4$ or $x = -3/4$. Since $N$ lies between $M(-3,0)$ and $O(0,0)$, $n$ must be $-\\frac{4}{3}$.",
+          "step": "For part (c), solve $3x^2 + 16x + 16 = 0$ (since $x \\neq 2$ at $N$ because $N$ lies between $M(-3,0)$ and $O$). Factorising gives $(3x+4)(x+4)=0$, so $x = -4$ or $x = -\\frac{4}{3}$. Since $N$ lies between $M(-3,0)$ and $O(0,0)$, $n$ must be $-\\frac{4}{3}$.",
           "marks": "M1 A1 M1"
         },
         {
@@ -13201,7 +13188,7 @@
           "marks": "M1"
         },
         {
-          "expand": "Expand and simplify the integrand: $(4 - x^2)^2 - (x + 2)^2 = (16 - 8x^2 + x^4) - (x^2 + 4x + 4) = x^4 - 9x^2 - 4x + 12$.",
+          "step": "Expand and simplify the integrand: $(4 - x^2)^2 - (x + 2)^2 = (16 - 8x^2 + x^4) - (x^2 + 4x + 4) = x^4 - 9x^2 - 4x + 12$.",
           "marks": null
         },
         {
@@ -13247,7 +13234,7 @@
       "ms_error": null,
       "steps": [
         {
-          "step": "For part (a), the curve $S$ has equation $y = 2\\sin x$. The point $A$ is where $S$ crosses the $x$-axis, so $2\\sin x = 0$, giving $x = \\frac{\\pi}{2}$ or $90^{\\circ}$.",
+          "step": "For part (a), $A$ is where $C$, $y = 2\\cos x$, crosses the $x$-axis: $2\\cos x = 0$, giving $x = \\frac{\\pi}{2}$ (or $90^{\\circ}$).",
           "marks": "B1"
         },
         {
@@ -13595,7 +13582,6 @@
           "marks": "M1"
         },
         {
-          "expand": "Expand the integrand: $(\\mathrm{e}^{2x} - 9)^2 = \\mathrm{e}^{4x} - 18\\mathrm{e}^{2x} + 81$.",
           "step": "Expand the integrand: $(\\mathrm{e}^{2x} - 9)^2 = \\mathrm{e}^{4x} - 18\\mathrm{e}^{2x} + 81$.",
           "marks": "A1"
         },
@@ -13662,15 +13648,15 @@
           "marks": "M1"
         },
         {
-          "step": "Simplify and integrate: $\\pi \\int_{-1}^{3} \\left(3 + 2x - x^2\\right) \\, dx = \\pi \\left[3x + x^2 - \\frac{x^3}{3}\\right]_{-1}^{3}$",
+          "step": "Combine into one integral: $\\pi\\int_{-1}^{3}\\left((2x + 3) - \\frac{(x + 3)^2}{4}\\right) dx = \\frac{\\pi}{4}\\int_{-1}^{3}(3 + 2x - x^2)\\, dx = \\frac{\\pi}{4}\\left[3x + x^2 - \\frac{x^3}{3}\\right]_{-1}^{3}$.",
           "marks": "M1 A1"
         },
         {
-          "step": "Substitute the limits $x=3$ and $x=-1$: $\\pi \\left[ (9 + 9 - 9) - (-3 + 1 + \\frac{1}{3}) \\right]$",
+          "step": "Substitute the limits $x = 3$ and $x = -1$: $\\frac{\\pi}{4}\\left[(9 + 9 - 9) - \\left(-3 + 1 + \\frac{1}{3}\\right)\\right]$.",
           "marks": "dM1"
         },
         {
-          "step": "Evaluate the final value: $\\pi \\left(9 - \\left(-\\frac{5}{3}\\right)\\right) = \\frac{8}{3}\\pi$",
+          "step": "Evaluate: $\\frac{\\pi}{4}\\left(9 + \\frac{5}{3}\\right) = \\frac{\\pi}{4} \\times \\frac{32}{3} = \\frac{8}{3}\\pi$.",
           "marks": "A1"
         }
       ],
@@ -13783,7 +13769,7 @@
         },
         {
           "step": "Equate to the given volume: $128 - 16a + \\frac{a^2}{2} = 50 \\implies \\frac{a^2}{2} - 16a + 78 = 0 \\implies a^2 - 32a + 156 = 0$.",
-          "marks": "M1"
+          "marks": null
         },
         {
           "step": "Solve the quadratic equation: $(a-6)(a-26) = 0 \\implies a = 6$ or $a = 26$. Since the domain given is $2 < a < 16$, we select $a = 6$.",
@@ -13820,8 +13806,8 @@
         10
       ],
       "ms_matches_question": true,
-      "ms_math_correct": true,
-      "ms_error": null,
+      "ms_math_correct": false,
+      "ms_error": "The scheme prints the second integral as $-1.313170\\ldots$ and the total as $3.8267\\ldots$. The second integral is $-1.13137\\ldots$ and the total is $2.73137\\ldots + 1.13137\\ldots = 3.86274\\ldots$, so the scheme's final answer of $3.86$ is still correct.",
       "steps": [
         {
           "step": "Write down the expansion for $\\sin(A+B)$ and $\\sin(A-B)$ from formulae page: $\\sin(A+B) = \\sin A \\cos B + \\cos A \\sin B$ and $\\sin(A-B) = \\sin A \\cos B - \\cos A \\sin B$.",
@@ -13856,7 +13842,7 @@
           "marks": "M1"
         },
         {
-          "step": "Substitute the limits: First interval from $0$ to $\\frac{\\pi}{4}$ gives $2.73137\\dots$, second interval from $\\frac{\\pi}{4}$ to $\\frac{\\pi}{2}$ gives $|-1.31317\\dots|$. Total area = $2.73137 + 1.31317 = 3.8267\\dots$",
+          "step": "Substitute the limits: First interval from $0$ to $\\frac{\\pi}{4}$ gives $2.73137\\dots$, second interval from $\\frac{\\pi}{4}$ to $\\frac{\\pi}{2}$ gives $|-1.13137\\dots|$. Total area = $2.73137 + 1.13137 = 3.86274\\dots \\approx 3.86$",
           "marks": "ddM1"
         },
         {
@@ -13980,7 +13966,7 @@
           "marks": "A1"
         },
         {
-          "step": "Evaluate the limits to find the area of $R_2$: $\\left( \\left(-\\frac{\\sqrt{2}}{2} + \\frac{5\\pi}{4}\\right) - \\pi \\right) + \\left( \\frac{3\\pi}{2} - \\left(-\\frac{\\sqrt{2}}{2} + \\frac{5\\pi}{4}\\right) \\right) = \\frac{1}{2}\\pi - \\sqrt{2}$.",
+          "step": "Evaluate the limits to find the area of $R_2$: $\\left( \\left(-\\frac{\\sqrt{2}}{2} + \\frac{5\\pi}{4}\\right) - \\pi \\right) + \\left( \\frac{3\\pi}{2} - \\left(\\frac{\\sqrt{2}}{2} + \\frac{5\\pi}{4}\\right) \\right) = \\frac{1}{2}\\pi - \\sqrt{2}$.",
           "marks": "M1 A1"
         },
         {
@@ -14026,7 +14012,7 @@
           "marks": "M1 A1 dM1 A1"
         },
         {
-          "step": "For part (c), find the gradient of the tangent at $M\\left(\\frac{7\\pi}{18}, 0\\right)$: $\\left.\\frac{dy}{dx}\\right|_{x=\\frac{7\\pi}{18}} = 3 \\cos\\left(3 \\times \\frac{7\\pi}{18}\\right) = 3 \\cos\\left(\\frac{7\\pi}{6}\\right) = 3\\left(-\\frac{\\sqrt{3}}{2}\\right) = -\\frac{3\\sqrt{3}}{2}$. Using the point-slope form: $y - 0 = -\\frac{3\\sqrt{3}}{2}\\left(x - \\frac{7\\pi}{18}\\right)$. Rearranging gives $2y = -3\\sqrt{3}x + \\frac{21\\pi\\sqrt{3}}{6} = -3\\sqrt{3}x + \\frac{7\\pi\\sqrt{3}}{2}$, which multiplies to $4y + 6\\sqrt{3}x - 7\\pi\\sqrt{3} = 0$. Dividing by $\\sqrt{3}$: $12y + 18\\sqrt{3}x - 7\\sqrt{3}\\pi = 0$.",
+          "step": "For part (c), find the gradient of the tangent at $M\\left(\\frac{7\\pi}{18}, 0\\right)$: $\\left.\\frac{dy}{dx}\\right|_{x=\\frac{7\\pi}{18}} = 3 \\cos\\left(3 \\times \\frac{7\\pi}{18}\\right) = 3 \\cos\\left(\\frac{7\\pi}{6}\\right) = 3\\left(-\\frac{\\sqrt{3}}{2}\\right) = -\\frac{3\\sqrt{3}}{2}$. Using the point-slope form: $y - 0 = -\\frac{3\\sqrt{3}}{2}\\left(x - \\frac{7\\pi}{18}\\right)$. Multiplying by $12$: $12y = -18\\sqrt{3}x + 12 \\times \\frac{3\\sqrt{3}}{2} \\times \\frac{7\\pi}{18} = -18\\sqrt{3}x + 7\\sqrt{3}\\pi$, so $12y + 18\\sqrt{3}x - 7\\sqrt{3}\\pi = 0$.",
           "marks": "B1 M1 A1 A1"
         },
         {
@@ -14327,7 +14313,7 @@
         },
         {
           "step": "To find the distance from the origin when $P$ first comes to instantaneous rest, substitute $t = 3$ into the displacement equation: $s = \\frac{2(3)^3}{3} - 8(3)^2 + 30(3) - 4 = 18 - 72 + 90 - 4 = 32$.",
-          "marks": "M1 A1"
+          "marks": "A1"
         }
       ],
       "final_answer": "32\\text{ m}",
@@ -14361,7 +14347,7 @@
       "steps": [
         {
           "step": "Integrate $a = 6t - 12$ with respect to $t$ to find the velocity: $v = \\int (6t - 12) \\, dt = 3t^2 - 12t + c$. Using the initial condition $v = 0$ when $t = 0$, we find $c = 0$, so $v = 3t^2 - 12t$. Substituting $t = 2$ gives $v = 3(2)^2 - 12(2) = 12 - 24 = -12\\text{ m/s}$.",
-          "marks": "M1 A1"
+          "marks": "M1 A1 A1"
         },
         {
           "step": "Apply $v = 0$ for instantaneous rest: $3t^2 - 12t = 0 \\implies 3t(t - 4) = 0$. Since $T > 0$, $T = 4$.",
@@ -14706,7 +14692,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "Expand and simplify the equation: $4x^2 + 20x + 25 = 9x^2 - 6x + 1 + 25x^2 - 30x(3x - 1)\\left(\\frac{1}{2}\\right)$, which simplifies to $15x^2 - 21x - 24 = 0$",
+          "step": "Expand and simplify: $4x^2 + 20x + 25 = 9x^2 - 6x + 1 + 25x^2 - 5x(3x - 1) = 19x^2 - x + 1$, which gives $15x^2 - 21x - 24 = 0$.",
           "marks": "A1"
         },
         {
@@ -14918,7 +14904,7 @@
           "marks": "B1 M1"
         },
         {
-          "step": "Calculate the area of triangle $ABD$ using $\\text{Area} = \\frac{1}{2}ab\\sin(C)$: $\\text{Area} = \\frac{1}{2} \\times 10 \\times 6 \\times \\sin(82.819^\\circ) = 29.802...$",
+          "step": "Calculate the area of triangle $ABD$ using $\\text{Area} = \\frac{1}{2}ab\\sin(C)$: $\\text{Area} = \\frac{1}{2} \\times 10 \\times 6 \\times \\sin(82.819^\\circ) = 29.76...$",
           "marks": "M1 A1"
         }
       ],
@@ -15138,23 +15124,23 @@
           "marks": "M1"
         },
         {
-          "step": "Solving for $\\angle AED$: $\\sin \\angle AED = \\frac{15 \\sin 55^{\\circ}}{13} \\approx 0.9431$, giving $\\angle AED = 70.58^{\\circ}$ or $109.42^{\\circ}$. Since $\\angle AED$ is obtuse, $\\angle AED = 109.4^{\\circ}$.",
+          "step": "Solve: $\\sin \\angle AED = \\frac{15 \\sin 55^{\\circ}}{13} = 0.9452$, giving $\\angle AED = 70.94^{\\circ}$ or $109.06^{\\circ}$. Since $\\angle AED$ is obtuse, $\\angle AED = 109.06^{\\circ}$.",
           "marks": "A1"
         },
         {
-          "step": "Calculate angle $\\angle EAD$: $\\angle EAD = 180^{\\circ} - 55^{\\circ} - 109.42^{\\circ} = 15.58^{\\circ}$.",
+          "step": "Then $\\angle ADE = 180^{\\circ} - 55^{\\circ} - 109.06^{\\circ} = 15.94^{\\circ}$.",
           "marks": "M1"
         },
         {
-          "step": "Using the perpendicular height $h$ from $E$ to $AD$, $h = 13 \\sin 15.58^{\\circ} \\approx 3.49\\text{ cm}$.",
+          "step": "Let $h$ be the perpendicular distance from $E$ to $AD$. Using $DE = 13$: $h = 13 \\sin 15.94^{\\circ} = 3.57\\text{ cm}$.",
           "marks": "M1 A1"
         },
         {
-          "step": "Alternatively, the area of $\\triangle BCE$ can be found by subtracting the areas of $\\triangle ABE$, $\\triangle ADE$, and $\\triangle CDE$ from the area of the rectangle $ABCD$: $\\text{Area}(ABCD) = 10 \\times 15 = 150\\text{ cm}^2$. Using the height from $E$ to $AD$, the area of $\\triangle ADE = \\frac{1}{2} \\times 15 \\times h = \\frac{1}{2} \\times 15 \\times (3.49...) = 26.2\\text{ cm}^2$.",
+          "step": "The perpendicular distance from $E$ to $BC$ is $10 - h = 6.43\\text{ cm}$, so $\\text{Area}(\\triangle BCE) = \\frac{1}{2} \\times 15 \\times (10 - 3.57)$.",
           "marks": "ddM1"
         },
         {
-          "step": "Thus, the area of triangle $BCE$ is $48.2\\text{ cm}^2$.",
+          "step": "$\\text{Area}(\\triangle BCE) = 48.2\\text{ cm}^2$ (to 3 significant figures).",
           "marks": "A1"
         }
       ],
@@ -15513,7 +15499,7 @@
         },
         {
           "step": "Simplify to get $x^2 = 108 - x^2 \\implies 2x^2 = 108 \\implies x^2 = 54 \\implies x = \\sqrt{54} = 3\\sqrt{6}$.",
-          "marks": null
+          "marks": "A1"
         },
         {
           "step": "Since $AC = 2x$, $AC = 2(3\\sqrt{6}) = 6\\sqrt{6}$.",
@@ -15602,7 +15588,7 @@
           "marks": "M1"
         },
         {
-          "step": "Substitute exact values and simplify: $\\left(\\frac{\\sqrt{2}}{2}\\right)\\left(/frac{\\sqrt{3}}{2}\\right) + \\left(\\frac{\\sqrt{2}}{2}\\right)\\left(\\frac{1}{2}\\right) = \\frac{\\sqrt{6} + \\sqrt{2}}{4}$",
+          "step": "Substitute exact values and simplify: $\\left(\\frac{\\sqrt{2}}{2}\\right)\\left(\\frac{\\sqrt{3}}{2}\\right) + \\left(\\frac{\\sqrt{2}}{2}\\right)\\left(\\frac{1}{2}\\right) = \\frac{\\sqrt{6} + \\sqrt{2}}{4}$",
           "marks": "A1"
         },
         {
@@ -15657,7 +15643,7 @@
         },
         {
           "step": "For part (b), let $A+B=P$ and $A-B=Q$, giving $A = \\frac{P+Q}{2}$ and $B = \\frac{P-Q}{2}$. Substituting into the result from (a) yields $\\cos P + \\cos Q = 2 \\cos \\left(\\frac{P+Q}{2}\\right) \\cos \\left(\\frac{P-Q}{2}\\right)$.",
-          "marks": "M1 A1"
+          "marks": "M1 M1 A1"
         },
         {
           "step": "For part (c), apply the result from (b) to $\\cos 5\\theta + \\cos 7\\theta = 0$, giving $2 \\cos 6\\theta \\cos \\theta = 0$.",
@@ -16576,7 +16562,7 @@
           "marks": "M1 M1 M1 A1"
         },
         {
-          "step": "(c) Let $x = \\frac{\\theta}{4} + \\frac{\\pi}{24}$. The equation becomes $\\cos^2 x(\\cos^2 x - 1) = -\\frac{1}{16}$, which simplifies to $\\cos^4 x - \\cos^2 x = -\\frac{1}{16}$. Using part (b), we know $8\\cos^4 x - 8\\cos^2 x + 1 = \\cos(4x)$, so $\\cos^4 x - \\cos^2 x = \\frac{\\cos(4x) - 1}{8}$. Substituting this gives $\\frac{\\cos(4x) - 1}{8} = -\\frac{1}{16}$, which leads to $\\cos(4x) = \\frac{1}{2}$. Since $4x = 4\\left(\\frac{\\theta}{4} + \\frac{\\pi}{24}\\right) = \\theta + \\frac{\\pi}{6}$, we have $\\cos\\left(\\theta + \\frac{\\pi}{6}\\right) = \\frac{1}{2}$. For $0 \\leqslant \\theta < 2\\pi$, the range for $\\theta + \\frac{\\pi}{6}$ is $\\frac{\\pi}{6} \\leqslant \\theta + \\frac{\\pi}{6} < 2\\pi + \\frac{\\pi}{6}$. The solutions for $\\theta + \\frac{\\pi}{6}$ are $\\frac{\\pi}{3}, \\frac{5\\pi}{3}, \\frac{7\\pi}{3}$. Subtracting $\\frac{\\pi}{6}$ gives $\\theta = \\frac{\\pi}{6}, \\frac{3\\pi}{2}$.",
+          "step": "(c) Let $x = \\frac{\\theta}{4} + \\frac{\\pi}{24}$. The equation becomes $\\cos^2 x(\\cos^2 x - 1) = -\\frac{1}{16}$, which simplifies to $\\cos^4 x - \\cos^2 x = -\\frac{1}{16}$. Using part (b), we know $8\\cos^4 x - 8\\cos^2 x + 1 = \\cos(4x)$, so $\\cos^4 x - \\cos^2 x = \\frac{\\cos(4x) - 1}{8}$. Substituting this gives $\\frac{\\cos(4x) - 1}{8} = -\\frac{1}{16}$, which leads to $\\cos(4x) = \\frac{1}{2}$. Since $4x = 4\\left(\\frac{\\theta}{4} + \\frac{\\pi}{24}\\right) = \\theta + \\frac{\\pi}{6}$, we have $\\cos\\left(\\theta + \\frac{\\pi}{6}\\right) = \\frac{1}{2}$. For $0 \\leqslant \\theta < 2\\pi$, the range for $\\theta + \\frac{\\pi}{6}$ is $\\frac{\\pi}{6} \\leqslant \\theta + \\frac{\\pi}{6} < 2\\pi + \\frac{\\pi}{6}$. In this range the solutions for $\\theta + \\frac{\\pi}{6}$ are $\\frac{\\pi}{3}$ and $\\frac{5\\pi}{3}$ ($\\frac{7\\pi}{3}$ lies just outside the range). Subtracting $\\frac{\\pi}{6}$ gives $\\theta = \\frac{\\pi}{6}, \\frac{3\\pi}{2}$.",
           "marks": "M1 M1 M1 M1 A1"
         },
         {
@@ -16924,7 +16910,7 @@
           "marks": "M1 A1ft"
         },
         {
-          "step": "(c) We are given $OT:TR = 1:3$, so $OT = \\frac{1}{4} r = \\frac{1}{4}(4) = 1$ and $OS = 4$. The area of sector $OTS$ is $\\frac{1}{2}(OT)(OS)\\sin\\theta = \\frac{1}{2}(1)(4)\\sin\\left(\\frac{\\pi}{4}\\right) = 2 \\times \\frac{\\sqrt{2}}{2} = \\sqrt{2}$. The area $A$ of the shaded region $TSR$ is the area of sector $ORS$ minus the area of sector $OTS$, which is $2\\pi - \\sqrt{2}$.",
+          "step": "(c) We are given $OT:TR = 1:3$, so $OT = \\frac{1}{4} r = \\frac{1}{4}(4) = 1$ and $OS = 4$. The area of triangle $OTS$ is $\\frac{1}{2}(OT)(OS)\\sin\\theta = \\frac{1}{2}(1)(4)\\sin\\left(\\frac{\\pi}{4}\\right) = 2 \\times \\frac{\\sqrt{2}}{2} = \\sqrt{2}$. The area $A$ of the shaded region $TSR$ is the area of sector $ORS$ minus the area of triangle $OTS$, which is $2\\pi - \\sqrt{2}$.",
           "marks": "M1 A1"
         }
       ],
@@ -17248,11 +17234,10 @@
           "marks": "M1 A1"
         },
         {
-          "step": "For part (c), use the given equation $S_{2p} - 2S_p = 1 + S_{p-1}$. Substitute the formula $S_n = n(15 + 2n)$ to get $2p(15 + 4p) - 2p(15 + 2p) = 1 + (p-1)(13 + 2(p-1))$.",
+          "step": "For part (c), use the given equation $S_{2p} - 2S_p = 1 + S_{p-1}$. Substitute the formula $S_n = n(15 + 2n)$ to get $2p(15 + 4p) - 2p(15 + 2p) = 1 + (p-1)(15 + 2(p-1))$.",
           "marks": "M1"
         },
         {
-          "expand": true,
           "step": "Simplify the equation to obtain the quadratic equation in $p$: $2p^2 - 11p + 12 = 0$.",
           "marks": "A1"
         },
@@ -17654,7 +17639,7 @@
         },
         {
           "step": "Substitute this into the original equation: $\\log_2 x + \\frac{6}{\\log_2 x} = 7$.",
-          "marks": "M1 A1"
+          "marks": "M1"
         },
         {
           "step": "Multiply through by $\\log_2 x$ and rearrange to form a quadratic equation in terms of $\\log_2 x$: $(\\log_2 x)^2 - 7\\log_2 x + 6 = 0$.",
@@ -17666,7 +17651,7 @@
         },
         {
           "step": "Solve for $x$: $x = 2^6 = 64$ and $x = 2^1 = 2$.",
-          "marks": "A1"
+          "marks": "M1 A1"
         }
       ],
       "final_answer": "x = 64, x = 2",
@@ -17761,8 +17746,12 @@
           "marks": "M1 A1"
         },
         {
-          "step": "From part (a), consider the first case $\\log_y x = \\frac{1}{2}$, which gives $x = y^{\\frac{1}{2}}$. Substitute this into $xy = 27$ to get $y^{\\frac{3}{2}} = 27$, so $y = 9$ and $x = 3$.",
+          "step": "For part (b), convert each value back from logarithmic form: $\\log_y x = \\frac{1}{2} \\implies x = y^{\\frac{1}{2}}$ and $\\log_y x = 2 \\implies x = y^2$.",
           "marks": "M1 A1"
+        },
+        {
+          "step": "From part (a), consider the first case $\\log_y x = \\frac{1}{2}$, which gives $x = y^{\\frac{1}{2}}$. Substitute this into $xy = 27$ to get $y^{\\frac{3}{2}} = 27$, so $y = 9$ and $x = 3$.",
+          "marks": "M1"
         },
         {
           "step": "Consider the second case $\\log_y x = 2$, which gives $x = y^2$. Substitute this into $xy = 27$ to get $y^3 = 27$, so $y = 3$ and $x = 9$.",
@@ -17813,9 +17802,6 @@
         {
           "step": "For part (b), use the change of base formula to express $\\log_y 2$ as $\\frac{1}{\\log_2 y}$.",
           "marks": "M1"
-        },
-        {
-          "s": ""
         },
         {
           "step": "Substitute this into the given equation: $2 \\log_2 y + \\frac{3}{\\log_2 y} = 7$. Multiply through by $\\log_2 y$ to form a quadratic in terms of $\\log_2 y$: $2(\\log_2 y)^2 - 7 \\log_2 y + 3 = 0$.",
@@ -17880,7 +17866,8 @@
           "marks": "M1"
         },
         {
-          "simplify the logarithmic expression to $10 \\log_a 5 = 10 \\implies \\log_a 5 = 1$.": "M1"
+          "step": "Collect the terms: $10\\log_a 5 = 10 \\implies \\log_a 5 = 1$.",
+          "marks": "M1"
         },
         {
           "step": "Solve for $a$: $a = 5$.",
@@ -17957,7 +17944,7 @@
           "marks": "M1"
         },
         {
-          "simplify": "Combine like terms: $10\\log_b 5 = 5 \\implies \\log_b 5 = \\frac{1}{2}$.",
+          "step": "Collect the terms: $10\\log_b 5 = 5 \\implies \\log_b 5 = \\frac{1}{2}$.",
           "marks": "M1"
         },
         {
@@ -18359,7 +18346,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "Find the product of the new roots $\\left(\\frac{\\alpha}{\\beta^2}\\right)\\left(/frac{\\beta}{\\alpha^2}\\right) = \\frac{1}{\\alpha\\beta} = \\frac{1}{2}$.",
+          "step": "Find the product of the new roots $\\left(\\frac{\\alpha}{\\beta^2}\\right)\\left(\\frac{\\beta}{\\alpha^2}\\right) = \\frac{1}{\\alpha\\beta} = \\frac{1}{2}$.",
           "marks": "B1"
         },
         {
@@ -18402,7 +18389,7 @@
       "steps": [
         {
           "step": "For part (a), we are given $\\alpha + \\beta = -\\frac{7}{3}$ and $\\alpha\\beta = -2$. A quadratic equation with roots $\\alpha$ and $\\beta$ can be written in the form $x^2 - (\\alpha + \\beta)x + \\alpha\\beta = 0$. Substituting the given values gives $x^2 - \\left(-\\frac{7}{3}\\right)x - 2 = 0$, which simplifies to $x^2 + \\frac{7}{3}x - 2 = 0$. Multiplying by 3 to get integer coefficients gives $3x^2 + 7x - 6 = 0$.",
-          "marks": "B1 M1 A1"
+          "marks": "B1 B1 M1 A1"
         },
         {
           "step": "For part (b), we know that $(\\alpha - \\beta)^2 = (\\alpha + \\beta)^2 - 4\\alpha\\beta$. Substituting the given values: $(\\alpha - \\beta)^2 = \\left(-\\frac{7}{3}\\right)^2 - 4(-2) = \\frac{49}{9} + 8 = \\frac{49 + 72}{9} = \\frac{121}{9}$. Since $\\alpha > \\beta$, we have $\\alpha - \\beta > 0$, so $\\alpha - \\beta = \\sqrt{\\frac{121}{9}} = \\frac{11}{3}$.",
@@ -18622,7 +18609,7 @@
         },
         {
           "step": "Since the remainder when $\\mathrm{f}'(x)$ is divided by $(x+3)$ is $37$, we have $\\mathrm{f}'(-3) = 37$. Substituting $x = -3$: $6(-3)^2 + 2p(-3) + q = 37 \\implies 54 - 6p + q = 37 \\implies -6p + q = -17$.",
-          "marks": "M1"
+          "marks": "M1 A1"
         },
         {
           "step": "Solve the simultaneous equations $3p - q = 14$ and $-6p + q = -17$. Adding them gives $-3p = -3 \\implies p = 1$. Substituting $p = 1$ gives $3(1) - q = 14 \\implies q = -11$. Thus $p=1$ and $q=-11$ are shown.",
@@ -18917,7 +18904,7 @@
           "marks": "B1ft"
         },
         {
-          "step": "To find the maximum value of $P = y + 2x$ in the region $R$, we test the vertices of the region. The vertices are $(0, 0)$, $(2, 0)$, $(4, 2)$, and the intersection of $y = 2x$ and $y = 6 - x$ which is $(2, 4)$, and the intersection of $y = 2x$ and $2y = x - 2$ (or check the boundary points). The region is bounded by $y = 2x$, $y = 6 - x$, and $y = 0$. The maximum value occurs at the intersection of $y = 2x$ and $y = 6 - x$, which is $(2, 4)$, or checking the vertex where $y = 2x$ and $2y = x - 2$: $2(2x) = x - 2 \\implies 4x = x - 2 \\implies 3x = -2$ (outside $y \\ge 0$). Let's find the intersection of $y = 6 - x$ and $2y = x - 2$: $2(6 - x) = x - 2 \\implies 12 - 2x = x - 2 \\implies 3x = 14 \\implies x = \\frac{14}{3}, y = \\frac{4}{3}$. At this point, $P = \\frac{4}{3} + 2\\left(\\frac{14}{3}\\right) = \\frac{32}{3} = 10\\frac{2}{3}$.",
+          "step": "The vertices of $R$ are $(0, 0)$, $(2, 0)$, $\\left(\\frac{14}{3}, \\frac{4}{3}\\right)$ (where $y = 6 - x$ meets $2y = x - 2$) and $(2, 4)$ (where $y = 2x$ meets $y = 6 - x$). Evaluating $P = y + 2x$ at each vertex gives $0$, $4$, $\\frac{32}{3}$ and $8$. The greatest value is $P = \\frac{32}{3} = 10\\frac{2}{3}$, at $\\left(\\frac{14}{3}, \\frac{4}{3}\\right)$.",
           "marks": "B1"
         }
       ],
@@ -19221,7 +19208,7 @@
           "marks": "M1 A1"
         },
         {
-          "step": "(b) Substitute $x$ back into $y = \\frac{3x^2 - 1}{3x + 2}$: for $x = -\\frac{1}{3}$, $y = -\\frac{2}{3}$; for $x = -1$, $y = -2$. The stationary points are $\\left(-\\frac{1}{3}, --\\frac{2}{3}\\right)$ and $(-1, -2)$.",
+          "step": "(b) Substitute $x$ back into $y = \\frac{3x^2 - 1}{3x + 2}$: for $x = -\\frac{1}{3}$, $y = -\\frac{2}{3}$; for $x = -1$, $y = -2$. The stationary points are $\\left(-\\frac{1}{3}, -\\frac{2}{3}\\right)$ and $(-1, -2)$.",
           "marks": "A1"
         },
         {
@@ -19229,7 +19216,7 @@
           "marks": "B1"
         },
         {
-          "step": "(d) Sketch the two branches of the curve with the vertical asymptote $x = -\\frac{2}{3}$, showing turning points at $(-1, -2)$ and $\\left(-\\frac{1}{3}, --\\frac{2}{3}\\right)$, and $y$-intercept at $\\left(0, -\\frac{1}{2}\\right)$.",
+          "step": "(d) Sketch the two branches of the curve with the vertical asymptote $x = -\\frac{2}{3}$, showing turning points at $(-1, -2)$ and $\\left(-\\frac{1}{3}, -\\frac{2}{3}\\right)$, and $y$-intercept at $\\left(0, -\\frac{1}{2}\\right)$.",
           "marks": "B1 B1 B1"
         },
         {
@@ -19380,7 +19367,7 @@
       "steps": [
         {
           "step": "For an arithmetic series, the sum of the first $n$ terms is given by $S_n = \\frac{n}{2}[2a + (n-1)d]$ and the $n$-th term is $t_n = a + (n-1)d$. Using the given condition $S_2 = \\frac{2}{3}t_5$, we substitute $S_2 = \\frac{2}{2}(2a + (2-1)d) = 2a + d$ and $t_5 = a + 4d$. Thus, $2a + d = \\frac{2}{3}(a + 4d)$, which simplifies to $4a = 5d$.",
-          "marks": "M1 A1"
+          "marks": "M1"
         },
         {
           "step": "Using the second given condition $S_4 = t_{10} + 3$, we substitute $S_4 = \\frac{4}{2}(2a + 3d) = 2(2a + 3d) = 4a + 6d$ and $t_{10} = a + 9d$. Thus, $4a + 6d = a + 9d + 3$, which simplifies to $3a - 3d = 3$, or $a - d = 1$, giving $a = d + 1$.",
@@ -19438,11 +19425,11 @@
         },
         {
           "step": "For part (c), we use the given equation $6S_{n-4} = 7T_{n+3}$. Substituting $S_k = 2k(k+3)$ and $T_k = a + (k-1)d = 8 + 4(k-1) = 4k + 4$: $6[2(n-4)(n-4+3)] = 7[4(n+3) + 4]$.",
-          "marks": "M1"
+          "marks": "M1 M1"
         },
         {
           "step": "Simplify the equation: $12(n-4)(n-1) = 7(4n + 16)$. Expanding yields $12(n^2 - 5n + 4) = 28n + 112 \\implies 12n^2 - 60n + 48 = 28n + 112 \\implies 12n^2 - 88n - 64 = 0$.",
-          "marks": "M1"
+          "marks": "M1 A1"
         },
         {
           "step": "Divide by 4: $3n^2 - 22n - 16 = 0$. Factorize: $(n-8)(3n+2) = 0$. Since $n$ must be a positive integer, $n = 8$.",
@@ -20514,7 +20501,7 @@
       "steps": [
         {
           "step": "Let $M$ be the midpoint of the diagonal $AC$. The length of $AC$ is $\\sqrt{8^2 + 8^2} = 8\\sqrt{2}$, so $AM = 4\\sqrt{2}$.",
-          "marks": "M1"
+          "marks": "M1 M1"
         },
         {
           "step": "Using Pythagoras' theorem on triangle $AMO$ where $OA = 12$ and $AM = 4\\sqrt{2}$, we find the height $h$: $h = \\sqrt{12^2 - (4\\sqrt{2})^2} = \\sqrt{144 - 32} = \\sqrt{112} = 4\\sqrt{7}$.",
@@ -20530,7 +20517,7 @@
         },
         {
           "step": "For part (d), let $S$ be the perpendicular from $P$ to diagonal $AC$, and $R$ be the perpendicular from $S$ to side $BC$. Triangle $PSR$ and triangle $PRQ$ allow us to compute $PQ$. Specifically, $PR = \\sqrt{(2\\sqrt{17})^2 - 2^2} = 8$, and $PQ = \\sqrt{8^2 + 4^2} = \\sqrt{80} = 4\\sqrt{5}\\text{ cm}$.",
-          "marks": "M1 A1"
+          "marks": "M1 A1 M1 A1"
         },
         {
           "step": "For part (e), find the lengths in triangle $PQA$: $AQ = \\sqrt{8^2 + 6^2} = 10$, $PA = \\frac{1}{2} OA = 6$, and $PQ = 4\\sqrt{5}$. Using the cosine rule in triangle $PQA$: $\\cos(\\angle PQA) = \\frac{10^2 + (4\\sqrt{5})^2 - 6^2}{2 \\times 10 \\times 4\\sqrt{5}}$.",
@@ -20538,11 +20525,7 @@
         },
         {
           "step": "Calculate $\\angle PQA = \\cos^{-1}\\left(\\frac{100 + 80 - 36}{80\\sqrt{5}}\\right) = \\cos^{-1}\\left(\\frac{144}{80\\sqrt{5}}\\right) \\approx 36.4^{\\circ}$.",
-          "marks": "A1 A1"
-        },
-        {
-          "step": "Total marks for question 10 is 15 marks.",
-          "marks": "15"
+          "marks": "M1 A1 A1"
         }
       ],
       "final_answer": "36.4^\\circ",
@@ -20637,7 +20620,7 @@
           "marks": "M1 A1 dM1 A1"
         },
         {
-          "step": "For part (d), the angle between the plane $BCEH$ and the plane $ADEH$ is the angle between $BC$ and $AD$ projected or simply the angle between $BM$ and the base, or more directly $\\tan(\\theta) = \\frac{BM}{DE}$ since $BC$ and $HE$ are parallel to the length of the prism ($20$ cm). Looking at the cross section, the angle between the sloping side $AB$ and the horizontal $AD$ is $60^{\\circ}$, but the angle between planes $BCEH$ and $ADEH$ is determined by the drop and horizontal distance, which is $\\tan(\\theta) = \\frac{BM}{20} = \\frac{4\\sqrt{3}}{20} = \\frac{\\sqrt{3}}{5}$. Hence, $\\theta = \\tan^{-1}\\left(\\frac{\\sqrt{3}}{5}\\right) = 19.1^{\\circ}$.",
+          "step": "For part (d), the planes $BCEH$ and $ADEH$ meet along $HE$. Take $M$ on $AD$ directly below the midpoint of $BC$, and $N$ on $HE$ directly behind $M$, so $MN = 20$. The plane $BCEH$ rises from $HE$ to a height $BM = 4\\sqrt{3}$ above $M$, so the angle $\\theta$ between the planes satisfies $\\tan\\theta = \\frac{4\\sqrt{3}}{20} = \\frac{\\sqrt{3}}{5}$, giving $\\theta = 19.1^{\\circ}$.",
           "marks": "M1 dM1 A1"
         }
       ],
@@ -20683,7 +20666,7 @@
           "marks": "M1 A1 A1"
         },
         {
-          "step": "For part (c), since $N$ is the midpoint of $CH$, $CN = \\frac{1}{2}CH$. In triangle $FNC$ (right-angled at $C$), $FN^2 = FC^2 + CN^2$. Here $FC = EH = 3$, so $FN^2 = 8^2 + \\left(\\frac{\\sqrt{73}}{2}\\right)^2 = 64 + \\frac{73}{4} = \\frac{329}{4} = 91.25$. Thus $FN = \\sqrt{91.25} \\approx 9.55\\text{ cm}$.",
+          "step": "For part (c), $N$ is the midpoint of $CH$, so $HN = \\frac{\\sqrt{73}}{2}$. $CH$ is perpendicular to the face $EFGH$, so triangle $FHN$ is right-angled at $H$, with $FH = \\sqrt{8^2 + 3^2} = \\sqrt{73}$. Thus $FN^2 = FH^2 + HN^2 = 73 + \\frac{73}{4} = 91.25$, so $FN = \\sqrt{91.25} \\approx 9.55\\text{ cm}$.",
           "marks": "M1 A1 A1"
         },
         {
@@ -20691,7 +20674,7 @@
           "marks": "M1 A1 A1"
         },
         {
-          "step": "For part (e), consider triangle $FNG$. We know $FG = 8$, $FN = \\sqrt{91.25}$, and $NG = \\sqrt{NC^2 + GC^2} = \\sqrt{\\frac{73}{4} + 3^2} = \\sqrt{\\frac{109}{4}}$. Using the sine rule or trigonometry in triangle $FNG$, $\\sin(\\angle FNG) = \\frac{FG}{FN} = \\frac{3}{\\sqrt{91.25}}$. Thus $\\angle FNG = \\arcsin\\left(\\frac{3}{\\sqrt{91.25}}\\right) \\approx 18.3^\\circ$.",
+          "step": "For part (e), $FG = 3$ is perpendicular to the face containing $G$ and $N$, so triangle $FGN$ is right-angled at $G$. Hence $\\sin(\\angle FNG) = \\frac{FG}{FN} = \\frac{3}{\\sqrt{91.25}}$, giving $\\angle FNG \\approx 18.3^\\circ$.",
           "marks": "M1 A1 A1"
         }
       ],
@@ -21161,7 +21144,7 @@
           "marks": "M1"
         },
         {
-          "expand": "Expand the integrands: $(6x - x^2)^2 = x^4 - 12x^3 + 36x^2$ and $(10 - x)^2 = x^2 - 20x + 100$. Subtracting gives $x^4 - 12x^3 + 35x^2 + 20x - 100$. Integrating this gives $\\pi \\left[ \\frac{x^5}{5} - 3x^4 + \\frac{35}{3}x^3 + 10x^2 - 100x \\right]_2^5$.",
+          "step": "Expand and integrate: $(6x - x^2)^2 - (10 - x)^2 = x^4 - 12x^3 + 35x^2 + 20x - 100$, so $V = \\pi\\left[\\frac{x^5}{5} - 3x^4 + \\frac{35x^3}{3} + 10x^2 - 100x\\right]_{2}^{5} = \\pi\\left(-\\frac{125}{3} - \\left(-\\frac{1624}{15}\\right)\\right)$.",
           "marks": "M1 A1"
         },
         {
@@ -21281,7 +21264,7 @@
           "marks": "M1"
         },
         {
-          "substitute": "Substitute $x = 4.94$: $\\frac{\\mathrm{d}^2A}{\\mathrm{d}x^2} = 16 + \\frac{3860}{(4.94)^3} > 0$, hence $A$ is a minimum.",
+          "step": "Since $x = 4.94 > 0$, $\\frac{\\mathrm{d}^2A}{\\mathrm{d}x^2} = 16 + \\frac{3860}{x^3} > 0$, so this value of $x$ gives a minimum.",
           "marks": "A1ft"
         },
         {
@@ -21339,15 +21322,15 @@
           "marks": "M1 M1"
         },
         {
-          "step": "Evaluate the first integral from $0$ to $3$: $\\left[ \\frac{1}{2}x^4 - \\frac{13}{3}x^3 + 6x^2 + 27x \\right]_{0}^{3} = \\left(\\frac{81}{2} - 117 + 54 + 81\\right) - 0 = \\frac{135}{2}$.",
+          "step": "Evaluate the first integral from $0$ to $3$: $\\left[ \\frac{1}{2}x^4 - \\frac{13}{3}x^3 + 6x^2 + 27x \\right]_{0}^{3} = \\left(\\frac{81}{2} - 117 + 54 + 81\\right) - 0 = \\frac{117}{2}$.",
           "marks": "A1"
         },
         {
-          "step": "Evaluate the second integral from $3$ to $\\frac{9}{2}$: $\\left[ \\frac{1}{2}x^4 - \\frac{13}{3}x^3 + 6x^2 + 27x \\right]_{3}^{9/2} = \\frac{2187}{32} - \\frac{3159}{16} + \\frac{243}{2} + \\frac{243}{2} - \\left(\\frac{135}{2}\\right) = -\\frac{279}{32}$.",
+          "step": "Evaluate the second integral from $3$ to $\\frac{9}{2}$: $\\left[ \\frac{1}{2}x^4 - \\frac{13}{3}x^3 + 6x^2 + 27x \\right]_{3}^{9/2} = \\frac{1701}{32} - \\frac{117}{2} = -\\frac{171}{32}$.",
           "marks": "A1"
         },
         {
-          "step": "Sum the areas: $\\text{Area} = \\frac{135}{2} + \\left|-\\frac{279}{32}\\right| = \\frac{2160 + 279}{32} = \\frac{2043}{32}$.",
+          "step": "Add the two areas: $\\text{Area} = \\frac{117}{2} + \\left|-\\frac{171}{32}\\right| = \\frac{1872 + 171}{32} = \\frac{2043}{32}$.",
           "marks": "A1"
         }
       ],
@@ -21963,7 +21946,7 @@
           "marks": "B1"
         },
         {
-          "step": "Total volume $V = V_1 + V_2 = \\frac{4592}{135}\\pi + 192\\pi = \\frac{30520}{135}\\pi \\approx 710.22\\pi$ or calculation directly leads to $710$.",
+          "step": "Total volume $V = V_1 + V_2 = \\frac{4592}{135}\\pi + 192\\pi = \\frac{30512}{135}\\pi \\approx 226.0\\pi \\approx 710.05$.",
           "marks": "M1 A1"
         },
         {
@@ -22121,7 +22104,7 @@
           "marks": "M1"
         },
         {
-          "simplify the integrand to $\\int_{-2}^{5} (-x^2 + 3x + 10) \\, \\mathrm{d}x$.": null,
+          "step": "Simplify the integrand: $(5x + 4) - (x^2 + 2x - 6) = -x^2 + 3x + 10$.",
           "marks": "M1"
         },
         {
@@ -22603,7 +22586,7 @@
           "marks": "A1"
         },
         {
-          "step": "In triangle $ABD$, we know $AB = 4$, $BD = 4$, and we can find $\\angle ABD$. In triangle $BCD$, the sum of angles is $180^{\\circ}$, so $\\angle DBC = 180^{\\circ} - 30^{\\circ} - 141.3178^{\\circ} = 8.6822^{\\circ}$. Since triangle $ABC$ has $\\angle ABC = \\angle ABD + \\angle DBC$, we can first find $\\angle BAC$ (let it be $A$) using the sine rule on the large triangle $ABC$: $\\frac{\\sin A}{5} = \\frac{\\sin(30^{\\circ})}{4} \\implies \\sin A = 0.625 \\implies A = 38.682...^{\\circ}$. Then $\\angle ABD = 180^{\\circ} - 30^{\\circ} - 38.682^{\\circ} - 8.682^{\\circ}$ or simply using triangle $ABD$ with the cosine rule: $AD^2 = AB^2 + BD^2 - 2(AB)(BD)\\cos(\\angle ABD)$. Alternatively, using triangle $ABD$, the angle at $B$ is $\\angle ABD = \\angle ABC - \\angle DBC$. First, find $\\angle ABC$: in $\\triangle ABC$, $\\angle A = 38.682^{\\circ}$, so $\\angle ABC = 180^{\\circ} - 30^{\\circ} - 38.682^{\\circ} = 111.318^{\\circ}$. Then $\\angle ABD = 111.318^{\\circ} - 8.682^{\\circ} = 102.636^{\\circ}$.",
+          "step": "In triangle $ABC$, the sine rule gives $\\sin A = \\frac{5\\sin 30^{\\circ}}{4}$, so $\\angle BAC = 38.68^{\\circ}$ and $\\angle ABC = 180^{\\circ} - 30^{\\circ} - 38.68^{\\circ} = 111.32^{\\circ}$. In triangle $BCD$, $\\angle DBC = 180^{\\circ} - 30^{\\circ} - 141.32^{\\circ} = 8.68^{\\circ}$. Hence $\\angle ABD = 111.32^{\\circ} - 8.68^{\\circ} = 102.64^{\\circ}$.",
           "marks": "M1"
         },
         {
@@ -23056,7 +23039,7 @@
         },
         {
           "step": "Simplify the compound fraction by cancelling $1 - \\tan^2 x$ from both denominators: $\\frac{2\\tan x + \\tan x - \\tan^3 x}{1 - \\tan^2 x - 2\\tan^2 x}$.",
-          "marks": "M1 A1"
+          "marks": "A1"
         },
         {
           "step": "Collect like terms to arrive at the required identity: $\\frac{3\\tan x - \\tan^3 x}{1 - 3\\tan^2 x}$.",
@@ -23225,10 +23208,6 @@
         {
           "step": "(e)(ii) Substitute the limits: $\\left(\\frac{2}{3}\\sin\\pi + 6\\sin\\frac{\\pi}{3} - 4\\cos\\frac{\\pi}{3}\\right) - \\left(0 + 0 - 4(1)\\right) = 6\\left(\\frac{\\sqrt{3}}{2}\\right) - 4\\left(\\frac{1}{2}\\right) + 4 = 3\\sqrt{3} - 2 + 4 = 3\\sqrt{3} + 2$.",
           "marks": "A1"
-        },
-        {
-          "step": "(d) Final solutions for $\\theta$ are $\\frac{\\pi}{9}, \\frac{5\\pi}{9}, \\frac{7\\pi}{9}$ and (e)(ii) final answer is $3\\sqrt{3} + 2$.",
-          "marks": null
         }
       ],
       "final_answer": "3\\sqrt{3} + 2",
@@ -23709,23 +23688,23 @@
           "marks": "M1 A1"
         },
         {
-          "step": "For part (c), convert all base $2$ logarithms to base $4$ using $\\log_2 a = 2\\log_4 a$: $6\\log_4 x - 3(2\\log_4 3) - 5\\log_4 x + 10(2\\log_4 3) = 6\\log_4 x - 6\\log_4 3 - 5\\log_4 x + 20\\log_4 3$",
+          "step": "For part (c), use $\\log_2 a = 2\\log_4 a = \\log_4 a^2$ to write every term in base 4: $6x\\log_4 x - 3x\\log_2 3 - 5\\log_4 x + 10\\log_2 3 = 6x\\log_4 x - 5\\log_4 x - 3x\\log_4 3^2 + 10\\log_4 3^2$.",
           "marks": "M1"
         },
         {
-          "step": "Combine terms and apply log laws (power law): $\\log_4 x^{6x} - \\log_4 x^5 - \\log_4 3^{6x} + \\log_4 3^{20}$",
+          "step": "Apply the power law to each term: $= \\log_4 x^{6x} - \\log_4 x^5 - \\log_4 3^{6x} + \\log_4 3^{20}$.",
           "marks": "M1"
         },
         {
-          "step": "Apply quotient and product laws for logarithms: $\\log_4 \\left(\\frac{x^{6x} \\cdot 3^{20}}{x^5 \\cdot 3^{6x}}\\right)$",
+          "step": "Combine with the product and quotient laws: $= \\log_4 \\left(\\frac{x^{6x} \\times 3^{20}}{x^5 \\times 3^{6x}}\\right)$.",
           "marks": "M1"
         },
         {
-          "simplify": "Simplify the expression to obtain the required result: $\\log_4 \\left(\\frac{x^{6x-5}}{3^{6x-20}}\\right)$",
+          "step": "Simplify the powers: $= \\log_4 \\left(\\frac{x^{6x-5}}{3^{6x-20}}\\right)$, as required.",
           "marks": "A1"
         }
       ],
-      "final_answer": "p = \\sqrt[3]{9}, 9; \\quad k = 2",
+      "final_answer": "p = \\sqrt[3]{9}, 9; \\quad k = 2; \\quad \\log_4 \\left(\\frac{x^{6x-5}}{3^{6x-20}}\\right)",
       "answer_agrees_with_ms": true,
       "confidence": 1
     }
@@ -23806,7 +23785,7 @@
       "steps": [
         {
           "step": "For part (a), express $f(x)$ in the form $P(x+Q)^2+R$: $f(x) = 7 + 4x - 2x^2 = -2(x^2 - 2x) + 7 = -2((x-1)^2 - 1) + 7 = -2(x-1)^2 + 9$. Thus, $P = -2$, $Q = -1$, and $R = 9$.",
-          "marks": "M1 A1"
+          "marks": "M1 A1 A1"
         },
         {
           "step": "For part (b)(i), the maximum value of $f(x)$ is $9$ since $-2(x-1)^2 \\le 0$. For (b)(ii), this occurs when $x - 1 = 0$, so $x = 1$.",
@@ -23826,11 +23805,11 @@
         },
         {
           "step": "Integrate with respect to $x$: $\\int \\left(33 + 64x - 13x^2 - 16x^3 + 4x^4\\right) \\, dx = 33x + 32x^2 - \\frac{13}{3}x^3 - 4x^4 + \\frac{4}{5}x^5$.",
-          "marks": "M1 A1"
+          "marks": "M1"
         },
         {
-          "step": "Evaluate the definite integral between limits $-0.5$ and $3$: $V = \\pi \\left[33(3) + 32(3)^2 - \\frac{13}{3}(3)^3 - 4(3)^4 + \\frac{4}{5}(3)^5\\right] - \\pi \\left[33(-0.5) + 32(-0.5)^2 - \\frac{13}{3}(-0.5)^3 - 4(-0.5)^4 + \\frac{4}{5}(-0.5)^5\\right] = \\pi \\left(216 - \\left(-\\frac{229}{30}\\right)\\right) = \\frac{4459\\pi}{30} \\approx 467$.",
-          "marks": "M1 A1"
+          "step": "Evaluate the definite integral between limits $-0.5$ and $3$: $V = \\pi \\left[33(3) + 32(3)^2 - \\frac{13}{3}(3)^3 - 4(3)^4 + \\frac{4}{5}(3)^5\\right] - \\pi \\left[33(-0.5) + 32(-0.5)^2 - \\frac{13}{3}(-0.5)^3 - 4(-0.5)^4 + \\frac{4}{5}(-0.5)^5\\right] = \\pi \\left(\\frac{702}{5} - \\left(-\\frac{247}{30}\\right)\\right) = \\frac{4459\\pi}{30} \\approx 467$.",
+          "marks": "A1"
         }
       ],
       "final_answer": "467",
