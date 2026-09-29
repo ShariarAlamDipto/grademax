@@ -28,6 +28,14 @@
     "FPM.CH09.S05.Q076": {
       "ms_note": "dismissed",
       "reason": "2016 Specimen P1 Q11: (x+1) is correct because (-1, 0) lies on the curve; the model is wrong."
+    },
+    "FPM.CH02.S03.Q031": {
+      "ms_note": "confirmed",
+      "reason": "2022 Jan P2 Q7: the working prints p^2+4p+12 for p^2+4p+16; checked against the source mark scheme image."
+    },
+    "FPM.CH09.S06.Q095": {
+      "ms_note": "confirmed",
+      "reason": "2022 May/June P1R Q10: digits transposed (1.313170 for 1.13137, 3.8267 for 3.8627); checked against the source mark scheme."
     }
   }
 }
