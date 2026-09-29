@@ -67,6 +67,7 @@ SECTION_TITLES = {
     "7.2": "Vector equations of lines: parallel, intersecting and skew",
     "7.3": "The scalar product and the angle between two lines",
 }
+DIFFICULTY_RANK = {"easy": 0, "medium": 1, "hard": 2}
 SEASONS = {"jan": "January", "may-jun": "May/June", "oct-nov": "October/November",
            "specimen": "Specimen"}
 
@@ -80,8 +81,21 @@ within each topic, every distinct <em>type</em> of question that has appeared fr
 Each type goes from the prerequisite skill up to exam standard.</p>
 <p>Every question type has the same parts: <b>what it looks like</b>, the <b>method</b> to
 teach, a <b>worked example</b> modelled on a real paper, where the <b>mark scheme</b> puts its
-M, A and B marks, and the <b>traps</b> that cost marks. Each chapter ends with a <b>practice map</b>
-of every past-paper question on it.</p>
+M, A and B marks, and the <b>traps</b> that cost marks.</p>
+
+<h2>Graded practice: climb the ladder, do not jump</h2>
+<p>Every chapter ends with practice in four levels. Students should not meet a full exam
+question until they have cleared the levels below it. A student who can do Level 2 but gets
+stuck on Level 4 usually lacks a Level 3 skill, so go back one level, not forward.</p>
+<table>
+<tr><th>Level</th><th>What it is</th><th>When to set it</th></tr>
+<tr><td><b>1 &ndash; Skills</b></td><td>One-step drills of the single technique (a negation, one partial fraction, one derivative term, one integral).</td><td>In the lesson, straight after the method is taught.</td></tr>
+<tr><td><b>2 &ndash; Standard</b></td><td>Short textbook questions using the full method once, with numbers chosen to be friendly.</td><td>Homework after the first lesson.</td></tr>
+<tr><td><b>3 &ndash; Exam style</b></td><td>Two techniques combined, a "show that", a context, or an unknown constant, written in Edexcel's style (not from a paper).</td><td>Once Level 2 is secure.</td></tr>
+<tr><td><b>4 &ndash; Past papers</b></td><td>Every real WMA14 question on the chapter, ordered Easy &rarr; Medium &rarr; Hard within each section.</td><td>Last, and in that order.</td></tr>
+</table>
+<p>Answers to Levels 1&ndash;3 are at the back of the book, so these pages can be copied for
+students without the answers.</p>
 
 <h2>The exam</h2>
 <table>
@@ -132,7 +146,9 @@ def load_questions() -> dict[int, list]:
         by_ch.setdefault(int(sec.split(".")[0]), []).append({
             "section": sec,
             "source": f'{paper_label(q["source_paper_key"])} Q{q["source_question_number"]}',
-            "sort": (sec, q["year"], q["source_paper_key"], q["source_question_number"]),
+            "difficulty": q.get("difficulty", "medium"),
+            "sort": (sec, DIFFICULTY_RANK.get(q.get("difficulty"), 1), q["marks"],
+                     q["year"], q["source_paper_key"], q["source_question_number"]),
             "marks": q["marks"],
             "also": cls[slug].get("secondary_sections") or [],
         })
@@ -140,6 +156,7 @@ def load_questions() -> dict[int, list]:
 
 
 def practice_map(ch: int, qs: list) -> str:
+    """Level 4 of the ladder: every past-paper question, easiest first within each section."""
     rows = []
     cur = None
     for q in sorted(qs, key=lambda r: r["sort"]):
@@ -147,16 +164,34 @@ def practice_map(ch: int, qs: list) -> str:
             cur = q["section"]
             rows.append(f'<tr><th colspan="3">{cur} &nbsp;{html.escape(SECTION_TITLES[cur])}</th></tr>')
         also = f' <span class="src">(also {", ".join(q["also"])})</span>' if q["also"] else ""
-        rows.append(f'<tr><td>{html.escape(q["source"])}{also}</td><td class="n">{q["marks"]} marks</td></tr>')
+        rows.append(f'<tr><td class="n">{q["difficulty"].capitalize()}</td>'
+                    f'<td>{html.escape(q["source"])}{also}</td><td class="n">{q["marks"]} marks</td></tr>')
     total = sum(q["marks"] for q in qs)
-    return (f'<div class="practice"><h2>Chapter {ch} practice map</h2>'
-            f'<p class="src">{len(qs)} past-paper questions, {total} marks, grouped by the section of '
-            f'their main topic ("also" lists other sections the question uses).</p>'
+    return (f'<div class="practice"><h2>Level 4 &mdash; past-paper questions, easiest first</h2>'
+            f'<p class="src">{len(qs)} WMA14 questions, {total} marks. Within each section they are ordered '
+            f'Easy &rarr; Medium &rarr; Hard (by the question&rsquo;s mark tariff for P4: Easy &le; 6, Medium 7&ndash;8, '
+            f'Hard &ge; 9 marks). Set them in this order, and only after Levels 1&ndash;3. "Also" lists other '
+            f'sections the question uses: teach those first.</p>'
             f'<table>{"".join(rows)}</table></div>')
 
 
+ANSWERS_RE = re.compile(r'<div class="answers">(.*?)</div><!--/answers-->', re.S)
+
+
+def load_ladder(ch: int) -> tuple[str, str]:
+    """Levels 1-3 for a chapter, and its answers (moved to the back of the book)."""
+    path = NOTES_DIR / f"ch{ch:02d}_practice.html"
+    if not path.exists():
+        print(f"WARNING: missing {path.name}; chapter {ch} has no graded practice")
+        return "", ""
+    text = path.read_text(encoding="utf-8")
+    m = ANSWERS_RE.search(text)
+    answers = m.group(1) if m else ""
+    return ANSWERS_RE.sub("", text), answers
+
+
 def build_html(by_ch: dict) -> str:
-    toc, chapters = [], []
+    toc, chapters, answer_parts = [], [], []
     for ch, title in CHAPTER_TITLES.items():
         frag_path = NOTES_DIR / f"ch{ch:02d}.html"
         if not frag_path.exists():
@@ -166,8 +201,12 @@ def build_html(by_ch: dict) -> str:
         toc.append(f'<tr><td><b>Chapter {ch}</b></td><td><b>{html.escape(title)}</b></td></tr>')
         for t in re.findall(r'<div class="type"><h3>(.*?)<', frag):
             toc.append(f'<tr><td></td><td>{t}</td></tr>')
+        ladder, answers = load_ladder(ch)
         chapters.append(f'<div class="chapter"><h1 class="ct">Chapter {ch} &mdash; {html.escape(title)}</h1>'
-                        f'{frag}{practice_map(ch, by_ch.get(ch, []))}</div>')
+                        f'{frag}<div class="practice"><h2>Graded practice &mdash; Chapter {ch}</h2>{ladder}</div>'
+                        f'{practice_map(ch, by_ch.get(ch, []))}</div>')
+        if answers:
+            answer_parts.append(f'<h2>Chapter {ch} &mdash; {html.escape(title)}</h2>{answers}')
     cover = """
     <div class="cover">
       <h1>Teacher's Notes</h1>
@@ -178,9 +217,12 @@ def build_html(by_ch: dict) -> str:
       <div class="note">From the prerequisites to exam standard, with worked examples modelled on
       past papers, the mark-scheme points each type earns, and the mistakes that cost marks.</div>
     </div>"""
+    toc.append('<tr><td><b>Answers</b></td><td><b>Answers to Levels 1&ndash;3</b></td></tr>')
+    back = (f'<div class="chapter"><h1 class="ct">Answers to the graded practice</h1>'
+            f'{"".join(answer_parts)}</div>')
     contents = f'<div class="front"><h1 class="ct">Contents</h1><table class="toc">{"".join(toc)}</table></div>'
     return (f'<!doctype html><html><head><meta charset="utf-8">{KATEX}<style>{CSS}</style></head>'
-            f'<body>{cover}{contents}{FRONT}{"".join(chapters)}</body></html>')
+            f'<body>{cover}{contents}{FRONT}{"".join(chapters)}{back}</body></html>')
 
 
 def main() -> None:
