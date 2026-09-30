@@ -92,3 +92,72 @@ def build_pdf(html_path: Path, pdf_path: Path) -> None:
     print(f"PDF -> {pdf_path}  ({pdf_path.stat().st_size // 1024} KB)")
 
 
+
+
+# ---------------------------------------------------------------------------
+# Shared building blocks for the graded-ladder editions (Maths B, FPM).
+# ---------------------------------------------------------------------------
+
+import html as _html
+import re as _re
+
+LADDER_CSS = """
+.weight td.n, .weight th.n { text-align: right; white-space: nowrap; width: 1%; }
+.stars { color: var(--accent); letter-spacing: 1px; white-space: nowrap; }
+.lvl { border-top: 2px solid var(--line); margin-top: 12pt; }
+.lvl > h3 .tag { font-size: 8pt; font-weight: 600; color: var(--muted); margin-left: 6pt; }
+.answers-back ol { font-size: 9.5pt; }
+"""
+
+LADDER_LEVELS = [
+    ("1", "Beginner", "The prerequisite skill on its own, with small friendly numbers.",
+     "Starter, or before the topic is taught."),
+    ("2", "Developing", "One-step drills of the single technique just taught.",
+     "In the lesson, straight after the method."),
+    ("3", "Secure", "Short textbook questions using the full method once.",
+     "Homework after the first lesson."),
+    ("4", "Exam style", "Written in Edexcel's style (not from a paper): two steps combined, "
+     "a \"show that\", a context or an unknown constant.", "Once Level 3 is secure."),
+    ("5", "Expert", "Harder than a typical exam question: several topics combined, an "
+     "unfamiliar setting, or a proof. For students aiming at the top grade.",
+     "Stretch work, after the past papers are going well."),
+]
+
+ANSWERS_RE = _re.compile(r'<div class="answers">(.*?)</div><!--/answers-->', _re.S)
+
+
+def ladder_table_html() -> str:
+    rows = "".join(f"<tr><td><b>{n} &ndash; {name}</b></td><td>{what}</td><td>{when}</td></tr>"
+                   for n, name, what, when in LADDER_LEVELS)
+    return ("<table><tr><th>Level</th><th>What it is</th><th>When to set it</th></tr>"
+            f"{rows}</table>")
+
+
+def split_ladder(path: Path) -> tuple[str, str]:
+    """Return (exercises, answers) from a chNN_practice.html file; answers go to the back."""
+    if not path.exists():
+        print(f"WARNING: missing {path.name}; no graded practice for this chapter")
+        return "", ""
+    text = path.read_text(encoding="utf-8")
+    m = ANSWERS_RE.search(text)
+    return ANSWERS_RE.sub("", text), (m.group(1) if m else "")
+
+
+def stars(share: float) -> str:
+    """Priority from a section's share of all exam marks."""
+    n = 3 if share >= 0.03 else 2 if share >= 0.012 else 1
+    return "&#9733;" * n + "&#9734;" * (3 - n)
+
+
+def weight_table(rows: list[tuple[str, str, int, int]], grand_marks: int, years: str) -> str:
+    """rows: (section, title, questions, marks), in section order."""
+    body = []
+    for sec, title, n, marks in rows:
+        share = marks / grand_marks if grand_marks else 0
+        body.append(f'<tr><td class="n">{sec}</td><td>{_html.escape(title)}</td>'
+                    f'<td class="n">{n}</td><td class="n">{marks}</td>'
+                    f'<td class="n">{100 * share:.1f}%</td><td class="stars">{stars(share)}</td></tr>')
+    return (f'<div class="box key weight"><span class="lbl">How much this chapter is worth ({years})</span>'
+            '<table><tr><th class="n">Section</th><th>Topic</th><th class="n">Questions</th>'
+            '<th class="n">Marks</th><th class="n">Share of all marks</th><th>Priority</th></tr>'
+            f'{"".join(body)}</table></div>')
