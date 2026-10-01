@@ -32,7 +32,10 @@ const baseCsp = [
   "worker-src 'self' blob:",
   // *.r2.cloudflarestorage.com is the S3 API endpoint teachers PUT large
   // lecture files to with a presigned URL, bypassing the 4.5 MB serverless cap.
-  `connect-src 'self' https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
+  // blob: lets the in-browser PDF previews (MultiPagePdfPreview, PdfThumbnail)
+  // read back the PDFs the generators merge client-side. pdf.js fetches the
+  // object URL; without this the fetch is refused and every preview fails.
+  `connect-src 'self' blob: https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
   `frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
