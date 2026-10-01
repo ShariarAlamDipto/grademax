@@ -13,6 +13,8 @@ export const runtime = 'nodejs';
 export const maxDuration = 30;
 export const dynamic = 'force-dynamic';
 
+const MAX_LIMIT = 500;
+
 interface GenerateRequest {
   subjectId?: string;
   topics: string[];
@@ -113,7 +115,9 @@ export async function POST(request: Request) {
       shuffle = false,
     } = body;
 
-    const limit = Math.max(1, Number(rawLimit) || 50);
+    // Capped at the generator UI's own maximum: every selected page becomes a
+    // worksheet_items row, so an uncapped limit lets one request insert thousands.
+    const limit = Math.min(MAX_LIMIT, Math.max(1, Number(rawLimit) || 50));
 
     if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json({ error: 'Topics are required' }, { status: 400 });

@@ -3,7 +3,7 @@
  * Generate PDF from worksheet using Phase 2 page-based system
  */
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { requireAuth } from '@/lib/apiAuth'
 import { spawn } from 'child_process'
 import { writeFile, unlink, readFile } from 'fs/promises'
 import { join } from 'path'
@@ -17,12 +17,13 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   try {
+    // Worksheets belong to the user who generated them; this route merges
+    // files on the server, so it must not be callable anonymously.
+    const auth = await requireAuth()
+    if ('error' in auth) return auth.error
+    const supabase = auth.db
+
     const { id: worksheetId } = await params
-    
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
     
     // 1. Get worksheet and its items
     const { data: worksheet } = await supabase
@@ -42,6 +43,7 @@ export async function GET(
         )
       `)
       .eq('id', worksheetId)
+      .eq('user_id', auth.user.id)
       .single()
     
     if (!worksheet || !worksheet.worksheet_items) {
@@ -163,8 +165,7 @@ export async function GET(
   } catch (err) {
     console.error('PDF generation error:', err)
     return NextResponse.json({ 
-      error: 'Failed to generate PDF',
-      details: err instanceof Error ? err.message : 'Unknown error'
+      error: 'Failed to generate PDF'
     }, { status: 500 })
   }
 }

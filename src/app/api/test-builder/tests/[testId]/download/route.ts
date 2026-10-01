@@ -1,10 +1,7 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
-
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+import { requireAuth } from '@/lib/apiAuth';
 
 interface TestItemRow {
   sequence_order: number;
@@ -128,13 +125,16 @@ export async function GET(
   context: { params: Promise<{ testId: string }> }
 ) {
   try {
+    // Tests are owner-only (migration 08). The service-role client used below
+    // bypasses RLS, so ownership is enforced here with the user_id filter.
+    const auth = await requireAuth();
+    if ('error' in auth) return auth.error;
+
     const { testId } = await context.params;
     const url = new URL(request.url);
-    const type = (url.searchParams.get('type') || 'worksheet') as 'worksheet' | 'markscheme';
+    const type = url.searchParams.get('type') === 'markscheme' ? 'markscheme' : 'worksheet';
 
-    const supabase = createClient(supabaseUrl, supabaseKey);
-
-    const { data: test, error: testError } = await supabase
+    const { data: test, error: testError } = await auth.db
       .from('tests')
       .select(`
         id,
@@ -156,11 +156,12 @@ export async function GET(
         )
       `)
       .eq('id', testId)
+      .eq('user_id', auth.user.id)
       .single();
 
     if (testError || !test) {
       return NextResponse.json(
-        { error: 'Test not found', details: testError?.message },
+        { error: 'Test not found' },
         { status: 404 }
       );
     }
