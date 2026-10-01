@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
-import { getOrderByNumber, submitPayment } from "@/lib/store/orders"
+import {
+  CLAIMABLE_PAYMENT_STATUSES, getOrderByNumber, submitPayment, type ClaimablePaymentStatus,
+} from "@/lib/store/orders"
 import { paymentSubmitSchema } from "@/lib/store/schemas"
 import { checkRateLimitByIp } from "@/lib/store/rateLimit"
 import { phoneMatches } from "@/lib/store/phone"
@@ -60,8 +62,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, message: "This order is already paid." })
   }
 
+  // Only attach a claim where one is expected. A cash-on-delivery order has no
+  // wallet payment, and a submitted or settled one already has its claim;
+  // inserting regardless would leave an orphan claim that never moves the order.
+  const fromStatus = order.payment_status as ClaimablePaymentStatus
+  if (order.payment_method === "cod" || !CLAIMABLE_PAYMENT_STATUSES.includes(fromStatus)) {
+    return NextResponse.json(UNIFORM_OK)
+  }
+
   await submitPayment({
     orderId: order.id,
+    fromStatus,
     method: input.method,
     senderMsisdn: input.senderMsisdn,
     transactionId: input.transactionId,

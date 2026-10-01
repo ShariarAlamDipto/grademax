@@ -32,6 +32,8 @@ interface Props {
 
 interface PlacedOrder {
   orderNumber: string
+  /** The phone the order was placed with, needed to attach a payment to it. */
+  phone: string
   totalBdt: number
   hasDigital: boolean
   hasPrint: boolean
@@ -145,6 +147,7 @@ export default function CheckoutClient({ districts, storeEnabled, wallets, instr
 
       setPlaced({
         orderNumber: json.orderNumber,
+        phone,
         totalBdt: json.totalBdt,
         hasDigital: json.hasDigital,
         hasPrint: json.hasPrint,
@@ -153,7 +156,7 @@ export default function CheckoutClient({ districts, storeEnabled, wallets, instr
       })
       clear()
     } catch {
-      setFormError("We could not reach the server. Your card has not been charged — nothing was taken.")
+      setFormError("We could not reach the server. Nothing has been charged.")
     } finally {
       setSubmitting(false)
     }
@@ -470,6 +473,7 @@ function PaymentStep({
             </h2>
             <PaymentClaimForm
               orderNumber={order.orderNumber}
+              orderPhone={order.phone}
               totalBdt={order.totalBdt}
               method={order.paymentMethod as "bkash" | "nagad"}
               payTo={wallet}
