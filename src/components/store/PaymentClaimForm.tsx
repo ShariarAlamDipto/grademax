@@ -15,6 +15,12 @@ import type { PaymentMethod } from "@/lib/store/types"
 
 interface Props {
   orderNumber: string
+  /**
+   * The phone number the order was placed with. The server matches the claim
+   * to the order on this, NOT on the wallet number the money came from — a
+   * buyer often pays from a parent's or a friend's bKash.
+   */
+  orderPhone: string
   totalBdt: number
   method: Exclude<PaymentMethod, "cod">
   /** The wallet number to send to. Null when none is configured yet. */
@@ -27,7 +33,7 @@ const MIN_TRANSACTION_ID = 4
 const MIN_PHONE = 6
 
 export default function PaymentClaimForm({
-  orderNumber, totalBdt, method, payTo, instructions, onSubmitted,
+  orderNumber, orderPhone, totalBdt, method, payTo, instructions, onSubmitted,
 }: Props) {
   const [transactionId, setTransactionId] = useState("")
   const [sender, setSender] = useState("")
@@ -47,7 +53,7 @@ export default function PaymentClaimForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           orderNumber,
-          phone: sender,
+          phone: orderPhone,
           method,
           senderMsisdn: sender,
           transactionId: transactionId.trim(),

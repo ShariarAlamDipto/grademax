@@ -49,6 +49,9 @@ export default function OrderTracker() {
   const params = useSearchParams()
   const [orderNumber, setOrderNumber] = useState(params.get("order") ?? "")
   const [phone, setPhone] = useState("")
+  // The phone that actually found the order. Kept apart from the input so that
+  // editing the field afterwards cannot detach the payment form from the order.
+  const [orderPhone, setOrderPhone] = useState("")
   const [order, setOrder] = useState<TrackedOrder | null>(null)
   const [payTo, setPayTo] = useState<string | null>(null)
   const [slaHours, setSlaHours] = useState(12)
@@ -84,6 +87,7 @@ export default function OrderTracker() {
       const json = await res.json()
       if (!res.ok) { setError(json.error ?? "We could not find that order."); setOrder(null); return }
       setOrder(json.order as TrackedOrder)
+      setOrderPhone(phone.trim())
       setPayTo(json.payTo ?? null)
       setSlaHours(json.slaHours ?? 12)
     } catch {
@@ -152,15 +156,16 @@ export default function OrderTracker() {
         </Button>
       </div>
 
-      {order ? <OrderDetail order={order} payTo={payTo} slaHours={slaHours} onPaid={lookup} /> : null}
+      {order ? <OrderDetail order={order} orderPhone={orderPhone} payTo={payTo} slaHours={slaHours} onPaid={lookup} /> : null}
     </main>
   )
 }
 
 function OrderDetail({
-  order, payTo, slaHours, onPaid,
+  order, orderPhone, payTo, slaHours, onPaid,
 }: {
   order: TrackedOrder
+  orderPhone: string
   payTo: string | null
   slaHours: number
   onPaid: () => void
@@ -171,7 +176,10 @@ function OrderDetail({
     : order.paymentStatus === "submitted" ? "amber"
     : "neutral"
 
-  const needsPayment = order.paymentStatus === "awaiting_payment" && order.paymentMethod !== "cod"
+  // A rejected claim can be corrected: the buyer submits the right Transaction ID.
+  const needsPayment =
+    (order.paymentStatus === "awaiting_payment" || order.paymentStatus === "rejected") &&
+    order.paymentMethod !== "cod"
 
   return (
     <>
@@ -249,7 +257,7 @@ function OrderDetail({
       ) : null}
 
       {needsPayment ? (
-        <PayNow order={order} payTo={payTo} onPaid={onPaid} />
+        <PayNow order={order} orderPhone={orderPhone} payTo={payTo} onPaid={onPaid} />
       ) : null}
     </>
   )
@@ -278,7 +286,7 @@ function ProgressTrail({ current }: { current: OrderStatus }) {
   )
 }
 
-function PayNow({ order, payTo, onPaid }: { order: TrackedOrder; payTo: string | null; onPaid: () => void }) {
+function PayNow({ order, orderPhone, payTo, onPaid }: { order: TrackedOrder; orderPhone: string; payTo: string | null; onPaid: () => void }) {
   if (order.paymentMethod === "cod") return null
   return (
     <section style={card}>
@@ -287,6 +295,7 @@ function PayNow({ order, payTo, onPaid }: { order: TrackedOrder; payTo: string |
       </h2>
       <PaymentClaimForm
         orderNumber={order.orderNumber}
+        orderPhone={orderPhone}
         totalBdt={order.totalBdt}
         method={order.paymentMethod}
         payTo={payTo}

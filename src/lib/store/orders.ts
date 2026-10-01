@@ -180,8 +180,18 @@ async function recordOrderEvent(orderId: string, field: string, note: string): P
   }
 }
 
+/**
+ * Payment states a claim may be attached in: no claim yet, or the last one was
+ * rejected and the buyer is correcting it. Anything else already has a live
+ * claim or is settled.
+ */
+export const CLAIMABLE_PAYMENT_STATUSES = ["awaiting_payment", "rejected"] as const
+export type ClaimablePaymentStatus = typeof CLAIMABLE_PAYMENT_STATUSES[number]
+
 export async function submitPayment(args: {
   orderId: string
+  /** The order's payment status as read by the caller; the update is guarded on it. */
+  fromStatus: ClaimablePaymentStatus
   method: Exclude<PaymentMethod, "cod">
   senderMsisdn: string
   transactionId: string
@@ -227,7 +237,7 @@ export async function submitPayment(args: {
     .from("store_orders")
     .update({ payment_status: "submitted", updated_at: new Date().toISOString() })
     .eq("id", args.orderId)
-    .eq("payment_status", "awaiting_payment")
+    .eq("payment_status", args.fromStatus)
     .select("id")
 
   if (error) return { ok: false, reason: "error", message: "We could not record your payment." }
@@ -236,7 +246,7 @@ export async function submitPayment(args: {
   await db.from("store_order_events").insert({
     order_id: args.orderId,
     field: "payment_status",
-    from_value: "awaiting_payment",
+    from_value: args.fromStatus,
     to_value: "submitted",
     note: `${args.method} · ${args.transactionId}`,
   })

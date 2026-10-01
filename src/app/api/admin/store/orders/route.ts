@@ -83,10 +83,20 @@ export async function PATCH(req: NextRequest) {
     .maybeSingle()
   if (!before) return NextResponse.json({ error: "Order not found." }, { status: 404 })
 
+  // A cancelled order has already given its stock back. Moving it to any other
+  // status with a plain UPDATE would ship copies that are no longer reserved,
+  // so stock could go negative. Re-ordering is the way back.
+  if (before.order_status === "cancelled" && orderStatus !== undefined && orderStatus !== "cancelled") {
+    return NextResponse.json(
+      { error: "This order is cancelled and its stock was released. Place a new order instead of reopening it." },
+      { status: 409 }
+    )
+  }
+
   // Cancelling has to give the stock back, which the SQL function does
   // atomically and exactly once. Never do it with a plain UPDATE here.
   if (orderStatus === "cancelled") {
-    const { data } = await db.rpc("store_cancel_order", {
+    const { data, error: cancelError } = await db.rpc("store_cancel_order", {
       p_order: orderId,
       p_admin: auth.user.id,
       p_admin_email: auth.user.email ?? null,
@@ -97,8 +107,9 @@ export async function PATCH(req: NextRequest) {
       action: "store_cancel_order",
       entity_type: "store_order",
       entity_id: orderId,
-      details: { order_number: before.order_number, result: data },
+      details: { order_number: before.order_number, result: data, error: cancelError?.message ?? null },
     })
+    if (cancelError) return NextResponse.json({ error: cancelError.message }, { status: 500 })
     return NextResponse.json({ ok: true, cancelled: true })
   }
 
