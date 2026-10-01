@@ -126,6 +126,15 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [worksheetBlob, setWorksheetBlob] = useState<Blob | null>(null);
   const [markschemeBlob, setMarkschemeBlob] = useState<Blob | null>(null);
 
+  // Identifies the current PDF build. A build takes several seconds, and the
+  // user can switch subject, regenerate or click again meanwhile. Anything
+  // that invalidates the build bumps this, and a build whose token is stale
+  // drops its result instead of showing one worksheet's PDF under another.
+  const buildTokenRef = useRef(0);
+  // Set synchronously on click, so a double-click can't start two builds
+  // before the disabled button has rendered.
+  const buildingRef = useRef(false);
+
   // Cache topics per subject to avoid re-fetching
   const topicsCache = useRef<Record<string, Topic[]>>({
     [initialSubjects[0]?.id || '']: initialTopics,
@@ -163,6 +172,9 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
   // Reset selected topics when subject changes — revoke any live object URLs
   useEffect(() => {
+    buildTokenRef.current++;
+    buildingRef.current = false;
+    setPdfProgress(null);
     setSelectedTopics([]);
     setQuestions([]);
     setWorksheetId(null);
@@ -197,6 +209,9 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
       return;
     }
 
+    buildTokenRef.current++;
+    buildingRef.current = false;
+    setPdfProgress(null);
     setLoading(true);
     setError(null);
     setWorksheetId(null);
@@ -255,8 +270,14 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
   const handleDownload = async () => {
     if (!worksheetId || questions.length === 0) return;
+    if (buildingRef.current) return;
+    buildingRef.current = true;
+
+    const token = ++buildTokenRef.current;
+    const isStale = () => token !== buildTokenRef.current;
 
     setError(null);
+    setPdfProgress({ step: 1, total: 2, label: 'Preparing worksheet…' });
     setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setWorksheetBlob(null);
@@ -288,12 +309,15 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         yearEnd,
         difficulty: difficulty || null,
       }, (p) => {
+        if (isStale()) return;
         setPdfProgress({
           step: 1,
           total: 2,
           label: `Worksheet · ${p.label}`,
         });
       });
+
+      if (isStale()) return;
 
       if (wsResult.successCount === 0) {
         throw new Error('No question PDFs could be downloaded. Please try again or check your connection.');
@@ -318,12 +342,14 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             yearEnd,
             difficulty: difficulty || null,
           }, (p) => {
+            if (isStale()) return;
             setPdfProgress({
               step: 2,
               total: 2,
               label: `Markscheme · ${p.label}`,
             });
           });
+          if (isStale()) return;
           if (msResult.successCount > 0) {
             setMarkschemeBlob(msResult.blob);
             setMarkschemeUrl(URL.createObjectURL(msResult.blob));
@@ -333,8 +359,9 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         console.warn('[WorksheetGenerator] markscheme build failed', msErr);
       }
 
+      if (isStale()) return;
       setPdfProgress({ step: 2, total: 2, label: 'PDFs ready!' });
-      setTimeout(() => setPdfProgress(null), 2000);
+      setTimeout(() => { if (!isStale()) setPdfProgress(null); }, 2000);
 
       fireTrack("worksheet_download", {
         subject_id: selectedSubject,
@@ -342,9 +369,12 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         metadata: { worksheet_id: worksheetId },
       });
     } catch (err: unknown) {
+      if (isStale()) return;
       console.error('[WorksheetGenerator] download failed', err);
       setError(err instanceof Error ? err.message : 'Failed to generate PDFs');
       setPdfProgress(null);
+    } finally {
+      if (!isStale()) buildingRef.current = false;
     }
   };
 
