@@ -1,93 +1,27 @@
-﻿import { redirect } from "next/navigation"
+import { redirect } from "next/navigation"
+import { connection } from "next/server"
 import { getSupabaseServer } from "@/lib/supabaseServer"
 import { isPublicToolsTrialActive } from "@/lib/publicToolsTrial"
-import { createClient } from "@supabase/supabase-js"
+import { getToolSubjects } from "@/lib/toolSubjects"
 import WorksheetGenerator from "@/components/generate/WorksheetGenerator"
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-
-// IGCSE Edexcel subjects supported by the worksheet pipeline.
-// Each slot shows one subject; legacy code variants are listed as fallbacks.
-const WORKSHEET_SUBJECT_SLOTS = [
-  ['4PH1', '4PH0'],   // IGCSE Physics
-  ['4MB1', '4MB0'],   // IGCSE Mathematics B
-  ['4CH1', '4CH0'],   // IGCSE Chemistry
-  ['4BI1', '4BI0'],   // IGCSE Biology
-  ['4HB1', '4HB0'],   // IGCSE Human Biology
-  ['4PM1', '9FM0'],   // IGCSE Further Pure Mathematics (9FM0 retained as legacy alias)
-  ['WME01'],          // IAL Mechanics 1 (M1) -- NOT 4ME1, which is a separate IGCSE subject
-  ['WST01'],          // IAL Statistics 1 (S1)
-  ['WMA14'],          // IAL Pure Mathematics 4 (P4)
-  ['WMA11'],          // IAL Pure Mathematics 1 (P1)
-  ['WMA12'],          // IAL Pure Mathematics 2 (P2)
-  ['WMA13'],          // IAL Pure Mathematics 3 (P3)
-] as const
-
-const ALLOWED_WORKSHEET_SUBJECT_CODES = WORKSHEET_SUBJECT_SLOTS.flat()
-
 export default async function GeneratePage() {
-  const serverClient = getSupabaseServer()
-  const { data: { user } } = await serverClient.auth.getUser()
+  // Render per request: the access gate depends on the current date, which a
+  // prerendered page would freeze at build time.
+  await connection()
+
+  // While the tools are public the session is irrelevant here, so skip the
+  // Supabase Auth round trip; otherwise run it alongside the data load.
+  const userPromise = isPublicToolsTrialActive()
+    ? Promise.resolve(null)
+    : getSupabaseServer().auth.getUser().then(({ data }) => data.user)
+
+  const [user, { subjects, initialTopics }] = await Promise.all([userPromise, getToolSubjects()])
   if (!user && !isPublicToolsTrialActive()) redirect("/login?next=/generate")
-
-  const supabase = createClient(supabaseUrl, supabaseKey)
-
-  // Fetch subjects and first subject's topics in parallel on the server
-  const { data: subjects } = await supabase
-    .from("subjects")
-    .select("id, name, code, level, board")
-    .in('code', [...ALLOWED_WORKSHEET_SUBJECT_CODES])
-
-  const subjectIds = (subjects || []).map((subject) => subject.id)
-  const paperCountBySubjectId = new Map<string, number>()
-  if (subjectIds.length > 0) {
-    const { data: papers } = await supabase
-      .from('papers')
-      .select('subject_id')
-      .in('subject_id', subjectIds)
-
-    for (const paper of papers || []) {
-      const key = String(paper.subject_id)
-      paperCountBySubjectId.set(key, (paperCountBySubjectId.get(key) || 0) + 1)
-    }
-  }
-
-  const subjectsByCode = new Map((subjects || []).map((subject) => [String(subject.code), subject]))
-
-  const subjectList = WORKSHEET_SUBJECT_SLOTS
-    .map((slotCodes) => {
-      const candidates = slotCodes
-        .map((code) => subjectsByCode.get(code))
-        .filter((subject): subject is NonNullable<typeof subject> => Boolean(subject))
-
-      if (candidates.length === 0) return undefined
-      if (candidates.length === 1) return candidates[0]
-
-      // Prefer the subject variant that has real paper data; if tied, keep slot order.
-      return candidates.sort((a, b) => {
-        const countDiff = (paperCountBySubjectId.get(String(b.id)) || 0) - (paperCountBySubjectId.get(String(a.id)) || 0)
-        if (countDiff !== 0) return countDiff
-        const slotOrder = slotCodes as readonly string[]
-        return slotOrder.indexOf(String(a.code)) - slotOrder.indexOf(String(b.code))
-      })[0]
-    })
-    .filter((subject): subject is NonNullable<typeof subject> => Boolean(subject))
-  const firstSubjectId = subjectList[0]?.id
-
-  let initialTopics: { id: string; code: string; name: string; description?: string }[] = []
-  if (firstSubjectId) {
-    const { data: topics } = await supabase
-      .from("topics")
-      .select("id, name, code, description")
-      .eq("subject_id", firstSubjectId)
-      .order("code")
-    initialTopics = topics || []
-  }
 
   return (
     <WorksheetGenerator
-      initialSubjects={subjectList}
+      initialSubjects={subjects}
       initialTopics={initialTopics}
     />
   )
