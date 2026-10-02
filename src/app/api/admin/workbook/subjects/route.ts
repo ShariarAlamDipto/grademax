@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { createClient } from "@supabase/supabase-js"
+import { requireTeacher } from "@/lib/apiAuth"
 
 /**
  * The subjects that actually have a workbook, for the verify UI's picker.
@@ -16,6 +17,9 @@ import { createClient } from "@supabase/supabase-js"
 export const dynamic = "force-dynamic"
 
 export async function GET() {
+  const auth = await requireTeacher()
+  if ("error" in auth) return auth.error
+
   const db = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY!,
