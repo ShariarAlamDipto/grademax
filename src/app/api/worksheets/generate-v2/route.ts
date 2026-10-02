@@ -111,7 +111,15 @@ export async function POST(request: Request) {
     }
 
     const supabase = auth.supabase as AuthSupabase;
-    const body: GenerateRequest = await request.json();
+    let body: GenerateRequest;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
+    }
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
+    }
     const {
       subjectId,
       topics: rawTopics,

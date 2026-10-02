@@ -24,10 +24,10 @@
  *
  * Server-only: imports the R2 client and credentials.
  */
-import { GetObjectCommand } from "@aws-sdk/client-s3"
+import { GetObjectCommand, S3Client } from "@aws-sdk/client-s3"
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner"
 import { headers } from "next/headers"
-import { getR2Client, R2_BUCKET } from "@/lib/r2Client"
+import { R2_BUCKET } from "@/lib/r2Client"
 import { checkRateLimitRule, getClientIp, type RateLimitRule } from "@/lib/store/rateLimit"
 import { publicUrlForPdfKey, r2KeyFromUrl } from "@/lib/viewer-link"
 
@@ -53,8 +53,15 @@ export const PDF_LIMITS = {
  * spoofed, but it stops the lazy end of bulk copying at no cost to a person in
  * a browser. Search engine crawlers are deliberately not on this list.
  */
-const SCRAPER_UA =
-  /\b(curl|wget|python-requests|python-urllib|aiohttp|httpx|go-http-client|java\/|okhttp|libwww|lwp::|httrack|webcopier|webzip|teleport|offline explorer|sitesucker|scrapy|node-fetch|axios|undici|postmanruntime|powershell|winhttp|aria2|idm|internet download manager|jdownloader|getright|flashget|wkhtmltopdf)\b/i
+const SCRAPER_UA = new RegExp(
+  // Whole-word tokens: short enough that a substring match could hit a browser.
+  "\\b(?:curl|wget|python-requests|python-urllib|aiohttp|httpx|go-http-client|java/|okhttp|libwww|lwp::|" +
+  "scrapy|node-fetch|axios|undici|postmanruntime|winhttp|aria2|idm|getright|flashget|wkhtmltopdf)\\b" +
+  // Distinctive enough to match anywhere, e.g. "WindowsPowerShell/5.1".
+  "|powershell|httrack|webcopier|webzip|teleport pro|offline explorer|sitesucker|" +
+  "internet download manager|jdownloader",
+  "i"
+)
 
 export async function isScraperRequest(): Promise<boolean> {
   const ua = (await headers()).get("user-agent") ?? ""
@@ -68,8 +75,11 @@ export async function allowPdfAccess(kind: "view" | "file", units = 1): Promise<
     ? [PDF_LIMITS.viewBurst, PDF_LIMITS.viewDaily]
     : [PDF_LIMITS.fileBurst, PDF_LIMITS.fileDaily]
   for (let i = 0; i < units; i++) {
-    const okBurst = await checkRateLimitRule(`pdf:${kind}:burst:${ip}`, burst)
-    const okDaily = await checkRateLimitRule(`pdf:${kind}:daily:${ip}`, daily)
+    // Both counters in one round trip's time; this sits in front of every open.
+    const [okBurst, okDaily] = await Promise.all([
+      checkRateLimitRule(`pdf:${kind}:burst:${ip}`, burst),
+      checkRateLimitRule(`pdf:${kind}:daily:${ip}`, daily),
+    ])
     if (!okBurst || !okDaily) return false
   }
   return true
@@ -77,10 +87,33 @@ export async function allowPdfAccess(kind: "view" | "file", units = 1): Promise<
 
 /** Per-signed-in-user allowance for the tools that hand out many page links. */
 export async function allowUserAction(name: string, userId: string, rules: RateLimitRule[]): Promise<boolean> {
-  for (const [i, rule] of rules.entries()) {
-    if (!(await checkRateLimitRule(`tool:${name}:${i}:${userId}`, rule))) return false
-  }
-  return true
+  const results = await Promise.all(
+    rules.map((rule, i) => checkRateLimitRule(`tool:${name}:${i}:${userId}`, rule))
+  )
+  return results.every(Boolean)
+}
+
+let signer: S3Client | null = null
+
+/**
+ * A client used only for signing. Checksums are left to "when required", as
+ * Cloudflare advises for AWS SDK v3.729+ against R2; otherwise every signed
+ * link carries x-amz-checksum-mode, which R2 does not need.
+ */
+function getSigner(): S3Client {
+  if (signer) return signer
+  const accountId = process.env.R2_ACCOUNT_ID
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY
+  if (!accountId || !accessKeyId || !secretAccessKey) throw new Error("R2 credentials are not configured")
+  signer = new S3Client({
+    region: "auto",
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    credentials: { accessKeyId, secretAccessKey },
+    requestChecksumCalculation: "WHEN_REQUIRED",
+    responseChecksumValidation: "WHEN_REQUIRED",
+  })
+  return signer
 }
 
 function presignEnabled(): boolean {
@@ -105,7 +138,7 @@ export async function signedPdfUrl(
       ResponseContentType: "application/pdf",
       ...(name ? { ResponseContentDisposition: `attachment; filename="${name}"` } : {}),
     })
-    return await getSignedUrl(getR2Client(), command, {
+    return await getSignedUrl(getSigner(), command, {
       expiresIn: opts.ttlSeconds ?? PDF_LINK_TTL_SECONDS,
     })
   } catch (error) {
