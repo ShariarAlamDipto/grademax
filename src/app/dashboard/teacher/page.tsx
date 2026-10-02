@@ -324,6 +324,12 @@ export default function TeacherDashboardPage() {
           </div>
           <div className="flex items-center gap-2">
             <Link
+              href="/admin/workbook/verify"
+              className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
+            >
+              Workbook Verification
+            </Link>
+            <Link
               href="/lectures"
               className="rounded-lg border border-white/20 bg-white/5 px-4 py-2 text-sm hover:bg-white/10 transition-colors"
             >

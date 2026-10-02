@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 import { isPublicToolsTrialActive } from "@/lib/publicToolsTrial"
+import { PATHNAME_HEADER } from "@/lib/adminAccess"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Canonicalization (SEO). Runs before auth so a non-canonical URL 301s in a
@@ -96,6 +97,10 @@ export async function proxy(request: NextRequest) {
   // Canonicalize path casing + unicode dashes first — a single same-host 301.
   const canonical = canonicalRedirect(request)
   if (canonical) return canonical
+
+  // The admin layout needs the path to decide what a teacher may open. Always
+  // overwrite it so a client cannot supply its own value.
+  request.headers.set(PATHNAME_HEADER, request.nextUrl.pathname)
 
   // Create a response we can mutate
   const response = NextResponse.next({

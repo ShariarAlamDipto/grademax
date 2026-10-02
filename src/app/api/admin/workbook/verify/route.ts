@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import { requireAdmin } from "@/lib/apiAuth"
+import { requireTeacher } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 
 export const dynamic = "force-dynamic"
@@ -26,7 +26,7 @@ interface VerifyBody {
 }
 
 export async function POST(req: NextRequest) {
-  const auth = await requireAdmin()
+  const auth = await requireTeacher()
   if ("error" in auth) return auth.error
 
   const db = getSupabaseAdmin() || auth.db
