@@ -50,13 +50,20 @@ export async function checkRateLimit(
   name: keyof typeof RATE_LIMITS,
   discriminator: string
 ): Promise<boolean> {
-  const rule = RATE_LIMITS[name]
+  return checkRateLimitRule(`${name}:${discriminator}`, RATE_LIMITS[name])
+}
+
+/**
+ * The same Postgres-backed counter for callers outside the store, which bring
+ * their own rule. `bucket` must already include the discriminator.
+ */
+export async function checkRateLimitRule(bucket: string, rule: RateLimitRule): Promise<boolean> {
   const db = getSupabaseAdmin()
   if (!db) return true
 
   try {
     const { data, error } = await db.rpc("store_rate_limit_hit", {
-      p_bucket: `${name}:${discriminator}`,
+      p_bucket: bucket,
       p_limit: rule.limit,
       p_window_seconds: rule.windowSeconds,
     })

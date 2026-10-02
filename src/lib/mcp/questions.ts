@@ -14,7 +14,7 @@ import { createClient, type SupabaseClient } from "@supabase/supabase-js"
 import { subjects, dbNameOf, type Subject } from "@/lib/subjects"
 import { normalizeTopicCodes } from "@/lib/topicCodes"
 import { toAbsolutePdfUrl } from "@/lib/pdfUtils"
-import { buildViewerHref, isAllowedPdfUrl } from "@/lib/viewer-link"
+import { absoluteGatedPdfUrl, buildViewerHref, isAllowedPdfUrl } from "@/lib/viewer-link"
 import { SITE_ORIGIN } from "@/lib/mcp/catalog"
 
 /**
@@ -267,8 +267,8 @@ function mapPageRow(
     hasDiagram: p.has_diagram ?? false,
     questionText: textAvailable ? rawText : null,
     textAvailable,
-    questionPdfUrl: qp,
-    markSchemePdfUrl: ms,
+    questionPdfUrl: absoluteGatedPdfUrl(qp, SITE_ORIGIN),
+    markSchemePdfUrl: absoluteGatedPdfUrl(ms, SITE_ORIGIN),
     viewerUrl: viewerHref ? `${SITE_ORIGIN}${viewerHref}` : null,
   }
 }

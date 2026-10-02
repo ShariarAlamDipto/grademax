@@ -5,7 +5,7 @@ import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { extractPaperTokenFromSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode, normalizePaperToken, toPaperSlug } from "@/lib/paper-slugs"
 import { getPapersIndex, leafKey, sessionKey } from "@/lib/papersIndex"
 import { getCambridgeQpMap } from "@/lib/cambridge-seo"
-import { buildViewerHref, canSplit } from "@/lib/viewer-link"
+import { absoluteGatedPdfUrl, buildViewerHref, canSplit, gatedPdfHref } from "@/lib/viewer-link"
 
 // Syllabus codes that actually have a /qp landing page. The /qp route is
 // `dynamicParams = false`, so linking a code it does not enumerate would hard
@@ -207,7 +207,7 @@ function buildJsonLd(
                   "@type": "MediaObject",
                   name: `${subjectName} ${year} ${seasonName} ${displayPaper} Question Paper`,
                   encodingFormat: "application/pdf",
-                  contentUrl: paper.pdf_url,
+                  contentUrl: absoluteGatedPdfUrl(paper.pdf_url, BASE),
                 },
               ]
             : []),
@@ -217,7 +217,7 @@ function buildJsonLd(
                   "@type": "MediaObject",
                   name: `${subjectName} ${year} ${seasonName} ${displayPaper} Mark Scheme`,
                   encodingFormat: "application/pdf",
-                  contentUrl: paper.markscheme_pdf_url,
+                  contentUrl: absoluteGatedPdfUrl(paper.markscheme_pdf_url, BASE),
                 },
               ]
             : []),
@@ -428,7 +428,7 @@ export default async function PaperPage({
                     View QP
                   </Link>
                   <a
-                    href={validPdf}
+                    href={gatedPdfHref(validPdf, { download: true }) ?? undefined}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition-colors"
@@ -463,7 +463,7 @@ export default async function PaperPage({
                     View MS
                   </Link>
                   <a
-                    href={validMs}
+                    href={gatedPdfHref(validMs, { download: true }) ?? undefined}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-white/15 text-white/60 hover:text-white hover:border-white/30 transition-colors"

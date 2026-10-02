@@ -2,7 +2,9 @@ import type { Metadata } from "next"
 import { after } from "next/server"
 import { headers } from "next/headers"
 import ViewerClient from "./ViewerClient"
-import { isAllowedPdfUrl, parseViewerView, type ViewerDoc, type ViewerView } from "@/lib/viewer-link"
+import Link from "next/link"
+import { parseViewerView, resolveViewerPdfParam, type ViewerDoc, type ViewerView } from "@/lib/viewer-link"
+import { allowPdfAccess, isScraperRequest, signIfBucketPdf } from "@/lib/pdfGate"
 import { trackUsage } from "@/lib/trackUsage"
 
 // Dynamic: the whole page is derived from query params, which are only known
@@ -50,8 +52,9 @@ export default async function ViewerPage({ searchParams }: { searchParams: Searc
   const sp = await searchParams
   const qpRaw = first(sp.qp)
   const msRaw = first(sp.ms)
-  const qpUrl = isAllowedPdfUrl(qpRaw) ? qpRaw : null
-  const msUrl = isAllowedPdfUrl(msRaw) ? msRaw : null
+  // A bucket key (current links) or a full URL (links cached before that).
+  const qpUrl = resolveViewerPdfParam(qpRaw)
+  const msUrl = resolveViewerPdfParam(msRaw)
   const title = first(sp.title) ?? "Past Paper"
   const backPath = safeBackPath(first(sp.back))
   const requestedDoc: ViewerDoc = first(sp.doc) === "ms" ? "ms" : "qp"
@@ -77,14 +80,42 @@ export default async function ViewerPage({ searchParams }: { searchParams: Searc
     )
   }
 
+  // The gate: download tools get nothing, and each IP has an allowance of
+  // papers per ten minutes and per day. Within it, the browser receives
+  // short-lived signed links rather than the bucket's public address.
+  if (qpUrl || msUrl) {
+    if (await isScraperRequest()) {
+      return <ViewerBlocked backPath={backPath} message="Automated downloads are not allowed." />
+    }
+    if (!(await allowPdfAccess("view"))) {
+      return (
+        <ViewerBlocked
+          backPath={backPath}
+          message="You have opened a lot of papers in a short time. Please wait a few minutes, then reload this page."
+        />
+      )
+    }
+  }
+  const [qpSigned, msSigned] = await Promise.all([signIfBucketPdf(qpUrl), signIfBucketPdf(msUrl)])
+
   return (
     <ViewerClient
-      qpUrl={qpUrl}
-      msUrl={msUrl}
+      qpUrl={qpSigned}
+      msUrl={msSigned}
       title={title}
       backPath={backPath}
       requestedDoc={requestedDoc}
       requestedView={requestedView}
     />
+  )
+}
+
+function ViewerBlocked({ backPath, message }: { backPath: string; message: string }) {
+  return (
+    <main style={{ maxWidth: "36rem", margin: "0 auto", padding: "4rem 1.25rem", textAlign: "center" }}>
+      <h1 style={{ fontSize: "1.3rem", fontWeight: 700, marginBottom: "0.75rem" }}>Paper unavailable right now</h1>
+      <p style={{ fontSize: "0.9rem", color: "var(--gm-text-2)", lineHeight: 1.7, marginBottom: "1.25rem" }}>{message}</p>
+      <Link href={backPath} className="gm-link">Back to past papers</Link>
+    </main>
   )
 }

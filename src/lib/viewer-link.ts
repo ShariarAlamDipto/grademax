@@ -17,6 +17,78 @@ export function isAllowedPdfUrl(raw: string | null | undefined): raw is string {
   return url.hostname === R2_PUBLIC_HOST || url.hostname.endsWith(".supabase.co")
 }
 
+// ── Files in the public papers bucket ───────────────────────────────────────
+//
+// Pages never hand the browser a raw bucket URL any more: a viewer link carries
+// the object KEY, and a download goes through /api/pdf, which rate limits and
+// answers with a short-lived signed link. That keeps the storage address out of
+// the HTML, so "save every link on this page" tools and scrapers walking the
+// catalogue get throttled instead of handed the whole archive.
+
+/** Keys are plain relative paths to a PDF — nothing that could climb out. */
+export function isSafePdfKey(key: string | null | undefined): key is string {
+  if (!key || key.length > 512) return false
+  if (key.startsWith("/") || key.includes("\\") || /[\u0000-\u001f]/.test(key)) return false
+  if (key.split("/").some(seg => seg === "" || seg === "." || seg === "..")) return false
+  return /\.pdf$/i.test(key)
+}
+
+/** The object key of a PDF in the public papers bucket, or null for anything else. */
+export function r2KeyFromUrl(raw: string | null | undefined): string | null {
+  if (!raw) return null
+  let url: URL
+  try {
+    url = new URL(raw)
+  } catch {
+    return null
+  }
+  if (url.protocol !== "https:" || url.hostname !== R2_PUBLIC_HOST) return null
+  let key: string
+  try {
+    key = decodeURIComponent(url.pathname.replace(/^\/+/, ""))
+  } catch {
+    return null
+  }
+  return isSafePdfKey(key) ? key : null
+}
+
+export function encodePdfKey(key: string): string {
+  return key.split("/").map(encodeURIComponent).join("/")
+}
+
+export function publicUrlForPdfKey(key: string): string {
+  return `https://${R2_PUBLIC_HOST}/${encodePdfKey(key)}`
+}
+
+/**
+ * A same-site link for a PDF: bucket files go through the /api/pdf gate, other
+ * hosts we allow (legacy Supabase storage) pass through, anything else is null.
+ */
+export function gatedPdfHref(
+  raw: string | null | undefined,
+  opts: { download?: boolean } = {}
+): string | null {
+  const key = r2KeyFromUrl(raw)
+  if (key) return `/api/pdf/${encodePdfKey(key)}${opts.download ? "?dl=1" : ""}`
+  return isAllowedPdfUrl(raw) ? raw : null
+}
+
+/** `gatedPdfHref` as an absolute URL, for structured data and external tools. */
+export function absoluteGatedPdfUrl(raw: string | null | undefined, origin: string): string | null {
+  const href = gatedPdfHref(raw)
+  if (!href) return null
+  return href.startsWith("/") ? `${origin}${href}` : href
+}
+
+/**
+ * Reads a viewer `qp`/`ms` parameter: a bucket key (current links) or a full
+ * URL (links cached before keys were used). Returns a full URL or null.
+ */
+export function resolveViewerPdfParam(raw: string | null | undefined): string | null {
+  if (isSafePdfKey(raw)) return publicUrlForPdfKey(raw)
+  return isAllowedPdfUrl(raw) ? raw : null
+}
+
 export type ViewerDoc = "qp" | "ms"
 
 /**
@@ -45,8 +117,9 @@ export interface ViewerLinkInput {
 
 export function buildViewerHref(input: ViewerLinkInput): string {
   const params = new URLSearchParams()
-  if (isAllowedPdfUrl(input.qpUrl)) params.set("qp", input.qpUrl)
-  if (isAllowedPdfUrl(input.msUrl)) params.set("ms", input.msUrl)
+  // Bucket files travel as their key; the viewer signs them per request.
+  if (isAllowedPdfUrl(input.qpUrl)) params.set("qp", r2KeyFromUrl(input.qpUrl) ?? input.qpUrl)
+  if (isAllowedPdfUrl(input.msUrl)) params.set("ms", r2KeyFromUrl(input.msUrl) ?? input.msUrl)
   params.set("doc", input.doc)
   params.set("title", input.title)
   params.set("back", input.backPath)

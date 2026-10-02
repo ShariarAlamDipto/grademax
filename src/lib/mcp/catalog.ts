@@ -26,7 +26,7 @@ import {
   formatCambridgePaperLabel,
   cambridgePaperCode,
 } from "@/lib/paper-slugs"
-import { buildViewerHref, isAllowedPdfUrl } from "@/lib/viewer-link"
+import { absoluteGatedPdfUrl, buildViewerHref, isAllowedPdfUrl } from "@/lib/viewer-link"
 
 export const SITE_ORIGIN = "https://www.grademax.me"
 
@@ -174,8 +174,10 @@ function toPaperResult(
       board === "cambridge"
         ? cambridgePaperCode(s.examCode, p.paperNumber)
         : undefined,
-    questionPaperUrl: p.pdfUrl,
-    markSchemeUrl: p.markschemePdfUrl,
+    // Through the rate-limited download gate, never the bucket's own address:
+    // this connector is public and paginates the whole catalogue.
+    questionPaperUrl: absoluteGatedPdfUrl(p.pdfUrl, SITE_ORIGIN),
+    markSchemeUrl: absoluteGatedPdfUrl(p.markschemePdfUrl, SITE_ORIGIN),
     viewerUrl: viewerHref ? `${SITE_ORIGIN}${viewerHref}` : null,
     catalogUrl,
   }
