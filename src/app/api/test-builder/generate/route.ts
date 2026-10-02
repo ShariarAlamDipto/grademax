@@ -1,6 +1,32 @@
 import { NextResponse } from 'next/server';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { isAllowedPdfUrl } from '@/lib/viewer-link';
+import { checkRateLimitRule, getClientIp } from '@/lib/store/rateLimit';
+
+/** Most question pages one generated test may merge. */
+const MAX_PAGES = 60;
+
+/**
+ * The server fetches every URL it is given, so only our own storage is
+ * accepted: the public papers host and Supabase (via isAllowedPdfUrl), and a
+ * signed link to the papers bucket on the R2 S3 endpoint. Anything else would
+ * make this route a free proxy into any address the server can reach.
+ */
+function isFetchablePdfUrl(raw: string): boolean {
+  if (isAllowedPdfUrl(raw)) return true;
+  try {
+    const url = new URL(raw);
+    const bucket = process.env.R2_BUCKET_NAME || 'grademax-papers';
+    return (
+      url.protocol === 'https:' &&
+      url.hostname === `${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com` &&
+      url.pathname.startsWith(`/${bucket}/`)
+    );
+  } catch {
+    return false;
+  }
+}
 
 // Merging many source PDFs from Supabase storage can take longer than the
 // default 10 s function budget, especially on cold starts behind a slow
@@ -124,19 +150,34 @@ interface GenerateBody {
 
 export async function POST(request: Request) {
   try {
+    const ip = await getClientIp();
+    if (!(await checkRateLimitRule(`tb-generate:${ip}`, { limit: 10, windowSeconds: 600 }))) {
+      return NextResponse.json(
+        { error: 'Too many tests generated from this connection. Please wait a few minutes.' },
+        { status: 429 }
+      );
+    }
+
     const body: GenerateBody = await request.json();
     const { title, type = 'worksheet', totalMarks, subjectName, level, pages } = body;
 
-    if (!pages || pages.length === 0) {
+    if (!Array.isArray(pages) || pages.length === 0) {
       return NextResponse.json(
         { error: 'At least one page is required' },
         { status: 400 }
       );
     }
 
+    if (pages.length > MAX_PAGES) {
+      return NextResponse.json(
+        { error: `A test can hold at most ${MAX_PAGES} questions.` },
+        { status: 400 }
+      );
+    }
+
     const pdfUrls = pages
-      .map(p => toAbsolutePdfUrl(type === 'markscheme' ? p.msPageUrl : p.qpPageUrl))
-      .filter(Boolean) as string[];
+      .map(p => toAbsolutePdfUrl(type === 'markscheme' ? p?.msPageUrl : p?.qpPageUrl))
+      .filter((u): u is string => typeof u === 'string' && isFetchablePdfUrl(u));
 
     if (pdfUrls.length === 0) {
       return NextResponse.json(

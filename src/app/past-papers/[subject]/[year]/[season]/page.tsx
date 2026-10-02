@@ -5,6 +5,7 @@ import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode } from "@/lib/paper-slugs"
 import { getPapersIndex, sessionKey } from "@/lib/papersIndex"
 import PaperRow from "@/components/past-papers/PaperRow"
+import { absoluteGatedPdfUrl } from "@/lib/viewer-link"
 
 export const revalidate = false
 // Edexcel session URLs are enumerated from the DB-backed index at build time.
@@ -206,7 +207,7 @@ function buildJsonLd(
               "@type": "MediaObject",
               name: `${subjectName} ${year} ${seasonName} Paper ${p.paper_number} Question Paper`,
               encodingFormat: "application/pdf",
-              contentUrl: p.pdf_url,
+              contentUrl: absoluteGatedPdfUrl(p.pdf_url, base),
             })),
           ...papers
             .filter((p) => p.markscheme_pdf_url)
@@ -214,7 +215,7 @@ function buildJsonLd(
               "@type": "MediaObject",
               name: `${subjectName} ${year} ${seasonName} Paper ${p.paper_number} Mark Scheme`,
               encodingFormat: "application/pdf",
-              contentUrl: p.markscheme_pdf_url,
+              contentUrl: absoluteGatedPdfUrl(p.markscheme_pdf_url, base),
             })),
         ],
       },

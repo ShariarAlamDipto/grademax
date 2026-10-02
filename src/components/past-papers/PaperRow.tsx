@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { buildViewerHref, canSplit } from "@/lib/viewer-link"
+import { buildViewerHref, canSplit, gatedPdfHref } from "@/lib/viewer-link"
 
 interface PaperRowProps {
   /** The paper's own page. Null when the paper_number has no usable slug. */
@@ -100,7 +100,7 @@ export default function PaperRow({
 
         {dataUrl && (
           <a
-            href={dataUrl}
+            href={gatedPdfHref(dataUrl) ?? dataUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="gm-paper-action"

@@ -3,6 +3,16 @@ import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { allowUserAction, signIfBucketPdf } from '@/lib/pdfGate';
+
+/**
+ * Result pages one user may load. Each page carries up to 50 question PDFs, so
+ * this bounds how fast the bank can be paged through and copied.
+ */
+const QUESTION_BROWSE_LIMITS = [
+  { limit: 60, windowSeconds: 600 },
+  { limit: 400, windowSeconds: 86_400 },
+];
 
 /**
  * GET /api/test-builder/questions
@@ -23,6 +33,13 @@ export async function GET(request: Request) {
   try {
     const auth = await requireAuth();
     if ('error' in auth) return auth.error;
+
+    if (!(await allowUserAction('tb-questions', auth.user.id, QUESTION_BROWSE_LIMITS))) {
+      return NextResponse.json(
+        { error: 'You have browsed a lot of questions in a short time. Please wait a few minutes.' },
+        { status: 429 }
+      );
+    }
 
     const url = new URL(request.url);
     const subjectId = url.searchParams.get('subjectId');
@@ -145,19 +162,20 @@ export async function GET(request: Request) {
       papers: PaperData;
     }
 
-    const questions = ((pages || []) as unknown as PageRow[]).map((p) => ({
+    // Bucket PDFs go out as short-lived signed links, not the public address.
+    const questions = await Promise.all(((pages || []) as unknown as PageRow[]).map(async (p) => ({
       id: p.id,
       questionNumber: p.question_number || String(p.page_number),
       topics: p.topics || [],
       difficulty: p.difficulty || 'unknown',
-      qpPageUrl: toAbsolutePdfUrl(p.qp_page_url)!,
-      msPageUrl: toAbsolutePdfUrl(p.ms_page_url),
+      qpPageUrl: (await signIfBucketPdf(toAbsolutePdfUrl(p.qp_page_url)))!,
+      msPageUrl: await signIfBucketPdf(toAbsolutePdfUrl(p.ms_page_url)),
       hasDiagram: p.has_diagram || false,
       textExcerpt: p.text_excerpt || '',
       year: p.papers?.year,
       season: p.papers?.season,
       paper: p.papers?.paper_number,
-    }));
+    })));
 
     return NextResponse.json({
       questions,

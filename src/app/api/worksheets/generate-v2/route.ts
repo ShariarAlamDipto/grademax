@@ -4,6 +4,8 @@ import { requireAuth } from '@/lib/apiAuth';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { allowUserAction, signIfBucketPdf } from '@/lib/pdfGate';
+import { MAX_WORKSHEET_QUESTIONS, WORKSHEET_RATE_LIMITS } from '@/lib/worksheetLimits';
 
 // Several Supabase round-trips happen here. On a cold serverless start over a
 // slow mobile connection the default 10 s budget is tight enough that the
@@ -101,6 +103,13 @@ export async function POST(request: Request) {
     const auth = await requireAuth();
     if ('error' in auth) return auth.error;
 
+    if (!(await allowUserAction('worksheet', auth.user.id, WORKSHEET_RATE_LIMITS))) {
+      return NextResponse.json(
+        { error: 'You have generated a lot of worksheets recently. Please wait a while before making another.' },
+        { status: 429 }
+      );
+    }
+
     const supabase = auth.supabase as AuthSupabase;
     const body: GenerateRequest = await request.json();
     const {
@@ -109,11 +118,12 @@ export async function POST(request: Request) {
       yearStart,
       yearEnd,
       difficulty,
-      limit: rawLimit = 50,
+      limit: rawLimit = MAX_WORKSHEET_QUESTIONS,
       shuffle = false,
     } = body;
 
-    const limit = Math.max(1, Number(rawLimit) || 50);
+    // Capped here, not just in the form: the API is what hands out the PDFs.
+    const limit = Math.min(MAX_WORKSHEET_QUESTIONS, Math.max(1, Math.floor(Number(rawLimit)) || MAX_WORKSHEET_QUESTIONS));
 
     if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json({ error: 'Topics are required' }, { status: 400 });
@@ -247,18 +257,19 @@ export async function POST(request: Request) {
       metadata: { total_questions: finalQuestions.length, topics },
     });
 
-    const formattedPages = finalQuestions.map((page) => ({
+    // Bucket PDFs go out as short-lived signed links, not the public address.
+    const formattedPages = await Promise.all(finalQuestions.map(async (page) => ({
       id: page.id,
       questionNumber: page.question_number,
       topics: page.topics,
       difficulty: page.difficulty ?? 'unknown',
-      qpPageUrl: toAbsolutePdfUrl(page.qp_page_url)!,
-      msPageUrl: toAbsolutePdfUrl(page.ms_page_url),
+      qpPageUrl: (await signIfBucketPdf(toAbsolutePdfUrl(page.qp_page_url)))!,
+      msPageUrl: await signIfBucketPdf(toAbsolutePdfUrl(page.ms_page_url)),
       hasDiagram: page.has_diagram ?? false,
       year: page.papers?.year,
       season: page.papers?.season,
       paper: page.papers?.paper_number,
-    }));
+    })));
 
     return NextResponse.json({
       worksheet_id: worksheet.id,
