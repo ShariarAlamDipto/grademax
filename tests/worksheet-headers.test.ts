@@ -32,3 +32,16 @@ test("global headers still deny framing", async () => {
   assert.ok(csp?.value, "Missing global CSP header");
   assert.match(csp.value, /frame-ancestors 'none'/);
 });
+
+test("site CSP lets in-browser previews read the PDF they built (connect-src blob:)", async () => {
+  assert.ok(nextConfig.headers, "Expected next.config.ts to export headers()");
+  const headers = await nextConfig.headers();
+  const globalHeaders = headers.find((entry) => entry.source === "/(.*)");
+  const csp = globalHeaders?.headers.find((header) => header.key.toLowerCase() === "content-security-policy");
+  assert.ok(csp?.value, "Missing global CSP");
+  const connectSrc = csp.value.split(";").map((d) => d.trim()).find((d) => d.startsWith("connect-src"));
+  assert.ok(connectSrc, "Missing connect-src");
+  // MultiPagePdfPreview and PdfThumbnail fetch() blob: URLs; without this the
+  // worksheet and test previews show "Unable to load preview".
+  assert.match(connectSrc, /\sblob:(\s|$)/);
+});
