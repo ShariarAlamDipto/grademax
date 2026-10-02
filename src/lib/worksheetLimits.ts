@@ -4,7 +4,7 @@
  */
 
 /** Most questions one generated worksheet may hold. */
-export const MAX_WORKSHEET_QUESTIONS = 20
+export const MAX_WORKSHEET_QUESTIONS = 30
 
 /**
  * Worksheets one signed-in user may generate. Each one hands out up to
