@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
+import { MAX_WORKSHEET_QUESTIONS } from '@/lib/worksheetLimits';
 
 interface Subject {
   id: string;
@@ -109,7 +110,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [yearStart, setYearStart] = useState<number>(START_YEAR);
   const [yearEnd, setYearEnd] = useState<number>(CURRENT_YEAR);
   const [difficulty, setDifficulty] = useState<string>('');
-  const [limit, setLimit] = useState<number>(20);
+  const [limit, setLimit] = useState<number>(MAX_WORKSHEET_QUESTIONS);
   const [shuffle, setShuffle] = useState<boolean>(false);
   
   const [loading, setLoading] = useState(false);
@@ -513,14 +514,14 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             </div>
             <div>
               <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
-                Max Questions
+                Max Questions <span className="font-normal text-gray-400">(up to {MAX_WORKSHEET_QUESTIONS})</span>
               </label>
               <input
                 type="number"
                 value={limit}
-                onChange={(e) => setLimit(parseInt(e.target.value) || 20)}
+                onChange={(e) => setLimit(Math.min(MAX_WORKSHEET_QUESTIONS, Math.max(1, parseInt(e.target.value) || MAX_WORKSHEET_QUESTIONS)))}
                 min="1"
-                max="500"
+                max={MAX_WORKSHEET_QUESTIONS}
                 className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>
