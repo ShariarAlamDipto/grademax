@@ -226,8 +226,9 @@ def create_bundle(products: dict, bundle_price: int, stock: int) -> dict:
     """Create the Mathematics B bundle from the Part 1 listing, inactive.
 
     Only the columns the shop is known to use are copied. If the table has a
-    required column this does not know about, the insert fails loudly and
-    nothing is half-created.
+    required column this does not know about, the insert fails loudly. The
+    product row is created first and stays inactive; if its variant then fails,
+    a re-run finds the row and `ensure_bundle_variant` finishes the job.
     """
     template = products.get(BUNDLE_TEMPLATE_SLUG)
     if not template:
@@ -241,14 +242,25 @@ def create_bundle(products: dict, bundle_price: int, stock: int) -> dict:
         "preview_pages": template.get("preview_pages") or DEFAULT_PREVIEW_PAGES,
         "is_active": False,  # switched on below, once its cover and preview exist
     })
+    ensure_bundle_variant(product, products, bundle_price, stock)
+    return product
 
+
+def ensure_bundle_variant(product: dict, products: dict, bundle_price: int, stock: int) -> None:
+    """Give the bundle its printed variant if it has none yet. Never touches an
+    existing one, so a re-run does not reprice the set."""
+    if any(v["kind"] == "print" for v in fetch_variants(product["id"])):
+        return
+    template = products.get(BUNDLE_TEMPLATE_SLUG) or {}
     parts = [products[s] for s in RETIRED_SLUGS if s in products]
     separate_total = 0
     for part in parts:
         for v in fetch_variants(part["id"]):
             if v["kind"] == "print":
                 separate_total += v["price_bdt"]
-    template_print = next((v for v in fetch_variants(template["id"]) if v["kind"] == "print"), {})
+    template_print = next(
+        (v for v in fetch_variants(template["id"]) if v["kind"] == "print"), {}
+    ) if template.get("id") else {}
     insert("store_variants", {
         "product_id": product["id"],
         "kind": "print",
@@ -260,7 +272,6 @@ def create_bundle(products: dict, bundle_price: int, stock: int) -> dict:
         "allow_cod": template_print.get("allow_cod", True),
         "is_active": True,
     })
-    return product
 
 
 def set_setting(key: str, value: str) -> None:
@@ -331,6 +342,15 @@ def main() -> None:
 
         if not args.commit:
             print("    would activate the product and set the printed variant's page count\n")
+            continue
+
+        if slug == BUNDLE_SLUG:
+            # Repairs a bundle whose variant insert failed on an earlier run.
+            ensure_bundle_variant(product, products, args.bundle_price, args.stock)
+        # Never switch on a listing with nothing to buy: it would show in the
+        # shop with no price, and the parts it replaces would then be retired.
+        if not any(v["kind"] == "print" and v["is_active"] for v in fetch_variants(product["id"])):
+            print(f"!! {slug}: has no active printed variant — left inactive\n")
             continue
 
         r2.put_object(Bucket=R2_BUCKET, Key=cover_key, Body=cover, ContentType="image/jpeg")

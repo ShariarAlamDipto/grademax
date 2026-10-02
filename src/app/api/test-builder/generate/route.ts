@@ -10,22 +10,34 @@ const MAX_PAGES = 60;
 /**
  * The server fetches every URL it is given, so only our own storage is
  * accepted: the public papers host and Supabase (via isAllowedPdfUrl), and a
- * signed link to the papers bucket on the R2 S3 endpoint. Anything else would
- * make this route a free proxy into any address the server can reach.
+ * signed link to the papers bucket on the R2 S3 endpoint -- in either form,
+ * <bucket>.<account>.r2... (what the SDK signs today) or <account>.r2.../<bucket>/.
+ * Anything else would make this route a free proxy into any address the
+ * server can reach.
  */
 function isFetchablePdfUrl(raw: string): boolean {
   if (isAllowedPdfUrl(raw)) return true;
+  const account = process.env.R2_ACCOUNT_ID;
+  if (!account) return false;
   try {
     const url = new URL(raw);
+    if (url.protocol !== 'https:' || url.username || url.password || url.port) return false;
     const bucket = process.env.R2_BUCKET_NAME || 'grademax-papers';
+    const endpoint = `${account}.r2.cloudflarestorage.com`;
     return (
-      url.protocol === 'https:' &&
-      url.hostname === `${process.env.R2_ACCOUNT_ID}.r2.cloudflarestorage.com` &&
-      url.pathname.startsWith(`/${bucket}/`)
+      url.hostname === `${bucket}.${endpoint}` ||
+      (url.hostname === endpoint && url.pathname.startsWith(`/${bucket}/`))
     );
   } catch {
     return false;
   }
+}
+
+/** A page's URL for the requested document, or null for anything malformed. */
+function pageUrl(page: unknown, type: 'worksheet' | 'markscheme'): string | null {
+  if (!page || typeof page !== 'object') return null;
+  const raw = (page as Record<string, unknown>)[type === 'markscheme' ? 'msPageUrl' : 'qpPageUrl'];
+  return typeof raw === 'string' ? toAbsolutePdfUrl(raw) : null;
 }
 
 // Merging many source PDFs from Supabase storage can take longer than the
@@ -158,7 +170,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const body: GenerateBody = await request.json();
+    let body: GenerateBody;
+    try {
+      body = await request.json();
+    } catch {
+      return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
+    }
+    if (!body || typeof body !== 'object') {
+      return NextResponse.json({ error: 'Invalid request.' }, { status: 400 });
+    }
     const { title, type = 'worksheet', totalMarks, subjectName, level, pages } = body;
 
     if (!Array.isArray(pages) || pages.length === 0) {
@@ -176,8 +196,8 @@ export async function POST(request: Request) {
     }
 
     const pdfUrls = pages
-      .map(p => toAbsolutePdfUrl(type === 'markscheme' ? p?.msPageUrl : p?.qpPageUrl))
-      .filter((u): u is string => typeof u === 'string' && isFetchablePdfUrl(u));
+      .map(p => pageUrl(p, type))
+      .filter((u): u is string => u !== null && isFetchablePdfUrl(u));
 
     if (pdfUrls.length === 0) {
       return NextResponse.json(
