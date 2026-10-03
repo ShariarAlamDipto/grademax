@@ -142,6 +142,9 @@ const nextConfig: NextConfig = {
       { source: "/past_papers", destination: "/past-papers", permanent: true },
       { source: "/worksheets", destination: "/edexcel-worksheets", permanent: true },
       { source: "/worksheet-generator", destination: "/generate", permanent: true },
+      // Maths B is now sold only as the two-volume set (migration 31)
+      { source: "/store/mathematics-b-part-1", destination: "/store/mathematics-b", permanent: true },
+      { source: "/store/mathematics-b-part-2", destination: "/store/mathematics-b", permanent: true },
       // Redirect trailing slashes for consistency
       { source: "/:path+/", destination: "/:path+", permanent: true },
     ];
