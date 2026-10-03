@@ -44,17 +44,25 @@ export async function GET() {
     page++
   }
 
-  // 2. Fetch all profiles (has role)
-  const { data: profiles, error: profilesError } = await admin
+  // 2. Fetch all profiles (has role and Pro expiry)
+  type ProfileRow = { id: string; email: string | null; full_name: string | null; role: string; created_at: string; pro_until?: string | null }
+  let profilesResult = await admin
     .from("profiles")
-    .select("id, email, full_name, role, created_at")
+    .select("id, email, full_name, role, created_at, pro_until")
+  if (profilesResult.error) {
+    // pro_until arrives with migration 32; list without it until then.
+    profilesResult = await admin
+      .from("profiles")
+      .select("id, email, full_name, role, created_at")
+  }
+  const { data: profiles, error: profilesError } = profilesResult
 
   if (profilesError) {
     return NextResponse.json({ error: profilesError.message }, { status: 500 })
   }
 
   const profileMap = new Map(
-    (profiles || []).map((p: { id: string; email: string | null; full_name: string | null; role: string; created_at: string }) => [p.id, p])
+    ((profiles || []) as ProfileRow[]).map((p) => [p.id, p])
   )
 
   // 3. Merge: auth user data takes priority for email/name, profile has role
@@ -81,7 +89,7 @@ export async function GET() {
       })
     }
 
-    return { id: authUser.id, email, full_name, role, created_at }
+    return { id: authUser.id, email, full_name, role, created_at, pro_until: profile?.pro_until ?? null }
   })
 
   // 4. Backfill profiles in bulk (fire-and-forget, non-blocking)

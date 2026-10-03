@@ -4,6 +4,7 @@ import { requireAuth } from '@/lib/apiAuth';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
 import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
+import { getUserQuestionLimit } from '@/lib/questionLimit';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
 // Several Supabase round-trips happen here. On a cold serverless start over a
@@ -114,7 +115,10 @@ export async function POST(request: Request) {
       shuffle = false,
     } = body;
 
-    const limit = Math.min(MAX_QUESTIONS_PER_PAPER, Math.max(1, Number(rawLimit) || MAX_QUESTIONS_PER_PAPER));
+    // Normal students are capped; admins, teachers and Pro students are not.
+    const { limit: maxQuestions } = await getUserQuestionLimit(auth.user);
+    const requested = Math.max(1, Number(rawLimit) || MAX_QUESTIONS_PER_PAPER);
+    const limit = maxQuestions === null ? requested : Math.min(maxQuestions, requested);
 
     if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json({ error: 'Topics are required' }, { status: 400 });

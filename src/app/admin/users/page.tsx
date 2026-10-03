@@ -1,9 +1,14 @@
 "use client"
 import { useState, useEffect, useCallback, useMemo } from "react"
+import { isProActive, PRO_PACK_DAYS } from "@/lib/toolLimits"
 
 interface UserEntry {
   id: string; email: string | null; full_name: string | null; role: string; created_at: string
+  pro_until?: string | null
 }
+
+const PRO_COLOR = "#f59e0b"
+const shortDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "2-digit" })
 
 const roleColors: Record<string, string> = {
   admin: "#ef4444",
@@ -20,6 +25,7 @@ export default function UsersAdminPage() {
   const [roleFilter, setRoleFilter] = useState<"all" | "admin" | "teacher" | "student">("all")
   const [changingRole, setChangingRole] = useState<string | null>(null)
   const [deactivating, setDeactivating] = useState<string | null>(null)
+  const [changingPro, setChangingPro] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<"list" | "assign">("list")
   const [assignEmail, setAssignEmail] = useState("")
   const [assignRole, setAssignRole] = useState<"student" | "teacher" | "admin">("teacher")
@@ -61,6 +67,32 @@ export default function UsersAdminPage() {
       setMsg({ type: "err", text: d.error || "Role change failed" })
     }
     setChangingRole(null)
+  }
+
+  const handlePro = async (u: UserEntry, action: "grant" | "revoke") => {
+    const who = u.email || u.full_name || "this user"
+    const extendNote = isProActive(u.pro_until)
+      ? `\n\nTheir current pack is still active, so this adds another ${PRO_PACK_DAYS} days to it.`
+      : ""
+    const question = action === "grant"
+      ? `Grant ${who} a Pro Student Pack for ${PRO_PACK_DAYS} days?\n\nPro students have no question limit in the worksheet generator and test builder.${extendNote}`
+      : `Revoke ${who}'s Pro Student Pack now?`
+    if (!confirm(question)) return
+    setChangingPro(u.id)
+    setMsg(null)
+    const res = await fetch("/api/admin/users/pro", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ userId: u.id, action }),
+    })
+    const data = await res.json().catch(() => ({}))
+    if (res.ok) {
+      setUsers(prev => prev.map(x => x.id === u.id ? { ...x, pro_until: data.pro_until ?? null } : x))
+      setMsg({ type: "ok", text: action === "grant" ? `${who} is Pro until ${shortDate(data.pro_until)}` : `${who}'s Pro pack revoked` })
+    } else {
+      setMsg({ type: "err", text: data.error || "Pro change failed" })
+    }
+    setChangingPro(null)
   }
 
   const handleDeactivate = async (u: UserEntry) => {
@@ -118,7 +150,7 @@ export default function UsersAdminPage() {
   const avatar = (u: UserEntry) => (u.full_name || u.email || "?").split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2)
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "1000px" }}>
+    <div style={{ padding: "2rem", maxWidth: "1150px" }}>
       <div style={{ marginBottom: "1.5rem" }}>
         <h1 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--gm-text)", marginBottom: "0.25rem" }}>Users</h1>
         <p style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Manage accounts and assign roles</p>
@@ -200,15 +232,15 @@ export default function UsersAdminPage() {
             </button>
           </div>
           <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden" }}>
-            <div style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr auto", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
-              <span>Name</span><span>Email</span><span>Joined</span><span>Role</span><span></span>
+            <div style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr 1.4fr auto", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              <span>Name</span><span>Email</span><span>Joined</span><span>Role</span><span>Pro pack</span><span></span>
             </div>
             {loading ? (
               <div style={{ padding: "2rem", textAlign: "center", color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Loading…</div>
             ) : filtered.length === 0 ? (
               <div style={{ padding: "2rem", textAlign: "center", color: "var(--gm-text-3)", fontSize: "0.875rem" }}>No users found</div>
             ) : filtered.map(u => (
-              <div key={u.id} style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr auto", padding: "0.625rem 1rem", borderBottom: "1px solid var(--gm-border)", alignItems: "center", gap: "0.5rem" }}>
+              <div key={u.id} style={{ display: "grid", gridTemplateColumns: "2fr 2fr 1fr 1fr 1.4fr auto", padding: "0.625rem 1rem", borderBottom: "1px solid var(--gm-border)", alignItems: "center", gap: "0.5rem" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "0.625rem" }}>
                   <div style={{ width: "1.75rem", height: "1.75rem", borderRadius: "50%", background: `${roleColors[u.role] || "var(--gm-text-3)"}20`, display: "flex", alignItems: "center", justifyContent: "center", fontSize: "0.65rem", fontWeight: 700, color: roleColors[u.role] || "var(--gm-text-3)", flexShrink: 0 }}>
                     {avatar(u)}
@@ -229,6 +261,21 @@ export default function UsersAdminPage() {
                     <option value="admin">Admin</option>
                   </select>
                   {changingRole === u.id && <div style={{ width: "0.875rem", height: "0.875rem", border: "2px solid var(--gm-border)", borderTopColor: "var(--gm-blue)", borderRadius: "50%", animation: "spin 0.6s linear infinite" }} />}
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "0.375rem", flexWrap: "wrap" }}>
+                  {u.role !== "student" ? (
+                    <span style={{ fontSize: "0.7rem", color: "var(--gm-text-3)" }} title="Admins and teachers have no question limit">No limit</span>
+                  ) : isProActive(u.pro_until) ? (
+                    <>
+                      <span style={{ fontSize: "0.7rem", fontWeight: 600, color: PRO_COLOR }}>Pro · {shortDate(u.pro_until as string)}</span>
+                      <button onClick={() => handlePro(u, "grant")} disabled={changingPro === u.id} title={`Add ${PRO_PACK_DAYS} days`} style={{ padding: "0.1rem 0.35rem", background: `${PRO_COLOR}15`, border: `1px solid ${PRO_COLOR}40`, borderRadius: "0.375rem", color: PRO_COLOR, fontSize: "0.65rem", cursor: "pointer" }}>+{PRO_PACK_DAYS}d</button>
+                      <button onClick={() => handlePro(u, "revoke")} disabled={changingPro === u.id} style={{ padding: "0.1rem 0.35rem", background: "transparent", border: "1px solid var(--gm-border)", borderRadius: "0.375rem", color: "var(--gm-text-3)", fontSize: "0.65rem", cursor: "pointer" }}>Revoke</button>
+                    </>
+                  ) : (
+                    <button onClick={() => handlePro(u, "grant")} disabled={changingPro === u.id} title={u.pro_until ? `Last pack ended ${shortDate(u.pro_until)}` : undefined} style={{ padding: "0.2rem 0.5rem", background: `${PRO_COLOR}10`, border: `1px solid ${PRO_COLOR}35`, borderRadius: "0.375rem", color: PRO_COLOR, fontSize: "0.7rem", cursor: "pointer", whiteSpace: "nowrap" }}>
+                      {changingPro === u.id ? "…" : `Grant Pro (${PRO_PACK_DAYS}d)`}
+                    </button>
+                  )}
                 </div>
                 <button
                   onClick={() => handleDeactivate(u)}
