@@ -1,6 +1,7 @@
 "use client"
 import { createContext, useContext, useEffect, useState, useCallback, useRef } from "react"
 import { supabase } from "@/lib/supabaseClient"
+import { reconcileCartOwner } from "@/lib/store/cartStorage"
 import type { User, Session } from "@supabase/supabase-js"
 
 
@@ -116,6 +117,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const handleSession = useCallback((s: Session | null, event?: string) => {
     setSession(s)
     setUser(s?.user ?? null)
+    // Every call here carries a settled auth state (getSession only calls in
+    // with a user, and onAuthStateChange events are final), so it is safe to
+    // empty a cart that belongs to someone other than whoever is now here.
+    reconcileCartOwner(s?.user?.id ?? null)
 
     if (s?.user) {
       // Sync server-side cookies — fire and forget
@@ -206,6 +211,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const signOut = useCallback(async () => {
     await supabase.auth.signOut()
+    // Also done by the SIGNED_OUT event, but the redirect below can unload the
+    // page before that listener runs.
+    reconcileCartOwner(null)
     setUser(null)
     setSession(null)
     setProfile(null)

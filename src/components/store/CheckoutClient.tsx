@@ -153,7 +153,10 @@ export default function CheckoutClient({ districts, storeEnabled, wallets, instr
       })
       clear()
     } catch {
-      setFormError("We could not reach the server. Your card has not been charged — nothing was taken.")
+      // The order may have been written before the connection dropped, so the
+      // cart is kept and the buyer is pointed at their orders, not told nothing
+      // happened — a blind retry here places a second order.
+      setFormError("We lost the connection before your order was confirmed. Check My orders before trying again, so you do not order twice.")
     } finally {
       setSubmitting(false)
     }
