@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
-import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
+import { exceedsLimit, limitMessage } from '@/lib/toolLimits';
+import { getUserQuestionLimit } from '@/lib/questionLimit';
 import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 
@@ -86,11 +87,9 @@ export async function POST(request: Request) {
       );
     }
 
-    if (items.length > MAX_QUESTIONS_PER_PAPER) {
-      return NextResponse.json(
-        { error: `A test can hold at most ${MAX_QUESTIONS_PER_PAPER} questions` },
-        { status: 400 }
-      );
+    const { limit: maxQuestions } = await getUserQuestionLimit(auth.user);
+    if (maxQuestions !== null && exceedsLimit(items.length, maxQuestions)) {
+      return NextResponse.json({ error: limitMessage(maxQuestions) }, { status: 403 });
     }
 
     const db = getSupabaseAdmin() || auth.db;

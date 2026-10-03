@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
+import { useQuestionLimit } from '@/lib/useQuestionLimit';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
@@ -111,6 +111,9 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [yearEnd, setYearEnd] = useState<number>(CURRENT_YEAR);
   const [difficulty, setDifficulty] = useState<string>('');
   const [limit, setLimit] = useState<number>(20);
+  const { limit: questionLimit } = useQuestionLimit();
+  // Admins, teachers and Pro students have no limit; the input still needs a ceiling.
+  const inputMax = questionLimit ?? 500;
   const [shuffle, setShuffle] = useState<boolean>(false);
   
   const [loading, setLoading] = useState(false);
@@ -514,14 +517,14 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             </div>
             <div>
               <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
-                Max Questions (up to {MAX_QUESTIONS_PER_PAPER})
+                {questionLimit === null ? 'Max Questions' : `Max Questions (up to ${questionLimit})`}
               </label>
               <input
                 type="number"
                 value={limit}
-                onChange={(e) => setLimit(Math.min(MAX_QUESTIONS_PER_PAPER, Math.max(1, parseInt(e.target.value) || 20)))}
+                onChange={(e) => setLimit(Math.min(inputMax, Math.max(1, parseInt(e.target.value) || 20)))}
                 min="1"
-                max={MAX_QUESTIONS_PER_PAPER}
+                max={inputMax}
                 className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>

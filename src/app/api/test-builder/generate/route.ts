@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
+import { MAX_QUESTIONS_PER_PAPER, exceedsLimit, limitMessage } from '@/lib/toolLimits';
+import { getUserQuestionLimit } from '@/lib/questionLimit';
+import { getSupabaseServer } from '@/lib/supabaseServer';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
@@ -135,11 +137,13 @@ export async function POST(request: Request) {
       );
     }
 
+    // Only look the caller up when the request is over the student limit.
     if (pages.length > MAX_QUESTIONS_PER_PAPER) {
-      return NextResponse.json(
-        { error: `A test can hold at most ${MAX_QUESTIONS_PER_PAPER} questions` },
-        { status: 400 }
-      );
+      const { data: { user } } = await getSupabaseServer().auth.getUser();
+      const { limit: maxQuestions } = await getUserQuestionLimit(user);
+      if (maxQuestions !== null && exceedsLimit(pages.length, maxQuestions)) {
+        return NextResponse.json({ error: limitMessage(maxQuestions) }, { status: 403 });
+      }
     }
 
     const pdfUrls = pages

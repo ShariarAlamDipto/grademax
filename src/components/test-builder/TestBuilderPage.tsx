@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
-import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
+import { limitMessage } from '@/lib/toolLimits';
+import { useQuestionLimit } from '@/lib/useQuestionLimit';
 
 function fireTrack(feature: string, payload?: Record<string, unknown>) {
   fetch("/api/track", {
@@ -66,6 +67,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   const [difficulty, setDifficulty] = useState('');
   const [yearStart, setYearStart] = useState(2011);
   const [yearEnd, setYearEnd] = useState(2025);
+  const { limit: questionLimit } = useQuestionLimit();
 
   // ── Question Browser ──
   const [questions, setQuestions] = useState<QuestionItem[]>([]);
@@ -217,8 +219,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
   const addToBasket = (q: QuestionItem) => {
     if (basketIds.has(q.id)) return;
-    if (basketItems.length >= MAX_QUESTIONS_PER_PAPER) {
-      setError(`A test can hold at most ${MAX_QUESTIONS_PER_PAPER} questions. Remove one to add another.`);
+    if (questionLimit !== null && basketItems.length >= questionLimit) {
+      setError(limitMessage(questionLimit));
       return;
     }
     setBasketItems(prev => [...prev, q]);
