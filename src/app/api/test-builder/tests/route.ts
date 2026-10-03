@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
 import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 
@@ -81,6 +82,13 @@ export async function POST(request: Request) {
     if (!items || items.length === 0) {
       return NextResponse.json(
         { error: 'At least one question is required' },
+        { status: 400 }
+      );
+    }
+
+    if (items.length > MAX_QUESTIONS_PER_PAPER) {
+      return NextResponse.json(
+        { error: `A test can hold at most ${MAX_QUESTIONS_PER_PAPER} questions` },
         { status: 400 }
       );
     }
