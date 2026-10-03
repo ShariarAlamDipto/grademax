@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
@@ -513,14 +514,14 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             </div>
             <div>
               <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
-                Max Questions
+                Max Questions (up to {MAX_QUESTIONS_PER_PAPER})
               </label>
               <input
                 type="number"
                 value={limit}
-                onChange={(e) => setLimit(parseInt(e.target.value) || 20)}
+                onChange={(e) => setLimit(Math.min(MAX_QUESTIONS_PER_PAPER, Math.max(1, parseInt(e.target.value) || 20)))}
                 min="1"
-                max="500"
+                max={MAX_QUESTIONS_PER_PAPER}
                 className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
               />
             </div>
