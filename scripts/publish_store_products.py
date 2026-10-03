@@ -59,32 +59,35 @@ WORKBOOK = ROOT / "data" / "workbook"
 # built and kept alongside it, but they are NOT part of the product and must not
 # appear in the page count, the spec line or the description.
 #
-# slug -> (questions volume, "N volumes" wording for the variant label)
+# slug -> the questions volume(s) shipped together as that one product.
+#
+# Mathematics B is sold only as the two-volume set (migration 31). The old
+# per-part products are deliberately absent, so a re-run can never switch them
+# back on.
 PRODUCTS = {
-    "mathematics-b-part-1": WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part1.pdf",
-    "mathematics-b-part-2": WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part2.pdf",
-    "further-pure-mathematics": WORKBOOK / "fpm/print/final/Further_Pure_Mathematics_Workbook_PRINT.pdf",
+    "mathematics-b": [
+        WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part1.pdf",
+        WORKBOOK / "mathsb/print/final/Mathematics_B_Workbook_PRINT_Part2.pdf",
+    ],
+    "further-pure-mathematics": [
+        WORKBOOK / "fpm/print/final/Further_Pure_Mathematics_Workbook_PRINT.pdf",
+    ],
 }
 
 # Copy that must not promise a mark scheme. Keyed by slug; `{pp}` is filled with
 # the measured page count of the questions volume.
 COPY = {
-    "mathematics-b-part-1": {
-        "spec_summary": "{pp} pages of questions",
+    "mathematics-b": {
+        "spec_summary": "{pp} pages of questions in 2 volumes",
         "description":
-            "Every Mathematics B past-paper question from chapters 1 to 5 — Number, Sets, "
-            "Algebra, Functions and Matrices — regrouped chapter by chapter and section by "
-            "section, so you practise one skill until it is finished instead of meeting it "
-            "once per paper. Reproduced at 1:1 from the board's own sheets, so the ruled "
-            "answer lines and the original spacing are intact.",
-    },
-    "mathematics-b-part-2": {
-        "spec_summary": "{pp} pages of questions",
-        "description":
-            "The second volume of the Mathematics B chapterwise workbook, covering chapters 6 "
-            "to 11 — Geometry, Mensuration, Vectors and transformation geometry, and the rest "
-            "of the specification. A complete book in its own right, with its own contents, "
-            "summary-and-formulae section and question index.",
+            "The complete Mathematics B chapterwise workbook, both volumes together. Part 1 "
+            "covers chapters 1 to 5 — Number, Sets, Algebra, Functions and Matrices; Part 2 "
+            "covers chapters 6 to 11 — Geometry, Mensuration, Vectors and transformation "
+            "geometry, and the rest of the specification. Every past-paper question is "
+            "regrouped chapter by chapter and section by section, so you practise one skill "
+            "until it is finished instead of meeting it once per paper. Reproduced at 1:1 "
+            "from the board's own sheets, so the ruled answer lines and the original spacing "
+            "are intact.",
     },
     "further-pure-mathematics": {
         "spec_summary": "{pp} pages of questions",
@@ -99,6 +102,10 @@ COPY = {
 }
 
 PRINT_VARIANT_LABEL = "Printed copy — spiral bound"
+
+
+def print_label(volumes: int) -> str:
+    return PRINT_VARIANT_LABEL if volumes == 1 else f"{PRINT_VARIANT_LABEL}, {volumes} volumes"
 
 COVER_DPI = 150
 DEFAULT_PREVIEW_PAGES = 12
@@ -120,15 +127,22 @@ def render_cover(pdf_path: Path) -> bytes:
         return pix.tobytes("jpeg", jpg_quality=88)
 
 
-def build_preview(pdf_path: Path, pages: int) -> tuple[bytes, int]:
-    """First `pages` sheets, cover included, as a standalone PDF."""
-    with fitz.open(pdf_path) as src:
-        n = min(pages, len(src))
-        out = fitz.open()
-        out.insert_pdf(src, from_page=0, to_page=n - 1)
-        data = out.tobytes(garbage=3, deflate=True)
+def build_preview(pdf_paths: list[Path], pages: int) -> tuple[bytes, int]:
+    """The opening sheets of each volume, cover included, as one standalone PDF.
+
+    The page budget is split evenly across volumes, so a buyer of a set sees the
+    cover and contents of every book in it, not just the first.
+    """
+    share = max(1, pages // len(pdf_paths))
+    out = fitz.open()
+    try:
+        for path in pdf_paths:
+            with fitz.open(path) as src:
+                n = min(share, len(src))
+                out.insert_pdf(src, from_page=0, to_page=n - 1)
+        return out.tobytes(garbage=3, deflate=True), len(out)
+    finally:
         out.close()
-        return data, n
 
 
 def page_count(pdf_path: Path) -> int:
@@ -170,6 +184,8 @@ def main() -> None:
     ap.add_argument("--commit", action="store_true")
     ap.add_argument("--enable-store", action="store_true",
                     help="also flip store_enabled to true (the shop goes live)")
+    ap.add_argument("--only", choices=sorted(PRODUCTS),
+                    help="publish just this product (leaves the others' stock untouched)")
     ap.add_argument("--stock", type=int, default=50,
                     help="stock_qty to set on each printed variant (seeded at 0, "
                          "which refuses every order)")
@@ -177,22 +193,25 @@ def main() -> None:
 
     products = {p["slug"]: p for p in fetch_products()}
     r2 = get_r2() if args.commit else None
-    print(f"{'COMMIT' if args.commit else 'dry-run'} — {len(PRODUCTS)} products\n")
+    targets = {args.only: PRODUCTS[args.only]} if args.only else PRODUCTS
+    print(f"{'COMMIT' if args.commit else 'dry-run'} — {len(targets)} products\n")
 
     activated = 0
-    for slug, q_pdf in PRODUCTS.items():
+    for slug, q_pdfs in targets.items():
         product = products.get(slug)
         if not product:
             print(f"!! {slug}: no such product row — skipping")
             continue
-        if not q_pdf.exists():
-            print(f"!! {slug}: missing {q_pdf.name} — skipping")
+        missing = [p.name for p in q_pdfs if not p.exists()]
+        if missing:
+            print(f"!! {slug}: missing {', '.join(missing)} — skipping")
             continue
 
-        q_pages = page_count(q_pdf)
+        q_pages = sum(page_count(p) for p in q_pdfs)
         want_preview = product.get("preview_pages") or DEFAULT_PREVIEW_PAGES
-        cover = render_cover(q_pdf)
-        preview, preview_n = build_preview(q_pdf, want_preview)
+        cover = render_cover(q_pdfs[0])
+        preview, preview_n = build_preview(q_pdfs, want_preview)
+        label = print_label(len(q_pdfs))
 
         cover_key = f"store/{slug}/cover.jpg"
         preview_key = f"store/{slug}/preview.pdf"
@@ -201,12 +220,12 @@ def main() -> None:
         copy = COPY[slug]
         spec = copy["spec_summary"].format(pp=q_pages)
         print(f"=== {slug}")
-        print(f"    questions volume: {q_pages}pp (mark schemes are not sold and are excluded)")
+        print(f"    questions: {len(q_pdfs)} volume(s), {q_pages}pp (mark schemes are not sold and are excluded)")
         print(f"    spec line: {spec}")
         print(f"    cover   {len(cover)//1024:>5} KB -> {cover_key}")
         print(f"    preview {len(preview)//1024:>5} KB, {preview_n} pages -> {preview_key}")
         print(f"    printed variant: page_count {q_pages}, stock_qty -> {args.stock}, "
-              f"label {PRINT_VARIANT_LABEL!r}")
+              f"label {label!r}")
 
         if not args.commit:
             print("    would activate the product and set the printed variant's page count\n")
@@ -230,7 +249,7 @@ def main() -> None:
                 patch("store_variants", v["id"], {
                     "page_count": q_pages,
                     "stock_qty": args.stock,
-                    "label": PRINT_VARIANT_LABEL,
+                    "label": label,
                 })
         activated += 1
         print("    published\n")
