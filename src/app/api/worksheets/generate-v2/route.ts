@@ -3,6 +3,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { requireAuth } from '@/lib/apiAuth';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
+import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
 // Several Supabase round-trips happen here. On a cold serverless start over a
@@ -109,11 +110,11 @@ export async function POST(request: Request) {
       yearStart,
       yearEnd,
       difficulty,
-      limit: rawLimit = 50,
+      limit: rawLimit = MAX_QUESTIONS_PER_PAPER,
       shuffle = false,
     } = body;
 
-    const limit = Math.max(1, Number(rawLimit) || 50);
+    const limit = Math.min(MAX_QUESTIONS_PER_PAPER, Math.max(1, Number(rawLimit) || MAX_QUESTIONS_PER_PAPER));
 
     if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json({ error: 'Topics are required' }, { status: 400 });

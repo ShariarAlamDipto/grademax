@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
 
 function fireTrack(feature: string, payload?: Record<string, unknown>) {
   fetch("/api/track", {
@@ -215,9 +216,12 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   // ─────────────────────────────────────────────
 
   const addToBasket = (q: QuestionItem) => {
-    if (!basketIds.has(q.id)) {
-      setBasketItems(prev => [...prev, q]);
+    if (basketIds.has(q.id)) return;
+    if (basketItems.length >= MAX_QUESTIONS_PER_PAPER) {
+      setError(`A test can hold at most ${MAX_QUESTIONS_PER_PAPER} questions. Remove one to add another.`);
+      return;
     }
+    setBasketItems(prev => [...prev, q]);
   };
 
   const removeFromBasket = (id: string) => {
