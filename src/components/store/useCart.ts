@@ -1,6 +1,8 @@
 "use client"
 
 import { useCallback, useEffect, useState } from "react"
+import { CART_EVENT, readCartLines as read, writeCartLines as write } from "@/lib/store/cartStorage"
+import type { CartLine } from "@/lib/store/cartStorage"
 
 /**
  * The cart lives in the browser only.
@@ -9,46 +11,15 @@ import { useCallback, useEffect, useState } from "react"
  * shown comes back from /api/store/cart, and the order is written from a fresh
  * server-side pricing pass, so a cart edited in devtools buys nothing cheaper.
  *
+ * Storage and ownership live in lib/store/cartStorage: a cart is tied to the
+ * account it was filled under, and AuthContext empties it on sign-out or when a
+ * different account signs in.
+ *
  * Updates are immutable: each change builds a new array rather than mutating
  * the stored one, so React always sees a changed reference and re-renders.
  */
 
-const STORAGE_KEY = "grademax.cart.v1"
-const CART_EVENT = "grademax:cart-changed"
-
-export interface CartLine {
-  variantId: string
-  quantity: number
-}
-
-function read(): CartLine[] {
-  if (typeof window === "undefined") return []
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY)
-    if (!raw) return []
-    const parsed: unknown = JSON.parse(raw)
-    if (!Array.isArray(parsed)) return []
-    return parsed
-      .filter((l): l is CartLine =>
-        typeof l === "object" && l !== null &&
-        typeof (l as CartLine).variantId === "string" &&
-        Number.isInteger((l as CartLine).quantity) && (l as CartLine).quantity > 0)
-      .slice(0, 20)
-  } catch {
-    // Private browsing and blocked site data both throw here. An empty cart is
-    // the right answer — it must never take the page down.
-    return []
-  }
-}
-
-function write(lines: CartLine[]): void {
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(lines))
-  } catch {
-    // Storage unavailable: the cart stays in memory for this page view.
-  }
-  window.dispatchEvent(new CustomEvent(CART_EVENT))
-}
+export type { CartLine }
 
 export function useCart() {
   const [lines, setLines] = useState<CartLine[]>([])
