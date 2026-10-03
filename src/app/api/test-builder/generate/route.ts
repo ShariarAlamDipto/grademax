@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
@@ -130,6 +131,13 @@ export async function POST(request: Request) {
     if (!pages || pages.length === 0) {
       return NextResponse.json(
         { error: 'At least one page is required' },
+        { status: 400 }
+      );
+    }
+
+    if (pages.length > MAX_QUESTIONS_PER_PAPER) {
+      return NextResponse.json(
+        { error: `A test can hold at most ${MAX_QUESTIONS_PER_PAPER} questions` },
         { status: 400 }
       );
     }
