@@ -274,7 +274,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <AuthProvider>
             <Navbar />
-            <div id="main-content" className="pt-[112px] sm:pt-[68px] flex-1">{children}</div>
+            <div id="main-content" className="pt-[var(--gm-nav-h)] flex-1">{children}</div>
             <Footer />
           </AuthProvider>
         </ThemeProvider>
