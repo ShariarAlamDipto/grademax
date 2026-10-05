@@ -31,7 +31,7 @@ export default function FilterBar({
         <select
           value={difficulty}
           onChange={(e) => onDifficultyChange(e.target.value)}
-          className="w-full p-2 text-sm border border-gray-600 bg-gray-800 text-white rounded-lg focus:border-blue-500 focus:outline-none"
+          className="w-full p-2 text-base lg:text-sm border border-gray-600 bg-gray-800 text-white rounded-lg focus:border-blue-500 focus:outline-none"
         >
           <option value="">All</option>
           <option value="easy">Easy</option>
@@ -47,7 +47,7 @@ export default function FilterBar({
           <select
             value={yearStart}
             onChange={(e) => onYearStartChange(parseInt(e.target.value))}
-            className="w-full p-2 text-sm border border-gray-600 bg-gray-800 text-white rounded-lg focus:border-blue-500 focus:outline-none"
+            className="w-full p-2 text-base lg:text-sm border border-gray-600 bg-gray-800 text-white rounded-lg focus:border-blue-500 focus:outline-none"
           >
             {YEARS.map((year) => (
               <option key={year} value={year}>{year}</option>
@@ -59,7 +59,7 @@ export default function FilterBar({
           <select
             value={yearEnd}
             onChange={(e) => onYearEndChange(parseInt(e.target.value))}
-            className="w-full p-2 text-sm border border-gray-600 bg-gray-800 text-white rounded-lg focus:border-blue-500 focus:outline-none"
+            className="w-full p-2 text-base lg:text-sm border border-gray-600 bg-gray-800 text-white rounded-lg focus:border-blue-500 focus:outline-none"
           >
             {YEARS.map((year) => (
               <option key={year} value={year}>{year}</option>
