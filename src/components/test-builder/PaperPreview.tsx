@@ -1,8 +1,11 @@
 'use client';
 
+import { useState, type MouseEvent } from 'react';
 import { QuestionItem } from './QuestionCard';
 import PdfThumbnail from './PdfThumbnail';
+import GeneratedPdfModal from './GeneratedPdfModal';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
+import { usePdfRenderMode } from '@/components/viewer/usePdfSupport';
 
 interface PaperPreviewProps {
   items: QuestionItem[];
@@ -38,7 +41,25 @@ export default function PaperPreview({
   worksheetBlob, markschemeBlob, pdfProgress, error,
 }: PaperPreviewProps) {
   const totalMarks = items.length * 4;
+  const renderMode = usePdfRenderMode();
+  const [viewing, setViewing] = useState<{ url: string; label: string } | null>(null);
+
+  // Touch devices preview in-page (see GeneratedPdfModal); desktop keeps the
+  // new-tab link with the browser's own viewer.
+  const openPreview = (e: MouseEvent<HTMLAnchorElement>, url: string, label: string) => {
+    if (renderMode === 'canvas') {
+      e.preventDefault();
+      setViewing({ url, label });
+      return;
+    }
+    handlePdfPreviewClick(e, url);
+  };
+
   return (
+    <>
+    {viewing && (
+      <GeneratedPdfModal url={viewing.url} label={viewing.label} onClose={() => setViewing(null)} />
+    )}
     <div className="bg-white dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 rounded-xl flex flex-col h-full overflow-hidden text-gray-900 dark:text-white"> 
       {/* ── Header ── */}
       <div className="shrink-0 p-4 border-b border-gray-700">
@@ -50,7 +71,7 @@ export default function PaperPreview({
             Paper Preview
           </h2>
           {items.length > 0 && (
-            <button onClick={onClearAll} className="text-xs text-red-400 hover:text-red-300 transition-colors">
+            <button onClick={onClearAll} disabled={generating} className="text-xs disabled:opacity-40 text-red-400 hover:text-red-300 transition-colors">
               Clear All
             </button>
           )}
@@ -60,7 +81,7 @@ export default function PaperPreview({
           value={testTitle}
           onChange={(e) => onTitleChange(e.target.value)}
           placeholder="Test title..."
-          className="w-full px-3 py-2 text-sm bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
+          className="w-full px-3 py-2 text-base lg:text-sm bg-gray-900 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none"
         />
         {items.length > 0 && (
           <div className="flex justify-between text-xs mt-2 text-gray-400">
@@ -121,19 +142,22 @@ export default function PaperPreview({
                   Q{index + 1}
                 </span>
 
-                {/* Reorder & remove controls */}
-                <div className="absolute top-1.5 right-2 z-10 flex items-center gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <button onClick={() => onMoveUp(index)} disabled={index === 0}
-                    className="p-1 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30" title="Move up">
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" /></svg>
+                {/* Reorder & remove controls. Revealed on hover only where a
+                    real hover exists — on touch screens they are always shown
+                    (an invisible-but-tappable button removed questions by accident).
+                    Locked while a PDF is building so the result matches the basket. */}
+                <div className="absolute top-1.5 right-2 z-10 flex items-center gap-1 transition-opacity [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:hover)]:group-focus-within:opacity-100">
+                  <button onClick={() => onMoveUp(index)} disabled={generating || index === 0}
+                    className="p-1.5 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30" title="Move up" aria-label={`Move question ${index + 1} up`}>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 15l7-7 7 7" /></svg>
                   </button>
-                  <button onClick={() => onMoveDown(index)} disabled={index === items.length - 1}
-                    className="p-1 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30" title="Move down">
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                  <button onClick={() => onMoveDown(index)} disabled={generating || index === items.length - 1}
+                    className="p-1.5 bg-gray-900/80 text-white rounded hover:bg-gray-800 disabled:opacity-30" title="Move down" aria-label={`Move question ${index + 1} down`}>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
                   </button>
-                  <button onClick={() => onRemove(item.id)}
-                    className="p-1 bg-red-600/80 text-white rounded hover:bg-red-700" title="Remove">
-                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                  <button onClick={() => onRemove(item.id)} disabled={generating}
+                    className="p-1.5 bg-red-600/80 text-white rounded hover:bg-red-700 disabled:opacity-30" title="Remove" aria-label={`Remove question ${index + 1}`}>
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
                   </button>
                 </div>
 
@@ -194,7 +218,7 @@ export default function PaperPreview({
                   href={worksheetUrl}
                   target="_blank"
                   rel="noopener"
-                  onClick={(e) => handlePdfPreviewClick(e, worksheetUrl)}
+                  onClick={(e) => openPreview(e, worksheetUrl, 'Question Paper')}
                   className="flex-1 bg-green-600/30 border border-green-500/60 text-green-200 hover:bg-green-600/50 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -229,7 +253,7 @@ export default function PaperPreview({
                   href={markschemeUrl}
                   target="_blank"
                   rel="noopener"
-                  onClick={(e) => handlePdfPreviewClick(e, markschemeUrl)}
+                  onClick={(e) => openPreview(e, markschemeUrl, 'Mark Scheme')}
                   className="flex-1 bg-blue-600/30 border border-blue-500/60 text-blue-200 hover:bg-blue-600/50 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center justify-center gap-1.5"
                 >
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -267,5 +291,6 @@ export default function PaperPreview({
         </button>
       </div>
     </div>
+    </>
   );
 }
