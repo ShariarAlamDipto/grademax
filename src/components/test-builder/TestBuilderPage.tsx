@@ -19,6 +19,25 @@ import QuestionCard, { QuestionItem } from './QuestionCard';
 import PaperPreview from './PaperPreview';
 import QuestionPreviewModal from './QuestionPreviewModal';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
+import { pageWindow } from '@/lib/pagination';
+import {
+  BASKET_STORAGE_KEY,
+  parseStoredBasket,
+  serializeBasket,
+  type StoredBasket,
+} from '@/lib/basketStorage';
+
+/** Tailwind `lg` — below this the inline preview column is hidden. */
+const LG_BREAKPOINT_PX = 1024;
+/** Desktop navbar height (68px + 1px border); replaced by a measurement once the drawer opens. */
+const DEFAULT_NAV_HEIGHT_PX = 69;
+/** Shown when questions are added/removed while a PDF is still building. */
+const STALE_BASKET_MESSAGE = 'Your questions changed while the PDF was building. Tap Generate again.';
+/** Page-number buttons: wider screens vs phones (see the pagination nav). */
+const PAGE_BUTTONS_WIDE = 7;
+const PAGE_BUTTONS_PHONE = 3;
+/** How long a basket notice toast stays up. */
+const NOTICE_MS = 4000;
 
 // ─────────────────────────────────────────────
 // Types
@@ -94,10 +113,22 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   const [worksheetBlob, setWorksheetBlob] = useState<Blob | null>(null);
   const [markschemeBlob, setMarkschemeBlob] = useState<Blob | null>(null);
   const [pdfProgress, setPdfProgress] = useState<{ step: number; total: number; label: string } | null>(null);
+  // Three separate channels so each message shows where the student is
+  // looking: search errors above the results, PDF errors in the preview
+  // footer, and basket notices as a toast (the results header is usually
+  // scrolled far out of view when "+ Add" is tapped on a phone).
   const [error, setError] = useState<string | null>(null);
+  const [generateError, setGenerateError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
 
   // ── Basket helpers ──
   const basketIds = useMemo(() => new Set(basketItems.map(i => i.id)), [basketItems]);
+  // Bumped on every basket change, so a PDF build can tell if the basket
+  // moved under it and discard a result that no longer matches.
+  const basketVersion = useRef(0);
+  const pendingRestore = useRef<StoredBasket | null>(null);
+  const [basketHydrated, setBasketHydrated] = useState(false);
+  const resultsTopRef = useRef<HTMLDivElement>(null);
 
   // ─────────────────────────────────────────────
   // Fetch topics when subject changes
@@ -129,18 +160,14 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     fetchTopics();
   }, [selectedSubject]);
 
-  // Reset when subject changes — clear basket and any previously generated PDFs
+  // Reset when subject changes — clear basket and any previously generated PDFs.
+  // Skipped on mount: there is nothing to reset yet, and running it would
+  // wipe a basket the restore effect below has just put back.
+  const lastSubject = useRef<string | null>(null);
   useEffect(() => {
-    setSelectedTopics([]);
-    setQuestions([]);
-    setPagination({ page: 1, limit: 20, total: 0, totalPages: 0 });
-    setSearchTriggered(false);
-    setError(null);
-    setBasketItems([]);
-    setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
-    setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
-    setWorksheetBlob(null);
-    setMarkschemeBlob(null);
+    const changed = lastSubject.current !== null && lastSubject.current !== selectedSubject;
+    lastSubject.current = selectedSubject;
+    if (changed) resetForSubject();
 
     if (selectedSubject) {
       const subject = initialSubjects.find(s => s.id === selectedSubject);
@@ -151,19 +178,109 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     }
   }, [selectedSubject]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Detect mobile and auto-open drawer when first item added
+  function resetForSubject() {
+    setSelectedTopics([]);
+    setQuestions([]);
+    setPagination({ page: 1, limit: 20, total: 0, totalPages: 0 });
+    setSearchTriggered(false);
+    setError(null);
+    setGenerateError(null);
+    discardGeneratedPdfs();
+
+    // A basket saved before the page was unloaded is restored once its
+    // subject is selected; any other subject change starts a fresh basket.
+    const restore = pendingRestore.current;
+    if (restore && restore.subjectId === selectedSubject) {
+      pendingRestore.current = null;
+      setBasketItems(restore.items);
+      setTestTitle(restore.title);
+    } else {
+      setBasketItems([]);
+    }
+  }
+
+  // "Mobile" must match the `lg` breakpoint that hides the inline preview
+  // column, or 768-1023px screens get no preview at all. The drawer is
+  // never auto-opened: students keep adding questions and open it from the
+  // bottom bar when they are ready to build the PDF.
   useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    const checkMobile = () => setIsMobile(window.innerWidth < LG_BREAKPOINT_PX);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Restore a basket saved this session (e.g. before iOS navigated away to
+  // a generated PDF). Same subject → apply now; otherwise switch subject and
+  // let the reset effect above apply it.
   useEffect(() => {
-    if (isMobile && basketItems.length === 1) {
-      setShowMobilePreview(true);
+    let saved: StoredBasket | null = null;
+    try {
+      saved = parseStoredBasket(window.sessionStorage.getItem(BASKET_STORAGE_KEY));
+    } catch {
+      // Storage blocked (private mode) — nothing to restore.
     }
-  }, [basketItems, isMobile]);
+    setBasketHydrated(true);
+    if (!saved || saved.items.length === 0) return;
+    if (!initialSubjects.some(s => s.id === saved.subjectId)) return;
+
+    if (saved.subjectId === selectedSubject) {
+      setBasketItems(saved.items);
+      setTestTitle(saved.title);
+    } else {
+      pendingRestore.current = saved;
+      setSelectedSubject(saved.subjectId);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    // Don't overwrite a saved basket before it has been read back, or while
+    // it is still waiting for its subject to be selected.
+    if (!basketHydrated || pendingRestore.current) return;
+    try {
+      if (basketItems.length === 0) {
+        window.sessionStorage.removeItem(BASKET_STORAGE_KEY);
+      } else {
+        window.sessionStorage.setItem(
+          BASKET_STORAGE_KEY,
+          serializeBasket({ subjectId: selectedSubject, title: testTitle, items: basketItems }),
+        );
+      }
+    } catch {
+      // Storage full or blocked — the basket still works, it just won't survive a reload.
+    }
+  }, [basketItems, testTitle, selectedSubject, basketHydrated]);
+
+  useEffect(() => {
+    if (!notice) return;
+    const timer = setTimeout(() => setNotice(null), NOTICE_MS);
+    return () => clearTimeout(timer);
+  }, [notice]);
+
+  // Lock the page behind the mobile drawer so scrolling the preview doesn't
+  // scroll the question list underneath it (iOS scroll chaining).
+  const drawerOpen = isMobile && showMobilePreview;
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => { document.body.style.overflow = previous; };
+  }, [drawerOpen]);
+
+  // The drawer must start below the fixed navbar, whose height varies by
+  // breakpoint (two rows, ~117px, on phones). A hard-coded offset hid the
+  // drawer's header — and its only close button — behind the nav pills.
+  const [navBottom, setNavBottom] = useState(DEFAULT_NAV_HEIGHT_PX);
+  useEffect(() => {
+    if (!drawerOpen) return;
+    const measure = () => {
+      const nav = document.querySelector('nav[aria-label="Main navigation"]');
+      if (nav) setNavBottom(Math.max(0, Math.round(nav.getBoundingClientRect().bottom)));
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, [drawerOpen]);
 
   // ─────────────────────────────────────────────
   // Fetch questions
@@ -203,6 +320,22 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     }
   }, [selectedSubject, selectedTopics, difficulty, yearStart, yearEnd]);
 
+  // After a page change, bring the student back to the top of the results —
+  // on a phone the page buttons sit far below the first new question.
+  // Scrolls once the new page has rendered — scrolling while the list is
+  // being swapped out gets cancelled by the layout shift in WebKit.
+  const scrollAfterLoad = useRef(false);
+  const goToPage = (page: number) => {
+    scrollAfterLoad.current = true;
+    void fetchQuestions(page);
+  };
+  useEffect(() => {
+    if (loadingQuestions || !scrollAfterLoad.current) return;
+    scrollAfterLoad.current = false;
+    resultsTopRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [loadingQuestions]);
+  const mobileWindow = pageWindow(pagination.page, pagination.totalPages, PAGE_BUTTONS_PHONE);
+
   // ─────────────────────────────────────────────
   // Topic toggle
   // ─────────────────────────────────────────────
@@ -217,47 +350,54 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   // Basket operations
   // ─────────────────────────────────────────────
 
+  /** Drop any generated PDFs (revoking their object URLs). */
+  function discardGeneratedPdfs() {
+    setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setWorksheetBlob(null);
+    setMarkschemeBlob(null);
+  }
+
+  /**
+   * Every basket edit goes through here: a PDF built from the old basket no
+   * longer matches, so its download links are withdrawn rather than letting
+   * the student download a stale paper.
+   */
+  const updateBasket = (next: (prev: QuestionItem[]) => QuestionItem[]) => {
+    basketVersion.current += 1;
+    setBasketItems(next);
+    setGenerateError(null);
+    discardGeneratedPdfs();
+  };
+
   const addToBasket = (q: QuestionItem) => {
     if (basketIds.has(q.id)) return;
     if (questionLimit !== null && basketItems.length >= questionLimit) {
-      setError(limitMessage(questionLimit));
+      setNotice(limitMessage(questionLimit));
       return;
     }
-    setBasketItems(prev => [...prev, q]);
+    updateBasket(prev => [...prev, q]);
   };
 
   const removeFromBasket = (id: string) => {
-    setBasketItems(prev => prev.filter(i => i.id !== id));
+    updateBasket(prev => prev.filter(i => i.id !== id));
   };
+
+  const swap = (items: QuestionItem[], a: number, b: number): QuestionItem[] =>
+    items.map((item, i) => (i === a ? items[b] : i === b ? items[a] : item));
 
   const moveUp = (index: number) => {
     if (index <= 0) return;
-    setBasketItems(prev => {
-      const arr = [...prev];
-      [arr[index - 1], arr[index]] = [arr[index], arr[index - 1]];
-      return arr;
-    });
+    updateBasket(prev => swap(prev, index - 1, index));
   };
 
   const moveDown = (index: number) => {
-    setBasketItems(prev => {
-      if (index >= prev.length - 1) return prev;
-      const arr = [...prev];
-      [arr[index], arr[index + 1]] = [arr[index + 1], arr[index]];
-      return arr;
-    });
+    if (index >= basketItems.length - 1) return;
+    updateBasket(prev => swap(prev, index, index + 1));
   };
 
   const clearBasket = () => {
-    // Revoke object URLs to prevent memory leaks
-    if (worksheetUrl) URL.revokeObjectURL(worksheetUrl);
-    if (markschemeUrl) URL.revokeObjectURL(markschemeUrl);
-
-    setBasketItems([]);
-    setWorksheetUrl(null);
-    setMarkschemeUrl(null);
-    setWorksheetBlob(null);
-    setMarkschemeBlob(null);
+    updateBasket(() => []);
   };
 
   // ─────────────────────────────────────────────
@@ -268,16 +408,10 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     if (basketItems.length === 0) return;
 
     setGenerating(true);
-    setError(null);
-
-    // Revoke previous object URLs before creating new ones
-    if (worksheetUrl) URL.revokeObjectURL(worksheetUrl);
-    if (markschemeUrl) URL.revokeObjectURL(markschemeUrl);
-
-    setWorksheetUrl(null);
-    setMarkschemeUrl(null);
-    setWorksheetBlob(null);
-    setMarkschemeBlob(null);
+    setGenerateError(null);
+    discardGeneratedPdfs();
+    const startedAtVersion = basketVersion.current;
+    const basketChanged = () => basketVersion.current !== startedAtVersion;
 
     const subject = initialSubjects.find(s => s.id === selectedSubject);
     const totalMarks = basketItems.length * 4;
@@ -311,6 +445,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
         throw new Error('No question PDFs could be downloaded. Please try again or check your connection.');
       }
 
+      if (basketChanged()) throw new Error(STALE_BASKET_MESSAGE);
       setWorksheetBlob(qpResult.blob);
       setWorksheetUrl(URL.createObjectURL(qpResult.blob));
 
@@ -333,7 +468,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               label: `Mark scheme · ${p.label}`,
             });
           });
-          if (msResult.successCount > 0) {
+          if (msResult.successCount > 0 && !basketChanged()) {
             setMarkschemeBlob(msResult.blob);
             setMarkschemeUrl(URL.createObjectURL(msResult.blob));
           }
@@ -341,6 +476,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       } catch (msErr) {
         console.warn('[TestBuilder] mark scheme generation failed', msErr);
       }
+
+      if (basketChanged()) throw new Error(STALE_BASKET_MESSAGE);
 
       // Step 3: Done
       setPdfProgress({ step: 2, total: 2, label: 'PDFs ready!' });
@@ -370,7 +507,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
     } catch (err: unknown) {
       console.error('[TestBuilder] generate failed', err);
-      setError(err instanceof Error ? err.message : 'Failed to generate PDF');
+      setGenerateError(err instanceof Error ? err.message : 'Failed to generate PDF');
       setPdfProgress(null);
     } finally {
       setGenerating(false);
@@ -401,7 +538,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
         />
       )}
 
-      <div className="max-w-[1800px] mx-auto p-4 md:p-6">
+      <div className={`max-w-[1800px] mx-auto p-4 md:p-6 ${isMobile && basketItems.length > 0 ? 'pb-28' : ''}`}>
         {/* Page header */}
         <div className="mb-6">
           <h1 className="text-2xl md:text-4xl font-bold text-white mb-1">Test Builder</h1>
@@ -458,7 +595,9 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           </div>
 
           {/* ═══ CENTER COLUMN: Question Browser ═══ */}
-          <div className="min-w-0">
+          {/* Always mounted (unlike the results header, which unmounts while
+              loading) so a page change has something to scroll to. */}
+          <div ref={resultsTopRef} className="min-w-0">
             {error && (
               <div className="bg-red-900/60 border border-red-500/50 rounded-xl p-4 mb-4">
                 <p className="text-red-300 text-sm">{error}</p>
@@ -513,30 +652,26 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                 )}
 
                 {pagination.totalPages > 1 && (
-                  <div className="flex items-center justify-center gap-2">
+                  // Phones show 3 page numbers, wider screens 7, and the row
+                  // wraps rather than overflowing: 7 numbers + Previous/Next
+                  // is ~480px, wider than a phone, and the page clips
+                  // horizontal overflow — which hid both Previous and Next.
+                  <nav aria-label="Question pages" className="flex flex-wrap items-center justify-center gap-2">
                     <button
-                      onClick={() => fetchQuestions(pagination.page - 1)}
+                      onClick={() => goToPage(pagination.page - 1)}
                       disabled={pagination.page <= 1}
-                      className="px-4 py-2 text-sm bg-gray-800 border border-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                      className="px-3 sm:px-4 py-2 text-sm bg-gray-800 border border-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                     >
                       Previous
                     </button>
-                    {Array.from({ length: Math.min(pagination.totalPages, 7) }, (_, i) => {
-                      let pageNum: number;
-                      if (pagination.totalPages <= 7) {
-                        pageNum = i + 1;
-                      } else if (pagination.page <= 4) {
-                        pageNum = i + 1;
-                      } else if (pagination.page >= pagination.totalPages - 3) {
-                        pageNum = pagination.totalPages - 6 + i;
-                      } else {
-                        pageNum = pagination.page - 3 + i;
-                      }
+                    {pageWindow(pagination.page, pagination.totalPages, PAGE_BUTTONS_WIDE).map((pageNum) => {
+                      const onPhone = mobileWindow.includes(pageNum);
                       return (
                         <button
                           key={pageNum}
-                          onClick={() => fetchQuestions(pageNum)}
-                          className={`w-9 h-9 text-sm rounded-lg transition-colors ${
+                          onClick={() => goToPage(pageNum)}
+                          aria-current={pageNum === pagination.page ? 'page' : undefined}
+                          className={`${onPhone ? 'inline-flex' : 'hidden sm:inline-flex'} items-center justify-center w-9 h-9 text-sm rounded-lg transition-colors ${
                             pageNum === pagination.page
                               ? 'bg-blue-600 text-white'
                               : 'bg-gray-800 border border-gray-600 text-gray-300 hover:bg-gray-700'
@@ -547,13 +682,13 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                       );
                     })}
                     <button
-                      onClick={() => fetchQuestions(pagination.page + 1)}
+                      onClick={() => goToPage(pagination.page + 1)}
                       disabled={pagination.page >= pagination.totalPages}
-                      className="px-4 py-2 text-sm bg-gray-800 border border-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                      className="px-3 sm:px-4 py-2 text-sm bg-gray-800 border border-gray-600 text-white rounded-lg hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
                     >
                       Next
                     </button>
-                  </div>
+                  </nav>
                 )}
 
                 {questions.length === 0 && pagination.total === 0 && (
@@ -587,7 +722,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               worksheetBlob={worksheetBlob}
               markschemeBlob={markschemeBlob}
               pdfProgress={pdfProgress}
-              error={error}
+              error={generateError}
             />
           </div>
         </div>
@@ -601,8 +736,8 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               onClick={() => setShowMobilePreview(false)}
             />
 
-            {/* Drawer Panel */}
-            <div className="fixed bottom-0 left-0 right-0 top-[60px] z-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col rounded-t-2xl overflow-hidden">
+            {/* Drawer Panel — starts below the fixed navbar (measured above). */}
+            <div style={{ top: navBottom }} className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col rounded-t-2xl overflow-hidden">
               {/* Header */}
               <div className="shrink-0 flex items-center justify-between px-4 py-3 border-b border-gray-700 bg-gray-800/80">
                 <h2 className="text-base font-bold text-white flex items-center gap-2">
@@ -638,29 +773,46 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
                   worksheetBlob={worksheetBlob}
                   markschemeBlob={markschemeBlob}
                   pdfProgress={pdfProgress}
-                  error={error}
+                  error={generateError}
                 />
               </div>
             </div>
           </>
         )}
 
-        {/* Mobile FAB Button */}
-        {isMobile && basketItems.length > 0 && !showMobilePreview && (
-          <button
-            onClick={() => setShowMobilePreview(true)}
-            className="fixed bottom-6 right-6 z-30 flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full shadow-lg hover:shadow-xl transition-all active:scale-95 font-bold text-2xl"
-            title="Show preview"
+        {/* Basket notice toast (e.g. question limit reached). Sits above the
+            mobile bottom bar and above the question preview modal, since
+            "+ Add to Test" can be tapped from either. */}
+        {notice && (
+          <div
+            role="status"
+            className={`fixed left-4 right-4 z-[70] mx-auto max-w-md rounded-xl border border-amber-500/60 bg-gray-900/95 px-4 py-3 text-sm text-amber-200 shadow-2xl backdrop-blur ${
+              isMobile && basketItems.length > 0 && !showMobilePreview ? 'bottom-24' : 'bottom-6'
+            }`}
           >
-            <div className="relative w-8 h-8">
-              <svg className="absolute inset-0 w-full h-full" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <div className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full">
-                {basketItems.length}
+            {notice}
+          </div>
+        )}
+
+        {/* Mobile bottom bar: keeps the question list usable while the
+            basket fills, and opens the preview / PDF step on demand. */}
+        {isMobile && basketItems.length > 0 && !showMobilePreview && (
+          <div className="fixed bottom-0 left-0 right-0 z-30 border-t border-gray-700 bg-gray-900/95 backdrop-blur px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))]">
+            <div className="flex items-center gap-3">
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-semibold text-white">
+                  {basketItems.length} question{basketItems.length === 1 ? '' : 's'} added
+                </p>
+                <p className="text-xs text-gray-400 truncate">Keep adding, then build your PDF</p>
               </div>
+              <button
+                onClick={() => setShowMobilePreview(true)}
+                className="shrink-0 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold rounded-lg shadow-lg active:scale-95 transition-transform"
+              >
+                Build PDF
+              </button>
             </div>
-          </button>
+          </div>
         )}
       </div>
     </div>
