@@ -274,7 +274,7 @@ export default async function SubjectYearPapersPage({
       />
 
       <main className="min-h-screen bg-black text-white">
-        <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky top-0 z-10">
+        <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky z-10" style={{ top: "var(--gm-nav-h)" }}>
           <div className="max-w-4xl mx-auto px-6 py-3 flex items-center gap-2 text-sm flex-wrap">
             <Link href={catalogPath} className="text-white/50 hover:text-white transition-colors">
               Past Papers
