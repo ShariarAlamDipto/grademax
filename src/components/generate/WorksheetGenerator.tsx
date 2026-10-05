@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useQuestionLimit } from '@/lib/useQuestionLimit';
+import { parseQuestionCount } from '@/lib/questionCountInput';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
@@ -23,6 +24,8 @@ interface Topic {
 
 const CURRENT_YEAR = new Date().getFullYear();
 const START_YEAR = 2011;
+/** Questions requested when the student leaves Max Questions empty or invalid. */
+const DEFAULT_QUESTION_COUNT = 20;
 const YEARS = Array.from({ length: CURRENT_YEAR - START_YEAR + 1 }, (_, i) => CURRENT_YEAR - i);
 
 interface Question {
@@ -110,10 +113,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [yearStart, setYearStart] = useState<number>(START_YEAR);
   const [yearEnd, setYearEnd] = useState<number>(CURRENT_YEAR);
   const [difficulty, setDifficulty] = useState<string>('');
-  const [limit, setLimit] = useState<number>(20);
+  // Kept as the raw text so the field can be emptied while typing; the count
+  // actually requested is always derived (and clamped) from it.
+  const [limitDraft, setLimitDraft] = useState<string>(String(DEFAULT_QUESTION_COUNT));
   const { limit: questionLimit } = useQuestionLimit();
   // Admins, teachers and Pro students have no limit; the input still needs a ceiling.
   const inputMax = questionLimit ?? 500;
+  const limit = parseQuestionCount(limitDraft, inputMax, DEFAULT_QUESTION_COUNT);
   const [shuffle, setShuffle] = useState<boolean>(false);
   
   const [loading, setLoading] = useState(false);
@@ -475,7 +481,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={yearStart}
                 onChange={(e) => setYearStart(parseInt(e.target.value))}
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -489,7 +495,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={yearEnd}
                 onChange={(e) => setYearEnd(parseInt(e.target.value))}
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -507,7 +513,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               >
                 <option value="">All</option>
                 <option value="easy">Easy</option>
@@ -521,11 +527,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               </label>
               <input
                 type="number"
-                value={limit}
-                onChange={(e) => setLimit(Math.min(inputMax, Math.max(1, parseInt(e.target.value) || 20)))}
+                inputMode="numeric"
+                value={limitDraft}
+                onChange={(e) => setLimitDraft(e.target.value)}
+                onBlur={() => setLimitDraft(String(limit))}
                 min="1"
                 max={inputMax}
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               />
             </div>
             <div className="col-span-2 md:col-span-1 flex items-end">

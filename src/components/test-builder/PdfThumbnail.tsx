@@ -2,29 +2,27 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+/** Beyond 2x costs phone memory for no visible gain (iOS caps total canvas memory). */
+const MAX_DPR = 2;
+/** Start loading a little before the thumbnail scrolls into view. */
+const PRELOAD_MARGIN = '300px 0px';
+const A4_RATIO = 1.414;
+
 // Cache the pdfjs module so it's only loaded once across all thumbnails
-let pdfjsCache: typeof import('pdfjs-dist') | null = null;
-async function getPdfjsLib() {
-  if (!pdfjsCache) {
-    try {
-      pdfjsCache = await import('pdfjs-dist');
-      console.log('[PdfThumbnail] pdfjs-dist loaded');
-    } catch (err) {
-      console.error('[PdfThumbnail] Failed to import pdfjs-dist:', err);
-      throw new Error('Failed to load pdfjs-dist library');
-    }
+let pdfjsPromise: Promise<typeof import('pdfjs-dist')> | null = null;
+function getPdfjsLib(): Promise<typeof import('pdfjs-dist')> {
+  if (!pdfjsPromise) {
+    pdfjsPromise = import('pdfjs-dist').then((lib) => {
+      lib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+      return lib;
+    });
   }
-  
-  // Always ensure worker source is set correctly
-  if (pdfjsCache && pdfjsCache.GlobalWorkerOptions) {
-    pdfjsCache.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-  }
-  
-  return pdfjsCache;
+  return pdfjsPromise;
 }
 
 interface PdfThumbnailProps {
   url: string;
+  /** Upper bound on the rendered width in CSS px; the thumbnail never exceeds its container. */
   width?: number;
   className?: string;
   onClick?: () => void;
@@ -32,16 +30,38 @@ interface PdfThumbnailProps {
 
 /**
  * Renders the first page of a PDF as a canvas thumbnail.
- * Worker is served from /public/pdf.worker.min.mjs for reliability.
+ *
+ * Fluid: it fills its container up to `width`, so a 400px thumbnail in a
+ * 330px phone card is scaled down rather than cropped. Lazy: nothing is
+ * fetched until it nears the viewport, so a page of 20 cards doesn't hold 20
+ * full-resolution canvases at once. There is deliberately no <iframe>
+ * fallback — phones paint a PDF iframe as a blank white box.
  */
 export default function PdfThumbnail({ url, width = 280, className = '', onClick }: PdfThumbnailProps) {
+  const wrapperRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [visible, setVisible] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const taskRef = useRef(0); // generation counter to cancel stale renders
 
   useEffect(() => {
+    const element = wrapperRef.current;
+    if (!element) return;
+    if (typeof IntersectionObserver === 'undefined') { setVisible(true); return; }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: PRELOAD_MARGIN });
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (!url) { setError(true); setLoading(false); return; }
+    if (!visible) return;
 
     const gen = ++taskRef.current;
     setLoading(true);
@@ -51,63 +71,36 @@ export default function PdfThumbnail({ url, width = 280, className = '', onClick
       try {
         const pdfjsLib = await getPdfjsLib();
 
-        // For blob URLs, fetch the data directly instead of passing URL
-        let loadData: any;
-        if (url.startsWith('blob:')) {
-          console.log('[PdfThumbnail] Loading blob URL data directly');
-          try {
-            const response = await fetch(url);
-            if (!response.ok) throw new Error(`Fetch failed: ${response.status}`);
-            const arrayBuffer = await response.arrayBuffer();
-            console.log('[PdfThumbnail] Blob fetched, size:', arrayBuffer.byteLength, 'bytes');
-            loadData = { data: new Uint8Array(arrayBuffer) };
-          } catch (fetchErr) {
-            const blobError = fetchErr instanceof TypeError ? 
-              ' (blob may have been revoked or is inaccessible)' : '';
-            console.warn(`[PdfThumbnail] Failed to fetch blob: ${fetchErr}${blobError}`);
-            throw fetchErr;
-          }
-        } else {
-          loadData = { url };
-        }
+        // pdf.js can't stream a blob: URL, so read its bytes up front.
+        const source = url.startsWith('blob:')
+          ? { data: new Uint8Array(await (await fetch(url)).arrayBuffer()) }
+          : { url };
 
-        const loadingTask = pdfjsLib.getDocument({
-          ...loadData,
+        const pdf = await pdfjsLib.getDocument({
+          ...source,
           disableAutoFetch: true,
           disableStream: true,
           isEvalSupported: false,
-        });
-
-        const pdf = await loadingTask.promise;
+        }).promise;
         if (gen !== taskRef.current) { pdf.destroy(); return; }
 
         const page = await pdf.getPage(1);
-        if (gen !== taskRef.current) { pdf.destroy(); return; }
-
         const canvas = canvasRef.current;
-        if (!canvas) { pdf.destroy(); return; }
+        if (gen !== taskRef.current || !canvas) { pdf.destroy(); return; }
 
+        const cssWidth = Math.min(width, wrapperRef.current?.clientWidth || width);
+        const dpr = Math.min(window.devicePixelRatio || 1, MAX_DPR);
         const unscaledVp = page.getViewport({ scale: 1 });
-        const dpr = typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1;
-        const scale = (width * dpr) / unscaledVp.width;
-        const viewport = page.getViewport({ scale });
+        const viewport = page.getViewport({ scale: (cssWidth * dpr) / unscaledVp.width });
 
         canvas.width = viewport.width;
         canvas.height = viewport.height;
-        canvas.style.width = `${width}px`;
-        canvas.style.height = `${(viewport.height / viewport.width) * width}px`;
 
         const ctx = canvas.getContext('2d');
         if (!ctx) { pdf.destroy(); return; }
 
-        const renderTask = page.render({
-          canvasContext: ctx,
-          viewport,
-          canvas,
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        } as any);
-
-        await renderTask.promise;
+        await page.render({ canvasContext: ctx, viewport, canvas } as any).promise;
         pdf.destroy();
 
         if (gen === taskRef.current) setLoading(false);
@@ -118,43 +111,34 @@ export default function PdfThumbnail({ url, width = 280, className = '', onClick
     })();
 
     return () => { taskRef.current++; };
-  }, [url, width]);
-
-  if (error) {
-    // Fallback: show the PDF in a scaled iframe
-    return (
-      <div
-        className={`relative bg-white rounded-lg overflow-hidden ${onClick ? 'cursor-pointer' : ''} ${className}`}
-        onClick={onClick}
-        style={{ width, height: width * 1.414 }}
-      >
-        <iframe
-          src={`${url}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-          className="border-0 pointer-events-none"
-          title="PDF preview"
-          style={{
-            width: width * 3,
-            height: width * 1.414 * 3,
-            transform: 'scale(0.333)',
-            transformOrigin: 'top left',
-          }}
-        />
-      </div>
-    );
-  }
+  }, [url, width, visible]);
 
   return (
     <div
+      ref={wrapperRef}
       className={`relative bg-white rounded-lg overflow-hidden ${onClick ? 'cursor-pointer' : ''} ${className}`}
       onClick={onClick}
-      style={{ width, minHeight: loading ? width * 1.414 : undefined }}
+      style={{
+        width: '100%',
+        maxWidth: width,
+        aspectRatio: loading || error ? `1 / ${A4_RATIO}` : undefined,
+      }}
     >
-      {loading && (
-        <div className="absolute inset-0 flex items-center justify-center bg-gray-50" style={{ height: width * 1.414 }}>
+      {loading && !error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-50">
           <div className="animate-spin w-6 h-6 border-2 border-gray-300 border-t-blue-500 rounded-full" />
         </div>
       )}
-      <canvas ref={canvasRef} className={loading ? 'invisible absolute' : 'block'} />
+      {error && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-50 px-3 text-center text-xs text-gray-500">
+          Preview unavailable
+        </div>
+      )}
+      <canvas
+        ref={canvasRef}
+        className={loading || error ? 'invisible absolute' : 'block'}
+        style={{ width: '100%', height: 'auto' }}
+      />
     </div>
   );
 }
