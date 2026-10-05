@@ -89,13 +89,34 @@ html.light {
 /* ── Base ── */
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Height of the fixed navbar (.gm-nav), so page content, sticky bars and
+   anchor jumps all clear it. Phones add a second row of link pills, pinned to
+   a fixed height in Navbar.tsx: 68px bar + 49px row + 1px border. Keep the
+   two in step — a hard-coded 112px left every page's top 6px under the nav. */
+:root { --gm-nav-h: 69px; }
+@media (max-width: 639px) {
+  :root { --gm-nav-h: 118px; }
+}
+
 html {
   background-color: var(--gm-bg);
   color: var(--gm-text);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;
+  scroll-padding-top: var(--gm-nav-h);
   transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* iOS zooms the page into any focused form field under 16px and leaves it
+   zoomed. On touch screens every text field is 16px; !important so it also
+   beats inline font sizes. */
+@media (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="color"]),
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
 }
 
 body {
@@ -689,6 +710,14 @@ html.light body {
   cursor: default;
 }
 .gm-paper-action[data-muted="true"]:hover { color: var(--gm-text-3); }
+
+/* On touch screens the bare-text QP / MS / Both links (~20px, 14px apart)
+   were easy to mis-tap. Inline padding grows the hit area to ~40px without
+   changing the row's height. */
+@media (pointer: coarse) {
+  .gm-paper-actions { gap: 0.35rem; }
+  .gm-paper-action { padding: 0.7rem 0.45rem; }
+}
 
 /* ── Store ──────────────────────────────────────────────────────────────────
    The product, cart and checkout pages put a sticky summary beside the main

@@ -5,6 +5,9 @@ import NavAuthSection from "./NavAuthSection"
 import ThemeToggle from "./ThemeToggle"
 import CartLink from "./store/CartLink"
 
+/** Height of the xs links row, border included; see --gm-nav-h in globals.css. */
+const MOBILE_ROW_HEIGHT = 49
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -158,15 +161,23 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ── Mobile core-links row (only on xs, hidden sm+) ── */}
+      {/* ── Mobile core-links row (only on xs, hidden sm+) ──
+          Fixed at MOBILE_ROW_HEIGHT so the navbar's total height matches
+          --gm-nav-h in globals.css. The pills are sized to fit all five on a
+          360px+ phone (they used to push "Books" off-screen); narrower
+          screens scroll the row instead of clipping it. */}
       <div
         className="flex sm:hidden"
         style={{
           borderTop: "1px solid var(--gm-border)",
-          padding: "0.5rem 1rem",
-          justifyContent: "space-around",
+          height: MOBILE_ROW_HEIGHT,
+          padding: "0 0.375rem",
+          alignItems: "center",
+          justifyContent: "space-between",
           background: "var(--gm-nav-bg)",
-          gap: "0.375rem",
+          gap: "0.2rem",
+          overflowX: "auto",
+          scrollbarWidth: "none",
         }}
       >
         {coreLinks.map(({ href, label }) => (
@@ -175,17 +186,16 @@ export default function Navbar() {
             href={href}
             className="gradient-hover-sea"
             style={{
-              padding: "0.35rem 0.65rem",
+              padding: "0.35rem 0.4rem",
               borderRadius: "99px",
-              fontSize: "0.72rem",
+              fontSize: "0.7rem",
               fontWeight: 500,
               whiteSpace: "nowrap",
               background: "var(--gm-card-bg)",
               border: "1px solid var(--gm-border-2)",
               textDecoration: "none",
-              flex: "1 1 0",
+              flex: "1 0 auto",
               textAlign: "center",
-              maxWidth: "120px",
             }}
           >
             {label}
@@ -201,6 +211,12 @@ export default function Navbar() {
             borderTop: "1px solid var(--gm-border)",
             background: "var(--gm-nav-bg)",
             padding: "0.75rem 1.25rem 1.25rem",
+            // The menu lives inside the fixed navbar, which never scrolls —
+            // without this, links below the fold (a phone in landscape) were
+            // unreachable.
+            maxHeight: "calc(100dvh - var(--gm-nav-h))",
+            overflowY: "auto",
+            overscrollBehavior: "contain",
           }}
         >
           <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "0.15rem" }}>

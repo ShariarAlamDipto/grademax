@@ -28,7 +28,7 @@ export default function NavAuthSection() {
     return (
       <Link
         href="/login"
-        className="rounded-lg bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-100 px-3 py-1.5 text-sm font-medium transition-colors"
+        className="rounded-lg bg-gray-900 text-white hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-100 px-3 py-1.5 text-sm font-medium whitespace-nowrap transition-colors"
       >
         Sign In
       </Link>

@@ -21,6 +21,9 @@ const GOOGLE_ADS_ORIGINS = [
   // beacon. Its TLD is bare `.google`, so the `https://*.google.com` entries below
   // never matched it and every page load logged a blocked-connection CSP error.
   "https://*.adtrafficquality.google",
+  // AdSense's CSI page-timing beacon (fetch/sendBeacon). `*.gstatic.com` was
+  // only in img-src, so connect-src blocked it and logged a CSP error per page.
+  "https://csi.gstatic.com",
 ].join(" ");
 
 const baseCsp = [

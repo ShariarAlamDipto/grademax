@@ -332,7 +332,7 @@ export default async function SubjectPapersPage({
 
       <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
         {/* Header */}
-        <div style={{ borderBottom: "1px solid var(--gm-border)", background: "var(--gm-nav-bg)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", position: "sticky", top: "68px", zIndex: 10 }}>
+        <div style={{ borderBottom: "1px solid var(--gm-border)", background: "var(--gm-nav-bg)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)", position: "sticky", top: "var(--gm-nav-h)", zIndex: 10 }}>
           <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0.875rem 1.5rem", display: "flex", alignItems: "center", gap: "0.875rem", flexWrap: "wrap" }}>
             <Link href={catalogPath} className="gm-link" style={{ fontSize: "0.82rem" }}>
               ← Past Papers
