@@ -284,6 +284,10 @@ function OrderDrawer({ order, onClose, onChanged }: { order: Order; onClose: () 
             <span style={{ display: "block", fontSize: "0.72rem", color: "var(--gm-text-3)", marginTop: "0.2rem" }}>
               {formatDhakaDate(order.created_at)}
             </span>
+            <Link href={`/admin/receipts?order=${encodeURIComponent(order.order_number)}`}
+                  style={{ fontSize: "0.72rem", color: "var(--gm-blue)", textDecoration: "none", display: "inline-block", marginTop: "0.4rem" }}>
+              Make receipt →
+            </Link>
           </div>
           <button onClick={onClose} aria-label="Close order details"
                   style={{ background: "none", border: "none", cursor: "pointer", color: "var(--gm-text-3)", fontSize: "1.2rem", lineHeight: 1 }}>
