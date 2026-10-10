@@ -9,6 +9,7 @@ import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { ADSENSE_SCRIPT_SRC } from '@/lib/ads'
+import { SOCIAL_SAME_AS } from '@/lib/social'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700','800'], display: 'swap' });
 
@@ -34,8 +35,8 @@ const jsonLd = {
       description: 'Free Edexcel past papers, topic-wise question papers, and custom worksheet generator for IGCSE and A Level students. Access mark schemes, practice papers, and revision resources for Physics, Maths, Chemistry, Biology, ICT and more.',
       foundingDate: '2024',
       knowsAbout: ['Edexcel past papers', 'IGCSE', 'A Level', 'Pearson Edexcel', 'Past paper questions', 'Mark schemes'],
-      // sameAs intentionally omitted — only add social profiles that actually
-      // exist and are controlled by GradeMax; fake profile links hurt E-E-A-T.
+      // Only real, GradeMax-controlled profiles (see src/lib/social.tsx).
+      sameAs: SOCIAL_SAME_AS,
     },
     {
       '@type': 'WebSite',

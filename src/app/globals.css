@@ -373,6 +373,45 @@ body {
 }
 .gm-link-blue:hover { color: var(--gm-blue); }
 
+/* Community / social links (contact page cards + footer icons) */
+.gm-social-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.125rem;
+  background: var(--gm-card-bg);
+  border: 1px solid var(--gm-border-2);
+  border-radius: 1rem;
+  color: var(--gm-text);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.gm-social-card:hover { border-color: var(--gm-social-accent); transform: translateY(-1px); }
+.gm-social-card:focus-visible { outline: 2px solid var(--gm-social-accent); outline-offset: 2px; }
+.gm-social-cta {
+  flex-shrink: 0;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--gm-social-accent);
+  white-space: nowrap;
+}
+.gm-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--gm-border-2);
+  color: var(--gm-text-3);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.gm-social-icon:hover,
+.gm-social-icon:focus-visible { color: var(--gm-social-accent); border-color: var(--gm-social-accent); }
+
 /* Subject / Catalog card hover */
 .subject-card {
   background: var(--gm-card-bg);

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import type { CSSProperties } from 'react'
+import { SOCIAL_PROFILES, SocialIcon } from '@/lib/social'
 
 export default function Footer() {
   return (
@@ -118,6 +120,22 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div style={{ borderTop: "1px solid var(--gm-border)", paddingTop: "1.25rem", textAlign: "center" }}>
+          <div style={{ display: "flex", justifyContent: "center", gap: "0.75rem", marginBottom: "0.875rem" }}>
+            {SOCIAL_PROFILES.map((p) => (
+              <a
+                key={p.id}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gm-social-icon"
+                aria-label={`GradeMax on ${p.name}`}
+                title={`${p.cta} on ${p.name}`}
+                style={{ "--gm-social-accent": p.color } as CSSProperties}
+              >
+                <SocialIcon id={p.id} size={16} />
+              </a>
+            ))}
+          </div>
           <p style={{ fontSize: "0.78rem", color: "var(--gm-text-3)" }}>
             © {new Date().getFullYear()} GradeMax. All rights reserved.
           </p>
