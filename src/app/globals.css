@@ -373,6 +373,45 @@ body {
 }
 .gm-link-blue:hover { color: var(--gm-blue); }
 
+/* Community / social links (contact page cards + footer icons) */
+.gm-social-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.125rem;
+  background: var(--gm-card-bg);
+  border: 1px solid var(--gm-border-2);
+  border-radius: 1rem;
+  color: var(--gm-text);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.gm-social-card:hover { border-color: var(--gm-social-accent); transform: translateY(-1px); }
+.gm-social-card:focus-visible { outline: 2px solid var(--gm-social-accent); outline-offset: 2px; }
+.gm-social-cta {
+  flex-shrink: 0;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--gm-social-accent);
+  white-space: nowrap;
+}
+.gm-social-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  border: 1px solid var(--gm-border-2);
+  color: var(--gm-text-3);
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.gm-social-icon:hover,
+.gm-social-icon:focus-visible { color: var(--gm-social-accent); border-color: var(--gm-social-accent); }
+
 /* Subject / Catalog card hover */
 .subject-card {
   background: var(--gm-card-bg);
@@ -737,4 +776,36 @@ html.light body {
     position: static !important;
     top: auto !important;
   }
+}
+
+/* ── Promo banner (scrolling strip under the navbar, PromoBanner.tsx) ── */
+.gm-promo {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--gm-amber-bg);
+  border-bottom: 1px solid var(--gm-amber-ring);
+  color: var(--gm-amber);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  text-decoration: none;
+}
+.gm-promo:hover { background: var(--gm-amber-ring); }
+.gm-promo-track {
+  display: inline-flex;
+  animation: gm-promo-scroll 32s linear infinite;
+}
+.gm-promo:hover .gm-promo-track,
+.gm-promo:focus-visible .gm-promo-track { animation-play-state: paused; }
+.gm-promo-item { padding-right: 6rem; }
+@keyframes gm-promo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-promo { white-space: normal; text-align: center; padding: 0 1rem; }
+  .gm-promo-track { animation: none; display: inline; }
+  .gm-promo-item + .gm-promo-item { display: none; }
+  .gm-promo-item { padding-right: 0; }
 }

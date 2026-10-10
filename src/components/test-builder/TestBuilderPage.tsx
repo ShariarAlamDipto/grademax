@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { limitMessage } from '@/lib/toolLimits';
 import { useQuestionLimit } from '@/lib/useQuestionLimit';
+import SignInPrompt from '@/components/SignInPrompt';
 
 function fireTrack(feature: string, payload?: Record<string, unknown>) {
   fetch("/api/track", {
@@ -118,6 +119,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   // footer, and basket notices as a toast (the results header is usually
   // scrolled far out of view when "+ Add" is tapped on a phone).
   const [error, setError] = useState<string | null>(null);
+  const [needsSignIn, setNeedsSignIn] = useState(false);
   const [generateError, setGenerateError] = useState<string | null>(null);
   const [notice, setNotice] = useState<string | null>(null);
 
@@ -291,6 +293,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
     setLoadingQuestions(true);
     setError(null);
+    setNeedsSignIn(false);
     setSearchTriggered(true);
 
     try {
@@ -304,6 +307,11 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
       if (yearEnd) params.set('yearEnd', String(yearEnd));
 
       const res = await fetch(`/api/test-builder/questions?${params.toString()}`);
+      if (res.status === 401) {
+        setNeedsSignIn(true);
+        setQuestions([]);
+        return;
+      }
       const data = await res.json();
 
       if (!res.ok) {
@@ -415,9 +423,15 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
 
     const subject = initialSubjects.find(s => s.id === selectedSubject);
     const totalMarks = basketItems.length * 4;
+    // The metadata is printed on each question's first page, so a question
+    // and its mark scheme can always be matched by eye.
     const pagesPayload = basketItems.map(item => ({
       qpPageUrl: item.qpPageUrl,
       msPageUrl: item.msPageUrl,
+      questionNumber: item.questionNumber,
+      year: item.year,
+      season: item.season,
+      paper: item.paper,
     }));
 
     try {
@@ -598,6 +612,13 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           {/* Always mounted (unlike the results header, which unmounts while
               loading) so a page change has something to scroll to. */}
           <div ref={resultsTopRef} className="min-w-0">
+            {needsSignIn && (
+              <SignInPrompt
+                title="Sign in to make customised test papers with Test Builder"
+                next="/test-builder"
+              />
+            )}
+
             {error && (
               <div className="bg-red-900/60 border border-red-500/50 rounded-xl p-4 mb-4">
                 <p className="text-red-300 text-sm">{error}</p>
@@ -623,7 +644,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               </div>
             )}
 
-            {searchTriggered && !loadingQuestions && (
+            {searchTriggered && !loadingQuestions && !needsSignIn && (
               <>
                 <div className="flex items-center justify-between mb-3">
                   <h2 className="text-base font-bold text-white">

@@ -37,7 +37,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.teachers_notes_render import (  # noqa: E402
-    CSS, KATEX, LADDER_CSS, build_pdf, ladder_table_html, split_ladder, stars, weight_table,
+    CSS, KATEX, LADDER_CSS, TOPIC_CSS, build_pdf, insert_topic_notes, ladder_table_html, split_ladder, stars, weight_table,
 )
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -258,6 +258,7 @@ def build_html(weights: dict, grand: int, by_ch: dict) -> str:
             print(f"WARNING: missing {frag_path.name}; chapter {ch} skipped")
             continue
         frag = frag_path.read_text(encoding="utf-8")
+        frag = insert_topic_notes(frag, NOTES_DIR / f"ch{ch:02d}_basics.html")
         toc.append(f'<tr><td><b>Chapter {ch}</b></td><td><b>{html.escape(title)}</b></td></tr>')
         for t in re.findall(r'<div class="type"><h3>(.*?)<', frag):
             toc.append(f'<tr><td></td><td>{t}</td></tr>')
@@ -284,7 +285,7 @@ def build_html(weights: dict, grand: int, by_ch: dict) -> str:
     front = (f'{FRONT_TOP}{ladder_table_html()}{FRONT_BOTTOM}{priority_ranking(weights, grand)}</div>')
     back = (f'<div class="chapter answers-back"><h1 class="ct">Answers to the graded practice</h1>'
             f'{"".join(answer_parts)}</div>')
-    return (f'<!doctype html><html><head><meta charset="utf-8">{KATEX}<style>{CSS}{LADDER_CSS}</style></head>'
+    return (f'<!doctype html><html><head><meta charset="utf-8">{KATEX}<style>{CSS}{LADDER_CSS}{TOPIC_CSS}</style></head>'
             f'<body>{cover}{contents}{front}{"".join(chapters)}{back}</body></html>')
 
 

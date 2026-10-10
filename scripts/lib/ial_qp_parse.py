@@ -87,7 +87,9 @@ TALLY_MAX_Y = 790.0
 #: '1.' / '12.' opening a page. The trailing dot is IAL house style and is what
 #: separates a question marker from a stray numeral; IGCSE papers print a bare
 #: number, which is why the FPM matcher does not port.
-QUESTION_START_RE = re.compile(r"^(\d{1,2})\s*\.")
+# Not followed by a digit: "12.5 m above horizontal ground" opens a line of
+# M1 text and is a decimal, not question 12 (6 false "bundled" flags on M1).
+QUESTION_START_RE = re.compile(r"^(\d{1,2})\s*\.(?!\d)")
 
 #: 'Question 7 continued' -- an explicit, unambiguous ownership statement.
 QUESTION_CONT_RE = re.compile(r"^Question\s+(\d{1,2})\s+continued", re.I)

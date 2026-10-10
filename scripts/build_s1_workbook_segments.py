@@ -36,7 +36,11 @@ import fitz
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from lib.ial_ms_parse import extract_blocks  # noqa: E402
+from lib.ial_chapterwise_build import (  # noqa: E402
+    attach_markschemes,
+    source_papers,
+    write_slice,
+)
 from lib.ial_qp_parse import (  # noqa: E402
     RECOVERY_PREFIX,
     QUESTION_CONT_RE,
@@ -121,53 +125,27 @@ class PaperResult:
 
 def discover_papers() -> tuple[list[PaperSource], list[str]]:
     """
-    Find every WST01 question paper, dropping duplicates and exclusions.
+    The unit's VERIFIED sittings, from data/workbook/ial_sources/<unit>/.
 
-    Duplicate detection is by CONTENT, not filename. Three WST01 papers in this
-    archive are the same paper filed under two sessions (the COVID reuse
-    pattern) and differ only in our own watermark's session token. Kept, they
-    would put 12% of the book in twice.
+    Since 2026-10-06 papers come from the folder lib/ial_chapterwise_sources.py
+    assembles -- every question paper and mark scheme checked against its own
+    printed identity, the archive's wrong files replaced, duplicates refused.
+    The content-fingerprint duplicate check is kept as a second guard.
     """
     notes: list[str] = []
-    candidates: list[PaperSource] = []
-
-    for qp_path in sorted(SOURCE_DIR.rglob(f"Mathematics_{UNIT}_*_QP.pdf")):
-        match = re.search(rf"Mathematics_{UNIT}_(\d{{4}})_([A-Za-z-]+)_QP\.pdf$", qp_path.name)
-        if not match:
-            notes.append(f"unparseable filename, skipped: {qp_path.name}")
-            continue
-        year = int(match.group(1))
-        season = SEASON_FROM_FOLDER.get(match.group(2).lower(), match.group(2).lower())
-        key = f"{year}_{season}"
-
-        if key in EXCLUDED_PAPERS:
-            notes.append(f"excluded {key}: {EXCLUDED_PAPERS[key]}")
-            continue
-
-        ms_path = qp_path.with_name(qp_path.name.replace("_QP.pdf", "_MS.pdf"))
-        candidates.append(
-            PaperSource(
-                key=key,
-                year=year,
-                season=season,
-                qp_path=qp_path,
-                ms_path=ms_path if ms_path.exists() else None,
-            )
-        )
-
     unique: list[PaperSource] = []
     seen: dict[str, str] = {}
-    for source in candidates:
-        fingerprint = content_fingerprint(source.qp_path)
-        if fingerprint in seen:
-            notes.append(
-                f"duplicate: {source.key} is the same paper as {seen[fingerprint]} "
-                f"(identical text once the watermark session token is stripped)"
-            )
+    for row in source_papers(UNIT):
+        if row["key"] in EXCLUDED_PAPERS:
+            notes.append(f"excluded {row['key']}: {EXCLUDED_PAPERS[row['key']]}")
             continue
-        seen[fingerprint] = source.key
-        unique.append(source)
-
+        fingerprint = content_fingerprint(row["qp"])
+        if fingerprint in seen:
+            notes.append(f"duplicate: {row['key']} is the same paper as {seen[fingerprint]}")
+            continue
+        seen[fingerprint] = row["key"]
+        unique.append(PaperSource(key=row["key"], year=row["year"], season=row["season"],
+                                  qp_path=row["qp"], ms_path=row["ms"]))
     return unique, notes
 
 
@@ -210,17 +188,15 @@ def write_paper(result: PaperResult) -> tuple[int, dict[str, int]]:
     # question paper's. A question with no entry here gets no mark scheme file
     # and `has_markscheme: false` -- a blank slot a student can act on, rather
     # than another question's scheme presented as this one's.
-    blocks: dict[int, object] = {}
+    blocks: dict = {}
     ms_stats: dict[str, int] = {}
     if result.source.ms_path is not None:
         expected = {q.number: q.marks for q in result.questions}
-        blocks, ms_stats = extract_blocks(result.source.ms_path, expected)
-        for number, block in blocks.items():
-            extract_range(
-                result.source.ms_path,
-                block.pages,
-                paper_dir / "markschemes" / f"q{number}.pdf",
-            )
+        blocks = attach_markschemes(result.source.ms_path, expected)
+        for number, part in blocks.items():
+            write_slice(result.source.ms_path, part,
+                        paper_dir / "markschemes" / f"q{number}.pdf")
+            ms_stats[part.route] = ms_stats.get(part.route, 0) + 1
             written += 1
 
     manifest = {
@@ -247,8 +223,12 @@ def write_paper(result: PaperResult) -> tuple[int, dict[str, int]]:
                 "ms_pages": (
                     list(blocks[q.number].pages) if q.number in blocks else None
                 ),
+                "ms_band": (
+                    [blocks[q.number].top, blocks[q.number].bottom]
+                    if q.number in blocks else None
+                ),
                 "ms_extractor": (
-                    blocks[q.number].extractor if q.number in blocks else None
+                    blocks[q.number].route if q.number in blocks else None
                 ),
                 "has_markscheme": q.number in blocks,
             }
@@ -395,7 +375,7 @@ def main() -> int:
     print(f"mark provenance   : {sources_used}")
     if args.execute:
         print(f"segment PDFs      : {written} written to {OUTPUT_DIR}")
-        attached = ms_totals.get("ruled", 0) + ms_totals.get("unruled", 0)
+        attached = sum(v for k, v in ms_totals.items() if k != "rejected")
         print(
             f"mark schemes      : {attached}/{total_questions} attached "
             f"({attached * 100 // max(total_questions, 1)}%), "
