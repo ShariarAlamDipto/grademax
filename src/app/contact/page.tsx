@@ -1,4 +1,6 @@
-import type { Metadata } from 'next'
+﻿import type { Metadata } from 'next'
+import type { CSSProperties } from 'react'
+import { SOCIAL_PROFILES, SocialIcon } from '@/lib/social'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -18,16 +20,53 @@ export default function ContactPage() {
             Get in touch
           </h1>
           <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", lineHeight: 1.6 }}>
-            Questions, feedback, or subject requests — reach out directly.
+            Join the GradeMax community, or reach out directly with questions, feedback, or subject requests.
           </p>
         </div>
+
+        {/* Community â€” one click opens the invite / profile in a new tab */}
+        <section aria-labelledby="community-heading" style={{ marginBottom: "3rem" }}>
+          <h2 id="community-heading" style={{ fontSize: "1rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "0.35rem" }}>
+            Join the community
+          </h2>
+          <p style={{ color: "var(--gm-text-2)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: "1rem" }}>
+            Study with other IGCSE and A Level students and hear about new papers first.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+            {SOCIAL_PROFILES.map((p) => (
+              <a
+                key={p.id}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="gm-social-card"
+                aria-label={`${p.cta} â€” GradeMax on ${p.name} (opens in a new tab)`}
+                style={{ "--gm-social-accent": p.color } as CSSProperties}
+              >
+                <span
+                  style={{
+                    flexShrink: 0, display: "inline-flex", alignItems: "center", justifyContent: "center",
+                    width: "2.75rem", height: "2.75rem", borderRadius: "0.75rem", background: p.color, color: "#fff",
+                  }}
+                >
+                  <SocialIcon id={p.id} size={22} />
+                </span>
+                <span style={{ flex: 1, minWidth: 0 }}>
+                  <span style={{ display: "block", fontSize: "0.9rem", fontWeight: 600 }}>{p.name}</span>
+                  <span style={{ display: "block", fontSize: "0.775rem", color: "var(--gm-text-3)", lineHeight: 1.5 }}>{p.blurb}</span>
+                </span>
+                <span className="gm-social-cta">{p.cta}</span>
+              </a>
+            ))}
+          </div>
+        </section>
 
         {/* Contact items */}
         <div style={{ display: "flex", flexDirection: "column", gap: "0", marginBottom: "3rem" }}>
           {([
-            { label: "General and Support",  email: "shariardipto111@gmail.com", note: "Fastest response" },
-            { label: "Feature Requests",       email: "shariardipto111@gmail.com", note: "Ideas welcome" },
-            { label: "Bug Reports",            email: "shariardipto111@gmail.com", note: "Include details" },
+            { label: "General and Support",  email: "grademax.me@gmail.com", note: "Fastest response" },
+            { label: "Feature Requests",       email: "grademax.me@gmail.com", note: "Ideas welcome" },
+            { label: "Bug Reports",            email: "grademax.me@gmail.com", note: "Include details" },
           ] as { label: string; email: string; note: string }[]).map(({ label, email, note }, i, arr) => (
             <div
               key={label}
@@ -60,7 +99,7 @@ export default function ContactPage() {
         <div style={{ background: "var(--gm-card-bg)", border: "1px solid var(--gm-border-2)", borderRadius: "1rem", padding: "1.5rem" }}>
           <p style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--gm-text)", marginBottom: "0.4rem" }}>Response time</p>
           <p style={{ fontSize: "0.825rem", color: "var(--gm-text-2)", lineHeight: 1.6 }}>
-            Typically within 24–48 hours on weekdays. Subject requests are reviewed weekly.
+            Typically within 24â€“48 hours on weekdays. Subject requests are reviewed weekly.
           </p>
         </div>
 

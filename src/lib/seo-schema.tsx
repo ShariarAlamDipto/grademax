@@ -4,6 +4,7 @@
  */
 
 import { SEOSubject, Topic, getLevelDisplay } from './seo-subjects'
+import { SOCIAL_SAME_AS } from './social'
 
 const BASE_URL = 'https://www.grademax.me'
 const ORG_ID = `${BASE_URL}/#organization`
@@ -25,9 +26,7 @@ export function generateOrganizationSchema() {
       height: 512
     },
     description: 'GradeMax provides free Edexcel IGCSE and A Level past papers, topic-wise questions, custom worksheets, and mark schemes.',
-    sameAs: [
-      // Add social profiles when created
-    ]
+    sameAs: SOCIAL_SAME_AS,
   }
 }
 
