@@ -26,6 +26,11 @@ interface PaperRowProps {
  * Every action opens the on-site viewer rather than the raw PDF, so "Both"
  * (side by side) is always one click away from wherever a student is browsing.
  * The paper's own page keeps the direct downloads.
+ *
+ * No link here prefetches. A subject page lists hundreds of rows with four
+ * links each, and /viewer is force-dynamic with per-paper query strings, so
+ * viewport prefetching turned one page view into hundreds of uncacheable
+ * function invocations and ISR reads on Vercel.
  */
 export default function PaperRow({
   href,
@@ -44,7 +49,7 @@ export default function PaperRow({
   return (
     <div className="gm-paper-row" id={id}>
       {href ? (
-        <Link href={href} className="gm-paper-name">
+        <Link href={href} prefetch={false} className="gm-paper-name">
           {label}
           {code && <span className="gm-paper-code">{code}</span>}
         </Link>
@@ -59,6 +64,7 @@ export default function PaperRow({
         {qpUrl ? (
           <Link
             href={buildViewerHref({ doc: "qp", ...viewer })}
+            prefetch={false}
             className="gm-paper-action"
             title={`${viewerTitle} question paper`}
           >
@@ -73,6 +79,7 @@ export default function PaperRow({
         {msUrl ? (
           <Link
             href={buildViewerHref({ doc: "ms", ...viewer })}
+            prefetch={false}
             className="gm-paper-action"
             title={`${viewerTitle} mark scheme`}
           >
@@ -87,6 +94,7 @@ export default function PaperRow({
         {splitAvailable ? (
           <Link
             href={buildViewerHref({ doc: "qp", view: "split", ...viewer })}
+            prefetch={false}
             className="gm-paper-action"
             title="Open the question paper and mark scheme side by side"
           >

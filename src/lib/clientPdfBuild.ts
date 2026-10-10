@@ -19,7 +19,13 @@
  *   click Generate.
  */
 
-export interface PdfBuildPage {
+import {
+  assembleQuestionPdfs,
+  planQuestionSources,
+  type QuestionSourceMeta,
+} from './questionPdfAssembly';
+
+export interface PdfBuildPage extends QuestionSourceMeta {
   qpPageUrl: string;
   msPageUrl: string | null;
 }
@@ -52,14 +58,13 @@ export interface PdfBuildProgress {
 
 export interface PdfBuildResult {
   blob: Blob;
-  /** Number of source PDFs that were merged in successfully. */
+  /** Number of questions whose PDF was merged in successfully. */
   successCount: number;
-  /** Total source PDFs we tried to fetch (excludes pages with no URL). */
+  /** Questions that exist in the worksheet (each keeps its slot). */
   attemptedCount: number;
+  /** Questions that got a "not available" page instead of a PDF. */
+  placeholderCount: number;
 }
-
-const A4_W = 595.28; // PageSizes.A4 width in points
-const A4_H = 841.89; // PageSizes.A4 height in points
 
 /**
  * Download one PDF from storage and return its bytes, or null on any
@@ -82,7 +87,8 @@ export async function buildPdfInBrowser(
   onProgress?: (p: PdfBuildProgress) => void,
   signal?: AbortSignal,
 ): Promise<PdfBuildResult> {
-  const { PDFDocument, StandardFonts, rgb, PageSizes } = await import('pdf-lib');
+  const lib = await import('pdf-lib');
+  const { PDFDocument, StandardFonts, rgb, PageSizes } = lib;
 
   const merged = await PDFDocument.create();
   const bold = await merged.embedFont(StandardFonts.TimesRomanBold);
@@ -218,80 +224,26 @@ export async function buildPdfInBrowser(
   }
 
   // ── Source pages ───────────────────────────────────────────────────────
-  const urls = pages
-    .map((p) => (opts.kind === 'markscheme' ? p.msPageUrl : p.qpPageUrl))
-    .filter((u): u is string => Boolean(u));
-
-  const total = urls.length;
-  let done = 0;
-  let successCount = 0;
-
-  // Smaller batches than server-side: phones are bandwidth-constrained and
-  // 5 in-flight requests is plenty to saturate a 4G connection without
-  // overwhelming the device.
-  const batchSize = 5;
-
-  for (let i = 0; i < urls.length; i += batchSize) {
-    if (signal?.aborted) {
-      throw new DOMException('Aborted', 'AbortError');
-    }
-
-    onProgress?.({
-      step: 'downloading',
-      done,
-      total,
-      label: `Downloading page ${Math.min(done + 1, total)} of ${total}…`,
-    });
-
-    const batch = urls.slice(i, i + batchSize);
-    const buffers = await Promise.all(batch.map((u) => fetchPdfBytes(u, signal)));
-
-    for (const buf of buffers) {
-      done += 1;
-      if (!buf) {
-        onProgress?.({
-          step: 'downloading',
-          done,
-          total,
-          label: `Downloaded ${done} of ${total}`,
-        });
-        continue;
-      }
-
-      try {
-        const src = await PDFDocument.load(buf);
-        for (const pi of src.getPageIndices()) {
-          const srcPage = src.getPage(pi);
-          const { width: srcW, height: srcH } = srcPage.getSize();
-          if (Math.abs(srcW - A4_W) < 2 && Math.abs(srcH - A4_H) < 2) {
-            const [copied] = await merged.copyPages(src, [pi]);
-            merged.addPage(copied);
-          } else {
-            const [embedded] = await merged.embedPdf(src, [pi]);
-            const a4Page = merged.addPage(PageSizes.A4);
-            const scale = Math.min(A4_W / srcW, A4_H / srcH, 1);
-            a4Page.drawPage(embedded, {
-              x: (A4_W - srcW * scale) / 2,
-              y: (A4_H - srcH * scale) / 2,
-              width: srcW * scale,
-              height: srcH * scale,
-            });
-          }
-        }
-        successCount += 1;
-      } catch (err) {
-        // One bad PDF shouldn't kill the whole worksheet — log and move on.
-        console.warn('[clientPdfBuild] failed to merge a source PDF', err);
-      }
-
+  // Every question keeps its slot: a missing or failed PDF becomes a
+  // placeholder page rather than letting the next question's pages move up
+  // (see questionPdfAssembly.ts for the bug this prevents).
+  const sources = planQuestionSources(pages, opts.kind);
+  const total = sources.length;
+  const { merged: successCount, placeholders } = await assembleQuestionPdfs(
+    merged,
+    lib,
+    sources,
+    opts.kind,
+    (url) => fetchPdfBytes(url, signal),
+    ({ done }) =>
       onProgress?.({
-        step: 'merging',
+        step: done < total ? 'downloading' : 'merging',
         done,
         total,
-        label: `Merged ${done} of ${total}`,
-      });
-    }
-  }
+        label: `Added ${done} of ${total}`,
+      }),
+    signal,
+  );
 
   onProgress?.({
     step: 'finalizing',
@@ -309,5 +261,5 @@ export async function buildPdfInBrowser(
 
   onProgress?.({ step: 'done', done: total, total, label: 'PDF ready' });
 
-  return { blob, successCount, attemptedCount: total };
+  return { blob, successCount, attemptedCount: total, placeholderCount: placeholders };
 }

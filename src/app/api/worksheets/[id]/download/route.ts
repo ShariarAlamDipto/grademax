@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { requireAuth } from '@/lib/apiAuth';
-import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { mergeQuestionPdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { planQuestionSources } from '@/lib/questionPdfAssembly';
 
 // Same reason as /api/test-builder/generate — PDF merging across many source
 // files can run long, particularly on cold starts. Without these the default
@@ -209,17 +210,16 @@ export async function GET(
     const worksheetData = worksheet as unknown as WorksheetData;
     const items = worksheetData.worksheet_items.sort((a, b) => a.position - b.position);
 
-    const pdfUrls = items
-      .map((item) => {
-        if (!item.questions) return null;
-        if (type === 'markscheme') {
-          return toAbsolutePdfUrl(item.questions.ms_pdf_url);
-        }
-        return toAbsolutePdfUrl(item.questions.page_pdf_url);
-      })
-      .filter(Boolean) as string[];
+    const kind = type === 'markscheme' ? 'markscheme' : 'worksheet';
+    const sources = planQuestionSources(
+      items.map((item) => ({
+        qpPageUrl: toAbsolutePdfUrl(item.questions?.page_pdf_url),
+        msPageUrl: toAbsolutePdfUrl(item.questions?.ms_pdf_url),
+      })),
+      kind,
+    );
 
-    if (pdfUrls.length === 0) {
+    if (sources.every((source) => !source.url)) {
       return NextResponse.json({ error: 'No PDFs found' }, { status: 404 });
     }
 
@@ -239,7 +239,7 @@ export async function GET(
       totalQuestions: items.length,
     });
 
-    const successCount = await mergePagePdfs(mergedPdf, pdfUrls);
+    const { merged: successCount } = await mergeQuestionPdfs(mergedPdf, sources, kind);
 
     if (successCount === 0) {
       return NextResponse.json(

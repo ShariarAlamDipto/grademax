@@ -161,3 +161,65 @@ def weight_table(rows: list[tuple[str, str, int, int]], grand_marks: int, years:
             '<table><tr><th class="n">Section</th><th>Topic</th><th class="n">Questions</th>'
             '<th class="n">Marks</th><th class="n">Share of all marks</th><th>Priority</th></tr>'
             f'{"".join(body)}</table></div>')
+
+
+# ---------------------------------------------------------------------------
+# Topic notes: the "learn the maths from the basics" block for every section.
+# Written in chNN_basics.html as
+#   <div class="topic" data-sec="1.4" data-title="Bounds">...</div><!--/topic-->
+# and inserted straight after the chapter's <h2> for that section. A block whose
+# section has no <h2> of its own goes before the chapter's first numbered <h2>
+# (or its first question type when it has none).
+# ---------------------------------------------------------------------------
+
+TOPIC_CSS = """
+.topic { border: 1.5px solid var(--keyb); border-radius: 6px; margin: 8pt 0 12pt; padding: 0 0 6pt; }
+.topic > .topic-h { background: var(--keyb); color: #fff; font-weight: 700; font-size: 10.5pt;
+                    padding: 4pt 10pt; border-radius: 4px 4px 0 0; }
+.topic > .topic-b { padding: 2pt 10pt; }
+.topic h4 { color: var(--keyb); margin: 9pt 0 2pt; }
+.topic ol.steps > li { margin: 3pt 0; }
+.topic table.walk td:first-child { white-space: nowrap; width: 1%; font-weight: 600; }
+.topic table.walk td:last-child { color: var(--muted); font-size: 9pt; }
+.topic .check { background: var(--ex); border-radius: 4px; padding: 4pt 8pt; margin-top: 6pt; }
+.topic .ans { color: var(--muted); font-size: 8.5pt; }
+"""
+
+_TOPIC_RE = _re.compile(
+    r'<div class="topic" data-sec="([\d.]+)" data-title="([^"]*)">(.*?)</div><!--/topic-->', _re.S)
+_H2_SEC_RE = _re.compile(r'<h2>(\d+)\.(\d+)(?:\s*(?:&ndash;|and|,)\s*(?:\d+)\.(\d+))?[^<]*(?:<[^/][^>]*>[^<]*</[^>]+>[^<]*)*</h2>')
+
+
+def _render_topic(sec: str, title: str, body: str) -> str:
+    return (f'<div class="topic"><div class="topic-h">Topic notes &mdash; {sec} {title}</div>'
+            f'<div class="topic-b">{body}</div></div>')
+
+
+def insert_topic_notes(frag: str, basics_path: Path) -> str:
+    if not basics_path.exists():
+        print(f"WARNING: missing {basics_path.name}; no topic notes for this chapter")
+        return frag
+    blocks = _TOPIC_RE.findall(basics_path.read_text(encoding="utf-8"))
+    if not blocks:
+        print(f"WARNING: {basics_path.name} has no topic blocks")
+        return frag
+    placed: set[str] = set()
+    out, pos = [], 0
+    for m in _H2_SEC_RE.finditer(frag):
+        ch, lo = int(m.group(1)), int(m.group(2))
+        hi = int(m.group(3)) if m.group(3) else lo
+        mine = [b for b in blocks
+                if int(b[0].split(".")[0]) == ch and lo <= int(b[0].split(".")[1]) <= hi]
+        out.append(frag[pos:m.end()])
+        out.extend(_render_topic(*b) for b in mine)
+        placed.update(b[0] for b in mine)
+        pos = m.end()
+    out.append(frag[pos:])
+    frag = "".join(out)
+    rest = [b for b in blocks if b[0] not in placed]
+    if rest:
+        extra = "".join(_render_topic(*b) for b in rest)
+        m = _re.search(r"<h2>\d", frag)
+        i = m.start() if m else frag.find('<div class="type">')
+        frag = frag[:i] + extra + frag[i:] if i >= 0 else frag + extra
+    return frag

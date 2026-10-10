@@ -165,8 +165,26 @@ export async function proxy(request: NextRequest) {
   return response
 }
 
+// Every matched request is a billed function invocation, so the proxy only runs
+// where it can do something. It used to match every path except images, which
+// made nearly every page view, link prefetch, API call and public/ asset an
+// invocation even though ordinary pages return `response` untouched above.
+//
+//  - Auth: the protected prefixes (both trial states) and /login. /admin also
+//    needs PATHNAME_HEADER for its layout.
+//  - Canonicalization: a redirect is only possible when the path holds an
+//    uppercase letter or a unicode dash. Browsers send the dash percent-encoded
+//    (%E2%80%91), so `%` covers it; the literal dashes cover any client that
+//    does not encode. _next and api paths are excluded (build hashes contain
+//    uppercase, and no API path is canonicalisable).
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/dashboard/:path*",
+    "/profile/:path*",
+    "/admin/:path*",
+    "/lectures/:path*",
+    "/generate/:path*",
+    "/login",
+    "/((?!_next/|api/)[^A-Z%‐-―−]*[A-Z%‐-―−].*)",
   ],
 }
