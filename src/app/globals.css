@@ -777,3 +777,35 @@ html.light body {
     top: auto !important;
   }
 }
+
+/* ── Promo banner (scrolling strip under the navbar, PromoBanner.tsx) ── */
+.gm-promo {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--gm-amber-bg);
+  border-bottom: 1px solid var(--gm-amber-ring);
+  color: var(--gm-amber);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 2.1rem;
+  text-decoration: none;
+}
+.gm-promo:hover { background: var(--gm-amber-ring); }
+.gm-promo-track {
+  display: inline-flex;
+  animation: gm-promo-scroll 32s linear infinite;
+}
+.gm-promo:hover .gm-promo-track,
+.gm-promo:focus-visible .gm-promo-track { animation-play-state: paused; }
+.gm-promo-item { padding-right: 6rem; }
+@keyframes gm-promo-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gm-promo { white-space: normal; text-align: center; padding: 0 1rem; }
+  .gm-promo-track { animation: none; display: inline; }
+  .gm-promo-item + .gm-promo-item { display: none; }
+  .gm-promo-item { padding-right: 0; }
+}

@@ -2,6 +2,7 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import PromoBanner from '../components/PromoBanner'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Playfair_Display } from 'next/font/google'
@@ -275,7 +276,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <AuthProvider>
             <Navbar />
-            <div id="main-content" className="pt-[var(--gm-nav-h)] flex-1">{children}</div>
+            <div id="main-content" className="pt-[var(--gm-nav-h)] flex-1">
+              <PromoBanner />
+              {children}
+            </div>
             <Footer />
           </AuthProvider>
         </ThemeProvider>

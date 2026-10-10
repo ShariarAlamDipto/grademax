@@ -6,6 +6,7 @@ import { parseQuestionCount } from '@/lib/questionCountInput';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
+import SignInPrompt from '@/components/SignInPrompt';
 
 interface Subject {
   id: string;
@@ -127,7 +128,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [worksheetId, setWorksheetId] = useState<string | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [error, setError] = useState<string | null>(null);
-  
+  const [needsSignIn, setNeedsSignIn] = useState(false);
+
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
   // Blobs are retained next to their object URLs: iOS saves through the Web
@@ -209,6 +211,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
     setLoading(true);
     setError(null);
+    setNeedsSignIn(false);
     setWorksheetId(null);
     setQuestions([]);
 
@@ -232,6 +235,11 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
           shuffle,
         }),
       });
+
+      if (response.status === 401) {
+        setNeedsSignIn(true);
+        return;
+      }
 
       if (!response.ok) {
         const text = await response.text();
@@ -278,9 +286,15 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
     // Map the questions returned by /generate-v2 onto the shape the
     // browser-side merger expects.
+    // The metadata is printed on each question's first page, so a question
+    // and its mark scheme can always be matched by eye.
     const pagesPayload = questions.map((q) => ({
       qpPageUrl: q.qpPageUrl,
       msPageUrl: q.msPageUrl,
+      questionNumber: q.questionNumber,
+      year: q.year,
+      season: q.season,
+      paper: q.paper,
     }));
 
     try {
@@ -560,6 +574,10 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         </div>
 
         {/* Error Display */}
+        {needsSignIn && (
+          <SignInPrompt title="Sign in to make practice worksheets" next="/generate" />
+        )}
+
         {error && (
           <div className="bg-red-900 bg-opacity-80 backdrop-blur-lg border-2 border-red-500 rounded-xl p-4 md:p-6 mb-4 md:mb-8">
             <div className="flex items-center gap-3">
