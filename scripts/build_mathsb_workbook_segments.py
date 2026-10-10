@@ -70,6 +70,8 @@ from pathlib import Path
 
 import fitz
 
+from lib import ms_bands
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Configuration
 # ─────────────────────────────────────────────────────────────────────────────
@@ -134,24 +136,11 @@ FENCE_RE = re.compile(
 # A bare fence with no mark tally -- used only to detect that we under-matched.
 FENCE_LOOSE_RE = re.compile(r"Total\s+for\s+Question\s+(\d{1,2})", re.I)
 
-# Mark scheme table head. Maths B prints "Question / Working / Answer / Mark /
-# Notes"; the FPM variants are kept because the earlier Maths B years drift
-# toward them.
-MS_HEADER_ROW_RE = re.compile(
-    r"Question(?:\s+Working)?\s*\n\s*(?:Number\s*\n\s*)?(?:Scheme|Answer|Working)", re.I
-)
-
-# Read immediately after a header row: "1", "2 (a)(i)", "4(a)".
-MS_NUMBER_RE = re.compile(
-    r"^[^\S\n]*\n?(?:[^\S\n]*(?:Marks?|AO|Notes|Scheme|Answer|Working)[^\S\n]*\n)*"
-    r"\s*(\d{1,2})\s*\.?\s*(?:\(\s*[a-z]\s*\)\s*)*",
-)
-
-# Mark scheme per-question tally: "Total 2 marks".
-MS_TOTAL_RE = re.compile(r"Total\s+(\d{1,3})\s+marks?", re.I)
-
-# Older mark schemes close each part with a bracketed tally instead.
-MS_BRACKET_RE = re.compile(r"[\[(]\s*(\d{1,3})\s*[\])]")
+# Everything the mark scheme side needs to read -- the per-question tally, the
+# table head, the question number under it -- now lives in lib/ms_bands.py,
+# which reads them with coordinates so a block can be cut to its own band
+# instead of taking whole pages. The regexes that used to sit here read the
+# same things out of flat page text and are gone with the code that used them.
 
 # The printed question number sits hard against the left margin. Page-number
 # footers sit at a similar x, so the bottom strip of the page is excluded --
@@ -201,15 +190,25 @@ class Region:
     """
     One page of a segment. `top`/`bottom` are None where the segment owns the
     full page and a float where the page is shared and must be cropped.
+
+    `left`/`right` are the same idea across the page instead of down it, and are
+    used only by mark scheme pages that set /Rotate 90 and write their text
+    bottom-to-top. On those the table's rows advance along x, so a question's
+    block is a vertical stripe rather than a horizontal band. See
+    scripts/lib/ms_bands.py for why that layout has to be cut on its own axis.
     """
 
     page: int
     top: float | None = None
     bottom: float | None = None
+    left: float | None = None
+    right: float | None = None
 
     @property
     def cropped(self) -> bool:
-        return self.top is not None or self.bottom is not None
+        return any(
+            edge is not None for edge in (self.top, self.bottom, self.left, self.right)
+        )
 
 
 @dataclass(frozen=True)
@@ -656,74 +655,6 @@ def build_regions(
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def ms_totals_in_order(ms_path: Path) -> list[tuple[int, int]]:
-    """
-    Format A delimiter: every "Total N marks" line as (page_index, marks), in
-    document order.
-
-    Used by the 2016, 2017 and 2020-2022 mark schemes, which box each question
-    separately and close each box with its own tally.
-    """
-    found: list[tuple[int, int]] = []
-    with fitz.open(ms_path) as doc:
-        for index, page in enumerate(doc):
-            for match in MS_TOTAL_RE.finditer(normalise(page.get_text())):
-                found.append((index, int(match.group(1))))
-    return found
-
-
-def ms_question_rows(ms_path: Path) -> list[tuple[int, int, int | None]]:
-    """
-    Format B delimiter: the question-number rows of a continuous mark scheme
-    table, as (page_index, question, marks_or_None).
-
-    The 2018 and 2019 mark schemes print no per-question total at all. Instead
-    one table runs the length of the document with the question number in the
-    leftmost column and the question's mark in the rightmost numeric column:
-
-        x=77.6  "3"   ...working...   x=536.6  "2"
-
-    So a row is a standalone integer hard against the left edge, and its mark is
-    the standalone integer on the far side of the page at the same height. Both
-    columns are located per page rather than hardcoded, since the layout shifts
-    between portrait and landscape pages.
-    """
-    rows: list[tuple[int, int, int | None]] = []
-
-    with fitz.open(ms_path) as doc:
-        for index, page in enumerate(doc):
-            width = page.rect.width
-            left_limit = page.rect.x0 + width * 0.14
-            right_floor = page.rect.x0 + width * 0.55
-
-            left: list[tuple[float, int]] = []
-            right: list[tuple[float, int]] = []
-
-            try:
-                blocks = page.get_text("dict")["blocks"]
-            except Exception:  # noqa: BLE001
-                continue
-
-            for block in blocks:
-                for line in block.get("lines", []):
-                    text = "".join(s["text"] for s in line.get("spans", [])).strip()
-                    if not re.fullmatch(r"\d{1,2}", text):
-                        continue
-                    x0, y0 = line["bbox"][0], line["bbox"][1]
-                    if x0 < left_limit:
-                        left.append((y0, int(text)))
-                    elif x0 > right_floor:
-                        right.append((y0, int(text)))
-
-            for y0, question in sorted(left):
-                mark = next(
-                    (value for my, value in sorted(right) if abs(my - y0) <= 6), None
-                )
-                rows.append((index, question, mark))
-
-    return rows
-
-
 def align_sequences(expected: list[int], observed: list[int]) -> dict[int, int]:
     """
     Longest common subsequence between the paper's per-question marks and the
@@ -764,35 +695,46 @@ def locate_ms_blocks(
     ms_path: Path, fences: dict[int, tuple[int, int, float]]
 ) -> tuple[dict[int, tuple[Region, ...]], list[str]]:
     """
-    Map question number -> the mark scheme pages that hold it.
+    Map question number -> the slice of the mark scheme that holds it.
 
-    Maths B mark schemes come in two layouts and neither can be read
-    geometrically with any confidence: pages mix portrait and landscape, and
-    several print their table cells as rotated text, so "the line below this one"
-    is not a well-defined idea. Blocks are therefore delimited by CONTENT -- the
-    tally that closes each question, or the numbered row that opens it -- and
-    emitted as whole pages.
+    HISTORY, BECAUSE THE OLD BEHAVIOUR WAS DELIBERATE
+    -------------------------------------------------
+    This used to emit whole pages, on the reasoning that Maths B mark schemes
+    mix portrait and landscape and print some cells as rotated text, so their
+    coordinates could not be trusted -- and that the cost was small because
+    adjacent questions land in different chapters of the workbook.
 
-    That means a Paper 1 mark scheme page shared by three questions is attached
-    to all three. This is deliberate. Cropping it would mean trusting
-    coordinates that have already proved unreliable, and the cost of the
-    imprecision is small: adjacent questions land in different chapters of the
-    workbook, so a neighbour's scheme is not the answer to anything nearby. The
-    QP side, which is what a student actually attempts, is cropped exactly.
+    The cost was not small. A Paper 1 mark scheme fits three questions to a
+    page, so `q1.pdf` held question 1's scheme with questions 2 and 3 stapled
+    underneath and nothing marking where one ended. In a printed book the
+    student turns to the answer for question 1 and is shown three.
 
-    A block is attached only when the mapping from questions to blocks is
-    FORCED, not merely consistent -- see the note on skipped tallies below,
-    which is the real safeguard. A wrong mark scheme is worse than a missing
-    one.
+    The reasoning was also wrong about the coordinates. A band needs one number,
+    the coordinate at which a block ends, and both layouts state it in their own
+    text: Format A closes each block with its own "Total N marks", Format B
+    opens each with its own numbered row. Neither requires knowing what a cell
+    is, so rotation does not enter into it -- except on the pages that write
+    their text bottom-to-top, where the blocks advance across the page instead
+    of down it, and which are therefore cut on their own axis. All of that lives
+    in lib/ms_bands.py.
+
+    What survives from the old note is its real point: a GUESSED coordinate is
+    worse than a whole page. So every band edge here is the bounding box of text
+    matched by a regex, a page whose layout is not recognised is left whole, and
+    a block is attached only when the mapping from questions to blocks is
+    FORCED rather than merely consistent -- see the note on skipped tallies.
     """
     warnings: list[str] = []
     numbers = sorted(fences)
     expected_marks = [fences[q][1] for q in numbers]
 
-    anchors: dict[int, int] = {}  # question -> page where its block starts
+    with fitz.open(ms_path) as doc:
+        last_page = doc.page_count - 1
+
+    bands: dict[int, ms_bands.Band] = {}
     note = ""
 
-    # ── Format A: align the tally sequence against the paper's marks ─────────
+    # -- Format A: align the tally sequence against the paper's marks --------
     #
     # NOTE ON WHAT THIS DOES AND DOES NOT PROVE. Aligning on marks and then
     # "checking" the marks agree is circular -- LCS guarantees agreement by
@@ -811,19 +753,23 @@ def locate_ms_blocks(
     # reach this path, 5 skip on one side only, and 2 skip on both -- of which
     # one (2016 May-Jun 2R, 3 skipped each way) is rejected outright rather
     # than risk attaching another question's mark scheme.
-    totals = ms_totals_in_order(ms_path)
-    if totals:
-        alignment = align_sequences(expected_marks, [m for _, m in totals])
+    tallies = ms_bands.find_tallies(ms_path)
+    if tallies:
+        alignment = align_sequences(expected_marks, [t.marks for t in tallies])
         skipped_questions = len(numbers) - len(alignment)
-        skipped_tallies = len(totals) - len(alignment)
+        skipped_tallies = len(tallies) - len(alignment)
         unambiguous = (
             min(skipped_questions, skipped_tallies) == 0
             or skipped_questions + skipped_tallies <= 2
         )
 
         if len(alignment) >= 0.6 * len(numbers) and unambiguous:
-            for position, total_index in alignment.items():
-                anchors[numbers[position]] = totals[total_index][0]
+            assignment = {numbers[pos]: index for pos, index in alignment.items()}
+            # Headers let a band skip anything the previous question printed
+            # after its own tally, such as a separate Guidance table.
+            bands = ms_bands.bands_from_tallies(
+                tallies, assignment, ms_bands.find_block_headers(ms_path)
+            )
             note = (
                 f"mark scheme read as per-question tallies: "
                 f"{len(alignment)}/{len(numbers)} aligned "
@@ -839,61 +785,82 @@ def locate_ms_blocks(
             )
             return {}, warnings
 
-    # ── Format B: the continuous table's own numbered rows ───────────────────
-    if not anchors:
-        rows = ms_question_rows(ms_path)
+    # -- Format B: the continuous table's own numbered rows ------------------
+    if not bands:
+        rows = ms_bands.find_numbered_rows(ms_path)
+        row_assignment: dict[int, int] = {}
         confirmed = 0
         seen_page = -1
-        for page, question, mark in rows:
-            if question not in fences or question in anchors:
+        for index, row in enumerate(rows):
+            if row.question not in fences or row.question in row_assignment:
                 continue
             # Blocks run in question order, so a row that jumps backwards is a
             # stray integer from the working column, not a question row.
-            if page < seen_page:
+            if row.page < seen_page:
                 continue
-            anchors[question] = page
-            seen_page = page
-            if mark is not None and mark == fences[question][1]:
+            row_assignment[row.question] = index
+            seen_page = row.page
+            if row.marks is not None and row.marks == fences[row.question][1]:
                 confirmed += 1
 
-        if len(anchors) < 0.6 * len(numbers):
-            anchors = {}
-        else:
+        if len(row_assignment) >= 0.6 * len(numbers):
+            bands = ms_bands.bands_from_rows(rows, row_assignment, last_page=last_page)
             note = (
-                f"mark scheme read as a continuous table: {len(anchors)} numbered "
-                f"rows, {confirmed} also confirmed by their printed mark"
+                f"mark scheme read as a continuous table: {len(row_assignment)} "
+                f"numbered rows, {confirmed} also confirmed by their printed mark"
             )
 
-    if not anchors:
+    if not bands:
         warnings.append(
             f"mark scheme could not be aligned to the paper "
-            f"({len(totals)} tallies for {len(numbers)} questions, and no readable "
+            f"({len(tallies)} tallies for {len(numbers)} questions, and no readable "
             f"numbered table) -- no mark schemes attached"
         )
         return {}, warnings
 
-    if len(anchors) < len(numbers):
-        note += f" -- {len(numbers) - len(anchors)} question(s) unmatched"
+    if len(bands) < len(numbers):
+        note += f" -- {len(numbers) - len(bands)} question(s) unmatched"
     warnings.append(note)
 
-    # A block runs from its own anchor page to the page before the next one.
-    ordered = sorted(anchors.items())
-    blocks: dict[int, tuple[int, int]] = {}
-    for position, (question, page) in enumerate(ordered):
-        end = ordered[position + 1][1] if position + 1 < len(ordered) else page
-        blocks[question] = (page, max(page, end))
-
+    # -- Turn each band into regions, and read every one of them back --------
+    #
+    # The read-back is the check that makes banding worth doing, and it is NOT
+    # circular the way the mark alignment above is. The band's edges came from
+    # two tallies; counting how many tallies now fall strictly inside it asks a
+    # different question: does this slice close with exactly one question's
+    # tally, stating exactly the marks the question paper's fence stated? Two
+    # means the band swallowed a neighbour. Zero means it missed its own.
+    #
+    # A band that fails is dropped rather than downgraded to a whole page. A
+    # whole page here is precisely the defect being removed, and a missing mark
+    # scheme is honest where a wrong one is not.
     kept: dict[int, tuple[Region, ...]] = {}
-    with fitz.open(ms_path) as doc:
-        last_page = doc.page_count - 1
+    rejected: list[str] = []
 
-    for question, (start, end) in sorted(blocks.items()):
+    for question, band in sorted(bands.items()):
         if question not in fences:
             warnings.append(f"mark scheme has question {question} but the QP does not")
             continue
-        start = max(0, min(start, last_page))
-        end = max(start, min(end, last_page))
-        kept[question] = tuple(Region(page=p) for p in range(start, end + 1))
+        if band.start_page > last_page:
+            continue
+
+        if tallies:
+            inside = ms_bands.verify_band(tallies, band)
+            if len(inside) != 1:
+                rejected.append(f"q{question} ({len(inside)} tallies in its band)")
+                continue
+            if inside[0] != fences[question][1]:
+                rejected.append(
+                    f"q{question} (band closes with {inside[0]} marks, "
+                    f"fence says {fences[question][1]})"
+                )
+                continue
+
+        extents = ms_bands.page_extents_of(ms_path, band.axis)
+        kept[question] = ms_bands.band_to_regions(band, Region, extents)
+
+    if rejected:
+        warnings.append("mark scheme band rejected for " + ", ".join(rejected))
 
     missing = sorted(set(fences) - set(kept))
     if missing:
@@ -902,7 +869,6 @@ def locate_ms_blocks(
     return kept, warnings
 
 
-# ─────────────────────────────────────────────────────────────────────────────
 # Validation
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -1086,11 +1052,20 @@ def extract_regions(source_pdf: Path, regions: tuple[Region, ...], target: Path)
                     if region.bottom is None
                     else min(page_rect.y1, region.bottom)
                 )
-                if bottom - top < 20:  # a band this thin means a bad coordinate
+                left = (
+                    page_rect.x0 if region.left is None else max(page_rect.x0, region.left)
+                )
+                right = (
+                    page_rect.x1
+                    if region.right is None
+                    else min(page_rect.x1, region.right)
+                )
+                # A band this thin on either axis means a bad coordinate.
+                if bottom - top < 20 or right - left < 20:
                     out.insert_pdf(src, from_page=region.page, to_page=region.page)
                     continue
 
-                clip = fitz.Rect(page_rect.x0, top, page_rect.x1, bottom)
+                clip = fitz.Rect(left, top, right, bottom)
                 band = out.new_page(width=clip.width, height=clip.height)
                 band.show_pdf_page(
                     fitz.Rect(0, 0, clip.width, clip.height),
@@ -1104,9 +1079,30 @@ def extract_regions(source_pdf: Path, regions: tuple[Region, ...], target: Path)
 
 
 def write_paper(result: PaperResult) -> int:
-    """Write every segment of a validated paper. Returns files written."""
+    """
+    Write every segment of a validated paper. Returns files written.
+
+    Files this run did not produce are DELETED first. Without that, a segment
+    the current logic declines to emit -- because its mark scheme band could not
+    be verified, say -- silently keeps whatever an earlier run left at that
+    path. Rebuilding Maths B after the mark schemes were banded turned up 103
+    such orphans, holding the very contamination the rebuild existed to remove,
+    and the audit read them back as if they were current output.
+    """
     paper_dir = OUTPUT_DIR / result.source.key
     written = 0
+
+    wanted = {
+        "questions": {f"q{s.number}.pdf" for s in result.segments},
+        "markschemes": {f"q{s.number}.pdf" for s in result.segments if s.ms_regions},
+    }
+    for subdir, keep in wanted.items():
+        directory = paper_dir / subdir
+        if not directory.is_dir():
+            continue
+        for stale in directory.glob("q*.pdf"):
+            if stale.name not in keep:
+                stale.unlink()
 
     for segment in result.segments:
         extract_regions(
@@ -1128,7 +1124,14 @@ def write_paper(result: PaperResult) -> int:
         if regions is None:
             return None
         return [
-            {"page": r.page, "top": r.top, "bottom": r.bottom, "cropped": r.cropped}
+            {
+                "page": r.page,
+                "top": r.top,
+                "bottom": r.bottom,
+                "left": r.left,
+                "right": r.right,
+                "cropped": r.cropped,
+            }
             for r in regions
         ]
 
@@ -1189,7 +1192,9 @@ def audit_output() -> int:
         return 0
 
     checked = bundled = mislabelled = unverifiable = hand_verified = 0
+    ms_checked = ms_bundled = ms_wrong_marks = ms_empty = 0
     defects: list[str] = []
+    ms_defects: list[str] = []
 
     for paper_dir in sorted(OUTPUT_DIR.iterdir()):
         questions_dir = paper_dir / "questions"
@@ -1210,6 +1215,53 @@ def audit_output() -> int:
                 for entry in manifest.get("questions", [])
                 if entry.get("fence_recovered")
             }
+            marks_of = {
+                entry["question_number"]: entry["marks"]
+                for entry in manifest.get("questions", [])
+            }
+        else:
+            marks_of = {}
+
+        # ── The mark scheme side ────────────────────────────────────────────
+        #
+        # The point of banding is that a segment now closes with exactly one
+        # question's tally. So read each written file back and count them. Two
+        # tallies is the original defect -- a neighbour's scheme stapled on --
+        # and a tally stating marks the question paper's fence did not is the
+        # worse one, a scheme belonging to a different question altogether.
+        #
+        # This reads only the written PDF, so it would catch a bug in the band
+        # logic rather than inherit one.
+        for ms_path in sorted((paper_dir / "markschemes").glob("q*.pdf")):
+            ms_match = re.fullmatch(r"q(\d+)\.pdf", ms_path.name)
+            if not ms_match:
+                continue
+            ms_expected = int(ms_match.group(1))
+            ms_checked += 1
+
+            # Counted with the same word-level reader the bands were cut with,
+            # not a regex over the flat text. A mark scheme may print
+            # "(total 2 marks)" inside a Special Case note, and a loose
+            # case-insensitive match reads that as a second question's tally --
+            # three correct Maths A segments were reported bundled because of it.
+            found_marks = [t.marks for t in ms_bands.find_tallies(ms_path)]
+            label = f"{paper_dir.name}/{ms_path.name}"
+
+            if not found_marks:
+                # Format B mark schemes carry no tally at all, so silence here
+                # is only a defect when the paper's other blocks do have one.
+                ms_empty += 1
+            elif len(found_marks) > 1:
+                ms_bundled += 1
+                ms_defects.append(
+                    f"MS BUNDLED   {label}: holds {len(found_marks)} tallies {found_marks}"
+                )
+            elif ms_expected in marks_of and found_marks[0] != marks_of[ms_expected]:
+                ms_wrong_marks += 1
+                ms_defects.append(
+                    f"MS MISMATCH  {label}: tally says {found_marks[0]} marks, "
+                    f"question is {marks_of[ms_expected]}"
+                )
 
         for pdf_path in sorted(questions_dir.glob("q*.pdf")):
             match = re.fullmatch(r"q(\d+)\.pdf", pdf_path.name)
@@ -1249,16 +1301,30 @@ def audit_output() -> int:
     print(f"  mislabelled           : {mislabelled}")
     print(f"  unverifiable          : {unverifiable}")
 
+    print(f"\n  mark schemes checked  : {ms_checked}")
+    print(f"  single-tally          : {ms_checked - ms_bundled - ms_wrong_marks - ms_empty}")
+    print(f"  no tally (format B)   : {ms_empty}")
+    print(f"  bundled               : {ms_bundled}")
+    print(f"  wrong marks           : {ms_wrong_marks}")
+
     if defects:
-        print(f"\n  {len(defects)} defect(s):")
+        print(f"\n  {len(defects)} question defect(s):")
         for defect in defects[:60]:
             print(f"    {defect}")
         if len(defects) > 60:
             print(f"    ... and {len(defects) - 60} more")
 
-    total = bundled + mislabelled + unverifiable
+    if ms_defects:
+        print(f"\n  {len(ms_defects)} mark scheme defect(s):")
+        for defect in ms_defects[:60]:
+            print(f"    {defect}")
+        if len(ms_defects) > 60:
+            print(f"    ... and {len(ms_defects) - 60} more")
+
+    total = bundled + mislabelled + unverifiable + ms_bundled + ms_wrong_marks
     print(f"\n  GATE: {'PASS' if total == 0 else 'FAIL'} "
-          f"(bundled + mislabelled + unverifiable = {total})")
+          f"(question defects {bundled + mislabelled + unverifiable}, "
+          f"mark scheme defects {ms_bundled + ms_wrong_marks})")
     return total
 
 

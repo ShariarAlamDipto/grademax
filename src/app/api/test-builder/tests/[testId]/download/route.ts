@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
-import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { mergeQuestionPdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { planQuestionSources } from '@/lib/questionPdfAssembly';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -12,7 +13,8 @@ interface TestItemRow {
     qp_page_url: string;
     ms_page_url: string | null;
     question_number: string | null;
-  };
+    papers: { year: number; season: string; paper_number: string } | null;
+  } | null;
 }
 
 interface TestRow {
@@ -146,7 +148,12 @@ export async function GET(
           pages (
             qp_page_url,
             ms_page_url,
-            question_number
+            question_number,
+            papers (
+              year,
+              season,
+              paper_number
+            )
           )
         ),
         subjects (
@@ -168,11 +175,19 @@ export async function GET(
     const testData = test as unknown as TestRow;
     const items = testData.test_items.sort((a, b) => a.sequence_order - b.sequence_order);
 
-    const pdfUrls = items
-      .map(item => toAbsolutePdfUrl(type === 'markscheme' ? item.pages?.ms_page_url : item.pages?.qp_page_url))
-      .filter(Boolean) as string[];
+    const sources = planQuestionSources(
+      items.map((item) => ({
+        qpPageUrl: toAbsolutePdfUrl(item.pages?.qp_page_url),
+        msPageUrl: toAbsolutePdfUrl(item.pages?.ms_page_url),
+        questionNumber: item.pages?.question_number,
+        year: item.pages?.papers?.year,
+        season: item.pages?.papers?.season,
+        paper: item.pages?.papers?.paper_number,
+      })),
+      type,
+    );
 
-    if (pdfUrls.length === 0) {
+    if (sources.every((source) => !source.url)) {
       return NextResponse.json(
         { error: `No ${type} PDFs found for this test` },
         { status: 404 }
@@ -191,7 +206,7 @@ export async function GET(
       type,
     });
 
-    const successCount = await mergePagePdfs(mergedPdf, pdfUrls);
+    const { merged: successCount } = await mergeQuestionPdfs(mergedPdf, sources, type);
 
     if (successCount === 0) {
       return NextResponse.json(

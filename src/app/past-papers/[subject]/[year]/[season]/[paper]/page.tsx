@@ -392,6 +392,7 @@ export default async function PaperPage({
           {splitAvailable && (
             <Link
               href={viewerSplitHref}
+              prefetch={false}
               className="flex items-center justify-between gap-4 mb-3 rounded-xl px-5 py-4 bg-blue-500/10 ring-1 ring-blue-400/30 hover:bg-blue-500/20 transition-colors"
             >
               <span>
@@ -417,6 +418,7 @@ export default async function PaperPage({
                 <div className="flex gap-2 flex-shrink-0 flex-wrap justify-end">
                   <Link
                     href={viewerQpHref}
+                    prefetch={false}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30 hover:bg-blue-500/25 transition-colors"
                   >
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -454,6 +456,7 @@ export default async function PaperPage({
                 <div className="flex gap-2 flex-shrink-0 flex-wrap justify-end">
                   <Link
                     href={viewerMsHref}
+                    prefetch={false}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30 hover:bg-emerald-500/25 transition-colors"
                   >
                     <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
