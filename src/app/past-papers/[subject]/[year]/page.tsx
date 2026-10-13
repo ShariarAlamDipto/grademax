@@ -1,8 +1,7 @@
-import { createClient } from "@supabase/supabase-js"
 import type { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getSubjectBySlug, seasonDisplay, subjectColorClasses, boardOf, boardDisplay, levelShort, catalogHref, dbNameOf } from "@/lib/subjects"
+import { getSubjectBySlug, seasonDisplay, subjectColorClasses, boardOf, boardDisplay, levelShort, catalogHref } from "@/lib/subjects"
 import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
 import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode, comparePaperNumbers } from "@/lib/paper-slugs"
 import { getPapersIndex } from "@/lib/papersIndex"
@@ -210,30 +209,20 @@ export default async function SubjectYearPapersPage({
   const colorClass = subjectColorClasses[subj.colorKey]
 
   // Years that actually have papers for this subject — used to filter "Other years" links.
-  const { yearsBySubject } = await getPapersIndex()
+  const { yearsBySubject, bySession } = await getPapersIndex()
   const indexYearsForSubject = yearsBySubject.get(slug)
 
-  const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { auth: { autoRefreshToken: false, persistSession: false } }
+  // Reuse the snapshot already loaded for navigation and session pages. Per-year
+  // database requests can stall prerendering after thousands of routes build.
+  const data: PaperRow[] = Array.from(VALID_SEASONS).flatMap((season) =>
+    (bySession.get(`${slug}/${yearLabel}/${season}`) ?? []).map((paper) => ({
+      id: paper.id,
+      paper_number: paper.paperNumber,
+      season,
+      pdf_url: paper.pdfUrl,
+      markscheme_pdf_url: paper.markschemePdfUrl,
+    }))
   )
-
-  const { data: subjectRow } = await supabase
-    .from("subjects")
-    .select("id")
-    .eq("name", dbNameOf(subj))
-    .maybeSingle()
-
-  if (!subjectRow) notFound()
-
-  const { data } = await supabase
-    .from("papers")
-    .select("id, paper_number, season, pdf_url, markscheme_pdf_url")
-    .eq("subject_id", subjectRow.id)
-    .eq("year", parsedYear)
-    .in("season", Array.from(VALID_SEASONS))
-    .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
 
   const papers = ((data as PaperRow[]) ?? [])
     .map((paper) => ({
