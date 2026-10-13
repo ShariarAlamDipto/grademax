@@ -6,6 +6,7 @@ import { createClient } from "@supabase/supabase-js"
 // listed as fallbacks.
 export const TOOL_SUBJECT_SLOTS = [
   ['4PH1', '4PH0'],   // IGCSE Physics
+  ['4MA1'],          // IGCSE Mathematics A (4MA0 Higher papers share this subject)
   ['4MB1', '4MB0'],   // IGCSE Mathematics B
   ['4CH1', '4CH0'],   // IGCSE Chemistry
   ['4BI1', '4BI0'],   // IGCSE Biology
@@ -82,7 +83,7 @@ async function loadToolSubjects(): Promise<{ subjects: ToolSubject[]; initialTop
   return { subjects, initialTopics }
 }
 
-export const getToolSubjects = unstable_cache(loadToolSubjects, ["tool-subjects-v1"], {
+export const getToolSubjects = unstable_cache(loadToolSubjects, ["tool-subjects-v2"], {
   revalidate: REVALIDATE_SECONDS,
   tags: ["tool-subjects"],
 })
