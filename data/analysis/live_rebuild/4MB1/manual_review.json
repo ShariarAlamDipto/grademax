@@ -1,0 +1,3672 @@
+{
+ "2014_jan_1|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    5,
+    69.4,
+    191.4
+   ]
+  ]
+ },
+ "2014_jan_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    5,
+    191.4,
+    265.5
+   ]
+  ]
+ },
+ "2014_jan_1|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    5,
+    265.5,
+    356.1
+   ]
+  ]
+ },
+ "2014_jan_1|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    5,
+    356.1,
+    473.9
+   ]
+  ]
+ },
+ "2014_jan_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    5,
+    473.9,
+    548.0
+   ]
+  ]
+ },
+ "2014_jan_1|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    5,
+    548.0,
+    837.3
+   ]
+  ]
+ },
+ "2014_jan_1|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    6,
+    83.2,
+    230.4
+   ]
+  ]
+ },
+ "2014_jan_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    6,
+    230.4,
+    330.7
+   ]
+  ]
+ },
+ "2014_jan_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    6,
+    330.7,
+    417.8
+   ]
+  ]
+ },
+ "2014_jan_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    6,
+    417.8,
+    583.0
+   ]
+  ]
+ },
+ "2014_jan_1|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    6,
+    583.0,
+    670.2
+   ]
+  ]
+ },
+ "2014_jan_1|12": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    6,
+    670.2,
+    837.3
+   ]
+  ]
+ },
+ "2014_jan_1|13": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    7,
+    69.4,
+    211.5
+   ]
+  ]
+ },
+ "2014_jan_1|14": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    7,
+    211.5,
+    331.8
+   ]
+  ]
+ },
+ "2014_jan_1|15": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    7,
+    331.8,
+    438.2
+   ]
+  ]
+ },
+ "2014_jan_1|16": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    7,
+    438.2,
+    837.3
+   ]
+  ]
+ },
+ "2014_jan_1|17": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    8,
+    83.2,
+    837.3
+   ]
+  ]
+ },
+ "2014_jan_1|18": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    9,
+    83.2,
+    204.0
+   ]
+  ]
+ },
+ "2014_jan_1|19": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    9,
+    204.0,
+    344.9
+   ]
+  ]
+ },
+ "2014_jan_1|20": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    9,
+    344.9,
+    595.9
+   ]
+  ]
+ },
+ "2014_jan_1|21": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    9,
+    595.9,
+    837.3
+   ]
+  ]
+ },
+ "2014_jan_1|22": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    10,
+    83.2,
+    358.4
+   ]
+  ]
+ },
+ "2014_jan_1|23": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    10,
+    358.4,
+    503.4
+   ]
+  ]
+ },
+ "2014_jan_1|24": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    10,
+    503.4,
+    638.0
+   ]
+  ]
+ },
+ "2014_jan_1|25": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    10,
+    638.0,
+    837.3
+   ]
+  ]
+ },
+ "2014_jan_1|26": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    11,
+    69.4,
+    247.5
+   ]
+  ]
+ },
+ "2014_jan_1|27": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    11,
+    247.5,
+    469.7
+   ]
+  ]
+ },
+ "2014_jan_1|28": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    11,
+    469.7,
+    837.3
+   ]
+  ]
+ },
+ "2014_jan_1|29": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: this scheme gives each question its own table; region = from its table's header to the next numbered table (unnumbered continuation tables kept); read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    12,
+    83.2,
+    224.2
+   ]
+  ]
+ },
+ "2014_jan_1|30": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: Q30's table on page 12 opens with a 'Penalise incorrect rounding' row, so its '30(a)' label sits below the label window; marks 2+2+3=7 = paper; read together after the cut (all 30 stacked): each table is its own question, marks match the paper question by question (2x12, 3,3,3,3,3,4x8,5,6,7,4,7)",
+  "ms_regions": [
+   [
+    12,
+    224.2,
+    628.0
+   ]
+  ]
+ },
+ "2013_may-jun_2R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    4,
+    109.4,
+    480.7
+   ]
+  ]
+ },
+ "2013_may-jun_2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    4,
+    480.7,
+    837.1
+   ],
+   [
+    5,
+    69.3,
+    371.4
+   ]
+  ]
+ },
+ "2013_may-jun_2R|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    5,
+    371.4,
+    837.1
+   ],
+   [
+    6,
+    80.6,
+    202.0
+   ]
+  ]
+ },
+ "2013_may-jun_2R|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    6,
+    202.0,
+    837.1
+   ]
+  ]
+ },
+ "2013_may-jun_2R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    7,
+    82.8,
+    358.3
+   ]
+  ]
+ },
+ "2013_may-jun_2R|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    7,
+    358.3,
+    837.1
+   ]
+  ]
+ },
+ "2013_may-jun_2R|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    8,
+    82.8,
+    837.1
+   ]
+  ]
+ },
+ "2013_may-jun_2R|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    9,
+    109.4,
+    486.9
+   ]
+  ]
+ },
+ "2013_may-jun_2R|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    9,
+    486.9,
+    837.1
+   ],
+   [
+    10,
+    67.9,
+    572.3
+   ]
+  ]
+ },
+ "2013_may-jun_2R|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    10,
+    572.3,
+    837.1
+   ],
+   [
+    11,
+    82.1,
+    837.1
+   ]
+  ]
+ },
+ "2013_may-jun_2R|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: one table per question; header to next numbered table; read together after the cut: own tables incl. page continuations, marks = paper (4,6,6,7,7,10,10,9,13,14,14)",
+  "ms_regions": [
+   [
+    12,
+    82.8,
+    837.1
+   ],
+   [
+    13,
+    67.3,
+    837.1
+   ]
+  ]
+ },
+ "2016_may-jun_2R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   4
+  ]
+ },
+ "2016_may-jun_2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   5
+  ]
+ },
+ "2016_may-jun_2R|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, scheme parts (a)4+(b)3=7 = paper (its Total line misprints 5)",
+  "ms_pages": [
+   6,
+   7
+  ]
+ },
+ "2016_may-jun_2R|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   8,
+   9
+  ]
+ },
+ "2016_may-jun_2R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   10,
+   11
+  ]
+ },
+ "2016_may-jun_2R|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, parts 1+3+3+3=10 = paper (Total line misprints 9)",
+  "ms_pages": [
+   12
+  ]
+ },
+ "2016_may-jun_2R|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   13
+  ]
+ },
+ "2016_may-jun_2R|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   14
+  ]
+ },
+ "2016_may-jun_2R|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, parts (a)3+(b)4+(c)3=10 = paper (BD, angle BDC, CD)",
+  "ms_pages": [
+   15,
+   16,
+   17
+  ]
+ },
+ "2016_may-jun_2R|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   18,
+   19
+  ]
+ },
+ "2016_may-jun_2R|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); each question starts a fresh landscape page and closes with its own Total row; read together (stacked, labelled): own question, marks = paper",
+  "ms_pages": [
+   20,
+   21
+  ]
+ },
+ "2017_jan_2R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; Q1 and Q2 share page 4, cut at the ink blocks of their two tables (125-277, 289-472); read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_regions": [
+   [
+    4,
+    121.3,
+    281.2
+   ]
+  ]
+ },
+ "2017_jan_2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; Q1 and Q2 share page 4, cut at the ink blocks of their two tables (125-277, 289-472); read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_regions": [
+   [
+    4,
+    285.4,
+    476.3
+   ]
+  ]
+ },
+ "2017_jan_2R|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   5
+  ]
+ },
+ "2017_jan_2R|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   6
+  ]
+ },
+ "2017_jan_2R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   7,
+   8
+  ]
+ },
+ "2017_jan_2R|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   9
+  ]
+ },
+ "2017_jan_2R|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   10
+  ]
+ },
+ "2017_jan_2R|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   11,
+   12
+  ]
+ },
+ "2017_jan_2R|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   13,
+   14
+  ]
+ },
+ "2017_jan_2R|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   15,
+   16,
+   17
+  ]
+ },
+ "2017_jan_2R|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme (no text layer, PMT copy identical); read from page renders; question starts a fresh page; read together (stacked, labelled): each cut is its own question, marks = paper (4,4,7,9,10,4,10,10,10,16,16)",
+  "ms_pages": [
+   18,
+   19
+  ]
+ },
+ "2017_may-jun_1R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    4,
+    86.0,
+    154.5
+   ]
+  ]
+ },
+ "2017_may-jun_1R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    4,
+    160.2,
+    217.1
+   ]
+  ]
+ },
+ "2017_may-jun_1R|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    4,
+    222.8,
+    293.4
+   ]
+  ]
+ },
+ "2017_may-jun_1R|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    4,
+    299.1,
+    367.6
+   ]
+  ]
+ },
+ "2017_may-jun_1R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    4,
+    373.3,
+    481.4
+   ]
+  ]
+ },
+ "2017_may-jun_1R|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    5,
+    86.0,
+    166.7
+   ]
+  ]
+ },
+ "2017_may-jun_1R|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    5,
+    172.4,
+    281.9
+   ]
+  ]
+ },
+ "2017_may-jun_1R|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    5,
+    287.6,
+    401.4
+   ]
+  ]
+ },
+ "2017_may-jun_1R|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    6,
+    86.0,
+    193.4
+   ]
+  ]
+ },
+ "2017_may-jun_1R|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    6,
+    198.3,
+    306.4
+   ]
+  ]
+ },
+ "2017_may-jun_1R|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    6,
+    311.4,
+    466.2
+   ]
+  ]
+ },
+ "2017_may-jun_1R|12": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    7,
+    86.0,
+    161.0
+   ]
+  ]
+ },
+ "2017_may-jun_1R|13": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    7,
+    166.6,
+    410.8
+   ]
+  ]
+ },
+ "2017_may-jun_1R|14": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    8,
+    86.0,
+    199.8
+   ]
+  ]
+ },
+ "2017_may-jun_1R|15": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    8,
+    204.8,
+    369.0
+   ]
+  ]
+ },
+ "2017_may-jun_1R|16": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    8,
+    374.0,
+    464.8
+   ]
+  ]
+ },
+ "2017_may-jun_1R|17": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    9,
+    86.0,
+    222.9
+   ]
+  ]
+ },
+ "2017_may-jun_1R|18": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    9,
+    228.6,
+    373.4
+   ]
+  ]
+ },
+ "2017_may-jun_1R|19": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    10,
+    86.0,
+    226.5
+   ]
+  ]
+ },
+ "2017_may-jun_1R|20": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    10,
+    232.2,
+    343.1
+   ]
+  ]
+ },
+ "2017_may-jun_1R|21": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    10,
+    348.8,
+    443.9
+   ]
+  ]
+ },
+ "2017_may-jun_1R|22": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    11,
+    86.0,
+    225.0
+   ]
+  ]
+ },
+ "2017_may-jun_1R|23": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    11,
+    230.0,
+    357.5
+   ]
+  ]
+ },
+ "2017_may-jun_1R|24": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    11,
+    363.2,
+    483.5
+   ]
+  ]
+ },
+ "2017_may-jun_1R|25": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    12,
+    86.0,
+    222.2
+   ]
+  ]
+ },
+ "2017_may-jun_1R|26": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    12,
+    227.8,
+    356.1
+   ]
+  ]
+ },
+ "2017_may-jun_1R|27": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    13,
+    86.0,
+    329.4
+   ]
+  ]
+ },
+ "2017_may-jun_1R|28": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: image-only scheme; one table per question, found as ink blocks between blank bands (28 tables = 28 questions, in reading order); read together (stacked, labelled): tables 1..28 in order, totals = paper (2x4,3x12,4x7,5x3,6,7)",
+  "ms_regions": [
+   [
+    14,
+    86.0,
+    268.2
+   ]
+  ]
+ },
+ "2017_jan_1R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    4,
+    67.6,
+    214.0
+   ]
+  ]
+ },
+ "2017_jan_1R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    4,
+    222.4,
+    376.7
+   ]
+  ]
+ },
+ "2017_jan_1R|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    4,
+    385.1,
+    498.4
+   ]
+  ]
+ },
+ "2017_jan_1R|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    5,
+    67.6,
+    162.1
+   ]
+  ]
+ },
+ "2017_jan_1R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    5,
+    183.5,
+    280.2
+   ]
+  ]
+ },
+ "2017_jan_1R|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    5,
+    287.9,
+    342.8
+   ]
+  ]
+ },
+ "2017_jan_1R|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    6,
+    67.6,
+    225.5
+   ],
+   [
+    6,
+    239.6,
+    277.3
+   ]
+  ]
+ },
+ "2017_jan_1R|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    6,
+    287.9,
+    395.4
+   ],
+   [
+    6,
+    405.2,
+    422.8
+   ]
+  ]
+ },
+ "2017_jan_1R|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    7,
+    67.6,
+    222.6
+   ]
+  ]
+ },
+ "2017_jan_1R|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    7,
+    259.1,
+    373.8
+   ],
+   [
+    7,
+    384.4,
+    414.8
+   ]
+  ]
+ },
+ "2017_jan_1R|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    7,
+    423.2,
+    488.3
+   ]
+  ]
+ },
+ "2017_jan_1R|12": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    8,
+    67.6,
+    175.1
+   ]
+  ]
+ },
+ "2017_jan_1R|13": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    8,
+    196.4,
+    333.5
+   ],
+   [
+    8,
+    344.0,
+    363.0
+   ],
+   [
+    8,
+    376.4,
+    393.2
+   ],
+   [
+    8,
+    406.7,
+    442.2
+   ]
+  ]
+ },
+ "2017_jan_1R|14": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    9,
+    67.6,
+    191.6
+   ]
+  ]
+ },
+ "2017_jan_1R|15": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    9,
+    213.0,
+    324.1
+   ]
+  ]
+ },
+ "2017_jan_1R|16": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    10,
+    67.6,
+    250.0
+   ],
+   [
+    10,
+    262.0,
+    278.8
+   ]
+  ]
+ },
+ "2017_jan_1R|17": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    10,
+    287.2,
+    448.7
+   ]
+  ]
+ },
+ "2017_jan_1R|18": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    11,
+    67.6,
+    203.2
+   ],
+   [
+    11,
+    230.3,
+    261.5
+   ],
+   [
+    11,
+    274.9,
+    306.1
+   ],
+   [
+    11,
+    319.6,
+    350.8
+   ],
+   [
+    11,
+    363.5,
+    394.7
+   ],
+   [
+    11,
+    408.1,
+    439.3
+   ],
+   [
+    11,
+    452.8,
+    484.0
+   ],
+   [
+    11,
+    496.7,
+    512.8
+   ]
+  ]
+ },
+ "2017_jan_1R|19": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    12,
+    67.6,
+    271.6
+   ]
+  ]
+ },
+ "2017_jan_1R|20": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    12,
+    281.4,
+    482.5
+   ]
+  ]
+ },
+ "2017_jan_1R|21": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    13,
+    67.6,
+    216.1
+   ],
+   [
+    13,
+    227.4,
+    245.6
+   ]
+  ]
+ },
+ "2017_jan_1R|22": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    13,
+    254.8,
+    332.8
+   ],
+   [
+    13,
+    344.8,
+    376.0
+   ]
+  ]
+ },
+ "2017_jan_1R|23": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    14,
+    67.6,
+    491.2
+   ]
+  ]
+ },
+ "2017_jan_1R|24": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    15,
+    67.6,
+    474.6
+   ]
+  ]
+ },
+ "2017_jan_1R|25": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    16,
+    67.6,
+    270.8
+   ],
+   [
+    16,
+    283.6,
+    299.6
+   ]
+  ]
+ },
+ "2017_jan_1R|26": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    17,
+    67.6,
+    370.9
+   ]
+  ]
+ },
+ "2017_jan_1R|27": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    18,
+    67.6,
+    284.5
+   ],
+   [
+    18,
+    295.8,
+    312.6
+   ]
+  ]
+ },
+ "2017_jan_1R|28": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    19,
+    67.6,
+    272.3
+   ]
+  ]
+ },
+ "2017_jan_1R|29": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; ink blocks between blank bands grouped by question from the page layout (table + its notes); read together (stacked, labelled): own table + own notes, totals = paper",
+  "ms_regions": [
+   [
+    20,
+    67.6,
+    271.6
+   ],
+   [
+    20,
+    284.3,
+    301.1
+   ],
+   [
+    20,
+    312.4,
+    329.2
+   ]
+  ]
+ },
+ "2016_may-jun_1R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    4,
+    67.6,
+    190.2
+   ]
+  ]
+ },
+ "2016_may-jun_1R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    4,
+    211.6,
+    280.9
+   ]
+  ]
+ },
+ "2016_may-jun_1R|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    4,
+    302.3,
+    414.1
+   ]
+  ]
+ },
+ "2016_may-jun_1R|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    5,
+    67.6,
+    352.9
+   ]
+  ]
+ },
+ "2016_may-jun_1R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    5,
+    374.3,
+    468.8
+   ]
+  ]
+ },
+ "2016_may-jun_1R|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    6,
+    67.6,
+    224.8
+   ]
+  ]
+ },
+ "2016_may-jun_1R|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    6,
+    246.1,
+    331.3
+   ]
+  ]
+ },
+ "2016_may-jun_1R|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    6,
+    352.7,
+    460.9
+   ]
+  ]
+ },
+ "2016_may-jun_1R|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    7,
+    67.6,
+    165.7
+   ]
+  ]
+ },
+ "2016_may-jun_1R|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    7,
+    187.1,
+    316.2
+   ]
+  ]
+ },
+ "2016_may-jun_1R|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    7,
+    337.6,
+    445.8
+   ]
+  ]
+ },
+ "2016_may-jun_1R|12": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    8,
+    67.6,
+    257.2
+   ]
+  ]
+ },
+ "2016_may-jun_1R|13": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    9,
+    67.6,
+    397.6
+   ]
+  ]
+ },
+ "2016_may-jun_1R|14": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    9,
+    418.9,
+    511.3
+   ]
+  ]
+ },
+ "2016_may-jun_1R|15": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    10,
+    67.6,
+    162.8
+   ]
+  ]
+ },
+ "2016_may-jun_1R|16": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    10,
+    184.2,
+    414.1
+   ]
+  ]
+ },
+ "2016_may-jun_1R|17": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    11,
+    67.6,
+    307.6
+   ]
+  ]
+ },
+ "2016_may-jun_1R|18": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    12,
+    67.6,
+    429.2
+   ]
+  ]
+ },
+ "2016_may-jun_1R|19": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    13,
+    67.6,
+    229.1
+   ]
+  ]
+ },
+ "2016_may-jun_1R|20": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    14,
+    67.6,
+    424.9
+   ]
+  ]
+ },
+ "2016_may-jun_1R|21": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    15,
+    67.6,
+    257.2
+   ]
+  ]
+ },
+ "2016_may-jun_1R|22": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    15,
+    278.5,
+    500.5
+   ]
+  ]
+ },
+ "2016_may-jun_1R|23": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    16,
+    67.6,
+    250.0
+   ]
+  ]
+ },
+ "2016_may-jun_1R|24": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    16,
+    271.3,
+    399.7
+   ]
+  ]
+ },
+ "2016_may-jun_1R|25": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    17,
+    67.6,
+    225.5
+   ]
+  ]
+ },
+ "2016_may-jun_1R|26": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    18,
+    67.6,
+    520.0
+   ]
+  ]
+ },
+ "2016_may-jun_1R|27": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    19,
+    82.0,
+    326.3
+   ]
+  ]
+ },
+ "2016_may-jun_1R|28": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question as ink blocks, count per page = layout read off the pages (28); read together (stacked, labelled): own table, totals = paper",
+  "ms_regions": [
+   [
+    20,
+    67.6,
+    500.5
+   ]
+  ]
+ },
+ "2024_oct-nov_2|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    5,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    6,
+    0,
+    842
+   ],
+   [
+    7,
+    0,
+    842
+   ],
+   [
+    30,
+    160,
+    490
+   ]
+  ]
+ },
+ "2024_oct-nov_2|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    8,
+    0,
+    842
+   ],
+   [
+    9,
+    0,
+    842
+   ],
+   [
+    31,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    10,
+    0,
+    842
+   ],
+   [
+    11,
+    0,
+    842
+   ],
+   [
+    12,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    13,
+    0,
+    842
+   ],
+   [
+    14,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    15,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    16,
+    0,
+    842
+   ],
+   [
+    17,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    18,
+    0,
+    842
+   ],
+   [
+    19,
+    0,
+    842
+   ],
+   [
+    20,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    21,
+    0,
+    842
+   ],
+   [
+    22,
+    0,
+    842
+   ],
+   [
+    23,
+    0,
+    842
+   ],
+   [
+    24,
+    0,
+    842
+   ],
+   [
+    25,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    26,
+    0,
+    842
+   ],
+   [
+    32,
+    0,
+    842
+   ]
+  ]
+ },
+ "2024_oct-nov_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: each question starts a fresh page ('Question Working Answer Mark Notes N'); answer diagrams Pearson printed at the back (Question 2, Question 3, Q10, Qu11) are attached to their questions; read together (stacked, labelled): own question incl. its back-of-scheme diagram; totals = paper (4,6,10,7,8,7,9,14,9,11,15)",
+  "ms_regions": [
+   [
+    27,
+    0,
+    842
+   ],
+   [
+    28,
+    0,
+    842
+   ],
+   [
+    29,
+    0,
+    842
+   ],
+   [
+    30,
+    80,
+    142
+   ],
+   [
+    33,
+    0,
+    842
+   ]
+  ]
+ },
+ "2016_may-jun_1|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    4,
+    67.6,
+    190.9
+   ]
+  ]
+ },
+ "2016_may-jun_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    4,
+    212.3,
+    352.2
+   ]
+  ]
+ },
+ "2016_may-jun_1|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    4,
+    373.6,
+    459.5
+   ]
+  ]
+ },
+ "2016_may-jun_1|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    5,
+    67.6,
+    196.0
+   ]
+  ]
+ },
+ "2016_may-jun_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    5,
+    217.3,
+    311.2
+   ]
+  ]
+ },
+ "2016_may-jun_1|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    5,
+    332.5,
+    385.3
+   ]
+  ]
+ },
+ "2016_may-jun_1|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    6,
+    67.6,
+    276.6
+   ]
+  ]
+ },
+ "2016_may-jun_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    6,
+    298.0,
+    455.9
+   ]
+  ]
+ },
+ "2016_may-jun_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    7,
+    67.6,
+    152.8
+   ]
+  ]
+ },
+ "2016_may-jun_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    7,
+    174.1,
+    260.0
+   ]
+  ]
+ },
+ "2016_may-jun_1|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    7,
+    281.4,
+    401.2
+   ]
+  ]
+ },
+ "2016_may-jun_1|12": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    8,
+    67.6,
+    164.3
+   ]
+  ]
+ },
+ "2016_may-jun_1|13": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    8,
+    185.6,
+    458.8
+   ]
+  ]
+ },
+ "2016_may-jun_1|14": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    9,
+    67.6,
+    338.5
+   ]
+  ]
+ },
+ "2016_may-jun_1|15": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    9,
+    346.2,
+    475.3
+   ]
+  ]
+ },
+ "2016_may-jun_1|16": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    10,
+    67.6,
+    350.0
+   ]
+  ]
+ },
+ "2016_may-jun_1|17": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    11,
+    67.6,
+    218.3
+   ]
+  ]
+ },
+ "2016_may-jun_1|18": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    11,
+    239.6,
+    352.9
+   ]
+  ]
+ },
+ "2016_may-jun_1|19": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    12,
+    67.6,
+    492.6
+   ]
+  ]
+ },
+ "2016_may-jun_1|20": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    13,
+    67.6,
+    306.1
+   ]
+  ]
+ },
+ "2016_may-jun_1|21": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    13,
+    327.5,
+    512.8
+   ]
+  ]
+ },
+ "2016_may-jun_1|22": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    14,
+    82.0,
+    261.5
+   ]
+  ]
+ },
+ "2016_may-jun_1|23": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    15,
+    67.6,
+    364.4
+   ]
+  ]
+ },
+ "2016_may-jun_1|24": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    16,
+    67.6,
+    461.6
+   ]
+  ]
+ },
+ "2016_may-jun_1|25": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    17,
+    67.6,
+    368.0
+   ]
+  ]
+ },
+ "2016_may-jun_1|26": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    18,
+    67.6,
+    525.0
+   ]
+  ]
+ },
+ "2016_may-jun_1|27": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    19,
+    82.0,
+    333.5
+   ]
+  ]
+ },
+ "2016_may-jun_1|28": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question (ink blocks), mapping read off the annotated page sheet; Q28's four method tables run pages 20-22; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    20,
+    67.6,
+    258.6
+   ],
+   [
+    20,
+    280.0,
+    500.5
+   ],
+   [
+    21,
+    67.6,
+    374.5
+   ],
+   [
+    22,
+    67.6,
+    265.8
+   ],
+   [
+    22,
+    273.5,
+    481.8
+   ]
+  ]
+ },
+ "2016_may-jun_2|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    4,
+    67.6,
+    234.8
+   ]
+  ]
+ },
+ "2016_may-jun_2|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    4,
+    256.2,
+    472.4
+   ]
+  ]
+ },
+ "2016_may-jun_2|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    5,
+    67.6,
+    370.2
+   ]
+  ]
+ },
+ "2016_may-jun_2|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    6,
+    67.6,
+    267.2
+   ]
+  ]
+ },
+ "2016_may-jun_2|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    7,
+    67.6,
+    381.0
+   ]
+  ]
+ },
+ "2016_may-jun_2|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    8,
+    67.6,
+    237.7
+   ]
+  ]
+ },
+ "2016_may-jun_2|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    9,
+    67.6,
+    471.7
+   ],
+   [
+    10,
+    67.6,
+    214.0
+   ]
+  ]
+ },
+ "2016_may-jun_2|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    11,
+    67.6,
+    427.1
+   ]
+  ]
+ },
+ "2016_may-jun_2|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    12,
+    67.6,
+    451.6
+   ]
+  ]
+ },
+ "2016_may-jun_2|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    13,
+    67.6,
+    520.7
+   ],
+   [
+    14,
+    67.6,
+    256.4
+   ]
+  ]
+ },
+ "2016_may-jun_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; groups per question read off the annotated page sheet (Q10, Q11 continue onto the next page); read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    15,
+    67.6,
+    458.0
+   ],
+   [
+    16,
+    67.6,
+    313.3
+   ]
+  ]
+ },
+ "2018_may-jun_2R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    4,
+    95.6,
+    260.8
+   ]
+  ]
+ },
+ "2018_may-jun_2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    4,
+    295.8,
+    401.9
+   ]
+  ]
+ },
+ "2018_may-jun_2R|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    5,
+    82.0,
+    252.8
+   ]
+  ]
+ },
+ "2018_may-jun_2R|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    5,
+    288.6,
+    437.9
+   ]
+  ]
+ },
+ "2018_may-jun_2R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    6,
+    95.6,
+    300.4
+   ]
+  ]
+ },
+ "2018_may-jun_2R|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    7,
+    109.3,
+    344.3
+   ]
+  ]
+ },
+ "2018_may-jun_2R|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    8,
+    109.3,
+    301.8
+   ]
+  ]
+ },
+ "2018_may-jun_2R|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    8,
+    309.5,
+    459.5
+   ]
+  ]
+ },
+ "2018_may-jun_2R|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    9,
+    109.3,
+    313.3
+   ]
+  ]
+ },
+ "2018_may-jun_2R|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    10,
+    109.3,
+    374.5
+   ]
+  ]
+ },
+ "2018_may-jun_2R|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    11,
+    95.6,
+    492.6
+   ]
+  ]
+ },
+ "2018_may-jun_2R|12": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut: scrambled scheme read from its OCR copy; one table per question, Q12 ends on page 13; read together (stacked, labelled): own table(s), totals = paper",
+  "ms_regions": [
+   [
+    12,
+    137.4,
+    502.7
+   ],
+   [
+    13,
+    82.0,
+    164.3
+   ]
+  ]
+ },
+ "2011_may-jun_1|3": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q3 10,12,14 B2, total 2 -- its own row"
+ },
+ "2012_may-jun_2|9": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): own Q9 functions scheme (a)-(d), 13 marks; MS_EXTRA flag is its own notes"
+ },
+ "2012_may-jun_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): own Q11 scheme opening with its notes block, angle/cosine-rule parts, 16 marks"
+ },
+ "2013_jan_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q5 irrational numbers, total 2"
+ },
+ "2014_may-jun_1R|3": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q3 (a) $2.40 (b) $1.80, total 2"
+ },
+ "2015_jan_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q10 number line (a) 2 + list -4,-3,-2,-1 (b) 1, total 3"
+ },
+ "2015_may-jun_1R|8": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q8 Venn shading (a)(b), [2]"
+ },
+ "2015_may-jun_1R|9": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q9 reflection in y=-x gives (-3,5), [2]"
+ },
+ "2015_may-jun_1R|10": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q10 (a) 2 (b) 4, [2]"
+ },
+ "2015_may-jun_1R|26": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q26 factor theorem k=-22 then (x-1)(x+4)(x-6), [6]"
+ },
+ "2015_may-jun_2R|8": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q8 Nargis/Tony (a)-(f), [11]"
+ },
+ "2015_may-jun_2R|11": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q11 wire/triangle (a)-(g) + alternative (g), [16]"
+ },
+ "2017_may-jun_2|4": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q4 matrix equation x,y,z, total 6"
+ },
+ "2018_jan_1R|4": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q4 lines/rotational symmetry 0, 2"
+ },
+ "2018_jan_1R|8": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q8 difference of 8th and 12th terms = 40, 2 marks"
+ },
+ "2018_jan_1R|11": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q11 modulus of OY, 3 marks"
+ },
+ "2018_jan_1R|20": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q20 particle s=t+4/t: (a) 3 marks t=2, (b) 2 marks 4.5 m, total 5"
+ },
+ "2018_jan_2R|11": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q11 cubic (a)-(e), 2+4+3+3+4 = 16"
+ },
+ "2018_may-jun_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q2 bearing 234, 2 marks"
+ },
+ "2018_may-jun_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q5 BEARING symmetry letters, 2 marks"
+ },
+ "2018_may-jun_1R|24": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q24 (x+2) factor a=-4, factorise, 5 marks"
+ },
+ "2020_oct-nov_1R|17": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q17 standard form (a)(b)(c), total 4"
+ },
+ "2021_may-jun_1|17": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q17 inequality + number line, total 4"
+ },
+ "2021_oct-nov_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q11 functions f,g,h (a)-(e), total 15"
+ },
+ "2022_jan_1R|4": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q4 pie chart 225 people, 2 marks"
+ },
+ "2023_oct-nov_1|28": {
+  "decision": "CONFIRMED",
+  "reason": "read with the question (review s2): Q28 factor theorem (a) 2 (b) 4, total 6"
+ },
+ "2013_jan_1|25": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from the ruler render; Q25 probability disc question only (the Q24 notes above it removed), total 5",
+  "ms_regions": [
+   [
+    9,
+    444,
+    812
+   ]
+  ]
+ },
+ "2014_may-jun_1R|27": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from the ruler render; Q27 (a) 2 + (b) continuing on the next page to (x-1)(3x-1)(2x+5), total 5",
+  "ms_regions": [
+   [
+    11,
+    388,
+    790
+   ],
+   [
+    12,
+    55,
+    338
+   ]
+  ]
+ },
+ "2014_may-jun_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q11 vectors (a)-(d) plus (e) lambda=2 on the following page, total 15",
+  "ms_display_regions": [
+   [
+    14,
+    213,
+    570
+   ],
+   [
+    15,
+    40,
+    570
+   ],
+   [
+    16,
+    86,
+    153
+   ]
+  ]
+ },
+ "2019_may-jun_1|20": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q20 histogram/frequency density, total 4",
+  "ms_display_regions": [
+   [
+    10,
+    484.5,
+    500
+   ],
+   [
+    11,
+    82,
+    190
+   ]
+  ]
+ },
+ "2020_jan_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q10 matrices A+B, 2A-4B, total 3 (Q11 row removed)",
+  "ms_display_regions": [
+   [
+    6,
+    82,
+    193.5
+   ]
+  ]
+ },
+ "2020_jan_1|26": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q26 Venn train/plane probability 15/28, total 6 (was cut from Q25)",
+  "ms_display_regions": [
+   [
+    14,
+    82,
+    430
+   ]
+  ]
+ },
+ "2021_jan_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q10 sequence (2n+1)/2 not an integer, total 3",
+  "ms_display_regions": [
+   [
+    8,
+    365.5,
+    511
+   ],
+   [
+    9,
+    82,
+    160.5
+   ]
+  ]
+ },
+ "2023_may-jun_1|17": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q17 histogram of bird weights, total 3, with its sample correct histograms (was cut from Q16)",
+  "ms_display_regions": [
+   [
+    12,
+    82,
+    256
+   ],
+   [
+    13,
+    55,
+    560
+   ]
+  ]
+ },
+ "2023_may-jun_2|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q10 transformations (a)-(d) + ALT (d) + answer grid, total 14 (Q9 ALT removed)",
+  "ms_display_regions": [
+   [
+    14,
+    196,
+    570
+   ],
+   [
+    15,
+    40,
+    495
+   ],
+   [
+    16,
+    40,
+    370
+   ]
+  ]
+ },
+ "2026_may-jun_1R|19": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q19 algebraic fractions, total 4 (was cut from Q20)",
+  "ms_display_regions": [
+   [
+    22,
+    55,
+    502
+   ]
+  ]
+ },
+ "2026_may-jun_1R|20": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q20 factor theorem f(-2)=0, Q(x)=x^2+5x+7, total 4 (was cut from Q21)",
+  "ms_display_regions": [
+   [
+    23,
+    55,
+    362
+   ]
+  ]
+ },
+ "2026_may-jun_2|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q6 v=dx/dt, a range -17<a<17, total 7 (was cut from a Q5 alternative)",
+  "ms_display_regions": [
+   [
+    12,
+    60,
+    513
+   ]
+  ]
+ },
+ "2026_may-jun_2R|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut on the displayed page (edges at the table rules); Q1 alloy (a)-(e), 2+3+2+4+4 = 15 (was only (e))",
+  "ms_display_regions": [
+   [
+    4,
+    50,
+    445
+   ],
+   [
+    5,
+    48,
+    230
+   ]
+  ]
+ },
+ "2015_may-jun_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q5 determinant 3x5-7x1 = 8, M1 A1 (scheme misprints \"Total 1 marks\"; mark column 2 = paper)",
+  "ms_display_regions": [
+   [
+    4,
+    439.9,
+    565.4
+   ]
+  ]
+ },
+ "2025_may-jun_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q2 first three terms 5, -2, -9, B2, total 2",
+  "ms_display_regions": [
+   [
+    4,
+    220.7,
+    318.3
+   ]
+  ]
+ },
+ "2025_may-jun_1|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q3 interior angle of 30-gon 168, M1 A1, total 2",
+  "ms_display_regions": [
+   [
+    4,
+    318.3,
+    565.4
+   ]
+  ]
+ },
+ "2025_may-jun_1|19": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q19 f = 144/h^2 by proportion + ALT, total 4",
+  "ms_display_regions": [
+   [
+    18,
+    92.3,
+    565.4
+   ],
+   [
+    19,
+    30.0,
+    565.4
+   ]
+  ]
+ },
+ "2025_may-jun_1|24": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q24 bearing of B from A = 344 (cosine/sine rule) + diagram + ALT, total 6",
+  "ms_display_regions": [
+   [
+    24,
+    105.0,
+    565.4
+   ],
+   [
+    25,
+    30.0,
+    565.4
+   ],
+   [
+    26,
+    30.0,
+    565.4
+   ],
+   [
+    27,
+    30.0,
+    565.4
+   ]
+  ]
+ },
+ "2020_jan_1|25": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q25 circle theorems angle OAD 24 / AOD 66, mark column 7 = paper (scheme total line misprints 6)",
+  "ms_display_regions": [
+   [
+    13,
+    99.3,
+    565.2
+   ]
+  ]
+ },
+ "2026_may-jun_1R|21": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q21 (NM)^-1 = -(24 -19; -19 15) + Alt1 + Alt2, total 4",
+  "ms_display_regions": [
+   [
+    24,
+    71.3,
+    565.3
+   ],
+   [
+    25,
+    30.0,
+    565.3
+   ],
+   [
+    26,
+    30.0,
+    565.3
+   ]
+  ]
+ },
+ "2023_may-jun_2|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut (lib/ms_hand_cut, edges at table rules), read with the question: Q5 curve/line y=3 (a)-(d)(ii), 2+2+2+1+3 = 10",
+  "ms_display_regions": [
+   [
+    9,
+    153.1,
+    565.4
+   ],
+   [
+    10,
+    30.0,
+    159.3
+   ]
+  ]
+ },
+ "2017_may-jun_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: 1/5+2/3-1/2 = 11/30, total 2",
+  "ms_display_regions": [
+   [
+    4,
+    154,
+    321
+   ]
+  ]
+ },
+ "2017_may-jun_1|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: n(AuB)=37+23-16=44, total 2",
+  "ms_display_regions": [
+   [
+    4,
+    442,
+    683
+   ]
+  ]
+ },
+ "2017_may-jun_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: 40 km at 30 km/h, arrives 16 05, total 2",
+  "ms_display_regions": [
+   [
+    4,
+    684,
+    800
+   ]
+  ]
+ },
+ "2017_may-jun_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: lines of symmetry 2 / order 2, total 2",
+  "ms_display_regions": [
+   [
+    5,
+    411,
+    486
+   ]
+  ]
+ },
+ "2017_may-jun_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: 3 balls same colour 12/247, total 2",
+  "ms_display_regions": [
+   [
+    5,
+    486,
+    697
+   ]
+  ]
+ },
+ "2017_may-jun_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: sqrt432-sqrt243 = sqrt27, total 3",
+  "ms_display_regions": [
+   [
+    5,
+    697,
+    800
+   ],
+   [
+    6,
+    40,
+    217
+   ]
+  ]
+ },
+ "2017_may-jun_1|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: intersecting chords AP=2, r=5.5, total 3",
+  "ms_display_regions": [
+   [
+    6,
+    217,
+    347
+   ]
+  ]
+ },
+ "2017_may-jun_1|13": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: sine rule ACB = 32.3-32.4, total 3",
+  "ms_display_regions": [
+   [
+    6,
+    545,
+    685
+   ]
+  ]
+ },
+ "2017_may-jun_1|23": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut of the continuous (scrambled-font) scheme, edges at the rule under each Total line; read with the question: y = kx^2, k=225, x = +-0.4, total 4",
+  "ms_display_regions": [
+   [
+    9,
+    638,
+    800
+   ],
+   [
+    10,
+    40,
+    238
+   ]
+  ]
+ },
+ "2019_jan_1|1": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: 230x1.05 = 241.5",
+  "ms_display_regions": [
+   [
+    5,
+    94.5,
+    145.5
+   ]
+  ]
+ },
+ "2019_jan_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: 5n^2-2: 3, 18, 43",
+  "ms_display_regions": [
+   [
+    5,
+    145.5,
+    171.2
+   ]
+  ]
+ },
+ "2019_jan_1|3": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: ratio 4:5:6, 6/15x80 = 32",
+  "ms_display_regions": [
+   [
+    5,
+    171.2,
+    228.7
+   ]
+  ]
+ },
+ "2019_jan_1|4": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: 3xy(3x+4yz)",
+  "ms_display_regions": [
+   [
+    5,
+    228.7,
+    298.6
+   ]
+  ]
+ },
+ "2019_jan_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: make x the subject",
+  "ms_display_regions": [
+   [
+    5,
+    298.6,
+    384.5
+   ]
+  ]
+ },
+ "2019_jan_1|6": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: simplify indices 2x^2y^5... ",
+  "ms_display_regions": [
+   [
+    5,
+    384.5,
+    442.4
+   ]
+  ]
+ },
+ "2019_jan_1|7": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: tangent at x=1 gradient 5+-0.5",
+  "ms_display_regions": [
+   [
+    5,
+    442.4,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: (a) x<2 (b) number line",
+  "ms_display_regions": [
+   [
+    6,
+    94.5,
+    277.1
+   ]
+  ],
+  "qp_display_regions": [
+   [
+    4,
+    30,
+    381
+   ]
+  ]
+ },
+ "2019_jan_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: |BC| = 10",
+  "ms_display_regions": [
+   [
+    6,
+    277.1,
+    410.0
+   ]
+  ],
+  "qp_display_regions": [
+   [
+    4,
+    381,
+    868
+   ]
+  ]
+ },
+ "2019_jan_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: standard form (a)(b)",
+  "ms_display_regions": [
+   [
+    6,
+    410.0,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|11": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: complete the square a=2,b=3/4,c=159/8",
+  "ms_display_regions": [
+   [
+    7,
+    94.5,
+    192.2
+   ]
+  ]
+ },
+ "2019_jan_1|12": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: proof BC common, AC=BD diameters, ASA/RHS",
+  "ms_display_regions": [
+   [
+    7,
+    192.2,
+    344.5
+   ]
+  ]
+ },
+ "2019_jan_1|13": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: sector perimeter 12.5",
+  "ms_display_regions": [
+   [
+    7,
+    344.5,
+    417.0
+   ]
+  ]
+ },
+ "2019_jan_1|14": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: angles 110/30, answer 30",
+  "ms_display_regions": [
+   [
+    7,
+    417.0,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|15": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: mean from grouped data 71",
+  "ms_display_regions": [
+   [
+    8,
+    94.5,
+    196.0
+   ]
+  ]
+ },
+ "2019_jan_1|16": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: (a) 336 (b) 204",
+  "ms_display_regions": [
+   [
+    8,
+    196.0,
+    317.1
+   ]
+  ]
+ },
+ "2019_jan_1|17": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: semicircle area 2pi -> R area 36",
+  "ms_display_regions": [
+   [
+    8,
+    317.1,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|18": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: matrix equation (-7 -12; -1/2 0)",
+  "ms_display_regions": [
+   [
+    9,
+    94.5,
+    344.4
+   ]
+  ]
+ },
+ "2019_jan_1|19": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: bounds 19.7",
+  "ms_display_regions": [
+   [
+    9,
+    344.4,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|20": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: area scale factor 40(x-2)^2",
+  "ms_display_regions": [
+   [
+    10,
+    94.5,
+    248.1
+   ]
+  ]
+ },
+ "2019_jan_1|21": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: histogram (a)(b) 18.6",
+  "ms_display_regions": [
+   [
+    10,
+    248.1,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|22": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: quadratic inequality 0<x<4",
+  "ms_display_regions": [
+   [
+    11,
+    94.5,
+    221.3
+   ]
+  ]
+ },
+ "2019_jan_1|23": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: bounds/ratio 2.14",
+  "ms_display_regions": [
+   [
+    11,
+    221.3,
+    334.4
+   ]
+  ]
+ },
+ "2019_jan_1|24": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: functions (a)-(d)",
+  "ms_display_regions": [
+   [
+    11,
+    334.4,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|25": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: pyramid/triangle (a) 70 (b) 54.5",
+  "ms_display_regions": [
+   [
+    12,
+    94.5,
+    565.3
+   ]
+  ]
+ },
+ "2019_jan_1|26": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: simultaneous x=3,y=1",
+  "ms_display_regions": [
+   [
+    13,
+    94.5,
+    301.0
+   ]
+  ]
+ },
+ "2019_jan_1|27": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule cut (scheme centres each number in a tall row); all 27 read stacked, each its own question, marks 2x7,3x7,4x6,5x3,6,8,6,6: stationary points x=0, 8/3",
+  "ms_display_regions": [
+   [
+    13,
+    301.0,
+    565.3
+   ]
+  ]
+ },
+ "2015_jan_1R|1": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    4,
+    98.9,
+    172.1
+   ]
+  ]
+ },
+ "2015_jan_1R|2": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    4,
+    172.1,
+    262.0
+   ]
+  ]
+ },
+ "2015_jan_1R|3": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    4,
+    262.0,
+    336.2
+   ]
+  ]
+ },
+ "2015_jan_1R|4": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    4,
+    336.2,
+    417.6
+   ]
+  ]
+ },
+ "2015_jan_1R|5": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    4,
+    417.6,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|6": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    5,
+    85.1,
+    166.7
+   ]
+  ]
+ },
+ "2015_jan_1R|7": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    5,
+    166.7,
+    385.5
+   ]
+  ]
+ },
+ "2015_jan_1R|8": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    5,
+    385.5,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|9": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    6,
+    85.1,
+    173.8
+   ]
+  ]
+ },
+ "2015_jan_1R|10": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    6,
+    173.8,
+    277.3
+   ]
+  ]
+ },
+ "2015_jan_1R|11": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    6,
+    277.3,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|12": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question: Q12 inequalities (a) y>=4 (b) x>y (c) 0.32x+0.25y<=300, 3 marks",
+  "ms_display_regions": [
+   [
+    7,
+    85.1,
+    175.5
+   ]
+  ]
+ },
+ "2015_jan_1R|13": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    7,
+    175.5,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|14": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    8,
+    85.1,
+    205.5
+   ]
+  ]
+ },
+ "2015_jan_1R|15": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    8,
+    205.5,
+    307.3
+   ]
+  ]
+ },
+ "2015_jan_1R|16": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    8,
+    307.3,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|17": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    9,
+    85.1,
+    224.8
+   ]
+  ]
+ },
+ "2015_jan_1R|18": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    9,
+    224.8,
+    313.5
+   ]
+  ]
+ },
+ "2015_jan_1R|19": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    9,
+    313.5,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|20": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    10,
+    85.1,
+    293.0
+   ]
+  ]
+ },
+ "2015_jan_1R|21": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    10,
+    293.0,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|22": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    11,
+    85.1,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|23": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question: Q23 integer values 4,5,6,7 from 10/3<=x<=22/3; codes M1+M1+A2 = 4 = paper (scheme prints \"3\")",
+  "ms_display_regions": [
+   [
+    12,
+    85.1,
+    205.5
+   ]
+  ]
+ },
+ "2015_jan_1R|24": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    12,
+    205.5,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|25": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    13,
+    85.1,
+    255.3
+   ]
+  ]
+ },
+ "2015_jan_1R|26": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    13,
+    255.3,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|27": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    14,
+    85.1,
+    265.7
+   ]
+  ]
+ },
+ "2015_jan_1R|28": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    14,
+    265.7,
+    565.4
+   ]
+  ]
+ },
+ "2015_jan_1R|29": {
+  "decision": "CONFIRMED",
+  "reason": "row-rule label cut (lib/ms_hand_cut.label_cuts, header row kept with its own question); all 29 read stacked, each its own question",
+  "ms_display_regions": [
+   [
+    15,
+    85.1,
+    565.4
+   ]
+  ]
+ },
+ "2016_jan_1|16": {
+  "decision": "CONFIRMED",
+  "reason": "official cut holds 16(b) ((2n-4)x90=900, n=7, M1 A1, Total 3 marks); Pearson's scheme prints no 16(a) row (both copies searched: the R2 source and data/Ultimate Final IGCSE). 16(a) supplied as a labelled GradeMax supplement",
+  "ms_supplement": {
+   "title": "Question 16 (a)  [1 mark]",
+   "lines": [
+    "Order of rotational symmetry of a regular octagon:",
+    "A regular polygon with n sides maps onto itself n times in one full turn,",
+    "so a regular octagon (8 sides) has rotational symmetry of order 8.",
+    "Answer: 8        B1"
+   ]
+  }
+ }
+}

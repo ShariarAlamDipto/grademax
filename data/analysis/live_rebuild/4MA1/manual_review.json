@@ -1,0 +1,713 @@
+{
+ "2026_may-jun_2HR|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 ratio sharing $400 2:3 / $375; scheme 5* total 5 ('2+3' read as a label)",
+  "ms_fingerprint": "cb87abb7f94e"
+ },
+ "2026_may-jun_2HR|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 six cards median; scheme 6* answer 5.5 total 4",
+  "ms_fingerprint": "f94d6ea5209e"
+ },
+ "2026_may-jun_2HR|20": {
+  "decision": "CONFIRMED",
+  "reason": "Q20 make x subject of y=(3x+5)/(4-2x); scheme 20* total 3",
+  "ms_fingerprint": "84ec5432f006"
+ },
+ "2026_may-jun_2HR|22": {
+  "decision": "CONFIRMED",
+  "reason": "Q22 y^2=x^2+7, y=3x-5; scheme 22* total 5",
+  "ms_fingerprint": "0af44d28ff99"
+ },
+ "2026_may-jun_2HR|23": {
+  "decision": "CONFIRMED",
+  "reason": "Q23 similar solids K,L,M; scheme 23* answer 25 total 5",
+  "ms_fingerprint": "7355f980c2a6"
+ },
+ "2026_may-jun_1H|17": {
+  "decision": "CONFIRMED",
+  "reason": "Q17 (4-sqrt20)(5-2sqrt5) = 40-sqrt1620; 'total 2 marks' is an SC note; total 3",
+  "ms_fingerprint": "a3da70ebbb9c"
+ },
+ "2025_oct-nov_1H|17": {
+  "decision": "CONFIRMED",
+  "reason": "Q17 rationalise (2sqrt7+2)/(sqrt7-3) = -10-sqrt112; SC note; total 3",
+  "ms_fingerprint": "f20fb2633886"
+ },
+ "2025_oct-nov_1H|28": {
+  "decision": "CONFIRMED",
+  "reason": "Q28 circle x^2+y^2=d-11x and line y=3x+e through (0.2,2.6); B=(-2.5,-5.5) total 6",
+  "ms_fingerprint": "44822b035c7a"
+ },
+ "2025_may-jun_1H|14": {
+  "decision": "CONFIRMED",
+  "reason": "Q14 badminton/tennis tree (a)2 + (b)0.18 2 = 4 = QP; Pearson printed 'Total 3 marks' (misprint)",
+  "ms_fingerprint": "470ca7a2ae1e"
+ },
+ "2025_may-jun_1H|15": {
+  "decision": "CONFIRMED",
+  "reason": "Q15 (a) k=9 (b) 21/(3-sqrt2) = 9+sqrt18; SC note; total 4",
+  "ms_fingerprint": "e0b24edc5b8c"
+ },
+ "2025_may-jun_1HR|24": {
+  "decision": "CONFIRMED",
+  "reason": "Q24 arithmetic series (2x+5),(3y-4),(4x-2), S9=216; x=11/2 y=22/3 total 6",
+  "ms_fingerprint": "dcbaf02f8290"
+ },
+ "2025_may-jun_2H|16": {
+  "decision": "CONFIRMED",
+  "reason": "Q16 make t subject of c=(t^2+3)/(7-8t^2); scheme 16* total 4",
+  "ms_fingerprint": "91e413afb669"
+ },
+ "2025_may-jun_2HR|16": {
+  "decision": "CONFIRMED",
+  "reason": "Q16 4/(3sqrt5+7) = 7-sqrt45; SC note; total 3",
+  "ms_fingerprint": "484c56a5f509"
+ },
+ "2024_may-jun_2HR|16": {
+  "decision": "CONFIRMED",
+  "reason": "Q16 six graphs: (i) -1/x = E (ii) sin x = A; total 2",
+  "ms_fingerprint": "d795cf0381e3"
+ },
+ "2024_may-jun_2HR|22": {
+  "decision": "CONFIRMED",
+  "reason": "Q22 x^2+y^2=y+11, y=3x-1; total 5",
+  "ms_fingerprint": "c1dc1cdaeb63"
+ },
+ "2024_may-jun_1H|14": {
+  "decision": "CONFIRMED",
+  "reason": "Q14 savings Abel/Bahira/Chanda 15435, answer 6090; total 5 ('29/20' read as a label)",
+  "ms_fingerprint": "60a0de408ea8"
+ },
+ "2023_may-jun_2HR|24": {
+  "decision": "CONFIRMED",
+  "reason": "Q24 spheres SA ratio 9, volume difference 117pi, r=3/2; total 5 (margin prints '4')",
+  "ms_fingerprint": "8bf081c42d73"
+ },
+ "2018_jan_3HR|21": {
+  "decision": "CONFIRMED",
+  "reason": "Q21 y=4ax^2, z=a^2x^3: (a)(i)(ii) 4 + (b) 10^3003 3 = 7",
+  "ms_fingerprint": "1d82cb7974bf"
+ },
+ "2018_jan_3HR|23": {
+  "decision": "CONFIRMED",
+  "reason": "Q23 f(x)=(x+1)^2: (a) 2/3 3 + (b) shown 2 + (c) sqrt x -1 2 = 7",
+  "ms_fingerprint": "d3533f634124"
+ },
+ "2018_jan_3H|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 (a) 3(1-2y)=2y-7 1.25 3 + (b) -3<x<=4 2 + (c) m>=-2.5 2 = 7 (repeated table header only)",
+  "ms_fingerprint": "c27b33b87c20"
+ },
+ "2018_jan_3H|23": {
+  "decision": "CONFIRMED",
+  "reason": "Q23 f=3x/(x-2), g=4x/5: (a) 1.6 2 + (b) 6x/(2x-5) 3 + (c) 2x/(x-3) 3 = 8",
+  "ms_fingerprint": "a2ddc8293e7f"
+ },
+ "2018_jan_4H|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 (a) 2/7 / 4/5 = 5/14 2 + (b) 3 1/6 - 1 2/3 3 = 5",
+  "ms_fingerprint": "537748b2196d"
+ },
+ "2018_jan_4H|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 India phones 53.01 3 + texts 15.2% 3 + minutes estimate 590 3 = 9",
+  "ms_fingerprint": "8f98c249e881"
+ },
+ "2024_may-jun_2HR|25": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    25,
+    20,
+    545
+   ]
+  ],
+  "reason": "Q25 OPQR vectors: whole of scheme page 25 (header to Total 6 marks)",
+  "ms_fingerprint": "249f49a5a514"
+ },
+ "2022_may-jun_2HR|25": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   26,
+   27
+  ],
+  "reason": "Q25 ABCD vectors: main scheme p26 + its MISREAD scheme p27 (\"SEE NEXT PAGE\")",
+  "ms_fingerprint": "c8f808fa1d41"
+ },
+ "2021_oct-nov_1H|12": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   15
+  ],
+  "reason": "Q12 cliff/mast tan 20, 25: page 15 alone (Pearson total misprinted 5; parts 3+3=6)",
+  "ms_fingerprint": "baaae02f9751"
+ },
+ "2021_oct-nov_1H|17": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   21
+  ],
+  "reason": "Q17 with its 17(c) ALT: page 21 alone",
+  "ms_fingerprint": "2bc644937f1a"
+ },
+ "2021_oct-nov_1H|18": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   22
+  ],
+  "reason": "Q18 recurring decimal 0.4x: page 22 alone (cut opened on 17(c) ALT)",
+  "ms_fingerprint": "81da3bc58e27"
+ },
+ "2019_jan_2HR|22": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   17
+  ],
+  "reason": "Q22 sector perimeter 9pi+18: page 17 alone (cut also held Q23)",
+  "ms_fingerprint": "105432edd98f"
+ },
+ "2019_jan_2HR|23": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   18
+  ],
+  "reason": "Q23 arithmetic sequence 10th term/sum 20 terms: page 18",
+  "ms_fingerprint": "6078f629e43e"
+ },
+ "2019_jan_1HR|23": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   19
+  ],
+  "reason": "Q23 f(x)=sqrt(x^2+k^2)/x: page 19 alone (cut also held Q14 graph + blank)",
+  "ms_fingerprint": "5e1367923ccc"
+ },
+ "2019_jan_1HR|14": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   12,
+   20
+  ],
+  "reason": "Q14 cumulative frequency: scheme page 12 + its answer graph page 20 (first try used page 14 = Q16 by mistake; caught on reading)",
+  "ms_fingerprint": "1f6185a3eae1"
+ },
+ "2018_may-jun_1H|20": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   22
+  ],
+  "reason": "Q20 isosceles triangle line of symmetry 3x+2y=86: page 22 alone (cut also held Q12 graph + back page)",
+  "ms_fingerprint": "7848dc07b8a0"
+ },
+ "2018_may-jun_1H|12": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    14,
+    125,
+    322
+   ],
+   [
+    23,
+    80,
+    560
+   ]
+  ],
+  "reason": "Q12 scheme band on p14 + its answer graph (p23, \"Question 12\")",
+  "ms_fingerprint": "9cfc36879e0c"
+ },
+ "2011_may-jun_3H|2": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    2,
+    296,
+    418
+   ]
+  ],
+  "reason": "Q2 pentagon fifth angle 118: displayed band on p2 after Q1 total",
+  "ms_fingerprint": "b5e3a90b5aef"
+ },
+ "2012_may-jun_3H|10": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    11,
+    248,
+    560
+   ],
+   [
+    12,
+    40,
+    425
+   ]
+  ],
+  "reason": "Q10 peas: (a)(b) on p11 below Q9 total + (c) on p12",
+  "ms_fingerprint": "c7a5e153375a"
+ },
+ "2014_may-jun_4HR|13": {
+  "decision": "CONFIRMED",
+  "reason": "Q13 Carmelo IQR 6 + (b) Carmelo; Pearson scheme gives (b) 2 marks where QP prints (1): same question, content matches",
+  "ms_fingerprint": "b6d3b8386415"
+ },
+ "2017_may-jun_3HR|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 taka/baht/aeroplane 2+3+3=8",
+  "ms_fingerprint": "c4e400d59531"
+ },
+ "2017_may-jun_3HR|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 Peace Bell 7.85, 18.8 = 4",
+  "ms_fingerprint": "fb37870e7603"
+ },
+ "2017_may-jun_3HR|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 ages 25, 7 = 6",
+  "ms_fingerprint": "64562c6f4473"
+ },
+ "2017_may-jun_3HR|9": {
+  "decision": "CONFIRMED",
+  "reason": "Q9 10e^5f^2, (x-6)(x+1) = 4",
+  "ms_fingerprint": "6291df7da7c5"
+ },
+ "2017_may-jun_3HR|10": {
+  "decision": "CONFIRMED",
+  "reason": "Q10 silver 550, copper 6600 = 6",
+  "ms_fingerprint": "f3749ff304f6"
+ },
+ "2017_may-jun_3HR|15": {
+  "decision": "CONFIRMED",
+  "reason": "Q15 dy/dx 6x^2-6x-12, 0, k=1 m=0 = 7",
+  "ms_fingerprint": "6bc5bcea7171"
+ },
+ "2014_may-jun_4HR|6": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   7
+  ],
+  "reason": "Q6 Kim drinks: page 7 = main scheme + its second method",
+  "ms_fingerprint": "4ad867f4f9c5"
+ },
+ "2017_may-jun_3HR|8": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    6,
+    370,
+    590
+   ],
+   [
+    16,
+    40,
+    590
+   ]
+  ],
+  "reason": "Q8 rotate/translate: band below Q7 total + answer diagram page 16",
+  "ms_fingerprint": "2af859679a9b"
+ },
+ "2017_may-jun_3HR|12": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    60,
+    440
+   ],
+   [
+    17,
+    40,
+    590
+   ]
+  ],
+  "reason": "Q12 cumulative frequency (Total 8marks): page 9 top + answer graph page 17",
+  "ms_fingerprint": "1e74a310a709"
+ },
+ "2017_may-jun_3HR|13": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    445,
+    590
+   ],
+   [
+    18,
+    40,
+    590
+   ]
+  ],
+  "reason": "Q13 region: below Q12 + answer graph page 18 (old cut also held all of Q12)",
+  "ms_fingerprint": "4d20ced5bbc8"
+ },
+ "2016_jan_4H|24": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   18
+  ],
+  "reason": "Q24 sector: page 18 = scheme + its misread block (misread had gone to Q25)",
+  "ms_fingerprint": "885d7b1769cd"
+ },
+ "2016_jan_4H|25": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   19
+  ],
+  "reason": "Q25 standard form: page 19 alone",
+  "ms_fingerprint": "a79407028cc9"
+ },
+ "2017_jan_3H|18": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    18,
+    111.8,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "46d4303e5491",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2017_jan_3H|19": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    19,
+    81.6,
+    302.0
+   ]
+  ],
+  "ms_fingerprint": "65fd716ac888",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2017_jan_4H|14": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    11,
+    71.5,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "f7a3b9c016fa",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2017_jan_4H|15": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    12,
+    71.5,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "7e80f465b158",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2017_may-jun_3HR|20": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    14,
+    306.5,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "27af88951338",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2017_may-jun_3HR|21": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    15,
+    98.5,
+    291.00201416015625
+   ]
+  ],
+  "ms_fingerprint": "94ca37581150",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2017_jan_3HR|22": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    17,
+    74.9,
+    565.3
+   ],
+   [
+    18,
+    30.0,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "9575539cf0a5",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2017_jan_3HR|23": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    19,
+    74.9,
+    565.3
+   ],
+   [
+    20,
+    30.0,
+    230.24400329589844
+   ]
+  ],
+  "ms_fingerprint": "a432f8577090",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2018_may-jun_1H|3": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    6,
+    89.9,
+    328.0
+   ]
+  ],
+  "ms_fingerprint": "3efb0c1b698d",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2018_may-jun_1H|4": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    6,
+    328.0,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "bd5af29b5f48",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_jan_1HR|8": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    8,
+    89.9,
+    565.3
+   ],
+   [
+    9,
+    30.0,
+    145.1
+   ]
+  ],
+  "ms_fingerprint": "172f9621efbe",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_jan_1HR|9": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    9,
+    145.1,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "b38c77125357",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_jan_1HR|16": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    15,
+    89.9,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "a10ef1a74f21",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_jan_1HR|17": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    16,
+    89.9,
+    565.3
+   ]
+  ],
+  "ms_fingerprint": "8acc800b69ed",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_may-jun_2H|10": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    13,
+    85.1,
+    565.4
+   ]
+  ],
+  "ms_fingerprint": "02abcbefe19b",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_may-jun_2H|11": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    14,
+    85.1,
+    565.4
+   ]
+  ],
+  "ms_fingerprint": "52ebd714849a",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2022_jan_2H|11": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    12,
+    48.9,
+    565.6
+   ]
+  ],
+  "ms_fingerprint": "5bfeb4834c37",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2022_jan_2H|12": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    13,
+    48.9,
+    131.4
+   ]
+  ],
+  "ms_fingerprint": "c71fe98ca299",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_may-jun_2HR|8": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    11,
+    159.0,
+    565.4
+   ]
+  ],
+  "ms_fingerprint": "cf04a1223cc6",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2023_may-jun_2HR|9": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    12,
+    85.1,
+    565.4
+   ]
+  ],
+  "ms_fingerprint": "92577bec1bf1",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2019_jan_1HR|2": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    6,
+    89.9,
+    292.5
+   ]
+  ],
+  "ms_fingerprint": "fbcc5f5f5baa",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2019_jan_1HR|3": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    6,
+    292.5,
+    394.6
+   ]
+  ],
+  "ms_fingerprint": "c511838a50de",
+  "reason": "label-to-label cut (question's own row to the next question's row) so trailing ALT / misread / notes stay with their question; read after cutting"
+ },
+ "2026_may-jun_2H|23": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    21,
+    56.4,
+    565.4
+   ]
+  ],
+  "reason": "Q23 simultaneous equations: page 21 only (old cut held the ALT 1 title of Q24)",
+  "ms_fingerprint": "c17bb1f85c21"
+ },
+ "2026_may-jun_2H|24": {
+  "decision": "CONFIRMED",
+  "ms_display_regions": [
+   [
+    22,
+    30.0,
+    565.4
+   ],
+   [
+    23,
+    30.0,
+    565.4
+   ]
+  ],
+  "reason": "Q24 cones: ALT 1 (with its title) + ALT 2",
+  "ms_fingerprint": "b7da58ff5744"
+ },
+ "2016_jan_3H|21": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   17,
+   18
+  ],
+  "reason": "Q21 bus/bike lateness: Scheme 1 (p17) + Scheme 2 (p18, was in no cut)",
+  "ms_fingerprint": "d76ee3cb8c22"
+ },
+ "2021_oct-nov_1H|20": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   24,
+   25
+  ],
+  "reason": "Q20 triangle area: main scheme p24 + appendix p25 Q20 Alt1-Alt4 (was in no cut)",
+  "ms_fingerprint": "4db912275072"
+ },
+ "2013_may-jun_4HR|22": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   13,
+   15,
+   16
+  ],
+  "reason": "Q22 hexagon area: scheme p13 + ALTERNATIVES FOR QUESTION 22 (p15-16, were in no cut)",
+  "ms_fingerprint": "d0315f9e17ac"
+ },
+ "2019_may-jun_1H|19": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   18,
+   23
+  ],
+  "reason": "Q19 histogram: scheme p18 + answer histogram p23 (was in no cut)",
+  "ms_fingerprint": "cdb7d9cd5b4b"
+ },
+ "2019_may-jun_1H|22": {
+  "decision": "CONFIRMED",
+  "ms_pages": [
+   21,
+   24
+  ],
+  "reason": "Q22 sine graph: scheme p21 + answer graph p24 (was in no cut)",
+  "ms_fingerprint": "9fb6a74de94a"
+ }
+}

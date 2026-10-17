@@ -1,0 +1,1967 @@
+[
+ {
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "command": "calculate",
+  "questions": 75,
+  "papers": 43,
+  "marks": 247,
+  "why_hard": [
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 47
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 45
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 25
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 18
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 15
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Ball A collides with ball B. Ɣ before the collision, ball A moves with a velocity of 10 m/s Ɣ after the collision, ball B moves in the same direction as ball A with a velocity of 8 m/s Ɣ ball A continues to move in the same direction, but at a lower velocity Calculate the velocity of ball A after the collision. [mass of each ball = 0.16 kg] velocity of ball A = m/s 9",
+    "tariff": 3,
+    "points": [
+     "correct value of momentum before collision seen anywhere in the calculation",
+     "substitution into balanced equation",
+     "evaluation of velocity",
+     "(momentum before =) 1.6 (kgm/s) 1.6 = 0.16 x 8 + 0.16 x v (v =) 2 (m/s)"
+    ],
+    "notes": "either as 0.16 x 10 or 1.6",
+    "sitting": "Jan 2018 Paper 2 Q4(b)"
+   },
+   {
+    "stem": "During the collision some kinetic energy is lost. Calculate the kinetic energy lost in the collision. [kinetic energy = 1 2 × mass × velocity2] kinetic energy lost = J 10 11",
+    "tariff": 3,
+    "points": [
+     "calculation of KE before collision",
+     "calculation of KE of either ball after collision",
+     "evaluation of energy difference",
+     "0.5 × 0.16 × 102 (0.5 × 0.16 × 82) OR (0.5 × 0.16 × 22) (8 – (5.12 + 0.32) =) 2.6 (J)"
+    ],
+    "notes": "ecf from (b) 8 (J) 5.12 OR 0.32 (J) allow 2.56 (J) Total for question 4 =",
+    "sitting": "Jan 2018 Paper 2 Q4(c)"
+   },
+   {
+    "stem": "The probe is propelled by an ion thruster which produces a force of 91 mN. Calculate the change in momentum that this force produces in 25 minutes. change in momentum = kg m / s 13",
+    "tariff": 3,
+    "points": [
+     "dimensionally correct substitution",
+     "rearrangement",
+     "evaluation",
+     "0.091 = change in momentum 25 x 60 (change in momentum =) 0.091 × 60 × 25 (change in momentum =) 140 (kg m/s)"
+    ],
+    "notes": "no marks for equation as given in paper substitution and rearrangement in either order allow 136.5, 137 unit conversion error or POT error loses the evaluation mark e.g. 2275, 2.275, 136 500, 1.365 × 1011 scores 2 Total for Question 5 =",
+    "sitting": "May-Jun 2018 Paper 2R Q5(c)"
+   }
+  ]
+ },
+ {
+  "topic_n": 2,
+  "topic": "Electricity",
+  "command": "calculate",
+  "questions": 48,
+  "papers": 29,
+  "marks": 149,
+  "why_hard": [
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 34
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 30
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 16
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 9
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 7
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Calculate the energy transferred to an electron when it passes through a voltage of 150 kV. [charge of electron = 1.6 × 10–19 C] energy transferred = J 15",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "conversion of kV to V",
+     "evaluation",
+     "energy = 1.6 × 10-19 × 150 × 103 energy = 2.4 × 10-14 (J)"
+    ],
+    "notes": "",
+    "sitting": "Jan 2020 Paper 1R Q7(a)(iii)"
+   },
+   {
+    "stem": "The charge on the generator discharges through the air as a spark. The charge takes a time of 0.68 ms to leave the generator. Calculate the mean (average) current in the air. mean current = A 16",
+    "tariff": 3,
+    "points": [
+     "substitution and re-arrangement",
+     "conversion of ms to s",
+     "evaluation",
+     "charge = current × time current = 2.9 × 10-8 / 0.68 × 10-3 current = 4.3 × 10-5 (A)"
+    ],
+    "notes": "accept conversion to microamps or milliamps provided micro- (μ) or milli- (m) clear on answer line allow 4.265 × 10-5 (A) Total for Question 7 = 9",
+    "sitting": "Jan 2020 Paper 1R Q7(b)(ii)"
+   },
+   {
+    "stem": "The power rating of the toaster is 2.8 kW. Calculate the total current in the toaster. [mains voltage = 230 V] current = A",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "2800 = current × 230 (current =) 2800 / 230 (current =) 12 (A)"
+    ],
+    "notes": "in either order -1 for POT error allow 12.17…(A)",
+    "sitting": "Oct-Nov 2020 Paper 1R Q5(b)(ii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 3,
+  "topic": "Waves",
+  "command": "calculate",
+  "questions": 45,
+  "papers": 34,
+  "marks": 138,
+  "why_hard": [
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 29
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 26
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 20
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 13
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 10
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Waves in the deep part of the ripple tank have a speed of 6.0 cm/s and a wavelength of 4.0 cm. Waves in the shallow part of the ripple tank have a speed of 4.0 cm/s. The frequency of the waves stays the same. Show that the wavelength in the shallow part of the ripple tank is approximately 3 cm. 8",
+    "tariff": 3,
+    "points": [
+     "substitution / rearrangement",
+     "evaluation of frequency",
+     "evaluation of wavelength to at least 2 significant figures",
+     "6.0 = f x 4.0 f = 1.5 (Hz) (λ2 =) 2.7 (cm)"
+    ],
+    "notes": "allow alternative methods e.g. 6 / 4 = 4 / λ gains both method allow 2.67, 2.6 recurring condone 2.6, 2.66 etc. do not allow 3.0 Total for question 3",
+    "sitting": "Jan 2018 Paper 2 Q3(b)(ii)"
+   },
+   {
+    "stem": "The refractive index of water is 1.33 Calculate the critical angle for the boundary between water and air. Give your answer to three significant figures. critical angle =",
+    "tariff": 3,
+    "points": [
+     "substitution into correct equation",
+     "rearrangement and evaluation",
+     "final correct answer given to 3 s.f",
+     "(sin(c) =) 1 1.33 c = 48.753… c = 48.8 (°)"
+    ],
+    "notes": "mark independently allow 0.75187… if correct equation seen anywhere",
+    "sitting": "May-Jun 2018 Paper 1 Q11(c)(ii)"
+   },
+   {
+    "stem": "The glass has a refractive index of 1.6 Calculate the critical angle of the glass-air boundary. critical angle = degrees 25",
+    "tariff": 3,
+    "points": [
+     "substitution into sin c = 1/n",
+     "rearrangement",
+     "evaluation",
+     "sin c = 1/1.6 (c =) sin-1 (1/1.6) (c =) 39°"
+    ],
+    "notes": "condone intermediate rounding allow 38.682…",
+    "sitting": "May-Jun 2019 Paper 1R Q9(b)(iii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "command": "calculate",
+  "questions": 43,
+  "papers": 33,
+  "marks": 134,
+  "why_hard": [
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 30
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 28
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 23
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 7
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 4
+   }
+  ],
+  "examples": [
+   {
+    "stem": "When the drop touches the water, the solvent evaporates and an oil film forms with thickness equal to the length of one oil molecule. The volume of the oil film is 1.0 mm3. The thickness of the oil film can be found using the formula volume = ʌ r2t [r = radius of film, t = thickness of film] Calculate the length of one oil molecule. length = mm 20 Every effort has been made to contact copyright holders to obtain their permission for the use of copyright material. future editions.",
+    "tariff": 3,
+    "points": [
+     "use of radius in calculation",
+     "substitution and rearrangement",
+     "evaluation",
+     "radius = 150(.4) (mm) (length =) 1.0 / (π x 150.4 x 150.4) (length =) 1.4 x 10-5 (mm)"
+    ],
+    "notes": "allow ecf from (b)(i) throughout seen anywhere -1 for POT error answer of 3.5 x 10-6 (mm) gains 2 marks for using diameter instead of radius allow answers that round to 1.40-1.41 Total for question 7",
+    "sitting": "Jan 2018 Paper 2 Q7(b)(ii)"
+   },
+   {
+    "stem": "The canister supplies 18 000 cm3 of helium at a pressure of 2300 kPa. The volume of each balloon is 8200 cm3. The pressure exerted by the helium in each balloon is 100 kPa. Calculate how many balloons can be filled using the helium from the canister. [assume temperature of the helium remains constant] number of balloons = 16",
+    "tariff": 3,
+    "points": [
+     "substitution into p1V1 = p2V2",
+     "rearrangement",
+     "evaluation",
+     "2300 × 18 000 = N × 100 × 8200 (N =) 2300 × 18 000 100 × 8200 (N =) 50"
+    ],
+    "notes": "no mark for the equation as given -1 for POT error allow alternative methods e.g. calculate final volume of gas available from canister, divide by volume of one balloon allow 2300 × 18 000 = 100 × V allow N = V / 8200 allow 50.5, 50.49 etc. condone 51",
+    "sitting": "May-Jun 2018 Paper 1R Q7(b)(ii)"
+   },
+   {
+    "stem": "A fixed mass of air has a volume of 43 000 cm3 when its pressure is 100 kPa. Calculate the pressure of this fixed mass of air when it is inside the cylinder. [volume of air in cylinder = 8500 cm3] pressure = kPa 28",
+    "tariff": 3,
+    "points": [
+     "substitution into p1V1 = p2V2",
+     "rearrangement",
+     "evaluation",
+     "p1 × 8500 = 100 × 43000 (p1 =) (100 x 43000) / 8500 (p1 =) 510 (kPa)"
+    ],
+    "notes": "no mark for equation as given in paper -1 for POT error allow 505.88… Total for question 10",
+    "sitting": "Jan 2019 Paper 1 Q10(c)"
+   }
+  ]
+ },
+ {
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "command": "calculate",
+  "questions": 19,
+  "papers": 17,
+  "marks": 58,
+  "why_hard": [
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 15
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 8
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 4
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 3
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 2
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Calculate the work done on the metal can by the force. Give the unit. work done = unit 6",
+    "tariff": 3,
+    "points": [
+     "dimensionally correct substitution",
+     "correct evaluation",
+     "unit",
+     "(W =) 275 000 × (0.163-0.008) (W =) 42 600 joules / J"
+    ],
+    "notes": "allow force multiplied by any distance unit conversion error or POT error loses the evaluation mark e.g. 4 262 500, 4262.5 mark independently allow 275 × 15.5 allow 43 000, 42 630, 42 625 allow kJ 42.6(25) kJ scores 3 marks Total for Question 2 =",
+    "sitting": "May-Jun 2018 Paper 2R Q2(b)"
+   },
+   {
+    "stem": "The mass gains 5.0 J of gravitational potential energy when it is lifted. Calculate the height the mass is lifted. height = m",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "5.0 = 0.780 x 10 x height (height =) 5.0 / (0.780 x 10) (height =) 0.64 (m)"
+    ],
+    "notes": "answer of 0.000 64 (m) gains 2 marks only allow 0.641… (m) allow use of g = 9.81 giving 0.65 (m)",
+    "sitting": "Jan 2019 Paper 1 Q5(a)(iii)"
+   },
+   {
+    "stem": "The maximum gravitational potential energy of the car is 380 kJ. The maximum height of the car is 45 m. Calculate the mass of the car. [gravitational potential energy = mass × g × height] mass = kg 6 *P61937RA0620*",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "380 000 = m × 10 × 45 (m =) 380 000 / (10 × 45) (m =) 840 (kg)"
+    ],
+    "notes": "-1 for POT error allow 844, 844.4…(kg) 862 (kg) if g=9.8 861 (kg) if g=9.81 Total for question",
+    "sitting": "Jan 2019 Paper 2 Q3(b)"
+   }
+  ]
+ },
+ {
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "command": "explain",
+  "questions": 14,
+  "papers": 13,
+  "marks": 55,
+  "why_hard": [
+   {
+    "reason": "'explain' command word",
+    "n": 14
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 7
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 4
+   },
+   {
+    "reason": "5-mark answer",
+    "n": 3
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 3
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The builder is pushing down with a force of 520 N to keep the plank horizontal. Calculate distance X. distance X = m",
+    "tariff": 3,
+    "points": [
+     "correct expression for either moment",
+     "correct use of principle of moments",
+     "evaluation of distance X",
+     "1300 × 0.30 OR 520 × X 1300 × 0.30 = 520 × X X = 0.75 (m)"
+    ],
+    "notes": "allow ecf from (a)(iii)",
+    "sitting": "Oct-Nov 2020 Paper 2R Q3(b)(ii)"
+   },
+   {
+    "stem": "The graph shows the student’s results. 0 5 10 15 20 25 30 Distance in cm 0 2000 4000 6000 8000 10 000 12 000 14 000 Mean count 23 The student claims that the data obeys the formula count × distance2 = constant Evaluate the student’s claim. 24",
+    "tariff": 3,
+    "points": [
+     "calculation of one constant from a point on the curve",
+     "calculation of a second constant from a second point on the curve",
+     "comparison of the constants AND conclusion that is valid from the candidate’s values for the ‘constant’",
+     "Sample data: Count Distance Constant 13 600 6 489 600 3300 12 475 200 1600 18 518 400 800 24 460 800 600 30 540 000"
+    ],
+    "notes": "roughly, the constant for any count-distance pair is in range 460 000- 540 000 reject this mark if there are any miscalculated constants i.e. are the constants ‘the same’ or not NB: ignore consistent PoT errors",
+    "sitting": "May-Jun 2025 Paper 2 Q6(b)(ii)"
+   },
+   {
+    "stem": "The table shows data for the ball after it has travelled for two different times. Time in s Distance in m 5.0 15 10.0 60 A student suggests that these results obey the relationship: distance time 2 = constant Use data from the table to deduce whether the results support this suggestion. 18",
+    "tariff": 3,
+    "points": [
+     "evaluation of either (15/52) or (60/102)",
+     "evaluation of second constant",
+     "comparison of the two values to conclude suggestion supported"
+    ],
+    "notes": "allow 0.6 or 3/5 seen in working ignore constants calculated using data from graph Total for Question 6 = 10",
+    "sitting": "Oct-Nov 2023 Paper 1 Q6(b)"
+   }
+  ]
+ },
+ {
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "command": "calculate",
+  "questions": 12,
+  "papers": 11,
+  "marks": 38,
+  "why_hard": [
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 10
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 5
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 1
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Calculate the number of turns on the secondary coil. number of turns = 13",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "15/330 = 2600/Ns Ns = 2600 × 330 / 15 Ns = 57 000"
+    ],
+    "notes": "allow kV or V for voltages -1 for POT error allow 57 200",
+    "sitting": "Jan 2020 Paper 2R Q6(a)(ii)"
+   },
+   {
+    "stem": "Calculate the output voltage for the transformer. voltage = V 18 19 20",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "(160/45) = 12/Vs Vs = 12 / (160/45) (Vs =) 3.4 (V)"
+    ],
+    "notes": "allow 3.375 (V)",
+    "sitting": "Jan 2021 Paper 2R Q8(b)(ii)"
+   },
+   {
+    "stem": "The input voltage to the transformer is 115 V. Show that the output voltage is approximately 20 V. *P67162RA01524* 15",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation to 2s.f. or more",
+     "1500/280 = 115/Vs (Vs =) 115 ×280 / 1500 (Vs =) 21 (V)"
+    ],
+    "notes": "allow 21.4666…(V)",
+    "sitting": "Oct-Nov 2021 Paper 2 Q6(b)(ii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 8,
+  "topic": "Astrophysics",
+  "command": "calculate",
+  "questions": 11,
+  "papers": 11,
+  "marks": 37,
+  "why_hard": [
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 11
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 11
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 4
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 1
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "It takes a time of 12 s from when the powder starts landing in the metal can until all the powder has landed in the can. Calculate the mean charging current. current = A 10",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "(-) 9.4 × 10-9 = current × 12 (current =) (-) 9.4 × 10-9 / 12 (current =) (-) 7.8 × 10-10 (A)"
+    ],
+    "notes": "-1 for POT error 7.83… × 10-10 (A)",
+    "sitting": "Jan 2020 Paper 2 Q4(b)(iii)"
+   },
+   {
+    "stem": "The small block then moves around the fixed point on the table. The block moves in a circular orbit of radius 17.6 cm at a constant orbital speed of 6 m/s. The time period of the orbit can be found using the formula orbital speed = 2 orbital radius time period π × Calculate the time period of the orbit. time period = s 23 24",
+    "tariff": 3,
+    "points": [
+     "substitution and re-arrangement of given equation",
+     "conversion of 17.6 cm to 0.176 m",
+     "evaluation",
+     "correct answer = 0.18(41…) (s) e.g. orbital speed=(2π × orbital radius)÷time period 6 = (2π × 0.176)÷T T = (2π × 0.176) ÷ 6 T = 0.1843… (s)"
+    ],
+    "notes": "accept 0.2 (s) accept use of v=5.84…(m/s) -1 POT error 0.092.. (s) for using 17.6 cm as a diameter scores 2",
+    "sitting": "May-Jun 2021 Paper 2 Q7(d)"
+   },
+   {
+    "stem": "Calculate the time period of Mercury’s orbit around the Sun. time period = s 12",
+    "tariff": 3,
+    "points": [
+     "substitution into",
+     "rearrangement",
+     "evaluation",
+     "47.4 = 2 × π × 57.9 × 106 / T T = 2 × π × 57.9 × 106 / 47.4 (T =) 7.68 × 106 (s)"
+    ],
+    "notes": "-1 for POT error allow 1s.f. answer if supported by working allow 7.7 × 106, 7.67 × 106, 7 675 030.154 (s)",
+    "sitting": "May-Jun 2022 Paper 1 Q4(d)"
+   }
+  ]
+ },
+ {
+  "topic_n": 2,
+  "topic": "Electricity",
+  "command": "explain",
+  "questions": 7,
+  "papers": 7,
+  "marks": 30,
+  "why_hard": [
+   {
+    "reason": "'explain' command word",
+    "n": 7
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 3
+   },
+   {
+    "reason": "5-mark answer",
+    "n": 3
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 1
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Explain how the voltage across the fixed resistor changes when the hot water is replaced with cold water. 17",
+    "tariff": 3,
+    "points": [
+     "resistance of thermistor increases",
+     "current through circuit decreases",
+     "(so) voltage (across fixed resistor) decreases"
+    ],
+    "notes": "dependent on scoring one of previous two marking points allow 2 max. as ECF for correct description with incorrect Rtherm change allow correct potential divider argument for full marks",
+    "sitting": "Oct-Nov 2020 Paper 1 Q6(b)"
+   },
+   {
+    "stem": "Explain why the voltage across the light dependent resistor (LDR) decreases if the brightness of the light in the room increases.",
+    "tariff": 4,
+    "points": [
+     "MP1. resistance (of LDR / circuit) decreases (with increased brightness)",
+     "MP2. current increases",
+     "MP3. voltage of fixed resistor increases",
+     "MP4. battery/total voltage remains constant (so voltage across LDR decreases)",
+     "OR MP1. resistance of LDR decreases (with increased brightness)",
+     "MP2. LDR resistance is a smaller proportion/fraction of total resistance",
+     "MP3. voltage from battery is split/shared between LDR and resistor",
+     "MP4. (so) voltage (across LDR) is proportional to resistance (so voltage across LDR decreases)"
+    ],
+    "notes": "allow R, resistor R for fixed resistor allow circuit voltage for total voltage ignore quotation of V=I×R",
+    "sitting": "Oct-Nov 2025 Paper 1 Q7(c)"
+   },
+   {
+    "stem": "Explain how the voltage across the variable resistor changes if more mass is added to the end of the elastic string. 30",
+    "tariff": 4,
+    "points": [
+     "any FOUR from: stretchy resistor increases in resistance (when mass increased)",
+     "I = V/R",
+     "current in circuit less",
+     "voltage across fixed resistor decreases",
+     "so voltage across stretchy resistor increases",
+     "as total voltage is constant/voltage of cell constant"
+    ],
+    "notes": "reject V=IR or I=V/R with assumption of constant current",
+    "sitting": "Jan 2021 Paper 1R Q12(b)"
+   }
+  ]
+ },
+ {
+  "topic_n": 3,
+  "topic": "Waves",
+  "command": "explain",
+  "questions": 8,
+  "papers": 7,
+  "marks": 27,
+  "why_hard": [
+   {
+    "reason": "'explain' command word",
+    "n": 8
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 3
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 3
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 3
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 2
+   }
+  ],
+  "examples": [
+   {
+    "stem": "As the aeroplane travels away from the airport, it sends a signal to the airport using radio waves with a wavelength of 1.2 m. When the signal is received at the airport, the wavelength is 1.1 × 10-6 m longer than when it is emitted by the aeroplane. Calculate the speed of the aeroplane using the formula change of wavelength wavelength speedof aeroplane speedof radio wa ve [speed of radio waves = 3.0 × 108 m/s] speed of aeroplane = m/s 16",
+    "tariff": 3,
+    "points": [
+     "substitution into given equation Δλ/λ = v/c",
+     "rearrangement",
+     "evaluation",
+     "1.1 x 10-6 / 1.2 = v/3 x 108 v = 3 x 108 x 1.1 x 10-6 / 1.2 v = 280 (m/s) Total for"
+    ],
+    "notes": "-1 POT error allow ecf from wrong change in wavelength condone premature rounding allow 275 (m/s) Question 5 = 6",
+    "sitting": "Oct-Nov 2020 Paper 2 Q5(b)"
+   },
+   {
+    "stem": "Diagram 2 shows a ray of light incident on the boundary between water and air. air water 43° 13° Diagram 2 Explain how the refractive index of water compares to the refractive index of acetone. 32",
+    "tariff": 3,
+    "points": [
+     "ray is refracting / angle of incidence is less than critical angle",
+     "critical angle for water is greater than for acetone",
+     "refractive index of water is less than for acetone"
+    ],
+    "notes": "award full marks for a correct calculation of the refractive index of water with correct conclusion e.g. nwater = 1.33 < nacetone Allow correct conclusion with nwater = 0.75... for 1 mark MAX reject response with otherwise incorrect calculation of nwater",
+    "sitting": "Oct-Nov 2020 Paper 1R Q12(b)"
+   },
+   {
+    "stem": "A teacher suggests that a more accurate value for the refractive index can be found using a graphical method. Design a method to obtain a value for the refractive index of the glass block using a graph. You may draw a diagram to support your answer. *P67160RA01732* 17",
+    "tariff": 3,
+    "points": [
+     "idea that multiple angles (of incidence) measured",
+     "graph of sin(i) against sin(r) plotted",
+     "gradient of graph = refractive index"
+    ],
+    "notes": "can be gained from diagram ignore orientation of axes can be gained from diagram reject if inconsistent with graph. However, accept if sin(r) on y-axis then gradient = 1/n",
+    "sitting": "Oct-Nov 2021 Paper 1 Q6(c)"
+   }
+  ]
+ },
+ {
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "command": "apply",
+  "questions": 5,
+  "papers": 5,
+  "marks": 25,
+  "why_hard": [
+   {
+    "reason": "4-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 2
+   },
+   {
+    "reason": "6-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 1
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "This is the student’s method.  use a balance to find the mass of the bottle and stopper  completely fill the bottle with water  insert the stopper and dry the outside of the bottle  use the balance to find the mass of the full bottle and stopper These are the student’s results. mass of empty bottle and stopper = 63.4 g mass of full bottle and stopper = 112.9 g Use the student’s results to determine the volume of the water in the bottle. Give your answer to three significant figures. [density of water = 0.998 g/cm3] volume = cm3 29",
+    "tariff": 4,
+    "points": [
+     "determination of mass of water",
+     "substitution into / rearrangement of density formula",
+     "evaluation",
+     "rounding to 3 s.f",
+     "mass = 49.5 (g) 0.998 = 49.5/volume OR volume = mass/density volume = 49.599 49.6 (cm3)"
+    ],
+    "notes": "allow ECF from incorrect mass mark independently",
+    "sitting": "Jan 2021 Paper 1 Q11(a)"
+   },
+   {
+    "stem": "After finishing the experiment, the student removes the aluminium block and places the container of water into a freezer. The water loses energy at a constant rate and cools from 38 °C to –20 °C. The water freezes and turns into ice at 0 °C. Ice has a lower specific heat capacity than water. Use the axes to sketch a temperature-time graph from when the water is placed in the freezer until it reaches its lowest temperature. No calculations are required. Time 40 30 20 10 0 −10 −20 Temperature in °C 22 23 24",
+    "tariff": 4,
+    "points": [
+     "line has two downward sloping sections of different gradient",
+     "horizontal line at 0 oC in between downward sloping sections",
+     "line starts at 38 oC and finishes at -20 oC",
+     "initial downward sloping line has smaller gradient than final downward sloping line"
+    ],
+    "notes": "ignore where lines intersect the time axis throughout sections do not need to be straight, but one must be clearly steeper than the other reject this MP if there is more than one horizontal line lower than 38 and higher than -20 ignore start/finish time by eye note: responses with initial downward section and final downward section parallel (by eye) can only score MP2 and MP3 Total for Question 7 = 13",
+    "sitting": "May-Jun 2022 Paper 2 Q7(d)"
+   },
+   {
+    "stem": "The student uses a device called a Hall probe, which can be placed anywhere in the magnetic field to measure its strength at that point. Design a suitable method for the investigation. Your answer should include • any extra measuring equipment needed • details of the independent variable, dependent variable and any control variables You may include a diagram to help your answer. 9 10",
+    "tariff": 5,
+    "points": [
+     "Any FIVE from: MP1: ruler",
+     "MP2: idea of measuring mag field at different distances",
+     "MP3: idea of repeat and average",
+     "MP4: distance is independent variable",
+     "MP5: mag field strength is dependent variable",
+     "MP6: current is a control variable",
+     "MP7: reference to suitable second control variable e.g. coil (spacing or turns), the rest of the apparatus"
+    ],
+    "notes": "marks may be awarded from a suitable labelled diagram condone tape measure or metre stick condone voltage accept idea of ammeter use to monitor current",
+    "sitting": "Jan 2022 Paper 2 Q4(a)"
+   }
+  ]
+ },
+ {
+  "topic_n": 2,
+  "topic": "Electricity",
+  "command": "apply",
+  "questions": 6,
+  "papers": 5,
+  "marks": 22,
+  "why_hard": [
+   {
+    "reason": "4-mark answer",
+    "n": 4
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 3
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 2
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 2
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Use the readings on the adaptor to calculate the resistance of the circuit used to charge the battery. Give the unit. resistance = unit 11",
+    "tariff": 4,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "unit",
+     "4.80 = 0.42 × R (R =) 4.8 / 0.42 (R =) 11 ohms / Ω"
+    ],
+    "notes": "-1 if rounding error e.g. 11.42 allow 11.4, 11.43, 11.42857…",
+    "sitting": "May-Jun 2018 Paper 1R Q5(a)(ii)"
+   },
+   {
+    "stem": "Draw the circuit diagram for this electrical circuit. The variable resistor has been drawn for you.",
+    "tariff": 4,
+    "points": [
+     "correct symbol for resistor",
+     "correct symbol for cell",
+     "correct symbol for ammeter",
+     "circuit is complete series circuit"
+    ],
+    "notes": "reject extra components allow ECF for missing/incorrect symbols",
+    "sitting": "Jan 2021 Paper 1R Q12(a)(i)"
+   },
+   {
+    "stem": "The student first investigates how the voltage of a diode affects the current in the diode. They use this equipment. • diode • cell • variable resistor • wires • voltmeter • ammeter Draw a circuit diagram to represent a circuit the student could use. The diode has been drawn for you. 24",
+    "tariff": 4,
+    "points": [
+     "complete circuit with correct symbols for cell, ammeter and voltmeter",
+     "variable resistor in series with diode",
+     "ammeter in series with diode",
+     "voltmeter in parallel with diode"
+    ],
+    "notes": "condone more than one cell / battery drawn ignore orientation of diode relative to cell circuit symbol must be correct condone incorrect orientation of symbol reject if voltmeter drawn in parallel with variable resistor and diode",
+    "sitting": "Oct-Nov 2024 Paper 1 Q9(a)"
+   }
+  ]
+ },
+ {
+  "topic_n": 2,
+  "topic": "Electricity",
+  "command": "describe",
+  "questions": 4,
+  "papers": 4,
+  "marks": 22,
+  "why_hard": [
+   {
+    "reason": "6-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "5-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 2
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Describe how a student could use this apparatus to determine the specific heat capacity of water. Include details of any additional equipment needed in your answer. 12",
+    "tariff": 6,
+    "points": [
+     "any five from: MP1. idea of mass of water = [mass of water and cup] − [mass of cup]",
+     "MP2. mass found on balance",
+     "MP3. time measured on timer/stopwatch/stopclock",
+     "MP4. idea of finding temperature change",
+     "MP5. energy supplied = voltmeter reading × ammeter reading × time",
+     "MP6. whole experiment repeated and averaged",
+     "MP7. water stirred (throughout)",
+     "MP8. keep taking temperature after heater switched off for max temp",
+     "MP9. plot a graph of temperature against time",
+     "MP10. find gradient of temperature-time graph",
+     "and one from: MP11. use of equation \"gradient = power of heater / m × c” or re-arrangement",
+     "MP12. rearrangement of formula sheet equation",
+     "i.e. c = energy supplied/(m × temp change)"
+    ],
+    "notes": "accept zeroing balance with cup present condone ‘weighing scales’ or ‘scales’ reject ‘scale’ allow ‘measure volume of water with a measuring cylinder and multiply volume by density to find mass’ for MP1 and MP2 accept idea of a fixed amount of time e.g. temp change = final temp − initial temp accept idea of a defined temperature change I.e. stop heating after a temp change of 20 degrees accept E = VIt accept use of joulemeter i.e. get several values of c",
+    "sitting": "Oct-Nov 2023 Paper 2 Q3(a)"
+   },
+   {
+    "stem": "Describe a method that the student could use to perform this investigation. You should include a circuit diagram. 10",
+    "tariff": 6,
+    "points": [
+     "any six from: MP1. continuous circuit with electromagnet/coil shown clearly",
+     "MP2. power-pack OR cell/battery and variable resistor",
+     "MP3. use of ammeter",
+     "MP4. viable method of detecting strength of field",
+     "MP5. vary the current",
+     "MP6. measure/record the results",
+     "MP7. repeat and average"
+    ],
+    "notes": "shown in text or on diagram allow iron/steel pins, paperclips, iron filings, newton-meter needs to be a quantitative statement e.g. ‘see how many pins are picked up’ Total for Question 4 = 13",
+    "sitting": "May-Jun 2018 Paper 2R Q4(b)(iii)"
+   },
+   {
+    "stem": "Describe how the student could use their apparatus to help determine the specific heat capacity of the substance. You should give details of any additional apparatus needed in your answer. 16",
+    "tariff": 5,
+    "points": [
+     "Any FIVE from: MP1. measure current and voltage to work out power",
+     "MP2. use ammeter and voltmeter",
+     "MP3. measure temperature increase AND time taken",
+     "MP4. find total energy (E = Pt or E = VIt)",
+     "MP5. measure mass of substance",
+     "MP6. use a balance",
+     "MP7. rearrange to give c = E / m Δθ",
+     "MP8. plot a temperature-time graph",
+     "MP9. use gradient (so c = P/(m × gradient))"
+    ],
+    "notes": "accept ‘known power’ accept ‘power meter’ or ‘joulemeter’ accept idea of ‘known voltage’ accept measure initial and final temperature for temp increase accept idea of waiting for highest temperature after power switched off accept ‘use a stopwatch’ for time taken",
+    "sitting": "May-Jun 2021 Paper 2 Q5(a)"
+   }
+  ]
+ },
+ {
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "command": "calculate",
+  "questions": 5,
+  "papers": 5,
+  "marks": 19,
+  "why_hard": [
+   {
+    "reason": "4-mark answer",
+    "n": 4
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 4
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 3
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Callisto orbits Jupiter at an orbital radius of 1 880 000 km and with an orbital period of 400 hours. Calculate the orbital speed of Callisto in km/s. Give your answer to 3 significant figures. orbital speed = km/s",
+    "tariff": 4,
+    "points": [
+     "conversion of time from hours to seconds",
+     "substitution into orbital speed formula",
+     "evaluation",
+     "final answer given to 3s.f",
+     "time = (400 ×60 ×60 =) 1 440 000 (s) (orbital speed =) 2 × π × 1 880 000 / 1 440 000 (orbital speed =) 8.203… (km/s) (orbital speed =) 8.20 (km/s)"
+    ],
+    "notes": "allow use of 1 440 000 seen anywhere allow ecf from incorrect time conversion mark independently",
+    "sitting": "Oct-Nov 2021 Paper 1 Q8(b)"
+   },
+   {
+    "stem": "The table shows the student’s results. Mass of empty balloon in g 15.00 Mass of balloon when full of air in g 15.61 Volume of air in cm3 490 Calculate the density of air to 2 significant figures. Give the unit. density = unit 21",
+    "tariff": 4,
+    "points": [
+     "mass of air is 0.61 g",
+     "correct use of formula: density = mass/volume",
+     "correct evaluation to 2 sf",
+     "appropriate unit i.e. g/cm3",
+     "correct answer = 0.0012 g/cm3 e.g. mass of air = 15.61 − 15.00 = 0.61 density = mass ÷ volume density = 0.61 ÷ 490 density = 0.00124 g/cm3 density = 0.0012 g/cm3 to 2 sf"
+    ],
+    "notes": "−1 POT error accept use of standard form i.e. 1.2(4) × 10-3 g/cm3",
+    "sitting": "Jan 2023 Paper 1R Q8(b)"
+   },
+   {
+    "stem": "A scientist finds the volume and mass of a patella. The mass of the patella is 17 g. The volume of the patella is 13 cm3. Calculate the density of the patella. Give your answer to 2 significant figures. density = g / cm3 18",
+    "tariff": 4,
+    "points": [
+     "correct formula selected",
+     "seen substitution",
+     "evaluation",
+     "-1 for answer given to 2 sf",
+     "mark e.g. density = mass / volume density = 17 / 13 density = 1.3… (g/cm3) density = 1.3 (g/cm3)"
+    ],
+    "notes": "or implied by working POT error independently Total for Question 6 = 13",
+    "sitting": "May-Jun 2023 Paper 1 Q6(c)"
+   }
+  ]
+ },
+ {
+  "topic_n": 0,
+  "topic": "Unclassified",
+  "command": "calculate",
+  "questions": 6,
+  "papers": 5,
+  "marks": 19,
+  "why_hard": [
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 5
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 4
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 2
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 1
+   },
+   {
+    "reason": "'calculate' command word",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Calculate the time taken for the car to accelerate to 35 m/s. time = s 19",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "1.2 = (35 – 26) / t t = 9 / 1.2 (t =) 7.5 (s)"
+    ],
+    "notes": "",
+    "sitting": "Jan 2020 Paper 1 Q8(a)(ii)"
+   },
+   {
+    "stem": "The electric motor can only operate at maximum power for part of each lap of the race. The electric motor has a maximum power output of 1.2 × 105 W. The electric motor transfers 4.0 × 106 J of energy when it operates at maximum power. Calculate the amount of time the electric motor can operate at maximum power. time = s 9",
+    "tariff": 3,
+    "points": [
+     "substitution into P = E / t",
+     "rearrangement",
+     "evaluation",
+     "1.2 × 105 = 4.0 × 106 / time (time =) 4.0 × 106 / 1.2 × 105 (time =) 33 (s)"
+    ],
+    "notes": "-1 for POT error allow 33.3…",
+    "sitting": "Jan 2022 Paper 2R Q4(a)"
+   },
+   {
+    "stem": "Calculate the minimum time taken for Kori to transfer 6.47 × 1014 J of energy. minimum time = s 8",
+    "tariff": 3,
+    "points": [
+     "substitution into P = W / t",
+     "rearrangement",
+     "evaluation",
+     "7.49 × 109 = 6.47 × 1014 / t t = 6.47 × 1014 / 7.49 × 109 (t =) 86 400 (s)"
+    ],
+    "notes": "-1 for POT error allow 86000, 86382, 86381.8… Total for question 3 = 7",
+    "sitting": "Jan 2023 Paper 2 Q3(c)(ii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "command": "apply",
+  "questions": 5,
+  "papers": 5,
+  "marks": 19,
+  "why_hard": [
+   {
+    "reason": "4-mark answer",
+    "n": 4
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 3
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 3
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 2
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "A small hydroelectric power station has a useful energy output of 6.0 kJ. the chart. total energy input = kJ 13",
+    "tariff": 4,
+    "points": [
+     "correct efficiency read from graph",
+     "substitution into efficiency formula",
+     "rearrangement",
+     "evaluation",
+     "90% or 0.9 seen in working 0.9 = 6.0 / total energy input total energy input = useful energy / efficiency (total energy input =) 6.7 (kJ)"
+    ],
+    "notes": "allow ecf from incorrect efficiency allow working in J or kJ allow any correctly rounded value for 4 marks allow 6.6 or 6.6 recurring (kJ) for 3 marks",
+    "sitting": "Jan 2022 Paper 1R Q5(b)"
+   },
+   {
+    "stem": "Energy is transferred from the thermal store of the water to the thermal store of the air in the boiling tube with an efficiency of 16%. The air in the boiling tube gains 1800 J of energy during this process. This is defined as the useful energy transfer. Calculate the amount of energy wasted during this process. energy wasted = J 35",
+    "tariff": 4,
+    "points": [
+     "substitution into given equation, efficiency = useful output energy (x 100%) total output energy",
+     "rearrangement",
+     "evaluation of total output energy",
+     "evaluation of wasted energy",
+     "0.16 = 1800/total output total output = 1800 / 0.16 total output = 11 250 (J) (wasted energy = 11250 - 1800 =) 9500 (J)"
+    ],
+    "notes": "11250 (J) seen -1 POT here i.e. subtracting 1800 (J) from candidate’s total output energy or calculating 84% of total output energy ecf wrong total output energy allow 9450 (J)",
+    "sitting": "May-Jun 2024 Paper 1R Q12(a)"
+   },
+   {
+    "stem": "The wind transfers 1.2 × 106 J of energy to the turbine. The total mass of the turbine blades is 16 000 kg. The wind causes the turbine blades to accelerate from rest to an average speed of 7.6 m/s. Calculate the efficiency of the turbine. efficiency = 18",
+    "tariff": 4,
+    "points": [
+     "KE = ½ m v2 seen",
+     "evaluation of KE of blades",
+     "substitution of candidate’s value for blades’ KE and wind KE into efficiency equation",
+     "evaluation of efficiency",
+     "KE of blades = ½ × 16 000 × (7.6)2 KE of blades = 462 080 (J) efficiency = (KE of blades/KE of wind) x 100% efficiency = (462 080 ÷ 1 200 000) × 100% efficiency = 38.506… % correct answer = 39%"
+    ],
+    "notes": "accept substitution correct KE is 462 080 (J) allow correct decimal expression allow correct % expression with % sign ignore fractional final",
+    "sitting": "Oct-Nov 2024 Paper 2 Q7(b)(ii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "command": "describe",
+  "questions": 3,
+  "papers": 3,
+  "marks": 17,
+  "why_hard": [
+   {
+    "reason": "6-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "credit from a menu of acceptable points",
+    "n": 2
+   },
+   {
+    "reason": "5-mark answer",
+    "n": 1
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Describe a method for the student’s investigation. Your answer should include details of • the variables in the investigation • how the investigation will be valid (a fair test) • how the range will be measured accurately 28",
+    "tariff": 6,
+    "points": [
+     "any two from: MP1. height is independent variable",
+     "MP2. at least five different heights tested",
+     "MP3. range is dependent variable",
+     "with any two from: MP4. one control variable named",
+     "MP5. second control variable named",
+     "MP6. idea of repeating process at each height to find mean",
+     "AND: MP7. ruler used to measure height / range",
+     "MP8. suitable method to see where ball lands"
+    ],
+    "notes": "e.g. launch speed/launch force, angle of launch, same ball allow repeating process at each height to identify anomalies allow tape measure condone metre stick e.g. record video (and playback in slow motion) cover ball in paint, material on floor to show landing point etc.",
+    "sitting": "May-Jun 2022 Paper 1 Q11(a)"
+   },
+   {
+    "stem": "The photograph shows some of the equipment available to the student. black bottle silver bottle thermometers infrared heater 9 The student pours some water into each bottle. Describe a method the student could use to investigate how the colour of the bottle affects the amount of infrared radiation absorbed by the bottle. You may draw a diagram to help your answer. 10",
+    "tariff": 6,
+    "points": [
+     "any six from: MP1. idea of equal volume of water in each bottle",
+     "MP2. place both bottles an equal distance from the heater",
+     "MP3. idea of same heater output for both bottles",
+     "MP4. same starting temperature of water in both bottles",
+     "MP5. measure temperature of water in both bottles after a given time",
+     "MP6. repeat investigation (more than once)",
+     "MP7. calculate a mean",
+     "MP8. safety guidance to avoid the hazard of burn/scald/electrocution"
+    ],
+    "notes": "allow marks from suitable diagram condone have ‘heater setting’ the same for both bottles allow ‘measure initial temp of water’ allow measure time in for a given temperature change i.e. the candidate has shown they understand that both bottles have been measured more than once condone average e.g. take care to avoid burns from heater, clean up water spillages etc.",
+    "sitting": "May-Jun 2024 Paper 2 Q3(a)"
+   },
+   {
+    "stem": "The student decides to measure the mass and the volume of each rock. Describe a method the student could use to accurately determine the mass and the volume of each rock. You may draw a diagram to help your answer. 13",
+    "tariff": 5,
+    "points": [
+     "MP1. use balance to measure mass",
+     "MP2. use of measuring cylinder to measure volume",
+     "PLUS Any three from: MP3. ensure balance reads zero before placing rock",
+     "MP4. ensure balance is on a level surface",
+     "MP5. ensure rock is dry when measuring its mass MP6. recording volume before rock added to water MP7. finding difference in volume of water after rock added MP8. ensure rock is fully submerged",
+     "MP9. ensure no water is spilt / all water collected by measuring cylinder",
+     "MP10. read measuring cylinder at eye level / on a level surface",
+     "MP11. read to bottom of water meniscus"
+    ],
+    "notes": "marks can be awarded from candidate’s diagram allow (weighing) scales reject scale allow measure mass before volume fill displacement can to ‘top’ or ‘spout’/eq catch displaced volume when rock added ignore unqualified reference to ‘avoid parallax’",
+    "sitting": "May-Jun 2024 Paper 1R Q5(a)"
+   }
+  ]
+ },
+ {
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "command": "explain",
+  "questions": 4,
+  "papers": 4,
+  "marks": 16,
+  "why_hard": [
+   {
+    "reason": "'explain' command word",
+    "n": 4
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 2
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 1
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 1
+   },
+   {
+    "reason": "6-mark answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The student increases the current and observes that the rod rotates anticlockwise and the magnet moves towards the coil. Explain this observation. 16",
+    "tariff": 3,
+    "points": [
+     "coil becomes an electromagnet / coil produces a magnetic field",
+     "coil {attracts / exerts a force on} magnet",
+     "increasing anti-clockwise moment"
+    ],
+    "notes": "allow current for coil reject if repulsion mentioned allow creating (additional) anti- clockwise moment",
+    "sitting": "Jan 2018 Paper 2 Q6(b)"
+   },
+   {
+    "stem": "The diagram shows the part of the radio called a generator. The generator produces a voltage which does electrical work on the battery. coil handle connected to battery magnet S N magnet Explain how the generator produces a voltage. 25",
+    "tariff": 3,
+    "points": [
+     "(turning handle makes) coil turn / rotate",
+     "coil cuts through",
+     "magnetic field (of the permanent magnets)"
+    ],
+    "notes": "reject if suggested that coil rotation is due to motor effect ignore ‘interacts with’",
+    "sitting": "Oct-Nov 2020 Paper 1 Q9(a)"
+   },
+   {
+    "stem": "The graph shows the results of the student’s investigation. 0 10 20 30 40 50 50 40 30 20 10 0 Distance in cm Strength of magnetic field in arbitrary units The student suggests that the relationship linking the strength of the magnetic field and the distance from the end of the solenoid is strength of magnetic field × (distance)3 = constant Use readings from the graph to deduce whether the results of the student’s investigation support this relationship. 11 12",
+    "tariff": 4,
+    "points": [
+     "any pair of readings from the graph",
+     "correct substitution into formula and constant found",
+     "different pair of readings used correctly to find a constant",
+     "statement that the results do not agree with the conclusion",
+     "when distance = 10 cm , magnetic field strength = 17 17 × 103 = 17000 when distance = 50 cm ,magnetic field strength = 4 4 × 503 = 500000 constants are different so results disagree with conclusion"
+    ],
+    "notes": "DOP allow idea that the constants are the same so that the results agree with the conclusion Total for question 4:",
+    "sitting": "Jan 2022 Paper 2 Q4(b)"
+   }
+  ]
+ },
+ {
+  "topic_n": 8,
+  "topic": "Astrophysics",
+  "command": "recall",
+  "questions": 5,
+  "papers": 5,
+  "marks": 16,
+  "why_hard": [
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 5
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 4
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 3
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The proton completes one orbit of its circular path in a time period of 8.7 × 10–6 seconds. Calculate the orbital speed of the proton. orbital speed = m/s 16 17",
+    "tariff": 3,
+    "points": [
+     "use of radius",
+     "dimensionally correct substitution into v = 2 × π × r / T",
+     "evaluation",
+     "r = (6.0 / 2 =) 3.0 cm v = 2 × π × 0.030 / 8.7 × 10-6 (v =) 22 000 (m/s)"
+    ],
+    "notes": "allow ecf from (b)(ii) -1 for POT error accept alternative method using v = π × d / T allow 21 000-22 000 (m/s)",
+    "sitting": "Jan 2020 Paper 2R Q7(b)(iii)"
+   },
+   {
+    "stem": "Object X completes an orbit of the star in 35 days. The radius of its orbit is 1.5 × 1011 m. Calculate the orbital speed of object X. orbital speed = m/s 9",
+    "tariff": 3,
+    "points": [
+     "substitution into given formula",
+     "conversion of 35 days into seconds",
+     "evaluation",
+     "v = 2 × π × 1.5 × 1011/(35 × 24 × 60 × 60) v = 310 000 m/s (Total"
+    ],
+    "notes": "allow full credit for 2.6927937 × 1010 if unit changed to m/day. 311665.93(7)8 Answer for incorrect/no conversion of days→ seconds 2.69etc x 1010 scores 2 -1 for POT error for Question 3 = 5 marks)",
+    "sitting": "Jan 2021 Paper 1R Q3(c)"
+   },
+   {
+    "stem": "The time taken for the electrons to complete one orbit of the circle is 24 ms. Calculate the orbital speed of the electrons. Use the formula orbital speed = 2 orbital radius time period π × orbital speed = m / s 12",
+    "tariff": 3,
+    "points": [
+     "substitution into given formula",
+     "conversion of ms to s and cm to m",
+     "correct evaluation using radius",
+     "correct answer: 6.5 (m/s) e.g. orbital speed = 2 π r ÷ T orbital speed = 2 π 2.5 x 10−2 ÷ (24 × 10−3) orbital speed = 6.544… m/s"
+    ],
+    "notes": "ECF candidate’s answer to (c)(i) ignore POT at this point allow 654 cm/s (i.e. cm for m on answer line) allow full credit for correct answer with no working allow answers that round to the range 6.3 to 6.8 (m/s) -1 for POT conversion of milliseconds to minutes scores 2 (393 m/s) Total for question 3: 12",
+    "sitting": "May-Jun 2023 Paper 2 Q3(c)(ii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "command": "explain",
+  "questions": 4,
+  "papers": 4,
+  "marks": 15,
+  "why_hard": [
+   {
+    "reason": "'explain' command word",
+    "n": 4
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 1
+   },
+   {
+    "reason": "5-mark answer",
+    "n": 1
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Explain what happens during nuclear fusion.",
+    "tariff": 3,
+    "points": [
+     "creation of a (large) nucleus from small nuclei",
+     "resulting in a loss of mass",
+     "and the release of energy"
+    ],
+    "notes": "condone “fusing of two nuclei” accept reference to E=mc2 condone “converted to energy”",
+    "sitting": "May-Jun 2021 Paper 2 Q6(a)"
+   },
+   {
+    "stem": "Evaluate the data from the experiment to conclude the type of radiation emitted by protactinium‑231. 22 23",
+    "tariff": 3,
+    "points": [
+     "count decreases (significantly) using paper",
+     "no (additional) effect on the count when using aluminium AND lead / eq",
+     "radiation must be alpha consistent with candidate's discussion"
+    ],
+    "notes": "both must be mentioned for this mark allow idea that count with aluminium and lead is background radiation / in the range of 11-14",
+    "sitting": "May-Jun 2023 Paper 1R Q7(b)(iv)"
+   },
+   {
+    "stem": "In nuclear fusion, two positively charged nuclei must overcome the effects of the repulsive electrostatic force between them. Explain the two conditions needed to overcome the effects of this repulsive force and achieve nuclear fusion. 1 2 6",
+    "tariff": 4,
+    "points": [
+     "high temperature",
+     "(so that) nuclei will have high(er) speed or high(er) {kinetic energy/KE}",
+     "high pressure",
+     "plus one from: • (so that nuclei will be) closer together / eq",
+     "• (so that nuclei are) more likely to collide/ eq"
+    ],
+    "notes": "ignore references to repulsion or attraction condone particles, atoms, molecules for nuclei e.g. closely packed e.g. collide more frequently Total for Question 1 = 7",
+    "sitting": "Oct-Nov 2023 Paper 2 Q1(b)"
+   }
+  ]
+ },
+ {
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "command": "describe",
+  "questions": 3,
+  "papers": 3,
+  "marks": 14,
+  "why_hard": [
+   {
+    "reason": "5-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 1
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Describe how the students should use their equipment to measure the speed of sound in air. You may draw a diagram to support your answer. 7",
+    "tariff": 5,
+    "points": [
+     "any five from: MP1. idea that students stand a large distance apart",
+     "MP2. measure distance with tape measure / trundle wheel",
+     "MP3. start timing when see blocks hit together",
+     "MP4. stop timing when hear sound from blocks being hit together",
+     "MP5. measure time with stopclock / stop watch",
+     "MP6. take repeats and determine mean",
+     "MP7. use of speed = distance / time",
+     "MP8. use of a distance-time graph to find speed from gradient"
+    ],
+    "notes": "allow alternative approach using echoes from a wall allow stated distance if 50m or greater allow a large distance from a wall (at least 25m) ignore ruler allow idea of setting of a rhythm if wall method used allow dividing total time by number of hits if wall method used ignore timer allow take repeats to identify anomalies allow use of speed = 2×distance / time if wall method used",
+    "sitting": "Jan 2022 Paper 2R Q3(a)"
+   },
+   {
+    "stem": "A student needs to find the mass of a large steel bolt but does not have access to a balance. The student knows the density of steel. Describe how he can accurately find the mass of the bolt using its density. You may draw a diagram to help your answer. 8",
+    "tariff": 5,
+    "points": [
+     "MP1. find volume (of bolt)",
+     "MP2. using displacement method",
+     "MP3. further detail of displacement method",
+     "MP4. correct use of density equation to find mass",
+     "MP5. further example of good practical technique"
+    ],
+    "notes": "MP2 MP3 MP5 can be awarded if seen on diagram e.g. • ensure bolt is fully submerged • measure volume of water before and after then find difference • (if using Archimedes can) ensure all displaced water is collected allow use of standard symbols e.g. • take repeats and average • use of appropriately sized measuring cylinder • make sure no water splashes out • read volume of water from bottom of meniscus • read at eye level to reduce parallax error",
+    "sitting": "Jan 2018 Paper 1 Q4"
+   },
+   {
+    "stem": "Describe a method that could be used to accurately determine the volume of clay used in the pot.",
+    "tariff": 4,
+    "points": [
+     "reference to using a displacement method",
+     "measuring cylinder used (to measure volume of water)",
+     "repeating and average",
+     "further experimental detail relating to accuracy",
+     "• lack of splashing • reading measuring cylinder at eye level • placing measuring cylinder on flat surface • ensure pot is fully submerged • ensure eureka can/bowl is (completely) full prior to submerging pot • no trapped air in pot"
+    ],
+    "notes": "ignore filling pot with water allow graduated cylinder for measuring cylinder ignore beaker allow repeating to identify anomalous results",
+    "sitting": "Oct-Nov 2025 Paper 1 Q8(a)"
+   }
+  ]
+ },
+ {
+  "topic_n": 3,
+  "topic": "Waves",
+  "command": "apply",
+  "questions": 4,
+  "papers": 4,
+  "marks": 14,
+  "why_hard": [
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 3
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 2
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 2
+   },
+   {
+    "reason": "5-mark answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The block has a refractive index of 1.52 Use the formula to show that the angle of refraction is about 30° for the ray at point K. 19",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "correct evaluation",
+     "correct answer: 31 degrees e.g refractive index = sin (i)/sin (r) 1.52 = sin(51)/sin(r) sin(r) = sin(51)/1.52 sin(r) = 0.511… r = sin-1(0.511…) = 30.7… degrees"
+    ],
+    "notes": "allow ECF from (i) answers of 26.66…, 28.76…, 32.06… all score 3 marks ECF",
+    "sitting": "Jan 2023 Paper 1R Q7(a)(iii)"
+   },
+   {
+    "stem": "The reference wavelength of the light used in this investigation is 660 nm. distance of 0.75 Mpc. [speed of light = 300 000 km/s] velocity = km/s",
+    "tariff": 3,
+    "points": [
+     "change in wavelength = 0.03 (nm)",
+     "substitution OR rearrangement",
+     "evaluation",
+     "change in wavelength = 0.03 (nm) 0.03/660 = v/300 000 OR v = ∆λ/λ × c (v =) 14 (km/s)"
+    ],
+    "notes": "allow ecf from (ii) correct within ½ small square allow ecf from incorrect reading of ∆λ if clear from working -1 for POT error award if seen anywhere in working allow 13.6… (km/s)",
+    "sitting": "Jan 2023 Paper 2R Q8(b)(iii)"
+   },
+   {
+    "stem": "The change in wavelength happens because galaxy A is moving away from the Earth. Calculate the speed of galaxy A. [speed of light = 3.0 × 108 m / s] speed = m / s 21",
+    "tariff": 3,
+    "points": [
+     "substitution into given formula",
+     "re-arrangement",
+     "correct evaluation",
+     "correct answer: 7 100 000 (m/s) e.g. Δλ ÷ λ = v/c 15 ÷ 630 = v ÷ (3.0 × 108) v = (3.0 × 108) × (15 ÷ 630) v = 7.14 × 10 6 (m/s)"
+    ],
+    "notes": "ecf from (i) allow in either order allow full credit for correct answer with no working -1 POT error use of observed wavelength instead of 630 nm i.e. 645 nm giving 6.976… x106 (m/s) gives 1 mark max",
+    "sitting": "May-Jun 2023 Paper 2 Q7(b)(ii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "command": "explain",
+  "questions": 4,
+  "papers": 4,
+  "marks": 14,
+  "why_hard": [
+   {
+    "reason": "'explain' command word",
+    "n": 4
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "credit from a menu of acceptable points",
+    "n": 1
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 1
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Diagram 1 shows a model aeroplane powered by a rubber band. propeller rubber band Diagram 1 A person rotates the propeller of the model aeroplane, which twists the rubber band. He then releases the propeller and it spins. Energy transfer occurs during this process. The box lists words associated with energy. kinetic gravitational electrostatic mechanical elastic magnetic heating chemical radiation Use words from the box to complete the passage. The person does work to twist the rubber band. As the person twists the rubber band it extends, increasing the energy store of the rubber band. When the rubber band is released it does mechanical work, increasing the energy store of the propeller. 11",
+    "tariff": 3,
+    "points": [
+     "mechanical",
+     "elastic",
+     "kinetic / gravitational"
+    ],
+    "notes": "allow elastic potential allow gravitational potential",
+    "sitting": "Oct-Nov 2020 Paper 1 Q4(b)"
+   },
+   {
+    "stem": "As the water passes through the turbine, energy is lost from the water’s kinetic energy store. Explain what happens to the energy lost from the water’s kinetic energy store.",
+    "tariff": 3,
+    "points": [
+     "transferred mechanically",
+     "the KE store of the turbine increases",
+     "some energy is transferred to the thermal store of the surroundings/turbine"
+    ],
+    "notes": "ignore references to electrical energy, sound energy reject mechanical energy allow ‘...to the KE store of the turbine’ reject mechanical energy alternate: MP1 ‘KE of water transfers to KE of turbine’ MP2 idea that not all of the KE of water goes to KE of turbine i.e. most of the KE of the water goes to the KE of the turbine’ MP3 reference to some (of the KE of water) is lost as heat or thermal energy to the surroundings NB marks can only be scored either from the original or alternate, not from both",
+    "sitting": "Oct-Nov 2025 Paper 2 Q3(b)"
+   },
+   {
+    "stem": "The student suggests it is better to use a less steep ramp to raise the block through the same vertical height. Discuss an advantage and a disadvantage of using a less steep ramp. 28",
+    "tariff": 4,
+    "points": [
+     "any TWO from: lower force required",
+     "to prevent block from slipping down required / to move block",
+     "any TWO from: longer distance required (with a lower force)",
+     "more inefficient",
+     "greater proportion of energy transferred to the surroundings"
+    ],
+    "notes": "allow ‘to overcome friction’ allow ‘easier to move block’ for 2 marks Allow idea of more work required (for same increase in GPE) for Question 11 = 12 marks)",
+    "sitting": "Jan 2021 Paper 1R Q11(b)"
+   }
+  ]
+ },
+ {
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "command": "describe",
+  "questions": 3,
+  "papers": 3,
+  "marks": 14,
+  "why_hard": [
+   {
+    "reason": "5-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 1
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Describe an experiment that a scientist could use to demonstrate that the emission from technetium-99 is gamma radiation. Include details of a safety precaution in your answer. 27",
+    "tariff": 5,
+    "points": [
+     "any four max. from: MP1. use of GM tube + counter/GM tube/photographic film",
+     "MP2. measure count (rate) without source / find background count",
+     "MP3. measure count (rate) with source",
+     "MP4. (subtraction to) find corrected count (rate)",
+     "MP5. repeat readings to obtain mean",
+     "MP6. idea that paper / aluminium does not affect count / reading",
+     "MP7. idea that lead reduces count rate significantly",
+     "PLUS any safety precaution from: MP8. idea of keeping distance from source",
+     "MP9. minimise exposure time",
+     "MP10. use of shielding"
+    ],
+    "notes": "allow ‘reading’ for count rate allow Geiger counter; allow lead blocks (all) radiation e.g. tongs/moving away from source e.g. keeping source in lead-lined box, use of lead apron / gloves, working in a different room from source",
+    "sitting": "Oct-Nov 2020 Paper 1 Q10(b)"
+   },
+   {
+    "stem": "These sentences describe the process of nuclear fission. Complete these sentences by writing a suitable word in each blank space. A nucleus absorbs a. The nucleus formed splits because it is. The nucleus splits into two smaller nuclei called nuclei and two or three. The energy released is transferred into the energy store of the fission products. 14",
+    "tariff": 5,
+    "points": [
+     "neutron",
+     "unstable",
+     "daughter",
+     "neutrons",
+     "kinetic"
+    ],
+    "notes": "",
+    "sitting": "Jan 2022 Paper 1R Q5(c)(ii)"
+   },
+   {
+    "stem": "Energy is released from the fuel in the reactor by nuclear fission. Describe the process of nuclear fission that takes place inside the reactor. 26",
+    "tariff": 4,
+    "points": [
+     "neutron absorbed by (parent) nucleus",
+     "nucleus splits",
+     "releasing (daughter) nuclei / neutrons",
+     "fission process repeats"
+    ],
+    "notes": "allow named daughter nuclei e.g. krypton, barium etc. reject if reference to daughter nuclei splitting allow idea that chain reaction occurs",
+    "sitting": "Oct-Nov 2023 Paper 1 Q9(a)(ii)"
+   }
+  ]
+ },
+ {
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "command": "explain",
+  "questions": 4,
+  "papers": 4,
+  "marks": 14,
+  "why_hard": [
+   {
+    "reason": "'explain' command word",
+    "n": 4
+   },
+   {
+    "reason": "mark scheme names a common wrong answer",
+    "n": 4
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "credit from a menu of acceptable points",
+    "n": 2
+   }
+  ],
+  "examples": [
+   {
+    "stem": "Explain why air moves upwards through the external pipe. *P67160RA02932* 29",
+    "tariff": 3,
+    "points": [
+     "air (inside external pipe) is heated",
+     "air expands",
+     "air decreases in density (and therefore rises)"
+    ],
+    "notes": "allow particles move further apart reject particles become less dense",
+    "sitting": "Oct-Nov 2021 Paper 1 Q12(b)"
+   },
+   {
+    "stem": "Using ideas about particles, explain why the air pressure inside the tyre is lower on a cold winter day than on a warm summer day.",
+    "tariff": 3,
+    "points": [
+     "idea that particles move more slowly at lower temp",
+     "particles collide with walls less often",
+     "particles collide with walls less force"
+    ],
+    "notes": "allow RA if clear allow lower kinetic energy (KE) reject no KE allow particles colliding less hard note: with walls/eq must be mentioned once",
+    "sitting": "Jan 2022 Paper 1R Q11(b)(i)"
+   },
+   {
+    "stem": "The air near the bar receives energy by heating. Explain how a convection current is formed in the air near the bar. 28",
+    "tariff": 4,
+    "points": [
+     "any four from: MP1. temperature of air increases",
+     "MP2. air expands / air particles move further apart",
+     "MP3. density of air decreases",
+     "MP4. warm/heated air rises",
+     "MP5. cool air replaces warmed air",
+     "MP6. process repeats"
+    ],
+    "notes": "allow air particles gain KE reject particles expand reject particles become less dense ignore heat rises allow cool air sinks",
+    "sitting": "Jan 2021 Paper 1 Q10(b)"
+   }
+  ]
+ },
+ {
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "command": "apply",
+  "questions": 3,
+  "papers": 3,
+  "marks": 13,
+  "why_hard": [
+   {
+    "reason": "5-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 1
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The diagram shows most of the equipment the student uses in the investigation. clamp stand mass spring clamp Describe a method the student could use for the investigation. Your description should include the measurements taken and how the student could obtain accurate results. 28",
+    "tariff": 5,
+    "points": [
+     "any five from: MP1. measure original length of spring",
+     "MP2. measure new length / extension for a range of masses",
+     "MP3. extension = new length – original length",
+     "MP4. use of ruler",
+     "MP5. method of avoiding parallax, e.g. look at eye level or use a pointer",
+     "MP6. use of a set square / clamping ruler vertically",
+     "MP7. idea of measuring between the same two points (on the spring)",
+     "MP8. idea of repeating and averaging",
+     "MP9. idea of measuring extension with decreasing mass as well"
+    ],
+    "notes": "allow any marking points if seen on diagram allow tape measure allow repeating to identify anomalies",
+    "sitting": "Jan 2022 Paper 1 Q9(a)"
+   },
+   {
+    "stem": "A student does an investigation to find the specific heat capacity of water. This is the list of equipment they use. • heater with a power output of 50 W • power supply • beaker • water • thermometer • stopwatch • connecting leads • balance 17 Describe an investigation the student could use to find the specific heat capacity of water. You may draw a diagram to help your answer. 18",
+    "tariff": 5,
+    "points": [
+     "any five from: MP1. measure temperature increase",
+     "MP2. measure time taken",
+     "MP3. allow temperature to rise to maximum after heater switched off",
+     "MP4. calculate total energy / use of E = P×t",
+     "MP5. measure mass of water",
+     "MP6. (by) finding difference between empty beaker and ‘beaker + water’ MP7. use of E = m × c × Δθ",
+     "MP8. plot a temperature-time graph",
+     "MP9. use gradient (so c = P/(m × gradient)"
+    ],
+    "notes": "accept measure initial and final temperature allow a stated time period",
+    "sitting": "Jan 2023 Paper 2R Q6(a)"
+   },
+   {
+    "stem": "When ball A collides with the magnet, a force of 1.3 N is exerted on ball C for a time of 0.0025 s. This causes ball C to move away from the magnet. Calculate the change in velocity of ball C due to this force. change in velocity = m/s 20",
+    "tariff": 3,
+    "points": [
+     "substitution into F = (mv – mu) / t",
+     "rearrangement",
+     "evaluation",
+     "1.3 = 0.0041 × v (– 0) / 0.0025 (v =) 1.3 × 0.0025 / 0.0041 (v =) 0.79 (m/s)"
+    ],
+    "notes": "-1 for POT error allow 0.79268… Total for Question",
+    "sitting": "Jan 2021 Paper 2 Q7(c)"
+   }
+  ]
+ },
+ {
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "command": "apply",
+  "questions": 3,
+  "papers": 3,
+  "marks": 11,
+  "why_hard": [
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 3
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 3
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 2
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 2
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The table shows the student’s results. energy transferred to the thermal store of the water in J 54 000 mass of water in kg 0.56 temperature change of water in °C 22 Use the student’s results to calculate the specific heat capacity of water. specific heat capacity of water = J / kg °C",
+    "tariff": 3,
+    "points": [
+     "substitution into given formula",
+     "rearrangement",
+     "evaluation",
+     "54 000 = 0.56 × c × 22 c = 54 000 / 0.56 × 22 (c =) 4400 (J/kg °C)"
+    ],
+    "notes": "-1 POT error allow 4383… allow any reasonable rounding ignore rounding error after 3sf",
+    "sitting": "Oct-Nov 2023 Paper 2 Q3(b)(i)"
+   },
+   {
+    "stem": "The mass of stearic acid used in the investigation is 0.45 kg. The stearic acid gains 39 kJ of energy when it is heated to its melting point. Calculate the specific heat capacity of stearic acid. You should use data from the graph in your calculation. specific heat capacity = J/kg °C 16 17",
+    "tariff": 4,
+    "points": [
+     "correct evaluation of temperature change",
+     "substitution into ΔQ = m × c ×Δθ",
+     "rearrangement",
+     "evaluation",
+     "temperature change = 49 (°C) 39 000 = 0.45 × c × 49 (c =) 39 000 / (0.45 × 49) (c =) 1800 (J/kg°C)"
+    ],
+    "notes": "allow 49 seen anywhere in working allow ecf from incorrect temperature change value of 50, 69 or 70 only -1 for POT error allow 1770, 1769, 1768.7… answer of 1.7687… gains 3 marks answer of 1733, 1256, 1238 gains 3 marks answer of 1.256…, 1.733…, 1.238… gains 2 marks Total for Question 5 = 8",
+    "sitting": "May-Jun 2019 Paper 2R Q5(b)"
+   },
+   {
+    "stem": "The clay pot can be used to hold liquids. A student needs to determine the volume of liquid that can be contained in the pot. The student measures the mass of the empty pot and then measures the mass of the pot again when it is filled with a liquid. The table shows the student’s measurements. Mass of empty pot in kg 1.2 Mass of pot filled with liquid in kg 6.8 The density of the liquid used is 920 kg / m3. Calculate the volume of liquid that can be contained in the pot. Use the formula density = mass volume volume = m3 *P78770RA02436* 24",
+    "tariff": 4,
+    "points": [
+     "evaluation of mass of liquid",
+     "substitution into formula",
+     "rearrangement",
+     "evaluation",
+     "mass of liquid = 6.8 − 1.2 = 5.6 (kg) 920 = 5.6 ÷ volume volume = 5.6 ÷ 920 (volume =) 0.0061 (m3)"
+    ],
+    "notes": "allow ecf from incorrect mass −1 for POT error allow 0.006, 0.00608… (m3) Total for Question 8 =",
+    "sitting": "Oct-Nov 2025 Paper 1 Q8(c)"
+   }
+  ]
+ },
+ {
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "command": "calculate",
+  "questions": 3,
+  "papers": 3,
+  "marks": 11,
+  "why_hard": [
+   {
+    "reason": "'calculate' command word",
+    "n": 2
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 2
+   },
+   {
+    "reason": "5-mark answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The activity of an isotope is the total amount of radiation emitted each second. The teacher estimates that only 5% of the total radiation emitted is detected by the radiation detector. Estimate the activity of the isotope when the count rate is 840 counts per second. Give the unit. activity = unit = 32",
+    "tariff": 3,
+    "points": [
+     "correct use of 5%",
+     "evaluation",
+     "unit",
+     "activity = 840 / 0.05 (activity =) 16 800 becquerels"
+    ],
+    "notes": "1680, 168 scores this mark as a POT error independent mark allow Bq condone bq, BQ Total for Question 9 = 8",
+    "sitting": "May-Jun 2025 Paper 1 Q9(c)(ii)"
+   },
+   {
+    "stem": "Uranium-235 decays to thorium-231 with a half-life of 700 million years. When a rock was formed, it contained 6400 million uranium-235 nuclei and no thorium-231 nuclei. Show that after 2100 million years there are seven times more thorium nuclei than uranium nuclei in the rock. 20",
+    "tariff": 5,
+    "points": [
+     "any indication that 2100 million years is 3 half-lives",
+     "evaluation of number of uranium nuclei after 1 half-life",
+     "(after 2100 million years) there are 800 million uranium nuclei",
+     "(after 2100 million years) there are 5600 million thorium nuclei",
+     "5600 (million) / 800 (million) = 7"
+    ],
+    "notes": "3200 (million) uranium nuclei after one half-life scores first three allow total number of nuclei is constant allow 7 × 800 = 5600 for Question 7 = 11",
+    "sitting": "May-Jun 2021 Paper 1 Q7(b)(iii)"
+   },
+   {
+    "stem": "Calculate the kinetic energy (KE) of the alpha particle. KE = J",
+    "tariff": 3,
+    "points": [
+     "recall of KE = ½ m v2",
+     "substitution",
+     "correct evaluation",
+     "correct answer: 1.5 × 10−12 (J) e.g. KE = ½ m v2 KE = ½ × (6.6 × 10−27) × (2.1 × 107)2 KE = 1.4553 x 10−12 (J)"
+    ],
+    "notes": "−1 POT error",
+    "sitting": "Jan 2023 Paper 1R Q9(c)(i)"
+   }
+  ]
+ },
+ {
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "command": "apply",
+  "questions": 3,
+  "papers": 3,
+  "marks": 10,
+  "why_hard": [
+   {
+    "reason": "multi-step calculation (substitute, rearrange, evaluate)",
+    "n": 3
+   },
+   {
+    "reason": "unit conversion or power-of-ten trap",
+    "n": 3
+   },
+   {
+    "reason": "4-mark answer",
+    "n": 1
+   },
+   {
+    "reason": "carries forward from an earlier answer",
+    "n": 1
+   }
+  ],
+  "examples": [
+   {
+    "stem": "The input power to the transformer is 16 W. The transformer is used for 2.5 hours. Calculate the energy transferred to the transformer during this time. energy transferred = J 15",
+    "tariff": 3,
+    "points": [
+     "substitution into given formula",
+     "rearrangement",
+     "evaluation",
+     "16 = energy / 2.5 (× 3600) energy = 16 × 2.5 (× 3600) (energy =) 140 000 (J)"
+    ],
+    "notes": "ignore units 2 marks max. if time not converted correctly to seconds e.g. 40 (J), 2400 (J) allow 144 000 (J) 2.5 × 60 × 60 or 9000 seen for 1 mark if no other mark awarded",
+    "sitting": "Oct-Nov 2023 Paper 2 Q4(a)"
+   },
+   {
+    "stem": "Use data from the table to calculate the output (secondary) voltage of the transformer. output (secondary) voltage = V",
+    "tariff": 3,
+    "points": [
+     "substitution",
+     "rearrangement",
+     "evaluation",
+     "230 ÷ V2 = 1000 ÷ 300 V2 = 300 × 230 ÷ 1000 (V2 =) 69 (V)"
+    ],
+    "notes": "accept in either order substitution into an incorrectly arranged formula scores zero",
+    "sitting": "May-Jun 2025 Paper 2 Q7(a)(ii)"
+   },
+   {
+    "stem": "Diagram 2 shows a device called a magneto-optical trap (MOT). Physicists use the device to cool gases to extremely low temperatures. The MOT uses laser beams and magnetic fields to trap a small collection of atoms with extremely small kinetic energies. trapped atoms laser beams coils producing magnetic field Diagram 2 Each trapped atom has a mass of 5.0 × 10–27 kg and a mean speed of 73 m / s. Calculate the temperature of the trapped atoms. [mean kinetic energy of an atom = 2.1 × 10–23 × temperature in kelvin] temperature = K 32",
+    "tariff": 4,
+    "points": [
+     "substitution into KE = ½ × m × v2",
+     "evaluation of KE",
+     "rearrangement of given formula",
+     "evaluation of kelvin temperature",
+     "KE = 0.5 × 5.0 × 10-27 × 732 KE = 1.3 × 10-23 (J) T = KE / 2.1 × 10-23 (T =) 0.63 (K)"
+    ],
+    "notes": "allow ecf from incorrect KE allow 1.33225 × 10-23 (J) allow answers in the range of 0.61-0.64 (K)",
+    "sitting": "Jan 2023 Paper 1 Q11(b)"
+   }
+  ]
+ }
+]

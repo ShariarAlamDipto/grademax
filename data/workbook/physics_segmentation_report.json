@@ -1,0 +1,517 @@
+{
+  "papers": [
+    {
+      "key": "2018_jan_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "q3: tally prints no number -- placed by sequence, confirmed by its 3 marks",
+        "mark scheme read as numbered tallies: 14/14"
+      ],
+      "questions": 14,
+      "marks": 120
+    },
+    {
+      "key": "2018_jan_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 7/7"
+      ],
+      "questions": 7,
+      "marks": 60
+    },
+    {
+      "key": "2018_may-jun_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 120
+    },
+    {
+      "key": "2018_may-jun_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 14/14"
+      ],
+      "questions": 14,
+      "marks": 120
+    },
+    {
+      "key": "2018_may-jun_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 60
+    },
+    {
+      "key": "2018_may-jun_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "q4: mark scheme tally says 13 marks, QP fence says 15 -- block kept on its number",
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 60
+    },
+    {
+      "key": "2019_jan_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 120
+    },
+    {
+      "key": "2019_jan_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 9/9"
+      ],
+      "questions": 9,
+      "marks": 60
+    },
+    {
+      "key": "2019_may-jun_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "no usable text layer: using hand-verified page ranges and mark-scheme marks for 12 questions",
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2019_may-jun_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 11/11"
+      ],
+      "questions": 11,
+      "marks": 110
+    },
+    {
+      "key": "2019_may-jun_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme has no tallies -- read as a numbered table, 9/9 rows in sequence"
+      ],
+      "questions": 9,
+      "marks": 70
+    },
+    {
+      "key": "2019_may-jun_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2020_jan_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2020_jan_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2020_jan_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2020_jan_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2020_oct-nov_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 11/11"
+      ],
+      "questions": 11,
+      "marks": 110
+    },
+    {
+      "key": "2020_oct-nov_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 13/13"
+      ],
+      "questions": 13,
+      "marks": 110
+    },
+    {
+      "key": "2020_oct-nov_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "q7: mark scheme tally says 9 marks, QP fence says 10 -- block kept on its number",
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2020_oct-nov_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2021_jan_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 11/11"
+      ],
+      "questions": 11,
+      "marks": 110
+    },
+    {
+      "key": "2021_jan_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2021_jan_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2021_jan_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "q1: mark scheme tally says 8 marks, QP fence says 9 -- block kept on its number",
+        "q2: mark scheme tally says 6 marks, QP fence says 7 -- block kept on its number",
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2021_may-jun_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 11/11"
+      ],
+      "questions": 11,
+      "marks": 110
+    },
+    {
+      "key": "2021_may-jun_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 7/7"
+      ],
+      "questions": 7,
+      "marks": 70
+    },
+    {
+      "key": "2021_oct-nov_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2021_oct-nov_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2022_jan_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2022_jan_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2022_jan_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "q6: mark scheme tally says 12 marks, QP fence says 14 -- block kept on its number",
+        "mark scheme read as numbered tallies: 9/9"
+      ],
+      "questions": 9,
+      "marks": 70
+    },
+    {
+      "key": "2022_jan_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2022_may-jun_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2022_may-jun_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2022_may-jun_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 7/7"
+      ],
+      "questions": 7,
+      "marks": 70
+    },
+    {
+      "key": "2022_may-jun_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 7/7"
+      ],
+      "questions": 7,
+      "marks": 70
+    },
+    {
+      "key": "2023_jan_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 11/11"
+      ],
+      "questions": 11,
+      "marks": 110
+    },
+    {
+      "key": "2023_jan_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 11/11"
+      ],
+      "questions": 11,
+      "marks": 110
+    },
+    {
+      "key": "2023_jan_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2023_jan_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2023_may-jun_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2023_may-jun_1PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 11/11"
+      ],
+      "questions": 11,
+      "marks": 110
+    },
+    {
+      "key": "2023_may-jun_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2023_may-jun_2PR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    },
+    {
+      "key": "2023_oct-nov_1P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 12/12"
+      ],
+      "questions": 12,
+      "marks": 110
+    },
+    {
+      "key": "2023_oct-nov_2P",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as numbered tallies: 8/8"
+      ],
+      "questions": 8,
+      "marks": 70
+    }
+  ]
+}

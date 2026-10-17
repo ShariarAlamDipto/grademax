@@ -1,0 +1,64 @@
+{
+ "2012_jan_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 (a)-(e) scheme, cells sum to 13; printed 'Total 11' is a misprint",
+  "qp_md5": "34dbd8578702f7c9c9241902c34bdd17",
+  "ms_md5": "e420667c58bf6135fa9473de8fec418b"
+ },
+ "2013_may-jun_P2|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 (a)-(d) scheme, Total 9; 'Total for paper 60' is the table's last row",
+  "qp_md5": "f04ff9a0a344c23c70a20dcb95feaff7",
+  "ms_md5": "a568d32fd6f7a93bbf402f2a62f47ac7"
+ },
+ "2013_may-jun_P2R|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 (a)-(c) scheme, Total 12; 'Total for paper 60' is the table's last row",
+  "qp_md5": "6aea264d4af50207b57187ca5362b463",
+  "ms_md5": "3bd0fba5f25a3809a38e304fe10d2a10"
+ },
+ "2014_jan_P1|12": {
+  "decision": "CONFIRMED",
+  "reason": "Q12 (a)(b) scheme, Total 6",
+  "qp_md5": "e5b11a2d6158e785ee21784790569725",
+  "ms_md5": "00436944a1f87b3fb2fe79caef4da559"
+ },
+ "2014_may-jun_P1R|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 crude oil (a)-(c); cells sum to 16, printed 15 is a misprint",
+  "qp_md5": "b595151ff2f258315b03347b5a10e5e0",
+  "ms_md5": "61cd2e2b1ba1bba7df908802187aa2bb"
+ },
+ "2016_may-jun_P1R|11": {
+  "decision": "CONFIRMED",
+  "reason": "Q11 (a)-(e) on scheme pages 23-26; automatic cut stopped before 11(e)",
+  "ms_regions": [
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ],
+   [
+    25,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 titration (a)(b), 'Total for Question 3 = 4'",
+  "qp_md5": "a1799e690fedbbf1d80a42219e4e367a",
+  "ms_md5": "2e05da93fcd4179b8884d9e5a2f3dd1d"
+ }
+}

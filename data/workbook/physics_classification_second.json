@@ -1,0 +1,4156 @@
+{
+  "2018_jan_1P:1": {
+    "primary": "2.3",
+    "secondary": [
+      "2.2",
+      "4.4"
+    ],
+    "archetype": "solar cells charge current time",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:2": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2",
+      "3.2"
+    ],
+    "archetype": "distance time graph speed force",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:3": {
+    "primary": "1.3",
+    "secondary": [],
+    "archetype": "stopping distance factors",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density mass volume method",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:5": {
+    "primary": "4.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "house insulation energy loss",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:6": {
+    "primary": "5.1",
+    "secondary": [
+      "1.6"
+    ],
+    "archetype": "pressure force area centre gravity",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:7": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moment force distance calculation",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:8": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "plane mirror ray diagram",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:9": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure temperature volume",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:10": {
+    "primary": "8.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "orbital speed and gpe moon",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:11": {
+    "primary": "6.1",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "magnetic field mapping induction",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:12": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "brownian motion evidence",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:13": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radiation absorption and half-life",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_1P:14": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "thermistor resistance temperature graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_2P:1": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "renewable energy sources pros cons",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_2P:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "power current voltage calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_2P:3": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "ripple tank diffraction refraction",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_2P:4": {
+    "primary": "1.5",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "conservation of momentum collision",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_2P:5": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "gas pressure kinetic theory",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_2P:6": {
+    "primary": "6.2",
+    "secondary": [
+      "1.6"
+    ],
+    "archetype": "magnetic force current graph",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_jan_2P:7": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "oil drop molecule size",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:1": {
+    "primary": "8.1",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "solar system orbits labels",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:2": {
+    "primary": "1.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "hooke law spring experiment",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:3": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "mains power fuse rating",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density experiment description",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:5": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "resistance length wire graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:6": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "em spectrum uses dangers",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:7": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "falling object v-t graph",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:8": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "series circuit thermistor lamp",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:9": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field lines pattern",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radioactive decay equation and half-life",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:11": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "total internal reflection critical angle",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:12": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1",
+      "4.1"
+    ],
+    "archetype": "gas pressure temperature steam engine",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:1": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "circuit diagram symbols identification",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:2": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "orbital shape comparison diagram",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:3": {
+    "primary": "2.1",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "kettle power current fuse safety",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:4": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "refractive index glass block",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:5": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "ohms law charge calculation",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:6": {
+    "primary": "3.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "wave equation graph analysis",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:7": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "pressure area gas law",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:8": {
+    "primary": "1.2",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "newton second law energy",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:9": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "satellite orbital period calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:10": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "ultraviolet intensity distance experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:11": {
+    "primary": "3.1",
+    "secondary": [
+      "3.3"
+    ],
+    "archetype": "wave properties comparison",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:12": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "carbon dating half-life",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:13": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "thermal conduction experiments",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:14": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "fluid speed pressure relationship",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:1": {
+    "primary": "1.2",
+    "secondary": [
+      "1.5"
+    ],
+    "archetype": "vector scalar weight calculation",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:2": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "water wave wavelength speed diffraction",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:3": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "ramp car time angle experiment",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:4": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "electromagnet construction hard soft magnetic",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "melting point particle arrangement",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:6": {
+    "primary": "7.1",
+    "secondary": [],
+    "archetype": "gold foil alpha scattering atom structure",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:7": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "renewable energy resource advantages disadvantages",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:8": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "principle of moments calculation",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:1": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "static electricity charging friction",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:2": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "work done force distance",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:3": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear fission reactor parts",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:4": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "electromagnet strength investigation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:5": {
+    "primary": "3.2",
+    "secondary": [
+      "1.5",
+      "4.4"
+    ],
+    "archetype": "space probe radio waves momentum",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "generator voltage time graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:7": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "yard arm moments calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:8": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "em spectrum health effects",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:1": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2",
+      "3.3"
+    ],
+    "archetype": "wave properties and em uses",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "mains power fuse calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:3": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field pattern experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "pressure force area calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:5": {
+    "primary": "6.2",
+    "secondary": [
+      "4.3",
+      "4.1"
+    ],
+    "archetype": "electric motor energy and operation",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:6": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "parachute falling terminal velocity",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:7": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "average speed method description",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:8": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "sledge acceleration and v-t graph",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:9": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radioactive source detection and safety",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:10": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure volume temperature",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:11": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "total internal reflection glass block",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_1P:12": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "filament lamp current voltage graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "planetary orbits and gravity",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:2": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "scalar and vector quantities",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:3": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "roller coaster energy stores",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:4": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "density mass volume calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:5": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound temperature graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:6": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "nuclear power station advantages disadvantages",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:7": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "step down transformer calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:8": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "crane moments equilibrium calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_jan_2P:9": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "conservation of momentum collision",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1P:1": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "em spectrum uses identification",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:2": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field pattern drawing",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:3": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "radioactive sterilisation safety",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:4": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "stopping distance graph calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:5": {
+    "primary": "1.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "force extension graph elastic",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:6": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "filament lamp circuit experiment",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:7": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index and critical angle",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:8": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1",
+      "8.1"
+    ],
+    "archetype": "parachute terminal velocity forces",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:9": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "nuclear reactor components fusion",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:10": {
+    "primary": "6.2",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "moving coil meter motor effect",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:11": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "gas pressure temperature kelvin",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:12": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "energy stores falling object",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1PR:1": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "stellar evolution and spectral class",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:2": {
+    "primary": "7.3",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "nuclear fission and fusion conditions",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:3": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "half-life calculation and decay equation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:4": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "thermal energy transfer insulation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:5": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "resistance cross-sectional area experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:6": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density and pressure calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:7": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "ramp speed investigation method",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:8": {
+    "primary": "1.3",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "parachute terminal velocity graph",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:9": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "refraction and critical angle",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:10": {
+    "primary": "1.2",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "van braking force calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:11": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field pattern investigation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:1": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "astronomy multiple choice",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:2": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer turns ratio calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:3": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound experiment oscilloscope",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:4": {
+    "primary": "7.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "alpha particle scattering force",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:5": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "doppler effect wavefronts",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:6": {
+    "primary": "5.2",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "specific heat capacity calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:7": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "big bang evidence",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:8": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moment equilibrium calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:9": {
+    "primary": "5.2",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "melting curve and pressure",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:1": {
+    "primary": "4.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "power station energy transfers",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:2": {
+    "primary": "3.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "doppler effect moving source",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:3": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "static charge experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:4": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar evolution hertzsprung russell",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:5": {
+    "primary": "5.2",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "specific heat capacity graph calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer turns voltage investigation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:7": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum conservation collision",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:8": {
+    "primary": "4.3",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "work done gas compression",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:1": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnet properties fill in blanks",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:2": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "ship upthrust pressure difference",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:3": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "series circuit current voltage",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:4": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "pressure force area calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:5": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "distance time graph speed",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:6": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "thermal insulation cup design",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:7": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure volume temperature",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:8": {
+    "primary": "3.1",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "doppler effect radar speed",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:9": {
+    "primary": "7.1",
+    "secondary": [],
+    "archetype": "gamma penetration investigation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:10": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "prism refraction critical angle",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:11": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "medical tracer half-life risks",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1P:12": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "planetary orbital speed calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:1": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "wave properties frequency calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "liquid pressure height calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:3": {
+    "primary": "1.3",
+    "secondary": [
+      "4.3",
+      "4.1"
+    ],
+    "archetype": "stopping distance and braking work",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:4": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar life cycle description",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:5": {
+    "primary": "1.3",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "falling object air resistance forces",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:6": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "series circuit ldr resistance",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:7": {
+    "primary": "2.3",
+    "secondary": [],
+    "archetype": "charge energy and current calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:8": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density measurement and calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:9": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "half-life calculation and decay equation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:10": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index graph experiment",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:11": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "gas pressure volume change",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_1PR:12": {
+    "primary": "6.2",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "magnetic force on wire calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:1": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "renewable energy resource classification",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density mass volume calculation",
+    "confidence": 0.99,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:3": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum collision force calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:4": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "static charge powder funnel",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:5": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "sonometer frequency length graph",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:6": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hertzsprung russell diagram label",
+    "confidence": 0.99,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:7": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "uranium glass isotope decay",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2P:8": {
+    "primary": "6.3",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "wireless charging induction field",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:1": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "em spectrum uses hazards",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:2": {
+    "primary": "1.6",
+    "secondary": [
+      "1.5"
+    ],
+    "archetype": "principle of moments equilibrium",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:3": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "conservation of momentum collision",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:4": {
+    "primary": "4.3",
+    "secondary": [
+      "1.5"
+    ],
+    "archetype": "gpe ke work force calculation",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "heating curve specific heat capacity",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer turns voltage calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:7": {
+    "primary": "6.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "proton circular path magnetic field",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_jan_2PR:8": {
+    "primary": "8.3",
+    "secondary": [
+      "3.4",
+      "1.1"
+    ],
+    "archetype": "doppler effect galaxies red shift",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:1": {
+    "primary": "3.1",
+    "secondary": [
+      "3.3"
+    ],
+    "archetype": "wave behaviour matching properties",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:2": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "velocity time graph acceleration distance",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:3": {
+    "primary": "8.2",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "stellar evolution fusion fission",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:4": {
+    "primary": "1.4",
+    "secondary": [
+      "4.1",
+      "1.2"
+    ],
+    "archetype": "hooke law rubber band energy",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:5": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "current voltage graph diode",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:6": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "series circuit thermistor resistance",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:7": {
+    "primary": "5.3",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "gas pressure temperature height",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:8": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "mirage total internal reflection",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:9": {
+    "primary": "6.3",
+    "secondary": [
+      "3.1",
+      "6.2"
+    ],
+    "archetype": "generator radio wave loudspeaker",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "isotope decay gamma detection",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:11": {
+    "primary": "8.1",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "satellite orbit calculation doppler",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:1": {
+    "primary": "8.1",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "solar system terminology comet orbit",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:2": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "nuclear fission chain reaction",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:3": {
+    "primary": "3.4",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "speed of sound kinetic energy",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:4": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar evolution life cycle",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:5": {
+    "primary": "2.1",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "toaster power current calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:6": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density measurement and calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:7": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "thermal energy transfer comparison",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:8": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "motor efficiency experiment graph",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:9": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "series circuit ldr calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:10": {
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "dynamo electromagnetic induction",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:11": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "stopping distance graph analysis",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:12": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "critical angle refractive index",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:13": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure temperature kelvin",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:1": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "density calculation particle model",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:2": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "archetype": "charge current time calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:3": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "principle of moments calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:4": {
+    "primary": "4.4",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "energy resource advantages disadvantages",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:5": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "radio wave doppler effect",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:6": {
+    "primary": "4.2",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "thermal insulation and specific heat",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:7": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "magnetic field loop wire",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:8": {
+    "primary": "6.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "transformer calculation and fuse",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:1": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "electrostatics charging and uses",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:2": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "x-ray frequency wavelength period",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:3": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "principle of moments lever",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:4": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound experiment",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:5": {
+    "primary": "5.2",
+    "secondary": [
+      "4.1",
+      "7.3"
+    ],
+    "archetype": "solar water heating calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:6": {
+    "primary": "5.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "heating curve change of state",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:7": {
+    "primary": "6.2",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "cyclotron force and half-life",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:8": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "big bang theory evidence",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:1": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar evolution passage completion",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:2": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "speed camera and v-t graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:3": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "series circuit bulbs calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:4": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "mains safety and power calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:5": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radioactive source properties and half-life",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:6": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "design investigation bounce height",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:7": {
+    "primary": "6.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "magnetic field and force on iron",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:8": {
+    "primary": "5.3",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "gas pressure temperature kinetic energy",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:9": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index glass block",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:10": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "convection current and absorption",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1P:11": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density bottle method",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:1": {
+    "primary": "4.1",
+    "secondary": [],
+    "archetype": "energy stores and transfers",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:2": {
+    "primary": "3.2",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "infrared spectrum thermometer",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:3": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "orbital speed calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:4": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure temperature graph",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:5": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "velocity time graph distance",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:6": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index glass block",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:7": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "bubble pressure volume depth",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:8": {
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "magnetic field lines induction",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:9": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "doppler effect moving source",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:10": {
+    "primary": "7.3",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "fission equation chain reaction",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:11": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "work done ramp gpe",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_1PR:12": {
+    "primary": "2.2",
+    "secondary": [
+      "1.4"
+    ],
+    "archetype": "circuit diagram variable resistor",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:1": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1",
+      "3.2"
+    ],
+    "archetype": "light sound differences oscilloscope",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:2": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear fission equation chain reaction",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:3": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moment experiment graph evaluation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:4": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "energy resources bar chart calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:5": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer calculation transmission explanation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:6": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hertzsprung russell diagram star position",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:7": {
+    "primary": "1.5",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "momentum collision force time",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2P:8": {
+    "primary": "2.4",
+    "secondary": [
+      "1.1",
+      "1.2"
+    ],
+    "archetype": "charged particle deflection plates",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:1": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "heating curve specific heat capacity",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:2": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "moment equilibrium beam",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:3": {
+    "primary": "1.5",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "momentum conservation collision",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:4": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "speed of sound oscilloscope",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:5": {
+    "primary": "1.1",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "acceleration distance calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:6": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "red shift galaxy speed",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:7": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3",
+      "4.3"
+    ],
+    "archetype": "electrostatics charge current energy",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_jan_2PR:8": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer operation calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:1": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "stellar life cycle orbit",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:2": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field pattern hard material",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:3": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear fission chain reaction",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:4": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "stopping distance v-t graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:5": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "led i-v characteristic graph",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:6": {
+    "primary": "4.2",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "convection current heating water",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "half-life decay calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:8": {
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "electromagnetic induction wire field",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:9": {
+    "primary": "4.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "kinetic energy falling object",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:10": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2",
+      "4.1"
+    ],
+    "archetype": "hydraulic lift pressure force",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:11": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index critical angle",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:1": {
+    "primary": "8.2",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "hertzsprung russell diagram stars",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:2": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "measuring speed of sound echo",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:3": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "static charge friction earth wire",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:4": {
+    "primary": "6.2",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "loudspeaker motor effect sound",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:6": {
+    "primary": "6.3",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "transformer current calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:7": {
+    "primary": "1.5",
+    "secondary": [
+      "4.3",
+      "8.1"
+    ],
+    "archetype": "momentum conservation spring explosion",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:1": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "motion graph identification",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "heating effect current calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:3": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "electromagnetic induction generator",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:4": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "half-life graph activity",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:5": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density measurement experiment",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:6": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index glass block",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:7": {
+    "primary": "6.2",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "loudspeaker motor effect",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:8": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "orbital speed calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:9": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "gas pressure temperature graph",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:10": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "rubber band extension graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:11": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "series parallel circuit resistance",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:12": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "building insulation convection radiation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:1": {
+    "primary": "8.3",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "big bang evidence stellar evolution",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:2": {
+    "primary": "4.4",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "hydroelectric power station advantages",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:3": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "gas pressure temperature graph",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:4": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "nuclear fission equation chain reaction",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:5": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "metre rule moments experiment",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:6": {
+    "primary": "6.3",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "transformer voltage current calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:7": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "electrostatic paint sprayer",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:8": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "oscilloscope sound frequency measurement",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:1": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field patterns investigation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:2": {
+    "primary": "7.2",
+    "secondary": [],
+    "archetype": "half-life graph activity",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:3": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "wave equation wavelength calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:4": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "reflection ray diagram mirror",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:5": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1",
+      "1.2"
+    ],
+    "archetype": "stopping distance calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:6": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "terminal velocity graph forces",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:7": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "thermistor circuit resistance calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:8": {
+    "primary": "8.1",
+    "secondary": [
+      "4.1",
+      "4.2"
+    ],
+    "archetype": "satellite orbit speed energy stores",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:9": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "spring extension hooke law graph",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:10": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "prism refractive index dispersion",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:11": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas laws pressure volume temperature",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1P:12": {
+    "primary": "6.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "electric motor motor effect efficiency",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:1": {
+    "primary": "7.1",
+    "secondary": [],
+    "archetype": "gamma radiation penetration variables",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:2": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "ionising radiation uses and wave equation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:3": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic repulsion field pattern",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:4": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "scalar vector resultant force",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:5": {
+    "primary": "4.4",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "power station efficiency and fission",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:6": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar evolution life cycle",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:7": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index experiment",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:8": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "ultrasound echo distance calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:9": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "series circuit diagram and charge",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:10": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "light gate acceleration experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:11": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure volume temperature",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_1PR:12": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "insulation conduction convection radiation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:1": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum force airbag safety",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:2": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "heating curve sketch",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:3": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear fusion conditions",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:4": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "solenoid field strength experiment",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:5": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "gpe ke ramp calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:6": {
+    "primary": "3.4",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "oscilloscope trace sound wave",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:7": {
+    "primary": "4.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "energy resource comparison",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:8": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "red-shift galaxy calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2P:9": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:1": {
+    "primary": "4.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "energy resources generation table",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:2": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum force collision safety",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:3": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound experiment",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:4": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3",
+      "4.3"
+    ],
+    "archetype": "dc motor generator energy",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:5": {
+    "primary": "7.3",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "fusion equation and tokamak",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:6": {
+    "primary": "8.3",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "red shift galaxy speed",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:7": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "cooling curve gradient insulation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_jan_2PR:8": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "van de graaff generator charge",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "comet orbit diagram",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:2": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "atomic structure multiple choice",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:3": {
+    "primary": "3.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "ultrasonic distance measurement wave speed",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:4": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "planetary orbital data analysis",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:5": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "nuclear decay equation and hazards",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:6": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "free body diagram forces",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:7": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "parallel circuit current and brightness",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:8": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "efficiency sankey diagram work force",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:9": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "liquid pressure depth bottle",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:10": {
+    "primary": "4.3",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "falling object energy transfer",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:11": {
+    "primary": "1.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "projectile range height graph",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:12": {
+    "primary": "6.3",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "electromagnetic induction ammeter",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "solar system structure gravity",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:2": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "em spectrum uses hazards",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:3": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "ldr circuit resistance graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:4": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "floating object pressure force",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:5": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "star colour temperature evolution",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:6": {
+    "primary": "6.2",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "loudspeaker motor effect circuit",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "radon half-life decay hazard",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:8": {
+    "primary": "5.1",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "hailstone density convection",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:9": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "gas pressure container collapse",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:10": {
+    "primary": "6.3",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "induced voltage moving rod",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:11": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "wave reflection doppler effect",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:12": {
+    "primary": "1.3",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "parachutist terminal velocity energy",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:1": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "power measurement data analysis",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:2": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "conservation momentum explosion",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:3": {
+    "primary": "6.3",
+    "secondary": [
+      "2.1",
+      "2.3"
+    ],
+    "archetype": "transformer power and charge time",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:4": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "ultrasound oscilloscope frequency",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:5": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear reactor components and fission energy",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:6": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "big bang theory evidence",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:7": {
+    "primary": "5.2",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:1": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hertzsprung russell diagram classification",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:2": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound oscilloscope",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:3": {
+    "primary": "6.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "particle accelerator magnetic field",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:4": {
+    "primary": "5.2",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "heating water specific heat capacity",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:5": {
+    "primary": "6.3",
+    "secondary": [
+      "4.4"
+    ],
+    "archetype": "national grid transformer calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:6": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index experiment calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:7": {
+    "primary": "1.6",
+    "secondary": [
+      "1.4"
+    ],
+    "archetype": "gate moment spring mechanism",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:1": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "hooke's law graph sketch",
+    "confidence": 1.0,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:2": {
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "electromagnetic induction wire magnet",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:3": {
+    "primary": "4.3",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "work done force distance sankey",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:4": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "radioactive attenuation lead graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:5": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "stopping distance graph calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:6": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "optical fibre total internal reflection",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:7": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3",
+      "2.1"
+    ],
+    "archetype": "filament lamp i-v characteristic",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:8": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar evolution mass comparison",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:9": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "microwave intensity distance graph",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:10": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "hot cold water thermal equilibrium",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1P:11": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure kinetic theory",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:1": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "laser moon reflection distance",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:2": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "orbital speed and stellar evolution",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:3": {
+    "primary": "5.1",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "pressure depth and terminal velocity",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:4": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "filament lamp current voltage graph",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:5": {
+    "primary": "7.3",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "fusion fission difference and half-life",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:6": {
+    "primary": "4.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "heat transfer methods and power",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:7": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index and critical angle",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:8": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density calculation experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:9": {
+    "primary": "7.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "radiation penetration and energy",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:10": {
+    "primary": "1.2",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "resultant force and doppler",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_1PR:11": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "magnetic field and induction",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:1": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "static charge friction explanation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:2": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "particle model and specific heat",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:3": {
+    "primary": "7.3",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "nuclear fission power station",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:4": {
+    "primary": "5.3",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "gas pressure temperature experiment",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:5": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "moment equilibrium plank",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:6": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "magnetic field current wire",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:7": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "speed of sound oscilloscope",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2P:8": {
+    "primary": "8.1",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "binary star orbit radius",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:1": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hertzsprung russell diagram labels",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:2": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "em spectrum hazards and wave equation",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:3": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "electrostatic charging experiment",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:4": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "parallel circuit calculations",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:5": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer efficiency and turns ratio",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:6": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment and calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:7": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "crumple zone force time",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_jan_2PR:8": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "red shift galaxy graph",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:1": {
+    "primary": "7.2",
+    "secondary": [],
+    "archetype": "half life graph activity",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:2": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "filament lamp iv graph",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:3": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "standby energy fuse rating",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:4": {
+    "primary": "3.1",
+    "secondary": [
+      "3.3"
+    ],
+    "archetype": "radio wave speed wavelength",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:5": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "pressure force area calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:6": {
+    "primary": "5.1",
+    "secondary": [
+      "3.1",
+      "3.2"
+    ],
+    "archetype": "density mass volume measurement",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:7": {
+    "primary": "4.1",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "sankey diagram efficiency motor",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:8": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "thermal insulation convection radiation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:9": {
+    "primary": "5.1",
+    "secondary": [
+      "1.1",
+      "5.3"
+    ],
+    "archetype": "manometer pressure difference graph",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:10": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "distance time graph analysis",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:11": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "series parallel circuit current",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:12": {
+    "primary": "6.3",
+    "secondary": [
+      "6.2",
+      "2.1"
+    ],
+    "archetype": "metal detector induction motor",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:1": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "electromagnetic spectrum properties uses",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:2": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "orbital speed calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:3": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3",
+      "1.2"
+    ],
+    "archetype": "motor efficiency sankey diagram",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:4": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "magnetic field lines force wire",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:5": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "doppler effect moving source",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:6": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "current voltage graph resistor",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "half-life graph and radiation type",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:8": {
+    "primary": "1.4",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "spring extension and vibration graph",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:9": {
+    "primary": "1.1",
+    "secondary": [
+      "4.2",
+      "4.1"
+    ],
+    "archetype": "deceleration and braking distance",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:10": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "liquid pressure depth calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:11": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "gravitational field strength inverse square",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:1": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "moment equilibrium pencil pivot",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:2": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "heating curve particle arrangement",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:3": {
+    "primary": "2.3",
+    "secondary": [
+      "4.3",
+      "8.1"
+    ],
+    "archetype": "oscilloscope electron kinetic energy",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:4": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "conservation of momentum collision",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:5": {
+    "primary": "7.3",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "fission reactor chain reaction",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer turns ratio calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:7": {
+    "primary": "8.3",
+    "secondary": [
+      "3.3"
+    ],
+    "archetype": "redshift galaxy speed calculation",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:8": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:1": {
+    "primary": "1.2",
+    "secondary": [
+      "1.1",
+      "4.3"
+    ],
+    "archetype": "units and scalar vector matching",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:2": {
+    "primary": "4.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "energy resource advantages disadvantages",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:3": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "static charge friction and discharge",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:4": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum collision airbag",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity calculation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:6": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "electromagnet strength investigation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:7": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "sound frequency speed wavelength",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:8": {
+    "primary": "8.2",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "stellar evolution red shift",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:1": {
+    "primary": "8.1",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "astrophysics multiple choice",
+    "confidence": 0.8,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:2": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "current time graph interpretation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:3": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "microwave wavelength speed danger",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:4": {
+    "primary": "2.1",
+    "secondary": [
+      "3.3",
+      "3.2",
+      "6.2"
+    ],
+    "archetype": "filament lamp circuit energy reflection",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:5": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "conduction metal strips experiment",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:6": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "velocity time graph acceleration distance",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "carbon dating half-life graph",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:8": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "galactic orbit period calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:9": {
+    "primary": "7.3",
+    "secondary": [
+      "6.3",
+      "2.1"
+    ],
+    "archetype": "nuclear power station process",
+    "confidence": 0.85,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:10": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "parallel circuit current change",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:11": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "barometer pressure gas law",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:12": {
+    "primary": "4.3",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "marble run energy loss",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:1": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "fission fusion comparison conditions",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:2": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moments beam supports",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:3": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:4": {
+    "primary": "6.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "transformer operation and energy",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:5": {
+    "primary": "5.2",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "cooling curve particle model",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:6": {
+    "primary": "1.5",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "rocket momentum conservation",
+    "confidence": 0.98,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:7": {
+    "primary": "3.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "oscilloscope trace sound frequency",
+    "confidence": 0.9,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:8": {
+    "primary": "8.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "galaxy red-shift velocity calculation",
+    "confidence": 0.95,
+    "model": "qwen/qwen3.8-27b",
+    "route": "text"
+  }
+}

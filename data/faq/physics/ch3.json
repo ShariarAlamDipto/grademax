@@ -1,0 +1,173 @@
+{
+  "n": 3,
+  "title": "Waves",
+  "blurb": "The second-biggest chapter. Refraction dominates it - the refractive index formula is the single most frequently asked recall question in the entire subject.",
+  "formulas": [
+    [
+      "wave speed",
+      "frequency × wavelength",
+      "m/s"
+    ],
+    [
+      "frequency",
+      "1 ÷ time period",
+      "Hz"
+    ],
+    [
+      "refractive index",
+      "sin i ÷ sin r",
+      "no unit"
+    ],
+    [
+      "refractive index",
+      "speed of light in vacuum ÷ speed in the medium",
+      "no unit"
+    ],
+    [
+      "critical angle",
+      "sin c = 1 ÷ n",
+      "degrees"
+    ]
+  ],
+  "items": [
+    {
+      "q": "State the formula linking refractive index, angle of incidence and angle of refraction.",
+      "rx": "(formula|equation) linking refractive index",
+      "marks": "1 mark",
+      "a": [
+        "refractive index = sin(angle of incidence) ÷ sin(angle of refraction)",
+        "(n = sin i ÷ sin r)"
+      ],
+      "tip": "The most frequently asked recall question in the whole of 4PH1. Both angles are measured from the normal."
+    },
+    {
+      "q": "State the formula linking critical angle and refractive index.",
+      "rx": "(formula|equation) linking critical angle",
+      "marks": "1 mark",
+      "a": [
+        "sin c = 1 ÷ n",
+        "(where c is the critical angle and n is the refractive index)"
+      ],
+      "tip": "To find c you need the inverse sine: c = sin⁻¹(1 ÷ n). Make sure your calculator is in degrees."
+    },
+    {
+      "q": "State the formula linking wave speed, frequency and wavelength.",
+      "rx": "(formula|equation|relationship).{0,40}(speed|wave speed).{0,40}(frequency|wavelength)",
+      "marks": "1 mark",
+      "a": [
+        "wave speed = frequency × wavelength",
+        "(v = f × λ)"
+      ],
+      "tip": "Also learn f = 1 ÷ T. Many questions read the period T off an oscilloscope trace, then want the frequency, then the speed."
+    },
+    {
+      "q": "Calculate the refractive index of the glass block / material.",
+      "rx": "calculate the refractive index|determine the refractive index",
+      "marks": "2–3 marks",
+      "a": [
+        "Substitute the measured angles into n = sin i ÷ sin r;",
+        "evaluate;",
+        "refractive index has no unit, and for glass it should come out around 1.5."
+      ],
+      "tip": "If your answer is less than 1 you have divided the wrong way round. Light bends towards the normal on entering a denser medium, so i is bigger than r."
+    },
+    {
+      "q": "Calculate the critical angle for the boundary between the material and air.",
+      "rx": "(calculate|determine|find).{0,50}critical angle",
+      "marks": "2–3 marks",
+      "a": [
+        "Use sin c = 1 ÷ n;",
+        "take the inverse sine of the result;",
+        "give the answer in degrees."
+      ],
+      "tip": "Total internal reflection only happens when the light is in the denser medium AND the angle of incidence is greater than the critical angle. Both conditions must be stated if asked."
+    },
+    {
+      "q": "Measure the angle of incidence / the angle of refraction in the diagram.",
+      "rx": "measure the angle of incidence|measure the angle of refraction",
+      "marks": "1–2 marks",
+      "a": [
+        "Draw the normal - a dashed line at 90° to the surface at the point where the ray hits;",
+        "measure the angle between the ray and the normal with a protractor (not the angle to the surface)."
+      ],
+      "tip": "Answers are usually allowed within ±1 or ±2 degrees. Measuring from the surface instead of the normal is the most common error in the whole paper."
+    },
+    {
+      "q": "State two uses of total internal reflection.",
+      "rx": "total internal reflection",
+      "marks": "2 marks",
+      "a": [
+        "Optical fibres, used in telecommunications / broadband;",
+        "endoscopes, used to see inside the body;",
+        "reflecting prisms in periscopes, binoculars and bicycle reflectors."
+      ]
+    },
+    {
+      "q": "Describe the difference between transverse and longitudinal waves.",
+      "rx": "transverse (and|or) longitudinal|longitudinal (and|or) transverse|(describe|state|explain).{0,60}(transverse|longitudinal)",
+      "marks": "2–3 marks",
+      "a": [
+        "In a transverse wave the vibrations are perpendicular (at right angles) to the direction of energy transfer;",
+        "in a longitudinal wave the vibrations are parallel to the direction of energy transfer;",
+        "longitudinal waves consist of compressions and rarefactions;",
+        "light and water waves are transverse; sound is longitudinal."
+      ],
+      "tip": "Say 'direction of energy transfer' or 'direction the wave travels'. Just writing 'up and down' is not enough."
+    },
+    {
+      "q": "Describe an experiment to measure the speed of sound in air, and calculate it from the results.",
+      "rx": "speed of sound",
+      "marks": "4–6 marks",
+      "a": [
+        "Measure a large distance between two points with a tape measure / metre rule;",
+        "make a sound at one point (e.g. bang two blocks) and start a stopwatch when it is made;",
+        "stop the stopwatch when the sound is heard at the other point (or when the echo returns);",
+        "use speed = distance ÷ time;",
+        "repeat and calculate a mean to reduce the effect of random error;",
+        "reaction time is a significant source of error, so use a large distance."
+      ],
+      "tip": "The oscilloscope version is: two microphones a measured distance apart, read the time delay between the traces, then speed = distance ÷ time."
+    },
+    {
+      "q": "Give the name of the piece of apparatus connected to the oscilloscope to detect the sound wave.",
+      "rx": "connected to the oscilloscope|oscilloscope to detect",
+      "marks": "1 mark",
+      "a": [
+        "A microphone."
+      ],
+      "tip": "A free mark that appeared in several recent papers. The microphone converts the sound wave into an electrical signal for the oscilloscope."
+    },
+    {
+      "q": "State the order of the electromagnetic spectrum and give a use and a danger of each part.",
+      "rx": "electromagnetic (spectrum|wave|radiation)",
+      "marks": "2–6 marks",
+      "a": [
+        "Order from longest wavelength (lowest frequency) to shortest: radio, microwave, infrared, visible, ultraviolet, X-rays, gamma rays;",
+        "Uses: radio - broadcasting; microwave - satellite and mobile communication, cooking; infrared - remote controls, thermal imaging, heaters; visible - sight, photography; ultraviolet - security marking, sterilising, sun beds; X-rays - medical imaging, security scanning; gamma - sterilising equipment, treating cancer;",
+        "Dangers: microwaves cause internal heating of body tissue; infrared causes surface burns; ultraviolet damages eyes and causes skin cancer; X-rays and gamma rays ionise and mutate or kill cells, causing cancer."
+      ],
+      "tip": "The 6-mark version wants named regions with a specific effect each. Vague answers like 'they are harmful' score nothing."
+    },
+    {
+      "q": "Describe what happens to water waves in a ripple tank when they are reflected, refracted or diffracted.",
+      "rx": "ripple tank|diffract|wavefront",
+      "marks": "2–3 marks",
+      "a": [
+        "Reflection: the angle of reflection equals the angle of incidence and the wavelength is unchanged;",
+        "Refraction: in shallower water the waves slow down, so the wavelength decreases while the frequency stays the same, and they bend towards the normal;",
+        "Diffraction: waves spread out through a gap, and the spreading is greatest when the gap size is about equal to the wavelength."
+      ],
+      "tip": "Frequency never changes when a wave crosses a boundary. Only speed and wavelength change."
+    },
+    {
+      "q": "Draw the normal and complete the path of the ray through the block.",
+      "rx": "draw (a|the) normal|normal line where",
+      "marks": "1–3 marks",
+      "a": [
+        "Draw the normal as a dashed line at 90° to the surface at the point of incidence;",
+        "entering a denser medium the ray bends towards the normal; leaving it, the ray bends away;",
+        "if the angle inside exceeds the critical angle, show total internal reflection with the angle of reflection equal to the angle of incidence."
+      ]
+    }
+  ]
+}

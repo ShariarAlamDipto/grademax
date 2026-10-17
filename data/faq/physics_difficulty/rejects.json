@@ -1,0 +1,1827 @@
+[
+ {
+  "phrase": "scale",
+  "papers": 6,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "Name the equipment the student could use to measure the mass of the balloon.",
+    "accepted": [
+     "balance"
+    ],
+    "sitting": "Jan 2023 Paper 1R Q8(a)(i)"
+   },
+   {
+    "stem": "Describe how to determine the density of a hailstone. Assume that hailstones are spherical.",
+    "accepted": [
+     "any FOUR from: MP1. measure mass",
+     "MP2. use (mass) balance",
+     "MP3. measure diameter"
+    ],
+    "sitting": "May-Jun 2022 Paper 1R Q8(a)(i)"
+   },
+   {
+    "stem": "A scientist wants to determine the specific heat capacity of concrete. The diagram shows some of the equipment they could use. V A 12 V insulating material thermometer el",
+    "accepted": [
+     "Any FIVE from: MP1 mass found on balance",
+     "MP2 time measured on timer/stopwatch/stopclock",
+     "MP3 temperature change = final temp – initial temp"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q8(a)"
+   },
+   {
+    "stem": "Describe how a student could use this apparatus to determine the specific heat capacity of water. Include details of any additional equipment needed in your answer. 12",
+    "accepted": [
+     "any five from: MP1. idea of mass of water = [mass of water and cup] − [mass of cup]",
+     "MP2. mass found on balance",
+     "MP3. time measured on timer/stopwatch/stopclock"
+    ],
+    "sitting": "Oct-Nov 2023 Paper 2 Q3(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "gravity for g",
+  "papers": 5,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "State the equation linking gravitational potential energy (GPE), mass, g and height.",
+    "accepted": [
+     "GPE = mass x g x height"
+    ],
+    "sitting": "May-Jun 2018 Paper 1R Q8(b)(i)"
+   },
+   {
+    "stem": "State the formula linking gravitational potential energy (GPE), mass, gravitational field strength (g) and height.",
+    "accepted": [
+     "GPE = mass × gravitational field strength × height"
+    ],
+    "sitting": "Jan 2022 Paper 2 Q5(a)"
+   },
+   {
+    "stem": "State the formula linking pressure difference, height, density and gravitational field strength.",
+    "accepted": [
+     "(liquid) pressure = depth (of liquid) × density × g"
+    ],
+    "sitting": "Jan 2020 Paper 1R Q2(b)"
+   },
+   {
+    "stem": "State the formula linking pressure difference, height, gravitational field strength and density. 17",
+    "accepted": [
+     "pressure = depth × gravitational field strength × density"
+    ],
+    "sitting": "Jan 2021 Paper 1R Q7(a)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "half the time",
+  "papers": 4,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "Explain what is meant by the term half-life. 9",
+    "accepted": [
+     "time taken",
+     "and either of for (radio)activity to halve",
+     "for half of the (radioactive) nuclei / atoms / isotope to decay"
+    ],
+    "sitting": "Jan 2022 Paper 1 Q2(b)(i)"
+   },
+   {
+    "stem": "Describe what is meant by the term half-life.",
+    "accepted": [
+     "time (taken)",
+     "and EITHER of: • for (radio)activity to halve",
+     "• for half the (radioactive) nuclei / atoms / isotope to decay"
+    ],
+    "sitting": "May-Jun 2018 Paper 1 Q10(e)(i)"
+   },
+   {
+    "stem": "State what is meant by the term half-life.",
+    "accepted": [
+     "time taken",
+     "and either of • for (radio)activity to halve",
+     "• for half of the (radioactive) nuclei / atoms / isotope to decay"
+    ],
+    "sitting": "Jan 2021 Paper 1 Q5(d)(i)"
+   },
+   {
+    "stem": "State what is meant by the term half‑life. 17",
+    "accepted": [
+     "time taken",
+     "and either of for the (radio)activity to halve",
+     "for half of the (radioactive) nuclei / atoms/ isotope /mass to decay"
+    ],
+    "sitting": "May-Jun 2022 Paper 1R Q7(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "cmbr",
+  "papers": 2,
+  "topic": "Unclassified",
+  "contexts": [
+   {
+    "stem": "Describe what is meant by the term background radiation.",
+    "accepted": [
+     "idea that background radiation is always present",
+     "appropriate named source of background radiation mentioned"
+    ],
+    "sitting": "Oct-Nov 2024 Paper 1 Q4(b)"
+   },
+   {
+    "stem": "State one source of background radiation.",
+    "accepted": [
+     "(the) Sun / cosmic rays / rocks / radon (in the air) / weapons testing / food / (named) nuclear disasters / medical equipment"
+    ],
+    "sitting": "Jan 2023 Paper 1 Q4(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "m for momentum",
+  "papers": 2,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "State the equation linking momentum, mass and velocity.",
+    "accepted": [
+     "momentum = mass × velocity"
+    ],
+    "sitting": "Jan 2019 Paper 2 Q9(a)(i)"
+   },
+   {
+    "stem": "State the formula linking momentum, mass and velocity.",
+    "accepted": [
+     "momentum = mass × velocity"
+    ],
+    "sitting": "May-Jun 2019 Paper 2R Q7(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "particles expand",
+  "papers": 2,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Explain how a convection current is formed in the container. You may add to the diagram or draw your own diagram to support your answer. 17",
+    "accepted": [
+     "any four from: MP1. water near heater is heated",
+     "MP2. (heated) water expands",
+     "MP3. density of (heated) water decreases"
+    ],
+    "sitting": "May-Jun 2021 Paper 1 Q6(a)"
+   },
+   {
+    "stem": "The air near the bar receives energy by heating. Explain how a convection current is formed in the air near the bar. 28",
+    "accepted": [
+     "any four from: MP1. temperature of air increases",
+     "MP2. air expands / air particles move further apart",
+     "MP3. density of air decreases"
+    ],
+    "sitting": "Jan 2021 Paper 1 Q10(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "c or c for current",
+  "papers": 2,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the formula linking voltage, current and resistance.",
+    "accepted": [
+     "V = I × R"
+    ],
+    "sitting": "Jan 2020 Paper 1R Q6(b)(i)"
+   },
+   {
+    "stem": "State the formula linking charge transferred, current and time taken.",
+    "accepted": [
+     "charge (transferred) = current x time"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 2 Q2(c)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "particles become less dense",
+  "papers": 2,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Explain why air moves upwards through the external pipe. *P67160RA02932* 29",
+    "accepted": [
+     "air (inside external pipe) is heated",
+     "air expands",
+     "air decreases in density (and therefore rises)"
+    ],
+    "sitting": "Oct-Nov 2021 Paper 1 Q12(b)"
+   },
+   {
+    "stem": "The air near the bar receives energy by heating. Explain how a convection current is formed in the air near the bar. 28",
+    "accepted": [
+     "any four from: MP1. temperature of air increases",
+     "MP2. air expands / air particles move further apart",
+     "MP3. density of air decreases"
+    ],
+    "sitting": "Jan 2021 Paper 1 Q10(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "gravitational potential, gravitational field strength",
+  "papers": 2,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Name the force that causes planets and moons to move in orbits.",
+    "accepted": [
+     "gravitational (force)"
+    ],
+    "sitting": "Jan 2019 Paper 2 Q1(a)"
+   },
+   {
+    "stem": "Give the name of the force that causes the Moon to orbit the Earth.",
+    "accepted": [
+     "gravitational (force)"
+    ],
+    "sitting": "May-Jun 2024 Paper 1 Q1(a)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "heat",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "Describe a change in the turbine’s energy stores from when the turbine is at rest to when it is moving at full speed.",
+    "accepted": [
+     "kinetic energy (store)",
+     "increases"
+    ],
+    "sitting": "Oct-Nov 2024 Paper 2 Q7(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "comet",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Give the name of another object that orbits the Earth.",
+    "accepted": [
+     "satellite / space station"
+    ],
+    "sitting": "May-Jun 2024 Paper 1 Q1(a)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "gravity",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "State the formula linking pressure difference, height, density and gravitational field strength.",
+    "accepted": [
+     "pressure difference = height x density x g"
+    ],
+    "sitting": "May-Jun 2019 Paper 1R Q6(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "uranium",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "The reactors at Kori use nuclear fission to generate electricity. The products released during nuclear fission have high energy in their kinetic store. Give a product of ",
+    "accepted": [
+     "daughter nuclei / named nuclei e.g. krypton or barium/ neutron(s)"
+    ],
+    "sitting": "Jan 2023 Paper 2 Q3(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "beta plus",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "Some of the products of nuclear fission are radioactive because their nuclei have too many neutrons. These nuclei become more stable when a neutron changes into a proton.",
+    "accepted": [
+     "beta (minus)"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 1R Q2(d)"
+   }
+  ]
+ },
+ {
+  "phrase": "w for power",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the equation linking power, current and voltage.",
+    "accepted": [
+     "power = current × voltage"
+    ],
+    "sitting": "May-Jun 2018 Paper 1R Q3(c)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "has gravity",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "The student suggests that the ball will reach the ground with a speed that is less than 16 m/s because of air resistance. Use ideas about forces to justify the student’s ",
+    "accepted": [
+     "any FIVE from: MP1 ball has weight",
+     "MP2 ball accelerates",
+     "MP3 drag increases (while accelerating)"
+    ],
+    "sitting": "Jan 2020 Paper 1R Q5(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "use of v=fλ",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Radio waves are emitted from an aerial at an airport, and are then reflected back to the aerial from an aeroplane. The time taken between emitting the radio waves and rec",
+    "accepted": [
+     "use/substitution of distance = average speed x time",
+     "evaluation of distance to at least 2s.f"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 2 Q5(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "c for charge",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the formula linking energy transferred, charge and voltage.",
+    "accepted": [
+     "energy (transferred) = charge × voltage"
+    ],
+    "sitting": "Jan 2022 Paper 1R Q9(c)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "d for density",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "State the formula linking pressure difference, height, gravitational field strength and density. 17",
+    "accepted": [
+     "pressure = depth × gravitational field strength × density"
+    ],
+    "sitting": "Jan 2021 Paper 1R Q7(a)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "idea of p = iv",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "State what is meant by the term power. 5",
+    "accepted": [
+     "rate of doing work / rate of energy transfer"
+    ],
+    "sitting": "May-Jun 2022 Paper 2 Q1(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "daughter cells",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "The reactors at Kori use nuclear fission to generate electricity. The products released during nuclear fission have high energy in their kinetic store. Give a product of ",
+    "accepted": [
+     "daughter nuclei / named nuclei e.g. krypton or barium/ neutron(s)"
+    ],
+    "sitting": "Jan 2023 Paper 2 Q3(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "multiples of 0",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Table 2 shows the student’s results. Length of wire in field in mm Force in N 0 0.00 5 0.32 10 0.64 15 0.92 20 1.28 25 1.58 30 1.92 Table 2 Plot a graph of the results on",
+    "accepted": [
+     "suitably labelled axes with quantity and unit",
+     "suitable scale",
+     "data plotted correctly to nearest ½ square"
+    ],
+    "sitting": "Oct-Nov 2025 Paper 1 Q6(b)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "c, a for current",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the equation linking power, current and voltage.",
+    "accepted": [
+     "power = current × voltage"
+    ],
+    "sitting": "May-Jun 2018 Paper 1R Q3(c)(i)"
+   },
+   {
+    "stem": "State the equation linking voltage, current and resistance.",
+    "accepted": [
+     "voltage = current × resistance"
+    ],
+    "sitting": "May-Jun 2018 Paper 1R Q5(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "balls slows down",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "The student suggests that the ball will reach the ground with a speed that is less than 16 m/s because of air resistance. Use ideas about forces to justify the student’s ",
+    "accepted": [
+     "any FIVE from: MP1 ball has weight",
+     "MP2 ball accelerates",
+     "MP3 drag increases (while accelerating)"
+    ],
+    "sitting": "Jan 2020 Paper 1R Q5(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "extra components",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "Draw the circuit diagram for this electrical circuit. The variable resistor has been drawn for you.",
+    "accepted": [
+     "correct symbol for resistor",
+     "correct symbol for cell",
+     "correct symbol for ammeter"
+    ],
+    "sitting": "Jan 2021 Paper 1R Q12(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "c, c for current",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the formula linking voltage, current and resistance.",
+    "accepted": [
+     "voltage = current × resistance"
+    ],
+    "sitting": "May-Jun 2021 Paper 1 Q5(b)(v)"
+   }
+  ]
+ },
+ {
+  "phrase": "atom for nucleus",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "Describe the difference between nuclear fusion and nuclear fission.",
+    "accepted": [
+     "fission is the splitting of a nucleus",
+     "fusion is the joining of (two) nuclei"
+    ],
+    "sitting": "Jan 2023 Paper 1R Q5(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "dot-to-dot lines",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Draw a line of best fit. *P78770RA01936* 19",
+    "accepted": [
+     "adequate straight line of best fit"
+    ],
+    "sitting": "Oct-Nov 2025 Paper 1 Q6(b)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "incorrect physics",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "Explain why the current in each wire must be small.",
+    "accepted": [
+     "reference to temperature of the wire changing",
+     "(preventing) a change in resistance"
+    ],
+    "sitting": "May-Jun 2018 Paper 1 Q5(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "m, m for momentum",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "State the formula linking momentum, mass and velocity.",
+    "accepted": [
+     "momentum = mass × velocity"
+    ],
+    "sitting": "Jan 2020 Paper 2R Q3(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "mechanical energy",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "As the water passes through the turbine, energy is lost from the water’s kinetic energy store. Explain what happens to the energy lost from the water’s kinetic energy sto",
+    "accepted": [
+     "transferred mechanically",
+     "the KE store of the turbine increases",
+     "some energy is transferred to the thermal store of the surroundings/turbine"
+    ],
+    "sitting": "Oct-Nov 2025 Paper 2 Q3(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "phrase turns ratio",
+  "papers": 1,
+  "topic": "Magnetism and electromagnetism",
+  "contexts": [
+   {
+    "stem": "This is the label on the step-up transformer. input voltage = 15 kV output voltage = 340 kV number of turns on primary coil = 1400 State the formula linking input voltage",
+    "accepted": [
+     "(Np ÷ Ns) = (Vp ÷ Vs)"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q6(a)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "incorrect physics i",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "The ball has a mass of 14 g. Show that when the ball reaches a height of 29 cm above the bottom of the ramp, the GPE gained by the ball is about 4 × 10−2 J.",
+    "accepted": [
+     "substitution",
+     "conversion of mass to kg and height to m",
+     "correct evaluation to at least 2 sf"
+    ],
+    "sitting": "Jan 2022 Paper 2 Q5(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "p=current × voltage",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "State what is meant by the term power.",
+    "accepted": [
+     "rate of {energy transfer/doing work}"
+    ],
+    "sitting": "Jan 2023 Paper 2 Q3(c)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "reference to charge",
+  "papers": 1,
+  "topic": "Magnetism and electromagnetism",
+  "contexts": [
+   {
+    "stem": "Some bar magnets are made of steel. Explain why steel is a good material for making bar magnets. 13",
+    "accepted": [
+     "steel is magnetic / eq",
+     "(therefore) magnet stays magnetised (for a long period of time) /eq"
+    ],
+    "sitting": "May-Jun 2023 Paper 1R Q4(c)"
+   }
+  ]
+ },
+ {
+  "phrase": "a repeat of the stem",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Explain which is the independent variable in his investigation.",
+    "accepted": [
+     "current",
+     "(because) the student selects the values / OWTTE"
+    ],
+    "sitting": "May-Jun 2018 Paper 2R Q4(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "gravity judge by eye",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "The upward force acting on the ship is called upthrust. This force is shown on the diagram. Draw another labelled arrow on the diagram to show the other vertical force ac",
+    "accepted": [
+     "downward arrow labelled weight",
+     "downward arrow is equal in length to upthrust arrow"
+    ],
+    "sitting": "Jan 2020 Paper 1 Q2(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "unqualified distance",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "State the independent variable in the student’s investigation.",
+    "accepted": [
+     "position of the mass hanger"
+    ],
+    "sitting": "Oct-Nov 2021 Paper 2 Q5(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "contradictory arrows",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "Draw a labelled arrow on diagram 2 to show the force of friction acting on the puck.",
+    "accepted": [
+     "horizontal arrow drawn acting to the left"
+    ],
+    "sitting": "May-Jun 2025 Paper 1 Q1(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "use of m for momentum",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "State the formula linking momentum, mass and velocity.",
+    "accepted": [
+     "momentum = mass × velocity"
+    ],
+    "sitting": "Jan 2020 Paper 2 Q3(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "unsupported incorrect",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "Calculate the motor efficiency when the power supply is set to a voltage of 10 V. efficiency = % 21",
+    "accepted": [
+     "efficiency formula seen",
+     "substitution",
+     "evaluation"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 1R Q8(d)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "idea of charged atoms",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "Two nuclei are close together and stationary. Explain why these nuclei will move apart.",
+    "accepted": [
+     "(nuclei are) positively charged",
+     "like charges repel"
+    ],
+    "sitting": "Jan 2022 Paper 2 Q3(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "air particles expanding",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "The teacher inflates a balloon and places it inside a bell jar. He fixes the bell jar firmly to a bench. He then uses a pump to remove some of the air from the bell jar. ",
+    "accepted": [
+     "any 4 from: MP1. fewer particles outside the balloon",
+     "MP2. (hence) fewer impacts (per second) on the outside of the balloon",
+     "MP3. (hence) pressure outside balloon is reduced"
+    ],
+    "sitting": "Jan 2018 Paper 2 Q5(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "c for current and charge",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the equation linking charge, current and time.",
+    "accepted": [
+     "charge = current × time"
+    ],
+    "sitting": "May-Jun 2018 Paper 1R Q5(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "multiples of 3 for scale",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Plot a bar chart of the gravitational field strength for each planet. 11",
+    "accepted": [
+     "suitable linear scale chosen (>50% of grid used)",
+     "axes labelled with quantities and unit",
+     "all bar plotting correct to nearest half square"
+    ],
+    "sitting": "May-Jun 2022 Paper 1 Q4(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "gravity for g in formula",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "State the formula linking pressure difference, height, density and gravitational field strength. 9",
+    "accepted": [
+     "pressure = depth × density × gravitational field strength"
+    ],
+    "sitting": "May-Jun 2022 Paper 1R Q4(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "c, c for current, charge",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the formula linking charge, current and time.",
+    "accepted": [
+     "charge = current × time"
+    ],
+    "sitting": "May-Jun 2022 Paper 2 Q3(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "multiples of 30 for scale",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "On the grid, plot a bar chart of the mean count rate for each absorbing material. 23",
+    "accepted": [
+     "suitable linear scale chosen (>50% of grid used)",
+     "axes labelled with quantities and unit",
+     "all bar plotting correct to nearest half square"
+    ],
+    "sitting": "Jan 2020 Paper 1 Q9(e)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "v2 = 2600 if no a=10 seen",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "A parachutist leaves a helicopter that is hovering above the ground. The parachutist is initially at rest and falls vertically downwards. Calculate the speed of the parac",
+    "accepted": [
+     "use of u=0 (m/s)",
+     "correct substitution into ‘v2 = u2 + 2aS’",
+     "correct evaluation of v2"
+    ],
+    "sitting": "May-Jun 2022 Paper 1R Q12(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "reference to power by eye",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "Diagram 2 is an incomplete Sankey diagram. Complete the Sankey diagram to show the energy transferred by the motor. input energy wasted output energy Diagram 2 12",
+    "accepted": [
+     "only one additional arrow drawn pointing to the right",
+     "labelled “useful output (energy)” width of arrow drawn = 8 small squares"
+    ],
+    "sitting": "May-Jun 2023 Paper 1R Q3(c)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "72-26 = 46 (wrong physics",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "The racing car is travelling at an initial speed of 72 m / s. Calculate the minimum distance needed to decrease the speed of the racing car from 72 m / s to 26 m / s. dis",
+    "accepted": [
+     "substitution into v2 = u2 + 2as",
+     "rearrangement",
+     "evaluation"
+    ],
+    "sitting": "May-Jun 2023 Paper 1R Q9(a)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "lost from electron supply",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Explain, in terms of the movement of particles, how the grid has become positively charged.",
+    "accepted": [
+     "idea of transfer of electrons (from grid)",
+     "grid has lost electrons"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q3(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "row if more than one tick",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Table 1 lists the variables in the student’s investigation. Add one tick (ü) to each row to show whether each variable is an independent, dependent or control variable. V",
+    "accepted": [
+     "4 rows correct = 3 marks",
+     "2-3 rows correct = 2 marks",
+     "any 1 row correct = 1 mark"
+    ],
+    "sitting": "Oct-Nov 2025 Paper 1 Q6(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "c for current, w for power",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the formula linking power, current and voltage.",
+    "accepted": [
+     "power = current × voltage"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 1R Q5(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "reference to input current",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "Charger Y can also be used to charge the mobile phone battery. Input voltage = 230 V Output voltage = 5.0 V Output current = 2.1 A Diagram 2 Explain how the time taken to",
+    "accepted": [
+     "time will be less / eq",
+     "(because) current is greater"
+    ],
+    "sitting": "May-Jun 2022 Paper 2 Q3(b)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "responses that do not use g",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "The ball has a mass of 14 g. Show that when the ball reaches a height of 29 cm above the bottom of the ramp, the GPE gained by the ball is about 4 × 10−2 J.",
+    "accepted": [
+     "substitution",
+     "conversion of mass to kg and height to m",
+     "correct evaluation to at least 2 sf"
+    ],
+    "sitting": "Jan 2022 Paper 2 Q5(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "c, c for current and charge",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the formula linking charge, current and time.",
+    "accepted": [
+     "charge = current × time"
+    ],
+    "sitting": "Jan 2023 Paper 1 Q7(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "cancer apply list principle",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Give one use and one harmful effect of microwaves. use harmful effect",
+    "accepted": [
+     "microwaves: one valid use",
+     "• communication /eq • heating food /eq one valid harmful effect",
+     "• internal heating (of body tissue) / eq"
+    ],
+    "sitting": "May-Jun 2023 Paper 1R Q1(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "unqualified fewer collisions",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Explain, in terms of particles, why the pressure of the air inside the glass jar decreases. 25",
+    "accepted": [
+     "any THREE from: MP1 walls further apart",
+     "MP2 fewer collisions between particles and walls per second/lower frequency of collisions",
+     "MP3 means (average) force on walls lower"
+    ],
+    "sitting": "Jan 2020 Paper 1R Q11(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "6.3 × 10−5 / √2 -1 pot error",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "The effective voltage of the oscilloscope trace can be calculated using the formula effective voltage = amplitude of trace in V 2 Use the effective voltage to calculate t",
+    "accepted": [
+     "amplitude of signal in volts determined",
+     "evaluation of effective voltage",
+     "evaluation of energy transferred"
+    ],
+    "sitting": "Oct-Nov 2023 Paper 2 Q7(c)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "mechanical energy alternate:",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "As the water passes through the turbine, energy is lost from the water’s kinetic energy store. Explain what happens to the energy lost from the water’s kinetic energy sto",
+    "accepted": [
+     "transferred mechanically",
+     "the KE store of the turbine increases",
+     "some energy is transferred to the thermal store of the surroundings/turbine"
+    ],
+    "sitting": "Oct-Nov 2025 Paper 2 Q3(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "c / a for current, w for power",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the equation linking power, current and voltage.",
+    "accepted": [
+     "power = current × voltage"
+    ],
+    "sitting": "May-Jun 2018 Paper 1 Q3(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "atoms/molecules/partic les etc",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "Describe how a chain reaction occurs in a nuclear fission reactor.",
+    "accepted": [
+     "(uranium) initial nucleus absorbs a neutron /eq",
+     "(uranium) nucleus splits/fission releasing (further) neutron(s)",
+     "idea of neutrons can be absorbed by or can cause further fissions with other (uranium) nuclei"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q5(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "c,c for charge -1 for pot error",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "The plastic tube gains a charge of 4.3 mC. The energy stored on the tube is 3.7 J. Calculate the voltage between the plastic tube and the metal mast. voltage = V",
+    "accepted": [
+     "recall of equation energy = charge × voltage",
+     "substitution or re-arrangement",
+     "evaluation"
+    ],
+    "sitting": "May-Jun 2021 Paper 2 Q3(d)"
+   }
+  ]
+ },
+ {
+  "phrase": "change in speed × time giving 0",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "Calculate the distance between the light gates. distance = m 24",
+    "accepted": [
+     "substitution into v2 = u2 + 2×a×s",
+     "rearrangement",
+     "evaluation"
+    ],
+    "sitting": "Jan 2022 Paper 1R Q10(a)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "use of c/c for charge or current",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "State the formula linking charge, current and time.",
+    "accepted": [
+     "charge = current × time"
+    ],
+    "sitting": "Jan 2020 Paper 2 Q4(b)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "amount of energy in a given time",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "State what is meant by the term power. 5",
+    "accepted": [
+     "rate of doing work / rate of energy transfer"
+    ],
+    "sitting": "May-Jun 2022 Paper 2 Q1(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "reference to opposite charge for",
+  "papers": 1,
+  "topic": "Magnetism and electromagnetism",
+  "contexts": [
+   {
+    "stem": "The student then removes the card and sets up a second wire next to the first wire, as shown in diagram 2. second wire first wire Diagram 2 The current in both wires is i",
+    "accepted": [
+     "any three from: MP1. (both) wire(s) have magnetic fields around them",
+     "MP2. each wire has a current in a magnetic field",
+     "MP3. each wire experiences a force"
+    ],
+    "sitting": "Jan 2023 Paper 2 Q6(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "references to positive electrons",
+  "papers": 1,
+  "topic": "Magnetism and electromagnetism",
+  "contexts": [
+   {
+    "stem": "Diagram 1 shows the magnetic field around a straight section of copper wire. copper wire Diagram 1 Explain why the copper wire has the magnetic field shown in the diagram",
+    "accepted": [
+     "idea that there must be a current in the wire",
+     "this current must be to the right"
+    ],
+    "sitting": "May-Jun 2023 Paper 2R Q6(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "explicit reference to bar magnet",
+  "papers": 1,
+  "topic": "Magnetism and electromagnetism",
+  "contexts": [
+   {
+    "stem": "Describe the construction of a simple electromagnet that is producing a magnetic field. You may draw a diagram to help your answer. 18",
+    "accepted": [
+     "solenoid / coil (of wire)",
+     "(direct/d.c.)current in the wire/coil/solenoid",
+     "(soft) iron core"
+    ],
+    "sitting": "May-Jun 2024 Paper 2 Q6(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "use of v=0 for this mp v2 = 26000",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "A parachutist leaves a helicopter that is hovering above the ground. The parachutist is initially at rest and falls vertically downwards. Calculate the speed of the parac",
+    "accepted": [
+     "use of u=0 (m/s)",
+     "correct substitution into ‘v2 = u2 + 2aS’",
+     "correct evaluation of v2"
+    ],
+    "sitting": "May-Jun 2022 Paper 1R Q12(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "energy transferred in a unit time",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "State what is meant by the term power.",
+    "accepted": [
+     "rate of {energy transfer/doing work}"
+    ],
+    "sitting": "Jan 2023 Paper 2 Q3(c)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "mark for row if more than one tick",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Complete the table by placing a tick (ü) to show which variables are the independent, dependent and control variables in this investigation. Independent Dependent Control",
+    "accepted": [
+     "one mark for each correct row"
+    ],
+    "sitting": "May-Jun 2023 Paper 1 Q10(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "atoms/particles/molecu les/neutrons",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "Describe how the process of nuclear fission is different from the process of nuclear fusion.",
+    "accepted": [
+     "fission is the splitting of a nucleus",
+     "fusion is the combining of nuclei"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q5(c)"
+   }
+  ]
+ },
+ {
+  "phrase": "skin cancer, cell mutation, sunburn",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Give a harmful effect of infrared waves.",
+    "accepted": [
+     "{skin / eye / tissue} burns"
+    ],
+    "sitting": "May-Jun 2024 Paper 1 Q3(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "transfer of protons/positive charge",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Explain how the flour particles can become charged.",
+    "accepted": [
+     "idea of rubbing / friction",
+     "(causing) transfer of electrons"
+    ],
+    "sitting": "May-Jun 2025 Paper 2R Q1(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "this mark if inconsistent units used",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "The bottom of the ship is 15.8 m below the surface of the sea. Show that the pressure acting on the bottom of the ship is approximately 260 kPa. [density of seawater = 10",
+    "accepted": [
+     "substitution",
+     "evaluation of pressure difference in Pa OR kPa to at least 3s.f",
+     "addition of surface pressure (100 kPa) to give answer"
+    ],
+    "sitting": "Jan 2020 Paper 1 Q2(b)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "positive particle has gained protons",
+  "papers": 1,
+  "topic": "Radioactivity and particles",
+  "contexts": [
+   {
+    "stem": "Neutral sulfur particles can become positively charged sulfur particles. Describe the difference between a neutral sulfur particle and a positively charged sulfur particl",
+    "accepted": [
+     "neutral particle has same number of protons and electrons",
+     "positive particle has more protons than electrons"
+    ],
+    "sitting": "May-Jun 2022 Paper 2R Q3(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "indication of a complete (iron) loop",
+  "papers": 1,
+  "topic": "Magnetism and electromagnetism",
+  "contexts": [
+   {
+    "stem": "Describe the construction of a simple electromagnet that is producing a magnetic field. You may draw a diagram to help your answer. 18",
+    "accepted": [
+     "solenoid / coil (of wire)",
+     "(direct/d.c.)current in the wire/coil/solenoid",
+     "(soft) iron core"
+    ],
+    "sitting": "May-Jun 2024 Paper 2 Q6(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "radioactive (waves), radiation (waves",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Name the part of the electromagnetic spectrum that has a lower frequency than microwaves.",
+    "accepted": [
+     "radio (waves)"
+    ],
+    "sitting": "Jan 2023 Paper 1 Q9(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "5.5 × 1014 (hz) total for question 8 =",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Visible light from the Sun reaches whale B. The wavelength of this light is 5.4 × 10–7 m. Calculate the frequency of this light. [speed of light = 3.0 × 108 m/s] frequenc",
+    "accepted": [
+     "substitution into speed = frequency × wavelength",
+     "rearrangement",
+     "evaluation"
+    ],
+    "sitting": "Oct-Nov 2024 Paper 1 Q8(c)"
+   }
+  ]
+ },
+ {
+  "phrase": "mark for row if more than one tick given",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "A main sequence star is created in a collapsing region of a nebula. The table gives different energy stores for the gases in the collapsing nebula, from when the nebula s",
+    "accepted": [
+     "one mark for each correct row"
+    ],
+    "sitting": "May-Jun 2024 Paper 1 Q4(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "mark for row if more than one tick shown",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Table 1 gives some possible names for object X and object Y. Complete the table by placing one tick (ü) in each row to show which orbital path is correct for each combina",
+    "accepted": [
+     "one mark for each correct row"
+    ],
+    "sitting": "May-Jun 2025 Paper 1 Q2(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "arrowhead in wrong direction judge by eye",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "The ray of light is incident at the boundary between the optical fibre and air. The ray of light reflects at the boundary. Complete diagram 1 by drawing the reflected ray",
+    "accepted": [
+     "any reflecting ray drawn",
+     "angle or reflection approximately equal to angle of incidence"
+    ],
+    "sitting": "May-Jun 2025 Paper 1R Q7(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "particles expand (total for question 8 = 9",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "Hailstones can be lifted to the top of clouds. The diagram shows the movement of some hailstones in a cloud. movement of hailstones cloud warm ground Suggest how hailston",
+    "accepted": [
+     "any TWO from: MP1. warm air rises",
+     "MP2. warm air expands",
+     "MP3. warm air is less dense than cold air"
+    ],
+    "sitting": "May-Jun 2022 Paper 1R Q8(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "idea of positive electrons for this mp only",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "The stream of electrons spreads out as it travels towards the screen. Explain why the electrons in the stream move apart from each other.",
+    "accepted": [
+     "idea that electrons are (all) negatively charged/like charged",
+     "like charges repel"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q3(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "mark if more than one line drawn from region",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Three regions in the HR diagram are labelled P, Q and R. The boxes show the three regions and different astronomical objects. Draw a straight line from each region to the",
+    "accepted": [
+     "one mark for each correct line"
+    ],
+    "sitting": "May-Jun 2024 Paper 2 Q1(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "whole response if both lines show a decrease",
+  "papers": 1,
+  "topic": "Unclassified",
+  "contexts": [
+   {
+    "stem": "The student plots a graph to show how the temperature of the water in each bottle varies with time. Draw two curves to show the expected variation in temperature of the b",
+    "accepted": [
+     "two lines drawn showing an increase in temperature over time",
+     "line identified by candidate as black is always above the line identified by candidate as silver"
+    ],
+    "sitting": "May-Jun 2024 Paper 2 Q3(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "evaluation of answer expressed as a fraction",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "The mean current displayed on the ammeter is 6.8 × 10–6 A. The current lasts for 3.7 ms. Calculate the charge transferred. charge = C 6",
+    "accepted": [
+     "conversion of ms to s",
+     "substitution",
+     "correct evaluation"
+    ],
+    "sitting": "Oct-Nov 2024 Paper 2 Q2(b)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "mark for that row if more than one tick drawn",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "The winch can also be used to pull the truck uphill at a constant speed. The table gives some energy stores. Add one tick (ü) to each row to show what happens to the ener",
+    "accepted": [
+     "mark for each correct row",
+     "reject more"
+    ],
+    "sitting": "Jan 2023 Paper 1 Q3(b)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "response with more than one quantity/property",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "State which wave property determines the pitch of a sound.",
+    "accepted": [
+     "frequency"
+    ],
+    "sitting": "May-Jun 2024 Paper 2 Q5(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "this mark if proportional relationship described",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "Describe the relationship between current and voltage shown on the graph.",
+    "accepted": [
+     "current increases as voltage increases",
+     "idea of non-linear relationship"
+    ],
+    "sitting": "May-Jun 2023 Paper 1 Q2(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "multiples of 30, 45, 60, 80 for 10 small squares",
+  "papers": 1,
+  "topic": "Unclassified",
+  "contexts": [
+   {
+    "stem": "Plot a bar chart of the results on the grid.",
+    "accepted": [
+     "suitable linear scale for time axis",
+     "time axis labelled with quantity and unit AND material axis labelled",
+     "all bars correct length to within ½ small square"
+    ],
+    "sitting": "Oct-Nov 2024 Paper 1 Q10(b)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "v=ir or i=v/r with assumption of constant current",
+  "papers": 1,
+  "topic": "Electricity",
+  "contexts": [
+   {
+    "stem": "Explain how the voltage across the variable resistor changes if more mass is added to the end of the elastic string. 30",
+    "accepted": [
+     "any FOUR from: stretchy resistor increases in resistance (when mass increased)",
+     "I = V/R",
+     "current in circuit less"
+    ],
+    "sitting": "Jan 2021 Paper 1R Q12(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "supernova for this mark total for question 2 = 12",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Describe the evolution of the Sun from the first stage of its evolution to the final stage of its evolution. 8",
+    "accepted": [
+     "starts as nebula/cloud (of gas)",
+     "reference to main sequence",
+     "finishes as white dwarf"
+    ],
+    "sitting": "Jan 2023 Paper 1R Q2(d)"
+   }
+  ]
+ },
+ {
+  "phrase": "planets etc for galaxies total for question 7: 12",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Light from galaxy B has twice the redshift as light from galaxy A. Galaxy B is twice as far away from Earth as galaxy A. Explain how these observations support the Big Ba",
+    "accepted": [
+     "link between twice the redshift and twice the speed",
+     "PLUS one from: link between larger speed and larger distance",
+     "(which in turn means that) galaxies are moving apart /moving away from each other"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q7(b)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "answer that clearly uses the amplitude scale for 0",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Determine the time period of the ultrasound waves. time period = s",
+    "accepted": [
+     "number of squares for full cycle",
+     "correct evaluation of time period from candidate’s number of squares",
+     "one full cycle = 6 squares time period = (6 × 5 × 10-6) = 3 × 10-5 (s)"
+    ],
+    "sitting": "May-Jun 2022 Paper 2 Q4(c)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "idea of heating ball directly with a bunsen burner",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Design a method that the student could use to investigate how the temperature of the ball affects the maximum height after it bounces. Your answer should include details ",
+    "accepted": [
+     "six marks as distributed: apparatus (2 marks max.) MP1. ruler / tape measure",
+     "MP2. idea of water bath (and thermometer)",
+     "measurements (2 marks max.) MP3. range of temperatures"
+    ],
+    "sitting": "Jan 2023 Paper 2 Q4(c)"
+   }
+  ]
+ },
+ {
+  "phrase": "this mark if there are any miscalculated constants i",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "The graph shows the student’s results. 0 5 10 15 20 25 30 Distance in cm 0 2000 4000 6000 8000 10 000 12 000 14 000 Mean count 23 The student claims that the data obeys t",
+    "accepted": [
+     "calculation of one constant from a point on the curve",
+     "calculation of a second constant from a second point on the curve",
+     "comparison of the constants AND conclusion that is valid from the candidate’s values for the ‘constant’"
+    ],
+    "sitting": "May-Jun 2025 Paper 2 Q6(b)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "mark if two lines drawn from either tir or refraction",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "The boxes give three types of wave behaviour and the diagrams give three examples of wave behaviour. Draw one straight line from each wave behaviour to the example that b",
+    "accepted": [
+     "one mark for each correct line drawn"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 1 Q1(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "response with otherwise incorrect calculation of nwater",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Diagram 2 shows a ray of light incident on the boundary between water and air. air water 43° 13° Diagram 2 Explain how the refractive index of water compares to the refra",
+    "accepted": [
+     "ray is refracting / angle of incidence is less than critical angle",
+     "critical angle for water is greater than for acetone",
+     "refractive index of water is less than for acetone"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 1R Q12(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "gravitational potential, gravitational field strength, g",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Name the force that keeps the comet in orbit around the Sun. 5",
+    "accepted": [
+     "gravity"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 1R Q1(b)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "this mark if there are more than two arrows 7 = 12 marks",
+  "papers": 1,
+  "topic": "Forces and motion",
+  "contexts": [
+   {
+    "stem": "A force called upthrust acts vertically upwards on the bubble. When the bubble is released, it accelerates vertically upwards. Draw two labelled arrows on the diagram to ",
+    "accepted": [
+     "vertical arrow upwards labelled upthrust",
+     "vertical arrow downwards labelled weight",
+     "upthrust > weight"
+    ],
+    "sitting": "Jan 2021 Paper 1R Q7(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "plotting mark if non-linear scale used in region of plots",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "Plot a graph of the student’s results, with the independent variable on the x-axis.",
+    "accepted": [
+     "sensible linear scales on both axes that occupy >50% of the grid",
+     "both axes labelled correctly with quantity and unit",
+     "correct orientation"
+    ],
+    "sitting": "Jan 2018 Paper 2 Q6(c)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "gravitational field strength, gravitational potential, gpe",
+  "papers": 1,
+  "topic": "Astrophysics",
+  "contexts": [
+   {
+    "stem": "Give the name of the force that causes one object to orbit another object in space. Star Colour Evolutionary stage Antares red red supergiant Capella yellow main sequence",
+    "accepted": [
+     "gravity"
+    ],
+    "sitting": "May-Jun 2025 Paper 1 Q2(a)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "reference to positive electrons this statement alone scores 2",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Explain, in terms of the movement of particles, how the grid has become positively charged.",
+    "accepted": [
+     "idea of transfer of electrons (from grid)",
+     "grid has lost electrons"
+    ],
+    "sitting": "May-Jun 2023 Paper 2 Q3(a)(i)"
+   }
+  ]
+ },
+ {
+  "phrase": "simple reference to wind farm powering pump (repeats question",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "The HEP station has an electric pump that can pump water from the lower lake back to the upper lake. The pump can be powered using electricity generated by the wind farm.",
+    "accepted": [
+     "any THREE from: MP1 idea that wind farm cannot store energy",
+     "MP2 idea of wind powering the pump when (energy) demand is low",
+     "MP3 idea that (therefore) upper lake acts as an energy store (for wind farm output)"
+    ],
+    "sitting": "May-Jun 2024 Paper 2 Q7(c)(iii)"
+   }
+  ]
+ },
+ {
+  "phrase": "references to repulsion unless linked to gold leaf electroscope",
+  "papers": 1,
+  "topic": "Energy resources and energy transfer",
+  "contexts": [
+   {
+    "stem": "The small spark between the sponge pad and the metal post demonstrates that the sponge pad is charged. Describe a different experiment that could demonstrate that the spo",
+    "accepted": [
+     "idea of bringing pad near another uncharged insulator",
+     "attraction used to demonstrate charge on sponge"
+    ],
+    "sitting": "May-Jun 2023 Paper 2R Q3(b)(ii)"
+   }
+  ]
+ },
+ {
+  "phrase": "response that infers positive electrons plate loses electrons scores 2 marks",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "The two metal plates have no charge before the power supply is connected. When plate Y is connected to the positive terminal of the power supply, the plate becomes positi",
+    "accepted": [
+     "plate loses negatively charged particles",
+     "(loses) electrons"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 2 Q2(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "mark if relationship described as directly proportional total for question 4",
+  "papers": 1,
+  "topic": "Waves",
+  "contexts": [
+   {
+    "stem": "Describe the relationship between the speed of sound in air and temperature. 14",
+    "accepted": [
+     "idea that speed increases as temperature increases",
+     "idea of a linear relationship"
+    ],
+    "sitting": "Oct-Nov 2020 Paper 2R Q4(b)(vi)"
+   }
+  ]
+ },
+ {
+  "phrase": "whole response motion of protons or motion of positive charge scores both marks",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Explain, in terms of the movement of charged particles, how the ball has become positively charged. 16",
+    "accepted": [
+     "idea of transfer of electrons or transfer of negative charge",
+     "electrons are lost from the ball / eq"
+    ],
+    "sitting": "May-Jun 2025 Paper 2 Q5(b)"
+   }
+  ]
+ },
+ {
+  "phrase": "mp2 if there is a reference to the speed of particles or ke changing during melting",
+  "papers": 1,
+  "topic": "Solids, liquids and gases",
+  "contexts": [
+   {
+    "stem": "Melting is the process that occurs when a solid changes into a liquid. Using ideas about particles, describe the process of melting.",
+    "accepted": [
+     "(some) bonds (between particles) are broken or weakened",
+     "particles begin to move around or slide over each other"
+    ],
+    "sitting": "Oct-Nov 2021 Paper 2 Q3(a)"
+   }
+  ]
+ },
+ {
+  "phrase": "this mp if there is more than one horizontal line lower than 38 and higher than -20",
+  "papers": 1,
+  "topic": "Practical skills and data handling",
+  "contexts": [
+   {
+    "stem": "After finishing the experiment, the student removes the aluminium block and places the container of water into a freezer. The water loses energy at a constant rate and co",
+    "accepted": [
+     "line has two downward sloping sections of different gradient",
+     "horizontal line at 0 oC in between downward sloping sections",
+     "line starts at 38 oC and finishes at -20 oC"
+    ],
+    "sitting": "May-Jun 2022 Paper 2 Q7(d)"
+   }
+  ]
+ }
+]

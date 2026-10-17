@@ -1,0 +1,27 @@
+{
+ "2021_oct-nov_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 circle (i)(a)(b),(ii) + Alt (ii), (8 marks); margin '1' is a value"
+ },
+ "2022_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 (i),(ii) Ways 1-3 on scheme pp11-13, from its own header to Q4's; automatic cut opened on Q2's notes and missed Way 3",
+  "ms_regions": [
+   [
+    10,
+    73,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ }
+}

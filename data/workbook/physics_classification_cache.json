@@ -1,0 +1,4118 @@
+{
+  "2018_jan_1P:1": {
+    "primary": "2.3",
+    "secondary": [
+      "4.1",
+      "2.2"
+    ],
+    "archetype": "solar cell charge calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:2": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2",
+      "3.2"
+    ],
+    "archetype": "bee force and motion graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:3": {
+    "primary": "1.3",
+    "secondary": [],
+    "archetype": "factors affecting stopping distance",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "mass from density measurement",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:5": {
+    "primary": "4.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "thermal energy loss house calculation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:6": {
+    "primary": "5.1",
+    "secondary": [
+      "1.6"
+    ],
+    "archetype": "chair centre of gravity pressure",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:7": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moment spanner force",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:8": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "plane mirror image formation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:9": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "pressure temperature graph extrapolation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:10": {
+    "primary": "4.3",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "moon hammer gpe work",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:11": {
+    "primary": "6.1",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "magnetic field bar magnet investigation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:12": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "brownian motion pollen evidence",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:13": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radiation absorption half-life",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_1P:14": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "thermistor resistance temperature graph",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_2P:1": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "renewable non-renewable energy classification",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_2P:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "power current voltage calculation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_2P:3": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "ripple tank diffraction wavelength calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_2P:4": {
+    "primary": "1.5",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "elastic collision momentum kinetic energy",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_2P:5": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "balloon pressure kinetic theory",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_2P:6": {
+    "primary": "6.2",
+    "secondary": [
+      "1.6"
+    ],
+    "archetype": "magnetic field force current experiment",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_jan_2P:7": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "oil film molecule length",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "label solar system diagram",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:2": {
+    "primary": "4.1",
+    "secondary": [
+      "1.4"
+    ],
+    "archetype": "trampoline energy transfer",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:3": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "toaster power and fuse calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density measurement experiment",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:5": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "resistance length relationship experiment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:6": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "electromagnetic spectrum uses hazards",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:7": {
+    "primary": "1.1",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "falling object v-t graph",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:8": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "thermistor circuit brightness",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:9": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field diagram identification",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radioactive isotope decay half-life",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:11": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "critical angle refraction calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1P:12": {
+    "primary": "4.1",
+    "secondary": [
+      "5.1",
+      "5.3",
+      "4.4"
+    ],
+    "archetype": "steam engine efficiency pressure",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:1": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "circuit diagram symbols identification",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:2": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "orbit differences mercury earth",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:3": {
+    "primary": "2.1",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "kettle heating effect power fuse",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:4": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:5": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "charging circuit resistance",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:6": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "frequency wavelength graph",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:7": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "knife pressure explanation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:8": {
+    "primary": "1.2",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "trolley force energy",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:9": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "satellite orbital period",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:10": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "ultraviolet intensity distance graph",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:11": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "ray diagram refraction reflection",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:12": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "carbon-14 decay half-life",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:13": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "thermal conduction experiment rods",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_1PR:14": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "fluid pressure bernoulli experiment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:1": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "vector momentum weight calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:2": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "wavelength speed frequency diagram",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:3": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "ramp angle time graph",
+    "confidence": 0.6,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:4": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "electromagnet construction material",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "melting point particle arrangement",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:6": {
+    "primary": "7.1",
+    "secondary": [],
+    "archetype": "gold foil atom structure",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:7": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "renewable energy advantages disadvantages",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2P:8": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "lever force moment",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:1": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "static electricity word fill",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:2": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "work done calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:3": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear reactor parts matching",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:4": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "magnet pins investigation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:5": {
+    "primary": "3.1",
+    "secondary": [
+      "1.5",
+      "4.4"
+    ],
+    "archetype": "space probe radio wave",
+    "confidence": 0.88,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "alternating voltage generator graph",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:7": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "lever yard-arm weight calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2018_may-jun_2PR:8": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "electromagnetic radiation health effects",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:1": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2",
+      "7.2"
+    ],
+    "archetype": "wave diagram wavelength amplitude",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "heater power fuse calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:3": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field bar magnet experiment",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "pressure area calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:5": {
+    "primary": "2.1",
+    "secondary": [
+      "4.3",
+      "4.1"
+    ],
+    "archetype": "electric motor lifting mass",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:6": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "parachute falling speed investigation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:7": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "average speed measurement method",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:8": {
+    "primary": "1.2",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "sledge force velocity graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:9": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radioactivity background measurement",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:10": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "pressure temperature volume gas",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:11": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "total internal reflection refractive index",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_1P:12": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "filament lamp v i graph",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "orbiting bodies force period",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:2": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "vector scalar identification",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:3": {
+    "primary": "4.3",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "roller coaster energy acceleration",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:4": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "density volume graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:5": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound temperature graph",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:6": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "nuclear power advantages disadvantages",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:7": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "step-down transformer turns current",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:8": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "crane moment weight calculation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_jan_2P:9": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "toy train momentum collision",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1P:1": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "electromagnetic spectrum uses",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:2": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field line diagram",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:3": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radiation type penetration",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:4": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "stopping distance graph calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:5": {
+    "primary": "1.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "hooke's law graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:6": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "circuit with ammeter voltmeter experiment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:7": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refraction index calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:8": {
+    "primary": "1.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "parachute force analysis",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:9": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "reactor components table",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:10": {
+    "primary": "6.2",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "circuit voltage and motor coil",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:11": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "pressure difference gas temperature",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1P:12": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "energy transfer falling dough",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "markscheme"
+  },
+  "2019_may-jun_1PR:1": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "star orbit force diagram",
+    "confidence": 0.8,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:2": {
+    "primary": "7.3",
+    "secondary": [
+      "7.2",
+      "8.2"
+    ],
+    "archetype": "nuclear fission and fusion",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:3": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "lead isotope half-life",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:4": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "pool thermal energy transfer",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:5": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "resistance cross-sectional area experiment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:6": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density pressure ball calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:7": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "ramp surface speed investigation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:8": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1",
+      "4.1"
+    ],
+    "archetype": "parachute velocity time graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:9": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refraction critical angle experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:10": {
+    "primary": "1.2",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "van braking force kinematics",
+    "confidence": 0.88,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_1PR:11": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field bar magnet investigation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:1": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "basic astrophysics multiple choice",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:2": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer turns voltage relationship",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:3": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "measure speed of sound experiment",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:4": {
+    "primary": "7.1",
+    "secondary": [],
+    "archetype": "alpha particle force diagram",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:5": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "moving source wavefront frequency",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:6": {
+    "primary": "5.2",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "dog heating water specific heat",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:7": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "big bang evidence explanation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:8": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moment balance bottle",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2P:9": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "ice melting pressure curve",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:1": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "solar farm advantages disadvantages",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:2": {
+    "primary": "3.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "sound wave speed wavelength doppler",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:3": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "static charge rod experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:4": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hr diagram stellar evolution description",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:5": {
+    "primary": "5.2",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "specific heat capacity heating graph",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer turns voltage ratio",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:7": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "elastic collision momentum calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2019_may-jun_2PR:8": {
+    "primary": "4.3",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "work done compressing gas",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:1": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnet terminology fill in",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "ship buoyancy pressure calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:3": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "circuit diagram ammeter voltmeter",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:4": {
+    "primary": "5.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "pressure weight area calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:5": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "distance-time graph speed",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:6": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "insulated cup thermal transfer",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:7": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "syringe pressure boyle's law",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:8": {
+    "primary": "1.1",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "car acceleration doppler radar",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:9": {
+    "primary": "7.1",
+    "secondary": [],
+    "archetype": "gamma radiation absorption experiment",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:10": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "prism critical angle calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:11": {
+    "primary": "7.2",
+    "secondary": [],
+    "archetype": "half-life activity graph",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1P:12": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "comet orbit drawing calculation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:1": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "water wave amplitude wavelength",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "oil column pressure calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:3": {
+    "primary": "1.3",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "stopping distance work calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:4": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar evolution description",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:5": {
+    "primary": "1.2",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "free fall air resistance",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:6": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "ldr series circuit voltage",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:7": {
+    "primary": "2.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "van de graaff voltage energy",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:8": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "rock density measurement",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:9": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "alpha decay activity calculation",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:10": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index sin graph",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:11": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "pressure volume inverse relationship",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_1PR:12": {
+    "primary": "1.2",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "magnetic force on current wire",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:1": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "renewable energy resource table",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:2": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density mass volume calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:3": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum conservation collision force",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:4": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "static electricity charging current",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:5": {
+    "primary": "3.1",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "sonometer frequency length investigation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:6": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "absolute magnitude hr diagram",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:7": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "uranium glass alpha decay",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2P:8": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "magnetic field coil wireless charging",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:1": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "em spectrum matching",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:2": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "table moment equilibrium",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:3": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum conservation calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:4": {
+    "primary": "4.3",
+    "secondary": [
+      "4.1",
+      "1.5"
+    ],
+    "archetype": "hammer work-energy",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "temperature-time heating curve",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "step-up transformer calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:7": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "proton circular motion magnetic field",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_jan_2PR:8": {
+    "primary": "3.4",
+    "secondary": [
+      "1.4",
+      "8.3"
+    ],
+    "archetype": "spring buzzer frequency measurement",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:1": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "wave behaviour matching",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:2": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "train v-t graph acceleration",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:3": {
+    "primary": "8.2",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "star evolution fusion reactor",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:4": {
+    "primary": "1.4",
+    "secondary": [
+      "4.1",
+      "1.2"
+    ],
+    "archetype": "rubber band energy forces",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:5": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "current voltage graph investigation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:6": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "thermistor voltage divider explanation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:7": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1",
+      "1.1"
+    ],
+    "archetype": "gas pressure temperature height",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:8": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "mirage critical angle calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:9": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3",
+      "3.1"
+    ],
+    "archetype": "generator loudspeaker wave",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:10": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "gamma radiation inverse square",
+    "confidence": 0.92,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1P:11": {
+    "primary": "8.1",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "satellite orbit height",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "space terminology fill",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:2": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "fission chain reaction table",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:3": {
+    "primary": "1.1",
+    "secondary": [
+      "3.4",
+      "4.3"
+    ],
+    "archetype": "meteor explosion speed calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:4": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "star formation evolution",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:5": {
+    "primary": "2.1",
+    "secondary": [
+      "2.2"
+    ],
+    "archetype": "toaster power current",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:6": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density identification experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:7": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "animal heat loss comparison",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:8": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "motor efficiency voltage investigation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:9": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "circuit analysis resistor component",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:10": {
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "bicycle dynamo magnetic induction",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:11": {
+    "primary": "1.3",
+    "secondary": [],
+    "archetype": "braking distance acceleration calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:12": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "critical angle refractive index",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_1PR:13": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "egg flask pressure change",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:1": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "liquid nitrogen density calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:2": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3",
+      "2.2"
+    ],
+    "archetype": "electrostatic charge transfer experiment",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:3": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "bin moments force calculation",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:4": {
+    "primary": "4.4",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "solar power advantages discussion",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:5": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "radio wave distance doppler",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:6": {
+    "primary": "5.2",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "thermal tile insulation water heating",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:7": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "magnetic field loop diagram",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2P:8": {
+    "primary": "6.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "step-down transformer current calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:1": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "electrostatic charging plastic rod",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:2": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "x-ray frequency period wavelength",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:3": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "centre of gravity lever",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:4": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound temperature experiment",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:5": {
+    "primary": "4.1",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "solar panel heating water",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:6": {
+    "primary": "5.2",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "energy transfer state change",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:7": {
+    "primary": "6.2",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "electromagnet half-life explanation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2020_oct-nov_2PR:8": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "big bang evidence description",
+    "confidence": 0.92,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:1": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "stellar evolution passage",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:2": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "speed camera acceleration graph",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:3": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "series bulb circuit calculations",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:4": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "hair dryer fuse power",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:5": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "radioactive source safety half-life",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:6": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "temperature effect on bounce investigation",
+    "confidence": 0.92,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:7": {
+    "primary": "6.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "magnet lifting iron ball",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:8": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "kinetic energy of gas particles",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:9": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index glass experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:10": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "convection current near bar",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1P:11": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density measurement bottle method",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:1": {
+    "primary": "4.1",
+    "secondary": [],
+    "archetype": "energy store matching diagram",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:2": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "electromagnetic spectrum identification",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:3": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "orbital speed calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:4": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "pressure-temperature graph analysis",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:5": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "velocity-time graph distance",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:6": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refraction angle calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:7": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "bubble pressure depth calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:8": {
+    "primary": "6.1",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "magnetic field lines induction",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:9": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "sound doppler effect explanation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:10": {
+    "primary": "7.2",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "nuclear fission half-life problem",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:11": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "work energy ramp problem",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_1PR:12": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "variable resistor voltage current experiment",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:1": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1",
+      "3.4"
+    ],
+    "archetype": "light vs sound wave properties",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:2": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "fission neutron release",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:3": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moment distance graph",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:4": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "energy resource bar chart",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:5": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "step-down transformer calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:6": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hr diagram star placement",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:7": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "magnet ball momentum transfer",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2P:8": {
+    "primary": "1.1",
+    "secondary": [
+      "2.4",
+      "1.2"
+    ],
+    "archetype": "electrostatic deflection distance",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:1": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "temperature time graph specific heat",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:2": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "moment calculation lever",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:3": {
+    "primary": "1.5",
+    "secondary": [
+      "6.1",
+      "1.2"
+    ],
+    "archetype": "magnetic repulsion momentum",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:4": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "oscilloscope sound speed",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:5": {
+    "primary": "7.1",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "aircraft takeoff radiation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:6": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "cosmic microwave background redshift",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:7": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4",
+      "4.3"
+    ],
+    "archetype": "electrostatic charging water droplets",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_jan_2PR:8": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "step-down transformer explanation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:1": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "stellar temperature life cycle mcq",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:2": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field direction apparatus",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:3": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "nuclear fission chain reaction model",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:4": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "velocity time graph braking distance",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:5": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "led iv characteristic",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:6": {
+    "primary": "4.2",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "convection current formation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "half-life multiple decay calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:8": {
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "induced emf moving wire",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:9": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "free fall velocity calculation",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:10": {
+    "primary": "5.1",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "hydraulic lift pressure calculation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_1P:11": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index and critical angle",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:1": {
+    "primary": "8.2",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "hr diagram region",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:2": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound experiment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:3": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "electrostatic charging plastic tube",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:4": {
+    "primary": "6.2",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "loudspeaker coil magnetic field",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:6": {
+    "primary": "7.3",
+    "secondary": [
+      "6.3",
+      "2.1"
+    ],
+    "archetype": "fusion power station transformer",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_may-jun_2P:7": {
+    "primary": "1.5",
+    "secondary": [
+      "4.3",
+      "1.1"
+    ],
+    "archetype": "blocks spring collision momentum",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:1": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "graph types motion identification",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:2": {
+    "primary": "2.1",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "electric heater current calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:3": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "shaking torch generator",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:4": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "activity time graph half-life",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:5": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "mass measurement mean",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:6": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index glass block",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:7": {
+    "primary": "6.2",
+    "secondary": [
+      "3.4"
+    ],
+    "archetype": "loudspeaker electromagnetic sound",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:8": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "moon orbital speed weight",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:9": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "pressure force area graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:10": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "rubber band hooke's law experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:11": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "circuit with ammeter voltmeter resistors",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_1P:12": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "solar pipe convection cooling",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:1": {
+    "primary": "8.3",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "big bang evidence table",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:2": {
+    "primary": "4.3",
+    "secondary": [
+      "4.4",
+      "4.1"
+    ],
+    "archetype": "hydroelectric power calculation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:3": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "archetype": "gas pressure temperature graph",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:4": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "lithium-6 fission equation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:5": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "metre rule moments investigation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:6": {
+    "primary": "6.3",
+    "secondary": [
+      "6.1"
+    ],
+    "archetype": "transformer voltage turns ratio",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:7": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "electrostatic paint sprayer advantage",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2021_oct-nov_2P:8": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "oscilloscope sound frequency measurement",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:1": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnetic field bar magnet diagram",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:2": {
+    "primary": "7.2",
+    "secondary": [],
+    "archetype": "half-life graph activity",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:3": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "wifi wavelength calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:4": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "plane mirror angle measurement",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:5": {
+    "primary": "1.3",
+    "secondary": [
+      "1.2",
+      "1.1"
+    ],
+    "archetype": "car stopping distance calculation",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:6": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2",
+      "1.3"
+    ],
+    "archetype": "speed-time graph projectile",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:7": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "thermistor voltage resistance temperature",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:8": {
+    "primary": "4.1",
+    "secondary": [
+      "4.2",
+      "8.1"
+    ],
+    "archetype": "energy stores orbital speed",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:9": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "spring extension hooke's law experiment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:10": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "prism refractive index calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:11": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas law pressure volume temperature",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1P:12": {
+    "primary": "6.2",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "electric fan motor efficiency",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:1": {
+    "primary": "7.1",
+    "secondary": [],
+    "archetype": "gamma radiation penetration variables",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:2": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "electromagnetic wave wavelength calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:3": {
+    "primary": "6.1",
+    "secondary": [],
+    "archetype": "magnet repulsion force explanation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:4": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "scalar vector identification",
+    "confidence": 0.8,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:5": {
+    "primary": "4.1",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "efficiency calculation nuclear fission",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:6": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "star temperature ordering evolution",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:7": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:8": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "sound wave distance calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:9": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "circuit diagram component symbols",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:10": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "light gate acceleration experiment",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:11": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "tyre pressure temperature calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_1PR:12": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "insulated box heat transfer",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:1": {
+    "primary": "1.5",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "airbag momentum impulse",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:2": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "solid particle arrangement",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:3": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear fusion description",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:4": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "solenoid magnetic field vs distance",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:5": {
+    "primary": "4.3",
+    "secondary": [],
+    "archetype": "ramp gpe ke calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:6": {
+    "primary": "3.4",
+    "secondary": [
+      "6.2",
+      "2.1"
+    ],
+    "archetype": "mri electromagnet sound analysis",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:7": {
+    "primary": "4.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "hydroelectric vs wind discussion",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:8": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "redshift wavelength calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2P:9": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:1": {
+    "primary": "4.4",
+    "secondary": [],
+    "archetype": "energy resource generation table",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:2": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum impact force calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:3": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "speed of sound measurement experiment",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:4": {
+    "primary": "6.3",
+    "secondary": [
+      "4.3",
+      "2.1"
+    ],
+    "archetype": "motor generator power calculation",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:5": {
+    "primary": "7.3",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "fusion reaction energy estimate",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:6": {
+    "primary": "8.3",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "galaxy redshift speed calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:7": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "cooling curve gradient tangent",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_jan_2PR:8": {
+    "primary": "1.2",
+    "secondary": [
+      "2.4",
+      "2.3"
+    ],
+    "archetype": "electrostatic dome charging current",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "comet orbit diagram labeling",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:2": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "atomic number isotopes mcq",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:3": {
+    "primary": "3.1",
+    "secondary": [
+      "3.3"
+    ],
+    "archetype": "ultrasonic distance measurement",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:4": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "planet orbital speed period",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:5": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radioactive decay hazards",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:6": {
+    "primary": "1.2",
+    "secondary": [],
+    "archetype": "vector quantity forces diagram",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:7": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "circuit current fuse led",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:8": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "toy car energy efficiency",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:9": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "hydrostatic pressure bottle",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:10": {
+    "primary": "4.1",
+    "secondary": [
+      "1.1",
+      "4.3"
+    ],
+    "archetype": "free fall energy transfer",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:11": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "projectile range table height",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1P:12": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "ammeter induced current experiment",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:1": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "basic astrophysics mcq",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:2": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "electromagnetic wave uses matching",
+    "confidence": 0.92,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:3": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "photoresistor voltage calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:4": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "ice cube pressure calculation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:5": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "star wavelength temperature relation",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:6": {
+    "primary": "2.2",
+    "secondary": [
+      "6.2",
+      "2.1"
+    ],
+    "archetype": "loudspeaker circuit analysis",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:7": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radon half-life activity",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:8": {
+    "primary": "5.1",
+    "secondary": [
+      "4.2"
+    ],
+    "archetype": "hailstone density determination",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:9": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "archetype": "pressure change heating container",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:10": {
+    "primary": "6.3",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "induced emf trolley motion",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:11": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "water wave reflection diagram",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_1PR:12": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2",
+      "4.1"
+    ],
+    "archetype": "parachutist free fall energy",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:1": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "appliance power measurement",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:2": {
+    "primary": "1.5",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "explosion momentum egg impact",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:3": {
+    "primary": "2.3",
+    "secondary": [
+      "2.1",
+      "6.3"
+    ],
+    "archetype": "charger power and charge time",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:4": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "ultrasound oscilloscope frequency",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:5": {
+    "primary": "7.3",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "nuclear reactor moderator control rod",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:6": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "big bang evidence discussion",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2P:7": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:1": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hr diagram star classification",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:2": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "sound speed measurement",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:3": {
+    "primary": "2.4",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "particle accelerator charge",
+    "confidence": 0.71,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:4": {
+    "primary": "5.2",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "water heating energy",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:5": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer step-up step-down",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:6": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "refractive index experiment",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2022_may-jun_2PR:7": {
+    "primary": "1.6",
+    "secondary": [
+      "1.4"
+    ],
+    "archetype": "gate spring moment",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:1": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "elastic behaviour hooke's law",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:2": {
+    "primary": "6.1",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "magnetic field uniform induction",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:3": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "winch work efficiency sankey",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:4": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "radioactive count rate attenuation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:5": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "archetype": "stopping distance reaction time",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:6": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "optical fibre refraction total internal",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:7": {
+    "primary": "2.2",
+    "secondary": [
+      "2.3",
+      "2.1"
+    ],
+    "archetype": "filament lamp v-i graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:8": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "star colour temperature evolution",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:9": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "wave amplitude wavelength measurement",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:10": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "hot cold water temperature graph",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1P:11": {
+    "primary": "5.3",
+    "secondary": [],
+    "archetype": "gas pressure temperature calculation",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:1": {
+    "primary": "8.1",
+    "secondary": [
+      "3.3"
+    ],
+    "archetype": "laser moon distance calculation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:2": {
+    "primary": "8.1",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "earth orbit speed sun evolution",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:3": {
+    "primary": "5.1",
+    "secondary": [
+      "1.3"
+    ],
+    "archetype": "balloon terminal velocity pressure",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:4": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "filament lamp v-i graph",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:5": {
+    "primary": "7.3",
+    "secondary": [
+      "7.2"
+    ],
+    "archetype": "fusion fission safety half-life",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:6": {
+    "primary": "4.2",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "computer case heat transfer power",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:7": {
+    "primary": "3.3",
+    "secondary": [],
+    "archetype": "glass block refractive index",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:8": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "density measurement displacement",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:9": {
+    "primary": "4.3",
+    "secondary": [
+      "7.1",
+      "7.2"
+    ],
+    "archetype": "radiation penetration alpha kinetic",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:10": {
+    "primary": "1.2",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "firework thrust acceleration",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_1PR:11": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "oersted experiment magnetic field",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:1": {
+    "primary": "2.4",
+    "secondary": [],
+    "archetype": "static electricity plastic wrapping",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:2": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "solid liquid particle arrangement",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:3": {
+    "primary": "4.3",
+    "secondary": [
+      "7.3"
+    ],
+    "archetype": "nuclear fission power calculation",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:4": {
+    "primary": "1.4",
+    "secondary": [],
+    "archetype": "temperature bounce height experiment",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:5": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "lever balance moment calculation",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:6": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "magnetic field around current wire",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:7": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "oscilloscope sound speed measurement",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2P:8": {
+    "primary": "8.1",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "binary star orbital radius calculation",
+    "confidence": 0.92,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:1": {
+    "primary": "8.2",
+    "secondary": [],
+    "archetype": "hr diagram magnitude temperature",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:2": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "wave speed frequency calculation",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:3": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "electrostatic charge experiment",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:4": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "circuit resistor series calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:5": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "transformer step-down efficiency",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:6": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity water experiment",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:7": {
+    "primary": "1.5",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "crumple zone impulse",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_jan_2PR:8": {
+    "primary": "8.3",
+    "secondary": [],
+    "archetype": "hubble redshift graph analysis",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:1": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "radioactivity half-life graph",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:2": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "filament lamp v-i graph",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:3": {
+    "primary": "2.1",
+    "secondary": [],
+    "archetype": "standby power energy calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:4": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "radio wave refraction wavelength",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:5": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "pressure measurement method",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:6": {
+    "primary": "5.1",
+    "secondary": [
+      "3.1"
+    ],
+    "archetype": "electromagnetic wave properties density",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:7": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "electric motor energy efficiency",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:8": {
+    "primary": "4.2",
+    "secondary": [],
+    "archetype": "snow melt thermal transfer",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:9": {
+    "primary": "1.1",
+    "secondary": [
+      "5.1",
+      "5.3"
+    ],
+    "archetype": "pressure manometer graph analysis",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:10": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "ball roll distance-time experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:11": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "led series parallel current",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1P:12": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3"
+    ],
+    "archetype": "metal detector electromagnetic induction",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:1": {
+    "primary": "3.2",
+    "secondary": [],
+    "archetype": "electromagnetic spectrum uses hazards",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:2": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "iss orbital speed calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:3": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "motor efficiency sankey diagram",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:4": {
+    "primary": "6.1",
+    "secondary": [
+      "6.2"
+    ],
+    "archetype": "bar magnet field force diagram",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:5": {
+    "primary": "3.1",
+    "secondary": [],
+    "archetype": "doppler effect moving source",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:6": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "iv characteristic resistor experiment",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "half-life decay graph activity",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:8": {
+    "primary": "1.1",
+    "secondary": [
+      "1.4"
+    ],
+    "archetype": "spring vibration distance-time graph",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:9": {
+    "primary": "1.2",
+    "secondary": [
+      "1.1",
+      "4.2"
+    ],
+    "archetype": "braking deceleration energy explanation",
+    "confidence": 0.88,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:10": {
+    "primary": "5.1",
+    "secondary": [],
+    "archetype": "pressure depth water calculation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_1PR:11": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "gravity inverse square law",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:1": {
+    "primary": "1.6",
+    "secondary": [
+      "1.2"
+    ],
+    "archetype": "pencil lever moment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:2": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "solid heating temperature graph",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:3": {
+    "primary": "4.3",
+    "secondary": [
+      "2.4",
+      "1.1"
+    ],
+    "archetype": "oscilloscope electron speed calculation",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:4": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "bird collision momentum",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:5": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "nuclear fission reactor chain",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:6": {
+    "primary": "6.3",
+    "secondary": [],
+    "archetype": "step-up transformer turns",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:7": {
+    "primary": "3.3",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "prism refractive index experiment",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2P:8": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "concrete specific heat experiment",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:1": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2",
+      "4.3"
+    ],
+    "archetype": "quantity unit matching",
+    "confidence": 0.7,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:2": {
+    "primary": "4.4",
+    "secondary": [
+      "4.1"
+    ],
+    "archetype": "energy generation methods discussion",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:3": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "static electricity sponge experiment",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:4": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "momentum mass velocity",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:6": {
+    "primary": "6.2",
+    "secondary": [],
+    "archetype": "electromagnet current load graph",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:7": {
+    "primary": "3.4",
+    "secondary": [],
+    "archetype": "human audible frequency",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_may-jun_2PR:8": {
+    "primary": "8.3",
+    "secondary": [
+      "8.2"
+    ],
+    "archetype": "redshift supernova speed",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:1": {
+    "primary": "8.1",
+    "secondary": [
+      "8.3"
+    ],
+    "archetype": "basic astrophysics multiple choice",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:2": {
+    "primary": "2.3",
+    "secondary": [],
+    "archetype": "current time graph identification",
+    "confidence": 0.85,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:3": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "archetype": "microwave wavelength speed",
+    "confidence": 0.9,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:4": {
+    "primary": "2.1",
+    "secondary": [
+      "3.3",
+      "6.1",
+      "2.2"
+    ],
+    "archetype": "filament lamp circuit reflection",
+    "confidence": 0.88,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "metal conduction experiment",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:6": {
+    "primary": "1.1",
+    "secondary": [],
+    "archetype": "velocity time graph acceleration",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "archetype": "carbon dating graph analysis",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:8": {
+    "primary": "8.1",
+    "secondary": [],
+    "archetype": "circular orbit period",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:9": {
+    "primary": "6.3",
+    "secondary": [
+      "7.3",
+      "2.1"
+    ],
+    "archetype": "nuclear power station generator",
+    "confidence": 0.95,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:10": {
+    "primary": "2.2",
+    "secondary": [],
+    "archetype": "resistor circuit current calculation",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:11": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "archetype": "barometer gas temperature pressure",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_1P:12": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "archetype": "marble run energy loss",
+    "confidence": 0.93,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:1": {
+    "primary": "7.3",
+    "secondary": [],
+    "archetype": "fusion vs fission conditions",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:2": {
+    "primary": "1.6",
+    "secondary": [],
+    "archetype": "lever arm force calculation",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:3": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "specific heat capacity experiment",
+    "confidence": 0.99,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:4": {
+    "primary": "6.3",
+    "secondary": [
+      "2.1"
+    ],
+    "archetype": "step-down transformer operation",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:5": {
+    "primary": "5.2",
+    "secondary": [],
+    "archetype": "steam cooling temperature graph",
+    "confidence": 0.96,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:6": {
+    "primary": "1.5",
+    "secondary": [],
+    "archetype": "spacecraft engine momentum problem",
+    "confidence": 0.98,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:7": {
+    "primary": "3.4",
+    "secondary": [
+      "2.3"
+    ],
+    "archetype": "oscilloscope sound wave analysis",
+    "confidence": 0.94,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  },
+  "2023_oct-nov_2P:8": {
+    "primary": "8.3",
+    "secondary": [
+      "8.1"
+    ],
+    "archetype": "redshift galaxy velocity",
+    "confidence": 0.97,
+    "model": "openai/gpt-oss-120b",
+    "route": "text"
+  }
+}

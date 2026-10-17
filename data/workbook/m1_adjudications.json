@@ -1,0 +1,275 @@
+{
+  "M1.2019_jan.Q005": {
+    "primary": "5.2",
+    "secondary": [
+      "5.1",
+      "1.1"
+    ],
+    "reason": "box hanging on two ropes in equilibrium"
+  },
+  "M1.2019_jan.Q006": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "train journey: speed-time graph, area as distance"
+  },
+  "M1.2019_may-jun.Q002": {
+    "primary": "4.4",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "broom pushed at constant speed against friction F = muR"
+  },
+  "M1.2019_oct-nov.Q006": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1",
+      "1.1"
+    ],
+    "reason": "athlete's speed-time graph, area as distance"
+  },
+  "M1.2020_jan.Q004": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "rings on a rough wire on the point of sliding"
+  },
+  "M1.2020_oct-nov.Q003": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "greatest and least P on a rough plane (limiting friction)"
+  },
+  "M1.2021_jan.Q003": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "smallest T for equilibrium on a rough floor"
+  },
+  "M1.2021_jan.Q007": {
+    "primary": "3.3",
+    "secondary": [
+      "3.2",
+      "3.1"
+    ],
+    "reason": "parachutist's speed-time graph across three phases"
+  },
+  "M1.2021_may-jun.Q003": {
+    "primary": "4.1",
+    "secondary": [
+      "2.1",
+      "5.2"
+    ],
+    "reason": "F = ma with i, j forces 5 > equilibrium angle 4"
+  },
+  "M1.2021_may-jun.Q006": {
+    "primary": "4.2",
+    "secondary": [
+      "4.4"
+    ],
+    "reason": "particle up and down a rough inclined plane"
+  },
+  "M1.2021_may-jun.Q008": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "two trams on speed-time graphs, overtaking"
+  },
+  "M1.2021_oct-nov.Q002": {
+    "primary": "4.4",
+    "secondary": [
+      "4.3"
+    ],
+    "reason": "friction bringing Q to rest 6 > collision 4"
+  },
+  "M1.2021_oct-nov.Q004": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "reason": "position vector: angle and distance from O"
+  },
+  "M1.2021_oct-nov.Q005": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "bead on a rough wire, greatest thrust, find mu"
+  },
+  "M1.2022_jan.Q006": {
+    "primary": "2.2",
+    "secondary": [
+      "4.1",
+      "2.1"
+    ],
+    "reason": "force, acceleration and velocity as i, j vectors"
+  },
+  "M1.2022_may-jun.Q004": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "friction on a block at rest and on the point of slipping"
+  },
+  "M1.2022_may-jun.Q006": {
+    "primary": "2.2",
+    "secondary": [],
+    "reason": "constant acceleration with velocity vectors"
+  },
+  "M1.2022_oct-nov.Q003": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "rough inclined plane, smallest horizontal force"
+  },
+  "M1.2022_oct-nov.Q006": {
+    "primary": "2.2",
+    "secondary": [
+      "4.1"
+    ],
+    "reason": "direction of motion and speed from i, j forces"
+  },
+  "M1.2023_jan.Q001": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "train journey: speed-time graph, area as distance"
+  },
+  "M1.2023_jan.Q003": {
+    "primary": "2.2",
+    "secondary": [
+      "2.1"
+    ],
+    "reason": "constant acceleration with velocity vectors"
+  },
+  "M1.2023_jan.Q006": {
+    "primary": "5.2",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "boat at constant speed: forces in equilibrium"
+  },
+  "M1.2023_jan.Q008": {
+    "primary": "4.2",
+    "secondary": [
+      "4.4",
+      "3.1"
+    ],
+    "reason": "parcel pulled up a rough inclined plane"
+  },
+  "M1.2023_may-jun.Q003": {
+    "primary": "4.1",
+    "secondary": [
+      "3.2",
+      "1.1"
+    ],
+    "reason": "resistance from F = ma 5 > free fall 3"
+  },
+  "M1.2023_oct-nov.Q003": {
+    "primary": "4.3",
+    "secondary": [
+      "4.1"
+    ],
+    "reason": "collision and impulse 5 = resistance 5; momentum first"
+  },
+  "M1.2023_oct-nov.Q005": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "ring on a rough rod: minimum and maximum tension"
+  },
+  "M1.2024_may-jun.Q003": {
+    "primary": "4.2",
+    "secondary": [
+      "4.1"
+    ],
+    "reason": "two connected particles accelerating"
+  },
+  "M1.2024_may-jun.Q005": {
+    "primary": "4.1",
+    "secondary": [
+      "3.2",
+      "3.3"
+    ],
+    "reason": "resistance from the parachute, F = ma 10 > free fall 2"
+  },
+  "M1.2024_oct-nov.Q004": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "two cyclists on speed-time graphs"
+  },
+  "M1.2024_oct-nov.Q006": {
+    "primary": "5.3",
+    "secondary": [
+      "4.2"
+    ],
+    "reason": "limiting equilibrium 6 = sliding down the slope 6"
+  },
+  "M1.2024_oct-nov.Q007": {
+    "primary": "3.2",
+    "secondary": [
+      "4.3"
+    ],
+    "reason": "vertical motion under gravity 6 > impulse 5"
+  },
+  "M1.2025_jan.Q001": {
+    "primary": "2.1",
+    "secondary": [
+      "4.1"
+    ],
+    "reason": "resultant of i, j forces: magnitude and direction"
+  },
+  "M1.2025_jan.Q002": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "motorbike speed-time graph, areas as distances"
+  },
+  "M1.2025_jan.Q006": {
+    "primary": "5.3",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "rough plane, on the point of moving"
+  },
+  "M1.2025_may-jun.Q006": {
+    "primary": "4.2",
+    "secondary": [
+      "5.3",
+      "3.1"
+    ],
+    "reason": "projected up a rough inclined plane 8 > held at rest 3"
+  },
+  "M1.2025_oct-nov.Q006": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "velocity-time and acceleration-time graphs"
+  },
+  "M1.2026_jan.Q002": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "speed-time graph, area as distance, acceleration-time graph"
+  },
+  "M1.2020_jan.Q005": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "car and motorcyclist on speed-time graphs, catching up; same type as the trams and cyclists questions (models agreed on 3.1; overridden for consistency)"
+  }
+}

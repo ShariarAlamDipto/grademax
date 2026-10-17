@@ -1,0 +1,137 @@
+{
+  "n": 4,
+  "title": "Energy Resources and Energy Transfers",
+  "blurb": "Smaller than the first three chapters, but very predictable: specific heat capacity (definition, calculation and experiment) plus one discussion question on generating electricity.",
+  "formulas": [
+    [
+      "gravitational potential energy",
+      "mass × g × height",
+      "J"
+    ],
+    [
+      "kinetic energy",
+      "½ × mass × velocity²",
+      "J"
+    ],
+    [
+      "thermal energy change",
+      "mass × specific heat capacity × temperature change",
+      "J"
+    ],
+    [
+      "efficiency",
+      "useful energy output ÷ total energy input (× 100%)",
+      "no unit"
+    ],
+    [
+      "power",
+      "work done ÷ time taken",
+      "W"
+    ]
+  ],
+  "items": [
+    {
+      "q": "State what is meant by the term specific heat capacity.",
+      "rx": "meant by the term specific heat capacity",
+      "marks": "1–2 marks",
+      "a": [
+        "The energy needed to raise the temperature of 1 kg of a substance",
+        "by 1 °C (or 1 K)."
+      ],
+      "tip": "You must have all three parts: the energy, the 1 kg, and the 1 degree. Missing the mass loses the mark."
+    },
+    {
+      "q": "Use the student's results to calculate the specific heat capacity of the water / liquid.",
+      "rx": "(calculate|determine|find|use).{0,60}specific heat capacity",
+      "marks": "3–4 marks",
+      "a": [
+        "Find the energy supplied, e.g. E = I × V × t (or read it from the joulemeter);",
+        "use the rearranged formula c = energy ÷ (mass × temperature change);",
+        "substitute with mass in kg and the temperature change (not the final temperature);",
+        "evaluate and give the unit J/(kg °C)."
+      ],
+      "tip": "Δθ is the change in temperature. Subtract the start from the finish - do not use the final reading on its own."
+    },
+    {
+      "q": "Describe an investigation to determine the specific heat capacity of water.",
+      "rx": "(describe|investigation).{0,80}specific heat capacity",
+      "marks": "4–6 marks",
+      "a": [
+        "Measure the mass of the water with a balance (weigh the beaker empty, then with water, and subtract);",
+        "record the starting temperature with a thermometer;",
+        "heat with an electrical immersion heater for a measured time using a stopwatch;",
+        "measure the current and voltage with an ammeter and voltmeter, so energy = I × V × t;",
+        "record the final (highest) temperature and find the temperature change;",
+        "calculate c = energy ÷ (mass × temperature change);",
+        "insulate the container and use a lid to reduce heat loss to the surroundings."
+      ],
+      "tip": "The improvement mark is almost always about insulation or lagging. The main systematic error is energy lost to the surroundings, which makes the measured value too high."
+    },
+    {
+      "q": "Discuss the advantages and disadvantages of generating electricity using solar panels / solar farms.",
+      "rx": "solar (panel|farm|cell)|generating electricity using",
+      "marks": "4–6 marks",
+      "a": [
+        "Advantages: renewable and will not run out; no carbon dioxide or other polluting gases released while generating; low running costs; useful in remote locations with no grid connection;",
+        "Disadvantages: high initial installation cost; output depends on the weather and the time of day, and is zero at night; needs a very large area of land for the power produced; energy cannot easily be stored for later use."
+      ],
+      "tip": "Balance the answer - give both sides. Naming a specific comparison with fossil fuels or another named source usually picks up the last mark."
+    },
+    {
+      "q": "Describe the energy transfers taking place.",
+      "rx": "(describe|state|complete).{0,60}energy (transfer|store)",
+      "marks": "2–3 marks",
+      "a": [
+        "Name the store the energy starts in and the store it ends in (chemical, kinetic, gravitational potential, elastic, thermal, nuclear);",
+        "name the pathway: mechanically (by a force), electrically, by heating, or by radiation;",
+        "state that energy is conserved - the total stays the same, but some is dissipated to the surroundings as thermal energy."
+      ],
+      "tip": "Use the word 'store' and the word 'transferred'. Never say energy is 'used up', 'lost' or 'created'."
+    },
+    {
+      "q": "Calculate the efficiency of the device.",
+      "rx": "(calculate|determine).{0,50}efficiency|efficiency of (the|this)",
+      "marks": "2–3 marks",
+      "a": [
+        "efficiency = useful energy (or power) output ÷ total energy (or power) input;",
+        "multiply by 100 if a percentage is asked for;",
+        "the answer must be less than 1 (or less than 100%)."
+      ],
+      "tip": "Wasted energy = total input − useful output. If your efficiency comes out above 100%, you have the fraction upside down."
+    },
+    {
+      "q": "Explain how thermal energy is transferred by conduction, convection and radiation, and how the transfer can be reduced.",
+      "rx": "\\b(conduction|convection)\\b",
+      "marks": "3–6 marks",
+      "a": [
+        "Conduction: particles vibrate more and pass energy to neighbouring particles; in metals free electrons carry energy quickly, which is why metals are good conductors;",
+        "Convection: heated fluid expands and becomes less dense, so it rises, and cooler denser fluid sinks to replace it, forming a convection current;",
+        "Radiation: energy transferred as infrared electromagnetic waves and needs no medium; dull black surfaces are the best emitters and absorbers, shiny silver surfaces the worst;",
+        "To reduce transfer: use insulation and trapped air (a poor conductor), shiny reflective surfaces, and a vacuum to stop conduction and convection."
+      ],
+      "tip": "Convection needs the words 'less dense' and 'rises'. Saying 'heat rises' on its own scores nothing."
+    },
+    {
+      "q": "Use conservation of energy to find the speed of a falling object (GPE to KE).",
+      "rx": "(calculate|determine|show that).{0,70}(gravitational potential energy|\\bGPE\\b|kinetic energy)",
+      "marks": "3–4 marks",
+      "a": [
+        "GPE lost = mass × g × height;",
+        "assume all of this is transferred to the kinetic energy store: ½ × m × v² = m × g × h;",
+        "rearrange for v and evaluate;",
+        "in reality some energy is transferred to thermal energy by air resistance, so the real speed is lower."
+      ]
+    },
+    {
+      "q": "Compare renewable and non-renewable energy resources.",
+      "rx": "\\b(renewable|fossil fuel|hydroelectric|geothermal|tidal|biomass)\\b|wind (turbine|farm|power)",
+      "marks": "2–4 marks",
+      "a": [
+        "Non-renewable (coal, oil, gas, nuclear fuel) will run out; they are reliable and give a large, controllable output on demand;",
+        "fossil fuels release carbon dioxide, causing the enhanced greenhouse effect, and sulfur dioxide, causing acid rain;",
+        "renewables (wind, solar, hydroelectric, tidal, wave, geothermal, biomass) will not run out and release no CO₂ while generating;",
+        "but most renewables are unreliable, depending on the weather, the time of day or the tides, and have high set-up costs."
+      ]
+    }
+  ]
+}

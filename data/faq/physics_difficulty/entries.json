@@ -1,0 +1,3394 @@
+[
+ {
+  "stem": "State the formula linking voltage, current and resistance.",
+  "exemplar_stem": "State the equation linking voltage, current and resistance.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "banker",
+  "score": 0.3,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 11,
+  "appearances": 11,
+  "years": [
+   2018,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1R Q6(b)(i)",
+   "Jan 2021 Paper 1 Q3(c)(i)",
+   "Jan 2022 Paper 1 Q7(a)(ii)",
+   "Jan 2023 Paper 2R Q4(a)(i)",
+   "May-Jun 2018 Paper 1R Q5(a)(i)",
+   "May-Jun 2021 Paper 1 Q5(b)(v)",
+   "May-Jun 2023 Paper 1 Q2(b)(ii)",
+   "Oct-Nov 2021 Paper 1 Q11(a)(ii)",
+   "Oct-Nov 2023 Paper 1 Q10(a)(i)",
+   "Oct-Nov 2024 Paper 1 Q9(b)(ii)",
+   "Oct-Nov 2025 Paper 1 Q7(b)(i)"
+  ],
+  "points": [
+   "voltage = current × resistance"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "voltage = current × resistance"
+  ],
+  "notes": "allow in standard symbols and rearrangements e.g. V = I × R reject C, A for current",
+  "traps": [
+   "allow in standard symbols and rearrangements e.g. V = I × R reject C, A for current",
+   "allow any re-arrangement allow word equation condone ‘i’ for current reject ‘c’ or ‘C’ for current",
+   "allow standard symbols and rearrangements reject C, c for current"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking critical angle and refractive index.",
+  "exemplar_stem": "State the formula linking the refractive index and the critical angle of a material.",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 9,
+  "appearances": 9,
+  "years": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2024
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q11(b)(iv)",
+   "Jan 2020 Paper 1 Q10(a)(iii)",
+   "Jan 2020 Paper 1R Q10(a)(i)",
+   "May-Jun 2018 Paper 1 Q11(c)(i)",
+   "May-Jun 2021 Paper 1 Q11(a)(v)",
+   "May-Jun 2022 Paper 2R Q6(b)(ii)",
+   "Oct-Nov 2020 Paper 1 Q8(a)(i)",
+   "Oct-Nov 2020 Paper 1R Q12(a)(ii)",
+   "Oct-Nov 2024 Paper 1 Q6(b)(i)"
+  ],
+  "points": [
+   "sin(c) = 1/n"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "sin(c) = 1/n",
+   "sin(c) = 1 / n"
+  ],
+  "notes": "allow any correct rearrangement allow word formula",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking power, current and voltage.",
+  "exemplar_stem": "State the equation linking power, current and voltage.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "banker",
+  "score": 0.3,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 9,
+  "appearances": 9,
+  "years": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q2(b)(i)",
+   "Jan 2021 Paper 1 Q4(c)(i)",
+   "Jan 2023 Paper 1R Q6(c)(i)",
+   "May-Jun 2018 Paper 1 Q3(a)(i)",
+   "May-Jun 2018 Paper 1R Q3(c)(i)",
+   "May-Jun 2024 Paper 1R Q2(b)(i)",
+   "Oct-Nov 2020 Paper 1R Q5(b)(i)",
+   "Oct-Nov 2021 Paper 1 Q2(c)(i)",
+   "Oct-Nov 2024 Paper 1 Q3(b)(i)"
+  ],
+  "points": [
+   "power = current × voltage"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "power = current × voltage"
+  ],
+  "notes": "allow standard symbols and rearrangements e.g. P = I x V reject C / A for current, W for power",
+  "traps": [
+   "allow standard symbols and rearrangements e.g. P = I x V reject C / A for current, W for power",
+   "allow in standard symbols and rearrangements e.g. P = I × V reject C, A for current reject W for power",
+   "allow standard symbols and rearrangements e.g. P = I × V reject C for current, W for power"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Draw a line of best fit.",
+  "exemplar_stem": "Draw a straight line of best fit. 17",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "banker",
+  "score": 1.3,
+  "command": "apply",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 9,
+  "appearances": 9,
+  "years": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2025
+  ],
+  "sittings": [
+   "Jan 2018 Paper 2 Q6(c)(ii)",
+   "Jan 2019 Paper 2 Q5(b)(i)",
+   "Jan 2020 Paper 1R Q10(b)(iii)",
+   "Jan 2021 Paper 1R Q12(c)(iii)",
+   "Jan 2022 Paper 1 Q9(b)(iii)",
+   "Jan 2023 Paper 2R Q8(b)(ii)",
+   "May-Jun 2018 Paper 1 Q5(b)(iv)",
+   "May-Jun 2019 Paper 2R Q6(c)(ii)",
+   "Oct-Nov 2025 Paper 1 Q6(b)(iii)"
+  ],
+  "points": [
+   "straight line of best fit avoiding anomalous reading"
+  ],
+  "menu": false,
+  "recurring_points": [],
+  "notes": "",
+  "traps": [
+   "reject dot-to-dot lines"
+  ],
+  "why_hard": [
+   "carries forward from an earlier answer",
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking pressure, density, gravitational field strength and height.",
+  "exemplar_stem": "State the formula linking pressure difference, height, density and gravitational field strength.",
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "tier": "banker",
+  "score": 0.6,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 8,
+  "appearances": 8,
+  "years": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1 Q2(b)(i)",
+   "Jan 2020 Paper 1R Q2(b)",
+   "Jan 2021 Paper 1R Q7(a)(ii)",
+   "Jan 2023 Paper 1R Q3(b)(i)",
+   "May-Jun 2019 Paper 1R Q6(b)(i)",
+   "May-Jun 2022 Paper 1R Q4(b)(i)",
+   "Oct-Nov 2023 Paper 1 Q11(a)(i)",
+   "Oct-Nov 2024 Paper 1 Q7(b)(i)"
+  ],
+  "points": [
+   "pressure difference = height x density x g"
+  ],
+  "menu": false,
+  "recurring_points": [],
+  "notes": "allow use of standard symbols e.g. p = h x ρ x g reject ‘gravity’",
+  "traps": [
+   "allow use of standard symbols e.g. p = h x ρ x g reject ‘gravity’",
+   "accept d, h, height for depth rho, ρ for density g.f.s or gravitational field strength for g reject gravity for g",
+   "allow recognised symbols e.g. P or p for pressure d or h for depth ρ for density reject d for density, reject gravity for g"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking refractive index, angle of incidence and angle of refraction.",
+  "exemplar_stem": "State the equation linking refractive index, angle of incidence and angle of refraction. 9",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "banker",
+  "score": 0.1,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 8,
+  "appearances": 8,
+  "years": [
+   2018,
+   2021,
+   2022,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2021 Paper 1 Q9(a)(iii)",
+   "Jan 2021 Paper 1R Q6(b)",
+   "Jan 2022 Paper 1 Q10(a)(ii)",
+   "Jan 2023 Paper 1R Q7(a)(ii)",
+   "May-Jun 2018 Paper 1R Q4(c)(i)",
+   "May-Jun 2021 Paper 1 Q11(a)(iii)",
+   "May-Jun 2024 Paper 1R Q6(a)(ii)",
+   "Oct-Nov 2021 Paper 1 Q6(b)(iv)"
+  ],
+  "points": [
+   "n = sin i / sin r"
+  ],
+  "menu": false,
+  "recurring_points": [],
+  "notes": "allow in words and rearrangements",
+  "traps": [
+   "allow rearrangements reject n = i/r"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking charge, current and time.",
+  "exemplar_stem": "State the formula linking charge transferred, current and time taken.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "banker",
+  "score": 0.6,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 8,
+  "appearances": 8,
+  "years": [
+   2018,
+   2020,
+   2022,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1R Q7(b)(i)",
+   "Jan 2020 Paper 2 Q4(b)(ii)",
+   "Jan 2023 Paper 1 Q7(b)(i)",
+   "Jan 2023 Paper 2R Q3(d)(i)",
+   "May-Jun 2018 Paper 1R Q5(b)(i)",
+   "May-Jun 2022 Paper 2 Q3(b)(i)",
+   "Oct-Nov 2020 Paper 2 Q2(c)(i)",
+   "Oct-Nov 2024 Paper 2 Q2(b)(ii)"
+  ],
+  "points": [
+   "charge (transferred) = current x time"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "charge = current × time"
+  ],
+  "notes": "allow standard symbols and rearrangements e.g. I = Q / t reject C or c for current",
+  "traps": [
+   "allow standard symbols and rearrangements e.g. I = Q / t reject C or c for current",
+   "allow in standard symbols and rearrangements e.g. Q = I × t reject C for current and charge",
+   "allow standard symbols and rearrangements e.g. Q = I × t reject use of C/c for charge or current"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking speed, frequency and wavelength.",
+  "exemplar_stem": "State the equation linking speed, frequency and wavelength of a wave.",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 8,
+  "appearances": 8,
+  "years": [
+   2018,
+   2019,
+   2020,
+   2022,
+   2023,
+   2025
+  ],
+  "sittings": [
+   "Jan 2022 Paper 1 Q3(b)(i)",
+   "Jan 2022 Paper 1R Q2(c)(i)",
+   "May-Jun 2018 Paper 1R Q6(c)(i)",
+   "May-Jun 2019 Paper 2R Q2(c)(i)",
+   "May-Jun 2022 Paper 1 Q3(b)(i)",
+   "May-Jun 2023 Paper 1 Q4(a)(i)",
+   "May-Jun 2025 Paper 2R Q6(a)(i)",
+   "Oct-Nov 2020 Paper 1 Q9(b)(i)"
+  ],
+  "points": [
+   "(wave) speed = frequency × wavelength"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "speed = frequency × wavelength",
+   "(wave) speed = frequency × wavelength"
+  ],
+  "notes": "allow in standard symbols and rearrangements e.g. v = f × λ allow c for v",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking momentum, mass and velocity.",
+  "exemplar_stem": "State the equation linking momentum, mass and velocity.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.6,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 7,
+  "appearances": 7,
+  "years": [
+   2019,
+   2020,
+   2023,
+   2024,
+   2025
+  ],
+  "sittings": [
+   "Jan 2019 Paper 2 Q9(a)(i)",
+   "Jan 2020 Paper 2 Q3(a)(i)",
+   "Jan 2020 Paper 2R Q3(a)",
+   "May-Jun 2019 Paper 2R Q7(a)(i)",
+   "May-Jun 2023 Paper 2R Q4(a)(i)",
+   "Oct-Nov 2024 Paper 2 Q3(b)(ii)",
+   "Oct-Nov 2025 Paper 2 Q3(a)(i)"
+  ],
+  "points": [
+   "momentum = mass × velocity"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "momentum = mass × velocity"
+  ],
+  "notes": "allow rearrangements and standard symbols e.g. p = m × v reject m for momentum",
+  "traps": [
+   "allow rearrangements and standard symbols e.g. p = m × v reject m for momentum",
+   "allow rearrangements and standard symbols e.g. m = p / v reject m for momentum",
+   "allow standard symbols and rearrangements e.g. p = m × v reject use of m for momentum"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the equation linking gravitational potential energy (GPE), mass, g and height.",
+  "exemplar_stem": "State the formula linking gravitational potential energy (GPE), mass, gravitational field strength (g) and height.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.4,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 5,
+  "appearances": 5,
+  "years": [
+   2018,
+   2019,
+   2022,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q5(a)(ii)",
+   "Jan 2022 Paper 2 Q5(a)",
+   "May-Jun 2018 Paper 1R Q8(b)(i)",
+   "May-Jun 2023 Paper 1R Q3(a)(i)",
+   "Oct-Nov 2024 Paper 1 Q2(a)(iv)"
+  ],
+  "points": [
+   "GPE = mass × gravitational field strength × height"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "gpe = mass × g × height"
+  ],
+  "notes": "Accept g for gravitational field strength allow standard symbols e.g. m for mass, h for height reject ‘gravity’ for g",
+  "traps": [
+   "Accept g for gravitational field strength allow standard symbols e.g. m for mass, h for height reject ‘gravity’ for g",
+   "allow in standard symbols and rearrangements e.g. GPE = m × g × h reject ‘gravity’ for g"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking work done, force and distance moved.",
+  "exemplar_stem": "State the equation linking work done, force and distance moved in the direction of the force.",
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 5,
+  "appearances": 5,
+  "years": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2023
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1R Q3(b)(i)",
+   "Jan 2021 Paper 1R Q11(a)(i)",
+   "Jan 2023 Paper 1 Q3(a)(i)",
+   "May-Jun 2018 Paper 2R Q2(a)",
+   "May-Jun 2019 Paper 2R Q8(a)(i)"
+  ],
+  "points": [
+   "work (done) = force × distance (moved)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "work (done) = force × distance (moved in direction of force)"
+  ],
+  "notes": "allow rearrangements and standard symbols e.g. W = F × d",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking pressure, force and area.",
+  "exemplar_stem": "State the equation linking pressure, force and area.",
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 5,
+  "appearances": 5,
+  "years": [
+   2019,
+   2020,
+   2021,
+   2022,
+   2023
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q4(a)(i)",
+   "Jan 2020 Paper 1 Q4(b)(ii)",
+   "May-Jun 2022 Paper 1R Q4(b)(iii)",
+   "May-Jun 2023 Paper 1R Q10(b)(i)",
+   "Oct-Nov 2021 Paper 1 Q9(a)(i)"
+  ],
+  "points": [
+   "pressure = force ÷ area"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "pressure = force ÷ area",
+   "pressure = force / area"
+  ],
+  "notes": "allow rearrangements and standard symbols e.g. p = F ÷ A",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking density, mass and volume.",
+  "exemplar_stem": "State the formula linking density, mass and volume.",
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 5,
+  "appearances": 5,
+  "years": [
+   2019,
+   2020,
+   2024
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1R Q8(b)(i)",
+   "Jan 2020 Paper 2 Q2(a)",
+   "May-Jun 2019 Paper 1R Q6(a)(i)",
+   "May-Jun 2024 Paper 1R Q5(b)(i)",
+   "Oct-Nov 2020 Paper 2 Q1(b)(iv)"
+  ],
+  "points": [
+   "density = mass / volume"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "density = mass / volume"
+  ],
+  "notes": "allow rearrangements and use of symbols e.g. V = m / ρ or D = M/V",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking input (primary) voltage, output (secondary) voltage and the turns ratio.",
+  "exemplar_stem": "State the formula linking input voltage, output voltage, number of primary turns and number of secondary turns for a transformer.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2020,
+   2021,
+   2025
+  ],
+  "sittings": [
+   "Jan 2020 Paper 2R Q6(a)(i)",
+   "May-Jun 2025 Paper 2 Q7(a)(i)",
+   "Oct-Nov 2021 Paper 2 Q6(b)(i)",
+   "Oct-Nov 2025 Paper 2 Q5(b)(i)"
+  ],
+  "points": [
+   "input voltage = primary turns turns / output voltage secondary"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "input voltage = primary turns turns / output voltage secondary",
+   "np/ns = vp/vs",
+   "input (primary) voltage / output (secondary) voltage = primary turns / secondary turns",
+   "np / ns = vp/vs"
+  ],
+  "notes": "allow standard symbols and rearrangements e.g. Vp / Vs = Np / Ns allow T, n for turns allow 1,2 in,out for p and s",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking average speed, distance moved and time taken.",
+  "exemplar_stem": "State the formula linking average speed, distance moved and time taken.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2020,
+   2022,
+   2023,
+   2025
+  ],
+  "sittings": [
+   "Jan 2022 Paper 1 Q5(a)(i)",
+   "Jan 2023 Paper 1 Q5(d)(i)",
+   "May-Jun 2025 Paper 1 Q1(a)(i)",
+   "Oct-Nov 2020 Paper 1R Q3(a)(i)"
+  ],
+  "points": [
+   "(average) speed = distance / time"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "(average) speed = distance / time",
+   "(average) speed = distance (travelled) ÷ time (taken)",
+   "(average) speed = distance (moved) / time (taken)",
+   "(average) speed = distance (travelled) / time (taken)"
+  ],
+  "notes": "allow standard symbols and rearrangements e.g. v = s/t allow s for speed and d for distance",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking moment, force and perpendicular distance from a pivot.",
+  "exemplar_stem": "State the equation linking moment, force and perpendicular distance from the pivot.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2019,
+   2020,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2019 Paper 2 Q8(b)(i)",
+   "Jan 2020 Paper 2R Q2(b)",
+   "Jan 2023 Paper 2 Q5(a)(i)",
+   "Oct-Nov 2024 Paper 2 Q6(a)(i)"
+  ],
+  "points": [
+   "moment = force × (perpendicular) distance (from pivot)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "moment = force × (perpendicular) distance",
+   "moment = force × (perpendicular) distance (from pivot)"
+  ],
+  "notes": "allow symbols, e.g. M = F × d or rearrangements",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking force, mass and acceleration.",
+  "exemplar_stem": "State the formula linking resultant force, mass and acceleration.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2019,
+   2021,
+   2022,
+   2023
+  ],
+  "sittings": [
+   "Jan 2021 Paper 1R Q5(b)(ii)",
+   "Jan 2022 Paper 1 Q5(b)(i)",
+   "Jan 2023 Paper 1R Q10(a)(ii)",
+   "May-Jun 2019 Paper 1R Q10(b)(i)"
+  ],
+  "points": [
+   "(resultant) force = mass × acceleration"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "(resultant) force = mass × acceleration",
+   "(resultant) force = mass x acceleration / f = ma",
+   "force = mass × acceleration"
+  ],
+  "notes": "allow rearrangements and standard symbols e.g. a = F/m",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking kinetic energy, mass and speed.",
+  "exemplar_stem": "State the formula linking kinetic energy, mass and speed.",
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2020,
+   2022,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 1 Q10(b)(i)",
+   "May-Jun 2023 Paper 2 Q3(a)(ii)",
+   "Oct-Nov 2020 Paper 1R Q3(c)(i)",
+   "Oct-Nov 2024 Paper 1 Q2(a)(i)"
+  ],
+  "points": [
+   "kinetic energy = ½ × mass × speed2"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "kinetic energy = ½ × mass × speed2",
+   "ke = ½ m v2"
+  ],
+  "notes": "allow standard symbols and rearrangements e.g. KE = ½ × m × v2",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the independent and dependent variables in this investigation. independent dependent",
+  "exemplar_stem": "State the independent and dependent variables in this investigation. independent variable dependent variable",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "banker",
+  "score": 1.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2019,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q6(b)",
+   "Jan 2023 Paper 2 Q4(a)",
+   "Jan 2023 Paper 2R Q3(a)(ii)",
+   "May-Jun 2024 Paper 1 Q10(b)(i)"
+  ],
+  "points": [
+   "independent = mass (of parachute)",
+   "dependent = time (taken for fall)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "dependent = time (taken for fall)",
+   "independent = mass (of parachute)",
+   "dv = height (of bounce)",
+   "iv = temperature (of ball)",
+   "independent: material (of the squares)",
+   "dependent: force",
+   "dependent variable = height",
+   "independent variable = length (extending beyond table)"
+  ],
+  "notes": "",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State what is meant by the term half-life.",
+  "exemplar_stem": "State what is meant by the term half-life.",
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "tier": "banker",
+  "score": 1.5,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2020,
+   2021,
+   2022
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1R Q9(b)(i)",
+   "Jan 2021 Paper 1 Q5(d)(i)",
+   "May-Jun 2022 Paper 1R Q7(b)(i)",
+   "Oct-Nov 2020 Paper 2R Q7(c)(i)"
+  ],
+  "points": [
+   "time taken",
+   "and either of • for (radio)activity to halve",
+   "• for half of the (radioactive) nuclei / atoms / isotope to decay"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "time taken",
+   "for (radio)activity/mass/number of (remaining) nuclei to half",
+   "for {activity / number of (radioactive) nuclei / amount of isotope / count rate} to halve",
+   "and either of • for (radio)activity to halve",
+   "• for half of the (radioactive) nuclei / atoms / isotope to decay",
+   "for half of the (radioactive) nuclei / atoms/ isotope /mass to decay",
+   "and either of for the (radio)activity to halve"
+  ],
+  "notes": "allow “how long it takes” reject “half the time” allow count rate for activity",
+  "traps": [
+   "allow “how long it takes” reject “half the time” allow count rate for activity",
+   "allow \"how long it takes\" reject \"half the time\" allow count rate for activity ignore substance"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Measure the angle of incidence. angle of incidence =",
+  "exemplar_stem": "Measure the angle of incidence in diagram 2. angle of incidence = degrees",
+  "topic_n": 0,
+  "topic": "Unclassified",
+  "tier": "banker",
+  "score": 1.5,
+  "command": "other",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2018,
+   2019,
+   2022
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q11(b)(ii)",
+   "Jan 2022 Paper 1 Q4(b)(ii)",
+   "May-Jun 2018 Paper 1 Q11(a)(iii)",
+   "May-Jun 2019 Paper 1R Q9(b)(ii)"
+  ],
+  "points": [
+   "55°"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "55°",
+   "79 (degrees)",
+   "70 (°)",
+   "angle measured in the range 24-30°"
+  ],
+  "notes": "allow range 54-56°",
+  "traps": [],
+  "why_hard": [
+   "carries forward from an earlier answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Give the independent variable in this investigation.",
+  "exemplar_stem": "State the independent variable in the teacher’s investigation.",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "banker",
+  "score": 0.2,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2020,
+   2021,
+   2024
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1 Q9(b)",
+   "Jan 2021 Paper 1R Q12(c)(i)",
+   "Oct-Nov 2021 Paper 2 Q5(a)(i)",
+   "Oct-Nov 2024 Paper 1 Q10(a)(i)"
+  ],
+  "points": [
+   "(absorbing) material"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "(absorbing) material",
+   "voltage",
+   "position of the mass hanger",
+   "metal/material"
+  ],
+  "notes": "allow absorber",
+  "traps": [
+   "allow distance of mass hanger/eq reject unqualified “distance”"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Give two control variables in the investigation. 1 2",
+  "exemplar_stem": "Give three control variables in the student’s investigation. 1 2 3 13",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "banker",
+  "score": 0.2,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2020,
+   2021,
+   2024,
+   2025
+  ],
+  "sittings": [
+   "May-Jun 2024 Paper 1 Q10(b)(ii)",
+   "May-Jun 2025 Paper 1R Q4(a)(i)",
+   "Oct-Nov 2020 Paper 1R Q8(b)",
+   "Oct-Nov 2021 Paper 2 Q5(a)(ii)"
+  ],
+  "points": [
+   "any three from: MP1. (all bars same) length",
+   "MP2. (all bars same) width",
+   "MP3. (all bars same) thickness",
+   "MP4. (all bars can be) placed in same water",
+   "MP5. (all bars will be same) depth in water"
+  ],
+  "menu": true,
+  "recurring_points": [
+   "any two from: mp1. weight or mass of metre rule mp2. weight or mass of mass hanger",
+   "mp3. positions of newton meter(s)",
+   "mp3. power supply / circuit being used",
+   "mp4. temperature (of motor)",
+   "any two from: mp1. mass (being lifted)",
+   "mp2. height (lifted) / distance",
+   "• material/type of wood(en strip)",
+   "any two from: • mass/weight of load",
+   "• position of load (on wooden strip)",
+   "• thickness of wood(en strip)",
+   "mp2. (all bars same) width",
+   "mp5. (all bars will be same) depth in water",
+   "any three from: mp1. (all bars same) length",
+   "mp3. (all bars same) thickness",
+   "mp4. (all bars can be) placed in same water"
+  ],
+  "notes": "condone 'size' for 'length' accept ‘same initial temperature (for all bars)’",
+  "traps": [],
+  "why_hard": [
+   "credit from a menu of acceptable points"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the principle of moments.",
+  "exemplar_stem": "State the principle of moments.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.2,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 4,
+  "appearances": 4,
+  "years": [
+   2018,
+   2019,
+   2020
+  ],
+  "sittings": [
+   "Jan 2019 Paper 2 Q8(c)(i)",
+   "May-Jun 2018 Paper 2R Q7(b)",
+   "Oct-Nov 2020 Paper 2 Q3(b)(ii)",
+   "Oct-Nov 2020 Paper 2R Q3(b)(i)"
+  ],
+  "points": [
+   "in equilibrium / when balanced",
+   "(sum of) clockwise moment(s) = (sum of) anti- clockwise moment(s)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "(at equilibrium, sum of) moment(s) anticlockwise = (sum of) moment(s) clockwise",
+   "(at equilibrium) (sum of) clockwise moment(s) = (sum of) anticlockwise moment(s)",
+   "(in equilibrium) sum of clockwise moments = sum of anticlockwise moments",
+   "(sum of) clockwise moment(s) = (sum of) anti- clockwise moment(s)",
+   "in equilibrium / when balanced"
+  ],
+  "notes": "allow idea that net moment is zero",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking input voltage, output voltage and turns ratio for a transformer.",
+  "exemplar_stem": "State the formula linking input voltage, output voltage and the turns ratio of a transformer.",
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2021,
+   2022,
+   2023
+  ],
+  "sittings": [
+   "Jan 2021 Paper 2R Q8(b)(i)",
+   "Jan 2023 Paper 2R Q5(c)(i)",
+   "May-Jun 2022 Paper 2R Q5(b)(i)"
+  ],
+  "points": [
+   "(Np/Ns) = (Vp/Vs)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "np/ns = vp/vs",
+   "(np/ns) = (vp/vs)"
+  ],
+  "notes": "allow any correct rearrangement allow ”i(nput) and o(utput)” or “1 and 2”for “p(rimary) and s(econdary)” allow correct word equation ignore ‘P’ for ‘N’ condone ‘T’, ’t’ or ‘n’ for ‘N’ condone ‘coils’ for ‘turns’",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking weight, mass and gravitational field strength.",
+  "exemplar_stem": "State the formula linking weight, mass and gravitational field strength (g).",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2020,
+   2021
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1 Q4(a)(i)",
+   "Jan 2021 Paper 1 Q7(b)(iii)",
+   "Oct-Nov 2020 Paper 2R Q3(a)(ii)"
+  ],
+  "points": [
+   "weight = mass × gravitational field strength"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "weight = mass × gravitational field strength"
+  ],
+  "notes": "allow rearrangements and standard symbols e.g. W = m × g ignore ‘gravity’ for g",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the equation linking acceleration, velocity and time.",
+  "exemplar_stem": "State the formula linking acceleration, change in velocity and time taken.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2019,
+   2020,
+   2021
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q8(b)(i)",
+   "Jan 2020 Paper 1 Q8(a)(i)",
+   "Jan 2021 Paper 1 Q2(b)(ii)"
+  ],
+  "points": [
+   "acceleration = change in velocity / time"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "acceleration = change in velocity / time",
+   "acceleration = change in velocity ÷ time (taken)"
+  ],
+  "notes": "allow rearrangements and standard symbols e.g. a = v-u / t, a = ∆v/t, a = ∆v/∆t",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Name the piece of equipment that should be used with an oscilloscope to detect a sound wave.",
+  "exemplar_stem": "Name the piece of equipment that should be used with an oscilloscope to detect a sound wave.",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2021,
+   2023
+  ],
+  "sittings": [
+   "Jan 2023 Paper 2 Q7(a)",
+   "Oct-Nov 2021 Paper 2 Q8(a)(i)",
+   "Oct-Nov 2023 Paper 2 Q7(a)"
+  ],
+  "points": [
+   "microphone"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "microphone"
+  ],
+  "notes": "",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking energy transferred, voltage and charge.",
+  "exemplar_stem": "State the formula linking energy transferred, voltage and charge.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "banker",
+  "score": 0.3,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2020,
+   2022,
+   2023
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1R Q7(a)(ii)",
+   "Jan 2022 Paper 1R Q9(c)(i)",
+   "Oct-Nov 2023 Paper 2 Q7(c)(i)"
+  ],
+  "points": [
+   "energy (transferred) = charge × voltage"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "energy (transferred) = charge × voltage"
+  ],
+  "notes": "allow standard symbols and rearrangements",
+  "traps": [
+   "allow standard symbols and rearrangements e.g. Q = E / V reject C for charge"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State a control variable in this investigation. 9",
+  "exemplar_stem": "State a control variable in this investigation. 9",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2020,
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2020 Paper 2 Q5(b)(i)",
+   "Jan 2023 Paper 2R Q3(a)(iii)",
+   "May-Jun 2024 Paper 2R Q6(b)(ii)"
+  ],
+  "points": [
+   "any one from: • speed (of rotation)",
+   "• direction of rotation",
+   "• temperature (of tumble dryer)",
+   "• number of squares",
+   "• size / thickness / shape of square",
+   "• time (of rotation)"
+  ],
+  "menu": true,
+  "recurring_points": [
+   "• number of squares",
+   "• time (of rotation)",
+   "any one from: • speed (of rotation)",
+   "• direction of rotation",
+   "• size / thickness / shape of square",
+   "• temperature (of tumble dryer)",
+   "any 1 of: mp1. force / tension (on the string)",
+   "mp4. temperature",
+   "mp3. diameter / thickness of the string",
+   "mp2. material string is made from",
+   "• brightness of lamp",
+   "any one of: • power/luminosity (of lamp)",
+   "• light intensity of lamp",
+   "• (amount of) background light"
+  ],
+  "notes": "",
+  "traps": [],
+  "why_hard": [
+   "credit from a menu of acceptable points"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking efficiency to useful energy output and total energy output.",
+  "exemplar_stem": "State the formula linking efficiency, useful energy output and total energy output. 19",
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "tier": "banker",
+  "score": 1.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2024
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 1 Q8(b)(i)",
+   "Oct-Nov 2024 Paper 2 Q7(b)(i)"
+  ],
+  "points": [
+   "useful (energy) output efficiency ="
+  ],
+  "menu": false,
+  "recurring_points": [
+   "useful (energy) output efficiency =",
+   "efficiency = useful energy (output) ÷ total energy(output) x100%"
+  ],
+  "notes": "ignore ×100(%) allow rearrangements allow total (energy) input for total (energy) output",
+  "traps": [],
+  "why_hard": [
+   "unit conversion or power-of-ten trap"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Some bar magnets are made of steel. Explain why steel is a good material for making bar magnets. 13",
+  "exemplar_stem": "Some bar magnets are made of steel. Explain why steel is a good material for making bar magnets. 13",
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "tier": "banker",
+  "score": 2.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023
+  ],
+  "sittings": [
+   "Jan 2023 Paper 1 Q2(b)",
+   "May-Jun 2023 Paper 1R Q4(c)"
+  ],
+  "points": [
+   "steel is magnetic / eq",
+   "(therefore) magnet stays magnetised (for a long period of time) /eq"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "idea that steel is a hard magnetic material",
+   "steel is magnetic / eq",
+   "(therefore) magnet stays magnetised (for a long period of time) /eq"
+  ],
+  "notes": "allow ‘steel is a hard magnetic material’ for both marks reject reference to charge",
+  "traps": [
+   "allow ‘steel is a hard magnetic material’ for both marks reject reference to charge"
+  ],
+  "why_hard": [
+   "'explain' command word",
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the formula linking input power and output power for a transformer.",
+  "exemplar_stem": "State the formula linking input power and output power for a transformer that is 100% efficient.",
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2021,
+   2025
+  ],
+  "sittings": [
+   "Jan 2021 Paper 2 Q5(a)(ii)",
+   "May-Jun 2025 Paper 2R Q4(b)(i)"
+  ],
+  "points": [
+   "input power = output power"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "input power = output power",
+   "input power = output power / or primary voltage × primary current = secondary voltage × secondary current"
+  ],
+  "notes": "allow if expressed in terms of voltages and currents e.g. VpIp = VsIs allow p/s, 1/2, in/out, i/o for subscripts",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Give a name for a large collection of billions of stars. 4",
+  "exemplar_stem": "State the name given to a large collection of billions of stars.",
+  "topic_n": 8,
+  "topic": "Astrophysics",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2018,
+   2019
+  ],
+  "sittings": [
+   "May-Jun 2018 Paper 1 Q1(c)",
+   "May-Jun 2019 Paper 1R Q1(b)"
+  ],
+  "points": [
+   "galaxy"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "galaxy",
+   "galaxy / universe"
+  ],
+  "notes": "allow named galaxy e.g. Andromeda, Milky Way ignore universe",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State how the student could improve the reliability of her results.",
+  "exemplar_stem": "State how the student could improve the reliability of their results.",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "banker",
+  "score": 0.5,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2020,
+   2023
+  ],
+  "sittings": [
+   "Oct-Nov 2020 Paper 1R Q8(a)",
+   "Oct-Nov 2023 Paper 1 Q5(c)(ii)"
+  ],
+  "points": [
+   "repeat the measurements",
+   "calculate a mean / identify anomalies"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "take repeats and find the mean",
+   "repeat the measurements",
+   "calculate a mean / identify anomalies"
+  ],
+  "notes": "allow repeat the experiment allow average for mean",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State what is meant by the term specific heat capacity.",
+  "exemplar_stem": "State what is meant by the term specific heat capacity.",
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "tier": "banker",
+  "score": 1.5,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 2 Q7(a)",
+   "May-Jun 2023 Paper 2R Q5(a)"
+  ],
+  "points": [
+   "energy required",
+   "for a unit mass / per gram (of mass) / per kilogram (of mass)",
+   "to change per unit temperature / change by 1°(C) / change by 1 K"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "energy to change temperature by 1°c",
+   "per kilogram of mass",
+   "for a unit mass / per gram (of mass) / per kilogram (of mass)",
+   "to change per unit temperature / change by 1°(c) / change by 1 k",
+   "energy required"
+  ],
+  "notes": "ignore equations ignore heat for energy allow other statements that imply changing e.g. increasing, raising, heat up, decreasing etc.",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State the principle of conservation of momentum.",
+  "exemplar_stem": "State what is meant by the principle of conservation of momentum.",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 2 Q2(b)(i)",
+   "Oct-Nov 2023 Paper 2 Q6(a)"
+  ],
+  "points": [
+   "idea that (total) momentum before (collision) = (total) momentum after (collision) (in the absence of external forces)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "idea that (total) momentum before (collision) = (total) momentum after (collision) (in the absence of external forces)",
+   "idea that (total) momentum before = (total) momentum after (event)"
+  ],
+  "notes": "allow references to explosion/event, rather than collision ‘momentum is conserved’ is insufficient",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State two uses of total internal reflection. 1 2",
+  "exemplar_stem": "State two uses of total internal reflection. 1 2",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "banker",
+  "score": 0.5,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2019,
+   2022
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q11(a)(i)",
+   "Jan 2022 Paper 1R Q7(b)"
+  ],
+  "points": [
+   "any two from: MP1. optical fibres for communication",
+   "MP2. endoscopes",
+   "MP3. optical fibres in decorative lamps etc",
+   "MP4. safety reflector",
+   "MP5. prism in {binoculars / camera / periscope / rangefinder}"
+  ],
+  "menu": true,
+  "recurring_points": [
+   "mp5. prism in {binoculars / camera / periscope / rangefinder}",
+   "mp2. endoscopes",
+   "mp3. optical fibres in decorative lamps etc",
+   "mp4. safety reflector",
+   "any two from: mp1. optical fibres for communication",
+   "optical fibres",
+   "named prismatic use e.g. cats eye reflector, binoculars, periscope etc"
+  ],
+  "notes": "allow 1 mark for unqualified “optical fibres” in the absence of any other marks e.g. bicycle/car reflector, cat’s eye",
+  "traps": [],
+  "why_hard": [
+   "credit from a menu of acceptable points"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the voltage across the 17 Ω resistor. voltage = V",
+  "exemplar_stem": "Calculate the voltage across the 17 Ω resistor. voltage = V",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "banker",
+  "score": 3.5,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2020,
+   2023
+  ],
+  "sittings": [
+   "Jan 2023 Paper 2R Q4(a)(ii)",
+   "Oct-Nov 2020 Paper 1R Q9(c)(i)"
+  ],
+  "points": [
+   "conversion of mA to A",
+   "substitution",
+   "evaluation",
+   "83 ÷ 1000 = 0.083 V = 0.083 × 17 (V =) 1.4 (V)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "9(.0) (v)",
+   "83 ÷ 1000 = 0.083 v = 0.083 × 17 (v =) 1.4 (v)",
+   "evaluation",
+   "substitution",
+   "conversion of ma to a"
+  ],
+  "notes": "1400, 1410, 1411 (V) scores 2 marks allow 1.41, 1.411 (V)",
+  "traps": [],
+  "why_hard": [
+   "multi-step calculation (substitute, rearrange, evaluate)",
+   "unit conversion or power-of-ten trap"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Give the name of this type of transformer.",
+  "exemplar_stem": "State the name of this type of transformer.",
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2020,
+   2025
+  ],
+  "sittings": [
+   "Oct-Nov 2020 Paper 2 Q8(a)",
+   "Oct-Nov 2025 Paper 2 Q5(b)(iii)"
+  ],
+  "points": [
+   "step-down"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "step-down",
+   "step up (transformer)"
+  ],
+  "notes": "",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State what is meant by the term power.",
+  "exemplar_stem": "State what is meant by the term power. 5",
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "tier": "banker",
+  "score": 1.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2023
+  ],
+  "sittings": [
+   "Jan 2023 Paper 2 Q3(c)(i)",
+   "May-Jun 2022 Paper 2 Q1(a)"
+  ],
+  "points": [
+   "rate of doing work / rate of energy transfer"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "rate of doing work / rate of energy transfer",
+   "rate of {energy transfer/doing work}"
+  ],
+  "notes": "condone “amount of energy transferred each second” accept “energy transferred per second” allow correct formula allow correct word equation reject idea of P = IV reject “amount of energy in a given time”",
+  "traps": [
+   "condone “amount of energy transferred each second” accept “energy transferred per second” allow correct formula allow correct word equation reject idea of P = IV reject “amount of energy in a given time”",
+   "allow energy transferred per {unit time / second} reject energy transferred in a unit time reject P=current × voltage"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State what is meant by the term voltage.",
+  "exemplar_stem": "State what is meant by the term voltage.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2024,
+   2025
+  ],
+  "sittings": [
+   "May-Jun 2024 Paper 1 Q7(c)(i)",
+   "May-Jun 2025 Paper 1 Q11(a)(i)"
+  ],
+  "points": [
+   "energy (transferred) per unit charge (passed)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "energy (transferred) per unit charge (passed)"
+  ],
+  "notes": "allow V = E/Q only if all terms defined allow work done for energy transferred allow coulomb for unit charge",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Give a suitable unit for activity.",
+  "exemplar_stem": "Give a suitable unit for activity.",
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "tier": "banker",
+  "score": 0.0,
+  "command": "recall",
+  "multiple_choice": false,
+  "tariff": 1,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2021,
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2023 Paper 1R Q7(a)(i)",
+   "Oct-Nov 2021 Paper 1 Q4(a)"
+  ],
+  "points": [
+   "becquerel(s) / Bq"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "becquerel(s) / bq",
+   "becquerel(s)"
+  ],
+  "notes": "allow recognisable spellings allow if written in table",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Describe two differences between evaporation and boiling. Paper reference F:1/1/1/1/1/ Equation Booklet Do not return this Booklet with the question paper. Physics UNIT: 4PH1 PAPER: 2P 4PH1/2P Friday 14 June 2024 2 1. Forces and Motion average speed = acceleration = (final speed)2 = (initial speed)2 + (2 × acceleration × distance moved) force = mass × acceleration F = m × a weight = mass × gravitational field strength W = m × g 2. Electricity power = current × voltage P = I × V energy transferred = current × voltage × time E = I × V × t voltage = current × resistance V = I × R charge = current × time Q = I × t energy transferred = charge × voltage E = Q × V 3. Waves wave speed = frequency × wavelength v = f × λ frequency = refractive index = distance moved time taken change in velocity time taken a v u t v u a s 2 2 2 \u001b 1 time period f T = 1 sin sin angle of incidence angle of refraction n i r = sin sin sin critical angle refractive index 1 sin c n = 1 3 4. Energy resources and energy transfers efficiency = work done = force × distance moved W = F × d gravitational potential energy = mass × gravitational field strength × height GPE = m × g × h kinetic energy = × mass × speed2 power = 5. Solids, liquids and gases density = pressure = pressure difference = height × density × gravitational field strength p = h × ρ × g = constant pressure × volume = constant p1 × V1 = p2 × V2 8. Astrophysics orbital speed = useful energy output total energy output ×100% 1 2 KE m v 1 2 2 work done time taken P W t = mass volume m V force area p F A = pressure temperature p T p T 1 1 2 2 = 2 orbital radius time period v r T 2 4 and 2PR. 1. Forces and Motion momentum = mass × velocity p = m × v force = moment = force × perpendicular distance from the pivot 5. Solids, liquids and gases change in thermal energy = mass × specific heat capacity × change in temperature ΔQ = m × c × ΔT 6. Magnetism and electromagnetism relationship between input and output voltages for a transformer input power = output power Vp Ip = Vs Is for 100% efficiency 8. Astrophysics END OF EQUATION LIST change in momentum time taken F mv mu t input (primary) voltage output (secondary) voltage primary = turns secondary turns change in wavelength reference wavelength velocity of a gal = axy speed of light 0 0 0 v c",
+  "exemplar_stem": "Explain an improvement to the student’s method. 20 Paper reference   V:1/1/1/1/1/ Equation Booklet Do not return this Booklet with the question paper. Physics UNIT: 4PH1 PAPER: 2P 4PH1/2P Wednesday 20 November 2024 Morning (Time: 1 hour 15 minutes) 2 1. Forces and Motion average speed = acceleration = (final speed)2 = (initial speed)2 + (2 × acceleration × distance moved) force = mass × acceleration F = m × a weight = mass × gravitational field strength W = m × g 2. Electricity power = current × voltage P = I × V energy transferred = current × voltage × time E = I × V × t voltage = current × resistance V = I × R charge = current × time Q = I × t energy transferred = charge × voltage E = Q × V 3. Waves wave speed = frequency × wavelength v = f × λ frequency = refractive index = distance moved time taken change in velocity time taken a v u t v u a s 2 2 2 \u001b 1 time period f T = 1 sin sin angle of incidence angle of refraction n i r = sin sin sin critical angle refractive index 1 sin c n = 1 3 4. Energy resources and energy transfers efficiency = work done = force × distance moved W = F × d gravitational potential energy = mass × gravitational field strength × height GPE = m × g × h kinetic energy = × mass × speed2 power = 5. Solids, liquids and gases density = pressure = pressure difference = height × density × gravitational field strength p = h × ρ × g = constant pressure × volume = constant p1 × V1 = p2 × V2 8. Astrophysics orbital speed = useful energy output total energy output ×100% 1 2 KE m v 1 2 2 work done time taken P W t = mass volume m V force area p F A = pressure temperature p T p T 1 1 2 2 = 2 orbital radius time period v r T 2 4 and 2PR. 1. Forces and Motion momentum = mass × velocity p = m × v force = moment = force × perpendicular distance from the pivot 5. Solids, liquids and gases change in thermal energy = mass × specific heat capacity × change in temperature ΔQ = m × c × ΔT 6. Magnetism and electromagnetism relationship between input and output voltages for a transformer input power = output power Vp Ip = Vs Is for 100% efficiency 8. Astrophysics END OF EQUATION LIST change in momentum time taken F mv mu t input (primary) voltage output (secondary) voltage primary = turns secondary turns change in wavelength reference wavelength velocity of a gal = axy speed of light 0 0 0 v c",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "routine",
+  "score": 3.8,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 14,
+  "appearances": 14,
+  "years": [
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 1 Q12(d)(ii)",
+   "May-Jun 2022 Paper 1R Q12(b)(ii)",
+   "May-Jun 2023 Paper 1R Q11(b)",
+   "May-Jun 2024 Paper 1 Q12(c)",
+   "May-Jun 2024 Paper 1R Q12(b)",
+   "May-Jun 2024 Paper 2 Q8(c)(ii)",
+   "May-Jun 2024 Paper 2R Q9(c)",
+   "May-Jun 2025 Paper 1 Q11(b)(ii)",
+   "May-Jun 2025 Paper 1R Q11(b)(ii)",
+   "May-Jun 2025 Paper 2R Q8(c)",
+   "Oct-Nov 2023 Paper 1 Q12(b)(ii)",
+   "Oct-Nov 2023 Paper 2 Q8(b)",
+   "Oct-Nov 2024 Paper 2 Q8(d)",
+   "Oct-Nov 2025 Paper 1 Q12(c)"
+  ],
+  "points": [
+   "any two from: reduction of timing inaccuracy: MP1 idea of datalogging (with a microphone/sound meter)",
+   "MP2 idea of electronic start and/or stop timing (with microphone/sound meter)",
+   "MP3 larger distance (gives larger time)",
+   "MP4 idea of longer time may reduce effect of reaction time",
+   "MP5 produce a regular sound that coincides with echo",
+   "improvement of distance measurement: MP6 use a laser-based distance measure/use a map (and scale) to pinpoint start and finish",
+   "other: MP7 idea of removing noise/wind",
+   "do the experiment indoors, shielding a microphone, wait for a windless time MP8 drawing a distance-time graph for different distances and finding gradient"
+  ],
+  "menu": true,
+  "recurring_points": [],
+  "notes": "ignore use of oscilloscope to measure wavelength or period ignore unqualified use of microphone a for question 8 = 11 marks",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word",
+   "credit from a menu of acceptable points",
+   "unit conversion or power-of-ten trap",
+   "carries forward from an earlier answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Draw a curve of best fit.",
+  "exemplar_stem": "Draw a curve of best fit.",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "routine",
+  "score": 1.6,
+  "command": "apply",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 13,
+  "appearances": 13,
+  "years": [
+   2018,
+   2019,
+   2020,
+   2021,
+   2022,
+   2023
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q6(d)(iii)",
+   "Jan 2020 Paper 2 Q5(b)(iv)",
+   "Jan 2021 Paper 2 Q3(c)(ii)",
+   "Jan 2023 Paper 1 Q4(b)(iii)",
+   "May-Jun 2018 Paper 1R Q6(a)(ii)",
+   "May-Jun 2019 Paper 1R Q5(c)(iii)",
+   "May-Jun 2021 Paper 1 Q5(b)(iii)",
+   "May-Jun 2022 Paper 1 Q11(b)(i)",
+   "May-Jun 2022 Paper 1R Q6(b)(iii)",
+   "Oct-Nov 2020 Paper 1 Q5(b)(ii)",
+   "Oct-Nov 2020 Paper 1R Q8(d)(iii)",
+   "Oct-Nov 2021 Paper 1 Q4(b)(ii)",
+   "Oct-Nov 2023 Paper 1 Q7(b)(ii)"
+  ],
+  "points": [
+   "acceptable curve of best fit drawn up to a voltage of 6V",
+   "straight horizontal line of best fit drawn from 6V onwards"
+  ],
+  "menu": false,
+  "recurring_points": [],
+  "notes": "i.e. curved line with even distribution of points either side by eye",
+  "traps": [],
+  "why_hard": [
+   "carries forward from an earlier answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Plot the results on the grid.",
+  "exemplar_stem": "Plot a graph of the student’s results on the grid.",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "routine",
+  "score": 2.8,
+  "command": "other",
+  "multiple_choice": false,
+  "tariff": 4,
+  "papers": 8,
+  "appearances": 8,
+  "years": [
+   2018,
+   2021,
+   2022,
+   2023,
+   2025
+  ],
+  "sittings": [
+   "Jan 2021 Paper 1R Q12(c)(ii)",
+   "Jan 2021 Paper 2 Q3(c)(i)",
+   "Jan 2022 Paper 1R Q10(b)(i)",
+   "Jan 2023 Paper 1R Q4(b)(i)",
+   "May-Jun 2018 Paper 1 Q5(b)(iii)",
+   "May-Jun 2018 Paper 1R Q6(a)(i)",
+   "May-Jun 2021 Paper 1 Q5(b)(i)",
+   "May-Jun 2025 Paper 1 Q10(c)(i)"
+  ],
+  "points": [
+   "scale on both axes",
+   "label on both axes with units",
+   "plotting"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "suitable linear scale chosen (>50% of grid used)"
+  ],
+  "notes": "linear scale using at least 50% of the squares ignore orientation tolerance is +/- 0.5 square -1 for each error",
+  "traps": [
+   "reject if either scale uses multiples of 3, 7 or 9 or if discontinuous ignore orientation reject if either scale is discontinuous data should be plotted to within half a small square"
+  ],
+  "why_hard": [
+   "4-mark answer",
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the refractive index of the glass. refractive index = 15",
+  "exemplar_stem": "Calculate the refractive index of this glass. refractive index = 16",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "routine",
+  "score": 4.7,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 6,
+  "appearances": 6,
+  "years": [
+   2019,
+   2020,
+   2021,
+   2024,
+   2025
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q11(b)(v)",
+   "Jan 2020 Paper 1R Q10(b)(iv)",
+   "Jan 2021 Paper 1R Q6(c)",
+   "May-Jun 2024 Paper 1R Q6(a)(iii)",
+   "Oct-Nov 2021 Paper 1 Q6(b)(v)",
+   "Oct-Nov 2025 Paper 1 Q10(c)(ii)"
+  ],
+  "points": [
+   "substitution",
+   "evaluation of either sine correctly",
+   "evaluation",
+   "refractive index = sin(29)/sin(17) refractive index = 0.484…/0.292… refractive index = 1.7 (Total"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "evaluation",
+   "substitution"
+  ],
+  "notes": "allow ecf from (a) 0.48480962/0.292371705 1.6581961 for Question 6 = 5 marks)",
+  "traps": [
+   "allow ecf from (i) i.e 0.642... for sin(40), 0.390... for sin(23) reject 1.73913 or any value clearly angle of incidence divided by angle of refraction NB - using extreme values from (i), n rounds the range 1.46 to 1.87"
+  ],
+  "why_hard": [
+   "carries forward from an earlier answer",
+   "multi-step calculation (substitute, rearrange, evaluate)",
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "On Diagram 1, draw a voltmeter to measure the voltage of resistor S.",
+  "exemplar_stem": "Draw a voltmeter on the diagram to measure the voltage of the variable resistor.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "routine",
+  "score": 2.0,
+  "command": "apply",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2020,
+   2021
+  ],
+  "sittings": [
+   "Jan 2020 Paper 1 Q3(c)(i)",
+   "Jan 2021 Paper 1R Q12(a)(ii)",
+   "Oct-Nov 2020 Paper 1R Q9(a)"
+  ],
+  "points": [
+   "voltmeter symbol is correct and in parallel with any component",
+   "voltmeter is in parallel with variable resistor"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "voltmeter symbol is correct and in parallel with any component",
+   "voltmeter is in parallel with variable resistor",
+   "correct voltmeter symbol used",
+   "voltmeter drawn in parallel with s",
+   "voltmeter connected in parallel with resistor",
+   "correct voltmeter symbol"
+  ],
+  "notes": "",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the acceleration of the car. acceleration = m / s2 15",
+  "exemplar_stem": "Calculate the acceleration of the car between 1.8 and 8.0 seconds. acceleration = m/s2",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "routine",
+  "score": 4.0,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 3,
+  "appearances": 3,
+  "years": [
+   2021,
+   2022
+  ],
+  "sittings": [
+   "Jan 2021 Paper 1R Q5(b)(i)",
+   "Jan 2022 Paper 1 Q5(b)(ii)",
+   "May-Jun 2021 Paper 1 Q4(a)(i)"
+  ],
+  "points": [
+   "use of acceleration = change in velocity / time",
+   "substitution",
+   "evaluation",
+   "acceleration = change in velocity / time acceleration = (-)30 / 6.2 (acceleration =) (-)4.8 (m/s2)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "evaluation",
+   "acceleration = change in velocity / time acceleration = (-)30 / 6.2 (acceleration =) (-)4.8 (m/s2)",
+   "substitution",
+   "use of acceleration = change in velocity / time",
+   "acceleration = (-) 86 (m/s2)",
+   "gradient = (-)4.3 / 0.05",
+   "idea that acceleration = gradient",
+   "7600 = 1200 × a or a = f / m (a =) (−)6.3 (m/s2)",
+   "substitution or rearrangement"
+  ],
+  "notes": "seen anywhere in working allow clear indication that acceleration is gradient ignore minus sign allow (-)4.8 to (-)5.0 (m/s2)",
+  "traps": [],
+  "why_hard": [
+   "unit conversion or power-of-ten trap",
+   "multi-step calculation (substitute, rearrange, evaluate)"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Explain the advantage of the concrete having a high specific heat capacity when it is used to heat water in the heating system. 24 Paper reference   N:1/1/1/1/ Equation Booklet Do not return this Booklet with the question paper. Physics UNIT: 4PH1 PAPER: 2P 4PH1/2P Friday 16 June 2023 Morning (Time: 1 hour 15 minutes) 2 1. Forces and Motion average speed = acceleration = (final speed)2 = (initial speed)2 + (2 × acceleration × distance moved) force = mass × acceleration F = m × a weight = mass × gravitational field strength W = m × g 2. Electricity power = current × voltage P = I × V energy transferred = current × voltage × time E = I × V × t voltage = current × resistance V = I × R charge = current × time Q = I × t energy transferred = charge × voltage E = Q × V 3. Waves wave speed = frequency × wavelength v = f × λ frequency = refractive index = distance moved time taken change in velocity time taken a v u t v u a s 2 2 2 \u001b 1 time period f T = 1 sin sin angle of incidence angle of refraction n i r = sin sin sin critical angle refractive index 1 sin c n = 1 3 4. Energy resources and energy transfers efficiency = work done = force × distance moved W = F × d gravitational potential energy = mass × gravitational field strength × height GPE = m × g × h kinetic energy = × mass × speed2 power = 5. Solids, liquids and gases density = pressure = pressure difference = height × density × gravitational field strength p = h × ρ × g = constant pressure × volume = constant p1 × V1 = p2 × V2 8. Astrophysics orbital speed = useful energy output total energy output ×100% 1 2 KE m v 1 2 2 work done time taken P W t = mass volume m V force area p F A = pressure temperature p T p T 1 1 2 2 = 2 orbital radius time period v r T 2 4 and 2PR. 1. Forces and Motion momentum = mass × velocity p = m × v force = moment = force × perpendicular distance from the pivot 5. Solids, liquids and gases change in thermal energy = mass × specific heat capacity × change in temperature ΔQ = m × c × ΔT 6. Magnetism and electromagnetism relationship between input and output voltages for a transformer input power = output power Vp Ip = Vs Is for 100% efficiency 8. Astrophysics END OF EQUATION LIST change in momentum time taken F mv mu t input (primary) voltage output (secondary) voltage primary = turns secondary turns change in wavelength reference wavelength velocity of a gal = axy speed of light 0 0 0 v c",
+  "exemplar_stem": "Diagram 3 shows the circuit for the receiver coil. loudspeaker receiver coil Diagram 3 As a result of the alternating current in the gold ring, there is an alternating current in the receiving coil. Explain how an alternating current in the receiving coil causes a sound to be emitted from the loudspeaker. Paper reference   N:1/1/1/1/1/ Equation Booklet Do not return this Booklet with the question paper. Physics UNIT: 4PH1 Science (Double Award) 4SD0 PAPER: 1P 4PH1/1P 4SD0/1P Thursday 25 May 2023 Morning (Time: 2 hours) 2 1. Forces and Motion average speed = acceleration = (final speed)2 = (initial speed)2 + (2 × acceleration × distance moved) force = mass × acceleration F = m × a weight = mass × gravitational field strength W = m × g 2. Electricity power = current × voltage P = I × V energy transferred = current × voltage × time E = I × V × t voltage = current × resistance V = I × R charge = current × time Q = I × t energy transferred = charge × voltage E = Q × V 3. Waves wave speed = frequency × wavelength v = f × λ frequency = refractive index = distance moved time taken change in velocity time taken a v u t v u a s 2 2 2 \u001b 1 time period f T = 1 sin sin angle of incidence angle of refraction n i r = sin sin sin critical angle refractive index 1 sin c n = 1 3 4. Energy resources and energy transfers efficiency = work done = force × distance moved W = F × d gravitational potential energy = mass × gravitational field strength × height GPE = m × g × h kinetic energy = × mass × speed2 power = 5. Solids, liquids and gases density = pressure = pressure difference = height × density × gravitational field strength p = h × ρ × g = constant pressure × volume = constant p1 × V1 = p2 × V2 8. Astrophysics orbital speed = useful energy output total energy output ×100% 1 2 KE m v 1 2 2 work done time taken P W t = mass volume m V force area p F A = pressure temperature p T p T 1 1 2 2 = 2 orbital radius time period v r T 2 4 and 2PR. 1. Forces and Motion momentum = mass × velocity p = m × v force = moment = force × perpendicular distance from the pivot 5. Solids, liquids and gases change in thermal energy = mass × specific heat capacity × change in temperature ΔQ = m × c × ΔT 6. Magnetism and electromagnetism relationship between input and output voltages for a transformer input power = output power Vp Ip = Vs Is for 100% efficiency 8. Astrophysics END OF EQUATION LIST change in momentum time taken F mv mu t input (primary) voltage output (secondary) voltage primary = turns secondary turns change in wavelength reference wavelength velocity of a gal = axy speed of light 0 0 0 v c",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "routine",
+  "score": 3.5,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 4,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2023 Paper 1 Q12(c)",
+   "May-Jun 2023 Paper 2 Q8(b)"
+  ],
+  "points": [
+   "any four from: MP1. alternating current in loudspeaker",
+   "MP2. magnetic fields interact (in loudspeaker)",
+   "MP3. causing a force (on loudspeaker cone)",
+   "MP4. a.c. causes changing force direction",
+   "MP5. loudspeaker (cone) vibrates"
+  ],
+  "menu": true,
+  "recurring_points": [
+   "mp3. causing a force (on loudspeaker cone)",
+   "mp5. loudspeaker (cone) vibrates",
+   "any four from: mp1. alternating current in loudspeaker",
+   "mp2. magnetic fields interact (in loudspeaker)",
+   "mp4. a.c. causes changing force direction",
+   "water temp maintained for longer/ temp rise for water more than temp drop for concrete",
+   "concrete can store/absorb/release a lot of energy (because of high shc)"
+  ],
+  "notes": "ignore fields cutting allow coil for cone allow coil for cone allow description of vibrations e.g. “back and forth” Total for Question 12 = 10",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word",
+   "4-mark answer",
+   "credit from a menu of acceptable points"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "On diagram 1, draw the shape and direction of the magnetic field produced by the current in the wire.",
+  "exemplar_stem": "On diagram 1, draw the shape and direction of the magnetic field produced by the current in the wire.",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "routine",
+  "score": 3.0,
+  "command": "apply",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023
+  ],
+  "sittings": [
+   "Jan 2023 Paper 1R Q11(a)(ii)",
+   "Jan 2023 Paper 2 Q6(a)(i)"
+  ],
+  "points": [
+   "single circle centred on the wire and parallel to the plane of the card",
+   "at least two concentric circles in the same plane",
+   "clockwise direction arrow marked on at least one line"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "(circular) field line through all of the compass needles",
+   "arrow clockwise",
+   "single circle centred on the wire and parallel to the plane of the card",
+   "at least two concentric circles in the same plane",
+   "clockwise direction arrow marked on at least one line"
+  ],
+  "notes": "allow gap where circle crosses wire circles do not have to stay within the card DOP by eye ignore spacing reject if contradicting arrows",
+  "traps": [
+   "allow gap where circle crosses wire circles do not have to stay within the card DOP by eye ignore spacing reject if contradicting arrows"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Explain how transformers are useful in the large‑scale transmission of electricity. You may draw a diagram to support your answer. 16",
+  "exemplar_stem": "Explain how transformers are useful in the large‑scale transmission of electricity. You may draw a diagram to support your answer. 16",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "routine",
+  "score": 5.0,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 5,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2020,
+   2021
+  ],
+  "sittings": [
+   "Jan 2020 Paper 2R Q6(b)",
+   "Jan 2021 Paper 2 Q5(b)"
+  ],
+  "points": [
+   "any five from: MP1. step-up transformer used before transmission",
+   "MP2. voltage is increased before transmission",
+   "MP3. current is reduced before transmission",
+   "MP4. less heating in transmission cables",
+   "MP5. less energy wasted in transmission cables",
+   "MP6. step-down transformer used after transmission",
+   "MP7. voltage is decreased after transmission for safety"
+  ],
+  "menu": true,
+  "recurring_points": [
+   "mp6. (because) current causes heating (in transmission cables)",
+   "mp7. idea that step-down transformer used to reduce voltage to safe level",
+   "mp3. idea that pin = pout / viniin=voutiout (assuming 100% efficient)",
+   "mp2. step-up transformer decreases current",
+   "any four from: mp1. step-up transformer increases voltage",
+   "mp5. idea that energy losses are reduced",
+   "mp4. idea that transmission current is reduced",
+   "any five from: mp1. step-up transformer used before transmission",
+   "mp4. less heating in transmission cables",
+   "mp7. voltage is decreased after transmission for safety",
+   "mp2. voltage is increased before transmission",
+   "mp3. current is reduced before transmission",
+   "mp6. step-down transformer used after transmission",
+   "mp5. less energy wasted in transmission cables"
+  ],
+  "notes": "allow any mark if clear from diagram Total for question 5",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word",
+   "4-mark answer",
+   "credit from a menu of acceptable points",
+   "5-mark answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Explain how the cosmological red‑shift of galaxies also supports the Big Bang theory. 18 19",
+  "exemplar_stem": "One of the pieces of evidence for the Big Bang theory is the red-shift of galaxies. Explain how the red-shift of galaxies supports the Big Bang theory. 22",
+  "topic_n": 8,
+  "topic": "Astrophysics",
+  "tier": "routine",
+  "score": 4.0,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2025
+  ],
+  "sittings": [
+   "Jan 2022 Paper 2 Q8(b)",
+   "May-Jun 2025 Paper 2R Q6(c)"
+  ],
+  "points": [
+   "Any THREE from: MP1: the further the galaxy is from Earth, the greater the red-shift",
+   "MP2: the greater the red-shift, the faster the galaxy is moving away",
+   "MP3: speed of galaxies increases with increased distance",
+   "MP4: the speed and distance are directly proportional",
+   "MP5: relationship between speed and distance implies expansion",
+   "MP6: expansion implies there was a single point in the past"
+  ],
+  "menu": true,
+  "recurring_points": [
+   "mp5: relationship between speed and distance implies expansion",
+   "any three from: mp1: the further the galaxy is from earth, the greater the red-shift",
+   "mp6: expansion implies there was a single point in the past",
+   "mp4: the speed and distance are directly proportional",
+   "mp2: the greater the red-shift, the faster the galaxy is moving away",
+   "mp3: speed of galaxies increases with increased distance",
+   "idea that all matter must have originated from a single point",
+   "further galaxies are travelling (away from earth) faster",
+   "(most galaxies show a) red-shift because they are moving away (from earth / each other)",
+   "further galaxies show a greater red-shift"
+  ],
+  "notes": "condone “star” for “galaxy” allow “galaxies moving apart from each other” condone RA for MP6 Total for question",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word",
+   "credit from a menu of acceptable points",
+   "4-mark answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Explain how the pressure of the gas changes as its temperature increases. Include ideas about particles in your answer.",
+  "exemplar_stem": "Explain how the pressure of the gas changes as its temperature increases. Include ideas about particles in your answer.",
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "tier": "routine",
+  "score": 3.5,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2021,
+   2023
+  ],
+  "sittings": [
+   "Jan 2021 Paper 1R Q4(b)(iii)",
+   "May-Jun 2023 Paper 1 Q9(c)"
+  ],
+  "points": [
+   "any THREE from: MP1 (increase in temperature) increases speed/KE",
+   "MP2 collisions between walls and particles more frequent/eq",
+   "MP3 idea collisions between walls and particles are harder",
+   "MP4 idea that force (between wall and particle) is increased",
+   "MP5 P=F/A so increased force means increased pressure for same area"
+  ],
+  "menu": true,
+  "recurring_points": [
+   "mp5 p=f/a so increased force means increased pressure for same area",
+   "mp4 idea that force (between wall and particle) is increased",
+   "mp2 collisions between walls and particles more frequent/eq",
+   "any three from: mp1 (increase in temperature) increases speed/ke",
+   "mp3 idea collisions between walls and particles are harder",
+   "idea of harder collisions between particles and liquid/walls/container",
+   "idea of (gas) particles speeding up",
+   "idea of more frequent collisions between particles and liquid/walls/container"
+  ],
+  "notes": "",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word",
+   "credit from a menu of acceptable points"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Explain, in terms of the movement of particles, how the grid has become positively charged.",
+  "exemplar_stem": "Explain, in terms of the movement of particles, how the grid has become positively charged.",
+  "topic_n": 5,
+  "topic": "Solids, liquids and gases",
+  "tier": "routine",
+  "score": 4.0,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023,
+   2025
+  ],
+  "sittings": [
+   "May-Jun 2023 Paper 2 Q3(a)(i)",
+   "May-Jun 2025 Paper 2 Q5(b)"
+  ],
+  "points": [
+   "idea of transfer of electrons (from grid)",
+   "grid has lost electrons"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "idea of transfer of electrons (from grid)",
+   "grid has lost electrons",
+   "idea of transfer of electrons or transfer of negative charge",
+   "electrons are lost from the ball / eq"
+  ],
+  "notes": "reject reference to positive electrons this statement alone scores 2 reject “lost from electron supply”",
+  "traps": [
+   "reject reference to positive electrons this statement alone scores 2 reject “lost from electron supply”",
+   "reject whole response motion of protons or motion of positive charge scores both marks"
+  ],
+  "why_hard": [
+   "'explain' command word",
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Describe the differences between transverse and longitudinal waves. You may draw a diagram to help your answer.",
+  "exemplar_stem": "Describe the differences between transverse and longitudinal waves. You may draw a diagram to help your answer.",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "routine",
+  "score": 3.0,
+  "command": "describe",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2019,
+   2023
+  ],
+  "sittings": [
+   "Jan 2019 Paper 1 Q1(b)",
+   "May-Jun 2023 Paper 1 Q6(a)(iii)"
+  ],
+  "points": [
+   "vibrations / oscillations / disturbance",
+   "(are) parallel or perpendicular to direction of energy transfer / wave (travel/movement)",
+   "correct identification of both types",
+   "gets 3 marks"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "correct identification of both types",
+   "gets 3 marks",
+   "vibrations / oscillations / disturbance",
+   "(are) parallel or perpendicular to direction of energy transfer / wave (travel/movement)",
+   "{oscillation/vibrations/particle movement} are parallel to {direction of wave (travel) / direction of energy transfer} of wave for longitudinal",
+   "mention of oscillations/vibrations",
+   "{oscillation/vibrations/particle movement} are perpendicular to {direction of wave (travel) / direction of energy transfer} of wave for transverse"
+  ],
+  "notes": "allow suitably labelled diagrams",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "State how the graph shows that the rubber band does not obey Hooke’s law.",
+  "exemplar_stem": "Explain how the graph shows that the rubber band does not obey Hooke’s Law. *P67160RA02532* 25",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "routine",
+  "score": 1.5,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2021,
+   2024
+  ],
+  "sittings": [
+   "May-Jun 2024 Paper 1R Q9(b)(i)",
+   "Oct-Nov 2021 Paper 1 Q10(b)(i)"
+  ],
+  "points": [
+   "line is not straight / line is curved",
+   "(therefore) weight/force and extension are not proportional to each other"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "line is not straight / line is curved",
+   "(therefore) weight/force and extension are not proportional to each other",
+   "curve/variable gradient/not linear"
+  ],
+  "notes": "allow gradient is not constant",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Use the graph to determine the half-life of the radioactive sample. half-life = s",
+  "exemplar_stem": "Use the graph to determine the half‑life of this radioactive sample. half‑life = minutes",
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "tier": "routine",
+  "score": 2.0,
+  "command": "apply",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023,
+   2024
+  ],
+  "sittings": [
+   "May-Jun 2023 Paper 1 Q1(c)(iii)",
+   "Oct-Nov 2024 Paper 1 Q4(c)(ii)"
+  ],
+  "points": [
+   "lines drawn on graph indicating an activity and half of that activity",
+   "half-life = 19 (minutes)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "lines drawn on graph indicating an activity and half of that activity",
+   "half-life = 19 (minutes)",
+   "half-life = 15 (s)",
+   "any indication of a halving in activity"
+  ],
+  "notes": "e.g. line drawn across from 600 and down to 19 accept any answer that rounds to 19 (minutes) for 2 marks",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Describe the difference between alternating current (a.c.) and direct current (d.c.).",
+  "exemplar_stem": "Describe the difference between alternating current (a.c.) and direct current (d.c.).",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "routine",
+  "score": 2.0,
+  "command": "describe",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2018,
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2018 Paper 1 Q3(b)(i)",
+   "May-Jun 2023 Paper 1 Q12(b)(i)"
+  ],
+  "points": [
+   "idea that alternating current is (continuously) changing direction",
+   "idea that direct current only in one direction / does not change direction"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "idea that alternating current is (continuously) changing direction",
+   "idea that direct current only in one direction / does not change direction",
+   "idea of a.c. continuously changing direction",
+   "d.c. travels in one direction only"
+  ],
+  "notes": "allow marks if shown in labelled diagrams e.g. • allow ‘current travels backwards and forwards’ / ‘current is positive and negative’ • condone different directions",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Describe what is meant by the term half-life.",
+  "exemplar_stem": "Describe what is meant by the term half‑life. 11",
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "tier": "routine",
+  "score": 2.5,
+  "command": "describe",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2018,
+   2024
+  ],
+  "sittings": [
+   "May-Jun 2018 Paper 1 Q10(e)(i)",
+   "Oct-Nov 2024 Paper 1 Q4(c)(i)"
+  ],
+  "points": [
+   "(average) time",
+   "for halving of: • the (radio)activity",
+   "• number of nuclei",
+   "• mass of isotope"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "• for half the (radioactive) nuclei / atoms / isotope to decay",
+   "and either of: • for (radio)activity to halve",
+   "time (taken)",
+   "for halving of: • the (radio)activity",
+   "(average) time",
+   "• number of nuclei",
+   "• mass of isotope"
+  ],
+  "notes": "allow how long it takes allow count rate for activity allow atoms for nuclei ignore mass of substance/sample",
+  "traps": [
+   "allow how long it takes reject ‘half the time’ allow count rate for activity ignore • element • substance reject: • particles • molecules • ‘break down’ • ‘reactivity’ • a nucleus / an atom • halve in mass • to completely/fully decay"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the distance travelled by the car during the first 0.4 seconds. distance = m 13",
+  "exemplar_stem": "Calculate the distance travelled by the car during the first 0.4 seconds. distance = m 13",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "routine",
+  "score": 4.0,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 4,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2021,
+   2025
+  ],
+  "sittings": [
+   "Jan 2021 Paper 1R Q5(a)",
+   "Oct-Nov 2025 Paper 1 Q9(d)"
+  ],
+  "points": [
+   "any attempt at finding the area/ “area = distance” stated",
+   "area of triangle = ½ x 4.3 x 0.2 (= 0.43 m)",
+   "area of rectangle = 4.3 x 0.2 (= 0.86 m)",
+   "distance = 1.29 (m)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "area of triangle = ½ x 4.3 x 0.2 (= 0.43 m)",
+   "any attempt at finding the area/ “area = distance” stated",
+   "area of rectangle = 4.3 x 0.2 (= 0.86 m)",
+   "distance = 1.29 (m)",
+   "idea that distance = area (under line)",
+   "distance = area distance = 0.5 × 90 × 4.0 (distance =) 180 (m)",
+   "correct evaluation",
+   "attempt at calculating area of correct triangle"
+  ],
+  "notes": "accept area of trapezium = ½ x 4.3 x (0.2 + 0.4) for MP2 and MP3. count squares; area of 1 square = 0.001 (m); distance = 1.29 (m)",
+  "traps": [],
+  "why_hard": [
+   "4-mark answer",
+   "carries forward from an earlier answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Describe what is meant by a chain reaction.",
+  "exemplar_stem": "Describe what is meant by a chain reaction.",
+  "topic_n": 7,
+  "topic": "Radioactivity and particles",
+  "tier": "routine",
+  "score": 2.5,
+  "command": "describe",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2021
+  ],
+  "sittings": [
+   "Jan 2021 Paper 1R Q10(b)",
+   "May-Jun 2021 Paper 1 Q3(a)(iii)"
+  ],
+  "points": [
+   "(fission) releases neutrons",
+   "neutrons can be captured by other uranium nuclei",
+   "(these nuclei) then undergo fission"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "neutrons released (by fission) are absorbed by other (uranium) nuclei",
+   "causing fission/splitting in other (uranium) nuclei",
+   "neutrons can be captured by other uranium nuclei",
+   "(fission) releases neutrons",
+   "(these nuclei) then undergo fission"
+  ],
+  "notes": "",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Describe what is meant by the term background radiation.",
+  "exemplar_stem": "Describe what is meant by the term background radiation.",
+  "topic_n": 4,
+  "topic": "Energy resources and energy transfer",
+  "tier": "routine",
+  "score": 2.5,
+  "command": "describe",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2024
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 1R Q7(a)",
+   "Oct-Nov 2024 Paper 1 Q4(b)"
+  ],
+  "points": [
+   "idea of radiation from sources in the environment",
+   "idea that background is ever present/all around"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "idea of radiation from sources in the environment",
+   "idea that background is ever present/all around",
+   "appropriate named source of background radiation mentioned",
+   "idea that background radiation is always present"
+  ],
+  "notes": "allow idea of ‘no other sources present’",
+  "traps": [
+   "allow radiation all around us, in the surroundings/environment, everywhere etc. e.g. from: • the Sun / cosmic rays • rocks / soil • radon • weapons testing • food • nuclear disasters • medical equipment reject CMBR"
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the frequency of the sound wave. frequency = Hz 8",
+  "exemplar_stem": "Calculate the frequency of the sound wave. frequency = Hz 8",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "routine",
+  "score": 3.0,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 2R Q2(b)(ii)",
+   "Oct-Nov 2023 Paper 2 Q7(b)(ii)"
+  ],
+  "points": [
+   "substitution into given formula",
+   "correct evaluation",
+   "frequency = 1 / 0.02 frequency = 50 (Hz)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "use of f = 1 / t to evaluate frequency / frequency = (1 / 0.011 =) 91 (hz)",
+   "substitution into given formula",
+   "correct evaluation",
+   "frequency = 1 / 0.02 frequency = 50 (hz)"
+  ],
+  "notes": "allow ECF from (i)",
+  "traps": [],
+  "why_hard": [
+   "carries forward from an earlier answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Plot a bar chart of the results on the grid.",
+  "exemplar_stem": "Plot a bar chart of the results on the grid.",
+  "topic_n": 0,
+  "topic": "Unclassified",
+  "tier": "routine",
+  "score": 3.5,
+  "command": "other",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2024,
+   2025
+  ],
+  "sittings": [
+   "May-Jun 2025 Paper 1R Q4(b)(i)",
+   "Oct-Nov 2024 Paper 1 Q10(b)(i)"
+  ],
+  "points": [
+   "suitable linear scale for time axis",
+   "time axis labelled with quantity and unit AND material axis labelled",
+   "all bars correct length to within ½ small square"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "suitable linear scale for time axis",
+   "time axis labelled with quantity and unit and material axis labelled",
+   "all bars correct length to within ½ small square",
+   "all bars plotted correctly within ½ small square",
+   "labelled axes with units",
+   "linear scale that takes up ≥ 50% of the grid for time axis"
+  ],
+  "notes": "reject multiples of 30, 45, 60, 80 for 10 small squares allow use of false origin scale should be such that length of tallest bar must be at least half the grid condone missing “material” label if bars are labelled iron, steel etc.",
+  "traps": [
+   "reject multiples of 30, 45, 60, 80 for 10 small squares allow use of false origin scale should be such that length of tallest bar must be at least half the grid condone missing “material” label if bars are labelled iron, steel etc."
+  ],
+  "why_hard": [
+   "mark scheme names a common wrong answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Complete the path of the ray of light. 18",
+  "exemplar_stem": "Explain the path of the light ray shown in diagram 2. 26 27",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "routine",
+  "score": 2.5,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2019,
+   2024
+  ],
+  "sittings": [
+   "May-Jun 2019 Paper 1R Q9(b)(iv)",
+   "Oct-Nov 2024 Paper 1 Q6(c)(ii)"
+  ],
+  "points": [
+   "(path shows) total internal reflection",
+   "(because) ray is travelling from high to low refractive index",
+   "(and) angle of incidence is greater than the critical angle"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "(and) angle of incidence is greater than the critical angle",
+   "(because) ray is travelling from high to low refractive index",
+   "(path shows) total internal reflection",
+   "ray emerges into air",
+   "ray refracts correctly, bending away from the normal"
+  ],
+  "notes": "allow TIR however expressed e.g. reduction of (optical) density / increase in speed from glass to air for Question 9 = 13 marks",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Draw a circuit diagram the student could use in their investigation.",
+  "exemplar_stem": "Draw a circuit diagram that the student could use for this investigation. 12",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "routine",
+  "score": 4.0,
+  "command": "apply",
+  "multiple_choice": false,
+  "tariff": 4,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023
+  ],
+  "sittings": [
+   "Jan 2023 Paper 1R Q4(a)",
+   "May-Jun 2023 Paper 1 Q2(a)"
+  ],
+  "points": [
+   "correct symbols for all components",
+   "components connected in a series circuit",
+   "ammeter in series with lamp",
+   "voltmeter in parallel with lamp"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "voltmeter in parallel with lamp",
+   "ammeter in series with lamp",
+   "correct symbols for all components",
+   "components connected in a series circuit",
+   "means of varying current or voltage i.e. variable resistor/variable power supply",
+   "• suitable power source • ammeter • voltmeter • filament lamp ammeter drawn in series with lamp",
+   "voltmeter drawn in parallel with lamp",
+   "correct circuit symbols for all of"
+  ],
+  "notes": "ignore ammeter and voltmeter",
+  "traps": [],
+  "why_hard": [
+   "4-mark answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Plot the student’s data on the grid.",
+  "exemplar_stem": "Plot the scientist’s data on the grid.",
+  "topic_n": 9,
+  "topic": "Practical skills and data handling",
+  "tier": "routine",
+  "score": 2.0,
+  "command": "other",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2023 Paper 1 Q10(b)(i)",
+   "Oct-Nov 2023 Paper 1 Q7(b)(i)"
+  ],
+  "points": [
+   "linear scales that take up ≥ 50% of the grid for both axes",
+   "labelled axes with units",
+   "all points plotted correctly within ½ small square"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "labelled axes with units",
+   "all points plotted correctly within ½ small square",
+   "linear scales that take up ≥ 50% of the grid for both axes",
+   "all points correct"
+  ],
+  "notes": "ignore orientation of axes allow use of false origins allow no units on percentage axis",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the current in the battery. current = A",
+  "exemplar_stem": "Calculate the current in the battery. current = mA 13",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "routine",
+  "score": 1.5,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 2,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023,
+   2024
+  ],
+  "sittings": [
+   "Jan 2023 Paper 2R Q4(a)(iv)",
+   "Oct-Nov 2024 Paper 1 Q9(b)(i)"
+  ],
+  "points": [
+   "evidence of addition of the two currents",
+   "311 mA"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "311 ma",
+   "evidence of addition of the two currents",
+   "0.38 (a)"
+  ],
+  "notes": "accept 0.311 A",
+  "traps": [],
+  "why_hard": [],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Another galaxy, Centaurus A, is much further away from the Earth than NGC 300. Explain how the wavelength of light detected from hydrogen atoms in Centaurus A is different from the wavelength of light detected from hydrogen atoms in NGC 300. 30 31 32 Paper reference   Y:1/1/1/1/1/ Equation Booklet Do not return this Booklet with the question paper. Physics UNIT: 4PH1 PAPER: 2P 4PH1/2P Monday 16 June 2025 Morning (Time: 1 hour 15 minutes) 2 1. Forces and Motion average speed = acceleration = (final speed)2 = (initial speed)2 + (2 × acceleration × distance moved) force = mass × acceleration F = m × a weight = mass × gravitational field strength W = m × g 2. Electricity power = current × voltage P = I × V energy transferred = current × voltage × time E = I × V × t voltage = current × resistance V = I × R charge = current × time Q = I × t energy transferred = charge × voltage E = Q × V 3. Waves wave speed = frequency × wavelength v = f × λ frequency = refractive index = distance moved time taken change in velocity time taken a v u t v u a s 2 2 2 \u001b 1 time period f T = 1 sin sin angle of incidence angle of refraction n i r = sin sin sin critical angle refractive index 1 sin c n = 1 3 4. Energy resources and energy transfers efficiency = work done = force × distance moved W = F × d gravitational potential energy = mass × gravitational field strength × height GPE = m × g × h kinetic energy = × mass × speed2 power = 5. Solids, liquids and gases density = pressure = pressure difference = height × density × gravitational field strength p = h × ρ × g = constant pressure × volume = constant p1 × V1 = p2 × V2 8. Astrophysics orbital speed = useful energy output total energy output ×100% 1 2 KE m v 1 2 2 work done time taken P W t = mass volume m V force area p F A = pressure temperature p T p T 1 1 2 2 = 2 orbital radius time period v r T 2 4 and 2PR. 1. Forces and Motion momentum = mass × velocity p = m × v force = moment = force × perpendicular distance from the pivot 5. Solids, liquids and gases change in thermal energy = mass × specific heat capacity × change in temperature ΔQ = m × c × ΔT 6. Magnetism and electromagnetism relationship between input and output voltages for a transformer input power = output power Vp Ip = Vs Is for 100% efficiency 8. Astrophysics END OF EQUATION LIST change in momentum time taken F mv mu t input (primary) voltage output (secondary) voltage primary = turns secondary turns change in wavelength reference wavelength velocity of a gal = axy speed of light 0 0 0 v c",
+  "exemplar_stem": "The astronomers investigated supernovas that showed a red-shift in the wavelengths detected in different galaxies. The astronomers discovered that the red-shifted light detected from supernovas in nearby galaxies had shorter wavelengths than the red-shifted light detected from supernovas in galaxies further away. Explain how this discovery supports the Big Bang theory. *P71958RA02224* 22 *P71958RA02324* 23 *P71958RA02424* 24 Paper reference   *P71958RA* P71958RA N:1/1/1/1/1/ Equation Booklet Do not return this Booklet with the question paper. Physics UNIT: 4PH1 PAPER: 2PR 4PH1/2PR Friday 16 June 2023 Morning (Time: 1 hour 15 minutes) 2 P71958RA 1. Forces and Motion average speed = acceleration = (final speed)2 = (initial speed)2 + (2 × acceleration × distance moved) force = mass × acceleration F = m × a weight = mass × gravitational field strength W = m × g 2. Electricity power = current × voltage P = I × V energy transferred = current × voltage × time E = I × V × t voltage = current × resistance V = I × R charge = current × time Q = I × t energy transferred = charge × voltage E = Q × V 3. Waves wave speed = frequency × wavelength v = f × λ frequency = refractive index = distance moved time taken change in velocity time taken a v u t v u a s 2 2 2 \u001b 1 time period f T = 1 sin sin angle of incidence angle of refraction n i r = sin sin sin critical angle refractive index 1 sin c n = 1 3 P71958RA 4. Energy resources and energy transfers efficiency = work done = force × distance moved W = F × d gravitational potential energy = mass × gravitational field strength × height GPE = m × g × h kinetic energy = × mass × speed2 power = 5. Solids, liquids and gases density = pressure = pressure difference = height × density × gravitational field strength p = h × ρ × g = constant pressure × volume = constant p1 × V1 = p2 × V2 8. Astrophysics orbital speed = useful energy output total energy output ×100% 1 2 KE m v 1 2 2 work done time taken P W t = mass volume m V force area p F A = pressure temperature p T p T 1 1 2 2 = 2 orbital radius time period v r T 2 4 P71958RA and 2PR. 1. Forces and Motion momentum = mass × velocity p = m × v force = moment = force × perpendicular distance from the pivot 5. Solids, liquids and gases change in thermal energy = mass × specific heat capacity × change in temperature ΔQ = m × c × ΔT 6. Magnetism and electromagnetism relationship between input and output voltages for a transformer input power = output power Vp Ip = Vs Is for 100% efficiency 8. Astrophysics END OF EQUATION LIST change in momentum time taken F mv mu t input (primary) voltage output (secondary) voltage primary = turns secondary turns change in wavelength reference wavelength velocity of a gal = axy speed of light 0 0 0 v c",
+  "topic_n": 1,
+  "topic": "Forces and motion",
+  "tier": "discriminator",
+  "score": 4.0,
+  "command": "explain",
+  "multiple_choice": false,
+  "tariff": 4,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2023,
+   2025
+  ],
+  "sittings": [
+   "May-Jun 2023 Paper 2R Q8(c)(ii)",
+   "May-Jun 2025 Paper 2 Q8(c)"
+  ],
+  "points": [
+   "MP1. nearby galaxies show smaller {red-shift / change in wavelength}",
+   "MP2. nearby galaxies are travelling slower than further galaxies",
+   "MP3. (all light red-shifted) suggests universe is expanding",
+   "MP4. suggesting universe was once at a single point"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "mp1. nearby galaxies show smaller {red-shift / change in wavelength}",
+   "mp4. suggesting universe was once at a single point",
+   "mp2. nearby galaxies are travelling slower than further galaxies",
+   "mp3. (all light red-shifted) suggests universe is expanding",
+   "centaurus a will have a greater red-shift",
+   "(so) wavelength from centaurus a will be longer /eq"
+  ],
+  "notes": "allow RA allow RA allow (all) galaxies are moving away from each other Total for Question 8 = 15",
+  "traps": [],
+  "why_hard": [
+   "'explain' command word",
+   "4-mark answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "The refractive index of water is 1.33 Calculate the critical angle for the boundary between water and air. Give your answer to three significant figures. critical angle =",
+  "exemplar_stem": "The refractive index of water is 1.33 Calculate the critical angle for the boundary between water and air. Give your answer to three significant figures. critical angle =",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "discriminator",
+  "score": 5.0,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2018,
+   2020
+  ],
+  "sittings": [
+   "May-Jun 2018 Paper 1 Q11(c)(ii)",
+   "Oct-Nov 2020 Paper 1 Q8(a)(ii)"
+  ],
+  "points": [
+   "substitution into correct equation",
+   "rearrangement and evaluation",
+   "final correct answer given to 3 s.f",
+   "(sin(c) =) 1 1.33 c = 48.753… c = 48.8 (°)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "rearrangement and evaluation",
+   "final correct answer given to 3 s.f",
+   "(sin(c) =) 1 1.33 c = 48.753… c = 48.8 (°)",
+   "substitution into correct equation",
+   "rearrangement",
+   "sin(88.500) = 1/n n = 1/sin(88.500) n = 1.0003",
+   "correct evaluation to 5 s.f",
+   "substitution"
+  ],
+  "notes": "mark independently allow 0.75187… if correct equation seen anywhere",
+  "traps": [],
+  "why_hard": [
+   "multi-step calculation (substitute, rearrange, evaluate)"
+  ],
+  "specs": [
+   "4PH0",
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Give two pieces of evidence that support the Big Bang theory. 1 2",
+  "exemplar_stem": "Discuss two pieces of evidence that support the Big Bang theory. 19",
+  "topic_n": 8,
+  "topic": "Astrophysics",
+  "tier": "discriminator",
+  "score": 3.5,
+  "command": "other",
+  "multiple_choice": false,
+  "tariff": 6,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2025
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 2 Q6(b)",
+   "May-Jun 2025 Paper 2 Q8(a)"
+  ],
+  "points": [
+   "MAX four from: MP1. identification of cosmic (microwave) background radiation (CMBR)",
+   "MP2. CMBR appears to be the same in all directions/is everywhere",
+   "MP3. which implies all parts of the Universe were in contact a long time ago",
+   "MP4. wavelength has increased as the universe has expanded",
+   "MP5. universe was (significantly) hotter long ago",
+   "MAX four from: MP6. identification of red shift of galaxies",
+   "MP7. the further the galaxy is (from Earth), the greater the red-shift",
+   "MP8. larger redshift means faster movement of galaxies",
+   "MP9. (therefore) the further away, the faster the galaxy moves away",
+   "MP10. galaxies moving apart from each other implies expansion from a single point or since the Big Bang"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "mp10. galaxies moving apart from each other implies expansion from a single point or since the big bang",
+   "max four from: mp6. identification of red shift of galaxies",
+   "mp7. the further the galaxy is (from earth), the greater the red-shift",
+   "mp4. wavelength has increased as the universe has expanded",
+   "mp5. universe was (significantly) hotter long ago",
+   "max four from: mp1. identification of cosmic (microwave) background radiation (cmbr)",
+   "mp2. cmbr appears to be the same in all directions/is everywhere",
+   "mp8. larger redshift means faster movement of galaxies",
+   "mp3. which implies all parts of the universe were in contact a long time ago",
+   "mp9. (therefore) the further away, the faster the galaxy moves away",
+   "cosmic microwave background radiation",
+   "red-shift of galaxies"
+  ],
+  "notes": "allow idea of coming from single point or singularity allow 'frequency has decreased as the universe has expanded' allow RA condone “star” for “galaxy” for MP7-10 accept speed of galaxies increases (is directly proportional to) with increased distance; accept ‘relationship between speed and distance’ for ‘galaxies moving apart from each other’ allow singularity for single point Total for question 6 = 8",
+  "traps": [],
+  "why_hard": [
+   "6-mark answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the wavelength of the sound wave. wavelength = m",
+  "exemplar_stem": "The wavelength of the sound wave is 27 cm. Calculate the speed of sound. speed of sound = m/s",
+  "topic_n": 3,
+  "topic": "Waves",
+  "tier": "discriminator",
+  "score": 6.0,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2023
+  ],
+  "sittings": [
+   "Jan 2023 Paper 2 Q7(b)(ii)",
+   "May-Jun 2022 Paper 1 Q3(b)(ii)"
+  ],
+  "points": [
+   "use of speed = frequency × wavelength",
+   "dimensionally correct substitution",
+   "evaluation",
+   "speed = frequency × wavelength speed = 1250 × 0.27 (speed =) 340 (m/s)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "evaluation",
+   "dimensionally correct substitution",
+   "use of speed = frequency × wavelength",
+   "speed = frequency × wavelength speed = 1250 × 0.27 (speed =) 340 (m/s)",
+   "rearrangement",
+   "345 = 40 (000) × λ λ = 345/40 (000) (λ =) 8.6 × 10-3 (m)",
+   "substitution"
+  ],
+  "notes": "seen or implied allow ecf from (b)(i) -1 for POT error allow 337.5 (m/s)",
+  "traps": [],
+  "why_hard": [
+   "unit conversion or power-of-ten trap",
+   "carries forward from an earlier answer",
+   "multi-step calculation (substitute, rearrange, evaluate)"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the output voltage for the transformer. voltage = V 18 19 20",
+  "exemplar_stem": "Calculate the output voltage for the transformer. voltage = V 18 19 20",
+  "topic_n": 6,
+  "topic": "Magnetism and electromagnetism",
+  "tier": "discriminator",
+  "score": 5.0,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2021,
+   2025
+  ],
+  "sittings": [
+   "Jan 2021 Paper 2R Q8(b)(ii)",
+   "May-Jun 2025 Paper 2R Q4(b)(ii)"
+  ],
+  "points": [
+   "substitution",
+   "rearrangement",
+   "evaluation",
+   "(160/45) = 12/Vs Vs = 12 / (160/45) (Vs =) 3.4 (V)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "rearrangement",
+   "substitution",
+   "evaluation",
+   "(160/45) = 12/vs vs = 12 / (160/45) (vs =) 3.4 (v)",
+   "230 × 4.5 = v × 0.21 v = 230 × 4.5 / 0.21 (v =) 4900 (v)"
+  ],
+  "notes": "allow 3.375 (V)",
+  "traps": [],
+  "why_hard": [
+   "multi-step calculation (substitute, rearrange, evaluate)"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the current in the resistor. current = A 29",
+  "exemplar_stem": "Calculate the mean current in the resistor. mean current = A",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "discriminator",
+  "score": 5.5,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2023
+  ],
+  "sittings": [
+   "May-Jun 2022 Paper 1R Q10(b)(i)",
+   "Oct-Nov 2023 Paper 1 Q10(a)(ii)"
+  ],
+  "points": [
+   "substitution",
+   "re-arrangement",
+   "evaluation",
+   "correct answer: 1.8 × 10-4 (A) e.g. charge = current × time 1.4 × 10-4 = current × 0.78 current = (1.4 × 10-4) ÷ 0.78 = 1.79 × 10-4 (A)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "substitution",
+   "evaluation",
+   "correct answer: 1.8 × 10-4 (a) e.g. charge = current × time 1.4 × 10-4 = current × 0.78 current = (1.4 × 10-4) ÷ 0.78 = 1.79 × 10-4 (a)",
+   "re-arrangement",
+   "rearrangement",
+   "5.8 = current × 13(× 103) (current =) 5.8 / 13(× 103) (current =) 4.5 × 10−4 (a)"
+  ],
+  "notes": "substitution and rearrangement in either order -1 POT error",
+  "traps": [],
+  "why_hard": [
+   "unit conversion or power-of-ten trap",
+   "multi-step calculation (substitute, rearrange, evaluate)"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the resistance of resistor Y. resistance = Ω",
+  "exemplar_stem": "Calculate the resistance of resistor Y. resistance = Ω",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "top-grade",
+  "score": 5.3,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 4,
+  "papers": 2,
+  "appearances": 3,
+  "years": [
+   2021,
+   2024
+  ],
+  "sittings": [
+   "Oct-Nov 2021 Paper 1 Q11(a)(iii)",
+   "Oct-Nov 2021 Paper 1 Q11(b)(ii)",
+   "Oct-Nov 2024 Paper 1 Q9(b)(iii)"
+  ],
+  "points": [
+   "use of voltage = current × resistance",
+   "calculation of total resistance of path (750 Ω)",
+   "idea that resistances of two resistors in series adds up to total resistance",
+   "evaluation of resistance of Y",
+   "12 = 0.016 × RT RT = 750 (Ω) 750 = 250 + RY RY = 500 (Ω)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "evaluation",
+   "rearrangement",
+   "12 = 0.019 × r (r =) 12 / 0.019 (r =) 630 (ω)",
+   "substitution",
+   "idea that resistances of two resistors in series adds up to total resistance",
+   "calculation of total resistance of path (750 ω)",
+   "use of voltage = current × resistance",
+   "12 = 0.016 × rt rt = 750 (ω) 750 = 250 + ry ry = 500 (ω)",
+   "evaluation of resistance of y",
+   "substitution or rearrangement",
+   "2.9 = 0.15 × r or r = v / i (resistance =) 19 (ω)"
+  ],
+  "notes": "must be more than just quoting the formula for the mark calculation of voltage across 250 Ω resistor (4.0 V) evaluation of voltage across R (8.0 V) evaluation of resistance of R (using V=IR) if mA not converted to A and 0.75 seen then award 2 marks max.",
+  "traps": [],
+  "why_hard": [
+   "multi-step calculation (substitute, rearrange, evaluate)",
+   "unit conversion or power-of-ten trap",
+   "carries forward from an earlier answer",
+   "4-mark answer"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ },
+ {
+  "stem": "Calculate the resistance of the thermistor. resistance = Ω 21",
+  "exemplar_stem": "Calculate the resistance of the thermistor. resistance = Ω 21",
+  "topic_n": 2,
+  "topic": "Electricity",
+  "tier": "top-grade",
+  "score": 6.5,
+  "command": "calculate",
+  "multiple_choice": false,
+  "tariff": 3,
+  "papers": 2,
+  "appearances": 2,
+  "years": [
+   2022,
+   2025
+  ],
+  "sittings": [
+   "Jan 2022 Paper 1 Q7(a)(iii)",
+   "May-Jun 2025 Paper 1 Q3(a)(iv)"
+  ],
+  "points": [
+   "substitution",
+   "rearrangement",
+   "evaluation",
+   "0.59 = 0.0062 × R R = 0.59 / 0.0062 (R =) 95 (Ω)"
+  ],
+  "menu": false,
+  "recurring_points": [
+   "rearrangement",
+   "evaluation",
+   "0.59 = 0.0062 × r r = 0.59 / 0.0062 (r =) 95 (ω)",
+   "substitution",
+   "3.9 = 0.0072 × r r = 3.9 / 0.0072 (r =) 540 (ω)",
+   "correct substitution into v = i × r"
+  ],
+  "notes": "ecf answer from (i) -1 for POT error answers of R = 90.7… or R = 101.9…(Ω) gain full answer of 242 (Ω) gains 2 marks allow 95.2, 95.16… condone 95.1",
+  "traps": [],
+  "why_hard": [
+   "multi-step calculation (substitute, rearrange, evaluate)",
+   "carries forward from an earlier answer",
+   "unit conversion or power-of-ten trap"
+  ],
+  "specs": [
+   "4PH1"
+  ]
+ }
+]

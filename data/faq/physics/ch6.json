@@ -1,0 +1,132 @@
+{
+  "n": 6,
+  "title": "Magnetism and Electromagnetism",
+  "blurb": "Transformers are the reliable earner here - the turns-ratio formula and a step-up/step-down calculation appear in most sessions, usually alongside a field-line drawing.",
+  "formulas": [
+    [
+      "transformer turns ratio",
+      "input voltage ÷ output voltage = primary turns ÷ secondary turns",
+      "–"
+    ],
+    [
+      "ideal transformer power",
+      "input voltage × input current = output voltage × output current",
+      "–"
+    ],
+    [
+      "power loss in cables",
+      "current² × resistance",
+      "W"
+    ]
+  ],
+  "items": [
+    {
+      "q": "State the formula linking input voltage, output voltage and the turns ratio of a transformer.",
+      "rx": "(formula|equation) linking .{0,60}(turns ratio|input|output|primary|secondary)",
+      "marks": "1 mark",
+      "a": [
+        "input (primary) voltage ÷ output (secondary) voltage = number of primary turns ÷ number of secondary turns",
+        "(Vp ÷ Vs = Np ÷ Ns)"
+      ],
+      "tip": "Keep primary on top on both sides, or secondary on top on both sides. Mixing them up is the usual mistake."
+    },
+    {
+      "q": "Calculate the number of turns on the secondary coil / the output voltage of the transformer.",
+      "rx": "(number of turns on the secondary|output voltage (of|for) (the|this) transformer|input voltage of this transformer)",
+      "marks": "2–3 marks",
+      "a": [
+        "Substitute into Vp ÷ Vs = Np ÷ Ns;",
+        "rearrange for the unknown;",
+        "evaluate - and check it makes sense (a step-up transformer must give more turns and more volts on the secondary)."
+      ],
+      "tip": "For an ideal transformer, power in = power out, so if the voltage is stepped up the current is stepped down."
+    },
+    {
+      "q": "State the name given to this type of transformer.",
+      "rx": "name (given to |of )?(this|the) type of transformer",
+      "marks": "1 mark",
+      "a": [
+        "Step-up if the secondary has more turns and the output voltage is higher;",
+        "step-down if the secondary has fewer turns and the output voltage is lower."
+      ]
+    },
+    {
+      "q": "Explain the operation of a step-down transformer.",
+      "rx": "step-?(up|down)|operation of a .{0,20}transformer",
+      "marks": "4–6 marks",
+      "a": [
+        "An alternating current in the primary coil produces a changing magnetic field;",
+        "the (soft) iron core carries this changing magnetic field to the secondary coil;",
+        "the changing magnetic field induces an alternating voltage in the secondary coil;",
+        "the secondary coil has fewer turns than the primary, so the output voltage is lower than the input voltage;",
+        "a transformer will not work with a steady direct current, because that gives a constant magnetic field with no change to induce a voltage."
+      ],
+      "tip": "The word 'changing' must appear. A magnetic field that is merely present induces nothing."
+    },
+    {
+      "q": "Explain why electricity is transmitted across the national grid at very high voltage.",
+      "rx": "national grid|large-scale transmission|transmitted (across|at)",
+      "marks": "2–3 marks",
+      "a": [
+        "For a given power, a higher voltage means a smaller current (P = I × V);",
+        "the power wasted as heat in the cables is I² × R, so a smaller current wastes much less energy;",
+        "this makes transmission more efficient (and thinner, cheaper cables can be used)."
+      ],
+      "tip": "Step-up transformers raise the voltage leaving the power station; step-down transformers lower it again before it reaches homes."
+    },
+    {
+      "q": "Describe the construction of an electromagnet.",
+      "rx": "construction of (a|an) (simple )?electromagnet",
+      "marks": "2–3 marks",
+      "a": [
+        "A length of insulated wire wound into a coil (solenoid);",
+        "wrapped around a soft iron core;",
+        "connected to a d.c. supply, so that a current flows and produces a magnetic field."
+      ],
+      "tip": "Ways to make it stronger: more turns on the coil, a larger current, or an iron core. Soft iron is used because it loses its magnetism when the current is switched off."
+    },
+    {
+      "q": "Describe a method to show the shape and direction of the magnetic field around a bar magnet.",
+      "rx": "(shape and direction|magnetic field).{0,60}bar magnet|plotting compass|iron filings",
+      "marks": "3–4 marks",
+      "a": [
+        "Place the magnet on a sheet of paper and sprinkle iron filings over it (tapping the paper) to show the shape of the field;",
+        "use a plotting compass to show the direction: place it near the magnet and mark the position of the needle ends with dots;",
+        "move the compass so it starts where the last dot was and repeat, then join the dots into a smooth field line;",
+        "repeat from several starting points to build up the pattern."
+      ],
+      "tip": "Iron filings alone show shape but not direction. The direction mark requires the plotting compass."
+    },
+    {
+      "q": "Draw the magnetic field lines around the bar magnet(s).",
+      "rx": "(draw|drawing).{0,40}(magnetic )?field lines",
+      "marks": "2–3 marks",
+      "a": [
+        "Lines run from the north pole to the south pole, with arrows on them showing that direction;",
+        "lines are closest together where the field is strongest (at the poles);",
+        "lines are smooth curves and never cross or touch."
+      ]
+    },
+    {
+      "q": "Draw an arrow to show the direction of the force on the current-carrying wire.",
+      "rx": "direction of the force on the (wire|proton|conductor)",
+      "marks": "1–2 marks",
+      "a": [
+        "Use Fleming's left-hand rule: first finger = magnetic Field (N to S), second finger = Current (+ to −), thumb = Force (motion);",
+        "the force is perpendicular to both the current and the field."
+      ],
+      "tip": "Reversing either the current or the magnetic field reverses the force. Reversing both leaves it unchanged."
+    },
+    {
+      "q": "Explain how a voltage is induced when the wire is moved in the magnetic field, and how to increase it.",
+      "rx": "(voltage|current) is induced|induced (voltage|current|e\\.m\\.f)|simple generator|dynamo",
+      "marks": "3–4 marks",
+      "a": [
+        "Moving the wire makes it cut through the magnetic field lines;",
+        "this induces a voltage (e.m.f.) across the wire, and a current flows if the circuit is complete;",
+        "to increase the induced voltage: move the wire faster, use a stronger magnet, or wind the wire into a coil with more turns;",
+        "if the wire is stationary or moves parallel to the field lines, no lines are cut and no voltage is induced."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+ "2020_jan_P2R|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 rhino (a)-(c); cells 3+2+1+4=10, printed 9 is a misprint",
+  "qp_md5": "161d05c4944fea63848041399ab460e6",
+  "ms_md5": "a543ea540e24375bf45fba716082c545"
+ },
+ "2020_jan_P2R|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 DNA/RNA (a)-(d); cells 2+1+1+4+1=9, printed 10 is a misprint",
+  "qp_md5": "3dc55323f2107ad53c9fba2b96d98511",
+  "ms_md5": "abb1fcf61f14b09dce65d28626125a48"
+ },
+ "2011_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 FH genetics (a)-(c), Total 12; the QP's '(d)' is the allele symbol in the stem, not a part",
+  "qp_md5": "a59d6064e59d93f9afabe0a139584d90",
+  "ms_md5": "769d3a75f916f52a924bad54d9ff5b58"
+ },
+ "2011_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 skin sensitivity (a)(b), Total 13; cut opens on 7(a)",
+  "qp_md5": "ad4f4b4e773d154ae45de23ea7fdd798",
+  "ms_md5": "277cc07001534c442664d181269e1c02"
+ },
+ "2015_may-jun_P1R|12": {
+  "decision": "CONFIRMED",
+  "reason": "Q12 viruses (a)(b)(c), Total 4; (c) rows print no part letter",
+  "qp_md5": "eea2585f099d8687113aab97fa9120fc",
+  "ms_md5": "04f17c1581774a894fc59a331abca506"
+ },
+ "2015_may-jun_P1R|13": {
+  "decision": "CONFIRMED",
+  "reason": "Q13 vitamin D investigation, 6 max, Total 6",
+  "qp_md5": "f48a99313260ade1fb020f68bcd36808",
+  "ms_md5": "41486733a5f6d513420a6a445c7af7c5"
+ },
+ "2018_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 desert plants (a)-(f): 2+1+2+1+2+2+1+1+1+1 = 14",
+  "qp_md5": "c8f7ee0d6ba63515021eea1afa761878",
+  "ms_md5": "07f87d5239ef2bf5b23985b5d1f89898"
+ },
+ "2019_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 own scheme, all parts present; part (c) is typeset as the © glyph so the reader missed it",
+  "qp_md5": "bc288b9ec697e6bfc95a0cb68a2808bf",
+  "ms_md5": "59c31114b95225e94805bc445603e54e"
+ },
+ "2019_may-jun_P2R|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 own scheme, all parts present; part (c) is typeset as the © glyph so the reader missed it",
+  "qp_md5": "c51659d48bf084ed2daa4c7334d76a37",
+  "ms_md5": "fbb6e7e4c58974633cbbbe6fb47cf6a9"
+ },
+ "2019_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 own scheme, all parts present; part (c) is typeset as the © glyph so the reader missed it",
+  "qp_md5": "ee1f59fc1368aa4dac397f02fce212b8",
+  "ms_md5": "f2a98ee464ddcd9847e4859d9d64094c"
+ },
+ "2020_oct-nov_P1R|4": {
+  "decision": "CONFIRMED",
+  "reason": "scheme heads 4(a),4(b),4(c)(i)-(iv) match the question's six parts one for one; printed total 12 vs 13",
+  "qp_md5": "d5e610d4bc9fcc4aa84e850a499e81d4",
+  "ms_md5": "0d0aa9233a9b2eaf0c8e4d54c509158f"
+ },
+ "2020_oct-nov_P1R|10": {
+  "decision": "CONFIRMED",
+  "reason": "scheme heads 10(a),(b),(c) match the question's parts; printed total 10 vs 9",
+  "qp_md5": "0a744256bb79bdaac30c7497f1f436d5",
+  "ms_md5": "d0c3a5e52485d7d6561c9d04c9a28ac1"
+ },
+ "2022_jan_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "scheme heads 4(a)(i),(a)(ii),(b) match the question's parts; printed total 9 vs 10",
+  "qp_md5": "bfcc64b9cf329278b76a05ae8146d39b",
+  "ms_md5": "e666e803f7ecc725fb46135d6bf19e55"
+ },
+ "2022_jan_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "scheme heads 7(a)(i)-(c)(iii) match the question's seven parts; printed total 13 vs 12",
+  "qp_md5": "2f97beb2504a92e3c021df2150eed3b8",
+  "ms_md5": "7c8c00e8073caa1f9c4d6b838ecf12f9"
+ },
+ "2023_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "scheme cells 1+1+3+4 = 9 = question; printed 'Total = 8' is a misprint",
+  "qp_md5": "1a4d05fd53208c708364acf5eaddd62d",
+  "ms_md5": "3bb18d710499923f628d739a70d04b9c"
+ },
+ "2026_may-jun_P1B|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 (a)-(c), 'Total = 9 marks'; cut pinned to scheme pages 7-8 above Q3",
+  "ms_regions": [
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    318
+   ]
+  ]
+ },
+ "2026_may-jun_P1B|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 'Q03a', 3(b)-(d), 'Total = 11 marks'; the reader missed the 'Q03a' head",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    318
+   ]
+  ]
+ },
+ "2026_may-jun_P1B|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 heads 4(a), 4(b)(i)-(v) match the six parts; Total = 12 marks",
+  "qp_md5": "89665b07f46b7dea1006f97054e519cb",
+  "ms_md5": "00303bf91ef044408a7910e437b2f919"
+ },
+ "2026_may-jun_P2B|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 heads 6(a)(i)-(iv), 6(b) match the five parts; board's total line misnames it 'Question 5'",
+  "qp_md5": "5ee4987ae43b2676c8da1e8e22c8afbc",
+  "ms_md5": "607ecd1c1cf23f6a5b166c7114e6077e"
+ },
+ "2023_may-jun_P2BR|2": {
+  "decision": "CONFIRMED",
+  "reason": "same paper as 2023 MJ P2R (same Pearson ref); scheme cells 1+1+3+4 = 9 = question; printed 'Total = 8' is a misprint",
+  "qp_md5": "37d5cff40252c55191e7458f3cdc276a",
+  "ms_md5": "ca69e4fadcd6d72cab5cf9c8f2bb5d5e"
+ }
+}

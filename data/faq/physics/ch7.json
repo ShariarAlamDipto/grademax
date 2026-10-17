@@ -1,0 +1,148 @@
+{
+  "n": 7,
+  "title": "Radioactivity and Particles",
+  "blurb": "Highly predictable. A definition question, a nuclear equation to balance and a half-life reading off a graph cover most of what this chapter ever asks.",
+  "formulas": [
+    [
+      "alpha particle",
+      "⁴₂He - mass number falls by 4, atomic number falls by 2",
+      "–"
+    ],
+    [
+      "beta particle",
+      "⁰₋₁e - mass number unchanged, atomic number rises by 1",
+      "–"
+    ],
+    [
+      "gamma ray",
+      "no mass, no charge - numbers unchanged",
+      "–"
+    ],
+    [
+      "half-life",
+      "time for the activity (or number of undecayed nuclei) to halve",
+      "time"
+    ]
+  ],
+  "items": [
+    {
+      "q": "State what is meant by the term half-life.",
+      "rx": "meant by the term half.?life",
+      "marks": "1–2 marks",
+      "a": [
+        "The time taken for the activity of a sample to fall to half its original value;",
+        "(or the time taken for half of the undecayed nuclei in a sample to decay)."
+      ],
+      "tip": "Say 'half of the original' or 'half of the remaining'. Just writing 'the time for it to halve' without saying what halves may not score."
+    },
+    {
+      "q": "State what is meant by the term isotope.",
+      "rx": "meant by the term isotope",
+      "marks": "2 marks",
+      "a": [
+        "Atoms (nuclei) of the same element with the same number of protons (same atomic number);",
+        "but different numbers of neutrons (different mass number)."
+      ],
+      "tip": "Both halves are needed for both marks. Same protons, different neutrons."
+    },
+    {
+      "q": "Complete the nuclear equation for an alpha decay / beta decay.",
+      "rx": "complete the (nuclear )?equation",
+      "marks": "2 marks",
+      "a": [
+        "The mass numbers (top) must balance on both sides, and the atomic numbers (bottom) must balance on both sides;",
+        "alpha decay: mass number decreases by 4 and atomic number decreases by 2, emitting ⁴₂He;",
+        "beta decay: mass number is unchanged and atomic number increases by 1, emitting ⁰₋₁e."
+      ],
+      "tip": "Check by adding: the top numbers on the right must sum to the top number on the left, and the same for the bottom numbers."
+    },
+    {
+      "q": "Use the graph to determine the half-life of the isotope.",
+      "rx": "determine the half.?life",
+      "marks": "2–3 marks",
+      "a": [
+        "Read the initial activity (or count rate) from the graph at time zero;",
+        "halve it, and read across to the curve and down to the time axis;",
+        "that time is the half-life - repeat from another starting point and average to check."
+      ],
+      "tip": "Draw your construction lines on the graph. The mark scheme often gives a mark for the lines even if the read-off is slightly out."
+    },
+    {
+      "q": "Describe the properties of alpha, beta and gamma radiation.",
+      "rx": "(properties|penetrat\\w*|ionis\\w*|deflect\\w*).{0,80}(alpha|beta|gamma)|(alpha|beta|gamma).{0,60}(penetrat|ionis|stopped by)",
+      "marks": "3–6 marks",
+      "a": [
+        "Alpha: a helium nucleus (2 protons + 2 neutrons), charge +2, most strongly ionising, least penetrating - stopped by paper or a few cm of air;",
+        "Beta: a fast-moving electron from the nucleus, charge −1, moderately ionising, stopped by a few mm of aluminium;",
+        "Gamma: a high-frequency electromagnetic wave, no charge, weakly ionising, most penetrating - reduced by thick lead or concrete;",
+        "in a magnetic or electric field, alpha and beta deflect in opposite directions (beta deflects more because it has far less mass), and gamma is not deflected."
+      ],
+      "tip": "The most ionising is always the least penetrating, because it loses its energy quickly. Learn the pair together."
+    },
+    {
+      "q": "Describe what is meant by a chain reaction.",
+      "rx": "chain reaction",
+      "marks": "3–4 marks",
+      "a": [
+        "A nucleus absorbs a neutron and becomes unstable;",
+        "the nucleus splits (fission), forming two daughter nuclei;",
+        "two or more neutrons are released;",
+        "these neutrons are absorbed by further nuclei, causing more fissions, so the reaction continues and grows."
+      ],
+      "tip": "Say 'nucleus', not 'atom'. The mark scheme rejects answers that say the atom splits."
+    },
+    {
+      "q": "Describe the role of the shielding, the control rods and the moderator in a nuclear reactor.",
+      "rx": "shielding|control rod|moderator",
+      "marks": "2–4 marks",
+      "a": [
+        "Shielding: thick concrete (or lead) around the reactor absorbs the radiation and neutrons, protecting workers from harmful exposure;",
+        "Control rods: made of boron and absorb neutrons; lowering them further reduces the number of fissions and slows the reaction;",
+        "Moderator: slows down the fast neutrons so that they are more likely to be absorbed and cause further fission."
+      ]
+    },
+    {
+      "q": "Explain how the process of nuclear fission differs from nuclear fusion.",
+      "rx": "(describe|explain|process of).{0,50}(fission|fusion)|fission.{0,40}fusion",
+      "marks": "2–4 marks",
+      "a": [
+        "Fission: a large, unstable nucleus splits into two smaller nuclei plus neutrons, releasing energy;",
+        "Fusion: two very light nuclei join together to form a heavier nucleus, releasing energy;",
+        "fusion needs extremely high temperature and pressure to overcome the electrostatic repulsion between the positive nuclei;",
+        "fusion is the process powering stars, including the Sun."
+      ]
+    },
+    {
+      "q": "Describe the sources of background radiation and how it is accounted for.",
+      "rx": "background (radiation|count)",
+      "marks": "2–3 marks",
+      "a": [
+        "Natural sources: radon gas from rocks, rocks and soil (especially granite), cosmic rays from space, and food and drink;",
+        "artificial sources: medical X-rays and treatments, and fallout from nuclear weapons or accidents;",
+        "measure the count rate with no source present, then subtract this background count from every reading."
+      ],
+      "tip": "The instruction 'correct for background radiation' means subtract - always show the subtraction in your working."
+    },
+    {
+      "q": "State what is meant by ionisation / describe how radiation is detected.",
+      "rx": "meant by the term ionis|geiger|GM tube|photographic film",
+      "marks": "1–3 marks",
+      "a": [
+        "Ionisation is the removal (or addition) of an electron from an atom, leaving a charged particle (ion);",
+        "radiation is detected with a Geiger-Müller tube connected to a counter, which records a count rate;",
+        "or with photographic film, which darkens on exposure - as used in film badges to monitor workers."
+      ]
+    },
+    {
+      "q": "Describe the safety precautions for handling radioactive sources.",
+      "rx": "(safety|precaution|handl\\w*|dispos\\w*).{0,70}(source|radioactiv|waste)|tongs",
+      "marks": "2–3 marks",
+      "a": [
+        "Handle the source with long tongs, never with bare hands, to increase the distance;",
+        "keep the exposure time as short as possible and point the source away from the body;",
+        "store it in a lead-lined container when not in use;",
+        "wear a film badge to monitor the dose received."
+      ]
+    }
+  ]
+}

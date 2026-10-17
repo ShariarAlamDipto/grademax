@@ -1,0 +1,696 @@
+{
+  "2018_jan_1P:10": {
+    "primary": "8.1",
+    "secondary": [
+      "4.3"
+    ],
+    "reason": "orbits 2 + g on the Moon 4 + orbital speed 4 outweigh GPE calc 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_jan_2P:5": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "kinetic theory of gas pressure in balloon and trapped air",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_jan_2P:7": {
+    "primary": "5.1",
+    "secondary": [],
+    "reason": "measuring volumes of an oil film; no change of state",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_1P:2": {
+    "primary": "1.4",
+    "secondary": [
+      "4.1"
+    ],
+    "reason": "Hooke's law investigation 5 vs energy words 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_1P:7": {
+    "primary": "1.1",
+    "secondary": [
+      "1.3"
+    ],
+    "reason": "v-t graph, acceleration, area 8 vs terminal velocity 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_1P:12": {
+    "primary": "4.1",
+    "secondary": [
+      "5.1",
+      "5.3",
+      "4.4"
+    ],
+    "reason": "Sankey/efficiency 5 is the largest single part",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_1PR:10": {
+    "primary": "3.2",
+    "secondary": [],
+    "reason": "investigation of ultraviolet intensity and sunscreen",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_1PR:11": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "total internal reflection 4 vs wave basics 2",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_1PR:12": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "reason": "nuclear equation and isotopes 7 vs half-life/dating 6",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_2P:4": {
+    "primary": "6.2",
+    "secondary": [
+      "6.1"
+    ],
+    "reason": "construction of an electromagnet; soft/hard materials secondary",
+    "by": "Claude review 2026-10-03"
+  },
+  "2018_may-jun_2PR:5": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1",
+      "1.5"
+    ],
+    "reason": "radio waves from a space probe; momentum 3 secondary",
+    "by": "Claude review 2026-10-03"
+  },
+  "2019_jan_1P:5": {
+    "primary": "4.3",
+    "secondary": [
+      "6.2",
+      "2.1",
+      "4.1"
+    ],
+    "reason": "GPE 4 is the largest single strand of the energy parts",
+    "by": "Claude review 2026-10-03"
+  },
+  "2019_jan_1P:8": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2"
+    ],
+    "reason": "acceleration and v-t graph 7 vs F = ma 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2019_may-jun_1P:3": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "reason": "irradiating food with gamma: irradiation vs contamination",
+    "by": "Claude review 2026-10-03"
+  },
+  "2019_may-jun_1P:8": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1",
+      "8.1"
+    ],
+    "reason": "forces on a falling probe and parachute 7 vs v^2 calc 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2019_may-jun_1PR:1": {
+    "primary": "8.2",
+    "secondary": [
+      "8.1"
+    ],
+    "reason": "question about stars: colour, temperature, classification",
+    "by": "Claude review 2026-10-03"
+  },
+  "2019_may-jun_1PR:3": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "reason": "isotope, protons, decay equation 5 vs half-life 2",
+    "by": "Claude review 2026-10-03"
+  },
+  "2019_may-jun_2P:9": {
+    "primary": "5.1",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "pressure of ice cube 6 vs melting 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_1P:8": {
+    "primary": "3.1",
+    "secondary": [
+      "1.1"
+    ],
+    "reason": "Doppler change in radar frequency 4 = acceleration 4; Doppler is the harder part",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_1PR:5": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1"
+    ],
+    "reason": "air resistance on a falling ball 5 vs speed calc 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_1PR:9": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "reason": "half-life calc and hazards outweigh the decay equation",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_1PR:11": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "gas pressure and pV at constant temperature",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_1PR:12": {
+    "primary": "1.2",
+    "secondary": [
+      "6.2"
+    ],
+    "reason": "weight and F = ma 7 vs motor effect 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_2P:5": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "oscilloscope and frequency of sound from a string",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_2P:8": {
+    "primary": "6.3",
+    "secondary": [
+      "6.2"
+    ],
+    "reason": "wireless charging by induction 5 vs fields 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_jan_2PR:8": {
+    "primary": "8.3",
+    "secondary": [
+      "3.1",
+      "3.4"
+    ],
+    "reason": "red-shift and Big Bang 7 is the largest part",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_1P:1": {
+    "primary": "3.3",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "reflection, refraction, TIR 3 vs wave properties 2",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_1P:9": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3",
+      "3.1"
+    ],
+    "reason": "loudspeaker 5 vs wavelength 4 vs generator 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_1PR:3": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1",
+      "4.3"
+    ],
+    "reason": "speed of sound from a meteor explosion",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_1PR:8": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "reason": "efficiency of a motor investigation",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_1PR:13": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "gas temperature in kelvin, molecules, egg in flask",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_2P:2": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4"
+    ],
+    "reason": "the question is the link between current and charge (Q = It)",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_2P:6": {
+    "primary": "4.2",
+    "secondary": [
+      "5.2"
+    ],
+    "reason": "thermal transfer through tiles = SHC part; insulation is the subject",
+    "by": "Claude review 2026-10-03"
+  },
+  "2020_oct-nov_2PR:5": {
+    "primary": "5.2",
+    "secondary": [
+      "4.1",
+      "7.3"
+    ],
+    "reason": "solar water heating, SHC calculation is the largest part",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_1P:5": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "reason": "safety and half-life 4 vs neutrons/detection 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_1P:6": {
+    "primary": "4.1",
+    "secondary": [
+      "1.4"
+    ],
+    "reason": "bounce height measures energy kept in the ball's stores",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_1PR:8": {
+    "primary": "6.1",
+    "secondary": [
+      "6.3"
+    ],
+    "reason": "field lines 3 vs induction 2",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_1PR:10": {
+    "primary": "7.2",
+    "secondary": [
+      "7.3"
+    ],
+    "reason": "half-life and waste disposal 8 vs fission 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_2P:1": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1",
+      "3.4"
+    ],
+    "reason": "infrared uses and hazards 3 is the largest part",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_2P:8": {
+    "primary": "2.4",
+    "secondary": [
+      "1.2",
+      "1.1"
+    ],
+    "reason": "inkjet electrostatics 6 vs F = ma 3 vs distance 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_2PR:5": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2",
+      "1.1"
+    ],
+    "reason": "background radiation at altitude 5 vs runway distance 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_jan_2PR:7": {
+    "primary": "2.3",
+    "secondary": [
+      "2.4",
+      "4.3"
+    ],
+    "reason": "current and energy from charge 6 vs charging 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_may-jun_1P:9": {
+    "primary": "1.1",
+    "secondary": [
+      "1.2"
+    ],
+    "reason": "falling whale velocity 4 = F = ma 4; kinematics first",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_may-jun_2P:6": {
+    "primary": "6.3",
+    "secondary": [
+      "7.3"
+    ],
+    "reason": "step-up transformer 4 vs fusion 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_oct-nov_1P:9": {
+    "primary": "5.1",
+    "secondary": [
+      "5.3"
+    ],
+    "reason": "pressure = force/area 6 vs absolute zero 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2021_oct-nov_2P:2": {
+    "primary": "4.3",
+    "secondary": [
+      "4.4"
+    ],
+    "reason": "power of a hydroelectric station 6 vs advantages 2",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_jan_1P:6": {
+    "primary": "1.3",
+    "secondary": [
+      "1.1",
+      "1.2"
+    ],
+    "reason": "forces on a falling object 9 vs v-t graph 6",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_jan_1P:8": {
+    "primary": "4.1",
+    "secondary": [
+      "4.2",
+      "8.1"
+    ],
+    "reason": "energy stores of a rocket 4 = radiation 4; orbit 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_jan_1PR:2": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "reason": "wavelength calc and graph 5 vs uses 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_jan_1PR:5": {
+    "primary": "4.1",
+    "secondary": [
+      "7.3",
+      "4.4"
+    ],
+    "reason": "efficiency 6; fission sentence completion 6 secondary",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_jan_1PR:8": {
+    "primary": "3.4",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "echo sounding and ultrasound in tissue",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_jan_2PR:4": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3",
+      "4.3"
+    ],
+    "reason": "d.c. motor, brushes and commutator",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_jan_2PR:8": {
+    "primary": "2.4",
+    "secondary": [
+      "2.3"
+    ],
+    "reason": "electrostatic machine, repulsion of the metal case",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_1P:10": {
+    "primary": "4.3",
+    "secondary": [
+      "4.1",
+      "1.1"
+    ],
+    "reason": "KE and speed of a falling ride 6 vs energy transfers 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_1PR:6": {
+    "primary": "2.2",
+    "secondary": [
+      "6.2",
+      "2.1"
+    ],
+    "reason": "loudspeakers in a circuit: power-resistance data, series vs parallel",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_1PR:7": {
+    "primary": "7.2",
+    "secondary": [
+      "7.1"
+    ],
+    "reason": "half-life and hazard 6 vs background and equation 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_1PR:9": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "molecules in a heated and cooled container",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_1PR:12": {
+    "primary": "1.1",
+    "secondary": [
+      "1.3",
+      "4.1"
+    ],
+    "reason": "speed after falling 4 vs parachute forces 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_2P:1": {
+    "primary": "2.1",
+    "secondary": [
+      "4.3"
+    ],
+    "reason": "power of electrical appliances, results handling",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_2P:3": {
+    "primary": "2.3",
+    "secondary": [
+      "6.3",
+      "2.1"
+    ],
+    "reason": "charge and charging time 6 vs transformer 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2022_may-jun_2PR:3": {
+    "primary": "6.2",
+    "secondary": [
+      "2.4"
+    ],
+    "reason": "left-hand rule force on a moving charge 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_1P:2": {
+    "primary": "6.1",
+    "secondary": [
+      "6.3"
+    ],
+    "reason": "uniform field between magnets 4 vs induced voltage 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_1P:3": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3"
+    ],
+    "reason": "Sankey and energy stores 7 vs work done 4",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_1P:4": {
+    "primary": "7.1",
+    "secondary": [
+      "7.2"
+    ],
+    "reason": "background correction and absorption by lead",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_1PR:1": {
+    "primary": "3.3",
+    "secondary": [
+      "1.1",
+      "8.1"
+    ],
+    "reason": "question about reflection; laser to the Moon",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_1PR:9": {
+    "primary": "7.1",
+    "secondary": [
+      "4.3"
+    ],
+    "reason": "penetrating ability of alpha, beta, gamma 5 = KE 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_2P:3": {
+    "primary": "4.3",
+    "secondary": [
+      "4.4",
+      "7.3"
+    ],
+    "reason": "power of a nuclear station 4 vs disadvantages 2",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_2P:4": {
+    "primary": "4.1",
+    "secondary": [
+      "1.4"
+    ],
+    "reason": "bounce height investigation; same call as 2021_jan_1P:6",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_jan_2PR:2": {
+    "primary": "3.2",
+    "secondary": [
+      "3.1"
+    ],
+    "reason": "question about electromagnetic waves; colour and UV hazard",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_1P:4": {
+    "primary": "3.1",
+    "secondary": [
+      "3.3"
+    ],
+    "reason": "wavelength calc and wavefronts reflected/refracted",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_1P:9": {
+    "primary": "1.1",
+    "secondary": [
+      "5.1",
+      "5.3"
+    ],
+    "reason": "velocity-time graph of the liquid 6 vs pressure 2+3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_1P:12": {
+    "primary": "6.2",
+    "secondary": [
+      "6.3",
+      "2.1"
+    ],
+    "reason": "loudspeaker and field around coil 5 vs induction 3",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_1PR:8": {
+    "primary": "1.1",
+    "secondary": [
+      "1.4"
+    ],
+    "reason": "distance-time graph of vibrating masses 5 vs spring 2",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_1PR:9": {
+    "primary": "1.2",
+    "secondary": [
+      "1.1",
+      "4.1"
+    ],
+    "reason": "braking force and deceleration",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_2P:3": {
+    "primary": "2.4",
+    "secondary": [
+      "4.3",
+      "8.1"
+    ],
+    "reason": "charged grid and repelling electrons in an oscilloscope",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_2P:7": {
+    "primary": "3.3",
+    "secondary": [
+      "8.3"
+    ],
+    "reason": "refractive index 6 = red-shift 6; refraction first",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_2PR:1": {
+    "primary": "1.2",
+    "secondary": [
+      "1.1"
+    ],
+    "reason": "vectors and scalars, units",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_may-jun_2PR:8": {
+    "primary": "8.3",
+    "secondary": [
+      "8.2"
+    ],
+    "reason": "red-shift from a supernova 8 vs stellar evolution 7",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_oct-nov_1P:2": {
+    "primary": "2.2",
+    "secondary": [],
+    "reason": "current-time graph relationships",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_oct-nov_1P:3": {
+    "primary": "3.1",
+    "secondary": [
+      "3.2"
+    ],
+    "reason": "microwave wavelength and speed 5 vs hazard 1",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_oct-nov_1P:5": {
+    "primary": "4.2",
+    "secondary": [],
+    "reason": "conduction through metal strips",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_oct-nov_1P:9": {
+    "primary": "7.3",
+    "secondary": [
+      "6.3",
+      "2.1"
+    ],
+    "reason": "nuclear fission 5 is the largest single strand",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_oct-nov_1P:11": {
+    "primary": "5.3",
+    "secondary": [
+      "5.1"
+    ],
+    "reason": "pressure of trapped gas 7 vs pressure difference 5",
+    "by": "Claude review 2026-10-03"
+  },
+  "2023_oct-nov_1P:12": {
+    "primary": "4.1",
+    "secondary": [
+      "4.3",
+      "1.1"
+    ],
+    "reason": "energy transfers and energy lost on a marble run",
+    "by": "Claude review 2026-10-03"
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "title": "Exam Skills That Appear in Every Chapter",
+  "blurb": "These are not tied to any one topic - they turn up attached to whichever chapter the practical question happens to be about. They are among the most frequently asked things in the whole paper, and they are the easiest marks on it.",
+  "items": [
+    {
+      "q": "Draw the line / curve of best fit.",
+      "rx": "(line|curve) of best fit",
+      "marks": "1 mark",
+      "a": [
+        "Draw a single smooth thin line with roughly equal numbers of points above and below it;",
+        "ignore any anomalous point, and circle it to show you spotted it;",
+        "if the relationship is proportional, the line must pass through the origin;",
+        "use a ruler for a straight line, and draw a smooth freehand curve for a curved one."
+      ],
+      "tip": "Never join the dots, and never extend the line beyond the data unless the question asks you to extrapolate."
+    },
+    {
+      "q": "Plot the student's results on the grid.",
+      "rx": "plot (the|a graph of|your).{0,30}(results|point|data)",
+      "marks": "2–4 marks",
+      "a": [
+        "Choose sensible linear scales that make the points fill more than half the grid;",
+        "label both axes with the quantity and its unit;",
+        "put the independent variable (the one the student changed) on the x-axis;",
+        "plot every point accurately, to within half a small square, using neat crosses or dots."
+      ],
+      "tip": "Scales of 3 or 7 units per square lose marks and cause plotting errors. Use 1, 2, 5 or 10."
+    },
+    {
+      "q": "Give your answer to a suitable number of significant figures / decimal places.",
+      "rx": "significant figures|decimal places",
+      "marks": "1 mark",
+      "a": [
+        "Match the least precise piece of data you were given - usually 2 or 3 significant figures;",
+        "round only at the very end of the calculation, never in the middle;",
+        "keep the unrounded value in your calculator for any follow-on part."
+      ],
+      "tip": "This is often a separate mark on top of the calculation mark. Losing it is the single most avoidable error in the paper."
+    },
+    {
+      "q": "State two control variables in the student's investigation.",
+      "rx": "control variables",
+      "marks": "2 marks",
+      "a": [
+        "Name any quantity deliberately kept the same throughout - the same ruler, the same length of wire, the same mass, the same temperature, the same room;",
+        "keeping them constant is what makes it a fair test."
+      ],
+      "tip": "A control variable is not the thing you change (independent) nor the thing you measure (dependent). Name something concrete from the apparatus in the question."
+    },
+    {
+      "q": "Describe how the student could improve the accuracy / reliability of the investigation.",
+      "rx": "(improve|more accurate|accuracy|reliab|repeat).{0,60}(result|investigation|experiment|measurement)",
+      "marks": "2–3 marks",
+      "a": [
+        "Repeat each reading and calculate a mean, discarding anomalies - this reduces random error;",
+        "use a measuring instrument with a finer resolution (more decimal places);",
+        "measure a larger quantity, or many events at once, so the measurement error is a smaller fraction;",
+        "control the variables that would otherwise affect the result, such as insulating against heat loss."
+      ],
+      "tip": "'Be more careful' and 'avoid human error' score nothing. Name the instrument or the specific change."
+    },
+    {
+      "q": "Suggest a reason why ... / Suggest why the student should ...",
+      "rx": "suggest (a )?(reason )?(why|how|what)",
+      "marks": "1–3 marks",
+      "a": [
+        "'Suggest' means there is no single memorised answer - apply physics you know to the situation described;",
+        "name the physical effect (friction, air resistance, heat loss to the surroundings, a zero error, resistance of the wires);",
+        "say what it does to the measurement, and in which direction it changes the result."
+      ],
+      "tip": "One of the most common command words in the paper. Always tie your reason to something specific in the question - the apparatus, the material, or the numbers given."
+    },
+    {
+      "q": "Evaluate the student's method / conclusion.",
+      "rx": "evaluate (this|the|whether|how)",
+      "marks": "3–6 marks",
+      "a": [
+        "Give both sides - at least one thing that supports the method or conclusion and at least one weakness;",
+        "quote specific data from the question to back each point up;",
+        "identify the main source of error and say whether it makes the value too high or too low;",
+        "finish with a clear judgement that answers the question actually asked."
+      ],
+      "tip": "'Evaluate' with no judgement at the end caps your marks. Write one closing sentence that decides the issue."
+    }
+  ]
+}
