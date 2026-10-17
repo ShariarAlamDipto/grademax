@@ -53,6 +53,15 @@ the state of the most recent work.
    Commit or push only when the user asks. Use conventional commits
    (`feat:`, `fix:`, `docs:` …). Never commit or push large "everything in the working
    tree" changes; the tree always holds unrelated in-progress work.
+   **What may be committed** is set by `.gitignore` (17 Oct 2026). Never commit
+   `data/supabase-export` (every user's email), `data/backups`, raw paper archives,
+   built books or segment PDFs (R2 serves them), predictions, `output/` or `tmp/`. Do
+   commit code, tests, docs, the JSON work product in `data/workbook`, and each
+   subject's chapter decisions in `data/analysis/live_rebuild/<code>/`
+   (`topic_reads.json`, `topics_new.json`, `manual_review.json`). Never use
+   `git add -f` on an ignored path, and never restore a file from an old commit over
+   newer work: on 17 Oct the April copy of `generate-v2/route.ts`, which lacks the
+   30-question limit, reappeared in the working tree and had to be reverted.
 9. **Print books** (chapterwise and yearwise) always ship as two editions that differ
    only in their watermark: a GradeMax store edition and the user's students edition.
 
