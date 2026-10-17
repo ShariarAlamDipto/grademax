@@ -1,0 +1,268 @@
+{
+  "questions": 48,
+  "chapter_counts": {
+    "4": 23,
+    "5": 19,
+    "3": 18,
+    "1": 8,
+    "2": 10,
+    "6": 10
+  },
+  "verdicts": {
+    "LABEL_PROVEN": 27,
+    "PROVEN": 21
+  },
+  "source_identity": {
+    "2022_may-jun_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": null,
+        "season": null,
+        "evidence": null,
+        "barcode": "P72538A",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2022
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2022,
+        "season": "may-jun",
+        "evidence": "Summer 2022",
+        "barcode": null,
+        "pubcode": "4CP0_01_2206_MS",
+        "pub_year": 2022,
+        "pub_season": "may-jun",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    },
+    "2020_oct-nov_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2020,
+        "season": "may-jun",
+        "evidence": "Monday 18 May 2020",
+        "barcode": "P61884RR",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2020
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2020,
+        "season": "oct-nov",
+        "evidence": "November 2020",
+        "barcode": null,
+        "pubcode": "4CP0_01_2011_MS",
+        "pub_year": 2020,
+        "pub_season": "oct-nov",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    },
+    "2021_may-jun_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": null,
+        "season": null,
+        "evidence": null,
+        "barcode": "P66489A",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2021
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2021,
+        "season": "may-jun",
+        "evidence": "Summer 2021",
+        "barcode": null,
+        "pubcode": "4CP0_01_2106_MS",
+        "pub_year": 2021,
+        "pub_season": "may-jun",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    },
+    "2024_may-jun_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2024,
+        "season": "may-jun",
+        "evidence": "Thursday 23 May 2024",
+        "barcode": "P75736A",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2024
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2024,
+        "season": "may-jun",
+        "evidence": "Summer 2024",
+        "barcode": null,
+        "pubcode": "4CP0_01_2406_MS",
+        "pub_year": 2024,
+        "pub_season": "may-jun",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    },
+    "2026_may-jun_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2026,
+        "season": "may-jun",
+        "evidence": "Friday 8 May 2026",
+        "barcode": "P79637RA",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2026
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2026,
+        "season": "may-jun",
+        "evidence": "Summer 2026",
+        "barcode": null,
+        "pubcode": "4CP0_01_2606_MS",
+        "pub_year": 2026,
+        "pub_season": "may-jun",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    },
+    "2023_may-jun_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2023,
+        "season": "may-jun",
+        "evidence": "Friday 26 May 2023",
+        "barcode": "P72937A",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2023
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2023,
+        "season": "may-jun",
+        "evidence": "Summer 2023",
+        "barcode": null,
+        "pubcode": "4CP0_01_2306_MS",
+        "pub_year": 2023,
+        "pub_season": "may-jun",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    },
+    "2021_oct-nov_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": null,
+        "season": null,
+        "evidence": null,
+        "barcode": "P69297A",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2021
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2021,
+        "season": "oct-nov",
+        "evidence": "November 2021",
+        "barcode": null,
+        "pubcode": "4CP0_01_2111_MS",
+        "pub_year": 2021,
+        "pub_season": "oct-nov",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    },
+    "2019_may-jun_P1": {
+      "qp": {
+        "kind": "QP",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2019,
+        "season": "may-jun",
+        "evidence": "Monday 20 May 2019",
+        "barcode": "P61880A",
+        "pubcode": null,
+        "pub_year": null,
+        "pub_season": null,
+        "pub_is_date": null,
+        "cover_unit": null,
+        "copy_year": 2019
+      },
+      "ms": {
+        "kind": "MS",
+        "unit": "4CP0",
+        "paper": "01",
+        "year": 2019,
+        "season": "may-jun",
+        "evidence": "Summer 2019",
+        "barcode": null,
+        "pubcode": "4CP0_01_1906_MS",
+        "pub_year": 2019,
+        "pub_season": "may-jun",
+        "pub_is_date": false,
+        "cover_unit": "4CP0"
+      }
+    }
+  },
+  "verdicts_sha256": "e72f6c60fa0a96146836a2f91508be44bbdbe74248f8cd2b97c92314102c9bb2",
+  "reads_sha256": "7a1837df68b3f1f4432f221a9651a29d42569cb6a54b3cca524bd4aca6c3e758",
+  "failures": []
+}
