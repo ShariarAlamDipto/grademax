@@ -657,6 +657,80 @@ def band_text(ms_path: Path, band: Band) -> str:
     return re.sub(r"\s+", " ", " ".join(pieces))
 
 
+# The block must OPEN with it (after at most a repeated table header): a
+# question's own scheme often says "Alternative method" a few rows in
+# (2013 Jan 4H q24), and that is not a separate block.
+ALTERNATIVE_OPENING_RE = re.compile(
+    r"^\W*(?:Question\s+(?:Number\s+)?Working\s+Answer\s+Mark\s+Notes\s+)?"
+    r"(?:Alternative\b|ALT\b)", re.I)
+STAMP_RE = re.compile(r"GradeMax|[\w ]+·[^·]+·[^·]+·[^·]+·\s*(?:QP|MS)|4MA\d[^|]*(?:\|[^|]*){3}\|")
+ALTERNATIVE_LEAD_CHARS = 200
+
+
+def merge_alternative_tallies(ms_path: Path, tallies: Sequence[Tally],
+                              target: int | None = None) -> list[Tally]:
+    """
+    Fold "Alternative mark scheme for 19" blocks into the question they belong to.
+
+    Maths A schemes print an alternative method as its own table with its own
+    "Total 3 marks" line straight after the main one. Read as a tally sequence
+    that is one tally too many, and the aligner hands the alternative to the
+    NEXT question (2023 May-Jun 2H q20 came out as "Alternative mark scheme for
+    19"). Where a tally's block opens with "Alternative" and states the same
+    total as the tally before it, the earlier tally is dropped: the question's
+    band then runs from its own start through its alternative, and the next
+    question starts after both. Unequal totals are left alone for the gate.
+    """
+    titled, repeated = _alternative_candidates(ms_path, tallies)
+    drop: set[int] = set()
+    # Titled blocks are near-certain; an untitled block that repeats the
+    # previous question number is used only while the scheme still has more
+    # tallies than the paper has questions, so it can never undercount.
+    for index in titled:
+        if target is None or len(tallies) - len(drop) > target:
+            drop.add(index - 1)
+    if target is not None:
+        for index in repeated:
+            if len(tallies) - len(drop) <= target:
+                break
+            drop.add(index - 1)
+    return [t for i, t in enumerate(tallies) if i not in drop]
+
+
+def _alternative_candidates(ms_path: Path, tallies: Sequence[Tally]) -> tuple[list[int], list[int]]:
+    """Indexes of tallies whose block is an alternative of the block before it:
+    (titled "Alternative ...", untitled but repeating the previous number)."""
+    titled: list[int] = []
+    repeated: list[int] = []
+    previous_label = None
+    for index in range(1, len(tallies)):
+        previous, tally = tallies[index - 1], tallies[index]
+        if previous.axis != tally.axis:
+            previous_label = None
+            continue
+        block = Band(previous.page, previous.hi + GAP_AFTER_TALLY, tally.page, tally.lo, tally.axis)
+        lead = STAMP_RE.sub(" ", band_text(ms_path, block)).strip()[:ALTERNATIVE_LEAD_CHARS]
+        label = _lead_label(lead)
+        if previous.marks == tally.marks:
+            if ALTERNATIVE_OPENING_RE.search(lead):
+                titled.append(index)
+                continue  # the question's own number stays the one to compare with
+            if label is not None and label == previous_label:
+                repeated.append(index)
+                continue
+        previous_label = label
+    return titled, repeated
+
+
+LEAD_LABEL_RE = re.compile(r"(?<![\d.,])(\d{1,2})(?!\d|[.,]\d)")
+
+
+def _lead_label(lead: str) -> int | None:
+    """The first bare whole number of a block -- its question label, usually."""
+    match = LEAD_LABEL_RE.search(lead)
+    return int(match.group(1)) if match else None
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Turning anchors into bands
 # ─────────────────────────────────────────────────────────────────────────────

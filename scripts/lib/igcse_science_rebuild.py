@@ -315,7 +315,7 @@ def question_segments(read_doc: fitz.Document) -> tuple[list[Segment], str]:
     return segments, ""
 
 
-def write_cut(src: fitz.Document, regions, target: Path) -> None:
+def write_cut(src: fitz.Document, regions, target: Path, *, garbage: int = 3) -> None:
     with fitz.open() as new:
         for page_no, top, bottom in regions:
             page = src[page_no]
@@ -330,7 +330,13 @@ def write_cut(src: fitz.Document, regions, target: Path) -> None:
         if new.page_count == 0:
             raise ValueError(f"empty cut for {target}")
         target.parent.mkdir(parents=True, exist_ok=True)
-        new.save(target, garbage=3, deflate=True)
+        new.save(target, garbage=garbage, deflate=True)
+    # The source's design layers that are OFF by default (OMR grid, "Exemplar"
+    # watermark, DRAFT) must stay off in the cut -- the copy above loses that
+    # setting and they showed over 31 live questions (2026-10-11).
+    if src.name:
+        from lib.live_rebuild_common import carry_hidden_layers  # noqa: PLC0415 -- avoid import cycle
+        carry_hidden_layers(Path(src.name), target)
 
 
 LABEL_COLUMN_FRACTION = 0.2

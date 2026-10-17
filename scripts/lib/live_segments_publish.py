@@ -41,6 +41,7 @@ import time
 import json
 import re
 from dataclasses import dataclass, field
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 from lib.live_paper_sources import ROOT, fetch_rows, r2_reader, subject_id, supabase_client
@@ -204,7 +205,29 @@ def _put_with_retry(r2, bucket: str, key: str, body: bytes) -> None:
             time.sleep(2 ** attempt)
 
 
-def execute(code: str, plan: Plan, pages_rows: list[dict]) -> None:
+def upload_objects(r2, bucket: str, uploads: list[tuple[Path, str]],
+                   existing: dict[str, int], workers: int = 1) -> int:
+    """Finish all unique uploads before the caller writes database URLs."""
+    if workers < 1:
+        raise ValueError("upload workers must be positive")
+    unique = {key: local for local, key in uploads}
+    pending = [(local, key) for key, local in unique.items() if key not in existing]
+    print(f"objects : {len(unique)} total, {len(unique) - len(pending)} already uploaded", flush=True)
+
+    def put(item):
+        local, key = item
+        _put_with_retry(r2, bucket, key, local.read_bytes())
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = [pool.submit(put, item) for item in pending]
+        for done, future in enumerate(as_completed(futures), 1):
+            future.result()
+            if done % 100 == 0 or done == len(pending):
+                print(f"upload  : {done}/{len(pending)}", flush=True)
+    return len(unique)
+
+
+def execute(code: str, plan: Plan, pages_rows: list[dict], *, upload_workers: int = 1) -> None:
     import ingest_2026_papers as ing  # noqa: PLC0415 -- env loaded by r2_reader
 
     r2_reader()
@@ -219,16 +242,8 @@ def execute(code: str, plan: Plan, pages_rows: list[dict]) -> None:
                                                                   Prefix=prefix):
             for obj in page.get("Contents", []):
                 existing[obj["Key"]] = obj["Size"]
-    done: set[str] = set()
-    for local, key in plan.uploads:
-        if key in done:
-            continue
-        if key in existing:  # content-addressed: same name, same bytes
-            done.add(key)
-            continue
-        _put_with_retry(r2, ing.R2_BUCKET, key, local.read_bytes())
-        done.add(key)
-    print(f"uploaded: {len(done)} objects")
+    done = upload_objects(r2, ing.R2_BUCKET, plan.uploads, existing, upload_workers)
+    print(f"uploaded: {done} objects", flush=True)
 
     sb = supabase_client()
     mirror_ids = {r["id"] for r in json.loads(
@@ -253,6 +268,7 @@ def execute(code: str, plan: Plan, pages_rows: list[dict]) -> None:
             "difficulty": c.get("difficulty"), "page_pdf_url": c["qp_page_url"],
             "ms_pdf_url": c["ms_page_url"], "has_diagram": False,
         } for c in created]).execute()
+        print(f"inserted: {min(start + 100, len(plan.inserts))}/{len(plan.inserts)}", flush=True)
     print(f"updated : {len(plan.updates)}  hidden: {len(plan.hides)}  inserted: {len(plan.inserts)}")
 
 
