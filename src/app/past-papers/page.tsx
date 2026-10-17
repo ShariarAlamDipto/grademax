@@ -5,9 +5,9 @@ import { pastPaperSubjects, type Subject } from "@/lib/subjects"
 import { getSubjectSlugsWithPapers } from "@/lib/papersIndex"
 
 export const metadata: Metadata = {
-  title: "Free Edexcel Past Papers – IGCSE & A Level by Year | GradeMax",
+  title: "Edexcel Past Papers & Mark Schemes – IGCSE & A Level",
   description:
-    "Browse free Edexcel IGCSE and A Level past papers with mark schemes (2011–2025). Choose your subject and download question papers by year and session.",
+    "Download free Edexcel IGCSE and International A Level question papers and mark schemes. Choose your subject, year and exam session to find the right PDF.",
   keywords: [
     "Edexcel past papers", "IGCSE past papers", "A Level past papers",
     "Edexcel IGCSE past papers", "Edexcel A Level past papers",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "A Level question papers", "Edexcel past papers 2025",
   ],
   openGraph: {
-    title: "Free Edexcel Past Papers – IGCSE & A Level by Year | GradeMax",
+    title: "Edexcel Past Papers & Mark Schemes – IGCSE & A Level | GradeMax",
     description: "Browse all Edexcel IGCSE and A Level past papers by subject, year and session. Free PDFs with mark schemes.",
     url: "https://www.grademax.me/past-papers",
     siteName: "GradeMax",

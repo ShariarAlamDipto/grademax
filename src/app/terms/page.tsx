@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { publicPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = publicPageMetadata({
+  path: '/terms',
   title: 'Terms of Service',
   description: 'GradeMax Terms of Service - Read our terms and conditions for using the GradeMax study platform.',
-}
+})
 
 const sectionStyle = { marginBottom: "2rem" }
 const h2Style = { fontSize: "1.05rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "0.875rem" } as const

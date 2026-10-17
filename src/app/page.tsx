@@ -1,5 +1,6 @@
 // src/app/page.tsx
 import type { Metadata } from "next"
+import { publicPageMetadata } from "@/lib/metadata"
 import dynamic from "next/dynamic"
 import Link from "next/link"
 import LazyWorryCatcher from "@/components/LazyWorryCatcher"
@@ -9,6 +10,11 @@ const CURRENT_YEAR = new Date().getFullYear()
 // Brand-first on the homepage tab; the keyword-first default in layout.tsx
 // still covers every page that doesn't set its own title.
 export const metadata: Metadata = {
+  ...publicPageMetadata({
+    path: '/',
+    title: `Free Edexcel Past Papers ${CURRENT_YEAR} – IGCSE & A Level`,
+    description: 'Free Edexcel and Cambridge IGCSE and A Level past papers with mark schemes. Browse by subject, year and session, or create custom Edexcel worksheets.',
+  }),
   title: { absolute: `GradeMax – Free Edexcel Past Papers ${CURRENT_YEAR} | IGCSE & A Level` },
 }
 
@@ -30,9 +36,35 @@ const ialSubjects = [
   { name: "Statistics 1", level: "ial", slug: "statistics-1",       code: "WST01", color: "#F472B6", bg: "rgba(244,114,182,0.06)", border: "rgba(244,114,182,0.20)" },
 ]
 
+const homepageSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': 'https://www.grademax.me/#webpage',
+      url: 'https://www.grademax.me/',
+      name: 'GradeMax – Edexcel and Cambridge Past Papers',
+      description: 'Free IGCSE and A Level past papers with mark schemes and Edexcel practice tools.',
+      isPartOf: { '@id': 'https://www.grademax.me/#website' },
+      about: { '@id': 'https://www.grademax.me/#organization' },
+      inLanguage: 'en-GB',
+    },
+    {
+      '@type': 'ItemList',
+      itemListElement: [...igcseSubjects, ...ialSubjects].map((subject, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: `${subject.name} Past Papers`,
+        url: `https://www.grademax.me/subjects/${subject.level}/${subject.slug}`,
+      })),
+    },
+  ],
+}
+
 export default function Home() {
   return (
     <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageSchema) }} />
 
       {/* ════════════════════════════════════════
           § 1  HERO
@@ -63,10 +95,12 @@ export default function Home() {
         }} />
 
         <div style={{ position: "relative", zIndex: 1, maxWidth: "820px", width: "100%" }}>
-          {/* Main headline */}
-          <h1
+          {/* One semantic heading, with the two visual lines preserved. */}
+          <h1 style={{ margin: 0 }}>
+          <span
             className="hero-line-1"
             style={{
+              display: "block",
               fontSize: "clamp(3.2rem, 9vw, 6.5rem)",
               fontWeight: 800,
               lineHeight: 1.0,
@@ -76,10 +110,11 @@ export default function Home() {
             }}
           >
             Your A* strategy,
-          </h1>
-          <h1
+          </span>
+          <span
             className="hero-line-2"
             style={{
+              display: "block",
               fontSize: "clamp(3.2rem, 9vw, 6.5rem)",
               fontWeight: 800,
               lineHeight: 1.0,
@@ -92,6 +127,7 @@ export default function Home() {
             }}
           >
             simplified.
+          </span>
           </h1>
 
           {/* Board labels */}
@@ -165,6 +201,22 @@ export default function Home() {
         </div>
       </section>
 
+      <section aria-labelledby="bangladesh-books" style={{ borderTop: "1px solid var(--gm-border)", padding: "3.5rem 1.5rem", background: "var(--gm-bg)" }}>
+        <div style={{ maxWidth: "1080px", margin: "0 auto", display: "flex", gap: "1.5rem", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap" }}>
+          <div style={{ maxWidth: "42rem" }}>
+            <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gm-amber)", marginBottom: "0.5rem" }}>For students in Bangladesh</p>
+            <h2 id="bangladesh-books" style={{ fontSize: "clamp(1.4rem, 3.5vw, 2rem)", fontWeight: 800, letterSpacing: "-0.03em", lineHeight: 1.2, marginBottom: "0.75rem" }}>
+              Take your practice off the screen.
+            </h2>
+            <p style={{ color: "var(--gm-text-2)", fontSize: "0.95rem", lineHeight: 1.7 }}>
+              Explore GradeMax Edexcel IGCSE and IAL printed workbooks and yearwise books.
+              Compare editions, read sample pages and check prices in taka, with delivery across Bangladesh.
+            </p>
+          </div>
+          <Link href="/books/bangladesh" className="btn-ghost-amber">Explore books in Bangladesh</Link>
+        </div>
+      </section>
+
       {/* ════════════════════════════════════════
           § 3  SUBJECTS — float from center
           ════════════════════════════════════════ */}
@@ -218,18 +270,19 @@ export default function Home() {
       </section>
 
       {/* ════════════════════════════════════════
-          SEO — hidden prose for crawlers
+          Public resource guide
           ════════════════════════════════════════ */}
-      <section style={{ padding: "2rem 1.5rem 1rem", maxWidth: "680px", margin: "0 auto" }} aria-hidden="true">
-        <p style={{ fontSize: "0.75rem", color: "var(--gm-border-2)", lineHeight: 1.8, textAlign: "center" }}>
+      <section aria-label="Study resources" style={{ padding: "2rem 1.5rem", maxWidth: "800px", margin: "0 auto" }}>
+        <p style={{ fontSize: "0.85rem", color: "var(--gm-text-2)", lineHeight: 1.8, textAlign: "center" }}>
           GradeMax provides free{" "}
           <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-gcses-and-edexcel-certificates.html"
-            target="_blank" rel="noopener noreferrer" style={{ color: "var(--gm-border-2)" }}>Pearson Edexcel IGCSE</a>{" "}
+            target="_blank" rel="noopener noreferrer" className="gm-link">Pearson Edexcel IGCSE</a>{" "}
           and{" "}
           <a href="https://qualifications.pearson.com/en/qualifications/edexcel-international-advanced-levels.html"
-            target="_blank" rel="noopener noreferrer" style={{ color: "var(--gm-border-2)" }}>International A Level</a>{" "}
-          past papers with mark schemes from 2010–2025. Topic-wise practice for Physics, Maths, Chemistry, Biology and ICT.
-          Generate custom worksheets from real Pearson Edexcel exam questions.
+            target="_blank" rel="noopener noreferrer" className="gm-link">International A Level</a>{" "}
+          past papers and mark schemes. Browse by subject, year and session, or use our Edexcel worksheet
+          guide to find supported subjects for topic practice. Students in Bangladesh can also compare
+          printed books and delivery options in the book guide.
         </p>
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.25rem 1rem", marginTop: "1.25rem" }}>
           {([
@@ -239,6 +292,7 @@ export default function Home() {
             ["/edexcel-a-level-past-papers", "A Level Past Papers"],
             ["/edexcel-worksheets",          "Worksheet Generator"],
             ["/subjects",                    "All Subjects"],
+            ["/books/bangladesh",            "Books in Bangladesh"],
           ] as [string, string][]).map(([href, label]) => (
             <Link key={href} href={href} className="quick-link" style={{ fontSize: "0.7rem" }}>{label}</Link>
           ))}

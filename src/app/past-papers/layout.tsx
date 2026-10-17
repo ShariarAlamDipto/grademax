@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Free Edexcel Past Papers 2025 – IGCSE & A Level with Mark Schemes | GradeMax',
-  description: 'Download free Edexcel IGCSE and A Level past papers with mark schemes (2011–2025). Browse Physics, Maths, Chemistry, Biology, ICT and more – all question papers organised by year and session.',
+  title: 'Edexcel Past Papers & Mark Schemes – IGCSE & A Level',
+  description: 'Download free Edexcel IGCSE and A Level question papers and mark schemes. Browse by subject, year and exam session.',
   keywords: [
     'Edexcel past papers', 'Edexcel past papers free download', 'past papers with mark schemes',
     'IGCSE past papers', 'IGCSE past papers Edexcel', 'Edexcel IGCSE past papers',
@@ -18,16 +18,16 @@ export const metadata: Metadata = {
     'Edexcel question papers', 'past paper PDF download',
   ],
   openGraph: {
-    title: 'Free Edexcel Past Papers 2025 – IGCSE & A Level | GradeMax',
-    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Physics, Maths, Chemistry, Biology, ICT – all sessions 2011–2025.',
+    title: 'Edexcel Past Papers & Mark Schemes – IGCSE & A Level | GradeMax',
+    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Browse by subject, year and session.',
     url: 'https://www.grademax.me/past-papers',
     siteName: 'GradeMax',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Free Edexcel Past Papers 2025 – IGCSE & A Level | GradeMax',
-    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes (2011–2025).',
+    title: 'Edexcel Past Papers & Mark Schemes – IGCSE & A Level | GradeMax',
+    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes by subject, year and session.',
   },
   alternates: {
     canonical: 'https://www.grademax.me/past-papers',

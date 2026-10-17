@@ -1,11 +1,13 @@
 import type { Metadata } from "next"
+import { publicPageMetadata } from "@/lib/metadata"
 import SuggestionForm from "./SuggestionForm"
 
-export const metadata: Metadata = {
+export const metadata: Metadata = publicPageMetadata({
+  path: '/improvements',
   title: "Improvements and Suggestions",
   description:
     "Share what you'd like to see on GradeMax. Every suggestion goes straight to the team and helps shape the platform.",
-}
+})
 
 const CONTACT_EMAIL = "grademax.me@gmail.com"
 

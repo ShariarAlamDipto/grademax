@@ -1,11 +1,13 @@
 ﻿import type { Metadata } from 'next'
 import type { CSSProperties } from 'react'
+import { publicPageMetadata } from '@/lib/metadata'
 import { SOCIAL_PROFILES, SocialIcon } from '@/lib/social'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = publicPageMetadata({
+  path: '/contact',
   title: 'Contact Us',
   description: 'Get in touch with the GradeMax team. We welcome your questions, feedback, and suggestions about our IGCSE and A Level study platform.',
-}
+})
 
 export default function ContactPage() {
   return (

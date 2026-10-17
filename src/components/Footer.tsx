@@ -96,6 +96,8 @@ export default function Footer() {
                 ["/past-papers",           "Edexcel Papers by Year"],
                 ["/past-papers/cambridge", "Cambridge Papers by Year"],
                 ["/subjects",              "All Subjects"],
+                ["/store",                 "Books & Workbooks"],
+                ["/books/bangladesh",      "Books in Bangladesh"],
               ] as [string, string][]).map(([href, label]) => (
                 <li key={href}><Link href={href} className="gm-link" style={{ fontSize: "0.8rem" }}>{label}</Link></li>
               ))}
