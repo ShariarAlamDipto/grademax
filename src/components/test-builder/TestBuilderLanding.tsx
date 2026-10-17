@@ -13,6 +13,7 @@ const SUBJECTS = [
   { name: 'IGCSE Biology',                 code: '4BI1', href: '/subjects/igcse/biology' },
   { name: 'IGCSE Human Biology',           code: '4HB1', href: '/past-papers/human-biology' },
   { name: 'IGCSE Further Pure Mathematics', code: '4PM1', href: '/past-papers/further-pure-maths' },
+  { name: 'IGCSE Computer Science',        code: '4CP0', href: '/past-papers/computer-science' },
 ]
 
 const faqs = [
@@ -26,7 +27,7 @@ const faqs = [
   },
   {
     question: 'Which subjects does the Test Builder support?',
-    answer: 'Edexcel IGCSE Physics (4PH1), Mathematics B (4MB1), Chemistry (4CH1), Biology (4BI1), Human Biology (4HB1), and Further Pure Mathematics (4PM1). More subjects are added as their question banks are classified by topic.',
+    answer: 'Edexcel IGCSE Physics (4PH1), Mathematics B (4MB1), Chemistry (4CH1), Biology (4BI1), Human Biology (4HB1), Further Pure Mathematics (4PM1) and Computer Science (4CP0). More subjects are added as their question banks are classified by topic.',
   },
   {
     question: 'How is the Test Builder different from the Worksheet Generator?',

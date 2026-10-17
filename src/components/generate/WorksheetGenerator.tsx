@@ -7,6 +7,8 @@ import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
 import SignInPrompt from '@/components/SignInPrompt';
+import { toolSubjectDisplayCode, usesChapterFilters, usesExamPaperFilters } from '@/lib/igcseToolSubjects';
+import { totalQuestionMarks } from '@/lib/questionMarks';
 
 interface Subject {
   id: string;
@@ -32,6 +34,7 @@ const YEARS = Array.from({ length: CURRENT_YEAR - START_YEAR + 1 }, (_, i) => CU
 interface Question {
   id: string;
   questionNumber: string;
+  marks?: number | null;
   topics: string[];
   difficulty: string;
   qpPageUrl: string;
@@ -113,7 +116,10 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [selectedTopics, setSelectedTopics] = useState<string[]>([]);
   const [yearStart, setYearStart] = useState<number>(START_YEAR);
   const [yearEnd, setYearEnd] = useState<number>(CURRENT_YEAR);
-  const [difficulty, setDifficulty] = useState<string>('');
+  const [difficultyDraft, setDifficulty] = useState<string>('');
+  const paperFilters = usesExamPaperFilters(subjects.find(s => s.id === selectedSubject)?.code || '');
+  const chapterFilters = usesChapterFilters(subjects.find(s => s.id === selectedSubject)?.code || '');
+  const difficulty = paperFilters ? '' : difficultyDraft;
   // Kept as the raw text so the field can be emptied while typing; the count
   // actually requested is always derived (and clamped) from it.
   const [limitDraft, setLimitDraft] = useState<string>(String(DEFAULT_QUESTION_COUNT));
@@ -305,7 +311,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         title: `${subjectName || 'Worksheet'} Worksheet`,
         subjectName,
         level: subjectLevel,
-        totalMarks: questions.length * 4,
+        totalMarks: totalQuestionMarks(questions),
         brand: 'GradeMax Worksheets',
         topics: selectedTopics,
         yearStart,
@@ -335,7 +341,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             title: `${subjectName || 'Worksheet'} Worksheet`,
             subjectName,
             level: subjectLevel,
-            totalMarks: questions.length * 4,
+            totalMarks: totalQuestionMarks(questions),
             brand: 'GradeMax Worksheets',
             topics: selectedTopics,
             yearStart,
@@ -405,7 +411,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                         : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500'
                     }`}
                   >
-                    <div className="text-[10px] md:text-xs text-gray-400 font-medium mb-0.5 md:mb-1">{subject.code}</div>
+                    <div className="text-[10px] md:text-xs text-gray-400 font-medium mb-0.5 md:mb-1">{toolSubjectDisplayCode(subject.code)}</div>
                     <div className="text-[10px] md:text-xs text-gray-400 font-medium">{subject.level || 'IGCSE'}</div>
                     <div className="text-xs md:text-sm font-semibold text-white text-center">{subject.name}</div>
                   </button>
@@ -417,13 +423,17 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
           {/* Topic Selection */}
           <div className="mb-4 md:mb-8">
             <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-4 flex flex-wrap items-center gap-2 text-white">
-              Select Topics
+              {paperFilters ? 'Select Exam Papers' : chapterFilters ? 'Select Chapters' : 'Select Topics'}
               {selectedTopics.length > 0 && (
                 <span className="text-xs md:text-sm bg-blue-500 text-white px-2 md:px-3 py-0.5 md:py-1 rounded-full">
                   {selectedTopics.length} selected
                 </span>
               )}
             </h2>
+            {paperFilters && (
+              <p className="text-sm text-gray-400 mb-3">Complete questions grouped by exam paper, including all subparts.</p>
+            )}
+            {chapterFilters && <p className="text-sm text-gray-400 mb-3">Written-paper questions grouped by syllabus chapter. Complete questions keep all subparts and may cover more than one chapter.</p>}
             
             {loadingTopics ? (
               <div className="flex items-center justify-center p-4 md:p-8">
@@ -526,6 +536,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               </label>
               <select
                 value={difficulty}
+                disabled={paperFilters}
                 onChange={(e) => setDifficulty(e.target.value)}
                 className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               >
@@ -534,6 +545,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
               </select>
+              {paperFilters && <p className="text-xs text-gray-400 mt-1">Difficulty ratings are not available yet.</p>}
             </div>
             <div>
               <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">

@@ -3,13 +3,15 @@ import type { Metadata } from 'next'
 // Root template appends "| GradeMax" — no manual brand in the title.
 export const metadata: Metadata = {
   title: 'Edexcel Test Builder – Create Custom Test Papers Free',
-  description: 'Build custom Edexcel IGCSE test papers question by question. Pick topics, difficulty and years from real past papers — Physics, Maths, Chemistry, Biology — and download print-ready PDFs with mark schemes.',
+  description: 'Build custom Edexcel IGCSE test papers question by question. Pick topics, difficulty and years from real past papers — Physics, Maths, Chemistry, Biology, Computer Science, Accounting and more — and download print-ready PDFs with mark schemes.',
   keywords: [
     'test builder', 'Edexcel test builder', 'custom test paper generator',
     'IGCSE test generator', 'create test from past papers', 'mock exam builder',
     'custom exam paper maker', 'past paper question picker', 'test maker for students',
     'IGCSE Physics test builder', 'IGCSE Maths test builder', 'IGCSE Chemistry test builder',
     'IGCSE Biology test builder', 'build your own exam paper', 'exam preparation',
+    'IGCSE Accounting test builder', 'IGCSE Business Studies test builder', 'IGCSE Economics test builder',
+    'IGCSE Computer Science test builder',
   ],
   openGraph: {
     title: 'Edexcel Test Builder – Create Custom Test Papers Free | GradeMax',

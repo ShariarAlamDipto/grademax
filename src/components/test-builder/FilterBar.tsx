@@ -1,11 +1,12 @@
 'use client';
 
-const CURRENT_YEAR = 2025;
+const CURRENT_YEAR = new Date().getFullYear();
 const START_YEAR = 2011;
 const YEARS = Array.from({ length: CURRENT_YEAR - START_YEAR + 1 }, (_, i) => CURRENT_YEAR - i);
 
 interface FilterBarProps {
   difficulty: string;
+  difficultyAvailable?: boolean;
   onDifficultyChange: (val: string) => void;
   yearStart: number;
   onYearStartChange: (val: number) => void;
@@ -15,6 +16,7 @@ interface FilterBarProps {
 
 export default function FilterBar({
   difficulty,
+  difficultyAvailable = true,
   onDifficultyChange,
   yearStart,
   onYearStartChange,
@@ -30,6 +32,7 @@ export default function FilterBar({
         <label className="block text-xs font-medium text-gray-400 mb-1">Difficulty</label>
         <select
           value={difficulty}
+          disabled={!difficultyAvailable}
           onChange={(e) => onDifficultyChange(e.target.value)}
           className="w-full p-2 text-base lg:text-sm border border-gray-600 bg-gray-800 text-white rounded-lg focus:border-blue-500 focus:outline-none"
         >
@@ -38,6 +41,7 @@ export default function FilterBar({
           <option value="medium">Medium</option>
           <option value="hard">Hard</option>
         </select>
+        {!difficultyAvailable && <p className="text-xs text-gray-400 mt-1">Difficulty ratings are not available yet.</p>}
       </div>
 
       {/* Year Range */}

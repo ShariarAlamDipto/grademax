@@ -3,6 +3,7 @@ import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { getQuestionMarks } from '@/lib/questionMarks';
 
 /**
  * GET /api/test-builder/questions
@@ -148,6 +149,7 @@ export async function GET(request: Request) {
     const questions = ((pages || []) as unknown as PageRow[]).map((p) => ({
       id: p.id,
       questionNumber: p.question_number || String(p.page_number),
+      marks: getQuestionMarks(p.paper_id, p.question_number),
       topics: p.topics || [],
       difficulty: p.difficulty || 'unknown',
       qpPageUrl: toAbsolutePdfUrl(p.qp_page_url)!,
