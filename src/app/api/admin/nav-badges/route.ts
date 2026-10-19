@@ -34,5 +34,19 @@ export async function GET() {
     // Non-fatal — badge simply shows 0
   }
 
-  return NextResponse.json({ missingPapers, unreviewedQuestions })
+  // Payments claimed but not yet checked. This is the one badge here that is
+  // time-sensitive: until it clears, a buyer has paid and received nothing.
+  let pendingOrders = 0
+  try {
+    const { count } = await db
+      .from("store_orders")
+      .select("id", { count: "exact", head: true })
+      .eq("payment_status", "submitted")
+      .neq("order_status", "cancelled")
+    pendingOrders = count ?? 0
+  } catch {
+    // Non-fatal — the store may not be migrated in this environment yet.
+  }
+
+  return NextResponse.json({ missingPapers, unreviewedQuestions, pendingOrders })
 }

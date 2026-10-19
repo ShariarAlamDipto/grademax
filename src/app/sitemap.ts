@@ -1,14 +1,19 @@
 import { MetadataRoute } from 'next'
 import { createClient } from '@supabase/supabase-js'
 import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
-import { pastPaperSubjects, subjects } from '@/lib/subjects'
+import { pastPaperSubjects, subjects, dbNameOf } from '@/lib/subjects'
+import { cambridgeSeoSubjects } from '@/lib/cambridge-seo'
+import { canonicalEdexcelQpSlug, canonicalCambridgeQpSlug } from '@/lib/qp-slugs'
 import { toPaperSlug } from '@/lib/paper-slugs'
+import { listActiveProducts } from '@/lib/store/catalogue'
+import { getSettings } from '@/lib/store/settings'
 
-const BASE_URL = 'https://grademax.me'
+const BASE_URL = 'https://www.grademax.me'
 const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
 
-// Build a slug → subject map for quick lookup
-const slugByName = new Map(subjects.map(s => [s.name, s.slug]))
+// Build a DB-name → slug map for quick lookup (Cambridge subjects store a
+// board-prefixed name in the DB, so key on dbNameOf rather than display name)
+const slugByName = new Map(subjects.map(s => [dbNameOf(s), s.slug]))
 
 function normalizeSeason(value: unknown): string {
   return String(value ?? '').trim().toLowerCase()
@@ -45,16 +50,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/edexcel-past-papers`,     changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE_URL}/edexcel-igcse-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE_URL}/edexcel-a-level-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/cambridge-past-papers`,   changeFrequency: 'weekly',  priority: 0.95 },
+    { url: `${BASE_URL}/cambridge-igcse-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
+    { url: `${BASE_URL}/cambridge-a-level-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE_URL}/edexcel-worksheets`,      changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE_URL}/subjects`,                changeFrequency: 'weekly',  priority: 0.9  },
-    { url: `${BASE_URL}/generate`,                changeFrequency: 'weekly',  priority: 0.9  },
+    // /generate is auth-gated (307 → /login) so it must NOT be in the sitemap;
+    // /edexcel-worksheets above is its public, indexable landing page.
+    // /test-builder renders a public landing for logged-out visitors.
+    { url: `${BASE_URL}/test-builder`,            changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/browse`,                  changeFrequency: 'weekly',  priority: 0.8  },
     { url: `${BASE_URL}/past-papers`,             changeFrequency: 'weekly',  priority: 0.9  },
+    { url: `${BASE_URL}/past-papers/cambridge`,   changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/about`,                   changeFrequency: 'monthly', priority: 0.6  },
     { url: `${BASE_URL}/contact`,                 changeFrequency: 'monthly', priority: 0.5  },
     { url: `${BASE_URL}/privacy`,                 changeFrequency: 'yearly',  priority: 0.3  },
     { url: `${BASE_URL}/terms`,                   changeFrequency: 'yearly',  priority: 0.3  },
   ]
+
+  // ─── Store ───────────────────────────────────────────────────────────────────
+  // The shop and each book on sale. /cart, /checkout and /store/orders are
+  // deliberately absent: they are per-visitor, already noindex, and one of them
+  // redirects to /login, which must never be advertised to a crawler.
+  //
+  // Product URLs come from the database rather than a hardcoded list, so a title
+  // withdrawn from sale drops out of the sitemap on the next build instead of
+  // leaving a 404 behind. A store that is switched off contributes nothing.
+  const storePages: MetadataRoute.Sitemap = []
+  try {
+    const settings = await getSettings()
+    if (settings.storeEnabled) {
+      storePages.push({
+        url: `${BASE_URL}/store`,
+        changeFrequency: 'weekly' as const,
+        priority: 0.8,
+      })
+      for (const product of await listActiveProducts()) {
+        storePages.push({
+          url: `${BASE_URL}/store/${product.slug}`,
+          changeFrequency: 'weekly' as const,
+          priority: 0.75,
+        })
+      }
+    }
+  } catch (error) {
+    // A sitemap that loses the shop is far better than a build that fails, and
+    // the paper pages below already take this approach.
+    console.error('sitemap: could not list store products', error)
+  }
 
   // ─── Level landing pages ──────────────────────────────────────────────────────
 
@@ -87,18 +130,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }))
 
-  // ─── Paper number hub pages (/past-papers/{subject}/paper-N) ─────────────────
-  // These aggregate all years for a specific paper number — high-value SEO targets
-  // e.g. "Physics Paper 1 past papers" → /past-papers/physics/paper-1
-
-  const paperHubPages: MetadataRoute.Sitemap = pastPaperSubjects.flatMap((s) =>
-    ["1", "2", "3", "4"].map((n) => ({
-      url: `${BASE_URL}/past-papers/${s.slug}/paper-${n}`,
-      changeFrequency: 'monthly' as const,
-      priority: 0.88,
-    }))
-  )
-
   // ─── Dynamic: session pages + individual paper pages (fetched from Supabase) ──
   // Session pages  → /past-papers/{slug}/{year}/{season}
   // Paper pages    → /past-papers/{slug}/{year}/{season}/paper-{number}
@@ -116,13 +147,34 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       { auth: { autoRefreshToken: false, persistSession: false } }
     )
 
-    // Fetch all papers with at least one file, including paper_number for individual pages
-    const { data } = await supabase
-      .from('papers')
-      .select('year, season, paper_number, pdf_url, markscheme_pdf_url, created_at, subjects!inner(name)')
-      .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
+    // Fetch ALL papers with a file. Supabase caps a single response at 1000 rows
+    // and there are ~11k qualifying papers, so page through by id — otherwise the
+    // sitemap silently omits ~90% of the individual paper/session/year pages.
+    type PaperRow = {
+      year: string | number | null
+      season: string | null
+      paper_number: string | number | null
+      pdf_url: string | null
+      markscheme_pdf_url: string | null
+      created_at: string | null
+      subjects: { name: string } | { name: string }[] | null
+    }
+    const PAGE_SIZE = 1000
+    const data: PaperRow[] = []
+    for (let from = 0; ; from += PAGE_SIZE) {
+      const { data: page, error } = await supabase
+        .from('papers')
+        .select('year, season, paper_number, pdf_url, markscheme_pdf_url, created_at, subjects!inner(name)')
+        .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
+        .order('id', { ascending: true })
+        .range(from, from + PAGE_SIZE - 1)
+      if (error) throw error
+      if (!page || page.length === 0) break
+      data.push(...(page as PaperRow[]))
+      if (page.length < PAGE_SIZE) break
+    }
 
-    if (data) {
+    if (data.length > 0) {
       // key → most recent papers.created_at in that group, so lastmod reflects
       // when content actually changed rather than when the site last built.
       const yearDates = new Map<string, Date>()
@@ -206,27 +258,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   // ─── SEO "QP" landing pages ───────────────────────────────────────────────────
 
-  const qpPages: MetadataRoute.Sitemap = seoSubjects.flatMap((s: SEOSubject) => {
-    const levelPrefix = s.level === 'igcse' ? 'igcse' : 'a-level'
-    return [
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}`,                     changeFrequency: 'weekly' as const, priority: 0.9 },
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-past-papers`,         changeFrequency: 'weekly' as const, priority: 0.9 },
-      { url: `${BASE_URL}/qp/${levelPrefix}-${s.slug}-question-papers`,     changeFrequency: 'weekly' as const, priority: 0.85 },
-      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}`,                  changeFrequency: 'weekly' as const, priority: 0.85 },
-      { url: `${BASE_URL}/qp/${s.examCode.toLowerCase()}-past-papers`,      changeFrequency: 'weekly' as const, priority: 0.85 },
-    ]
+  // A sitemap advertises canonical URLs only. Each subject answers on several
+  // /qp slugs (see src/lib/qp-slugs.ts) but they render identical pages, so
+  // listing all five asked Google to crawl ~200 duplicates of ~86 real pages and
+  // pick a winner itself. The variants stay live and still resolve — they just
+  // carry a canonical tag pointing here instead of being submitted for indexing.
+  const qpPages: MetadataRoute.Sitemap = seoSubjects.map((s: SEOSubject) => ({
+    url: `${BASE_URL}/qp/${canonicalEdexcelQpSlug(s)}`,
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }))
+
+  // Cambridge syllabus-code landing pages (/qp/0620, /qp/9702…) — the code
+  // long-tail students search verbatim. Same static /qp route, bare code only.
+  const cambridgeQpPages: MetadataRoute.Sitemap = cambridgeSeoSubjects.flatMap((s) => {
+    const slug = canonicalCambridgeQpSlug(s.examCode)
+    return slug
+      ? [{ url: `${BASE_URL}/qp/${slug}`, changeFrequency: 'weekly' as const, priority: 0.85 }]
+      : []
   })
 
   return [
     ...corePages,
+    ...storePages,
     ...levelPages,
     ...subjectPages,
     ...topicPages,
     ...pastPaperSubjectPages,
-    ...paperHubPages,          // ← paper number hubs (paper-1 through paper-4)
     ...(yearPages.length > 0 ? yearPages : fallbackYearPages),
     ...sessionPages,
     ...paperPages,             // ← individual paper pages (year/season/paper-N)
     ...qpPages,
+    ...cambridgeQpPages,       // ← Cambridge syllabus-code pages (/qp/0620…)
   ]
 }

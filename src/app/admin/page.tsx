@@ -9,7 +9,7 @@ interface Stats {
   papersWithMS: number
   pages: number
   questionPages: number
-  r2Objects: number
+  r2Objects: number | null
   users: { total: number; admins: number; teachers: number; students: number }
 }
 
@@ -20,11 +20,13 @@ const QUICK_ACTIONS = [
   { href: "/admin/scraper", label: "Scraper", desc: "Download missing papers", icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4", color: "#a855f7" },
   { href: "/admin/analytics", label: "Analytics", desc: "Usage and coverage stats", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", color: "#f97316" },
   { href: "/admin/tagger", label: "Question Tagger", desc: "Tag and classify questions", icon: "M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z", color: "#ec4899" },
+  { href: "/admin/workbook/verify", label: "Workbook Verification", desc: "Confirm chapter assignments before they reach the book", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", color: "#0ea5e9" },
   { href: "/admin/suggestions", label: "Suggestions", desc: "User-submitted improvement ideas", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z", color: "var(--gm-amber)" },
 ]
 
 export default function AdminOverviewPage() {
   const [stats, setStats] = useState<Stats | null>(null)
+  const [r2Count, setR2Count] = useState<number | null>(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -32,6 +34,12 @@ export default function AdminOverviewPage() {
       .then(r => r.json())
       .then(d => { setStats(d); setLoading(false) })
       .catch(() => setLoading(false))
+    // R2 count is slow (full bucket listing) — loaded separately so the
+    // dashboard never blocks on it.
+    fetch("/api/admin/stats/r2")
+      .then(r => r.ok ? r.json() : null)
+      .then(d => { if (d && typeof d.r2Objects === "number") setR2Count(d.r2Objects) })
+      .catch(() => {})
   }, [])
 
   const qpPct = stats && stats.papers > 0 ? Math.round((stats.papersWithQP / stats.papers) * 100) : 0
@@ -52,7 +60,7 @@ export default function AdminOverviewPage() {
           { label: "QP Coverage", value: loading ? "—" : `${qpPct}%`, color: "#22c55e", sub: `${stats?.papersWithQP ?? 0} papers` },
           { label: "MS Coverage", value: loading ? "—" : `${msPct}%`, color: "#f97316", sub: `${stats?.papersWithMS ?? 0} papers` },
           { label: "Question Pages", value: stats?.questionPages, color: "#22c55e", sub: `${stats?.pages ?? 0} total pages` },
-          { label: "R2 Files", value: stats?.r2Objects, color: "var(--gm-amber)" },
+          { label: "R2 Files", value: r2Count ?? "…", color: "var(--gm-amber)" },
           { label: "Users", value: stats?.users.total, color: "#a855f7", sub: `${stats?.users.admins ?? 0} admin · ${stats?.users.teachers ?? 0} teacher` },
         ].map(item => (
           <div key={item.label} style={{

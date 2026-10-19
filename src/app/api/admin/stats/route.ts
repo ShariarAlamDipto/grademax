@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
-import { getR2Client, R2_BUCKET } from "@/lib/r2Client"
-import { ListObjectsV2Command } from "@aws-sdk/client-s3"
 
 export const dynamic = "force-dynamic"
 
@@ -48,18 +46,6 @@ export async function GET() {
   const students = studentRes.count ?? 0
   const roles = { total: admins + teachers + students, admins, teachers, students }
 
-  // Count all R2 objects with pagination (no 1000-key cap)
-  let r2Count = 0
-  try {
-    const r2 = getR2Client()
-    let token: string | undefined
-    do {
-      const res = await r2.send(new ListObjectsV2Command({ Bucket: R2_BUCKET, MaxKeys: 1000, ContinuationToken: token }))
-      r2Count += res.KeyCount || 0
-      token = res.NextContinuationToken
-    } while (token)
-  } catch { /* R2 may not be reachable */ }
-
   return NextResponse.json({
     subjects: subjectsRes.count ?? 0,
     papers: papersRes.count ?? 0,
@@ -69,7 +55,10 @@ export async function GET() {
     questionPages: questionPagesRes.count ?? 0,
     tests: testsRes.count ?? 0,
     worksheets: worksheetsRes.count ?? 0,
-    r2Objects: r2Count,
+    // Counting 37k+ R2 objects takes ~40s of sequential list calls — far past
+    // the serverless timeout, and it used to take the whole dashboard down
+    // with it. The count now lives at /api/admin/stats/r2 (cached, parallel).
+    r2Objects: null,
     users: roles,
   })
 }

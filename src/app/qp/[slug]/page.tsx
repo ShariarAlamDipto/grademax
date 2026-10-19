@@ -1,10 +1,11 @@
 import { Metadata } from 'next'
-import { createClient } from '@supabase/supabase-js'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { cache } from 'react'
-import { seoSubjects, type SEOSubject } from '@/lib/seo-subjects'
+import { seoSubjects, isSingleUnitEdexcelCode, type SEOSubject } from '@/lib/seo-subjects'
 import { getPapersIndex } from '@/lib/papersIndex'
+import { getCambridgeQpMap, cambridgeLevelSeo } from '@/lib/cambridge-seo'
+import { canonicalEdexcelQpSlug, canonicalCambridgeQpSlug } from '@/lib/qp-slugs'
+import CambridgeQpLanding from '@/components/CambridgeQpLanding'
 import {
   generateOrganizationSchema,
   generateBreadcrumbSchema,
@@ -37,77 +38,26 @@ function getSlugMapping(): Record<string, SEOSubject> {
 
 const slugMap = getSlugMapping()
 
+// Cambridge syllabus-code slugs (/qp/0620, /qp/9702-past-papers…). Codes are
+// numeric and unique, so they can never collide with the alphanumeric Edexcel
+// slugs above — but Edexcel wins on any overlap, as the established pages.
+const cambridgeQpMap = Object.fromEntries(
+  Object.entries(getCambridgeQpMap()).filter(([key]) => !(key in slugMap))
+)
+
 function serializeJsonLd(schema: object): string {
   return JSON.stringify(schema).replace(/</g, '\\u003c')
 }
 
-function parseYearParam(value: unknown): number | null {
-  if (typeof value === 'number') {
-    if (!Number.isInteger(value)) return null
-    if (value < 2000 || value > 2100) return null
-    return value
-  }
-
-  const raw = String(value ?? '').trim()
-  if (!/^\d{4}$/.test(raw)) return null
-  const year = Number.parseInt(raw, 10)
-  if (year < 2000 || year > 2100) return null
-  return year
-}
-
-function isValidPublicUrl(url: string | null): boolean {
-  if (!url) return false
-  return /^https?:\/\//i.test(url)
-}
-
-const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
-
-function normalizeSeason(value: unknown): string {
-  return String(value ?? '').trim().toLowerCase()
-}
-
-const getAvailableYearsForSubject = cache(async (subjectName: string): Promise<number[]> => {
-  try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!,
-      { auth: { autoRefreshToken: false, persistSession: false } }
-    )
-
-    const { data: subjectRow } = await supabase
-      .from('subjects')
-      .select('id')
-      .eq('name', subjectName)
-      .maybeSingle()
-
-    if (!subjectRow) return []
-
-    const { data } = await supabase
-      .from('papers')
-      .select('year, season, pdf_url, markscheme_pdf_url')
-      .eq('subject_id', subjectRow.id)
-      .or('pdf_url.not.is.null,markscheme_pdf_url.not.is.null')
-
-    const years = new Set<number>()
-    for (const row of data ?? []) {
-      const hasRenderableFile = isValidPublicUrl(row.pdf_url) || isValidPublicUrl(row.markscheme_pdf_url)
-      if (!hasRenderableFile) continue
-
-      const season = normalizeSeason(row.season)
-      if (!VALID_SEASONS.has(season)) continue
-
-      const year = parseYearParam(row.year)
-      if (year !== null) years.add(year)
-    }
-
-    return Array.from(years).sort((a, b) => b - a)
-  } catch {
-    return []
-  }
-})
+// Fully static. generateStaticParams below enumerates every real slug (the same
+// set the sitemap advertises), so unknown /qp/* URLs return an instant
+// build-manifest 404 instead of triggering an on-demand ISR cache fill — which
+// Vercel meters as an ISR write + function CPU. Mirrors the past-papers routes.
+export const dynamicParams = false
+export const revalidate = false
 
 export async function generateStaticParams() {
-  return Object.keys(slugMap).map(slug => ({ slug }))
+  return [...Object.keys(slugMap), ...Object.keys(cambridgeQpMap)].map(slug => ({ slug }))
 }
 
 type PageProps = {
@@ -116,19 +66,76 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params
+
+  // Cambridge syllabus-code pages. SERP research: winning titles put the subject
+  // name immediately before the code ("Chemistry 0620") and carry a CAIE token.
+  // Root layout template appends " | GradeMax".
+  const cambridge = cambridgeQpMap[slug]
+  if (cambridge) {
+    const code = cambridge.examCode ?? ''
+    const lvlSeo = cambridgeLevelSeo(cambridge)
+    // `{code}` and `{code}-past-papers` render the same page — consolidate on the
+    // bare syllabus code rather than letting both self-canonicalise.
+    const canonicalSlug = canonicalCambridgeQpSlug(code) ?? slug
+    const title = `${cambridge.name} ${code} Past Papers – Cambridge ${lvlSeo} Mark Schemes (CAIE)`
+    const description = `Free Cambridge ${lvlSeo} ${cambridge.name} (${code}) past papers with mark schemes, 2015–2025. Feb/March, May/June and Oct/Nov series, all variants — free PDF download.`
+    return {
+      title,
+      description,
+      keywords: [
+        `${code} past papers`,
+        `${cambridge.name} ${code}`,
+        `${code} mark scheme`,
+        `${code} question papers`,
+        `Cambridge ${lvlSeo} ${cambridge.name} past papers`,
+        `CAIE ${cambridge.name} past papers`,
+        `CIE ${code}`,
+        `${code} past papers free download`,
+        `${cambridge.name} ${code} may june`,
+        `${cambridge.name} ${code} oct nov`,
+      ],
+      openGraph: {
+        title,
+        description,
+        url: `https://www.grademax.me/qp/${canonicalSlug}`,
+        siteName: 'GradeMax',
+        type: 'website',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: `${cambridge.name} ${code} Past Papers | GradeMax`,
+        description: `Free Cambridge ${lvlSeo} ${cambridge.name} (${code}) past papers with mark schemes.`,
+      },
+      alternates: {
+        canonical: `https://www.grademax.me/qp/${canonicalSlug}`,
+      },
+    }
+  }
+
   const subject = slugMap[slug]
   if (!subject) return {}
 
   const levelDisplay = subject.levelDisplay
   const isQP = slug.includes('question-papers')
-  const isPP = slug.includes('past-papers') || !isQP
+  const kind = isQP ? 'Question Papers' : 'Past Papers'
+  const codeLed = isSingleUnitEdexcelCode(subject.examCode) && !subject.name.startsWith('IAL ')
+  // All five /qp variants for a subject render identical copy under an identical
+  // <title>, so they consolidate onto one URL instead of self-canonicalising and
+  // competing. Only this slug is published in sitemap.xml.
+  const canonicalSlug = canonicalEdexcelQpSlug(subject)
 
-  const titlePrefix = isPP 
-    ? `Edexcel ${levelDisplay} ${subject.name} Past Papers`
-    : `Edexcel ${levelDisplay} ${subject.name} Question Papers`
-  
-  const title = `${titlePrefix} – Free Download with Mark Schemes (${subject.examCode})`
-  const description = `Download free Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers and mark schemes from ${subject.yearsAvailable[0]} to ${subject.yearsAvailable[subject.yearsAvailable.length - 1]}. ${subject.topics.length} topics covered. Practice topic-wise questions and generate custom worksheets.`
+  const firstYear = subject.yearsAvailable[0]
+  const lastYear = subject.yearsAvailable[subject.yearsAvailable.length - 1]
+
+  // Lead the title with the exam code (WME01, 4PH1…) since that is the exact term
+  // students search — these pages rank on page 1 but earn no clicks when the code
+  // is buried. Layout template appends " | GradeMax".
+  const title = codeLed
+    ? `${subject.examCode} ${kind} – Edexcel ${levelDisplay} ${subject.name} Mark Schemes`
+    : `Edexcel ${levelDisplay} ${subject.name} ${kind} (${subject.examCode}) – Free with Mark Schemes`
+  const description = codeLed
+    ? `${subject.examCode} (Edexcel ${levelDisplay} ${subject.name}) past papers ${firstYear}–${lastYear} with mark schemes. Free PDF question papers, all sessions, topic-wise practice.`
+    : `Free Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers and mark schemes, ${firstYear}–${lastYear}. ${subject.topics.length} topics, all sessions, free PDF download.`
 
   return {
     title,
@@ -150,35 +157,46 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://grademax.me/qp/${slug}`,
+      url: `https://www.grademax.me/qp/${canonicalSlug}`,
       siteName: 'GradeMax',
       type: 'website',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${titlePrefix} | GradeMax`,
+      title: `${title} | GradeMax`,
       description: `Free ${levelDisplay} ${subject.name} past papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://grademax.me/qp/${slug}`,
+      canonical: `https://www.grademax.me/qp/${canonicalSlug}`,
     },
   }
 }
 
 export default async function SubjectQPPage({ params }: PageProps) {
   const { slug } = await params
+
+  // Cambridge code pages render their own board-specific landing — the Edexcel
+  // layout below is SEOSubject-shaped (topics, worksheet CTAs) which Cambridge
+  // subjects don't have.
+  const cambridge = cambridgeQpMap[slug]
+  if (cambridge) {
+    return <CambridgeQpLanding subject={cambridge} slug={slug} />
+  }
+
   const subject = slugMap[slug]
   if (!subject) notFound()
 
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
+  // Schema must name the same URL as the canonical tag, or the two disagree about
+  // which of the five identical variants is the real page.
+  const canonicalSlug = canonicalEdexcelQpSlug(subject)
   const levelDisplay = subject.levelDisplay
-  const availableYears = await getAvailableYearsForSubject(subject.name)
-  const candidateYears = availableYears.length > 0 ? availableYears : [...subject.yearsAvailable].reverse()
-  // Filter against the index so we never emit a /past-papers link to a year
-  // the subject hub didn't actually build (avoids soft-404s for Googlebot).
+  // Years come straight from the shared papers index — the exact set the
+  // /past-papers hub built from, so every link targets a page that exists
+  // (no soft-404s for Googlebot). Replaces a per-page 2-query DB lookup that
+  // could only ever agree with the index.
   const { yearsBySubject } = await getPapersIndex()
-  const realYears = yearsBySubject.get(subject.slug) ?? new Set<number>()
-  const yearLinks = candidateYears.filter((y) => realYears.has(y))
+  const yearLinks = Array.from(yearsBySubject.get(subject.slug) ?? []).sort((a, b) => b - a)
 
   const schema = {
     '@context': 'https://schema.org',
@@ -190,10 +208,10 @@ export default async function SubjectQPPage({ params }: PageProps) {
       generateBreadcrumbSchema([
         { name: 'Home', url: baseUrl },
         { name: `Edexcel Past Papers`, url: `${baseUrl}/edexcel-past-papers` },
-        { name: `${levelDisplay} ${subject.name}`, url: `${baseUrl}/qp/${slug}` },
+        { name: `${levelDisplay} ${subject.name}`, url: `${baseUrl}/qp/${canonicalSlug}` },
       ]),
       generateWebPageSchema(
-        `${baseUrl}/qp/${slug}`,
+        `${baseUrl}/qp/${canonicalSlug}`,
         `Edexcel ${levelDisplay} ${subject.name} Past Papers`,
         `Free Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers with mark schemes.`
       ),
@@ -202,7 +220,7 @@ export default async function SubjectQPPage({ params }: PageProps) {
         '@type': 'CollectionPage',
         name: `Edexcel ${levelDisplay} ${subject.name} Past Papers Collection`,
         description: `Complete collection of Edexcel ${levelDisplay} ${subject.name} (${subject.examCode}) past papers from ${subject.yearsAvailable[0]} to ${subject.yearsAvailable[subject.yearsAvailable.length - 1]}.`,
-        url: `${baseUrl}/qp/${slug}`,
+        url: `${baseUrl}/qp/${canonicalSlug}`,
         isPartOf: { '@id': `${baseUrl}/#website` },
         about: {
           '@type': 'Course',
@@ -364,11 +382,12 @@ export default async function SubjectQPPage({ params }: PageProps) {
             {seoSubjects
               .filter(s => s.level === subject.level && s.slug !== subject.slug)
               .map(s => {
-                const prefix = s.level === 'igcse' ? 'igcse' : 'a-level'
+                // Link the canonical variant so internal links, sitemap and the
+                // canonical tag all point at the same URL.
                 return (
-                  <Link 
+                  <Link
                     key={s.slug}
-                    href={`/qp/${prefix}-${s.slug}`}
+                    href={`/qp/${canonicalEdexcelQpSlug(s)}`}
                     className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors"
                   >
                     {s.levelDisplay} {s.name}

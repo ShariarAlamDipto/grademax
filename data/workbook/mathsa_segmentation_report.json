@@ -1,0 +1,486 @@
+{
+  "papers": [
+    {
+      "key": "2018_may-jun_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as a continuous table: 20 numbered rows, 5 also confirmed by their printed mark"
+      ],
+      "questions": 20,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 23/23 aligned (skipped 0 question(s), 5 tally/tallies)"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 23/23 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 3: start marker unreadable (image-only page) -- start page 5 supplied from MANUAL_START_PAGES (read off the rendered page)",
+        "question 2: fence unreadable -- marks (6) from MANUAL_QUESTION_MARKS (read off the rendered page), boundary from question 3's printed start marker on page 5",
+        "question 3: fence unreadable -- marks (4) from MANUAL_QUESTION_MARKS (read off the rendered page), boundary from question 4's printed start marker on page 6",
+        "mark scheme read as a continuous table: 20 numbered rows, 0 also confirmed by their printed mark -- 1 question(s) unmatched",
+        "no mark scheme block found for questions [18]"
+      ],
+      "questions": 21,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 7: fence unreadable -- marks (3) from MANUAL_QUESTION_MARKS (read off the rendered page), boundary from question 8's printed start marker on page 9",
+        "question 10: fence unreadable -- marks (3) from MANUAL_QUESTION_MARKS (read off the rendered page), boundary from question 11's printed start marker on page 12",
+        "mark scheme read as a continuous table: 23 numbered rows, 14 also confirmed by their printed mark"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 10: fence unreadable -- marks (3) from the 100-mark paper total, boundary from question 11's printed start marker on page 11",
+        "mark scheme read as a continuous table: 23 numbered rows, 2 also confirmed by their printed mark"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 18: fence unreadable -- marks (4) from the 100-mark paper total, boundary from question 19's printed start marker on page 18",
+        "mark scheme read as a continuous table: 22 numbered rows, 11 also confirmed by their printed mark -- 1 question(s) unmatched",
+        "no mark scheme block found for questions [23]"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 6 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme tallies align only ambiguously (1 question(s) and 4 tally/tallies unmatched, so a question could pair with the wrong tally of equal value) -- no mark schemes attached"
+      ],
+      "questions": 20,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 22/22 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 22,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 23/23 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 4 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 2 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2023_jan_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 2 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2023_jan_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2023_jan_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 2 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2023_jan_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 2 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2023_may-jun_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 23/23 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2023_may-jun_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 2 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2023_may-jun_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 3 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2023_may-jun_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2023_oct-nov_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 2 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2023_oct-nov_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 24/24 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 24,
+      "marks": 100
+    },
+    {
+      "key": "2024_may-jun_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 3 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2024_may-jun_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 23/23 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 23,
+      "marks": 100
+    },
+    {
+      "key": "2024_may-jun_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2024_may-jun_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2024_oct-nov_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 25/25 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2025_may-jun_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme tallies align only ambiguously (1 question(s) and 2 tally/tallies unmatched, so a question could pair with the wrong tally of equal value) -- no mark schemes attached"
+      ],
+      "questions": 25,
+      "marks": 100
+    },
+    {
+      "key": "2025_may-jun_1HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2025_may-jun_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 0 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2025_may-jun_2HR",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    },
+    {
+      "key": "2025_oct-nov_1H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 2 tally/tallies)"
+      ],
+      "questions": 28,
+      "marks": 100
+    },
+    {
+      "key": "2025_oct-nov_2H",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 1 tally/tallies)"
+      ],
+      "questions": 26,
+      "marks": 100
+    }
+  ]
+}

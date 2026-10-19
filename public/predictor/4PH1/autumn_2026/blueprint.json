@@ -1,0 +1,1086 @@
+{
+  "subject_code": "4PH1",
+  "subject_name": "Physics",
+  "target": {
+    "session": "autumn",
+    "year": 2026,
+    "label": "October/November 2026"
+  },
+  "papers": {
+    "1": {
+      "paper": "1",
+      "paper_name": "Paper 1",
+      "target": {
+        "session": "autumn",
+        "year": 2026,
+        "label": "October/November 2026"
+      },
+      "total_marks": 110,
+      "question_count": 11,
+      "predicted_marks": 110,
+      "topic_demand": {
+        "1": 22.1,
+        "2": 16.0,
+        "3": 14.7,
+        "5": 13.1,
+        "7": 11.4,
+        "6": 11.1,
+        "4": 10.9,
+        "8": 10.7
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "topic": "1",
+          "topic_name": "Forces and motion",
+          "marks": 7,
+          "command_words": [
+            "state",
+            "describe",
+            "draw"
+          ],
+          "difficulty": "easy",
+          "skills": [
+            "kinematic calculations",
+            "force and acceleration analysis",
+            "graphical analysis",
+            "graph analysis"
+          ],
+          "style_reference": {
+            "context_tag": "Rubber band",
+            "example_marks": 15,
+            "example_excerpt": "\n\n9 A student stretches a rubber band.\n(a) The photographs show a rubber band before and after it has been stretched.\nbefore\nafter\n(i) State which energy store increases in the rubber band after it has\nbeen stretched.\n(1)\n.....................................................",
+            "from_q_id": "4PH1:2024:summer:1R:q9"
+          },
+          "confidence": 0.68,
+          "confidence_band": "high",
+          "rationale": "Forces and motion carries 20% of weighted marks on this paper; appears almost every year; frequently sits at Q1",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Ice hockey"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q1",
+              "year": 2025,
+              "marks": 5,
+              "context": "Vehicle motion"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q6",
+              "year": 2025,
+              "marks": 10,
+              "context": "Rocket launch"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q11",
+              "year": 2025,
+              "marks": 10,
+              "context": "Ball motion"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 2,
+          "topic": "2",
+          "topic_name": "Electricity",
+          "marks": 9,
+          "command_words": [
+            "state",
+            "calculate",
+            "explain"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "energy calculation",
+            "equation recall",
+            "physical explanation",
+            "apply formula"
+          ],
+          "style_reference": {
+            "context_tag": "Electric Circuit",
+            "example_marks": 15,
+            "example_excerpt": "\n\n3 A student builds this electric circuit to measure the temperature of a room.\nA\nV\n290 Ω\n6.0 V\n(a) At 20 °C , the voltage across the thermistor is 3.9 V.\n(i) Explain why the reading on the voltmeter is 2.1 V.\n(2)\n............................................................",
+            "from_q_id": "4PH1:2025:summer:1:q3"
+          },
+          "confidence": 0.545,
+          "confidence_band": "medium",
+          "rationale": "Electricity carries 14% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q3",
+              "year": 2025,
+              "marks": 15,
+              "context": "Electric Circuit"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1:q11",
+              "year": 2025,
+              "marks": 12,
+              "context": "Fluorescent lighting"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q3",
+              "year": 2025,
+              "marks": 12,
+              "context": "Electrical circuits"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q3",
+              "year": 2025,
+              "marks": 6,
+              "context": "Household electrical wiring"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 3,
+          "topic": "1",
+          "topic_name": "Forces and motion",
+          "marks": 11,
+          "command_words": [
+            "calculate",
+            "explain",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "kinematic calculations",
+            "force and acceleration analysis",
+            "graphical analysis",
+            "graph analysis"
+          ],
+          "style_reference": {
+            "context_tag": "Rubber band",
+            "example_marks": 15,
+            "example_excerpt": "\n\n9 A student stretches a rubber band.\n(a) The photographs show a rubber band before and after it has been stretched.\nbefore\nafter\n(i) State which energy store increases in the rubber band after it has\nbeen stretched.\n(1)\n.....................................................",
+            "from_q_id": "4PH1:2024:summer:1R:q9"
+          },
+          "confidence": 0.673,
+          "confidence_band": "high",
+          "rationale": "Forces and motion carries 20% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Ice hockey"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q1",
+              "year": 2025,
+              "marks": 5,
+              "context": "Vehicle motion"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q6",
+              "year": 2025,
+              "marks": 10,
+              "context": "Rocket launch"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q11",
+              "year": 2025,
+              "marks": 10,
+              "context": "Ball motion"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 4,
+          "topic": "8",
+          "topic_name": "Astrophysics",
+          "marks": 9,
+          "command_words": [
+            "state",
+            "explain",
+            "calculate"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "orbital mechanics",
+            "identification",
+            "data analysis",
+            "description"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.498,
+          "confidence_band": "medium",
+          "rationale": "Astrophysics carries 9% of weighted marks on this paper; appears almost every year; frequently sits at Q4",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q2",
+              "year": 2025,
+              "marks": 13,
+              "context": "Astrophysics"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q8",
+              "year": 2025,
+              "marks": 7,
+              "context": "Solar System"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Binary Star System"
+            },
+            {
+              "q_id": "4PH1:2024:summer:1:q1",
+              "year": 2024,
+              "marks": 5,
+              "context": "Hertzsprung-Russell diagram"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 5,
+          "topic": "7",
+          "topic_name": "Radioactivity and particles",
+          "marks": 10,
+          "command_words": [
+            "calculate",
+            "state",
+            "explain"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "nuclear equation completion",
+            "data interpretation",
+            "describing radiation types",
+            "nuclear reaction calculation"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.515,
+          "confidence_band": "medium",
+          "rationale": "Radioactivity and particles carries 10% of weighted marks on this paper; appears almost every year; frequently sits at Q5",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q4",
+              "year": 2025,
+              "marks": 8,
+              "context": "Nuclear Reactor"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1:q9",
+              "year": 2025,
+              "marks": 8,
+              "context": "Radioactive decay"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q5",
+              "year": 2025,
+              "marks": 10,
+              "context": "Radioactive decay"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q5",
+              "year": 2025,
+              "marks": 10,
+              "context": "Radioactive decay"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 6,
+          "topic": "1",
+          "topic_name": "Forces and motion",
+          "marks": 11,
+          "command_words": [
+            "calculate",
+            "state",
+            "describe"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "kinematic calculations",
+            "force and acceleration analysis",
+            "graphical analysis",
+            "graph analysis"
+          ],
+          "style_reference": {
+            "context_tag": "Rubber band",
+            "example_marks": 15,
+            "example_excerpt": "\n\n9 A student stretches a rubber band.\n(a) The photographs show a rubber band before and after it has been stretched.\nbefore\nafter\n(i) State which energy store increases in the rubber band after it has\nbeen stretched.\n(1)\n.....................................................",
+            "from_q_id": "4PH1:2024:summer:1R:q9"
+          },
+          "confidence": 0.718,
+          "confidence_band": "high",
+          "rationale": "Forces and motion carries 20% of weighted marks on this paper; appears almost every year; frequently sits at Q6",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Ice hockey"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q1",
+              "year": 2025,
+              "marks": 5,
+              "context": "Vehicle motion"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q6",
+              "year": 2025,
+              "marks": 10,
+              "context": "Rocket launch"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q11",
+              "year": 2025,
+              "marks": 10,
+              "context": "Ball motion"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 7,
+          "topic": "3",
+          "topic_name": "Waves",
+          "marks": 10,
+          "command_words": [
+            "calculate",
+            "state",
+            "describe"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "calculation",
+            "measurement",
+            "identifying wave properties",
+            "wave properties"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.614,
+          "confidence_band": "high",
+          "rationale": "Waves carries 13% of weighted marks on this paper; appears almost every year; frequently sits at Q7",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q8",
+              "year": 2025,
+              "marks": 11,
+              "context": "Ripple tank"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q7",
+              "year": 2025,
+              "marks": 11,
+              "context": "Optical fibre"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q10",
+              "year": 2025,
+              "marks": 11,
+              "context": "Light Waves"
+            },
+            {
+              "q_id": "4PH1:2024:summer:1:q7",
+              "year": 2024,
+              "marks": 9,
+              "context": "Sound waves"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 8,
+          "topic": "8",
+          "topic_name": "Astrophysics",
+          "marks": 10,
+          "command_words": [
+            "calculate",
+            "explain",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "orbital mechanics",
+            "identification",
+            "data analysis",
+            "description"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.538,
+          "confidence_band": "medium",
+          "rationale": "Astrophysics carries 9% of weighted marks on this paper; appears almost every year; frequently sits at Q8",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q2",
+              "year": 2025,
+              "marks": 13,
+              "context": "Astrophysics"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q8",
+              "year": 2025,
+              "marks": 7,
+              "context": "Solar System"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Binary Star System"
+            },
+            {
+              "q_id": "4PH1:2024:summer:1:q1",
+              "year": 2024,
+              "marks": 5,
+              "context": "Hertzsprung-Russell diagram"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 9,
+          "topic": "7",
+          "topic_name": "Radioactivity and particles",
+          "marks": 11,
+          "command_words": [
+            "explain",
+            "calculate",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "nuclear equation completion",
+            "data interpretation",
+            "describing radiation types",
+            "nuclear reaction calculation"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.489,
+          "confidence_band": "medium",
+          "rationale": "Radioactivity and particles carries 10% of weighted marks on this paper; appears almost every year; frequently sits at Q9",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q4",
+              "year": 2025,
+              "marks": 8,
+              "context": "Nuclear Reactor"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1:q9",
+              "year": 2025,
+              "marks": 8,
+              "context": "Radioactive decay"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q5",
+              "year": 2025,
+              "marks": 10,
+              "context": "Radioactive decay"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q5",
+              "year": 2025,
+              "marks": 10,
+              "context": "Radioactive decay"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 10,
+          "topic": "6",
+          "topic_name": "Magnetism and electromagnetism",
+          "marks": 12,
+          "command_words": [
+            "calculate",
+            "explain",
+            "describe"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "drawing field lines",
+            "explaining concepts",
+            "applying electromagnetic induction",
+            "describing methods"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.504,
+          "confidence_band": "medium",
+          "rationale": "Magnetism and electromagnetism carries 10% of weighted marks on this paper; appears almost every year; frequently sits at Q10",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q5",
+              "year": 2025,
+              "marks": 6,
+              "context": "Electric Motor"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1:q10",
+              "year": 2025,
+              "marks": 11,
+              "context": "Magnetic force"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q2",
+              "year": 2025,
+              "marks": 7,
+              "context": "Magnetic Fields"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q6",
+              "year": 2025,
+              "marks": 16,
+              "context": "Magnetism"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 11,
+          "topic": "5",
+          "topic_name": "Solids, liquids and gases",
+          "marks": 10,
+          "command_words": [
+            "calculate",
+            "explain",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "data analysis",
+            "apply formula",
+            "pressure calculation",
+            "measurement technique"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.58,
+          "confidence_band": "high",
+          "rationale": "Solids, liquids and gases carries 11% of weighted marks on this paper; appears almost every year; frequently sits at Q11",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:1:q7",
+              "year": 2025,
+              "marks": 7,
+              "context": "Fluid pressure"
+            },
+            {
+              "q_id": "4PH1:2025:summer:1R:q10",
+              "year": 2025,
+              "marks": 11,
+              "context": "Gold ring measurement"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q8",
+              "year": 2025,
+              "marks": 9,
+              "context": "Clay Pot"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:1:q11",
+              "year": 2025,
+              "marks": 5,
+              "context": "Convection currents"
+            }
+          ],
+          "est_subparts": 2
+        }
+      ]
+    },
+    "2": {
+      "paper": "2",
+      "paper_name": "Paper 2",
+      "target": {
+        "session": "autumn",
+        "year": 2026,
+        "label": "October/November 2026"
+      },
+      "total_marks": 70,
+      "question_count": 8,
+      "predicted_marks": 70,
+      "topic_demand": {
+        "1": 14.0,
+        "6": 10.3,
+        "4": 9.8,
+        "3": 9.6,
+        "8": 8.2,
+        "2": 7.0,
+        "7": 5.8,
+        "5": 5.3
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "topic": "8",
+          "topic_name": "Astrophysics",
+          "marks": 7,
+          "command_words": [
+            "state",
+            "draw",
+            "explain"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "apply theory",
+            "use formula",
+            "interpret data",
+            "apply knowledge of cosmic expansion"
+          ],
+          "style_reference": {
+            "context_tag": "Galaxy Expansion",
+            "example_marks": 7,
+            "example_excerpt": "\n\n6 Galaxies A, B and C are different distances from the Earth.\nGalaxy A is moving away from the Earth with a velocity of 1.7 × 104 km/s.\n(a) The reference wavelength for light arriving at the Earth from galaxy A is 506 nm.\nCalculate the observed wavelength for the light arr",
+            "from_q_id": "4PH1:2025:autumn:2:q6"
+          },
+          "confidence": 0.586,
+          "confidence_band": "high",
+          "rationale": "Astrophysics carries 11% of weighted marks on this paper; appears almost every year; frequently sits at Q1",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q8",
+              "year": 2025,
+              "marks": 8,
+              "context": "Cosmology"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:2:q6",
+              "year": 2025,
+              "marks": 7,
+              "context": "Galaxy Expansion"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2:q4",
+              "year": 2024,
+              "marks": null,
+              "context": "Hertzsprung-Russell"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2:q9",
+              "year": 2024,
+              "marks": 11,
+              "context": "Cepheid variables"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 2,
+          "topic": "1",
+          "topic_name": "Forces and motion",
+          "marks": 8,
+          "command_words": [
+            "calculate",
+            "state",
+            "describe"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "apply formula",
+            "calculate momentum",
+            "calculate force",
+            "calculate moment"
+          ],
+          "style_reference": {
+            "context_tag": "Pencil balance",
+            "example_marks": 6,
+            "example_excerpt": "\n\nAnswer ALL questions.\nSome questions must be answered with a cross in a box . If you change your mind about an\nanswer, put a line through the box\nand then mark your new answer with a cross .\n1 A pencil has a weight of 0.16 N.\n(a) What is the mass of the pencil?\n(1)\nA 1.6 g",
+            "from_q_id": "4PH1:2023:summer:2:q1"
+          },
+          "confidence": 0.726,
+          "confidence_band": "high",
+          "rationale": "Forces and motion carries 19% of weighted marks on this paper; appears almost every year; frequently sits at Q2",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q4",
+              "year": 2025,
+              "marks": null,
+              "context": "Gate mechanism"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2:q6",
+              "year": 2025,
+              "marks": 9,
+              "context": "Gate mechanism"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2R:q5",
+              "year": 2025,
+              "marks": null,
+              "context": "Tennis ball drop"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2R:q6",
+              "year": 2025,
+              "marks": 15,
+              "context": "Ball Bounce"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 3,
+          "topic": "4",
+          "topic_name": "Energy resources and transfers",
+          "marks": 9,
+          "command_words": [
+            "calculate",
+            "state",
+            "explain"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "energy calculation",
+            "experimental design",
+            "energy transfer calculation",
+            "graph analysis"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.577,
+          "confidence_band": "high",
+          "rationale": "Energy resources and transfers carries 14% of weighted marks on this paper; appears almost every year; frequently sits at Q3",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q3",
+              "year": 2025,
+              "marks": 9,
+              "context": "Solar panel energy"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2R:q3",
+              "year": 2025,
+              "marks": 9,
+              "context": "Tidal Power"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:2:q3",
+              "year": 2025,
+              "marks": 11,
+              "context": "hydroelectric power"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:2:q7",
+              "year": 2025,
+              "marks": 9,
+              "context": "heating metal"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 4,
+          "topic": "3",
+          "topic_name": "Waves",
+          "marks": 9,
+          "command_words": [
+            "calculate",
+            "explain",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "measurement technique",
+            "data analysis",
+            "experimental design",
+            "investigation design"
+          ],
+          "style_reference": {
+            "context_tag": "Sound waves",
+            "example_marks": 9,
+            "example_excerpt": "\n\n4 This question is about sound waves.\n(a) Describe an investigation to measure the frequency of a sound wave with\nan oscilloscope.\nYou may draw a diagram to help your answer.\n(5)\n..............................................................................................",
+            "from_q_id": "4PH1:2025:autumn:2:q4"
+          },
+          "confidence": 0.554,
+          "confidence_band": "high",
+          "rationale": "Waves carries 13% of weighted marks on this paper; appears almost every year; frequently sits at Q4",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q2",
+              "year": 2025,
+              "marks": 6,
+              "context": "Sound Waves"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:2:q4",
+              "year": 2025,
+              "marks": 9,
+              "context": "Sound waves"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2R:q7",
+              "year": 2024,
+              "marks": 9,
+              "context": "Sound experiment"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2R:q9",
+              "year": 2024,
+              "marks": 9,
+              "context": "Sound Waves"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 5,
+          "topic": "1",
+          "topic_name": "Forces and motion",
+          "marks": 8,
+          "command_words": [
+            "calculate",
+            "explain",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "apply formula",
+            "calculate momentum",
+            "calculate force",
+            "calculate moment"
+          ],
+          "style_reference": {
+            "context_tag": "Pencil balance",
+            "example_marks": 6,
+            "example_excerpt": "\n\nAnswer ALL questions.\nSome questions must be answered with a cross in a box . If you change your mind about an\nanswer, put a line through the box\nand then mark your new answer with a cross .\n1 A pencil has a weight of 0.16 N.\n(a) What is the mass of the pencil?\n(1)\nA 1.6 g",
+            "from_q_id": "4PH1:2023:summer:2:q1"
+          },
+          "confidence": 0.742,
+          "confidence_band": "high",
+          "rationale": "Forces and motion carries 19% of weighted marks on this paper; appears almost every year; frequently sits at Q5",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q4",
+              "year": 2025,
+              "marks": null,
+              "context": "Gate mechanism"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2:q6",
+              "year": 2025,
+              "marks": 9,
+              "context": "Gate mechanism"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2R:q5",
+              "year": 2025,
+              "marks": null,
+              "context": "Tennis ball drop"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2R:q6",
+              "year": 2025,
+              "marks": 15,
+              "context": "Ball Bounce"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 6,
+          "topic": "6",
+          "topic_name": "Magnetism and electromagnetism",
+          "marks": 10,
+          "command_words": [
+            "calculate",
+            "explain",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "data analysis",
+            "magnetic field description",
+            "describing electromagnet construction",
+            "apply magnetic principles"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.548,
+          "confidence_band": "medium",
+          "rationale": "Magnetism and electromagnetism carries 14% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q7",
+              "year": 2025,
+              "marks": 14,
+              "context": "Electrical Transformers"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2R:q1",
+              "year": 2025,
+              "marks": 6,
+              "context": "Flour mill"
+            },
+            {
+              "q_id": "4PH1:2025:summer:2R:q4",
+              "year": 2025,
+              "marks": 7,
+              "context": "Transformers"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:2:q5",
+              "year": 2025,
+              "marks": 9,
+              "context": "Electromagnetic solenoids"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 7,
+          "topic": "3",
+          "topic_name": "Waves",
+          "marks": 10,
+          "command_words": [
+            "calculate",
+            "state",
+            "describe"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "measurement technique",
+            "data analysis",
+            "experimental design",
+            "investigation design"
+          ],
+          "style_reference": {
+            "context_tag": "Sound waves",
+            "example_marks": 9,
+            "example_excerpt": "\n\n4 This question is about sound waves.\n(a) Describe an investigation to measure the frequency of a sound wave with\nan oscilloscope.\nYou may draw a diagram to help your answer.\n(5)\n..............................................................................................",
+            "from_q_id": "4PH1:2025:autumn:2:q4"
+          },
+          "confidence": 0.57,
+          "confidence_band": "high",
+          "rationale": "Waves carries 13% of weighted marks on this paper; appears almost every year; frequently sits at Q7",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q2",
+              "year": 2025,
+              "marks": 6,
+              "context": "Sound Waves"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:2:q4",
+              "year": 2025,
+              "marks": 9,
+              "context": "Sound waves"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2R:q7",
+              "year": 2024,
+              "marks": 9,
+              "context": "Sound experiment"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2R:q9",
+              "year": 2024,
+              "marks": 9,
+              "context": "Sound Waves"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 8,
+          "topic": "8",
+          "topic_name": "Astrophysics",
+          "marks": 9,
+          "command_words": [
+            "explain",
+            "calculate",
+            "state"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "apply theory",
+            "use formula",
+            "interpret data",
+            "apply knowledge of cosmic expansion"
+          ],
+          "style_reference": {
+            "context_tag": "Galaxy Expansion",
+            "example_marks": 7,
+            "example_excerpt": "\n\n6 Galaxies A, B and C are different distances from the Earth.\nGalaxy A is moving away from the Earth with a velocity of 1.7 × 104 km/s.\n(a) The reference wavelength for light arriving at the Earth from galaxy A is 506 nm.\nCalculate the observed wavelength for the light arr",
+            "from_q_id": "4PH1:2025:autumn:2:q6"
+          },
+          "confidence": 0.649,
+          "confidence_band": "high",
+          "rationale": "Astrophysics carries 11% of weighted marks on this paper; appears almost every year; frequently sits at Q8",
+          "evidence": [
+            {
+              "q_id": "4PH1:2025:summer:2:q8",
+              "year": 2025,
+              "marks": 8,
+              "context": "Cosmology"
+            },
+            {
+              "q_id": "4PH1:2025:autumn:2:q6",
+              "year": 2025,
+              "marks": 7,
+              "context": "Galaxy Expansion"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2:q4",
+              "year": 2024,
+              "marks": null,
+              "context": "Hertzsprung-Russell"
+            },
+            {
+              "q_id": "4PH1:2024:summer:2:q9",
+              "year": 2024,
+              "marks": 11,
+              "context": "Cepheid variables"
+            }
+          ],
+          "est_subparts": 2
+        }
+      ]
+    }
+  },
+  "method": "recency/era/session-weighted topic demand + position priors + cycle overdue boost"
+}

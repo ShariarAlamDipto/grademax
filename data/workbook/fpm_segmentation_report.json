@@ -1,0 +1,486 @@
+{
+  "papers": [
+    {
+      "key": "2016_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [9]",
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2016_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [2, 4, 6]",
+        "mark scheme banded on header rows: 12/12 questions, 0 inferred from sequence"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2016_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2016_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2016_specimen_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [3, 5, 7, 10, 11]",
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2016_specimen_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [1, 2, 4, 6, 7, 10, 11]",
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [3]",
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [2, 3, 4, 5]",
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2017_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]",
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2017_oct-nov_1",
+      "status": "excluded",
+      "skipped_reason": "Extracted text is byte-identical to 2016 Specimen Paper 1 -- these are the specimen papers refiled under a session that was never sat. Including them duplicates ~10 questions.",
+      "issues": [],
+      "warnings": [],
+      "questions": 0,
+      "marks": 0
+    },
+    {
+      "key": "2017_oct-nov_2",
+      "status": "excluded",
+      "skipped_reason": "Extracted text is byte-identical to 2016 Specimen Paper 2 -- see 2017_oct-nov_1.",
+      "issues": [],
+      "warnings": [],
+      "questions": 0,
+      "marks": 0
+    },
+    {
+      "key": "2018_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2018_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 10/11 questions",
+        "tally unmatched, banded from the question's own header for [7]",
+        "question 7: QP fence says 9 marks but the mark scheme total line give [8]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2018_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [2]",
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2019_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "question 2: derived start page 3 carries no printed '2' marker (markers seen on no pages)",
+        "mark scheme header unreadable, banded from the printed question label for questions [5]",
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "image-only scan: using hand-verified page ranges and mark-scheme marks for 11 questions",
+        "mark scheme banded on per-question tallies: 10/11 questions",
+        "tally unmatched, banded from the question's own header for [6]",
+        "question 6: QP fence says 11 marks but the mark scheme bracketed part tallies give [4, 5, 2]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [4]",
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2019_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 10/11 questions",
+        "tally unmatched, banded from the question's own header for [11]",
+        "question 11: QP fence says 12 marks but the mark scheme bracketed part tallies give [5, 2, 5, 0]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [4]",
+        "mark scheme banded on header rows: 11/11 questions, 0 inferred from sequence"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 12/12 questions, 0 inferred from sequence"
+      ],
+      "questions": 12,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme header unreadable, banded from the printed question label for questions [8]",
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2020_oct-nov_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on header rows: 10/10 questions, 0 inferred from sequence"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2021_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2021_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 10/11 questions",
+        "tally unmatched, banded from the question's own header for [4]",
+        "question 4: QP fence says 16 marks but the mark scheme bracketed part tallies give [4, 3, 2, 2, 6, 21, 4, 2, 4, 3, 4, 3, 21, 21]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2021_oct-nov_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 10/10 questions"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2022_jan_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 10/10 questions"
+      ],
+      "questions": 10,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_1R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 10/11 questions",
+        "tally unmatched, banded from the question's own header for [4]",
+        "question 4: QP fence says 7 marks but the mark scheme bracketed part tallies give [2, 6, 5]"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    },
+    {
+      "key": "2022_may-jun_2R",
+      "status": "ok",
+      "skipped_reason": null,
+      "issues": [],
+      "warnings": [
+        "mark scheme banded on per-question tallies: 11/11 questions"
+      ],
+      "questions": 11,
+      "marks": 100
+    }
+  ]
+}

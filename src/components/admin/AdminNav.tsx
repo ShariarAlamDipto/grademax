@@ -2,10 +2,12 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react"
+import { isTeacherAdminPath } from "@/lib/adminAccess"
 
 interface Badges {
   missingPapers: number
   unreviewedQuestions: number
+  pendingOrders: number
 }
 
 const NAV_ITEMS = [
@@ -14,25 +16,42 @@ const NAV_ITEMS = [
   { href: "/admin/scraper", label: "Scraper", icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4", badge: null as keyof Badges | null },
   { href: "/admin/subjects", label: "Subjects", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253", badge: null as keyof Badges | null },
   { href: "/admin/users", label: "Users", icon: "M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z", badge: null as keyof Badges | null },
+  { href: "/admin/store", label: "Store", icon: "M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z", badge: "pendingOrders" as keyof Badges | null },
+  { href: "/admin/receipts", label: "Receipts", icon: "M9 14l6-6m-5.5.5h.01m4.99 5h.01M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16l3.5-2 3.5 2 3.5-2 3.5 2z", badge: null as keyof Badges | null },
   { href: "/admin/analytics", label: "Analytics", icon: "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z", badge: null as keyof Badges | null },
   { href: "/admin/tagger", label: "Tagger", icon: "M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z", badge: "unreviewedQuestions" as keyof Badges | null },
+  { href: "/admin/workbook/verify", label: "Workbook", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", badge: null as keyof Badges | null },
   { href: "/admin/pipeline", label: "Pipeline", icon: "M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4", badge: null as keyof Badges | null },
+  { href: "/admin/predictor", label: "Predictor", icon: "M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z", badge: null as keyof Badges | null },
+  { href: "/admin/suggestions", label: "Suggestions", icon: "M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z", badge: null as keyof Badges | null },
   { href: "/admin/audit-log", label: "Audit Log", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01", badge: null as keyof Badges | null },
   { href: "/admin/suggestions", label: "Suggestions", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z", badge: null as keyof Badges | null },
 ]
 
-export default function AdminNav() {
+interface AdminNavProps {
+  role: "admin" | "teacher"
+}
+
+export default function AdminNav({ role }: AdminNavProps) {
   const pathname = usePathname()
-  const [badges, setBadges] = useState<Badges>({ missingPapers: 0, unreviewedQuestions: 0 })
+  const isTeacher = role === "teacher"
+  const navItems = isTeacher ? NAV_ITEMS.filter(item => isTeacherAdminPath(item.href)) : NAV_ITEMS
+  const [badges, setBadges] = useState<Badges>({ missingPapers: 0, unreviewedQuestions: 0, pendingOrders: 0 })
   const [mobileOpen, setMobileOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    // The badge counts come from an admin-only endpoint.
+    if (isTeacher) return
     fetch("/api/admin/nav-badges")
       .then(r => r.json())
-      .then(d => setBadges({ missingPapers: d.missingPapers ?? 0, unreviewedQuestions: d.unreviewedQuestions ?? 0 }))
+      .then(d => setBadges({
+        missingPapers: d.missingPapers ?? 0,
+        unreviewedQuestions: d.unreviewedQuestions ?? 0,
+        pendingOrders: d.pendingOrders ?? 0,
+      }))
       .catch(() => {})
-  }, [])
+  }, [isTeacher])
 
   useEffect(() => {
     const check = () => setIsMobile(window.innerWidth < 768)
@@ -53,7 +72,7 @@ export default function AdminNav() {
             GradeMax
           </p>
           <p style={{ fontSize: "0.95rem", fontWeight: 800, color: "var(--gm-text)", letterSpacing: "-0.01em" }}>
-            Admin Portal
+            {isTeacher ? "Teacher Portal" : "Admin Portal"}
           </p>
         </div>
         {isMobile && (
@@ -70,7 +89,7 @@ export default function AdminNav() {
 
       {/* Nav items */}
       <nav style={{ flex: 1, padding: "0 0.75rem" }}>
-        {NAV_ITEMS.map(item => {
+        {navItems.map(item => {
           const isActive = item.href === "/admin" ? pathname === "/admin" : pathname.startsWith(item.href)
           const badgeCount = item.badge ? badges[item.badge] : 0
           return (
@@ -134,10 +153,10 @@ export default function AdminNav() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <span style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)" }}>Admin Portal</span>
-          {(badges.missingPapers > 0 || badges.unreviewedQuestions > 0) && (
+          <span style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)" }}>{isTeacher ? "Teacher Portal" : "Admin Portal"}</span>
+          {(badges.missingPapers > 0 || badges.unreviewedQuestions > 0 || badges.pendingOrders > 0) && (
             <span style={{ background: "#ef444430", color: "#ef4444", borderRadius: "0.25rem", padding: "0 0.4rem", fontSize: "0.65rem", fontWeight: 700 }}>
-              {badges.missingPapers + badges.unreviewedQuestions} alerts
+              {badges.missingPapers + badges.unreviewedQuestions + badges.pendingOrders} alerts
             </span>
           )}
         </div>

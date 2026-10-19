@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import SuggestionForm from "./SuggestionForm"
 
 export const metadata: Metadata = {
-  title: "Improvements & Suggestions",
+  title: "Improvements and Suggestions",
   description:
     "Share what you'd like to see on GradeMax. Every suggestion goes straight to the team and helps shape the platform.",
 }
@@ -50,6 +50,11 @@ export default function ImprovementsPage() {
           lineHeight: 1.6,
         }}>
           New features, bug reports, subject requests, design ideas — anything goes.
+          <br />
+          <span style={{ color: "var(--gm-amber)" }}>
+            With exams just around the corner, ask for any help you need with IGCSE or IAL
+            Maths and Physics — I&apos;ll do my best to deliver it on time.
+          </span>
         </p>
 
         {/* Form card (the standout element) */}

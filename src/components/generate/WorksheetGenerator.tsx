@@ -1,8 +1,12 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { useQuestionLimit } from '@/lib/useQuestionLimit';
+import { parseQuestionCount } from '@/lib/questionCountInput';
 import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
+import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
+import SignInPrompt from '@/components/SignInPrompt';
 
 interface Subject {
   id: string;
@@ -21,6 +25,8 @@ interface Topic {
 
 const CURRENT_YEAR = new Date().getFullYear();
 const START_YEAR = 2011;
+/** Questions requested when the student leaves Max Questions empty or invalid. */
+const DEFAULT_QUESTION_COUNT = 20;
 const YEARS = Array.from({ length: CURRENT_YEAR - START_YEAR + 1 }, (_, i) => CURRENT_YEAR - i);
 
 interface Question {
@@ -108,7 +114,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [yearStart, setYearStart] = useState<number>(START_YEAR);
   const [yearEnd, setYearEnd] = useState<number>(CURRENT_YEAR);
   const [difficulty, setDifficulty] = useState<string>('');
-  const [limit, setLimit] = useState<number>(20);
+  // Kept as the raw text so the field can be emptied while typing; the count
+  // actually requested is always derived (and clamped) from it.
+  const [limitDraft, setLimitDraft] = useState<string>(String(DEFAULT_QUESTION_COUNT));
+  const { limit: questionLimit } = useQuestionLimit();
+  // Admins, teachers and Pro students have no limit; the input still needs a ceiling.
+  const inputMax = questionLimit ?? 500;
+  const limit = parseQuestionCount(limitDraft, inputMax, DEFAULT_QUESTION_COUNT);
   const [shuffle, setShuffle] = useState<boolean>(false);
   
   const [loading, setLoading] = useState(false);
@@ -116,9 +128,15 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   const [worksheetId, setWorksheetId] = useState<string | null>(null);
   const [questions, setQuestions] = useState<Question[]>([]);
   const [error, setError] = useState<string | null>(null);
-  
+  const [needsSignIn, setNeedsSignIn] = useState(false);
+
   const [worksheetUrl, setWorksheetUrl] = useState<string | null>(null);
   const [markschemeUrl, setMarkschemeUrl] = useState<string | null>(null);
+  // Blobs are retained next to their object URLs: iOS saves through the Web
+  // Share API, which needs a File handed over synchronously inside the click,
+  // so re-reading the object URL at that point would be too late.
+  const [worksheetBlob, setWorksheetBlob] = useState<Blob | null>(null);
+  const [markschemeBlob, setMarkschemeBlob] = useState<Blob | null>(null);
 
   // Cache topics per subject to avoid re-fetching
   const topicsCache = useRef<Record<string, Topic[]>>({
@@ -162,12 +180,16 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     setWorksheetId(null);
     setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setWorksheetBlob(null);
+    setMarkschemeBlob(null);
     setError(null);
   }, [selectedSubject]);
 
   // Note: we deliberately do NOT auto-open a PDF iframe on mobile.
   // iOS Safari can't render PDF blob URLs inside iframes — it shows a
-  // broken-page icon. The download anchors below work natively instead.
+  // broken-page icon. Previews are rasterised by MultiPagePdfPreview, and
+  // the download anchors below fall back to the iOS share sheet — see
+  // @/lib/savePdf for why the `download` attribute alone isn't enough.
 
   const toggleTopic = (code: string) => {
     setSelectedTopics(prev =>
@@ -189,12 +211,15 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
     setLoading(true);
     setError(null);
+    setNeedsSignIn(false);
     setWorksheetId(null);
     setQuestions([]);
 
     // Revoke any existing object URLs before creating new ones
     setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setWorksheetBlob(null);
+    setMarkschemeBlob(null);
 
     try {
       const response = await fetchWithRetry('/api/worksheets/generate-v2', {
@@ -210,6 +235,11 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
           shuffle,
         }),
       });
+
+      if (response.status === 401) {
+        setNeedsSignIn(true);
+        return;
+      }
 
       if (!response.ok) {
         const text = await response.text();
@@ -247,6 +277,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
     setError(null);
     setWorksheetUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
     setMarkschemeUrl(prev => { if (prev) URL.revokeObjectURL(prev); return null; });
+    setWorksheetBlob(null);
+    setMarkschemeBlob(null);
 
     const subject = subjects.find(s => s.id === selectedSubject);
     const subjectName = subject?.name ?? '';
@@ -254,9 +286,15 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
     // Map the questions returned by /generate-v2 onto the shape the
     // browser-side merger expects.
+    // The metadata is printed on each question's first page, so a question
+    // and its mark scheme can always be matched by eye.
     const pagesPayload = questions.map((q) => ({
       qpPageUrl: q.qpPageUrl,
       msPageUrl: q.msPageUrl,
+      questionNumber: q.questionNumber,
+      year: q.year,
+      season: q.season,
+      paper: q.paper,
     }));
 
     try {
@@ -285,6 +323,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         throw new Error('No question PDFs could be downloaded. Please try again or check your connection.');
       }
 
+      setWorksheetBlob(wsResult.blob);
       setWorksheetUrl(URL.createObjectURL(wsResult.blob));
 
       // Step 2: Markscheme — best effort.
@@ -310,6 +349,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             });
           });
           if (msResult.successCount > 0) {
+            setMarkschemeBlob(msResult.blob);
             setMarkschemeUrl(URL.createObjectURL(msResult.blob));
           }
         }
@@ -455,7 +495,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={yearStart}
                 onChange={(e) => setYearStart(parseInt(e.target.value))}
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -469,7 +509,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={yearEnd}
                 onChange={(e) => setYearEnd(parseInt(e.target.value))}
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               >
                 {YEARS.map((year) => (
                   <option key={year} value={year}>{year}</option>
@@ -487,7 +527,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
               <select
                 value={difficulty}
                 onChange={(e) => setDifficulty(e.target.value)}
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               >
                 <option value="">All</option>
                 <option value="easy">Easy</option>
@@ -497,15 +537,17 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             </div>
             <div>
               <label className="block text-xs md:text-sm font-semibold text-gray-300 mb-1 md:mb-2">
-                Max Questions
+                {questionLimit === null ? 'Max Questions' : `Max Questions (up to ${questionLimit})`}
               </label>
               <input
                 type="number"
-                value={limit}
-                onChange={(e) => setLimit(parseInt(e.target.value) || 20)}
+                inputMode="numeric"
+                value={limitDraft}
+                onChange={(e) => setLimitDraft(e.target.value)}
+                onBlur={() => setLimitDraft(String(limit))}
                 min="1"
-                max="500"
-                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-sm md:text-base"
+                max={inputMax}
+                className="w-full p-2 md:p-3 border-2 border-gray-600 bg-gray-700 text-white rounded-lg focus:border-blue-500 focus:outline-none text-base"
               />
             </div>
             <div className="col-span-2 md:col-span-1 flex items-end">
@@ -532,6 +574,10 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
         </div>
 
         {/* Error Display */}
+        {needsSignIn && (
+          <SignInPrompt title="Sign in to make practice worksheets" next="/generate" />
+        )}
+
         {error && (
           <div className="bg-red-900 bg-opacity-80 backdrop-blur-lg border-2 border-red-500 rounded-xl p-4 md:p-6 mb-4 md:mb-8">
             <div className="flex items-center gap-3">
@@ -615,8 +661,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     <a
                       href={worksheetUrl}
                       download="worksheet.pdf"
-                      target="_blank"
-                      rel="noopener"
+                      onClick={(e) => handlePdfDownloadClick(e, worksheetBlob, 'worksheet.pdf', worksheetUrl)}
                       className="flex-1 bg-gray-700 border-2 border-green-500 text-green-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-green-900 transition-colors text-center text-sm md:text-base"
                     >
                       Download Worksheet.pdf
@@ -626,8 +671,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     <a
                       href={markschemeUrl}
                       download="markscheme.pdf"
-                      target="_blank"
-                      rel="noopener"
+                      onClick={(e) => handlePdfDownloadClick(e, markschemeBlob, 'markscheme.pdf', markschemeUrl)}
                       className="flex-1 bg-gray-700 border-2 border-blue-500 text-blue-300 px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold hover:bg-blue-900 transition-colors text-center text-sm md:text-base"
                     >
                       Download Markscheme.pdf
@@ -647,12 +691,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                         href={worksheetUrl}
                         target="_blank"
                         rel="noopener"
+                        onClick={(e) => handlePdfPreviewClick(e, worksheetUrl)}
                         className="bg-green-600 hover:bg-green-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
                       >
                         Open in viewer
                       </a>
                     </div>
-                    <MultiPagePdfPreview url={worksheetUrl} className="border-2 border-green-500/60 max-h-[70vh] overflow-y-auto" />
+                    <MultiPagePdfPreview url={worksheetUrl} blob={worksheetBlob} className="border-2 border-green-500/60 max-h-[70vh] overflow-y-auto" />
                   </div>
                 )}
                 {markschemeUrl && (
@@ -663,12 +708,13 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                         href={markschemeUrl}
                         target="_blank"
                         rel="noopener"
+                        onClick={(e) => handlePdfPreviewClick(e, markschemeUrl)}
                         className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 md:px-4 md:py-2 rounded-lg font-semibold text-xs md:text-sm transition-colors"
                       >
                         Open in viewer
                       </a>
                     </div>
-                    <MultiPagePdfPreview url={markschemeUrl} className="border-2 border-blue-500/60 max-h-[70vh] overflow-y-auto" />
+                    <MultiPagePdfPreview url={markschemeUrl} blob={markschemeBlob} className="border-2 border-blue-500/60 max-h-[70vh] overflow-y-auto" />
                   </div>
                 )}
               </div>

@@ -1,15 +1,21 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getSubjectBySlug, subjectColorClasses, seasonDisplay } from "@/lib/subjects"
-import { seoSubjects } from "@/lib/seo-subjects"
-import { toPaperSlug } from "@/lib/paper-slugs"
+import { getSubjectBySlug, subjectColorClasses, seasonDisplay, boardOf, boardDisplay, levelShort, catalogHref } from "@/lib/subjects"
+import { seoSubjects, isSingleUnitEdexcelCode } from "@/lib/seo-subjects"
+import { toPaperSlug, formatPaperLabel, formatCambridgePaperLabel, cambridgePaperCode } from "@/lib/paper-slugs"
 import { getPapersIndex, sessionKey } from "@/lib/papersIndex"
+import PaperRow from "@/components/past-papers/PaperRow"
 
 export const revalidate = false
-// Every reachable session URL is enumerated from the DB-backed index at build
-// time. Unknown URLs return 404 instead of falling through to ISR, keeping the
-// route off the ISR write meter.
-export const dynamicParams = false
+// Edexcel session URLs are enumerated from the DB-backed index at build time.
+// Cambridge sessions render on demand and cache permanently (revalidate=false)
+// — prerendering all ~10k Cambridge routes pushed the deploy output past
+// Vercel's limit (post-build "Maximum call stack size exceeded"). Invalid URLs
+// still 404 via the guards below.
+export const dynamicParams = true
+// First on-demand render loads the whole papers index from Supabase — give it
+// headroom beyond Vercel's default function timeout.
+export const maxDuration = 60
 
 export async function generateStaticParams() {
   const { bySession } = await getPapersIndex()
@@ -17,6 +23,8 @@ export async function generateStaticParams() {
   for (const key of bySession.keys()) {
     const [subject, year, season] = key.split("/")
     if (!subject || !year || !season) continue
+    const subj = getSubjectBySlug(subject)
+    if (!subj || boardOf(subj.level) === "cambridge") continue
     params.push({ subject, year, season })
   }
   return params
@@ -30,6 +38,13 @@ interface PaperRow {
 }
 
 const VALID_SEASONS = new Set(["jan", "jan-feb", "feb-mar", "may-jun", "oct-nov"])
+
+// Cambridge series shorthand (m/s/w) — "0620 s23" is how CAIE students search.
+const CAMBRIDGE_SERIES_LETTER: Record<string, string> = {
+  "feb-mar": "m",
+  "may-jun": "s",
+  "oct-nov": "w",
+}
 
 function parseYearParam(value: string): number | null {
   if (!/^\d{4}$/.test(value)) return null
@@ -57,18 +72,31 @@ export async function generateMetadata({
   const normalizedSeason = normalizeSeason(season)
   if (!VALID_SEASONS.has(normalizedSeason)) return {}
 
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const boardLong = boardOf(subj.level) === "cambridge" ? "Cambridge International" : "Pearson Edexcel"
   const seasonName = seasonDisplay(normalizedSeason)
   const seoData = seoSubjects.find((s) => s.slug === slug)
-  const examCode = seoData?.examCode ?? ""
+  const examCode = seoData?.examCode ?? subj.examCode ?? ""
   const codeStr = examCode ? ` (${examCode})` : ""
+  const codeLed = isSingleUnitEdexcelCode(examCode) && !subj.name.startsWith("IAL ")
+  const isCambridge = boardOf(subj.level) === "cambridge"
+  // Lead with code + year + session for queries like "4ma1/1hr may 2025". The
+  // /past-papers layout's plain-string title blocks the root template here, so the
+  // brand suffix is added explicitly. Cambridge: winning SERP titles put the name
+  // immediately before the syllabus code ("Chemistry 0620") plus the session.
+  const title = codeLed
+    ? `${examCode} ${yearLabel} ${seasonName} Past Paper + Mark Scheme – Edexcel ${subj.name}`
+    : isCambridge && examCode
+    ? `${subj.name} ${examCode} ${seasonName} ${yearLabel} Past Papers – Cambridge ${level} QP & MS`
+    : `${board} ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers – Free PDF`
 
   return {
-    title: `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers – Free PDF | GradeMax`,
-    description: `Download free Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} past papers with mark schemes. Official Pearson Edexcel question papers and mark schemes available as free PDF.`,
+    title: `${title} | GradeMax`,
+    description: `Download free ${board} ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} past papers with mark schemes. Official ${boardLong} question papers and mark schemes available as free PDF.`,
     keywords: [
       `${subj.name} ${yearLabel} ${seasonName} past paper`,
-      `Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName}`,
+      `${board} ${level} ${subj.name} ${yearLabel} ${seasonName}`,
       `${subj.name} ${yearLabel} ${seasonName} mark scheme`,
       `${subj.name} past papers ${yearLabel}`,
       ...(examCode
@@ -79,27 +107,35 @@ export async function generateMetadata({
             `${examCode} past papers`,
           ]
         : []),
+      // Cambridge series shorthand students type verbatim: "0620 s23" = May/June 2023.
+      ...(isCambridge && examCode && CAMBRIDGE_SERIES_LETTER[normalizedSeason]
+        ? [
+            `${subj.name} ${examCode} ${seasonName} ${yearLabel}`,
+            `${examCode} ${CAMBRIDGE_SERIES_LETTER[normalizedSeason]}${yearLabel.slice(2)}`,
+            `CAIE ${subj.name} ${yearLabel} ${seasonName}`,
+          ]
+        : []),
       `${subj.name} ${yearLabel} paper 1`,
       `${subj.name} ${yearLabel} paper 2`,
-      `Edexcel ${subj.name} ${yearLabel} free download`,
+      `${board} ${subj.name} ${yearLabel} free download`,
       `${subj.name} ${yearLabel} past paper PDF`,
-      `Edexcel ${level} ${subj.name} ${yearLabel}`,
+      `${board} ${level} ${subj.name} ${yearLabel}`,
       `${level} ${subj.name} ${yearLabel} ${seasonName}`,
     ],
     openGraph: {
-      title: `Edexcel ${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName} past papers with mark schemes. Download question papers and answer booklets as PDF.`,
-      url: `https://grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
+      title: `${title} | GradeMax`,
+      description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} past papers with mark schemes. Download question papers and answer booklets as PDF.`,
+      url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
       siteName: "GradeMax",
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
       title: `${level} ${subj.name}${codeStr} ${yearLabel} ${seasonName} Past Papers | GradeMax`,
-      description: `Free Edexcel ${level} ${subj.name} ${yearLabel} ${seasonName} papers with mark schemes.`,
+      description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
+      canonical: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
     },
   }
 }
@@ -108,13 +144,15 @@ function buildJsonLd(
   slug: string,
   subjectName: string,
   level: string,
+  board: string,
+  catalogPath: string,
   year: string,
   seasonSlug: string,
   seasonName: string,
   papers: PaperRow[],
   examCode: string
 ) {
-  const base = "https://grademax.me"
+  const base = "https://www.grademax.me"
   const pageUrl = `${base}/past-papers/${slug}/${year}/${seasonSlug}`
 
   return {
@@ -123,8 +161,8 @@ function buildJsonLd(
       {
         "@type": "LearningResource",
         "@id": `${pageUrl}#resource`,
-        name: `Edexcel ${level} ${subjectName} ${year} ${seasonName} Past Papers`,
-        description: `Free Edexcel ${level} ${subjectName} ${year} ${seasonName} question papers and mark schemes.`,
+        name: `${board} ${level} ${subjectName} ${year} ${seasonName} Past Papers`,
+        description: `Free ${board} ${level} ${subjectName} ${year} ${seasonName} question papers and mark schemes.`,
         url: pageUrl,
         educationalLevel: level,
         learningResourceType: ["Past Paper", "Examination"],
@@ -151,7 +189,7 @@ function buildJsonLd(
         about: examCode
           ? {
               "@type": "Thing",
-              name: `Edexcel ${level} ${subjectName} (${examCode})`,
+              name: `${board} ${level} ${subjectName} (${examCode})`,
               identifier: examCode,
             }
           : undefined,
@@ -159,7 +197,7 @@ function buildJsonLd(
           "@type": "AlignmentObject",
           alignmentType: "educationalSubject",
           targetName: subjectName,
-          educationalFramework: "Edexcel",
+          educationalFramework: board,
         },
         hasPart: [
           ...papers
@@ -184,7 +222,7 @@ function buildJsonLd(
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: base },
-          { "@type": "ListItem", position: 2, name: "Past Papers", item: `${base}/past-papers` },
+          { "@type": "ListItem", position: 2, name: `${board} Past Papers`, item: `${base}${catalogPath}` },
           { "@type": "ListItem", position: 3, name: subjectName, item: `${base}/past-papers/${slug}` },
           { "@type": "ListItem", position: 4, name: `${year} ${seasonName}`, item: pageUrl },
         ],
@@ -211,8 +249,12 @@ export default async function SessionPapersPage({
   const yearLabel = String(parsedYear)
 
   const seoData = seoSubjects.find((s) => s.slug === slug)
-  const examCode = seoData?.examCode ?? ""
-  const level = subj.level === "ial" ? "A Level" : "IGCSE"
+  const examCode = seoData?.examCode ?? subj.examCode ?? ""
+  const level = levelShort(subj.level)
+  const board = boardDisplay(subj.level)
+  const boardLong = boardOf(subj.level) === "cambridge" ? "Cambridge International" : "Pearson Edexcel"
+  const catalogPath = catalogHref(subj.level)
+  const isCambridge = boardOf(subj.level) === "cambridge"
   const colorClass = subjectColorClasses[subj.colorKey]
   const normalizedSeason = normalizeSeason(season)
   if (!VALID_SEASONS.has(normalizedSeason)) notFound()
@@ -230,16 +272,16 @@ export default async function SessionPapersPage({
     markscheme_pdf_url: p.markschemePdfUrl,
   }))
 
-  const jsonLd = buildJsonLd(slug, subj.name, level, yearLabel, normalizedSeason, seasonName, papers, examCode)
+  const jsonLd = buildJsonLd(slug, subj.name, level, board, catalogPath, yearLabel, normalizedSeason, seasonName, papers, examCode)
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }} />
 
       <main className="min-h-screen bg-black text-white">
-        <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky top-0 z-10">
+        <div className="border-b border-white/10 bg-black/50 backdrop-blur-sm sticky z-10" style={{ top: "var(--gm-nav-h)" }}>
           <div className="max-w-4xl mx-auto px-6 py-3 flex items-center gap-2 text-sm flex-wrap">
-            <Link href="/past-papers" className="text-white/50 hover:text-white transition-colors">Past Papers</Link>
+            <Link href={catalogPath} className="text-white/50 hover:text-white transition-colors">Past Papers</Link>
             <span className="text-white/20">›</span>
             <Link href={`/past-papers/${slug}`} className="text-white/50 hover:text-white transition-colors">{subj.name}</Link>
             <span className="text-white/20">›</span>
@@ -250,76 +292,32 @@ export default async function SessionPapersPage({
         <div className="max-w-4xl mx-auto px-6 py-10">
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-3">
-              <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${colorClass}`}>Edexcel {level}</span>
+              <span className={`text-xs px-2.5 py-1 rounded-full font-semibold ${colorClass}`}>{board} {level}</span>
               <span className="text-white/30 text-sm">{yearLabel} · {seasonName}</span>
             </div>
             <h1 className="text-3xl font-extrabold mb-2">{subj.name} {yearLabel} {seasonName}</h1>
             <p className="text-white/50">
-              Download free Edexcel {level} {subj.name} {yearLabel} {seasonName} question papers and mark schemes.
+              Download free {board} {level} {subj.name} {yearLabel} {seasonName} question papers and mark schemes.
             </p>
           </div>
 
-          <div className="space-y-3">
+          <div>
             {papers.map((paper) => {
               const paperSlug = toPaperSlug(paper.paper_number)
+              const paperLabel = isCambridge ? formatCambridgePaperLabel(paper.paper_number) : formatPaperLabel(paper.paper_number)
+              const paperCode = isCambridge ? cambridgePaperCode(subj.examCode, paper.paper_number) : ""
               return (
-                <div
+                <PaperRow
                   key={paper.id}
                   id={`paper-${paper.paper_number.toLowerCase()}`}
-                  className="bg-white/[0.03] border border-white/10 rounded-xl px-5 py-4 flex items-center justify-between gap-4"
-                >
-                  <div>
-                    {paperSlug ? (
-                      <Link
-                        href={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${paperSlug}`}
-                        className="font-semibold text-white hover:text-white/80 transition-colors"
-                      >
-                        Paper {paper.paper_number}
-                      </Link>
-                    ) : (
-                      <span className="font-semibold text-white/80">Paper {paper.paper_number}</span>
-                    )}
-                    <span className="ml-2 text-xs text-white/30">{subj.name} · {yearLabel} · {seasonName}</span>
-                  </div>
-
-                  <div className="flex gap-2 flex-shrink-0">
-                    {paper.pdf_url ? (
-                      <a
-                        href={paper.pdf_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-500/15 text-blue-300 ring-1 ring-blue-400/30 hover:bg-blue-500/25 transition-colors"
-                      >
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                          />
-                        </svg>
-                        Question Paper
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">QP —</span>
-                    )}
-
-                    {paper.markscheme_pdf_url ? (
-                      <a
-                        href={paper.markscheme_pdf_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-emerald-500/15 text-emerald-300 ring-1 ring-emerald-400/30 hover:bg-emerald-500/25 transition-colors"
-                      >
-                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        Mark Scheme
-                      </a>
-                    ) : (
-                      <span className="inline-flex items-center px-3 py-1.5 text-xs rounded-lg text-white/20">MS —</span>
-                    )}
-                  </div>
-                </div>
+                  href={paperSlug ? `/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${paperSlug}` : null}
+                  label={paperLabel}
+                  code={paperCode}
+                  qpUrl={paper.pdf_url}
+                  msUrl={paper.markscheme_pdf_url}
+                  viewerTitle={`${subj.name} ${yearLabel} ${seasonName} ${paperLabel}`}
+                  backPath={`/past-papers/${slug}/${yearLabel}/${normalizedSeason}`}
+                />
               )
             })}
           </div>

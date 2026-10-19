@@ -1,0 +1,2354 @@
+{
+  "subject_code": "4PH1",
+  "subject_name": "Physics",
+  "target": {
+    "session": "autumn",
+    "year": 2026,
+    "label": "October/November 2026"
+  },
+  "generated_at": "2026-06-13T17:27:07.605461+00:00",
+  "n_questions": 708,
+  "years": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "papers": {
+    "1": {
+      "name": "Paper 1",
+      "marks_target": 110,
+      "typical_question_count": [
+        9,
+        12
+      ],
+      "n_questions": 427,
+      "n_questions_9_1": 274,
+      "topic_frequency": [
+        {
+          "topic": "1",
+          "name": "Forces and motion",
+          "raw_count": 58,
+          "weighted": 25.46,
+          "freq_share": 0.2069,
+          "avg_marks": 8.7,
+          "marks_share": 0.2007,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 58
+          }
+        },
+        {
+          "topic": "3",
+          "name": "Waves",
+          "raw_count": 40,
+          "weighted": 17.15,
+          "freq_share": 0.1394,
+          "avg_marks": 8.4,
+          "marks_share": 0.1338,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 40
+          }
+        },
+        {
+          "topic": "2",
+          "name": "Electricity",
+          "raw_count": 37,
+          "weighted": 16.44,
+          "freq_share": 0.1336,
+          "avg_marks": 9.8,
+          "marks_share": 0.1453,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 37
+          }
+        },
+        {
+          "topic": "5",
+          "name": "Solids, liquids and gases",
+          "raw_count": 33,
+          "weighted": 14.75,
+          "freq_share": 0.1199,
+          "avg_marks": 8.6,
+          "marks_share": 0.1189,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 33
+          }
+        },
+        {
+          "topic": "8",
+          "name": "Astrophysics",
+          "raw_count": 28,
+          "weighted": 12.99,
+          "freq_share": 0.1056,
+          "avg_marks": 8.2,
+          "marks_share": 0.0976,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 28
+          }
+        },
+        {
+          "topic": "6",
+          "name": "Magnetism and electromagnetism",
+          "raw_count": 27,
+          "weighted": 12.56,
+          "freq_share": 0.1021,
+          "avg_marks": 8.4,
+          "marks_share": 0.1008,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 27
+          }
+        },
+        {
+          "topic": "7",
+          "name": "Radioactivity and particles",
+          "raw_count": 28,
+          "weighted": 12.44,
+          "freq_share": 0.1011,
+          "avg_marks": 9.4,
+          "marks_share": 0.1039,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 28
+          }
+        },
+        {
+          "topic": "4",
+          "name": "Energy resources and transfers",
+          "raw_count": 23,
+          "weighted": 11.25,
+          "freq_share": 0.0915,
+          "avg_marks": 8.9,
+          "marks_share": 0.0989,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 23
+          }
+        }
+      ],
+      "topic_by_year": {
+        "2": {
+          "2015": 7,
+          "2016": 7,
+          "2017": 6,
+          "2018": 7,
+          "2019": 5,
+          "2020": 7,
+          "2021": 5,
+          "2022": 7,
+          "2023": 4,
+          "2024": 4,
+          "2025": 5
+        },
+        "7": {
+          "2015": 6,
+          "2016": 3,
+          "2017": 6,
+          "2018": 2,
+          "2019": 4,
+          "2020": 5,
+          "2021": 5,
+          "2022": 4,
+          "2023": 3,
+          "2024": 3,
+          "2025": 4
+        },
+        "3": {
+          "2015": 4,
+          "2016": 6,
+          "2017": 6,
+          "2018": 8,
+          "2019": 4,
+          "2020": 7,
+          "2021": 8,
+          "2022": 6,
+          "2023": 7,
+          "2024": 5,
+          "2025": 3
+        },
+        "1": {
+          "2015": 8,
+          "2016": 7,
+          "2017": 9,
+          "2018": 4,
+          "2019": 11,
+          "2020": 9,
+          "2021": 9,
+          "2022": 7,
+          "2023": 9,
+          "2024": 6,
+          "2025": 7
+        },
+        "5": {
+          "2015": 6,
+          "2016": 6,
+          "2017": 5,
+          "2018": 4,
+          "2019": 4,
+          "2020": 7,
+          "2021": 7,
+          "2022": 4,
+          "2023": 3,
+          "2024": 3,
+          "2025": 5
+        },
+        "4": {
+          "2015": 3,
+          "2016": 4,
+          "2017": 5,
+          "2018": 3,
+          "2019": 3,
+          "2020": 2,
+          "2021": 3,
+          "2022": 3,
+          "2023": 5,
+          "2024": 4,
+          "2025": 3
+        },
+        "6": {
+          "2015": 3,
+          "2016": 2,
+          "2017": 3,
+          "2018": 1,
+          "2019": 1,
+          "2020": 4,
+          "2021": 6,
+          "2022": 4,
+          "2023": 7,
+          "2024": 1,
+          "2025": 4
+        },
+        "8": {
+          "2015": 2,
+          "2016": 2,
+          "2017": 5,
+          "2018": 3,
+          "2019": 1,
+          "2020": 6,
+          "2021": 4,
+          "2022": 4,
+          "2023": 7,
+          "2024": 3,
+          "2025": 3
+        }
+      },
+      "slot_patterns": [
+        {
+          "slot": 1,
+          "n": 26,
+          "avg_marks": 5.2,
+          "marks_range": [
+            0,
+            10
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 3.32
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.5
+            },
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 2.33
+            }
+          ],
+          "common_commands": [
+            "state",
+            "describe",
+            "draw",
+            "calculate"
+          ],
+          "difficulty_mode": "easy"
+        },
+        {
+          "slot": 2,
+          "n": 24,
+          "avg_marks": 7.2,
+          "marks_range": [
+            0,
+            13
+          ],
+          "top_topics": [
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.58
+            },
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 1.86
+            },
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 1.79
+            }
+          ],
+          "common_commands": [
+            "state",
+            "calculate",
+            "explain",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 3,
+          "n": 24,
+          "avg_marks": 8.7,
+          "marks_range": [
+            0,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 3.66
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.2
+            },
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 1.81
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "explain",
+            "state",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 4,
+          "n": 25,
+          "avg_marks": 8.5,
+          "marks_range": [
+            0,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.74
+            },
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 1.95
+            },
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 1.63
+            }
+          ],
+          "common_commands": [
+            "state",
+            "explain",
+            "calculate",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 5,
+          "n": 23,
+          "avg_marks": 9.4,
+          "marks_range": [
+            0,
+            17
+          ],
+          "top_topics": [
+            {
+              "topic": "7",
+              "name": "Radioactivity and particles",
+              "weight": 2.22
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 1.91
+            },
+            {
+              "topic": "4",
+              "name": "Energy resources and transfers",
+              "weight": 1.72
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "state",
+            "explain",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 6,
+          "n": 26,
+          "avg_marks": 10.0,
+          "marks_range": [
+            0,
+            17
+          ],
+          "top_topics": [
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.86
+            },
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 2.1
+            },
+            {
+              "topic": "4",
+              "name": "Energy resources and transfers",
+              "weight": 1.92
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "state",
+            "describe",
+            "explain"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 7,
+          "n": 26,
+          "avg_marks": 9.3,
+          "marks_range": [
+            0,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 3.47
+            },
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 2.31
+            },
+            {
+              "topic": "5",
+              "name": "Solids, liquids and gases",
+              "weight": 1.67
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "state",
+            "describe",
+            "explain"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 8,
+          "n": 25,
+          "avg_marks": 8.9,
+          "marks_range": [
+            0,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 3.25
+            },
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 2.26
+            },
+            {
+              "topic": "5",
+              "name": "Solids, liquids and gases",
+              "weight": 2.18
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "explain",
+            "state",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 9,
+          "n": 21,
+          "avg_marks": 9.7,
+          "marks_range": [
+            0,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 3.07
+            },
+            {
+              "topic": "7",
+              "name": "Radioactivity and particles",
+              "weight": 1.99
+            },
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 1.46
+            }
+          ],
+          "common_commands": [
+            "explain",
+            "calculate",
+            "state",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 10,
+          "n": 20,
+          "avg_marks": 10.9,
+          "marks_range": [
+            0,
+            16
+          ],
+          "top_topics": [
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 2.07
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.02
+            },
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 1.93
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "explain",
+            "describe",
+            "state"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 11,
+          "n": 20,
+          "avg_marks": 9.3,
+          "marks_range": [
+            0,
+            12
+          ],
+          "top_topics": [
+            {
+              "topic": "5",
+              "name": "Solids, liquids and gases",
+              "weight": 2.71
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 1.87
+            },
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 1.2
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "explain",
+            "state",
+            "draw"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 12,
+          "n": 13,
+          "avg_marks": 9.7,
+          "marks_range": [
+            0,
+            16
+          ],
+          "top_topics": [
+            {
+              "topic": "4",
+              "name": "Energy resources and transfers",
+              "weight": 1.44
+            },
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 1.23
+            },
+            {
+              "topic": "5",
+              "name": "Solids, liquids and gases",
+              "weight": 1.03
+            }
+          ],
+          "common_commands": [
+            "explain",
+            "calculate",
+            "draw",
+            "state"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 13,
+          "n": 1,
+          "avg_marks": 8,
+          "marks_range": [
+            8,
+            8
+          ],
+          "top_topics": [
+            {
+              "topic": "5",
+              "name": "Solids, liquids and gases",
+              "weight": 0.25
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "describe",
+            "state",
+            "explain"
+          ],
+          "difficulty_mode": "medium"
+        }
+      ],
+      "command_words": [
+        {
+          "word": "calculate",
+          "count": 143
+        },
+        {
+          "word": "explain",
+          "count": 123
+        },
+        {
+          "word": "state",
+          "count": 119
+        },
+        {
+          "word": "describe",
+          "count": 86
+        },
+        {
+          "word": "draw",
+          "count": 54
+        },
+        {
+          "word": "give",
+          "count": 41
+        },
+        {
+          "word": "complete",
+          "count": 38
+        },
+        {
+          "word": "determine",
+          "count": 24
+        },
+        {
+          "word": "show",
+          "count": 24
+        },
+        {
+          "word": "suggest",
+          "count": 20
+        },
+        {
+          "word": "name",
+          "count": 15
+        },
+        {
+          "word": "define",
+          "count": 10
+        },
+        {
+          "word": "discuss",
+          "count": 9
+        },
+        {
+          "word": "measure",
+          "count": 7
+        },
+        {
+          "word": "plot",
+          "count": 6
+        }
+      ],
+      "difficulty_dist": {
+        "easy": 31,
+        "medium": 241,
+        "hard": 2
+      },
+      "cycles": [
+        {
+          "topic": "3",
+          "name": "Waves",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 40,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 7,
+            "2021": 8,
+            "2022": 6,
+            "2023": 7,
+            "2024": 5,
+            "2025": 3
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "2",
+          "name": "Electricity",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 37,
+          "per_year_counts": {
+            "2019": 5,
+            "2020": 7,
+            "2021": 5,
+            "2022": 7,
+            "2023": 4,
+            "2024": 4,
+            "2025": 5
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "1",
+          "name": "Forces and motion",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 58,
+          "per_year_counts": {
+            "2019": 11,
+            "2020": 9,
+            "2021": 9,
+            "2022": 7,
+            "2023": 9,
+            "2024": 6,
+            "2025": 7
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "7",
+          "name": "Radioactivity and particles",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 28,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 5,
+            "2021": 5,
+            "2022": 4,
+            "2023": 3,
+            "2024": 3,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "5",
+          "name": "Solids, liquids and gases",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 33,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 7,
+            "2021": 7,
+            "2022": 4,
+            "2023": 3,
+            "2024": 3,
+            "2025": 5
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "4",
+          "name": "Energy resources and transfers",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 23,
+          "per_year_counts": {
+            "2019": 3,
+            "2020": 2,
+            "2021": 3,
+            "2022": 3,
+            "2023": 5,
+            "2024": 4,
+            "2025": 3
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "8",
+          "name": "Astrophysics",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 28,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 6,
+            "2021": 4,
+            "2022": 4,
+            "2023": 7,
+            "2024": 3,
+            "2025": 3
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "6",
+          "name": "Magnetism and electromagnetism",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 27,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 4,
+            "2021": 6,
+            "2022": 4,
+            "2023": 7,
+            "2024": 1,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        }
+      ],
+      "templates": [
+        {
+          "signature": "4|describe|hi",
+          "topic": "4",
+          "name": "Energy resources and transfers",
+          "size": 3,
+          "years": [
+            2023,
+            2024
+          ],
+          "weighted": 1.97,
+          "common_skills": [
+            "experimental design",
+            "designing an experiment",
+            "understanding heat transfer",
+            "data collection",
+            "equipment usage"
+          ],
+          "representative": {
+            "q_id": "4PH1:2024:autumn:1:q5",
+            "context_tag": "Specific Heat Capacity",
+            "marks": 10,
+            "command_words": [
+              "describe"
+            ],
+            "skills": [
+              "experimental design",
+              "data analysis",
+              "formula manipulation"
+            ],
+            "text_excerpt": "\n\n5 Diagram 1 shows the apparatus a student uses to determine the specific heat\ncapacity of a liquid.\nV\nA\nelectrical heater\nthermometer\ninsulating material\nliquid\nlid\npower supply\nDiagram 1\n(a) Describe a suitable method the student could use to determine the specific heat\ncapacity of the liqui"
+          }
+        },
+        {
+          "signature": "2|calculate,explain,state|hi",
+          "topic": "2",
+          "name": "Electricity",
+          "size": 4,
+          "years": [
+            2019,
+            2022,
+            2023,
+            2025
+          ],
+          "weighted": 1.89,
+          "common_skills": [
+            "energy calculation",
+            "equation recall",
+            "physical explanation",
+            "apply formula",
+            "use given data"
+          ],
+          "representative": {
+            "q_id": "4PH1:2025:summer:1:q3",
+            "context_tag": "Electric Circuit",
+            "marks": 15,
+            "command_words": [
+              "explain",
+              "calculate",
+              "state"
+            ],
+            "skills": [
+              "circuit analysis",
+              "voltage calculation",
+              "resistance calculation"
+            ],
+            "text_excerpt": "\n\n3 A student builds this electric circuit to measure the temperature of a room.\nA\nV\n290 Ω\n6.0 V\n(a) At 20 °C , the voltage across the thermistor is 3.9 V.\n(i) Explain why the reading on the voltmeter is 2.1 V.\n(2)\n................................................................................"
+          }
+        },
+        {
+          "signature": "1|calculate,explain,state|hi",
+          "topic": "1",
+          "name": "Forces and motion",
+          "size": 4,
+          "years": [
+            2021,
+            2023,
+            2024
+          ],
+          "weighted": 1.76,
+          "common_skills": [
+            "kinematic calculations",
+            "force and acceleration analysis",
+            "graphical analysis",
+            "graph analysis",
+            "force and acceleration"
+          ],
+          "representative": {
+            "q_id": "4PH1:2024:summer:1R:q9",
+            "context_tag": "Rubber band",
+            "marks": 15,
+            "command_words": [
+              "state",
+              "explain",
+              "calculate"
+            ],
+            "skills": [
+              "energy transfer",
+              "elastic properties",
+              "kinematic calculations"
+            ],
+            "text_excerpt": "\n\n9 A student stretches a rubber band.\n(a) The photographs show a rubber band before and after it has been stretched.\nbefore\nafter\n(i) State which energy store increases in the rubber band after it has\nbeen stretched.\n(1)\n........................................................................."
+          }
+        },
+        {
+          "signature": "1|calculate,explain,state|mid",
+          "topic": "1",
+          "name": "Forces and motion",
+          "size": 4,
+          "years": [
+            2020,
+            2022,
+            2023
+          ],
+          "weighted": 1.4,
+          "common_skills": [
+            "applying formulae",
+            "using equations",
+            "describing phenomena",
+            "apply formula",
+            "analyze energy transfer"
+          ],
+          "representative": {
+            "q_id": "4PH1:2023:winter:1:q7",
+            "context_tag": "car collision",
+            "marks": 7,
+            "command_words": [
+              "calculate",
+              "state",
+              "explain"
+            ],
+            "skills": [
+              "applying equations",
+              "describing forces",
+              "comparing data"
+            ],
+            "text_excerpt": "\n\n7 A crumple zone is a safety feature in a car.\nIt is a part of the car that is designed to collapse during a collision.\nA student investigates the effectiveness of crumple zones.\nThe student rolls two model cars down a ramp.\nEach car comes to rest when it hits a large metal block.\nA data logg"
+          }
+        },
+        {
+          "signature": "1|calculate,explain,show,state|hi",
+          "topic": "1",
+          "name": "Forces and motion",
+          "size": 3,
+          "years": [
+            2021,
+            2023
+          ],
+          "weighted": 1.13,
+          "common_skills": [
+            "apply formula",
+            "calculate energy",
+            "explain concept",
+            "explain energy transfer",
+            "solve problem"
+          ],
+          "representative": {
+            "q_id": "4PH1:2023:summer:1:q4",
+            "context_tag": "car collision",
+            "marks": 9,
+            "command_words": [
+              "state",
+              "show",
+              "calculate",
+              "explain"
+            ],
+            "skills": [
+              "apply formula",
+              "solve problem",
+              "physical reasoning"
+            ],
+            "text_excerpt": "\n\n4 The photograph shows a dummy during a test of the safety features of a car in\na collision.\n(Source: © fStop Images GmbH/Alamy Stock Photo)\nBefore the collision, the dummy in the car is travelling at a velocity of 14 m / s.\nThe dummy has a momentum of 1100 kg m / s.\n(a) (i) State the formula"
+          }
+        },
+        {
+          "signature": "1|calculate,explain|hi",
+          "topic": "1",
+          "name": "Forces and motion",
+          "size": 3,
+          "years": [
+            2020,
+            2021,
+            2022
+          ],
+          "weighted": 0.96,
+          "common_skills": [
+            "apply equations of motion",
+            "relate particle behavior to pressure",
+            "velocity-time graph analysis",
+            "acceleration calculation",
+            "braking distance calculation"
+          ],
+          "representative": {
+            "q_id": "4PH1:2022:summer:1R:q12",
+            "context_tag": "Parachutist fall",
+            "marks": 10,
+            "command_words": [
+              "calculate",
+              "explain"
+            ],
+            "skills": [
+              "apply equations of motion",
+              "analyze force interactions",
+              "energy conversion"
+            ],
+            "text_excerpt": "\n\n12 This question is about a parachutist.\n(a) A parachutist leaves a helicopter that is hovering above the ground.\nThe parachutist is initially at rest and falls vertically downwards.\nCalculate the speed of the parachutist after they have fallen through a distance\nof 1300 m.\nIgnore the effect "
+          }
+        }
+      ]
+    },
+    "2": {
+      "name": "Paper 2",
+      "marks_target": 70,
+      "typical_question_count": [
+        6,
+        9
+      ],
+      "n_questions": 281,
+      "n_questions_9_1": 191,
+      "topic_frequency": [
+        {
+          "topic": "1",
+          "name": "Forces and motion",
+          "raw_count": 39,
+          "weighted": 17.26,
+          "freq_share": 0.2018,
+          "avg_marks": 8.2,
+          "marks_share": 0.1996,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 39
+          }
+        },
+        {
+          "topic": "8",
+          "name": "Astrophysics",
+          "raw_count": 25,
+          "weighted": 11.99,
+          "freq_share": 0.1402,
+          "avg_marks": 6.7,
+          "marks_share": 0.1169,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 25
+          }
+        },
+        {
+          "topic": "6",
+          "name": "Magnetism and electromagnetism",
+          "raw_count": 28,
+          "weighted": 11.83,
+          "freq_share": 0.1384,
+          "avg_marks": 8.6,
+          "marks_share": 0.1472,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 28
+          }
+        },
+        {
+          "topic": "4",
+          "name": "Energy resources and transfers",
+          "raw_count": 23,
+          "weighted": 11.02,
+          "freq_share": 0.1288,
+          "avg_marks": 8.6,
+          "marks_share": 0.1402,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 23
+          }
+        },
+        {
+          "topic": "3",
+          "name": "Waves",
+          "raw_count": 26,
+          "weighted": 10.74,
+          "freq_share": 0.1256,
+          "avg_marks": 8.8,
+          "marks_share": 0.1372,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 26
+          }
+        },
+        {
+          "topic": "2",
+          "name": "Electricity",
+          "raw_count": 18,
+          "weighted": 8.29,
+          "freq_share": 0.0969,
+          "avg_marks": 8.7,
+          "marks_share": 0.0994,
+          "years": [
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 18
+          }
+        },
+        {
+          "topic": "7",
+          "name": "Radioactivity and particles",
+          "raw_count": 14,
+          "weighted": 7.6,
+          "freq_share": 0.0889,
+          "avg_marks": 7.6,
+          "marks_share": 0.0835,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 14
+          }
+        },
+        {
+          "topic": "5",
+          "name": "Solids, liquids and gases",
+          "raw_count": 18,
+          "weighted": 6.8,
+          "freq_share": 0.0795,
+          "avg_marks": 7.8,
+          "marks_share": 0.0759,
+          "years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "era_counts": {
+            "9-1": 18
+          }
+        }
+      ],
+      "topic_by_year": {
+        "2": {
+          "2015": 6,
+          "2016": 6,
+          "2017": 3,
+          "2018": 3,
+          "2020": 3,
+          "2021": 3,
+          "2022": 5,
+          "2023": 3,
+          "2024": 3,
+          "2025": 1
+        },
+        "8": {
+          "2015": 1,
+          "2017": 2,
+          "2019": 4,
+          "2020": 1,
+          "2021": 4,
+          "2022": 4,
+          "2023": 5,
+          "2024": 5,
+          "2025": 2
+        },
+        "1": {
+          "2015": 6,
+          "2016": 4,
+          "2017": 6,
+          "2018": 5,
+          "2019": 6,
+          "2020": 6,
+          "2021": 7,
+          "2022": 4,
+          "2023": 8,
+          "2024": 3,
+          "2025": 5
+        },
+        "5": {
+          "2015": 1,
+          "2016": 2,
+          "2017": 1,
+          "2018": 3,
+          "2019": 4,
+          "2020": 4,
+          "2021": 3,
+          "2022": 1,
+          "2023": 4,
+          "2024": 1,
+          "2025": 1
+        },
+        "7": {
+          "2015": 3,
+          "2016": 2,
+          "2017": 2,
+          "2018": 2,
+          "2019": 1,
+          "2020": 1,
+          "2021": 1,
+          "2022": 3,
+          "2023": 3,
+          "2024": 3,
+          "2025": 2
+        },
+        "3": {
+          "2015": 1,
+          "2016": 4,
+          "2017": 2,
+          "2018": 2,
+          "2019": 5,
+          "2020": 3,
+          "2021": 5,
+          "2022": 3,
+          "2023": 6,
+          "2024": 2,
+          "2025": 2
+        },
+        "6": {
+          "2015": 2,
+          "2016": 2,
+          "2017": 5,
+          "2018": 4,
+          "2019": 4,
+          "2020": 6,
+          "2021": 4,
+          "2022": 4,
+          "2023": 5,
+          "2024": 1,
+          "2025": 4
+        },
+        "4": {
+          "2015": 2,
+          "2016": 1,
+          "2017": 5,
+          "2018": 2,
+          "2019": 2,
+          "2020": 4,
+          "2021": 1,
+          "2022": 7,
+          "2023": 4,
+          "2024": 1,
+          "2025": 4
+        }
+      },
+      "slot_patterns": [
+        {
+          "slot": 1,
+          "n": 26,
+          "avg_marks": 5.9,
+          "marks_range": [
+            0,
+            9
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 2.65
+            },
+            {
+              "topic": "2",
+              "name": "Electricity",
+              "weight": 2.18
+            },
+            {
+              "topic": "7",
+              "name": "Radioactivity and particles",
+              "weight": 2.1
+            }
+          ],
+          "common_commands": [
+            "state",
+            "draw",
+            "explain",
+            "calculate"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 2,
+          "n": 25,
+          "avg_marks": 7.2,
+          "marks_range": [
+            4,
+            13
+          ],
+          "top_topics": [
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 3.55
+            },
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 2.45
+            },
+            {
+              "topic": "5",
+              "name": "Solids, liquids and gases",
+              "weight": 1.65
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "state",
+            "describe",
+            "explain"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 3,
+          "n": 25,
+          "avg_marks": 8.1,
+          "marks_range": [
+            0,
+            12
+          ],
+          "top_topics": [
+            {
+              "topic": "4",
+              "name": "Energy resources and transfers",
+              "weight": 3.27
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.4
+            },
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 2.23
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "state",
+            "explain",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 4,
+          "n": 24,
+          "avg_marks": 7.5,
+          "marks_range": [
+            0,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 2.23
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.04
+            },
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 1.84
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "explain",
+            "state",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 5,
+          "n": 20,
+          "avg_marks": 7.8,
+          "marks_range": [
+            0,
+            13
+          ],
+          "top_topics": [
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.96
+            },
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 1.43
+            },
+            {
+              "topic": "4",
+              "name": "Energy resources and transfers",
+              "weight": 1.4
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "explain",
+            "state",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 6,
+          "n": 23,
+          "avg_marks": 10.3,
+          "marks_range": [
+            6,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 2.46
+            },
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 2.24
+            },
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 1.85
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "explain",
+            "state",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 7,
+          "n": 22,
+          "avg_marks": 9.5,
+          "marks_range": [
+            6,
+            14
+          ],
+          "top_topics": [
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 2.78
+            },
+            {
+              "topic": "4",
+              "name": "Energy resources and transfers",
+              "weight": 2.22
+            },
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 1.74
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "state",
+            "describe",
+            "explain"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 8,
+          "n": 19,
+          "avg_marks": 8.8,
+          "marks_range": [
+            5,
+            15
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 3.59
+            },
+            {
+              "topic": "6",
+              "name": "Magnetism and electromagnetism",
+              "weight": 1.76
+            },
+            {
+              "topic": "7",
+              "name": "Radioactivity and particles",
+              "weight": 1.03
+            }
+          ],
+          "common_commands": [
+            "explain",
+            "calculate",
+            "state",
+            "suggest"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 9,
+          "n": 6,
+          "avg_marks": 9.5,
+          "marks_range": [
+            7,
+            11
+          ],
+          "top_topics": [
+            {
+              "topic": "8",
+              "name": "Astrophysics",
+              "weight": 1.45
+            },
+            {
+              "topic": "3",
+              "name": "Waves",
+              "weight": 0.63
+            },
+            {
+              "topic": "4",
+              "name": "Energy resources and transfers",
+              "weight": 0.4
+            }
+          ],
+          "common_commands": [
+            "calculate",
+            "state",
+            "explain",
+            "give"
+          ],
+          "difficulty_mode": "medium"
+        },
+        {
+          "slot": 10,
+          "n": 1,
+          "avg_marks": 13,
+          "marks_range": [
+            13,
+            13
+          ],
+          "top_topics": [
+            {
+              "topic": "1",
+              "name": "Forces and motion",
+              "weight": 0.41
+            }
+          ],
+          "common_commands": [
+            "plot",
+            "draw",
+            "describe"
+          ],
+          "difficulty_mode": "medium"
+        }
+      ],
+      "command_words": [
+        {
+          "word": "calculate",
+          "count": 107
+        },
+        {
+          "word": "state",
+          "count": 82
+        },
+        {
+          "word": "explain",
+          "count": 77
+        },
+        {
+          "word": "describe",
+          "count": 58
+        },
+        {
+          "word": "draw",
+          "count": 29
+        },
+        {
+          "word": "give",
+          "count": 29
+        },
+        {
+          "word": "determine",
+          "count": 18
+        },
+        {
+          "word": "suggest",
+          "count": 16
+        },
+        {
+          "word": "show",
+          "count": 16
+        },
+        {
+          "word": "complete",
+          "count": 12
+        },
+        {
+          "word": "discuss",
+          "count": 8
+        },
+        {
+          "word": "name",
+          "count": 5
+        },
+        {
+          "word": "sketch",
+          "count": 5
+        },
+        {
+          "word": "place",
+          "count": 5
+        },
+        {
+          "word": "define",
+          "count": 5
+        }
+      ],
+      "difficulty_dist": {
+        "medium": 170,
+        "easy": 21
+      },
+      "cycles": [
+        {
+          "topic": "8",
+          "name": "Astrophysics",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 25,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 1,
+            "2021": 4,
+            "2022": 4,
+            "2023": 5,
+            "2024": 5,
+            "2025": 2
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "1",
+          "name": "Forces and motion",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 39,
+          "per_year_counts": {
+            "2019": 6,
+            "2020": 6,
+            "2021": 7,
+            "2022": 4,
+            "2023": 8,
+            "2024": 3,
+            "2025": 5
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "5",
+          "name": "Solids, liquids and gases",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 18,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 4,
+            "2021": 3,
+            "2022": 1,
+            "2023": 4,
+            "2024": 1,
+            "2025": 1
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "3",
+          "name": "Waves",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 26,
+          "per_year_counts": {
+            "2019": 5,
+            "2020": 3,
+            "2021": 5,
+            "2022": 3,
+            "2023": 6,
+            "2024": 2,
+            "2025": 2
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "6",
+          "name": "Magnetism and electromagnetism",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 28,
+          "per_year_counts": {
+            "2019": 4,
+            "2020": 6,
+            "2021": 4,
+            "2022": 4,
+            "2023": 5,
+            "2024": 1,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "7",
+          "name": "Radioactivity and particles",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 14,
+          "per_year_counts": {
+            "2019": 1,
+            "2020": 1,
+            "2021": 1,
+            "2022": 3,
+            "2023": 3,
+            "2024": 3,
+            "2025": 2
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "4",
+          "name": "Energy resources and transfers",
+          "appearance_years": [
+            2019,
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 23,
+          "per_year_counts": {
+            "2019": 2,
+            "2020": 4,
+            "2021": 1,
+            "2022": 7,
+            "2023": 4,
+            "2024": 1,
+            "2025": 4
+          },
+          "coverage": 1.0,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        },
+        {
+          "topic": "2",
+          "name": "Electricity",
+          "appearance_years": [
+            2020,
+            2021,
+            2022,
+            2023,
+            2024,
+            2025
+          ],
+          "total_appearances": 18,
+          "per_year_counts": {
+            "2020": 3,
+            "2021": 3,
+            "2022": 5,
+            "2023": 3,
+            "2024": 3,
+            "2025": 1
+          },
+          "coverage": 0.86,
+          "mean_gap": 1,
+          "last_seen": 2025,
+          "years_since": 1,
+          "overdue_score": 1.0,
+          "cadence": "annual"
+        }
+      ],
+      "templates": [
+        {
+          "signature": "8|calculate,explain|mid",
+          "topic": "8",
+          "name": "Astrophysics",
+          "size": 4,
+          "years": [
+            2021,
+            2022,
+            2025
+          ],
+          "weighted": 2.06,
+          "common_skills": [
+            "apply theory",
+            "use formula",
+            "interpret data",
+            "apply knowledge of cosmic expansion",
+            "use of wavelength shift"
+          ],
+          "representative": {
+            "q_id": "4PH1:2025:autumn:2:q6",
+            "context_tag": "Galaxy Expansion",
+            "marks": 7,
+            "command_words": [
+              "calculate",
+              "explain"
+            ],
+            "skills": [
+              "apply wave equation",
+              "reason about expansion",
+              "interpret cosmic evidence"
+            ],
+            "text_excerpt": "\n\n6 Galaxies A, B and C are different distances from the Earth.\nGalaxy A is moving away from the Earth with a velocity of 1.7 × 104 km/s.\n(a) The reference wavelength for light arriving at the Earth from galaxy A is 506 nm.\nCalculate the observed wavelength for the light arriving from galaxy A."
+          }
+        },
+        {
+          "signature": "3|describe|hi",
+          "topic": "3",
+          "name": "Waves",
+          "size": 4,
+          "years": [
+            2019,
+            2022,
+            2025
+          ],
+          "weighted": 2.02,
+          "common_skills": [
+            "measurement technique",
+            "data analysis",
+            "experimental design",
+            "investigation design",
+            "experimental method"
+          ],
+          "representative": {
+            "q_id": "4PH1:2025:autumn:2:q4",
+            "context_tag": "Sound waves",
+            "marks": 9,
+            "command_words": [
+              "describe"
+            ],
+            "skills": [
+              "investigation design",
+              "measurement technique",
+              "data analysis"
+            ],
+            "text_excerpt": "\n\n4 This question is about sound waves.\n(a) Describe an investigation to measure the frequency of a sound wave with\nan oscilloscope.\nYou may draw a diagram to help your answer.\n(5)\n.................................................................................................................."
+          }
+        },
+        {
+          "signature": "2|calculate,explain,state|hi",
+          "topic": "2",
+          "name": "Electricity",
+          "size": 4,
+          "years": [
+            2020,
+            2022,
+            2023
+          ],
+          "weighted": 1.54,
+          "common_skills": [
+            "charge calculation",
+            "current calculation",
+            "apparatus modification",
+            "energy calculation",
+            "circuit component explanation"
+          ],
+          "representative": {
+            "q_id": "4PH1:2023:summer:2:q6",
+            "context_tag": "National Grid",
+            "marks": 9,
+            "command_words": [
+              "explain",
+              "state",
+              "calculate"
+            ],
+            "skills": [
+              "applying equations",
+              "transformer principles",
+              "electrical systems"
+            ],
+            "text_excerpt": "\n\n6 The National Grid is used in the United Kingdom for the large-scale transmission of\nelectricity. The photograph shows solar panels connected to the National Grid.\n(Source: © Jenson/Shutterstock)\n(a) Solar panels provide direct current to a device that outputs an alternating current\nso that "
+          }
+        },
+        {
+          "signature": "1|calculate,show,state|mid",
+          "topic": "1",
+          "name": "Forces and motion",
+          "size": 3,
+          "years": [
+            2022,
+            2023
+          ],
+          "weighted": 1.4,
+          "common_skills": [
+            "apply formula",
+            "calculate momentum",
+            "calculate force",
+            "calculate moment",
+            "solve equation"
+          ],
+          "representative": {
+            "q_id": "4PH1:2023:summer:2:q1",
+            "context_tag": "Pencil balance",
+            "marks": 6,
+            "command_words": [
+              "calculate",
+              "state",
+              "show"
+            ],
+            "skills": [
+              "apply formula",
+              "calculate moment",
+              "solve equation"
+            ],
+            "text_excerpt": "\n\nAnswer ALL questions.\nSome questions must be answered with a cross in a box . If you change your mind about an\nanswer, put a line through the box\nand then mark your new answer with a cross .\n1 A pencil has a weight of 0.16 N.\n(a) What is the mass of the pencil?\n(1)\nA 1.6 g\nB 16 g\nC 160 g\nD 16"
+          }
+        },
+        {
+          "signature": "1|calculate,explain,state|mid",
+          "topic": "1",
+          "name": "Forces and motion",
+          "size": 3,
+          "years": [
+            2022,
+            2023
+          ],
+          "weighted": 1.29,
+          "common_skills": [
+            "apply Newton's laws",
+            "calculate force",
+            "explain momentum change",
+            "conservation of momentum",
+            "unit analysis"
+          ],
+          "representative": {
+            "q_id": "4PH1:2023:winter:2R:q7",
+            "context_tag": "car collision",
+            "marks": 7,
+            "command_words": [
+              "calculate",
+              "state",
+              "explain"
+            ],
+            "skills": [
+              "problem solving",
+              "data analysis",
+              "physical reasoning"
+            ],
+            "text_excerpt": "\n\n7 A crumple zone is a safety feature in a car.\nIt is a part of the car that is designed to collapse during a collision.\nA student investigates the effectiveness of crumple zones.\nThe student rolls two model cars down a ramp.\nEach car comes to rest when it hits a large metal block.\nA data logg"
+          }
+        }
+      ]
+    }
+  },
+  "spec_shift": {
+    "n_legacy": 243,
+    "n_nine_one": 465,
+    "legacy_share": {
+      "2": 0.185,
+      "7": 0.107,
+      "3": 0.136,
+      "1": 0.202,
+      "5": 0.115,
+      "4": 0.103,
+      "6": 0.091,
+      "8": 0.062
+    },
+    "nine_one_share": {
+      "3": 0.142,
+      "2": 0.118,
+      "1": 0.209,
+      "7": 0.09,
+      "5": 0.11,
+      "8": 0.114,
+      "6": 0.118,
+      "4": 0.099
+    },
+    "grew_under_9_1": [
+      {
+        "topic": "8",
+        "name": "Astrophysics",
+        "delta": 0.052
+      }
+    ],
+    "shrank_under_9_1": [
+      {
+        "topic": "2",
+        "name": "Electricity",
+        "delta": -0.067
+      }
+    ]
+  }
+}

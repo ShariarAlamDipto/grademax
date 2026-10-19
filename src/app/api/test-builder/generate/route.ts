@@ -1,6 +1,10 @@
 import { NextResponse } from 'next/server';
+import { MAX_QUESTIONS_PER_PAPER, exceedsLimit, limitMessage } from '@/lib/toolLimits';
+import { getUserQuestionLimit } from '@/lib/questionLimit';
+import { getSupabaseServer } from '@/lib/supabaseServer';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
-import { mergePagePdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { mergeQuestionPdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { planQuestionSources, type QuestionSourceMeta } from '@/lib/questionPdfAssembly';
 
 // Merging many source PDFs from Supabase storage can take longer than the
 // default 10 s function budget, especially on cold starts behind a slow
@@ -119,7 +123,7 @@ interface GenerateBody {
   totalMarks: number;
   subjectName?: string;
   level?: string;
-  pages: { qpPageUrl: string; msPageUrl: string | null }[];
+  pages: ({ qpPageUrl: string; msPageUrl: string | null } & QuestionSourceMeta)[];
 }
 
 export async function POST(request: Request) {
@@ -134,11 +138,25 @@ export async function POST(request: Request) {
       );
     }
 
-    const pdfUrls = pages
-      .map(p => toAbsolutePdfUrl(type === 'markscheme' ? p.msPageUrl : p.qpPageUrl))
-      .filter(Boolean) as string[];
+    // Only look the caller up when the request is over the student limit.
+    if (pages.length > MAX_QUESTIONS_PER_PAPER) {
+      const { data: { user } } = await getSupabaseServer().auth.getUser();
+      const { limit: maxQuestions } = await getUserQuestionLimit(user);
+      if (maxQuestions !== null && exceedsLimit(pages.length, maxQuestions)) {
+        return NextResponse.json({ error: limitMessage(maxQuestions) }, { status: 403 });
+      }
+    }
 
-    if (pdfUrls.length === 0) {
+    const sources = planQuestionSources(
+      pages.map((p) => ({
+        ...p,
+        qpPageUrl: toAbsolutePdfUrl(p.qpPageUrl),
+        msPageUrl: toAbsolutePdfUrl(p.msPageUrl),
+      })),
+      type,
+    );
+
+    if (sources.every((source) => !source.url)) {
       return NextResponse.json(
         { error: `No ${type === 'markscheme' ? 'mark scheme' : 'question paper'} PDFs available for these questions` },
         { status: 404 }
@@ -155,7 +173,7 @@ export async function POST(request: Request) {
       type,
     });
 
-    const successCount = await mergePagePdfs(mergedPdf, pdfUrls);
+    const { merged: successCount } = await mergeQuestionPdfs(mergedPdf, sources, type);
 
     if (successCount === 0) {
       return NextResponse.json(

@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { exceedsLimit, limitMessage } from '@/lib/toolLimits';
+import { getUserQuestionLimit } from '@/lib/questionLimit';
 import { requireAuth } from '@/lib/apiAuth';
 import { getSupabaseAdmin } from '@/lib/supabaseAdmin';
 
@@ -83,6 +85,11 @@ export async function POST(request: Request) {
         { error: 'At least one question is required' },
         { status: 400 }
       );
+    }
+
+    const { limit: maxQuestions } = await getUserQuestionLimit(auth.user);
+    if (maxQuestions !== null && exceedsLimit(items.length, maxQuestions)) {
+      return NextResponse.json({ error: limitMessage(maxQuestions) }, { status: 403 });
     }
 
     const db = getSupabaseAdmin() || auth.db;

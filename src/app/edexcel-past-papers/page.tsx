@@ -1,14 +1,21 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { seoSubjects, getSubjectsByLevel } from '@/lib/seo-subjects'
+import { getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
+import PastPaperCatalog from '@/components/PastPaperCatalog'
+
+// Static hub — links are built from the DB index at build time (no ISR writes).
+export const revalidate = false
+
+// Build-time year so the title never advertises a stale year.
+const CURRENT_YEAR = new Date().getFullYear()
 
 export const metadata: Metadata = {
-  title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
+  title: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level with Mark Schemes`,
   description: 'Download free Edexcel past papers for IGCSE and A Level with mark schemes. Physics, Maths, Chemistry, Biology, ICT, Statistics & more. Topic-wise questions from 2010-2025.',
   keywords: [
-    'Edexcel past papers', 'Edexcel past papers free', 'Edexcel past papers 2025',
-    'Edexcel past papers 2024', 'Edexcel past papers 2023', 'Edexcel past papers with answers',
+    'Edexcel past papers', 'Edexcel past papers free', `Edexcel past papers ${CURRENT_YEAR}`,
+    `Edexcel past papers ${CURRENT_YEAR - 1}`, `Edexcel past papers ${CURRENT_YEAR - 2}`, 'Edexcel past papers with answers',
     'Pearson Edexcel past papers', 'Edexcel exam papers',
     'Edexcel IGCSE past papers', 'Edexcel A Level past papers',
     'Edexcel past papers with mark scheme', 'Edexcel question papers',
@@ -16,21 +23,21 @@ export const metadata: Metadata = {
     'past papers Edexcel free download', 'Edexcel past papers online',
   ],
   openGraph: {
-    title: 'Edexcel Past Papers 2025 – Free IGCSE & A Level with Mark Schemes',
-    description: 'Free Edexcel past papers for all subjects with mark schemes. IGCSE and A Level. Updated 2025.',
-    url: 'https://grademax.me/edexcel-past-papers',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level with Mark Schemes`,
+    description: `Free Edexcel past papers for all subjects with mark schemes. IGCSE and A Level. Updated ${CURRENT_YEAR}.`,
+    url: 'https://www.grademax.me/edexcel-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Free Edexcel Past Papers' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel Past Papers 2025 – Free with Mark Schemes',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} – Free with Mark Schemes`,
     description: 'Free Edexcel IGCSE & A Level past papers with mark schemes. Topic-wise questions from 2010–2025.',
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://grademax.me/edexcel-past-papers',
+    canonical: 'https://www.grademax.me/edexcel-past-papers',
   },
 }
 
@@ -61,10 +68,10 @@ const faqs = [
   },
 ]
 
-export default function EdexcelPastPapersPage() {
+export default async function EdexcelPastPapersPage() {
   const igcse = getSubjectsByLevel('igcse')
   const ial = getSubjectsByLevel('ial')
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
 
   const schema = {
     '@context': 'https://schema.org',
@@ -101,11 +108,14 @@ export default function EdexcelPastPapersPage() {
           Pure Maths, Mechanics, Statistics and more — completely free.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/generate" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
-            Generate Custom Worksheet
-          </Link>
-          <Link href="#igcse" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-gray-700">
+          <Link href="#igcse" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors">
             Browse Past Papers ↓
+          </Link>
+          {/* Secondary CTA points to the PUBLIC worksheet landing, not /generate
+              (proxy-protected → 307 to /login) — a login wall as the hero CTA was
+              bouncing visitors who searched for papers, not an account. */}
+          <Link href="/edexcel-worksheets" className="inline-block bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors border border-gray-700">
+            Generate Custom Worksheet
           </Link>
         </div>
       </section>
@@ -121,9 +131,9 @@ export default function EdexcelPastPapersPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {igcse.map((subj) => (
-              <Link 
+              <Link
                 key={subj.slug}
-                href={`/subjects/igcse/${subj.slug}`}
+                href={`/past-papers/${subj.slug}`}
                 className="bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-blue-600 transition-colors group"
               >
                 <div className="flex justify-between items-start mb-2">
@@ -134,8 +144,9 @@ export default function EdexcelPastPapersPage() {
                 </div>
                 <p className="text-sm text-gray-400 mb-2">{subj.shortDescription}</p>
                 <p className="text-xs text-gray-500">
-                  {subj.topics.length} topics · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]} · Mark schemes included
+                  Question papers and mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
                 </p>
+                <p className="text-xs text-blue-400/80 mt-2 group-hover:text-blue-400 transition-colors">Browse papers by year →</p>
               </Link>
             ))}
           </div>
@@ -158,9 +169,9 @@ export default function EdexcelPastPapersPage() {
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {ial.map((subj) => (
-              <Link 
+              <Link
                 key={subj.slug}
-                href={`/subjects/ial/${subj.slug}`}
+                href={`/past-papers/${subj.slug}`}
                 className="bg-gray-900 rounded-lg p-5 border border-gray-800 hover:border-purple-600 transition-colors group"
               >
                 <div className="flex justify-between items-start mb-2">
@@ -171,8 +182,9 @@ export default function EdexcelPastPapersPage() {
                 </div>
                 <p className="text-sm text-gray-400 mb-2">{subj.shortDescription}</p>
                 <p className="text-xs text-gray-500">
-                  {subj.topics.length} topics · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]} · Mark schemes included
+                  Question papers and mark schemes · {subj.yearsAvailable[0]}–{subj.yearsAvailable[subj.yearsAvailable.length - 1]}
                 </p>
+                <p className="text-xs text-purple-400/80 mt-2 group-hover:text-purple-400 transition-colors">Browse papers by year →</p>
               </Link>
             ))}
           </div>
@@ -181,6 +193,21 @@ export default function EdexcelPastPapersPage() {
               View all A Level units and topics →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Full catalog: every subject that has papers, by year, + paper-code table.
+          Makes the whole /past-papers tree reachable from this head-term hub. */}
+      <section className="px-4 md:px-8 py-12" id="all-subjects">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-2">All Edexcel Past Papers by Subject</h2>
+          <p className="text-gray-400 mb-8 text-sm">
+            Every Edexcel IGCSE and International A Level subject with papers on GradeMax, linked by
+            year and by qualification code.
+          </p>
+          {/* levelLabel intentionally empty — the component prefixes the board name
+              itself (was "Edexcel Edexcel Paper Codes" when this passed "Edexcel"). */}
+          <PastPaperCatalog levelLabel="" />
         </div>
       </section>
 
@@ -236,8 +263,9 @@ export default function EdexcelPastPapersPage() {
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/edexcel-igcse-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">IGCSE Past Papers</Link>
             <Link href="/edexcel-a-level-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">A Level Past Papers</Link>
+            <Link href="/cambridge-past-papers" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Cambridge Past Papers</Link>
             <Link href="/edexcel-worksheets" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Custom Worksheets</Link>
-            <Link href="/generate" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Worksheet Generator</Link>
+            <Link href="/edexcel-worksheets" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">Worksheet Generator</Link>
             <Link href="/subjects" className="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg text-sm text-gray-300 transition-colors">All Subjects</Link>
           </div>
         </div>

@@ -2,13 +2,20 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
+import PastPaperCatalog from '@/components/PastPaperCatalog'
+
+// Static hub — links are built from the DB index at build time (no ISR writes).
+export const revalidate = false
+
+// Build-time year so the title never advertises a stale year.
+const CURRENT_YEAR = new Date().getFullYear()
 
 export const metadata: Metadata = {
-  title: 'Edexcel IGCSE Past Papers 2025 – Free with Mark Schemes | All Subjects',
+  title: `Edexcel IGCSE Past Papers ${CURRENT_YEAR} – Free with Mark Schemes | All Subjects`,
   description: 'Free Edexcel IGCSE past papers with mark schemes for Physics (4PH1), Maths A (4MA1), Maths B (4MB1), Chemistry (4CH1), Biology (4BI1), ICT (4IT1). Topic-wise questions from 2010-2025.',
   keywords: [
     'IGCSE past papers', 'IGCSE past papers Edexcel', 'Edexcel IGCSE past papers',
-    'IGCSE past papers 2025', 'IGCSE past papers 2024', 'IGCSE past papers 2023', 'IGCSE past papers free',
+    `IGCSE past papers ${CURRENT_YEAR}`, `IGCSE past papers ${CURRENT_YEAR - 1}`, `IGCSE past papers ${CURRENT_YEAR - 2}`, 'IGCSE past papers free',
     'IGCSE past papers with mark scheme', 'IGCSE past papers free download',
     'international GCSE past papers', 'Pearson Edexcel IGCSE',
     'IGCSE Physics past papers', 'IGCSE Maths past papers',
@@ -21,21 +28,21 @@ export const metadata: Metadata = {
     'IGCSE worksheets', 'IGCSE chapterwise questions',
   ],
   openGraph: {
-    title: 'Edexcel IGCSE Past Papers 2025 – Free with Mark Schemes',
+    title: `Edexcel IGCSE Past Papers ${CURRENT_YEAR} – Free with Mark Schemes`,
     description: 'Free IGCSE past papers for all Edexcel subjects with mark schemes. Organized by topic and year.',
-    url: 'https://grademax.me/edexcel-igcse-past-papers',
+    url: 'https://www.grademax.me/edexcel-igcse-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Edexcel IGCSE Past Papers' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel IGCSE Past Papers 2025 – Free with Mark Schemes',
+    title: `Edexcel IGCSE Past Papers ${CURRENT_YEAR} – Free with Mark Schemes`,
     description: 'Free IGCSE past papers for Physics, Maths, Chemistry, Biology, ICT with mark schemes.',
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://grademax.me/edexcel-igcse-past-papers',
+    canonical: 'https://www.grademax.me/edexcel-igcse-past-papers',
   },
 }
 
@@ -62,9 +69,9 @@ const faqs = [
   },
 ]
 
-export default function IGCSEPastPapersPage() {
+export default async function IGCSEPastPapersPage() {
   const subjects = getSubjectsByLevel('igcse')
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
 
   const schema = {
     '@context': 'https://schema.org',
@@ -147,19 +154,9 @@ export default function IGCSEPastPapersPage() {
           </div>
         </section>
 
-        {/* Years */}
-        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
-          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1rem" }}>
-            Browse by Year
-          </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-            {[2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
-              <Link key={year} href={`/past-papers/physics/${year}`} className="topic-pill">
-                {year}
-              </Link>
-            ))}
-          </div>
-        </section>
+        {/* Full subject + year index — every IGCSE subject that has papers, plus
+            the paper-code reference table. Replaces the old Physics-only year list. */}
+        <PastPaperCatalog level="igcse" levelLabel="IGCSE" />
 
         {/* FAQ */}
         <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>

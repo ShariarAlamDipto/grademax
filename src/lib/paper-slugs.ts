@@ -17,3 +17,71 @@ export function extractPaperTokenFromSlug(slug: string): string | null {
   if (!match) return null
   return match[1] ?? null
 }
+
+/**
+ * Natural-order comparator for raw `paper_number` values.
+ *
+ * Sorts the embedded number as a number, so:
+ *   Unit_1 < Unit_2 < … < Unit_6 < Unit_10   (IAL multi-unit subjects)
+ *   1 < 1R < 2 < 10                            (Edexcel IGCSE / single-unit)
+ *
+ * A bare `parseInt("Unit_1")` returns `NaN`, and `NaN !== NaN` is `true`, so the
+ * old `parseInt`-based comparators returned `NaN` from the comparator for every
+ * pair of IAL unit papers — an invalid comparator that yields an unstable,
+ * effectively random order. Numeric-aware collation fixes this while preserving
+ * the existing IGCSE ordering (where `parseInt` happened to work).
+ */
+export function comparePaperNumbers(a: string, b: string): number {
+  return String(a ?? "").localeCompare(String(b ?? ""), "en", { numeric: true })
+}
+
+/**
+ * Human-readable label for a raw paper_number value.
+ *
+ * Examples:
+ *   "1"       → "Paper 1"
+ *   "1R"      → "Paper 1R"
+ *   "Unit_3"  → "Unit 3"
+ *   "Unit 3"  → "Unit 3"
+ *   "P1"      → "P1"
+ *   "FP2"     → "FP2"
+ */
+export function formatPaperLabel(raw: string): string {
+  const value = String(raw ?? "").trim()
+  if (!value) return "Paper"
+  const unitMatch = value.match(/^Unit[_\s-]?(\d+[A-Z]*)$/i)
+  if (unitMatch) return `Unit ${unitMatch[1].toUpperCase()}`
+  const paperPrefix = value.match(/^Paper[_\s-]?(.+)$/i)
+  if (paperPrefix) return `Paper ${paperPrefix[1].toUpperCase()}`
+  if (/^[A-Z]{1,3}\d+[A-Z]*$/i.test(value)) return value.toUpperCase()
+  return `Paper ${value.toUpperCase()}`
+}
+
+/**
+ * Human-readable label for a Cambridge component code.
+ *
+ * Cambridge encodes papers as `{paper}{variant}` where the second digit is the
+ * time-zone variant (not difficulty): "22" = Paper 2, Variant 2; "11" = Paper 1,
+ * Variant 1. Older/single-component papers use a single digit with no variant.
+ * Making the variant explicit lets students who think in "Paper 2" find "22".
+ *
+ * Examples:
+ *   "22" → "Paper 2 · Variant 2"
+ *   "1"  → "Paper 1"
+ *   "4"  → "Paper 4"
+ */
+export function formatCambridgePaperLabel(raw: string): string {
+  const value = String(raw ?? "").trim()
+  if (/^\d{2}$/.test(value)) return `Paper ${value[0]} · Variant ${value[1]}`
+  if (/^\d$/.test(value)) return `Paper ${value}`
+  return formatPaperLabel(value)
+}
+
+/**
+ * Cambridge component reference students search verbatim, e.g. "9702/22".
+ * Falls back to just the component when no syllabus code is known.
+ */
+export function cambridgePaperCode(examCode: string | undefined, component: string): string {
+  const c = String(component ?? "").trim()
+  return examCode ? `${examCode}/${c}` : c
+}

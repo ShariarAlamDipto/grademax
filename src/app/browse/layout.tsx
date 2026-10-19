@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Browse Edexcel Past Paper Questions by Topic | GradeMax',
     description: 'Practice Edexcel IGCSE and A Level questions organized by topic with mark schemes.',
-    url: 'https://grademax.me/browse',
+    url: 'https://www.grademax.me/browse',
     siteName: 'GradeMax',
     type: 'website',
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: 'Browse past paper questions by topic with mark schemes.',
   },
   alternates: {
-    canonical: 'https://grademax.me/browse',
+    canonical: 'https://www.grademax.me/browse',
   },
 }
 

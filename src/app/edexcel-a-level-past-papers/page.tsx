@@ -2,13 +2,20 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
+import PastPaperCatalog from '@/components/PastPaperCatalog'
+
+// Static hub — links are built from the DB index at build time (no ISR writes).
+export const revalidate = false
+
+// Build-time year so the title never advertises a stale year.
+const CURRENT_YEAR = new Date().getFullYear()
 
 export const metadata: Metadata = {
-  title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+  title: `Edexcel A Level Past Papers ${CURRENT_YEAR} – Free IAL with Mark Schemes`,
   description: 'Free Edexcel A Level (IAL) past papers with mark schemes. Pure Maths 1 (WMA11), Mechanics 1 (WME01), Statistics 1 (WST01). Topic-wise questions from 2012-2025.',
   keywords: [
     'A Level past papers', 'A Level past papers Edexcel', 'Edexcel A Level past papers',
-    'A Level past papers 2025', 'A Level past papers 2024', 'A Level past papers 2023', 'A Level past papers free',
+    `A Level past papers ${CURRENT_YEAR}`, `A Level past papers ${CURRENT_YEAR - 1}`, `A Level past papers ${CURRENT_YEAR - 2}`, 'A Level past papers free',
     'IAL past papers', 'International A Level past papers', 'Edexcel IAL past papers',
     'A Level Maths past papers', 'A Level Maths past papers Edexcel',
     'A Level Maths past papers by topic', 'A Level Maths topic wise',
@@ -23,21 +30,21 @@ export const metadata: Metadata = {
     'A Level worksheets', 'A Level practice papers',
   ],
   openGraph: {
-    title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+    title: `Edexcel A Level Past Papers ${CURRENT_YEAR} – Free IAL with Mark Schemes`,
     description: 'Free A Level past papers for all Edexcel IAL units with mark schemes. Organized by topic and year.',
-    url: 'https://grademax.me/edexcel-a-level-past-papers',
+    url: 'https://www.grademax.me/edexcel-a-level-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Edexcel A Level Past Papers' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel A Level Past Papers 2025 – Free IAL with Mark Schemes',
+    title: `Edexcel A Level Past Papers ${CURRENT_YEAR} – Free IAL with Mark Schemes`,
     description: 'Free A Level past papers for Pure Maths, Mechanics, Statistics with mark schemes.',
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://grademax.me/edexcel-a-level-past-papers',
+    canonical: 'https://www.grademax.me/edexcel-a-level-past-papers',
   },
 }
 
@@ -52,7 +59,7 @@ const faqs = [
   },
   {
     question: "Can I practice A Level Maths past papers by topic?",
-    answer: "Yes! Each A Level unit on GradeMax has questions organized by topic. For example, Pure Maths 1 topics include Algebra, Coordinate Geometry, Sequences & Series, Differentiation, and Integration."
+    answer: "Yes! Each A Level unit on GradeMax has questions organized by topic. For example, Pure Maths 1 topics include Algebra, Coordinate Geometry, Sequences and Series, Differentiation, and Integration."
   },
   {
     question: "Are A Level mark schemes included?",
@@ -68,9 +75,9 @@ const faqs = [
   },
 ]
 
-export default function ALevelPastPapersPage() {
+export default async function ALevelPastPapersPage() {
   const subjects = getSubjectsByLevel('ial')
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
 
   const schema = {
     '@context': 'https://schema.org',
@@ -175,19 +182,9 @@ export default function ALevelPastPapersPage() {
           </div>
         </section>
 
-        {/* Years */}
-        <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>
-          <h2 style={{ fontSize: "0.75rem", fontWeight: 700, color: "var(--gm-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "1rem" }}>
-            Browse by Year
-          </h2>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
-            {[2025, 2024, 2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014].map(year => (
-              <Link key={year} href={`/past-papers/pure-mathematics-1/${year}`} className="topic-pill">
-                {year}
-              </Link>
-            ))}
-          </div>
-        </section>
+        {/* Full subject + year index — every IAL subject that has papers, plus the
+            paper-code reference table. Replaces the old Pure-Maths-only year list. */}
+        <PastPaperCatalog level="ial" levelLabel="A Level" />
 
         {/* FAQ */}
         <section style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid var(--gm-border)" }}>

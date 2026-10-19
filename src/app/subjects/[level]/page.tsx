@@ -23,6 +23,12 @@ function isValidLevel(level: string): level is Level {
   return validLevels.includes(level as Level)
 }
 
+// Fully static: only the two valid levels exist, so any other /subjects/* URL
+// 404s instantly instead of triggering an ISR cache fill (ISR write + function
+// CPU on Vercel). Mirrors the past-papers routes.
+export const dynamicParams = false
+export const revalidate = false
+
 export async function generateStaticParams() {
   return validLevels.map(level => ({ level }))
 }
@@ -38,7 +44,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const subjectNames = subjects.map(s => s.name).join(', ')
   
   return {
-    title: `${levelDisplay} Subjects – Past Papers & Study Resources | GradeMax`,
+    // Root template appends "| GradeMax" — no manual suffix (it double-branded before).
+    title: `${levelDisplay} Subjects – Past Papers & Study Resources`,
     description: `Master ${levelDisplay} with GradeMax. Access past papers, topic questions, and practice for ${subjectNames}. Free study resources for exam success.`,
     keywords: [
       `${levelDisplay} past papers`,
@@ -49,12 +56,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${levelDisplay} Subjects – Past Papers & Study Resources | GradeMax`,
       description: `Master ${levelDisplay} with GradeMax. Access past papers for ${subjectNames}.`,
-      url: `https://grademax.me/subjects/${level}`,
+      url: `https://www.grademax.me/subjects/${level}`,
       siteName: 'GradeMax',
       type: 'website',
     },
     alternates: {
-      canonical: `https://grademax.me/subjects/${level}`,
+      canonical: `https://www.grademax.me/subjects/${level}`,
     },
   }
 }
@@ -71,7 +78,7 @@ export default async function LevelPage({ params }: PageProps) {
   const subjects = getSubjectsByLevel(level)
   
   // Generate JSON-LD schema
-  const baseUrl = 'https://grademax.me'
+  const baseUrl = 'https://www.grademax.me'
   const pageUrl = `${baseUrl}/subjects/${level}`
   
   const schema = {

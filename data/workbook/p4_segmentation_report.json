@@ -1,0 +1,129 @@
+{
+  "unit": "P4",
+  "subject_code": "WMA14",
+  "mode": "EXECUTE",
+  "notes": [
+    "out of scope 2014_jan: legacy qualification on cover (WMA02)",
+    "out of scope 2014_may-jun: legacy qualification on cover (Core Mathematics C4)",
+    "out of scope 2015_jan: legacy qualification on cover (WMA02)",
+    "out of scope 2015_may-jun: legacy qualification on cover (Core Mathematics C4)",
+    "out of scope 2016_jan: legacy qualification on cover (WMA02)",
+    "out of scope 2016_may-jun: legacy qualification on cover (WMA02)",
+    "out of scope 2017_jan: legacy qualification on cover (WMA02)",
+    "out of scope 2017_may-jun: legacy qualification on cover (Core Mathematics C4)",
+    "out of scope 2017_oct-nov: legacy qualification on cover (WMA02)",
+    "out of scope 2018_jan: legacy qualification on cover (WMA02)",
+    "out of scope 2018_may-jun: legacy qualification on cover (Core Mathematics C4)",
+    "out of scope 2018_oct-nov: legacy qualification on cover (Core Mathematics C34)",
+    "out of scope 2019_jan: legacy qualification on cover (Core Mathematics C34)",
+    "out of scope 2019_may-jun: legacy qualification on cover (Core Mathematics C34)",
+    "duplicate: 2020_oct-nov is the same paper as 2020_may-jun (identical text once the watermark session token is stripped)",
+    "duplicate: 2023_may-jun is the same paper as 2023_jan (identical text once the watermark session token is stripped)"
+  ],
+  "papers_clean": 14,
+  "papers_total": 14,
+  "questions": 130,
+  "mark_provenance": {
+    "fence+tally": 130
+  },
+  "papers": [
+    {
+      "key": "2018_specimen",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2020_may-jun",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_jan",
+      "ok": true,
+      "questions": 10,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_may-jun",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_oct-nov",
+      "ok": true,
+      "questions": 10,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_jan",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_may-jun",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_oct-nov",
+      "ok": true,
+      "questions": 11,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2023_jan",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2023_oct-nov",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_jan",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_may-jun",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_oct-nov",
+      "ok": true,
+      "questions": 10,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2025_jan",
+      "ok": true,
+      "questions": 9,
+      "marks": 75,
+      "problems": []
+    }
+  ]
+}

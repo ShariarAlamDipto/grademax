@@ -1,0 +1,4624 @@
+[
+  {
+    "slug": "P3.2018_specimen.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 1,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q1.pdf",
+    "stem": "Answer ALL questions. Write your answers in the spaces provided. Express x x x + − − + as a single fraction in its simplest form. (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q1 (Total for Question 1 is 4 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 598,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 2,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q2.pdf",
+    "stem": "f(x) = x3 + 3 2 + 4x – 12 (a) Show that the equation f(x) = 0 can be written as x = 4 3 ( ) ( ) − + ⎛ ⎝⎜ ⎞ ⎠⎟ x x x  –3 (3) The equation x3 + 3 2 + 4x – 12 = 0 has a single root which is between 1 and 2 (b) Use the iteration formula xn + 1 = 4 3 ( ) ( ) − + ⎛ ⎝⎜ ⎞ ⎠⎟ x x n n n . 0 with x0 = 1 to find, to 2 decimal places, the value of x1, x2 and x3 (3) The root of f(x) = 0 is Į. (c) By choosing a suitable interval, prove that Į = 1.272 to 3 decimal places. (2) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q2 (Total for Question 2 is 8 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1358,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 3,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q3.pdf",
+    "stem": "y O y = f(x) x Figure 1 Figure 1 shows a sketch of part of the graph y = f(x) where f(x) = 2µ3 – xµ + 5 x . 0 (a) Solve the equation f(x) = 1 2 x + 30 (3) Given that the equation f(x) = k, where k is a constant, has two distinct roots, (b) state the set of possible values for k. (2) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q3 (Total for Question 3 is 5 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 748,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 4,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q4.pdf",
+    "stem": "(i) Find ( ) x x − ∫ d writing your answer in its simplest form. (4) (ii) Use integration to find the exact value of π ∫ sin 2x + sec 1 3 x tan 1 3 x dx (3) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q4 (Total for Question 4 is 7 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1049,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 5,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q5.pdf",
+    "stem": "Given that y = 5 x x x − + − ( ) x  1 show that d d y x k x = − ( )1 3 , where k is a constant to be found. (6) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q5 (Total for Question 5 is 6 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 577,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 6,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q6.pdf",
+    "stem": "The functions f and g are defined by f : x 6 ex + 2 x ∈ \\ g : x 6 ln x x < 0 (a) State the range of f. (1) (b) Find fg(x), giving your answer in its simplest form. (2) (c) Find the exact value of x for which f(2x + 3) = 6 (4) (d) Find f –1 stating its domain. (3) (e) On the same axes sketch the curves with equation y = f(x) and y = f –1(x), giving the coordinates of all the points where the curves cross the axes. (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q6 (Total for Question 6 is 14 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1314,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      },
+      {
+        "label": "d",
+        "marks": 3
+      },
+      {
+        "label": "e",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 7,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q7.pdf",
+    "stem": "The point P lies on the curve with equation x = (4y – sin 2y)2 Given that P has (x, y) coordinates , 2 π p ⎛ ⎞ ⎜ ⎟ ⎝ ⎠, where p is a constant, (a) find the exact value of p (1) The tangent to the curve at P cuts the y-axis at the point A. (b) Use calculus to find the coordinates of A. (6) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q7 (Total for Question 7 is 7 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1182,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 6
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 8,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q8.pdf",
+    "stem": "In a controlled experiment, the number of microbes, N, present in a culture T days after the start of the experiment were counted. N and T are expected to satisfy a relationship of the form N = aT b where a and b are constants (a) Show that this relationship can be expressed in the form log10 N = m log10 T + c giving m and c in terms of the constants a and/or b. (2) log10N log10T – 0.2 – 0.4 – 0.6 – 0.8 – 1.0 – 2.5 – 2.0 – 1.5 – 1.0 – 0.5 – 0 – 3.0 – 3.5 – 4.0 – 4.5 – 5.0 – 1.2 – 1.4 – Figure 2 Figure 2 shows the line of best fit for values of log10 N plotted against values of log10 T (b) Use the information provided to estimate the number of microbes present in the culture 3 days after the start of the experiment. (4) (c) With reference to the model, interpret the value of the constant a. (1) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q8 (Total for Question 8 is 7 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1697,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 9,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      30
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q9.pdf",
+    "stem": "(a) Prove that sec 2A + tan 2A Ł cos sin cos sin A A A A + − A  (2 1) n π + n ∈ ] (5) (b) Hence solve, for 0 - θ < 2π sec 2θ + tan 2θ = 1 Give your answers to 3 decimal places. (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Q9 (Total for Question 9 is 9 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1074,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2018_specimen.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2018_specimen",
+    "source_question_number": 10,
+    "year": 2018,
+    "season": "specimen",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      31,
+      34
+    ],
+    "qp_pdf": "p3/2018_specimen/questions/q10.pdf",
+    "stem": "The amount of an antibiotic in the bloodstream, from a given dose, is modelled by the formula x = De–0.2t where x is the amount of the antibiotic in the bloodstream in milligrams, D is the dose given in milligrams and t is the time in hours after the antibiotic has been given. A first dose of 15 mg of the antibiotic is given. (a) Use the model to find the amount of the antibiotic in the bloodstream 4 hours after the dose is given. Give your answer in mg to 3 decimal places. (2) A second dose of 15 mg is given 5 hours after the first dose has been given. Using the same model for the second dose, (b) show that the total amount of the antibiotic in the bloodstream 2 hours after the second dose is given is 13.754 mg to 3 decimal places. (2) No more doses of the antibiotic are given. At time T hours after the second dose is given, the total amount of the antibiotic in the bloodstream is 7.5 mg. (c) Show that T = a ln b b + ⎛ ⎝⎜ ⎞ ⎠⎟ e , where a and b are integers to be determined. (4) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018 TOTAL FOR PAPER IS 75 MARKS Q10 (Total for Question 10 is 8 marks) Pearson Edexcel International Advanced Subsidiary/Advanced Level in Mathematics, Further Mathematics and Pure Mathematics – Sample Assessment Materials (SAMs) – Issue 3 – June 2018 © Pearson Education Limited 2018",
+    "stem_chars": 1917,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_jan.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 1,
+    "year": 2020,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q1.pdf",
+    "stem": "A population of a rare species of toad is being studied. The number of toads, N, in the population, t years after the start of the study, is modelled by the equation N = 900 0 12 0 12 e e . . t t + t  0, t ∈  According to this model, (a) calculate the number of toads in the population at the start of the study, (1) (b) find the value of t when there are 420 toads in the population, giving your answer to 2 decimal places. (4) (c) Explain why, according to this model, the number of toads in the population can never reach 500 (1) Q1",
+    "stem_chars": 537,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2020_jan.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 2,
+    "year": 2020,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q2.pdf",
+    "stem": "The function f and the function g are defined by f(x) = 12 x + x > 0, x ∈  g(x) = 5 2 ln x x > 0, x ∈  (a) Find, in simplest form, the value of fg(e2) (2) (b) Find f –1 (3) (c) Hence, or otherwise, find all real solutions of the equation f –1(x) = f(x) (3) Q2",
+    "stem_chars": 261,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_jan.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 3,
+    "year": 2020,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q3.pdf",
+    "stem": "log10 y O (0, 4) (6, 0) log10 x Figure 1 Figure 1 shows a linear relationship between log10 y and log10 x The line passes through the points (0, 4) and (6, 0) as shown. (a) Find an equation linking log10 y with log10 x (2) (b) Hence, or otherwise, express y in the form px q, where p and q are constants to be found. (3) Q3",
+    "stem_chars": 323,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2020_jan.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 4,
+    "year": 2020,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q4.pdf",
+    "stem": "(i) f(x) = ( ) x x + − x ≠ 3 (a) Find f′(x) in the form P x Q x ( ) ( ) where P(x) and Q(x) are fully factorised quadratic expressions. (b) Hence find the range of values of x for which f(x) is increasing. (6) (ii) g(x) = x sin 4x 0  x < 4 π The curve with equation y = g(x) has a maximum at the point M. Show that the x coordinate of M satisfies the equation tan 4x + kx = 0 where k is a constant to be found. (5) Q4",
+    "stem_chars": 418,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2020_jan.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 5,
+    "year": 2020,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q5.pdf",
+    "stem": "(a) Use the substitution t = tan x to show that the equation 12 tan 2x + 5 cot x sec2 x = 0 can be written in the form 5t 4 – 24t2 – 5 = 0 (4) (b) Hence solve, for 0  x < 360°, the equation 12 tan 2x + 5 cot x sec2 x = 0 Show each stage of your working and give your answers to one decimal place. (4) Q5",
+    "stem_chars": 304,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2020_jan.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 6,
+    "year": 2020,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q6.pdf",
+    "stem": "y O P y = f(x) x Figure 2 Figure 2 shows part of the graph with equation y = f(x), where f(x) = 2 ½ 2x – 5 ½ + 3 x  0 The vertex of the graph is at point P as shown. (a) State the coordinates of P. (2) (b) Solve the equation f(x) = 3x – 2 (4) Given that the equation f(x) = kx + 2 where k is a constant, has exactly two roots, (c) find the range of values of k. (3) Q6",
+    "stem_chars": 369,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2020_jan.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 7,
+    "year": 2020,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q7.pdf",
+    "stem": "y O P Q R x Figure 3 Figure 3 shows a sketch of part of the curve with equation y = 2 cos 3x – 3x + 4 x > 0 where x is measured in radians. The curve crosses the x‑axis at the point P, as shown in Figure 3. Given that the x coordinate of P is α, (a) show that α lies between 0.8 and 0.9 (2) The iteration formula xn + 1 = 1 3 arccos(1.5xn – 2) can be used to find an approximate value for α. (b) Using this iteration formula with x1 = 0.8 find, to 4 decimal places, the value of (i) x2 (ii) x5 (3) The point Q and the point R are local minimum points on the curve, as shown in Figure 3. Given that the x coordinates of Q and R are β and λ respectively, and that they are the two smallest values of x at which local minima occur, (c) find, using calculus, the exact value of β and the exact value of λ. (6) Q7",
+    "stem_chars": 808,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2020_jan.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 8,
+    "year": 2020,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q8.pdf",
+    "stem": "(i) Find, using algebraic integration, the exact value of x x − ∫ d giving your answer in simplest form. (4) (ii) h(x) = 2 x x x x − + + − ( ) x > 1 Given h(x) = Ax + B + C x ( ) −1 2 where A, B and C are constants to be found, find h d ( ) x x ∫ (6) Q8",
+    "stem_chars": 253,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_jan.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_jan",
+    "source_question_number": 9,
+    "year": 2020,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2020_jan/questions/q9.pdf",
+    "stem": "f(θ) = 5 cos θ – 4 sin θ θ ∈  (a) Express f(θ) in the form R cos (θ + α), where R and α are constants, R > 0 and 0 < α < 2 π. Give the exact value of R and give the value of α, in radians, to 3 decimal places. (3) The curve with equation y = cos θ is transformed onto the curve with equation y = f(θ) by a sequence of two transformations. Given that the first transformation is a stretch and the second a translation, (b) (i) describe fully the transformation that is a stretch, (ii) describe fully the transformation that is a translation. (2) Given g(θ) = f( ) ( ) θ + θ ∈  (c) find the range of g. (2) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 641,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2020_may-jun.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 1,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q1.pdf",
+    "stem": "Solve, for 0  x < 360°, the equation 2 cos 2 x = 7 cos x giving your solutions to one decimal place. (Solutions based entirely on graphical or numerical methods are not acceptable.) (5) Q1",
+    "stem_chars": 189,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 2,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q2.pdf",
+    "stem": "A scientist monitored the growth of bacteria on a dish over a 30‑day period. The area, N mm2, of the dish covered by bacteria, t days after monitoring began, is modelled by the equation log10 N = 0.0646 t + 1.478 0  t  30 (a) Show that this equation may be written in the form N = a b t where a and b are constants to be found. Give the value of a to the nearest integer and give the value of b to 3 significant figures. (4) (b) Use the model to find the area of the dish covered by bacteria 30 days after monitoring began. Give your answer, in mm2, to 2 significant figures. (2) Q2",
+    "stem_chars": 584,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 3,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q3.pdf",
+    "stem": ". y x O Figure 1 Figure 1 shows a sketch of a curve with equation y = f (x) where f (x) = 2 x x + − x > 1 (a) Find, in simplest form, f ʹ(x). (4) (b) Hence find the range of f. (3) Q3",
+    "stem_chars": 183,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 4,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q4.pdf",
+    "stem": "y x O y = f (x) Figure 2 Figure 2 shows a sketch of part of the graph with equation y = f (x) where f (x) = 21 − 2 | 2 − x | x  0 (a) Find f f (6) (2) (b) Solve the equation f (x) = 5x (2) Given that the equation f (x) = k , where k is a constant, has exactly two roots, (c) state the set of possible values of k. (2) The graph with equation y = f (x) is transformed onto the graph with equation y = a f (x − b) The vertex of the graph with equation y = a f (x − b) is (6, 3). Given that a and b are constants, (d) find the value of a and the value of b. (2) Q4",
+    "stem_chars": 562,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 5,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q5.pdf",
+    "stem": "(a) Show that sin 3x ≡ 3 sin x − 4 sin3 x (4) (b) Hence find, using algebraic integration, sin d π x x ∫ (4) Q5",
+    "stem_chars": 111,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 6,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q6.pdf",
+    "stem": ". C1 α O β P x y C2 Figure 3 Figure 3 shows a sketch of curve C1 with equation y = 5e x−1 + 3 and curve C2 with equation y = 10 − x2 The point P lies on C1 and has y coordinate 18 (a) Find the x coordinate of P, writing your answer in the form ln k, where k is a constant to be found. (3) The curve C1 meets the curve C2 at x = α and at x = β , as shown in Figure 3. (b) Using a suitable interval and a suitable function that should be stated, show that to 3 decimal places α = 1.134 (3) The iterative equation xn xn + − = − − 5e is used to find an approximation to β . Using this iterative formula with x1 = −3 (c) find the value of x2 and the value of β , giving each answer to 6 decimal places. (3) Q6",
+    "stem_chars": 704,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 7,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q7.pdf",
+    "stem": "(a) Express cos x + 4 sin x in the form R cos (x − α) where R > 0 and 0 < α < 2 π Give the exact value of R and give the value of α, in radians, to 3 decimal places. (3) A scientist is studying the behaviour of seabirds in a colony. She models the height above sea level, H metres, of one of the birds in the colony by the equation H = +    +     cos sin t t 0  t  6.5 where t seconds is the time after it leaves the nest. Find, according to the model, (b) the minimum height of the seabird above sea level, giving your answer to the nearest cm, (2) (c) the value of t, to 2 decimal places, when H = 10 (4) Q7",
+    "stem_chars": 623,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 8,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q8.pdf",
+    "stem": "(i) The curve C has equation y = g(x) where g(x) = e3x sec 2x −4 π < x < 4 π (a) Find gʹ(x) (2) (b) Hence find the x coordinate of the stationary point of C. (3) (ii) A different curve has equation x = ln (sin y) 0 < y < 2 π Show that d d y x = e f x x ( ) where f (x) is a function of e x that should be found. (4) Q8",
+    "stem_chars": 318,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2020_may-jun.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2020_may-jun",
+    "source_question_number": 9,
+    "year": 2020,
+    "season": "may-jun",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p3/2020_may-jun/questions/q9.pdf",
+    "stem": "(a) Given that x x x x x x x P Q x x − − + − − − ≡ + + − − > find the value of the constant P and show that Q = 5 (4) The curve C has equation y = g(x), where g(x) = x x x x x x x 3 5 − − + − − − − < < . x ∈  (b) Find the equation of the tangent to C at the point where x = 2 Give your answer in the form y = mx + c , where m and c are constants to be found. (5) y x R O C Figure 4 Figure 4 shows a sketch of the curve C. The region R, shown shaded in Figure 4, is bounded by C, the y-axis, the x-axis and the line with equation x = 2 (c) Find the exact area of R, writing your answer in the form a + b ln2 , where a and b are constants to be found. (5) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 689,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2021_jan.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "jan",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q1.pdf",
+    "stem": "Find x x x x − ∫ d > giving your answer in simplest form. (3) Q1",
+    "stem_chars": 64,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q2.pdf",
+    "stem": "O x y (1, 2) (3,0) Figure 1 Figure 1 shows a sketch of the curve with equation y = f(x), where x ∈  and f(x) is a polynomial. The curve passes through the origin and touches the x-axis at the point (3, 0) There is a maximum turning point at (1, 2) and a minimum turning point at (3, 0) On separate diagrams, sketch the curve with equation (i) y = 3f(2x) (3) (ii) y = f(−x) − 1 (3) On each sketch, show clearly the coordinates of ● the point where the curve crosses the y-axis ● any maximum or minimum turning points Q2",
+    "stem_chars": 519,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q3.pdf",
+    "stem": "f ( ) x x x x x x x = − − + + + − − > (a) Show that f ( ) x ax b cx d x = + + > 4 where a, b, c and d are integers to be found. (4) (b) Hence find f −1(x) (2) (c) Find the domain of f −1 (2) Q3",
+    "stem_chars": 193,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q4.pdf",
+    "stem": "O y x P Figure 2 Figure 2 shows a sketch of the graph with equation y = f(x), where f(x) = | 3x + a | + a and where a is a positive constant. The graph has a vertex at the point P, as shown in Figure 2. (a) Find, in terms of a, the coordinates of P. (2) (b) Sketch the graph with equation y = g(x), where g(x) = | x + 5a | On your sketch, show the coordinates, in terms of a, of each point where the graph cuts or meets the coordinate axes. (2) The graph with equation y = g(x) intersects the graph with equation y = f(x) at two points. (c) Find, in terms of a, the coordinates of the two points. (5) Q4",
+    "stem_chars": 603,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q5.pdf",
+    "stem": "The temperature, θ °C, inside an oven, t minutes after the oven is switched on, is given by θ = A – 180e–kt where A and k are positive constants. Given that the temperature inside the oven is initially 18 °C, (a) find the value of A. (2) The temperature inside the oven, 5 minutes after the oven is switched on, is 90 °C. (b) Show that k = p ln q where p and q are rational numbers to be found. (4) Hence find (c) the temperature inside the oven 9 minutes after the oven is switched on, giving your answer to 3 significant figures, (2) (d) the rate of increase of the temperature inside the oven 9 minutes after the oven is switched on. Give your answer in °C min–1 to 3 significant figures. (3) Q5",
+    "stem_chars": 698,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q6.pdf",
+    "stem": "f ( ) cos x x x x =     > (a) Find fʹ(x) (2) (b) Show that the equation fʹ(x) = 0 can be written as x k k x =     arctan where k is an integer to be found. (2) (c) Starting with x1 = 2.5 use the iteration formula x k k x n n + =     arctan with the value of k found in part (b), to calculate the values of x2 and x6 giving your answers to 3 decimal places. (2) (d) Using a suitable interval and a suitable function that should be stated, show that a root of fʹ(x) = 0 is 2.581 correct to 3 decimal places. (2) Q6",
+    "stem_chars": 530,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q7.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Prove that sin 2 cos2 cosec cos sin + ≡ ≠ ∈ x x nπ x x n x x Z (3) (b) Hence solve, for π π θ − < < sin 4 cos4 3cot 2 cos2 sin 2 θ θ θ θ θ + + = giving your answers in radians to 3 significant figures where appropriate. (6) Q7",
+    "stem_chars": 361,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      26
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q8.pdf",
+    "stem": "The percentage, P, of the population of a small country who have access to the internet, is modelled by the equation P = abt where a and b are constants and t is the number of years after the start of 2005 Using the data for the years between the start of 2005 and the start of 2010, a graph is plotted of log10 P against t. The points are found to lie approximately on a straight line with gradient 0.09 and intercept 0.68 on the log10 P axis. (a) Find, according to the model, the value of a and the value of b, giving your answers to 2 decimal places. (4) (b) In the context of the model, give a practical interpretation of the constant a. (1) (c) Use the model to estimate the percentage of the population who had access to the internet at the start of 2015 (2) Q8",
+    "stem_chars": 768,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      27,
+      28
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q9.pdf",
+    "stem": "Find (i) x x x x − − + ∫ d (2) (ii) e e d x x x x ( ) − ≠ ∫ (2) Q9",
+    "stem_chars": 66,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_jan.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_jan",
+    "source_question_number": 10,
+    "year": 2021,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2021_jan/questions/q10.pdf",
+    "stem": "The curve C has equation 3sec 2 = π x y x y > < < (a) Find d d x y in terms of y. (2) (b) Hence show that d d y x p qx x = −3 where p is irrational and q is an integer, stating the values of p and q. (3) (c) Find the equation of the normal to C at the point where π y = , giving your answer in the form y = mx + c, giving m and c as exact irrational numbers. (5) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 398,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q1.pdf",
+    "stem": "The curve C has equation y = x 2 cos 1 2 x     0 < x  π The curve has a stationary point at the point P. (a) Show, using calculus, that the x coordinate of P is a solution of the equation x = 2 arctan 4 x     (4) Using the iteration formula xn+1 = 2 arctan xn     x1 = 2 (b) find the value of x2 and the value of x6 , giving your answers to 3 decimal places. (3) Q1",
+    "stem_chars": 384,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q2.pdf",
+    "stem": "(a) Show that −cos sin x x º k tan x x ¹ (90n)° n   where k is a constant to be found. (3) (b) Hence solve, for 0 < θ < 90° ( ) 9 1 cos2 2sin 2 θ θ − = 2 sec2 θ giving your answers to one decimal place. (Solutions based entirely on graphical or numerical methods are not acceptable.) (6) Q2",
+    "stem_chars": 292,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q3.pdf",
+    "stem": "(i) Find x x − ( ) ∫ d giving your answer in simplest form. (2) (ii) (a) Write 4 x x + + in the form A + B x + 2 where A and B are constants to be found (b) Hence find, using algebraic integration, the exact value of 5 x x x + + − − ∫ d giving your answer in simplest form. (6) Q3",
+    "stem_chars": 280,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q4.pdf",
+    "stem": "The functions f and g are defined by f (x) = 4 x x + − x  , x ¹ 5 g (x) = 5 − 2x2 x  , x  0 (a) Solve the equation fg(x) = 3 (4) (b) Find f −1 (3) (c) Sketch and label, on the same axes, the curve with equation y = g(x) and the curve with equation y = g−1(x) . Show on your sketch the coordinates of the points where each curve meets or cuts the coordinate axes. (3) Q4",
+    "stem_chars": 374,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q5.pdf",
+    "stem": "log10 A O (8, 0.56) (0, 0.32) t Figure 1 The growth of duckweed on a pond is being studied. The surface area of the pond covered by duckweed, Am2, at a time t days after the start of the study is modelled by the equation A = p q t where p and q are positive constants Figure 1 shows the linear relationship between log10 A and t. The points (0, 0.32) and (8, 0.56) lie on the line as shown. (a) Find, to 3 decimal places, the value of p and the value of q. (4) Using the model with the values of p and q found in part (a), (b) find the rate of increase of the surface area of the pond covered by duckweed, in m2 / day, exactly 6 days after the start of the study. Give your answer to 2 decimal places. (3) Q5",
+    "stem_chars": 708,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q6.pdf",
+    "stem": "Given that k is a positive constant, (a) on separate diagrams, sketch the graph with equation (i) y = k − 2| x | (ii) y = | 2x − k 3 | Show on each sketch the coordinates, in terms of k, of each point where the graph meets or cuts the axes. (4) (b) Hence find, in terms of k, the values of x for which | 2x − k 3 | = k − 2| x | giving your answers in simplest form. (4) Q6",
+    "stem_chars": 372,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q7.pdf",
+    "stem": "Given that x = 6 sin2 2 y 0 < y < 4 π show that d d y x = A Bx x ( ) − where A and B are integers to be found. (5) Q7",
+    "stem_chars": 117,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 13,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q8.pdf",
+    "stem": "A scientist is studying a population of fish in a lake. The number of fish, N, in the population, t years after the start of the study, is modelled by the equation N = 600 0 3 0 3 e e . . t t + t  0 Use the equation of the model to answer parts (a), (b), (c), (d) and (e). (a) Find the number of fish in the lake at the start of the study. (1) (b) Find the upper limit to the number of fish in the lake. (1) (c) Find the time, after the start of the study, when there are predicted to be 500 fish in the lake. Give your answer in years and months to the nearest month. (4) (d) Show that d d N t = A t t e e 0 3 0 3 . . + ( ) where A is a constant to be found. (3) Given that when t = T, d d N t = 8 (e) find the value of T to one decimal place. (Solutions relying entirely on calculator technology are not acceptable.) (4) Q8",
+    "stem_chars": 826,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 4
+      },
+      {
+        "label": "d",
+        "marks": 3
+      },
+      {
+        "label": "e",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_may-jun.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_may-jun",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2021_may-jun/questions/q9.pdf",
+    "stem": "(a) Express 12 sin x − 5 cos x in the form Rsin (x − α), where R and α are constants, R > 0 and 0 < α < 2 π . Give the exact value of R and give the value of α in radians, to 3 decimal places. (3) The function g is defined by g(θ ) = 10 + 12 sin 2 π θ   −     − 5 cos 2 π θ   −     θ > 0 Find (b) (i) the minimum value of g(θ ) (ii) the smallest value of θ at which the minimum value occurs. (3) The function h is defined by h( β ) = 10 − (12 sin β − 5 cos β )2 (c) Find the range of h. (2) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 537,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 1,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      1,
+      4
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q1.pdf",
+    "stem": "The function f is defined by f ( ) x x x x x x = + + + + x > 0 (a) Show that f ( ) x x x = + (3) (b) Find f –1 (3) (c) (i) Find, in simplest form, f′(x). (ii) Hence, state whether f is an increasing or a decreasing function, giving a reason for your answer. (3) Q1",
+    "stem_chars": 264,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 2,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q2.pdf",
+    "stem": "O x P y Figure 1 Figure 1 shows a sketch of part of the graph with equation y = f(x), where f(x) = ½3x – 13½ + 5 x ∈  The vertex of the graph is at point P, as shown in Figure 1. (a) State the coordinates of P. (2) (b) (i) State the range of f. (ii) Find the value of ff(4) (2) (c) Solve, using algebra and showing your working, 16 – 2x > ½3x – 13½ + 5 (4) The graph with equation y = f(x) is transformed onto the graph with equation y = af(x + b) The vertex of the graph with equation y = af(x + b) is (4, 20) Given that a and b are constants, (d) find the value of a and the value of b. (2) Q2",
+    "stem_chars": 596,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 4
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 3,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q3.pdf",
+    "stem": "O t G k Figure 2 The total mass of gold, G tonnes, extracted from a mine is modelled by the equation G = 40 – 30e1–0.05t t  k G  0 where t is the number of years after 1st January 1800. Figure 2 shows a sketch of G against t. Use the equation of the model to answer parts (a), (b) and (c). (a) (i) Find the value of k. (ii) Hence find the year and month in which gold started being extracted from the mine. (3) (b) Find the total mass of gold extracted from the mine up to 1st January 1870. (2) There is a limit to the mass of gold that can be extracted from the mine. (c) State the value of this limit. (1) Q3",
+    "stem_chars": 612,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 4,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q4.pdf",
+    "stem": "In this question you should show detailed reasoning. Solutions relying entirely on calculator technology are not acceptable. (a) Show that the equation 2 sin(θ – 30°) = 5 cos θ can be written in the form tan θ = 2 3 (4) (b) Hence, or otherwise, solve for 0  x  360° 2 sin(x – 10°) = 5 cos(x + 20°) giving your answers to one decimal place. (3) Q4",
+    "stem_chars": 348,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 5,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q5.pdf",
+    "stem": "(i) Find, by algebraic integration, the exact value of 3 3 ( ) x x < ; d (4) (ii) Find, in simplest form, x x x < ; : d (2) Q5",
+    "stem_chars": 126,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 6,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      18
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q6.pdf",
+    "stem": "(i) The curve C1 has equation y = 3 ln(x2 – 5) – 4x2 + 15 x > 5 Show that C1 has a stationary point at x = p 2 where p is a constant to be found. (4) (ii) A different curve C2 has equation y = 4x – 12 sin2 x (a) Show that, for this curve, d d y x = A + B sin 2x where A and B are constants to be found. (b) Hence, state the maximum gradient of this curve. (4) Q6",
+    "stem_chars": 362,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 7,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q7.pdf",
+    "stem": "7 The mass, M kg, of a species of tree can be modelled by the equation log10M = 1.93 log10r + 0.684 where r cm is the base radius of the tree. The base radius of a particular tree of this species is 45 cm. According to the model, (a) find the mass of this tree, giving your answer to 2 significant figures. (2) (b) Show that the equation of the model can be written in the form M = pr q giving the values of the constants p and q to 3 significant figures. (3) (c) With reference to the model, interpret the value of the constant p. (1) Q7",
+    "stem_chars": 538,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 8,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q8.pdf",
+    "stem": "A curve C has equation y = f(x), where f(x) = arcsin 1 2 x < ;: 87 –2  x  2 – 2 π  y  2 π (a) Sketch C. (1) (b) Given x = 2 sin y, show that d d y x A x = - where A is a constant to be found. (3) The point P lies on C and has y coordinate 4 π (c) Find the equation of the tangent to C at P. Write your answer in the form y = mx + c, where m and c are constants to be found. (3) Q8",
+    "stem_chars": 384,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 9,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q9.pdf",
+    "stem": "O y = f(x) x P y l Figure 3 Figure 3 shows a sketch of part of the curve with equation y = f(x), where f(x) = x(x2 – 4)e - 1 2 x (a) Find f′(x). (2) The line l is the normal to the curve at O and meets the curve again at the point P. The point P lies in the 3rd quadrant, as shown in Figure 3. (b) Show that the x coordinate of P is a solution of the equation x x = - + e (4) (c) Using the iterative formula xn xn + = - + e with x1 = –2 find, to 4 decimal places, (i) the value of x2 (ii) the x coordinate of P. (3) Q9",
+    "stem_chars": 518,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2021_oct-nov.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2021_oct-nov",
+    "source_question_number": 10,
+    "year": 2021,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2021_oct-nov/questions/q10.pdf",
+    "stem": "O x y a Figure 4 Figure 4 shows a sketch of part of the curve with equation y = (1 + 2 cos 2x)2 (a) Show that (1 + 2 cos 2x)2 ≡ p + q cos 2x + r cos 4x where p, q and r are constants to be found. (2) The curve touches the positive x‑axis for the second time when x = a, as shown in Figure 4. The regions bounded by the curve, the y‑axis and the x‑axis up to x = a are shown shaded in Figure 4. (b) Find, using algebraic integration and making your method clear, the exact total area of the shaded regions. Write your answer in simplest form. (5) TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 581,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q1.pdf",
+    "stem": "  Find, using calculus, the x coordinate of the stationary point on the curve with equation y = (2x + 5)e 3x (4)   Q1",
+    "stem_chars": 127,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q2.pdf",
+    "stem": "  (a) Show that the equation 8 cos θ = 3 cosec θ can be written in the form sin 2θ = k where k is a constant to be found. (3) (b) Hence find the smallest positive solution of the equation 8 cos θ = 3 cosec θ giving your answer, in degrees, to one decimal place. (2)   Q2",
+    "stem_chars": 280,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q3.pdf",
+    "stem": "  (i) Find, in simplest form, ( ) x x − ∫ d (2) (ii) Show, by algebraic integration, that 4sin d ln 2cos = + ∫ π x x a x where a is a rational constant to be found. (4)   Q3",
+    "stem_chars": 183,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q4.pdf",
+    "stem": "  The growth of a weed on the surface of a pond is being studied. The surface area of the pond covered by the weed, A m 2, is modelled by the equation A p p t t = + 0 15 0 15 e e . . where p is a positive constant and t is the number of days after the start of the study. Given that • 30 m 2 of the surface of the pond was covered by the weed at the start of the study • 50 m 2 of the surface of the pond was covered by the weed T days after the start of the study (a) show that p = 2.4 (2) (b) find the value of T, giving your answer to one decimal place. (Solutions relying entirely on graphical or numerical methods are not acceptable.) (4) The weed grows until it covers the surface of the pond. (c) Find, according to the model, the maximum possible surface area of the pond. (1)   Q4",
+    "stem_chars": 799,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q5.pdf",
+    "stem": "  y x O M Q P Figure 1 Figure 1 shows a sketch of part of the curve with equation y = 6 ln(2x + 3) – 1 2 x 2 + 4 x > – 3 The curve cuts the negative x‑axis at the point P, as shown in Figure 1. (a) Show that the x coordinate of P lies in the interval [–1.25, –1.2] (2) The curve cuts the positive x‑axis at the point Q, also shown in Figure 1. Using the iterative formula xn+1 = 12 ln( ) xn + + with x1 = 6 (b) (i) find, to 4 decimal places, the value of x2 (ii) find, by continued iteration, the x coordinate of Q. Give your answer to 4 decimal places. (3) The curve has a maximum turning point at M, as shown in Figure 1. (c) Using calculus and showing each stage of your working, find the x coordinate of M. (4)       Q5",
+    "stem_chars": 743,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q6.pdf",
+    "stem": "  The function f is defined by f(x) = 5 x x − − x > 4 (a) Show, by using calculus, that f is a decreasing function. (3) (b) Find f –1 (3) (c) (i) Show that ff(x) = ax b x c + + where a, b and c are constants to be found. (ii) Deduce the range of ff. (5)       Q6",
+    "stem_chars": 282,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "jan",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q7.pdf",
+    "stem": "  y x O y = f(x) V Figure 2 Figure 2 shows a sketch of part of the graph with equation y = f(x), where f(x) = 1 2 ½2x + 7½ – 10 (a) State the coordinates of the vertex, V, of the graph. (2) (b) Solve, using algebra, 2 ½2x + 7½ – 10  1 3 x + 1 (4) (c) Sketch the graph with equation y = ½f(x)½ stating the coordinates of the local maximum point and each local minimum point. (4)       Q7",
+    "stem_chars": 407,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q8.pdf",
+    "stem": "  A dose of antibiotics is given to a patient. The amount of the antibiotic, x milligrams, in the patient's bloodstream t hours after the dose was given, is found to satisfy the equation log10 x = 2.74 – 0.079t (a) Show that this equation can be written in the form x = pq –t where p and q are constants to be found. Give the value of p to the nearest whole number and the value of q to 2 significant figures. (4) (b) With reference to the equation in part (a), interpret the value of the constant p. (1) When a different dose of the antibiotic is given to another patient, the values of x and t satisfy the equation x = 400 × 1.4 –t (c) Use calculus to find, to 2 significant figures, the value of d d x t when t = 5 (3)       Q8",
+    "stem_chars": 750,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q9.pdf",
+    "stem": "  In this question you must show detailed reasoning. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for 0 < x  π, the equation 2 sec 2 x – 3 tan x = 2 giving the answers, as appropriate, to 3 significant figures. (4) (ii) Prove that sin3 cos3 sin cos − ≡ θ θ θ θ (4)       Q9",
+    "stem_chars": 332,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_jan.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_jan",
+    "source_question_number": 10,
+    "year": 2022,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2022_jan/questions/q10.pdf",
+    "stem": "  y x O C Figure 3 Figure 3 shows a sketch of the curve C with equation x = ye 2y y ∈  (a) Show that d d y x y x y = + ( ) (4) Given that the straight line with equation x = k, where k is a constant, cuts C at exactly two points, (b) find the range of possible values for k. (3)     TOTAL FOR PAPER IS 75 MARKS END Q10",
+    "stem_chars": 334,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q1.pdf",
+    "stem": "  The curve C has equation y = (3x – 2) (a) Find d d y x (2) Given that the point P 3 1 ,     lies on C, (b) find the equation of the normal to C at P. Write your answer in the form ax + by + c = 0 where a, b and c are integers to be found. (4)   Q1",
+    "stem_chars": 265,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q2.pdf",
+    "stem": "  The functions f and g are defined by f(x) = 5 − + x x x ∈  , x ≠ – 2 g(x) = 2x – 7 x ∈  (a) Find the value of fg(5) (2) (b) Find f –1 (3) (c) Solve the equation f a     = g(a + 3) (4)       Q2",
+    "stem_chars": 222,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q3.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Given that k is a positive constant, (a) find x x k x + ∫ d (2) Given also that x x k x + = ∫ d ln (b) find the value of k (4)   Q3",
+    "stem_chars": 274,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q4.pdf",
+    "stem": "  O (0, 3.08) (5, 3.85) log10 N t Figure 1 The number of subscribers to an online video streaming service, N, is modelled by the equation N = ab t where a and b are constants and t is the number of years since monitoring began. The line in Figure 1 shows the linear relationship between t and log10 N The line passes through the points (0, 3.08) and (5, 3.85) Using this information, (a) find an equation for this line. (2) (b) Find the value of a and the value of b, giving your answers to 3 significant figures. (3) When t = T the number of subscribers is 500 000 According to the model, (c) find the value of T (2)       Q4",
+    "stem_chars": 646,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q5.pdf",
+    "stem": "  O A B y = f(x) y x Figure 2 Figure 2 shows part of the graph with equation y = f(x), where f(x) = ½kx – 9½ – 2 x ∈  and k is a positive constant. The graph intersects the y‑axis at the point A and has a minimum point at B as shown. (a) (i) Find the y coordinate of A (ii) Find, in terms of k, the x coordinate of B (2) (b) Find, in terms of k, the range of values of x that satisfy the inequality ½kx – 9½ – 2 < 0 (3) Given that the line y = 3 – 2x intersects the graph y = f(x) at two distinct points, (c) find the range of possible values of k (3)       Q5",
+    "stem_chars": 581,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q6.pdf",
+    "stem": "  P x O y C Figure 3 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The function f is defined by f(x) = 5(x 2 – 2)(4x + 9) x  – 9 (a) Show that f′(x) = k x x x ( ) ( ) < ; < where k is an integer to be found. (4) (b) Hence, find the values of x for which f′(x) = 0 (1) Figure 3 shows a sketch of the curve C with equation y = f(x). The curve has a local maximum at the point P (c) Find the exact coordinates of P (2) The function g is defined by g(x) = 2f(x) + 4 – 9 4  x  0 (d) Find the range of g (3)       Q6",
+    "stem_chars": 618,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Show that the equation 2 sin θ (3 cot 2 2θ – 7) = 13 sec θ can be written as 3 cosec 2 2θ – 13 cosec 2θ – 10 = 0 (4) (b) Hence solve, for 0 < θ < 2 π , the equation 2 sin θ (3 cot 2 2θ – 7) = 13 sec θ giving your answers to 3 significant figures. (4)       Q7",
+    "stem_chars": 416,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q8.pdf",
+    "stem": "  T t O v Figure 4 Figure 4 is a graph showing the velocity of a sprinter during a 100 m race. The sprinter’s velocity during the race, v m s –1, is modelled by the equation v = 12 – e t – 10 – 12e –0.75t t  0 where t seconds is the time after the sprinter begins to run. According to the model, (a) find, using calculus, the sprinter’s maximum velocity during the race. (5) Given that the sprinter runs 100 m in T seconds, such that T∫v dt = 100 (b) show that T is a solution of the equation T = 1 12 (116 – 16e –0.75T + e T – 10 – e –10 ) (4) The iteration formula Tn + 1 = 1 12 (116 – 16e –0.75Tn + e Tn – 10 – e –10 ) is used to find an approximate value for T Using this iteration formula with T1 = 10 (c) find, to 4 decimal places, (i) the value of T2 (ii) the time taken by the sprinter to run the race, according to the model. (3)       Q8",
+    "stem_chars": 868,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_may-jun.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_may-jun",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2022_may-jun/questions/q9.pdf",
+    "stem": "  M x O y Figure 5 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 5 shows the curve with equation y = 1 + + cos sin x x – 2 π < x < 3 π The point M, shown in Figure 5, is the minimum point on the curve. (a) Show that the x coordinate of M is a solution of the equation 2 sin x + cos x = –2 (4) (b) Hence find, to 3 significant figures, the x coordinate of M. (5)     TOTAL FOR PAPER: 75 MARKS END Q9",
+    "stem_chars": 505,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 1,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      1,
+      4
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q1.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. f(x) = 2 x x x x − − + + (a) Show that f(x) ≡ Ax + B + C x x x + ( ) + + where A, B and C are integers to be found. (4) (b) Hence, find f d ( ) x x ∫ giving your answer in the form p + ln q , where p and q are integers. (5) Q1",
+    "stem_chars": 357,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 2,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q2.pdf",
+    "stem": "The functions f and g are defined by f(x) = 5 − x + x  0 g(x) = 4sin 3 x π   +     x ∈  (a) Find the range of f (2) (b) (i) Find f −1(x) (ii) Write down the domain of f −1 (3) (c) Find fg(−π) (2) Q2",
+    "stem_chars": 206,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 3,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q3.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. y (2, 0) A O x Figure 1 Figure 1 shows a sketch of part of the curve with equation y = f(x) where f(x) = (x − 2) 2 e 3x x ∈  The curve has a maximum turning point at A and a minimum turning point at (2, 0) (a) Use calculus to find the exact coordinates of A. (5) Given that the equation f(x) = k , where k is a constant, has at least two distinct roots, (b) state the range of possible values for k. (2) Q3",
+    "stem_chars": 538,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 4,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q4.pdf",
+    "stem": "y = log10 (2x + 1) (a) Express x in terms of y. (2) (b) Hence, giving your answer in terms of x, find d d y x (3) Q4",
+    "stem_chars": 116,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 5,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q5.pdf",
+    "stem": "P O t Figure 2 The profit made by a company, £ P million, t years after the company started trading, is modelled by the equation P t t t = − + + + ( )         ln The graph of P against t is shown in Figure 2. According to the model, (a) show that exactly one year after it started trading, the company had made a loss of approximately £ 830 000 (2) A manager of the company wants to know the value of t for which P = 0 (b) Show that this value of t occurs in the interval [6, 7] (2) (c) Show that the equation P = 0 can be expressed in the form t t t = + + ( ) +         ln (2) (d) Using the iteration formula t t t t n n n + = + + ( ) +         = ln with find the value of t2 and the value of t6 , giving your answers to 3 decimal places. (3) (e) Hence find, according to the model, how many months it takes in total, from when the company started trading, for it to make a profit. (2) Q5",
+    "stem_chars": 913,
+    "text_status": "ok",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 3
+      },
+      {
+        "label": "e",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 6,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q6.pdf",
+    "stem": "y = 2 + + sin cos sin x x x Show that d d y x = a x b x c x x tan sec sec sin + + + 2 where a, b and c are integers to be found. (6) Q6",
+    "stem_chars": 135,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 7,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q7.pdf",
+    "stem": "y C1 x O Figure 3 Figure 3 shows a sketch of the graph of C1 with equation y = 5 − | 3x − 22 | (a) Write down the coordinates of (i) the vertex of C1 (ii) the intersection of C1 with the y-axis. (2) (b) Find the x coordinates of the intersections of C1 with the x-axis. (2) Diagram 1, shown on page 21, is a copy of Figure 3. (c) On Diagram 1, sketch the curve C2 with equation y = 1 9 x2 − 9 Identify clearly the coordinates of any points of intersection of C2 with the coordinate axes. (3) (d) Find the coordinates of the points of intersection of C1 and C2 (Solutions relying entirely on calculator technology are not acceptable.) (5) y C1 x O Diagram 1 Q7",
+    "stem_chars": 659,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 8,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q8.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Express 8 sin x − 15 cos x in the form R sin (x − α) , where R > 0 and 0 < α < 2 π Give the exact value of R, and give the value of α, in radians, to 4 significant figures. (3) f(x) = + − sin cos x x x > 0 (b) Find (i) the minimum value of f(x) (ii) the smallest value of x at which this minimum value occurs. (4) (c) State the y coordinate of the minimum points on the curve with equation y = 2f(x) − 5 x > 0 (1) (d) State the smallest value of x at which a maximum point occurs for the curve with equation y = −f(2x) x > 0 (1) Q8",
+    "stem_chars": 666,
+    "text_status": "ok",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2022_oct-nov.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2022_oct-nov",
+    "source_question_number": 9,
+    "year": 2022,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p3/2022_oct-nov/questions/q9.pdf",
+    "stem": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Given that cos 2θ − sin 3θ ≠ 0 (a) prove that cos sin cos2 sin3 2sin 4sin θ θ θ θ θ θ + ≡ − − − (4) (b) Hence solve, for 0 < θ  360° cos 2cosec cos2 sin3 θ θ θ θ = − Give your answers to one decimal place. (5) TOTAL FOR PAPER IS 75 MARKS END Q9",
+    "stem_chars": 376,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2023_jan.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q1.pdf",
+    "stem": "  The functions f and g are defined by (a) Write down the range of f (1) (b) Find the value of fg (1.5) (2) (c) Find g−1 (3)   (Total for Question 1 is 6 marks)",
+    "stem_chars": 170,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q2.pdf",
+    "stem": "  f x x x < ; : cos sin (a) Express f (x) in the form where R and α are constants, R > 0 and Give the exact value of R and give the value of α, in radians, to 3 decimal places. (3) g f x x (b) Using the answer to part (a), (i) write down the exact maximum value of g (x), (ii) find the smallest positive value of x for which this maximum value occurs, giving your answer to 2 decimal places. (3)   (Total for Question 2 is 6 marks)",
+    "stem_chars": 441,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q3.pdf",
+    "stem": "  O (−4.8, 0) (0, 1.5) y x l log10 Figure 1 The line l in Figure 1 shows a linear relationship between log10 y and x. The line passes through the points (0, 1.5) and (−4.8, 0) as shown. (a) Write down an equation for l. (2) (b) Hence, or otherwise, express y in the form kbx, giving the values of the constants k and b to 3 significant figures. (3)   (Total for Question 3 is 5 marks)",
+    "stem_chars": 394,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q4.pdf",
+    "stem": "  f x x x x x x x x < (a) Find the values of the constants A, B, C and D such that f x Ax Bx C D x < ; : < ; (4) (b) Hence find, f d x x < ; : (3)       (Total for Question 4 is 7 marks)",
+    "stem_chars": 206,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Prove that (4) (b) Hence solve, for giving your answers to 2 decimal places. (5)       (Total for Question 5 is 9 marks)",
+    "stem_chars": 277,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q6.pdf",
+    "stem": "  y P Q S R x O Figure 2 Figure 2 shows a sketch of the graph with equation y x a a < ; ; where a is a positive constant. The graph • cuts the y-axis at the point P • cuts the x-axis at the points Q and R • has a minimum point at S (a) Find, in simplest form in terms of a, the coordinates of (i) point P (ii) points Q and R (iii) point S (4) (b) Find, in simplest form in terms of a, the values of x for which x a a x a < < ; < (4)       (Total for Question 6 is 8 marks)",
+    "stem_chars": 492,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q7.pdf",
+    "stem": "  The curve C has equation (a) Show that d d y x a x b < ; where a and b are integers to be found. (4) The point P with y coordinate lies on C. Given that the tangent to C at P crosses the x-axis at the point Q. (b) find, in simplest form, the exact x coordinate of Q. (5)       (Total for Question 7 is 9 marks)",
+    "stem_chars": 332,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "jan",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      23,
+      24
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q8.pdf",
+    "stem": "  Find, in simplest form, cos sin x x x d (5)   (Total for Question 8 is 5 marks)",
+    "stem_chars": 91,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2023_jan.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q9.pdf",
+    "stem": "  O y P C x Figure 3 Figure 3 shows a sketch of part of the curve C with equation y x x < ; e  (a) Find d d y x , giving your answer in simplest form. (2) The point P with x coordinate α lies on C. Given that the tangent to C at P passes through the origin, as shown in Figure 3, (b) show that x = α is a solution of the equation x x x e e < < ; (3) (c) Hence show that α lies between 1 and 2 (2) (d) Show that the equation in part (b) can be written in the form x x < ; : e (1) The iteration formula xn xn < ; : < e with x1 = is used to find an approximation for α. (e) Use the iteration formula to find, to 4 decimal places, the value of (i) x3 (ii) α (3)       (Total for Question 9 is 11 marks)",
+    "stem_chars": 719,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_jan.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_jan",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2023_jan/questions/q10.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. A population of fruit flies is being studied. The number of fruit flies, F, in the population, t days after the start of the study, is modelled by the equation F kt kt < ; e e where k is a constant. Use the equation of the model to answer parts (a), (b) and (c). (a) Find the number of fruit flies in the population at the start of the study. (1) Given that there are 200 fruit flies in the population 15 days after the start of the study, (b) show that k = 1 ln (3) Given also that, when t = T, the number of fruit flies in the population is increasing at a rate of 10 per day, (c) find the possible values of T, giving your answers to one decimal place. (5)     (Total for Question 10 is 9 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 874,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q1.pdf",
+    "stem": "  g(x) = x 6 + 2x – 1000 (a) Show that g(x) = 0 has a root α in the interval [3, 4] (2) Using the iteration formula x x x n n < ; : ; 1000 with (b) (i) find, to 4 decimal places, the value of x2 (ii) find, by repeated iteration, the value of α. Give your answer to 4 decimal places. (3)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 332,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q2.pdf",
+    "stem": "  log6 T log6 x (2, 0) (0, 4) O Figure 1 Figure 1 shows the linear relationship between log6 T and log6 x The line passes through the points (0, 4) and (2, 0) as shown. (a) (i) Find an equation linking log6 T and log6 x (ii) Hence find the exact value of T when x = 216 (3) (b) Find an equation, not involving logs, linking T with x (3)   (Total for Question 2 is 6 marks)",
+    "stem_chars": 382,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q3.pdf",
+    "stem": "  (i) Find d dx x ln sin 2 3 < ; writing your answer in simplest form. (2) (ii) (a) Find d dx x < ; : (2) (b) Hence show that x x x R < ; : 5 d where R is an integer to be found. (Solutions relying on calculator technology are not acceptable.) (3)   (Total for Question 3 is 7 marks)",
+    "stem_chars": 293,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q4.pdf",
+    "stem": "  The function f is defined by f(x) = 2x 2 – 5 x  0 x ∈  (a) State the range of f (1) On the following page there is a diagram, labelled Diagram 1, which shows a sketch of the curve with equation y = f(x). (b) On Diagram 1, sketch the curve with equation y = f –1(x). (2) The curve with equation y = f(x) meets the curve with equation y = f –1(x) at the point P Using algebra and showing your working, (c) find the exact x coordinate of P (3)   y O x y = f(x) Diagram 1 (Total for Question 4 is 6 marks)",
+    "stem_chars": 515,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for 0 < x < π x x < ; : ; : 8 sec (3) (ii) Solve, for 0 < θ < 360° 10 sin θ = 3 cos 2θ (4)       (Total for Question 5 is 7 marks)",
+    "stem_chars": 294,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q6.pdf",
+    "stem": "  y O x P Figure 2 Figure 2 shows a sketch of the graph y = f(x), where f(x) = 3½x – 2½ – 10 The vertex of the graph is at point P, shown in Figure 2. (a) Find the coordinates of P (2) (b) Find ff(0) (2) (c) Solve the inequality 3½x – 2½ – 10 < 5x + 10 (2) (d) Solve the equation f(½x½) = 0 (3)       (Total for Question 6 is 9 marks)",
+    "stem_chars": 354,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q7.pdf",
+    "stem": "  A scientist is studying two different populations of bacteria. The number of bacteria N in the first population is modelled by the equation N = Ae kt t  0 where A and k are positive constants and t is the time in hours from the start of the study. Given that • there were 2500 bacteria in this population at the start of the study • there were 10 000 bacteria 8 hours later (a) find the exact value of A and the value of k to 4 significant figures. (3) The number of bacteria N in the second population is modelled by the equation N = 60 000e –0.6t t  0 where t is the time in hours from the start of the study. (b) Find the rate of decrease of bacteria in this population exactly 5 hours from the start of the study. Give your answer to 3 significant figures. (2) When t = T, the number of bacteria in the two different populations was the same. (c) Find the value of T, giving your answer to 3 significant figures. (Solutions relying entirely on calculator technology are not acceptable.) (3)       (Total for Question 7 is 8 marks)",
+    "stem_chars": 1058,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q8.pdf",
+    "stem": "  y O x C Figure 3 Figure 3 shows a sketch of the curve C with equation y = f(x) , where f(x) = (2x + 1) 3e –4x (a) Show that f′(x) = A(2x + 1) 2 (1 – 4x) e –4x where A is a constant to be found. (4) (b) Hence find the exact coordinates of the two stationary points on C. (3) The function g is defined by g(x) = 8f(x – 2) (c) Find the coordinates of the maximum stationary point on the curve with equation y = g(x) . (2)       (Total for Question 8 is 9 marks)",
+    "stem_chars": 480,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_may-jun.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q9.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Show that cos sin sin cos x x x x x < ; cosec x ≠ 2 nπ n ∈  (3) (b) Hence solve, for 0 < θ < 2 π cos2 sin 2 sin cos θ θ θ θ   +     = 6 cot θ – 4 giving your answers to 3 significant figures as appropriate. (5) (c) Using the result from part (a), or otherwise, find the exact value of cos2 sin 2 cot d sin cos π π x x x x x x   +     ∫ (2)       v____________________________________________________________________________________ (Total for Question 9 is 10 marks)",
+    "stem_chars": 636,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2023_may-jun.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_may-jun",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2023_may-jun/questions/q10.pdf",
+    "stem": "  y O x Q P Figure 4 Figure 4 shows a sketch of the curve with equation x = 2 2y y < ; (a) Find d d x y giving your answer as a fully simplified fraction. (4) The tangents at points P and Q on the curve are parallel to the y-axis, as shown in Figure 4. (b) Use the answer to part (a) to find the equations of these two tangents. (4)     (Total for Question 10 is 8 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 414,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 1,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q1.pdf",
+    "stem": " A curve has equation y = f (x) where f (x) = x 2 – 5x + e x x ∈  (a) Show that the equation f (x) = 0 has a root, α, in the interval [1, 2] (2) The iterative formula x x n n xn < ; : e with x1 = 1 is used to find an approximate value for the root α. (b) (i) Find the value of x2 to 4 decimal places. (ii) Find, by repeated iteration, the value of α, giving your answer to 4 decimal places. (3)  (Total for Question 1 is 5 marks)",
+    "stem_chars": 438,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 2,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q2.pdf",
+    "stem": " The function f is defined by f (x) = x x < ; 4 x ∈ , x ≠ 4 (a) Find ff (6) (2) (b) Find f –1 (3) The function g is defined by g (x) = x 2 + 5 x ∈ , x > 0 (c) Find the exact value of a for which gf (a) = 7 (3)    (Total for Question 2 is 8 marks)",
+    "stem_chars": 264,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 3,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q3.pdf",
+    "stem": " (a) Using the identity for cos (A + B) , prove that cos 2A ≡ 2 cos 2 A – 1 (2) (b) Hence, using algebraic integration, find the exact value of (5 4cos 3 )d π π x x < ; (4)  (Total for Question 3 is 6 marks)",
+    "stem_chars": 215,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 4,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q4.pdf",
+    "stem": " A new mobile phone is released for sale. The total sales N of this phone, in thousands, is modelled by the equation N = 125 – Ae –0.109t t  0 where A is a constant and t is the time in months after the phone was released for sale. Given that when t = 0 , N = 32 (a) state the value of A. (1) Given that when t = T the total sales of the phone was 100 000 (b) find, according to the model, the value of T. Give your answer to 2 decimal places. (3) (c) Find, according to the model, the rate of increase in total sales when t = 7, giving your answer to 3 significant figures. (Solutions relying entirely on calculator technology are not acceptable.) (2) The total sales of the mobile phone is expected to reach 150 000 Using this information, (d) give a reason why the given equation is not suitable for modelling the total sales of the phone. (1)    (Total for Question 4 is 7 marks)",
+    "stem_chars": 900,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 5,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      14
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q5.pdf",
+    "stem": " The curve C has equation y = ln x k x k < ; : < x ∈  where k is a positive constant. (a) Show that d d y x Ax B x k x k < ; : : ln where A and B are constants to be found. (3) Given that C has exactly three turning points, (b) find the x coordinate of each of these points. Give your answer in terms of k where appropriate. (3) (c) find the upper limit to the value for k. (1)  (Total for Question 5 is 7 marks)",
+    "stem_chars": 421,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 6,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      15,
+      16
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q6.pdf",
+    "stem": " An area of sea floor is being monitored. The area of the sea floor, S km 2, covered by coral reefs is modelled by the equation S = pq t where p and q are constants and t is the number of years after monitoring began. Given that log10 S = 4.5 – 0.006t (a) find, according to the model, the area of sea floor covered by coral reefs when t = 2 (2) (b) find a complete equation for the model in the form S = pq t giving the value of p and the value of q each to 3 significant figures. (3) (c) With reference to the model, interpret the value of the constant q (1)  (Total for Question 6 is 6 marks)",
+    "stem_chars": 603,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 7,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q7.pdf",
+    "stem": " y O x Figure 1 Figure 1 shows a sketch of the curve C with equation y = f (x) where f e ( ) x x x < ; : ; 2 (a) Find the range of f (2) (b) Show that < ; : : : f e ( ) x x x A Bx x where A and B are constants to be found. (4) Given that the line y = k , where k is a constant, k > 0, intersects the curve at exactly two distinct points, (c) find the exact range of values of k (4)    (Total for Question 7 is 10 marks)",
+    "stem_chars": 435,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 8,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q8.pdf",
+    "stem": " (a) Prove that 2 cosec 2 2θ (1 – cos 2θ) ≡ 1 + tan 2 θ (4) (b) Hence solve for 0 < x < 360° , where x ≠ (90n)° , n ∈  , the equation 2 cosec 2 2x (1 – cos 2x) = 4 + 3 sec x giving your answers to one decimal place. (Solutions relying entirely on calculator technology are not acceptable.) (4)    (Total for Question 8 is 8 marks)",
+    "stem_chars": 347,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 9,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q9.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. y y = f (x) x = k B A O x Figure 2 Figure 2 shows a sketch of the curve with equation y = | 2 – 4 ln (x + 1) | x > k where k is a constant. Given that the curve • has an asymptote at x = k • cuts the y-axis at point A • meets the x-axis at point B as shown in Figure 2, (a) state the value of k (1) (b) (i) find the y coordinate of A (ii) find the exact x coordinate of B (3) (c) Using algebra and showing your working, find the set of values of x such that | 2 – 4 ln (x + 1) | > 3 (5)    (Total for Question 9 is 9 marks)",
+    "stem_chars": 662,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2023_oct-nov.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2023_oct-nov",
+    "source_question_number": 10,
+    "year": 2023,
+    "season": "oct-nov",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2023_oct-nov/questions/q10.pdf",
+    "stem": " In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. A curve C has equation sin 4 π x y y x < < < < < The point P with x coordinate 1 4 lies on C (a) Find the exact y coordinate of P (2) (b) Find d d x y (2) (c) Hence show that d d y x can be written in the form d d y x q r x s < ; ; ( ) where q, r and s are constants to be found. (3) Using the answer to part (c), (d) (i) state the x coordinate of the point where the value of d d y x is a minimum, (ii) state the value of d d y x at this point. (2)   (Total for Question 10 is 9 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 649,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2024_jan.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "jan",
+    "marks": 4,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q1.pdf",
+    "stem": "  The point P(–4, –3) lies on the curve with equation y = f(x), x ∈  Find the point to which P is mapped when the curve with equation y = f(x) is transformed to the curve with equation (a) y = f(2x) (1) (b) y = 3f(x – 1) (2) (c) y = ½f(x)½ (1)   (Total for Question 1 is 4 marks)",
+    "stem_chars": 290,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q2.pdf",
+    "stem": "  A curve has equation y = f(x) where f(x) = x x x < ; < x ∈  (a) Show that the equation f(x) = 0 has a root, α, in the interval [2, 3] (2) (b) Show that the equation f(x) = 0 can be written as x x x x < ; : (1) The iterative formula x x x x n n n n < ; : < is used to find α (c) Starting with x1 = 2 and using the iterative formula, (i) find, to 4 decimal places, the value of x2 (ii) find, to 4 decimal places, the value of α (3)   (Total for Question 2 is 6 marks)",
+    "stem_chars": 478,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q3.pdf",
+    "stem": "  The amount of money raised for a charity is being monitored. The total amount raised in the t months after monitoring began, £D, is modelled by the equation log . . 1 04 0 38 D t < ; (a) Write this equation in the form D = ab t where a and b are constants to be found. Give each value to 4 significant figures. (3) When t = T, the total amount of money raised is £45 000 According to the model, (b) find the value of T, giving your answer to 3 significant figures. (2) The charity aims to raise a total of £350 000 within the first 12 months of monitoring. According to the model, (c) determine whether or not the charity will achieve its aim. (2)   (Total for Question 3 is 7 marks)",
+    "stem_chars": 695,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "jan",
+    "marks": 13,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q4.pdf",
+    "stem": "  The function f is defined by f(x) = x x x x < ; < ; < x ∈  x > 2 (a) Show that f(x) = x x − (3) (b) Show, using calculus, that f is a decreasing function. You must make your reasoning clear. (3) The function g is defined by g(x) = 3 + 2 ln x x  1 (c) Find g –1 (3) (d) Find the exact value of a for which gf(a) = 5 (4)       (Total for Question 4 is 13 marks)",
+    "stem_chars": 383,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      12
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The temperature, T °C, of the air in a room t minutes after a heat source is switched off, is modelled by the equation T = 10 + Ae –Bt where A and B are constants. Given that the temperature of the air in the room at the instant the heat source was switched off was 18 °C, (a) find the value of A (1) Given also that, exactly 45 minutes after the heat source was switched off, the temperature of the air in the room was 16 °C, (b) find the value of B to 3 significant figures. (3) Using the values for A and B, (c) find, according to the model, the rate of change of the temperature of the air in the room exactly two minutes after the heat source was switched off. Give your answer in °C min –1 to 3 significant figures. (2) (d) Explain why, according to the model, the temperature of the air in the room cannot fall to 5 °C (1)   (Total for Question 5 is 7 marks)",
+    "stem_chars": 1008,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 1
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "jan",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q6.pdf",
+    "stem": "  O y = f(x) R P Q x y Figure 1 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 1 shows a sketch of the curve with equation y = f(x), where f(x) = 3sin 2e cos x x x π < < The curve intersects the x‑axis at point R, as shown in Figure 1. (a) State the coordinates of R (1) The curve has two turning points, at point P and point Q, also shown in Figure 1. (b) Show that, at points P and Q, a x b x c sin sin < < ; where a, b and c are integers to be found. (4) (c) Hence find the x coordinate of point Q, giving your answer to 3 decimal places. (2)       (Total for Question 6 is 7 marks)",
+    "stem_chars": 696,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "jan",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. The curve C has equation y x k x k < ; : 9 3 ( ) where k is a positive constant not equal to 3 (a) Find d d y x giving your answer in simplest form in terms of k. (2) The point P with x coordinate 1 lies on C. Given that the gradient of the curve at P is –12 (b) find the two possible values of k (3) Given also that k < 3 (c) find the equation of the normal to C at P, writing your answer in the form ax by c < < ; 0, where a, b and c are integers to be found. (3) (d) show, using algebraic integration that, d ln10 9(3 ) x λ x k < ; :98 where λ is a constant to be found. (4)       (Total for Question 7 is 12 marks)",
+    "stem_chars": 771,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "jan",
+    "marks": 11,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q8.pdf",
+    "stem": "  O x y Figure 2 In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. The graph shown in Figure 2 has equation y a x b < ; ; where a and b are positive constants, a > b (a) Find, giving your answer in terms of a and b, (i) the coordinates of the maximum point of the graph, (ii) the coordinates of the point of intersection of the graph with the y‑axis, (iii) the coordinates of the points of intersection of the graph with the x‑axis. (5) On page 24 there is a copy of Figure 2 called Diagram 1. (b) On Diagram 1, sketch the graph with equation y x < ; 1 (2) Given that the graphs y x < ; 1 and y a x b < ; ; intersect at x = –3 and x = 5 (c) find the value of a and the value of b (4)     O x y Diagram 1   (Total for Question 8 is 11 marks)",
+    "stem_chars": 832,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_jan.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_jan",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      27
+    ],
+    "qp_pdf": "p3/2024_jan/questions/q9.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Show that the equation 3sin cos (2 sec2 )(cos sin ) cos sin < ; : ; θ θ θ θ θ θ θ can be written in the form 3sin 2 4cos2 < ; θ θ (3) (b) Hence solve for < < π π x sin cos cos sin ( sec )(cos sin ) x x x x x x x < ; < : giving the answer to 3 significant figures. (5)     (Total for Question 9 is 8 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 485,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q1.pdf",
+    "stem": "  y x O P y = f (x) Figure 1 Figure 1 shows a sketch of the graph with equation y = f (x) where f (x) = 2| x – 5| + 10 The point P, shown in Figure 1, is the vertex of the graph. (a) State the coordinates of P (2) (b) Use algebra to solve 2| x – 5| + 10 > 6x (Solutions relying on calculator technology are not acceptable.) (2) (c) Find the point to which P is mapped, when the graph with equation y = f (x) is transformed to the graph with equation y = 3f (x – 2) (2)   (Total for Question 1 is 6 marks)",
+    "stem_chars": 514,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      3,
+      6
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q2.pdf",
+    "stem": "  g( ) x x x x < ; : ; (a) Write g (x) in the form Ax B C x < < ; 2 where A, B and C are integers to be found. (3) (b) Hence use algebraic integration to show that g( )d ln3 < ; : x x α β where α and β are integers to be found. (4)       (Total for Question 2 is 7 marks)",
+    "stem_chars": 291,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      7,
+      8
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q3.pdf",
+    "stem": "  (i) The variables x and y are connected by the equation y x x = 10 > Sketch the graph of log10 y against log10 x Show on your sketch the coordinates of the points of intersection of the graph with the axes. (3) (ii) log3 N O (0, 4) (–2, 0) t Figure 2 Figure 2 shows the linear relationship between log3 N and t. Show that N = ab t where a and b are constants to be found. (3)   (Total for Question 3 is 6 marks)",
+    "stem_chars": 423,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      9,
+      12
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q4.pdf",
+    "stem": "  f (x) = 8 sin x cos x + 4 cos 2 x – 3 (a) Write f (x) in the form a sin 2 x + b cos 2x + c where a, b and c are integers to be found. (3) (b) Use the answer to part (a) to write f (x) in the form R sin (2x + α) + c where R > 0 and 0 < α < 2 π Give the exact value of R and give the value of α in radians to 3 significant figures. (3) (c) Hence, or otherwise, (i) state the maximum value of f (x) (ii) find the second smallest positive value of x at which a maximum value of f (x) occurs. Give your answer to 3 significant figures. (3)       (Total for Question 4 is 9 marks)",
+    "stem_chars": 596,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      13,
+      16
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q5.pdf",
+    "stem": "  The functions f and g are defined by f ( ) ln x x x < ; > g( ) x x x x < ; : > (a) Find f –1(22) (2) (b) Use differentiation to prove that g is an increasing function. (3) (c) Find g –1 (3) (d) Find the range of fg (2)       (Total for Question 5 is 10 marks)",
+    "stem_chars": 281,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      17,
+      20
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q6.pdf",
+    "stem": "  y R P l O x Figure 3 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 3 shows a sketch of part of the curve with equation y x < ; The line l, shown in Figure 3, is the normal to the curve at the point P (8, 5) (a) Use calculus to show that an equation of l is 5x + 2y – 50 = 0 (5) The region R, shown shaded in Figure 3, is bounded by the curve, the x-axis and l. (b) Use algebraic integration to find the exact area of R. (4)       (Total for Question 6 is 9 marks)",
+    "stem_chars": 577,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 5
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q7.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Given that 2 sin (x + 45°) = cos (x – 60°) show that tan x = –2 – 3 (4) (b) Hence or otherwise, solve, for 0  θ < 180° 2 sin (2θ) = cos (2θ – 105°) (4)       (Total for Question 7 is 8 marks)",
+    "stem_chars": 349,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q8.pdf",
+    "stem": "  h x d O Figure 4 Figure 4 is a graph showing the path of a golf ball after the ball has been hit until it first hits the ground. The vertical height, h metres, of the ball above the ground has been plotted against the horizontal distance travelled, x metres, measured from where the ball was hit. The ball travels a horizontal distance of d metres before it first hits the ground. The ball is modelled as a particle travelling in a vertical plane above horizontal ground. The path of the ball is modelled by the equation h = 1.5x – 0.5x e 0.02x 0  x  d Use the model to answer parts (a), (b) and (c). (a) Find the value of d, giving your answer to 2 decimal places. (Solutions relying entirely on calculator technology are not acceptable.) (3) (b) Show that the maximum value of h occurs when x x < ; : ln (4) Using the iteration formula x x x n n < ; < : ; ln with (c) (i) find the value of x2 to 2 decimal places, (ii) find, by repeated iteration, the horizontal distance travelled by the golf ball before it reaches its maximum height. Give your answer to 2 decimal places. (3)       (Total for Question 8 is 10 marks)",
+    "stem_chars": 1145,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_may-jun.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_may-jun",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "may-jun",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2024_may-jun/questions/q9.pdf",
+    "stem": "  y O x , 3 π P k < ; : Figure 5 The curve shown in Figure 5 has equation x = 4sin 2 y – 1 0  y  2 π The point , 3 π P k < ; : 7 lies on the curve. (a) Verify that k = 2 (1) (b) (i) Find d d x y in terms of y (ii) Hence show that d d y x x x < ; : 1 3 (6) The normal to the curve at P cuts the x-axis at the point N. (c) Find the exact area of triangle OPN, where O is the origin. Give your answer in the form aπ + bπ 2 where a and b are constants. (3)     (Total for Question 9 is 10 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 536,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 6
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 1,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q1.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Solve, for 0 < θ  360° , the equation 3 tan 2 θ + 7 sec θ – 3 = 0 giving your answers to one decimal place. (5)   (Total for Question 1 is 5 marks)",
+    "stem_chars": 291,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 2,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 5,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q2.pdf",
+    "stem": "  y x O P Figure 1 Figure 1 shows a sketch of the curve with equation x = 2y 2 + 5y – 6 (a) Find d d y x in terms of y. (2) The point P lies on the curve and is shown in Figure 1. Given that the tangent to the curve at P is parallel to the y‑axis, (b) find the coordinates of P. (3)   (Total for Question 2 is 5 marks)",
+    "stem_chars": 328,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 3,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 7,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      5,
+      8
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q3.pdf",
+    "stem": "  y x O Figure 2 In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. Figure 2 shows a sketch of the curve with equation y = f (x) , where f (x) = 2x 2 – 10x x ∈  (a) Solve the equation f ( | x |) = 48 (3) (b) Find the set of values of x for which | f (x) |  5 2 x (4)       (Total for Question 3 is 7 marks)",
+    "stem_chars": 408,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 4,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      9,
+      10
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q4.pdf",
+    "stem": "  The number of bacteria on a surface is being monitored. The number of bacteria, N, on the surface, t hours after monitoring began is modelled by the equation log10 N = 0.35t + 2 Use the equation of the model to answer parts (a) to (c). (a) Find the initial number of bacteria on the surface. (1) (b) Show that the equation of the model can be written in the form N = ab t where a and b are constants to be found. Give the value of b to 2 decimal places. (3) (c) Hence find the rate of growth of bacteria on the surface exactly 5 hours after monitoring began. (2)   (Total for Question 4 is 6 marks)",
+    "stem_chars": 610,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 5,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q5.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (a) Show that sin 3x can be written in the form P sin x + Q sin 3 x where P and Q are constants to be found. (4) (b) Hence or otherwise, solve, for 0 < θ  360° , the equation 2 sin 3θ = 5 sin 2θ giving your answers, in degrees, to one decimal place as appropriate. (4)       (Total for Question 5 is 8 marks)",
+    "stem_chars": 462,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 6,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q6.pdf",
+    "stem": "  The functions f and g are defined by f (x) = 6 – x + x  0 g (x) = x 2 + 5 x ∈  (a) Find gf(2) (2) (b) Find f –1 (3) (c) Solve the equation gg(x) = 126 (3)       (Total for Question 6 is 8 marks)",
+    "stem_chars": 218,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 7,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 10,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      19,
+      22
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q7.pdf",
+    "stem": "  y x O P C Figure 3 The curve C has equation y = f (x) , where f (x) = x 3 4 x + x  – 7 (a) Show that f′ (x) = kx x x 2 2 < ; : < where k is a constant to be found. (4) The point P, shown in Figure 3, is the minimum turning point on C. (b) Find the coordinates of P. (2) (c) Hence find the range of the function g defined by g (x) = –4 f (x) x  – 7 (2) The point Q with coordinates 1 , < ;: 87 lies on C. (d) Find the coordinates of the point to which Q is mapped when C is transformed to the curve with equation y = 40 f x < ; :9 2 – 8 (2)       (Total for Question 7 is 10 marks)",
+    "stem_chars": 604,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 2
+      },
+      {
+        "label": "d",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 8,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 12,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      23,
+      26
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q8.pdf",
+    "stem": "  H t O Figure 4 The heart rate of a horse is being monitored. The heart rate H, measured in beats per minute (bpm), is modelled by the equation H = 32 + 40e –0.2t – 20 e –0.9t where t minutes is the time after monitoring began. Figure 4 is a sketch of H against t. Use the equation of the model to answer parts (a) to (e). (a) State the initial heart rate of the horse. (1) In the long term, the heart rate of the horse approaches L bpm. (b) State the value of L. (1) The heart rate of the horse reaches its maximum value after T minutes. (c) Find the value of T, giving your answer to 3 decimal places. (Solutions based entirely on calculator technology are not acceptable.) (5) The heart rate of the horse is 37 bpm after M minutes. (d) Show that M is a solution of the equation t t < ; : 0 9 ln . e (2) Using the iteration formula tn tn < ; : < 0 9 ln . e with t1 = 10 (e) (i) find, to 4 decimal places, the value of t2 (ii) find, to 4 decimal places, the value of M (3)       (Total for Question 8 is 12 marks)",
+    "stem_chars": 1035,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 1
+      },
+      {
+        "label": "c",
+        "marks": 5
+      },
+      {
+        "label": "d",
+        "marks": 2
+      },
+      {
+        "label": "e",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2024_oct-nov.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2024_oct-nov",
+    "source_question_number": 9,
+    "year": 2024,
+    "season": "oct-nov",
+    "marks": 14,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      27,
+      31
+    ],
+    "qp_pdf": "p3/2024_oct-nov/questions/q9.pdf",
+    "stem": "  y x O P l C R Figure 5 Figure 5 shows a sketch of part of the curve C with equation y = f (x) where f (x) = 6 2x x x < ; < x > – 1 (a) Find f′ (x) , giving the answer in simplest form. (3) The line l is the normal to C at the point P(2, 6) (b) Show that an equation for l is 16y + 5x = 106 (3) (c) Write f (x) in the form Ax + B + D x + where A, B and D are constants. (3) The region R, shown shaded in Figure 5, is bounded by C, l and the x-axis. (d) Use algebraic integration to find the exact area of R, giving your answer in the form P + Q ln 3 , where P and Q are rational constants. (Solutions based entirely on calculator technology are not acceptable.) (5)         (Total for Question 9 is 14 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 762,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2025_jan.Q001",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 1,
+    "year": 2025,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      1,
+      2
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q1.pdf",
+    "stem": "  f (x) = 2sec x + 6x – 3 0 < x < 2 π The equation f (x) = 0 has a single root α (a) Show that 0.1 < α < 0.2 (2) (b) Show that α is a solution of x = 1 2 – 3cos x (1) The iterative formula xn + 1 = 1 2 – 3cos xn is used to find α (c) Starting with x1 = 0.15 and using the iterative formula, (i) find, to 4 decimal places, the value of x2 (ii) find, to 4 decimal places, the value of α (3)   (Total for Question 1 is 6 marks)",
+    "stem_chars": 434,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2025_jan.Q002",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 2,
+    "year": 2025,
+    "season": "jan",
+    "marks": 3,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      3,
+      4
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q2.pdf",
+    "stem": "  The weed on the surface of a pond is being monitored. The surface area of the pond covered by the weed, A m 2, is modelled by the equation log10 A = 1 + 0.03t where t is the number of weeks after monitoring began. Use the equation of the model to answer parts (a) and (b). (a) Find the surface area of the pond initially covered by the weed. (1) After T weeks, 25 m 2 of the pond is covered by the weed. (b) Find the value of T, giving your answer to 2 decimal places. (2)   (Total for Question 2 is 3 marks)",
+    "stem_chars": 520,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2025_jan.Q003",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 3,
+    "year": 2025,
+    "season": "jan",
+    "marks": 6,
+    "mark_source": "fence+tally",
+    "difficulty": "easy",
+    "qp_pages": [
+      5,
+      6
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q3.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying on calculator technology are not acceptable. A curve has equation y = 4 x x < < ; : x ≠ –3 x ∈  Use calculus to find the range of values of x for which y is increasing. (6)   (Total for Question 3 is 6 marks)",
+    "stem_chars": 298,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2025_jan.Q004",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 4,
+    "year": 2025,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      7,
+      10
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q4.pdf",
+    "stem": "  Given that x x x x Ax B Cx D x < < < < ; < < < < (a) (i) find the values of the constants A, B and C (ii) show that D = 0 (4) (b) Hence, using algebraic integration, find x x x x x < < < < ; d giving your answer in the form p + q ln 2, where p and q are integers. (5)       (Total for Question 4 is 9 marks)",
+    "stem_chars": 329,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 4
+      },
+      {
+        "label": "b",
+        "marks": 5
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2025_jan.Q005",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 5,
+    "year": 2025,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      11,
+      14
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q5.pdf",
+    "stem": "  A hot piece of metal is cooled by dropping it into water. The temperature, H °C, of the metal, t minutes after it is dropped into the water, is modelled by the equation H = 280e – 0.05t + 24 t  0 Use the equation of the model to answer parts (a) to (d). (a) Find the initial temperature of the piece of metal. (1) (b) On Diagram 1, sketch the graph of H against t. On your sketch, state the equation of the asymptote to the curve. (2) (c) Find the value of t for which H = 144, giving your answer to 2 decimal places. (Solutions based entirely on calculator technology are not acceptable.) (3) (d) Show by differentiation that d d H t = a + bH where a and b are constants to be found. (3)   H t O Diagram 1     (Total for Question 5 is 9 marks)",
+    "stem_chars": 767,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 2
+      },
+      {
+        "label": "c",
+        "marks": 3
+      },
+      {
+        "label": "d",
+        "marks": 3
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2025_jan.Q006",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 6,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      15,
+      18
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q6.pdf",
+    "stem": "  The function f is defined by f (x) = 4 x x < ; x ≠ 2 (a) Find f –1 (3) (b) Show that f f (x) = ax b cx d + + where a, b, c and d are integers to be found. (3) The point P (3, 15) lies on the curve with equation y = f (x) . (c) Find the point to which P is mapped when y = f (x) is transformed to the curve with equation y = 2f (3x) + 8 (2)       (Total for Question 6 is 8 marks)",
+    "stem_chars": 401,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 3
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2025_jan.Q007",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 7,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      19,
+      20
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q7.pdf",
+    "stem": "  Given that a and b are positive constants with a > b , (a) sketch, on separate diagrams, the graph with equation (i) y = |3x – a| (ii) y = |3x – a| – b Show on each sketch • the coordinates of the minimum point on the graph • the coordinates of the point at which the graph crosses the y-axis (6) (b) Solve the equation |3x – a| – b = 5x giving any solution for x in terms of a and b. (2)   (Total for Question 7 is 8 marks)",
+    "stem_chars": 436,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2025_jan.Q008",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 8,
+    "year": 2025,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      21,
+      24
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q8.pdf",
+    "stem": "  In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable. (i) Solve, for 0 < θ < π 3 cosec θ = 8 cos θ giving your answers, in radians, to 3 significant figures. (5) (ii) Solve, for 0 < x < 180° tan tan tan tan x x < ; : < ° ° giving your answers, in degrees, to one decimal place. (4)       (Total for Question 8 is 9 marks)",
+    "stem_chars": 420,
+    "text_status": "repaired",
+    "sub_parts": [],
+    "sub_parts_verified": false,
+    "has_markscheme": false
+  },
+  {
+    "slug": "P3.2025_jan.Q009",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 9,
+    "year": 2025,
+    "season": "jan",
+    "marks": 8,
+    "mark_source": "fence+tally",
+    "difficulty": "medium",
+    "qp_pages": [
+      25,
+      28
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q9.pdf",
+    "stem": "  y P x Q O Figure 1 Figure 1 shows a sketch of part of the curve C with equation y = f (x) where f (x) = 6 x ln (4x) x > 0 The curve cuts the x-axis at point P (a) State the x coordinate of P (1) The point Q, shown in Figure 1, is the stationary point on C (b) Use calculus to find the exact coordinates of Q (5) (c) Hence find the range of the function g (x) where g (x) = –2 f (x) (2)       (Total for Question 9 is 8 marks)",
+    "stem_chars": 447,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 1
+      },
+      {
+        "label": "b",
+        "marks": 5
+      },
+      {
+        "label": "c",
+        "marks": 2
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  },
+  {
+    "slug": "P3.2025_jan.Q010",
+    "subject_code": "WMA13",
+    "source_paper_key": "2025_jan",
+    "source_question_number": 10,
+    "year": 2025,
+    "season": "jan",
+    "marks": 9,
+    "mark_source": "fence+tally",
+    "difficulty": "hard",
+    "qp_pages": [
+      29,
+      31
+    ],
+    "qp_pdf": "p3/2025_jan/questions/q10.pdf",
+    "stem": "  y P (a, b) O x Figure 2 Figure 2 shows a sketch of the curve with equation x = 3 cos 2y –3  x  3 0  y  2 π (a) Find d d x y in terms of y. (2) (b) Hence show that d d y x k x < ; where k is a constant to be found. (3) The point P (a, b) lies on the curve and is shown in Figure 2. Given that • the gradient of the curve at P is – 1 • both a and b are positive (c) find the exact values of a and b. (4)     (Total for Question 10 is 9 marks) TOTAL FOR PAPER IS 75 MARKS",
+    "stem_chars": 489,
+    "text_status": "repaired",
+    "sub_parts": [
+      {
+        "label": "a",
+        "marks": 2
+      },
+      {
+        "label": "b",
+        "marks": 3
+      },
+      {
+        "label": "c",
+        "marks": 4
+      }
+    ],
+    "sub_parts_verified": true,
+    "has_markscheme": true
+  }
+]

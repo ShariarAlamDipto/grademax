@@ -1,0 +1,95 @@
+{
+  "subjects": [
+    {
+      "code": "4PH1",
+      "name": "Physics",
+      "target": {
+        "session": "autumn",
+        "year": 2026,
+        "label": "October/November 2026"
+      },
+      "dir": "4PH1/autumn_2026",
+      "papers": [
+        "1",
+        "2"
+      ],
+      "artifacts": {
+        "blueprint": "4PH1/autumn_2026/blueprint.json",
+        "report": "4PH1/autumn_2026/report.html",
+        "paper": {
+          "1": "4PH1/autumn_2026/paper_p1.html",
+          "2": "4PH1/autumn_2026/paper_p2.html"
+        },
+        "markscheme": {
+          "1": "4PH1/autumn_2026/markscheme_p1.html",
+          "2": "4PH1/autumn_2026/markscheme_p2.html"
+        }
+      },
+      "summary": [
+        {
+          "paper": "1",
+          "name": "Paper 1",
+          "question_count": 11,
+          "predicted_marks": 110,
+          "total_marks": 110,
+          "high_conf": 5
+        },
+        {
+          "paper": "2",
+          "name": "Paper 2",
+          "question_count": 8,
+          "predicted_marks": 70,
+          "total_marks": 70,
+          "high_conf": 7
+        }
+      ],
+      "published_at": "2026-06-13T17:44:45.875158+00:00"
+    },
+    {
+      "code": "4PM1",
+      "name": "Further Pure Mathematics",
+      "target": {
+        "session": "autumn",
+        "year": 2026,
+        "label": "October/November 2026"
+      },
+      "dir": "4PM1/autumn_2026",
+      "papers": [
+        "1",
+        "2"
+      ],
+      "artifacts": {
+        "blueprint": "4PM1/autumn_2026/blueprint.json",
+        "report": "4PM1/autumn_2026/report.html",
+        "paper": {
+          "1": "4PM1/autumn_2026/paper_p1.html",
+          "2": "4PM1/autumn_2026/paper_p2.html"
+        },
+        "markscheme": {
+          "1": "4PM1/autumn_2026/markscheme_p1.html",
+          "2": "4PM1/autumn_2026/markscheme_p2.html"
+        }
+      },
+      "summary": [
+        {
+          "paper": "1",
+          "name": "Paper 1",
+          "question_count": 10,
+          "predicted_marks": 100,
+          "total_marks": 100,
+          "high_conf": 6
+        },
+        {
+          "paper": "2",
+          "name": "Paper 2",
+          "question_count": 10,
+          "predicted_marks": 100,
+          "total_marks": 100,
+          "high_conf": 4
+        }
+      ],
+      "published_at": "2026-06-13T17:44:45.515641+00:00"
+    }
+  ],
+  "generated_at": "2026-06-13T17:44:45.875222+00:00"
+}

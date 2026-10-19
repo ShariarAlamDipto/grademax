@@ -32,7 +32,6 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
-docker.env
 
 # vercel
 .vercel
@@ -47,26 +46,35 @@ check_pages.js
 scripts/check-r2.js
 config/google-service-account.json
 config/*.json
+
+# build-time papers-index snapshot (regenerated every build by prebuild)
+/src/generated/
+
+# Python
+__pycache__/
+*.pyc
+
+# Workbook segment PDFs (~103 MB). Deliberately not tracked, unlike the older
+# data/processed corpus which predates the R2 migration:
+#   - the app serves them from R2 (workbook/fpm/...), never from the repo
+#   - they are deterministically regenerable:
+#       python scripts/build_fpm_workbook_segments.py --execute
+# The JSON alongside them IS tracked — it is the classification work product and
+# costs API calls to rebuild.
+/data/workbook/*/
+
+# Harvested third-party paper links: local working data, not for publication.
+data/manifest/paperlords_*
+
+# Deploy-branch local artifacts and sensitive exports
+docker.env
 data/processed/upload_manifest.json
 scripts/email_send_log.json
-test_api.js
-test_maths_b_api.py
-
-# pipeline data — R2 + manifests are the source of truth, never commit PDFs
-/data/
-
-# local run artifacts / logs
 /logs/
 /output/
 debug_output.txt
 m1_*.txt
 physics_test.txt
 IMPLEMENTATION_STATUS.txt
-
-# Shape-classifier datasets (regenerable via scripts/shape-data-gen.ts)
 training-data/
-
-# Supabase data export — contains user PII (emails, OAuth provider IDs, etc.)
-# Keep it local, back it up to encrypted private storage, never commit.
 data/supabase-export/
-__pycache__/

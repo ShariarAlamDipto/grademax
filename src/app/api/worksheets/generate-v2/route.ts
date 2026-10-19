@@ -3,12 +3,16 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { requireAuth } from '@/lib/apiAuth';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
+import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
+import { getUserQuestionLimit } from '@/lib/questionLimit';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
 
-// Several Supabase round-trips happen here, but they're all HTTP/JSON — no
-// Node-only APIs are touched. Edge runtime gives lower cold-start latency
-// and is required for Cloudflare Pages deploy.
-export const runtime = 'edge';
+// Several Supabase round-trips happen here. On a cold serverless start over a
+// slow mobile connection the default 10 s budget is tight enough that the
+// connection can be dropped mid-flight, surfacing as `Failed to fetch` in the
+// browser. Bump the budget and pin the runtime.
+export const runtime = 'nodejs';
+export const maxDuration = 30;
 export const dynamic = 'force-dynamic';
 
 interface GenerateRequest {
@@ -107,11 +111,14 @@ export async function POST(request: Request) {
       yearStart,
       yearEnd,
       difficulty,
-      limit: rawLimit = 50,
+      limit: rawLimit = MAX_QUESTIONS_PER_PAPER,
       shuffle = false,
     } = body;
 
-    const limit = Math.max(1, Number(rawLimit) || 50);
+    // Normal students are capped; admins, teachers and Pro students are not.
+    const { limit: maxQuestions } = await getUserQuestionLimit(auth.user);
+    const requested = Math.max(1, Number(rawLimit) || MAX_QUESTIONS_PER_PAPER);
+    const limit = maxQuestions === null ? requested : Math.min(maxQuestions, requested);
 
     if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json({ error: 'Topics are required' }, { status: 400 });
@@ -232,7 +239,10 @@ export async function POST(request: Request) {
       question_id: page.id,
       position: index + 1,
     }));
-    supabase.from('worksheet_items').insert(worksheetItems).then(() => undefined);
+    await supabase
+      .from('worksheet_items')
+      .insert(worksheetItems)
+      .then(() => undefined, () => undefined);
 
     trackUsage({
       user_id: auth.user.id,

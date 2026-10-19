@@ -2,12 +2,21 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import PromoBanner from '../components/PromoBanner'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Playfair_Display } from 'next/font/google'
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
+import { ADSENSE_SCRIPT_SRC } from '@/lib/ads'
+import { SOCIAL_SAME_AS } from '@/lib/social'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700','800'], display: 'swap' });
+
+// Evaluated at build time; every deploy refreshes it, so titles never advertise a
+// stale year (the hardcoded "2025" sat live well into 2026).
+const CURRENT_YEAR = new Date().getFullYear()
 
 // JSON-LD Structured Data for Brand Recognition & Edexcel SEO
 const jsonLd = {
@@ -15,35 +24,35 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://grademax.me/#organization',
+      '@id': 'https://www.grademax.me/#organization',
       name: 'GradeMax',
-      url: 'https://grademax.me',
+      url: 'https://www.grademax.me',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://grademax.me/logo.png',
+        url: 'https://www.grademax.me/logo.png',
         width: 512,
         height: 512
       },
       description: 'Free Edexcel past papers, topic-wise question papers, and custom worksheet generator for IGCSE and A Level students. Access mark schemes, practice papers, and revision resources for Physics, Maths, Chemistry, Biology, ICT and more.',
       foundingDate: '2024',
       knowsAbout: ['Edexcel past papers', 'IGCSE', 'A Level', 'Pearson Edexcel', 'Past paper questions', 'Mark schemes'],
-      // sameAs intentionally omitted — only add social profiles that actually
-      // exist and are controlled by GradeMax; fake profile links hurt E-E-A-T.
+      // Only real, GradeMax-controlled profiles (see src/lib/social.tsx).
+      sameAs: SOCIAL_SAME_AS,
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://grademax.me/#website',
-      url: 'https://grademax.me',
+      '@id': 'https://www.grademax.me/#website',
+      url: 'https://www.grademax.me',
       name: 'GradeMax',
-      description: 'Free Edexcel IGCSE and A Level Past Papers 2025, Custom Worksheets and Topic-Wise Questions with Mark Schemes',
+      description: `Free Edexcel IGCSE and A Level Past Papers ${CURRENT_YEAR}, Custom Worksheets and Topic-Wise Questions with Mark Schemes`,
       publisher: {
-        '@id': 'https://grademax.me/#organization'
+        '@id': 'https://www.grademax.me/#organization'
       },
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://grademax.me/browse?q={search_term_string}'
+          urlTemplate: 'https://www.grademax.me/browse?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       },
@@ -51,16 +60,16 @@ const jsonLd = {
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://grademax.me/#webpage',
-      url: 'https://grademax.me',
-      name: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
+      '@id': 'https://www.grademax.me/#webpage',
+      url: 'https://www.grademax.me',
+      name: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level | GradeMax`,
       datePublished: '2024-01-15T00:00:00+00:00',
       dateModified: new Date().toISOString(),
       isPartOf: {
-        '@id': 'https://grademax.me/#website'
+        '@id': 'https://www.grademax.me/#website'
       },
       about: {
-        '@id': 'https://grademax.me/#organization'
+        '@id': 'https://www.grademax.me/#organization'
       },
       description: 'Free Edexcel past papers with mark schemes for IGCSE and A Level (2010-2025). Generate custom worksheets, practice topic-wise questions, and revise with 14+ years of real Pearson Edexcel exam papers.',
       inLanguage: 'en-GB',
@@ -71,9 +80,9 @@ const jsonLd = {
     },
     {
       '@type': 'EducationalOrganization',
-      '@id': 'https://grademax.me/#educationalorg',
+      '@id': 'https://www.grademax.me/#educationalorg',
       name: 'GradeMax',
-      url: 'https://grademax.me',
+      url: 'https://www.grademax.me',
       description: 'Free online platform for Edexcel IGCSE and A Level exam preparation with past papers, custom worksheets, and topic-wise practice questions.',
       areaServed: 'Worldwide',
       audience: {
@@ -85,9 +94,9 @@ const jsonLd = {
     // WebApplication schema for worksheet generator tool
     {
       '@type': 'WebApplication',
-      '@id': 'https://grademax.me/#webapp',
+      '@id': 'https://www.grademax.me/#webapp',
       name: 'GradeMax Worksheet Generator',
-      url: 'https://grademax.me/generate',
+      url: 'https://www.grademax.me/generate',
       applicationCategory: 'EducationalApplication',
       operatingSystem: 'Any',
       offers: {
@@ -101,24 +110,24 @@ const jsonLd = {
     {
       '@type': 'ItemList',
       itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'IGCSE Physics Past Papers', url: 'https://grademax.me/subjects/igcse/physics' },
-        { '@type': 'ListItem', position: 2, name: 'IGCSE Maths A Past Papers', url: 'https://grademax.me/subjects/igcse/maths-a' },
-        { '@type': 'ListItem', position: 3, name: 'IGCSE Maths B Past Papers', url: 'https://grademax.me/subjects/igcse/maths-b' },
-        { '@type': 'ListItem', position: 4, name: 'IGCSE Chemistry Past Papers', url: 'https://grademax.me/subjects/igcse/chemistry' },
-        { '@type': 'ListItem', position: 5, name: 'IGCSE Biology Past Papers', url: 'https://grademax.me/subjects/igcse/biology' },
-        { '@type': 'ListItem', position: 6, name: 'IGCSE ICT Past Papers', url: 'https://grademax.me/subjects/igcse/ict' },
-        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://grademax.me/subjects/ial/pure-mathematics-1' },
-        { '@type': 'ListItem', position: 8, name: 'A Level Mechanics 1 Past Papers', url: 'https://grademax.me/subjects/ial/mechanics-1' },
-        { '@type': 'ListItem', position: 9, name: 'A Level Statistics 1 Past Papers', url: 'https://grademax.me/subjects/ial/statistics-1' },
+        { '@type': 'ListItem', position: 1, name: 'IGCSE Physics Past Papers', url: 'https://www.grademax.me/subjects/igcse/physics' },
+        { '@type': 'ListItem', position: 2, name: 'IGCSE Maths A Past Papers', url: 'https://www.grademax.me/subjects/igcse/maths-a' },
+        { '@type': 'ListItem', position: 3, name: 'IGCSE Maths B Past Papers', url: 'https://www.grademax.me/subjects/igcse/maths-b' },
+        { '@type': 'ListItem', position: 4, name: 'IGCSE Chemistry Past Papers', url: 'https://www.grademax.me/subjects/igcse/chemistry' },
+        { '@type': 'ListItem', position: 5, name: 'IGCSE Biology Past Papers', url: 'https://www.grademax.me/subjects/igcse/biology' },
+        { '@type': 'ListItem', position: 6, name: 'IGCSE ICT Past Papers', url: 'https://www.grademax.me/subjects/igcse/ict' },
+        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/pure-mathematics-1' },
+        { '@type': 'ListItem', position: 8, name: 'A Level Mechanics 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/mechanics-1' },
+        { '@type': 'ListItem', position: 9, name: 'A Level Statistics 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/statistics-1' },
       ]
     }
   ]
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://grademax.me'),
+  metadataBase: new URL('https://www.grademax.me'),
   title: {
-    default: 'Edexcel Past Papers 2025 – Free IGCSE & A Level | GradeMax',
+    default: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level | GradeMax`,
     template: '%s | GradeMax'
   },
   description: 'Free Edexcel IGCSE & A Level past papers with mark schemes (2010–2025). Generate custom worksheets from real Pearson exam questions. Topic-wise practice for Physics, Maths, Chemistry & more.',
@@ -199,14 +208,14 @@ export const metadata: Metadata = {
     telephone: false,
   },
   alternates: {
-    canonical: 'https://grademax.me',
+    canonical: 'https://www.grademax.me',
   },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://grademax.me',
+    url: 'https://www.grademax.me',
     siteName: 'GradeMax',
-    title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level | GradeMax',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} | Free IGCSE & A Level | GradeMax`,
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real Pearson Edexcel exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology, ICT and more.',
     images: [
       {
@@ -219,7 +228,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Edexcel Past Papers 2025 | Free IGCSE & A Level Questions | GradeMax',
+    title: `Edexcel Past Papers ${CURRENT_YEAR} | Free IGCSE & A Level Questions | GradeMax`,
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes (2010-2025). Generate custom worksheets, practice topic-wise, and ace your exams.',
     images: ['/opengraph-image'],
     // creator/site omitted — re-add only if the @grademax handle is actually owned.
@@ -242,8 +251,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en-GB" className={playfair.className} suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+        {/* next/font self-hosts Playfair Display — no runtime request to Google
+            Fonts, so no preconnect needed (removed: it opened a dead TLS
+            connection on every visit). */}
         {/* Theme init — runs before paint to prevent flash */}
         <script
           dangerouslySetInnerHTML={{
@@ -254,16 +264,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* AdSense loader. It sits in the root layout's <head> deliberately:
+            AdSense's site review requires the snippet in the server-rendered
+            HTML of every page, so next/script (which injects it client-side,
+            into the body) would not satisfy it. async, so it never blocks the
+            first paint. */}
+        <script async src={ADSENSE_SCRIPT_SRC} crossOrigin="anonymous" />
       </head>
       <body className="min-h-screen flex flex-col" style={{ background: 'var(--gm-bg)', color: 'var(--gm-text)' }}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>
         <ThemeProvider>
           <AuthProvider>
             <Navbar />
-            <div id="main-content" className="pt-[112px] sm:pt-[68px] flex-1">{children}</div>
+            <div id="main-content" className="pt-[var(--gm-nav-h)] flex-1">
+              <PromoBanner />
+              {children}
+            </div>
             <Footer />
           </AuthProvider>
         </ThemeProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

@@ -1,14 +1,43 @@
 import type { NextConfig } from "next";
 
+// Google AdSense origins. Without these the loader in the root layout's <head>
+// is blocked outright, ads never render and — because the review crawler runs
+// the page — site verification fails with no visible error but a CSP console
+// warning.
+//
+// This stays a list of Google's own origins rather than a blanket `https:`
+// because ad creatives are rendered *inside* Google's cross-origin iframes,
+// which carry their own policy; this document's CSP does not reach into them.
+// So allowing Google here is enough to serve ads without opening the page to
+// every advertiser domain on the internet.
+const GOOGLE_ADS_ORIGINS = [
+  "https://*.googlesyndication.com", // pagead2 (the loader), tpc (creatives)
+  "https://*.doubleclick.net", // ad requests, securepubads
+  "https://*.googleadservices.com",
+  "https://*.googletagservices.com",
+  "https://adservice.google.com",
+  "https://fundingchoicesmessages.google.com", // EEA/UK consent messaging
+  // Ad Traffic Quality (ep1/ep2.adtrafficquality.google) — AdSense's invalid-traffic
+  // beacon. Its TLD is bare `.google`, so the `https://*.google.com` entries below
+  // never matched it and every page load logged a blocked-connection CSP error.
+  "https://*.adtrafficquality.google",
+  // AdSense's CSI page-timing beacon (fetch/sendBeacon). `*.gstatic.com` was
+  // only in img-src, so connect-src blocked it and logged a CSP error per page.
+  "https://csi.gstatic.com",
+].join(" ");
+
 const baseCsp = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live",
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live ${GOOGLE_ADS_ORIGINS}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' data: https://fonts.gstatic.com",
-  "img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev",
+  `img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev ${GOOGLE_ADS_ORIGINS} https://*.google.com https://*.gstatic.com`,
   "worker-src 'self' blob:",
-  "connect-src 'self' https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com",
-  "frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev",
+  // *.r2.cloudflarestorage.com is the S3 API endpoint teachers PUT large
+  // lecture files to with a presigned URL, bypassing the 4.5 MB serverless cap.
+  // blob: lets the worksheet preview read the PDF it just built in the browser.
+  `connect-src 'self' blob: https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
+  `frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self' https://accounts.google.com",
@@ -26,6 +55,12 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["recharts", "@supabase/supabase-js", "pdf-lib", "zod"],
   },
+  // The prebuild papers-index snapshot (src/generated/papers-index.json) is read
+  // with fs at runtime by on-demand past-papers renders (Cambridge deep pages),
+  // so it must be traced into those function bundles. Missing file = DB fallback.
+  outputFileTracingIncludes: {
+    "/past-papers/**": ["./src/generated/**"],
+  },
   compress: true,
   productionBrowserSourceMaps: false,
   images: {
@@ -41,6 +76,13 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "*.supabase.co",
+      },
+      {
+        // Store book covers. Already allowed by img-src in the CSP above; this
+        // is what lets next/image resize and re-encode them, which matters
+        // because the source is a 150 dpi render of a print cover.
+        protocol: "https",
+        hostname: "*.r2.dev",
       },
     ],
   },
@@ -83,7 +125,7 @@ const nextConfig: NextConfig = {
       },
       // Cache static SEO pages for better Core Web Vitals
       {
-        source: "/:path(edexcel-past-papers|edexcel-igcse-past-papers|edexcel-a-level-past-papers|edexcel-worksheets|subjects|about|privacy|terms|contact)",
+        source: "/:path(edexcel-past-papers|edexcel-igcse-past-papers|edexcel-a-level-past-papers|edexcel-worksheets|cambridge-past-papers|cambridge-igcse-past-papers|cambridge-a-level-past-papers|subjects|about|privacy|terms|contact)",
         headers: [
           { key: "Cache-Control", value: "public, s-maxage=3600, stale-while-revalidate=86400" },
         ],
@@ -104,6 +146,9 @@ const nextConfig: NextConfig = {
       { source: "/past_papers", destination: "/past-papers", permanent: true },
       { source: "/worksheets", destination: "/edexcel-worksheets", permanent: true },
       { source: "/worksheet-generator", destination: "/generate", permanent: true },
+      // Maths B is now sold only as the two-volume set (migration 31)
+      { source: "/store/mathematics-b-part-1", destination: "/store/mathematics-b", permanent: true },
+      { source: "/store/mathematics-b-part-2", destination: "/store/mathematics-b", permanent: true },
       // Redirect trailing slashes for consistency
       { source: "/:path+/", destination: "/:path+", permanent: true },
     ];

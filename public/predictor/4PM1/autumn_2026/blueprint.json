@@ -1,0 +1,1144 @@
+{
+  "subject_code": "4PM1",
+  "subject_name": "Further Pure Mathematics",
+  "target": {
+    "session": "autumn",
+    "year": 2026,
+    "label": "October/November 2026"
+  },
+  "papers": {
+    "1": {
+      "paper": "1",
+      "paper_name": "Paper 1",
+      "target": {
+        "session": "autumn",
+        "year": 2026,
+        "label": "October/November 2026"
+      },
+      "total_marks": 100,
+      "question_count": 10,
+      "predicted_marks": 100,
+      "topic_demand": {
+        "9": 25.1,
+        "8": 14.0,
+        "10": 12.5,
+        "2": 9.7,
+        "5": 8.9,
+        "1": 8.1,
+        "7": 6.3,
+        "6": 5.9,
+        "3": 4.8,
+        "4": 4.5
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "topic": "3",
+          "topic_name": "Identities & inequalities",
+          "marks": 6,
+          "command_words": [
+            "find",
+            "show",
+            "calculate"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "algebraic manipulation",
+            "factorisation",
+            "equation solving",
+            "remainder theorem"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.443,
+          "confidence_band": "medium",
+          "rationale": "Identities & inequalities carries 4% of weighted marks on this paper; appears almost every year; frequently sits at Q1",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1R:q5",
+              "year": 2025,
+              "marks": 7,
+              "context": "Rectangle dimensions"
+            },
+            {
+              "q_id": "4PM1:2024:summer:1R:q1",
+              "year": 2024,
+              "marks": 4,
+              "context": "Algebraic inequalities"
+            },
+            {
+              "q_id": "4PM1:2023:winter:1R:q5",
+              "year": 2023,
+              "marks": 12,
+              "context": "Algebraic functions"
+            },
+            {
+              "q_id": "4PM1:2023:summer:1R:q1",
+              "year": 2023,
+              "marks": 4,
+              "context": "Rectangle area"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 2,
+          "topic": "2",
+          "topic_name": "Quadratic function",
+          "marks": 9,
+          "command_words": [
+            "find",
+            "show",
+            "hence"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "completing the square",
+            "solving inequalities",
+            "comparing coefficients",
+            "quadratic equation manipulation"
+          ],
+          "style_reference": {
+            "context_tag": "Quadratic Functions",
+            "example_marks": 5,
+            "example_excerpt": "\n\nf( )\nx\nx\nx\nGiven that f( )\nx can be written in the form A x\nB\nC\n, where A, B and C\nare integers,\n(a) find the value of A, the value of B and the value of C\n(3)\n(b) Hence, or otherwise, find\n(i) the value of x for which 1\nf( )\nx is a maximum\n(ii) the maximum value of 1\nf( )",
+            "from_q_id": "4PM1:2024:summer:1:q2"
+          },
+          "confidence": 0.554,
+          "confidence_band": "high",
+          "rationale": "Quadratic function carries 9% of weighted marks on this paper; appears almost every year; frequently sits at Q2",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1:q5",
+              "year": 2025,
+              "marks": 8,
+              "context": "Quadratic Equations"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q2",
+              "year": 2025,
+              "marks": 5,
+              "context": "Quadratic function"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q7",
+              "year": 2025,
+              "marks": 10,
+              "context": "Quadratic Equation"
+            },
+            {
+              "q_id": "4PM1:2024:summer:1:q2",
+              "year": 2024,
+              "marks": 5,
+              "context": "Quadratic Functions"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 3,
+          "topic": "10",
+          "topic_name": "Trigonometry",
+          "marks": 8,
+          "command_words": [
+            "find",
+            "show",
+            "calculate"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "apply trigonometric identities",
+            "use cosine rule",
+            "calculate area of triangle",
+            "use given ratios"
+          ],
+          "style_reference": {
+            "context_tag": "Right pyramid",
+            "example_marks": 13,
+            "example_excerpt": "\n\nDiagram NOT\naccurately drawn\nA\n30°\n12 cm\nx cm\nD\nO\nB\nC\nFigure 2\nFigure 2 shows the right pyramid OABCD with a square base ABCD of side 12 cm.\nOA = OB = OC = OD = x cm and ∠OAC = ∠ODB = ∠OCA = ∠OBD = 30°\n(a) Find the exact length of AC\n(2)\n(b) Show that  x = 4 6\n(2)\n(c) Find",
+            "from_q_id": "4PM1:2023:winter:1R:q9"
+          },
+          "confidence": 0.572,
+          "confidence_band": "high",
+          "rationale": "Trigonometry carries 12% of weighted marks on this paper; appears almost every year; frequently sits at Q3",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1R:q4",
+              "year": 2025,
+              "marks": 7,
+              "context": "Triangle Trigonometry"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1R:q10",
+              "year": 2025,
+              "marks": 15,
+              "context": "Trigonometry curves"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q3",
+              "year": 2025,
+              "marks": 6,
+              "context": "Triangle Trigonometry"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q11",
+              "year": 2025,
+              "marks": 10,
+              "context": "Trigonometry"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 4,
+          "topic": "9",
+          "topic_name": "Calculus",
+          "marks": 9,
+          "command_words": [
+            "find",
+            "show",
+            "calculate"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "differentiation",
+            "differentiate",
+            "integration",
+            "substitution"
+          ],
+          "style_reference": {
+            "context_tag": "Liquid Filling Cone",
+            "example_marks": 13,
+            "example_excerpt": "\n\nh cm\n60°\nX\nDiagram NOT\naccurately drawn\nFigure 2\nFigure 2 shows a hollow right circular cone fixed with its axis of symmetry vertical.\nThe vertical angle of the cone is 60°\nInitially the cone is empty.\nAt time t = 0 liquid starts to fill the cone at a constant rate of 0.2 ",
+            "from_q_id": "4PM1:2025:autumn:1:q9"
+          },
+          "confidence": 0.779,
+          "confidence_band": "high",
+          "rationale": "Calculus carries 25% of weighted marks on this paper; appears almost every year; frequently sits at Q4",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Particle motion"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1:q7",
+              "year": 2025,
+              "marks": 6,
+              "context": "Liquid dripping"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1:q11",
+              "year": 2025,
+              "marks": 7,
+              "context": "Volume of solids"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1R:q3",
+              "year": 2025,
+              "marks": 10,
+              "context": "Particle motion"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 5,
+          "topic": "3",
+          "topic_name": "Identities & inequalities",
+          "marks": 10,
+          "command_words": [
+            "find",
+            "show",
+            "use"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "algebraic manipulation",
+            "factorisation",
+            "equation solving",
+            "remainder theorem"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.412,
+          "confidence_band": "medium",
+          "rationale": "Identities & inequalities carries 4% of weighted marks on this paper; appears almost every year; frequently sits at Q5",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1R:q5",
+              "year": 2025,
+              "marks": 7,
+              "context": "Rectangle dimensions"
+            },
+            {
+              "q_id": "4PM1:2024:summer:1R:q1",
+              "year": 2024,
+              "marks": 4,
+              "context": "Algebraic inequalities"
+            },
+            {
+              "q_id": "4PM1:2023:winter:1R:q5",
+              "year": 2023,
+              "marks": 12,
+              "context": "Algebraic functions"
+            },
+            {
+              "q_id": "4PM1:2023:summer:1R:q1",
+              "year": 2023,
+              "marks": 4,
+              "context": "Rectangle area"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 6,
+          "topic": "9",
+          "topic_name": "Calculus",
+          "marks": 11,
+          "command_words": [
+            "find",
+            "show",
+            "calculate"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "differentiation",
+            "differentiate",
+            "integration",
+            "substitution"
+          ],
+          "style_reference": {
+            "context_tag": "Liquid Filling Cone",
+            "example_marks": 13,
+            "example_excerpt": "\n\nh cm\n60°\nX\nDiagram NOT\naccurately drawn\nFigure 2\nFigure 2 shows a hollow right circular cone fixed with its axis of symmetry vertical.\nThe vertical angle of the cone is 60°\nInitially the cone is empty.\nAt time t = 0 liquid starts to fill the cone at a constant rate of 0.2 ",
+            "from_q_id": "4PM1:2025:autumn:1:q9"
+          },
+          "confidence": 0.829,
+          "confidence_band": "high",
+          "rationale": "Calculus carries 25% of weighted marks on this paper; appears almost every year; frequently sits at Q6",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Particle motion"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1:q7",
+              "year": 2025,
+              "marks": 6,
+              "context": "Liquid dripping"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1:q11",
+              "year": 2025,
+              "marks": 7,
+              "context": "Volume of solids"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1R:q3",
+              "year": 2025,
+              "marks": 10,
+              "context": "Particle motion"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 7,
+          "topic": "1",
+          "topic_name": "Logarithmic functions & indices",
+          "marks": 10,
+          "command_words": [
+            "find",
+            "show",
+            "calculate"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "change of base",
+            "solve equation",
+            "apply log rules",
+            "algebraic manipulation"
+          ],
+          "style_reference": {
+            "context_tag": "Logarithmic equations",
+            "example_marks": 8,
+            "example_excerpt": "\n11 Solve the simultaneous equations\n2log4\nx\ny\nx\ny\nlog\nlog\nlog\nShow your working clearly.\n(8)\n......................................................................................................................................................................................",
+            "from_q_id": "4PM1:2023:autumn:1:q11"
+          },
+          "confidence": 0.489,
+          "confidence_band": "medium",
+          "rationale": "Logarithmic functions & indices carries 8% of weighted marks on this paper; appears almost every year; frequently sits at Q7",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1:q10",
+              "year": 2025,
+              "marks": 11,
+              "context": "Logarithmic equations"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1R:q1",
+              "year": 2025,
+              "marks": 3,
+              "context": "Algebraic Expression"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1R:q7",
+              "year": 2025,
+              "marks": 10,
+              "context": "Log functions"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q8",
+              "year": 2025,
+              "marks": 12,
+              "context": "Logarithmic functions"
+            }
+          ],
+          "est_subparts": 0
+        },
+        {
+          "slot": 8,
+          "topic": "9",
+          "topic_name": "Calculus",
+          "marks": 12,
+          "command_words": [
+            "find",
+            "show",
+            "use"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "differentiation",
+            "differentiate",
+            "integration",
+            "substitution"
+          ],
+          "style_reference": {
+            "context_tag": "Liquid Filling Cone",
+            "example_marks": 13,
+            "example_excerpt": "\n\nh cm\n60°\nX\nDiagram NOT\naccurately drawn\nFigure 2\nFigure 2 shows a hollow right circular cone fixed with its axis of symmetry vertical.\nThe vertical angle of the cone is 60°\nInitially the cone is empty.\nAt time t = 0 liquid starts to fill the cone at a constant rate of 0.2 ",
+            "from_q_id": "4PM1:2025:autumn:1:q9"
+          },
+          "confidence": 0.871,
+          "confidence_band": "high",
+          "rationale": "Calculus carries 25% of weighted marks on this paper; appears almost every year; frequently sits at Q8",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1:q1",
+              "year": 2025,
+              "marks": 7,
+              "context": "Particle motion"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1:q7",
+              "year": 2025,
+              "marks": 6,
+              "context": "Liquid dripping"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1:q11",
+              "year": 2025,
+              "marks": 7,
+              "context": "Volume of solids"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1R:q3",
+              "year": 2025,
+              "marks": 10,
+              "context": "Particle motion"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 9,
+          "topic": "6",
+          "topic_name": "Binomial series",
+          "marks": 11,
+          "command_words": [
+            "find",
+            "show",
+            "solve"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "binomial expansion",
+            "Binomial expansion",
+            "term identification",
+            "Series manipulation"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.41,
+          "confidence_band": "medium",
+          "rationale": "Binomial series carries 5% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1:q6",
+              "year": 2025,
+              "marks": 8,
+              "context": "Binomial Expansion"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q1",
+              "year": 2025,
+              "marks": 3,
+              "context": "Algebraic expansion"
+            },
+            {
+              "q_id": "4PM1:2024:summer:1R:q2",
+              "year": 2024,
+              "marks": 8,
+              "context": "Binomial Expansion"
+            },
+            {
+              "q_id": "4PM1:2024:autumn:1:q6",
+              "year": 2024,
+              "marks": 12,
+              "context": "Binomial Expansion"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 10,
+          "topic": "10",
+          "topic_name": "Trigonometry",
+          "marks": 14,
+          "command_words": [
+            "find",
+            "show",
+            "using"
+          ],
+          "difficulty": "hard",
+          "skills": [
+            "apply trigonometric identities",
+            "use cosine rule",
+            "calculate area of triangle",
+            "use given ratios"
+          ],
+          "style_reference": {
+            "context_tag": "Right pyramid",
+            "example_marks": 13,
+            "example_excerpt": "\n\nDiagram NOT\naccurately drawn\nA\n30°\n12 cm\nx cm\nD\nO\nB\nC\nFigure 2\nFigure 2 shows the right pyramid OABCD with a square base ABCD of side 12 cm.\nOA = OB = OC = OD = x cm and ∠OAC = ∠ODB = ∠OCA = ∠OBD = 30°\n(a) Find the exact length of AC\n(2)\n(b) Show that  x = 4 6\n(2)\n(c) Find",
+            "from_q_id": "4PM1:2023:winter:1R:q9"
+          },
+          "confidence": 0.57,
+          "confidence_band": "high",
+          "rationale": "Trigonometry carries 12% of weighted marks on this paper; appears almost every year; frequently sits at Q10",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:1R:q4",
+              "year": 2025,
+              "marks": 7,
+              "context": "Triangle Trigonometry"
+            },
+            {
+              "q_id": "4PM1:2025:summer:1R:q10",
+              "year": 2025,
+              "marks": 15,
+              "context": "Trigonometry curves"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q3",
+              "year": 2025,
+              "marks": 6,
+              "context": "Triangle Trigonometry"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:1:q11",
+              "year": 2025,
+              "marks": 10,
+              "context": "Trigonometry"
+            }
+          ],
+          "est_subparts": 2
+        }
+      ]
+    },
+    "2": {
+      "paper": "2",
+      "paper_name": "Paper 2",
+      "target": {
+        "session": "autumn",
+        "year": 2026,
+        "label": "October/November 2026"
+      },
+      "total_marks": 100,
+      "question_count": 10,
+      "predicted_marks": 100,
+      "topic_demand": {
+        "9": 21.6,
+        "10": 12.5,
+        "8": 11.7,
+        "4": 10.6,
+        "2": 10.0,
+        "5": 9.8,
+        "7": 7.9,
+        "3": 7.0,
+        "1": 6.0,
+        "6": 3.1
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "topic": "3",
+          "topic_name": "Identities & inequalities",
+          "marks": 7,
+          "command_words": [
+            "find",
+            "solve",
+            "show"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "inequality solving",
+            "algebraic manipulation",
+            "quadratic equation analysis",
+            "quadratic inequality"
+          ],
+          "style_reference": {
+            "context_tag": "Algebraic Inequalities",
+            "example_marks": 7,
+            "example_excerpt": "\n\nAnswer all ELEVEN questions.\nWrite your answers in the spaces provided.\nYou must write down all the stages in your working.\n1 Find the set of values of x for which\n(a) 2(3x – 1) < 4 – 3x\n(2)\n(b) 3x2 – 8x – 3 < 0\n(4)\n(c) both 2(3x – 1) < 4 – 3x and 3x2 – 8x – 3 < 0\n(1)\n....",
+            "from_q_id": "4PM1:2023:winter:2:q1"
+          },
+          "confidence": 0.491,
+          "confidence_band": "medium",
+          "rationale": "Identities & inequalities carries 7% of weighted marks on this paper; appears almost every year; frequently sits at Q1",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q2",
+              "year": 2025,
+              "marks": 5,
+              "context": "Algebraic inequalities"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2:q3",
+              "year": 2025,
+              "marks": 5,
+              "context": "Prime numbers"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q5",
+              "year": 2025,
+              "marks": 8,
+              "context": "Polynomial division"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:2:q7",
+              "year": 2025,
+              "marks": 12,
+              "context": "curve analysis"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 2,
+          "topic": "9",
+          "topic_name": "Calculus",
+          "marks": 8,
+          "command_words": [
+            "find",
+            "solve",
+            "hence"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "algebraic integration",
+            "differentiation",
+            "integration",
+            "volume calculation"
+          ],
+          "style_reference": {
+            "context_tag": "Calculus curve",
+            "example_marks": 5,
+            "example_excerpt": "\n\n8 Use calculus to find the gradient of the curve with equation\ny\nx\nx\ne3\nat the point on the curve where x =1\nGive your answer to 3 significant figures.\n(5)\n.....................................................................................................................",
+            "from_q_id": "4PM1:2025:summer:2R:q8"
+          },
+          "confidence": 0.714,
+          "confidence_band": "high",
+          "rationale": "Calculus carries 21% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q6",
+              "year": 2025,
+              "marks": 10,
+              "context": "Cylinder volume"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2:q9",
+              "year": 2025,
+              "marks": 8,
+              "context": "Calculus functions"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q8",
+              "year": 2025,
+              "marks": 5,
+              "context": "Calculus curve"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q11",
+              "year": 2025,
+              "marks": 12,
+              "context": "curve and normal"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 3,
+          "topic": "9",
+          "topic_name": "Calculus",
+          "marks": 8,
+          "command_words": [
+            "find",
+            "calculate",
+            "hence"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "algebraic integration",
+            "differentiation",
+            "integration",
+            "volume calculation"
+          ],
+          "style_reference": {
+            "context_tag": "Calculus curve",
+            "example_marks": 5,
+            "example_excerpt": "\n\n8 Use calculus to find the gradient of the curve with equation\ny\nx\nx\ne3\nat the point on the curve where x =1\nGive your answer to 3 significant figures.\n(5)\n.....................................................................................................................",
+            "from_q_id": "4PM1:2025:summer:2R:q8"
+          },
+          "confidence": 0.837,
+          "confidence_band": "high",
+          "rationale": "Calculus carries 21% of weighted marks on this paper; appears almost every year; frequently sits at Q3",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q6",
+              "year": 2025,
+              "marks": 10,
+              "context": "Cylinder volume"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2:q9",
+              "year": 2025,
+              "marks": 8,
+              "context": "Calculus functions"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q8",
+              "year": 2025,
+              "marks": 5,
+              "context": "Calculus curve"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q11",
+              "year": 2025,
+              "marks": 12,
+              "context": "curve and normal"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 4,
+          "topic": "2",
+          "topic_name": "Quadratic function",
+          "marks": 9,
+          "command_words": [
+            "find",
+            "show",
+            "calculate"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "algebraic manipulation",
+            "apply quadratic formula",
+            "manipulate algebraic expressions",
+            "sum and product of roots"
+          ],
+          "style_reference": {
+            "context_tag": "",
+            "example_marks": null,
+            "example_excerpt": "",
+            "from_q_id": ""
+          },
+          "confidence": 0.506,
+          "confidence_band": "medium",
+          "rationale": "Quadratic function carries 10% of weighted marks on this paper; appears almost every year; frequently sits at Q4",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:autumn:2:q2",
+              "year": 2025,
+              "marks": 5,
+              "context": "Curve Line Intersection"
+            },
+            {
+              "q_id": "4PM1:2024:summer:2:q2",
+              "year": 2024,
+              "marks": 8,
+              "context": "Quadratic Roots"
+            },
+            {
+              "q_id": "4PM1:2024:summer:2R:q1",
+              "year": 2024,
+              "marks": 4,
+              "context": "Quadratic Equation"
+            },
+            {
+              "q_id": "4PM1:2023:winter:2:q3",
+              "year": 2023,
+              "marks": 13,
+              "context": "Quadratic functions"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 5,
+          "topic": "9",
+          "topic_name": "Calculus",
+          "marks": 9,
+          "command_words": [
+            "find",
+            "show",
+            "draw"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "algebraic integration",
+            "differentiation",
+            "integration",
+            "volume calculation"
+          ],
+          "style_reference": {
+            "context_tag": "Calculus curve",
+            "example_marks": 5,
+            "example_excerpt": "\n\n8 Use calculus to find the gradient of the curve with equation\ny\nx\nx\ne3\nat the point on the curve where x =1\nGive your answer to 3 significant figures.\n(5)\n.....................................................................................................................",
+            "from_q_id": "4PM1:2025:summer:2R:q8"
+          },
+          "confidence": 0.856,
+          "confidence_band": "high",
+          "rationale": "Calculus carries 21% of weighted marks on this paper; appears almost every year; frequently sits at Q5",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q6",
+              "year": 2025,
+              "marks": 10,
+              "context": "Cylinder volume"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2:q9",
+              "year": 2025,
+              "marks": 8,
+              "context": "Calculus functions"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q8",
+              "year": 2025,
+              "marks": 5,
+              "context": "Calculus curve"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q11",
+              "year": 2025,
+              "marks": 12,
+              "context": "curve and normal"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 6,
+          "topic": "5",
+          "topic_name": "Series",
+          "marks": 10,
+          "command_words": [
+            "find",
+            "calculate",
+            "show"
+          ],
+          "difficulty": "hard",
+          "skills": [
+            "series sum",
+            "series term calculation",
+            "convergence testing",
+            "sum to infinity calculation"
+          ],
+          "style_reference": {
+            "context_tag": "Arithmetic series",
+            "example_marks": 10,
+            "example_excerpt": "\n8 The sum to n terms of an arithmetic series A is Sn\nThe sum of the first four terms of A is 42 and the fifth term of A is 23\n(a) Show that S\nPr\nQ\nn\nr\nn\n\u001b\nwhere P and Q are prime numbers.\n(6)\nS\nU\nn\nn\nwhere U n is the nth term of A\n(b) Find the value of n\n(4)\n................",
+            "from_q_id": "4PM1:2023:autumn:2:q8"
+          },
+          "confidence": 0.456,
+          "confidence_band": "medium",
+          "rationale": "Series carries 9% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q4",
+              "year": 2025,
+              "marks": 6,
+              "context": "Geometric series"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q4",
+              "year": 2025,
+              "marks": 11,
+              "context": "Geometric series"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:2:q6",
+              "year": 2025,
+              "marks": 8,
+              "context": "Geometric series"
+            },
+            {
+              "q_id": "4PM1:2024:summer:2R:q8",
+              "year": 2024,
+              "marks": 14,
+              "context": "Geometric series"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 7,
+          "topic": "1",
+          "topic_name": "Logarithmic functions & indices",
+          "marks": 11,
+          "command_words": [
+            "find",
+            "show",
+            "use"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "apply logarithmic properties",
+            "apply log rules",
+            "change of base",
+            "solve equation"
+          ],
+          "style_reference": {
+            "context_tag": "Logarithmic equations",
+            "example_marks": 8,
+            "example_excerpt": "\n\n8 Solve, using an algebraic method, the simultaneous equations\nlog\nlog\nlog\nx\ny\nx\ny\n\u001b\n(8)\n........................................................................................................................................................................................",
+            "from_q_id": "4PM1:2025:autumn:2:q8"
+          },
+          "confidence": 0.419,
+          "confidence_band": "medium",
+          "rationale": "Logarithmic functions & indices carries 6% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q7",
+              "year": 2025,
+              "marks": 10,
+              "context": "Log functions"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:2:q8",
+              "year": 2025,
+              "marks": 8,
+              "context": "Logarithmic equations"
+            },
+            {
+              "q_id": "4PM1:2024:summer:2R:q7",
+              "year": 2024,
+              "marks": 7,
+              "context": "Logarithmic functions"
+            },
+            {
+              "q_id": "4PM1:2024:autumn:2:q4",
+              "year": 2024,
+              "marks": 8,
+              "context": "Log functions"
+            }
+          ],
+          "est_subparts": 0
+        },
+        {
+          "slot": 8,
+          "topic": "8",
+          "topic_name": "Rectangular Cartesian coordinates",
+          "marks": 12,
+          "command_words": [
+            "find",
+            "show",
+            "use"
+          ],
+          "difficulty": "medium",
+          "skills": [
+            "apply trigonometry",
+            "calculate angle",
+            "apply trigonometric concepts",
+            "use area formula"
+          ],
+          "style_reference": {
+            "context_tag": "Circle sector",
+            "example_marks": 5,
+            "example_excerpt": "\n\nAnswer all TEN questions.\nWrite your answers in the spaces provided.\nYou must write down all the stages in your working.\nrad\nO\n2 cm\nS\nR\nDiagram NOT\naccurately drawn\nθ\nFigure 1\nFigure 1 shows sector ROS of a circle with centre O and radius 2 cm\nThe size of angle ROS is θ ra",
+            "from_q_id": "4PM1:2024:autumn:2:q1"
+          },
+          "confidence": 0.563,
+          "confidence_band": "high",
+          "rationale": "Rectangular Cartesian coordinates carries 11% of weighted marks on this paper; appears almost every year; frequently sits at Q8",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q5",
+              "year": 2025,
+              "marks": 8,
+              "context": "Triangle Geometry"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q2",
+              "year": 2025,
+              "marks": 10,
+              "context": "Coordinate geometry"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q6",
+              "year": 2025,
+              "marks": 6,
+              "context": "3D Geometry"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:2:q1",
+              "year": 2025,
+              "marks": 3,
+              "context": "Circle sector"
+            }
+          ],
+          "est_subparts": 2
+        },
+        {
+          "slot": 9,
+          "topic": "10",
+          "topic_name": "Trigonometry",
+          "marks": 12,
+          "command_words": [
+            "find",
+            "show",
+            "use"
+          ],
+          "difficulty": "hard",
+          "skills": [
+            "apply trigonometric identities",
+            "solve trigonometric equations",
+            "trig equation solving",
+            "identity manipulation"
+          ],
+          "style_reference": {
+            "context_tag": "Trigonometry",
+            "example_marks": 12,
+            "example_excerpt": "\n\n11 (a) Use a formula on page 2 to show that sin\ncos\n2 1\nA\nA\n(3)\n(b) Show that sin\ncos\ncos\nx\nx\nx\n(5)\n(c) Hence solve, in degrees to one decimal place, the equation\nsin\ncos\nsin\nθ\nθ\nθ\nθ\nfor 0\no\no\n(4)\n............................................................................",
+            "from_q_id": "4PM1:2023:summer:2R:q11"
+          },
+          "confidence": 0.493,
+          "confidence_band": "medium",
+          "rationale": "Trigonometry carries 12% of weighted marks on this paper; appears almost every year",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q1",
+              "year": 2025,
+              "marks": 5,
+              "context": "Trigonometry"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2:q11",
+              "year": 2025,
+              "marks": 15,
+              "context": "Trigonometry"
+            },
+            {
+              "q_id": "4PM1:2024:summer:2:q9",
+              "year": 2024,
+              "marks": 15,
+              "context": "Triangular prism"
+            },
+            {
+              "q_id": "4PM1:2024:summer:2:q11",
+              "year": 2024,
+              "marks": 16,
+              "context": "Trigonometry"
+            }
+          ],
+          "est_subparts": 3
+        },
+        {
+          "slot": 10,
+          "topic": "4",
+          "topic_name": "Graphs",
+          "marks": 14,
+          "command_words": [
+            "find",
+            "show",
+            "solve"
+          ],
+          "difficulty": "hard",
+          "skills": [
+            "asymptote identification",
+            "graph sketching",
+            "coordinate geometry",
+            "algebraic manipulation"
+          ],
+          "style_reference": {
+            "context_tag": "Curve analysis",
+            "example_marks": 18,
+            "example_excerpt": "\n\n10 A curve C has equation\ny\nx\nx\nx\n(a) Find the coordinates of the point where C intersects the\n(i) x-axis\n(ii) y-axis\n(2)\n(b) Write down an equation of the asymptote to C that is\n(i) parallel to the x-axis\n(ii) parallel to the y-axis\n(2)\n(c) Sketch C on the opposite page.\n",
+            "from_q_id": "4PM1:2024:autumn:2:q10"
+          },
+          "confidence": 0.531,
+          "confidence_band": "medium",
+          "rationale": "Graphs carries 10% of weighted marks on this paper; appears almost every year; frequently sits at Q10",
+          "evidence": [
+            {
+              "q_id": "4PM1:2025:summer:2:q10",
+              "year": 2025,
+              "marks": 17,
+              "context": "curve analysis"
+            },
+            {
+              "q_id": "4PM1:2025:summer:2R:q10",
+              "year": 2025,
+              "marks": 18,
+              "context": "Curve analysis"
+            },
+            {
+              "q_id": "4PM1:2025:autumn:2:q3",
+              "year": 2025,
+              "marks": 8,
+              "context": "Rational functions"
+            },
+            {
+              "q_id": "4PM1:2024:summer:2:q4",
+              "year": 2024,
+              "marks": 4,
+              "context": "curve analysis"
+            }
+          ],
+          "est_subparts": 4
+        }
+      ]
+    }
+  },
+  "method": "recency/era/session-weighted topic demand + position priors + cycle overdue boost"
+}

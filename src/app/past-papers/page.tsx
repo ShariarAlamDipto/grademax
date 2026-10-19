@@ -1,8 +1,8 @@
 
 import type { Metadata } from "next"
-import { createClient } from "@supabase/supabase-js"
 import Link from "next/link"
 import { pastPaperSubjects, type Subject } from "@/lib/subjects"
+import { getSubjectSlugsWithPapers } from "@/lib/papersIndex"
 
 export const metadata: Metadata = {
   title: "Free Edexcel Past Papers – IGCSE & A Level by Year | GradeMax",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Edexcel Past Papers – IGCSE & A Level by Year | GradeMax",
     description: "Browse all Edexcel IGCSE and A Level past papers by subject, year and session. Free PDFs with mark schemes.",
-    url: "https://grademax.me/past-papers",
+    url: "https://www.grademax.me/past-papers",
     siteName: "GradeMax",
     type: "website",
   },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     description: "All Edexcel past papers organised by year and session. Free PDFs with mark schemes.",
   },
   alternates: {
-    canonical: "https://grademax.me/past-papers",
+    canonical: "https://www.grademax.me/past-papers",
   },
 }
 
@@ -38,17 +38,17 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://grademax.me" },
-        { "@type": "ListItem", position: 2, name: "Past Papers", item: "https://grademax.me/past-papers" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.grademax.me" },
+        { "@type": "ListItem", position: 2, name: "Past Papers", item: "https://www.grademax.me/past-papers" },
       ],
     },
     {
       "@type": "WebPage",
-      "@id": "https://grademax.me/past-papers#webpage",
-      url: "https://grademax.me/past-papers",
+      "@id": "https://www.grademax.me/past-papers#webpage",
+      url: "https://www.grademax.me/past-papers",
       name: "Free Edexcel Past Papers 2025 – IGCSE & A Level with Mark Schemes",
       description: "Download free Edexcel IGCSE and A Level past papers with mark schemes (2011–2025). Browse Physics, Maths, Chemistry, Biology, ICT and more by year and session.",
-      isPartOf: { "@id": "https://grademax.me/#website" },
+      isPartOf: { "@id": "https://www.grademax.me/#website" },
       inLanguage: "en-GB",
     },
   ],
@@ -80,60 +80,24 @@ const codeColorMap: Record<Subject["colorKey"], string> = {
 }
 
 export default async function PastPapersPage() {
-  const subjectsWithPapers = new Set<string>()
+  // Which subjects have papers comes from the shared, memoized papers index
+  // (see getSubjectSlugsWithPapers) instead of re-scanning all ~11k paper rows
+  // here — the index is already built by the leaf/session pages in the same
+  // render pass, so this catalog page adds no extra DB round-trips.
+  const slugsWithPapers = await getSubjectSlugsWithPapers()
 
-  try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.SUPABASE_SERVICE_ROLE_KEY!,
-      { auth: { autoRefreshToken: false, persistSession: false } }
-    )
+  // An empty set means the index failed to load (never the case in prod, where
+  // papers always exist). Fall back to listing every known subject rather than
+  // serving an empty catalog — matches the previous error-handling behaviour.
+  const availableSubjects = slugsWithPapers.size > 0
+    ? pastPaperSubjects.filter(s => slugsWithPapers.has(s.slug))
+    : pastPaperSubjects
 
-    const pageSize = 1000
-    let lastSeenId: string | null = null
-
-    while (true) {
-      let query = supabase
-        .from("papers")
-        .select("id,subjects!inner(name)")
-        .or("pdf_url.not.is.null,markscheme_pdf_url.not.is.null")
-        .order("id", { ascending: true })
-        .limit(pageSize)
-
-      if (lastSeenId) {
-        query = query.gt("id", lastSeenId)
-      }
-
-      const { data: paperRows, error } = await query
-
-      // Supabase returns errors (eg. quota restriction 402) via the `error`
-      // field rather than throwing. Treat that the same as the catch below:
-      // fall back to listing all known subjects so we never serve an empty
-      // page just because the API was momentarily unavailable.
-      if (error) {
-        pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
-        break
-      }
-
-      if (!paperRows || paperRows.length === 0) break
-
-      const typedRows = paperRows as Array<{ id: string; subjects: { name: string } | { name: string }[] }>
-      for (const row of typedRows) {
-        const s = Array.isArray(row.subjects) ? row.subjects[0] : row.subjects
-        if (s?.name) subjectsWithPapers.add(s.name)
-      }
-
-      lastSeenId = typedRows[typedRows.length - 1].id
-      if (typedRows.length < pageSize) break
-    }
-  } catch {
-    // Same fallback for transport-level errors (no network, DNS failure, etc.)
-    pastPaperSubjects.forEach(s => subjectsWithPapers.add(s.name))
-  }
-
-  const availableSubjects = pastPaperSubjects.filter(s => subjectsWithPapers.has(s.name))
   const igcse = availableSubjects.filter((s) => s.level === "igcse")
   const ial  = availableSubjects.filter((s) => s.level === "ial")
+  const hasCambridge = availableSubjects.some(
+    (s) => s.level === "cambridge-igcse" || s.level === "cambridge-a-level"
+  )
 
   return (
     <main style={{ background: "var(--gm-bg)", color: "var(--gm-text)", minHeight: "100vh" }}>
@@ -209,6 +173,23 @@ export default async function PastPapersPage() {
           <div style={{ textAlign: "center", padding: "5rem 0", color: "var(--gm-text-3)" }}>
             <p style={{ fontSize: "1rem", fontWeight: 600, color: "var(--gm-text-2)", marginBottom: "0.5rem" }}>No papers available yet</p>
             <p style={{ fontSize: "0.85rem" }}>Papers are being uploaded. Check back soon.</p>
+          </div>
+        )}
+
+        {/* Cambridge cross-link */}
+        {hasCambridge && (
+          <div style={{ border: "1px solid var(--gm-border-2)", background: "var(--gm-card-bg)", borderRadius: "1rem", padding: "1.25rem 1.5rem", marginBottom: "3rem", display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem" }}>
+            <div>
+              <p style={{ fontSize: "0.875rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "0.2rem" }}>
+                Studying the Cambridge curriculum?
+              </p>
+              <p style={{ fontSize: "0.8rem", color: "var(--gm-text-3)" }}>
+                Cambridge IGCSE and International A Level past papers are catalogued separately.
+              </p>
+            </div>
+            <Link href="/past-papers/cambridge" className="btn-ghost-blue" style={{ fontSize: "0.8rem", padding: "0.5rem 1.25rem", minHeight: "36px" }}>
+              Cambridge Past Papers →
+            </Link>
           </div>
         )}
 
