@@ -54,8 +54,7 @@ config/*.json
 __pycache__/
 *.pyc
 
-# Workbook segment PDFs (~103 MB). Deliberately not tracked, unlike the older
-# data/processed corpus which predates the R2 migration:
+# Workbook segment PDFs (~103 MB). Deliberately not tracked:
 #   - the app serves them from R2 (workbook/fpm/...), never from the repo
 #   - they are deterministically regenerable:
 #       python scripts/build_fpm_workbook_segments.py --execute
@@ -80,7 +79,9 @@ data/manifest/paperlords_*
 /data/quarantine/
 /data/staging/
 /data/ict_data_files/
-# New segment PDFs come from R2; the pre-R2 corpus already tracked stays tracked.
+/data/raw/
+# Segment PDFs and their JSON: R2 serves them and the pipeline reads the local
+# copy. Untracked on 20 Oct 2026 (~980 MB); older commits still hold them.
 /data/processed/
 # Admin-only predicted papers and ingest logs with local machine paths.
 /data/predictions/
