@@ -1,5 +1,7 @@
 'use client';
 
+import { toolSubjectDisplayCode } from '@/lib/igcseToolSubjects';
+
 interface Subject {
   id: string;
   code: string;
@@ -57,7 +59,7 @@ export default function SubjectSelector({ subjects, selectedId, onSelect }: Subj
                     : 'border-gray-700 bg-gray-800/50 hover:border-gray-500 hover:bg-gray-700/50'
                 }`}
               >
-                <div className="text-[10px] text-gray-400 font-mono">{subject.code}</div>
+                <div className="text-[10px] text-gray-400 font-mono">{toolSubjectDisplayCode(subject.code)}</div>
                 <div className="text-sm font-semibold text-white truncate">{subject.name}</div>
               </button>
             );

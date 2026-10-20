@@ -4,6 +4,8 @@ import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { limitMessage } from '@/lib/toolLimits';
 import { useQuestionLimit } from '@/lib/useQuestionLimit';
 import SignInPrompt from '@/components/SignInPrompt';
+import { usesChapterFilters, usesExamPaperFilters } from '@/lib/igcseToolSubjects';
+import { totalQuestionMarks } from '@/lib/questionMarks';
 
 function fireTrack(feature: string, payload?: Record<string, unknown>) {
   fetch("/api/track", {
@@ -84,9 +86,12 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   const topicsCache = useRef<Record<string, Topic[]>>({ [initialSubjects[0]?.id || '']: initialTopics });
 
   // ── Filters ──
-  const [difficulty, setDifficulty] = useState('');
+  const [difficultyDraft, setDifficulty] = useState('');
+  const paperFilters = usesExamPaperFilters(initialSubjects.find(s => s.id === selectedSubject)?.code || '');
+  const chapterFilters = usesChapterFilters(initialSubjects.find(s => s.id === selectedSubject)?.code || '');
+  const difficulty = paperFilters ? '' : difficultyDraft;
   const [yearStart, setYearStart] = useState(2011);
-  const [yearEnd, setYearEnd] = useState(2025);
+  const [yearEnd, setYearEnd] = useState(new Date().getFullYear());
   const { limit: questionLimit } = useQuestionLimit();
 
   // ── Question Browser ──
@@ -422,7 +427,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
     const basketChanged = () => basketVersion.current !== startedAtVersion;
 
     const subject = initialSubjects.find(s => s.id === selectedSubject);
-    const totalMarks = basketItems.length * 4;
+    const totalMarks = totalQuestionMarks(basketItems);
     // The metadata is printed on each question's first page, so a question
     // and its mark scheme can always be matched by eye.
     const pagesPayload = basketItems.map(item => ({
@@ -577,7 +582,9 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
           {/* ═══ LEFT COLUMN: Topics + Filters ═══ */}
           <div className="space-y-4">
             <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-4">
-              <h2 className="text-base font-bold text-white mb-3">Topics</h2>
+              <h2 className="text-base font-bold text-white mb-3">{paperFilters ? 'Exam Papers' : chapterFilters ? 'Chapters' : 'Topics'}</h2>
+              {paperFilters && <p className="text-xs text-gray-400 mb-3">Complete questions, including all subparts.</p>}
+              {chapterFilters && <p className="text-xs text-gray-400 mb-3">Written-paper questions by syllabus chapter. All subparts are retained; questions may cover several chapters.</p>}
               <TopicTree
                 topics={topics}
                 selectedTopics={selectedTopics}
@@ -591,6 +598,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             <div className="bg-gray-800/60 backdrop-blur-lg rounded-xl border border-gray-700 p-4">
               <FilterBar
                 difficulty={difficulty}
+                difficultyAvailable={!paperFilters}
                 onDifficultyChange={setDifficulty}
                 yearStart={yearStart}
                 onYearStartChange={setYearStart}

@@ -422,7 +422,8 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme tallies align only ambiguously (1 question(s) and 2 tally/tallies unmatched, so a question could pair with the wrong tally of equal value) -- no mark schemes attached"
+        "mark scheme read as per-question tallies: 24/25 aligned (skipped 1 question(s), 1 tally/tallies) -- 1 question(s) unmatched",
+        "no mark scheme block found for questions [14]"
       ],
       "questions": 25,
       "marks": 100
@@ -455,7 +456,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 1 tally/tallies)"
+        "mark scheme read as per-question tallies: 26/26 aligned (skipped 0 question(s), 0 tally/tallies)"
       ],
       "questions": 26,
       "marks": 100
@@ -466,7 +467,7 @@
       "skipped_reason": null,
       "issues": [],
       "warnings": [
-        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 2 tally/tallies)"
+        "mark scheme read as per-question tallies: 28/28 aligned (skipped 0 question(s), 1 tally/tallies)"
       ],
       "questions": 28,
       "marks": 100

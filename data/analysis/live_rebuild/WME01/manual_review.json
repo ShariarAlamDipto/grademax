@@ -1,0 +1,721 @@
+{
+ "2018_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 own page(s) of the June 2018 WME01 scheme, closes on its boxed total; read by eye (symbol-font text layer)",
+  "ms_regions": [
+   [
+    6,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 own page(s) of the June 2018 WME01 scheme, closes on its boxed total; read by eye (symbol-font text layer)",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 own page(s) of the June 2018 WME01 scheme, closes on its boxed total; read by eye (symbol-font text layer)",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 own page(s) of the June 2018 WME01 scheme, closes on its boxed total; read by eye (symbol-font text layer)",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 own page(s) of the June 2018 WME01 scheme, closes on its boxed total; read by eye (symbol-font text layer)",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 own page(s) of the June 2018 WME01 scheme, closes on its boxed total; read by eye (symbol-font text layer)",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 own page(s) of the June 2018 WME01 scheme, closes on its boxed total; read by eye (symbol-font text layer)",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 is scheme page 8 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 is scheme page 9 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 is scheme page 10 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 is scheme page 11 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 is scheme page 12 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 is scheme page 13 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 is scheme page 14 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_may-jun_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 is scheme page 15 alone, closing on its boxed total that equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    14,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 is scheme page 7 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    6,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 is scheme page 8 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 is scheme page 9 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 is scheme page 10 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 is scheme page 11 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 is scheme page 12 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 is scheme page 13 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ },
+ "2015_jan_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 is scheme page 14 alone (Jan 2015 IAL M1 scheme), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ]
+  ]
+ },
+ "2016_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 own scheme page(s), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    6,
+    null,
+    null
+   ]
+  ]
+ },
+ "2016_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 own scheme page(s), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ]
+  ]
+ },
+ "2016_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 own scheme page(s), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ]
+  ]
+ },
+ "2016_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 own scheme page(s), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ]
+  ]
+ },
+ "2016_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 own scheme page(s), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ]
+  ]
+ },
+ "2016_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 own scheme page(s), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ },
+ "2016_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 own scheme page(s), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 is scheme page 7 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    6,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 is scheme page 8 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 is scheme page 9 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 is scheme page 10 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 is scheme page 11 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 is scheme page 12 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 is scheme page 13 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_may-jun_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 is scheme page 14 alone (June 2017 WME01), boxed total equals the question's marks; read by eye",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ]
+  ]
+ },
+ "2017_oct-nov_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 scheme + its notes, from its own first row to the next question's (Oct 2017 WME01; totals 7,11,6,9,11,14,17 match); read by eye",
+  "ms_regions": [
+   [
+    1,
+    null,
+    505
+   ]
+  ]
+ },
+ "2017_oct-nov_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 scheme + its notes, from its own first row to the next question's (Oct 2017 WME01; totals 7,11,6,9,11,14,17 match); read by eye",
+  "ms_regions": [
+   [
+    1,
+    505,
+    null
+   ],
+   [
+    2,
+    null,
+    478
+   ]
+  ]
+ },
+ "2017_oct-nov_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 scheme + its notes, from its own first row to the next question's (Oct 2017 WME01; totals 7,11,6,9,11,14,17 match); read by eye",
+  "ms_regions": [
+   [
+    2,
+    478,
+    null
+   ],
+   [
+    3,
+    null,
+    233
+   ]
+  ]
+ },
+ "2017_oct-nov_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 scheme + its notes, from its own first row to the next question's (Oct 2017 WME01; totals 7,11,6,9,11,14,17 match); read by eye",
+  "ms_regions": [
+   [
+    3,
+    233,
+    null
+   ],
+   [
+    4,
+    null,
+    336
+   ]
+  ]
+ },
+ "2017_oct-nov_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 scheme + its notes, from its own first row to the next question's (Oct 2017 WME01; totals 7,11,6,9,11,14,17 match); read by eye",
+  "ms_regions": [
+   [
+    4,
+    336,
+    null
+   ],
+   [
+    5,
+    null,
+    272
+   ]
+  ]
+ },
+ "2017_oct-nov_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 scheme + its notes, from its own first row to the next question's (Oct 2017 WME01; totals 7,11,6,9,11,14,17 match); read by eye",
+  "ms_regions": [
+   [
+    5,
+    272,
+    null
+   ],
+   [
+    6,
+    null,
+    389
+   ]
+  ]
+ },
+ "2017_oct-nov_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 scheme + its notes, from its own first row to the next question's (Oct 2017 WME01; totals 7,11,6,9,11,14,17 match); read by eye",
+  "ms_regions": [
+   [
+    6,
+    389,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ]
+ },
+ "2014_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 = scheme p13 alone (Pearson WME01 June 2014 scheme), [13] = question",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ },
+ "2014_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 = scheme pp14-15, [16] = question",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ]
+  ]
+ },
+ "2018_oct-nov_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 collision (a)(b) + notes, [6], scheme p7 from its header",
+  "ms_regions": [
+   [
+    6,
+    147,
+    null
+   ]
+  ]
+ },
+ "2018_oct-nov_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 from its first row (p9 y392) to Q4's header (p10)",
+  "ms_regions": [
+   [
+    8,
+    392,
+    null
+   ]
+  ]
+ },
+ "2019_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 vertical motion (a)(b)(c) + alt, (9) = question; (c) printed as '(c),'"
+ },
+ "2020_jan_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 collision (a)(b)(c) + notes, (8), scheme p7 from its header; Q2 opens p8",
+  "ms_regions": [
+   [
+    6,
+    127,
+    null
+   ]
+  ]
+ },
+ "2022_jan_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 (a)-(d) + notes, (13) = question; part (c) printed as '7l)'"
+ },
+ "2023_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 speed-time (a)-(d) + notes, (11) = question"
+ },
+ "2023_may-jun_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 vectors (a)-(d) + notes, (9) = question; scheme p17 from its own header",
+  "ms_regions": [
+   [
+    16,
+    67,
+    null
+   ]
+  ]
+ },
+ "2024_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 parachute (a)-(d) + notes, (14) = question"
+ },
+ "2012_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 own scheme page(s) of Pearson 6677 June 2012 (the paper served, P40689A), boxed total = question marks; read by eye",
+  "ms_regions": [
+   [
+    5,
+    null,
+    null
+   ]
+  ]
+ },
+ "2012_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 own scheme page(s) of Pearson 6677 June 2012 (the paper served, P40689A), boxed total = question marks; read by eye",
+  "ms_regions": [
+   [
+    6,
+    null,
+    null
+   ]
+  ]
+ },
+ "2012_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 own scheme page(s) of Pearson 6677 June 2012 (the paper served, P40689A), boxed total = question marks; read by eye",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ]
+  ]
+ },
+ "2012_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 own scheme page(s) of Pearson 6677 June 2012 (the paper served, P40689A), boxed total = question marks; read by eye",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ]
+  ]
+ },
+ "2012_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 own scheme page(s) of Pearson 6677 June 2012 (the paper served, P40689A), boxed total = question marks; read by eye",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ]
+ },
+ "2012_may-jun_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 own scheme page(s) of Pearson 6677 June 2012 (the paper served, P40689A), boxed total = question marks; read by eye",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ]
+  ]
+ },
+ "2012_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 own scheme page(s) of Pearson 6677 June 2012 (the paper served, P40689A), boxed total = question marks; read by eye",
+  "ms_regions": [
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ]
+ }
+}

@@ -1,0 +1,570 @@
+{
+  "2019_may-jun_P1|1": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "medium",
+    "reason": "Input-process-output, CPU, stored-program concept, virtual memory and optical storage.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "589ee7c7e76d2b91982032952b0aae6ae396cb0eb744eefa184a4a3ad6fa43c0",
+    "ms_sha256": "fb55067b4fd10247c2079b542adb1f4d8000e40a4b3846275758b07f252b8678"
+  },
+  "2019_may-jun_P1|2": {
+    "topics": [
+      "5"
+    ],
+    "difficulty": "medium",
+    "reason": "Cloud access security, permissions, DNS and physical network connections.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "19005e1812d29df38ef89489b587d11dcb70f8bb229f8d2b29dbf0ab7c881e1b",
+    "ms_sha256": "45579def0877f9abe87bf3ba6b85a9261605e22ae0085cbe031ad3d867dff56f"
+  },
+  "2019_may-jun_P1|3": {
+    "topics": [
+      "5",
+      "3"
+    ],
+    "difficulty": "medium",
+    "reason": "LAN/WAN, IMAP and topologies; signed binary, conversion and overflow are separately assessed.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "679ec154325a2a7048df255ad36a1155689b9a7e0e42a0dadc9f92a8589afe97",
+    "ms_sha256": "b187e382c910568cac5343dda0ec93b345b9dff4c7c47c0162a0d8f2924d1422"
+  },
+  "2019_may-jun_P1|4": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Storage units, bitmap file size, compression and Unicode block-allocation calculations.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "bd35cb413fcc333fec5ac991df635be0563bd37187f9c7867f166c9bf386e0de",
+    "ms_sha256": "783c7ca3a25d1b8e390200c025933f123b7ba7187fb1208ee1520aaa4be966cb"
+  },
+  "2019_may-jun_P1|5": {
+    "topics": [
+      "1",
+      "2"
+    ],
+    "difficulty": "hard",
+    "reason": "Interpret container flowchart, complete array iteration/string output, and trace/correct an out-of-bounds search.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "74e29c5f709a3845b22dedb1d862750ac9ac52c71bf2cff8158db4bb8838926c",
+    "ms_sha256": "c8a5f4f2db953a0fc9009c0cb572f9a10703424a1ce64d81157ddf07c359231c"
+  },
+  "2019_may-jun_P1|6": {
+    "topics": [
+      "4",
+      "6",
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Embedded hardware and language levels; AI uses/ethics; bank-card encryption.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "0883486d3d07201736977bff36230ab68f7659e3f0f494269752d667f724c5c9",
+    "ms_sha256": "d45f55439c313281ad06cddabbf1e104ed527c5ccb1c23648902de2e48603792"
+  },
+  "2020_oct-nov_P1|1": {
+    "topics": [
+      "5"
+    ],
+    "difficulty": "medium",
+    "reason": "Network sharing, wired/wireless media, internet/WWW, IPv6, star topology and TCP/IP email transport.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "e8ca64d37d9e5351d9eb709a2c5e3e209db2def380765584eb0e687e0b57278a",
+    "ms_sha256": "cdebfc71b1ce6f6ac9ae9a0f3bbe5c28ca4fb2ca0b6621ce22695e5ffe92ebd2"
+  },
+  "2020_oct-nov_P1|2": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "medium",
+    "reason": "Signed binary, hexadecimal base, ASCII encoding and Unicode.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "f906e068faf7104bb019df7468557a64c6cff714b540f7844acf97da3fcf52a4",
+    "ms_sha256": "8bfa2e12a2b439594952a57e62c917fd816c4b1d675582109075bbb14ddbb2ec"
+  },
+  "2020_oct-nov_P1|3": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "FDE buses and directions, cache performance, parallel CPU evaluation and operating-system file allocation.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "c8bf5cbca551eb1a4f9dc561195785d9224bca89ffdcbe44a3f714b3578a930b",
+    "ms_sha256": "05323ec4911a934c4968ede4075121297dc604d53606a95bba762c9b33aad1b3"
+  },
+  "2020_oct-nov_P1|4": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Analogue/digital sampling graph, frequency, bit depth, sound size and lossy compression.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "2c617ae7cdc6e6ff9838fa2b23d69ccda8af7afd35e7cafc3b8503df316a2eb8",
+    "ms_sha256": "41dcb3993d3bae5933273ab5d15b3dcf34284bd2ade2cafc748c7739f8c02020"
+  },
+  "2020_oct-nov_P1|5": {
+    "topics": [
+      "4",
+      "6",
+      "5"
+    ],
+    "difficulty": "medium",
+    "reason": "Truth table and Boolean mower interlock; intellectual-property protections; secure code review.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "9d9174b9547f39553a9d87c269846b8bcfdd7ab3b4ea51a295a8f75df9f86d45",
+    "ms_sha256": "7f3a8113d8d135e173ea604744153baa9512073fa15c8e8b2597225424cc5d7a"
+  },
+  "2020_oct-nov_P1|6": {
+    "topics": [
+      "1",
+      "4",
+      "2"
+    ],
+    "difficulty": "hard",
+    "reason": "Design timed flowchart, interpret array algorithm and change loop bound; compare compiler and interpreter.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "3d5de9da88cf8b55873439bb24a36e3162dd68d770b6d4fd3a4dd9fffd6cae2a",
+    "ms_sha256": "eaf773fcaffba0f1d45fefaa35f6e9ac2fb53ea55d6693453d34bf181f4a0a30"
+  },
+  "2021_may-jun_P1|1": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "medium",
+    "reason": "Hex conversion, binary addition and shift, ASCII and bitmap colour depth.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "13fb6b6e0124666e356b9a98d0348ed3c85c8a70bfde91687f4f24d70249ebdf",
+    "ms_sha256": "4b62d277153ba797abcc69f6e07f88a9dcb6e0900f2f292585278fe0cf793d70"
+  },
+  "2021_may-jun_P1|2": {
+    "topics": [
+      "5",
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "TCP/IP and bus topology; lossy/lossless compression, RLE and transfer-time calculation.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "7537918427860c094c7c84668cf71809f46a6b8e82e18f0ead5b6d418be96c17",
+    "ms_sha256": "4a1adc6b4f754134345e2ca1b245a2840f157e2863118758bc2354f3cf5058b8"
+  },
+  "2021_may-jun_P1|3": {
+    "topics": [
+      "4",
+      "5"
+    ],
+    "difficulty": "medium",
+    "reason": "Hardware/software, SSD/RAM, cache and I/O devices; anti-malware protection.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "fb12082d015da20925b7aa9c4ff73e8caac69a7529bcd79c1bcd6b982cb4293a",
+    "ms_sha256": "4232debe4dfc65debcf4fdaf4ba0d7975915a47cce9cfaee4a13435c1faa1c60"
+  },
+  "2021_may-jun_P1|4": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "Simulations, Boolean truth table, Von Neumann model, registers and bus width.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "4531c05a3b0959a3f85ac9d5f93a6107cafd5d122118835b812d7d81bbf199c3",
+    "ms_sha256": "14c444082bfc2ad5f472974fbb43c1f6888940bee53eeacda2c7542852928d86"
+  },
+  "2021_may-jun_P1|5": {
+    "topics": [
+      "1",
+      "2",
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "Trace/reverse array and diagnose average-loop errors; temporary variables and compiler distribution benefits.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "2d966dc9aac7a623d96388a4acc42f154f212061c97dc92757f56399014dbde0",
+    "ms_sha256": "07fabe01052c68dabe8a18a9105dbcfaffc26eef718d7281c20f65d880506dd2"
+  },
+  "2021_may-jun_P1|6": {
+    "topics": [
+      "6"
+    ],
+    "difficulty": "hard",
+    "reason": "DNA and quantum computing, unequal access and environmental impacts/mitigations.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "b0309752965819a8f8135329d61876abb457c4aec45751577b322c0a4d88d8c3",
+    "ms_sha256": "1e8a0d71110645ed810e3657ee3170a4e5afd53fa638c522a7ec71c67749a051"
+  },
+  "2021_oct-nov_P1|1": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Signed binary, hexadecimal, bitmap size/RLE and sound digitisation/lossy compression.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "6843b1954ad14b8222974ff41244b959a690f221b80b9d7b0db95fd140ac7bac",
+    "ms_sha256": "85017832a4cf2007d9a39bc71a1146293fcf671f5f46b13b3f0b7b6a75e0baa4"
+  },
+  "2021_oct-nov_P1|2": {
+    "topics": [
+      "5"
+    ],
+    "difficulty": "medium",
+    "reason": "Strong passwords, phishing evidence, shoulder surfing, penetration testing and software patches.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "982d272c25c712de034b66e34ea5aaab105f6e84dae44c986a53251059db1789",
+    "ms_sha256": "3795fe79b3a87c26a6d526c79391f31e620a7e9f05f13634251e430d1c6a0217"
+  },
+  "2021_oct-nov_P1|3": {
+    "topics": [
+      "5",
+      "6"
+    ],
+    "difficulty": "medium",
+    "reason": "PAN, peer-to-peer, TCP/IP, wireless frequencies and mobile standards; smartphone energy and e-waste.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "0d738fa8ad2514cad66e6fc7d0866a16ad09016d66ba0b61a770e69c0cc71ca4",
+    "ms_sha256": "151021caf1d929089246e3c376bd80467a156c038c053da4d980c9c4310881c8"
+  },
+  "2021_oct-nov_P1|4": {
+    "topics": [
+      "1",
+      "2"
+    ],
+    "difficulty": "hard",
+    "reason": "Trace a flowchart and complete vowel-count pseudocode using string iteration and concatenation.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "23db4d70556d46d89fc588cbeedadfb1ed724d5375f1f73d56beeac346f9c86a",
+    "ms_sha256": "2f392af7071843d4e2a5ca6ce96a6ba17010fe2d08e799ceb84ff75257a2d8a8"
+  },
+  "2021_oct-nov_P1|5": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "medium",
+    "reason": "CPU component diagram, program counter, clock and embedded-system design.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "73951beafd2df9d3bc131be26728f1f592f96fa9e322a3b1ed1d3a516bd09d1d",
+    "ms_sha256": "ed335078a00540fdb2a31c675f95e0dc46babaa537a0d15cb631f4c6d279e1d1"
+  },
+  "2021_oct-nov_P1|6": {
+    "topics": [
+      "4",
+      "6",
+      "5"
+    ],
+    "difficulty": "hard",
+    "reason": "Language levels and Boolean alarm expression; licensing/IP; anti-malware functions.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "c2bfde5b3fa25ef3a785fbb9d9fd14e2aec3494f8f092ebeb2360b7641cefcee",
+    "ms_sha256": "25911a40b1fbce66f25001d01bf114866c0457fa7aa97fd6a5b99806d3ceac3b"
+  },
+  "2022_may-jun_P1|1": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "medium",
+    "reason": "CPU instructions, memory addresses, registers, clock speed, sequential model and language translators.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "33b59abdd1f5320e59ac8853613ac6a01ce84a98d75f687e5841826e107fbd69",
+    "ms_sha256": "6a03b233527bb7bf5cd6adca274a3b8d79ca5950fb85d1875ba1f698a9d8f77b"
+  },
+  "2022_may-jun_P1|2": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "ASCII/Unicode, signed binary, addition, minimum colour depth and bitmap size with metadata.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "ef6b21754b7b39837abaf98e281bc835130f9e18ae08985e71a1dafe04f605b4",
+    "ms_sha256": "a24919bee20d842cbc38deec629e366d792d2a6c733593a6f97b78fbc0c0b104"
+  },
+  "2022_may-jun_P1|3": {
+    "topics": [
+      "3",
+      "5",
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "Sound sample graph and lossless compression; cloud benefits/security and URL components. Cloud-storage benefit part also assesses 4.2.6 (added on 2026-10-16 audit).",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "fa8ac6c7a3ebb368df52ff4a1927bf449d33801f8579f3de7e6cb6df5c6721b5",
+    "ms_sha256": "e3f0fd65330922fad22b33d4dd9195f605152d554fb72ef49798d0136fdc9f5b"
+  },
+  "2022_may-jun_P1|4": {
+    "topics": [
+      "1",
+      "2"
+    ],
+    "difficulty": "hard",
+    "reason": "Create guessing-game flowchart, identify input/initialisation and trace/correct game counters.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "96dd8edb93a5f11eb39b3a1d23a0433d0c60f613986abdbdeb220e8e7421b0da",
+    "ms_sha256": "863b6eb468fbbd45b0445a7237f2c16ab2c269abdec9817435921e0db011ee84"
+  },
+  "2022_may-jun_P1|5": {
+    "topics": [
+      "4",
+      "6",
+      "5"
+    ],
+    "difficulty": "medium",
+    "reason": "SSD storage and RAM/ROM; medical AI access; LAN/WAN and eavesdropping.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "12a5d51e57b60773521b56a449af35c6208308079c2bcbc22bb794a143be36d4",
+    "ms_sha256": "c7ff16a1da3cdefab0e935bbabf5ed936f14b976ec3c63c9e7b1eccd7425de9e"
+  },
+  "2022_may-jun_P1|6": {
+    "topics": [
+      "5"
+    ],
+    "difficulty": "hard",
+    "reason": "Ring/mesh, PAN security, audit trails and vulnerability assessment methods.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "aac8316f6de761a13486b35416b536fcff5d3bef4527e80cb1fefc4c07b4e3e3",
+    "ms_sha256": "34c22c4965bb0094eae1ebf2f6bfcae6b824b5b14b5f1001e163f39a8a60dfc6"
+  },
+  "2023_may-jun_P1|1": {
+    "topics": [
+      "5",
+      "6",
+      "2",
+      "3"
+    ],
+    "difficulty": "medium",
+    "reason": "Networking, physical/social security and 5G; professionalism; modular testing; encryption purpose.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "d93779eca89b9b9c8e5d57213c68bb9a68da26bb62020da94e486f209c5f859f",
+    "ms_sha256": "00f81243a1a8ef72afee0fdb74453e68593ec9238e21511abb3ff4c23434eb92"
+  },
+  "2023_may-jun_P1|2": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "medium",
+    "reason": "Hexadecimal, bit counts, logical/arithmetic shifts, signed representations and KB/KiB conversion.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "c445cf96439ee3abbe6f7ac52f4be22980dadde70726c640d5a956fc947fe230",
+    "ms_sha256": "b95b8fb155517c72e6a066f6397ad867a33545f8700f63ecf8a546043d92b0fe"
+  },
+  "2023_may-jun_P1|3": {
+    "topics": [
+      "4",
+      "3"
+    ],
+    "difficulty": "medium",
+    "reason": "Simulation validity, software classes, defragmentation and translators; colour depth and RLE.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "519f7616c84114bcf80e71e53d12b476080bc2812e5c2c4030389b6ddb3f309d",
+    "ms_sha256": "30cf205fce2d03000a529d5a9fee8d904e3f6142796b4c2d4520bd21a475162e"
+  },
+  "2023_may-jun_P1|4": {
+    "topics": [
+      "5",
+      "2"
+    ],
+    "difficulty": "medium",
+    "reason": "Network speed, IPv4/IPv6, media/Ethernet, switch-router-modem; input validation versus authentication.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "e923a007e783ed48f59610a49936ff9095f87962c6e0f19ac24ab2a91867623e",
+    "ms_sha256": "c7a20645abd075fe12049eb55fc0f75d37dcc883a732267cc124f95894371660"
+  },
+  "2023_may-jun_P1|5": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "IPO model, component directions, ROM/cache, embedded control, Boolean logic and scheduling.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "f281ea10a2d3cf7e088b535ac4307b0917a2e215b78bc34c904ec8fcb6a37230",
+    "ms_sha256": "c1aaf18be3017506fe7f5ffbb5ec31aeeda25d9b96ae552485d464c5075f0951"
+  },
+  "2023_may-jun_P1|6": {
+    "topics": [
+      "1",
+      "6",
+      "2",
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "Choose algorithm notation and explain selection/reverse-array pseudocode; evaluate cloud service benefits and risks. Cloud-storage benefit part also assesses 4.2.6 (added on 2026-10-16 audit).",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "b7e3bf96063ade7a0e8bc2690aca692b2c0e7571e9809067c38c4a7bcf44eecd",
+    "ms_sha256": "f577d6705da96e82b3a072c36445859a44db1e22d3f6979c5c8e68ac65063540"
+  },
+  "2024_may-jun_P1|1": {
+    "topics": [
+      "5"
+    ],
+    "difficulty": "easy",
+    "reason": "LAN/WAN, network risks, mesh topology, TCP/IP data-link layer and URL protocol/resource.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "833316ad8881558d68484a3295df1b7603f671e76ed17a35ea2220253727fc88",
+    "ms_sha256": "e8a28167815bfb8b29459106f419c138efa08662afe0a9a9c4ca023e07ce8164"
+  },
+  "2024_may-jun_P1|2": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "medium",
+    "reason": "Software classes, operating-system roles, RAM/ROM, magnetic drive, FDE and buses.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "f3a3514e5e9eefe518b4fb794fb9a2841f8082d1aabab95cead5e97f9951aad0",
+    "ms_sha256": "13ef67ca9fa82ad04253def2e49e43909f0144a7d9ad54503a812c9eddc21e45"
+  },
+  "2024_may-jun_P1|3": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Bitmap depth and size, binary conversion, signed shift/overflow and ASCII.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "ef51cd31c5290dffd3a6d0357a765a40e66954bf4533c727d4c69f8acc382fa8",
+    "ms_sha256": "e3a94f405dbc1a3ba3419c881a72ae6413d475905c167929aee4dfe54a95f079"
+  },
+  "2024_may-jun_P1|4": {
+    "topics": [
+      "6",
+      "5",
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "Nanotechnology and facial-recognition privacy dominate; authentication/IPv6 and simulation/computational models.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "ca6ab9ebfe9692f9a6fe1dfec71bd9965f03e8f6d5f90b0c073a83de89d5975a",
+    "ms_sha256": "d23f83b5edde1ddd1b07d1bfedb9e1ce308c3d01937d699db9059b93a6251572"
+  },
+  "2024_may-jun_P1|5": {
+    "topics": [
+      "4",
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Translators, clock speed, utility software and Boolean expression; lossless compression justification.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "bde9925b8b3df152c87001f7d23b0f5fac8b5f7a1145dc9844b6e7bd3e2976b4",
+    "ms_sha256": "3c14850c6b6e91b645effd67bd0c666c9d410b1df8743c9dba1d52db83e1fe07"
+  },
+  "2024_may-jun_P1|6": {
+    "topics": [
+      "1",
+      "2"
+    ],
+    "difficulty": "hard",
+    "reason": "Correct train-array pseudocode and construct FizzBuzz flowchart; loop, counters and array indexing.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "7f4f2ab3c573e571232d5fe134741bb8b8ccdf360406061189f77c037517d32f",
+    "ms_sha256": "87c720d06df0b4e274fe12e908de2c567ddeefaea392fe848b97371b3bc7e022"
+  },
+  "2026_may-jun_P1|1": {
+    "topics": [
+      "4"
+    ],
+    "difficulty": "easy",
+    "reason": "IPO, optical storage, processor cores and CPU/bus component diagram.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "5eb3faa3267c9b48c99e383b9bac0be93c2b2c41f47dbd574ec7665ad5ab8513",
+    "ms_sha256": "aed9ba9db6c5635c99dd1431582de84b94d874e06a35273ccde808c00637c77b"
+  },
+  "2026_may-jun_P1|2": {
+    "topics": [
+      "4",
+      "5",
+      "3"
+    ],
+    "difficulty": "medium",
+    "reason": "OS scheduling, translators and Boolean table; audit trails; Caesar cipher.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "cd2ac9a3f4e00aa3f50e30ed9a5fd8a3e1437f3a3d9ea67963fb5ac9d66b91d0",
+    "ms_sha256": "0e759352b1fcb678ea1af63ef392830262353fbd9d8a83a9d0a6f6b9718e6146"
+  },
+  "2026_may-jun_P1|3": {
+    "topics": [
+      "5",
+      "4",
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Bus topology, DNS, PAN and wired media; exclusive-access Boolean expression; two-complement conversion.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "e822f81766e8855bb1b19c25236722507d6cada9e5eca4804ddcb1c015691a12",
+    "ms_sha256": "2460adc6efb3c3c7011be1ad0123572d35267eb754a75b8547348fb2eae109aa"
+  },
+  "2026_may-jun_P1|4": {
+    "topics": [
+      "6",
+      "5",
+      "4"
+    ],
+    "difficulty": "hard",
+    "reason": "AI definition and evaluation in schools with ethics; cloud storage security and scaling. Cloud-storage benefit part also assesses 4.2.6 (added on 2026-10-16 audit).",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": false,
+    "qp_sha256": "a298d6a40c6fd434005f2772453018fbfd256bc5e6fc4fb3d1d502dbec1ca474",
+    "ms_sha256": "c45abf22bac0a0655dacfd23d0ee4056a703839f2d7257fc2984f647ff1bf90b"
+  },
+  "2026_may-jun_P1|5": {
+    "topics": [
+      "3"
+    ],
+    "difficulty": "hard",
+    "reason": "Storage units, colour/RLE encoding, bitmap size and signed digital sound graph.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "cf0f8530fa3170182114ffe96781c9b215792f0fb441ea7764a0d807c46b5fce",
+    "ms_sha256": "bb6d57f9efd1da67f491bcd85f0a4b5922b83a5e91f688954562b2235e784953"
+  },
+  "2026_may-jun_P1|6": {
+    "topics": [
+      "1",
+      "2"
+    ],
+    "difficulty": "hard",
+    "reason": "Pseudocode typecasting and loop correction, trace-table purpose and bubble-sort trace with temporary variable.",
+    "source": "Direct reading of complete question and matching mark scheme",
+    "has_diagram": true,
+    "qp_sha256": "21ac2f3b5f1e1fc45d157b3b8d6a60d6dd34147f5ae8786fb5d3279c2a667bac",
+    "ms_sha256": "4d2c048bfd9a3b911d21cecc4f7d8d56a819aab059808996b7a0e73d8fb2bd43"
+  }
+}

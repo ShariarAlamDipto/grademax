@@ -1,0 +1,219 @@
+{
+  "n": 1,
+  "title": "Forces and Motion",
+  "blurb": "The biggest chapter in the whole specification - about one fifth of every paper. Momentum, moments and the F = ma family come up relentlessly.",
+  "formulas": [
+    [
+      "average speed",
+      "distance moved ÷ time taken",
+      "m/s"
+    ],
+    [
+      "acceleration",
+      "(final velocity − initial velocity) ÷ time taken",
+      "m/s²"
+    ],
+    [
+      "resultant force",
+      "mass × acceleration",
+      "N"
+    ],
+    [
+      "weight",
+      "mass × gravitational field strength",
+      "N"
+    ],
+    [
+      "momentum",
+      "mass × velocity",
+      "kg m/s"
+    ],
+    [
+      "force (from momentum)",
+      "change in momentum ÷ time taken",
+      "N"
+    ],
+    [
+      "moment",
+      "force × perpendicular distance from the pivot",
+      "N m"
+    ],
+    [
+      "work done",
+      "force × distance moved in the direction of the force",
+      "J"
+    ],
+    [
+      "equation of motion",
+      "final velocity² = initial velocity² + 2 × acceleration × distance",
+      "–"
+    ]
+  ],
+  "items": [
+    {
+      "q": "State the formula linking momentum, mass and velocity.",
+      "rx": "formula linking momentum|equation linking momentum",
+      "marks": "1 mark",
+      "a": [
+        "momentum = mass × velocity",
+        "(p = m × v)"
+      ],
+      "tip": "Standard symbols are accepted, so p = mv is enough. Momentum is measured in kg m/s and it is a vector - it has a direction."
+    },
+    {
+      "q": "State the formula linking resultant (unbalanced) force, mass and acceleration.",
+      "rx": "(formula|equation) linking (resultant |unbalanced )?force, mass and acceleration",
+      "marks": "1 mark",
+      "a": [
+        "force = mass × acceleration",
+        "(F = m × a)"
+      ],
+      "tip": "The word 'resultant' matters in the explanation questions: a body only accelerates if the forces on it are unbalanced."
+    },
+    {
+      "q": "State the formula linking moment, force and perpendicular distance from the pivot.",
+      "rx": "(formula|equation) linking moment[,\\s]+force",
+      "marks": "1 mark",
+      "a": [
+        "moment = force × perpendicular distance from the pivot",
+        "(M = F × d)"
+      ],
+      "tip": "Write the word 'perpendicular'. Distance must be measured at right angles to the line of action of the force."
+    },
+    {
+      "q": "State the principle of moments.",
+      "rx": "principle of moments",
+      "marks": "1–2 marks",
+      "a": [
+        "For an object in equilibrium (balanced), the sum of the clockwise moments about a pivot",
+        "equals the sum of the anticlockwise moments about that same pivot."
+      ],
+      "tip": "Mark schemes accept this written mathematically, e.g. 'clockwise moment = anticlockwise moment'. You must mention the pivot."
+    },
+    {
+      "q": "State the principle of conservation of momentum / state what is meant by conservation of momentum.",
+      "rx": "principle of conservation of momentum|meant by (the term )?conservation of momentum",
+      "marks": "1–2 marks",
+      "a": [
+        "In a closed system (no external forces acting), the total momentum before a collision or explosion",
+        "equals the total momentum after it - momentum is conserved."
+      ],
+      "tip": "In the calculation that follows, choose a positive direction first and give anything moving the other way a minus sign. A negative answer just means it moves the opposite way."
+    },
+    {
+      "q": "Calculate the magnitude of force F acting on the beam / plank / arm.",
+      "rx": "calculate the magnitude of (the )?force",
+      "marks": "3–4 marks",
+      "a": [
+        "Take moments about the pivot: clockwise moment = anticlockwise moment;",
+        "substitute the known force × its perpendicular distance;",
+        "rearrange to make F the subject;",
+        "evaluate, and give the unit (N)."
+      ],
+      "tip": "Convert cm to m consistently, or keep everything in cm - just do not mix them. Marks are given for substitution and rearrangement even if the arithmetic slips."
+    },
+    {
+      "q": "Calculate the velocity of object A after the collision.",
+      "rx": "velocity of .{0,25}(after|before) the collision",
+      "marks": "3–4 marks",
+      "a": [
+        "Total momentum before = total momentum after;",
+        "set up the equation: m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂;",
+        "rearrange for the unknown velocity;",
+        "evaluate to 2 or more significant figures, with the direction stated."
+      ],
+      "tip": "If the two objects stick together, the right-hand side becomes (m₁ + m₂) × v. Watch the signs - a rebound is negative."
+    },
+    {
+      "q": "Calculate the average force acting on the object during the collision.",
+      "rx": "(average|mean) force on|average force acting",
+      "marks": "3 marks",
+      "a": [
+        "Find the change in momentum: Δp = m × (v − u);",
+        "use force = change in momentum ÷ time;",
+        "evaluate, with the unit N."
+      ],
+      "tip": "By Newton's third law, the force on A from B is equal in size and opposite in direction to the force on B from A."
+    },
+    {
+      "q": "State the magnitude and direction of the force that object A exerts on object B.",
+      "rx": "magnitude and direction of (the |this )?(mean )?force",
+      "marks": "2 marks",
+      "a": [
+        "The magnitude is the same as the force B exerts on A;",
+        "the direction is opposite (Newton's third law)."
+      ],
+      "tip": "This is a free 2 marks if you spot that it is Newton's third law. The pair always acts on two different objects."
+    },
+    {
+      "q": "Use the velocity–time graph to calculate the acceleration / the distance travelled.",
+      "rx": "(acceleration of the (car|train|object|firework)|distance travelled by the (car|object|train))",
+      "marks": "2–4 marks",
+      "a": [
+        "Acceleration = gradient of the graph = change in velocity ÷ time taken;",
+        "distance travelled = area under the graph;",
+        "split the area into triangles and rectangles and add them;",
+        "give the unit (m/s² for acceleration, m for distance)."
+      ],
+      "tip": "A horizontal line means constant velocity and zero acceleration. A negative gradient is deceleration."
+    },
+    {
+      "q": "Explain how the graph shows that the rubber band does not obey Hooke's law.",
+      "rx": "hooke",
+      "marks": "2–3 marks",
+      "a": [
+        "Hooke's law means extension is (directly) proportional to the force applied;",
+        "a proportional relationship gives a straight line through the origin;",
+        "this graph is curved / not a straight line, so extension is not proportional to force."
+      ],
+      "tip": "Naming Hooke's law alone scores only 1 mark. You must say what the graph should have looked like and what it actually looks like."
+    },
+    {
+      "q": "Explain, in terms of the forces acting, why a falling object reaches terminal velocity.",
+      "rx": "terminal velocity|constant (speed|velocity).{0,60}(fall|drop|parachut)",
+      "marks": "4–6 marks",
+      "a": [
+        "Weight acts downwards and is constant;",
+        "at the start there is little or no drag, so the resultant force is large and the acceleration is large;",
+        "as speed increases, air resistance / drag increases;",
+        "so the resultant force decreases and the acceleration decreases;",
+        "eventually drag = weight, so the resultant force is zero;",
+        "acceleration is zero, so the object falls at a constant (terminal) velocity."
+      ],
+      "tip": "This is a classic 6-marker. Follow the chain: forces → resultant → acceleration → speed, and never say 'gravity increases'."
+    },
+    {
+      "q": "Explain how a crumple zone / seat belt / air bag reduces the force on a passenger.",
+      "rx": "crumple|seat ?belt|air ?bag",
+      "marks": "2–3 marks",
+      "a": [
+        "It increases the time taken for the passenger to stop;",
+        "the change in momentum is the same;",
+        "force = change in momentum ÷ time, so a longer time gives a smaller force (and smaller deceleration)."
+      ],
+      "tip": "Do not write 'it absorbs the shock'. The marks are for time, momentum change, and the formula."
+    },
+    {
+      "q": "State the factors that affect thinking distance and braking distance.",
+      "rx": "thinking distance|braking distance|stopping distance",
+      "marks": "2–3 marks",
+      "a": [
+        "Stopping distance = thinking distance + braking distance;",
+        "thinking distance increases with speed, alcohol or drugs, tiredness and distraction;",
+        "braking distance increases with speed, greater mass, wet or icy roads, and worn tyres or brakes."
+      ],
+      "tip": "Multiple-choice versions of this appear constantly. Remember: anything about the car or the road affects only the braking distance; anything about the driver affects only the thinking distance."
+    },
+    {
+      "q": "Calculate the work done / show that the work done is about X J.",
+      "rx": "(calculate|show that|determine).{0,60}work done",
+      "marks": "2–3 marks",
+      "a": [
+        "work done = force × distance moved in the direction of the force;",
+        "substitute, using only the component of distance along the force;",
+        "evaluate and give the unit (J)."
+      ],
+      "tip": "In a 'show that' question you must still write out the full working and state a more precise answer than the one given."
+    }
+  ]
+}

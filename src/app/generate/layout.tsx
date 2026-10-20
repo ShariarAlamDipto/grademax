@@ -9,6 +9,8 @@ export const metadata: Metadata = {
     'past paper generator', 'practice paper generator',
     'Edexcel worksheets', 'custom worksheets', 'exam worksheets',
     'maths worksheet generator', 'physics worksheet generator',
+    'IGCSE Accounting worksheets', 'IGCSE Business Studies worksheets', 'IGCSE Economics worksheets',
+    'IGCSE Computer Science worksheets',
     'create worksheets from past papers', 'download worksheets free',
   ],
   openGraph: {
@@ -21,10 +23,27 @@ export const metadata: Metadata = {
   },
 }
 
+const toolSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  '@id': 'https://www.grademax.me/#webapp',
+  name: 'GradeMax Worksheet Generator',
+  url: 'https://www.grademax.me/generate',
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Any',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description: 'Free custom worksheet generator for Edexcel IGCSE and A Level past paper questions. Select topics, difficulty, and year range to generate a PDF worksheet with mark scheme.',
+}
+
 export default function GenerateLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(toolSchema) }} />
+      {children}
+    </>
+  )
 }

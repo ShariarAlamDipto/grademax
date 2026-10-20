@@ -1,0 +1,54 @@
+{
+ "2015_may-jun_P2|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 (a)(i)-(vi),(b) on scheme pages 10-11 to 'Total for Question 5 = 13 marks'; cut had run into Q6",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    597
+   ]
+  ]
+ },
+ "2020_oct-nov_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 (a)-(d), Total 10; board printed (d) as a second '(c)'",
+  "qp_md5": "5f586af8b9334efab7b034aee7e2ee6c",
+  "ms_md5": "ce961cef7e2d93a1cce46cda2232c4f4"
+ },
+ "2020_oct-nov_P1R|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 (a)(b) and unlettered (c)(i)(ii), Total for Question 1 = 7",
+  "qp_md5": "a6564d21a69e651f3616b6df6fee9b52",
+  "ms_md5": "60b472123fe2560aae4b44b9b625e8b8"
+ },
+ "2020_oct-nov_P1R|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 (a)(b), Total for Question 2 = 9; trailing words are 2(a)(i)'s matching-table labels",
+  "qp_md5": "af69609d049b2240d619708635577a74",
+  "ms_md5": "2819580f5cdab897ae23c24f164b7959"
+ },
+ "2025_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 reflexes (a)(b): heads 3(a), 3(b) match the question's parts; own block",
+  "qp_md5": "0ad5e66f77246a54b2b4c6ad6785e5b7",
+  "ms_md5": "5b38885c7148c97b6c1d3883ce148892"
+ },
+ "2025_may-jun_P2R|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 (a)(b)(c), Total for Question 5 = 12; (c) printed as '(c)`'",
+  "qp_md5": "f9a230ff14848ddc59cb23743fbd82cf",
+  "ms_md5": "88a9486d765e1da401110874c22c8d11"
+ },
+ "2025_may-jun_P2R|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 (a)(b), Total for Question 6 = 9",
+  "qp_md5": "cb6ab46bbde0963bdcc44de637fe9b9f",
+  "ms_md5": "4b6e79643a8c479c2e4cf4f7047a4385"
+ }
+}

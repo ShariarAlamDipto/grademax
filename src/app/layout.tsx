@@ -2,7 +2,6 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import PromoBanner from '../components/PromoBanner'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Playfair_Display } from 'next/font/google'
@@ -59,26 +58,6 @@ const jsonLd = {
       inLanguage: 'en-GB'
     },
     {
-      '@type': 'WebPage',
-      '@id': 'https://www.grademax.me/#webpage',
-      url: 'https://www.grademax.me',
-      name: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level | GradeMax`,
-      datePublished: '2024-01-15T00:00:00+00:00',
-      dateModified: new Date().toISOString(),
-      isPartOf: {
-        '@id': 'https://www.grademax.me/#website'
-      },
-      about: {
-        '@id': 'https://www.grademax.me/#organization'
-      },
-      description: 'Free Edexcel past papers with mark schemes for IGCSE and A Level (2010-2025). Generate custom worksheets, practice topic-wise questions, and revise with 14+ years of real Pearson Edexcel exam papers.',
-      inLanguage: 'en-GB',
-      speakable: {
-        '@type': 'SpeakableSpecification',
-        cssSelector: ['h1', '.hero-line-1', '.hero-line-2', '.hero-sub']
-      }
-    },
-    {
       '@type': 'EducationalOrganization',
       '@id': 'https://www.grademax.me/#educationalorg',
       name: 'GradeMax',
@@ -91,36 +70,6 @@ const jsonLd = {
         audienceType: 'Edexcel IGCSE and A Level students worldwide'
       }
     },
-    // WebApplication schema for worksheet generator tool
-    {
-      '@type': 'WebApplication',
-      '@id': 'https://www.grademax.me/#webapp',
-      name: 'GradeMax Worksheet Generator',
-      url: 'https://www.grademax.me/generate',
-      applicationCategory: 'EducationalApplication',
-      operatingSystem: 'Any',
-      offers: {
-        '@type': 'Offer',
-        price: '0',
-        priceCurrency: 'USD',
-      },
-      description: 'Free custom worksheet generator for Edexcel IGCSE and A Level past paper questions. Select topics, difficulty, and year range to generate a PDF worksheet with mark scheme.',
-    },
-    // ItemList for subjects
-    {
-      '@type': 'ItemList',
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'IGCSE Physics Past Papers', url: 'https://www.grademax.me/subjects/igcse/physics' },
-        { '@type': 'ListItem', position: 2, name: 'IGCSE Maths A Past Papers', url: 'https://www.grademax.me/subjects/igcse/maths-a' },
-        { '@type': 'ListItem', position: 3, name: 'IGCSE Maths B Past Papers', url: 'https://www.grademax.me/subjects/igcse/maths-b' },
-        { '@type': 'ListItem', position: 4, name: 'IGCSE Chemistry Past Papers', url: 'https://www.grademax.me/subjects/igcse/chemistry' },
-        { '@type': 'ListItem', position: 5, name: 'IGCSE Biology Past Papers', url: 'https://www.grademax.me/subjects/igcse/biology' },
-        { '@type': 'ListItem', position: 6, name: 'IGCSE ICT Past Papers', url: 'https://www.grademax.me/subjects/igcse/ict' },
-        { '@type': 'ListItem', position: 7, name: 'A Level Pure Maths 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/pure-mathematics-1' },
-        { '@type': 'ListItem', position: 8, name: 'A Level Mechanics 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/mechanics-1' },
-        { '@type': 'ListItem', position: 9, name: 'A Level Statistics 1 Past Papers', url: 'https://www.grademax.me/subjects/ial/statistics-1' },
-      ]
-    }
   ]
 }
 
@@ -130,7 +79,7 @@ export const metadata: Metadata = {
     default: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level | GradeMax`,
     template: '%s | GradeMax'
   },
-  description: 'Free Edexcel IGCSE & A Level past papers with mark schemes (2010–2025). Generate custom worksheets from real Pearson exam questions. Topic-wise practice for Physics, Maths, Chemistry & more.',
+  description: 'Free Edexcel and Cambridge IGCSE and A Level past papers with mark schemes. Browse by subject, year and session, or build Edexcel practice worksheets.',
   keywords: [
     // Brand
     'GradeMax', 'grademax', 'grade max',
@@ -207,16 +156,12 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: 'https://www.grademax.me',
-  },
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://www.grademax.me',
     siteName: 'GradeMax',
     title: `Edexcel Past Papers ${CURRENT_YEAR} | Free IGCSE & A Level | GradeMax`,
-    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Generate custom worksheets from real Pearson Edexcel exam questions. Topic-wise practice for Physics, Maths, Chemistry, Biology, ICT and more.',
+    description: 'Free Edexcel and Cambridge past papers with mark schemes for IGCSE and A Level. Find papers by subject, year and session, and create Edexcel worksheets.',
     images: [
       {
         url: '/opengraph-image',
@@ -229,7 +174,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `Edexcel Past Papers ${CURRENT_YEAR} | Free IGCSE & A Level Questions | GradeMax`,
-    description: 'Free Edexcel IGCSE and A Level past papers with mark schemes (2010-2025). Generate custom worksheets, practice topic-wise, and ace your exams.',
+    description: 'Free Edexcel and Cambridge IGCSE and A Level past papers with mark schemes, plus custom Edexcel worksheets and topic-wise practice.',
     images: ['/opengraph-image'],
     // creator/site omitted — re-add only if the @grademax handle is actually owned.
   },
@@ -277,7 +222,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <AuthProvider>
             <Navbar />
             <div id="main-content" className="pt-[var(--gm-nav-h)] flex-1">
-              <PromoBanner />
               {children}
             </div>
             <Footer />

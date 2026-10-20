@@ -54,8 +54,7 @@ config/*.json
 __pycache__/
 *.pyc
 
-# Workbook segment PDFs (~103 MB). Deliberately not tracked, unlike the older
-# data/processed corpus which predates the R2 migration:
+# Workbook segment PDFs (~103 MB). Deliberately not tracked:
 #   - the app serves them from R2 (workbook/fpm/...), never from the repo
 #   - they are deterministically regenerable:
 #       python scripts/build_fpm_workbook_segments.py --execute
@@ -65,6 +64,49 @@ __pycache__/
 
 # Harvested third-party paper links: local working data, not for publication.
 data/manifest/paperlords_*
+
+# ── Local data that must never reach this public repo ─────────────────────
+# Personal data: the Supabase export holds every user's email and profile
+# (auth/users.json, public/profiles.jsonl).
+/data/supabase-export/
+# Database row backups taken before live writes.
+/data/backups/
+# Raw Pearson/Cambridge paper archives, built books and quarantined papers:
+# multi-GB, copyrighted, and served from R2 rather than the repo.
+/data/Ultimate Final IGCSE/
+/data/Ultimate Final IAL/
+/data/yearwise_all/
+/data/quarantine/
+/data/staging/
+/data/ict_data_files/
+/data/raw/
+# Segment PDFs and their JSON: R2 serves them and the pipeline reads the local
+# copy. Untracked on 20 Oct 2026 (~980 MB); older commits still hold them.
+/data/processed/
+# Admin-only predicted papers and ingest logs with local machine paths.
+/data/predictions/
+/data/cambridge_ingest/
+# Finished FAQ renders are a product; their JSON build data is tracked.
+/data/faq/**/*.pdf
+/data/faq/**/*.html
+
+# data/analysis is a 17 GB scratch area (cuts, renders, logs, caches). Track only
+# the hand-made chapter/topic decisions, which cost reading time to rebuild.
+/data/analysis/*
+!/data/analysis/live_rebuild/
+/data/analysis/live_rebuild/*
+!/data/analysis/live_rebuild/*/
+/data/analysis/live_rebuild/*/*
+!/data/analysis/live_rebuild/*/topic_reads.json
+!/data/analysis/live_rebuild/*/topics_new.json
+!/data/analysis/live_rebuild/*/manual_review.json
+
+# Generated output and local workspace.
+/output/
+/tmp/
+/training-data/
+/.vscode/
+/.r2setup.ts
 
 # Deploy-branch local artifacts and sensitive exports
 docker.env

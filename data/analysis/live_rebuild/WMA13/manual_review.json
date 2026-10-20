@@ -1,0 +1,60 @@
+{
+ "2020_jan_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 (i)(a)(b),(ii) scheme + notes + alternatives, (11 marks)"
+ },
+ "2020_jan_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 (i)(ii) + Alt I/II + notes, (10 marks)"
+ },
+ "2020_may-jun_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "Q7 (a)(b)... on scheme p14 alone, (9 marks) = question",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ]
+  ]
+ },
+ "2020_may-jun_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 (i)(a)(b),(ii) on scheme pp15-16, (9 marks) = question",
+  "ms_regions": [
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ]
+ },
+ "2022_may-jun_P1|9": {
+  "decision": "CONFIRMED",
+  "reason": "Q9 (a)(b) + notes and alternative methods, (9 marks); margin '2' is from the working"
+ },
+ "2022_oct-nov_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 scheme + notes = scheme p13 alone, (6 marks); automatic cut opened on Q5's notes",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ]
+  ]
+ },
+ "2023_jan_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 integral, three methods each 'Total 5' = question"
+ },
+ "2023_may-jun_P1|10": {
+  "decision": "CONFIRMED",
+  "reason": "Q10 (a)(b) + Alt I/II + notes, 8 marks = question"
+ }
+}

@@ -1,0 +1,172 @@
+{
+  "unit": "M1",
+  "subject_code": "WME01",
+  "mode": "EXECUTE",
+  "notes": [],
+  "papers_clean": 22,
+  "papers_total": 22,
+  "questions": 169,
+  "mark_provenance": {
+    "fence+tally": 169
+  },
+  "papers": [
+    {
+      "key": "2019_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2019_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2019_oct-nov",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2020_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2020_oct-nov",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_jan",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2021_oct-nov",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_jan",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2022_oct-nov",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2023_jan",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2023_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2023_oct-nov",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_jan",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2024_oct-nov",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": [
+        "[recovered] question 7 start header unreadable on page 21; recovered from page 22's 'Question 7 continued'"
+      ]
+    },
+    {
+      "key": "2025_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2025_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2025_oct-nov",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2026_jan",
+      "ok": true,
+      "questions": 7,
+      "marks": 75,
+      "problems": []
+    },
+    {
+      "key": "2026_may-jun",
+      "ok": true,
+      "questions": 8,
+      "marks": 75,
+      "problems": [
+        "[recovered] question 5 start header unreadable on page 15; recovered from page 16's 'Question 5 continued'"
+      ]
+    }
+  ]
+}

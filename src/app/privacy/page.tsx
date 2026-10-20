@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
+import { publicPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
+export const metadata: Metadata = publicPageMetadata({
+  path: '/privacy',
   title: 'Privacy Policy',
   description: 'GradeMax Privacy Policy - Learn how we collect, use, and protect your personal information.',
-}
+})
 
 const sectionStyle = { marginBottom: "2rem" }
 const h2Style = { fontSize: "1.05rem", fontWeight: 700, color: "var(--gm-text)", marginBottom: "0.875rem" } as const

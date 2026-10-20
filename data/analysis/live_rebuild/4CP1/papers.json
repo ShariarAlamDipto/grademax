@@ -1,0 +1,146 @@
+[
+  {
+    "id": "deb714ed-8173-48c4-9ad3-f65db4eb01b9",
+    "year": 2024,
+    "season": "may-jun",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2024/may-jun/Computer_Science_2024_May-Jun_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2024/may-jun/Computer_Science_2024_May-Jun_Paper_1_MS.pdf"
+  },
+  {
+    "id": "a8bb7311-456a-4ded-bc67-0b2ac51f8996",
+    "year": 2024,
+    "season": "may-jun",
+    "paper_number": "2",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2024/may-jun/Computer_Science_2024_May-Jun_Paper_2_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2024/may-jun/Computer_Science_2024_May-Jun_Paper_2_MS.pdf"
+  },
+  {
+    "id": "66d33d9c-b056-4b19-bb99-241a53962250",
+    "year": 2023,
+    "season": "may-jun",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2023/may-jun/Computer_Science_2023_May-Jun_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2023/may-jun/Computer_Science_2023_May-Jun_Paper_1_MS.pdf"
+  },
+  {
+    "id": "cf508e16-f6bb-4176-b53e-53f06f7759a8",
+    "year": 2023,
+    "season": "may-jun",
+    "paper_number": "2",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2023/may-jun/Computer_Science_2023_May-Jun_Paper_2_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2023/may-jun/Computer_Science_2023_May-Jun_Paper_2_MS.pdf"
+  },
+  {
+    "id": "0bd6c726-ae76-4499-ad68-18748e21acef",
+    "year": 2022,
+    "season": "may-jun",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2022/may-jun/Computer_Science_2022_May-Jun_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2022/may-jun/Computer_Science_2022_May-Jun_Paper_1_MS.pdf"
+  },
+  {
+    "id": "5024305c-ae16-41a3-98bf-9132744e8285",
+    "year": 2022,
+    "season": "may-jun",
+    "paper_number": "2",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2022/may-jun/Computer_Science_2022_May-Jun_Paper_2_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2022/may-jun/Computer_Science_2022_May-Jun_Paper_2_MS.pdf"
+  },
+  {
+    "id": "f2fad334-87b9-479e-83bc-bc0985ac92bc",
+    "year": 2021,
+    "season": "may-jun",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/may-jun/Computer_Science_2021_May-Jun_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/may-jun/Computer_Science_2021_May-Jun_Paper_1_MS.pdf"
+  },
+  {
+    "id": "d9054356-4782-46b0-b15e-e7e1fde21980",
+    "year": 2021,
+    "season": "may-jun",
+    "paper_number": "2",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/may-jun/Computer_Science_2021_May-Jun_Paper_2_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/may-jun/Computer_Science_2021_May-Jun_Paper_2_MS.pdf"
+  },
+  {
+    "id": "bd121905-7ed8-4ade-9161-4f5f7cfb16e4",
+    "year": 2020,
+    "season": "oct-nov",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2020/oct-nov/Computer_Science_2020_Oct-Nov_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2020/oct-nov/Computer_Science_2020_Oct-Nov_Paper_1_MS.pdf"
+  },
+  {
+    "id": "e007b402-cc3e-4641-9aaf-65221d25219c",
+    "year": 2019,
+    "season": "may-jun",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2019/may-jun/Computer_Science_2019_May-Jun_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2019/may-jun/Computer_Science_2019_May-Jun_Paper_1_MS.pdf"
+  },
+  {
+    "id": "b0a030cf-aba9-4938-85af-3f5c1b6c0fa0",
+    "year": 2019,
+    "season": "may-jun",
+    "paper_number": "2",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2019/may-jun/Computer_Science_2019_May-Jun_Paper_2_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2019/may-jun/Computer_Science_2019_May-Jun_Paper_2_MS.pdf"
+  },
+  {
+    "id": "9b830510-3414-417f-a89f-e0ac9848295c",
+    "year": 2021,
+    "season": "oct-nov",
+    "paper_number": "2",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/oct-nov/Computer_Science_2021_Oct-Nov_Paper_2_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/oct-nov/Computer_Science_2021_Oct-Nov_Paper_2_MS.pdf"
+  },
+  {
+    "id": "f6abb455-abc4-4aee-ae76-1ed2038235de",
+    "year": 2021,
+    "season": "oct-nov",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/oct-nov/Computer_Science_2021_Oct-Nov_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2021/oct-nov/Computer_Science_2021_Oct-Nov_Paper_1_MS.pdf"
+  },
+  {
+    "id": "1dfe7497-1c11-49fe-9869-821e1ddd06f0",
+    "year": 2020,
+    "season": "oct-nov",
+    "paper_number": "2",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2020/oct-nov/Computer_Science_2020_Oct-Nov_Paper_2_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2020/oct-nov/Computer_Science_2020_Oct-Nov_Paper_2_MS.pdf"
+  },
+  {
+    "id": "3bde119a-360b-44c7-ac05-82ef1c5ffdf1",
+    "year": 2026,
+    "season": "may-jun",
+    "paper_number": "2A",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_2A_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_2A_MS.pdf"
+  },
+  {
+    "id": "2776fc8b-a40a-4d76-a5cd-08e22d44990a",
+    "year": 2026,
+    "season": "may-jun",
+    "paper_number": "2C",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_2C_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_2C_MS.pdf"
+  },
+  {
+    "id": "3810783e-db1d-4d64-8529-3830463afa5c",
+    "year": 2026,
+    "season": "may-jun",
+    "paper_number": "1",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_1_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_1_MS.pdf"
+  },
+  {
+    "id": "1baac76c-f98c-4f42-8c66-5899a0140bad",
+    "year": 2026,
+    "season": "may-jun",
+    "paper_number": "2B",
+    "pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_2B_QP.pdf",
+    "markscheme_pdf_url": "https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev/igcse/computer-science/2026/may-jun/Computer_Science_2026_May-Jun_Paper_2B_MS.pdf"
+  }
+]

@@ -1,0 +1,139 @@
+{
+  "n": 5,
+  "title": "Solids, Liquids and Gases",
+  "blurb": "Density and pressure formulas are asked almost every session, and there is nearly always a particle-model explanation worth several marks.",
+  "formulas": [
+    [
+      "density",
+      "mass ÷ volume",
+      "kg/m³ or g/cm³"
+    ],
+    [
+      "pressure",
+      "force ÷ area",
+      "Pa (N/m²)"
+    ],
+    [
+      "pressure difference in a liquid",
+      "height × density × g",
+      "Pa"
+    ],
+    [
+      "gas law (fixed mass, fixed temperature)",
+      "p₁V₁ = p₂V₂",
+      "–"
+    ],
+    [
+      "gas law (fixed mass, fixed volume)",
+      "p₁ ÷ T₁ = p₂ ÷ T₂  (T in kelvin)",
+      "–"
+    ],
+    [
+      "temperature conversion",
+      "T (K) = θ (°C) + 273",
+      "K"
+    ]
+  ],
+  "items": [
+    {
+      "q": "State the formula linking density, mass and volume.",
+      "rx": "(formula|equation) linking density",
+      "marks": "1 mark",
+      "a": [
+        "density = mass ÷ volume",
+        "(ρ = m ÷ V)"
+      ],
+      "tip": "Watch the units: 1 g/cm³ = 1000 kg/m³. Water is 1.0 g/cm³ or 1000 kg/m³."
+    },
+    {
+      "q": "State the formula linking pressure, force and area.",
+      "rx": "(formula|equation) linking pressure, force and area",
+      "marks": "1 mark",
+      "a": [
+        "pressure = force ÷ area",
+        "(p = F ÷ A)"
+      ],
+      "tip": "The force must be perpendicular to the surface. Area in m² gives pressure in pascals."
+    },
+    {
+      "q": "State the formula linking pressure difference, height, density and gravitational field strength.",
+      "rx": "(formula|equation) linking pressure difference",
+      "marks": "1 mark",
+      "a": [
+        "pressure difference = height × density × gravitational field strength",
+        "(p = h × ρ × g)"
+      ],
+      "tip": "The height is the depth below the surface, measured vertically. The shape or width of the container makes no difference."
+    },
+    {
+      "q": "Describe the arrangement and motion of the particles in a solid, a liquid and a gas.",
+      "rx": "(arrangement|motion) of (the )?particles in|particles in a (solid|liquid|gas)",
+      "marks": "2–4 marks",
+      "a": [
+        "Solid: particles are close together in a regular, fixed pattern and vibrate about fixed positions;",
+        "Liquid: particles are still close together but irregularly arranged, and can move past one another randomly;",
+        "Gas: particles are far apart, randomly arranged, and move quickly in all directions (random motion);",
+        "the particles have more kinetic energy as you go from solid to liquid to gas."
+      ],
+      "tip": "Two things are always wanted: the arrangement (how they are positioned) and the motion (how they move). Answer both explicitly."
+    },
+    {
+      "q": "Explain, using the particle model, why the pressure of a gas increases when its temperature increases (at constant volume).",
+      "rx": "pressure of the (gas|air|steam).{0,80}temperature|explain (why|how) the pressure",
+      "marks": "3–4 marks",
+      "a": [
+        "The particles gain kinetic energy and move faster;",
+        "so they collide with the walls of the container more frequently;",
+        "and each collision exerts a greater force (bigger change in momentum);",
+        "the force on a given area increases, so the pressure increases."
+      ],
+      "tip": "Both reasons are needed - more frequent collisions AND harder collisions. Never say the particles themselves expand."
+    },
+    {
+      "q": "Explain, using the particle model, why the pressure of a gas increases when its volume decreases.",
+      "rx": "volume of the (gas|air)|gas is compressed|syringe|(pressure|volume) of the gas",
+      "marks": "2–3 marks",
+      "a": [
+        "The particles have a smaller space, so they hit the walls more often (more collisions per second);",
+        "the average speed of the particles is unchanged because the temperature is constant;",
+        "so the force per unit area, and therefore the pressure, increases (p₁V₁ = p₂V₂)."
+      ]
+    },
+    {
+      "q": "Use the graph to determine the value of absolute zero / convert between °C and K.",
+      "rx": "absolute zero|kelvin|273",
+      "marks": "1–2 marks",
+      "a": [
+        "Absolute zero is −273 °C, which is 0 K;",
+        "it is the lowest possible temperature, at which the particles have no (minimum) kinetic energy;",
+        "to convert, add 273 to a Celsius temperature to get kelvin."
+      ],
+      "tip": "Extrapolate the pressure–temperature line backwards until it crosses the temperature axis at zero pressure - that intercept is absolute zero."
+    },
+    {
+      "q": "Describe how the student should accurately measure the mass and the volume of the object to find its density.",
+      "rx": "(describe|explain).{0,90}(measure|find|determine).{0,50}(mass|volume|density)|(find|determine) the density",
+      "marks": "3–5 marks",
+      "a": [
+        "Mass: use a (top-pan) balance, zero it first, and for a liquid weigh the empty container then the container plus liquid and subtract;",
+        "Volume of a regular solid: measure the dimensions with a ruler or vernier calipers and multiply;",
+        "Volume of an irregular solid: lower it into a measuring cylinder of water and record the increase in level (or use a displacement can and catch the water);",
+        "calculate density = mass ÷ volume;",
+        "repeat the measurements and take a mean."
+      ],
+      "tip": "For the measuring-cylinder reading, mention reading at eye level from the bottom of the meniscus - it is often worth a mark."
+    },
+    {
+      "q": "Describe what happens to the particles when a substance melts, boils or evaporates.",
+      "rx": "\\b(melts?|melting|boils?|boiling|evaporat\\w*|condens\\w*|freez\\w*)\\b",
+      "marks": "2–4 marks",
+      "a": [
+        "Energy supplied increases the (potential) energy of the particles and weakens or breaks the bonds between them;",
+        "during a change of state the temperature stays constant because the energy goes into breaking bonds, not into speeding the particles up;",
+        "evaporation happens only at the surface, at any temperature, when the fastest particles escape; boiling happens throughout the liquid at a fixed temperature;",
+        "as the fastest particles leave, the average kinetic energy of those remaining falls, so the liquid cools."
+      ],
+      "tip": "The cooling effect of evaporation is a favourite. The key phrase is 'the most energetic particles escape'."
+    }
+  ]
+}

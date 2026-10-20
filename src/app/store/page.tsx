@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { publicPageMetadata } from "@/lib/metadata"
 import Link from "next/link"
 import Image from "next/image"
 import { listActiveProducts } from "@/lib/store/catalogue"
@@ -6,11 +7,12 @@ import { getSettings } from "@/lib/store/settings"
 import { formatBdt } from "@/lib/store/format"
 import { Badge, Button, PageHeader, card } from "@/components/store/StoreUI"
 
-export const metadata: Metadata = {
-  title: "Books and Workbooks",
+export const metadata: Metadata = publicPageMetadata({
+  path: '/store',
+  title: "Shop Edexcel IGCSE & IAL Books in Bangladesh",
   description:
-    "Buy the GradeMax chapterwise workbooks and formats booklets — spiral-bound printed copies, delivered anywhere in Bangladesh, with cash on delivery available.",
-}
+    "Shop Edexcel IGCSE and IAL workbooks and yearwise question booklets. Preview the books online and order spiral-bound copies delivered across Bangladesh.",
+})
 
 // Prices and stock change from the admin portal, so this must not be cached.
 export const dynamic = "force-dynamic"
@@ -40,9 +42,15 @@ export default async function StorePage() {
     <main style={{ maxWidth: "72rem", margin: "0 auto", padding: "3rem 1.25rem 4rem" }}>
       <PageHeader
         title="Books and Workbooks"
-        lead="Every past-paper question, regrouped chapter by chapter, as a spiral-bound book delivered anywhere in Bangladesh. Read a sample of any title before you order."
+        lead="Printed Edexcel IGCSE and IAL workbooks and yearwise exam-paper collections, delivered across Bangladesh. Check each edition and read a sample before you order."
         action={<Button href="/store/orders" variant="ghost">Track an order</Button>}
       />
+
+      <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+        Choosing between chapterwise and yearwise practice? Read our{" "}
+        <Link href="/books/bangladesh" className="gm-link">guide to Edexcel books in Bangladesh</Link>{" "}
+        for syllabus checks, delivery charges and payment options.
+      </p>
 
       <div style={{
         display: "grid",
@@ -131,16 +139,19 @@ export default async function StorePage() {
       <section style={{ ...card, marginTop: "2rem" }}>
         <h2 style={{ fontSize: "0.95rem", fontWeight: 700, marginBottom: "0.6rem" }}>Delivery and payment</h2>
         <ul style={{ fontSize: "0.85rem", color: "var(--gm-text-2)", lineHeight: 1.7, paddingLeft: "1.1rem" }}>
-          <li>We deliver anywhere in Bangladesh — {formatBdt(settings.deliveryBdtMetro)} inside Dhaka, {formatBdt(settings.deliveryBdtOutside)} elsewhere.</li>
+          <li>We deliver anywhere in Bangladesh — {formatBdt(settings.deliveryBdtMetro)} inside Dhaka, {formatBdt(settings.deliveryBdtOutside)} elsewhere. Delivery is charged once per order.</li>
+          {settings.freeDeliveryOverBdt > 0 ? (
+            <li>Free delivery when your order subtotal reaches {formatBdt(settings.freeDeliveryOverBdt)}.</li>
+          ) : null}
           {/* Only promise a wallet that is actually configured — otherwise a
               buyer picks bKash and finds no number to send money to. */}
           <li>
-            <strong>Cash on delivery</strong> — pay the courier when your book arrives.
+            <strong>Cash on delivery</strong> is available for printed-only orders.
             {settings.bkashNumber.trim() || settings.nagadNumber.trim()
-              ? " You can also pay ahead with bKash or Nagad."
+              ? ` You can also pay ahead with ${[settings.bkashNumber.trim() && "bKash", settings.nagadNumber.trim() && "Nagad"].filter(Boolean).join(" or ")}.`
               : null}
           </li>
-          <li>You will need an account, so you can track your order and we can reach you about delivery.</li>
+          {settings.requireAccount ? <li>Sign in to order and track your delivery.</li> : <li>You can track your order after checkout.</li>}
           {settings.digitalSalesEnabled ? (
             <li>Digital downloads unlock as soon as your payment is confirmed, usually within {settings.verificationSlaHours} hours.</li>
           ) : null}

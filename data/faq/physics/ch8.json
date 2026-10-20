@@ -1,0 +1,139 @@
+{
+  "n": 8,
+  "title": "Astrophysics",
+  "blurb": "The most formulaic chapter on the paper. Orbital speed, absolute magnitude, star life cycles and Big Bang evidence account for nearly everything ever asked.",
+  "formulas": [
+    [
+      "orbital speed",
+      "(2 × π × orbital radius) ÷ time period",
+      "m/s"
+    ],
+    [
+      "red-shift",
+      "change in wavelength ÷ reference wavelength = speed of galaxy ÷ speed of light",
+      "–"
+    ],
+    [
+      "wave speed",
+      "frequency × wavelength",
+      "m/s"
+    ],
+    [
+      "frequency",
+      "1 ÷ time period",
+      "Hz"
+    ]
+  ],
+  "items": [
+    {
+      "q": "Calculate the orbital speed of the satellite / moon / planet.",
+      "rx": "(calculate|determine).{0,50}orbital speed",
+      "marks": "3–4 marks",
+      "a": [
+        "Use orbital speed = (2 × π × orbital radius) ÷ time period;",
+        "convert the period into seconds (days × 24 × 3600) and the radius into consistent units;",
+        "evaluate;",
+        "if the answer is wanted in km/s, divide the metres-per-second answer by 1000."
+      ],
+      "tip": "The single most-asked calculation in this chapter. The marks are for substitution, conversion and evaluation, so show every step."
+    },
+    {
+      "q": "State what is meant by the term absolute magnitude.",
+      "rx": "meant by the term absolute magnitude",
+      "marks": "2 marks",
+      "a": [
+        "The brightness (luminosity) of a star;",
+        "as it would appear from a standard distance of 10 parsecs."
+      ],
+      "tip": "Two distinct marks: brightness, and standard distance. Apparent magnitude, by contrast, is how bright the star looks from Earth, which depends on how far away it is."
+    },
+    {
+      "q": "Describe the evolution of a star with a similar mass to the Sun.",
+      "rx": "evolution of|life cycle|next stage of its evolution",
+      "marks": "3–5 marks",
+      "a": [
+        "A cloud of dust and gas (nebula) is pulled together by gravity to form a protostar;",
+        "it heats up until hydrogen fusion begins and it becomes a main sequence star, stable while fusion pressure balances gravity;",
+        "when the hydrogen in the core runs out, the star expands and cools to become a red giant;",
+        "the outer layers are thrown off (as a planetary nebula) and the core collapses to leave a white dwarf, which cools and fades."
+      ],
+      "tip": "For a star much more massive than the Sun the ending differs: red supergiant → supernova → neutron star, or a black hole if it is massive enough."
+    },
+    {
+      "q": "Describe the stars in the top left corner of the HR diagram / mark the position of the Sun.",
+      "rx": "\\b(HR|H-R|Hertzsprung)\\b|top left corner",
+      "marks": "2–3 marks",
+      "a": [
+        "The HR diagram plots absolute magnitude (brightness) against temperature, with temperature increasing to the left;",
+        "top left: very hot, blue-white stars that are also very luminous (high power);",
+        "the Sun sits in the middle of the main sequence band, which runs from top left to bottom right;",
+        "red giants are to the top right and white dwarfs to the bottom left."
+      ],
+      "tip": "The temperature axis runs backwards - hottest on the left. Check this before you place your cross."
+    },
+    {
+      "q": "Describe / explain the evidence that supports the Big Bang theory.",
+      "rx": "big bang",
+      "marks": "3–6 marks",
+      "a": [
+        "Red-shift: light from distant galaxies is shifted towards the red (longer wavelength) end of the spectrum, showing they are moving away from us;",
+        "the further away a galaxy is, the greater its red-shift, so the faster it is receding - which means the universe is expanding;",
+        "tracing that expansion backwards implies everything began from a single point;",
+        "cosmic microwave background radiation (CMBR) fills the whole universe uniformly and is the cooled, stretched remnant of the radiation released just after the Big Bang, which only the Big Bang theory explains."
+      ],
+      "tip": "Two named pieces of evidence, each with an explanation, is the standard structure. Red-shift alone supports an expanding universe; the CMBR is what rules out the Steady State theory."
+    },
+    {
+      "q": "Explain how cosmic microwave background radiation supports the Big Bang theory.",
+      "rx": "cosmic microwave background|CMB",
+      "marks": "2–3 marks",
+      "a": [
+        "CMBR is low-level microwave radiation detected coming from every direction in space;",
+        "it is the remnant of the intense radiation released shortly after the Big Bang;",
+        "as the universe has expanded, this radiation has stretched to longer wavelengths and cooled into the microwave region."
+      ]
+    },
+    {
+      "q": "Explain why the galaxy's light is red-shifted / calculate the speed of a receding galaxy.",
+      "rx": "red-?shift",
+      "marks": "2–3 marks",
+      "a": [
+        "The galaxy is moving away from Earth, so the observed wavelength is longer than the reference wavelength;",
+        "use change in wavelength ÷ reference wavelength = speed of galaxy ÷ speed of light;",
+        "rearrange for the speed and evaluate, using c = 3 × 10⁸ m/s."
+      ],
+      "tip": "Bigger red-shift means faster recession and a more distant galaxy (Hubble's relationship)."
+    },
+    {
+      "q": "State the type of object that has a circular orbit / an elliptical orbit around a star.",
+      "rx": "type of object that has|circular orbit|elliptical orbit",
+      "marks": "1–2 marks",
+      "a": [
+        "A planet (or a moon around a planet) has an approximately circular orbit;",
+        "a comet has a highly elliptical orbit."
+      ],
+      "tip": "A comet speeds up as it approaches the Sun because the gravitational force is larger when it is closer, and slows down as it moves away."
+    },
+    {
+      "q": "Explain what keeps a satellite or planet in orbit.",
+      "rx": "(gravitational (force|field|attraction)).{0,80}orbit|keeps.{0,30}in orbit|centripetal",
+      "marks": "2–3 marks",
+      "a": [
+        "The gravitational force of attraction between the two bodies acts towards the centre of the orbit;",
+        "this provides the centripetal force needed to keep the object moving in a circle;",
+        "the direction of motion is constantly changing, so the object is accelerating even though its speed is constant;",
+        "a larger orbital radius means a weaker force and a longer time period."
+      ]
+    },
+    {
+      "q": "Determine the period and calculate the frequency of the variation in brightness of the star.",
+      "rx": "(period|frequency) of the variation in brightness",
+      "marks": "2–3 marks",
+      "a": [
+        "Read the time between two identical points on the brightness graph (peak to peak) to get the period T;",
+        "use frequency = 1 ÷ T;",
+        "give the frequency in Hz, converting the period into seconds first if it is given in days or hours."
+      ]
+    }
+  ]
+}

@@ -30,10 +30,23 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_fpm_workbook_segments as seg  # noqa: E402
 from lib import ms_label_blocks  # noqa: E402
 from lib.live_paper_sources import LivePaper  # noqa: E402
-from lib.live_rebuild_common import install_safe_extract, run  # noqa: E402
+from lib.live_rebuild_common import carry_hidden_layers, install_safe_extract, run  # noqa: E402
 
 CODE = "4PM1"
 install_safe_extract(seg)
+
+_original_extract_range = seg.extract_range
+
+
+def extract_range_keeping_hidden_layers(source_pdf, page_range, target):
+    """FPM cuts questions as whole page ranges, outside install_safe_extract:
+    re-declare the source's hidden design layers OFF there too (2015 Jan P2
+    showed its OMR grid and "Exemplar" watermark over every question)."""
+    _original_extract_range(source_pdf, page_range, target)
+    carry_hidden_layers(Path(source_pdf), Path(target))
+
+
+seg.extract_range = extract_range_keeping_hidden_layers
 
 _original_process = seg.process_paper
 

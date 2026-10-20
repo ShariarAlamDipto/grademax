@@ -1,7 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
-import { safeNextPath } from "@/lib/safeRedirect"
+import { publicOrigin, safeNextPath } from "@/lib/safeRedirect"
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -12,7 +12,9 @@ export async function GET(request: NextRequest) {
   // Same-site relative paths only — blocks open-redirect via ?next=//evil.com
   const next = safeNextPath(url.searchParams.get("next"))
 
-  const redirectTo = new URL(next, url.origin)
+  // Not url.origin: behind the Docker proxy that is https://0.0.0.0:3000
+  const origin = publicOrigin(request)
+  const redirectTo = new URL(next, origin)
 
   if (code) {
     const response = NextResponse.redirect(redirectTo)
@@ -64,7 +66,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.redirect(
-      new URL(`/login?error=${encodeURIComponent(error.message)}`, url.origin)
+      new URL(`/login?error=${encodeURIComponent(error.message)}`, origin)
     )
   }
 

@@ -1,0 +1,14 @@
+{
+  "subject": "Physics",
+  "code": "4PH1",
+  "board": "Edexcel International GCSE (9-1)",
+  "title": "Chapterwise Most-Asked Questions",
+  "window": "2018 - 2025",
+  "corpus_note": "Built by reading every Edexcel IGCSE Physics past paper in the GradeMax archive for 2018-2025 - Paper 1 and Paper 2, every session, including R variants. Re-used and duplicated paper folders were detected and collapsed before anything was counted, so no question is counted twice. One paper (June 2019 Paper 1) is an image-only scan with no readable text and is not included in the counts.",
+  "how_to_use": [
+    "Every question below was pulled from real 4PH1 papers, then ranked by how many different papers it appeared in. The badge on each question tells you that count.",
+    "Anything marked HIGH FREQUENCY has come up in five or more separate papers since 2018. Learn those first - they are close to guaranteed marks.",
+    "The answers are written in mark-scheme style. Each semicolon-separated point is one mark. Write the points, not an essay.",
+    "'State the formula linking ...' questions are the single most common question type in the whole subject. They are one mark each, they need no working, and they appear in almost every paper. Do not lose them."
+  ]
+}

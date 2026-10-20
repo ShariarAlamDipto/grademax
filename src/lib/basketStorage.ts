@@ -24,6 +24,8 @@ function isQuestionItem(value: unknown): value is QuestionItem {
   return (
     typeof v.id === 'string' &&
     typeof v.questionNumber === 'string' &&
+    (v.marks === undefined || v.marks === null ||
+      (typeof v.marks === 'number' && Number.isFinite(v.marks) && v.marks > 0)) &&
     Array.isArray(v.topics) && v.topics.every((t) => typeof t === 'string') &&
     typeof v.difficulty === 'string' &&
     typeof v.qpPageUrl === 'string' &&

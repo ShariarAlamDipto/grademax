@@ -7,6 +7,7 @@ import { canonicalEdexcelQpSlug, canonicalCambridgeQpSlug } from '@/lib/qp-slugs
 import { toPaperSlug } from '@/lib/paper-slugs'
 import { listActiveProducts } from '@/lib/store/catalogue'
 import { getSettings } from '@/lib/store/settings'
+import { isPublicToolsTrialActive } from '@/lib/publicToolsTrial'
 
 const BASE_URL = 'https://www.grademax.me'
 const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
@@ -55,14 +56,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${BASE_URL}/cambridge-a-level-past-papers`, changeFrequency: 'weekly', priority: 0.95 },
     { url: `${BASE_URL}/edexcel-worksheets`,      changeFrequency: 'weekly',  priority: 0.95 },
     { url: `${BASE_URL}/subjects`,                changeFrequency: 'weekly',  priority: 0.9  },
-    // /generate is auth-gated (307 → /login) so it must NOT be in the sitemap;
-    // /edexcel-worksheets above is its public, indexable landing page.
-    // /test-builder renders a public landing for logged-out visitors.
+    // /generate is self-canonical but redirects to /login whenever the public
+    // tools window is closed (publicToolsTrial.ts), so list it only while open.
+    // /test-builder always renders a public landing for logged-out visitors.
+    ...(isPublicToolsTrialActive()
+      ? [{ url: `${BASE_URL}/generate`, changeFrequency: 'weekly' as const, priority: 0.9 }]
+      : []),
     { url: `${BASE_URL}/test-builder`,            changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/browse`,                  changeFrequency: 'weekly',  priority: 0.8  },
     { url: `${BASE_URL}/past-papers`,             changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/past-papers/cambridge`,   changeFrequency: 'weekly',  priority: 0.9  },
     { url: `${BASE_URL}/about`,                   changeFrequency: 'monthly', priority: 0.6  },
+    { url: `${BASE_URL}/books/bangladesh`,        changeFrequency: 'weekly',  priority: 0.8  },
     { url: `${BASE_URL}/contact`,                 changeFrequency: 'monthly', priority: 0.5  },
     { url: `${BASE_URL}/privacy`,                 changeFrequency: 'yearly',  priority: 0.3  },
     { url: `${BASE_URL}/terms`,                   changeFrequency: 'yearly',  priority: 0.3  },

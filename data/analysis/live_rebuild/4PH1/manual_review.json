@@ -1,0 +1,95 @@
+{
+ "2018_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: (a)(i)-(iii) magnetised steel pins and (b)(i)-(iii) electromagnet investigation match part for part; the scheme omits the mark cell for (b)(ii), so it totals 13 against the paper's 15 -- board omission, not a different question"
+ },
+ "2017_jan_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "read together: (a)(i)-(ii) planet field strength chart, (b)(i) Deimos orbital radius 23 500 000 m, (b)(ii) arrow A; cells sum to 7 = paper, total line misprints 8"
+ },
+ "2013_may-jun_P1R|10": {
+  "decision": "CONFIRMED",
+  "reason": "read together: (a)(i)-(ii) circuit for wire resistance, (b)(i)-(ii) constant temperature, (c)(i) V=IR, (c)(ii) horizontal line; marks 3+3+1+1+1+1=10 = paper. Reader saw the wrapped '1'/'0' label as Question 1"
+ },
+ "2013_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "read together: (a) unit N m = B; (b)(i)-(ii) plank on trestles 500 N, A = B = 250 N; (c)(i)-(ii) painter weight arrow, both forces increase; scheme Total 9 = paper 9"
+ },
+ "2013_may-jun_P2R|6": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Newton's cradle; (a)(i) p=mv, (a)(ii) 0.1x3=0.3 kg m/s, (a)(iii) momentum conserved, (b) two balls move; scheme Total 7 = paper 7"
+ },
+ "2015_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: electromagnetic door holder; (a) iron easily (de)magnetised, (b) electromagnet construction, (c) current stops so field falls; 'total = 6 marks' = paper 6"
+ },
+ "2012_jan_P2|5": {
+  "decision": "CONFIRMED",
+  "reason": "read together: principle of moments; (a) check ruler horizontal, (b)(i)-(ii) moment = F x d, 120 N cm, (c)(i)-(ii) forcemeter reading, (d) fishermen A/B; marks 2+1+3+2+1+3 = 12 = paper"
+ },
+ "2013_jan_P2|1": {
+  "decision": "CONFIRMED",
+  "reason": "read together: ionising radiation table (a), beta for foil thickness (b), strontium-90 decay (c)(i)-(ii); scheme Total 7 = paper 7"
+ },
+ "2017_jan_P1|7": {
+  "decision": "CONFIRMED",
+  "reason": "read together: filament lamp current-time graph; (a) description, (b)(i)-(v) 0.2 A, V=IR, 60 ohm, P=IV, 2.4 W, (c) filament heats rapidly; scheme Total 14 = paper 14"
+ },
+ "2019_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "reason": "read together: (a) experiment for speed of sound (5), (b)(i) period 1.0e-3 s (3), (b)(ii) f = 1000 Hz (2) = paper 10"
+ },
+ "2017_may-jun_P1|7": {
+  "decision": "PENDING",
+  "reason": "scheme pages 12-13 between q6 total (p11) and q8 (p14); 'Total for 7 = 15 marks' lacks the word question",
+  "ms_pages": [
+   12,
+   13
+  ]
+ },
+ "2014_may-jun_P1R|8": {
+  "decision": "CONFIRMED",
+  "reason": "read together: thermistor investigation; (a)(i)-(iii) circuit, voltmeter in parallel, method; (b)(i)-(ii) best-fit line A/B, reading at 10 C; (c) J/K/L components. Scheme prints 1 in the (c) cell but lists two marking points (any one / all three) = paper 12. Pages 22-24.",
+  "ms_pages": [
+   22,
+   23,
+   24
+  ]
+ },
+ "2017_specimen_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Pearson SAM booklet p.33: Paper 1 Q1 (a) D, (b) B, (c) D, (d) C, 'Total for Question 1 = 4 marks' = paper 4 MCQ parts (a)-(d)",
+  "ms_pages": [
+   40
+  ],
+  "ms_source": "data/analysis/live_rebuild/4PH1/supplementary/pearson_4PH1_2017_SAMs.pdf"
+ },
+ "2013_may-jun_P2R|7": {
+  "decision": "CONFIRMED",
+  "reason": "read together: sea waves; (a) wavelength, (bi) v=f x lambda, (bii) 3 = 1.5 x lambda = 2 m, (ci) diffraction, (cii) gap comparable to wavelength; cells 1+1+2+2+2 = 8 = paper (total line misprints 9); parts printed '(bi)' form"
+ },
+ "2014_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: sodium-24; (a) isotopes, (b)(i)-(iii) beta, detector, absorbers, (c) half-life sketch (its row continues onto a page without the part label), (d)(i)-(ii) dating granite; Total 15 = paper 15"
+ },
+ "2017_specimen_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "our scrambled-scheme cut lost 4(a)(i)-(ii); Pearson SAM booklet index 43 holds exactly Q4 4(a)(i)-4(b)(ii), 'Total for Question 4 = 9 marks'; read together after re-cut: 4(a)(i) A, 4(a)(ii) B, 4(b)(i) C, 4(b)(ii) uses of EM waves = paper Q4 (9 marks). Flag was OCR applied to the clean SAM page.",
+  "ms_pages": [
+   43
+  ],
+  "ms_source": "data/analysis/live_rebuild/4PH1/supplementary/pearson_4PH1_2017_SAMs.pdf"
+ },
+ "2017_specimen_P1|11": {
+  "decision": "CONFIRMED",
+  "reason": "read together (live audit flag is OCR-less noise on the scrambled scheme): stellar evolution, 6 marks both sides"
+ },
+ "2017_specimen_P2|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: heating water; 4(a), 4(b)(i)-(iii) 264 000 J / 77 C, 4(c)(i)-(ii); Total 14 = paper 14"
+ },
+ "2017_specimen_P2|2": {
+  "decision": "CONFIRMED",
+  "reason": "read together: lightning; 2(a)-2(c)(iv), Total 11 = paper 11"
+ }
+}

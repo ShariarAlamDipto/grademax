@@ -1,0 +1,361 @@
+{
+ "2012_jan_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q5 differentiate x^2e^x and (x^3+2x^2+3)^5; scheme 5(a)(b), 5 marks"
+ },
+ "2014_jan_1|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q4 arithmetic series S_n=2n(n+3); scheme (a)-(c), (6)"
+ },
+ "2014_may-jun_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q8 3x^2+px-7 roots alpha,beta; scheme (a)-(c) with notes and alternatives, [12]"
+ },
+ "2014_may-jun_2|2": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q2 sum of (2r+7); scheme 4032, [4]"
+ },
+ "2014_may-jun_2|8": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q8 curve y=(3x-2)/(4x+5) asymptotes, sketch, normal; [14]"
+ },
+ "2014_may-jun_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q11 triangle ABC with angle 60, cosine rule, area 20sqrt3; [10]"
+ },
+ "2015_may-jun_2|7": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q7 solid VABCDEFGH pyramid on cuboid, h=4, VF, angles; [12]"
+ },
+ "2016_may-jun_1|6": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q6 log equations (a)-(d); [12]"
+ },
+ "2016_may-jun_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q8 vectors OA=a OB=b, lambda=9/11, area 110/27; [13]"
+ },
+ "2016_may-jun_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q9 roots of 3x^2-5x-4, completed square; [16]"
+ },
+ "2016_specimen_1|1": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|3": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|7": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_1|11": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|1": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|2": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|3": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|5": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|6": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|7": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|8": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|9": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2016_specimen_2|10": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2016 specimen: same question (stem, parts, marks total) read on both sides; cut is a stripe of Pearson's rotated SAM table"
+ },
+ "2011_may-jun_2|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    2,
+    88.2,
+    130.4
+   ]
+  ]
+ },
+ "2011_may-jun_2|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    2,
+    130.4,
+    255.0
+   ]
+  ]
+ },
+ "2011_may-jun_2|3": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    2,
+    255.0,
+    407.7
+   ]
+  ]
+ },
+ "2011_may-jun_2|4": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    2,
+    407.7,
+    532.7
+   ]
+  ]
+ },
+ "2011_may-jun_2|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    2,
+    532.7,
+    762
+   ]
+  ]
+ },
+ "2011_may-jun_2|6": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    3,
+    115.8,
+    243.3
+   ]
+  ]
+ },
+ "2011_may-jun_2|7": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    3,
+    243.3,
+    560
+   ]
+  ]
+ },
+ "2011_may-jun_2|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    4,
+    129.6,
+    566
+   ]
+  ]
+ },
+ "2011_may-jun_2|9": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    5,
+    88.2,
+    488.8
+   ]
+  ]
+ },
+ "2011_may-jun_2|10": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    5,
+    488.8,
+    779
+   ]
+  ]
+ },
+ "2011_may-jun_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut from Pearson's 2011 4PM0 P2 scheme (column headed 'Q.'): region from the table rule above the printed label to the next question's rule; per-question marks equal the paper's; read together after the cut (all 11 stacked): each block is exactly its own question",
+  "ms_regions": [
+   [
+    6,
+    116.1,
+    732
+   ]
+  ]
+ },
+ "2018_may-jun_1|7": {
+  "decision": "CONFIRMED",
+  "reason": "read together: 2018 MJ P1 Q7 particle v=5cos2t; parts 2+3+4=9 = paper (total line misprints 8); own notes page"
+ },
+ "2018_may-jun_2|3": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q3 V=5h^3 rate of change [7] with notes"
+ },
+ "2019_jan_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q2 arithmetic series S_n=n(3+2n) [8] + additional notes"
+ },
+ "2019_jan_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q9 coordinates A,B,P,Q, area ABQP=50 [16] + notes"
+ },
+ "2019_may-jun_1|6": {
+  "decision": "CONFIRMED",
+  "reason": "read together: scanned paper Q6 lawn S=90x-pi x^2 [11]"
+ },
+ "2019_may-jun_2|9": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q9 curve f'(x)=x^2-x-2.. turning points [14]"
+ },
+ "2020_jan_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q10 parallelogram vectors ratio 7:16 [13]"
+ },
+ "2020_jan_2|11": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q11 trig identities, cos15, tan255 [13]"
+ },
+ "2020_oct-nov_1R|3": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q3 log arithmetic series a=3,b=4 [7]"
+ },
+ "2022_may-jun_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q10 triangle OAB vectors, K=9/16 [14]; no longer opens on Q9's guidance"
+ },
+ "2023_jan_1|2": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q2 coordinates, tan ABC=1/2 [13]; clean start"
+ },
+ "2023_jan_1|3": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q3 curve y=(ax+3)/(1-2x) sketch [9]"
+ },
+ "2023_jan_1|4": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q4 factor theorem p=-2 q=-5 [9]"
+ },
+ "2023_jan_1|5": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q5 curve and line, k=-2 [8]"
+ },
+ "2023_jan_1|6": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q6 binomial (8+3x)^(1/3) [7]"
+ },
+ "2023_jan_1|7": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q7 log graph table [10]"
+ },
+ "2023_jan_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q8 badge optimisation [13]"
+ },
+ "2023_jan_1|10": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q10 volume of revolution [9]"
+ },
+ "2023_jan_1|11": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q11 vectors AX:XN=4:1 [10]"
+ },
+ "2023_jan_1R|5": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut, whole scheme pages: '5(a)' tops page 11, '6(a)' tops page 13; read together after the cut: Q5 f(x)=2ax^3+x^2-bx+3a factors, h(y) exponential, Total 12 + notes",
+  "ms_pages": [
+   11,
+   12
+  ]
+ },
+ "2023_jan_2R|2": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut, whole scheme pages: '2(a)' tops page 7, Q3 tops page 8; read together after the cut: Q2 inequalities (a)-(c), Total 6 + notes",
+  "ms_pages": [
+   7
+  ]
+ },
+ "2023_jan_2R|11": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q11 open cylinder optimisation [10]"
+ },
+ "2024_may-jun_1|1": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut, whole scheme pages: '1 Angle' tops page 5, '2 (a)' tops page 9; read together after the cut: Q1 triangle area 50, x=4.15: main method, ALT1 (Heron), ALT2, notes; Total 4",
+  "ms_pages": [
+   5,
+   6,
+   7,
+   8
+  ]
+ },
+ "2024_may-jun_1|8": {
+  "decision": "CONFIRMED",
+  "reason": "hand cut, whole scheme pages: '8 (a)' tops page 22, '9 (a)' tops page 25; read together after the cut: Q8 geometric series (a)-(c), notes, then (d) on Pearson's later page; Total 12",
+  "ms_pages": [
+   22,
+   23,
+   24
+  ]
+ },
+ "2024_may-jun_2|1": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q1 cubic, one root [6]"
+ },
+ "2025_may-jun_1|9": {
+  "decision": "CONFIRMED",
+  "reason": "read together: Q9 cubic f(x) area 863/48 [13]"
+ }
+}

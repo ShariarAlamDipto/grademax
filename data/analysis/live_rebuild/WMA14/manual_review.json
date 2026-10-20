@@ -1,0 +1,60 @@
+{
+ "2020_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 (a)(b)(c) + notes, (12 marks); the leading text is its own clipped header row"
+ },
+ "2020_may-jun_P1|5": {
+  "decision": "CONFIRMED",
+  "reason": "Q5 (a)(b) + notes, (7 marks); leading text is its own clipped header row"
+ },
+ "2020_may-jun_P1|8": {
+  "decision": "CONFIRMED",
+  "reason": "Q8 vectors (a)(b) + notes + alternatives, scheme pp18-20 from its own header, (10 marks); automatic cut clipped its first row",
+  "ms_regions": [
+   [
+    17,
+    144,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ]
+ },
+ "2021_jan_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 proof by contradiction, (2 marks) + notes"
+ },
+ "2021_jan_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 (a)(b) + alternatives/notes, (7 marks)"
+ },
+ "2022_jan_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 (a) Ways 1-4,(b) + notes, scheme pp9-11 from its header to Q4's, (9 marks); automatic cut opened on Q2's notes",
+  "ms_regions": [
+   [
+    8,
+    58,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ]
+  ]
+ }
+}

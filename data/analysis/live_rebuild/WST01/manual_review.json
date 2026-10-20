@@ -1,0 +1,55 @@
+{
+ "2014_jan_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 correlation (a)(b)(c) with notes = scheme p5 alone (Q2 opens p6)",
+  "ms_regions": [
+   [
+    4,
+    null,
+    null
+   ]
+  ]
+ },
+ "2014_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 histogram/median/mean (a)-(e) + notes, total [14]; the question has no part (f)"
+ },
+ "2017_jan_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 normal distribution (a)(b)(c) + notes, [8 marks] = question"
+ },
+ "2019_jan_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 normal distribution (a)(b)(c) + notes, [10 marks] = question"
+ },
+ "2019_jan_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 regression (a)-(h) + notes = scheme p12 alone (last question; p13 is the back page)",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ]
+  ]
+ },
+ "2020_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "reason": "Q1 E(X) scheme + notes, [5] = question"
+ },
+ "2022_oct-nov_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 E(W) from cdf + notes, [4] = question"
+ },
+ "2025_jan_P1|4": {
+  "decision": "CONFIRMED",
+  "reason": "Q4 Venn (a)(b)(c) + notes, Total 9 = scheme p11 from its header; automatic cut clipped the header and diagram top",
+  "ms_regions": [
+   [
+    10,
+    59,
+    null
+   ]
+  ]
+ }
+}

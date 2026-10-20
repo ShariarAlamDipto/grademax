@@ -1,0 +1,31 @@
+{
+  "questions": 48,
+  "mirrors": 48,
+  "chapters": {
+    "1": 8,
+    "2": 10,
+    "3": 18,
+    "4": 23,
+    "5": 19,
+    "6": 10
+  },
+  "difficulties": {
+    "easy": 2,
+    "medium": 19,
+    "hard": 27
+  },
+  "publicPdfsVerified": 96,
+  "assembled": {
+    "worksheet": {
+      "merged": 6,
+      "placeholders": 0,
+      "pages": 22
+    },
+    "markscheme": {
+      "merged": 6,
+      "placeholders": 0,
+      "pages": 19
+    }
+  },
+  "failures": []
+}

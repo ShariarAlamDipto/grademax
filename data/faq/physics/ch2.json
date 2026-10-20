@@ -1,0 +1,179 @@
+{
+  "n": 2,
+  "title": "Electricity",
+  "blurb": "Roughly one paper question in eight. Almost always includes a circuit calculation with V = I × R, plus a practical about plotting results.",
+  "formulas": [
+    [
+      "voltage",
+      "current × resistance",
+      "V"
+    ],
+    [
+      "charge",
+      "current × time",
+      "C"
+    ],
+    [
+      "electrical power",
+      "current × voltage",
+      "W"
+    ],
+    [
+      "electrical power",
+      "current² × resistance",
+      "W"
+    ],
+    [
+      "energy transferred",
+      "current × voltage × time",
+      "J"
+    ],
+    [
+      "energy transferred",
+      "charge × voltage",
+      "J"
+    ]
+  ],
+  "items": [
+    {
+      "q": "State the formula linking voltage, current and resistance.",
+      "rx": "(formula|equation) linking voltage, current and resistance",
+      "marks": "1 mark",
+      "a": [
+        "voltage = current × resistance",
+        "(V = I × R)"
+      ],
+      "tip": "The most-asked single question in the electricity chapter. Learn the triangle: V on top, I and R underneath."
+    },
+    {
+      "q": "State the formula linking power, current and voltage.",
+      "rx": "(formula|equation) linking power, current and voltage",
+      "marks": "1 mark",
+      "a": [
+        "power = current × voltage",
+        "(P = I × V)"
+      ],
+      "tip": "The alternative form P = I²R is also on the specification and is worth knowing for power-loss-in-cables questions."
+    },
+    {
+      "q": "State the formula linking charge (transferred), current and time.",
+      "rx": "(formula|equation) linking charge",
+      "marks": "1 mark",
+      "a": [
+        "charge = current × time",
+        "(Q = I × t)"
+      ],
+      "tip": "Time must be in seconds. Charge is in coulombs (C)."
+    },
+    {
+      "q": "State what is meant by the term electric current / voltage / power.",
+      "rx": "meant by the term (electric current|voltage|power|direct current)",
+      "marks": "1–2 marks",
+      "a": [
+        "Current: the rate of flow of (electric) charge - the charge passing a point each second;",
+        "Voltage (potential difference): the energy transferred per unit charge (per coulomb) passing between two points;",
+        "Power: the rate of energy transfer - the energy transferred each second."
+      ],
+      "tip": "Every one of these definitions is 'something per something'. Say the per, and the mark is yours."
+    },
+    {
+      "q": "Calculate the voltage across the resistor / thermistor / LDR in the circuit.",
+      "rx": "calculate the voltage across",
+      "marks": "2–3 marks",
+      "a": [
+        "In series the current is the same everywhere, so find the current first if it is not given;",
+        "use V = I × R for the component asked about;",
+        "or use the fact that the voltages across series components add up to the supply voltage;",
+        "evaluate and give the unit (V)."
+      ],
+      "tip": "For a potential divider, the bigger resistance always takes the bigger share of the voltage. Use that to sanity-check your answer."
+    },
+    {
+      "q": "Calculate the charge transferred / the current in the circuit.",
+      "rx": "calculate the (charge (that is )?transferred|current in the)",
+      "marks": "2–3 marks",
+      "a": [
+        "Select the correct formula (Q = I × t, or I = V ÷ R);",
+        "substitute the values with time converted to seconds;",
+        "evaluate and give the unit."
+      ]
+    },
+    {
+      "q": "Draw a voltmeter on the diagram to measure the voltage across the resistor.",
+      "rx": "(draw|add) (a|an) (voltmeter|ammeter)",
+      "marks": "1 mark",
+      "a": [
+        "The voltmeter symbol is a circle with a V inside;",
+        "it must be drawn in parallel, connected across the two ends of that component only."
+      ],
+      "tip": "Ammeters go in series, voltmeters go in parallel. Draw the connecting wires clearly touching the circuit."
+    },
+    {
+      "q": "Draw a circuit diagram the student could use for this investigation.",
+      "rx": "(draw|complete).{0,60}circuit diagram|circuit diagram (that|to show)",
+      "marks": "2–3 marks",
+      "a": [
+        "A cell or battery and the component under test connected in a complete series loop;",
+        "an ammeter in series with the component;",
+        "a voltmeter in parallel across the component;",
+        "a variable resistor (or variable supply) to change the current."
+      ],
+      "tip": "Use correct standard symbols and make sure the circuit is closed with no gaps. A stray line loses the mark."
+    },
+    {
+      "q": "Explain how an object becomes positively or negatively charged by friction.",
+      "rx": "(cloth|rod|balloon).{0,60}(positively|negatively) charged|become.{0,20}charged",
+      "marks": "2–3 marks",
+      "a": [
+        "Friction (rubbing) transfers electrons from the cloth to the other object;",
+        "the cloth loses electrons;",
+        "so it has more protons than electrons, giving it an overall positive charge."
+      ],
+      "tip": "Only electrons ever move. Never write that protons or 'positive charges' were transferred - that is an automatic loss of the mark."
+    },
+    {
+      "q": "Explain why the ammeter shows a current for a short time and then shows zero.",
+      "rx": "ammeter shows a current for a short time",
+      "marks": "2–3 marks",
+      "a": [
+        "Electrons flow to (or from) the charged object through the circuit;",
+        "this movement of charge is a current;",
+        "the charge is neutralised / the objects reach the same potential, so there is no longer a potential difference and the current stops."
+      ]
+    },
+    {
+      "q": "Explain how the resistance of an LDR / thermistor changes.",
+      "rx": "\\bLDR\\b|thermistor|light.dependent resistor",
+      "marks": "1–2 marks",
+      "a": [
+        "LDR: as the light intensity increases, the resistance decreases;",
+        "Thermistor: as the temperature increases, the resistance decreases;",
+        "so in a series circuit the voltage across it falls and the current in the circuit rises."
+      ],
+      "tip": "Both go down when their input goes up. Used in light-sensing and temperature-sensing circuits."
+    },
+    {
+      "q": "Explain the purpose of the earth wire and the fuse, and choose a suitable fuse rating.",
+      "rx": "earth wire|fuse|double insulat",
+      "marks": "2–3 marks",
+      "a": [
+        "If a fault connects the live wire to the metal case, the earth wire provides a low-resistance path to the ground;",
+        "a large current flows, which melts (blows) the fuse;",
+        "this disconnects the live wire, so the case cannot give the user an electric shock;",
+        "double insulation means the appliance has a plastic case, so no earth wire is needed."
+      ],
+      "tip": "The fuse must be in the live wire. Its rating should be just above the normal operating current of the appliance."
+    },
+    {
+      "q": "Give a reason why the components are connected in series / in parallel.",
+      "rx": "connected in (series|parallel)|in (series|parallel) with",
+      "marks": "2–3 marks",
+      "a": [
+        "Series: one loop, so the current is the same through every component and the supply voltage is shared between them;",
+        "Parallel: separate branches, so each branch receives the full supply voltage and the current splits between the branches;",
+        "adding resistors in series increases the total resistance; adding them in parallel decreases it."
+      ],
+      "tip": "Household lamps are wired in parallel so each gets the full mains voltage and can be switched independently."
+    }
+  ]
+}

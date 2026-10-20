@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import argparse
 import dataclasses
+import hashlib
 import json
 import re
 from collections import Counter
@@ -122,6 +123,15 @@ IMAGE_ONLY_CHARS_PER_PAGE = 250  # our own stamp lines alone are ~100 a page
 OCR_QP_PAPERS = {"2019_jan_P1"}
 
 
+COMMON_WORDS = {"the", "and", "for", "marks", "answer", "working", "correct", "award"}
+COMMON_WORDS_MIN = 20
+TRUST_ENGLISH_TEXT = False  # set True by subjects whose readable docs lack "Question"
+
+
+def _common_words(text: str) -> int:
+    return sum(w.lower() in COMMON_WORDS for w in re.findall(r"[A-Za-z]{3,}", text))
+
+
 def is_scrambled(pdf: Path) -> bool:
     """
     Plenty of text, yet not one readable 'Question' anywhere -- or a scan
@@ -132,6 +142,12 @@ def is_scrambled(pdf: Path) -> bool:
         text = " ".join(page.get_text() for page in doc)
         pages = max(doc.page_count, 1)
     if len(text) > 5000 and "Question" not in text:
+        # Maths A schemes head their column "Q" and never print "Question", yet
+        # read perfectly -- OCR'ing them lost most of their tallies. Scrambled
+        # glyph codes never spell ordinary English words. Opt-in per subject:
+        # the published subjects were proven with the plain rule.
+        if TRUST_ENGLISH_TEXT and _common_words(text) >= COMMON_WORDS_MIN:
+            return False
         return True
     return pages > 2 and len(text) / pages < IMAGE_ONLY_CHARS_PER_PAGE
 
@@ -261,6 +277,43 @@ def flag_ocr(source_pdf: Path, outputs: Path) -> None:
 
 
 # ── rotation-safe extraction ────────────────────────────────────────────────
+def hidden_layer_names(pdf: Path) -> set[str]:
+    """Names of the optional-content layers a PDF switches OFF by default."""
+    with fitz.open(pdf) as doc:
+        return {info["name"] for info in (doc.get_ocgs() or {}).values() if not info.get("on", True)}
+
+
+def carry_hidden_layers(source_pdf: Path, target: Path) -> None:
+    """
+    Pearson's print-artwork PDFs ship design layers switched OFF -- "Guides and
+    Grids", "OMR grids", "Exemplar" (a page-sized diagonal watermark), "DRAFT".
+    Cutting a region into a new PDF copies their content but not the catalog's
+    "these are off" setting, so the cut shows a red grid and the watermark
+    over the question (64 live questions on 2026-10-11). Re-declare the same
+    layers OFF in the cut; the text stays vector and selectable.
+    """
+    hidden = hidden_layer_names(source_pdf)
+    if not hidden or not target.is_file():
+        return
+    with fitz.open(target) as doc:
+        ocgs = []
+        for xref in range(1, doc.xref_length()):
+            try:
+                if doc.xref_get_key(xref, "Type") == ("name", "/OCG"):
+                    ocgs.append((xref, doc.xref_get_key(xref, "Name")[1].strip("()")))
+            except Exception:  # noqa: BLE001 -- free / broken xref slots
+                continue
+        off = [x for x, name in ocgs if name in hidden]
+        if not off:
+            return
+        all_refs = " ".join(f"{x} 0 R" for x, _ in ocgs)
+        off_refs = " ".join(f"{x} 0 R" for x in off)
+        doc.xref_set_key(doc.pdf_catalog(), "OCProperties",
+                         f"<</OCGs[{all_refs}]/D<</Name(Default)/OFF[{off_refs}]>>>>")
+        doc.save(target.with_suffix(".layers.tmp"))
+    target.with_suffix(".layers.tmp").replace(target)
+
+
 def install_safe_extract(seg: ModuleType, opener: Callable[[Path], fitz.Document] | None = None):
     original = seg.extract_regions
     open_src = opener or fitz.open
@@ -309,6 +362,8 @@ def install_safe_extract(seg: ModuleType, opener: Callable[[Path], fitz.Document
             drop_blank_sheets(target)
         else:
             drop_furniture_pages(target)
+        # last: the cleanups above rewrite the file and drop catalog keys
+        carry_hidden_layers(source_pdf, target)
 
     seg.extract_regions = extract
     return extract
@@ -466,6 +521,14 @@ def _page_count(segment) -> int:
     return segment.qp_pages[1] - segment.qp_pages[0] + 1
 
 
+def cut_fingerprint(ms_file: Path) -> str:
+    """What a reader saw: page sizes plus text, so a re-cut of the same pages
+    (identical content) keeps its review and any boundary change voids it."""
+    with fitz.open(ms_file) as doc:
+        parts = [f"{p.rect.width:.0f}x{p.rect.height:.0f}|{p.get_text()}" for p in doc]
+    return hashlib.md5("\n".join(parts).encode("utf-8")).hexdigest()[:12]
+
+
 def verify_paper(repo_root: Path, paper_dir: Path, key: str, segments, decisions: dict,
                  manual_proven: bool = False, document_verified: bool = False,
                  ms_from_ocr: bool = False) -> list[dict]:
@@ -526,7 +589,12 @@ def verify_paper(repo_root: Path, paper_dir: Path, key: str, segments, decisions
                                                f"Question header (previous question's guidance?)")
         decision = decisions.get(f"{key}|{s.number}")
         if decision and verdict not in PUBLISHABLE:
-            if decision["decision"] == "CONFIRMED":
+            read = decision.get("ms_fingerprint")
+            if read and ms_file.is_file() and read != cut_fingerprint(ms_file):
+                # Confirmed against a cut that no longer exists: a re-run changed
+                # what this scheme file holds, so the reading does not carry over.
+                verdict, detail = "REVIEW_STALE", "scheme cut changed since it was read"
+            elif decision["decision"] == "CONFIRMED":
                 verdict, detail = "REVIEWED_PROVEN", f"read together: {decision['reason']}"
             elif decision["decision"] == "REJECTED":
                 verdict, detail = "REJECTED", f"read together: {decision['reason']}"
@@ -654,7 +722,8 @@ def pairing_verified(papers: list[LivePaper]) -> set[str]:
 
 # ── the run loop ────────────────────────────────────────────────────────────
 def run(code: str, seg: ModuleType, to_source: Callable[[LivePaper], object | None],
-        argv: list[str] | None = None, *, before_paper: Callable | None = None) -> int:
+        argv: list[str] | None = None, *, before_paper: Callable | None = None,
+        include: Callable[[LivePaper], bool] | None = None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--paper", help="one live key, e.g. 2015_jan_P1")
     parser.add_argument("--verbose", action="store_true")
@@ -669,6 +738,10 @@ def run(code: str, seg: ModuleType, to_source: Callable[[LivePaper], object | No
     seg.OUTPUT_DIR = segments_dir
 
     papers = load_live_papers(code)
+    if include:
+        # Subjects whose live rows hold duplicate copies (Maths A's pre-2018
+        # "1H" rows are the 3H papers again) rebuild only the rows the tools serve.
+        papers = [p for p in papers if include(p)]
     pairing_ok = pairing_verified(papers)
     if args.paper:
         papers = [p for p in papers if p.key == args.paper]

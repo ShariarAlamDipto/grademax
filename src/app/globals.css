@@ -779,6 +779,24 @@ html.light body {
 }
 
 /* ── Promo banner (scrolling strip under the navbar, PromoBanner.tsx) ── */
+.gm-promo-wrap { position: relative; }
+html.gm-promo-off .gm-promo-wrap { display: none; }
+.gm-promo-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 2.5rem;
+  border: 0;
+  border-left: 1px solid var(--gm-amber-ring);
+  background: var(--gm-bg);
+  color: var(--gm-amber);
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.gm-promo-close:hover { background: var(--gm-amber-bg); }
+.gm-promo-close:focus-visible { outline: 2px solid var(--gm-amber); outline-offset: -2px; }
 .gm-promo {
   display: block;
   overflow: hidden;
@@ -790,6 +808,7 @@ html.light body {
   font-weight: 600;
   line-height: 2.1rem;
   text-decoration: none;
+  padding-right: 2.5rem;
 }
 .gm-promo:hover { background: var(--gm-amber-ring); }
 .gm-promo-track {
@@ -804,7 +823,7 @@ html.light body {
   to   { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .gm-promo { white-space: normal; text-align: center; padding: 0 1rem; }
+  .gm-promo { white-space: normal; text-align: center; padding: 0 3rem 0 1rem; }
   .gm-promo-track { animation: none; display: inline; }
   .gm-promo-item + .gm-promo-item { display: none; }
   .gm-promo-item { padding-right: 0; }

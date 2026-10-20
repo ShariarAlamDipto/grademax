@@ -6,6 +6,7 @@ import { trackUsage } from '@/lib/trackUsage';
 import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
 import { getUserQuestionLimit } from '@/lib/questionLimit';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
+import { getQuestionMarks, totalQuestionMarks } from '@/lib/questionMarks';
 
 // Several Supabase round-trips happen here. On a cold serverless start over a
 // slow mobile connection the default 10 s budget is tight enough that the
@@ -216,6 +217,9 @@ export async function POST(request: Request) {
         difficulty: difficulty ?? null,
         limit,
         shuffle,
+        totalMarks: totalQuestionMarks(finalQuestions.map((page) => ({
+          marks: getQuestionMarks(page.paper_id, page.question_number),
+        }))),
       },
     };
 
@@ -239,10 +243,13 @@ export async function POST(request: Request) {
       question_id: page.id,
       position: index + 1,
     }));
-    await supabase
+    const { error: itemsError } = await supabase
       .from('worksheet_items')
       .insert(worksheetItems)
-      .then(() => undefined, () => undefined);
+      .then((result) => result, (error: unknown) => ({ error }));
+    if (itemsError) {
+      console.error('worksheet_items insert failed', { worksheetId: worksheet.id, itemsError });
+    }
 
     trackUsage({
       user_id: auth.user.id,
@@ -255,6 +262,7 @@ export async function POST(request: Request) {
     const formattedPages = finalQuestions.map((page) => ({
       id: page.id,
       questionNumber: page.question_number,
+      marks: getQuestionMarks(page.paper_id, page.question_number),
       topics: page.topics,
       difficulty: page.difficulty ?? 'unknown',
       qpPageUrl: toAbsolutePdfUrl(page.qp_page_url)!,

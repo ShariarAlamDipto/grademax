@@ -1,5 +1,7 @@
 'use client';
 
+import { totalQuestionMarks } from '@/lib/questionMarks';
+
 import { useState, type MouseEvent } from 'react';
 import { QuestionItem } from './QuestionCard';
 import PdfThumbnail from './PdfThumbnail';
@@ -40,7 +42,7 @@ export default function PaperPreview({
   onGenerate, generating, onTitleChange, worksheetUrl, markschemeUrl,
   worksheetBlob, markschemeBlob, pdfProgress, error,
 }: PaperPreviewProps) {
-  const totalMarks = items.length * 4;
+  const totalMarks = totalQuestionMarks(items);
   const renderMode = usePdfRenderMode();
   const [viewing, setViewing] = useState<{ url: string; label: string } | null>(null);
 

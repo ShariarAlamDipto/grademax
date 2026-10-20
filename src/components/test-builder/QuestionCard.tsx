@@ -5,6 +5,7 @@ import PdfThumbnail from './PdfThumbnail';
 export interface QuestionItem {
   id: string;
   questionNumber: string;
+  marks?: number | null;
   topics: string[];
   difficulty: string;
   qpPageUrl: string;

@@ -4,6 +4,9 @@ import { useEffect, useState } from "react"
 import NavAuthSection from "./NavAuthSection"
 import ThemeToggle from "./ThemeToggle"
 import CartLink from "./store/CartLink"
+import { SOCIAL_PROFILES, SocialIcon } from "@/lib/social"
+
+const discordProfile = SOCIAL_PROFILES.find(profile => profile.id === "discord")!
 
 /** Height of the xs links row, border included; see --gm-nav-h in globals.css. */
 const MOBILE_ROW_HEIGHT = 49
@@ -131,6 +134,17 @@ export default function Navbar() {
         <div style={{ display: "flex", justifyContent: "flex-end", alignItems: "center", gap: "0.4rem" }}>
           <CartLink />
           <ThemeToggle />
+          <a
+            href={discordProfile.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Join Discord (opens in a new tab)"
+            title="Join Discord"
+            className="gm-link inline-flex shrink-0 items-center gap-1.5 rounded-full p-2 text-xs whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--gm-blue)]"
+          >
+            <SocialIcon id="discord" size={16} />
+            <span className="hidden xl:inline">Join Discord</span>
+          </a>
           <NavAuthSection />
           <button
             className="lg:hidden"

@@ -1,0 +1,35 @@
+{
+ "2023_oct-nov_P1|3": {
+  "decision": "CONFIRMED",
+  "reason": "Q3 surds (a)(b) scheme + notes, (6 marks); the margin \"5\" is from sqrt5 in the working"
+ },
+ "2023_oct-nov_P1|6": {
+  "decision": "CONFIRMED",
+  "reason": "Q6 (a)(b) scheme + notes, (6 marks), cut by the paper-wide (N marks) sequence; margin \"8\" is a value"
+ },
+ "2020_jan_P1|9": {
+  "decision": "CONFIRMED",
+  "reason": "Q9 scheme with Alt (I)/(II) and notes, (6 marks); margin '4' is from the working"
+ },
+ "2024_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "reason": "Q2 (i)(a)(b),(ii) from its own header (scheme p8) to Q3's header; automatic cut opened on Q1's notes",
+  "ms_regions": [
+   [
+    7,
+    33,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ]
+  ]
+ }
+}
