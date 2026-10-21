@@ -31,6 +31,16 @@ ENV R2_ACCESS_KEY_ID=$R2_ACCESS_KEY_ID
 ENV R2_SECRET_ACCESS_KEY=$R2_SECRET_ACCESS_KEY
 ENV R2_BUCKET_NAME=$R2_BUCKET_NAME
 COPY . .
+# NEXT_PUBLIC_* values are compiled into the browser bundle. Built without
+# `--env-file docker.env` they fall back to the placeholders above and every
+# sign-in breaks, so refuse to build instead of shipping a broken image.
+RUN case "$NEXT_PUBLIC_SUPABASE_URL" in \
+      https://*) ;; \
+      *) echo "NEXT_PUBLIC_SUPABASE_URL is '$NEXT_PUBLIC_SUPABASE_URL'. Build with: docker compose --env-file docker.env build" >&2; exit 1 ;; \
+    esac \
+  && if [ "$NEXT_PUBLIC_SUPABASE_ANON_KEY" = "placeholder" ]; then \
+      echo "NEXT_PUBLIC_SUPABASE_ANON_KEY is a placeholder. Build with: docker compose --env-file docker.env build" >&2; exit 1; \
+    fi
 RUN npm run build
 
 FROM base AS runner
