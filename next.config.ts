@@ -98,11 +98,16 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           { key: "Strict-Transport-Security", value: "max-age=31536000; includeSubDomains" },
-          {
-            key: "Content-Security-Policy",
-            value: baseCsp,
-          },
         ],
+      },
+      {
+        // Every path except the two that set the Supabase session cookie. Those
+        // already send ~5 KB of Set-Cookie (two chunks for a Google user), and
+        // the extra ~2.4 KB of CSP pushed the header block past the reverse
+        // proxy's buffer, so sign-in failed with a Cloudflare 502. They are
+        // redirects/JSON, where a CSP protects nothing.
+        source: "/((?!auth/|api/auth/).*)",
+        headers: [{ key: "Content-Security-Policy", value: baseCsp }],
       },
       {
         source: "/api/worksheets/:path*",
