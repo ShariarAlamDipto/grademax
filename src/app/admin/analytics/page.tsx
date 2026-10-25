@@ -1,5 +1,6 @@
 "use client"
 import { useEffect, useState } from "react"
+import VisitorAnalytics from "@/components/admin/VisitorAnalytics"
 
 interface Stats {
   subjects: number; papers: number; papersWithQP: number; papersWithMS: number
@@ -45,7 +46,7 @@ const UsageStat = ({ label, total, unique, color }: { label: string; total: numb
   </div>
 )
 
-type AnalyticsTab = "overview" | "coverage" | "usage"
+type AnalyticsTab = "visitors" | "overview" | "coverage" | "usage"
 
 export default function AnalyticsAdminPage() {
   const [stats, setStats] = useState<Stats | null>(null)
@@ -56,7 +57,7 @@ export default function AnalyticsAdminPage() {
   const [loading, setLoading] = useState(true)
   const [coverageLoading, setCoverageLoading] = useState(false)
   const [usageLoading, setUsageLoading] = useState(false)
-  const [activeTab, setActiveTab] = useState<AnalyticsTab>("overview")
+  const [activeTab, setActiveTab] = useState<AnalyticsTab>("visitors")
   const [coverageSort, setCoverageSort] = useState<"name" | "total" | "qp" | "ms">("total")
 
   useEffect(() => {
@@ -126,22 +127,24 @@ export default function AnalyticsAdminPage() {
     <div style={{ padding: "2rem", maxWidth: "1100px" }}>
       <div style={{ marginBottom: "1.5rem" }}>
         <h1 style={{ fontSize: "1.5rem", fontWeight: 800, color: "var(--gm-text)", marginBottom: "0.25rem" }}>Analytics</h1>
-        <p style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Content coverage and platform usage</p>
+        <p style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Visitors, content coverage and platform usage</p>
       </div>
 
       {/* Tabs */}
       <div style={{ display: "flex", borderBottom: "1px solid var(--gm-border)", marginBottom: "1.5rem" }}>
-        {(["overview", "coverage", "usage"] as const).map(tab => (
+        {(["visitors", "overview", "coverage", "usage"] as const).map(tab => (
           <button key={tab} onClick={() => handleTabChange(tab)} style={{
             padding: "0.625rem 1.25rem", fontSize: "0.8rem", fontWeight: activeTab === tab ? 600 : 400,
             color: activeTab === tab ? "var(--gm-text)" : "var(--gm-text-3)",
             borderBottom: activeTab === tab ? "2px solid var(--gm-blue)" : "2px solid transparent",
             background: "transparent", border: "none", cursor: "pointer", textTransform: "capitalize",
           }}>
-            {tab === "coverage" ? "Per-Subject Coverage" : tab === "usage" ? "Feature Usage" : "Overview"}
+            {tab === "visitors" ? "Visitors" : tab === "coverage" ? "Per-Subject Coverage" : tab === "usage" ? "Feature Usage" : "Overview"}
           </button>
         ))}
       </div>
+
+      {activeTab === "visitors" && <VisitorAnalytics />}
 
       {/* Overview tab */}
       {activeTab === "overview" && (
