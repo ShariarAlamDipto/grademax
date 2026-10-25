@@ -3,6 +3,7 @@ import { publicPageMetadata } from "@/lib/metadata"
 import Link from "next/link"
 import Image from "next/image"
 import { listActiveProducts } from "@/lib/store/catalogue"
+import { SHELF_FILTERS, parseShelfFilter, shelve } from "@/lib/store/shelves"
 import { getSettings } from "@/lib/store/settings"
 import { formatBdt } from "@/lib/store/format"
 import { Badge, Button, PageHeader, card } from "@/components/store/StoreUI"
@@ -17,8 +18,14 @@ export const metadata: Metadata = publicPageMetadata({
 // Prices and stock change from the admin portal, so this must not be cached.
 export const dynamic = "force-dynamic"
 
-export default async function StorePage() {
-  const [products, settings] = await Promise.all([listActiveProducts(), getSettings()])
+interface StoreQuery {
+  shelf?: string | string[]
+}
+
+export default async function StorePage({ searchParams }: { searchParams: Promise<StoreQuery> }) {
+  const [products, settings, query] = await Promise.all([listActiveProducts(), getSettings(), searchParams])
+  const filter = parseShelfFilter(query.shelf)
+  const shelves = shelve(products, filter)
 
   if (!settings.storeEnabled || products.length === 0) {
     return (
@@ -52,12 +59,52 @@ export default async function StorePage() {
         for syllabus checks, delivery charges and payment options.
       </p>
 
+      {/* Plain links, so the filter works without JavaScript and each shelf has its own URL. */}
+      <nav aria-label="Filter books" style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1.5rem" }}>
+        {SHELF_FILTERS.map(f => {
+          const active = f.key === filter
+          return (
+            <Link
+              key={f.key}
+              href={f.key === "all" ? "/store" : `/store?shelf=${f.key}`}
+              aria-current={active ? "page" : undefined}
+              style={{
+                padding: "0.4rem 0.9rem",
+                borderRadius: "999px",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+                textDecoration: "none",
+                border: "1px solid var(--gm-border)",
+                background: active ? "var(--gm-text)" : "var(--gm-surface)",
+                color: active ? "var(--gm-bg)" : "var(--gm-text-2)",
+              }}
+            >
+              {f.label}
+            </Link>
+          )
+        })}
+      </nav>
+
+      {shelves.length === 0 ? (
+        <p style={{ color: "var(--gm-text-2)", fontSize: "0.9rem" }}>
+          No books on this shelf yet. <Link href="/store" className="gm-link">See all books</Link>.
+        </p>
+      ) : null}
+
+      {shelves.map(shelf => (
+      <section key={shelf.level} aria-labelledby={`shelf-${shelf.level}`} style={{ marginBottom: "2rem" }}>
+      <h2 id={`shelf-${shelf.level}`} style={{ fontSize: "1.15rem", fontWeight: 800, marginBottom: "0.9rem" }}>
+        {shelf.title}
+        <span style={{ fontSize: "0.8rem", fontWeight: 500, color: "var(--gm-text-3)", marginLeft: "0.5rem" }}>
+          {shelf.items.length} {shelf.items.length === 1 ? "book" : "books"}
+        </span>
+      </h2>
       <div style={{
         display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 20rem), 1fr))",
+        gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 15rem), 1fr))",
         gap: "1.1rem",
       }}>
-        {products.map(product => {
+        {shelf.items.map(product => {
           const print = product.variants.find(v => v.kind === "print")
           const digital = product.variants.find(v => v.kind === "digital")
           const cheapest = Math.min(...product.variants.map(v => v.price_bdt))
@@ -135,6 +182,8 @@ export default async function StorePage() {
           )
         })}
       </div>
+      </section>
+      ))}
 
       <section style={{ ...card, marginTop: "2rem" }}>
         <h2 style={{ fontSize: "0.95rem", fontWeight: 700, marginBottom: "0.6rem" }}>Delivery and payment</h2>
