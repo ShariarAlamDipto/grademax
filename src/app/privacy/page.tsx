@@ -71,8 +71,13 @@ export default function PrivacyPage() {
         <section style={sectionStyle}>
           <h2 style={h2Style}>Analytics</h2>
           <p style={{ ...pStyle, marginBottom: 0 }}>
-            Vercel Analytics is used to collect anonymous usage data to help understand how visitors
-            use the website. This data is aggregated and does not personally identify you.
+            GradeMax runs its own anonymous analytics to understand how the site is used: which pages
+            are visited and in what order, how long a page is read and how far it is scrolled, which
+            PDFs are downloaded, which site or search engine a visit came from, the country (from the
+            network), and the device and browser type. Two cookies make this work: one holds a random
+            visitor ID for a year, the other a random visit ID that expires after 30 minutes without
+            activity. We do not store your IP address, and this data is not linked to your account or
+            shared with anyone.
           </p>
         </section>
 

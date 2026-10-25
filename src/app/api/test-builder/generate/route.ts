@@ -5,6 +5,7 @@ import { getSupabaseServer } from '@/lib/supabaseServer';
 import { PDFDocument, StandardFonts, rgb, PageSizes } from 'pdf-lib';
 import { mergeQuestionPdfs, toAbsolutePdfUrl } from '@/lib/pdfUtils';
 import { planQuestionSources, type QuestionSourceMeta } from '@/lib/questionPdfAssembly';
+import { trackServerEvent } from '@/lib/siteEvents';
 
 // Merging many source PDFs from Supabase storage can take longer than the
 // default 10 s function budget, especially on cold starts behind a slow
@@ -184,6 +185,7 @@ export async function POST(request: Request) {
 
     const mergedBytes = await mergedPdf.save();
     const filename = `${(title || 'test').replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, '_')}_${type}.pdf`;
+    await trackServerEvent('test_generated', '/test-builder', [subjectName, type].filter(Boolean).join(' · '));
 
     return new Response(Buffer.from(mergedBytes), {
       headers: {

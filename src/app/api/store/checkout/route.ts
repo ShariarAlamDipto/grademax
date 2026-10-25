@@ -4,6 +4,7 @@ import { createOrder } from "@/lib/store/orders"
 import { checkoutSchema } from "@/lib/store/schemas"
 import { getSettings } from "@/lib/store/settings"
 import { checkRateLimitByIp } from "@/lib/store/rateLimit"
+import { trackServerEvent } from "@/lib/siteEvents"
 
 /**
  * POST /api/store/checkout — place an order.
@@ -73,6 +74,9 @@ export async function POST(req: NextRequest) {
   }
 
   const { order } = result
+  // Analytics funnel. The label is the payment method, never the order number,
+  // so the anonymous visit cannot be matched to the buyer.
+  await trackServerEvent("order_placed", "/checkout", input.paymentMethod)
   return NextResponse.json({
     orderNumber: order.orderNumber,
     totalBdt: order.totalBdt,

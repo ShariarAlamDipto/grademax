@@ -3,6 +3,7 @@ import type { SupabaseClient } from '@supabase/supabase-js';
 import { requireAuth } from '@/lib/apiAuth';
 import { normalizeTopicCodes } from '@/lib/topicCodes';
 import { trackUsage } from '@/lib/trackUsage';
+import { trackServerEvent } from '@/lib/siteEvents';
 import { MAX_QUESTIONS_PER_PAPER } from '@/lib/toolLimits';
 import { getUserQuestionLimit } from '@/lib/questionLimit';
 import { toAbsolutePdfUrl } from '@/lib/pdfUtils';
@@ -258,6 +259,7 @@ export async function POST(request: Request) {
       subject_name: subjectRow?.name ?? null,
       metadata: { total_questions: finalQuestions.length, topics },
     });
+    await trackServerEvent('worksheet_generated', '/generate', subjectRow?.name ?? null);
 
     const formattedPages = finalQuestions.map((page) => ({
       id: page.id,
