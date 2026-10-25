@@ -1,0 +1,43 @@
+# Merge V1 into imrul-deploy on every push to V1.
+#
+# Production (Imrul's Docker server) builds imrul-deploy, which is V1 plus the
+# server's deploy files. scripts/deploy/sync-imrul-deploy.sh does the same from
+# the main PC through a git pre-push hook; this covers pushes made anywhere else.
+#
+# Uses only the built-in GITHUB_TOKEN with contents:write. No repository
+# secrets are read. On a conflict it fails without pushing anything.
+name: Sync V1 into imrul-deploy
+
+on:
+  push:
+    branches: [V1]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-imrul-deploy
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out imrul-deploy
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: imrul-deploy
+          fetch-depth: 0
+
+      - name: Merge V1 and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin V1
+          if git merge-base --is-ancestor origin/V1 HEAD; then
+            echo "imrul-deploy already contains V1."
+            exit 0
+          fi
+          git merge --no-ff -m "Merge V1 into imrul-deploy (automatic)" origin/V1
+          git push origin HEAD:imrul-deploy
