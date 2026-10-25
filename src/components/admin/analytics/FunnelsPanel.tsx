@@ -1,5 +1,5 @@
 "use client"
-import { COLORS, Empty, Panel, SectionState, num, panelGrid, useSection } from "./ui"
+import { COLORS, Empty, Panel, SectionState, num, panelGrid, useSection, type PanelProps } from "./ui"
 
 type Step = { step: string; sessions: number }
 interface FunnelsData { paper: Step[]; signup: Step[]; store: Step[]; tools: Step[] }
@@ -43,8 +43,8 @@ function Funnel({ steps, color }: { steps: Step[]; color: string }) {
   )
 }
 
-export default function FunnelsPanel({ days }: { days: number }) {
-  const { data, error, loading } = useSection<FunnelsData>("funnels", days, 300_000)
+export default function FunnelsPanel({ query }: PanelProps) {
+  const { data, error, loading } = useSection<FunnelsData>("funnels", query, 300_000)
   if (!data) return <SectionState loading={loading} error={error} hasData={false} />
   return (
     <div style={panelGrid}>

@@ -3,6 +3,7 @@ import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianG
 import {
   CHANNEL_COLORS, CHANNEL_LABELS, COLORS, DataTable, Empty, Panel, RankList, SectionState, Stat, axisTick,
   countryName, formatSeconds, num, panelGrid, pct, shortDay, statGrid, tooltipStyle, useSection,
+  type PanelProps,
 } from "./ui"
 
 interface ChannelRow { channel: string; sessions: number; visitors: number; bounce_rate: number | null; pages_per_session: number | null; avg_seconds: number | null }
@@ -18,8 +19,8 @@ interface AcquisitionData {
 
 const DAILY_SERIES = ["search", "direct", "social", "ai", "referral", "campaigns"] as const
 
-export default function AcquisitionPanel({ days }: { days: number }) {
-  const { data, error, loading } = useSection<AcquisitionData>("acquisition", days, 120_000)
+export default function AcquisitionPanel({ query }: PanelProps) {
+  const { data, error, loading } = useSection<AcquisitionData>("acquisition", query, 120_000)
   if (!data) return <SectionState loading={loading} error={error} hasData={false} />
 
   const total = data.channels.reduce((s, c) => s + c.sessions, 0)
@@ -61,6 +62,7 @@ export default function AcquisitionPanel({ days }: { days: number }) {
         <DataTable<ChannelRow>
           rows={data.channels}
           initialSort="sessions"
+          exportName="channels"
           columns={[
             { key: "channel", title: "Channel", render: r => (
               <span style={{ display: "inline-flex", alignItems: "center", gap: "0.45rem" }}>

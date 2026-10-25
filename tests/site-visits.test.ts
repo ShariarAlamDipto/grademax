@@ -10,7 +10,15 @@ import {
   isVisitorId,
   isAllowedOrigin,
   createHitCounter,
+  isAnalyticsEnabled,
 } from "../src/lib/siteVisits"
+
+test("isAnalyticsEnabled records in production only, unless a dev opts in", () => {
+  assert.equal(isAnalyticsEnabled({ NODE_ENV: "production" }), true)
+  assert.equal(isAnalyticsEnabled({ NODE_ENV: "development" }), false)
+  assert.equal(isAnalyticsEnabled({ NODE_ENV: "test" }), false)
+  assert.equal(isAnalyticsEnabled({ NODE_ENV: "development", ANALYTICS_DEV: "1" }), true)
+})
 
 const IPHONE = "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 Mobile/15E148 Safari/604.1"
 const ANDROID_PHONE = "Mozilla/5.0 (Linux; Android 14; SM-S918B) AppleWebKit/537.36 Chrome/120.0 Mobile Safari/537.36"

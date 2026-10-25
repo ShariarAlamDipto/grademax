@@ -34,6 +34,15 @@ const DEV_ORIGIN_RE = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
+/**
+ * Only production records analytics: a dev server shares the production
+ * database, so its test visits would otherwise land in the real numbers.
+ * Set ANALYTICS_DEV=1 to record from a dev server on purpose.
+ */
+export function isAnalyticsEnabled(env: Record<string, string | undefined> = process.env): boolean {
+  return env.NODE_ENV === "production" || env.ANALYTICS_DEV === "1"
+}
+
 export function isBotUserAgent(userAgent: string): boolean {
   return !userAgent.trim() || BOT_UA.test(userAgent)
 }

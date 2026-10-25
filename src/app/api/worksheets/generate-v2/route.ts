@@ -101,6 +101,9 @@ function stratifiedSelect(
 }
 
 export async function POST(request: Request) {
+  // Analytics only (Tools & health): how long a request takes and why it fails.
+  const startedAt = Date.now();
+  const elapsed = () => Date.now() - startedAt;
   try {
     const auth = await requireAuth();
     if ('error' in auth) return auth.error;
@@ -121,6 +124,9 @@ export async function POST(request: Request) {
     const { limit: maxQuestions } = await getUserQuestionLimit(auth.user);
     const requested = Math.max(1, Number(rawLimit) || MAX_QUESTIONS_PER_PAPER);
     const limit = maxQuestions === null ? requested : Math.min(maxQuestions, requested);
+    if (maxQuestions !== null && requested > maxQuestions) {
+      await trackServerEvent('limit_reached', '/generate', 'worksheet', { requested, max: maxQuestions });
+    }
 
     if (!rawTopics || rawTopics.length === 0) {
       return NextResponse.json({ error: 'Topics are required' }, { status: 400 });
@@ -187,6 +193,7 @@ export async function POST(request: Request) {
     const { data: pageRows, error: pageError } = await pageQuery;
 
     if (pageError) {
+      await trackServerEvent('worksheet_failed', '/generate', 'query_error', { requested: limit, ms: elapsed() });
       return NextResponse.json({ error: pageError.message }, { status: 500 });
     }
 
@@ -194,6 +201,7 @@ export async function POST(request: Request) {
     const finalQuestions = stratifiedSelect(candidates, topics, limit, shuffle);
 
     if (finalQuestions.length === 0) {
+      await trackServerEvent('worksheet_failed', '/generate', 'no_questions', { requested: limit, ms: elapsed() });
       return NextResponse.json(
         { error: 'No questions found for the selected topics. Try selecting different topics or a wider year range.' },
         { status: 404 }
@@ -231,6 +239,7 @@ export async function POST(request: Request) {
       .single();
 
     if (worksheetError || !worksheet) {
+      await trackServerEvent('worksheet_failed', '/generate', 'save_error', { requested: limit, ms: elapsed() });
       return NextResponse.json(
         { error: worksheetError?.message || 'Failed to create worksheet' },
         { status: 500 }
@@ -259,7 +268,13 @@ export async function POST(request: Request) {
       subject_name: subjectRow?.name ?? null,
       metadata: { total_questions: finalQuestions.length, topics },
     });
-    await trackServerEvent('worksheet_generated', '/generate', subjectRow?.name ?? null);
+    await trackServerEvent('worksheet_generated', '/generate', subjectRow?.name ?? null, {
+      requested: limit,
+      supplied: finalQuestions.length,
+      partial: finalQuestions.length < limit,
+      history_saved: !itemsError,
+      ms: elapsed(),
+    });
 
     const formattedPages = finalQuestions.map((page) => ({
       id: page.id,
@@ -287,6 +302,7 @@ export async function POST(request: Request) {
       },
     });
   } catch (error: unknown) {
+    await trackServerEvent('worksheet_failed', '/generate', 'server_error', { ms: elapsed() });
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Internal server error' },
       { status: 500 }

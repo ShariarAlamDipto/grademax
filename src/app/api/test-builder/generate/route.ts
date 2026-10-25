@@ -128,6 +128,9 @@ interface GenerateBody {
 }
 
 export async function POST(request: Request) {
+  // Analytics only (Tools & health): how long a PDF takes and why one fails.
+  const startedAt = Date.now();
+  const elapsed = () => Date.now() - startedAt;
   try {
     const body: GenerateBody = await request.json();
     const { title, type = 'worksheet', totalMarks, subjectName, level, pages } = body;
@@ -144,6 +147,7 @@ export async function POST(request: Request) {
       const { data: { user } } = await getSupabaseServer().auth.getUser();
       const { limit: maxQuestions } = await getUserQuestionLimit(user);
       if (maxQuestions !== null && exceedsLimit(pages.length, maxQuestions)) {
+        await trackServerEvent('limit_reached', '/test-builder', 'test', { requested: pages.length, max: maxQuestions });
         return NextResponse.json({ error: limitMessage(maxQuestions) }, { status: 403 });
       }
     }
@@ -158,6 +162,7 @@ export async function POST(request: Request) {
     );
 
     if (sources.every((source) => !source.url)) {
+      await trackServerEvent('test_failed', '/test-builder', 'no_pdfs', { requested: pages.length, ms: elapsed() });
       return NextResponse.json(
         { error: `No ${type === 'markscheme' ? 'mark scheme' : 'question paper'} PDFs available for these questions` },
         { status: 404 }
@@ -177,6 +182,7 @@ export async function POST(request: Request) {
     const { merged: successCount } = await mergeQuestionPdfs(mergedPdf, sources, type);
 
     if (successCount === 0) {
+      await trackServerEvent('test_failed', '/test-builder', 'download_failed', { requested: pages.length, ms: elapsed() });
       return NextResponse.json(
         { error: 'Could not download any question PDFs. Please try again.' },
         { status: 500 }
@@ -185,7 +191,13 @@ export async function POST(request: Request) {
 
     const mergedBytes = await mergedPdf.save();
     const filename = `${(title || 'test').replace(/[^a-zA-Z0-9 ]/g, '').replace(/\s+/g, '_')}_${type}.pdf`;
-    await trackServerEvent('test_generated', '/test-builder', [subjectName, type].filter(Boolean).join(' · '));
+    await trackServerEvent('test_generated', '/test-builder', [subjectName, type].filter(Boolean).join(' · '), {
+      requested: pages.length,
+      supplied: successCount,
+      partial: successCount < pages.length,
+      markscheme: type === 'markscheme',
+      ms: elapsed(),
+    });
 
     return new Response(Buffer.from(mergedBytes), {
       headers: {
@@ -195,6 +207,7 @@ export async function POST(request: Request) {
       },
     });
   } catch (error: unknown) {
+    await trackServerEvent('test_failed', '/test-builder', 'server_error', { ms: elapsed() });
     return NextResponse.json(
       { error: error instanceof Error ? error.message : 'Failed to generate PDF' },
       { status: 500 }
