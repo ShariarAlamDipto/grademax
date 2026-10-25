@@ -146,6 +146,22 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Host canonicalization: apex → www. Vercel used to do this at the domain
+      // level; the self-hosted Docker server does not, so the apex served every
+      // page with 200 and a www canonical (GSC "Alternative page with proper
+      // canonical tag"). nginx forwards the real Host. /api and /auth stay on the
+      // host they were called on: POSTs (MCP, webhooks) break on a redirect, and
+      // the PKCE cookie of a sign-in started on the apex lives on the apex.
+      {
+        source: "/:path((?!api/|auth/).*)",
+        // `value` is an anchored regex, hence the escaped dot.
+        has: [{ type: "host", value: "grademax\\.me" }],
+        destination: "https://www.grademax.me/:path",
+        permanent: true,
+      },
+      // Legacy subject-level paper URLs (/past-papers/physics/paper-1) still earn
+      // impressions but now 404 because "paper-1" is not a year.
+      { source: "/past-papers/:subject/:paper(paper-\\d+)", destination: "/past-papers/:subject", permanent: true },
       // Catch common misspellings & alternate search patterns
       { source: "/pastpapers", destination: "/past-papers", permanent: true },
       { source: "/past_papers", destination: "/past-papers", permanent: true },

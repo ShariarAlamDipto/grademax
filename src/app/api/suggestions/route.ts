@@ -2,6 +2,9 @@ import { NextResponse } from "next/server"
 import { z } from "zod"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getSupabaseServer } from "@/lib/supabaseServer"
+import { checkRateLimitByIp } from "@/lib/store/rateLimit"
+
+const SAVE_FAILED = "We couldn't save your suggestion. Please try again in a moment."
 
 export const dynamic = "force-dynamic"
 
@@ -12,6 +15,14 @@ const suggestionSchema = z.object({
 })
 
 export async function POST(req: Request) {
+  // Anyone can post here, so cap it per IP before reading the body.
+  if (!(await checkRateLimitByIp("suggestion"))) {
+    return NextResponse.json(
+      { error: "You've sent several suggestions in a short time. Please wait a few minutes and try again." },
+      { status: 429 }
+    )
+  }
+
   let body: unknown
   try {
     body = await req.json()
@@ -30,7 +41,8 @@ export async function POST(req: Request) {
 
   const db = getSupabaseAdmin()
   if (!db) {
-    return NextResponse.json({ error: "Server misconfigured" }, { status: 500 })
+    console.error("[suggestions] Supabase admin client is not configured")
+    return NextResponse.json({ error: SAVE_FAILED }, { status: 500 })
   }
 
   const emailValue = parsed.data.email && parsed.data.email !== "" ? parsed.data.email : user?.email ?? null
@@ -44,7 +56,9 @@ export async function POST(req: Request) {
   })
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 })
+    // Database details stay in the server log; the visitor gets a plain message.
+    console.error(`[suggestions] insert failed (${error.code ?? "no code"}): ${error.message}`)
+    return NextResponse.json({ error: SAVE_FAILED }, { status: 500 })
   }
 
   return NextResponse.json({ ok: true })
