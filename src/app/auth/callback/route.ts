@@ -2,6 +2,10 @@ import { type NextRequest, NextResponse } from "next/server"
 import { createServerClient } from "@supabase/ssr"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { publicOrigin, safeNextPath } from "@/lib/safeRedirect"
+import { trackServerEvent } from "@/lib/siteEvents"
+
+// An account created this recently is a sign-up, not a returning sign-in.
+const NEW_ACCOUNT_WINDOW_MS = 10 * 60 * 1000
 
 export const runtime = "nodejs"
 export const dynamic = "force-dynamic"
@@ -57,6 +61,8 @@ export async function GET(request: NextRequest) {
             },
             { onConflict: "id", ignoreDuplicates: true }
           )
+          const isNewAccount = Date.now() - new Date(authUser.created_at).getTime() < NEW_ACCOUNT_WINDOW_MS
+          await trackServerEvent(isNewAccount ? "sign_up" : "sign_in", "/auth/callback")
         }
       } catch {
         // Non-fatal — profile can be created later via profile page

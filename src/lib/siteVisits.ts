@@ -12,6 +12,9 @@ export type Device = "mobile" | "tablet" | "desktop"
 
 export const VISITOR_COOKIE = "gm_vid"
 export const VISITOR_COOKIE_MAX_AGE = 60 * 60 * 24 * 365
+// A session ends after 30 minutes without a page view (the usual definition).
+export const SESSION_COOKIE = "gm_sid"
+export const SESSION_COOKIE_MAX_AGE = 30 * 60
 
 const MAX_PATH_LENGTH = 300
 const MAX_HOST_LENGTH = 120
@@ -29,7 +32,7 @@ const PATH_RE = /^\/[A-Za-z0-9\-._~%!$&'()*+,;=:@/]*$/
 const OWN_ORIGINS = new Set(["https://www.grademax.me", "https://grademax.me"])
 const DEV_ORIGIN_RE = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/
 
-const UUID_RE =/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
+const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i
 
 export function isBotUserAgent(userAgent: string): boolean {
   return !userAgent.trim() || BOT_UA.test(userAgent)
