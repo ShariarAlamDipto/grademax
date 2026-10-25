@@ -1,7 +1,8 @@
 "use client"
 import { usePathname } from "next/navigation"
+import { useReportWebVitals } from "next/web-vitals"
 import { useEffect, useRef } from "react"
-import { classifyLinkClick } from "@/lib/siteBehavior"
+import { classifyLinkClick, sanitizeErrorLabel } from "@/lib/siteBehavior"
 
 /**
  * Anonymous behaviour beacons for the admin Visitors dashboard (/api/visit).
@@ -11,11 +12,15 @@ import { classifyLinkClick } from "@/lib/siteBehavior"
  *  - engage:   active reading time and deepest scroll for that page view,
  *    sent when the reader moves on or hides the tab. Time only counts while
  *    the tab is visible and the reader did something in the last minute.
- *  - event:    clicks on PDF links (downloads) and links to other sites.
+ *  - event:    clicks on PDF links (downloads) and links to other sites, and
+ *    JavaScript errors (sanitised, at most a few per page view).
+ *  - vital:    Core Web Vitals, measured for the page the tab first loaded.
  */
 const IDLE_MS = 60_000
 const TICK_MS = 1_000
+const MAX_ERRORS_PER_VIEW = 5
 const ACTIVITY_EVENTS = ["pointerdown", "keydown", "mousemove", "touchstart", "wheel"] as const
+const VITALS = new Set(["LCP", "INP", "CLS", "FCP", "TTFB"])
 
 interface PageState {
   pv: string | null
@@ -26,6 +31,15 @@ interface PageState {
   sentSeconds: number
   sentScroll: number
   isFirstView: boolean
+  errors: number
+  /** The first page view of this tab load: web vitals describe that load. */
+  loadPv: string | null
+  pendingVitals: { name: string; value: number }[]
+}
+
+/** Automation, or the browser's Global Privacy Control signal: send nothing. */
+function isOptedOut(): boolean {
+  return navigator.webdriver || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true
 }
 
 function send(payload: Record<string, unknown>): void {
@@ -71,11 +85,12 @@ export default function VisitTracker() {
   const pathname = usePathname()
   const state = useRef<PageState>({
     pv: null, path: null, seconds: 0, scroll: 0, lastActive: 0, sentSeconds: 0, sentScroll: 0, isFirstView: true,
+    errors: 0, loadPv: null, pendingVitals: [],
   })
 
   // Listeners live for the whole visit; the ref holds the current page view.
   useEffect(() => {
-    if (navigator.webdriver) return
+    if (isOptedOut()) return
     const s = state.current
     const markActive = () => { s.lastActive = Date.now() }
     const onScroll = () => { markActive(); s.scroll = Math.max(s.scroll, scrollPercent()) }
@@ -88,6 +103,17 @@ export default function VisitTracker() {
       const hit = classifyLinkClick(link.href, window.location.hostname)
       if (hit) send({ type: "event", name: hit.name, label: hit.label, path: s.path })
     }
+    const reportError = (label: string | null) => {
+      if (!label || !s.pv || !s.path || s.errors >= MAX_ERRORS_PER_VIEW) return
+      s.errors += 1
+      send({ type: "event", name: "js_error", label, path: s.path })
+    }
+    const onError = (event: ErrorEvent) => reportError(sanitizeErrorLabel(event.message, event.filename ?? "", event.lineno ?? 0))
+    const onRejection = (event: PromiseRejectionEvent) => {
+      const reason = event.reason instanceof Error ? event.reason.message : String(event.reason ?? "")
+      const label = sanitizeErrorLabel(reason, "", 0)
+      reportError(label ? `Unhandled rejection: ${label}` : null)
+    }
     const timer = window.setInterval(() => {
       if (s.pv && document.visibilityState === "visible" && Date.now() - s.lastActive < IDLE_MS) s.seconds += 1
     }, TICK_MS)
@@ -98,7 +124,11 @@ export default function VisitTracker() {
     window.addEventListener("pagehide", onPageHide)
     document.addEventListener("click", onClick, true)
     document.addEventListener("auxclick", onClick, true)
+    window.addEventListener("error", onError)
+    window.addEventListener("unhandledrejection", onRejection)
     return () => {
+      window.removeEventListener("error", onError)
+      window.removeEventListener("unhandledrejection", onRejection)
       window.clearInterval(timer)
       ACTIVITY_EVENTS.forEach(name => window.removeEventListener(name, markActive))
       window.removeEventListener("scroll", onScroll)
@@ -112,7 +142,7 @@ export default function VisitTracker() {
   useEffect(() => {
     const s = state.current
     // StrictMode runs effects twice in development; count each path once.
-    if (!pathname || pathname === s.path || navigator.webdriver) return
+    if (!pathname || pathname === s.path || isOptedOut()) return
     flushEngagement(s)
     s.path = pathname
     if (pathname.startsWith("/admin")) {
@@ -124,6 +154,7 @@ export default function VisitTracker() {
     s.seconds = 0
     s.sentSeconds = 0
     s.sentScroll = 0
+    s.errors = 0
     s.scroll = scrollPercent()
     s.lastActive = Date.now()
     send({
@@ -133,8 +164,21 @@ export default function VisitTracker() {
       referrer: s.isFirstView ? document.referrer : "",
       utm: s.isFirstView ? readUtm() : undefined,
     })
+    if (s.isFirstView) {
+      s.loadPv = s.pv
+      // Metrics that arrived before the first page view was sent.
+      s.pendingVitals.forEach(m => send({ type: "vital", pv: s.loadPv, name: m.name, value: m.value }))
+      s.pendingVitals = []
+    }
     s.isFirstView = false
   }, [pathname])
+
+  useReportWebVitals(metric => {
+    const s = state.current
+    if (!VITALS.has(metric.name) || isOptedOut()) return
+    if (s.loadPv) send({ type: "vital", pv: s.loadPv, name: metric.name, value: metric.value })
+    else s.pendingVitals.push({ name: metric.name, value: metric.value })
+  })
 
   return null
 }

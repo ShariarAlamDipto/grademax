@@ -7,6 +7,7 @@ import {
   sanitizeUtm,
   parseBeacon,
   classifyLinkClick,
+  sanitizeErrorLabel,
 } from "../src/lib/siteBehavior"
 
 const UA = {
@@ -95,6 +96,27 @@ test("parseBeacon validates each beacon type", () => {
   assert.equal(parseBeacon({ type: "pageview", path: "/admin" }), null)
   assert.equal(parseBeacon(null), null)
   assert.equal(parseBeacon("str"), null)
+})
+
+test("parseBeacon accepts Core Web Vitals and JavaScript errors", () => {
+  const pv = "3f2b8c1e-9a4d-4e6f-8b2a-1c3d5e7f9a0b"
+  assert.deepEqual(parseBeacon({ type: "vital", pv, name: "LCP", value: 2512.7 }), { type: "vital", pv, name: "LCP", value: 2513 })
+  assert.deepEqual(parseBeacon({ type: "vital", pv, name: "CLS", value: 0.123 }), { type: "vital", pv, name: "CLS", value: 0.123 })
+  assert.equal(parseBeacon({ type: "vital", pv, name: "FID", value: 3 }), null, "only the five current metrics")
+  assert.equal(parseBeacon({ type: "vital", pv, name: "LCP", value: -1 }), null)
+  assert.equal(parseBeacon({ type: "vital", pv, name: "LCP", value: 9e9 }), null, "absurd values are dropped")
+  assert.equal(parseBeacon({ type: "vital", pv: "x", name: "LCP", value: 1 }), null)
+  assert.equal((parseBeacon({ type: "event", name: "js_error", label: "TypeError: x is undefined @ /_next/app.js:1", path: "/store" }) as { name: string }).name, "js_error")
+})
+
+test("sanitizeErrorLabel keeps the useful part of an error and drops noise", () => {
+  assert.equal(sanitizeErrorLabel("TypeError: Cannot read properties of null", "https://www.grademax.me/_next/static/chunks/app.js?v=1", 12),
+    "TypeError: Cannot read properties of null @ /_next/static/chunks/app.js:12")
+  assert.equal(sanitizeErrorLabel("Error at https://x.example/a?token=secret&b=1", "", 0), "Error at https://x.example/a")
+  assert.equal(sanitizeErrorLabel("Script error.", "", 0), null, "cross-origin errors carry no information")
+  assert.equal(sanitizeErrorLabel("ResizeObserver loop limit exceeded", "", 0), null)
+  assert.equal(sanitizeErrorLabel("boom", "chrome-extension://abc/x.js", 3), null, "browser extensions are not our bugs")
+  assert.equal(sanitizeErrorLabel("x".repeat(500), "", 0)!.length, 200)
 })
 
 test("classifyLinkClick spots PDF downloads and outbound links", () => {

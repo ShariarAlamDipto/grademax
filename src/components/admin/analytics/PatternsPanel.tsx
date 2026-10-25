@@ -1,5 +1,5 @@
 "use client"
-import { COLORS, DataTable, Panel, RankList, SectionState, formatSeconds, num, panelGrid, useSection } from "./ui"
+import { COLORS, DataTable, Panel, RankList, SectionState, formatSeconds, num, panelGrid, useSection, type PanelProps } from "./ui"
 
 interface PatternsData {
   heatmap: { dow: number; hour: number; views: number }[]
@@ -39,8 +39,8 @@ function Heatmap({ cells }: { cells: PatternsData["heatmap"] }) {
   )
 }
 
-export default function PatternsPanel({ days }: { days: number }) {
-  const { data, error, loading } = useSection<PatternsData>("patterns", days, 300_000)
+export default function PatternsPanel({ query }: PanelProps) {
+  const { data, error, loading } = useSection<PatternsData>("patterns", query, 300_000)
   if (!data) return <SectionState loading={loading} error={error} hasData={false} />
 
   return (

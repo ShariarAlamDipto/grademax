@@ -2,7 +2,7 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts"
 import {
   CHANNEL_LABELS, COLORS, DataTable, Empty, Panel, RankList, SectionState, Stat, axisTick, countryName, num,
-  panelGrid, statGrid, tooltipStyle, useSection,
+  panelGrid, statGrid, tooltipStyle, useSection, type PanelProps,
 } from "./ui"
 
 interface RealtimeData {
@@ -21,8 +21,8 @@ const EVENT_LABELS: Record<string, string> = {
 
 const time = (iso: string) => new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" })
 
-export default function RealtimePanel() {
-  const { data, error, loading } = useSection<RealtimeData>("realtime", 30, 15_000)
+export default function RealtimePanel({ query }: PanelProps) {
+  const { data, error, loading } = useSection<RealtimeData>("realtime", query, 15_000)
   if (!data) return <SectionState loading={loading} error={error} hasData={false} />
 
   const views30 = data.per_minute.reduce((s, m) => s + m.views, 0)

@@ -1,18 +1,22 @@
 "use client"
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from "recharts"
 import {
-  COLORS, Panel, RankList, SectionState, Stat, axisTick, countryName, formatSeconds, num, panelGrid, pct,
-  shortDay, statGrid, tooltipStyle, useSection,
+  COLORS, Panel, PeriodNote, RankList, SectionState, Stat, axisTick, change, countryName, formatSeconds, num,
+  panelGrid, pct, shortDay, statGrid, tooltipStyle, useSection, type PanelProps,
 } from "./ui"
 
+interface Totals {
+  visitors: number; new_visitors: number; views: number
+  signed_in_visitors?: number; sessions?: number; bounce_rate?: number | null; pages_per_session?: number | null
+  avg_session_seconds?: number | null; avg_engaged_seconds?: number | null; unknown_country?: number
+}
 interface OverviewData {
   days: number
-  totals: {
-    live: number; today: number; yesterday: number; last7: number
-    visitors: number; new_visitors: number; views: number; signups: number
-    sessions?: number; bounce_rate?: number | null; pages_per_session?: number | null
-    avg_session_seconds?: number | null; avg_engaged_seconds?: number | null
-  }
+  first_day?: string
+  last_day?: string
+  partial?: boolean
+  totals: Totals & { live: number; today: number; yesterday: number; last7: number; signups: number }
+  previous?: Totals
   daily: { day: string; views: number; visitors: number; new_visitors: number; signed_in: number; signups: number; sessions?: number }[]
   pages: { path: string; views: number; visitors: number }[]
   referrers: { host: string; visitors: number }[]
@@ -20,26 +24,38 @@ interface OverviewData {
   devices: { device: string; visitors: number }[]
 }
 
-export default function OverviewPanel({ days }: { days: number }) {
-  const { data, error, loading } = useSection<OverviewData>("overview", days, 60_000)
+export default function OverviewPanel({ query }: PanelProps) {
+  const { data, error, loading } = useSection<OverviewData>("overview", query, 60_000)
   if (!data) return <SectionState loading={loading} error={error} hasData={false} />
 
   const t = data.totals
+  const p = data.previous
   const chart = data.daily.map(d => ({ ...d, label: shortDay(d.day) }))
   const avgDaily = data.daily.length ? Math.round(data.daily.reduce((s, d) => s + d.visitors, 0) / data.daily.length) : 0
+  const unknownShare = t.visitors && t.unknown_country != null ? Math.round((t.unknown_country / t.visitors) * 100) : null
 
   return (
     <div>
+      <PeriodNote
+        firstDay={data.first_day} lastDay={data.last_day} partial={data.partial}
+        extra={unknownShare != null ? `country unknown for ${unknownShare}% of visitors` : undefined}
+      />
       <div style={statGrid}>
         <Stat title="Online now" value={num(t.live)} note="last 30 minutes" color={COLORS.green} />
         <Stat title="Today" value={num(t.today)} note={`yesterday ${num(t.yesterday)}`} color="var(--gm-blue)" />
-        <Stat title="Last 7 days" value={num(t.last7)} note="unique visitors" color="var(--gm-text)" />
-        <Stat title={`${data.days}-day visitors`} value={num(t.visitors)} note={`${num(t.new_visitors)} new · avg ${num(avgDaily)}/day`} color={COLORS.purple} />
-        <Stat title="Visits" value={num(t.sessions ?? null)} note={t.pages_per_session ? `${t.pages_per_session} pages per visit` : "sessions"} color={COLORS.cyan} />
-        <Stat title="Avg visit length" value={formatSeconds(t.avg_session_seconds)} note={`reading time per page ${formatSeconds(t.avg_engaged_seconds)}`} color={COLORS.blue} />
-        <Stat title="Bounce rate" value={pct(t.bounce_rate)} note="left after one page, under 10s" color={COLORS.pink} />
-        <Stat title="Page views" value={num(t.views)} note={t.visitors ? `${(t.views / t.visitors).toFixed(1)} per visitor` : undefined} color={COLORS.cyan} />
-        <Stat title="New accounts" value={num(t.signups)} note={`in ${data.days} days`} color={COLORS.amber} />
+        <Stat title="Visitors" value={num(t.visitors)} delta={change(t.visitors, p?.visitors)}
+          note={`${num(t.new_visitors)} new · avg ${num(avgDaily)}/day`} color={COLORS.purple} />
+        <Stat title="Signed-in visitors" value={num(t.signed_in_visitors ?? null)} delta={change(t.signed_in_visitors, p?.signed_in_visitors)}
+          note="browsers with a GradeMax session" color={COLORS.green} />
+        <Stat title="Visits" value={num(t.sessions ?? null)} delta={change(t.sessions, p?.sessions)}
+          note={t.pages_per_session ? `${t.pages_per_session} pages per visit` : "sessions"} color={COLORS.cyan} />
+        <Stat title="Avg visit length" value={formatSeconds(t.avg_session_seconds)} delta={change(t.avg_session_seconds, p?.avg_session_seconds)}
+          note={`reading time per page ${formatSeconds(t.avg_engaged_seconds)}`} color={COLORS.blue} />
+        <Stat title="Bounce rate" value={pct(t.bounce_rate)} delta={change(t.bounce_rate, p?.bounce_rate)} lowerIsBetter
+          note="left after one page, under 10s" color={COLORS.pink} />
+        <Stat title="Page views" value={num(t.views)} delta={change(t.views, p?.views)}
+          note={t.visitors ? `${(t.views / t.visitors).toFixed(1)} per visitor` : undefined} color={COLORS.cyan} />
+        <Stat title="New accounts" value={num(t.signups)} note="all countries" color={COLORS.amber} />
       </div>
 
       <Panel title="Visitors per day" style={{ marginBottom: "1.5rem" }}>
@@ -78,7 +94,7 @@ export default function OverviewPanel({ days }: { days: number }) {
 
       <div style={panelGrid}>
         <Panel title="Top pages">
-          <RankList rows={data.pages.map(p => ({ name: p.path, value: p.views, sub: `· ${num(p.visitors)} visitors` }))} />
+          <RankList rows={data.pages.map(pg => ({ name: pg.path, value: pg.views, sub: `· ${num(pg.visitors)} visitors` }))} />
         </Panel>
         <Panel title="Where visitors come from">
           <RankList rows={data.referrers.map(r => ({ name: r.host, value: r.visitors }))} />

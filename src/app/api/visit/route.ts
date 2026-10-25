@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextRequest, NextResponse, after } from "next/server"
 import { randomUUID } from "node:crypto"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { getClientIp } from "@/lib/store/rateLimit"
@@ -12,11 +12,13 @@ import {
   externalReferrerHost,
   hasSupabaseSession,
   isAllowedOrigin,
+  isAnalyticsEnabled,
   isBotUserAgent,
   isVisitorId,
   parseCountry,
 } from "@/lib/siteVisits"
 import { type Beacon, classifyChannel, parseBeacon, parseBrowser, parseOs } from "@/lib/siteBehavior"
+import { runAnalyticsAlerts } from "@/lib/analyticsAlerts"
 
 /**
  * POST /api/visit — behaviour beacons for Admin → Analytics → Visitors.
@@ -38,11 +40,20 @@ const IS_PRODUCTION = process.env.NODE_ENV === "production"
 // database writes of every page view.
 const perIp = createHitCounter({ limit: 300, windowMs: 10 * 60 * 1000, maxKeys: 50_000 })
 
+// Raw rows older than 13 months are deleted (privacy policy). Roughly one page
+// view in 2,000 triggers the purge, after the response; it is an indexed delete.
+const PURGE_CHANCE = 1 / 2000
+const RETENTION_MONTHS = 13
+const ALERT_CHANCE = 1 / 20
+
 type Db = NonNullable<ReturnType<typeof getSupabaseAdmin>>
 
 export async function POST(req: NextRequest) {
   const done = new NextResponse(null, { status: 204 })
 
+  if (!isAnalyticsEnabled()) return done
+  // Global Privacy Control: the visitor asked not to be tracked.
+  if (req.headers.get("sec-gpc") === "1") return done
   if (!isAllowedOrigin(req.headers.get("origin"), IS_PRODUCTION)) return done
   const userAgent = req.headers.get("user-agent") ?? ""
   if (isBotUserAgent(userAgent)) return done
@@ -72,15 +83,35 @@ export async function POST(req: NextRequest) {
         p_pv: beacon.pv, p_visitor: existingVisitor, p_seconds: beacon.seconds, p_scroll: beacon.scroll,
       })
       if (error) logError("engage", error)
+    } else if (beacon.type === "vital") {
+      const { error } = await db.rpc("site_visit_vital", {
+        p_pv: beacon.pv, p_visitor: existingVisitor, p_name: beacon.name, p_value: beacon.value,
+      })
+      // PGRST202: migration 40 not applied yet; vitals are simply not kept.
+      if (error && error.code !== "PGRST202") logError("vital", error)
     } else {
-      const { error } = await db.from("site_events").insert({
+      const event = {
         visitor_id: existingVisitor,
         session_id: isVisitorId(existingSession) ? existingSession : null,
         name: beacon.name, label: beacon.label, path: beacon.path,
-      })
-      if (error) logError("event", error)
+      }
+      const { error } = await db.from("site_events").insert({ ...event, country: parseCountry(req.headers.get("cf-ipcountry")) })
+      // PGRST204: migration 38 (site_events.country) not applied yet.
+      const retry = error?.code === "PGRST204" ? (await db.from("site_events").insert(event)).error : error
+      if (retry) logError("event", retry)
     }
     return done
+  }
+
+  // Alert rules are evaluated at most every 15 minutes by the database itself;
+  // a page view now and then is just what wakes the check up.
+  if (Math.random() < ALERT_CHANCE) after(() => runAnalyticsAlerts(db))
+
+  if (Math.random() < PURGE_CHANCE) {
+    after(async () => {
+      const { error } = await db.rpc("site_analytics_purge", { p_months: RETENTION_MONTHS })
+      if (error && error.code !== "PGRST202") logError("purge", error)
+    })
   }
 
   const isNewVisitor = !isVisitorId(existingVisitor)

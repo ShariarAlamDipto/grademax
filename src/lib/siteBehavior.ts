@@ -14,7 +14,8 @@
 import { isVisitorId, sanitizeVisitPath } from "@/lib/siteVisits"
 
 export type Channel = "direct" | "search" | "social" | "ai" | "email" | "paid" | "referral"
-export type BrowserEventName = "download" | "outbound"
+export type BrowserEventName = "download" | "outbound" | "js_error"
+export type VitalName = "LCP" | "INP" | "CLS" | "FCP" | "TTFB"
 
 export interface Utm {
   source: string | null
@@ -26,12 +27,18 @@ export type Beacon =
   | { type: "pageview"; pv: string | null; path: string; referrer: string | null; utm: Utm }
   | { type: "engage"; pv: string; seconds: number; scroll: number }
   | { type: "event"; name: BrowserEventName; label: string; path: string }
+  | { type: "vital"; pv: string; name: VitalName; value: number }
 
 const MAX_UTM_LENGTH = 100
 const MAX_LABEL_LENGTH = 200
 const MAX_ENGAGED_SECONDS = 86_400
 const UTM_RE = /^[a-z0-9 _.+-]+$/
-const BROWSER_EVENTS = new Set<BrowserEventName>(["download", "outbound"])
+const BROWSER_EVENTS = new Set<BrowserEventName>(["download", "outbound", "js_error"])
+// Upper bounds well past anything real; larger values are measurement junk.
+const VITAL_MAX: Record<VitalName, number> = { LCP: 120_000, INP: 60_000, CLS: 50, FCP: 120_000, TTFB: 120_000 }
+// Errors we cannot act on: cross-origin scripts (ads) and a harmless browser warning.
+const NOISE_ERRORS = /^(Script error\.?|ResizeObserver loop)/i
+const EXTENSION_URL = /^(chrome|moz|safari|safari-web|ms-browser)-extension:/i
 
 // Checked in this order: AI before search, because gemini.google.com is Google.
 const AI_HOSTS = /(^|\.)(chatgpt\.com|chat\.openai\.com|openai\.com|perplexity\.ai|gemini\.google\.com|bard\.google\.com|copilot\.microsoft\.com|claude\.ai|poe\.com|you\.com|deepseek\.com|meta\.ai|grok\.com)$/
@@ -133,7 +140,41 @@ export function parseBeacon(value: unknown): Beacon | null {
     return { type, name, label: body.label.slice(0, MAX_LABEL_LENGTH), path }
   }
 
+  if (type === "vital") {
+    const name = body.name as VitalName
+    if (typeof body.pv !== "string" || !isVisitorId(body.pv) || !Object.hasOwn(VITAL_MAX, name)) return null
+    const value = body.value
+    if (typeof value !== "number" || !Number.isFinite(value) || value < 0 || value > VITAL_MAX[name]) return null
+    // CLS is a unitless score (0.1 is "good"); the others are milliseconds.
+    return { type, pv: body.pv, name, value: name === "CLS" ? Math.round(value * 1000) / 1000 : Math.round(value) }
+  }
+
   return null
+}
+
+/** Strips query strings (they can hold tokens) from URLs inside text. */
+function stripQueries(text: string): string {
+  return text.replace(/(https?:\/\/[^\s?#"']+)[?#][^\s"']*/g, "$1")
+}
+
+/**
+ * A short, safe label for a browser error: "message @ /path/file.js:line".
+ * Null for errors we cannot act on (cross-origin, extensions, known noise).
+ */
+export function sanitizeErrorLabel(message: string, filename: string, line: number): string | null {
+  const text = stripQueries(String(message ?? "").trim())
+  if (!text || NOISE_ERRORS.test(text) || EXTENSION_URL.test(filename)) return null
+  let where = ""
+  if (filename) {
+    try {
+      const url = new URL(filename)
+      const isOurs = url.hostname === "grademax.me" || url.hostname.endsWith(".grademax.me")
+      where = ` @ ${isOurs ? url.pathname : url.hostname + url.pathname}${line ? `:${line}` : ""}`
+    } catch {
+      where = ""
+    }
+  }
+  return `${text}${where}`.slice(0, MAX_LABEL_LENGTH)
 }
 
 /** What a link click means for analytics, or null when it is an ordinary internal link. */

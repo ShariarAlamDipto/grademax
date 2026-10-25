@@ -71,6 +71,8 @@ export async function GET(request: NextRequest) {
       return response
     }
 
+    // A short reason only (Supabase's error code), never the message text.
+    await trackServerEvent("sign_in_failed", "/auth/callback", error.code ?? "exchange_failed")
     return NextResponse.redirect(
       new URL(`/login?error=${encodeURIComponent(error.message)}`, origin)
     )

@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recha
 import {
   COLORS, DataTable, Panel, RankList, SectionState, Stat, axisTick, formatSeconds, num, panelGrid, pct,
   statGrid, tooltipStyle, useSection,
+  type PanelProps,
 } from "./ui"
 
 interface PageRow {
@@ -37,8 +38,8 @@ function MiniBars({ data, dataKey, name, color }: { data: object[]; dataKey: str
   )
 }
 
-export default function BehaviorPanel({ days }: { days: number }) {
-  const { data, error, loading } = useSection<BehaviorData>("behavior", days, 120_000)
+export default function BehaviorPanel({ query }: PanelProps) {
+  const { data, error, loading } = useSection<BehaviorData>("behavior", query, 120_000)
   if (!data) return <SectionState loading={loading} error={error} hasData={false} />
 
   const s = data.sessions
@@ -66,6 +67,8 @@ export default function BehaviorPanel({ days }: { days: number }) {
         <DataTable<PageRow>
           rows={data.pages}
           initialSort="views"
+          searchText={r => r.path}
+          exportName="pages"
           columns={[
             { key: "path", title: "Page", render: r => <span title={r.path}>{r.path}</span>, sort: r => r.path },
             { key: "views", title: "Views", align: "right", render: r => num(r.views), sort: r => r.views },
