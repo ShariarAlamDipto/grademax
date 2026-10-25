@@ -28,18 +28,31 @@ export const RATE_LIMITS = {
   paymentSubmit: { limit: 10, windowSeconds: 600 },
   orderLookup:   { limit: 12, windowSeconds: 300 },  // brute-force guard
   download:      { limit: 30, windowSeconds: 600 },
+  suggestion:    { limit: 5,  windowSeconds: 600 },  // public suggestion box, spam guard
 } satisfies Record<string, RateLimitRule>
 
+// IPv4 or IPv6 characters only, so a forged header cannot become a huge or
+// odd-looking bucket key.
+const IP_RE = /^[0-9a-f.:]{3,45}$/i
+
 /**
- * Best-effort client IP. Vercel sets x-forwarded-for; the left-most entry is
- * the original client. It is spoofable in principle, which is why this is one
- * layer among several rather than the only guard.
+ * The client IP, trusted only from headers the client cannot write.
+ *
+ * Production is Cloudflare → nginx → the container. Cloudflare overwrites
+ * CF-Connecting-IP with the real client address. X-Forwarded-For is NOT safe
+ * here: Cloudflare and nginx both append to whatever the client sent, so its
+ * left-most entry is attacker-chosen. Measured 25 Oct 2026: a different forged
+ * X-Forwarded-For on each request walked straight past the order-lookup limit.
+ * X-Real-IP is nginx's $remote_addr (a Cloudflare edge address behind
+ * Cloudflare, the real client on Vercel or a direct hit), used only as fallback.
  */
 export async function getClientIp(): Promise<string> {
   const h = await headers()
-  const xff = h.get("x-forwarded-for")
-  if (xff) return xff.split(",")[0]!.trim()
-  return h.get("x-real-ip") ?? "unknown"
+  for (const name of ["cf-connecting-ip", "x-real-ip"]) {
+    const value = h.get(name)?.trim()
+    if (value && IP_RE.test(value)) return value
+  }
+  return "unknown"
 }
 
 /**
