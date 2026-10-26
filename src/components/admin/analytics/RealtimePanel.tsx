@@ -17,6 +17,7 @@ interface RealtimeData {
 const EVENT_LABELS: Record<string, string> = {
   download: "Downloaded", outbound: "Left for", sign_in: "Signed in", sign_up: "New account",
   order_placed: "Order placed", worksheet_generated: "Worksheet generated", test_generated: "Test generated",
+  gate_shown: "Asked to sign in (download limit)",
 }
 
 const time = (iso: string) => new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", second: "2-digit" })

@@ -107,6 +107,7 @@ test("parseBeacon accepts Core Web Vitals and JavaScript errors", () => {
   assert.equal(parseBeacon({ type: "vital", pv, name: "LCP", value: 9e9 }), null, "absurd values are dropped")
   assert.equal(parseBeacon({ type: "vital", pv: "x", name: "LCP", value: 1 }), null)
   assert.equal((parseBeacon({ type: "event", name: "js_error", label: "TypeError: x is undefined @ /_next/app.js:1", path: "/store" }) as { name: string }).name, "js_error")
+  assert.equal((parseBeacon({ type: "event", name: "gate_shown", label: "downloads:20", path: "/past-papers/physics" }) as { name: string }).name, "gate_shown")
 })
 
 test("sanitizeErrorLabel keeps the useful part of an error and drops noise", () => {
