@@ -10,17 +10,20 @@ import RetentionPanel from "./analytics/RetentionPanel"
 import PatternsPanel from "./analytics/PatternsPanel"
 import ToolsPanel from "./analytics/ToolsPanel"
 import PerformancePanel from "./analytics/PerformancePanel"
+import ContentPanel from "./analytics/ContentPanel"
+import DataQualityPanel from "./analytics/DataQualityPanel"
 import { countryName, useSection } from "./analytics/ui"
 
 /**
  * Admin → Analytics → Visitors. Anonymous first-party behaviour analytics
- * (migrations 36-40, beacons from <VisitTracker />). Each section loads its
+ * (migrations 36-42, beacons from <VisitTracker />). Each section loads its
  * own data from /api/admin/analytics/visitors?section=… with the range and
  * country chosen here.
  */
 const SECTIONS = [
   { key: "overview", label: "Overview", ranged: true },
   { key: "countries", label: "Countries", ranged: true },
+  { key: "content", label: "Content", ranged: true },
   { key: "realtime", label: "Realtime", ranged: false },
   { key: "behavior", label: "Behaviour", ranged: true },
   { key: "acquisition", label: "Acquisition", ranged: true },
@@ -29,6 +32,7 @@ const SECTIONS = [
   { key: "patterns", label: "Time & tech", ranged: true },
   { key: "tools", label: "Tools & health", ranged: true },
   { key: "performance", label: "Performance", ranged: true },
+  { key: "quality", label: "Data quality", ranged: true },
 ] as const
 
 const RANGES = [
@@ -131,7 +135,7 @@ export default function VisitorAnalytics() {
             {!customReady && <span>pick both dates (showing 30 days)</span>}
           </span>
         )}
-        {section !== "countries" && (
+        {section !== "countries" && section !== "quality" && (
           <select aria-label="Country" value={country} onChange={e => setCountry(e.target.value)} style={{ ...field, marginLeft: "auto" }}>
             <option value="">All countries</option>
             {country && !countryOptions.some(c => c.country === country) && <option value={country}>{countryName(country)}</option>}
@@ -163,6 +167,8 @@ export default function VisitorAnalytics() {
       {section === "patterns" && <PatternsPanel {...panelProps} />}
       {section === "tools" && <ToolsPanel {...panelProps} />}
       {section === "performance" && <PerformancePanel {...panelProps} />}
+      {section === "content" && <ContentPanel {...panelProps} />}
+      {section === "quality" && <DataQualityPanel {...panelProps} />}
     </div>
   )
 }

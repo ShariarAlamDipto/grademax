@@ -40,6 +40,11 @@ test("isBotUserAgent catches crawlers, scripts and empty agents", () => {
   assert.equal(isBotUserAgent("curl/8.4.0"), true)
   assert.equal(isBotUserAgent("Mozilla/5.0 HeadlessChrome/120.0"), true)
   assert.equal(isBotUserAgent(""), true)
+  // Google crawlers whose names do not contain "bot".
+  assert.equal(isBotUserAgent("Mediapartners-Google"), true)
+  assert.equal(isBotUserAgent("Mozilla/5.0 (Windows NT 10.0) Chrome/120.0 Safari/537.36 (compatible; GoogleOther)"), true)
+  assert.equal(isBotUserAgent("Mozilla/5.0 (compatible; Google-InspectionTool/1.0)"), true)
+  assert.equal(isBotUserAgent("FeedFetcher-Google; (+http://www.google.com/feedfetcher.html)"), true)
   assert.equal(isBotUserAgent(WINDOWS), false)
   assert.equal(isBotUserAgent(IPHONE), false)
 })

@@ -9,6 +9,7 @@ interface Totals {
   visitors: number; new_visitors: number; views: number
   signed_in_visitors?: number; sessions?: number; bounce_rate?: number | null; pages_per_session?: number | null
   avg_session_seconds?: number | null; avg_engaged_seconds?: number | null; unknown_country?: number
+  engaged_sessions?: number; engagement_rate?: number | null
 }
 interface OverviewData {
   days: number
@@ -51,6 +52,10 @@ export default function OverviewPanel({ query }: PanelProps) {
           note="browsers with a GradeMax session" color={COLORS.green} />
         <Stat title="Visits" value={num(t.sessions ?? null)} delta={change(t.sessions, p?.sessions)}
           note={t.pages_per_session ? `${t.pages_per_session} pages per visit` : "sessions"} color={COLORS.cyan} />
+        {t.engaged_sessions != null && (
+          <Stat title="Engaged visits" value={num(t.engaged_sessions)} delta={change(t.engaged_sessions, p?.engaged_sessions)}
+            note={`${pct(t.engagement_rate)} of visits: 10s+ reading, 2+ pages or a click. Leaves out bots and unseen tabs.`} color={COLORS.green} />
+        )}
         <Stat title="Avg visit length" value={formatSeconds(t.avg_session_seconds)} delta={change(t.avg_session_seconds, p?.avg_session_seconds)}
           note={`reading time per page ${formatSeconds(t.avg_engaged_seconds)}`} color={COLORS.blue} />
         <Stat title="Bounce rate" value={pct(t.bounce_rate)} delta={change(t.bounce_rate, p?.bounce_rate)} lowerIsBetter

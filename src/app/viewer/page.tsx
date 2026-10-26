@@ -4,6 +4,7 @@ import { headers } from "next/headers"
 import ViewerClient from "./ViewerClient"
 import { isAllowedPdfUrl, parseViewerView, type ViewerDoc, type ViewerView } from "@/lib/viewer-link"
 import { trackUsage } from "@/lib/trackUsage"
+import { isBotUserAgent } from "@/lib/siteVisits"
 
 // Dynamic: the whole page is derived from query params, which are only known
 // per-request. Reading `searchParams` server-side renders the correct PDF on the
@@ -34,7 +35,12 @@ function safeBackPath(raw: string | undefined): string {
   return "/past-papers"
 }
 
-const BOT_UA = /bot|crawl|spider|slurp|preview|curl|wget|python-requests|headless|lighthouse|facebookexternalhit/i
+// A prefetch (Next.js router or the browser's speculative loading) is not a
+// paper being opened.
+function isPrefetch(h: Headers): boolean {
+  return h.get("next-router-prefetch") === "1"
+    || /prefetch|prerender/i.test(h.get("sec-purpose") ?? h.get("purpose") ?? "")
+}
 
 // Best-effort subject from the back path: /past-papers/<subject>/… or
 // /past-papers/cambridge/<subject>/…
@@ -63,8 +69,9 @@ export default async function ViewerPage({ searchParams }: { searchParams: Searc
   // sent, so tracking never adds latency to the render; trackUsage itself
   // swallows failures. Bots are skipped — /viewer is noindex but crawlers
   // still follow links into it.
-  const userAgent = (await headers()).get("user-agent") ?? ""
-  if ((qpUrl || msUrl) && !BOT_UA.test(userAgent)) {
+  const requestHeaders = await headers()
+  const userAgent = requestHeaders.get("user-agent") ?? ""
+  if ((qpUrl || msUrl) && !isBotUserAgent(userAgent) && !isPrefetch(requestHeaders)) {
     const pdfPath = (() => {
       try { return new URL(qpUrl ?? msUrl ?? "").pathname } catch { return null }
     })()

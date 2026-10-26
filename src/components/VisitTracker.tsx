@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation"
 import { useReportWebVitals } from "next/web-vitals"
 import { useEffect, useRef } from "react"
 import { classifyLinkClick, sanitizeErrorLabel } from "@/lib/siteBehavior"
+import ChunkReloadGuard from "@/components/ChunkReloadGuard"
 
 /**
  * Anonymous behaviour beacons for the admin Visitors dashboard (/api/visit).
@@ -211,5 +212,7 @@ export default function VisitTracker() {
     else s.pendingVitals.push({ name: metric.name, value: metric.value })
   })
 
-  return null
+  // Not analytics, but mounted here so it needs no change to the root layout;
+  // it runs for every visitor, opted out or not.
+  return <ChunkReloadGuard />
 }
