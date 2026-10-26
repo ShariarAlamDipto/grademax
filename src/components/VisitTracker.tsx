@@ -4,6 +4,8 @@ import { useReportWebVitals } from "next/web-vitals"
 import { useEffect, useRef } from "react"
 import { classifyLinkClick, sanitizeErrorLabel } from "@/lib/siteBehavior"
 import ChunkReloadGuard from "@/components/ChunkReloadGuard"
+import DownloadGate from "@/components/DownloadGate"
+import { sendVisitBeacon } from "@/lib/visitBeacon"
 
 /**
  * Anonymous behaviour beacons for the admin Visitors dashboard (/api/visit).
@@ -66,16 +68,7 @@ function isReadingEmbed(): boolean {
   return tag === "IFRAME" || tag === "EMBED" || tag === "OBJECT"
 }
 
-function send(payload: Record<string, unknown>): void {
-  const body = JSON.stringify(payload)
-  try {
-    if (navigator.sendBeacon?.("/api/visit", new Blob([body], { type: "application/json" }))) return
-  } catch {
-    // Fall through to fetch.
-  }
-  fetch("/api/visit", { method: "POST", body, keepalive: true, headers: { "Content-Type": "application/json" } })
-    .catch(() => {})
-}
+const send = sendVisitBeacon
 
 function newPageViewId(): string {
   if (typeof crypto.randomUUID === "function") return crypto.randomUUID()
@@ -212,7 +205,12 @@ export default function VisitTracker() {
     else s.pendingVitals.push({ name: metric.name, value: metric.value })
   })
 
-  // Not analytics, but mounted here so it needs no change to the root layout;
-  // it runs for every visitor, opted out or not.
-  return <ChunkReloadGuard />
+  // Not analytics, but mounted here so they need no change to the root
+  // layout; they run for every visitor, opted out of analytics or not.
+  return (
+    <>
+      <ChunkReloadGuard />
+      <DownloadGate />
+    </>
+  )
 }

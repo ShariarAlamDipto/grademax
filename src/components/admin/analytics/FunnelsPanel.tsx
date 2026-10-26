@@ -2,13 +2,14 @@
 import { COLORS, Empty, Panel, SectionState, num, panelGrid, useSection, type PanelProps } from "./ui"
 
 type Step = { step: string; sessions: number }
-interface FunnelsData { paper: Step[]; signup: Step[]; store: Step[]; tools: Step[] }
+interface FunnelsData { paper: Step[]; signup: Step[]; store: Step[]; tools: Step[]; gate?: Step[] }
 
 const FUNNELS: { key: keyof FunnelsData; title: string; note: string; color: string }[] = [
   { key: "paper", title: "Studying past papers", note: "Visits that reach a past-paper page and then open or download a paper.", color: COLORS.blue },
   { key: "signup", title: "Signing in", note: "Signed-out visits that open the login page and finish signing in.", color: COLORS.green },
   { key: "store", title: "Buying from the store", note: "Each step must happen after the one before, in the same visit.", color: COLORS.amber },
   { key: "tools", title: "Using the question tools", note: "Visits to the Worksheet Generator or Test Builder that produce a PDF.", color: COLORS.purple },
+  { key: "gate", title: "Download limit → sign-in", note: "Signed-out visitors who reached 20 downloads in a day and were asked to sign in (free).", color: COLORS.pink },
 ]
 
 function Funnel({ steps, color }: { steps: Step[]; color: string }) {
@@ -48,9 +49,9 @@ export default function FunnelsPanel({ query }: PanelProps) {
   if (!data) return <SectionState loading={loading} error={error} hasData={false} />
   return (
     <div style={panelGrid}>
-      {FUNNELS.map(f => (
+      {FUNNELS.filter(f => data[f.key]).map(f => (
         <Panel key={f.key} title={f.title} note={f.note}>
-          <Funnel steps={data[f.key]} color={f.color} />
+          <Funnel steps={data[f.key] ?? []} color={f.color} />
         </Panel>
       ))}
     </div>

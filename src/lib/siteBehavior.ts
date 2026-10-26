@@ -14,7 +14,7 @@
 import { isVisitorId, sanitizeVisitPath } from "@/lib/siteVisits"
 
 export type Channel = "direct" | "search" | "social" | "ai" | "email" | "paid" | "referral"
-export type BrowserEventName = "download" | "outbound" | "js_error"
+export type BrowserEventName = "download" | "outbound" | "js_error" | "gate_shown"
 export type VitalName = "LCP" | "INP" | "CLS" | "FCP" | "TTFB"
 
 export interface Utm {
@@ -33,7 +33,8 @@ const MAX_UTM_LENGTH = 100
 const MAX_LABEL_LENGTH = 200
 const MAX_ENGAGED_SECONDS = 86_400
 const UTM_RE = /^[a-z0-9 _.+-]+$/
-const BROWSER_EVENTS = new Set<BrowserEventName>(["download", "outbound", "js_error"])
+// gate_shown: the free sign-in prompt after the daily download limit (DownloadGate).
+const BROWSER_EVENTS = new Set<BrowserEventName>(["download", "outbound", "js_error", "gate_shown"])
 // Upper bounds well past anything real; larger values are measurement junk.
 const VITAL_MAX: Record<VitalName, number> = { LCP: 120_000, INP: 60_000, CLS: 50, FCP: 120_000, TTFB: 120_000 }
 // Errors we cannot act on: cross-origin scripts (ads), a harmless browser
