@@ -1,5 +1,5 @@
 "use client"
-import { useMemo, useState, type CSSProperties } from "react"
+import { useEffect, useMemo, useState, type CSSProperties } from "react"
 import OverviewPanel from "./analytics/OverviewPanel"
 import CountriesPanel from "./analytics/CountriesPanel"
 import RealtimePanel from "./analytics/RealtimePanel"
@@ -51,6 +51,33 @@ const pill = (active: boolean): CSSProperties => ({
 const field: CSSProperties = {
   padding: "0.35rem 0.5rem", fontSize: "0.75rem", borderRadius: "0.45rem",
   border: "1px solid var(--gm-border)", background: "var(--gm-bg)", color: "var(--gm-text)",
+}
+
+/**
+ * VisitTracker stops counting a browser once it opens the admin panel
+ * (localStorage "gm_staff"), so staff browsing does not inflate the numbers.
+ * This lets an admin see that, and count their browser again (e.g. to check
+ * Realtime after a deploy).
+ */
+function StaffBrowserNote() {
+  const [excluded, setExcluded] = useState<boolean | null>(null)
+  useEffect(() => {
+    try { setExcluded(window.localStorage.getItem("gm_staff") === "1") } catch { setExcluded(null) }
+  }, [])
+  if (excluded === null) return null
+  const toggle = () => {
+    try {
+      if (excluded) window.localStorage.removeItem("gm_staff")
+      else window.localStorage.setItem("gm_staff", "1")
+      setExcluded(!excluded)
+    } catch { /* storage blocked */ }
+  }
+  return (
+    <> This browser is {excluded ? "not counted (staff)" : "counted"} · <button
+      onClick={toggle}
+      style={{ background: "none", border: "none", color: "var(--gm-blue)", cursor: "pointer", padding: 0, font: "inherit" }}
+    >{excluded ? "count it" : "stop counting it"}</button>{excluded ? " (it stops again the next time it opens the admin panel)." : "."}</>
+  )
 }
 
 export default function VisitorAnalytics() {
@@ -117,7 +144,7 @@ export default function VisitorAnalytics() {
 
       <p style={{ fontSize: "0.72rem", color: "var(--gm-text-3)", marginBottom: "1rem" }}>
         Anonymous: no names, emails or IP addresses. Days follow Bangladesh time. Ad blockers and the browser
-        privacy signal (GPC) hide some visitors.
+        privacy signal (GPC) hide some visitors.<StaffBrowserNote />
         {country && section !== "countries" && (
           <> Showing <strong style={{ color: "var(--gm-text)" }}>{countryName(country)}</strong> only · <button
             onClick={() => setCountry("")}
