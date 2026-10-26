@@ -3,6 +3,7 @@ import { COLORS, Empty, Panel, SectionState, Stat, num, statGrid, useSection, ty
 
 interface RetentionData {
   weeks: number
+  this_week?: string
   day_n?: { days: number; visitors: number; returned: number; rate: number | null }[]
   cohorts: { week: string; size: number; complete?: boolean; retained: number[] }[]
 }
@@ -34,7 +35,7 @@ export default function RetentionPanel({ query }: PanelProps) {
       )}
       <Panel
         title="Weekly retention"
-        note="Each row is the visitors first seen that week; each cell is the share who came back in a later week. D-numbers only count visitors first seen long enough ago to have had the full window. Visitors are counted by an anonymous cookie, so a new device or a cleared browser looks like a new visitor."
+        note="Each row is the visitors first seen that week; each cell is the share who came back in a later week. * = this week, still running. D-numbers only count visitors whose whole window is over. Visitors are counted by an anonymous cookie, so a new device or a cleared browser looks like a new visitor."
       >
         {data.cohorts.length === 0 ? <Empty>No cohorts yet. The first row appears after a week of tracking.</Empty> : (
           <div style={{ overflowX: "auto" }}>
@@ -57,13 +58,17 @@ export default function RetentionPanel({ query }: PanelProps) {
                     {offsets.map(o => {
                       if (o >= c.retained.length) return <td key={o} style={cell} />
                       const share = c.size ? c.retained[o] / c.size : 0
+                      // The last cell of every row is the current week, still running.
+                      const running = o === c.retained.length - 1 && data.this_week != null
                       return (
-                        <td key={o} title={`${num(c.retained[o])} visitors`} style={{
+                        <td key={o} title={`${num(c.retained[o])} visitors${running ? " so far (this week is not over)" : ""}`} style={{
                           ...cell,
                           background: `rgba(59, 130, 246, ${0.08 + share * 0.72})`,
                           color: share > 0.45 ? "#fff" : "var(--gm-text)",
+                          fontStyle: running ? "italic" : undefined,
+                          opacity: running ? 0.75 : 1,
                         }}>
-                          {Math.round(share * 100)}%
+                          {Math.round(share * 100)}%{running ? "*" : ""}
                         </td>
                       )
                     })}

@@ -4,7 +4,7 @@ import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
 import { publicOrigin, safeNextPath } from "@/lib/safeRedirect"
 import { trackServerEvent } from "@/lib/siteEvents"
 
-// An account created this recently is a sign-up, not a returning sign-in.
+// An account created or confirmed this recently is a sign-up, not a returning sign-in.
 const NEW_ACCOUNT_WINDOW_MS = 10 * 60 * 1000
 
 export const runtime = "nodejs"
@@ -61,7 +61,10 @@ export async function GET(request: NextRequest) {
             },
             { onConflict: "id", ignoreDuplicates: true }
           )
-          const isNewAccount = Date.now() - new Date(authUser.created_at).getTime() < NEW_ACCOUNT_WINDOW_MS
+          // New = the account was just created (Google) or its email was just
+          // confirmed (an email sign-up finished later, possibly days after).
+          const isRecent = (iso?: string | null) => !!iso && Date.now() - new Date(iso).getTime() < NEW_ACCOUNT_WINDOW_MS
+          const isNewAccount = isRecent(authUser.created_at) || isRecent(authUser.email_confirmed_at)
           await trackServerEvent(isNewAccount ? "sign_up" : "sign_in", "/auth/callback")
         }
       } catch {

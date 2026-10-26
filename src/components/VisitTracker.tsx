@@ -37,9 +37,32 @@ interface PageState {
   pendingVitals: { name: string; value: number }[]
 }
 
-/** Automation, or the browser's Global Privacy Control signal: send nothing. */
+// Set in a browser that has opened the admin panel, so staff browsing the
+// public site does not inflate the visitor numbers.
+const STAFF_FLAG = "gm_staff"
+
+function isStaffBrowser(): boolean {
+  try { return window.localStorage.getItem(STAFF_FLAG) === "1" } catch { return false }
+}
+
+function markStaffBrowser(): void {
+  try { window.localStorage.setItem(STAFF_FLAG, "1") } catch { /* storage blocked: nothing to remember */ }
+}
+
+/** Automation, the browser's Global Privacy Control signal, or a staff browser: send nothing. */
 function isOptedOut(): boolean {
-  return navigator.webdriver || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true
+  return navigator.webdriver
+    || (navigator as Navigator & { globalPrivacyControl?: boolean }).globalPrivacyControl === true
+    || isStaffBrowser()
+}
+
+/**
+ * Reading a PDF happens inside an iframe, whose scrolling and clicks never
+ * reach this page, so a focused frame counts as activity.
+ */
+function isReadingEmbed(): boolean {
+  const tag = document.activeElement?.tagName
+  return tag === "IFRAME" || tag === "EMBED" || tag === "OBJECT"
 }
 
 function send(payload: Record<string, unknown>): void {
@@ -115,7 +138,7 @@ export default function VisitTracker() {
       reportError(label ? `Unhandled rejection: ${label}` : null)
     }
     const timer = window.setInterval(() => {
-      if (s.pv && document.visibilityState === "visible" && Date.now() - s.lastActive < IDLE_MS) s.seconds += 1
+      if (s.pv && document.visibilityState === "visible" && (Date.now() - s.lastActive < IDLE_MS || isReadingEmbed())) s.seconds += 1
     }, TICK_MS)
 
     ACTIVITY_EVENTS.forEach(name => window.addEventListener(name, markActive, { passive: true }))
@@ -142,21 +165,29 @@ export default function VisitTracker() {
   useEffect(() => {
     const s = state.current
     // StrictMode runs effects twice in development; count each path once.
-    if (!pathname || pathname === s.path || isOptedOut()) return
-    flushEngagement(s)
-    s.path = pathname
+    if (!pathname || pathname === s.path) return
     if (pathname.startsWith("/admin")) {
+      flushEngagement(s)
+      markStaffBrowser()
+      s.path = pathname
       s.pv = null
       return
     }
+    if (isOptedOut()) return
+    flushEngagement(s)
+    s.path = pathname
 
-    s.pv = newPageViewId()
+    const pv = newPageViewId()
+    s.pv = pv
     s.seconds = 0
     s.sentSeconds = 0
     s.sentScroll = 0
     s.errors = 0
-    s.scroll = scrollPercent()
+    s.scroll = 0
     s.lastActive = Date.now()
+    // Measured once the page has settled: right after a navigation, content
+    // that loads late makes the page look short and score a false 100%.
+    window.setTimeout(() => { if (s.pv === pv) s.scroll = Math.max(s.scroll, scrollPercent()) }, 1500)
     send({
       type: "pageview",
       pv: s.pv,

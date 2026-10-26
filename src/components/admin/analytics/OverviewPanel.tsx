@@ -31,7 +31,9 @@ export default function OverviewPanel({ query }: PanelProps) {
   const t = data.totals
   const p = data.previous
   const chart = data.daily.map(d => ({ ...d, label: shortDay(d.day) }))
-  const avgDaily = data.daily.length ? Math.round(data.daily.reduce((s, d) => s + d.visitors, 0) / data.daily.length) : 0
+  // Average over finished days only: today's partial count would drag it down.
+  const fullDays = data.partial ? data.daily.slice(0, -1) : data.daily
+  const avgDaily = fullDays.length ? Math.round(fullDays.reduce((s, d) => s + d.visitors, 0) / fullDays.length) : 0
   const unknownShare = t.visitors && t.unknown_country != null ? Math.round((t.unknown_country / t.visitors) * 100) : null
 
   return (
