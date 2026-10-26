@@ -36,8 +36,10 @@ const UTM_RE = /^[a-z0-9 _.+-]+$/
 const BROWSER_EVENTS = new Set<BrowserEventName>(["download", "outbound", "js_error"])
 // Upper bounds well past anything real; larger values are measurement junk.
 const VITAL_MAX: Record<VitalName, number> = { LCP: 120_000, INP: 60_000, CLS: 50, FCP: 120_000, TTFB: 120_000 }
-// Errors we cannot act on: cross-origin scripts (ads) and a harmless browser warning.
-const NOISE_ERRORS = /^(Script error\.?|ResizeObserver loop)/i
+// Errors we cannot act on: cross-origin scripts (ads), a harmless browser
+// warning, and scripts the browser itself injects (Firefox and Chrome on iOS
+// run reader-mode/translate helpers that throw on our pages; seen live 26 Oct).
+const NOISE_ERRORS = /^(Uncaught )?(Script error\.?|ResizeObserver loop)|__firefox__|__gCrWeb|webkit\.messageHandlers|instantSearchSDKJSBridge/i
 const EXTENSION_URL = /^(chrome|moz|safari|safari-web|ms-browser)-extension:/i
 
 // Checked in this order: AI before search, because gemini.google.com is Google.

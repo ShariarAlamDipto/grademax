@@ -22,9 +22,12 @@ const OWN_HOSTS = new Set(["grademax.me", "www.grademax.me"])
 // Staff pages and API calls are not visits.
 const UNTRACKED_PREFIXES = ["/admin", "/api", "/_next"]
 
-// Same family as the /viewer paper_view filter, plus empty agents and the
-// common HTTP libraries. A real browser always sends a user agent.
-const BOT_UA = /bot|crawl|spider|slurp|preview|curl|wget|python|axios|node-fetch|go-http|java\/|headless|lighthouse|facebookexternalhit|scrapy|httpclient/i
+// Crawlers, HTTP libraries and empty agents (a real browser always sends one).
+// Several Google crawlers do not say "bot": AdSense's Mediapartners-Google
+// fetches every page that shows ads (including /viewer), plus GoogleOther,
+// Google-InspectionTool, Google-Read-Aloud and FeedFetcher-Google. Shared with
+// the /viewer paper_view count.
+const BOT_UA = /bot|crawl|spider|slurp|preview|curl|wget|python|axios|node-fetch|go-http|java\/|headless|lighthouse|facebookexternalhit|scrapy|httpclient|mediapartners-google|googleother|google-inspectiontool|google-read-aloud|feedfetcher|apis-google|google-safety/i
 
 // Printable ASCII with no spaces, quotes or angle brackets. Browsers send
 // non-ASCII paths percent-encoded, so real pages always pass.

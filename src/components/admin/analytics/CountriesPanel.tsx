@@ -7,7 +7,7 @@ import {
 
 interface CountryRow {
   country: string; visitors: number; views: number; share: number | null; avg_engaged: number | null
-  sessions: number; bounce_rate: number | null; downloads: number; sign_ins: number; sign_ups: number
+  sessions: number; bounce_rate: number | null; engagement_rate?: number | null; downloads: number; sign_ins: number; sign_ups: number
   orders: number; generations: number; prev_visitors: number; change: number | null
   top_pages: { path: string; views: number }[]
 }
@@ -60,7 +60,7 @@ export default function CountriesPanel({ query, onPickCountry }: PanelProps) {
         </Panel>
       )}
 
-      <Panel title="All countries" note="Conversions come from server-recorded events. Change compares visitors with the previous period of the same length.">
+      <Panel title="All countries" note="Conversions come from server-recorded events. Change compares visitors with the previous period of the same length. Engaged under 50% (in pink, with 10+ visits) usually means automated traffic.">
         <DataTable<CountryRow>
           rows={data.countries}
           initialSort="visitors"
@@ -78,6 +78,9 @@ export default function CountriesPanel({ query, onPickCountry }: PanelProps) {
             { key: "views", title: "Page views", align: "right", render: r => num(r.views), sort: r => r.views },
             { key: "engaged", title: "Reading time", align: "right", render: r => formatSeconds(r.avg_engaged), sort: r => r.avg_engaged ?? -1 },
             { key: "bounce", title: "Bounce", align: "right", render: r => pct(r.bounce_rate), sort: r => r.bounce_rate ?? -1 },
+            // Low engagement with many visits usually means automated traffic.
+            { key: "engaged", title: "Engaged", align: "right", sort: r => r.engagement_rate ?? -1, csv: r => r.engagement_rate ?? null,
+              render: r => <span style={{ color: r.engagement_rate != null && r.engagement_rate < 50 && r.sessions >= 10 ? COLORS.pink : undefined }}>{pct(r.engagement_rate)}</span> },
             { key: "downloads", title: "Downloads", align: "right", render: r => num(r.downloads), sort: r => r.downloads },
             { key: "signins", title: "Sign-ins", align: "right", render: r => num(r.sign_ins), sort: r => r.sign_ins },
             { key: "signups", title: "New accounts", align: "right", render: r => num(r.sign_ups), sort: r => r.sign_ups },

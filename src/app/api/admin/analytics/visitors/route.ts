@@ -15,7 +15,7 @@ export const dynamic = "force-dynamic"
 
 const RETENTION_WEEKS = 8
 
-type Section = "overview" | "countries" | "realtime" | "behavior" | "acquisition" | "funnels" | "retention" | "patterns" | "tools" | "performance"
+type Section = "overview" | "countries" | "realtime" | "behavior" | "acquisition" | "funnels" | "retention" | "patterns" | "tools" | "performance" | "content" | "quality"
 type Args = Record<string, unknown>
 
 /** Only send optional parameters when they are used, so the 36/37 functions still answer the default view. */
@@ -36,6 +36,8 @@ const SECTIONS: Record<Section, { fn: string; args: (range: AnalyticsRange, coun
   // Always sends p_country so only the migration-38 function can answer.
   tools:       { fn: "admin_tools",          args: (r, c) => ({ ...rangeArgs(r), p_country: c }) },
   performance: { fn: "admin_performance",    args: (r, c) => ({ ...rangeArgs(r), p_country: c }) },
+  content:     { fn: "admin_content",        args: (r, c) => ({ ...rangeArgs(r), p_country: c }) },
+  quality:     { fn: "admin_data_quality",   args: r => rangeArgs(r) },
 }
 
 export async function GET(req: NextRequest) {
@@ -67,7 +69,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
       {
         error: notSetUp
-          ? "This view needs the latest analytics migrations: run supabase/migrations/37_site_behavior.sql, 38_site_analytics_controls.sql and 40_site_performance_alerts.sql (in that order) in the Supabase SQL editor."
+          ? "This view needs the latest analytics migrations. In the Supabase SQL editor, run any of supabase/migrations/37, 38, 40, 41 and 42 that have not been run yet, in that order."
           : "Could not load visitor analytics.",
         notSetUp,
       },
