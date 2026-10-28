@@ -5,17 +5,15 @@ import dynamic from "next/dynamic"
 import Link from "next/link"
 import LazyWorryCatcher from "@/components/LazyWorryCatcher"
 
-const CURRENT_YEAR = new Date().getFullYear()
-
 // Brand-first on the homepage tab; the keyword-first default in layout.tsx
 // still covers every page that doesn't set its own title.
 export const metadata: Metadata = {
   ...publicPageMetadata({
     path: '/',
-    title: `Free Edexcel Past Papers ${CURRENT_YEAR} – IGCSE & A Level`,
-    description: 'Free Edexcel and Cambridge IGCSE and A Level past papers with mark schemes. Browse by subject, year and session, or create custom Edexcel worksheets.',
+    title: 'Edexcel & Cambridge Past Papers | Custom Worksheet Builder',
+    description: 'Explore Edexcel and Cambridge IGCSE & A Level past papers with mark schemes. Create custom Edexcel practice with our Test Builder and Worksheet Generator.',
   }),
-  title: { absolute: `GradeMax – Free Edexcel Past Papers ${CURRENT_YEAR} | IGCSE & A Level` },
+  title: { absolute: 'GradeMax | Edexcel & Cambridge Past Papers | Custom Worksheet Builder' },
 }
 
 const SubjectGrid = dynamic(() => import("@/components/SubjectGrid"))
