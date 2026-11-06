@@ -39,38 +39,19 @@ PAPER = (236, 230, 216)
 INK = (52, 50, 46)
 AUTHOR = "SHARIAR ALAM DIPTO"
 
-# Block colour per subject. Deep, slightly muted tones like the reference green.
-PALETTE = {
-    "maths": (88, 125, 44),
-    "further": (46, 106, 104),
-    "mechanics": (160, 84, 46),
-    "statistics": (62, 79, 138),
-    "decision": (110, 64, 108),
-    "physics": (36, 73, 112),
-    "chemistry": (136, 48, 58),
-    "biology": (44, 104, 84),
-    "humanbio": (124, 84, 50),
-    "accounting": (44, 88, 120),
-    "business": (164, 104, 44),
-    "economics": (120, 60, 82),
-    "english": (92, 76, 122),
-    "ict": (40, 108, 130),
-    "computing": (58, 72, 92),
-}
+def unique_colour(index: int) -> tuple[int, int, int]:
+    """A different deep colour for every book, in catalogue order.
 
-
-def palette_key(title: str, code: str) -> str:
-    t = title.lower()
-    for word, key in (("further pure", "further"), ("mechanics", "mechanics"),
-                      ("statistics", "statistics"), ("decision", "decision"),
-                      ("human biology", "humanbio"), ("physics", "physics"),
-                      ("chemistry", "chemistry"), ("biology", "biology"),
-                      ("accounting", "accounting"), ("business", "business"),
-                      ("economics", "economics"), ("english", "english"),
-                      ("ict", "ict"), ("computer", "computing")):
-        if word in t:
-            return key
-    return "maths"
+    Hues step by the golden angle, so books next to each other on the shelf are
+    far apart on the colour wheel and no two of ~60 books share a hue. Lightness
+    and saturation alternate a little for more separation, but stay dark enough
+    for the cream title (contrast about 5:1 or better).
+    """
+    hue = (index * 137.508) % 360 / 360
+    light = (0.30, 0.36, 0.33)[index % 3]
+    sat = (0.50, 0.42, 0.58)[index % 3]
+    r, g, b = colorsys.hls_to_rgb(hue, light, sat)
+    return int(r * 255), int(g * 255), int(b * 255)
 
 
 def backdrop_of(rgb: tuple[int, int, int]) -> tuple[int, int, int]:
@@ -194,9 +175,9 @@ def draw_reader(d: ImageDraw.ImageDraw, bx: float, by: float, s: float, ink) -> 
     d.ellipse((bx - 64 * k, by - 2 * k, bx + 64 * k, by + 5 * k), fill=(205, 198, 182))
 
 
-def render(book: dict) -> Image.Image:
+def render(book: dict, index: int) -> Image.Image:
     name, extra = split_title(book["title"])
-    colour = PALETTE[palette_key(name, book.get("subject_code") or "")]
+    colour = unique_colour(index)
     back = backdrop_of(colour)
 
     img = Image.new("RGB", (W * SS, H * SS), back)
@@ -278,11 +259,12 @@ def main() -> None:
     ap.add_argument("--only", nargs="*", help="slugs to render")
     args = ap.parse_args()
     OUT.mkdir(parents=True, exist_ok=True)
-    books = [b for b in load_targets() if not args.only or b["slug"] in args.only]
+    # The colour index comes from the full list, so --only re-renders a book in its own colour.
+    books = [(i, b) for i, b in enumerate(load_targets()) if not args.only or b["slug"] in args.only]
     paths = []
-    for b in books:
+    for i, b in books:
         path = OUT / f"{b['slug']}.jpg"
-        render(b).save(path, quality=90, optimize=True, progressive=True)
+        render(b, i).save(path, quality=90, optimize=True, progressive=True)
         paths.append(path)
         print(f"{b['slug']:32} {path.stat().st_size // 1024} KB")
     if len(paths) > 1:

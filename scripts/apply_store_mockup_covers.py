@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Publish the mockup covers and put the hidden Tri Axis yearwise booklets on sale.
 
-1. Uploads output/store_covers_mockup/<slug>.jpg to R2 as store/<slug>/cover-mockup.jpg
+1. Uploads output/store_covers_mockup/<slug>.jpg to R2 as store/<slug>/<COVER_FILE>
    (a new key, so no CDN or next/image cache keeps serving the old cover), then
    checks that the public URL returns exactly those bytes.
 2. Points store_products.cover_image_url at it (guarded on the old URL).
@@ -28,6 +28,9 @@ from store_cover_targets import (NEW_PRICE_BDT, NEW_STOCK, ROOT, SUPABASE_URL, h
                                  is_to_switch_on, load_products, load_targets)
 
 COVERS = ROOT / "output/store_covers_mockup"
+# Bump the file name for every new design: covers are cached for a year, so the
+# URL must change for buyers to see the new image. v2 = a unique colour per book.
+COVER_FILE = "cover-mockup-v2.jpg"
 BACKUP = ROOT / "data/backups" / f"store_mockup_covers_{date.today().isoformat()}"
 
 
@@ -43,7 +46,7 @@ def patch(table: str, filters: dict, payload: dict) -> list[dict]:
 
 def upload_cover(r2, slug: str) -> str:
     body = (COVERS / f"{slug}.jpg").read_bytes()
-    key = f"store/{slug}/cover-mockup.jpg"
+    key = f"store/{slug}/{COVER_FILE}"
     r2.put_object(Bucket=store.R2_BUCKET, Key=key, Body=body, ContentType="image/jpeg",
                   CacheControl="public, max-age=31536000")
     url = f"{store.R2_PUBLIC_URL}/{key}"
@@ -76,7 +79,7 @@ def verify(expected: dict[str, bool]) -> None:
     for slug, switched in expected.items():
         p = rows[slug]
         assert p["is_active"], slug
-        assert p["cover_image_url"].endswith(f"store/{slug}/cover-mockup.jpg"), slug
+        assert p["cover_image_url"].endswith(f"store/{slug}/{COVER_FILE}"), slug
         if switched:
             v = next(v for v in p["store_variants"] if v["kind"] == "print")
             assert v["price_bdt"] == NEW_PRICE_BDT and v["stock_qty"] >= NEW_STOCK and v["is_active"], slug
