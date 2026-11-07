@@ -1,20 +1,13 @@
 import { NextResponse } from "next/server"
 import { requireAdmin } from "@/lib/apiAuth"
 import { getSupabaseAdmin } from "@/lib/supabaseAdmin"
+import { USAGE_FEATURES, fromUsageSummary, type UsageFeature } from "@/lib/usageReport"
 
 export const dynamic = "force-dynamic"
 
-const FEATURES = [
-  "paper_view",
-  "lecture_view",
-  "lecture_download",
-  "worksheet_generate",
-  "worksheet_download",
-  "test_builder_session",
-  "test_builder_download",
-] as const
-
-type Feature = (typeof FEATURES)[number]
+const FEATURES = USAGE_FEATURES
+type Feature = UsageFeature
+const REPORT_DAYS = 30
 
 // PostgREST caps every select at 1000 rows, silently. Page through results —
 // aggregate functions are disabled on this instance, so aggregation happens
@@ -44,6 +37,18 @@ export async function GET() {
 
   const db = getSupabaseAdmin() || auth.db
 
+  // Every row, counted in Postgres (migration 44).
+  const { data: summary, error: summaryError } = await db.rpc("admin_usage", { p_days: REPORT_DAYS })
+  if (!summaryError && summary && typeof summary === "object") {
+    return NextResponse.json(fromUsageSummary(summary as Record<string, unknown>))
+  }
+  // PGRST202: migration 44 not applied yet; anything else is worth a log line.
+  if (summaryError && summaryError.code !== "PGRST202") {
+    console.error(`[admin/usage] admin_usage failed (${summaryError.code ?? "no code"}): ${summaryError.message}`)
+  }
+
+  // Fallback: page through the newest rows. Lists cover at most MAX_ROWS rows,
+  // which for paper opens is less than a day, so the response says "sample".
   // Total counts per feature (head requests — exact and cheap)
   const featureCounts = await Promise.all(
     FEATURES.map(f =>
@@ -108,6 +113,7 @@ export async function GET() {
     daily: buildDaily(recentRaw),
     topPapers: buildTopPapers(paperViewRaw, thirtyDaysAgo),
     paperViewsBySubject: buildPaperViewsBySubject(paperViewRaw),
+    source: "sample",
   })
 }
 

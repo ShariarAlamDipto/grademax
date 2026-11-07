@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 import { classifyLinkClick, sanitizeErrorLabel } from "@/lib/siteBehavior"
 import ChunkReloadGuard from "@/components/ChunkReloadGuard"
 import DownloadGate from "@/components/DownloadGate"
-import { sendVisitBeacon } from "@/lib/visitBeacon"
+import { isHeartbeatDue, sendVisitBeacon } from "@/lib/visitBeacon"
 
 /**
  * Anonymous behaviour beacons for the admin Visitors dashboard (/api/visit).
@@ -132,7 +132,11 @@ export default function VisitTracker() {
       reportError(label ? `Unhandled rejection: ${label}` : null)
     }
     const timer = window.setInterval(() => {
-      if (s.pv && document.visibilityState === "visible" && (Date.now() - s.lastActive < IDLE_MS || isReadingEmbed())) s.seconds += 1
+      if (s.pv && document.visibilityState === "visible" && (Date.now() - s.lastActive < IDLE_MS || isReadingEmbed())) {
+        s.seconds += 1
+        // A long stay on one page keeps its visit open (see HEARTBEAT_SECONDS).
+        if (isHeartbeatDue(s.seconds, s.sentSeconds)) flushEngagement(s)
+      }
     }, TICK_MS)
 
     ACTIVITY_EVENTS.forEach(name => window.addEventListener(name, markActive, { passive: true }))
