@@ -1,10 +1,11 @@
 import type { Metadata } from "next"
 import { after } from "next/server"
-import { headers } from "next/headers"
+import { cookies, headers } from "next/headers"
 import ViewerClient from "./ViewerClient"
 import { isAllowedPdfUrl, parseViewerView, type ViewerDoc, type ViewerView } from "@/lib/viewer-link"
 import { trackUsage } from "@/lib/trackUsage"
-import { isBotUserAgent } from "@/lib/siteVisits"
+import { VISITOR_COOKIE } from "@/lib/siteVisits"
+import { shouldCountPaperView } from "@/lib/paperViewTracking"
 
 // Dynamic: the whole page is derived from query params, which are only known
 // per-request. Reading `searchParams` server-side renders the correct PDF on the
@@ -35,13 +36,6 @@ function safeBackPath(raw: string | undefined): string {
   return "/past-papers"
 }
 
-// A prefetch (Next.js router or the browser's speculative loading) is not a
-// paper being opened.
-function isPrefetch(h: Headers): boolean {
-  return h.get("next-router-prefetch") === "1"
-    || /prefetch|prerender/i.test(h.get("sec-purpose") ?? h.get("purpose") ?? "")
-}
-
 // Best-effort subject from the back path: /past-papers/<subject>/… or
 // /past-papers/cambridge/<subject>/…
 function subjectFromBackPath(backPath: string): string | null {
@@ -67,11 +61,17 @@ export default async function ViewerPage({ searchParams }: { searchParams: Searc
 
   // Record which paper was opened. `after()` runs once the response has been
   // sent, so tracking never adds latency to the render; trackUsage itself
-  // swallows failures. Bots are skipped — /viewer is noindex but crawlers
-  // still follow links into it.
-  const requestHeaders = await headers()
-  const userAgent = requestHeaders.get("user-agent") ?? ""
-  if ((qpUrl || msUrl) && !isBotUserAgent(userAgent) && !isPrefetch(requestHeaders)) {
+  // swallows failures. Only browsers the visit tracker already knows count:
+  // scrapers with browser user agents made up ~95% of the old count
+  // (see paperViewTracking.ts).
+  const [requestHeaders, jar] = await Promise.all([headers(), cookies()])
+  const counted = shouldCountPaperView({
+    hasPdf: Boolean(qpUrl || msUrl),
+    userAgent: requestHeaders.get("user-agent") ?? "",
+    headers: requestHeaders,
+    visitorId: jar.get(VISITOR_COOKIE)?.value,
+  })
+  if (counted) {
     const pdfPath = (() => {
       try { return new URL(qpUrl ?? msUrl ?? "").pathname } catch { return null }
     })()

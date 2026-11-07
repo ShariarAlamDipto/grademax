@@ -24,6 +24,7 @@ interface UsageData {
   daily: { date: string; [key: string]: number | string }[]
   topPapers: { title: string; total: number; last30: number }[]
   paperViewsBySubject: { subject: string; views: number }[]
+  source?: "summary" | "sample"
 }
 
 const Bar = ({ value, max, color }: { value: number; max: number; color: string }) => (
@@ -291,13 +292,19 @@ export default function AnalyticsAdminPage() {
             <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>No data yet.</div>
           ) : (
             <>
+              {usage.source === "sample" ? (
+                <p style={{ fontSize: "0.8rem", color: "var(--gm-amber, #b45309)", marginBottom: "1rem", lineHeight: 1.5 }}>
+                  Lists and the daily table cover only the newest 20,000 rows of each kind — under a day of paper opens.
+                  Run supabase/migrations/44_admin_usage_report.sql in the Supabase SQL editor to count every row.
+                </p>
+              ) : null}
               {/* Paper views */}
               <h2 style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.75rem" }}>Paper Views</h2>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: "1rem", marginBottom: "1.25rem" }}>
                 <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", padding: "1.25rem" }}>
                   <p style={{ fontSize: "0.7rem", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--gm-text-3)", marginBottom: "0.5rem" }}>Papers Opened</p>
                   <p style={{ fontSize: "2rem", fontWeight: 800, color: "var(--gm-blue)", lineHeight: 1 }}>{(usage.totals.paper_view ?? 0).toLocaleString()}</p>
-                  <p style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", marginTop: "0.3rem" }}>via the on-site viewer, incl. anonymous visitors</p>
+                  <p style={{ fontSize: "0.7rem", color: "var(--gm-text-3)", marginTop: "0.3rem" }}>via the on-site viewer, incl. anonymous visitors. Before 7 Nov 2026 this also counted scrapers (about 19 in 20 opens).</p>
                 </div>
               </div>
 

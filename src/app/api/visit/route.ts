@@ -83,6 +83,13 @@ export async function POST(req: NextRequest) {
         p_pv: beacon.pv, p_visitor: existingVisitor, p_seconds: beacon.seconds, p_scroll: beacon.scroll,
       })
       if (error) logError("engage", error)
+      // Active reading keeps the visit open: the session lasts until 30
+      // minutes pass with no page view AND no active time (see visitBeacon.ts).
+      if (isVisitorId(existingSession)) {
+        done.cookies.set(SESSION_COOKIE, existingSession, {
+          httpOnly: true, secure: IS_PRODUCTION, sameSite: "lax", path: "/", maxAge: SESSION_COOKIE_MAX_AGE,
+        })
+      }
     } else if (beacon.type === "vital") {
       const { error } = await db.rpc("site_visit_vital", {
         p_pv: beacon.pv, p_visitor: existingVisitor, p_name: beacon.name, p_value: beacon.value,

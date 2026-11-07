@@ -69,7 +69,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
       {
         error: notSetUp
-          ? "This view needs the latest analytics migrations. In the Supabase SQL editor, run any of supabase/migrations/37, 38, 40, 41 and 42 that have not been run yet, in that order."
+          ? "This view needs the latest analytics migrations. In the Supabase SQL editor, run any of supabase/migrations/37, 38, 40, 41, 42 and 43 that have not been run yet, in that order."
           : "Could not load visitor analytics.",
         notSetUp,
       },
