@@ -29,8 +29,10 @@ from store_cover_targets import (NEW_PRICE_BDT, NEW_STOCK, ROOT, SUPABASE_URL, h
 
 COVERS = ROOT / "output/store_covers_mockup"
 # Bump the file name for every new design: covers are cached for a year, so the
-# URL must change for buyers to see the new image. v2 = a unique colour per book.
-COVER_FILE = "cover-mockup-v2.jpg"
+# URL must change for buyers to see the new image. cover-photo = the ORIGINAL
+# cover shown as a paperback on a matching backdrop (CoverIns reference).
+# Retired: cover-mockup.jpg, cover-mockup-v2.jpg (redrawn covers, rejected 6 Nov 2026).
+COVER_FILE = "cover-photo.jpg"
 BACKUP = ROOT / "data/backups" / f"store_mockup_covers_{date.today().isoformat()}"
 
 
@@ -86,12 +88,43 @@ def verify(expected: dict[str, bool]) -> None:
     print(f"Verified {len(expected)} listings from a fresh read.")
 
 
+def restore_original(targets: list[dict], commit: bool) -> None:
+    """Point each listing back at its original cover, store/<slug>/cover.jpg (still in R2)."""
+    now = datetime.now(timezone.utc).isoformat()
+    for p in targets:
+        original = f"{store.R2_PUBLIC_URL}/store/{p['slug']}/cover.jpg"
+        current = p["cover_image_url"] or ""
+        if current == original:
+            print(f"  {p['slug']:30} already original")
+            continue
+        if requests.head(original, timeout=60).status_code != 200:
+            raise RuntimeError(f"original cover missing in R2: {original}")
+        print(f"  {p['slug']:30} {current.rsplit('/', 1)[-1]} -> cover.jpg")
+        if commit:
+            patch("store_products", {"id": f"eq.{p['id']}", "cover_image_url": f"eq.{current}"},
+                  {"cover_image_url": original, "updated_at": now})
+    if commit:
+        rows = {p["slug"]: p for p in load_products()}
+        assert all(rows[p["slug"]]["cover_image_url"].endswith(f"store/{p['slug']}/cover.jpg") for p in targets)
+        print(f"Verified {len(targets)} listings back on their original covers.")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--commit", action="store_true")
+    ap.add_argument("--restore-original", action="store_true",
+                    help="put every listing back on its original store/<slug>/cover.jpg")
     args = ap.parse_args()
 
     targets = load_targets()
+    if args.restore_original:
+        if args.commit:
+            BACKUP.mkdir(parents=True, exist_ok=True)
+            stamp = datetime.now().strftime("%H%M%S")
+            (BACKUP / f"store_products_{stamp}.json").write_text(
+                json.dumps(load_products(), indent=2), encoding="utf-8")
+        restore_original(targets, args.commit)
+        return
     missing = [p["slug"] for p in targets if not (COVERS / f"{p['slug']}.jpg").exists()]
     if missing:
         raise SystemExit(f"render covers first, missing: {missing}")
