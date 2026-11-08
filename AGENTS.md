@@ -76,7 +76,7 @@ the state of the most recent work.
 | Question search (Test Builder) | `src/app/api/test-builder/questions/route.ts`, which filters `pages.topics` with `.overlaps()` |
 | Worksheet generation | `src/app/api/worksheets/generate-v2/route.ts`, which also filters `pages.topics` |
 | PDF assembly | `src/lib/questionPdfAssembly.ts` |
-| Marks printed on PDFs | `src/lib/questionMarks.ts`, which merges `commerceQuestionMarks.json` and `computerScienceQuestionMarks.json` (key `paperId|questionNumber`). Questions with no known marks count as 4. |
+| Marks printed on PDFs | `src/lib/questionMarks.ts` (server only), which merges `src/lib/printedMarks/<CODE>.json` (one file per subject, read from each question paper's printed totals by `scripts/extract_printed_question_marks.py --subject <CODE>`) with the hand-made `*QuestionMarks.json` tables for the commerce subjects and Computer Science (key `paperId|questionNumber`). Client components import `src/lib/questionMarksTotal.ts` instead. Questions with no known marks count as 4, so **rerun the script after publishing new questions** for a subject (and add the subject's import when it is new). As of 8 Nov 2026 all 10,276 live tool questions have marks, and every complete paper adds up to its printed paper total. |
 | Question limit | `src/lib/toolLimits.ts` (30 questions for normal students; admins, teachers and Pro users unlimited) |
 
 Each question is a row in **`pages`** (`is_question = true`, `topics text[]`,
