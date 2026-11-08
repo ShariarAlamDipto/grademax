@@ -8,7 +8,7 @@ import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
 import SignInPrompt from '@/components/SignInPrompt';
 import { toolSubjectDisplayCode, usesChapterFilters, usesExamPaperFilters } from '@/lib/igcseToolSubjects';
-import { totalQuestionMarks } from '@/lib/questionMarks';
+import { totalQuestionMarks } from '@/lib/questionMarksTotal';
 
 interface Subject {
   id: string;

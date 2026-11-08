@@ -5,7 +5,7 @@ import { limitMessage } from '@/lib/toolLimits';
 import { useQuestionLimit } from '@/lib/useQuestionLimit';
 import SignInPrompt from '@/components/SignInPrompt';
 import { usesChapterFilters, usesExamPaperFilters } from '@/lib/igcseToolSubjects';
-import { totalQuestionMarks } from '@/lib/questionMarks';
+import { totalQuestionMarks } from '@/lib/questionMarksTotal';
 
 function fireTrack(feature: string, payload?: Record<string, unknown>) {
   fetch("/api/track", {

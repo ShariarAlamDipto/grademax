@@ -1,6 +1,6 @@
 'use client';
 
-import { totalQuestionMarks } from '@/lib/questionMarks';
+import { allQuestionMarksKnown, totalQuestionMarks } from '@/lib/questionMarksTotal';
 
 import { useState, type MouseEvent } from 'react';
 import { QuestionItem } from './QuestionCard';
@@ -88,7 +88,7 @@ export default function PaperPreview({
         {items.length > 0 && (
           <div className="flex justify-between text-xs mt-2 text-gray-400">
             <span>{items.length} question{items.length !== 1 ? 's' : ''} · {items.length + 1} pages</span>
-            <span>~{totalMarks} marks</span>
+            <span>{allQuestionMarksKnown(items) ? "" : "~"}{totalMarks} marks</span>
           </div>
         )}
       </div>
