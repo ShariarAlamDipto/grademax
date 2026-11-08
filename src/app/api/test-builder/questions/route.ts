@@ -31,8 +31,8 @@ export async function GET(request: Request) {
     const difficulty = url.searchParams.get('difficulty');
     const yearStart = url.searchParams.get('yearStart');
     const yearEnd = url.searchParams.get('yearEnd');
-    const page = Math.max(1, parseInt(url.searchParams.get('page') || '1'));
-    const limit = Math.min(50, Math.max(1, parseInt(url.searchParams.get('limit') || '20')));
+    const page = Math.max(1, parseInt(url.searchParams.get('page') || '1') || 1);
+    const limit = Math.min(50, Math.max(1, parseInt(url.searchParams.get('limit') || '20') || 20));
 
     if (!subjectId) {
       return NextResponse.json(
@@ -105,13 +105,27 @@ export async function GET(request: Request) {
       .eq('is_question', true)
       .not('qp_page_url', 'is', null)
       .in('paper_id', paperIds)
+      // page_number repeats across papers, so it alone gives Postgres no fixed
+      // order: OFFSET paging then showed some questions on two pages and never
+      // showed others. paper_id + the unique id make the order total.
       .order('page_number', { ascending: true })
+      .order('paper_id', { ascending: true })
+      .order('id', { ascending: true })
       .range(offset, offset + limit - 1);
 
     if (topicCodes.length > 0) dataQuery = dataQuery.overlaps('topics', topicCodes);
     if (difficulty) dataQuery = dataQuery.eq('difficulty', difficulty);
 
     const { data: pages, count, error: pagesError } = await dataQuery;
+
+    // PostgREST answers 416 (PGRST103) for a page past the end, e.g. a stale
+    // link after questions were removed. That is an empty page, not a failure.
+    if (pagesError?.code === 'PGRST103') {
+      return NextResponse.json({
+        questions: [],
+        pagination: { page, limit, total: 0, totalPages: 0 }
+      });
+    }
 
     if (pagesError) {
       return NextResponse.json(
