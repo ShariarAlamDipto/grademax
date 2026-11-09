@@ -14,6 +14,11 @@ const SUBJECTS = [
   { name: 'IGCSE Human Biology',           code: '4HB1', href: '/past-papers/human-biology' },
   { name: 'IGCSE Further Pure Mathematics', code: '4PM1', href: '/past-papers/further-pure-maths' },
   { name: 'IGCSE Computer Science',        code: '4CP0', href: '/past-papers/computer-science' },
+  { name: 'IGCSE ICT',                     code: '4IT1', href: '/past-papers/ict' },
+  { name: 'IGCSE Accounting',              code: '4AC1', href: '/past-papers/accounting' },
+  { name: 'IGCSE Business',                code: '4BS1', href: '/past-papers/business' },
+  { name: 'IAL Accounting',                code: 'WAC1', href: '/past-papers/ial-accounting' },
+  { name: 'IAL Business',                  code: 'WBS1', href: '/past-papers/ial-business' },
 ]
 
 const faqs = [
@@ -27,7 +32,7 @@ const faqs = [
   },
   {
     question: 'Which subjects does the Test Builder support?',
-    answer: 'Edexcel IGCSE Physics (4PH1), Mathematics B (4MB1), Chemistry (4CH1), Biology (4BI1), Human Biology (4HB1), Further Pure Mathematics (4PM1) and Computer Science (4CP0). More subjects are added as their question banks are classified by topic.',
+    answer: 'Edexcel IGCSE Physics (4PH1), Mathematics B (4MB1), Chemistry (4CH1), Biology (4BI1), Human Biology (4HB1), Further Pure Mathematics (4PM1), Computer Science (4CP0), ICT (4IT1), Accounting (4AC1), Business (4BS1) and Economics (4EC1), plus IAL Accounting and IAL Business. More subjects are added as their question banks are classified by topic.',
   },
   {
     question: 'How is the Test Builder different from the Worksheet Generator?',

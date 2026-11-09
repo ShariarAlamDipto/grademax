@@ -1,0 +1,9 @@
+{
+ "2019_may-jun_P1|1": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "read 2026-11-09: the Q1 scheme cut holds every part; part (c) (SIM card connectivity, answer D 4G) is printed with its answer and rationale but without its \"1c\" label",
+  "qp_sha256": "ac1e0cb6fd397d781a301e1e5108e3b44baf1b6c28a11af2e91402b1b376f5af",
+  "ms_sha256": "55c34545e23537336ee1b09ffb3831afe5ae22aa29636e8a220e6df61de705d3",
+  "held_because": "scheme cut lacks part(s) ['c'] the question prints"
+ }
+}

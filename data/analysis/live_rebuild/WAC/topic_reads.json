@@ -1,0 +1,1162 @@
+{
+ "2022_may-jun_PUnit_1|1": {
+  "topics": [
+   "1.10",
+   "1.02"
+  ],
+  "difficulty": "hard",
+  "reason": "(d)(e) partnership income statement with appropriation, current accounts, SFP 32; (a)-(c) capital vs revenue expenditure and journal 11; (f) evaluating cash-only sales 12",
+  "qp_sha256": "87d175859b1100c3b073f12c8c13c1122a2af83c4a1507659b3055510a3ce2a2",
+  "ms_sha256": "0824fa908f51671b7804885bf4297f5cf46e098040193f0c66187e1278693256"
+ },
+ "2022_may-jun_PUnit_1|2": {
+  "topics": [
+   "1.17",
+   "1.15",
+   "1.18"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b)(e)(g) ratios, reasons for changes, forecast statement, evaluating profitability ratios 37; (c)(d) fixed, variable, semi-fixed, semi-variable costs 12; (f) social accounting 6",
+  "qp_sha256": "a9e4e97e8f9e41185da81caabc3df3ed921bbf493063d796b922bada5fdff6d4",
+  "ms_sha256": "c264297cce1537bd83c7abc32c1dc4511d6e7cb2f02437d0b2bf67a224a1bf72"
+ },
+ "2022_may-jun_PUnit_1|3": {
+  "topics": [
+   "1.11",
+   "1.04"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(d) sports club dance profit, income and expenditure account, financial position 21; (a) trial balance with accumulated fund 9",
+  "qp_sha256": "5cd2283b282a1c7cdd388068e457dd79b5ae2d2d2706c0f1e724b8f5d5b0bf82",
+  "ms_sha256": "b4f5b3a7f3dd79fbf683b8f181f6f2c88c9d8f2dad635b517c52c3f44b2c2eb0"
+ },
+ "2022_may-jun_PUnit_1|4": {
+  "topics": [
+   "1.05",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) trade receivables ledger control account and SFP extract 17; (d)(e) debtor account with irrecoverable debt, evaluating irrecoverable debts 13",
+  "qp_sha256": "dca1f25f8f549f2132e577fa6b5ae72f61833e15dcc1398ecb9c94b1822d8405",
+  "ms_sha256": "b721482e7930723a2b750c82dc2d661c0cd5bd69ac5bafe1a79586d31377ec2f"
+ },
+ "2022_may-jun_PUnit_1|5": {
+  "topics": [
+   "1.12",
+   "1.14",
+   "1.15"
+  ],
+  "difficulty": "medium",
+  "reason": "(b) manufacturing account and provision for unrealised profit 20; (c) day work vs group bonus 6; (a) overhead allocation and apportionment 4",
+  "qp_sha256": "8cad808bbf3eacd2b1332c3776ff83e71193e6e7494676c0f5b40668a3c66536",
+  "ms_sha256": "476d48baebd25d62b6f526207218b018c48187ac7a30f156b0eed57815c2a29a"
+ },
+ "2022_may-jun_PUnit_1|6": {
+  "topics": [
+   "1.03",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(e) depreciation charge, equipment, provision and disposal accounts, revaluation, method evaluation 24; (a) historic cost, consistency, going concern 6",
+  "qp_sha256": "e99ecf0f4ec79d9b213ddbc626a9af169710b8596d4fb8fad20b90a90ee7ffc6",
+  "ms_sha256": "8b48442beae7ae5f4d218b23676673d12f40e32132d9e2e4005f14501dac80be"
+ },
+ "2022_may-jun_PUnit_2|1": {
+  "topics": [
+   "2.03"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(e) revaluation, goodwill, realisation account, SFP after merger, evaluating the merger for each set of shareholders 55",
+  "qp_sha256": "c19f7efab5f33746002668acf668cba3edae2e2eb36f364ce1e5423ab4430572",
+  "ms_sha256": "cfcaed5eef2c6c9ca60c8d989dd2e3f9eeb12f7c9de600a729643ae78f07a44b"
+ },
+ "2022_may-jun_PUnit_2|2": {
+  "topics": [
+   "2.08"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(f) net cash flows, payback, ARR, NPV, IRR and project evaluation 55",
+  "qp_sha256": "b7d8daa011a0e609c4edf5258794b5337b303810a7c9e628e95b93846d178838",
+  "ms_sha256": "fe3b3ab11a5ca3ce8841e98ceaa43c57e08021151aba7db0fd2f355ac4de5661"
+ },
+ "2022_may-jun_PUnit_2|3": {
+  "topics": [
+   "2.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(a) IAS 1 distribution costs and administrative expenses sections 24; (b) evaluating the auditor's report 6",
+  "qp_sha256": "970f5404f8e436529db8f9340c2abda2abb4bad9a53ccb2326dbe12a023305de",
+  "ms_sha256": "4cdb30ca5ac5a2e8d2fd44c6eb89ee189e70c8296352b3a55cfe2146b15fca11"
+ },
+ "2022_may-jun_PUnit_2|4": {
+  "topics": [
+   "2.10",
+   "2.09"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(c) marginal vs absorption costing profit statements and evaluation 24; (a) semi-variable and semi-fixed costs with graphs 6",
+  "qp_sha256": "cb736c8a3a9d48c766b62792f6c355a4bc44b431ab859df30e48b260308dcd3b",
+  "ms_sha256": "36f27b8fc7eae216754b629bf2d09239e68d33cf8787fd11789293702e234659"
+ },
+ "2022_may-jun_PUnit_2|5": {
+  "topics": [
+   "2.04"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) EPS, P/E, dividend per share, cover, yield, ROCE and evaluating dividend cover 30",
+  "qp_sha256": "d1af8579f2163991d6c5d899c2a8b6f9a5429890058b05c34859c4c4d6aa2aae",
+  "ms_sha256": "7e795f455b0c6df67d5ad6d65e66888840a66320b97490ba13de43ad4028a4bb"
+ },
+ "2022_may-jun_PUnit_2|6": {
+  "topics": [
+   "2.07"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) purposes of standard costing, labour hours and costs, labour variances, management by exception 30",
+  "qp_sha256": "7e090612bc8f6018e3e821f19e34609ffc94bb5c105cab113869f86d0d42eaf9",
+  "ms_sha256": "9aabd4db8b6aa9de00722684c3bc6eb3ad57029645057781e1582f76973f9253"
+ },
+ "2022_oct-nov_PUnit_1|1": {
+  "topics": [
+   "1.09",
+   "1.10"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) incomplete records: capital, revenue, purchases, income statement and SFP 43; (c) partnership vs bank loan 12",
+  "qp_sha256": "99f2c78939e4d9f5195c540f9d77ad7a83463d2ccdc319cdde33a4f4e407993d",
+  "ms_sha256": "df17710178d7581fa59e02a82fe483ad471cb2ada645c3a27b1b4fd3f8fce4f7"
+ },
+ "2022_oct-nov_PUnit_1|2": {
+  "topics": [
+   "1.06",
+   "1.04",
+   "1.07",
+   "1.01"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) corrected trial balance and revised profit 23; (e) evaluating what a balanced trial balance proves 12; (c) rent payable and receivable accounts 8; (d) materiality and business entity concepts",
+  "qp_sha256": "3efab77f373f2d03598813f45ebd19163855d7b85ac47a3b5e1e49ce3da15b95",
+  "ms_sha256": "ab4605c91e6ec4dcedb6a6b0e06aaae1eb7b01f99fb291e9b5a0d7d0d66fe082"
+ },
+ "2022_oct-nov_PUnit_1|3": {
+  "topics": [
+   "1.15",
+   "1.13",
+   "1.16"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(d) continuous allotment, overhead recovery rates, under-absorption 20; (e) evaluating LIFO 6; (a) job costing 4",
+  "qp_sha256": "36aa0d55e7dc2779406a94a5a814720aede2ede0be82636b1ec8423b2568d7cc",
+  "ms_sha256": "69e2cf14c452c170ef7468be6cc1671e4f77c6ea42fab11aff45160f6d217b78"
+ },
+ "2022_oct-nov_PUnit_1|4": {
+  "topics": [
+   "1.17",
+   "1.18"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) ratios and forecast income statement 20; (d)(e) social accounting and evaluating the purchase 10",
+  "qp_sha256": "8dcbe0f84759bcca69928584dda5526f32d78671c79882fa1b6902d3d2ff2558",
+  "ms_sha256": "c390207cc98c081cd90d19f17ce4d470cb017826f6eaf724e11985b39c6565a4"
+ },
+ "2022_oct-nov_PUnit_1|5": {
+  "topics": [
+   "1.10"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(f) converting to a partnership: capital accounts, bank account, opening SFP, profit, floating capital accounts 30",
+  "qp_sha256": "745400307f378880d643e240d1935766150d1ae151ac1be1e469a52b6527d3b1",
+  "ms_sha256": "f021d11324df336135f5a915522a0daca963dcc1dd4020f9b1ad16141087539d"
+ },
+ "2022_oct-nov_PUnit_1|6": {
+  "topics": [
+   "1.06"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) journal corrections, types of error, corrected supplier balance, error definitions, evaluation 30",
+  "qp_sha256": "a5f1eae8036ea1b29db112bb9089f992652e8269b5c773e487b42eba82d48bac",
+  "ms_sha256": "63cfc96dfed2e8bbb13a82e90114594935ca1f57cae231380e2356034b160c58"
+ },
+ "2022_oct-nov_PUnit_2|1": {
+  "topics": [
+   "2.01",
+   "2.11"
+  ],
+  "difficulty": "hard",
+  "reason": "(a) IAS 1 statement of profit or loss 43; (b) evaluating ICT in bookkeeping 12",
+  "qp_sha256": "8e4649ce7994df661bbd4a790284dd0ab6e838b511150dec0b872e6ea08ca5ea",
+  "ms_sha256": "878605f0c2c69b7e598c2d4e42c6006ebde8cd6c043ef1c66433726c7a27425b"
+ },
+ "2022_oct-nov_PUnit_2|2": {
+  "topics": [
+   "2.07",
+   "2.06",
+   "1.13"
+  ],
+  "difficulty": "hard",
+  "reason": "(b)(c)(e) material and labour variances and evaluating production 46; (a) flexed budget 5; (d) stores ledger record card 4",
+  "qp_sha256": "4ce6a74c3c53d03eac65736afdc7f3993b2a3e85749e0b2d5897aba4742f5616",
+  "ms_sha256": "c7a0793c6931bddaa7a3058deb4ccb2d337b71ecb85bbe94c2db2ca2d04fee13"
+ },
+ "2022_oct-nov_PUnit_2|3": {
+  "topics": [
+   "2.05",
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(ii)(b)(c) cash flows from operating and financing activities, liquidity evaluation 24; (a)(i) provision for depreciation account 6",
+  "qp_sha256": "fa6390a4514e5b92e56c818471ae3b5eb6c5994b3614bf41b80875eba1f33344",
+  "ms_sha256": "04c8d60c988df93a0afe897b8a53b6715cd4df644e952b398085054448dfd9d5"
+ },
+ "2022_oct-nov_PUnit_2|4": {
+  "topics": [
+   "2.06"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) capital budget, cash receipts, trade receivables budget, flexible budgets 30",
+  "qp_sha256": "dc5b04f781612baa9214d26685c69f1a463b2572c59b2dec23eb23764051a903",
+  "ms_sha256": "477eee613c3ba5021b2e89aafb2c9da019637c1682113d6bf944d7c3aac8842a"
+ },
+ "2022_oct-nov_PUnit_2|5": {
+  "topics": [
+   "2.02"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(k) capital and revenue reserves, share premium, revaluation, dividends, capital redemption, bonus issue 30",
+  "qp_sha256": "8bc6144a999f1e7344e81f1613b578f332bfe2c2bd32895aca19d430bb2415e9",
+  "ms_sha256": "c83c46eb0e846e6d8378c88fa4c8b11ac5a2ac5524f501a10d0eadfe33da143e"
+ },
+ "2022_oct-nov_PUnit_2|6": {
+  "topics": [
+   "2.09",
+   "2.10"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(d) break-even point, margin of safety, contribution/sales ratio, variable costs 19; (a) marginal-costing profit statement showing contribution 11",
+  "qp_sha256": "a63cbe8dc93c191a2401931bc0255e13bb78372705e4d6a768ad39ee4a45c8b2",
+  "ms_sha256": "8581bed72433f9601dd22e4c4ea9936708539d39b3bf67abcb22a2965e9fa12a"
+ },
+ "2023_jan_PUnit_1|1": {
+  "topics": [
+   "1.12"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(c) manufacturing account, income statement, provision for unrealised profit, make or buy evaluation 55",
+  "qp_sha256": "e844971f54dcd83b98558f65cdef455d84c3951ce0cd0b229e59125fc70af0c7",
+  "ms_sha256": "e6863e79c5a1d946cf2b99bb32b7785f98176cf36dc767e94c6affe7c770c134"
+ },
+ "2023_jan_PUnit_1|2": {
+  "topics": [
+   "1.10",
+   "1.01",
+   "1.05"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b)(e) partners' capital and current accounts, interest, SFP extract 25; (c)(f)(g) loan account, business entity and money measurement, evaluating IAS 21; (d) trade payables ledger control account 9",
+  "qp_sha256": "8f02d0bcff28dc1226f62dd24184bb46d2831540d50c78c8a0e185967a2ec4dc",
+  "ms_sha256": "fd3f79c7d3174d010c7be5217f14639825ef9e09c4597391d0f339a5bef43251"
+ },
+ "2023_jan_PUnit_1|3": {
+  "topics": [
+   "1.15",
+   "1.02"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(f) cost behaviour, vehicle operating costs, cost per delivery, profit and evaluation of deliveries 26; (a) capital vs revenue expenditure 4",
+  "qp_sha256": "7890947ece8750271f610a6442f98d4b3c1d80f2d90a8ad3db2bd42b9322b590",
+  "ms_sha256": "20ea7d6ee228388fa37e7a58b727de721b03fbbc412b05fbb2045527bcecddcf"
+ },
+ "2023_jan_PUnit_1|4": {
+  "topics": [
+   "1.11"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) art club subscriptions, bank, trade payables, trading account, income and expenditure, financial position 30",
+  "qp_sha256": "23affc220e39b33039b7e66a1e63a5cdf4194a1ee81321bcf4b3962af189f4fd",
+  "ms_sha256": "4915b054e7718546e5c6a31a2952e56d72aa48079a3ae3a423db6b3b013d4be6"
+ },
+ "2023_jan_PUnit_1|5": {
+  "topics": [
+   "1.13",
+   "1.17"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) inventory rotation, perpetual valuation, closing inventory, trading account 16; (d)(e) ratios and evaluating performance 14",
+  "qp_sha256": "4a08ba462853fc9a53df7c40ec01dfb2be90e6d32f55662ee634e2b411f13b46",
+  "ms_sha256": "25ae32e5d4e989c48c2af01677f2d1afda7393b98711c385a5488edd875a2cc8"
+ },
+ "2023_jan_PUnit_1|6": {
+  "topics": [
+   "1.07",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(d) corrected income statement and evaluating cash purchases 21; (a)(b) prudence, consistency and other concepts 9",
+  "qp_sha256": "57b10e8c562596c1313a6705f0aa4c4e9f9ccc38b94d0b58c8154a14c099557f",
+  "ms_sha256": "0c16a1b3b22e7b251ec7a3d35f42bba3d3f32b1e3e4d23f50bdd20f1e67e73c4"
+ },
+ "2023_may-jun_PUnit_1|1": {
+  "topics": [
+   "1.08",
+   "1.07",
+   "2.11"
+  ],
+  "difficulty": "hard",
+  "reason": "(a) departmental income statement for fresh and packaged foods 26; (b) SFP 17; (c) evaluating wider use of ICT 12",
+  "qp_sha256": "7bf71e33d8439e2ce2bdc2e5b418ace47685d7a72ccc78de583b687b747cc7f7",
+  "ms_sha256": "888e9c0b8ea60098f7377ea3f51ef4bcc5947893adbbdd6058e0cc1c6e8fa4f6"
+ },
+ "2023_may-jun_PUnit_1|2": {
+  "topics": [
+   "1.13",
+   "1.06",
+   "1.07",
+   "1.01"
+  ],
+  "difficulty": "hard",
+  "reason": "(f)-(h) net realisable value, FIFO periodic valuation, evaluating LIFO 21; (c)(e) correcting journal and suspense account 16; (b) rent, rates and commission accounts 10; (a)(d) roles of accounting and concepts broken 8",
+  "qp_sha256": "f52bd5806a54134c5167f8f2ea4603363889846b0439cbb0e52ec6faede15b39",
+  "ms_sha256": "251727baa426c507fc13b2b5dc0efbc53853a90e43dbf60484938de804c9b167"
+ },
+ "2023_may-jun_PUnit_1|3": {
+  "topics": [
+   "1.17",
+   "1.18"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b)(d) six ratios, comments vs sector, evaluating reliance on ratios 24; (c) non-financial factors 6",
+  "qp_sha256": "706e652f8b103fd69131afd4235359d1380021ab3c97f90a1f77cbd66d274388",
+  "ms_sha256": "64349a0abc40da955a09f4fabffae63aa8e3c3c70f6114ca91f2cfc2ce8c1096"
+ },
+ "2023_may-jun_PUnit_1|4": {
+  "topics": [
+   "1.09",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(d) bank balance, income statement and SFP from incomplete records, evaluating no full books 26; (a) trade vs cash discount 4",
+  "qp_sha256": "b057a38ac6de1f084e5dbbd3c2a3d8f2cc16394ae58063caf1a4eb73e7fc7b27",
+  "ms_sha256": "086d0203ac00ebbdf1c82cb361684b9436a55586fbf505180dc35085785dea94"
+ },
+ "2023_may-jun_PUnit_1|5": {
+  "topics": [
+   "1.14"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(f) wages with overtime and individual bonus, productivity, group bonus scheme and its evaluation 30",
+  "qp_sha256": "3f62313a788748e19f29aeccd02dc98a38765187f2780a279b810240209b4e7e",
+  "ms_sha256": "06987712ca2e0c317af860a0129b8a5bb003c00c4b8f7e9a696d8e72a3312b70"
+ },
+ "2023_may-jun_PUnit_1|6": {
+  "topics": [
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) schedule of non-current assets, depreciation rates and reasons, disposal account, depreciation methods 30",
+  "qp_sha256": "15870705ee213f4802210b1facff41fa8e520f74d2689907442648139e392641",
+  "ms_sha256": "effab244de3c67fe5cde9da848bda44e5ccfd1f64d0697eeb65357fe4ce20317"
+ },
+ "2023_may-jun_PUnit_2|1": {
+  "topics": [
+   "2.05"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) IAS 7 statement of cash flows and evaluating liquidity 55",
+  "qp_sha256": "fac369956ffa13bfd04a6d08852f927d71a486ee7b59a85f710413eaafefb2f1",
+  "ms_sha256": "54f652207731a12e48318f25460bf5a78d4b8b428c11812620a82f6897d12f4a"
+ },
+ "2023_may-jun_PUnit_2|2": {
+  "topics": [
+   "2.06",
+   "2.11"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(g) revenue, inventory, purchases and cash budgets, budgeted profit, cash discount 43; (h) evaluating ICT in budgeting 12",
+  "qp_sha256": "fe6f1701f5606c5af62b831209cc4339c0efec0db6cfbb585e0243dfe609bc98",
+  "ms_sha256": "33210ac8566f0d3c926f655a00324ed2a17048906995435c5a6631ae78536acc"
+ },
+ "2023_may-jun_PUnit_2|3": {
+  "topics": [
+   "2.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) closing journal entries, sundry shareholders account, equity after the purchase, shareholder's view 30",
+  "qp_sha256": "9e5df1202759968804520d488301ae038c312464ca6225bde1d1901ee5f0d68c",
+  "ms_sha256": "615a0d3b21ab90693edbd8c052fbaa1a45ceaa7c7381afcf1aee4c9791b598b7"
+ },
+ "2023_may-jun_PUnit_2|4": {
+  "topics": [
+   "2.07"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) material variances, completing the variance statement, reasons and evaluation 30",
+  "qp_sha256": "e0ddd0e0462658859e1d9afb9724f74bcfa9f5fc7116b065021d89a98c2d7414",
+  "ms_sha256": "c4c23504e4ccc59c58c69bd89302c83aa67fd0e854b093ab62eb432cc3eeeae7"
+ },
+ "2023_may-jun_PUnit_2|5": {
+  "topics": [
+   "2.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) IAS 1 cost of sales and distribution cost sections, evaluating the Directors' Report 30",
+  "qp_sha256": "218c8c2398adaf2afc9ed7c71bfce2e1c79500a7592968b203d02e2dfd6f8327",
+  "ms_sha256": "9f48e2ff1fa7d17821deb52a49e94460294cf68f814b4d7878e207e2d91a1136"
+ },
+ "2023_may-jun_PUnit_2|6": {
+  "topics": [
+   "2.10"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) unit and closing inventory values and profit statements under marginal and absorption costing, evaluation 30",
+  "qp_sha256": "ace48e12f73dc19959edba653747c9a9e95428de06c481bc4a8696a80dadbcfb",
+  "ms_sha256": "bf333cdac25ebe6f7b491bc12e3ccce6eea1299cfb1819444a948a6bbe6ea400"
+ },
+ "2023_oct-nov_PUnit_1|1": {
+  "topics": [
+   "1.10"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(d) partnership income statement and appropriation, capital and current accounts, SFP, extra capital vs loan 55",
+  "qp_sha256": "e55cd4861dc96e9a5ab5948162ebe6c9a84063dcda130c65105976df341182cc",
+  "ms_sha256": "6c7a364d594c6de43146d5337fc38caf66bd8fa5d7c84c2f06d49e8633e35409"
+ },
+ "2023_oct-nov_PUnit_1|2": {
+  "topics": [
+   "1.14",
+   "1.09"
+  ],
+  "difficulty": "hard",
+  "reason": "(c)-(g) cost per sandwich, day work vs piecework, wages and evaluation 34; (a)(b) sales, purchases and income statement from incomplete records 21",
+  "qp_sha256": "1e99a6a924dbf638fe3376b8d560d72b4a627400b870c2b769cb535b6e094101",
+  "ms_sha256": "c0514ba15e533df92a3614a7f0cccc367ebe174f02acca502641ffb63d9bf5ac"
+ },
+ "2023_oct-nov_PUnit_1|3": {
+  "topics": [
+   "1.01",
+   "1.05"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)-(e) irrecoverable debt recovered, credit control, cash-only selling 16; (a)(b) trade receivables ledger control account 14",
+  "qp_sha256": "0334b2410e76ddab1dc973b7fbaae6769f4c5328d7ea84bac2296ed43b51d13d",
+  "ms_sha256": "9c2faca83a037297c7f7bc482c10f108dc5e5975f4feb0944117aa17efea07c1"
+ },
+ "2023_oct-nov_PUnit_1|4": {
+  "topics": [
+   "1.17",
+   "1.18"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) uses of ratios, six ratios and comments over three years 24; (d) evaluating social accounting 6",
+  "qp_sha256": "3766f739773edc64e3ba26c9540e5c23b9ac93bd6eb9980ba5127dee206e81d1",
+  "ms_sha256": "058c55e0aa5d4b1cedd63c5f8fc60860714e7736277459df9f14222f7ea1f7b6"
+ },
+ "2023_oct-nov_PUnit_1|5": {
+  "topics": [
+   "1.09",
+   "1.12",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(ii)(iii)(c) profit and bank balance from incomplete records, part-time bookkeeper 18; (b)(i) total production cost 6; (a) business entity, realisation, accruals 6",
+  "qp_sha256": "f1ef095738059cec271ce600cefe2385b64ddef1e121675007095c8807c07652",
+  "ms_sha256": "4ec4bdd915a7be09034ba5d01cd27643639bcea9d92283560c49f260d29efe60"
+ },
+ "2023_oct-nov_PUnit_1|6": {
+  "topics": [
+   "1.06"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) error types, correcting journal, suspense account, revised profit, draft profit evaluation 30",
+  "qp_sha256": "6b7e853b448a134369d40bf7c01df7ec94b7866c2be0ae3079a8cb54d0140eb0",
+  "ms_sha256": "7d0a1780825da2bb8d4071cc098d5cda943f4398ffb0674cbe3986c27cebc378"
+ },
+ "2023_oct-nov_PUnit_2|1": {
+  "topics": [
+   "2.09"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(e) break-even in units and revenue, margin of safety, budgeted profit, break-even graph, choosing between options 55",
+  "qp_sha256": "cdad896495bb624dec19f779fd8e8b02016440c60aca1de8c8ca68ac911b748d",
+  "ms_sha256": "0420bec6aa022cadfe348170b652626cb1ea8ed3795d9304419f01e6d4e2b7b2"
+ },
+ "2023_oct-nov_PUnit_2|2": {
+  "topics": [
+   "2.01"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) IAS 1 statement of financial position and evaluating the Auditor's Report 55",
+  "qp_sha256": "97176e6477890dc54ad86cd28d978008c11edea9903e46672c30fbaf85adbb6f",
+  "ms_sha256": "18d9fa30a537c094594af3ea625b73ef90106cba15b477403c10d485eaeba31d"
+ },
+ "2023_oct-nov_PUnit_2|3": {
+  "topics": [
+   "2.06"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) revenue, production, labour cash and material purchases budgets, order of budgets 30",
+  "qp_sha256": "d047228894bb1f231793f1d1008c5fcb22b8748c815a8ccb975caf7e0d4cd02e",
+  "ms_sha256": "0398818ae6c3f24c70e3d3e7bd62b9ab8a9a1bbbf2ce6ecb11981fb8a72ec682"
+ },
+ "2023_oct-nov_PUnit_2|4": {
+  "topics": [
+   "2.08"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) budgeted project profit, average rate of return, payback, project evaluation 30",
+  "qp_sha256": "24fcac5040899b0168ab7f1233fc69e6b7bbcbb3b9590d269a4d04c3f99172d3",
+  "ms_sha256": "1e9605efa19355ca57607623ef3345f013a760becf28eacb3d5fbd2ebf87604f"
+ },
+ "2023_oct-nov_PUnit_2|5": {
+  "topics": [
+   "2.02"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) creating and using reserves, gearing ratio, interest, bonus issue journal, improving gearing 30",
+  "qp_sha256": "24dd44ae26d2fa19a586a7106a1bff8fb25072633b1d33a9d3397407cf885ee0",
+  "ms_sha256": "cb472e41f5a7afc493f1ce8acb8193cb6c333090e7fb833bcb3cee29de623a3e"
+ },
+ "2023_oct-nov_PUnit_2|6": {
+  "topics": [
+   "2.04"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) dividend per share, yield, cover, ROCE, P/E and a shareholder's decision 30",
+  "qp_sha256": "30baca19bf77ffec9f06f23ba87c8cbf43ef3da50153240eb121418f15faa810",
+  "ms_sha256": "5a07b0c69a0a3d09b872acd2ec7686786eb22700b6968c117e509fbe7e0dbfdc"
+ },
+ "2024_jan_PUnit_1|1": {
+  "topics": [
+   "1.12",
+   "1.02"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(d)(e) manufacturing account, income statement, SFP, production cost per ton, new machinery decision 49; (b)(c) capital vs revenue expenditure 6",
+  "qp_sha256": "51767da7c17ef677f71186dad31b85fea27b9a4a2d017ca165a8621d2e701556",
+  "ms_sha256": "0258a0b8f7d731c6a2c3c078d2612f87d877137c9c63d5c1d9cbe8d06bec60c4"
+ },
+ "2024_jan_PUnit_1|2": {
+  "topics": [
+   "1.06",
+   "2.11",
+   "1.04"
+  ],
+  "difficulty": "hard",
+  "reason": "(b)-(e) error types, correcting journal, effect on draft profit 31; (f) evaluating ICT in removing errors 12; (a) trial balance 11",
+  "qp_sha256": "97e82f3697f096a20867fe081c588dd649ce04a29d914ca3ce2a360d67e24d94",
+  "ms_sha256": "5254eafc63ff576df5292a8673ee439c34c233c1fad79fa2e0764dd501bad5cc"
+ },
+ "2024_jan_PUnit_1|3": {
+  "topics": [
+   "1.17"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) managing trade receivables, ratios for two years, reasons for cash decline, evaluating performance 30",
+  "qp_sha256": "2471de1c8802415ce373b5c8c4e44fcaa3e32de7ed919e4fd6360e805a4fdc4b",
+  "ms_sha256": "8d4d9c9329cbccb4984836febb53697049268def76c3e074689d3169a428c294"
+ },
+ "2024_jan_PUnit_1|4": {
+  "topics": [
+   "1.16",
+   "1.14",
+   "1.15",
+   "1.13"
+  ],
+  "difficulty": "medium",
+  "reason": "(b) job quotation with overhead recovery and mark-up 16; (c) evaluating piecework 6; (a) allocation and apportionment 4; (a) perpetual vs periodic inventory 4",
+  "qp_sha256": "5480b02b4f63b9bd6970bf5ee502de1955b4083249bfd0645f8e2c4971daccba",
+  "ms_sha256": "f33562ba8225ce3f068691f825cbb6272a1a5eabfabc8410f0bced71a83a6b10"
+ },
+ "2024_jan_PUnit_1|5": {
+  "topics": [
+   "1.07",
+   "1.01",
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(i)-(iii) electricity, advertising and rent receivable accounts with transfers 15; (a)(c) prudence, consistency, accruals concept 10; (b)(iv) provision for depreciation 5",
+  "qp_sha256": "2574d48a89d8e4bc2bcb1e4a59623e0e4b610ecdd289be855893261c0e8d46bc",
+  "ms_sha256": "0c5f512ffbef040751b5a3c00164caf5e7b98ff142f5e629d77e77cd99f97e9f"
+ },
+ "2024_jan_PUnit_1|6": {
+  "topics": [
+   "1.09",
+   "1.05",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b)(e) cash and inventory stolen using mark-up, credit-only sales 17; (c) trade payables ledger control account and credit limit 9; (d) role of accounting information 4",
+  "qp_sha256": "fc5cb2dad49d0d3b177ffb9d4621e22c574635469e1cd4cc87d067195528ab69",
+  "ms_sha256": "958dc75f2e51486df2dc67518c8c4a3376193c55d939ab3d32dfa7ef52c6f7e8"
+ },
+ "2024_jan_PUnit_2|1": {
+  "topics": [
+   "2.04",
+   "2.02"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) dividend per share, yield, EPS, P/E, cover, ROCE and shareholder evaluation 43; (a)(vi) gearing ratio 12",
+  "qp_sha256": "b2d26c7aad910830725490d35a8c8d51fde2cd7ea75661e3485723795f445206",
+  "ms_sha256": "fd358d3def1d6b9ab9d16c452e8609fdf709cfb1cac49603309918617ffbcdce"
+ },
+ "2024_jan_PUnit_2|2": {
+  "topics": [
+   "2.08"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(d) NPV, average rate of return, payback and project evaluation 55",
+  "qp_sha256": "dd7bd0fa0403b20135b079484b406343dc2f347bac95d36844146123ba12efdf",
+  "ms_sha256": "7fe5b9cf7dc9262cac534713b169ff10cfc6a83cab28bd2bb2317d8863e1a12e"
+ },
+ "2024_jan_PUnit_2|3": {
+  "topics": [
+   "2.05",
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(ii)(b) IAS 7 operating activities and evaluating liquidity 25; (a)(i) provision for depreciation account 5",
+  "qp_sha256": "2a107aaaec76cc0fe56cf086c3f27162e9cff5cd40a378434b61f2d16b9a7327",
+  "ms_sha256": "dd3fdf9f034ab0800aa922fab34ea5f702eb38415290933e7ae03c6d5a40144c"
+ },
+ "2024_jan_PUnit_2|4": {
+  "topics": [
+   "2.07",
+   "2.11"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(f) material price and usage variances worked backwards, interrelationships 24; (g) ICT in standard costing 6",
+  "qp_sha256": "29a7e2b2aa6f064b18dc06f65ab74d589b9282e01e8bef47bbc395e713087a10",
+  "ms_sha256": "9ecc142d4ef6a9332373854ea8cf5394d378f857af2812ada9361632cedf6c07"
+ },
+ "2024_jan_PUnit_2|5": {
+  "topics": [
+   "2.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) cash offer, goodwill on revaluation, closing journal entries, comparing two offers 30",
+  "qp_sha256": "ac41a822387ecd509b2ef3b8d70d6ecabeff4b636e9f830909c1e9d92c6facd7",
+  "ms_sha256": "f23cae62e589962c4f4284726977c3677fc20af1ed957e137c97b65abedab75b"
+ },
+ "2024_jan_PUnit_2|6": {
+  "topics": [
+   "2.10"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) closing inventory and profit under marginal and absorption costing, disadvantages and evaluation 30",
+  "qp_sha256": "957b99ee8594c57aa96a6ada3703ecfd5e206fdb3d81f3d16bfc29deb126622a",
+  "ms_sha256": "469b89ee212290652ed710c9e4af79f902e1addd855eeeb4dab89af65ae9360d"
+ },
+ "2024_may-jun_PUnit_1|1": {
+  "topics": [
+   "1.07",
+   "1.14"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) income statement and SFP with depreciation and irrecoverable debts 39; (c)(d) day work vs piecework and evaluating delivery-based pay 16",
+  "qp_sha256": "f0f758f2b29a577cd894bfbf30d0a80b2c28a63e97954a29f3a1237dafebc80b",
+  "ms_sha256": "e2ec622850e6e7e948c18b139c4067d37582627ea9900f57e4b6f76be93f0304"
+ },
+ "2024_may-jun_PUnit_1|2": {
+  "topics": [
+   "1.17",
+   "2.11",
+   "1.10"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) seven ratios for two businesses with comments 34; (f) evaluating ICT in a business 12; (c)-(e) goodwill and its valuation 9",
+  "qp_sha256": "3c4c441ae85e4bdbf531293288d655bf2b92eed7f2c135bf5c23f14c2d5f87b9",
+  "ms_sha256": "5f08cf8af4ec856f9dc0dc1dc9fcbe8c1d6bdadc54e38c173673e4958f268d92"
+ },
+ "2024_may-jun_PUnit_1|3": {
+  "topics": [
+   "1.11"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) club vs sole trader accounts, subscriptions, refreshments trading, income and expenditure, funding decision 30",
+  "qp_sha256": "b44253e3ec7c85da2c2da45f267ffa7d0337533892dc62342088e281cbd80592",
+  "ms_sha256": "3e2e2a1f96d3a2cf0fdd98a11fb59a566f1b0a05d1c70500e0613ea8d2a537fb"
+ },
+ "2024_may-jun_PUnit_1|4": {
+  "topics": [
+   "1.06",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) error of principle, suspense account, correcting journal, corrected profit 24; (d) evaluating IAS 6",
+  "qp_sha256": "5838f6576aaa2c1acf41cbad6eaa75e2db6770f141a96dfde34dc93ed88e473c",
+  "ms_sha256": "4cfe5b17ad13ef4e6cea27acdfd95d0d663bfea741fd37597f526e1e6aa8fc4d"
+ },
+ "2024_may-jun_PUnit_1|5": {
+  "topics": [
+   "1.15",
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)-(e) annual and per-km operating costs of two cars and the choice 22; (a)(b) causes of depreciation and choice of method 8",
+  "qp_sha256": "5e31b11ab3256abfe925fc738db5566d99102c69e4820aacef478328c34979a1",
+  "ms_sha256": "eb6253620f8390b8b81b3661aeea0dce07cf3b596f82ab40619c76dfbdf7f5eb"
+ },
+ "2024_may-jun_PUnit_1|6": {
+  "topics": [
+   "1.15"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) overhead allocation, continuous allotment, recovery rates, under/over absorption, evaluation 30",
+  "qp_sha256": "e73965fe5937b3956e6f3af60931577bdb8dbf193f9eee35ebecae03641db789",
+  "ms_sha256": "c6255e65b2ab6c4a23e3e408ab67f49fabb67101cb5b385e9c465374fb4dcac5"
+ },
+ "2024_oct-nov_PUnit_1|1": {
+  "topics": [
+   "1.07",
+   "1.15",
+   "1.02"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) income statement and SFP 30; (d)(e) revenue and running costs of chargers and the decision 22; (c) capital vs revenue expenditure 3",
+  "qp_sha256": "aceb26b672d768ca12a02f5c593de8e45affee2098c3b60b4ab451f0f9af0dca",
+  "ms_sha256": "010af9c242b6848a91c49593bbe2c6d29751941787325c3ea4300f958eec353a"
+ },
+ "2024_oct-nov_PUnit_1|2": {
+  "topics": [
+   "1.06",
+   "1.07",
+   "2.11"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) correcting journal and corrected profit 28; (c) corrected SFP 15; (d) evaluating ICT to avoid errors 12",
+  "qp_sha256": "77e63f21197caed6f889218260794316c2489839ccf21286dc88183a76d881ad",
+  "ms_sha256": "565d678fee363d2ede7bc001ced5b69d21d4b29d311a668392746e0fd5f2409f"
+ },
+ "2024_oct-nov_PUnit_1|3": {
+  "topics": [
+   "1.15",
+   "1.08",
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(i)(b) allocated overheads and apportionment to stores 17; (c)(d) revised departmental statement and store closure 11; (a)(ii) depreciation 2",
+  "qp_sha256": "ea0a2e83df4af46539351fdcf56b72a78088d126523c72305f790c0ef9b68586",
+  "ms_sha256": "aedd16c2194c91b4b16d8679a0a8ea517b09a54e1d544192d8f0099d80b3008c"
+ },
+ "2024_oct-nov_PUnit_1|4": {
+  "topics": [
+   "1.17",
+   "1.18"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d)(f) profitability ratios vs industry, forecast statement, expansion decision 26; (e) financial and non-financial factors 4",
+  "qp_sha256": "c1452860e9b6e9b40a4bf2b7362ba459d13972ce47a37ef028942506b96b70d1",
+  "ms_sha256": "2cae28c1d6aef67995fdc3751998b6fd4061143d9314d3d9c91230fd3f68f330"
+ },
+ "2024_oct-nov_PUnit_1|5": {
+  "topics": [
+   "1.12",
+   "1.13",
+   "1.15"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(i)(b) direct expenses and manufacturing account 22; (c) FIFO when prices rise 6; (a)(ii) semi-fixed cost 2",
+  "qp_sha256": "15e71535dda739a1fd0dd6b5c08d9535fb2db2b64b365f6b45b93cd8659ba37b",
+  "ms_sha256": "8cfd758fb9e56ab10e40758ae7f5cb2e37a182d22a4da1379a7151e3433c9b99"
+ },
+ "2024_oct-nov_PUnit_1|6": {
+  "topics": [
+   "1.09"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) cash book, sales, purchases and income statement from incomplete records, not keeping double entry 30",
+  "qp_sha256": "2cc9e3b0b3a9236377b1cc3e20ab94694c3b49cb53c12f0dc4ecb16057a9cab8",
+  "ms_sha256": "b7bbb09f34de7d73613b7319b61c28d5ec069c20e5f1dd65b9bc1bf50b5610a4"
+ },
+ "2024_oct-nov_PUnit_2|1": {
+  "topics": [
+   "2.09"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(f) classifying and forecasting costs, profit, break-even point, margin of safety, controlling fixed vs variable costs 55",
+  "qp_sha256": "e2b4fc04e2d08eed82ded8743f759d996d7a15a5013e463ae0f52559f65c22cf",
+  "ms_sha256": "bbde16d3f3eb2d8842b3a0c309fc4d56a215f7fb62cca2b179a8fcaf159c0b6f"
+ },
+ "2024_oct-nov_PUnit_2|2": {
+  "topics": [
+   "2.03"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(d) purchase price, shares issued, realisation and sundry shareholders accounts, merged SFP, shareholder's view 55",
+  "qp_sha256": "b4a83aa635966d424acfcc421f47979557e4b18f7f3cdb0cbe3afb6dcdbbcfc4",
+  "ms_sha256": "c536361ea2735afe6ff889fed318fd9563558d3f9d013b4aa42248c88f364d8c"
+ },
+ "2024_oct-nov_PUnit_2|3": {
+  "topics": [
+   "2.04"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) dividend per share, yield, cover, EPS, P/E, ROCE vs industry and evaluation 30",
+  "qp_sha256": "52ec65988386bbc1ebdfb3cc14f6b6074e5bc0d9c86eef704447b866a92d9a02",
+  "ms_sha256": "5e7cada40dc530245f8a9b672b77b346de9a7a777474e07b31d1ccbbaced8f1c"
+ },
+ "2024_oct-nov_PUnit_2|4": {
+  "topics": [
+   "2.08"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) NPV, annual profit, IRR and investment evaluation 30",
+  "qp_sha256": "809fb8e7f305c2680a1628de353cab04a4f064fba82930743448f3c7e0e14f9e",
+  "ms_sha256": "64c022c153a147732d45ea3352d14ba59af17dba29739dfbe893621d3de34f05"
+ },
+ "2024_oct-nov_PUnit_2|5": {
+  "topics": [
+   "2.07"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) fixed overheads, flexed variance column, labour efficiency and rate variances, labour performance 30",
+  "qp_sha256": "a90099bb0ef0300f05320e74e8aa0729976f069c0bb76c2c28da18ca16375853",
+  "ms_sha256": "f9c543d173b38dbebf62ebc2c11850df85b98cebf1fea7cd250cf6afaf1c3495"
+ },
+ "2024_oct-nov_PUnit_2|6": {
+  "topics": [
+   "2.01",
+   "2.02"
+  ],
+  "difficulty": "medium",
+  "reason": "(a) statement of changes in equity 20; (b)(c) capital reserves and paying out all retained earnings 10",
+  "qp_sha256": "27fe8406c8c0ac4475df29539966f117afc4d32829eae56109ce712da5edf1e4",
+  "ms_sha256": "1fec7967ad1d6ceda158e5361ecc99d9629ad5a315475c45d7560e84bbac1707"
+ },
+ "2025_jan_PUnit_1|1": {
+  "topics": [
+   "1.10"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(c) partnership income statement and appropriation, current accounts, SFP, loan vs new partner 55",
+  "qp_sha256": "b3518c50ed6b44d4795f5c8d16f986ecbd7b92de5d760d62b41072a9081d6c6b",
+  "ms_sha256": "6ae9ec5c7d24b9427b0971f5b35131f1664074d11254d7c38127ecfa34be0422"
+ },
+ "2025_jan_PUnit_1|2": {
+  "topics": [
+   "1.03",
+   "1.06",
+   "1.04"
+  ],
+  "difficulty": "hard",
+  "reason": "(c)-(g) depreciation, going concern and consistency, motor vehicle, provision and disposal accounts, schedule, single-rate evaluation 37; (b) corrected profit; (a) errors not revealed by the trial balance 4",
+  "qp_sha256": "8f77aa1eb7848b5de12f9bb8a31c829a8cc8b31192052b3f260f05e8290e57a0",
+  "ms_sha256": "45980db3b42ea762e5794bbb645b7c1dcd344e65c08ed80c1a20dd4b046a7e4b"
+ },
+ "2025_jan_PUnit_1|3": {
+  "topics": [
+   "1.05",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) receivables and payables ledger control accounts, credit balances, dishonoured cheque 24; (d) role of IAS 6",
+  "qp_sha256": "584ecba120d51ecc67440e67e14b52b39ab7ce614689cfd9fb651d790cd349d6",
+  "ms_sha256": "e91c54f68a1035bb5714c24f75a6ecce62efee01d81043de2c73080a0fde99d5"
+ },
+ "2025_jan_PUnit_1|4": {
+  "topics": [
+   "1.17",
+   "1.18"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(e) ratios, positive and negative points, cash after paying suppliers, profitability-only advice 22; (a) social accounting 4",
+  "qp_sha256": "92447bb507428895d160d95f97186a5aaec06c68b634bc3abb63685a1a810df3",
+  "ms_sha256": "30faa49f0507d4eaf63dc3f3c3106717b2de450c60a591c5494fa84e93f6f94b"
+ },
+ "2025_jan_PUnit_1|5": {
+  "topics": [
+   "1.11",
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(i)(b)-(d) accumulated fund, subscriptions, prize evening, income and expenditure, life membership 28; (a)(ii) profit on sale of a non-current asset 2",
+  "qp_sha256": "0269d5f20968bf42042aed73159dbf1b81651de6aac12b2bd658ee68cfce8bdc",
+  "ms_sha256": "2919eea415d189747825e2d1544840e1a42858e14103974b0aa705b8fc98c622"
+ },
+ "2025_jan_PUnit_1|6": {
+  "topics": [
+   "1.13"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) LIFO perpetual valuation, purchases, sales, trading account, NRV, periodic valuation, FIFO evaluation 30",
+  "qp_sha256": "d14fda6dcc4b868f7ded80db9448837f41aa566179529cd906b9e51b07b27d92",
+  "ms_sha256": "af559df785288bec7147773fcfa468c2317f0126efc777ba7263b512f0a9e2e7"
+ },
+ "2025_jan_PUnit_2|1": {
+  "topics": [
+   "2.05"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) IAS 7 statement of cash flows and evaluating liquidity 55",
+  "qp_sha256": "2acc70c9de4a915b2200f7820408242bd99f409f555f96e857f1aa3f1ef1d0e0",
+  "ms_sha256": "788217fb813c9066c395479f91826bffb37177ae706cc777c564ac678d488aee"
+ },
+ "2025_jan_PUnit_2|2": {
+  "topics": [
+   "2.07"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(f) budgeted and actual labour and material costs, efficiency, rate, usage and price variances, evaluating the department 55",
+  "qp_sha256": "3e966738b21e8c3a725d1828b7eb7a205711253f4b686fe24ac8479ac0167be2",
+  "ms_sha256": "1b8cdfb593b159993d86cd862d6d432cf7ec6c9b48fec6e4f117213f4ec36e2b"
+ },
+ "2025_jan_PUnit_2|3": {
+  "topics": [
+   "2.06"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) capital budget, production budget, cash received from customers, payment options 30",
+  "qp_sha256": "e0ce4bed25087e34e8fe3d490970c691d0f18c585a20c30b69f9660b03c25413",
+  "ms_sha256": "9583a2063d44744d05af895e23add0e625b8dce5c7c03ecf53277592a35d3beb"
+ },
+ "2025_jan_PUnit_2|4": {
+  "topics": [
+   "2.04"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) dividend per share, cover and yield for two companies and the investment choice 30",
+  "qp_sha256": "c97950557d4a09a94df2cb834f4457120a36d8a514364efc12c9e03fb21a1fc3",
+  "ms_sha256": "83f3e3239cd6cd57127012347ad9924fc215ac1eaa5a24a445056cb3f70d22de"
+ },
+ "2025_jan_PUnit_2|5": {
+  "topics": [
+   "2.10"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) marginal and absorption costing income statements and evaluating marginal-only reporting 30",
+  "qp_sha256": "4b667df560795fe08c5190be62cebea7f2c058c8a4bd5f538f3655c575ad932a",
+  "ms_sha256": "baf5a814ccb6e7dcdb27f7b218a3c858ac3520275945ca40c13a32ff98ced4b8"
+ },
+ "2025_jan_PUnit_2|6": {
+  "topics": [
+   "2.01",
+   "1.03",
+   "2.02"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(i)(ii)(iv)(vi)(b) SFP line items, bank, interest owing, profit, the auditor in corporate governance 14; (a)(viii) depreciation of property, plant and equipment 7; (a)(iii)(v)(vii) general reserve, debentures, redeemable preference shares 5",
+  "qp_sha256": "4273064ab548e5c62086ecafa1023e8651488e047f3f57877d1fd28d664e69e3",
+  "ms_sha256": "b13c915e22f2d4fefb63fc91767952755a5dcaa5dbc765fefab3a11bd007a3f8"
+ },
+ "2026_jan_PUnit_1|1": {
+  "topics": [
+   "1.08"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) departmental income statement and evaluating closing the showroom 55",
+  "qp_sha256": "2b897ddc767526882a66fad6c6c301a62128d6ce5b6f8c488b92ab67e22d9178",
+  "ms_sha256": "59a371aca716a28351e5d99ab2409c2307db4b0a6d173f57bcf523bcf7bdc309"
+ },
+ "2026_jan_PUnit_1|2": {
+  "topics": [
+   "1.07",
+   "1.06",
+   "2.11"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) SFP after corrections 22; (a)(b) error types and revised profit 21; (d) evaluating ICT 12",
+  "qp_sha256": "eedb76294db552d1c48f4af38a825a92b87a2195e9db01e5c57495589195dc2d",
+  "ms_sha256": "e08b0b09f089340ba8c1c869f00c6ca10b75a65b374179ece985c023c5c79601"
+ },
+ "2026_jan_PUnit_1|3": {
+  "topics": [
+   "1.05",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(d)(e) trade receivables ledger control account, SFP extract, evaluating control accounts 22; (a)(c) historic cost, realisation, allowance for irrecoverable debts 8",
+  "qp_sha256": "346c68f1ee4ca259a3c5ad5acbfc882b3ecb37250a646202b1ec553856b4910a",
+  "ms_sha256": "6714c08e4ee6ae211cadf65be8391c3fd9d8a2d7840e010b3bb92798ee4a945b"
+ },
+ "2026_jan_PUnit_1|4": {
+  "topics": [
+   "1.17"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(f) liquidity, current and liquid ratios, working-capital balances after transactions, improving liquidity 30",
+  "qp_sha256": "7c92e2cc8eecc957ea030c31048a372f1d6a3eb7184e186b26a0490ce3732792",
+  "ms_sha256": "b331a1396d2d78172785fbcdfd68a6086642c414c7cabb25310d8d9c046472c4"
+ },
+ "2026_jan_PUnit_1|5": {
+  "topics": [
+   "1.12",
+   "1.14",
+   "1.13"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(ii)(b)(d) unrealised profit, raw materials consumed, prime cost 14; (c)(e) labour hours and cost, evaluating the bonus per chair 14; (a)(i) perpetual valuation 2",
+  "qp_sha256": "45a5a08c6b4d8df0f501370709b1c0d06793e52860f2032efb1f2935bb2e5686",
+  "ms_sha256": "60591f06ecd9ef6504c399c1cab8ac56e224224cd514f51cb037f57d4570a385"
+ },
+ "2026_jan_PUnit_1|6": {
+  "topics": [
+   "1.03",
+   "1.07",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(i)(ii)(e) vehicle cost and depreciation accounts, reducing balance evaluation 15; (a)(c)(iii)(d) running expenses account with prepayment and transfers 11; (b) going concern and consistency 4",
+  "qp_sha256": "748cbb36b60127b5c2a0ee0064f5f2f0cb497ad577edfb8787035497ef1f3dd7",
+  "ms_sha256": "916f71fff58324a4e9212a29e5a183f9a8a169325016ab2c0246db9d6a3fa331"
+ },
+ "2026_jan_PUnit_2|1": {
+  "topics": [
+   "2.01"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) IAS 1 statement of profit or loss with apportionment and tax, evaluating the Directors' Report 55",
+  "qp_sha256": "5e9406d882c6c5ed9fad37413a6336a37f93c653d076f36ec347c229dfdda462",
+  "ms_sha256": "0a21fafb9b2a38664b5db78c6f78f6f1e23622c9a48cacf2a6f1ff6280ca53c0"
+ },
+ "2026_jan_PUnit_2|2": {
+  "topics": [
+   "2.06"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(c) material cost, revenue, production, cash and purchases budgets, limiting the budgets prepared 55",
+  "qp_sha256": "8bb13220794b4939a692e590484aa76e3c9e58601f53a1f63c7057425ac69973",
+  "ms_sha256": "1109c7afdd57e3f8efd7551c508662fdc2ae898b7bb85799fb4261cd868d80ee"
+ },
+ "2026_jan_PUnit_2|3": {
+  "topics": [
+   "2.02"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(f) authorised and called-up capital, gearing ratio, reducing gearing by two options 30",
+  "qp_sha256": "3d912a405013d6bc40868aa63d70fdf61d2c94ba2d5cb1e6e9deda6796629294",
+  "ms_sha256": "d2b113ef388176c6503def03df3f63735985039b8418a4a2f7489ab9f09b20fc"
+ },
+ "2026_jan_PUnit_2|4": {
+  "topics": [
+   "2.07"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) purposes of standard costing, labour hours and costs, labour variances, variance policy 30",
+  "qp_sha256": "12a4dd69c84b6514d883f9f34ec8fde2c2d4584936fa8f912fd71850e3b1ad0a",
+  "ms_sha256": "1db0b47ca9860cbe97e0b0857833db13db8d7458687133bbeb52a274c085eecc"
+ },
+ "2026_jan_PUnit_2|5": {
+  "topics": [
+   "2.05",
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(c) IAS 7 operating activities and evaluating liquidity 21; (a) property, plant and equipment and provision for depreciation accounts 9",
+  "qp_sha256": "e2881152cdf8bb73acae40c7d95ded00a592d52f0a73a85832264efa275f470d",
+  "ms_sha256": "4ea0b4c9b56aa7e8ae51e15b40e451617a690e1a6ccbb1c2ef06ba4fdadc397f"
+ },
+ "2026_jan_PUnit_2|6": {
+  "topics": [
+   "2.09"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) unit material cost, output, break-even point, margin of safety, producing to order 30",
+  "qp_sha256": "a9f58e509a5512338ed5167645227a720ebe24130986a20c97ccbf500c468e3b",
+  "ms_sha256": "3f5bf66bb9c680d8657fca3d85f42404903a3fc72199c5774fb561a96dd2fe1c"
+ },
+ "2026_may-jun_PUnit_1|1": {
+  "topics": [
+   "1.10"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(e) admitting a partner with goodwill, appropriation account, current accounts, SFP, evaluating the admission 55",
+  "qp_sha256": "de11f9f0915f40daa5521c9fe26047ac5980f79f16de1afd5f44ee9d78ecbef8",
+  "ms_sha256": "c7513c4f2ed93b71444b0bcc67ee0578543cce72ccfd7a34593540d6d91152a6"
+ },
+ "2026_may-jun_PUnit_1|2": {
+  "topics": [
+   "1.06",
+   "1.02",
+   "1.14",
+   "1.01"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(d) correcting a customer account, error types 22; (e)(f) capital vs revenue expenditure 9; (g)(h) day work vs piecework 8; (i) concepts broken 4; evaluating self-funding the extension 12",
+  "qp_sha256": "9de05d380eedea2bc73bdd7e4f9c9bdf5c76124c302448a43c467d7e033224a4",
+  "ms_sha256": "1877b73fb471f953a8aee1361a295ee9dfb262c1ec58e2e622bbd69532ecb99e"
+ },
+ "2026_may-jun_PUnit_1|3": {
+  "topics": [
+   "1.17",
+   "1.01"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b)(d) current ratio, collection and payment periods, effects of a bad debt, ROCE and liquid ratio 20; (c)(e) credit control and the allowance for irrecoverable debts 10",
+  "qp_sha256": "cb94d0fbde363f2af2d3560eb4d43c236f1f642c67da2e1ae2116238fa3ff16b",
+  "ms_sha256": "f0d82277cf9caf40696feca4ab44b36e0d6627fb26eba9cf1c13f644c9428a63"
+ },
+ "2026_may-jun_PUnit_1|4": {
+  "topics": [
+   "1.11",
+   "1.04"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(c) club income and expenditure with competitions and raffles, five-year membership 20; (a) opening trial balance with accumulated fund 10",
+  "qp_sha256": "0968ceeac37f68318244ddeef8c338f5dad9106bcbf05685c60b3cc044fb9c1e",
+  "ms_sha256": "cb82297e8c01ca73f16dfa9d5c70bc7bbaccc03bc23afa1e0dcc0bd757792846"
+ },
+ "2026_may-jun_PUnit_1|5": {
+  "topics": [
+   "1.09",
+   "1.16"
+  ],
+  "difficulty": "medium",
+  "reason": "(d)(e) income statement and summarised bank account from incomplete records, first-year results 19; (a)-(c) job costing, variable cost, chargeable hours 11",
+  "qp_sha256": "71cf6dd53ccff5c1f60717c9750f17d263dc5be4fb991ee2e6e0279292aa0192",
+  "ms_sha256": "b6f32ec8c7e08ccf807c04aa91be7153bb4791fb29e4bfe93ff386414dfde716"
+ },
+ "2026_may-jun_PUnit_1|6": {
+  "topics": [
+   "1.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(e) causes of depreciation, reducing balance, total depreciation, van and disposal accounts, schedule, revaluation method 30",
+  "qp_sha256": "03d1842a18aaeda32c4f08aae3afd014069bde5418f27b386a42295dc4702381",
+  "ms_sha256": "1cb8269290ccf8446972594653ff805ffe7955d77a9b61a877457a2119a8d359"
+ },
+ "2026_may-jun_PUnit_2|1": {
+  "topics": [
+   "2.04",
+   "2.02"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) dividend per share, yield, EPS, P/E, cover, ROCE and evaluating performance 43; (a)(vi) gearing ratio 12",
+  "qp_sha256": "d6a91d98274e8f7dd0fd1114043202f2a863a042b353bfaa92068cdaf1fac1f6",
+  "ms_sha256": "74cb6f0e38b6af1504a00e86bc7628662f51a64f4a2c1b103b529fcab2d952fe"
+ },
+ "2026_may-jun_PUnit_2|2": {
+  "topics": [
+   "2.09"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(e) break-even in units and revenue, margin of safety, budgeted profit, break-even graph, choosing a product 55",
+  "qp_sha256": "c032531346c47487906040e0605bdcda7da8e110e8e3c13355b120be136f0938",
+  "ms_sha256": "ff3b7c962a3741326606417ca4c59b2a815a89d896766d7031c75b30116a3911"
+ },
+ "2026_may-jun_PUnit_2|3": {
+  "topics": [
+   "2.03"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(g) revaluation, cash and share offers, goodwill, recommending an offer 30",
+  "qp_sha256": "272d631ef52dd9a7bddbba0f67ef85a9407b21aff33551604ed620b97fa8dabe",
+  "ms_sha256": "14be1b60da8b54fd6d1e91fbc2eb20b38f7f1571809c1e06d6c42f0f59d2a528"
+ },
+ "2026_may-jun_PUnit_2|5": {
+  "topics": [
+   "2.02"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) share capital, application and allotment, premium and call accounts, bonus vs rights issues, issuing shares 30",
+  "qp_sha256": "848e9f2ea45ce333b60a754acb4114fd58eb1e7153765094a6a5900d495bca50",
+  "ms_sha256": "832d10c6f701ffd40e946d061232423b1b17cca2afc65a8065706ea06371d9a6"
+ },
+ "2026_may-jun_PUnit_2|6": {
+  "topics": [
+   "2.10"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) marginal and absorption costing income statements and evaluating dual reporting 30",
+  "qp_sha256": "cb28507d0ff52d4575c879299456758ce3d277f71b736190e2941587b330b441",
+  "ms_sha256": "7e942048da0ec87f00eb0be1f8998be1612e47bfb9843a3e279adcbc7119a277"
+ }
+}

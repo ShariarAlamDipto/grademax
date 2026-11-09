@@ -11,7 +11,7 @@ const EXAM_PAPER_FILTER_CODES: readonly string[] = []
 // Whole questions grouped by specification chapter; one question may cover several.
 // IAL Accounting (WAC) is chapterwise from its first publish (scripts/onboard_ial_accounting.py).
 // Cambridge IGCSE Physics (0625) uses the six syllabus topics (scripts/onboard_cambridge_physics.py).
-const CHAPTER_FILTER_CODES: readonly string[] = ['4CP1', '4CP0', '4BS1', '4BS0', '4EC1', '4EC0', 'WAC', '0625']
+const CHAPTER_FILTER_CODES: readonly string[] = ['4CP1', '4CP0', '4BS1', '4BS0', '4EC1', '4EC0', '4IT1', 'WAC', 'WBS', '0625']
 
 export function usesExamPaperFilters(code: string): boolean {
   return EXAM_PAPER_FILTER_CODES.includes(code)

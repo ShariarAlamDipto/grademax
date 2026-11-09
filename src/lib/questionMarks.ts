@@ -3,6 +3,9 @@
 // (about 10,000 entries) stay out of the browser bundle.
 import commerceMarks from './commerceQuestionMarks.json'
 import computerScienceMarks from './computerScienceQuestionMarks.json'
+import ialAccountingMarks from './ialAccountingQuestionMarks.json'
+import ialBusinessMarks from './ialBusinessQuestionMarks.json'
+import ictMarks from './ictQuestionMarks.json'
 // Marks printed on each question paper ("Total for Question N is M marks"),
 // one file per subject. Regenerate with
 // scripts/extract_printed_question_marks.py --subject <CODE>.
@@ -35,7 +38,7 @@ const knownMarks: Readonly<Record<string, number>> = {
   ...printed4PM1, ...printedWMA11, ...printedWMA12, ...printedWMA13, ...printedWMA14,
   ...printedWME01, ...printedWST01, ...printed0625,
   // Hand-made tables; they agree with the printed totals and win on a clash.
-  ...commerceMarks, ...computerScienceMarks,
+  ...commerceMarks, ...computerScienceMarks, ...ialAccountingMarks, ...ialBusinessMarks, ...ictMarks,
 }
 
 export function getQuestionMarks(paperId: string, questionNumber: string): number | null {

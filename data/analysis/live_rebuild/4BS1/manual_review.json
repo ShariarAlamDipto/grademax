@@ -4263,5 +4263,61 @@
    ]
   ],
   "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-21; labels Q4 only, every QP part present"
+ },
+ "2025_oct-nov_P1|1": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/01 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/01 November 2025; the Paperlords QP carries the same barcode as our QP (P78969A, Ocean Vibes case named 45 times in the scheme); the cut names only Q1 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "609a740ff7d27dfbda4467989f042c19d34c8ee411a7c9e606920d66b631c78a",
+  "ms_sha256": "1a5ea8a8bf78e203cbc5024a8350ac0a7ad1eb5d87b1a0d0b9b9b2f215e74d2e"
+ },
+ "2025_oct-nov_P1|2": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/01 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/01 November 2025; the Paperlords QP carries the same barcode as our QP (P78969A, Ocean Vibes case named 45 times in the scheme); the cut names only Q2 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "a6822e955237ce31c1ee7c12a17d5b45bec73f3b276119a7d32f49cb7a037141",
+  "ms_sha256": "024865468af77f90bcb1e948daefa4cded33c115dde40fab2b767fc8b48df7b8"
+ },
+ "2025_oct-nov_P1|3": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/01 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/01 November 2025; the Paperlords QP carries the same barcode as our QP (P78969A, Ocean Vibes case named 45 times in the scheme); the cut names only Q3 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "3d652340ee30551dc5c5a44342fa397b3861a70bf695459e34888427ac9dc51e",
+  "ms_sha256": "5f62ce0dc7db2c386b5a6637430689177582706210402c10bd063accf91ee58b"
+ },
+ "2025_oct-nov_P1|4": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/01 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/01 November 2025; the Paperlords QP carries the same barcode as our QP (P78969A, Ocean Vibes case named 45 times in the scheme); the cut names only Q4 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "a4893126c880803b93f11f84f4a36e1c0730536f696e6b3885eb7196da360af0",
+  "ms_sha256": "3f37c75052dfff9e18f7ec16a94cfb658fb180586e08e380ac9e8479e138a1c3"
+ },
+ "2025_oct-nov_P2|1": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/02 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/02 November 2025; the Paperlords QP carries the same barcode as our QP (P78971A, Samsung case named 42 times in the scheme); the cut names only Q1 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "f57156e281fba8c8a8258294cbbe612530c1f9c637a59bc6dd0f1466228e3904",
+  "ms_sha256": "088ccb9ddb10c000ead45a8bb76ac108925fa75044b756d3a181b26815cba976"
+ },
+ "2025_oct-nov_P2|2": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/02 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/02 November 2025; the Paperlords QP carries the same barcode as our QP (P78971A, Samsung case named 42 times in the scheme); the cut names only Q2 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "5e8512afd4e016b5922c725b6b897a5e1031566b158b17ae98db85447365f471",
+  "ms_sha256": "f20b6bce7d23fca6a9dbe7f43563c2e775b6da83b3dad747787d8fc878377332"
+ },
+ "2025_oct-nov_P2|3": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/02 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/02 November 2025; the Paperlords QP carries the same barcode as our QP (P78971A, Samsung case named 42 times in the scheme); the cut names only Q3 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "7b21805cc57121d2817c867d40222c78b591f4c22ece15cc0be6a2b7e385e4d0",
+  "ms_sha256": "d8bd2200f980e07a3d3f7e905194af45cc460911c8d630f282c30274b9e56202"
+ },
+ "2025_oct-nov_P2|4": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "checked 2026-11-09: the site has no Oct/Nov 2025 scheme (Pearson time-locks the series); Pearson's 4BS1/02 November 2025 scheme was taken from Paperlords. Its cover prints 4BS1/02 November 2025; the Paperlords QP carries the same barcode as our QP (P78971A, Samsung case named 42 times in the scheme); the cut names only Q4 and covers every part",
+  "source": "https://archive.paperlords.org/library/IGCSE/Business%20Studies/Nov%202025/",
+  "qp_sha256": "bb75724bd18ecedd10ebc74fc17fe8226f93dc37fe26b50d1ef8588137d26e07",
+  "ms_sha256": "ac4f25086b9ded9e331ca3c8050b6b2fad816f8f6f64ac8771f5a7c088f17e47"
  }
 }

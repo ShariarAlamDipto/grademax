@@ -1,0 +1,1046 @@
+{
+ "2019_may-jun_P1R|1": {
+  "topics": [
+   "2.1",
+   "1.5",
+   "1.3",
+   "1.4",
+   "1.7",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(b)(i)(j) wired/wireless drawbacks, TV broadcast diagram, interference 10; (c)(g) SD card and solid state drawback 3; (f)(h) utility software and OS 3; (a) motion sensor 2; (e) processor speed 2; (d) convergence 1",
+  "qp_sha256": "0bc3843c64ce5d1a88a9df77017f172688a2a054305dc09aaf906961880d1d0d",
+  "ms_sha256": "c3dfd85f4e68599eeef45e7701b42edd984f3aff95bcc3d0ca52901a1b0e3285"
+ },
+ "2019_may-jun_P1R|2": {
+  "topics": [
+   "3.1",
+   "2.5",
+   "4.1",
+   "4.3",
+   "2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(c) spoofed login page 4; (e) PIN system 3; (b)(d) online TV drawbacks 4; (f)(g) hosted vs local applications 4; (a) gateway 2",
+  "qp_sha256": "730349ead993f4d52897c0db3e1dc263061f01d6d4d6d6d1340907657af5dc5b",
+  "ms_sha256": "1efd1f230fcb48adc6355b11a5f99e5c95b199207f5b6fa479e3060602233c50"
+ },
+ "2019_may-jun_P1R|3": {
+  "topics": [
+   "2.1",
+   "2.2",
+   "1.5",
+   "4.2",
+   "2.5",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) Wi-Fi Direct vs infrared, distance 5; (f) bits in 3 KiB 3; (g) transactional data 4; (c) encryption 2; (d)(e) GPS 4",
+  "qp_sha256": "5bae101a3fe794d67821f6d0d25babc29117d2461d862d9532b2bf217c4dc095",
+  "ms_sha256": "663f2bf5baca4a0dfc0dff98045683aeda24912922d0816c0997fce8e1b006b0"
+ },
+ "2019_may-jun_P1R|4": {
+  "topics": [
+   "3.5",
+   "3.9",
+   "2.5",
+   "4.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(e) less-restricted network access and society 8; (a)(b) fitness for purpose, ranking, search engines 9; (d) firewall 3; (c) payment method 1",
+  "qp_sha256": "31492db6e8446d0f7d8b5bfb0889b89905045df29b7d3442d767fc9129b2e35f",
+  "ms_sha256": "05ed6b7dd88298f7ad02dc67133f3a424f773abafd8b0170a75b14a5ae21ded0"
+ },
+ "2019_may-jun_P1R|5": {
+  "topics": [
+   "3.6",
+   "1.8",
+   "2.4",
+   "3.8",
+   "5.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) impact of wikis on learning 8; (b) configuring ICT for accessibility 4; (c)(d) roaming profiles, client-server 5; (e) cyber-bullying 3; (f) office productivity tools 2",
+  "qp_sha256": "bad3722bccaae7d2235bd3d195285dbbf694a5267c1bec9dd05fc0141861dd27",
+  "ms_sha256": "7fe322034436e52449110ea7da74580bf6aab9e1ebc664f2470640720b990493"
+ },
+ "2019_may-jun_P1|1": {
+  "topics": [
+   "2.1",
+   "2.2",
+   "1.3",
+   "1.4",
+   "1.7",
+   "1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(b)(c)(d) wired vs wireless, SIM connectivity, sharing a connection and bandwidth 11; (g)(i) application and open source software 3; (a) motion sensor 2; (f) CPU function 2; (h) solid state storage 2",
+  "qp_sha256": "ac1e0cb6fd397d781a301e1e5108e3b44baf1b6c28a11af2e91402b1b376f5af",
+  "ms_sha256": "55c34545e23537336ee1b09ffb3831afe5ae22aa29636e8a220e6df61de705d3"
+ },
+ "2019_may-jun_P1|2": {
+  "topics": [
+   "3.1",
+   "2.5",
+   "4.1",
+   "4.3",
+   "2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(c) ransomware 4; (e) preventing unauthorised access 3; (b)(d) online TV and connecting to a TV 4; (f)(g) hosted vs locally installed applications 4; (a) router 2",
+  "qp_sha256": "ec6c5dbfe65d3171a8903d682034d73254aee2e6d1e915fcde14db6045017629",
+  "ms_sha256": "21523c9dd19453bde3576fa99097f81c33045eeee77d0e5e96a3ef66d71a45b1"
+ },
+ "2019_may-jun_P1|3": {
+  "topics": [
+   "2.1",
+   "2.2",
+   "2.5",
+   "3.1",
+   "1.5",
+   "3.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) Bluetooth vs infrared, transfer speed 5; (c) encryption 2; (d)(e) GPS data and social network risk 4; (f) bits in 4 MiB 3; (g) internet and companies selling goods 4",
+  "qp_sha256": "80d55738867880eab68396a9393955021f526bcb2e1626af171ae664d8bda4b9",
+  "ms_sha256": "b2502eb22b67618baad5e24da4242014baf49e228f5d1ba5b106c31ac94c75c8"
+ },
+ "2019_may-jun_P1|4": {
+  "topics": [
+   "3.9",
+   "3.5",
+   "2.5",
+   "2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)-(c) fitness for purpose, ranking, keywords, personalised results 9; (f) cloud services and the information rich and poor 8; (e) MAC filtering 3; (d) protocol 1",
+  "qp_sha256": "530f8803cc9c0ee48084eeb2958bf7a0d48a00fc38cc6ef0e707a064c8d0023f",
+  "ms_sha256": "1bf81a3ea83aff1c631ddde4239b00bb0e08e2751abbc166448457d45eac6c10"
+ },
+ "2019_may-jun_P1|5": {
+  "topics": [
+   "4.1",
+   "2.4",
+   "1.4",
+   "1.8",
+   "2.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) impact of VLEs on learners 8; (c) LAN benefits for teachers 4; (b) accessibility peripherals 4; (e)(d) acceptable use policy and backup 4; (f) communication software 2",
+  "qp_sha256": "e1b431745a795b9a3f3942a4244b4eb4998443ed9fc9e8e2a62cb28df6d6c87d",
+  "ms_sha256": "5792165f836735a50245961600a5d4e9ba91108d64342d413ca5d67aae29f7c0"
+ },
+ "2020_oct-nov_P1R|1": {
+  "topics": [
+   "1.5",
+   "1.6",
+   "3.8",
+   "3.2",
+   "3.5",
+   "2.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(b)(d)(g)(h) optical media, flash memory, bits in 64 GiB 9; (e) less RAM 3; (f) safe disposal 4; (a) shopping 2; (i) reduced access 2",
+  "qp_sha256": "3a9e631293404ba55708fb5df104060fd98f5e02c3fe138b0d89ad01617ef49e",
+  "ms_sha256": "9fc29dda2865308d9622d6150532532686007117e2bbaeacb04090e7e0a7a402"
+ },
+ "2020_oct-nov_P1R|2": {
+  "topics": [
+   "2.4",
+   "1.3",
+   "3.8",
+   "2.3",
+   "3.9"
+  ],
+  "difficulty": "medium",
+  "reason": "(c) LAN benefits 4; (e)(f) updating game software 6; (a) RSI 2; (b) connecting to the internet diagram 2; (d) search engine 2",
+  "qp_sha256": "394fffe3a3dba5289de919d6847ea07941d58eab9f95eaeb401f54db4280a9c7",
+  "ms_sha256": "d29227f8b93774363a5843dc540fdab0939d8e120754850975c38ef85b20301b"
+ },
+ "2020_oct-nov_P1R|3": {
+  "topics": [
+   "2.2",
+   "2.4",
+   "2.5",
+   "2.3",
+   "1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(a) WPA and latency 6; (b)(c) file server, peer-to-peer drawbacks 6; (d)(e) identifying computers, MAC 2; (g) laser printer 2",
+  "qp_sha256": "ae3b06601611f86d42d26f1105f0a10931d4b0e0bf1e2de23d336bfea35ccffa",
+  "ms_sha256": "3e3dee4513cf9d8c542213f631150c8524e013103d277b2a9290d160084edf95"
+ },
+ "2020_oct-nov_P1R|4": {
+  "topics": [
+   "3.2",
+   "4.1",
+   "2.5",
+   "3.6",
+   "3.9"
+  ],
+  "difficulty": "hard",
+  "reason": "(h) online goods and services and lifestyle 8; (c) VLE for research 4; (e)(f)(g) VPN, strong passwords, encryption 6; (a)(b) reference sites, plagiarism 2",
+  "qp_sha256": "4c981d9d375c7a67903d23fb031d84f9c3139188cde68ad9f5e00f3b52d31c76",
+  "ms_sha256": "56b48a5f4bc4b1079e3864f85bc3f38c17d806be6be176626aff4d3939d5fd3d"
+ },
+ "2020_oct-nov_P1R|5": {
+  "topics": [
+   "3.8",
+   "1.7",
+   "1.5",
+   "1.3",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) copyright and making games 8; (c) processor speed 4; (b) hard drive use 4; (d) proprietary software, memory management 4; (a)(e) NFC risk, threats 4",
+  "qp_sha256": "82c15e2099ddef9feb839fc5fb6f8e0a7df5e074b816162927614c43f418ba05",
+  "ms_sha256": "6243642803cfcfc239b0cbb4f9c21fc328a886934eaac59ac51dc1a4178cc16a"
+ },
+ "2020_oct-nov_P1|1": {
+  "topics": [
+   "1.6",
+   "3.8",
+   "1.5",
+   "3.2",
+   "3.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(d) RAM and ROM characteristics 7; (e) improper disposal and health 4; (b)(f)(g) storage media and bits in 128 GiB 5; (a) online vs high-street shopping 2; (h) unequal access 2",
+  "qp_sha256": "988e2c293d2c5a502ea2dfce1e4158f24ad1a59da588546408fbf3bb45b8915c",
+  "ms_sha256": "2cb107a2c8048c285f2c2232cdea1e864d39699d3eaee8d0d295cb0761e4d4a3"
+ },
+ "2020_oct-nov_P1|2": {
+  "topics": [
+   "1.3",
+   "1.4",
+   "3.8",
+   "2.1",
+   "1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(d)(e)(f) web browser, updating game software 6; (b)(h) game controllers and fingerprint scanner 4; (a) RSI 2; (c) PAN 2; (g) DVD-R 2",
+  "qp_sha256": "0b424eb236ab7941fd4bd986205af556320d2ecbb4eed942d897bb9c9b128c93",
+  "ms_sha256": "bdf4d42fcd26c750b7adae47645c8ee6c0d6603ac243f2aad465c3cfb6605c12"
+ },
+ "2020_oct-nov_P1|3": {
+  "topics": [
+   "2.2",
+   "2.4",
+   "2.3",
+   "1.4",
+   "2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(a) video call, latency 6; (d) client-server benefits 4; (b)(c)(e)(f) ISP, gateway, IP and MAC 4; (h) inkjet vs laser 4; (g) GPS without internet 1",
+  "qp_sha256": "d018f0eaf91e1b5e3b8a779c32adc14f367c7e9192a50a27c4d44a831ad414a8",
+  "ms_sha256": "d53eb49a14764c6805c09e9a7b623b00af679b59e9152a1f3f56b635736e1e46"
+ },
+ "2020_oct-nov_P1|4": {
+  "topics": [
+   "4.2",
+   "3.6",
+   "3.7",
+   "1.4",
+   "2.5",
+   "1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(h) transaction tracking 8; (a)(c) wiki and social bookmarking 5; (d) OMR 2; (e) VPN 2; (f)(g) compression 3; (b) plagiarism 1",
+  "qp_sha256": "133e95fd80e8a0e2fbd7a6a4852e8a1e680ebab33673822d2752546f6ebbe69b",
+  "ms_sha256": "233fe0abcdd4571de26e11ed8660d700381f1a11a801623d73d9b5064293943e"
+ },
+ "2020_oct-nov_P1|5": {
+  "topics": [
+   "3.1",
+   "4.1",
+   "2.2",
+   "1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(f)(e) tools to stay safe online and threats 10; (b) streaming 4; (c) bandwidth 3; (a) NFC 2; (d) open source and OS functions 4",
+  "qp_sha256": "08054e0759ab1204a0f6c99268001c177ca0db6d661813ea919d13c767a6571b",
+  "ms_sha256": "f4f44ae123ee5dff377f28619b641143c2cc59e697acd832c935f3bae6a4aeba"
+ },
+ "2021_may-jun_P1|1": {
+  "topics": [
+   "1.5",
+   "2.1",
+   "1.1",
+   "1.3",
+   "3.8"
+  ],
+  "difficulty": "easy",
+  "reason": "(b)(g)(h)(i)(ii) storage media, bits in 16 MiB, read/write speed 11; (a)(c) wireless connectivity, ISP 3; (d)(e)(f) processor, desktop replacement, working from home 4; (h)(iii)(iv) environment and backup software 3",
+  "qp_sha256": "44a50e2b5d884d8b8ca29243ddd5ae58fbef9ea7d489b9b2efccd680f1a6a8d7",
+  "ms_sha256": "4dd270bbdaea41f4719a4e4fd5d5f919fa64eb9bb755ffd6bf209074c79a0c09"
+ },
+ "2021_may-jun_P1|2": {
+  "topics": [
+   "2.1",
+   "4.3",
+   "3.6",
+   "1.4",
+   "3.1",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(f)(g)(h) mobile broadband and wired connectivity 5; (e) cloud services and learning 2; (a) reference sites 2; (b) phone input/output devices 3; (d) CAPTCHA 2; (c) file permissions 1",
+  "qp_sha256": "baf8b36b982e111b058714f939e702360c2fe6f9ffccb63aaea71aebdcc41c5b",
+  "ms_sha256": "98771041d10320d1f0717c1accb91b6baac1cadd635ce7cfab0e2c81fb9c3308"
+ },
+ "2021_may-jun_P1|3": {
+  "topics": [
+   "1.3",
+   "4.2",
+   "3.2",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b)(c) utility software and updates 6; (g) cookies and informed consent 6; (e) entertainment online 2; (d) Wi-Fi blocks streaming 2",
+  "qp_sha256": "00f7928c1e0750557f641d32ebe39940c12404cc1416af86e28560ab2c05fefc",
+  "ms_sha256": "c304e2d6bf3e7a715e26aeec75efae30f9e6eb8c2fdb57df2b0a2815a96e4f35"
+ },
+ "2021_may-jun_P1|4": {
+  "topics": [
+   "1.1",
+   "3.8",
+   "5.1",
+   "4.1",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) desktop vs other devices 8; (a)(c) copyright and protecting personal information 5; (e) sound editing and project management software 6; (b) selling music online 3; (d) embedded system 2",
+  "qp_sha256": "5dc991545ac7d0c47fda1508820b3e9aafd60364823c9bde2d93796b93537e26",
+  "ms_sha256": "d8d21b27be52d3320225f4bd8d3259617aeb3e73f1e1982957d1fb52870bac58"
+ },
+ "2021_may-jun_P1|5": {
+  "topics": [
+   "3.6",
+   "2.5",
+   "2.3",
+   "4.1",
+   "4.3",
+   "5.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) online communities and socialising 8; (d)(e) securing payment data, WPA vs WEP 5; (b) network components 4; (c) streaming 2; (f) hosted applications 2; (a) image file size 2",
+  "qp_sha256": "150447253624a9f008c1352ba635b4572f251fe7182b84245af1820fb1b082bd",
+  "ms_sha256": "5d2bcf34f0c79ea8fb1a8496cbddbdc325320d2845c8dfa7b6cff75d9a9bd2e2"
+ },
+ "2021_oct-nov_P1|1": {
+  "topics": [
+   "1.4",
+   "1.5",
+   "1.6",
+   "1.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(d)(e)(f) printers, cache, hardware characteristics, storage labelling 11; (c) magnetic tape 2; (g) RAM 2; (h) print spooling 2; (a)(b) desktop replacement, backup 2",
+  "qp_sha256": "bcabd5f73fb9c514292c4904217ba169b8b41026db331d24b3b927c7e1506c42",
+  "ms_sha256": "82698254096a93f64b2211a965a77ba1d9df5aff5be688047efcfc29fa817a6f"
+ },
+ "2021_oct-nov_P1|2": {
+  "topics": [
+   "1.3",
+   "3.1",
+   "3.6",
+   "1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d)(f) utility, application and systems software 8; (h) phishing 2; (g) blog features 2; (e) OMR 1",
+  "qp_sha256": "9f388792f60fbe7702bb6b2a59fb44eb395f98c2367745b78048d6076c77b607",
+  "ms_sha256": "a789a219a674c3799bb0332366871fa03d2ad2103cb5f3b8d48285613eb085f6"
+ },
+ "2021_oct-nov_P1|3": {
+  "topics": [
+   "3.7",
+   "4.3",
+   "3.4",
+   "4.1",
+   "4.2",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) acceptable behaviour policy challenges 4; (f) hosted applications 4; (d) internet and organisations 4; (b) online services and VLE 3; (a)(c) transaction tracking, information poor 2",
+  "qp_sha256": "f5e17193f3565110eeafe1ba2d29de86f935ed16ac94afde11667ff4a261a203",
+  "ms_sha256": "12e88db04308db50f12318a40190fd69e30bcd75dee7def0439b78873b8c8332"
+ },
+ "2021_oct-nov_P1|4": {
+  "topics": [
+   "2.1",
+   "3.3",
+   "3.9",
+   "3.8",
+   "2.5",
+   "2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(j) wireless vs wired home network 8; (a)(b) working from home 4; (e) search engines 4; (f) health and safety 4; (d)(h) password and firewall 4; (c)(g)(i) ISP, gateway, device identification 4",
+  "qp_sha256": "ef60791edc9b5bd3f97449528f15f313e64f0ffcf02dfb225b90c77300869216",
+  "ms_sha256": "be33f6bcd104d26404cab6acd6ba2dd220497eac39e22ed8c64b7c0b56342070"
+ },
+ "2021_oct-nov_P1|5": {
+  "topics": [
+   "3.8",
+   "4.1",
+   "1.1",
+   "4.3",
+   "1.8"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) ICT and the environment 8; (b)(e) streaming 4; (a) connecting devices 4; (c) sharing music online 2; (d) cloud backup 2; (f) accessibility configuration 2",
+  "qp_sha256": "2ad5e1f693327c420dbea029906d7282caca7e6b955a5bc42580da58a113997a",
+  "ms_sha256": "883a987c8f31309222e50e16bdc7761874b7646ba772cb98d33925147b0794e0"
+ },
+ "2022_may-jun_P1R|1": {
+  "topics": [
+   "1.5",
+   "1.6",
+   "2.1",
+   "3.6",
+   "1.7",
+   "3.8"
+  ],
+  "difficulty": "easy",
+  "reason": "(e)(g)(h) memory card capacity, flash memory, Blu-ray 12; (e)(iii)(g)(iv) ROM and volatile memory 2; (b)(c) USB and Wi-Fi 2; (d) social network drawback 2; (f) processor speed 2; (d)(ii) copyright 1",
+  "qp_sha256": "5d1d02e423cf06c551be0142eebafbe55db28ba366e1914bfe36e26cea735d76",
+  "ms_sha256": "44e28bf076129773518201271f8fa041811c58f0d6e7c554616967ddd40a0474"
+ },
+ "2022_may-jun_P1R|2": {
+  "topics": [
+   "2.3",
+   "2.5",
+   "2.4",
+   "2.2",
+   "5.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(i)-(iii) MAC vs IP, identification issues, switch and router 6; (b)(v)(e) protecting a network, user data, flood recovery 7; (b)(iv) networked printer 2; (c)(d) bit rate and latency 4; (f) project management 1",
+  "qp_sha256": "dd5f26a4a6e21549624c48b8569c5368ba0853b06bb0cc9840ff640c5cc4ef69",
+  "ms_sha256": "9564c0e958a2db669121457c046f482aa02ec8092b1c76b2aa8fba6e2d8582f7"
+ },
+ "2022_may-jun_P1R|3": {
+  "topics": [
+   "3.5",
+   "4.1",
+   "3.6",
+   "4.2",
+   "3.9"
+  ],
+  "difficulty": "medium",
+  "reason": "(d) narrower views and negative impacts of internet access 6; (a) online banking and targeted marketing 4; (e) online communities and trustworthy reviews 4; (b)(c) cookies, unsafe practice 2",
+  "qp_sha256": "cbdfbbe7a61946b8e856a276a1c839f6ee1c875368eb003aa533742f1a2c0517",
+  "ms_sha256": "223c0ff4dfa2bb07b1da74a511bc89c9bf20fca4a5c20103d45880d1051c4a74"
+ },
+ "2022_may-jun_P1R|4": {
+  "topics": [
+   "3.1",
+   "4.3",
+   "3.4",
+   "1.3",
+   "2.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) ICT protecting payment systems 8; (b) hosted storage drawback 2; (a) internet and employment 2; (c) web browser 2; (d)(e) weak password, phishing 4",
+  "qp_sha256": "6b1fce1ea6bea557c027759f8fbd1e76994f720df547a1ec1895d613ed336236",
+  "ms_sha256": "71b5ca5614dfb90aba0937b1fcfb9c0449213a3cc9bb0b791ed6cd05c24b18ed"
+ },
+ "2022_may-jun_P1R|5": {
+  "topics": [
+   "1.4",
+   "3.4",
+   "1.8",
+   "1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) sensors in car decisions 8; (b) internet and organisational communication 4; (c) configuring software for disability 2; (a)(d)(e)(f) download requirements, updates, compression, defragmentation 7",
+  "qp_sha256": "15eeddf2794401606c577b8fbd40c56a83616d23b763857744f6a983d2fab901",
+  "ms_sha256": "89b4f0d808b2cb2a716780022359c707449e12d7a02a906bfd9aed0c273f0763"
+ },
+ "2022_may-jun_P1|1": {
+  "topics": [
+   "1.5",
+   "1.6",
+   "1.1",
+   "2.1",
+   "3.6",
+   "1.7"
+  ],
+  "difficulty": "easy",
+  "reason": "(e)(g) memory card capacity, flash, optical drive 12; (e)(iii) ROM 1; (a)(h) camcorder and embedded systems 2; (b)(c) USB and Wi-Fi vs Bluetooth 2; (d) sharing photos on a social network 3; (f) processor speed 2",
+  "qp_sha256": "9d055f0c6091fffc9ada3f1531fdd149e46883e3e137861a963f45cd75cd3199",
+  "ms_sha256": "25f3e2d6fce774f655ef64474634499bb949d48dba6020f831358297fac67628"
+ },
+ "2022_may-jun_P1|2": {
+  "topics": [
+   "2.3",
+   "2.5",
+   "2.4",
+   "2.2",
+   "1.3",
+   "1.4",
+   "5.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(i)-(iii)(vi) identifying devices, LAN vs WAN, gateway 7; (b)(v)(e)(ii) protecting a network, backups 5; (b)(iv) networked printer 2; (c)(d) pixelation and latency 4; (e)(i) network operating system 2; (a) OCR 1; (f) critical path 1",
+  "qp_sha256": "e5c1c17d1b1bbb01bb7dd513cf8e6c9eb77b276909cc6a1e4a1ba8342a5d2f3a",
+  "ms_sha256": "f775db43ae283b13840c1a2802d070869bd20cd10fd3cc9221ceafd29ae5d635"
+ },
+ "2022_may-jun_P1|3": {
+  "topics": [
+   "3.6",
+   "3.7",
+   "4.1",
+   "3.5",
+   "4.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) wiki vs forum and acceptable behaviour policy 6; (a) online services and travel booking 4; (d) technology and society 4; (b)(c) cookies, safe practice 2",
+  "qp_sha256": "b099c2a10c7a4b12cf178daa1a500db2f55a05d910c5bbc807849dab2617721e",
+  "ms_sha256": "47c8f7bdc2b45b583cf62292c2d27c937fedcfe3adad115fd01948299b980039"
+ },
+ "2022_may-jun_P1|4": {
+  "topics": [
+   "2.2",
+   "4.3",
+   "3.1",
+   "3.3",
+   "2.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) landline vs mobile broadband for rural communities 8; (b) hosted applications 3; (e) pharming 2; (a) internet and working 2; (c)(d) filter software, strong password 4",
+  "qp_sha256": "12dc13e064b1d1dc9a3c6187762c0baf1c8a88fb7b5dce5373d47701c580d7e5",
+  "ms_sha256": "2646a5d2dac2c1205d2aba5c24801f3453ad829a9f2a49f272435427231ec9bd"
+ },
+ "2022_may-jun_P1|5": {
+  "topics": [
+   "3.8",
+   "1.3",
+   "1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) monitoring movements and individual rights 8; (a)-(c)(e)(f) local software, communication software, updates, defragmentation, compression 11; (d) input devices for accessibility 2",
+  "qp_sha256": "8db1f74346b672f5787a24af359af0ac8a698b5ba438238e27461bbcb02809e3",
+  "ms_sha256": "6ecc1957c8adee00770de14c35fcac3260ddedc49c58f8beda902e26a5383734"
+ },
+ "2023_may-jun_P1R|1": {
+  "topics": [
+   "2.5",
+   "2.3",
+   "2.1",
+   "3.1",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) anti-malware and other security methods 6; (a)-(c) network, WAN vs LAN, router, server 7; (e)(f) wireless methods, bandwidth 5; (d) network filter 2; (h) working from home drawbacks 2",
+  "qp_sha256": "bc50ca839e005d46b5c010448763ab6bcb25c93a248c052e99a89c62585ad4b6",
+  "ms_sha256": "09ea6765e7055446763967e6248ad161410d4d8139cac23e0c7ef97d881daf22"
+ },
+ "2023_may-jun_P1R|2": {
+  "topics": [
+   "1.5",
+   "1.1",
+   "1.6",
+   "1.7"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) optical disk, defragmentation diagram, storage units, SSD for portable devices 8; (a)(b) embedded system and microprocessor 3; (f)(g) main memory and ROM vs RAM 3; (c) processor speed 1",
+  "qp_sha256": "51b6ed940783dc61ec69c6e5ef448eb973943abceca090e4dc10fbbf0415b771",
+  "ms_sha256": "6282a0eaeee40a7d20ddd8aa1a9d8946bc273fc595070f24f045eadef2193860"
+ },
+ "2023_may-jun_P1R|3": {
+  "topics": [
+   "2.5",
+   "3.1",
+   "2.2",
+   "3.6",
+   "4.3",
+   "1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(h) VPN, payment systems and protocol 5; (h)(iii) phishing email 2; (f) microwave interference and utility software 4; (a)(b)(d) online communities, privacy, location 5; (e) local vs hosted software 2; (g) emailing photos 2",
+  "qp_sha256": "318aa30f56d4b83a118afdad828169cb14f3baef03e9ba2a7dcc97b86db1bc09",
+  "ms_sha256": "e9376b64afc37533407fab53dedf2219fecc711aa5a034c4813869aa4ba4a95f"
+ },
+ "2023_may-jun_P1R|4": {
+  "topics": [
+   "3.5",
+   "4.1",
+   "3.9",
+   "1.4",
+   "3.8"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) digital divide and education 8; (b)(d) online learning from video, school services 3; (c) search improvement and personalised results 4; (a) input devices and latency 3; (e) online services and the environment 2",
+  "qp_sha256": "86b8a6a79603de3b7b1cc07d6e6fd9879eb009c021c636f08821a1bb5839e64a",
+  "ms_sha256": "c4bf47204136c6ae58884b89f9b089fc4326820de4e8b241ee11fb28e599c69e"
+ },
+ "2023_may-jun_P1R|5": {
+  "topics": [
+   "3.6",
+   "3.3",
+   "2.3",
+   "1.3",
+   "1.4",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) justify using a video sharing site 8; (e) internet and team working, safety 6; (c) MAC address 2; (b) software licensing 2; (a) output devices 2; (d) encryption 1",
+  "qp_sha256": "af7f180fcb45c9155be250a0cc3fc9f49ed777b64d420ea804baee80e9bcb04c",
+  "ms_sha256": "965c3bc79985a4f26c40022ff373f56c646b82f285fe821363d5e57647298b1e"
+ },
+ "2023_may-jun_P1|1": {
+  "topics": [
+   "2.3",
+   "2.1",
+   "3.1",
+   "2.5",
+   "3.3",
+   "2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(a)(b) tethering, LAN vs WAN, wireless access point, gateway 7; (d)(e) wireless methods and connection characteristics 5; (g) malware types 4; (f)(h) VPN and filters 4; (c) working from home 2; (e)(ii) latency 1",
+  "qp_sha256": "148e80a60ed05be2ba80c818cf832c8eaf0f98231a56c8ccf1f9c3717db4cd3f",
+  "ms_sha256": "edfc9170309febdc538e6fd910badfdf1f763cb7714391548ca6f12f8729e403"
+ },
+ "2023_may-jun_P1|2": {
+  "topics": [
+   "1.5",
+   "1.4",
+   "1.6",
+   "1.7",
+   "1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(d) hard disk, defragmentation diagram, storage units, HDD vs tape, local storage 8; (a) distance sensor in an embedded system 3; (f) memory 2; (b)(e) processor 2; (g) OS function 1",
+  "qp_sha256": "227972f1d9eed0defcfd8d0ff27a73e2ad3c7969c53cb76b84565f65430a6811",
+  "ms_sha256": "0b9a1c1416d5ec1cf018cb4d81e4e878ad70ab614c40f71ae54929375e4aeb15"
+ },
+ "2023_may-jun_P1|3": {
+  "topics": [
+   "2.2",
+   "2.5",
+   "3.6",
+   "4.2",
+   "4.3",
+   "1.8"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) distance and compression in transfer 4; (h) payment protocols, encryption, two-factor message 5; (a)(e) online community and avatars 3; (c) transactional data 2; (d) hosted software 2; (g) website accessibility 2",
+  "qp_sha256": "97625b33135cb37a474ac5eb9dc9414f08922f6b985c177067ffbea6bf8aedac",
+  "ms_sha256": "a7e61f7494dcf7e6532109c12399f8fb3c961d5ba71834bd627a82848afe009f"
+ },
+ "2023_may-jun_P1|4": {
+  "topics": [
+   "3.9",
+   "1.4",
+   "4.1",
+   "3.8",
+   "3.6"
+  ],
+  "difficulty": "hard",
+  "reason": "(f)(d)(i) reliability of online information and improving a search 10; (b)(i)(d)(ii) output devices and accessibility peripheral 4; (c) comments on video content 2; (e) online gaming 2; (a) server environmental impact 1",
+  "qp_sha256": "affd4b4872edbf1d5ae1390d60b9a488351a4cd41e760b34f88915c4cd2f8dd6",
+  "ms_sha256": "5de9e34d46f691c6747451fce18048d9905921e7e23fe48b4ae6fee6c4be0a06"
+ },
+ "2023_may-jun_P1|5": {
+  "topics": [
+   "3.8",
+   "3.3",
+   "1.4",
+   "1.3",
+   "2.3",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) plagiarism and ICT 8; (f) internet and remote team working 4; (a) input devices 2; (b) utility software 2; (c)(d) router and IP address 3; (e) staying safe online 2",
+  "qp_sha256": "f43de5c95a28f0cb1878e52ab8ff31fa6c45df36a2262c9a825ace8531855326",
+  "ms_sha256": "f4e9bc9de64113fe32693259b2f34e8cabefe81441b21701e32373c6c4a526ec"
+ },
+ "2023_oct-nov_P1|1": {
+  "topics": [
+   "2.4",
+   "2.1",
+   "4.1",
+   "2.3",
+   "2.5",
+   "1.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) PAN/LAN/WAN, peer-to-peer, MAC, wired network, roaming profiles 12; (b)(f)(g)(h) online booking, payment systems, NFC tickets, auction site 8; (c)(d) encryption and firewall 3; (a) database software, mainframe 2; (e) server role 1",
+  "qp_sha256": "c282ca4918f3b3feee3bf97bd149de75413b6583007cc901f708f04e2d69aff6",
+  "ms_sha256": "9a0322eba1c4bdf6f6ab75af893c4fa4e09845380a0af4a3e62101a32fc8ea95"
+ },
+ "2023_oct-nov_P1|2": {
+  "topics": [
+   "1.5",
+   "1.3",
+   "1.6",
+   "1.7"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(d)(iii) optical storage devices and media, storage units 7; (d) memory management, open source, application software 6; (a) RAM size 2; (b) processor speed 1",
+  "qp_sha256": "977a1cfc68e3629f88c72b847a470cd1b74200827ad8b8fe38480b70bdbdd87b",
+  "ms_sha256": "ded20d87517868a21d658707ece710154c02f7bdbb6fafd98bd85cca1ae47c7d"
+ },
+ "2023_oct-nov_P1|3": {
+  "topics": [
+   "3.1",
+   "3.6",
+   "2.3",
+   "2.5",
+   "3.9",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(c)(e) online safety risks and controlling personal data 4; (a)(d) online communities and personalisation 4; (f) wired network components, compression, WPA vs WEP 6; (f)(iv) search rank 2; (g) unequal access 2",
+  "qp_sha256": "7ce782423a9492158d10d6c4f5c1fd65ac75a9066e8bfc0cca627e8ef3899959",
+  "ms_sha256": "68bd3c20bb661294b4d3b4021f3285eaf775de871fe27916562f7da679218bbb"
+ },
+ "2023_oct-nov_P1|4": {
+  "topics": [
+   "3.8",
+   "1.2",
+   "1.4",
+   "2.2",
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(d) legal and ethical implications of monitoring 8; (a)(b) smartphone and tablet features, tethering 6; (c) barcode scanner and wired connection 5; (c)(iv) cloud hosting 2",
+  "qp_sha256": "df743b18e97f2f536b8bcb2ee68fe82999811c2b535d883790e9579b1471ec7c",
+  "ms_sha256": "e949214d2f0ad4c5d0f02573bebf2fc1eefc153a8b4d4e8748d051eaf62733af"
+ },
+ "2023_oct-nov_P1|5": {
+  "topics": [
+   "3.8",
+   "3.4",
+   "3.3",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(d) sustainability of ICT 8; (a) internet and the venue 4; (c) negative social impacts of working online 4; (b) staying safe online 2",
+  "qp_sha256": "9c5bc0435a2ca91229c508b89581940383b93eb83376baea833be3ea300151e2",
+  "ms_sha256": "e6e316b6167e5a3d9b540636bfd8e458100e013b0e3cc13559ca14f03d526739"
+ },
+ "2024_may-jun_P1|1": {
+  "topics": [
+   "1.6",
+   "3.1",
+   "3.8",
+   "4.1",
+   "1.4",
+   "1.7"
+  ],
+  "difficulty": "easy",
+  "reason": "(f) RAM capacity expression and RAM vs storage 7; (h) subscription risks, securing personal information, relevant content 5; (e)(h)(iii) copyright and data protection law 6; (c)(d) streaming 3; (a)(b) input device and latency 3; (g) processor speed and expansion 2",
+  "qp_sha256": "7e33abb5b077196ff80020e3597bbc23099add56e0fc8b5ab5d18c414a3b9bb8",
+  "ms_sha256": "0d15498e502317005587f7bd586fd8e6eee6b15eeb1d7dfa23d2b58d8081f1fb"
+ },
+ "2024_may-jun_P1|2": {
+  "topics": [
+   "3.6",
+   "3.7",
+   "3.9",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(d)(f) online community threats, moderators, social networks and reach 8; (e) reliability and plagiarism 4; (a)(b) choosing an online community 3; (g) online safety 1",
+  "qp_sha256": "9f80362de8e147a48889103900350e10db45ef196c595e608d72ecdf0d8f2b33",
+  "ms_sha256": "aebb08baf5e8c7590abc814e4d0d5ac3853bed5b663ed623c681418a6b61ea32"
+ },
+ "2024_may-jun_P1|3": {
+  "topics": [
+   "2.3",
+   "2.1",
+   "2.4",
+   "2.5",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(a) ISP, components, web browser, IP and MAC 8; (b)(c)(g) wireless connectivity, WAN, GPS, tethering 8; (d)(e) client-server vs peer-to-peer 4; (f) VPN 2; (h) upload/download speeds 2",
+  "qp_sha256": "3dbcae64cba40ea87bd3ed627811ed362924ccec8b68903195c96761dc9af8a6",
+  "ms_sha256": "722e68c4aff6f56e9b3b6bed81a9262639b0b021bcbf6ee346db896ba90d25a5"
+ },
+ "2024_may-jun_P1|4": {
+  "topics": [
+   "1.5",
+   "1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(e) storage media types for a music collection 8 + (a) storage units 1; (b)-(d) OS function, open source software, updates 7",
+  "qp_sha256": "bb43b92751004dc93643672293a814420536101e60359c5d7b38b1e254f53eba",
+  "ms_sha256": "95bf992e8969af0d45844588a1f28a685b2b581418a8dc0efe6b3ddb88027eb1"
+ },
+ "2024_may-jun_P1|5": {
+  "topics": [
+   "3.5",
+   "3.9",
+   "3.8"
+  ],
+  "difficulty": "hard",
+  "reason": "(d) reliability of broadcast vs online information 8; (a)(b) digital divide and limited internet 6; (c) environmental impact of online shows 4",
+  "qp_sha256": "30baaa6f3d0fab946d60339e864420af25956eaa509eb89131d38eeeef3a703d",
+  "ms_sha256": "03675fed26b3b4816da471fd118245f93658f77dca46a0e875faf95e996a6b4f"
+ },
+ "2024_oct-nov_P1|1": {
+  "topics": [
+   "2.4",
+   "1.5",
+   "2.2",
+   "1.1",
+   "3.3",
+   "3.8"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) client-server and data transfer speed 7; (d)(g) internal storage and bits in 2 TiB 5; (a)(e) processor, portable computer 2; (f) 4G and working anywhere 2; (h)(iv) reusing devices 2; (b)(c) NFC and network types 3",
+  "qp_sha256": "07f55b9504d0047bcb0b21f6faaca3cc5451240c84e732a226a1f97458aa32cc",
+  "ms_sha256": "60935caf2c21a9c2ca1f3584a6b1c0b45ee872caf9b3e0f02619f4f300bf7fc3"
+ },
+ "2024_oct-nov_P1|2": {
+  "topics": [
+   "1.3",
+   "4.2",
+   "3.8",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(d) utility, hosted, resource management, open source software 8; (g) cookies and personalised information 4; (g)(iii) data protection 1; (e) safe social networking 2",
+  "qp_sha256": "de3cc336621b349e1f35ed0ff4833de9a435d18bb4ac7ed05e6158ebc0f2d18d",
+  "ms_sha256": "ccc52e9c52f8c5e7938e30fa203dabad6863f347960a6d3365de2261161c702a"
+ },
+ "2024_oct-nov_P1|3": {
+  "topics": [
+   "4.1",
+   "2.1",
+   "2.5",
+   "3.6",
+   "3.8",
+   "3.5",
+   "1.4",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e)(iii) VLE features 4; (c)(d)(g) Wi-Fi, wireless benefit, shielded copper cable 4; (a)(b) read/write access, firewall 3; (e)(i)(ii) user-generated reference sites 3; (e)(iv) paraphrasing 2; (e)(v) unequal access 2; (f)(i) output devices 2; (f)(ii) bandwidth 2",
+  "qp_sha256": "9f031babf81abacd207658cb5ad9185b0adfcbd9544af1b9bed9e294d9fa4187",
+  "ms_sha256": "ca1f225581b4f4707ac697175ae5a042ea5291502e3c695ae92d1e8ec01f2e16"
+ },
+ "2024_oct-nov_P1|4": {
+  "topics": [
+   "4.1",
+   "1.5",
+   "1.6",
+   "5.1",
+   "3.8"
+  ],
+  "difficulty": "hard",
+  "reason": "(e) digital payment systems 8 + (a) sharing digital products online 2; (b)(i) magnetic vs solid state storage 2; (b)(ii) RAM 2; (c) image editing software 2; (d) copyright 2",
+  "qp_sha256": "81be5c88c8d362868ad97733c728af7aecedc3d340f865b0f9783884e37f9ff1",
+  "ms_sha256": "fb0b1486b5cc505e02458cd5d93366687e8ab7d395453ee5a93496c7188808e5"
+ },
+ "2024_oct-nov_P1|5": {
+  "topics": [
+   "3.2",
+   "1.3",
+   "4.3",
+   "2.2",
+   "4.1",
+   "4.2",
+   "2.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(g) digital devices and free time 8; (f) network operating system 4; (e) hosted software 3; (a) optimising content for bandwidth 2; (b) streaming vs downloading 2; (c) targeted advertising 2; (d) transaction logs 2",
+  "qp_sha256": "6c144a607aa7898c91e95b74d50ad939b3a54715f0195a0ab9f53c59fa7ebdb8",
+  "ms_sha256": "db8b5f5ce781b4a7759834e67badc8769acf6f4dc979bdce26d116f6fb50483c"
+ },
+ "2025_may-jun_P1R|1": {
+  "topics": [
+   "2.3",
+   "2.1",
+   "3.8"
+  ],
+  "difficulty": "easy",
+  "reason": "(e)(f)(g)(i)(iv)(v) IP networks, network requirements, router, tethering, phone identification 11; (d)(g)(iii) Bluetooth, PAN 3; (h)(ii) copyright 2",
+  "qp_sha256": "0e79905e9aa067b3703480bf42a6c85056d5d3a05c3be6d5ecc8f45baf0881c1",
+  "ms_sha256": "609dfa3871b9d8ea15f8e8c1d198ad512339f318966f508c165ea768f9ff5106"
+ },
+ "2025_may-jun_P1R|2": {
+  "topics": [
+   "2.5",
+   "1.5",
+   "1.3",
+   "1.6",
+   "1.7"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) passwords, file permissions, biometrics 7; (a) storage units, backup, media, defragmentation 6; (c)(g) system and open source software, OS functions 6; (f) main memory types, RAM 4; (h) CPU speed 2",
+  "qp_sha256": "b6d5f88ac10400f6ef00ce38453bea43e62d0c69fe022248cc21c9de38b888d5",
+  "ms_sha256": "ff5f4d674a77d1da3d4726410851a72fb44d78884bc899bffdc2c7ca3895cef7"
+ },
+ "2025_may-jun_P1R|3": {
+  "topics": [
+   "3.4",
+   "4.3",
+   "1.4",
+   "3.1",
+   "3.5",
+   "3.7"
+  ],
+  "difficulty": "medium",
+  "reason": "(b) negative internet impacts on organisations 4; (c)(f)(i) local vs online storage and online workspaces 4; (a) output peripherals 2; (d) email attachment threats 2; (e) positive impacts on society 2; (f)(ii) responsible use policy 2",
+  "qp_sha256": "537c11992d98d31603a5d6cbea16af973b0980a0f150446e9697b4515d36eba4",
+  "ms_sha256": "06344f2d6e4c652a5a4c63775bfb3cc825b82977587d36cfe97e72deed10e433"
+ },
+ "2025_may-jun_P1R|4": {
+  "topics": [
+   "3.3",
+   "4.2",
+   "3.8",
+   "3.4",
+   "2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) employers and home working 8; (b) cookies 2; (c) monitoring digital communications 2; (d) AI in web design 2; (e) peer-to-peer drawback 2",
+  "qp_sha256": "0cf5bb6bc2a20b60f0032823cd5fcc24763e101892e82e1a6920caec3b0b9444",
+  "ms_sha256": "5087fb527e5cb631a7876e5545472528ddf82b31317dda640bcfcb06206098e4"
+ },
+ "2025_may-jun_P1R|5": {
+  "topics": [
+   "3.8",
+   "3.5",
+   "3.9"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) data protection requirements 8 + (c) disposal and the environment 2; (a)(b) unequal access and digital divide 4; (d)(e) search results 4",
+  "qp_sha256": "34ee0cbf780271db3169498860354d301c556a2b42420e399afa5b4c5e748b6d",
+  "ms_sha256": "4a60ea9ac3a0226c2279f5b202bb75c80f79cc4b6e3a01f3547b648fbfce7e26"
+ },
+ "2025_may-jun_P1|1": {
+  "topics": [
+   "2.3",
+   "2.1",
+   "1.3",
+   "4.3",
+   "2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(e)(g)(i)(iv)(v) device identification, gateway, tethering, SIM 8; (d)(g)(iii) 4G vs 3G, PAN 3; (f) web software 3; (b)(c) cloud and app access 2; (h)(ii) upload speed 2",
+  "qp_sha256": "4d68519d5856bfbc8796146f051a19bf5cc4d3ae1f5c6f1aac4cba7f081279f9",
+  "ms_sha256": "40f795117c38f8308f3c879df3b94192ef7c465d91e74858a8ff2dc8c58fac38"
+ },
+ "2025_may-jun_P1|2": {
+  "topics": [
+   "2.5",
+   "1.5",
+   "1.3",
+   "1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) secure passwords, file permissions, biometrics 7; (a) storage units, backup, energy, defragmentation 6; (c)(g)(ii) application and open source software, memory management 6; (f)(g)(i) memory types and more memory 4",
+  "qp_sha256": "2e80091e74ad0ca730e64498c967b9e4b7f43ebd36fb93e29b9aa1dd5320e89a",
+  "ms_sha256": "690d5818de0a2089ea39d9e7a066da7f1a1452a677ff8df32ebfaca516850a08"
+ },
+ "2025_may-jun_P1|3": {
+  "topics": [
+   "3.4",
+   "1.4",
+   "4.3",
+   "3.1",
+   "3.5",
+   "3.7",
+   "3.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(b) internet and organisations 4; (a) input peripherals 2; (c) online vs local storage 2; (d) email attachments 2; (e) negative social impacts 2; (f) online community safety 2; (g) online community features 2",
+  "qp_sha256": "6fef685da36a3afc1079b3df9a008d89a285c7ca9ff9039c055d15158b815e1d",
+  "ms_sha256": "f8d56a74ef997738f6d2d52d347b2342969d2840fc435113d1c37277f2bbc67b"
+ },
+ "2025_may-jun_P1|4": {
+  "topics": [
+   "3.3",
+   "4.1",
+   "4.2",
+   "3.8",
+   "3.4",
+   "2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) working from home 8; (a) shopping website features 2; (b) cookies 2; (c) data protection law 2; (d) AI and employment 2; (e) peer-to-peer vs client-server 2",
+  "qp_sha256": "a0180ee64b9160bfdc3e8c2bed2a27b4a1b6fbb3e6792f38fef5f275b5eb34e4",
+  "ms_sha256": "b7ed7e77dc62e49b3f88ade8c7ac03f6fac7e8490d52bebde359b41a7dc5da69"
+ },
+ "2025_may-jun_P1|5": {
+  "topics": [
+   "3.8",
+   "3.5",
+   "3.9"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) health effects of ICT 8 + (c) environmental impact of manufacture 2; (a)(b) unequal access and digital divide 4; (d)(e) search results fit for purpose 4",
+  "qp_sha256": "148d4cde3e4761b2ec0a903b2688dd819b6ddf7b4f84a13f4574094bfb2ddd75",
+  "ms_sha256": "8729d09830a00a99f1773ea1f55aeeed13cf8148f022ced193e0444b194e7f74"
+ },
+ "2025_oct-nov_P1|1": {
+  "topics": [
+   "2.3",
+   "2.1",
+   "1.4",
+   "1.7",
+   "1.3",
+   "1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(e) tethering diagram, connectivity effect, MAC address 6; (a)-(c) wired vs wireless connectivity 5; (d) tablet sensors 2; (f) clock speed 2; (g) utility and proprietary software 2; (h) magnetic storage 2",
+  "qp_sha256": "6700a091c01814a4bac162958406ca63286ef8f4e592ee57d3539b5524047dd0",
+  "ms_sha256": "b83f34e8615c0ad9de7b06ff6b6b77e2b708e7e1befec0e8528f6b665c0525a8"
+ },
+ "2025_oct-nov_P1|2": {
+  "topics": [
+   "1.3",
+   "1.1",
+   "1.4",
+   "1.5",
+   "2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(h)(m) application software, print spooling, proprietary software 10; (a)(b)(d) mainframe, embedded systems, personal computers 4; (e)(i) plotter and device types 5; (g) bits in 256 GiB 3; (f) router IP table 2",
+  "qp_sha256": "37dcbc50e93cc426f4cbf726b781d8bcef058cbb6d0da7096d10f470720fd61f",
+  "ms_sha256": "c50aae9318f903fc1b682f8497bb45d3cc63f4ea889e3df231d5417eaacf3300"
+ },
+ "2025_oct-nov_P1|3": {
+  "topics": [
+   "3.4",
+   "3.9",
+   "4.2",
+   "3.1",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(d) entertainment organisations online 4; (e) effective searching 4; (c) cookies and transactional data 3; (a) risks to data 2; (b) user authentication 2",
+  "qp_sha256": "8fa68ab7e2f609661eab58f83a57a454a9d2f0a72012516216dd0b6a47fbb5e3",
+  "ms_sha256": "6d084bffb6ccb7f8a9c50dd29423ef43be9606da1d2a4b4d5e55c059156daeb0"
+ },
+ "2025_oct-nov_P1|4": {
+  "topics": [
+   "3.8",
+   "3.4",
+   "1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) ethics of monitoring 8 + (d) data protection 2; (c)(e) internet and the taxi business, employment 6; (a) vehicle safety sensor 2",
+  "qp_sha256": "664c19b4930cbf1254342382fe0b86ca8969cbb00fbd1ba8666a6656e3ac549d",
+  "ms_sha256": "66fb37aa2ec35dd6b907b283b63f42ba2baa57431f67a05428f3a95fbe59f5c7"
+ },
+ "2025_oct-nov_P1|5": {
+  "topics": [
+   "3.8",
+   "3.7",
+   "3.6",
+   "3.9"
+  ],
+  "difficulty": "hard",
+  "reason": "(f) positive environmental impacts of ICT 8; (c)(d) acceptable use policy, reporting a post 4; (a)(b) video sharing features, community risks 4; (e) fitness for purpose 2",
+  "qp_sha256": "c84525813215668a444f434fa5743d6d9b971670043582f8255c53aeba249652",
+  "ms_sha256": "38dafbb2bfd83c1e760eb1b18c67cac6b93c23796d0ee0432982cbdecf5b1448"
+ }
+}

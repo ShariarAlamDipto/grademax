@@ -1,0 +1,401 @@
+{
+ "2022_may-jun_PUnit_1|1": {
+  "topics": [
+   "1.4",
+   "1.1",
+   "1.5",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) performance-related pay 10; (d) competition and passengers 8; (c) entrepreneurial motives 6; (a)(b) consumer income, total demand 6",
+  "qp_sha256": "a48f3dc212e729ae8d21e351c06b2bdb4fb28e138950aea91ac901df84d7beea",
+  "ms_sha256": "15f348bf8730a45ea288c8f8287032f9603c8311a8eef0f7c1d81a9de9a86440"
+ },
+ "2022_may-jun_PUnit_1|2": {
+  "topics": [
+   "1.3",
+   "1.1",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(d) social media and ethical sourcing 14; (a)(e) USP and product orientation 12; (b) income elasticity calc 4",
+  "qp_sha256": "cb04772f7741e573ca923ffa2629953d2ab102428e8d76539d286afed65a00a9",
+  "ms_sha256": "ffc34ab3a8ccee8f79dd5960dc7034287ea1c0d10c4bc93948416ef29c6f8003"
+ },
+ "2022_may-jun_PUnit_1|3": {
+  "topics": [
+   "1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate democratic leadership for the Virgin Group 20",
+  "qp_sha256": "c9ef4d121b7c7f7dfb079e56a35b90dc117f5cb8345a8b438bc074cf2b52b636",
+  "ms_sha256": "5388c5261f9eedb318ef3fc38e4e294e8ca61c872e3b48711a4f258ca3b41f08"
+ },
+ "2022_may-jun_PUnit_2|1": {
+  "topics": [
+   "2.3",
+   "2.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b)(e) revenue, net profit margin, price rise and the income statement 16; (c)(d) cell production and quality circles 14",
+  "qp_sha256": "68a0f328db2333412382bc16ce4e57a83f8f7cec0a6c9fdd8e5a7e5f44243bdc",
+  "ms_sha256": "2955544ac5b802899ef5e4791bff66be73a944055348c6ca9667a3f0929c0127"
+ },
+ "2022_may-jun_PUnit_2|2": {
+  "topics": [
+   "2.5",
+   "1.3",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(d) exchange-rate calc and copyright 12; (e) internet advertising 10; (a)(c) budget and sales forecasting 8",
+  "qp_sha256": "167c0864e93a5208912aaaa22f957a14b7f45b39f242ec28c8744acd0edd6fb5",
+  "ms_sha256": "6bc95bbf4aedfd47344e370a3fd70f5586392fed3381f01dcf67aefcc494758a"
+ },
+ "2022_may-jun_PUnit_2|3": {
+  "topics": [
+   "2.1"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate bank loan vs peer-to-peer funding 20",
+  "qp_sha256": "b059d84ec7aa10284bcab532df9d2044e65b2051fe3612c8bd63c295ff7b04aa",
+  "ms_sha256": "f84662b018356eee4e1290c143fcdbc09ebb904b563e4b50a734a45ad1a90990"
+ },
+ "2022_may-jun_PUnit_3|1": {
+  "topics": [
+   "3.2",
+   "3.4",
+   "3.1",
+   "1.2",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(d) inorganic growth 12; (e) internal stakeholders and a product recall 12; (c) mission statement 8; (a) supply and demand diagram 4; (b) operating profit margin 4",
+  "qp_sha256": "46c63a433d5820d0b5e97ea18bb1524eccfd3f596dafa584773c238aaae3e0f2",
+  "ms_sha256": "5c78f6263450a46bde3f76fe188f4306aecf1d2577a6e4c9d7033c0fe50944d1"
+ },
+ "2022_may-jun_PUnit_3|2": {
+  "topics": [
+   "3.3"
+  ],
+  "difficulty": "hard",
+  "reason": "critical path analysis calculations and evaluating CPA 20",
+  "qp_sha256": "e2b88b04e248f879ac77ac18aed84083cbd8cf02fcce85850f905834dc48727a",
+  "ms_sha256": "4b2e9080005ea03bac6f729d3e259c1a70bbd1d07e390c76c9dbed7e10a7008a"
+ },
+ "2022_may-jun_PUnit_3|3": {
+  "topics": [
+   "1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate financial rewards to recruit and retain employees 20",
+  "qp_sha256": "ffd6393bdc8a46ac59118e59f0af43c6ce0bbd7524d27ca6e68405ba4a31736e",
+  "ms_sha256": "c7c3c728e1839dd929cd737ecdc563cf3eca4a72953149b4b5c979bcf6fe4dfa"
+ },
+ "2022_may-jun_PUnit_4|1": {
+  "topics": [
+   "4.1",
+   "4.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b)(c)(e) GDP per capita, specialisation, growth and employment, trading bloc 28; (d) growth in developing economies and trade opportunities 12",
+  "qp_sha256": "daeb6e42542d12c8893d231c855c8510ec947ea22894f010ce25211e09e240db",
+  "ms_sha256": "af8b6095e9caf02e2d2ae520433896c604a675f7823aafce5ca61c834fdcc3b5"
+ },
+ "2022_may-jun_PUnit_4|2": {
+  "topics": [
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate adapting to local tastes and preferences 20",
+  "qp_sha256": "60c782202b4440406230dc36641eca7fbdf2765a69b74200084734efeeb22a61",
+  "ms_sha256": "710fa89496eaf4b12c6a1c9a5af747ca1f68dfac6043ac247bf8874e7689f1fa"
+ },
+ "2022_may-jun_PUnit_4|3": {
+  "topics": [
+   "4.2"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate push vs pull factors in location 20",
+  "qp_sha256": "d290d25e9adc10a3d855a0c803ba11614281516253ebbebfc5695c75829b7b56",
+  "ms_sha256": "71135d8f93bbc118948b8edc6a9e387212c7dfbdb4ce2d775a04dcb215fbb219"
+ },
+ "2025_may-jun_PUnit_4|1": {
+  "topics": [
+   "4.2",
+   "4.1",
+   "2.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(b)(d) emerging economy, ease of doing business 16; (a)(e) GDP per capita, free trade agreements 16; (c) peso depreciation and exporters 8",
+  "qp_sha256": "8b363726e1db3961f6cfd221349bdf904b187e9892f9b9fc5ddd27d7f362353f",
+  "ms_sha256": "ebf64751173be29e3e4bca77a61b46c024de992d0016cefa0e10920b9cd6b49a"
+ },
+ "2025_may-jun_PUnit_4|2": {
+  "topics": [
+   "4.4"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate legal controls on MNCs 20",
+  "qp_sha256": "5cb351a7d4808cc39b08b6095e580dcdd1dcc15168c63c9aa1494ff5fde349eb",
+  "ms_sha256": "96a6cb82e479e7f3b2401f5441b74bafd2b8d0bce2cb8c15cc6a4a273c528b49"
+ },
+ "2025_may-jun_PUnit_4|3": {
+  "topics": [
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate whether glocalisation is necessary 20",
+  "qp_sha256": "67d01687527cbf10ce7dde1ad3cac316061d600bae1be2c639aa46668a84d0bb",
+  "ms_sha256": "fa38a57e248916310d9107512229a247623f49b08d0bf6f9459425f4add11ac2"
+ },
+ "2026_jan_PUnit_1|1": {
+  "topics": [
+   "1.3",
+   "1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(d) building a brand, penetration pricing 14; (a)(b)(e) competition, revenue change, secondary research for market share 16",
+  "qp_sha256": "249c919b26bf99584a5c842cf58d5d5091ef30ab4b93545b1847d00d5064f83b",
+  "ms_sha256": "73542fa28f289697c5acc55ea0b7c3940d767dfe306e24743f2ad038cc8d9be1"
+ },
+ "2026_jan_PUnit_1|2": {
+  "topics": [
+   "1.3",
+   "1.4",
+   "1.1",
+   "1.2",
+   "1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) Boston Matrix 10; (d) laissez-faire leadership 8; (c) niche market 6; (b) PED calc 4; (a) business objective 2",
+  "qp_sha256": "cf0f577c0fe2d961bb126f1986ca3683bf79bb8f43afcdeee0ef080bedeb3e9b",
+  "ms_sha256": "94d6e9761a6980d63df02169c306839a95122a6fa9b6922e884f555fc56c30bb"
+ },
+ "2026_jan_PUnit_1|3": {
+  "topics": [
+   "1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate a tall organisational structure for Toyota 20",
+  "qp_sha256": "6e8ebceaff81d5ed7c96633b635196649f25a7b30483f7490987f38cb82db02c",
+  "ms_sha256": "40d64be49ab5c0c7327bad6141af7626a5b9b93517d8e0c824e00c2e4d8f1905"
+ },
+ "2026_jan_PUnit_2|1": {
+  "topics": [
+   "2.3",
+   "1.4",
+   "2.2",
+   "1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(e) operating profit margin, price rise and gross profit 14; (d) on-the-job training 8; (c) sales forecasting 6; (a) market share 2",
+  "qp_sha256": "49b089ecd533c6fb0351cc8e880318f19fd4f618129d3ef3f0d36270b439bdc1",
+  "ms_sha256": "de729eedf5fa397075d1af69fa7e4b84bc0a981884e65483c0275d2d7d6f1b03"
+ },
+ "2026_jan_PUnit_2|2": {
+  "topics": [
+   "2.4",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(c)(e) capacity utilisation, capital-intensive and flow production 20; (d) trademark 8",
+  "qp_sha256": "5b4f111485a7fd957acce64138e6456f3eb3f59b5976be50857038dec3e49523",
+  "ms_sha256": "27dfa489a74a9538474162f02bf45cf703313a275ec98e3c378b89682988b135"
+ },
+ "2026_jan_PUnit_2|3": {
+  "topics": [
+   "2.1"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate business angels vs crowdfunding 20",
+  "qp_sha256": "2c2d7d7dca9851c291c5c1a5dccc45b13db606f1e7096c373d02bebbc78507dc",
+  "ms_sha256": "474bb4701e5bbd2570977a756c4e71cd37023635897cf57420735ff7e6c7d584"
+ },
+ "2026_jan_PUnit_3|1": {
+  "topics": [
+   "3.2",
+   "3.1",
+   "3.5",
+   "3.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(d) conglomerate 12; (e) PESTLE and economic factors 12; (b)(c) labour turnover 12; (a) payback 4",
+  "qp_sha256": "d0cb730665afd563b844d838c2e24899d5e319accd45fd4573810ef387e747c0",
+  "ms_sha256": "d1680ac1053a47ee052d9c3949f057a2aee370167a5b69b678d01123ecbadef7"
+ },
+ "2026_jan_PUnit_3|2": {
+  "topics": [
+   "3.6"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate contingency planning and an IT failure 20",
+  "qp_sha256": "2114aa4f493df3908d35335d6692a0651cd7103173af968596d8b8a525258e84",
+  "ms_sha256": "bb78f64af42033f48b7ebdb379608665bec1ba0c8619a5b9b09a6523d656a230"
+ },
+ "2026_jan_PUnit_3|3": {
+  "topics": [
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate expansion using liquidity ratios 20",
+  "qp_sha256": "006730c656ab3e82d45e162d93045b6be2112efe11b56adf5e55c23bf404c595",
+  "ms_sha256": "80c65ab1562578a554039cf73c54773d319a9009de166671c95b9877335cd9bc"
+ },
+ "2026_jan_PUnit_4|1": {
+  "topics": [
+   "4.1",
+   "4.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b)(d)(e) GDP growth and its limits, WTO, ECTA membership 32; (c) inorganic growth to enter a market 8",
+  "qp_sha256": "b48e60b006d360344916bea46b9b5a91196e0d9ce89d6ecfec2e61ee34b3fded",
+  "ms_sha256": "675e3b895a68e4d3de99ffffb69c786ae10feb3254389c81fd8f40f7edf320fc"
+ },
+ "2026_jan_PUnit_4|2": {
+  "topics": [
+   "2.5",
+   "4.2"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate the impact of exchange-rate movements on international businesses 20",
+  "qp_sha256": "a48ce8d2d99ae284a323996b0efce603c5303cb13650fa0f2e93655526df4cbe",
+  "ms_sha256": "f72dedd5fb55c7f1ab64143808826c376f3ce4d4eea60bade11366a97a4fe4a5"
+ },
+ "2026_jan_PUnit_4|3": {
+  "topics": [
+   "3.2",
+   "4.2"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate whether economies of scale are needed for an international business 20",
+  "qp_sha256": "ad1f4889d3f92bae9d97e60e379b61fa87e75a408c7f5296e5e53715a260d62e",
+  "ms_sha256": "6a05aad67fb5193b42c4d80fa2daa9b739dc487cb55822a4c8ed2cba90200df5"
+ },
+ "2026_may-jun_PUnit_1|1": {
+  "topics": [
+   "1.5",
+   "1.1",
+   "1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(d)(e) customer satisfaction as objective, risks of starting up 18; (a)(b) competitive advantage, market share 6; (c) performance-related pay 6",
+  "qp_sha256": "35bf9b64ca524a6062c5f514952f4823a9e635cb82925394f01ba6ed4e870efe",
+  "ms_sha256": "8338681163b732ddc40e4b33ba3c9dcbd3e13cd73463892536bf64a32aa06597"
+ },
+ "2026_may-jun_PUnit_1|2": {
+  "topics": [
+   "1.1",
+   "1.3",
+   "1.4",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) segmenting the leisure market 10; (a)(c) viral marketing, pricing factors 8; (d) multi-skilled flexible workforce 8; (b) normal goods 4",
+  "qp_sha256": "8339c90f05c2dfb0ed513c892697873f9eb118e2f7d07169bf9213ba1da6f155",
+  "ms_sha256": "9fb807af7569b260a42f180ca10259ac301f3d80328f7dc30752a17e73b2e333"
+ },
+ "2026_may-jun_PUnit_1|3": {
+  "topics": [
+   "1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate internal vs external recruitment of senior managers 20",
+  "qp_sha256": "3010400e8263e70a1ac1e1bd8c94851d6df6b7a4db5a42e983fa33446b8dc562",
+  "ms_sha256": "25b7a38599c1bb442d879314052b7babb773c3fcb7ed7ac9479bc3d0354af238"
+ },
+ "2026_may-jun_PUnit_2|1": {
+  "topics": [
+   "2.5",
+   "2.3",
+   "2.1",
+   "2.2",
+   "1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) exchange-rate changes 10; (d) charging fees and profit 8; (c) sole trader 6; (b) contribution per bed 4; (a) advertising 2",
+  "qp_sha256": "e6c2ca55dbebf516d78dc8088abe643c20dff291aa880cc8adecdbd4e3db416b",
+  "ms_sha256": "d19abce6685b7a8e4cf9daf449b9f6fb84281ac43a728a29cda1b15b46f836c2"
+ },
+ "2026_may-jun_PUnit_2|2": {
+  "topics": [
+   "2.1",
+   "2.2",
+   "2.3",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(c)(d) franchisee, share capital 14; (e) historical budgets 10; (b) operating profit 4; (a) patent 2",
+  "qp_sha256": "49948cba4d976cdd086e4ce26ba16f9d8cee09b4397b436200b024d467965f91",
+  "ms_sha256": "3397e70faf8b8347d38e9810e4fb31ad13452c1c1698ab98d0f7e2aea31573e2"
+ },
+ "2026_may-jun_PUnit_2|3": {
+  "topics": [
+   "2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate reducing over-utilisation of capacity 20",
+  "qp_sha256": "b6cbc47a7b4be002a60fe26380266e591cc32304b39f2ac33b3e0aa053a01811",
+  "ms_sha256": "a9774adb25b8a7deebc9c9ec59baaaca98f47253359cee6cfcc2de89f5b85cc7"
+ },
+ "2026_may-jun_PUnit_3|1": {
+  "topics": [
+   "3.3",
+   "3.1",
+   "3.4",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(b)(c) contribution 12; (d) Porter's five forces 12; (e) CEO pay 12; (a) acid test ratio 4",
+  "qp_sha256": "316365889cd771fcdc122466e5ed164be5378eca7c0d78406b2dd5c4411167d4",
+  "ms_sha256": "6d5382df526ad159c585d116d0fcb809a3497d20584b54512e35177e6224dedb"
+ },
+ "2026_may-jun_PUnit_3|2": {
+  "topics": [
+   "3.2"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate the benefits of a takeover by Unilever 20",
+  "qp_sha256": "088befa24fad37ff5f39a9a1c9d51d0402f4e15c24a07fe411890eaa746131d2",
+  "ms_sha256": "b524e7a5772b4c04b524285f303c79e6791fdb14985b57719b01a51c109c7c4a"
+ },
+ "2026_may-jun_PUnit_3|3": {
+  "topics": [
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate SWOT analysis for Rolls-Royce 20",
+  "qp_sha256": "997e6d4f94be6654cb691b6b6320661ab9b02273b2a748aa9d1fdace518b8d58",
+  "ms_sha256": "620fc3532ced5dc1565a7d383ec69a4d67ee353880858ec224075979cff87edf"
+ },
+ "2026_may-jun_PUnit_4|1": {
+  "topics": [
+   "4.4",
+   "4.1",
+   "4.2",
+   "1.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(d)(e) FDI and ethical policy 24; (c) reduced quotas 8; (b) inorganic growth 4; (a) supply and demand diagram 4",
+  "qp_sha256": "a00bd3303f9574fd9e0f91aa99ce9781f04ebec8df0747050f5a29821cf3d431",
+  "ms_sha256": "1449cf48b65c171ae9e8748f6ca48cf1296fa2f8359db6678504d1c983dda234"
+ },
+ "2026_may-jun_PUnit_4|2": {
+  "topics": [
+   "4.4"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate whether MNCs can be controlled 20",
+  "qp_sha256": "71f55df065f3707140239d0ecc0b400f2ff31ab2e14a44cb765bd4cc684110d8",
+  "ms_sha256": "b4f84cc6c868582286e0a93e79df569831d6ef06f4a8ae7120020ad15bb6c537"
+ },
+ "2026_may-jun_PUnit_4|3": {
+  "topics": [
+   "4.2"
+  ],
+  "difficulty": "hard",
+  "reason": "evaluate a global joint venture as expansion 20",
+  "qp_sha256": "62214180aeb190f8f705ae0f6fcccdf81807099cfa9054f9f88d898367a2844a",
+  "ms_sha256": "7123286518b4dcbdc245998e8dcfdfc15832a841aaa4042ef597c4658f5b3121"
+ }
+}
