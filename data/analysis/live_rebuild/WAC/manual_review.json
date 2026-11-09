@@ -1,0 +1,37 @@
+{
+ "2022_may-jun_PUnit_2|2": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "read 2026-11-07: scheme holds every part of Q2 (inflows/outflows, payback, accounting rate of return, NPV, IRR, 12-mark evaluation) ending \"(Total marks for Question 2 = 55 marks)\"; the ARR part (c) is printed without its label",
+  "qp_sha256": "b7d8daa011a0e609c4edf5258794b5337b303810a7c9e628e95b93846d178838",
+  "ms_sha256": "fe3b3ab11a5ca3ce8841e98ceaa43c57e08021151aba7db0fd2f355ac4de5661",
+  "held_because": "scheme cut lacks part(s) ['c'] the question prints"
+ },
+ "2023_may-jun_PUnit_1|4": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "read 2026-11-07: scheme parts (a) 4, (b) 3, (c)(i) 9, (c)(ii) 8 and the 6-mark evaluation = 30, ending \"Q4 Total marks 30\"; Pearson labelled the evaluation (c) where the QP prints (d)",
+  "qp_sha256": "b057a38ac6de1f084e5dbbd3c2a3d8f2cc16394ae58063caf1a4eb73e7fc7b27",
+  "ms_sha256": "086d0203ac00ebbdf1c82cb361684b9436a55586fbf505180dc35085785dea94",
+  "held_because": "scheme cut lacks part(s) ['d'] the question prints"
+ },
+ "2024_may-jun_PUnit_1|5": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "read 2026-11-07: scheme parts (a) 4, (b) 4, (c) 12, (d) 4 and the 6-mark evaluation = 30, ending \"Q5 Total marks 30\"; Pearson labelled the evaluation (d) where the QP prints (e)",
+  "qp_sha256": "5e31b11ab3256abfe925fc738db5566d99102c69e4820aacef478328c34979a1",
+  "ms_sha256": "eb6253620f8390b8b81b3661aeea0dce07cf3b596f82ab40619c76dfbdf7f5eb",
+  "held_because": "scheme cut lacks part(s) ['e'] the question prints"
+ },
+ "2024_oct-nov_PUnit_2|3": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "read 2026-11-07: scheme parts (a)(i)-(vi) and the 6-mark evaluation = 30, ending \"(Total for Question 3 = 30 marks)\"; Pearson labelled the evaluation (a) where the QP prints (b)",
+  "qp_sha256": "52ec65988386bbc1ebdfb3cc14f6b6074e5bc0d9c86eef704447b866a92d9a02",
+  "ms_sha256": "5e7cada40dc530245f8a9b672b77b346de9a7a777474e07b31d1ccbbaced8f1c",
+  "held_because": "scheme cut lacks part(s) ['b'] the question prints"
+ },
+ "2026_may-jun_PUnit_1|1": {
+  "verdict": "REVIEWED_PROVEN",
+  "reason": "read 2026-11-07: scheme parts (a) 7, (b) 17, (c) 7, (d) 12 and the 12-mark evaluation = 55, ending \"Q1 Total marks 55\"; Pearson labelled the evaluation (c) where the QP prints (e)",
+  "qp_sha256": "de11f9f0915f40daa5521c9fe26047ac5980f79f16de1afd5f44ee9d78ecbef8",
+  "ms_sha256": "c7513c4f2ed93b71444b0bcc67ee0578543cce72ccfd7a34593540d6d91152a6",
+  "held_because": "scheme cut lacks part(s) ['e'] the question prints"
+ }
+}

@@ -97,7 +97,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       openGraph: {
         title,
         description,
-        url: `https://www.grademax.me/qp/${canonicalSlug}`,
+        url: `https://www.grademax.org/qp/${canonicalSlug}`,
         siteName: 'GradeMax',
         type: 'website',
       },
@@ -107,7 +107,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         description: `Free Cambridge ${lvlSeo} ${cambridge.name} (${code}) past papers with mark schemes.`,
       },
       alternates: {
-        canonical: `https://www.grademax.me/qp/${canonicalSlug}`,
+        canonical: `https://www.grademax.org/qp/${canonicalSlug}`,
       },
     }
   }
@@ -157,7 +157,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://www.grademax.me/qp/${canonicalSlug}`,
+      url: `https://www.grademax.org/qp/${canonicalSlug}`,
       siteName: 'GradeMax',
       type: 'website',
     },
@@ -167,7 +167,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `Free ${levelDisplay} ${subject.name} past papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://www.grademax.me/qp/${canonicalSlug}`,
+      canonical: `https://www.grademax.org/qp/${canonicalSlug}`,
     },
   }
 }
@@ -186,7 +186,7 @@ export default async function SubjectQPPage({ params }: PageProps) {
   const subject = slugMap[slug]
   if (!subject) notFound()
 
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
   // Schema must name the same URL as the canonical tag, or the two disagree about
   // which of the five identical variants is the real page.
   const canonicalSlug = canonicalEdexcelQpSlug(subject)

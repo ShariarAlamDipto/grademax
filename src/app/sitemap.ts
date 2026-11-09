@@ -9,7 +9,7 @@ import { listActiveProducts } from '@/lib/store/catalogue'
 import { getSettings } from '@/lib/store/settings'
 import { isPublicToolsTrialActive } from '@/lib/publicToolsTrial'
 
-const BASE_URL = 'https://www.grademax.me'
+const BASE_URL = 'https://www.grademax.org'
 const VALID_SEASONS = new Set(['jan', 'jan-feb', 'feb-mar', 'may-jun', 'oct-nov'])
 
 // Build a DB-name → slug map for quick lookup (Cambridge subjects store a

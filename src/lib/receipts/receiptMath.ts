@@ -57,7 +57,7 @@ export const emptyItem = (): ReceiptItem => ({ name: "", spec: "", qty: 1, rate:
 export function blankReceipt(today: string): ReceiptDraft {
   return {
     shop: "GradeMax Print",
-    shopSub: "Dhaka, Bangladesh · grademax.me",
+    shopSub: "Dhaka, Bangladesh · grademax.org",
     no: "",
     date: today,
     ready: "",

@@ -25,12 +25,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Worksheet Generator – Free Custom Past Paper Worksheets',
     description: 'Generate free custom worksheets from real Edexcel past papers. IGCSE and A Level with mark schemes.',
-    url: 'https://www.grademax.me/edexcel-worksheets',
+    url: 'https://www.grademax.org/edexcel-worksheets',
     siteName: 'GradeMax',
     type: 'website',
   },
   alternates: {
-    canonical: 'https://www.grademax.me/edexcel-worksheets',
+    canonical: 'https://www.grademax.org/edexcel-worksheets',
   },
 }
 
@@ -53,7 +53,7 @@ const faqs = [
   },
   {
     question: "What subjects can I generate worksheets for?",
-    answer: "The worksheet generator supports IGCSE Physics, Mathematics A, Mathematics B, Chemistry, Biology, Human Biology, Further Pure Mathematics, Computer Science, Accounting, Business Studies and Economics, plus IAL Pure Mathematics 1-4, Mechanics 1 and Statistics 1. Computer Science and Accounting are organised by specification chapter. Business Studies and Economics offer complete questions grouped by exam paper, including all subparts and matching mark schemes."
+    answer: "The worksheet generator supports IGCSE Physics, Mathematics A, Mathematics B, Chemistry, Biology, Human Biology, Further Pure Mathematics, Computer Science, ICT, Accounting, Business Studies and Economics, plus IAL Pure Mathematics 1-4, Mechanics 1, Statistics 1, Accounting and Business. These subjects are organised by specification chapter and offer complete questions with all subparts and matching mark schemes."
   },
   {
     question: "Can teachers use the worksheet generator?",
@@ -62,7 +62,7 @@ const faqs = [
 ]
 
 export default function WorksheetsPage() {
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
 
   const schema = {
     '@context': 'https://schema.org',

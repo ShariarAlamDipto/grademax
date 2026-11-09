@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Cambridge IGCSE Past Papers ${CURRENT_YEAR} – All Subjects with Mark Schemes (CAIE)`,
     description: 'Free Cambridge IGCSE past papers for every hosted syllabus with mark schemes, organised by year and exam series.',
-    url: 'https://www.grademax.me/cambridge-igcse-past-papers',
+    url: 'https://www.grademax.org/cambridge-igcse-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Free Cambridge IGCSE Past Papers' }],
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://www.grademax.me/cambridge-igcse-past-papers',
+    canonical: 'https://www.grademax.org/cambridge-igcse-past-papers',
   },
 }
 
@@ -63,7 +63,7 @@ const faqs = [
 ]
 
 export default async function CambridgeIgcsePastPapersLanding() {
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
 
   const slugsWithPapers = await getSubjectSlugsWithPapers()
   const igcse = cambridgeSeoSubjects

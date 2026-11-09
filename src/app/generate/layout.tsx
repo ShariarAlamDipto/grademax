@@ -16,19 +16,19 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Worksheet Generator – Create Custom Past Paper Worksheets Free',
     description: 'Create custom Edexcel IGCSE and A Level practice worksheets from real past papers. Free with mark schemes.',
-    url: 'https://www.grademax.me/generate',
+    url: 'https://www.grademax.org/generate',
   },
   alternates: {
-    canonical: 'https://www.grademax.me/generate',
+    canonical: 'https://www.grademax.org/generate',
   },
 }
 
 const toolSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebApplication',
-  '@id': 'https://www.grademax.me/#webapp',
+  '@id': 'https://www.grademax.org/#webapp',
   name: 'GradeMax Worksheet Generator',
-  url: 'https://www.grademax.me/generate',
+  url: 'https://www.grademax.org/generate',
   applicationCategory: 'EducationalApplication',
   operatingSystem: 'Any',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },

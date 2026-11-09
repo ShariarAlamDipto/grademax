@@ -70,7 +70,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description,
-      url: `https://www.grademax.me/subjects/${level}/${slug}/${topicSlug}`,
+      url: `https://www.grademax.org/subjects/${level}/${slug}/${topicSlug}`,
       siteName: 'GradeMax',
       type: 'website',
     },
@@ -80,7 +80,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description,
     },
     alternates: {
-      canonical: `https://www.grademax.me/subjects/${level}/${slug}/${topicSlug}`,
+      canonical: `https://www.grademax.org/subjects/${level}/${slug}/${topicSlug}`,
     },
   }
 }

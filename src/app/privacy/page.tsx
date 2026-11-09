@@ -27,7 +27,7 @@ export default function PrivacyPage() {
           <p style={pStyle}>
             GradeMax is committed to protecting your privacy.
             This Privacy Policy explains how GradeMax collects, uses, discloses, and safeguards your
-            information when you visit grademax.me.
+            information when you visit grademax.org.
           </p>
           <p style={{ ...pStyle, marginBottom: 0 }}>
             Please read this policy carefully. If you do not agree with these terms,

@@ -1,4 +1,331 @@
 {
+ "2011_may-jun_P1|1": {
+  "topics": [
+   "2.5",
+   "2.2",
+   "5.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(c) purchasing and production departments 6; (b) ordering the recruitment stages 5; (d) TQM and customer complaints 4; (a) five 1-mark items",
+  "qp_sha256": "f73cf802ae6e64272faf8eec4011df9bbadf24334067a119e1fee26a133a66c4",
+  "ms_sha256": "0c52f4134a9254a5449b2d215da957742f57ef2fac2bb6dc3be02c3ab68f03da"
+ },
+ "2011_may-jun_P1|2": {
+  "topics": [
+   "4.3",
+   "1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b)(d)(e) wholesaler channel, Boston Matrix product and expanding it 12+; (c) importance of the aim and objectives 4",
+  "qp_sha256": "ccb06bb891013f9d371b102462ff3e9e6c94d46c809efe2a9af1d51f439b479c",
+  "ms_sha256": "b346117b7bc3dcda396b640c7d5f0d165d67553a8e86a83d6f40d50bc2554fde"
+ },
+ "2011_may-jun_P1|3": {
+  "topics": [
+   "5.2",
+   "1.2",
+   "3.5",
+   "3.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(d) job production and an alternative method 9; (b) stakeholders in the accounts 4; (c) analysing profit margins 4; (a) net profit and expenses 3",
+  "qp_sha256": "a2dbe4e9b1fb8987255bcac7a4c50ccc36735fcff478c0b37b1e8223a4be8e4a",
+  "ms_sha256": "6a9997e180e40225c9e5a5340a168c86a898b2b8503250ecd95f978713e59436"
+ },
+ "2011_may-jun_P1|4": {
+  "topics": [
+   "1.4",
+   "1.2",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(b) relocating production 8; (a)(i)(ii) becoming a plc 6; (a)(iii) other sources of finance 6",
+  "qp_sha256": "3e2842139f41b9d3505b63714d2a96d8c172dc6c2e3a3a055b7d3b5d4f889129",
+  "ms_sha256": "46a6d49f7a114b179f5cb3e8e019aa40669ebd1348b52b9cf636404aad6c92ea"
+ },
+ "2011_may-jun_P1|5": {
+  "topics": [
+   "2.4",
+   "2.2",
+   "2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) motivating production workers, justify 10; (a) internal vs external recruitment 5; (b) on- vs off-the-job training 5",
+  "qp_sha256": "2a06b8b24e19a8535a128563478b2569de35b1167eee3121a3e2f7aa232d7de0",
+  "ms_sha256": "6ebce6725c6ec50d120a267f571f16de9678cd86c71c270fa80746dca012ef16"
+ },
+ "2013_may-jun_P1|1": {
+  "topics": [
+   "4.2",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(c) segmenting by age, gender, lifestyle 6; (d) partnership and deed of partnership 4; (a)(b) 1-mark items and term matching",
+  "qp_sha256": "d2bec06a6c0e1eaa78e52152bb9a87096947b3924a5b4a0f570db20ac61ee14b",
+  "ms_sha256": "40b6ef5328e91c9581fd06b9134ae80133d87e6cffbdef3eaa73ae4da1ab6853"
+ },
+ "2013_may-jun_P1|2": {
+  "topics": [
+   "4.3",
+   "1.4",
+   "1.1",
+   "4.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)(d) marketing mix and product life cycle 8; (e) choosing premises 6; (c) survival and other objectives 4; (a) marketing 2",
+  "qp_sha256": "064d1dc02a3e4141b4fb1644d5116e6820764545bc01054c3c2cdd0edcf0b67e",
+  "ms_sha256": "93bfdddebb187097389e08cec2fe0ac5a5f599e3fe4fd35912acac137f4e9fd5"
+ },
+ "2013_may-jun_P1|3": {
+  "topics": [
+   "2.2",
+   "3.2",
+   "3.1",
+   "1.8",
+   "3.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) Sex Discrimination Act in recruitment 6; (c) cash-flow forecast 4; (d) loan vs overdraft 4; (b) judging success 3; (a) net profit and advertising costs 3",
+  "qp_sha256": "66f3409d9f46db56e77ba8966582df65059ca9e5d77e2b74bb1c9bd3146a3df5",
+  "ms_sha256": "f7ceaeb4c939007a8359fc1e2b93977c6c32778b19f72ef3b36a70f139344089"
+ },
+ "2013_may-jun_P1|4": {
+  "topics": [
+   "3.3",
+   "2.2",
+   "2.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) break-even analysis for a new shop 8; (a) person specification and job description 6; (b) telephone and email communication 6",
+  "qp_sha256": "385632e53b611b1e2a963fe722692940a0e80155dd3d85c74df5a5d0dc8c7c0d",
+  "ms_sha256": "fe540fbffa2e3b82cf16b9b1f2579e8b70207bdf656eb4916828428462f0b931"
+ },
+ "2013_may-jun_P1|5": {
+  "topics": [
+   "4.1",
+   "2.4",
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) primary vs secondary research, justify 10; (a) motivation and Maslow 5; (b) leaflets as advertising 5",
+  "qp_sha256": "73e5e55bd10ee9e86b7ca030ddee1cb0aaf190ba1732aeef6b839f41d56a3955",
+  "ms_sha256": "684c890acb5d1ae01c5df98928bbc836ce952b261993720aaa2a132082a97183"
+ },
+ "2014_may-jun_P1|1": {
+  "topics": [
+   "1.2",
+   "2.4",
+   "1.8"
+  ],
+  "difficulty": "easy",
+  "reason": "(c)(d) partnership advantages and disadvantages 6; (b) Maslow's hierarchy 5; (e) consumer satisfaction 4; (a) five 1-mark items",
+  "qp_sha256": "faed6e2a945e91e47df3853f3a741ecc8ea6912a1f683f28c70be7d1a4e08963",
+  "ms_sha256": "5a3dde449452383ed78d234567235a9450bb138429940d7131de8097a405c082"
+ },
+ "2014_may-jun_P1|2": {
+  "topics": [
+   "3.5",
+   "1.1",
+   "5.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) gross profit ratio and comparing rivals 8; (c) objectives and meeting a profit aim 6; (d) labour-intensive business 6",
+  "qp_sha256": "83a902d3cc712f49904b4c3a5d318620f7cc0e0825c33dee8ba2d15303250476",
+  "ms_sha256": "1042fc5f7a14e6c5dd371af46beb399913f5db7ce6b1ad99e9ba043835376f7b"
+ },
+ "2014_may-jun_P1|3": {
+  "topics": [
+   "2.4",
+   "4.3",
+   "2.2",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(c) incentives 6; (d) loyalty card vs other promotion 6; (a) employing a stranger 4; (b) how banks and suppliers help 4",
+  "qp_sha256": "3b400a04aec6c996664cb10b855a2c92f93234ae79e2507fe1ab8921a3a74c8c",
+  "ms_sha256": "2fe34d46d187d1a5338b645ecff2ea7b6544edab33762633a0ce072f491b8970"
+ },
+ "2014_may-jun_P1|4": {
+  "topics": [
+   "1.7",
+   "4.3",
+   "4.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) benefits of EFTPOS technology 8; (a) branding 6; (b) primary research methods 6",
+  "qp_sha256": "e09dcfd65d8a038ee1c636a312270f461bfb5f581edb081bf40d517c529c4e3b",
+  "ms_sha256": "3d0e67bd4644c1df187a42103aeb154fa390513e1da8bfcd166826ee0011c62f"
+ },
+ "2014_may-jun_P1|5": {
+  "topics": [
+   "2.1",
+   "1.6",
+   "2.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) text/email vs weekly meetings, justify 10; (a) government waste policy 5; (b) delegating all responsibility 5",
+  "qp_sha256": "3addd6094431d0ae488ec15e1b45c5ca002f3045f1e087eb3181eeeaadbc7cff",
+  "ms_sha256": "4e205bc698073fe233866a60f9d7ffcd6f99ebd703432372420f94e9d574a115"
+ },
+ "2016_may-jun_P1|1": {
+  "topics": [
+   "5.4",
+   "2.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(c)(d) quality customer service and keeping a 4-star rating 10; (b)+(a)(v) organisation chart, delegation 6; (a) 1-mark items",
+  "qp_sha256": "84389ef42cd87ffd1809760b1f25a58f6add45e7662c16f3f25e118bd8866fa3",
+  "ms_sha256": "a8dd558b76452bfa6a3d70c7e4ef45e6ec311780dccd2660472103b0da458780"
+ },
+ "2016_may-jun_P1|2": {
+  "topics": [
+   "1.2",
+   "4.1",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b) franchisor and franchisee 8; (c) using questionnaire data 6; (d) Equality Act in employment 6",
+  "qp_sha256": "9ef2098abf20a202b8beec7ebd0f1d6f9d0c0a07aee032e7d2cf444130a73f2c",
+  "ms_sha256": "479bf8dadc161f9582fbdb5c90f5ca14cfba23f2f8aaba2642de053bc9e6b3ae"
+ },
+ "2016_may-jun_P1|3": {
+  "topics": [
+   "3.5",
+   "4.3",
+   "1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(a) net profit ratio and performance 8; (b) pricing rooms 6; (c) hotel location factors 6",
+  "qp_sha256": "c9b58a34553662a5d078d5f30caecffee807172ff9bc6b297e41edc43f40a243",
+  "ms_sha256": "b37a4f096dd8e6f1e8ec139babad535895ecc4251b38fc4eb7e52b685e082fe1"
+ },
+ "2016_may-jun_P1|4": {
+  "topics": [
+   "4.3",
+   "5.1",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(b) persuasive vs informative advertising 8; (a) economies and diseconomies of scale 6; (c) sources of finance 6",
+  "qp_sha256": "1becf1f59deed9b4f0e1ed45a395eea0a377f997bca0f663096f5a9d46bfcb35",
+  "ms_sha256": "3c4ea54f613d1145146031a053e561252d9d78dd7d40740435b7b31dde703ec8"
+ },
+ "2016_may-jun_P1|5": {
+  "topics": [
+   "2.3",
+   "5.3",
+   "1.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) in-house vs external training, justify 10; (a) labour-intensive hotels 5; (b) form of ownership 5",
+  "qp_sha256": "9aabf5085bd50c66fe3c23ca99049630f42d94334209fc2dec77fe118513480a",
+  "ms_sha256": "2e9c345e0b52915cb40f85f9e45e85b77509a39e0de355e9a0615314c55e21b9"
+ },
+ "2017_may-jun_P1|1": {
+  "topics": [
+   "1.2",
+   "4.3",
+   "2.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(d)(e)+(a)(i)(v) becoming a plc, publishing accounts 10; (c) Boston Matrix 4; (b)(i) financial motivation 2",
+  "qp_sha256": "04b29f2357d279e45a01123cc3858ec746b826dd10bf9849f2836073e3f290f9",
+  "ms_sha256": "c372f819a8a55ef1c985c08b79f093f8b8286b142fbc85fbcc39a1397a2ec296"
+ },
+ "2017_may-jun_P1|2": {
+  "topics": [
+   "3.5",
+   "3.4",
+   "5.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(b)-(d) ROCE and financial information in decisions 12; (a) current assets and working capital 4; (e) managing diseconomies 4",
+  "qp_sha256": "04de9aed401ba9fdc9f30f9f40a29736f353ba53c20419b0d39d64aa42d89d15",
+  "ms_sha256": "2b5bc90fb32bd36eb18ecaa25d9f83a70b9f9193940bd884dbb413e38865172d"
+ },
+ "2017_may-jun_P1|3": {
+  "topics": [
+   "1.6",
+   "1.7"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)(b)(d) consumer law, competition policy, direct vs indirect tax 14; (c) renewable energy 6",
+  "qp_sha256": "91378bf7165a43dcf02527577ff0eff457879ee68b66e2b4e4bc8c5c3c5a9540",
+  "ms_sha256": "12f2e769c037a74a5be20a2146874bc2b3485aff31e1f160c8f69ce2cf54ca30"
+ },
+ "2017_may-jun_P1|4": {
+  "topics": [
+   "1.7",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(b)(c) new technology and low-carbon fuel 13; (a) source of finance and using profit 7",
+  "qp_sha256": "8064e52a6c3cba99f2d0921c286eda184c810f7222d7897c053794309d63687b",
+  "ms_sha256": "592730b2b937d130f4d6876ca4c6fdc77af5b58ab0d545389c927859cb2134ae"
+ },
+ "2017_may-jun_P1|5": {
+  "topics": [
+   "4.3",
+   "4.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(a)(b) below-the-line promotion and public relations 10; (c) primary vs secondary research, justify 10",
+  "qp_sha256": "b59f5fc01d42f54790834c37923b6597e722f4834b3a66147e0cbcc4113b48bd",
+  "ms_sha256": "9590da9ac22728289cdf30db403fe8a949ce7d2fae054490a3565f1585e04a28"
+ },
+ "2018_may-jun_P1|1": {
+  "topics": [
+   "2.1",
+   "5.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(e) written communication and letters 6; (c) labour-intensive 3; (a)(b)(d) 1-mark items and term matching",
+  "qp_sha256": "9c9dad0cb621305e8d25a1f8f6ef4e457044c42db37273ffd461e8ada694955f",
+  "ms_sha256": "503ea2825f76ebcb36864caeb9b65e29b1323bb70d602a4f37d0e18dcb7da99c"
+ },
+ "2018_may-jun_P1|2": {
+  "topics": [
+   "1.1",
+   "1.7",
+   "5.2",
+   "1.8"
+  ],
+  "difficulty": "medium",
+  "reason": "(a) objectives and wealth creation 6; (d) EPOS 6; (b) holding large stock 4; (c) measuring success 4",
+  "qp_sha256": "4dda38d0e1df476ff1e61cf0b2dbd7c8f632943d1770ee692c43e61bc11e41c5",
+  "ms_sha256": "1689ae2d2fd0a808e10b8012bc9e1426fd389048195aa4172346df6730c81b3f"
+ },
+ "2018_may-jun_P1|3": {
+  "topics": [
+   "4.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(a)-(c) newspaper vs leaflets, public relations and sponsorship, selling only online 20",
+  "qp_sha256": "15123ba189f46ac8a78d79eeda7e494e8598d6a760749b0888baf0652b1f5d7e",
+  "ms_sha256": "e79dd8d4624300ad85759c56e7c2f71199a112c96d549dbbefd4fffda12369d9"
+ },
+ "2018_may-jun_P1|4": {
+  "topics": [
+   "3.5",
+   "1.5",
+   "3.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(b) acid test ratio and its change 10; (c) exchange rates and a stronger pound 8; (a) ways to state break-even 2",
+  "qp_sha256": "0927558010b8c7bd34e390942edcfbc6f01ee28d9ac82e7e163cfd2cf607cb8f",
+  "ms_sha256": "13801e05f054c1bc9cd6d38c2bd366b292f46c7cdecabdd3b450f6ba5f008037"
+ },
+ "2018_may-jun_P1|5": {
+  "topics": [
+   "3.1",
+   "1.8",
+   "1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) overdraft vs family loan, justify 10; (b) judging website success 6; (a) closing the high street shop 4",
+  "qp_sha256": "f4398cd46f636c829d2427cded1da7fff6e87abb231002d729de1374519403f9",
+  "ms_sha256": "abd6ab71504cf2eccaa73a38014ba9e834e5579ee53358a2292bde56fff20491"
+ },
  "2019_may-jun_P1R|1": {
   "topics": [
    "1.2",
@@ -1545,6 +1872,99 @@
   "qp_sha256": "e14c292c5675c4ecf017b0f586d0b4cb5544ef856f1b1b0a6ea653ab75c20c79",
   "ms_sha256": "919c9f7b145bb1c469c7a5d95ca97d001c77bde88d51044a0e2fff0dc4139c98",
   "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_oct-nov_P1|1": {
+  "topics": [
+   "1.8",
+   "1.2",
+   "1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) measuring employee satisfaction 6; (f)+(c) sole trader, shareholder 4; (e) exchange rate calc 2; (a) six 1-mark items",
+  "qp_sha256": "609a740ff7d27dfbda4467989f042c19d34c8ee411a7c9e606920d66b631c78a",
+  "ms_sha256": "1a5ea8a8bf78e203cbc5024a8350ac0a7ad1eb5d87b1a0d0b9b9b2f215e74d2e"
+ },
+ "2025_oct-nov_P1|2": {
+  "topics": [
+   "3.1",
+   "4.2",
+   "4.3",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) venture capital vs loan capital 9; (c) high market share 3; (d) e-commerce 3; (e) shareholders and financial documents 3",
+  "qp_sha256": "a6822e955237ce31c1ee7c12a17d5b45bec73f3b276119a7d32f49cb7a037141",
+  "ms_sha256": "024865468af77f90bcb1e948daefa4cded33c115dde40fab2b767fc8b48df7b8"
+ },
+ "2025_oct-nov_P1|3": {
+  "topics": [
+   "2.2",
+   "2.3",
+   "2.4",
+   "4.3",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) part-time guides vs lower commission to raise profit 9; (d) on-the-job training 6; (b) promotion 2; (c) ROCE 2",
+  "qp_sha256": "3d652340ee30551dc5c5a44342fa397b3861a70bf695459e34888427ac9dc51e",
+  "ms_sha256": "5f62ce0dc7db2c386b5a6637430689177582706210402c10bd063accf91ee58b"
+ },
+ "2025_oct-nov_P1|4": {
+  "topics": [
+   "1.2",
+   "3.2",
+   "2.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate franchising to expand 12; (b) importance of cash 6; (a) minimum wage calc 2",
+  "qp_sha256": "a4893126c880803b93f11f84f4a36e1c0730536f696e6b3885eb7196da360af0",
+  "ms_sha256": "3f37c75052dfff9e18f7ec16a94cfb658fb180586e08e380ac9e8479e138a1c3"
+ },
+ "2025_oct-nov_P2|1": {
+  "topics": [
+   "2.2",
+   "4.2",
+   "2.4",
+   "5.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) recruitment documents 6; (f) mass marketing 3; (a)(vi)(b) remuneration, Taylor, job rotation 3; (e) productivity 2",
+  "qp_sha256": "f57156e281fba8c8a8258294cbbe612530c1f9c637a59bc6dd0f1466228e3904",
+  "ms_sha256": "088ccb9ddb10c000ead45a8bb76ac108925fa75044b756d3a181b26815cba976"
+ },
+ "2025_oct-nov_P2|2": {
+  "topics": [
+   "4.3",
+   "1.1",
+   "3.3",
+   "1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) celebrity sponsorship vs free app 9; (c) social objective 3; (d) break-even chart limitation 3; (e) trading bloc 3",
+  "qp_sha256": "5e8512afd4e016b5922c725b6b897a5e1031566b158b17ae98db85447365f471",
+  "ms_sha256": "f20b6bce7d23fca6a9dbe7f43563c2e775b6da83b3dad747787d8fc878377332"
+ },
+ "2025_oct-nov_P2|3": {
+  "topics": [
+   "5.2",
+   "3.4",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) JIT vs Kaizen 9 + (b) flow production 2; (d) why profit matters 6; (c) mark-up 2",
+  "qp_sha256": "7b21805cc57121d2817c867d40222c78b591f4c22ece15cc0be6a2b7e385e4d0",
+  "ms_sha256": "d8bd2200f980e07a3d3f7e905194af45cc460911c8d630f282c30274b9e56202"
+ },
+ "2025_oct-nov_P2|4": {
+  "topics": [
+   "2.5",
+   "4.1",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate a centralised structure 12; (b) purpose of market research 6; (a) operating profit margin 2",
+  "qp_sha256": "bb75724bd18ecedd10ebc74fc17fe8226f93dc37fe26b50d1ef8588137d26e07",
+  "ms_sha256": "ac4f25086b9ded9e331ca3c8050b6b2fad816f8f6f64ac8771f5a7c088f17e47"
  },
  "2026_may-jun_P1R|1": {
   "topics": [

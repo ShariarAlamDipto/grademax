@@ -9,7 +9,6 @@ import { Playfair_Display } from 'next/font/google'
 import type { Metadata } from 'next'
 import { AuthProvider } from '@/context/AuthContext'
 import { ThemeProvider } from '@/context/ThemeContext'
-import { ADSENSE_SCRIPT_SRC } from '@/lib/ads'
 import { SOCIAL_SAME_AS } from '@/lib/social'
 
 const playfair = Playfair_Display({ subsets: ['latin'], weight: ['600','700','800'], display: 'swap' });
@@ -24,12 +23,12 @@ const jsonLd = {
   '@graph': [
     {
       '@type': 'Organization',
-      '@id': 'https://www.grademax.me/#organization',
+      '@id': 'https://www.grademax.org/#organization',
       name: 'GradeMax',
-      url: 'https://www.grademax.me',
+      url: 'https://www.grademax.org',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.grademax.me/logo.png',
+        url: 'https://www.grademax.org/logo.png',
         width: 512,
         height: 512
       },
@@ -41,18 +40,18 @@ const jsonLd = {
     },
     {
       '@type': 'WebSite',
-      '@id': 'https://www.grademax.me/#website',
-      url: 'https://www.grademax.me',
+      '@id': 'https://www.grademax.org/#website',
+      url: 'https://www.grademax.org',
       name: 'GradeMax',
       description: `Free Edexcel IGCSE and A Level Past Papers ${CURRENT_YEAR}, Custom Worksheets and Topic-Wise Questions with Mark Schemes`,
       publisher: {
-        '@id': 'https://www.grademax.me/#organization'
+        '@id': 'https://www.grademax.org/#organization'
       },
       potentialAction: {
         '@type': 'SearchAction',
         target: {
           '@type': 'EntryPoint',
-          urlTemplate: 'https://www.grademax.me/browse?q={search_term_string}'
+          urlTemplate: 'https://www.grademax.org/browse?q={search_term_string}'
         },
         'query-input': 'required name=search_term_string'
       },
@@ -60,9 +59,9 @@ const jsonLd = {
     },
     {
       '@type': 'EducationalOrganization',
-      '@id': 'https://www.grademax.me/#educationalorg',
+      '@id': 'https://www.grademax.org/#educationalorg',
       name: 'GradeMax',
-      url: 'https://www.grademax.me',
+      url: 'https://www.grademax.org',
       description: 'Free online platform for Edexcel IGCSE and A Level exam preparation with past papers, custom worksheets, and topic-wise practice questions.',
       areaServed: 'Worldwide',
       audience: {
@@ -75,7 +74,7 @@ const jsonLd = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.grademax.me'),
+  metadataBase: new URL('https://www.grademax.org'),
   title: {
     default: `Edexcel Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level | GradeMax`,
     template: '%s | GradeMax'
@@ -210,12 +209,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* AdSense loader. It sits in the root layout's <head> deliberately:
-            AdSense's site review requires the snippet in the server-rendered
-            HTML of every page, so next/script (which injects it client-side,
-            into the body) would not satisfy it. async, so it never blocks the
-            first paint. */}
-        <script async src={ADSENSE_SCRIPT_SRC} crossOrigin="anonymous" />
       </head>
       <body className="min-h-screen flex flex-col" style={{ background: 'var(--gm-bg)', color: 'var(--gm-text)' }}>
         <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-blue-600 focus:text-white focus:px-4 focus:py-2 focus:rounded focus:text-sm">Skip to content</a>

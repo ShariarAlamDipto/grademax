@@ -66,10 +66,11 @@ test("sanitizeVisitPath keeps public paths and rejects the rest", () => {
 })
 
 test("isAllowedOrigin accepts only GradeMax pages (and localhost outside production)", () => {
+  assert.equal(isAllowedOrigin("https://www.grademax.org", true), true)
+  assert.equal(isAllowedOrigin("https://grademax.org", true), true)
   assert.equal(isAllowedOrigin("https://www.grademax.me", true), true)
-  assert.equal(isAllowedOrigin("https://grademax.me", true), true)
   assert.equal(isAllowedOrigin("https://evil.example", true), false)
-  assert.equal(isAllowedOrigin("https://www.grademax.me.evil.example", true), false)
+  assert.equal(isAllowedOrigin("https://www.grademax.org.evil.example", true), false)
   assert.equal(isAllowedOrigin(null, true), false)
   assert.equal(isAllowedOrigin("null", true), false)
   assert.equal(isAllowedOrigin("http://localhost:3000", true), false)
@@ -91,8 +92,9 @@ test("createHitCounter caps hits per key within a window", () => {
 test("externalReferrerHost keeps only other sites' host names", () => {
   assert.equal(externalReferrerHost("https://www.google.com/search?q=grademax"), "google.com")
   assert.equal(externalReferrerHost("https://l.facebook.com/l.php?u=x"), "l.facebook.com")
+  assert.equal(externalReferrerHost("https://www.grademax.org/past-papers"), null)
+  assert.equal(externalReferrerHost("https://grademax.org/"), null)
   assert.equal(externalReferrerHost("https://www.grademax.me/past-papers"), null)
-  assert.equal(externalReferrerHost("https://grademax.me/"), null)
   assert.equal(externalReferrerHost(""), null)
   assert.equal(externalReferrerHost("not a url"), null)
   assert.equal(externalReferrerHost(undefined), null)

@@ -18,7 +18,7 @@ export const SESSION_COOKIE_MAX_AGE = 30 * 60
 
 const MAX_PATH_LENGTH = 300
 const MAX_HOST_LENGTH = 120
-const OWN_HOSTS = new Set(["grademax.me", "www.grademax.me"])
+const OWN_HOSTS = new Set(["grademax.org", "www.grademax.org", "grademax.me", "www.grademax.me"])
 // Staff pages and API calls are not visits.
 const UNTRACKED_PREFIXES = ["/admin", "/api", "/_next"]
 
@@ -32,7 +32,7 @@ const BOT_UA = /bot|crawl|spider|slurp|preview|curl|wget|python|axios|node-fetch
 // Printable ASCII with no spaces, quotes or angle brackets. Browsers send
 // non-ASCII paths percent-encoded, so real pages always pass.
 const PATH_RE = /^\/[A-Za-z0-9\-._~%!$&'()*+,;=:@/]*$/
-const OWN_ORIGINS = new Set(["https://www.grademax.me", "https://grademax.me"])
+const OWN_ORIGINS = new Set(["https://www.grademax.org", "https://grademax.org", "https://www.grademax.me", "https://grademax.me"])
 const DEV_ORIGIN_RE = /^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i

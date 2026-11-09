@@ -1,43 +1,17 @@
 import type { NextConfig } from "next";
 
-// Google AdSense origins. Without these the loader in the root layout's <head>
-// is blocked outright, ads never render and — because the review crawler runs
-// the page — site verification fails with no visible error but a CSP console
-// warning.
-//
-// This stays a list of Google's own origins rather than a blanket `https:`
-// because ad creatives are rendered *inside* Google's cross-origin iframes,
-// which carry their own policy; this document's CSP does not reach into them.
-// So allowing Google here is enough to serve ads without opening the page to
-// every advertiser domain on the internet.
-const GOOGLE_ADS_ORIGINS = [
-  "https://*.googlesyndication.com", // pagead2 (the loader), tpc (creatives)
-  "https://*.doubleclick.net", // ad requests, securepubads
-  "https://*.googleadservices.com",
-  "https://*.googletagservices.com",
-  "https://adservice.google.com",
-  "https://fundingchoicesmessages.google.com", // EEA/UK consent messaging
-  // Ad Traffic Quality (ep1/ep2.adtrafficquality.google) — AdSense's invalid-traffic
-  // beacon. Its TLD is bare `.google`, so the `https://*.google.com` entries below
-  // never matched it and every page load logged a blocked-connection CSP error.
-  "https://*.adtrafficquality.google",
-  // AdSense's CSI page-timing beacon (fetch/sendBeacon). `*.gstatic.com` was
-  // only in img-src, so connect-src blocked it and logged a CSP error per page.
-  "https://csi.gstatic.com",
-].join(" ");
-
 const baseCsp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live ${GOOGLE_ADS_ORIGINS}`,
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' data: https://fonts.gstatic.com",
-  `img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev ${GOOGLE_ADS_ORIGINS} https://*.google.com https://*.gstatic.com`,
+  `img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.google.com https://*.gstatic.com`,
   "worker-src 'self' blob:",
   // *.r2.cloudflarestorage.com is the S3 API endpoint teachers PUT large
   // lecture files to with a presigned URL, bypassing the 4.5 MB serverless cap.
   // blob: lets the worksheet preview read the PDF it just built in the browser.
-  `connect-src 'self' blob: https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
-  `frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev ${GOOGLE_ADS_ORIGINS} https://*.google.com`,
+  `connect-src 'self' blob: https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com https://*.google.com`,
+  `frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.google.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self' https://accounts.google.com",
@@ -146,17 +120,18 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Host canonicalization: apex → www. Vercel used to do this at the domain
-      // level; the self-hosted Docker server does not, so the apex served every
-      // page with 200 and a www canonical (GSC "Alternative page with proper
-      // canonical tag"). nginx forwards the real Host. /api and /auth stay on the
-      // host they were called on: POSTs (MCP, webhooks) break on a redirect, and
-      // the PKCE cookie of a sign-in started on the apex lives on the apex.
+      // Host canonicalization: the old domain grademax.me (apex or www) and the
+      // grademax.org apex → www.grademax.org, the canonical host since the domain
+      // move (9 Nov 2026). nginx should do the .me → .org move in one hop too;
+      // this is the fallback when a request reaches the app. nginx forwards the
+      // real Host. /api and /auth stay on the host they were called on: POSTs
+      // (MCP, webhooks) break on a redirect, and the PKCE cookie of a sign-in
+      // started on one host lives on that host.
       {
         source: "/:path((?!api/|auth/).*)",
-        // `value` is an anchored regex, hence the escaped dot.
-        has: [{ type: "host", value: "grademax\\.me" }],
-        destination: "https://www.grademax.me/:path",
+        // `value` is an anchored regex, hence the escaped dots and the group.
+        has: [{ type: "host", value: "(?:(?:www\\.)?grademax\\.me|grademax\\.org)" }],
+        destination: "https://www.grademax.org/:path",
         permanent: true,
       },
       // Legacy subject-level paper URLs (/past-papers/physics/paper-1) still earn

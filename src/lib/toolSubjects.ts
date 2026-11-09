@@ -22,8 +22,18 @@ export const TOOL_SUBJECT_SLOTS = [
   ['WMA11'],          // IAL Pure Mathematics 1 (P1)
   ['WMA12'],          // IAL Pure Mathematics 2 (P2)
   ['WMA13'],          // IAL Pure Mathematics 3 (P3)
+  ['4IT1'],           // IGCSE ICT: Paper 1 written questions (Paper 2 is an on-screen practical)
+  ['WAC'],            // IAL Accounting (WAC11 Unit 1, WAC12 Unit 2)
+  ['WBS'],            // IAL Business (WBS11-14, one question per section)
   ['0625'],           // Cambridge IGCSE Physics: Paper 42 + 62 (variant 2) questions only
 ] as const
+
+const TOOL_SUBJECT_CODES: ReadonlySet<string> = new Set(TOOL_SUBJECT_SLOTS.flat())
+
+/** True when a subjects.code belongs to a tool slot, i.e. it has question-level data. */
+export function isToolSubjectCode(code: string | null | undefined): boolean {
+  return Boolean(code) && TOOL_SUBJECT_CODES.has(code as string)
+}
 
 // Subjects and topics change only when a new subject is onboarded, so the
 // lookup is cached instead of costing three Supabase round trips per visit.

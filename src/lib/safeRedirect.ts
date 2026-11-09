@@ -51,7 +51,8 @@ export function safeNextPath(raw: string | null | undefined, fallback: string = 
 // signed in to https://0.0.0.0:3000. Only GradeMax's own hosts are trusted from
 // the Host / X-Forwarded-Host headers, so a forged header cannot turn this into
 // an open redirect; anything else falls back to the canonical site.
-const PUBLIC_HOSTS = new Set(["www.grademax.me", "grademax.me"])
+// grademax.me 301s to grademax.org; its hosts stay trusted so sign-ins started there still finish.
+const PUBLIC_HOSTS = new Set(["www.grademax.org", "grademax.org", "www.grademax.me", "grademax.me"])
 const LOCAL_HOST_RE = /^(localhost|127\.0\.0\.1)(:\d+)?$/
 
 export function publicOrigin(request: Request): string {

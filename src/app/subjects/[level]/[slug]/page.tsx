@@ -50,11 +50,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title,
       description: subject.metaDescription,
-      url: `https://www.grademax.me/subjects/${level}/${slug}`,
+      url: `https://www.grademax.org/subjects/${level}/${slug}`,
       siteName: 'GradeMax',
       type: 'website',
     },
-    alternates: { canonical: `https://www.grademax.me/subjects/${level}/${slug}` },
+    alternates: { canonical: `https://www.grademax.org/subjects/${level}/${slug}` },
   }
 }
 

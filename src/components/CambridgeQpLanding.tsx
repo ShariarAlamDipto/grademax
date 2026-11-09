@@ -14,7 +14,7 @@ import {
   generateFAQSchema,
 } from "@/lib/seo-schema"
 
-const BASE_URL = "https://www.grademax.me"
+const BASE_URL = "https://www.grademax.org"
 
 function serializeJsonLd(schema: object): string {
   return JSON.stringify(schema).replace(/</g, "\\u003c")

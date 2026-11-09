@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Cambridge Past Papers – IGCSE & A Level by Year | GradeMax",
     description: "Browse all Cambridge IGCSE and International A Level past papers by subject, year and session. Free PDFs with mark schemes.",
-    url: "https://www.grademax.me/past-papers/cambridge",
+    url: "https://www.grademax.org/past-papers/cambridge",
     siteName: "GradeMax",
     type: "website",
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: "All Cambridge (CAIE) past papers organised by year and session. Free PDFs with mark schemes.",
   },
   alternates: {
-    canonical: "https://www.grademax.me/past-papers/cambridge",
+    canonical: "https://www.grademax.org/past-papers/cambridge",
   },
 }
 
@@ -39,17 +39,17 @@ const jsonLd = {
     {
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.grademax.me" },
-        { "@type": "ListItem", position: 2, name: "Cambridge Past Papers", item: "https://www.grademax.me/past-papers/cambridge" },
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://www.grademax.org" },
+        { "@type": "ListItem", position: 2, name: "Cambridge Past Papers", item: "https://www.grademax.org/past-papers/cambridge" },
       ],
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.grademax.me/past-papers/cambridge#webpage",
-      url: "https://www.grademax.me/past-papers/cambridge",
+      "@id": "https://www.grademax.org/past-papers/cambridge#webpage",
+      url: "https://www.grademax.org/past-papers/cambridge",
       name: "Free Cambridge Past Papers 2025 – IGCSE & A Level with Mark Schemes",
       description: "Download free Cambridge IGCSE and International A Level past papers with mark schemes (2015–2025). Browse Physics, Maths, Chemistry, Biology, Computer Science and more by year and session.",
-      isPartOf: { "@id": "https://www.grademax.me/#website" },
+      isPartOf: { "@id": "https://www.grademax.org/#website" },
       inLanguage: "en-GB",
     },
   ],

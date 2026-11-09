@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Edexcel IGCSE Past Papers ${CURRENT_YEAR} – Free with Mark Schemes`,
     description: 'Free IGCSE past papers for all Edexcel subjects with mark schemes. Organized by topic and year.',
-    url: 'https://www.grademax.me/edexcel-igcse-past-papers',
+    url: 'https://www.grademax.org/edexcel-igcse-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Edexcel IGCSE Past Papers' }],
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://www.grademax.me/edexcel-igcse-past-papers',
+    canonical: 'https://www.grademax.org/edexcel-igcse-past-papers',
   },
 }
 
@@ -71,7 +71,7 @@ const faqs = [
 
 export default async function IGCSEPastPapersPage() {
   const subjects = getSubjectsByLevel('igcse')
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
 
   const schema = {
     '@context': 'https://schema.org',

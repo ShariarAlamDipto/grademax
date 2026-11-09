@@ -25,7 +25,14 @@ const ACCESS_KEY = process.env.R2_ACCESS_KEY_ID
 const SECRET_KEY = process.env.R2_SECRET_ACCESS_KEY
 const BUCKET = process.env.R2_BUCKET_NAME || "grademax-papers"
 
+// The browser also downloads question PDFs straight from R2 when it builds a
+// worksheet or test (src/lib/clientPdfBuild.ts), so every host the site is
+// served from must be listed. The site moved to www.grademax.org on
+// 2026-11-09; without these two origins every worksheet failed with "No
+// question PDFs could be downloaded". grademax.me stays for old links.
 const ALLOWED_ORIGINS = [
+  "https://www.grademax.org",
+  "https://grademax.org",
   "https://grademax.me",
   "https://www.grademax.me",
   "http://localhost:3000",
@@ -66,7 +73,8 @@ async function apply() {
       AllowedOrigins: ALLOWED_ORIGINS,
       AllowedMethods: ["PUT", "GET", "HEAD"],
       AllowedHeaders: ["content-type"],
-      ExposeHeaders: ["ETag"],
+      // Matches what the live bucket exposed before 2026-11-09.
+      ExposeHeaders: ["Content-Length", "Content-Range", "Content-Type", "ETag"],
       MaxAgeSeconds: 3600,
     },
   ]

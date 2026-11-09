@@ -56,12 +56,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     openGraph: {
       title: `${levelDisplay} Subjects – Past Papers & Study Resources | GradeMax`,
       description: `Master ${levelDisplay} with GradeMax. Access past papers for ${subjectNames}.`,
-      url: `https://www.grademax.me/subjects/${level}`,
+      url: `https://www.grademax.org/subjects/${level}`,
       siteName: 'GradeMax',
       type: 'website',
     },
     alternates: {
-      canonical: `https://www.grademax.me/subjects/${level}`,
+      canonical: `https://www.grademax.org/subjects/${level}`,
     },
   }
 }
@@ -78,7 +78,7 @@ export default async function LevelPage({ params }: PageProps) {
   const subjects = getSubjectsByLevel(level)
   
   // Generate JSON-LD schema
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
   const pageUrl = `${baseUrl}/subjects/${level}`
   
   const schema = {

@@ -8,9 +8,9 @@ import {
 } from "../src/lib/questionPdfAssembly";
 
 /** A source PDF whose page size encodes which question it belongs to. */
-async function fakeQuestionPdf(questionId: number, pages = 1): Promise<ArrayBuffer> {
+async function fakeQuestionPdf(questionId: number, pages = 1, height = 500): Promise<ArrayBuffer> {
   const doc = await PdfLib.PDFDocument.create();
-  for (let i = 0; i < pages; i++) doc.addPage([400 + questionId, 500]);
+  for (let i = 0; i < pages; i++) doc.addPage([400 + questionId, height]);
   const bytes = await doc.save();
   return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer;
 }
@@ -54,8 +54,8 @@ test("missing and failed mark schemes become placeholders, never a shift", async
   );
 
   assert.deepEqual(result, { merged: 2, placeholders: 1 });
-  // q1 (1 page) + q2 placeholder (1 page) + q3 (2 pages)
-  assert.equal(doc.getPageCount(), 4);
+  // q1 (500pt) and the q2 placeholder share a sheet; each 500pt q3 page needs its own.
+  assert.equal(doc.getPageCount(), 3);
 });
 
 test("a download that fails is a placeholder in the same slot", async () => {
@@ -75,7 +75,8 @@ test("a download that fails is a placeholder in the same slot", async () => {
     },
   );
   assert.deepEqual(result, { merged: 1, placeholders: 1 });
-  assert.equal(doc.getPageCount(), 2);
+  // The placeholder block and the 500pt question fit on one sheet, in slot order.
+  assert.equal(doc.getPageCount(), 1);
 });
 
 test("garbage bytes are a placeholder, not a crash", async () => {
@@ -90,4 +91,51 @@ test("garbage bytes are a placeholder, not a crash", async () => {
   );
   assert.deepEqual(result, { merged: 0, placeholders: 1 });
   assert.equal(doc.getPageCount(), 1);
+});
+
+async function layoutOf(heights: number[][]): Promise<{ sheets: number; blocks: import("../src/lib/questionPdfAssembly").PlacedBlock[] }> {
+  const doc = await PdfLib.PDFDocument.create();
+  const bodies = await Promise.all(heights.map(async (pages, q) => {
+    const src = await PdfLib.PDFDocument.create();
+    for (const h of pages) src.addPage([595, h]);
+    const bytes = await src.save();
+    return bytes.buffer.slice(bytes.byteOffset, bytes.byteOffset + bytes.byteLength) as ArrayBuffer;
+  }));
+  let blocks: import("../src/lib/questionPdfAssembly").PlacedBlock[] = [];
+  await assembleQuestionPdfs(
+    doc, PdfLib,
+    heights.map((_, q) => ({ url: String(q), label: `Q${q + 1}` })),
+    "worksheet",
+    async (url) => bodies[Number(url)],
+    undefined, undefined,
+    (placed) => { blocks = [...placed]; },
+  );
+  return { sheets: doc.getPageCount(), blocks };
+}
+
+test("short MCQ strips share a sheet instead of one sheet each", async () => {
+  const { sheets, blocks } = await layoutOf(Array.from({ length: 8 }, () => [160]));
+  assert.equal(sheets, 2, "eight 160pt strips fit on two A4 sheets, not eight");
+  assert.deepEqual(blocks.map((b) => b.question), [0, 1, 2, 3, 4, 5, 6, 7], "slot order is kept");
+  for (const b of blocks) assert.ok(b.bottom >= 24, "no block runs into the bottom margin");
+});
+
+test("blocks on one sheet never overlap and run top to bottom", async () => {
+  const { blocks } = await layoutOf([[160], [300], [200], [160]]);
+  for (let i = 1; i < blocks.length; i++) {
+    if (blocks[i].sheet !== blocks[i - 1].sheet) continue;
+    assert.ok(blocks[i].top < blocks[i - 1].bottom, `block ${i} starts below block ${i - 1}`);
+  }
+});
+
+test("a full-height page always gets its own sheet", async () => {
+  const { sheets, blocks } = await layoutOf([[160], [842], [160]]);
+  assert.equal(sheets, 3);
+  assert.deepEqual(blocks.map((b) => b.sheet), [0, 1, 2]);
+});
+
+test("a short last page of a long question is followed by the next question", async () => {
+  const { sheets, blocks } = await layoutOf([[842, 300], [160]]);
+  assert.equal(sheets, 2, "the 300pt continuation and the next MCQ share the second sheet");
+  assert.deepEqual(blocks.map((b) => [b.question, b.sheet]), [[0, 0], [0, 1], [1, 1]]);
 });

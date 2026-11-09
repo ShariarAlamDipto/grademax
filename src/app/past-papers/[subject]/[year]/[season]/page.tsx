@@ -125,7 +125,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${title} | GradeMax`,
       description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} past papers with mark schemes. Download question papers and answer booklets as PDF.`,
-      url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
+      url: `https://www.grademax.org/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
       siteName: "GradeMax",
       type: "website",
     },
@@ -135,7 +135,7 @@ export async function generateMetadata({
       description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
+      canonical: `https://www.grademax.org/past-papers/${slug}/${yearLabel}/${normalizedSeason}`,
     },
   }
 }
@@ -152,7 +152,7 @@ function buildJsonLd(
   papers: PaperRow[],
   examCode: string
 ) {
-  const base = "https://www.grademax.me"
+  const base = "https://www.grademax.org"
   const pageUrl = `${base}/past-papers/${slug}/${year}/${seasonSlug}`
 
   return {
