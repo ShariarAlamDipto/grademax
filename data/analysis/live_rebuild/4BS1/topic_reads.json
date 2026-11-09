@@ -1,0 +1,1747 @@
+{
+ "2019_may-jun_P1R|1": {
+  "topics": [
+   "1.2",
+   "4.2",
+   "3.3",
+   "4.3",
+   "3.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(f) franchisee 3; (g) customer satisfaction 6; (a)(iii)(vi) fixed/total cost 2; (a)(ii)+(c)+(e) PLC, above-the-line, discount price 4; (a)(v) exchange 1; (a)(i)+(b) short-term finance 2",
+  "qp_sha256": "150766d66fe8f95164d37e0c11be61b5c6c6ba1525d599aa3920e5ef534f91d5",
+  "ms_sha256": "fb3ccb9565ded7f1d4b3667ae47918670a9d9ae20bfb9dfc9a411343e14722b9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1R|2": {
+  "topics": [
+   "5.2",
+   "4.3",
+   "2.5",
+   "5.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) batch vs flow production 9; (c) penetration pricing 3; (b) finance function + (d) span of control 4; (e) diseconomies 3; (a) non-financial motivation 1",
+  "qp_sha256": "d0eb825d465833db3c4d13492e2a348c7db33f46feda3a7c72ee84fcbdd763ce",
+  "ms_sha256": "48a4997fd01538cba6e4578769261eef267889bc8f107c4c791f0d76cbee7edb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1R|3": {
+  "topics": [
+   "4.1",
+   "3.4",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) primary vs secondary research 9; (a) current liabilities + (d) statement of comprehensive income 7; (c) GPM 2; (b) revenue reason 2",
+  "qp_sha256": "7fb5fbb8775df69985909def3baee9a729b332b1febe7cb40829fc336266d34d",
+  "ms_sha256": "bb18b9286843afe58759bc45b7130c658536c06b0474d4f7ac8193744115fd2e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1R|4": {
+  "topics": [
+   "4.3",
+   "3.1",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate technology in promotion 12; (b) internal sources of finance 6; (a) current ratio 2",
+  "qp_sha256": "d8396b6fe423812012b43b1f52df622046c771aa154a29571f5bce15ee872af8",
+  "ms_sha256": "c31388c5a44abfc84fa7cc04325ee122241b043a2957b433c37ea4e10ccf8a19",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|1": {
+  "topics": [
+   "4.2",
+   "3.5",
+   "1.5",
+   "4.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) customer needs 6; (e)(f) GPM calc + raising GPM 5; (a)(v)(vi) exchange rate 2; (a)(i)+(c) secondary research, quantitative data 2; rest single 1-mark recall",
+  "qp_sha256": "7cc1d92288ea2498f557847e7f943e685fd247013ef138657e218cbf55061642",
+  "ms_sha256": "a64209fdbba734548f2eb2a18d42b673bca6846da414227967714ded36e58796",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|2": {
+  "topics": [
+   "2.4",
+   "4.3",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) bonus vs job enrichment 9 + (a) fringe benefit; (d) above-the-line + (e) PLC extension 6; (c) HR functional area 3; (b) off-the-job training 1",
+  "qp_sha256": "a013b2d99a93e8dbeb90969747e354d8278f2b7dbe1f0bacfff1e0a034c1f4ff",
+  "ms_sha256": "23492442682b60c503f33c41203044632813fbdc1407ad8594ea2b5b85b72795",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|3": {
+  "topics": [
+   "3.1",
+   "3.3",
+   "1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) crowdfunding vs overdraft 9; (a) profit,(c) break-even calc,(d) break-even analysis 9; (b) interest rates 2",
+  "qp_sha256": "496f5c7634c7fed88a6bf67da2bbc401c450a698507732ef86dc1fc20919aad8",
+  "ms_sha256": "4ad42cb724d7c0b1629c872113bd4e7ea09d011a54663d2c92605b528881b8c3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|4": {
+  "topics": [
+   "4.1",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate primary market research 12; (a) markup + (b) profitability ratios 8",
+  "qp_sha256": "87908c47185773d55c0feb7887a48324d29c31476efdb8717eba807d74204db1",
+  "ms_sha256": "b3a009a0d70f7fac6096c23e44209a882181aa1d8f2400b6a6e32d8b45e6292b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|1": {
+  "topics": [
+   "4.3",
+   "5.2",
+   "1.8",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) public relations 6 + (c) PLC; (f) technology in manufacture 3; (b) insolvency + (e) sales growth calc 3; (a)(iv)(v) break-even point, total costs 2; (a)(vi) exchange 1",
+  "qp_sha256": "ca98d2060ac42601b6e8466863584c26a840bb4a2f4a77b85589c34d1375b152",
+  "ms_sha256": "05b82b1cd38fbc344a3717c00d7297d3297f32eb2983910149b738c61890d7b9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|2": {
+  "topics": [
+   "4.3",
+   "2.4",
+   "5.2",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) cost-plus vs promotional pricing 9; (c) fringe benefits 3; (d) job production 3; (e) chain of command 3; (a) non-financial objective 1; (b) casual staff 1",
+  "qp_sha256": "bd2b66f60c5f3d82f966fbb1233fa9a417099557db38a6d682b4f21480a3e258",
+  "ms_sha256": "66c5871b3b12993f0ff6fc116bb0b94d0c77bca493fbea471c3bb86eaeae2768",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|3": {
+  "topics": [
+   "4.1",
+   "3.5",
+   "3.4",
+   "3.3",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) primary vs secondary research 9; (d) using financial information 6; (a) revenue + (c) revenue % change 3; (b) overdrafts 2",
+  "qp_sha256": "3c7a1bea95fb2c91b174f7d3fefab072db5a90d54e45f2b259bc4b59508105bb",
+  "ms_sha256": "078a7a79e745a0492dd683f6eebebe834971ed95e0c939f45d60abddde8297cd",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|4": {
+  "topics": [
+   "1.4",
+   "2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate factors in factory location 12; (b) induction programme 6; (a) sales per showroom calc 2",
+  "qp_sha256": "e1622777c0fa4ef463db6658166b954b9d518a5687f7e9d8935fd14b33dbb8c9",
+  "ms_sha256": "be37d6eae68fd6616568d3d7761843ef290a9fc981fc34ec409ff2e07fdb34c3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1R|1": {
+  "topics": [
+   "1.7",
+   "1.8",
+   "4.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) environmental factors 6; (e) revenue growth + (f) increase profit 5; (a)(ii)(iv) Boston matrix, PLC 2; (d) social enterprise 1; (a)(i) non-financial objective 1",
+  "qp_sha256": "fff919f46f2ba00d39b2fd5e2da07a2f6430c5550e9e8feabf74f50491e0e366",
+  "ms_sha256": "c17852ea13bc9ebd54ed47cc1ebbc2c5014108d38898324f61e80682695201c9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1R|2": {
+  "topics": [
+   "4.3",
+   "2.5",
+   "5.2",
+   "4.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) free samples vs posters 9 + (c) e-newsletters 3; (d) HR responsibility 3; (e) JIT 3; (a) primary research 1",
+  "qp_sha256": "c94dbac72e8a6e28511a4d7eaf37af24c32e97c770d3488dfbf924d8f096f185",
+  "ms_sha256": "e8ba734d55e6d9dfd37312dc0fcd8049acade9de95b20167120852f8e350a6d1",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1R|3": {
+  "topics": [
+   "3.2",
+   "3.4",
+   "3.5",
+   "1.8"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) increase net cash flow 9; (d) usefulness of income statement extract 6; (c) operating profit margin 2; (b) customer satisfaction 2",
+  "qp_sha256": "8b4fd8d6bff9aad6555dfeccfbe7dc9f948f5265e508c0e9e465dbce4e3d64bb",
+  "ms_sha256": "d5be5959acb15431d8064a9c33840e57a1b9bf3fc18281db63cc4dac78c0088b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1R|4": {
+  "topics": [
+   "1.4",
+   "2.2",
+   "3.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate factors in locating a second bakery 12; (b) casual staff 6; (a) break-even calc 2",
+  "qp_sha256": "c364618415394cf9a78360d167d46811da172a384531b829c599150dc3626bc6",
+  "ms_sha256": "a1b057fc1c62a2b3e500c5e95154ee13399f05a4f0f3a9cbc2f077462dafe3c4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|1": {
+  "topics": [
+   "1.4",
+   "1.2",
+   "3.5",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) importance of location 6; (f) partnership disadvantage 3 + (c) stakeholder; (e) markup 2; (a)(ii)+(b) variable/fixed costs 2",
+  "qp_sha256": "87eb499042355bf24b22c3a76101b4a383a9e84728319fc371aec2410f7a0b76",
+  "ms_sha256": "c2bfd738486afebd554d7e40a380bb473f310639f306f46d84349dadbdf82778",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|2": {
+  "topics": [
+   "2.4",
+   "1.8",
+   "4.1",
+   "1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) commission vs hourly rate (retention) 9; (a) business failure + (d) measuring success 4; (c) purpose of market research 3; (e) interest rates 3; (b) casual staff 1",
+  "qp_sha256": "1442e9e456b9e27f31273e527a7f7c6b4d8c616bd8218b9f1fcc23fba11a28d2",
+  "ms_sha256": "8ece59537e938fad43c59892e8ef8ec603d946c51e73baa57f409b5750555236",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|3": {
+  "topics": [
+   "1.8",
+   "3.2",
+   "1.1",
+   "3.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) increase revenue: new instruments vs online lessons 9; (c) closing balance + (d) importance of cash 8; (b) financial objective 2; (a) liquidity 1",
+  "qp_sha256": "2a1971348da1936bc677a0d17c16b2450eb065f8ccc3adbcc08e29a78a4d6881",
+  "ms_sha256": "a6d4beb7f4c734b8c4a7d13d04a37027175d8ea7d986ac8ad6874863b4d51cf3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|4": {
+  "topics": [
+   "1.2",
+   "4.3",
+   "2.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate becoming a private limited company 12; (b) below-the-line promotion 6; (a) minimum wage % calc 2",
+  "qp_sha256": "c6342bf441fa3245941a8c0be6b5fae6528ddcf34aeb6ba108199ef8d8e13c5e",
+  "ms_sha256": "2431e50c4fb8308be704fa52e225b27fb1c8078aafc1b33f3dd99df7a57a3c95",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|1": {
+  "topics": [
+   "4.3",
+   "1.2",
+   "1.8"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) branding 6 + (f) sponsorship 3; (a)(ii)(v) franchise, public corporation 2; (c) revenue + (e) % increase 3; (a)(iii) markup 1; (a)(iv) interest 1",
+  "qp_sha256": "8d8cb6e871a3dfdfae0522ef6f303e4d56befcf2fc65ed254b6d96bdf28e519a",
+  "ms_sha256": "215683221e55afffea14b7741b5920ebd4c80958c5f92134c476e8b7e40eb07d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|2": {
+  "topics": [
+   "5.2",
+   "4.3",
+   "4.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) kaizen vs JIT 9; (c) penetration pricing + (e) new products 6; (b)+(d) market research 4",
+  "qp_sha256": "909e02badf56eaae023885566d21c4b41b0c116d5209848e75ecfc184d78eb49",
+  "ms_sha256": "61bfd759283bc3144e2a608911f241afa555f217581624bf00621f684200b09e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|3": {
+  "topics": [
+   "3.3",
+   "3.1",
+   "5.2",
+   "4.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(c) break-even + (d) limitations of break-even charts 8; (e) retained profit vs selling assets 9; (b) robotics 2; (a) e-tailers 1",
+  "qp_sha256": "b3409421992de58ef9e43b320e24347b9b689f7ea57f393e340227ac4d9cbd29",
+  "ms_sha256": "068f546bd05cf11fa7673b5487f38e63e6705b5a7ebc3b5ea0de1b7187036832",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|4": {
+  "topics": [
+   "1.8",
+   "3.4",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate factors that make a business successful 12; (b) bank's interest in financial documents 6; (a) acid test ratio 2",
+  "qp_sha256": "e959f544fcd1c837e3179aaea4b75c338f2f71dce96607edc8c1b6b713d5397b",
+  "ms_sha256": "5160bee61b468cb88df29418fa7b38f6ed5226cfb4717d3fdfe8088bc4fea0ab",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|1": {
+  "topics": [
+   "3.5",
+   "3.4",
+   "2.4",
+   "3.2",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) using financial information 6 + (v) % change in assets; (f) Herzberg 3; (e) net cash flow 2; (a)(i)+(b) plc, social enterprise 2; (c) globalisation 1",
+  "qp_sha256": "3df92c97de799fde649d93a1a54240e79d9f0d96847763527020188cb89b5b06",
+  "ms_sha256": "37973b93baa43452c0e80f17793ea6bb59d18cfac000cd1fe1f17c256647873a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|2": {
+  "topics": [
+   "4.1",
+   "2.2",
+   "2.3",
+   "2.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) questionnaires vs focus groups 9; (c) full-time + (d) seasonal staff 6; (e) health and safety induction 3; (a) non-financial motivation 1; (b) loyalty programme 1",
+  "qp_sha256": "361a503be03a71e4726f4d92261568cc43c8ab6686e5d55abb144edf708ab87d",
+  "ms_sha256": "03db8527216a64b22b665345aaf03bc0ee4076fa67bf3447ba11bf8ac39fd7b4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|3": {
+  "topics": [
+   "4.3",
+   "1.7",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) special offers vs social media advertising 9; (d) being environmentally friendly 6 + (c) petrol % calc 2; (a) hierarchical + (b) chain of command 3",
+  "qp_sha256": "1917f5252ee014d8a7203aa116515fafb68b2eb00ce712aa6d96c934834d3a2d",
+  "ms_sha256": "580b466fc9b9b5682a18a0c4b191e40d6c0159cd93a2978dd15dfff9752ab11d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|4": {
+  "topics": [
+   "4.2",
+   "2.2",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate changes in consumer spending and competition 12; (b) interviewing pilots 6; (a) loan interest calc 2",
+  "qp_sha256": "76e74411b5bde1e648f926eced9644760256c4c27e63f6fb1dfdc264e86c1aef",
+  "ms_sha256": "fbd8ba8bd1229a0298a7fc3a2275599771b9fc85974e3e8a4250c8e1d4d93e56",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P1|1": {
+  "topics": [
+   "4.2",
+   "3.5",
+   "4.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) importance of marketing 6 + (d) segmentation; (e) operating profit margin + (a)(vi) markup 3; (f) PLC extension 3 + (a)(ii) skimming; (a)(v) exchange 1; (c) non-current liabilities 1",
+  "qp_sha256": "ba5766d6c4af231bb2737a33ca86fa3ab39625aae006f8f9c88b9cc9ce45647e",
+  "ms_sha256": "9213c95cc0f22c506fe78251a9dc53b51ca33be0ab1812f90b0a2bf31249e310",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P1|2": {
+  "topics": [
+   "4.3",
+   "4.1",
+   "3.2",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) low introductory price vs competitor price 9 + (b) retailers; (a) external factor 1; (c) secondary research 3; (d) cash flow forecast limitation 3; (e) crowdfunding 3",
+  "qp_sha256": "9405c82ffcd3329b825532c9b5f1e24c4759693f59be17c54cf6922e070f02ad",
+  "ms_sha256": "6a39d322b392fd20b3e0ed2d0ea97dd8d8bba44e632ab64cbf6f8fc3343b2e43",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P1|3": {
+  "topics": [
+   "4.1",
+   "3.3",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) questionnaires vs internet research 9; (c) break-even calc + (d) usefulness 8; (b) seasonal staff 2; (a) remuneration 1",
+  "qp_sha256": "f823df13c1ec69224d44742510cc435eb109fc01a062b5bd553d13ce0ed0f370",
+  "ms_sha256": "60409d0aea42fb1370935aa2bc3e19e6ab1d3844198713a8baa4e19932ab0f21",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P1|4": {
+  "topics": [
+   "1.8",
+   "3.1",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate measuring success of farm shop 12; (b) personal savings 6; (a) current ratio 2",
+  "qp_sha256": "fd066724decc92aff9a7b8774777d88930347fb6aa9cba56faa9512d00f48166",
+  "ms_sha256": "b217d01b4f9c1acb6158d461f877c2acdb5525bd6cb9ca92cea61535ab189eb8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|1": {
+  "topics": [
+   "2.3",
+   "1.8",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) training all employees 6; (e) sales growth calc + (f) missing predicted growth 5; (a)(ii)(iv)... (a)(vi) franchise 1, (c) venture capital 1; (a)(iii) exchange 1; (d) cost-plus 1",
+  "qp_sha256": "70d17286b18287c923b8c0fa2e7b85a200282acaac1fb458fc5a8203e7d09aa5",
+  "ms_sha256": "2e87e7f72c2685c9dd77adc5d0a58d4321cdb82d4f2f8262654aebea1d7483e9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|2": {
+  "topics": [
+   "4.3",
+   "1.8",
+   "5.2",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) targeted online advertising vs e-newsletters 9; (c) why businesses fail 3; (d) batch production 3; (a) internal promotion + (e) CV 4; (b) health and safety law 1",
+  "qp_sha256": "624402ddbfbd94cb3caeff711ebd6ab5d21f3f10e3ecf2f5aecfb4b56564ce5c",
+  "ms_sha256": "6061ce7ec3412d6370187a094091f7afb930bdfe2dbc611d2c00f18fd7d1ff04",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|3": {
+  "topics": [
+   "2.4",
+   "2.1",
+   "4.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) job rotation vs job enrichment 9; (d) communication barriers 6; (a) economies of scale 1; (b) special offers 2",
+  "qp_sha256": "9f0a803e1ae4828063a5a42e564971b9c1216df159c07d13c205c9dd99746703",
+  "ms_sha256": "0daddff45c1b07b9be66e48f93dcc99c9a134adb6a9a6a61f2d225ceab5c655b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|4": {
+  "topics": [
+   "5.4",
+   "1.6",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate quality in manufacturing 12; (b) UK interest rate rise 6; (a) operating profit margin 2",
+  "qp_sha256": "6de82cbbc763c4c71984edf0f794dd97097c3c355b0e615b8493b5d34504f787",
+  "ms_sha256": "ed84b74bd87a5fac8870e3d746ca5d51f360a331a3512aa2e4619b3f924546ef",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|1": {
+  "topics": [
+   "1.6",
+   "1.8",
+   "4.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) effect of an interest rate cut 6; (f) measuring success 3; (e) course discount calc 2; rest single 1-mark recall",
+  "qp_sha256": "5ab55d22eb7112a1bfbf565b2955bc4f093b53a081bfdef132c285e69dc098f0",
+  "ms_sha256": "4137cfccf88187e2e4036aeab5c9e6fc9019188fd020b53ebf5891c7ae26e70a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|2": {
+  "topics": [
+   "4.3",
+   "5.4",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) sponsoring a local show vs national exhibition (public relations) 9 + (d) social media 3; (e) TQM 3 + (a) quality 1; (c) partnership 3",
+  "qp_sha256": "a046daaf3f84c50b69f84a646b7d56f7ce42e1e51277c4f6dea3c818bf13495c",
+  "ms_sha256": "684a14b3bd2894eba1f3e837581f15cb5ac27d5bc28ec5fa47c5d9ae031cc56a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|3": {
+  "topics": [
+   "3.1",
+   "3.5",
+   "3.4",
+   "3.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) crowdfunding vs retained profit 9; (d) using profit and loss extract to assess performance 6 + (c) GPM 2; (b) importance of cash 2",
+  "qp_sha256": "b738981b4c96155eb740ea020d442668d1b5be9ffb3dc89bde558e02a3dc0cae",
+  "ms_sha256": "2fc36059a27be3fcf25520098b164facb55357cc3febc38ca5b2353b97fdc9d3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|4": {
+  "topics": [
+   "1.4",
+   "2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate location factors for second studio 12; (b) on-the-job training 6; (a) leaflet delivery arithmetic 2",
+  "qp_sha256": "7525b278884027cf41616dd9e4311513aad43b0342f887f7b29c7a41662619a0",
+  "ms_sha256": "5ad82757ae19e631c45327cdd8e1ec8c8e2060cc6cba6b9b1bd710a53a12749f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|1": {
+  "topics": [
+   "1.4",
+   "4.3",
+   "3.5",
+   "1.2",
+   "3.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) locating near labour 6; (f) sponsorship 3; (e) operating profit margin 2; (a)(iv)+(b) partnership, sole trader 2; (a)(vi)+(d) long-term finance, share capital 2",
+  "qp_sha256": "f79aa06d26d828de0eadf976032a3e620c16a7d18afee9ae436074bb5d102711",
+  "ms_sha256": "ab9083a6319a5f95c60cd3aaa00c8337bf1e575e880b8a2cc992c9b090018fed",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|2": {
+  "topics": [
+   "2.4",
+   "4.3",
+   "1.5",
+   "4.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) financial vs non-financial motivation 9; (c) public relations 3; (d) multinational 3; (e) secondary research 3",
+  "qp_sha256": "413b2f5b2a267246b56c22b084a3e5a5305fa0360e76e453fa130929f4f2cc8e",
+  "ms_sha256": "68761a14e58b2b186ec73d75303f20c9fb521181d2af736360ef405024801711",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|3": {
+  "topics": [
+   "4.3",
+   "2.3",
+   "5.2",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) competition vs promotional pricing 9; (d) off-the-job training 6; (b) robotics 2; (c) bank loan interest 2",
+  "qp_sha256": "74a8788111f80d25ab72205b9a7872980114011994721546576135ef0ead9f03",
+  "ms_sha256": "37b3bb3e5b9a73603991df8311acdf2ba27e64abd11caac6411462cb5a308eb4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|4": {
+  "topics": [
+   "4.1",
+   "5.4",
+   "1.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate market research before designing a product 12; (b) quality control 6; (a) exchange rate calc 2",
+  "qp_sha256": "4b9969f8da4f19b02d5ab882a2d05d9795c3d99174fdfc17a2fdd684995703fc",
+  "ms_sha256": "5de08d5a809c0c446da5d00f07d132a5fe337af151258f917ca7b03c1262406c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|1": {
+  "topics": [
+   "5.2",
+   "3.2",
+   "2.1",
+   "4.1",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) productivity impact of ordering app 6 + (b) job production; (a)(i)+(e) cash flow, net cash flow 3; (f) communication 3; (a)(ii)+(d) primary/quantitative research 2; (a)(iii)(iv) fixed cost, break-even 2",
+  "qp_sha256": "a3d82f40d504ca3324733b33dc77db31c3425d8984c931d41b1718eb3878aa2c",
+  "ms_sha256": "3c593e55816b559ba34e5b3a10bcb76ac8e412358f5ba4f2663fbf1473b5f7a1",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|2": {
+  "topics": [
+   "4.3",
+   "4.2",
+   "3.1",
+   "2.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) more advertising vs opening for breakfast 9; (c) repeat purchase 3; (d) personal savings 3; (e) motivation 3",
+  "qp_sha256": "4c57cc5ef698249a6dba99bab213a98d05741b23761a67ca8ca245e1d89386f7",
+  "ms_sha256": "2c661bdbaff14c53bdb99de3cb03dabcc66ad1f8bdd94ab56b322896b153fc71",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|3": {
+  "topics": [
+   "2.2",
+   "4.2",
+   "3.5",
+   "5.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) permanent vs temporary contract 9; (d) customer social-media reviews 6; (c) GPM 2; (b) holding more inventory 2",
+  "qp_sha256": "c79465d9f87ca1af71f5e3d3b99922ee72bb716ec77fe46bd75594bb922bd70d",
+  "ms_sha256": "f2aadd9148c00cf18d830c8259a21a3d7234cfcc6e01f9bc1eb052056d875f60",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|4": {
+  "topics": [
+   "3.1",
+   "4.2",
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate venture capital for Can Cafe 12; (b) responding to market changes 6; (a) group discount calc 2",
+  "qp_sha256": "1bb954524d8b56dae5c43e5691e24f265411d73cf5629318d59e5f6ba8e262df",
+  "ms_sha256": "e9f060b64d16003246756d0c04a9e154204b2a8bd7fafba6799427ea6f7d2453",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|1": {
+  "topics": [
+   "1.7",
+   "1.2",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) external factors on decisions 6; (f) sole trader 3; (a)(iii)+(e) variable and total costs 3; rest single 1-mark recall",
+  "qp_sha256": "ded60b5653f6605434697db04d78a4312d8a22eff86c4a0424c77cb158023ec5",
+  "ms_sha256": "9d591312c4df32412d408238a4e5efda1405b5d34bc809dd74712da811fa9bb6",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|2": {
+  "topics": [
+   "3.1",
+   "1.8",
+   "2.5",
+   "4.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) retained profit vs bank loan 9; (a) measuring success + (d) increasing profit 4; (c) flat structure 3; (e) Boston Matrix 3",
+  "qp_sha256": "8d951ad5a7189a451787ae9df9236919e63d689bd330cb1bb21362014c8c048f",
+  "ms_sha256": "c5cd4dc14719e1ce5ca83699ecf8729af0350ed4c3db0df78a3fad5385dbc2ae",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|3": {
+  "topics": [
+   "4.1",
+   "2.4",
+   "4.2",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) questionnaires vs focus groups 9; (d) motivating employees 6; (b) responding to competition 2; (c) current ratio 2",
+  "qp_sha256": "a5bbde959947a98b410b289b3965d026dd9636fe8cc87f41f0813039a4320c14",
+  "ms_sha256": "82abd4e4cabc4e4c992bdf16b3933c1c0e3f67f6c822d70113c577ef9c09025a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|4": {
+  "topics": [
+   "2.1",
+   "3.5",
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate internal and external communication 12; (b) usefulness of acid test ratio 6; (a) VIP discount calc 2",
+  "qp_sha256": "21e29bf7f7db08a6b57e6045c54d8bf6b019a77a968ac3521a39a34ab008c524",
+  "ms_sha256": "86a102a777011c16c0cf390e9791b8abffbf684975c390764c88fc623efdffb3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|1": {
+  "topics": [
+   "1.4",
+   "1.6",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) factory location factors 6; (f) lower interest rates 3 + (e) tax on price 2; (a)(i)+(c) partnership, sole trader 2",
+  "qp_sha256": "29b9fd6f66680e829f4d30fbc502997be2067751254c81e19f528cdabb69abd0",
+  "ms_sha256": "7c4ccdfa1a98719741d844868134798e14c0b3940ab1a3a92b10c9775f8caed7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|2": {
+  "topics": [
+   "2.2",
+   "2.4",
+   "2.3",
+   "5.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) part-time vs job share 9 + (a)(b) CV, job description; (c) motivation 3; (d) trained employees 3; (e) kaizen 3",
+  "qp_sha256": "b1d87fedd59d599f24da66c31386efa79ad2bd7e84a89c488852f6a7c390db45",
+  "ms_sha256": "4c131782acafa63c4d19442bf810cff08041e2a94433dea92db2723d7fbf1ec9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|3": {
+  "topics": [
+   "5.2",
+   "1.6",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) batch vs flow production 9; (d) government sugar legislation 6; (b) interviewing shortlisted candidates 2",
+  "qp_sha256": "c3256fb372e1756126fa7be10c243138ff03ed9d1abd568d84f165fc4e6e12d9",
+  "ms_sha256": "d5ffb331293b96651222cc430e185528ec6978a3077c7fe03bd4898691c0a49c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|4": {
+  "topics": [
+   "4.2",
+   "4.3",
+   "3.1",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate marketing when introducing a new product 12; (b) need for an overdraft 6; (a) GPM 2",
+  "qp_sha256": "092436bfd57dbf65cd7fe48025f07757dc87942ead98fbc5e357339441360cae",
+  "ms_sha256": "261d98a732c56396416602a2f05097c7775de8ab8fe314b190104e2bcef61c09",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|1": {
+  "topics": [
+   "1.5",
+   "4.1",
+   "3.5",
+   "3.3",
+   "1.2",
+   "2.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) multinational 6; (f) questionnaires 3; (e) cost from markup 2; (a)(iii)+(b) profit, break-even 2; (a)(iv)+(c) franchise, public corporation 2; (a)(vi)+(d) functional area, span of control 2",
+  "qp_sha256": "e15a33cd262b7cc7ae422ba123d01c26abd13250edb5956dd081db1e3ef2079c",
+  "ms_sha256": "24514aa547e88384e1b600cf482925ac2f38f9199e00a5e0a0acf7988e197694",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|2": {
+  "topics": [
+   "4.3",
+   "2.2",
+   "2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) cost plus vs skimming 9 + (d) product trials 3; (b) casual + (c) above minimum wage 4; (e) health and safety law 3",
+  "qp_sha256": "4005f1c888c2e29e8036c81e92578819f133cdc1bb62d295d59511785966677a",
+  "ms_sha256": "2f97d2134cc5245833c381f8af043749a518e0c78989ef74bdfbfb210ef2d5f5",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|3": {
+  "topics": [
+   "2.3",
+   "3.5",
+   "3.4",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) on- vs off-the-job training 9; (d) using statement of comprehensive income for new toys 6; (b) private family business 2; (c) pay rise arithmetic 2",
+  "qp_sha256": "92606961557d133511646e4e622e8387a6222b8f94308208f56c61a4dcbf9351",
+  "ms_sha256": "080ee0dcae80a99fcd004fbfd5d78a1784337b3f1a51e41387a3495bf9a49d9c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|4": {
+  "topics": [
+   "5.4",
+   "5.2",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate how LEGO keeps competitive advantage (quality, best people) 12; (b) robotics 6; (a) current ratio 2",
+  "qp_sha256": "3f40efa9bc8d6389395d8065aa80ba1c5cc5a9eabdc642d3876f81fb5461161e",
+  "ms_sha256": "7d8224be8fe5d02ba9c803448b5cdd6630ea3e8a617e4ff4235dfcafcb9a7997",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|1": {
+  "topics": [
+   "2.4",
+   "1.8",
+   "3.3",
+   "2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) motivating employees 6; (f) why a business might fail 3; (e) break-even calc 2; (a)(i)(iv) minimum wage, job description 2",
+  "qp_sha256": "af2db03d01f2aa675015f7c3720a3a938ab8cd21ea8a72f1c612850d84cb9ba8",
+  "ms_sha256": "3dbfbb834b3c82f90ebfd476e0a61f8d8cfe455918b72e5d761c4f6810860e7c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|2": {
+  "topics": [
+   "4.3",
+   "2.1",
+   "1.2",
+   "4.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) sponsorship vs leaflets 9 + (b) branding; (c) ineffective communication 3; (d) partnership 3; (e) product orientation 3",
+  "qp_sha256": "882fc27d13df0818232a6d11bea6d1b2438675408170f11bdbf1da69d08a4243",
+  "ms_sha256": "4e753516b44f62edd1e8e15a27a992b373173742f503855da7578053fbeee3fe",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|3": {
+  "topics": [
+   "4.1",
+   "3.1",
+   "4.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) questionnaires vs internet research 9; (d) using retained profits 6 + (c) % fall in retained profit 2; (b) PLC extension 2",
+  "qp_sha256": "7a444d4a2576421e489de8d203580c2205b238f9465a07b473ba08b3a9a4d07b",
+  "ms_sha256": "00d5efdeef7c39d103ca54035d512ab4ba4ef1241b76818afc1202e1f19f5d00",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|4": {
+  "topics": [
+   "3.5",
+   "3.4",
+   "1.8"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate usefulness of financial documents for opening a second shop 12 + (a) GPM 2; (b) measuring success 6",
+  "qp_sha256": "8419d1925895f6d74ff6d8aa31493202e888fe329324956b5944138319643957",
+  "ms_sha256": "68400af1173fb00cf9fbe456350f8975d6309c76c953cfdc277707480b8622f6",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|1": {
+  "topics": [
+   "4.3",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) branding 6 + (e) discount 2 + (f) test marketing 3 + (a)(iv)(d) goods, Boston matrix; (b)+(c) limited liability, social enterprise 2",
+  "qp_sha256": "91756fa00873ac84f0af3bffaf2f5e792d34250513e6ac19b24e405d494b4d5b",
+  "ms_sha256": "7be1710e284ea64d18c8ded6c977ffcf7ce93926305620ddcd4950c511a55d3f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|2": {
+  "topics": [
+   "5.2",
+   "4.3",
+   "4.1",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) batch vs job production 9; (c) e-newsletters + (b) PLC 4; (d) using market research 3; (e) decentralised structure 3",
+  "qp_sha256": "e918d72973b160f44d254473927ac58acf39aa1266b2fe3b07edab5d98ec0b6a",
+  "ms_sha256": "40c8a1ae7055a212f4da25d36bbb29583228d203bdc43bfc767dc893a77a7c72",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|3": {
+  "topics": [
+   "2.3",
+   "3.3",
+   "4.2",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) on- vs off-the-job training 9; (d) limitations of break-even charts 6; (b) customer loyalty 2; (c) current ratio 2",
+  "qp_sha256": "b35586782b20711cf29c596b23f85aca2f96fb33c6ede257788a2b3bf433fbc6",
+  "ms_sha256": "9f0f0bcd243e589ee852c7b9bab3ac75fd1e96fd291fd9508a7a79a1e6f0a28c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|4": {
+  "topics": [
+   "2.4",
+   "4.3",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate financial methods of motivation 12; (b) importance of place 6; (a) operating profit margin 2",
+  "qp_sha256": "30e34760b1a4060260c7b96325898a82bc87379d4da0498dde5f7027b953d0a7",
+  "ms_sha256": "00c25286a29c4c37bcfa152333873a983231143a621e50c250fbb6ab08c7f6be",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|1": {
+  "topics": [
+   "4.3",
+   "1.5",
+   "2.4",
+   "4.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) disadvantages of social media 6; (f) multinational 3; (a)(i)+(d) Maslow, motivation 2; (a)(vi)+(c) research method, qualitative 2",
+  "qp_sha256": "6c80c972046a805e9e0e15b7659b9f1086bc742b5b10b80564d9b2a5ac1a1025",
+  "ms_sha256": "699d4e9cedaa7afeb0d03913c12b8cd902818021701c3c051debdb5e8707aff2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|2": {
+  "topics": [
+   "4.3",
+   "2.2",
+   "5.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) more promotion vs improving vehicles 9 + (c) branding 3; (d) equal opportunities 3; (e) maintaining quality 3",
+  "qp_sha256": "311284f467805bf05f2dcc5b9e493b2d08d3ca52c1cb7eccdf2f802ea096a655",
+  "ms_sha256": "b29a00a98b9f8027d1da97c4b8cc2f17f41bc7e280f81e2e003255dcefbf8ff3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|3": {
+  "topics": [
+   "2.4",
+   "1.8",
+   "1.4",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) job rotation vs bonus 9; (d) comparing with other manufacturers 6; (b) location near labour 2; (c) current ratio 2",
+  "qp_sha256": "c6bc7bc0c244c740c9c3d94b6e75964715a61be383e9ed364e3a2f0ff7503deb",
+  "ms_sha256": "fd4d65e8fdf73e80d1a6aa544bc412baaf000b01e69ada74a3451eda03e1b139",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|4": {
+  "topics": [
+   "3.2",
+   "1.7",
+   "1.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate cash-flow forecasting for decisions 12; (b) tree planting (environmental) 6; (a) exchange rate calc 2",
+  "qp_sha256": "9a0c8eaa72364ded9b0e2133b428c51db0c05025271fa8da8c744042f74d9a71",
+  "ms_sha256": "06f5cf974692db7a95b8c015b63ddb28228d5267fab5d3bb7924c578e03e3d53",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|1": {
+  "topics": [
+   "1.2",
+   "3.5",
+   "5.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) all stores as franchises 6; (a)(iv)+(e) markup, GPM 3; (f) using resources effectively 3",
+  "qp_sha256": "f3fdbdf43c584c4389525980e4f997f69ba7037112a2dc6a95349340793c8de5",
+  "ms_sha256": "c75ee2c9627e6c44952e2157c064f7a073fb6bd31ddc7fc297ff841034e7effa",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|2": {
+  "topics": [
+   "4.3",
+   "3.2",
+   "5.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) above vs below the line promotion 9 + (e) new products 3; (c) cash-flow forecasting 3; (d) diseconomies of scale 3",
+  "qp_sha256": "e75e89003c10bb626cfc1213ef397818476a8ba8976dc6acf6fbe967e7c3ffe2",
+  "ms_sha256": "8cf4ebabb534b4b886865c067ebaa9f67ba2a42fa91f62b2a86fdd40760cbf25",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|3": {
+  "topics": [
+   "2.4",
+   "2.2",
+   "4.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) bonus vs job enrichment 9 + (c) bonus calc 2; (d) shortlisting 6; (b) government reports 2",
+  "qp_sha256": "33a8180a55791ca133c193f68a68de9bed5671d52fefc67ff8b7e46921584c8f",
+  "ms_sha256": "8267f4db842231c6411accd42cb8daf4aa7e6f95230152f5480ab5872be9a105",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|4": {
+  "topics": [
+   "4.2",
+   "3.5",
+   "3.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate demographic segmentation 12; (b) statements of comprehensive income to assess performance 6; (a) inventory % change arithmetic 2",
+  "qp_sha256": "de35cc66dcb7c82fc29902ccfa54f050936970cc07075c3bf9a4421b1927128c",
+  "ms_sha256": "c67b066fbbf049dd2cc14cff6b63cc4a61eba423876fcd117d9d3d38356df38d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|1": {
+  "topics": [
+   "4.3",
+   "3.3",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) e-commerce 6 + (e) promotional discount 2; (a)(iii)(vi)+(b)+(d) total cost, break-even, profit, variable cost 4; (f) sole trader 3",
+  "qp_sha256": "1d62454798781e1b2ff21bcfe01124956c5b54627aa3d631c5979d254786141b",
+  "ms_sha256": "7decb38990673e7d01a6580869dc9dee802d2ee1096d32c0c8512a839c032a3a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|2": {
+  "topics": [
+   "3.1",
+   "1.2",
+   "1.5",
+   "4.3",
+   "4.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) venture capital vs franchising 9; (c) globalisation 3; (d) below-the-line promotion 3; (e) segmentation 3",
+  "qp_sha256": "38211ab242a4720848c1af6f9336baf302581e58ebf8653c98f7fb1bebcc6553",
+  "ms_sha256": "d26c7eb527dfd972d13152ddc86ec39e0b5fdccaafc344b25dc8c0c370d2ad91",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|3": {
+  "topics": [
+   "4.3",
+   "1.5",
+   "1.3",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) competition vs cost-plus pricing 9; (d) depreciation of the krona 6; (b) secondary sector 2; (c) loan interest 2",
+  "qp_sha256": "8dd277ae0ab473810d2f78cafe319f8198141195acf235c4f9b510851a7d7383",
+  "ms_sha256": "89605cffbb5c0b38b908fcc97dbac2a14960f80b330369ac5d14df3c3a528079",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|4": {
+  "topics": [
+   "1.1",
+   "1.7",
+   "5.2",
+   "2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate social (environmental) objectives when growing 12; (b) Kaizen 6; (a) commission calc 2",
+  "qp_sha256": "b04f09a62331989c689d29a8aa485a0ff38d77a252bb1739602a8f16d88a8e3f",
+  "ms_sha256": "3ed06430a748cc13e161d953959718d0a2e14f4a523391687e2fbee10ffd334b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|1": {
+  "topics": [
+   "4.1",
+   "3.4",
+   "2.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) social media for market research 6 + (a)(i); (f) purpose of statement of financial position 3; (e) bonus calc 2",
+  "qp_sha256": "f97f75006fc985b358e0528097a1bf82542db16f8523d530d9da793c44c08517",
+  "ms_sha256": "d119e3ed6aea67c354f03f294ac3d0e432c8683a75952fdfe71b2e747e07f0e7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|2": {
+  "topics": [
+   "4.3",
+   "3.1",
+   "5.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) sponsorship vs special offers 9; (c) crowdfunding + (d) retained profits 6; (e) quality 3",
+  "qp_sha256": "a9a0f7c1e485af772b75d4aaab0979e886485c50e607c260f7b709ce48b64616",
+  "ms_sha256": "28ea2de8be3d673843ff5efb105c92c3c672716884ce9965f4c3e03456437148",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|3": {
+  "topics": [
+   "2.2",
+   "5.2",
+   "1.7"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) internal promotion vs external advertising 9; (d) reducing waste 6 + (b) robotics 2; (c) landfill arithmetic 2",
+  "qp_sha256": "0f1eee633c8e3b3a452d8d9c37d3629cc66c5f126b1c46b40d79bd7e17d888e3",
+  "ms_sha256": "04e7ec5b9cf8c6825cbf6802576f2662d555f9f2f04ac6e2cdbe8beb062baadf",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|4": {
+  "topics": [
+   "4.3",
+   "1.5",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate varied advertising methods 12; (b) benefits to host countries of a multinational 6; (a) GPM 2",
+  "qp_sha256": "9bd2fd8e24803df79f0230b4497f8fec02010dedcb19c50308666ca3d84b6c67",
+  "ms_sha256": "195367e2adb881f713dfb68809fb33aba4da590a679587d8faee134329050a4f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|1": {
+  "topics": [
+   "2.4",
+   "3.1",
+   "3.3",
+   "4.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) motivated employees 6; (f) venture capitalist 3 + (a)(i); (a)(iii)+(b) profit, variable cost 2; (e) meal-deal discount 2",
+  "qp_sha256": "6be039b180784d954ab2a6595a2287d6030e1e64477060c663db7a0a6bf6d76a",
+  "ms_sha256": "2417b8363e9e4a8bffc65b5634778669a32748726aff710ec2f14e05635bb0a8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|2": {
+  "topics": [
+   "4.3",
+   "4.2",
+   "2.5",
+   "1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) vegan range vs midweek special offer, responding to competition 9; (c) HR responsibility + (e) hierarchical structure 6; (d) partnership 3",
+  "qp_sha256": "e63e93d6bc80c6d573d4a76906fa8b1c7f7c09c1dec83b35819e9d989d058e64",
+  "ms_sha256": "7c76a94ac3ec03ddb49c3973ee724532a02e8df789d0364b90700f28c13a3bce",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|3": {
+  "topics": [
+   "2.1",
+   "1.8",
+   "4.3",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) noticeboard vs staff meetings 9; (d) measuring success 6; (b) social media promotion 2; (c) operating profit margin 2",
+  "qp_sha256": "bbcba3e863ea81104945e97213a38df77dd17551a8b73f0df4a895317d5106f4",
+  "ms_sha256": "fe33a1b7946fe0b675cc519ed0f653ccbe3f16ea10f06b49c58e458b47c77b0b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|4": {
+  "topics": [
+   "4.1",
+   "4.2",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate market research to meet customer needs 12; (b) segmentation 6; (a) ROCE 2",
+  "qp_sha256": "36971430ae5983e182a589fde2e703fb2cc361c13499f939c27acaf72056ccdf",
+  "ms_sha256": "101cf39f0829d9006dd79752eea4ed540a6ae3deed3ead36c9748d1d3fe80607",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|1": {
+  "topics": [
+   "3.5",
+   "2.5",
+   "2.2",
+   "4.3",
+   "5.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) usefulness of GPM 6; (f) HR function 3; (e) minimum wage calc 2 + (a)(i); (a)(ii)+(d) Boston matrix, extension 2; (a)(iii)+(b) job production, robotics 2",
+  "qp_sha256": "bb60261f9bfa9394949bb4ec5602801c64a1a80ab4fe6c4a0038e2025103a4fb",
+  "ms_sha256": "efff940e9741981c2edf9401c1795d3e3ba3d2b1b7e7229c89e8127df3eb76f2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|2": {
+  "topics": [
+   "4.3",
+   "2.1",
+   "2.5",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) trial new dog food vs sponsoring a show 9; (c) ineffective communication 3; (d) decentralised 3; (e) seasonal employees 3",
+  "qp_sha256": "1eed6c8cbc852d84f7ac0bd6edb26e3ab0b5bdf17d4795989221e8ffd1e90b79",
+  "ms_sha256": "874df6a69cf61080ae269d956bdb51544c2c9147dc7caf9a87956b538931c5a8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|3": {
+  "topics": [
+   "3.1",
+   "4.1",
+   "3.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) personal savings vs bank loan 9; (d) reliable market research 6 + (b) primary method 2; (c) closing balance 2",
+  "qp_sha256": "76da4be18b7d83e9228f76d127ac32aa1864612165f1163a3a4c9cfa23c1563c",
+  "ms_sha256": "a9462a2ab9a762ee43577cec9ac9c12cb55896e984a32b87af88b8f3f0894ba0",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|4": {
+  "topics": [
+   "4.2",
+   "3.2",
+   "3.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate marketing to keep market share 12; (b) importance of cash 6; (a) break-even 2",
+  "qp_sha256": "c8a66ed4f9ffd1cb223406514980f4494ecdc83ad73fe314ea874ee90ff43c01",
+  "ms_sha256": "b1270fa6c1b1a763635d71aacbc08ca931856dbed12dce41c15871646d4b8894",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|1": {
+  "topics": [
+   "4.2",
+   "2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) unsatisfied customer needs 6 + (d) loyalty; (f) equal opportunities law 3 + (c) minimum wage; rest single 1-mark recall; (e) plastic % arithmetic 2",
+  "qp_sha256": "1ac17dc5b74a1b2f505cd5b48c47131517126333f60be2f9856b70b3d93750de",
+  "ms_sha256": "e3ba8ce7e089f049c498087fec7e5e57b4eaacb00ef7fc2d5e164c56770069db",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|2": {
+  "topics": [
+   "2.2",
+   "1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) casual vs part-time employees 9 + (d) supporting disabled employees 3; (c) trading bloc 3; (e) interest rate rise 3",
+  "qp_sha256": "432ab85e452190be713a60a6e4d0551b9f8e191707330e83f72a672cf48c7908",
+  "ms_sha256": "6e062480e694b8d252d60d2b643c48a33d40c24a608d8877bc7fd0555e3d7e91",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|3": {
+  "topics": [
+   "2.3",
+   "2.2",
+   "4.3",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) induction vs off-the-job training 9; (d) application forms 6 + (a); (b) branding 2; (c) markup % 2",
+  "qp_sha256": "8e1165284b2295460569eb6817a3215d23b981a01f038f081b39730b8620a69f",
+  "ms_sha256": "e81d3d61c1144b9a226e29e0ff61aac8d2abe887c4d979f992012a3c63e45b37",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|4": {
+  "topics": [
+   "1.4",
+   "3.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate factory location factors 12; (b) share capital 6; (a) shop % arithmetic 2",
+  "qp_sha256": "48b71eb02e63793f2400ac398b00ee2d934f414cb93546c3196ded4251ac2d17",
+  "ms_sha256": "2cc42663d94bd9c8d230956c393cd3b8ea548b680874571a741fab71df8dcdef",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|1": {
+  "topics": [
+   "2.3",
+   "2.4",
+   "3.2",
+   "3.3",
+   "1.2",
+   "4.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) health and safety in induction training 6; (f) Herzberg 3; (a)(ii)(iv) cash flow 2; (a)(iii)+(c) total cost, profit 2; (a)(vi)+(b) limited company, franchise 2; (e) online discount 2",
+  "qp_sha256": "d1732a81ab6093abd9d4bd9e8821d5e4e994cf29f090c2b45c3727a955222135",
+  "ms_sha256": "2464fba09901b4864c6fd6543b0d041081200b2f25dfd65e3e38d350136fa306",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|2": {
+  "topics": [
+   "4.3",
+   "2.2",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) competition vs promotional pricing 9; (b)(c)(e) casual staff, disabled employees, job advertisement 7; (d) chain of command 3",
+  "qp_sha256": "2b5d1316dccf1779428ccca2590538e3c64bc10014e6490689e06ab53e90c11d",
+  "ms_sha256": "9865705935d5d4d9a267e562fdd566b6462679c91bc72a7c01bce2722e98690d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|3": {
+  "topics": [
+   "4.1",
+   "1.6",
+   "2.4",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) internet vs questionnaire 9; (d) interest rate rise on customers 6; (b) commission 2; (c) current ratio 2",
+  "qp_sha256": "01c52e1bb8f6c3702b1b93f033e17abdf9cd6373b734f67114361780304c0faa",
+  "ms_sha256": "65b92221bfa0094f0b09534d6750923b69426a5739e2100dee3e9c1aca1345b0",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|4": {
+  "topics": [
+   "5.4",
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate providing a quality service 12; (b) Boston Matrix 6; (a) staff cost % arithmetic 2",
+  "qp_sha256": "903478a6a4cb2ff6bdde133fe05bc9935978e4c54a8636ed709e5aaa812d1527",
+  "ms_sha256": "81a6e834fb726612287fa18083003eb6d51a35dd78f402faf076d814c9351836",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|1": {
+  "topics": [
+   "4.1",
+   "1.2",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) primary research methods 6 + (a)(ii); (f) limited liability 3 + (b)(c) stakeholder, social enterprise; (e) revenue + (a)(iii) break-even 3",
+  "qp_sha256": "6be2d2e301800301053487fca37f3de645a58bf4df34e33260588744e2db10b9",
+  "ms_sha256": "ea2d5d87d3e7895f42e40aa14c36297e5a2c40c724488811ca7d051678b3b260",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|2": {
+  "topics": [
+   "3.1",
+   "4.3",
+   "5.2",
+   "1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) crowdfunding vs loan capital 9; (d) above-the-line + (a) branding 4; (c) flow production 3; (e) proximity to materials 3",
+  "qp_sha256": "d85a0705c914a999ad42785757e040d0e931c6e45c713db96e5fea2b9ba847db",
+  "ms_sha256": "44e90947e3df61817bc6b4cdbcc166c6787be88ee9eafe5b5612e5ceca6848ee",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|3": {
+  "topics": [
+   "4.3",
+   "1.8",
+   "3.2",
+   "2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) skimming vs cost plus 9; (d) reasons for business failure 6; (c) cash outflow 2; (b) dismissal 2",
+  "qp_sha256": "94bc9b3838abed6d8c41fb57a6ff833505e681dfef42003d2239bbd316eb0060",
+  "ms_sha256": "17e6ce2d15b77c59fef5f7170500e7973aef799c543f36f279db6a7eba181edb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|4": {
+  "topics": [
+   "5.4",
+   "1.5",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate introducing TQM 12; (b) becoming a multinational 6; (a) acid test ratio 2",
+  "qp_sha256": "1da8b7066a1bdd71c3c737d534061e1a7d969d4b2904d5f5a953ae51de8381aa",
+  "ms_sha256": "44b0ce0646d8036f9ed939ce45489d3d6e6dacc0d39601fc70d5f48077ebbc09",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|1": {
+  "topics": [
+   "1.5",
+   "4.1",
+   "4.3",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) benefits to India of a multinational's hotels 6; (f) focus groups 3; (e) discount 2; (a)(ii)+(c) franchise, public corporation 2",
+  "qp_sha256": "4be85b42e47d1e2c193cca0576fdc8824cf8a0c4817da1c7a86d13948e1e9f31",
+  "ms_sha256": "8d401d75a5d8ca6e9bc4bc0f18bfb8428c2fedb56e1a3bbf712caa0253452ff3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|2": {
+  "topics": [
+   "4.3",
+   "5.2",
+   "1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) competition vs promotional pricing 9 + (d) sponsorship 3; (c) robotics 3; (e) trading bloc 3",
+  "qp_sha256": "1b0f5018caa43924fcba153b10b5b2f23a790fbc247a016b2c2baa435c8dbfcc",
+  "ms_sha256": "55bb32649e921d64447bb653b79511016130e311d8f7c351a4c25903c6695ca7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|3": {
+  "topics": [
+   "2.2",
+   "2.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) internal vs external recruitment 9 + (b) application form 2; (d) motivating employees 6; (c) overtime arithmetic 2",
+  "qp_sha256": "9f1b4b6c79c6aa5ebcef28bdbd025f48f47bfdf086ef54e35bfd89e2243aea57",
+  "ms_sha256": "5d8da4fc5073ef69bb30ff4fb71893f1e043f155bfe1e097a772910e71762981",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|4": {
+  "topics": [
+   "1.8",
+   "5.4",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate profit as the only measure of success 12; (b) quality service 6; (a) current ratio 2",
+  "qp_sha256": "1b51e9fc50defe2796cfe4a698b03e62a77e15da4df92f6ee3c689e2b8678ecd",
+  "ms_sha256": "bd1e3f2a1b70459aab2bd7b6875c6483d0f1b988d4982e5ebf93b923e6ef30e2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|1": {
+  "topics": [
+   "4.3",
+   "1.2",
+   "3.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) concerns about a booking app 6; (f) private limited company 3; (e) current ratio 2; rest single 1-mark recall",
+  "qp_sha256": "2bd221f120baedbd50faa089034ef9196258cd54dafcdd17c3d0218d600e425a",
+  "ms_sha256": "6d0d08f83da07a05384ad5705f508bb7fabd2a24f62ff30c4738414259e18037",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|2": {
+  "topics": [
+   "1.8",
+   "1.6",
+   "5.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) customer satisfaction vs profit as a success measure 9 + (c) increasing profit 3; (d) tariffs 3; (e) quality control 3",
+  "qp_sha256": "a75fc5cd6b4610edf5651aabca72d9a3dec6062330bb3da909434ee55f151e96",
+  "ms_sha256": "c82e44ff422daeab7bf9e6a292633ba3b804a2e16a4fcfa15c2bf1bac97e4b74",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|3": {
+  "topics": [
+   "3.1",
+   "2.2",
+   "4.1",
+   "3.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) selling assets vs retained profit 9; (d) external recruitment 6; (b) quantitative research 2; (c) GPM 2",
+  "qp_sha256": "1a876069e2ef4963474edc386dd3a1a365039cfb72c6b2e49be023246b54cebb",
+  "ms_sha256": "597478664ec6758562103178999a786b852fa3d71a5cb3dac280ebe398124570",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|4": {
+  "topics": [
+   "1.6",
+   "4.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate an interest rate rise 12; (b) technology to communicate services 6 + (a) group discount 2",
+  "qp_sha256": "05d287e5302ea3f93257ff59aa98e67ca8e013a804f9aeb56d0b93d4481b56b7",
+  "ms_sha256": "91ff91ced90d77125c1f5d6836ab095461819944b8ed649f66cb050b596969c2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|1": {
+  "topics": [
+   "2.5",
+   "2.4",
+   "4.3",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) wide span of control 6 + (a)(iii); (f) fringe benefits 3; (e) member discount 2 + (a)(ii); (a)(v)(vi) break-even, profit 2",
+  "qp_sha256": "18618d9c130fa6bddd8278d0adba771550738c603319575d25661fafab7e6325",
+  "ms_sha256": "6fc0490c39ceb6b2460536bd6da33e0f60f44abb0afc8ef84d59c16f1d3e1d88",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|2": {
+  "topics": [
+   "4.3",
+   "5.4",
+   "2.1",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) new-service options to raise market share 9; (c) TQM 3; (d) ineffective communication 3; (e) bank borrowing 3",
+  "qp_sha256": "e2ab2fc6fd0e4d0bb24b0e8c970794b8c15fd73fce1ac384262be9cf392b8884",
+  "ms_sha256": "cea295229bee81df85d42f7dc494590c633f1f1f2248208db5cdf3425f389fd2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|3": {
+  "topics": [
+   "1.2",
+   "2.2",
+   "4.1",
+   "3.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) partnership vs private limited company 9; (d) external recruitment 6; (b) quantitative research 2; (c) net cash flow 2",
+  "qp_sha256": "6c325c35a3674be347c91b27b6853af1f96e271fb7ed1d23dc9a66a838b4b29e",
+  "ms_sha256": "b7db834e98223ea201e3d4ebb529569dd59a5806b101934f619b5d3b2319cb96",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|4": {
+  "topics": [
+   "4.2",
+   "2.3",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate responding to market changes 12; (b) complying with health and safety laws 6; (a) GPM 2",
+  "qp_sha256": "4ba301a923536403a585a9521c03c051693ae2edad04b17249beb545f66887dc",
+  "ms_sha256": "c606aa1cee3e51aa1dc4eeb28b98c153bf15e77842ea421507ff79d1d802e8d2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|1": {
+  "topics": [
+   "1.5",
+   "2.1",
+   "4.3",
+   "4.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) benefits of being global 6 + (e) exchange calc 2; (f) letters to employees 3; (a)(iii)+(d) promotional discount, test marketing 2; (a)(iv)+(c) primary research, qualitative 2",
+  "qp_sha256": "b77f35cea12eb509ff55990dcca825be96f431bf42a0ba903c4dc9eba59d150a",
+  "ms_sha256": "f173387590a448c2df6b7f54c7cd3c0207d163251218149dd9c5ee419f9a563b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|2": {
+  "topics": [
+   "2.1",
+   "1.8",
+   "4.3",
+   "3.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) text/email vs weekly meetings 9; (b)+(c) measuring success, business failure 4; (d) targeted online advertising 3; (e) statement of comprehensive income in decisions 3",
+  "qp_sha256": "2578ccf1a6227d530ff883baf9d0f5101484b73c8105a4af8c3fb9788864b450",
+  "ms_sha256": "97ec907b396099c354919628d38c54d07aca2cc6081b878010fce08da74ccaea",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|3": {
+  "topics": [
+   "4.3",
+   "5.2",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) product trials vs more advertising 9; (d) using resources effectively 6; (b) advertising vacancies 2; (c) current asset % arithmetic 2",
+  "qp_sha256": "aea669c94962e9b697f790748f9a7652ae170c9d941cea6cfeee7c80ad511ef4",
+  "ms_sha256": "a32fcb9c9baf4b63e49a0f3416c1d74ef22a68c7a68d19d6944688033a14c62d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|4": {
+  "topics": [
+   "4.3",
+   "5.2",
+   "2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate public relations 12; (b) robotics 6; (a) commission calc 2",
+  "qp_sha256": "b35621c6ac19bccec6df40b09b878c7488c4516c57c130508010d4cbe50ec73f",
+  "ms_sha256": "954a33fdd623fbdfe476ece937c150cecce3e84640f31f94af902c88747f74c1",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|1": {
+  "topics": [
+   "5.2",
+   "2.3",
+   "1.3",
+   "3.1",
+   "1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) batch production 6; (f) disadvantage of training 3; (a)(i)+(c) sectors 2; (a)(ii)(vi) external finance, overdraft 2; (a)(iv)+(b) partnership, social enterprise 2",
+  "qp_sha256": "40697163c1d4694ad6f0a9f7211194ff0736cea1bb63b83de482afd5e4093fcf",
+  "ms_sha256": "edc398564ed7123535fa20c96c0f2c097f378c66e80b2de6e5323e38974bc864",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|2": {
+  "topics": [
+   "2.4",
+   "5.2",
+   "3.2",
+   "1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) financial vs non-financial retention methods 9; (c) JIT 3; (d) paying suppliers on time 3; (e) interest rate cut 3",
+  "qp_sha256": "f7c1f23cc1ee13c078312844e2003692ce78de5e830d225ec967e55f4e6c81c8",
+  "ms_sha256": "e8de8d46dfebe85a7c0ec93061a8019683af7b69390a26ce5571ca135f00daa3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|3": {
+  "topics": [
+   "1.4",
+   "2.2",
+   "1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) supermarket vs hospital locations 9 + (b) proximity of labour 2; (d) internal promotion 6; (c) salary exchange-rate calc 2",
+  "qp_sha256": "783a198c18f3ca55c6d05c897a2101bc38acc8e59e039dc8ea2a434be7d3b474",
+  "ms_sha256": "4861833615a7ab2ebb664668cd507cf2f2815f58cbec4dcbdc51fbbd2248eb7a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|4": {
+  "topics": [
+   "4.3",
+   "2.2",
+   "2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate product trials 12; (b) interviewing candidates 6; (a) staff discount (fringe benefit) 2",
+  "qp_sha256": "e14c292c5675c4ecf017b0f586d0b4cb5544ef856f1b1b0a6ea653ab75c20c79",
+  "ms_sha256": "919c9f7b145bb1c469c7a5d95ca97d001c77bde88d51044a0e2fff0dc4139c98",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1R|1": {
+  "topics": [
+   "4.3",
+   "2.5",
+   "3.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) disadvantages of sponsorship 6 + (d) brand image; (f) flat structure 3 + (a)(iii) centralised; (e) retained profit calc 2",
+  "qp_sha256": "e713fd5f504a0170b683e6d8e636f130be4f583570f8267a270db966fb2fddba",
+  "ms_sha256": "e5a2dc0cf826641fd4c85f706dcce253d2035fc731e4c3d3caebbea973cfb1c0",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1R|2": {
+  "topics": [
+   "3.1",
+   "3.3",
+   "4.2",
+   "5.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) venture capital vs crowdfunding 9; (c) break-even purpose 3; (d) segmenting by income 3; (e) productivity 3",
+  "qp_sha256": "6fe5f367a65e21ebb561232c04f2f9c8b8e13607701f030726cfb204b20d7fe5",
+  "ms_sha256": "2c5c4886ef49f0054097ca5146b2bd01c53c7d714e1cec55c3904a47eafa55b2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1R|3": {
+  "topics": [
+   "4.1",
+   "4.3",
+   "3.2",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) questionnaires vs free samples 9; (d) viral advertising 6; (b) importance of cash 2; (c) minimum wage % calc 2",
+  "qp_sha256": "baaa8da352d5c2be3b818e0e2a1c093798ecac843f7d47b811639de94b1094bc",
+  "ms_sha256": "cefe8f28034b755bdfe7794b8faf8d4fc1b3ba01c6e44001fcdb36fc0e55335b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1R|4": {
+  "topics": [
+   "1.1",
+   "1.8",
+   "3.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate social objectives and success 12; (b) benefits of growth 6; (a) total costs 2",
+  "qp_sha256": "98aa225258cc6d6014f451d2e09fb0fbed04dcb59709a282b09473c04465a8e9",
+  "ms_sha256": "b2ca57fb2529bed91bd2d0bb19da26f95f824c5615f49b9a828af10a319800c6",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1|1": {
+  "topics": [
+   "2.2",
+   "2.5",
+   "3.3",
+   "4.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) requesting a CV 6 + (a)(vi) shortlisting; (f) long chain of command 3; (d)+(e) variable cost, revenue 3; (a)(iii)(v) skimming, discount 2",
+  "qp_sha256": "1bc52a82febf38f93361ac9eedcdac6176a32762440e0b5b9b1e3cc891a616a3",
+  "ms_sha256": "940b0b5fdfe85c5f04d4fa77fe854282bffd1e6914b4148b2dced5c7d3300dac",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1|2": {
+  "topics": [
+   "4.3",
+   "1.1",
+   "5.1",
+   "1.8"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) cookbook vs vegan range to raise revenue 9; (c) objectives changing 3; (d) economies of scale 3; (e) failure from poor cash flow 3",
+  "qp_sha256": "551b575f6bc7c66140590f25feedf4eb38a79cdaf84b2fdd6a434d05aa1be6a8",
+  "ms_sha256": "48d6f6d146bbbe8f2a6f1d9498d069fa340b8b4e6aff9591b24875b9247671eb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1|3": {
+  "topics": [
+   "3.1",
+   "4.1",
+   "2.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) personal savings vs loan 9; (d) focus groups 6; (b) motivating employees 2; (c) price % arithmetic 2",
+  "qp_sha256": "b032516d97288e4f603da6a3a4ebcefe939c15d876882b0cb5050df3ec17fa86",
+  "ms_sha256": "928dca974686c9ba4c15e6befd883665f9c959b04435d01926b7b72956dbb154",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1|4": {
+  "topics": [
+   "5.4",
+   "5.2",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate quality as competitive advantage 12; (b) job production 6; (a) acid test ratio 2",
+  "qp_sha256": "dcd69835b6434d6b9d9f961a7567d8116d0363d38c9c53553117f7f79d03f881",
+  "ms_sha256": "94fe965a9d2155737cf221c7ee50b673ba74b13ebe75758144325842a83bbd6a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2R|1": {
+  "topics": [
+   "1.2",
+   "3.2",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) partnership 6 + (f) limited liability 3 + (c) franchise; (e) closing balance 2; (a)(iii)(v) revenue, break-even 2",
+  "qp_sha256": "bedc6c84bc3d5a1ff856e3f1d3f5314d9d13476456ad6a64add9966990b57abb",
+  "ms_sha256": "9877a4efd1923ac255e26d4053f3c6e6b67844a7371c5d36b498913a57723fd5",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2R|2": {
+  "topics": [
+   "4.3",
+   "2.2",
+   "2.3",
+   "3.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) TV advertising vs free AirPods 9; (c) temporary employees 3; (d) on-the-job training 3; (e) venture capital 3",
+  "qp_sha256": "74b96672253739b064241a03a62f328a29174b0b0914eec90d41b9d8a9f13535",
+  "ms_sha256": "05fafc7d3b61ff14f2830d7514337b4a9183e5adecce2fe5427923d01140b535",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2R|3": {
+  "topics": [
+   "4.3",
+   "1.5",
+   "1.8"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) more retail stores vs better e-commerce 9; (d) advantages of an MNC 6; (b) shareholder satisfaction 2; (c) price % arithmetic 2",
+  "qp_sha256": "2252561e81c78920521ace6680064fd9aafbee22f0b81b624a80def66c4f07de",
+  "ms_sha256": "cc594294ebcb9b87588c0cec7c3d2ff0e3a79afa1586d89823f6887832e967c3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2R|4": {
+  "topics": [
+   "4.2",
+   "5.2",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate responding to market changes 12; (b) flow production 6; (a) current ratio 2",
+  "qp_sha256": "e538abf1d127d2e1eb4a3e6ca06868e011669bdb2702cc46df2f0a714e2861db",
+  "ms_sha256": "7cfa227c1aa0b49fa8c0b6b47a69b27d49097c4b4813f0a05d9f2fb6b94195f8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|1": {
+  "topics": [
+   "1.2",
+   "4.3",
+   "3.1",
+   "3.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(g) private limited company 6 + (a)(iii) shareholder; (f) packaging 3 + (c) distribution channel; (e) overdraft interest 2; (a)(v)+(d) revenue, profit 2",
+  "qp_sha256": "39b94d58b597abc328e697875c7edfa9d94365c7558de22e7aedf9ce0682b7bf",
+  "ms_sha256": "d1ea5ee4edc5ee655ed2f8e90e21b02124ba9b2055801bda33ca76df51ce14fa",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|2": {
+  "topics": [
+   "4.3",
+   "5.4",
+   "2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) penetration vs promotional pricing 9 + (c) strong brand 3; (d) quality control 3; (e) equal opportunities law 3",
+  "qp_sha256": "da0d12e10a13a6cbd889f6999e24a4f9d5d3289a5a0df3bd07a214b8e3782236",
+  "ms_sha256": "841dc640b3f313f2e949eeaebb167bc59fb13541038e8236ca2a96283896ef98",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|3": {
+  "topics": [
+   "2.4",
+   "2.3",
+   "2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) extra holiday vs bonus to retain managers 9; (d) induction training 6; (b) communication 2; (c) employee % arithmetic 2",
+  "qp_sha256": "6358cebfeb92b2f41a00cb912f47ea7f9551e787a3089387de4b48486913170e",
+  "ms_sha256": "d6eb057163f96fd232467daaca19aac401b178663a2da15515c6d00e5590a7ca",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|4": {
+  "topics": [
+   "4.2",
+   "1.5",
+   "3.5"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate market orientation 12; (b) benefits to Malaysia of a multinational 6; (a) GPM 2",
+  "qp_sha256": "87f1425b123a9e057f0005189da5a751cab8b7a4588ce9a5ad54586f2ca7f98f",
+  "ms_sha256": "fc9ff169f18de09e58555a8828ce09713737e968606318f8e9ed455976922caa",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ }
+}

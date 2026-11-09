@@ -1,0 +1,2198 @@
+{
+ "2019_may-jun_P1R|1": {
+  "topics": [
+   "1.2.4",
+   "1.1.4",
+   "1.1.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) why Robert stays small 6 + (h) sole local firm 3; (c)(d)(f) luxury good, PES 5; (e)+(g) substitute, demand shift 4",
+  "qp_sha256": "b12dcd08e9b11d7949640aabe34b0344c7e4cb5b59dc0fed28ba89f790fe640f",
+  "ms_sha256": "5f0ac3cd3ad3c77c3cf15cd9c6a8120d53b9b9cc21a9ed1466b82146fdf40259",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1R|2": {
+  "topics": [
+   "1.1.6",
+   "1.2.6",
+   "1.1.5",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) justify funding flu vaccination (external benefit) 9 + (e) congestion external cost 2; (f) paying private pharmacies 3; (a)(b) public/private sector 2; (c) sector sizes 3",
+  "qp_sha256": "eb0866b511ac7b586cc19ab01cb6171a1daefc943fde7b86fd11ae6e1dc57d87",
+  "ms_sha256": "5718093afaf05610f9d940d4678d2a587772090f9a924b9c50f247de319a4dc1",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1R|3": {
+  "topics": [
+   "1.2.5",
+   "1.1.1",
+   "1.1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(f) trade unions and the labour market 9; (e) PPF shift 6; (c)(d) total revenue and PED 3",
+  "qp_sha256": "251e99bfe43808d50d8c2a4872368a17380f5c1e9b213e112e0b7017469879ed",
+  "ms_sha256": "1b9457abf808fed23f0c30e32e308b9df369555f7e7b6df5d2eee7d6e95466f7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1R|4": {
+  "topics": [
+   "1.2.4",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate advertising on monopoly Google 12 + (b) NBC Olympics deal 6; (a) excess demand 2",
+  "qp_sha256": "d858ea9ed3b7d8e03f2236bafbbe6a36fb53974ab950a19a2fae631ac0ffc086",
+  "ms_sha256": "b9bb3cf2e1e162326cd420882a9334164747ea4a27ea92768c7286b183e99252",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|1": {
+  "topics": [
+   "1.2.4",
+   "1.1.3",
+   "1.1.4",
+   "1.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) Coca-Cola buying Inca Kola shares (takeover, growth) 6; (c) demand + (g) supply shift after hurricane 5; (h) inelastic ticket demand 3; (b)+(f) total and average cost 3",
+  "qp_sha256": "bf7a8fb2955498057912e55e5f2215cfc3dc148304b7c461e6566ce4c6037635",
+  "ms_sha256": "01448a307c15e867ab7df111914ab1e0f4188e58b08eb0d80076588fe64dae70",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|2": {
+  "topics": [
+   "1.1.3",
+   "1.2.4",
+   "1.1.1",
+   "1.1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) technology and the parking shortage 9; (f)(g) competition among auto rickshaws 5; (a)(b) scarcity, PPC 2; (c) PED calc 2",
+  "qp_sha256": "c6d13c96cc3758dcdc056e10cf60801de6061ad4b2a415b6429a1732baf7061d",
+  "ms_sha256": "78f24671281dc25b8f8004deb92c3a0108ad99f3c9241bb19790d52fb382177c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|3": {
+  "topics": [
+   "1.2.2",
+   "1.2.5",
+   "1.2.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) education and training vs productivity 9; (d) firms struggling to hire labour 6; (c) minimum wage diagram 3",
+  "qp_sha256": "4ce8829647993ebb456b8f369734f11ce1128529063902c1bc52a05cfd773a5a",
+  "ms_sha256": "85e2d118e28f1c11de54be76d47490338da28ff6296accaa440d407be2f0d9b8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P1|4": {
+  "topics": [
+   "1.2.4",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate competing in an oligopoly 12 + (b) collusion 6; (a) excess supply 2",
+  "qp_sha256": "95d49cd9cb0782148a7c569b60d698a7136ea5559445edb630cc4e67f9caa625",
+  "ms_sha256": "d3001764aaad4568822da9a92b010515538d7cbb9654e0717fe735b02592f223",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2R|1": {
+  "topics": [
+   "2.1.1",
+   "2.1.2",
+   "2.2.3",
+   "2.2.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(d)(e)(g) growth, current account, growth as objective 7; (h) fiscal surplus 6; (f) exchange-rate diagram 3; (c) MNC 2",
+  "qp_sha256": "14a12d13eab13a7fa24f07e85240e7d026ac1d91f60cfd198efbac4cb1290143",
+  "ms_sha256": "3123b574b58ca1ada4afbec486520e579d526d36b314c751a7b693cd94d22912",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2R|2": {
+  "topics": [
+   "1.1.6",
+   "1.1.5",
+   "2.1.1",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) government providing parks (pollution, public goods) 9; (d)(f) absolute poverty, growth harming environment 5; (e) appreciating currency 3",
+  "qp_sha256": "7c313c2ecb1f71373275178e93fb97ac45ac7987b0de5421e8f9ad56a516419d",
+  "ms_sha256": "16224415bd634a5d6068067bfccf813f6e9a98cc5b5742044292061184fd3814",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2R|3": {
+  "topics": [
+   "2.1.1",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) high unemployment 9 + (d) high inflation 6; (c) reducing inequality and poverty 3",
+  "qp_sha256": "b52aa02816e3103f8f87e9bf44549e9d80780c1efca6ea0482ac479fa4ff3cb2",
+  "ms_sha256": "fdcf5cde53f4da44eb5e0b39255c07535c931d4d05cab05e083fab3487cf0a87",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2R|4": {
+  "topics": [
+   "2.2.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate reducing tariffs 12 + (a) tariff price 2; (b) current account surplus 6",
+  "qp_sha256": "ef601ae1d1fcfdd07fb8d282ef15b8bfaf36b8c355c85f1e69c472b6d8a0fad1",
+  "ms_sha256": "dc7b14c62dc3423bc44f242b06596956b4e2dd4a749f556a604bf1fee6eec3d0",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|1": {
+  "topics": [
+   "2.1.2",
+   "2.2.2",
+   "2.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) fiscal policy to cut unemployment 6 + (c)(d) interest rates 4; (f) quota diagram + (g) WTO 6; (e) exchange calc 2",
+  "qp_sha256": "f82a3af88f02a2317e4c3ff4bb84b6b89af604c1df758b48f6531e43cc8d8512",
+  "ms_sha256": "76120dc39835387f41b03d4a33b49048aa9fe45f3549e633ee92e307b74b8568",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|2": {
+  "topics": [
+   "2.2.2",
+   "2.2.3",
+   "2.2.1",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) benefits of trade bloc membership 9; (e) depreciating currency 3; (f) emergence of MNCs 3; (b)+(d) direct tax, supply-side policy 3",
+  "qp_sha256": "b42ec24421fddaa9e911f512bf19a867c2b85a8f45e6f81f8ac0cd0fcd84274c",
+  "ms_sha256": "07f23118e26b607861aaa7f4c1adf26464d4bc5ebde0cc881e229f9db0b3d018",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|3": {
+  "topics": [
+   "2.1.1",
+   "1.2.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) impact of inflation 9 + (d) impact of unemployment 6; (c) intervention to protect the environment 3",
+  "qp_sha256": "9501082a2cb7fa10d742aed47f8e8596fe486dd37c73ffe6ba76c753f11bf5d4",
+  "ms_sha256": "d25b90d0d9b1d7a9ba88230872e9a6545b1aa4e4a18e026a50becbb21aa910b3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2019_may-jun_P2|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.3",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate progressive taxes vs inequality 12; (b) falling unemployment raising inflation 6; (a) GDP per capita 2",
+  "qp_sha256": "8ad046caff1e6f15e00b85b95067b4c902b73eabe2b0f00da0d71ad00a49ffbe",
+  "ms_sha256": "21a67f76294d0c6213f1333fb0bca2fc25988ac0174fd8389d14d097183c32fe",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1R|1": {
+  "topics": [
+   "1.2.4",
+   "1.1.3",
+   "1.1.1",
+   "1.1.4",
+   "1.1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) Dubai malls as oligopoly 6; (g) removing indirect tax diagram 3; (h) opportunity cost 3; (f) YED 2; (c) mixed economy 2",
+  "qp_sha256": "515e9cb6e3e8210ccc913c99b549a2b73a47d81a2e10273453610e4a6d2b1dff",
+  "ms_sha256": "25a3582a66764344e73e1f533af9736bb81592f22f3d458ec8af56b7ae141bce",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1R|2": {
+  "topics": [
+   "1.2.6",
+   "1.1.2",
+   "1.2.4",
+   "1.1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) fines for externalities 9; (g) consumers still eating sugar 3; (b)+(f) barriers, firm growth 3; (c) PED 2",
+  "qp_sha256": "5d5e299483f00fcb96394b3841ae2988540fc7b5af0704c20070a1cb55c66565",
+  "ms_sha256": "a2fe571f850cdd998942288dacd514a91a3a5c6785403de7190deb1bcfc36f25",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1R|3": {
+  "topics": [
+   "1.1.4",
+   "1.1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) PES cars vs strawberries 9 + (c) elastic demand diagram 3; (d) privatisation 6",
+  "qp_sha256": "b1d4cea1cde8ccafea97e99788da6f3441e3cc85aba17d745bd3dafa007481ea",
+  "ms_sha256": "f74494e73e39f5a84cec697dbe00c233ba7c6516aa17d85c388993201fc0f28e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1R|4": {
+  "topics": [
+   "1.2.2",
+   "1.2.3",
+   "1.2.6"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate division of labour 12; (b) internal economies of scale 6; (a) minimum wage income calc 2",
+  "qp_sha256": "5adaadd924be5cc244052b53ad40aea01dd7a37a61be1cf3952c5a88454ef747",
+  "ms_sha256": "f258aff919eb94bf6a0ea728141f51a32526a4acf10200db8b3a545ab4447251",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1|1": {
+  "topics": [
+   "1.1.2",
+   "1.1.3",
+   "1.1.1",
+   "1.1.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) McAfee not profit maximising 6; (c) supply + (g) income demand shift 5; (h) opportunity cost 3; (f) YED 2",
+  "qp_sha256": "fb70c28dc8aa7aa5fd5559f86f0e9d840032254293c8e69f9d7458c51d4a6e1f",
+  "ms_sha256": "da15d6f780251799a22df39b882dfc29a493d77f83f404a6461232605b023b26",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1|2": {
+  "topics": [
+   "1.2.4",
+   "1.1.5",
+   "1.1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) small vs large firm 9 + (f) market structure 2; (g) free rider 3; (d) PES 2",
+  "qp_sha256": "0f9f387e2f95c762564c785da3cfe14761489683d4889084595f91b23d9fb468",
+  "ms_sha256": "005a65ec7dcca28966e8d1e349abf4bf2676aece82f347b25fdf07d52e93de71",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1|3": {
+  "topics": [
+   "1.1.6",
+   "1.2.5",
+   "1.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) fireworks externalities 9; (d) machines and labour demand 6; (c) PPC shift 3",
+  "qp_sha256": "b4597082b7dcfb3a44c457630ec0f6096ab574633c569afd06e55a3dbb4ea3c0",
+  "ms_sha256": "2460014561e4ed0f355b1ba623bd593f25b14f7979693b5f24cbbcdfddfa021f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P1|4": {
+  "topics": [
+   "1.1.4",
+   "1.2.6",
+   "1.2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate PED for VAT decision 12; (b) controlling takeovers 6; (a) quantity from total revenue 2",
+  "qp_sha256": "3c3a68456f15d001f00711253000a1d7a0897bc0562334cdb36cb83f27c58825",
+  "ms_sha256": "64dafaf14554741eda6898b6e7215a8b79659189cfe17b0180ec85ba2bfd10b6",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2R|1": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.3",
+   "2.2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) cut in direct tax and living standards 6; (c)(d) boom, shoe-leather costs 4; (e)+(f) exchange calc and diagram 5; (g) dumping 3",
+  "qp_sha256": "e8fdd59e8918e8cc0b27ce586cc1ae650339682f63a8f982399210e4f5da845d",
+  "ms_sha256": "c5cb4ee9dcc932820702fc2556be76f5fbd30f0097fc650815f9b5560702ea19",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2R|2": {
+  "topics": [
+   "2.2.1",
+   "2.2.2",
+   "2.1.2",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) benefits of MNCs 9; (f) trade pattern + (a)(b) subsidy, free trade 5; (e) fiscal deficit and growth 3; (d) revaluation 2",
+  "qp_sha256": "0c884f6413759984f05b3b510b6ed2a74c9bf6b2f8bafc23d51bf4c28ffeb918",
+  "ms_sha256": "466a9d310376f3369b9a20810e1e8183e547c152e4e1b0c77498eec6df3d9188",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2R|3": {
+  "topics": [
+   "1.2.6",
+   "2.2.3",
+   "2.1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) regulation to protect environment 9; (d) currency speculators 6; (c) inflation and the current account 3",
+  "qp_sha256": "8ad203da9a220c65df0c464e341d95f17ca0ebd1696d162e9d0d98d417a0c84b",
+  "ms_sha256": "f1d6a352b08f5e58bd1de687630c3d8bf3ae9e22a05029bde53b4eb8bd506ff5",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2R|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate education and training vs unemployment 12; (a)(b) regional unemployment 8",
+  "qp_sha256": "952652d483b17da6f9b18f3b5311d21720b02ab7cbaf3564bce55e6d4ffc28ad",
+  "ms_sha256": "79df0522562890c1cefac80ba4cd997f08cad37f0781ab187246fc818f328dfe",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2|1": {
+  "topics": [
+   "2.2.2",
+   "2.1.1",
+   "2.1.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) sugar subsidies 6 + (f) tariff diagram 3; (c)(e)(g) unemployment, current account 7; (d) trade-off 2",
+  "qp_sha256": "9063150faa275ae410bc2eeedd1587ae9628a0ced46dc2b1ee4b4b0137d859ff",
+  "ms_sha256": "3bc0cd872ca85d3710aaf3c704fe072a0ac0ecce4cdd416eeea2d5c90df33ff4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2|2": {
+  "topics": [
+   "1.2.5",
+   "2.1.1",
+   "1.2.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) reducing seasonal worker shortage 9; (d) relative poverty + (f) unrecorded GDP 5; (e) parking fines 3",
+  "qp_sha256": "87e7d4a32d519a0d18f395c8b54dfa199a355f4dc4d68e4b1596680307138a1b",
+  "ms_sha256": "992229f46ef885a66c729ff0e1b87b553bd79d6acd21c34ecb269cc8a1765a82",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2|3": {
+  "topics": [
+   "2.1.2",
+   "2.2.3",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) lower business taxes and investment 9; (d) interest rates and the rand 6; (c) low stable inflation 3",
+  "qp_sha256": "2bac7bf08fae5a2b93d5b1d0c4735f4cfc7566c208b016ab054615fbdfd005fd",
+  "ms_sha256": "e31eef6300f23a0337876881cd094ee3c77f8332f333f8715eef83a76e3ffc39",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_jan_P2|4": {
+  "topics": [
+   "2.2.1",
+   "2.1.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate globalisation of Kenya's flower industry 12; (b) monetary policy vs inflation 6 + (a) interest % change 2",
+  "qp_sha256": "be022ce3922ea3d0ef5bf2355358df4adb52ac263a246c122cb5cb82bacd2b83",
+  "ms_sha256": "0d7b048272ad571205f2a0a5156a443cd476a668819875d25061583ca36a31b9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1R|1": {
+  "topics": [
+   "1.1.3",
+   "1.2.4",
+   "1.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) weather shifting supply 6 + (f)(g) excess supply, birth rate 5; (h) takeover for customers 3; (c) total revenue 2",
+  "qp_sha256": "820fcb3907a3b7f69927f6940c1b92d82fdebb31d16e563eea955cb637afdc9f",
+  "ms_sha256": "adf04430094d2300b6901de623d0c9b079319e1c9b5512419db99f6a3965ffdb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1R|2": {
+  "topics": [
+   "1.1.2",
+   "1.2.2",
+   "1.2.3",
+   "1.1.3",
+   "1.2.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) changing business aims to profit maximisation 9; (f) irrigation productivity 3; (c) total fixed costs 2; (d) demand 2; (e) policy for negative externalities 2",
+  "qp_sha256": "a3e41100e90bb6b07e0a03c70c71d87d1fe88a8bf4392e483f48158e0539a524",
+  "ms_sha256": "0a769833d9affa2ee9c69c68d4ae467bc7975b55808f42557f4dbcd45355f488",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1R|3": {
+  "topics": [
+   "1.1.5",
+   "1.2.4",
+   "1.2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) public sector road investment 9; (d) collusion 6; (c) retirement age labour diagram 3",
+  "qp_sha256": "863befefd4d7c3a73714496b1c1bf9c8f77f196b158413bccdc84d68b3d5d053",
+  "ms_sha256": "856343865ee2ab6d373f56722b30b511d04e7785647d9981342bd19e56afe753"
+ },
+ "2020_oct-nov_P1R|4": {
+  "topics": [
+   "1.1.4",
+   "1.2.3",
+   "1.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate YED for Amazon Prime 12; (b) diseconomies of scale 6; (a) PPC opportunity cost 2",
+  "qp_sha256": "3e4cb85631ddcac09e9ebda644e669aef35aa4ebeef84139c922be988d3d4cf5",
+  "ms_sha256": "3e6505b013de947c22825144f6b5c0b36c64cfb578366085be336d3373dacfee",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|1": {
+  "topics": [
+   "1.1.3",
+   "1.2.1",
+   "1.1.6",
+   "1.2.4",
+   "1.1.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(f)(g) excess demand, population and bread 5; (i) four factors of production 6; (c)(d) external costs/benefits 3; (h) barrier to entry 3; (a)+(e) opportunity cost, wants 2",
+  "qp_sha256": "91a6a6707cb010a6fc20e3a0a6b65451304aa4fe9541e5a999ecea35f21d0c77",
+  "ms_sha256": "16c0aa06d81eafaf2642e85e6d87b0b8dd7fe0a92cffcf03c88ef2682c692ea2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|2": {
+  "topics": [
+   "1.1.5",
+   "1.2.6",
+   "1.1.4",
+   "1.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) public vs private ownership solving the economic problem 9; (g) speeding fines 3; (c)+(f) PES formula, PED over time 3; (d) total variable costs 2",
+  "qp_sha256": "3df0d60b6a18532b6d814406b711fa7c2feccfbd4fc5ccb37d50a83a71650974",
+  "ms_sha256": "d3651f459448f159ef845c926b1bf8c9378ed7433aa640190dca5ddc80665139",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|3": {
+  "topics": [
+   "1.2.3",
+   "1.2.6",
+   "1.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) airport internal economies of scale 9; (d) raising minimum wage 6; (c) PPF 3",
+  "qp_sha256": "c0d0627172a6dbc5a42b4e6a5bbd37501bffa634540fb8c05258835f08bef725",
+  "ms_sha256": "cfd231ab03718c80ec735db6b9b25b695586c2bb81f55403e2e17705e2c14696",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P1|4": {
+  "topics": [
+   "1.2.2",
+   "1.2.5",
+   "1.1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate technology and restaurant productivity 12; (b) occupational mobility and labour supply 6; (a) revenue for elastic product 2",
+  "qp_sha256": "c8f63d14cbc95ee06765b50bb7bc43ebdc8bfafc3ae539f86fc8b565c4723603",
+  "ms_sha256": "0aba91638f8dbd17c3ef2fa564223d70964879c0ece9d31a046e660e1eaba21c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|1": {
+  "topics": [
+   "2.2.2",
+   "2.1.1",
+   "2.1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) benefits of AfCFTA 6 + (d)(f) free trade disadvantage, quota diagram 5; (g) inflation and wages 3 + (a)(b); (c) central bank + (e) net pay after tax 4",
+  "qp_sha256": "2caa0fb2393901b598b323f1a0e13756b43b55a657ffea815e4a6fed446574e3",
+  "ms_sha256": "aa728d74fbc2ae324ba350e1028048f7764c155befba59c694ece741a0f298d8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|2": {
+  "topics": [
+   "2.1.2",
+   "2.2.2",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) deregulation vs unemployment 9 + (d) infrastructure 2; (f) protecting consumers from imports 3; (e) falling unemployment and tax revenue 3",
+  "qp_sha256": "b7aadbadbe8f623a799009e3fce94484c1c83805844e718f34a358e60bdbb450",
+  "ms_sha256": "d55910def48625b54bdb9899102bc42849c71c3fa3bea494ca129c8ae96dc57f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|3": {
+  "topics": [
+   "2.1.1",
+   "2.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) current account deficit 9; (d) MNC investment + (c) globalisation and consumers 9",
+  "qp_sha256": "6c6e50b925c0019834b6a2932c5d67a14d21ae2f2e1bce914eeef04e5e21ed44",
+  "ms_sha256": "e41245a975efe50bb9a754795452c3e96cf15acb0385417994b69d9afbcc242f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2R|4": {
+  "topics": [
+   "2.1.3",
+   "2.2.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate growth vs environmental protection trade-off 12; (b) role of the WTO 6; (a) education spending % arithmetic 2",
+  "qp_sha256": "b6d6e2432e8191423412bc6e82e3a053c71c6a9a35424260e8b3566489ea2caf",
+  "ms_sha256": "47c00ba5e2bf4acfe5c5c61f333c839ce597fda26fc3007151f079cb6e42bcf7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|1": {
+  "topics": [
+   "2.1.1",
+   "2.2.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(c)-(g) GDP, growth, inflation calc, economic cycle, voluntary unemployment 12; (h) transport costs and globalisation 6",
+  "qp_sha256": "b4ba37e038c65faeae16bb64783852b4554b437cfcf383b5cee44144967d7e2f",
+  "ms_sha256": "251dc4b318dbc25bc504724e4e0c783451adf7c777ef10190d93b18aed5f21cc",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|2": {
+  "topics": [
+   "2.1.2",
+   "2.2.3",
+   "1.1.5",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) benefit payments to redistribute income 9; (d)(e) exchange rate, weaker euro and current account 5; (f) privatisation productivity 3; (a)(c) tariff, free trade 2",
+  "qp_sha256": "19db2c02a7d7fcfcbd9ceb9d7a170eb3993505096f815a0d5d4ec5c57fd86a1e",
+  "ms_sha256": "53f38d6d790454b2bf863434464e307e0a8d21e93d466e453d76def5d8c4fb8a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|3": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) monetary policy and growth 9; (d) recession and unemployment 6; (c) foreign MNC ownership 3",
+  "qp_sha256": "7a188c784c798ee722043d025e3204919601334b5e822e37c386377ed01f2e5f",
+  "ms_sha256": "a6e76dc4ce1ba1c676f4dde10dd5af1a21b6c180970bc986a79012218819bdeb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2020_oct-nov_P2|4": {
+  "topics": [
+   "1.2.6",
+   "2.1.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate transport subsidies to protect the environment 12; (a)(b) fiscal deficit, fiscal policy vs inflation 8",
+  "qp_sha256": "1b7e9d322eb19fb8b1ad15c552ec8fbd14de83cd07b262ad344fc73927b39fdd",
+  "ms_sha256": "38df71493ce34a90c3e5893c18291b1da6a40bdfef75e896217d700cd74b4f9d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P1|1": {
+  "topics": [
+   "1.2.4",
+   "1.1.3",
+   "1.2.5",
+   "1.2.3",
+   "1.1.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) Bupa operating in more markets 6; (g) technology shifting supply 3; (h) school-leaving age and labour supply 3; (c) economies of scale 2; (f) PED 2",
+  "qp_sha256": "3876393e659d83eca51dff28e7f5ddca8b453d3ad71c2e7546e52c1482286e12",
+  "ms_sha256": "caa1eee056cc9707e6929860f259e53b8ed26989e8f945b9d95e6a078eee59ce",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P1|2": {
+  "topics": [
+   "1.2.2",
+   "1.2.4",
+   "1.2.3",
+   "1.1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) division of labour in fast food 9; (g) patents 3; (b)+(d) average cost, profit 3; (f) privatisation 2",
+  "qp_sha256": "5f3b41b154511bc08bca82ad86d16ea5a8e75bffde33bd9c1621ee9be69b865d",
+  "ms_sha256": "89e70b3ab0e06550edb807992ee6f388884d0565bbabbd6f07f4642764437ead",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P1|3": {
+  "topics": [
+   "1.1.6",
+   "1.1.5",
+   "1.1.3",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) government funding all education (external benefits, public provision) 9; (d) market forces removing excess supply 6 + (a); (c) sectors in a developing economy 3",
+  "qp_sha256": "6fcadab7132819e1a36724df15787373bdfb18a7cfa434e46820d1354a8c40e8",
+  "ms_sha256": "96ca929a3993112d59f9ffdbc59cbd3ce9f9ed35ef4aa9d2d9b406520dbdc86b"
+ },
+ "2021_may-jun_P1|4": {
+  "topics": [
+   "1.2.6",
+   "1.1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate raising the minimum wage 12; (b) PES of bananas 6; (a) population % arithmetic 2",
+  "qp_sha256": "c8de84cb9ccec71bc6eb4670e880f1de6509f32149aa19e31910c4d11bd0c2b9",
+  "ms_sha256": "56d1c507f2c221cfb8dac50277e116949fa4bf4ab0c1c173712ffa9ba7a8250f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|1": {
+  "topics": [
+   "2.2.1",
+   "2.2.2",
+   "1.1.3",
+   "1.1.6",
+   "2.1.1",
+   "2.1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) benefits of FDI 6; (b)+(d) tariff, dumping 3; (f) subsidy diagram 3; (g) providing parks 3; (c) recession 2; (e) fiscal deficit 2",
+  "qp_sha256": "cfe3558eecae4e34c9c66531de8cda3fd8aeb2482f037b178836db6cf4d74d06",
+  "ms_sha256": "228d300cac95386a66d6af0df9890fb320a64e333b99be495c722a8c3072acbd",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|2": {
+  "topics": [
+   "1.2.6",
+   "2.1.1",
+   "2.2.1",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) taxation to protect the environment 9; (b)(c)(e) poverty, balance of payments, unemployment and confidence 5; (f) communication costs and globalisation 3; (d) free trade 2",
+  "qp_sha256": "6f3f4436597298a2fc8e5511267455c072f32f61dce90359adfa71d909b65b07",
+  "ms_sha256": "31084d38d1d1fb55a149cb9d3188f8be319773758e1eaa328c897192278ec9c9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|3": {
+  "topics": [
+   "2.1.1",
+   "2.1.2",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) benefits of economic growth 9; (d) healthcare investment 6; (b)+(c) trading bloc, quotas 4",
+  "qp_sha256": "2026598935360bf825861abeaed0b6e715d9e1e25c2c82cf0beb776399bc1ce7",
+  "ms_sha256": "aa6990486c4dd20d980f39928c8f7ca90e6da6c30c547715609c58b74036d7d2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_may-jun_P2|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate monetary policy vs inflation 12 + (a) savings interest 2; (b) inflation and individuals 6",
+  "qp_sha256": "99d659b223c5280fee4a14d6851d5c6636bd619e7f0ad7db48649ba066aece52",
+  "ms_sha256": "2d20ebdd6ae41953e4c0a456afc061f719a58d7077459801c6e49d19689867ab",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|1": {
+  "topics": [
+   "1.2.3",
+   "1.1.3",
+   "1.2.6",
+   "1.2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) technical economies of scale 6 + (f) total costs 2; (g) raw material costs shifting supply 3; (h) interest-cap legislation 3; (c) productivity 2",
+  "qp_sha256": "7ed3193833cbe350e7cf56c6eea0b63045e547b559aecef5746283c7ffd6b140",
+  "ms_sha256": "9a13a904717ebd0d083de051dd57f779b20b78f6a6d01b974ba8fff11764b80e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|2": {
+  "topics": [
+   "1.2.6",
+   "1.2.4",
+   "1.1.4",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) regulations vs air pollution 9; (c)(e)(g) staying small, price-maker, expansion 5; (d) PES 2; (f) computer as factor of production 2",
+  "qp_sha256": "048b21870c723c8c5cc42aafde20350a69bb5bbb54a1b4e54d16fce4a3c6eb4e",
+  "ms_sha256": "2c5103ea679f99a046364c04aa730d9603a0d3f3f12b8161d6c5887a260f57b0",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|3": {
+  "topics": [
+   "1.2.5",
+   "1.1.3",
+   "1.2.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) raising retirement age to increase labour supply 9; (d) Pepsi demand during the World Cup 6; (c) minimum wage diagram 3",
+  "qp_sha256": "cb9843b5dc2b39013d7e90eaf311f9fc85e9d0cf8a94131802c6ce0b14307c79",
+  "ms_sha256": "cdca92c6bda46ad3d89a63144b6691e3629a785d7b442799e127e76e8d3cd0ca",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P1|4": {
+  "topics": [
+   "1.1.5",
+   "1.2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate privatising Air India 12; (b) trekking market as oligopoly 6; (a) profit % arithmetic 2",
+  "qp_sha256": "72624b0fb82ebc0b254cb3112c0c23935a9148f41d1743d62d73b2f8d64efa89",
+  "ms_sha256": "34914802a39db1ed3fae534b99d40c5d6831476418da61e42385d7a78b9fbb74",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|1": {
+  "topics": [
+   "2.1.2",
+   "2.2.2",
+   "2.1.1",
+   "2.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) monetary policy vs inflation 6; (a)(d)(f) quota, infant industries, tariff 6; (c)+(g) downturn, growth disadvantage 5; (e) exchange calc 2",
+  "qp_sha256": "66f8cef4d4fc26f593592735310f2c734821addfc77f944a5e4ea739618a08a0",
+  "ms_sha256": "40a1be4a966db1347e0a8a4ec10163d907076e0336baa950e71b0e61c37d4afe",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|2": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) healthcare investment to reduce inequality 9 + (d) fiscal policy 2; (b)(c)(e) poverty, balance of payments, unemployment and confidence 5; (f) transport costs and globalisation 3",
+  "qp_sha256": "ec310c1509fadb0f5c665d0e85b0a559642f94363dbc5806f68a84f0770b982e",
+  "ms_sha256": "03da9ee8fa29e3bca2fb2d3251f9954d5c372db95ed402c217457c27f104f30d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|3": {
+  "topics": [
+   "2.1.1",
+   "1.2.6",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) GDP as a measure of growth 9; (d) taxation to protect the environment 6; (c) export subsidies 3",
+  "qp_sha256": "f5ffd95326b26bfcb8563de77a200607249963e3a41f01e6d9e65c45ef944ca1",
+  "ms_sha256": "39291dd365fad87841311f1abffe77a005af24dac0dea7152320c41fa5d5b19b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2021_oct-nov_P2|4": {
+  "topics": [
+   "2.2.1",
+   "2.2.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate FDI for India 12 + (a) FDI average 2; (b) trading bloc membership 6",
+  "qp_sha256": "adc6b3c6e40bf33c590da1d6e99073e04b63a0ae7cfd7ce332ef550627dfd541",
+  "ms_sha256": "6b28cc101dfef3da560f7c12498d07a217d0b23a24775b919786b112d061750d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|1": {
+  "topics": [
+   "1.2.3",
+   "1.1.4",
+   "1.1.3",
+   "1.2.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) Unilever profits and packaging 6; (c)+(f) inferior good, PED 4; (d)+(g) demand shift, flooding supply 4; (h) secondary-sector output vs employment 3",
+  "qp_sha256": "6c8d55ff4ca30ccc5ab079cab3b488334f14b20c894d4731608e6de03a2c1013",
+  "ms_sha256": "fb116798c6d71ad123263cbffc55932fd7a8e8e48926c170422b7e2ffc3450fe",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|2": {
+  "topics": [
+   "1.2.4",
+   "1.1.3",
+   "1.2.3",
+   "1.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) oligopoly in Tanzanian telecoms 9 + (b) niche; (g) movement along demand 3; (d) total variable costs 2; (f) wants and scarcity 2",
+  "qp_sha256": "ad1e14fb3816409a7dae38d1e2047c53ec242c407c71aa6e5e64d0debe9a86bd",
+  "ms_sha256": "202d04fc14d5fc5144304266f1f8f07ced39bcc2b9be51ec9288ec3f5ddc533e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|3": {
+  "topics": [
+   "1.2.5",
+   "1.1.6",
+   "1.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) machines as substitutes for labour 9; (d) vaccinations as external benefit 6; (c) PPF 3",
+  "qp_sha256": "4986d0d36c22f38e6a0fdf9af3a077979bcbf0254bda1eccd16aff9d2c641819",
+  "ms_sha256": "1cb7d92261126eef24bdd7e397ea4c08a81207f47d9c57f877d0400a89720d9e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1R|4": {
+  "topics": [
+   "1.2.3",
+   "1.1.5",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate economies of scale from combining apps 12; (b) large public sector in Cuba 6; (a) excess demand 2",
+  "qp_sha256": "91fb78c617bf4705feabfef5a8f7a8e84d0eee265b9d6b84002f7f6d7f8b6f0f",
+  "ms_sha256": "5168cb18851beada359483d1353edfcd35c2880916e693f8115c9b5fa6ec9663",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|1": {
+  "topics": [
+   "1.2.6",
+   "1.1.4",
+   "1.1.3",
+   "1.2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) deposit-return regulation and externalities 6; (c)+(f) normal good, PES 4; (g) banana price and apple demand 3; (h) division of labour drawback 3",
+  "qp_sha256": "6adeef393367b9c242657c50e38ba0b4b403760bdbaa4f029830aa78215abf33",
+  "ms_sha256": "0ace056fe94b7ff40d9847f8071a284242ee0026b2c0dbd2d8afdf4098efefdb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|2": {
+  "topics": [
+   "1.2.5",
+   "1.1.3",
+   "1.2.3",
+   "1.1.2",
+   "1.2.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) skills and the supply of teachers 9; (g) supply movement 3; (b)+(d) external economies, total costs 3; (f) consumers not maximising 2; (c)+(e) competition, takeover 2",
+  "qp_sha256": "bc6098803aed2cb372b2b88548da49dc28fff36da65ad4950436712442b51dee",
+  "ms_sha256": "c001ac8472ba0c59f54dbd1c9483cdb23e8c2cf55bd43c6d7a7593ab16d22449",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|3": {
+  "topics": [
+   "1.1.6",
+   "1.1.1",
+   "1.2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) brick production external costs 9; (d) PPF shift 6; (c) school-leaving age labour diagram 3",
+  "qp_sha256": "98cdea4e4fded3a5434d38bc23cc7d014034e41e1428c9ebdb3a783ffba416c7",
+  "ms_sha256": "d90d464bebec8b9fcc9448f0619e10c8b44aa07a7e31ae84cda92e34a08ec5c0",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P1|4": {
+  "topics": [
+   "1.2.4",
+   "1.1.5",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate whether monopoly KCOM is bad for consumers 12; (b) free rider and street lighting 6; (a) excess supply 2",
+  "qp_sha256": "57365bebffc69ccfe220bfc7bfca84d41e7bd4dc83052306cccdc210fda837c3",
+  "ms_sha256": "bd162546814401cbf5f929403b751c707a8d1c49e19df77515dfff4d59f17de7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|1": {
+  "topics": [
+   "2.2.2",
+   "2.2.3",
+   "1.1.3",
+   "2.1.1",
+   "2.1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) free trade drawbacks for domestic firms 6 + (c) exports 2; (g) interest cut and the pound 3; (f) subsidy diagram 3; (e) inflation from CPI 2; (d) education and inequality 2",
+  "qp_sha256": "2822e9534e1376e06a5c280efa76059207f777c3c27bf6fac34c58088f5c1658",
+  "ms_sha256": "9b01d9988603a2ae6dd29a75bdd4db707eaeb1e3bf9e4312f3df90bab7d47441",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|2": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) infrastructure spending vs unemployment 9 + (d)(e) fiscal surplus, deregulation 5; (f) economic cycle 3 + (c)",
+  "qp_sha256": "200f34a125d87903af00428bf81ce24a12dc5ed1b5659c2a20c7ba7ad79053e5",
+  "ms_sha256": "6420dc7effcc5d4ab535c62b7f05a6b427cb2c1926ccfc3d34b45431df1f043a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|3": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) benefit payments to redistribute income 9; (d) deflation and consumer confidence 6; (c) import quotas 3",
+  "qp_sha256": "98c7b79036483dc83e470943615f24ddabd24125387d18d4abda2426e0ebfc89",
+  "ms_sha256": "97789d293e90eeb350236bc273afd6d413250414befebfb75e2a07835273e36b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2R|4": {
+  "topics": [
+   "1.2.6",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate fuel taxes to protect the environment 12; (a)(b) GDP per capita, falling unemployment and tax revenue 8",
+  "qp_sha256": "6e4a18c27219a9f810db043f87548dd4676f8129d3064c3768c482e4ffe61f1d",
+  "ms_sha256": "044cfbe996b02e9802203c3fc17fba9539c685659576a758456718830b617f07",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|1": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) cutting indirect tax and living standards 6 + (d) benefit payments 2; (c)(e)(g) imports, current account 7; (f) quota diagram 3",
+  "qp_sha256": "44fabf5dee8dac48041c34478cba256962515fa3402f9e96fed6a7ae13c9b57a",
+  "ms_sha256": "6b94e50e743ad4531dbc3f43f070e5ab7c0e73d2c46f9e88b7c61652a3e59d3c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|2": {
+  "topics": [
+   "2.2.2",
+   "2.1.1",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) free trade for EU firms 9; (b)-(e) growth, unemployment, recovery, shoe-leather costs 7; (f) exchange-rate diagram 3",
+  "qp_sha256": "a489fa1fd6e11df3ba2ff22ab6035d8947d8068740c58ae67cd8093a446f9f2c",
+  "ms_sha256": "34464a66100ec21055fa99f15f868309250d80521a55c76dae09a304e8475962",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|3": {
+  "topics": [
+   "1.2.6",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) pollution permits 9 + (c) renewable subsidies 3; (d) fiscal surplus 6",
+  "qp_sha256": "327ad75fc8332a6431a826e4fe32b8f6ecdd6de72d69d71bcf49354dcbff1f1d",
+  "ms_sha256": "cab9a3c972a8d78d63136e5b3bf3c4d048149c1076561e3aec3e93ee8dee65e8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2022_may-jun_P2|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate infrastructure spending and output 12; (b) unemployment and business confidence 6; (a) % arithmetic 2",
+  "qp_sha256": "398fbc3010741be95473c19970a3ad683991d8f59511a9a3a0c089c4f421f29e",
+  "ms_sha256": "5f62e0b07e83421771745e910f38390fddc8945fbf0a78aae69df19f3320248b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1R|1": {
+  "topics": [
+   "1.1.1",
+   "1.1.3",
+   "1.1.5",
+   "1.1.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) movement along the PPC 6; (c)+(g) supply, fall in income 5; (h) privatisation and workers 3; (f) PES 2",
+  "qp_sha256": "857311fff8c285df0207cc00862abfc8734c570294347c480a572e89dc46f41a",
+  "ms_sha256": "1695e0c68ed6ff46a7b28a8a973215c7394ee8758475378b8c54e00aaa493708",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1R|2": {
+  "topics": [
+   "1.2.2",
+   "1.2.4",
+   "1.2.5",
+   "1.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) division of labour at Foxconn 9; (e)+(f) start-up barriers, oligopoly drawback 5; (c) trade union 2; (d) average cost 2",
+  "qp_sha256": "7d0b7a1a3360b5f48c379beaa7b70dc553d13e923728681cd320138984f45fff",
+  "ms_sha256": "0332b61db081e8349833db2848a521c01c520dbee8cb466458a269144c08379d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1R|3": {
+  "topics": [
+   "1.2.5",
+   "1.1.6",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) migrant labour in Dubai 9; (d) external costs of building 6; (c) employment by sector 3",
+  "qp_sha256": "55b5915d963be47221f0cc41698c3ee0196c8ef1d7dc394c196374f2a226af1a",
+  "ms_sha256": "7a78cbb9143b2e68647d66a6fe04a12b941d8b768daf31a4b9ef7d4f3330893a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1R|4": {
+  "topics": [
+   "1.2.4",
+   "1.1.2",
+   "1.1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate expanding vs staying small 12; (b) consumers not maximising benefit 6; (a) revenue for inelastic product 2",
+  "qp_sha256": "4f6b7c2d22d0be844180bbc53e61371a830c9145f30db26e70d8401349678dfd",
+  "ms_sha256": "634d4f507698d8adbd85da261d95ed5fbd3fcc04d286999932f90dcdb632a225",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1|1": {
+  "topics": [
+   "1.1.4",
+   "1.1.3",
+   "1.1.2",
+   "1.2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) usefulness of YED to Megabus 6 + (f) PED 2; (g) celebrity effect on demand 3; (h) not profit maximising 3; (b)+(c) productivity, division of labour 3",
+  "qp_sha256": "3572a4530b16e162ba13e1b21894a112fb2213cc2886ba4d55eaca60ace41bed",
+  "ms_sha256": "70f4cd72d031be4d9a5baf7e09c94549e444fc0f0b6e4533ce3206bd36aa8d3a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1|2": {
+  "topics": [
+   "1.2.3",
+   "1.2.4",
+   "1.2.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) merger and economies of scale 9 + (d) total costs 2; (c)+(f) barriers to entry, staying small 5; (e) subsidies drawback 2",
+  "qp_sha256": "81dbbd44346f5f3c8039ab17afa26d8297cc237498352e80a8d13ba58e321fdd",
+  "ms_sha256": "3cf065f8460a922e009688e0e083ceea6bf5624f1c9492a0f10eeca9fe22f92c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1|3": {
+  "topics": [
+   "1.2.5",
+   "1.1.5",
+   "1.1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) trade union activity at Morrisons 9; (d) government flood defences 6; (c) elastic supply diagram 3",
+  "qp_sha256": "251d507e77fa29ce98fba139083c9719e0357fea5b6adcac05aa59d6ecc28e4f",
+  "ms_sha256": "d373e34d2d6df74ddf9f1c51022e7198d237ea04221cf8d493a6a23c427678a6",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P1|4": {
+  "topics": [
+   "1.2.4",
+   "1.1.3",
+   "1.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate competition for Dahab restaurant customers 12; (b) equilibrium price of tagines 6; (a) PPC opportunity cost 2",
+  "qp_sha256": "5543d70f2186fc9eac6b99728d90ed03e247d01eb203e24da955d0c585d17493",
+  "ms_sha256": "bf00ce81d1ec43eb8dc476b07343999150ca63ec64b17db98b62394acdf37166",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2R|1": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.2",
+   "2.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) education and productive potential 6 + (c) deregulation 2; (d)+(g) growth drawback, wages vs inflation 5; (f) tariff cut diagram 3; (e) exchange calc 2",
+  "qp_sha256": "61d36c0b7c2d73716903784c0cc64b9fa8cff9da7db3f5c045a5dc1f12d7ec8d",
+  "ms_sha256": "3d023ad2f383137b3674ff0ad636234234e4667d7bc3212a31fafdea80c8579e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2R|2": {
+  "topics": [
+   "1.2.6",
+   "2.2.2",
+   "1.1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) fines to protect the environment 9 + (d) pollution permits 2; (f) quota diagram 3; (e) airport environmental damage 3",
+  "qp_sha256": "47fbbc983dbea655247f09c9f0691747173762c821debf2a6a947f0d8885e64b",
+  "ms_sha256": "e91311a35b7037df9252acd8640db379cc3d1e71059cf5c26010a866fb07a8fb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2R|3": {
+  "topics": [
+   "2.2.1",
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) drawbacks of MNCs in the UK 9; (d) healthcare investment 6; (c) domestic quality and current account 3",
+  "qp_sha256": "ec6d49736b4fe9e83ddeaf54715bbfe7e3caa7341549494e539b8320c848e4b6",
+  "ms_sha256": "4b7e48e95e356e8cb8289306b7bdbeccd9b797d20ab6a931b4b07081efceb456",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2R|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate fiscal policy to control inflation 12; (a)(b) GDP per capita, continuous current account deficit 8",
+  "qp_sha256": "ad195d39c56766bee82958e9dedaa2aee192277673469a71fc9853cd77de4d9c",
+  "ms_sha256": "4633f84e5868078a2c76e17f70d7c2968c5832838368c39885030c01b5670327",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2|1": {
+  "topics": [
+   "2.1.1",
+   "2.2.2",
+   "2.1.2",
+   "1.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) current account surplus 6 + (g) seasonal unemployment 3; (a)(d)(f) WTO, free trade, tariff diagram 6; (b)+(e) supply-side, net pay after tax 3; (c) economies of scale 2",
+  "qp_sha256": "0afa8313ce706e562301d1be87a820a45b392799b90253975c37f5f7d8b24dfe",
+  "ms_sha256": "33ccaf3dd333f39961b490773642fc75222cdd0c8fcdcb5580e6a86c0379b4d5",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2|2": {
+  "topics": [
+   "2.2.3",
+   "2.1.1",
+   "1.1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) depreciating dollar and US exports 9; (c)(e)(f) growth drawback, reducing poverty, economic cycle 7; (d) privatisation 2",
+  "qp_sha256": "7a8a2151d78efa22e5431b0a6741e02b5059096695aa926128f472e0b47f0749",
+  "ms_sha256": "ec0fa5db3a3bec9ee9a21b174215c61a681d9c3705af1839851439aa9fc87196",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2|3": {
+  "topics": [
+   "2.1.2",
+   "1.1.6",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) lowering taxes to cut unemployment 9; (d) business activity damaging the environment 6; (c) unemployment and tax revenue 3",
+  "qp_sha256": "2df4bb92dd4635538c79925e7e56933968e81890d73a74d75a06e81f9fbf8ff3",
+  "ms_sha256": "1758b68f348ca7a8713602459c0724e6c84d8733f22c352ad90ee4fe773ccbf3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_jan_P2|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate monetary policy to raise output 12; (a)(b) unemployment rate, wages and inflation 8",
+  "qp_sha256": "2bac2201cf1e08f6c8b932eec070e8080ad6624ce161953dda20e44866f90dbc",
+  "ms_sha256": "384b50dcb24b0df9240615bb2e0b11c193a1188f6d19d3c23ad927a971fd7706",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|1": {
+  "topics": [
+   "1.2.1",
+   "1.1.3",
+   "1.2.3",
+   "1.1.2",
+   "1.2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) shift of employment between sectors 6; (g) mango demand 3; (f) total revenue 2; (h) large meals over profit 3; (c) division of labour 2",
+  "qp_sha256": "2db6bdd6521bd08db1e7890b8b6f3be399dfb7e65d5691fc2df773994c6471b4",
+  "ms_sha256": "651a93599658f7b3c10df92760613ab0a452c9a9d941e06aae63185dbfe3a824",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|2": {
+  "topics": [
+   "1.1.5",
+   "1.1.3",
+   "1.1.4",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) public sector providing parks 9; (g) supply movement 3; (a)+(d) PES formula, PED 3; (e)+(f) entrepreneur, water as factor 3",
+  "qp_sha256": "49d52957255f6d8db0a3c7f46e885c117e30d142c7cd2ad00ae4e23ab2dbea50",
+  "ms_sha256": "f602955d6efd7e4c39fe72a5abadd737705fdc11a85dfccd7618e5ce1bbd49fb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|3": {
+  "topics": [
+   "1.2.3",
+   "1.1.1",
+   "1.1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) WarnerMedia-Discovery economies of scale 9; (d) inward PPF shift 6; (c) demand curve 3",
+  "qp_sha256": "4c3b2dc2fdc6c7ca9e7e778c5a179494111caabcc08fd418af4c7189d7d243c2",
+  "ms_sha256": "51e0e5a2c21c6cb1583b856837b63d24ed9af2d973e3fd297524766ec9d5b51c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1R|4": {
+  "topics": [
+   "1.2.5",
+   "1.2.4",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate derived demand for labour 12; (b) competitive airline market for passengers 6; (a) excess supply 2",
+  "qp_sha256": "1e2fcef1f5a384455b8fb0d3f87b86734c4f31a9692a5fea4e3c79c0408aafba",
+  "ms_sha256": "295cb240535ec3b51ea4a44a2080941fbc1546a6c803890bfa4644962148e57a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|1": {
+  "topics": [
+   "1.2.1",
+   "1.1.3",
+   "1.2.2",
+   "1.2.3",
+   "1.1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) four factors of production 6; (g) advertising and demand 3; (h) division of labour 3; (f) total variable costs 2; (c) privatisation 2",
+  "qp_sha256": "fc82cc13ec116ab760b45207efc5c7584cc6773ef89c2927364cb4e75f408e9b",
+  "ms_sha256": "ee32d3e404d53b8d210211ffcc408402b356d83166f30572f8443c9345cadb14",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|2": {
+  "topics": [
+   "1.2.4",
+   "1.1.3",
+   "1.1.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) whether monopoly PKP benefits consumers 9 + (f) staying small; (g) positive reviews and demand 3 + (a)(b); (c)+(d) unitary PED, PES 3",
+  "qp_sha256": "6471c6b82bbb9486fa0fd5b6ae491c4f7d3da90fd66b1fbc68ecf63d66f06300",
+  "ms_sha256": "53a1a66703df758f347c58741a6ef01f5ec47fdfa8d5cc5f91c0646bf7ddc543",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|3": {
+  "topics": [
+   "1.2.1",
+   "1.1.2",
+   "1.2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) role of the secondary sector 9; (d) ignoring harms of phone use 6; (c) retirement age labour diagram 3",
+  "qp_sha256": "61fae501f8048f56154dd2765c80e16bd51a25a2ff3e20b0b3df5f4d2f6e7516",
+  "ms_sha256": "f87a592db86f9638009f50ca976142274d8674d9fa1e09f3da74275718571b3e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P1|4": {
+  "topics": [
+   "1.2.6",
+   "1.1.5",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate regulation of air pollution 12; (b) free rider and defence 6; (a) excess demand 2",
+  "qp_sha256": "5718ad3efbd685468a3991130661ec1dd4308c4f2767adfbc20575b860d4fceb",
+  "ms_sha256": "3f7bf10f9d82e21be4af0a988cc97ab2d83dc21473dd7a5f660d065ace50cc60",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|1": {
+  "topics": [
+   "2.1.1",
+   "2.1.2",
+   "2.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) limitations of GDP 6 + (c)(e)(f) imports, current account, cycle 7; (g) benefit payments 3; (d) interest rates and currency demand 2",
+  "qp_sha256": "7462be68cc37261ba1924241eaf402dedf20588ca218e56f912253b6b7d0f7bb",
+  "ms_sha256": "39eecca4a251688ce342c36c655506f058bd6be9c84928ec553be6ce753500b1",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|2": {
+  "topics": [
+   "2.1.2",
+   "2.2.2",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) fiscal surplus for San Francisco 9 + (e) infrastructure 3; (f) quota diagram 3; (d) devaluation 2",
+  "qp_sha256": "a902f9c9d1bf75c6a3d262802b3e4e96e7377216106eed395e35f6740e8bebc7",
+  "ms_sha256": "a5b2eff4bd405b2ea5e97a20e4873399b5df557485ed54e3f21c42e66926a259",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|3": {
+  "topics": [
+   "2.1.1",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) rising unemployment in North East England 9; (d) free trade in RCEP 6 + (c) battery subsidy 3",
+  "qp_sha256": "c7dc6d845889f8bf9c528468ddf1c3ae6949c6ef07cb4f6fe126d0c93cda121b",
+  "ms_sha256": "a27fc398854233a7f49d202b9a6a26f8debdcbb64b0e874dd6575b58bfe54f48",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2R|4": {
+  "topics": [
+   "1.2.6",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate pollution permits 12; (a)(b) unemployment rate, inflation and exports 8",
+  "qp_sha256": "7412adc40d1ec6507afc2eedda93581984147f513f687cde545fd58d33f31725",
+  "ms_sha256": "5b94358244d4de9219f4e16a60466e14a7bf3173e96a24924787be5eb1ae88cb",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|1": {
+  "topics": [
+   "2.1.1",
+   "2.2.2",
+   "2.2.3",
+   "2.2.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(e)+(g) inflation from CPI, menu costs 5 + (a)(b); (h) import quotas 6 + (c) exports 2; (f) exchange-rate diagram 3; (d) globalisation 2",
+  "qp_sha256": "936d3dbc40b46757b7122578487088ad6c94071e67b24c238ac8529f62b6f629",
+  "ms_sha256": "efc7de555a3f726b75894efd16fa6c2a8bd69456cb344e31a6dcc399c382f784",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|2": {
+  "topics": [
+   "2.1.2",
+   "1.1.3",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) infrastructure and productive potential 9 + (e) education and inequality 3; (f) subsidy diagram 3; (d) current account surplus 2",
+  "qp_sha256": "28b72f9e95c9e4af2b112aacec1507961c972fd2da9f25173fcb394da6fabd6b",
+  "ms_sha256": "f8a8dcaf83dd02c9e0e2011b92237210f50073b0b8ef998628d7a7d21b413216",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|3": {
+  "topics": [
+   "1.1.5",
+   "2.2.2",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) privatising the college 9; (d) free trade drawbacks for UK firms 6; (c) foreign quality and current account 3",
+  "qp_sha256": "6e26a28d13039f890055c5542152a6d13059986dd5421f52ff1f7274c4d132dd",
+  "ms_sha256": "815535dfc867820ac72bbe316a4aaa2dbe476b9ac05fbfa7cd3497f7174d184a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_may-jun_P2|4": {
+  "topics": [
+   "1.2.6",
+   "2.1.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate subsidies to protect the environment 12; (a)(b) fiscal deficit 8",
+  "qp_sha256": "d0b741ab7e358bd934950a8a03cc37a0c9da13fca2cb41bebc64a31403abc5cc",
+  "ms_sha256": "e38427ab54da3ae7bc385c5ab35597b8b41df4225c4823814c6c2fc541d3e5d4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|1": {
+  "topics": [
+   "1.1.5",
+   "1.1.3",
+   "1.2.3",
+   "1.1.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) market failure at the venue 6 + (h) privatisation for consumers 3; (g) subsidy diagram 3; (c) economies of scale 2; (f) PES 2",
+  "qp_sha256": "86285da48c8fcda03071e3764e9ae0613137cf7f7470b37cd9bc942fe1714cab",
+  "ms_sha256": "85491c86a9197ded6791af4fe1bcae66ba6cb5ac10de0704b1eb2786d32983e7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|2": {
+  "topics": [
+   "1.2.6",
+   "1.2.5",
+   "1.1.1",
+   "1.2.3",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) Venice tourist tax and externalities 9; (f) higher retirement age for firms 3; (b)+(c) growth, opportunity cost 3; (d) total fixed costs 2; (e) entrepreneur 2",
+  "qp_sha256": "687b1ef2556bd765b01ec823f692abb24c8c7c3f6f96f847646620c120f67547",
+  "ms_sha256": "169a1baa5e8396987d69ec326c7816787b21aa457d55f968fa699f508b23439a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|3": {
+  "topics": [
+   "1.1.4",
+   "1.1.6",
+   "1.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) raising prices and late fees (price elasticity, revenue) 9; (d) education as external benefit 6; (c) LRAC economies of scale diagram 3",
+  "qp_sha256": "3e17059fd7baeba0293f4da89e9efcbfebf0bef663c181d132cf604bba1ad562",
+  "ms_sha256": "ad58082014b73a6c4495e11bd21f0b87d79f5d2fed4960ed99fa7f6c8a4d8953",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P1|4": {
+  "topics": [
+   "1.2.2",
+   "1.1.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate division of labour for productivity 12; (b) inelastic demand at Marina Cafe 6; (a) profit % arithmetic 2",
+  "qp_sha256": "fdad62dd1a5032c05c11b9c24378661bef6017905e1ebf5b4948dd5589b4b4c5",
+  "ms_sha256": "a0eb3002a01c4f52b383ae78101bf35f7c00c1d76f7ebdbc47dd37dafe57b5a1",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|1": {
+  "topics": [
+   "2.1.1",
+   "2.2.2",
+   "2.1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) inflation and consumer confidence 6 + (c)(e) inequality, unemployment rate; (d)(f)(g) WTO, tariff diagram, free trade 8; (a)(b) progressive tax, fiscal surplus 2",
+  "qp_sha256": "64699b21d3baf0c73d9ad669579772f23752d49400430e8b634f3cb3aa477e9d",
+  "ms_sha256": "63a3a2e562f114872a44dc934566278a5c2e8c2e245e61e3f78fa1b807b0f6a2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|2": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) higher business tax rates and investment 9; (d)+(e) seasonal unemployment, harmful growth 5; (f) exchange-rate diagram 3",
+  "qp_sha256": "cf37d0d64ec0e9af90c1e9ccf44dd227a4ffbbf52d4c26acd0f48f4b48ce81ec",
+  "ms_sha256": "fb09550f53f3cf5a90cb0c2ee2c208e859629557f5557a0fbe7ba66559fc7562",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|3": {
+  "topics": [
+   "2.1.1",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) low unemployment and tax revenue 9 + (c) import prices and current account 3; (d) monetary policy vs inflation 6",
+  "qp_sha256": "9746a1928fc15eb6fa45a82637ac7b25a2bcd086f6155ac3889109cb2227b242",
+  "ms_sha256": "d788903a630a956fccd962581e317cc47be65ceef9a20df96be26513ab940c9f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2023_oct-nov_P2|4": {
+  "topics": [
+   "2.2.1",
+   "1.1.5",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate FDI in Kazakhstan 12; (b) disadvantages of railway privatisation 6; (a) relative poverty % 2",
+  "qp_sha256": "538b90b04f16021342f6142dab8301dbd912cadc7d6462bd78952f0d898038e0",
+  "ms_sha256": "ccf451e3c061f1af97a8d88ecd9af1077be5a7dd5740b702b8d5095411c51aa4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|1": {
+  "topics": [
+   "1.1.2",
+   "1.1.3",
+   "1.1.1",
+   "1.1.4",
+   "1.1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) not maximising profit 6; (g) complement price and demand 3; (h) opportunity cost 3; (f) YED 2; (c) private sector 2",
+  "qp_sha256": "659065ebbbbc116d5a23811d65f8d79f4ec14f768bb53512a65be982340296e1",
+  "ms_sha256": "d9d260c8c5ae2526591a732e82b7a1d3252be387dffbf07ec442a0c84a4ef917",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|2": {
+  "topics": [
+   "1.2.6",
+   "1.2.4",
+   "1.1.4",
+   "1.1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) raising the minimum wage 9; (b)(e)(f) oligopoly, monopoly innovation, expansion 6; (c) PES calc 2; (d) social costs 2",
+  "qp_sha256": "cc7e11b70c8f61d0fe7f18ba67dd4736dcd1adcfa198071a62cb273e8515746d",
+  "ms_sha256": "5fd58a66bea059f890539dceaf749a3a7b80da005abda94c46e44a7290efdb90",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|3": {
+  "topics": [
+   "1.1.4",
+   "1.1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) price rise and total revenue 9 + (c) inelastic diagram 3; (d) privatising TAP Air 6",
+  "qp_sha256": "6978ba0441fc56450a3cc7f2d3a48a65746204ec2806e09f02d72b6aac8ec1cb",
+  "ms_sha256": "916cf3c1230afa575026b5e3832e20d929a35bfea695532b6e1c943d31ffd4f9",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1R|4": {
+  "topics": [
+   "1.2.2",
+   "1.2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate programmes for farming productivity 12; (a)(b) variable costs, external economies of scale 8",
+  "qp_sha256": "41897d774569a5f0cec597c169468ab40755f5411637dbcf9b9e8955375bc4a5",
+  "ms_sha256": "9c8bb3dc240dfd38d1b9c9cae14b752669430147b268ece163ef36154c9e176e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|1": {
+  "topics": [
+   "1.2.4",
+   "1.1.3",
+   "1.1.1",
+   "1.1.4",
+   "1.1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) factors in opening a second club 6; (g) removing indirect tax diagram 3; (h) opportunity cost 3; (f) YED 2; (c) mixed economy 2",
+  "qp_sha256": "a5e1691478ef5e34d547421cb4206d1c60a9664c57632851769cc0a618f0675e",
+  "ms_sha256": "17d489087807f75673454f7546e1e9377500f8a5bd14edc68f9d213f81ba0f1a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|2": {
+  "topics": [
+   "1.2.6",
+   "1.2.4",
+   "1.1.2",
+   "1.1.4",
+   "1.1.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(h) regulation of plastic pollution 9; (b)+(e) monopoly, oligopoly 3; (f) discount over profit 3; (c) PED calc 2; (d) social benefits 2",
+  "qp_sha256": "ccf86c2b82f35d27c5dcebde5c0bb9bfd42aab0986a7b238811acd5b8b925be1",
+  "ms_sha256": "8a6e3a29dac1038131ed37c81e15f2e55688d53eb4b7616503a5a3cf68c2a04c",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|3": {
+  "topics": [
+   "1.1.4",
+   "1.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) PES textiles vs agriculture 9 + (c) elastic demand diagram 3; (d) division of labour at Coca-Cola 6",
+  "qp_sha256": "14b3aa88b1e8345686fca0f81b1ff8066620931b55a1a87f4a413183c711c854",
+  "ms_sha256": "9cd595383b1e6d17a0477a987b6764c980ab45adcf4e568243a5525c135beb01",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P1|4": {
+  "topics": [
+   "1.1.5",
+   "1.2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate privatising Lagos airport 12; (a)(b) total costs, internal economies of scale 8",
+  "qp_sha256": "abe4779dae1827176e543b290cd917862b56aa5e55e11bb5b6d105c369a2c97c",
+  "ms_sha256": "dd592b395a69f0717516868062c2c81e7b0a199e94fed4d807c1d5332acda25a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|1": {
+  "topics": [
+   "2.1.2",
+   "2.2.2",
+   "1.1.3",
+   "1.1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(c)(e)(g) monetary policy, indirect taxes, deregulation 7; (h) joining CPTPP 6; (f) removing fuel subsidy diagram 3; (d) privatisation 2",
+  "qp_sha256": "410e1406fe10c79bf926f5352ff6cb33b680bae498e36a1bd9f8294a9e247471",
+  "ms_sha256": "e4f4b6cd456f64e94175631e5b635b8dc28cc98a1b128d12ea7dae5cf3f3a558",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|2": {
+  "topics": [
+   "2.1.1",
+   "2.1.2",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) recovery and unemployment 9 + (d) relative poverty 2; (e) asset purchasing 3; (f) interest rise and the pound 3",
+  "qp_sha256": "3866830ce6c3b6fc1f9dc142ab45de7af1f16cce591e9b273beb6637b35bc132",
+  "ms_sha256": "ddadea4b0de0c7419df96bbdef10bd276aec50f0f10199d66198287840e51015",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|3": {
+  "topics": [
+   "2.2.2",
+   "2.2.1",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) tariff on tyres for Brazil 9; (d) globalisation for clothing makers 6; (c) economic cycle 3",
+  "qp_sha256": "0423a6dc26a55b92d7e8e6ce35d5b57ae85d328eab9cf816ec76560ab6431574",
+  "ms_sha256": "6d26fbc179452ebcbad6bee1063a93710a1fb64dbd03b71298dc008ce07349fa",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2R|4": {
+  "topics": [
+   "1.1.6",
+   "1.1.5",
+   "2.2.2",
+   "2.2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate national parks to protect the environment 12; (b) trade patterns developed vs developing 6; (a) exchange calc 2",
+  "qp_sha256": "a5a798bc58281ebc8eee0bbb02958162785a300da8a3ec776126e53b53568e38",
+  "ms_sha256": "0e81fe9a68890da3f551bf21130b0affacde65bbd11b472de5d7ae5015b12e4f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|1": {
+  "topics": [
+   "2.2.2",
+   "2.1.1",
+   "2.1.3",
+   "1.1.6",
+   "2.1.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) AfCFTA drawbacks 6 + (f) quota diagram 3; (c) current account 2; (g) growth-inflation link 3; (d) business damaging environment 2; (e) direct taxes 2",
+  "qp_sha256": "2d628d585c31d7b3a786e84aaa809478dc01f8f40a59b38118dc253984b8d153",
+  "ms_sha256": "a03110038c94adf2c4400dea9ee33d2831cede6355a5fb512c636d0da4dd8a07",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|2": {
+  "topics": [
+   "1.2.6",
+   "2.1.1",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) green-technology subsidies 9 + (d) fines 2; (f) economic cycle 3; (e) progressive tax and poverty 3",
+  "qp_sha256": "637f8f567f9f7e40c2dd58d6c00193ecefb7f2e01dce4e955c151f65e91d4271",
+  "ms_sha256": "feedd3cb2f1bb57e8c94775928b8ce194a474bb7c9327d21623503116003cb0a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|3": {
+  "topics": [
+   "2.1.1",
+   "2.2.1",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) recession and inflation 9; (d) globalisation for consumers 6; (c) tariff removal diagram 3",
+  "qp_sha256": "9760a943caf5a22a7405007f4600edc742c575f7922bc8fdf1976a1453a5e20e",
+  "ms_sha256": "dc0356b7ea4e8011e23306db6933a03b0260177f89cbf2884b341b31814bd86d",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_may-jun_P2|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate education and training vs structural unemployment 12 + (a) fiscal balance 2; (b) inflation and interest rates 6",
+  "qp_sha256": "b771cfc63875862d1e1ffa86e550ad072eb7eb66cead202c7fe64214ace07fa4",
+  "ms_sha256": "795a023a3bc4f905898629b73758ef8bba17c326cb7c2b3e4f3bafbe342ca4cc",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|1": {
+  "topics": [
+   "1.2.1",
+   "1.1.4",
+   "1.1.3",
+   "1.1.6"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) four factors of production 6; (f)+(h) PES, PED over time 5; (g) population and rice demand 3; (c)(d) external benefit/cost 3",
+  "qp_sha256": "65e0a02236b4a02bd5f822e828e484957a3d9bc95855bc0912fdecb159cffe66",
+  "ms_sha256": "5820f222794097c478873c76b2825baccf7d5b60fd49db9317e5ecf45b58482a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|2": {
+  "topics": [
+   "1.2.5",
+   "1.2.3",
+   "1.2.6",
+   "1.2.4"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) trade unions and wages 9; (c)+(d) variable costs, total revenue 4; (f) legislation easing taxi entry 3; (e) monopoly feature 2",
+  "qp_sha256": "7de05cc9d8bda3e43f59a4f20528b7795ff47c83876feb2ee8fa164503488e91",
+  "ms_sha256": "64ee7ef60e69bf164e39c0bbdd8bfd0797334468c35851a09c77b27e94f488a7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|3": {
+  "topics": [
+   "1.2.2",
+   "1.2.6",
+   "1.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) quality of labour and productivity 9; (d) higher minimum wage and labour supply 6; (c) PPC 3",
+  "qp_sha256": "b69f3ffc4a89d2375b27805d8d823b4066e8eadbc95c731f4ec2eaccbd5f6cff",
+  "ms_sha256": "f52db53955869979bc425072c4e3c06d27e856ca3f9a0b0e84b184e8698f23ff",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P1|4": {
+  "topics": [
+   "1.2.3",
+   "1.1.5",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate economies of scale for X 12; (b) inefficient allocation in tourism 6; (a) excess demand 2",
+  "qp_sha256": "62c8c229576e4cfb78f4d7cc3abd871b5a2aabf1f8e8b1d2836b5dfbc167234d",
+  "ms_sha256": "6f567b636b9ef542effb6763df28886ddb6f7712e7da32f70f4c4f7402b7f5de",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|1": {
+  "topics": [
+   "2.1.1",
+   "2.2.2",
+   "1.2.6",
+   "2.2.1"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) cost-push inflation and business confidence 6 + (c)(e) deflation, invisible balance 4; (f) tariff removal diagram 3; (g) fines 3; (d) communication costs and globalisation 2",
+  "qp_sha256": "a5ee1c3f3c70cb45880131c26eada80df8cb2aed13a2ddb00dcfc83be802678b",
+  "ms_sha256": "fc9876917c72159865e99c993a29225e705071d3db44ae81f6769a3274eb1caa",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|2": {
+  "topics": [
+   "2.1.1",
+   "2.2.3",
+   "2.1.3",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) AI and structural unemployment 9; (f) exchange-rate diagram 3; (e) growth vs environment trade-off 3; (d) asset purchasing 2",
+  "qp_sha256": "749a48ac0aadbb0184081f88a9e6077ec6f9ab8c5b2fb7f05a2cf3efd906c8d4",
+  "ms_sha256": "15a1fa5b2d1ed0d26141e05e9d6e9dc8def753970337991832e9037d11f3f423",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|3": {
+  "topics": [
+   "2.1.2",
+   "1.2.6"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) income tax as reliable revenue 9 + (c) business taxes and productivity 3; (d) regulation to protect the environment 6",
+  "qp_sha256": "c0d0802316a5daf009d8448426fbf6ffd91e15d26b711edfad36548f9338bb09",
+  "ms_sha256": "92f2a2270bad5c758e9d2352c846abde3a94a08e40703b982feb112de39d35c5",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2024_oct-nov_P2|4": {
+  "topics": [
+   "2.2.2",
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate India joining RCEP 12; (b) benefits to reduce poverty 6; (a) GDP % change 2",
+  "qp_sha256": "87b7bc598ebfe307e1f311efd2dcb64b436199dbcc5f53727cbfa147187a82b8",
+  "ms_sha256": "f89d58a213aaab6cc2abc4388aa02ba0a9af2efc366259e1be6b292b2a5bd135",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|1": {
+  "topics": [
+   "1.1.4",
+   "1.1.3",
+   "1.2.5",
+   "1.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) PES of avocados 6 + (f) PED 2; (g) productivity shifting supply 3; (h) pension age and labour supply 3; (c) economies of scale 2",
+  "qp_sha256": "7d69a223b6e82bbb2d5b182f83babc8d9fd8df8e48a37b249751c7da59fbf35f",
+  "ms_sha256": "1ef6908392d9249519c547ceedfa72e75c6088d8820e3d49f5c84b0f2cf4a578",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|2": {
+  "topics": [
+   "1.2.2",
+   "1.2.6",
+   "1.2.3",
+   "1.2.4",
+   "1.1.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) division of labour in car making 9; (f) red-light fines 3; (b)+(c) average cost, profit 3; (d) patent 2; (e) privatisation 2",
+  "qp_sha256": "a1406d00b4506b36cf8b4aebfbdf5407920c88095c1c653b388f981ac5a6aadd",
+  "ms_sha256": "dc8625f7f3155e745a47721234bb445b2bf3baf71322d0781882aac3d02503b6",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|3": {
+  "topics": [
+   "1.1.6",
+   "1.1.5",
+   "1.1.3",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) government healthcare spending (external benefits, public sector) 9; (d) market forces removing excess demand 6; (c) sectors in a developing country 3",
+  "qp_sha256": "cab35f59edb22577013ac310a87825bf03dcfc220bbd33b81a3b43e982822801",
+  "ms_sha256": "d5be67e73f46c82ea5b92efa6c5a3667f86b17b3349556485e87726b284cdf45",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1R|4": {
+  "topics": [
+   "1.2.6",
+   "1.2.4"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate raising the minimum wage 12; (b) spreading risk across markets 6; (a) population % arithmetic 2",
+  "qp_sha256": "e960380c736267f976078dc49e444053786c07c9a7864250c7fe4168f9492257",
+  "ms_sha256": "7abf5271646ade82cc06b0864eceee4d874d156545814d997fbe0ec7959d30b4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|1": {
+  "topics": [
+   "1.2.5",
+   "1.1.3",
+   "1.2.6",
+   "1.2.2",
+   "1.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) derived demand for woodcutters 6; (g) raw material costs shifting supply 3; (h) CMA blocking a takeover 3; (c) productivity 2; (f) total costs 2",
+  "qp_sha256": "ddc3bbefb8248a3c499a7ac8333f96b5ea8d77e6498ea5eabc3132546df325fa",
+  "ms_sha256": "4c8dcd8a0dad41b9df62c4c57a2cf68a16f13e7acddaf1af0bb364c77cf26416",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|2": {
+  "topics": [
+   "1.2.5",
+   "1.1.5",
+   "1.1.4",
+   "1.2.4",
+   "1.2.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) trade unions, pay and conditions 9; (f) privatisation drawback 3; (c) PES 2; (d) innovation 2; (e) mechanic as factor of production 2",
+  "qp_sha256": "3f5cb528673bb37263143c7a0532296cce0a4c211da56ecaed1370db569d1b9b",
+  "ms_sha256": "7b566987936c3f0b945ef67c6c8437a64283d015e2f29352f4c9cb06efb7d620",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|3": {
+  "topics": [
+   "1.2.6",
+   "1.1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) subsidies vs road congestion 9 + (c) minimum wage diagram 3; (d) Tennis TV demand shift 6",
+  "qp_sha256": "5179dcff69108d4e8f971acef373e8f326496256da3e17dbf71b42dd74313b5c",
+  "ms_sha256": "c288f52bf96e9895039dc3a627f7594584963f03a1a66f84ab714afecacc0796",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P1|4": {
+  "topics": [
+   "1.2.4",
+   "1.2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate expanding to Prague (growth, scale) 12; (b) petrol market as oligopoly 6; (a) profit % arithmetic 2",
+  "qp_sha256": "17feda6173ba81d7ce2d45ee6c48d0d082f682c49c1f6ebb2c490735a680859a",
+  "ms_sha256": "8e4106a0caf28c4fcce3f1f40360a09d2b414f041599bfd620c4d25a003bc220",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|1": {
+  "topics": [
+   "2.1.1",
+   "2.2.2",
+   "1.2.6",
+   "2.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) GDP as a growth measure 6 + (c) current account deficit 2; (d)+(f) quotas, tariff diagram 5; (g) pollution permits 3; (e) exchange calc 2",
+  "qp_sha256": "6b03ca92d5fff60023c17cc50b2ec02120ff178d8be0ef18a716493a05591a0c",
+  "ms_sha256": "b8478b8a7308c3374143b50d75564632cdd8d3083cdfa159a7007a0ac6f65d06",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|2": {
+  "topics": [
+   "1.2.6",
+   "2.1.1",
+   "1.1.5",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) subsidies for solar stoves 9; (f) economic cycle 3; (e) privatising school meals 3; (d) direct tax 2",
+  "qp_sha256": "e6d5550913ae13f8a6d254dbe2f2684347131d8812b79d7b7e9d05302b74ec8b",
+  "ms_sha256": "023b4c10c7107af47a5849a597b339a93551fc677a4deb2668094afaabfe42bc",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|3": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) monetary policy vs unemployment 9 + (c) fiscal deficit 3; (d) shoe-leather costs 6",
+  "qp_sha256": "e88bb0f99b1a732dd7edcf400a16c02766cf99ebba48b53e171043b4baec6afd",
+  "ms_sha256": "5bd01c4126dd87f46e64e364834a6ecc4a5dda6a9d8def5a6a6556f51b24a46e",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2R|4": {
+  "topics": [
+   "2.2.1",
+   "2.1.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate globalisation for cocoa farmers 12; (b) road infrastructure spending 6; (a) % arithmetic 2",
+  "qp_sha256": "2d0dc7ebea1d6cb085091cce21e4824da8ab921b497a2a2cb9f709f4907b6849",
+  "ms_sha256": "ec2d2b9b1b13783ef7c44ed3673cb3b1797a4feb0e06538d266604f4a291de36",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|1": {
+  "topics": [
+   "2.1.1",
+   "2.1.2",
+   "1.1.3",
+   "2.2.2"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) recovery and unemployment 6 + (e) visible balance 2; (d)+(g) interest rates, fiscal surplus 5; (f) subsidy diagram 3; (c) trading bloc 2",
+  "qp_sha256": "5e481bf3dac074868b303673102ef82257bf9676b38dd5b05dfe5b1ca87614ff",
+  "ms_sha256": "b6ba41ff624756c0fac6df443dff0976cec5129eefd651020427ef7d53716651",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|2": {
+  "topics": [
+   "2.2.2",
+   "2.1.2",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) removal of Philippine tariffs 9; (d)+(e) indirect tax, healthcare and poverty 5; (f) currency speculators 3",
+  "qp_sha256": "76aac2055a0cb504ecf8cc5a400317eaddd379dcaa5fe9264de3139dec992065",
+  "ms_sha256": "0686c2901534a3765ba968cb5a19cd0c8e0b483a9d20be03f50b01ad7ae3eb42",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|3": {
+  "topics": [
+   "2.1.1",
+   "2.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(d) menu costs 6 + (c) structural unemployment 3; (e) lower income tax and work incentives 9",
+  "qp_sha256": "ab610e3f02cd41ede88dcb8ab7597e0aa2f09375851e4527ac8a02cb114b2855",
+  "ms_sha256": "00112c007010c6a089a37a740aa8ce66a17049ed2b6ef632074563d1a9ab92a8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_may-jun_P2|4": {
+  "topics": [
+   "1.2.6",
+   "1.1.6"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate regulation to protect the environment 12; (b) business activity damaging the environment 6; (a) plastic bag % arithmetic 2",
+  "qp_sha256": "f50d35857cbca0d7ccaf817861007af5bf6355b8058500b127dcb8dc4904feb9",
+  "ms_sha256": "26c9106f47576cc75e796a8344ee4223d971b02a9a9340eaf1939f6c713d5ea2",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_oct-nov_P2|1": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.3",
+   "2.2.2",
+   "1.1.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) deregulation 6; (c)+(e) demand-pull inflation, unemployment rate 4; (f) exchange-rate diagram 3; (g) free trade 3; (d) privatisation 2",
+  "qp_sha256": "687976174e4ab8ca493096feeac9cd9418f9f48c35e14b4247b9fa4b15808ddc",
+  "ms_sha256": "d61ef578f4601422b79d7dcf8cd8d72b87c3579d04fc17a68719434d788a5555",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_oct-nov_P2|2": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) monetary policy to raise output 9; (d)+(e) growth, unemployment and benefit spending 5; (f) tariff diagram 3",
+  "qp_sha256": "0c258eb161703425868aae01e6d1fe7a17d77e03facc54d05d623b64e9e9ff6e",
+  "ms_sha256": "d1dffa14ceec1e196b5a725db3651b2687f00b8514cb75ec1330038c8a3252e7",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_oct-nov_P2|3": {
+  "topics": [
+   "2.2.1",
+   "1.1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) advantages of MNCs 9 + (d) fewer tariffs and globalisation 6; (c) subsidy diagram 3",
+  "qp_sha256": "92ecfe04d35afc570e47e8a67fafb27b1eb4076d9301ca68a49a519267eb42f2",
+  "ms_sha256": "aadf45aaf20fd82a070ca13a4d70f39f54e2c85ed618d44d8dd0338c72220e8b",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2025_oct-nov_P2|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1",
+   "2.2.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate higher healthcare spending 12; (b) quality of goods and current account 6; (a) exchange calc 2",
+  "qp_sha256": "49113ded507103d162ee812a3ee8a353396e1474050c4cef9efb0c3bc853a891",
+  "ms_sha256": "f659c4eb779872a57be980ab73e0a8608bb12bb77b057cba42e3f26ebb0e11e8",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1R|1": {
+  "topics": [
+   "1.1.5",
+   "1.1.4",
+   "1.1.3",
+   "1.2.2",
+   "1.2.5"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) free rider and defence 6; (d)+(f) PED factor, PES 3; (g) complement price and demand 3; (h) division of labour 3; (c) trade union 2",
+  "qp_sha256": "eabc9946e7725c3a4c4fe8ec583539b5066ee6b7cecce9ed8eeb7bc0f0914a10",
+  "ms_sha256": "ae1d341e67e7c1475d9bc838b5071cbf96da21f1b657ffd54bd9f112cadb4282",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1R|2": {
+  "topics": [
+   "1.2.5",
+   "1.1.3",
+   "1.1.4",
+   "1.2.3",
+   "1.1.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) lower school-leaving age and labour supply 9; (f) supply movement 3; (b)+(d) unitary PED, YED 3; (c) total costs 2; (e) producers not maximising 2",
+  "qp_sha256": "e86dd31dd8c030dd2683e0835d2404c327fee5926867f86cfc8ab89ae73f0677",
+  "ms_sha256": "e5e8dbcaea80f0ba9a35f1ddcd4e39cd138b5b2285e970e28313c57bd3772c7f",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1R|3": {
+  "topics": [
+   "1.2.2",
+   "1.1.1",
+   "1.2.5"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) technology and efficiency in shops 9; (d) rice vs sugar cane opportunity cost 6; (c) derived demand labour diagram 3",
+  "qp_sha256": "733e67550310bb13c8fc511afbd642befeed7ea6b4923ed414c4ea4d8602b997",
+  "ms_sha256": "11a9b67e2126a3d1efc51dff95fe5f4d77c2b766706d657cbfc53e323cc0f192"
+ },
+ "2026_may-jun_P1R|4": {
+  "topics": [
+   "1.2.6",
+   "1.2.4",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate subsidies for externalities 12; (b) sunglasses market as monopoly 6; (a) excess supply 2",
+  "qp_sha256": "3e59f06a5f655594dd0bca0320d33019bc121e18841a4d8d062720b6d9027211",
+  "ms_sha256": "07efc32a33c12220e1620808524cd3cae8e3f80478cb9cbcd79543c43e2525b0"
+ },
+ "2026_may-jun_P1|1": {
+  "topics": [
+   "1.1.5",
+   "1.1.3",
+   "1.2.1",
+   "1.2.6",
+   "1.1.4"
+  ],
+  "difficulty": "easy",
+  "reason": "(i) why government provides street lighting 6; (g) raw material price and supply 3; (h) growing tertiary sector 3; (c) subsidies 2; (f) PED 2",
+  "qp_sha256": "368fa5f151feb1cbda3a0ba8118fad7ecc2bf10c109df98087b446a402e9c6be",
+  "ms_sha256": "0bc70d8f57da69ea706c4bff653993b672f8f80a51a8fa0418461b9b8434b9f5",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1|2": {
+  "topics": [
+   "1.2.5",
+   "1.2.2",
+   "1.1.3",
+   "1.2.3",
+   "1.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) productivity and demand for labour 9; (d) division of labour 2; (f) movement along demand 3; (c) profit 2; (e) finite resources 2",
+  "qp_sha256": "e769553e324db251334a191925b9a9c2b53beb02dfe2bee138e9257513601d86",
+  "ms_sha256": "f86eb19b796937ae76a57308495fe353028042080df7f2c9543686ee8077d221",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P1|3": {
+  "topics": [
+   "1.2.4",
+   "1.1.2",
+   "1.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) benefits of oligopolies for consumers 9; (d) Gillian not maximising profit 6; (c) PPC 3",
+  "qp_sha256": "863ca5cabcbd3f8ecf90e0dba1bf3a3acc2b1358e986360760bea2285276e5f1",
+  "ms_sha256": "0bf4b932a12d8ada257ed4d9c12b51e51502cf2f7985ee1e0507797cf0f0221a"
+ },
+ "2026_may-jun_P1|4": {
+  "topics": [
+   "1.2.3",
+   "1.1.6",
+   "1.1.3"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate Mars internal economies of scale 12; (b) tourism external costs 6; (a) excess demand 2",
+  "qp_sha256": "175bb47a204fcc8d9df1c13d8583350e53d8a57316b121560b972126359855f6",
+  "ms_sha256": "dd83f3b85256f1e60a403ed08658f9b663b189b843349e5d48fd8b9837ff5e46"
+ },
+ "2026_may-jun_P2R|1": {
+  "topics": [
+   "2.1.1",
+   "2.1.2",
+   "2.2.2",
+   "2.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(h) growth and living standards 6; (c)(d)(e) progressive tax, interest rates 6; (f) rate cut and the pound 3; (g) protection from unsafe imports 3",
+  "qp_sha256": "a0f1bf1f2fc20012caae4104272cde7876f825857cce3377be10f5f3e6e88665",
+  "ms_sha256": "73f771bfb98740c4dd17a85f7f61db143f808daebd599e8188abf7dee668f218",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2R|2": {
+  "topics": [
+   "2.2.1",
+   "2.1.3",
+   "1.1.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) disadvantages of MNCs in the US 9; (d)+(e) trade-off, inflation and unemployment 5; (f) subsidy removal diagram 3",
+  "qp_sha256": "f1729c11d556761d2fc4ee8ccefa6126565664c45387f10d4db54af7faf5e69d",
+  "ms_sha256": "d0b9b67abde5bf889a98ffa73e7475c6c0efdeba43df38ed655429269a493438",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2R|3": {
+  "topics": [
+   "2.1.2",
+   "2.2.2"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) fiscal deficit 9 + (d) lower income tax and work 6; (c) import quota diagram 3",
+  "qp_sha256": "187f6c69213418f53a252b16590a4e1d7f2565455f657e146c5f1a0fe5557369",
+  "ms_sha256": "4f773137f498a4e116e49de868a5e75ffdab9a583c0bf9f72d01f316ab0ef04a",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2R|4": {
+  "topics": [
+   "2.2.2"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate reducing UK tariffs 12 + (b) UK imports from developing countries 6; (a) sector % arithmetic 2",
+  "qp_sha256": "704a563499dd189e7dc3d7097064ae49d9b18520a60a15f468a1e06bff9f735a",
+  "ms_sha256": "271676de1c96d51219568f26e386883640add8b7cf7842d13f3e51465095a763",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|1": {
+  "topics": [
+   "2.1.1",
+   "2.1.2",
+   "2.2.3"
+  ],
+  "difficulty": "easy",
+  "reason": "(c)(d)(f)(g) unemployment, inflation, cycle, current account 10; (h) education and training vs poverty 6; (e) exchange-rate calc 2",
+  "qp_sha256": "e710d2d03fb5ba88ff850eeded7fc435e523dcffdd2e40ed58806cb331522b2f",
+  "ms_sha256": "bbd73d0b38ebd67612d4178de3220e97e511817c167cd06c120c42641d98bfb3",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|2": {
+  "topics": [
+   "1.2.6",
+   "2.1.1",
+   "2.2.2",
+   "2.2.3"
+  ],
+  "difficulty": "medium",
+  "reason": "(g) pollution permits in India 9; (e) unemployment and output 3; (f) import quota diagram 3; (d) appreciation 2",
+  "qp_sha256": "f9a8aa7118f2ab28565a3a62f19d25e3f8743ec219e409e155e4be34a927d798",
+  "ms_sha256": "bfe941da74d40692bd15be85870a289325bffd699c2b81396b58434b188103c4",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|3": {
+  "topics": [
+   "2.2.2",
+   "2.1.1"
+  ],
+  "difficulty": "medium",
+  "reason": "(e) free trade with the EU 9 + (c) tariff diagram 3; (d) growth harming the environment 6",
+  "qp_sha256": "c20d43a461dc418a4442f5c0d1e2a375269763691a9e4df54803f6dc5d245808",
+  "ms_sha256": "aab637fb0630e0a1babaf1263a167ff952854c1dfdd74b6fd0c631ad3c7759c0",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ },
+ "2026_may-jun_P2|4": {
+  "topics": [
+   "2.1.2",
+   "2.1.1"
+  ],
+  "difficulty": "hard",
+  "reason": "(c) evaluate monetary policy vs unemployment 12; (b) tourism revenue and the current account 6; (a) average arithmetic 2",
+  "qp_sha256": "b02334d84cf89f4fec9a564d14adda7f4f802757634d655b6fd895407c37cfb8",
+  "ms_sha256": "205544f5d850d7d1567d87e29aa09d5fe4e40f37a21bcbc4ef8b51f66a26cb51",
+  "ms_restamped": "MS re-cut by page range (lib/commerce_ms_fix.py, grademax-5c, 2026-11-07); QP byte-identical, read stands"
+ }
+}

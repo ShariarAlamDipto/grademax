@@ -1,0 +1,4267 @@
+{
+ "2019_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-7; labels Q1 only, every QP part present"
+ },
+ "2019_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 8-12; labels Q2 only, every QP part present"
+ },
+ "2019_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 13-16; labels Q3 only, every QP part present"
+ },
+ "2019_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 17-20; labels Q4 only, every QP part present"
+ },
+ "2019_may-jun_P1R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-7; labels Q1 only, every QP part present"
+ },
+ "2019_may-jun_P1R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 8-12; labels Q2 only, every QP part present"
+ },
+ "2019_may-jun_P1R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 13-16; labels Q3 only, every QP part present"
+ },
+ "2019_may-jun_P1R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 17-20; labels Q4 only, every QP part present"
+ },
+ "2019_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-7; labels Q1 only, every QP part present"
+ },
+ "2019_may-jun_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 8-12; labels Q2 only, every QP part present"
+ },
+ "2019_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 13-16; labels Q3 only, every QP part present"
+ },
+ "2019_may-jun_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 17-20; labels Q4 only, every QP part present"
+ },
+ "2020_oct-nov_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-7; labels Q1 only, every QP part present"
+ },
+ "2020_oct-nov_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 8-12; labels Q2 only, every QP part present"
+ },
+ "2020_oct-nov_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 13-16; labels Q3 only, every QP part present"
+ },
+ "2020_oct-nov_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 17-20; labels Q4 only, every QP part present"
+ },
+ "2020_oct-nov_P1R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2020_oct-nov_P1R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-12; labels Q2 only, every QP part present"
+ },
+ "2020_oct-nov_P1R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 13-16; labels Q3 only, every QP part present"
+ },
+ "2020_oct-nov_P1R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 17-20; labels Q4 only, every QP part present"
+ },
+ "2020_oct-nov_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2020_oct-nov_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2020_oct-nov_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-18; labels Q3 only, every QP part present"
+ },
+ "2020_oct-nov_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-23; labels Q4 only, every QP part present"
+ },
+ "2020_oct-nov_P2R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2020_oct-nov_P2R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2020_oct-nov_P2R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-18; labels Q3 only, every QP part present"
+ },
+ "2020_oct-nov_P2R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-23; labels Q4 only, every QP part present"
+ },
+ "2021_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 5-10; labels Q1 only, every QP part present"
+ },
+ "2021_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 11-15; labels Q2 only, every QP part present"
+ },
+ "2021_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 16-20; labels Q3 only, every QP part present"
+ },
+ "2021_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 21-25; labels Q4 only, every QP part present"
+ },
+ "2021_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 5-10; labels Q1 only, every QP part present"
+ },
+ "2021_may-jun_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 11-15; labels Q2 only, every QP part present"
+ },
+ "2021_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 16-19; labels Q3 only, every QP part present"
+ },
+ "2021_may-jun_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 20-24; labels Q4 only, every QP part present"
+ },
+ "2021_oct-nov_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 5-8; labels Q1 only, every QP part present"
+ },
+ "2021_oct-nov_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-12; labels Q2 only, every QP part present"
+ },
+ "2021_oct-nov_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 13-16; labels Q3 only, every QP part present"
+ },
+ "2021_oct-nov_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 17-20; labels Q4 only, every QP part present"
+ },
+ "2021_oct-nov_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2021_oct-nov_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2021_oct-nov_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2021_oct-nov_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-22; labels Q4 only, every QP part present"
+ },
+ "2022_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2022_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2022_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2022_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-21; labels Q4 only, every QP part present"
+ },
+ "2022_may-jun_P1R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2022_may-jun_P1R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2022_may-jun_P1R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-16; labels Q3 only, every QP part present"
+ },
+ "2022_may-jun_P1R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 17-20; labels Q4 only, every QP part present"
+ },
+ "2022_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2022_may-jun_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-14; labels Q2 only, every QP part present"
+ },
+ "2022_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 15-18; labels Q3 only, every QP part present"
+ },
+ "2022_may-jun_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-22; labels Q4 only, every QP part present"
+ },
+ "2022_may-jun_P2R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-9; labels Q1 only, every QP part present"
+ },
+ "2022_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 10-15; labels Q2 only, every QP part present"
+ },
+ "2022_may-jun_P2R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 16-20; labels Q3 only, every QP part present"
+ },
+ "2022_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 21-24; labels Q4 only, every QP part present"
+ },
+ "2023_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-9; labels Q1 only, every QP part present"
+ },
+ "2023_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 10-14; labels Q2 only, every QP part present"
+ },
+ "2023_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 15-18; labels Q3 only, every QP part present"
+ },
+ "2023_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-23; labels Q4 only, every QP part present"
+ },
+ "2023_may-jun_P1R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-9; labels Q1 only, every QP part present"
+ },
+ "2023_may-jun_P1R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 10-15; labels Q2 only, every QP part present"
+ },
+ "2023_may-jun_P1R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 16-19; labels Q3 only, every QP part present"
+ },
+ "2023_may-jun_P1R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 20-24; labels Q4 only, every QP part present"
+ },
+ "2023_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-9; labels Q1 only, every QP part present"
+ },
+ "2023_may-jun_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 10-15; labels Q2 only, every QP part present"
+ },
+ "2023_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 16-20; labels Q3 only, every QP part present"
+ },
+ "2023_may-jun_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 21-25; labels Q4 only, every QP part present"
+ },
+ "2023_may-jun_P2R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-9; labels Q1 only, every QP part present"
+ },
+ "2023_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 10-16; labels Q2 only, every QP part present"
+ },
+ "2023_may-jun_P2R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 17-21; labels Q3 only, every QP part present"
+ },
+ "2023_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ],
+   [
+    25,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 22-26; labels Q4 only, every QP part present"
+ },
+ "2023_oct-nov_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2023_oct-nov_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2023_oct-nov_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2023_oct-nov_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-22; labels Q4 only, every QP part present"
+ },
+ "2023_oct-nov_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-10; labels Q1 only, every QP part present"
+ },
+ "2023_oct-nov_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 11-16; labels Q2 only, every QP part present"
+ },
+ "2023_oct-nov_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 17-22; labels Q3 only, every QP part present"
+ },
+ "2023_oct-nov_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ],
+   [
+    25,
+    null,
+    null
+   ],
+   [
+    26,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 23-27; labels Q4 only, every QP part present"
+ },
+ "2024_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2024_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2024_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2024_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-22; labels Q4 only, every QP part present"
+ },
+ "2024_may-jun_P1R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2024_may-jun_P1R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2024_may-jun_P1R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2024_may-jun_P1R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-21; labels Q4 only, every QP part present"
+ },
+ "2024_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2024_may-jun_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2024_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2024_may-jun_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-22; labels Q4 only, every QP part present"
+ },
+ "2024_may-jun_P2R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2024_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-14; labels Q2 only, every QP part present"
+ },
+ "2024_may-jun_P2R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 15-18; labels Q3 only, every QP part present"
+ },
+ "2024_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-22; labels Q4 only, every QP part present"
+ },
+ "2024_oct-nov_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-11; labels Q1 only, every QP part present"
+ },
+ "2024_oct-nov_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 12-17; labels Q2 only, every QP part present"
+ },
+ "2024_oct-nov_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 18-22; labels Q3 only, every QP part present"
+ },
+ "2024_oct-nov_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ],
+   [
+    25,
+    null,
+    null
+   ],
+   [
+    26,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 23-27; labels Q4 only, every QP part present"
+ },
+ "2024_oct-nov_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-10; labels Q1 only, every QP part present"
+ },
+ "2024_oct-nov_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 11-16; labels Q2 only, every QP part present"
+ },
+ "2024_oct-nov_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 17-21; labels Q3 only, every QP part present"
+ },
+ "2024_oct-nov_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ],
+   [
+    25,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 22-26; labels Q4 only, every QP part present"
+ },
+ "2025_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2025_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2025_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-18; labels Q3 only, every QP part present"
+ },
+ "2025_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-23; labels Q4 only, every QP part present"
+ },
+ "2025_may-jun_P1R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2025_may-jun_P1R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2025_may-jun_P1R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-18; labels Q3 only, every QP part present"
+ },
+ "2025_may-jun_P1R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-23; labels Q4 only, every QP part present"
+ },
+ "2025_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2025_may-jun_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2025_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2025_may-jun_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-21; labels Q4 only, every QP part present"
+ },
+ "2025_may-jun_P2R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2025_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2025_may-jun_P2R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-17; labels Q3 only, every QP part present"
+ },
+ "2025_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-21; labels Q4 only, every QP part present"
+ },
+ "2026_may-jun_P1|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2026_may-jun_P1|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-13; labels Q2 only, every QP part present"
+ },
+ "2026_may-jun_P1|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 14-18; labels Q3 only, every QP part present"
+ },
+ "2026_may-jun_P1|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 19-22; labels Q4 only, every QP part present"
+ },
+ "2026_may-jun_P1R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-9; labels Q1 only, every QP part present"
+ },
+ "2026_may-jun_P1R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 10-14; labels Q2 only, every QP part present"
+ },
+ "2026_may-jun_P1R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ],
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 15-19; labels Q3 only, every QP part present"
+ },
+ "2026_may-jun_P1R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ],
+   [
+    22,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 20-23; labels Q4 only, every QP part present"
+ },
+ "2026_may-jun_P2|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ],
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-11; labels Q1 only, every QP part present"
+ },
+ "2026_may-jun_P2|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    11,
+    null,
+    null
+   ],
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 12-17; labels Q2 only, every QP part present"
+ },
+ "2026_may-jun_P2|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ],
+   [
+    21,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 18-22; labels Q3 only, every QP part present"
+ },
+ "2026_may-jun_P2|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    22,
+    null,
+    null
+   ],
+   [
+    23,
+    null,
+    null
+   ],
+   [
+    24,
+    null,
+    null
+   ],
+   [
+    25,
+    null,
+    null
+   ],
+   [
+    26,
+    null,
+    null
+   ],
+   [
+    27,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 23-28; labels Q4 only, every QP part present"
+ },
+ "2026_may-jun_P2R|1": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    3,
+    null,
+    null
+   ],
+   [
+    4,
+    null,
+    null
+   ],
+   [
+    5,
+    null,
+    null
+   ],
+   [
+    6,
+    null,
+    null
+   ],
+   [
+    7,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q1 owns source pages 4-8; labels Q1 only, every QP part present"
+ },
+ "2026_may-jun_P2R|2": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    8,
+    null,
+    null
+   ],
+   [
+    9,
+    null,
+    null
+   ],
+   [
+    10,
+    null,
+    null
+   ],
+   [
+    11,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q2 owns source pages 9-12; labels Q2 only, every QP part present"
+ },
+ "2026_may-jun_P2R|3": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    12,
+    null,
+    null
+   ],
+   [
+    13,
+    null,
+    null
+   ],
+   [
+    14,
+    null,
+    null
+   ],
+   [
+    15,
+    null,
+    null
+   ],
+   [
+    16,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q3 owns source pages 13-17; labels Q3 only, every QP part present"
+ },
+ "2026_may-jun_P2R|4": {
+  "decision": "CONFIRMED",
+  "ms_regions": [
+   [
+    17,
+    null,
+    null
+   ],
+   [
+    18,
+    null,
+    null
+   ],
+   [
+    19,
+    null,
+    null
+   ],
+   [
+    20,
+    null,
+    null
+   ]
+  ],
+  "reason": "2026-11-07 page-range recut (lib/commerce_ms_fix.py): Q4 owns source pages 18-21; labels Q4 only, every QP part present"
+ }
+}

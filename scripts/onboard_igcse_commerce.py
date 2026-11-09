@@ -118,12 +118,15 @@ def stage(code: str, workers: int, *, cached: bool = False) -> dict:
     pairing = pairing_verified(papers)
     base = REBUILD_DIR / code
     notes, rows = {}, []
+    # Hand cuts (ms_regions) only: the review scripts re-prove their rows after a stage.
+    review = base / "manual_review.json"
+    hand_cuts = json.loads(review.read_text(encoding="utf-8")) if review.is_file() else {}
 
     def one(paper):
         if not is_current_specification(code, paper):
             return paper.key, "HELD: missing source or legacy specification", []
         paper_topic(paper.paper_number)
-        staged = stage_paper(code, paper, base / "segments")
+        staged = stage_paper(code, paper, base / "segments", hand_cuts)
         if isinstance(staged, str):
             return paper.key, f"HELD: {staged}", []
         proved = prove_paper(code, paper, staged, {}, paper.paper_id in pairing)
