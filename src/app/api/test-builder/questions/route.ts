@@ -72,8 +72,6 @@ export async function GET(request: Request) {
       });
     }
 
-    const paperIds = papers.map(p => p.id);
-
     const topicCodes = topicsParam
       ? normalizeTopicCodes(topicsParam.split(',').map(t => t.trim()).filter(Boolean))
       : [];
@@ -95,7 +93,7 @@ export async function GET(request: Request) {
         ms_page_url,
         has_diagram,
         text_excerpt,
-        papers (
+        papers!inner (
           year,
           season,
           paper_number,
@@ -104,7 +102,10 @@ export async function GET(request: Request) {
       `, { count: 'exact' })
       .eq('is_question', true)
       .not('qp_page_url', 'is', null)
-      .in('paper_id', paperIds)
+      // Filter on the joined paper instead of `.in('paper_id', [...ids])`:
+      // Cambridge 0625's 397 paper ids made a ~15 KB URL that failed with
+      // "TypeError: fetch failed" (9 Nov 2026).
+      .eq('papers.subject_id', subjectId)
       // page_number repeats across papers, so it alone gives Postgres no fixed
       // order: OFFSET paging then showed some questions on two pages and never
       // showed others. paper_id + the unique id make the order total.
@@ -113,6 +114,8 @@ export async function GET(request: Request) {
       .order('id', { ascending: true })
       .range(offset, offset + limit - 1);
 
+    if (yearStart) dataQuery = dataQuery.gte('papers.year', parseInt(yearStart));
+    if (yearEnd) dataQuery = dataQuery.lte('papers.year', parseInt(yearEnd));
     if (topicCodes.length > 0) dataQuery = dataQuery.overlaps('topics', topicCodes);
     if (difficulty) dataQuery = dataQuery.eq('difficulty', difficulty);
 

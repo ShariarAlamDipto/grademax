@@ -145,7 +145,6 @@ export async function POST(request: Request) {
       return paperError;
     }
 
-    const paperIds = matchingPapers.map((paper) => paper.id);
     const resolvedSubjectId = subjectId || matchingPapers[0]?.subject_id || null;
 
     if (!resolvedSubjectId) {
@@ -167,7 +166,7 @@ export async function POST(request: Request) {
         ms_page_url,
         has_diagram,
         topics,
-        papers (
+        papers!inner (
           year,
           season,
           paper_number,
@@ -179,8 +178,15 @@ export async function POST(request: Request) {
       `)
       .eq('is_question', true)
       .not('qp_page_url', 'is', null)
-      .in('paper_id', paperIds)
       .limit(5000);
+
+    // Filter on the joined paper instead of `.in('paper_id', [...ids])`.
+    // Cambridge 0625 has 397 papers, and their ids made a ~15 KB URL that
+    // failed with "TypeError: fetch failed" (9 Nov 2026).
+    // Always scope to one subject: chapter codes such as "1.1" repeat across subjects.
+    pageQuery = pageQuery.eq('papers.subject_id', resolvedSubjectId);
+    if (yearStart) pageQuery = pageQuery.gte('papers.year', yearStart);
+    if (yearEnd) pageQuery = pageQuery.lte('papers.year', yearEnd);
 
     if (topics.length > 0) {
       pageQuery = pageQuery.overlaps('topics', topics);
