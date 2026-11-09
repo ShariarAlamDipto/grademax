@@ -24,7 +24,7 @@ export default function TermsPage() {
         <section style={sectionStyle}>
           <h2 style={h2Style}>Agreement to Terms</h2>
           <p style={{ ...pStyle, marginBottom: 0 }}>
-            By accessing or using GradeMax (grademax.me), you agree to be bound by these
+            By accessing or using GradeMax (grademax.org), you agree to be bound by these
             Terms of Service and all applicable laws and regulations. If you do not agree
             with any of these terms, you are prohibited from using or accessing this site.
           </p>

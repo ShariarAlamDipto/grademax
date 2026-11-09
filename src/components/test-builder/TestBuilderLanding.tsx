@@ -44,7 +44,7 @@ const faqs = [
 ]
 
 export default function TestBuilderLanding() {
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
 
   const schema = {
     '@context': 'https://schema.org',

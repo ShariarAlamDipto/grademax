@@ -39,12 +39,12 @@ const homepageSchema = {
   '@graph': [
     {
       '@type': 'WebPage',
-      '@id': 'https://www.grademax.me/#webpage',
-      url: 'https://www.grademax.me/',
+      '@id': 'https://www.grademax.org/#webpage',
+      url: 'https://www.grademax.org/',
       name: 'GradeMax – Edexcel and Cambridge Past Papers',
       description: 'Free IGCSE and A Level past papers with mark schemes and Edexcel practice tools.',
-      isPartOf: { '@id': 'https://www.grademax.me/#website' },
-      about: { '@id': 'https://www.grademax.me/#organization' },
+      isPartOf: { '@id': 'https://www.grademax.org/#website' },
+      about: { '@id': 'https://www.grademax.org/#organization' },
       inLanguage: 'en-GB',
     },
     {
@@ -53,7 +53,7 @@ const homepageSchema = {
         '@type': 'ListItem',
         position: index + 1,
         name: `${subject.name} Past Papers`,
-        url: `https://www.grademax.me/subjects/${subject.level}/${subject.slug}`,
+        url: `https://www.grademax.org/subjects/${subject.level}/${subject.slug}`,
       })),
     },
   ],

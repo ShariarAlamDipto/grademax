@@ -7,9 +7,9 @@ import { PATHNAME_HEADER } from "@/lib/adminAccess"
 // Canonicalization (SEO). Runs before auth so a non-canonical URL 301s in a
 // single hop without any Supabase work.
 //
-// Host canonicalization (apex grademax.me → www.grademax.me) is enforced by Vercel
-// at the domain level, so this proxy MUST NOT touch the host — doing www→apex here
-// would fight Vercel's apex→www redirect and create an infinite redirect loop.
+// Host canonicalization (grademax.me and the apex → www.grademax.org) is done by
+// next.config.ts redirects and nginx, so this proxy MUST NOT touch the host:
+// a second host rule here could fight those redirects and loop.
 //
 // What remains: the past-paper routes force lowercase seasons and set
 // `dynamicParams=false`, so historically-indexed capitalized URLs (…/2025/May-Jun)

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Edexcel A Level Past Papers ${CURRENT_YEAR} – Free IAL with Mark Schemes`,
     description: 'Free A Level past papers for all Edexcel IAL units with mark schemes. Organized by topic and year.',
-    url: 'https://www.grademax.me/edexcel-a-level-past-papers',
+    url: 'https://www.grademax.org/edexcel-a-level-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Edexcel A Level Past Papers' }],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://www.grademax.me/edexcel-a-level-past-papers',
+    canonical: 'https://www.grademax.org/edexcel-a-level-past-papers',
   },
 }
 
@@ -77,7 +77,7 @@ const faqs = [
 
 export default async function ALevelPastPapersPage() {
   const subjects = getSubjectsByLevel('ial')
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
 
   const schema = {
     '@context': 'https://schema.org',

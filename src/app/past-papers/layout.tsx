@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Past Papers & Mark Schemes – IGCSE & A Level | GradeMax',
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes. Browse by subject, year and session.',
-    url: 'https://www.grademax.me/past-papers',
+    url: 'https://www.grademax.org/past-papers',
     siteName: 'GradeMax',
     type: 'website',
   },
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Free Edexcel IGCSE and A Level past papers with mark schemes by subject, year and session.',
   },
   alternates: {
-    canonical: 'https://www.grademax.me/past-papers',
+    canonical: 'https://www.grademax.org/past-papers',
   },
 }
 

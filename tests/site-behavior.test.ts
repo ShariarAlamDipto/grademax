@@ -111,12 +111,12 @@ test("parseBeacon accepts Core Web Vitals and JavaScript errors", () => {
 })
 
 test("sanitizeErrorLabel keeps the useful part of an error and drops noise", () => {
-  assert.equal(sanitizeErrorLabel("TypeError: Cannot read properties of null", "https://www.grademax.me/_next/static/chunks/app.js?v=1", 12),
+  assert.equal(sanitizeErrorLabel("TypeError: Cannot read properties of null", "https://www.grademax.org/_next/static/chunks/app.js?v=1", 12),
     "TypeError: Cannot read properties of null @ /_next/static/chunks/app.js:12")
   assert.equal(sanitizeErrorLabel("Error at https://x.example/a?token=secret&b=1", "", 0), "Error at https://x.example/a")
   assert.equal(sanitizeErrorLabel("Script error.", "", 0), null, "cross-origin errors carry no information")
   assert.equal(sanitizeErrorLabel("ResizeObserver loop limit exceeded", "", 0), null)
-  assert.equal(sanitizeErrorLabel("TypeError: undefined is not an object (evaluating 'window.__firefox__.reader')", "https://www.grademax.me/past-papers", 1), null, "Firefox iOS injected script")
+  assert.equal(sanitizeErrorLabel("TypeError: undefined is not an object (evaluating 'window.__firefox__.reader')", "https://www.grademax.org/past-papers", 1), null, "Firefox iOS injected script")
   assert.equal(sanitizeErrorLabel("ReferenceError: Can't find variable: __gCrWeb", "", 0), null, "Chrome iOS injected script")
   assert.ok(sanitizeErrorLabel("ChunkLoadError: Failed to load chunk /_next/static/chunks/a.js", "", 0), "real errors are kept")
   assert.equal(sanitizeErrorLabel("boom", "chrome-extension://abc/x.js", 3), null, "browser extensions are not our bugs")
@@ -124,13 +124,13 @@ test("sanitizeErrorLabel keeps the useful part of an error and drops noise", () 
 })
 
 test("classifyLinkClick spots PDF downloads and outbound links", () => {
-  const here = "www.grademax.me"
+  const here = "www.grademax.org"
   assert.deepEqual(classifyLinkClick("https://pub-abc.r2.dev/papers/4PH1/2024/qp.pdf", here), { name: "download", label: "/papers/4PH1/2024/qp.pdf" })
-  assert.deepEqual(classifyLinkClick("https://www.grademax.me/files/book.pdf", here), { name: "download", label: "/files/book.pdf" })
+  assert.deepEqual(classifyLinkClick("https://www.grademax.org/files/book.pdf", here), { name: "download", label: "/files/book.pdf" })
   assert.deepEqual(classifyLinkClick("https://discord.gg/abc", here), { name: "outbound", label: "discord.gg" })
   assert.deepEqual(classifyLinkClick("https://www.facebook.com/grademax", here), { name: "outbound", label: "facebook.com" })
-  assert.equal(classifyLinkClick("https://www.grademax.me/store", here), null)
-  assert.equal(classifyLinkClick("mailto:hi@grademax.me", here), null)
+  assert.equal(classifyLinkClick("https://www.grademax.org/store", here), null)
+  assert.equal(classifyLinkClick("mailto:hi@grademax.org", here), null)
   assert.equal(classifyLinkClick("javascript:void(0)", here), null)
   assert.equal(classifyLinkClick("not a url", here), null)
 })

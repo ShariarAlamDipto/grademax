@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Cambridge A Level Past Papers ${CURRENT_YEAR} – AS & A Level Mark Schemes (CAIE)`,
     description: 'Free Cambridge International AS & A Level past papers for every hosted syllabus with mark schemes, organised by year and exam series.',
-    url: 'https://www.grademax.me/cambridge-a-level-past-papers',
+    url: 'https://www.grademax.org/cambridge-a-level-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Free Cambridge A Level Past Papers' }],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://www.grademax.me/cambridge-a-level-past-papers',
+    canonical: 'https://www.grademax.org/cambridge-a-level-past-papers',
   },
 }
 
@@ -64,7 +64,7 @@ const faqs = [
 ]
 
 export default async function CambridgeALevelPastPapersLanding() {
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
 
   const slugsWithPapers = await getSubjectSlugsWithPapers()
   const aLevel = cambridgeSeoSubjects

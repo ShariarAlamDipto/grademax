@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Cambridge (CAIE) Past Papers ${CURRENT_YEAR} – Free IGCSE & A Level Mark Schemes`,
     description: `Free Cambridge (CAIE) past papers for every IGCSE and AS & A Level subject with mark schemes. Updated ${CURRENT_YEAR}.`,
-    url: 'https://www.grademax.me/cambridge-past-papers',
+    url: 'https://www.grademax.org/cambridge-past-papers',
     siteName: 'GradeMax',
     type: 'website',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'GradeMax – Free Cambridge Past Papers' }],
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
   },
   alternates: {
-    canonical: 'https://www.grademax.me/cambridge-past-papers',
+    canonical: 'https://www.grademax.org/cambridge-past-papers',
   },
 }
 
@@ -72,7 +72,7 @@ const faqs = [
 ]
 
 export default async function CambridgePastPapersLanding() {
-  const baseUrl = 'https://www.grademax.me'
+  const baseUrl = 'https://www.grademax.org'
 
   // Only advertise subjects that actually have papers (memoized index, no DB).
   const slugsWithPapers = await getSubjectSlugsWithPapers()

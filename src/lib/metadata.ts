@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 
-export const SITE_URL = 'https://www.grademax.me'
+export const SITE_URL = 'https://www.grademax.org'
 
 /** Give public pages their own canonical and matching social previews. */
 export function publicPageMetadata({

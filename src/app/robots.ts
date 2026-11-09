@@ -15,6 +15,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/', '/debug/'],
       },
     ],
-    sitemap: 'https://www.grademax.me/sitemap.xml',
+    sitemap: 'https://www.grademax.org/sitemap.xml',
   }
 }

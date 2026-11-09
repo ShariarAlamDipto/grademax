@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Sign In',
   robots: { index: false, follow: false },
   alternates: {
-    canonical: 'https://www.grademax.me/login',
+    canonical: 'https://www.grademax.org/login',
   },
 }
 

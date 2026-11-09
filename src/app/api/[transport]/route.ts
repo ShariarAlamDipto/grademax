@@ -1,4 +1,4 @@
-// Public, read-only MCP connector for grademax.me.
+// Public, read-only MCP connector for grademax.org.
 //
 // Exposes the past-paper catalog to the Claude app (and any MCP client) over
 // the Streamable HTTP transport at /api/mcp. No auth: every tool reads only
@@ -7,7 +7,7 @@
 // key, no cookie-authed /api routes).
 //
 // Add in Claude: Settings → Connectors → Add custom connector →
-//   https://www.grademax.me/api/mcp
+//   https://www.grademax.org/api/mcp
 //
 // The route lives at /api/[transport] so the Streamable HTTP endpoint resolves
 // to the clean URL /api/mcp (transport = "mcp"). Static /api/* routes

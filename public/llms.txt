@@ -3,26 +3,26 @@
 
 ## Key Pages
 
-- [Home](https://grademax.me/): Free Edexcel past papers and study tools for IGCSE and A Level
-- [Past Papers](https://grademax.me/past-papers): All Edexcel IGCSE and A Level past papers organised by subject, year, and session
-- [Worksheet Generator](https://grademax.me/generate): Generate custom PDF worksheets from real Edexcel past paper questions by topic
-- [Test Builder](https://grademax.me/test-builder): Build timed practice tests from Edexcel past paper questions
-- [Subjects](https://grademax.me/subjects): Browse all IGCSE and A Level subjects with topic-wise questions
+- [Home](https://www.grademax.org/): Free Edexcel past papers and study tools for IGCSE and A Level
+- [Past Papers](https://www.grademax.org/past-papers): All Edexcel IGCSE and A Level past papers organised by subject, year, and session
+- [Worksheet Generator](https://www.grademax.org/generate): Generate custom PDF worksheets from real Edexcel past paper questions by topic
+- [Test Builder](https://www.grademax.org/test-builder): Build timed practice tests from Edexcel past paper questions
+- [Subjects](https://www.grademax.org/subjects): Browse all IGCSE and A Level subjects with topic-wise questions
 
 ## IGCSE Past Papers (Pearson Edexcel)
 
-- [Physics (4PH1)](https://grademax.me/past-papers/physics): Forces, Electricity, Waves, Energy, Radioactivity, Astrophysics — 2011–2025
-- [Mathematics A (4MA1)](https://grademax.me/past-papers/maths-a): Number, Algebra, Geometry, Statistics — 2011–2025
-- [Mathematics B (4MB1)](https://grademax.me/past-papers/maths-b): Number, Algebra, Functions, Geometry, Trigonometry, Vectors, Statistics — 2011–2025
-- [Chemistry (4CH1)](https://grademax.me/past-papers/chemistry): Atomic Structure, Bonding, Organic Chemistry, Rates, Equilibria — 2011–2025
-- [Biology (4BI1)](https://grademax.me/past-papers/biology): Cell Biology, Genetics, Ecology, Human Biology — 2011–2025
-- [ICT (4IT1)](https://grademax.me/past-papers/ict): Digital Devices, Connectivity, Multimedia, Databases, Spreadsheets — 2011–2025
+- [Physics (4PH1)](https://www.grademax.org/past-papers/physics): Forces, Electricity, Waves, Energy, Radioactivity, Astrophysics — 2011–2025
+- [Mathematics A (4MA1)](https://www.grademax.org/past-papers/maths-a): Number, Algebra, Geometry, Statistics — 2011–2025
+- [Mathematics B (4MB1)](https://www.grademax.org/past-papers/maths-b): Number, Algebra, Functions, Geometry, Trigonometry, Vectors, Statistics — 2011–2025
+- [Chemistry (4CH1)](https://www.grademax.org/past-papers/chemistry): Atomic Structure, Bonding, Organic Chemistry, Rates, Equilibria — 2011–2025
+- [Biology (4BI1)](https://www.grademax.org/past-papers/biology): Cell Biology, Genetics, Ecology, Human Biology — 2011–2025
+- [ICT (4IT1)](https://www.grademax.org/past-papers/ict): Digital Devices, Connectivity, Multimedia, Databases, Spreadsheets — 2011–2025
 
 ## A Level (IAL) Past Papers (Pearson Edexcel)
 
-- [Pure Mathematics 1 (WMA11)](https://grademax.me/past-papers/pure-mathematics-1): Algebra, Differentiation, Integration, Coordinate Geometry
-- [Mechanics 1 (WME01)](https://grademax.me/past-papers/mechanics-1): Kinematics, Dynamics, Statics, Moments
-- [Statistics 1 (WST01)](https://grademax.me/past-papers/statistics-1): Probability, Statistical Distributions, Representation of Data
+- [Pure Mathematics 1 (WMA11)](https://www.grademax.org/past-papers/pure-mathematics-1): Algebra, Differentiation, Integration, Coordinate Geometry
+- [Mechanics 1 (WME01)](https://www.grademax.org/past-papers/mechanics-1): Kinematics, Dynamics, Statics, Moments
+- [Statistics 1 (WST01)](https://www.grademax.org/past-papers/statistics-1): Probability, Statistical Distributions, Representation of Data
 
 ## Key Facts
 
@@ -37,5 +37,5 @@
 
 ## Contact
 
-- Website: https://grademax.me
-- Contact: https://grademax.me/contact
+- Website: https://www.grademax.org
+- Contact: https://www.grademax.org/contact

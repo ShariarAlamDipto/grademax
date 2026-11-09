@@ -28,7 +28,7 @@ import {
 } from "@/lib/paper-slugs"
 import { buildViewerHref, isAllowedPdfUrl } from "@/lib/viewer-link"
 
-export const SITE_ORIGIN = "https://www.grademax.me"
+export const SITE_ORIGIN = "https://www.grademax.org"
 
 export const VALID_SEASONS = [
   "jan",

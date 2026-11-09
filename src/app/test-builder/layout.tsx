@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Edexcel Test Builder – Create Custom Test Papers Free | GradeMax',
     description: 'Build custom test papers from real Edexcel past paper questions with mark schemes.',
-    url: 'https://www.grademax.me/test-builder',
+    url: 'https://www.grademax.org/test-builder',
     siteName: 'GradeMax',
     type: 'website',
   },
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     description: 'Build custom test papers from real Edexcel past paper questions with mark schemes.',
   },
   alternates: {
-    canonical: 'https://www.grademax.me/test-builder',
+    canonical: 'https://www.grademax.org/test-builder',
   },
 }
 

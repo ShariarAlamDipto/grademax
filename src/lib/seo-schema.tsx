@@ -6,7 +6,7 @@
 import { SEOSubject, Topic, getLevelDisplay } from './seo-subjects'
 import { SOCIAL_SAME_AS } from './social'
 
-const BASE_URL = 'https://www.grademax.me'
+const BASE_URL = 'https://www.grademax.org'
 const ORG_ID = `${BASE_URL}/#organization`
 const WEBSITE_ID = `${BASE_URL}/#website`
 

@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 
 const INDEXNOW_KEY = process.env.INDEXNOW_API_KEY || ''
-const SITE_URL = 'https://www.grademax.me'
+const SITE_URL = 'https://www.grademax.org'
 
 const INDEXNOW_ENDPOINTS = [
   'https://api.indexnow.org/indexnow',
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
     }
 
     const payload = {
-      host: 'grademax.me',
+      host: 'www.grademax.org',
       key: INDEXNOW_KEY,
       keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
       urlList: urls.map(url => url.startsWith('http') ? url : `${SITE_URL}${url}`)
@@ -76,7 +76,7 @@ export async function GET(request: NextRequest) {
   ]
 
   const payload = {
-    host: 'grademax.me',
+    host: 'www.grademax.org',
     key: INDEXNOW_KEY,
     keyLocation: `${SITE_URL}/${INDEXNOW_KEY}.txt`,
     urlList: allUrls.map(url => `${SITE_URL}${url}`)

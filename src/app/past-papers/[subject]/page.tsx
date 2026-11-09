@@ -75,7 +75,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${title} | GradeMax`,
       description: `Download free ${board} ${level} ${subj.name}${codeStr} past papers and mark schemes from ${yearRange}. All sessions available as free PDF.`,
-      url: `https://www.grademax.me/past-papers/${slug}`,
+      url: `https://www.grademax.org/past-papers/${slug}`,
       siteName: "GradeMax",
       type: "website",
     },
@@ -85,7 +85,7 @@ export async function generateMetadata({
       description: `Free ${board} ${level} ${subj.name} past papers with mark schemes.`,
     },
     alternates: {
-      canonical: `https://www.grademax.me/past-papers/${slug}`,
+      canonical: `https://www.grademax.org/past-papers/${slug}`,
     },
   }
 }
@@ -160,7 +160,7 @@ const SEASON_ORDER: Record<string, number> = {
 // ─── JSON-LD ───────────────────────────────────────────────────────────────────
 
 function buildJsonLd(slug: string, subjectName: string, level: string, board: string, catalogPath: string, yearGroups: YearGroup[]) {
-  const BASE = "https://www.grademax.me"
+  const BASE = "https://www.grademax.org"
   const pageUrl = `${BASE}/past-papers/${slug}`
 
   // ItemList of all available sessions

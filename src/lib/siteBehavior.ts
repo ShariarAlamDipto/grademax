@@ -171,7 +171,7 @@ export function sanitizeErrorLabel(message: string, filename: string, line: numb
   if (filename) {
     try {
       const url = new URL(filename)
-      const isOurs = url.hostname === "grademax.me" || url.hostname.endsWith(".grademax.me")
+      const isOurs = ["grademax.org", "grademax.me"].some((d) => url.hostname === d || url.hostname.endsWith(`.${d}`))
       where = ` @ ${isOurs ? url.pathname : url.hostname + url.pathname}${line ? `:${line}` : ""}`
     } catch {
       where = ""

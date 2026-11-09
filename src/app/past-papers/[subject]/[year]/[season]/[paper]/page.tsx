@@ -111,7 +111,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${title} | GradeMax`,
       description: `Free ${board} ${level} ${subj.name} ${yearLabel} ${seasonName} ${displayPaper} question paper and mark scheme – PDF download.`,
-      url: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
+      url: `https://www.grademax.org/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
       siteName: "GradeMax",
       type: "website",
     },
@@ -121,7 +121,7 @@ export async function generateMetadata({
       description: `Free download: ${subj.name} ${yearLabel} ${seasonName} ${displayPaper} QP & mark scheme.`,
     },
     alternates: {
-      canonical: `https://www.grademax.me/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
+      canonical: `https://www.grademax.org/past-papers/${slug}/${yearLabel}/${normalizedSeason}/${normalizedPaperSlug}`,
     },
   }
 }
@@ -157,7 +157,7 @@ function buildJsonLd(
   paper: PaperRow,
   examCode: string
 ) {
-  const BASE = "https://www.grademax.me"
+  const BASE = "https://www.grademax.org"
   const paperSlug = toPaperSlug(paperNumber) ?? `paper-${normalizePaperToken(paperNumber)}`
   const pageUrl = `${BASE}/past-papers/${slug}/${year}/${season}/${paperSlug}`
   const sessionUrl = `${BASE}/past-papers/${slug}/${year}/${season}`
