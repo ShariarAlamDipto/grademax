@@ -238,12 +238,14 @@ The DB subject is the existing `0625` row (`94fab3eb-…`); other 0625 component
   REVIEWED_PROVEN (2016 Feb-Mar q11: board relabelled (a)(i)/(a)(ii)/(b) as (a)/(b)/(c)).
 - `is_scrambled()` flags every 2020+ QP because only the cover is encoded; the original text
   layer is always tried first and OCR is used only when the cut fails on it.
-- **Staged, not live:** 356 questions / 49 papers, 356 direct reads pinned to both SHA-256s,
-  audit 0 failures, dry run = 356 inserts + 712 PDFs + 6 topics. Restaging rewrites the PDFs
-  and makes every read stale, so never restage before publishing.
+- **Live (published 9 Nov 2026, verified):** 356 questions / 49 papers, 356 `questions` mirror
+  rows, 6 topics; live tags equal the 356 direct reads (pinned to both SHA-256s); PDFs under
+  `cambridge/igcse/physics/pages-v2/` on R2. Backup and created ids:
+  `data/backups/cambridge_physics_onboarding_2026-11-09T05-53-25-081Z/`. Restaging rewrites
+  the PDFs and makes every read stale; to change tags, edit topic_reads.json, re-audit, then
+  apply a guarded update (rule 7).
 - **Held (rule 5):** 2024 Oct-Nov P42/P62 and 2025 May-Jun P42/P62. Their text layer is a
   Cambridge font cipher on every page (the scraper originals too); OCR misreads margin numbers
   and `[k]` marks. Needs hand-set `qp_regions` in `manual_review.json` or a decoded copy.
 - UI: `['0625']` slot in `TOOL_SUBJECT_SLOTS`, `'0625'` in `CHAPTER_FILTER_CODES`,
-  `printedMarks/0625.json` imported in `questionMarks.ts`. Publish the data before deploying
-  the UI, or the subject shows with no questions.
+  `printedMarks/0625.json` imported in `questionMarks.ts`.
