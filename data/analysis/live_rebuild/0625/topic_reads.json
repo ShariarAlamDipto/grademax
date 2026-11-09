@@ -1,0 +1,3589 @@
+{
+ "2015_feb-mar_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balancing a metre rule with masses (principle of moments) to find its mass from a graph gradient, and testing the centre of mass position.",
+  "has_diagram": true,
+  "qp_sha256": "ee8f16cd7173264da2918cb534bd0fbb6b2199d391d84265f1695d9989f7ae54",
+  "ms_sha256": "7f82688c0ec16ae2c57f887dbf6d5a0d9b26e661f2e29db7cee91ecadff0a145"
+ },
+ "2015_feb-mar_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of water in test-tubes with one or three layers of insulation: table units, conclusion on rate of cooling, reliable temperature readings and improvements.",
+  "has_diagram": true,
+  "qp_sha256": "b2206cabb2a23c6a4e9de28022b8aa11b379a320388e5635f578c4d078f372cf",
+  "ms_sha256": "30b45e90e83df74a60747818c6e6a38a6328ee01f2fb743727fa01241dc3d6ce"
+ },
+ "2015_feb-mar_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Lamp brightness and resistance using a resistance-wire circuit: voltmeter symbol, meter range and reading, R = V/I, and a variable resistor circuit.",
+  "has_diagram": true,
+  "qp_sha256": "3aedec377e4d789cb02846cd6ccd5307bdb211546a9d2b155ae4c925ceda810c",
+  "ms_sha256": "7dd8dc08839b5951a275f77c1e4630f9e95e01552ef217d0aacdc3a35cdb1187"
+ },
+ "2015_feb-mar_P62|4": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Converging lens: measuring object and image distances, focal length from f = uv/(u+v), second image position and precautions.",
+  "has_diagram": true,
+  "qp_sha256": "886a0261bef46f58ea7bacd0a82a972614ad0e7e988590611b35c7a2e1fadf3a",
+  "ms_sha256": "bcd45f1ee32e79d7e5fa5d5ed2fc5e0223c0468b0332f0b6df3d4a3eda0f8f24"
+ },
+ "2015_feb-mar_P62|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Thermal energy transfer from a heated iron block to water: thermometer readings, why the block was cooler than the water and reducing thermal losses.",
+  "has_diagram": true,
+  "qp_sha256": "066bcbfdbfeb9d417899deff9e730a8fe4f48a2e7491f35e39146749ce74fcf8",
+  "ms_sha256": "12b9427fe98328e2b93f006278a6df1c36e9087ae4450da95313365fcf48b416"
+ },
+ "2015_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Pendulum: measuring length accurately, stopwatch reading, period from 20 oscillations, testing whether doubling length doubles period, and choosing lengths.",
+  "has_diagram": true,
+  "qp_sha256": "29e6f2c95879e2db756f3bbb149a510ebece2818626720da2027897d3eb47050",
+  "ms_sha256": "3ff284a82d5a5d7a1eefdfe76b30e7c774f485d0e6737380e50bca7ca4e77dce"
+ },
+ "2015_may-jun_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Mixing hot and cold water: thermometer reading, temperature falls, factors affecting cooling and reading a measuring cylinder.",
+  "has_diagram": true,
+  "qp_sha256": "0976be39f9ddf578da2736f3a6db25b5f0369680379b63f7c14406885d28fd09",
+  "ms_sha256": "5708f64c4ae144909ec72044ba84782d9ddee454d5f67ec189a59c4f082949ba"
+ },
+ "2015_may-jun_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of lamps in parallel and series: meter readings, R = V/I, series circuit diagram and variable resistor position.",
+  "has_diagram": true,
+  "qp_sha256": "9a388bd4f4602fc91b9f94a58981e765e88773f54e96ce2677cee2d9e9fee947",
+  "ms_sha256": "46442f37d325ef513040e18337675d653b84a766cc7c972ede1713a859a63624"
+ },
+ "2015_may-jun_P62|4": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Plane mirror ray trace with pins: normal, pin separation, graph of reflected angle against mirror rotation and proportionality.",
+  "has_diagram": true,
+  "qp_sha256": "6223f30648a4b0d86b46ece78c805372e3715644b2a9213176e31b8a8b4a961c",
+  "ms_sha256": "aeacc2211ad1c9bbbd8065250b6d6d3a8e51138593746667302686ee164b6c87"
+ },
+ "2015_may-jun_P62|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Converging lens focal length from u and v with significant figures, precautions, and differences between object and real image.",
+  "has_diagram": true,
+  "qp_sha256": "3fadcc9cad9ce26aad2419be9ee6341eed1bb96e136a85fb3588e1656617a521",
+  "ms_sha256": "757098999075a2a5fcfb050187daa5da67fab041b63fe82140cbefe2bca46388"
+ },
+ "2015_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balancing loads on a metre rule (moments): scaled distances, graph of b against a, gradient as mass ratio and estimating masses.",
+  "has_diagram": true,
+  "qp_sha256": "3f17203d563f363ef5dee6236e50d4220f57ca1d851d1d2130d52417794031c9",
+  "ms_sha256": "b445bf08aba2a03ee6732d8d7107a1d1e8a0d6d125b4e6c06bcbdd8519c02137"
+ },
+ "2015_oct-nov_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of a thermometer bulb in air: readings, table headings, temperature decreases and reasons, thermometer reading precaution.",
+  "has_diagram": true,
+  "qp_sha256": "e41d8acd48fd2f45cf4965c2c4c8125f2c85503ff06267b29e44aa4eccd4ef9d",
+  "ms_sha256": "1b54935efad74c5c2d212c247710efb41e80baee776dfff550d2610dd9cc4891"
+ },
+ "2015_oct-nov_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Combined resistance of resistors in series and parallel arrangements: meter readings, R = V/I, circuit drawing and ratio R1/R2.",
+  "has_diagram": true,
+  "qp_sha256": "1ae5ecde91f922317d6e8f99d3b48ad7ba2f0278e907e92d0a42172de3be3a11",
+  "ms_sha256": "53ec6223c2aa1f0b94644919d6e07ba3784b490d3c7ecce762355eade34e7597"
+ },
+ "2015_oct-nov_P62|4": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Plane mirror reflection ray trace with pins: drawing normal and incident ray, measuring reflection angle and precautions.",
+  "has_diagram": true,
+  "qp_sha256": "a9c4875071a27a802cf5b5ab8910b3e9da137c1b7150a56ed5748d7b31dc07ea",
+  "ms_sha256": "c10aaa5d6a27b4355c1cc926c7932bba9ca73091c85dafc41ebdb93fa1267bff"
+ },
+ "2015_oct-nov_P62|5": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "easy",
+  "reason": "Steel ball dropped into sand: timing inaccuracy (reaction time), measuring the hole diameter and other variables affecting hole size.",
+  "has_diagram": false,
+  "qp_sha256": "1e3d6435c395125b500319a5db70c20f7b0e4299cedfb7eaa5782cb4b844a547",
+  "ms_sha256": "34392ecfde102abe7d2bb74642b7d4ccccff2639dfc23a1db6419c82dacdbf05"
+ },
+ "2016_feb-mar_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Speed-time graph: reading speed, reaction time, deceleration and area-under-graph distance, seat-belt inertia - motion only.",
+  "has_diagram": true,
+  "qp_sha256": "3563e8d6a26aad430da2a5604d99bf160c2e66b6bc296c589f967dda8856b867",
+  "ms_sha256": "cbddef6c4acd4ccf69fed656f80eefd00bdcc6668c909c43981a44485c88d2ce"
+ },
+ "2016_feb-mar_P42|10": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Nucleon/proton counts for I-131, beta decay product in nuclide notation, half-life count-rate graph corrected for background - nuclear.",
+  "has_diagram": true,
+  "qp_sha256": "e38a765ae269d6138b303508c8a40987d2e8b5409c9e520c3a093d0ae614e528",
+  "ms_sha256": "d06498c803517bbd7392ed8b7ceec642306c60640c6597daad8a65ea680bc722"
+ },
+ "2016_feb-mar_P42|11": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Naming an AND gate, completing a truth table and tracing a logic system for a strongroom - logic gates (electronics).",
+  "has_diagram": true,
+  "qp_sha256": "c1d3a1f7483c8ae6fc96c9b7ab39df156220e131911d36d6f9e2dadc4ef7b8e3",
+  "ms_sha256": "232a4c22c9adaf1f105d346b32427677493ad277c8ac124c76a3c198bc9b6b5d"
+ },
+ "2016_feb-mar_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "easy",
+  "reason": "Change of momentum, impulse and average force on a nail - momentum.",
+  "has_diagram": false,
+  "qp_sha256": "b248ae322f57a897a95fdf4bb4c1c511162e4a0571abcc3cf79e636bf107ac7a",
+  "ms_sha256": "4cafea830d393d264319f21fd0fac2be8afa27da177788135b8bd15d05275c68"
+ },
+ "2016_feb-mar_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Hooke's law graph, elastic energy and KE = 1/2mv^2 to find a train's speed - forces and energy.",
+  "has_diagram": true,
+  "qp_sha256": "88db8980e10ff610c5588f51777e3a62a9ca5f467b9b413f353495a1f7e7880d",
+  "ms_sha256": "f6edc7f4e11b71468139ef01e9fa817c0e68223639672a32a0310d502b421bd3"
+ },
+ "2016_feb-mar_P42|4": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Solar panel: copper conduction and black absorber, mc dT heating (thermal, 5 marks) plus Sun-sourced resources and efficiency/power (energy, 4 marks).",
+  "has_diagram": true,
+  "qp_sha256": "5e979647d80368d1a7697f1210c85fd2dcb056ea1559ccda5237b8c66ad0a3e5",
+  "ms_sha256": "18ae29bd539e10b3d7dae36b36e01a961919dbef430ab4f9954e906965fda7a1"
+ },
+ "2016_feb-mar_P42|5": {
+  "topics": [
+   "1",
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Boyle's law pV constant at constant temperature (thermal) plus p = h rho g in a lake and a rising bubble's volume/density (pressure).",
+  "has_diagram": true,
+  "qp_sha256": "15fa2c082763d12afac662d0713836b0ab78214dc3ea360963bd76c9c94a68cf",
+  "ms_sha256": "8997e4a6662cb2f5b5b40ebb131c7b458afacf57dbe34df9b5b5647de929b7ea"
+ },
+ "2016_feb-mar_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Amplitude and wavelength of a sound wave, loudness and pitch, echo-sounding depth calculation - sound waves.",
+  "has_diagram": true,
+  "qp_sha256": "3f3f716c99d43dcdeef75ac8811185c0a9e7816d419bf99e99ef4340cbeb7a23",
+  "ms_sha256": "14fa7674ac472adcf9e66fb2d5a1fc515ddeef64ac565a07b93a8c2ea520d071"
+ },
+ "2016_feb-mar_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Total internal reflection, critical angle, refractive index from speeds and ray path through a prism - light.",
+  "has_diagram": true,
+  "qp_sha256": "414f573da93d13b0a2f03de1c57ba3382918d5db311f2ef9db091c29ed0fee54",
+  "ms_sha256": "62bcb91a2a375b0ed3dd0c7b3b80e334fcf8f402249f5ddc09e5eb1fa84e2d0f"
+ },
+ "2016_feb-mar_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Lamp currents from P=IV, fuse rating, thinner filament resistance and power - electricity.",
+  "has_diagram": true,
+  "qp_sha256": "b7e7061721ccc5c64f846a1dd3f070df186600277f8e2df78c864103c77458c4",
+  "ms_sha256": "fec201479af11506c2abec29522777cc3cd3f217961df3a61a2973de66baf9d2"
+ },
+ "2016_feb-mar_P42|9": {
+  "topics": [
+   "4",
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Electric field direction and uniform field between plates (electrostatics) with balanced electric force and weight on an oil drop (forces).",
+  "has_diagram": true,
+  "qp_sha256": "fb98e90009b606f8768fb947dc2b417cc7ec3764b38b6cad4625059db53f3b12",
+  "ms_sha256": "114ae07ad969440c088d1dd46c2dd8c24254db725749f19a7de3a798239f7497"
+ },
+ "2016_feb-mar_P62|1": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "V-I relationship for a resistor using a slide wire: meter readings, graph, resistance from gradient, proportionality and reducing wire heating.",
+  "has_diagram": true,
+  "qp_sha256": "1bc59f33816a55ca849a76b362e4f7da389cfe80396f632a54e9c3b4c04ecd06",
+  "ms_sha256": "abb830cd20c370558a9d22b4c56cb73c65a2c0759d30f81c43a40d90d0019ada"
+ },
+ "2016_feb-mar_P62|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Density of glass from a test-tube: measuring length and diameter, volume calculations, measuring cylinder reading, mass and density, sources of inaccuracy.",
+  "has_diagram": true,
+  "qp_sha256": "f371581e5efae65dfdbdec7cca7ebeb69ad27948d3d1f519c03fda4fa91e56a0",
+  "ms_sha256": "520af12465f51bab255e7ef82d248f602a1b16ca35380b6bfdeaa3811aa422d4"
+ },
+ "2016_feb-mar_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refraction through a transparent block with pins: normal, angles, lengths and refractive index n = a/b, precautions.",
+  "has_diagram": true,
+  "qp_sha256": "f48536e84a240bbf5a659bd1799d5ff7c79c5b93e4efc2d635832741fdd6af34",
+  "ms_sha256": "bcaf1680f574a824520660713896d1ba703c1634b23877031b991fa160f39c90"
+ },
+ "2016_feb-mar_P62|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "hard",
+  "reason": "Planning an experiment on how water surface area affects rate of cooling: apparatus, method, controls and graph.",
+  "has_diagram": false,
+  "qp_sha256": "c608d5fb6f2b8e5a6b146794d1b8401763303ea966f0759edd27d4323cd1cfab",
+  "ms_sha256": "07e17d176d8246a1d14ccf6cddca92c21a577524bee599fc01e68f4e65b44beb"
+ },
+ "2016_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Effects of a force on motion, acceleration, average speed and reducing drag for a skier - motion and forces.",
+  "has_diagram": true,
+  "qp_sha256": "c3f369405fe7c41f433f472a8f7b0e0611246411218e3e6817c62376b0527f4e",
+  "ms_sha256": "a548d0bbcb52372b52ce98161a8592a25481d3b314710eea711a9e070cb165ed"
+ },
+ "2016_may-jun_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Hair-dryer heater circuit: resistance from P = V^2/R, series heaters and current at high power - electricity.",
+  "has_diagram": true,
+  "qp_sha256": "f4d8e738feb5d0ba4034dd86f8426028f4e08b2c05204a59b7ac975ae95ab72c",
+  "ms_sha256": "8ccf8d80669a95b9d5fd7699a7206443e5464746d25d6236815b101ce169eb1f"
+ },
+ "2016_may-jun_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Composition of radon-220, alpha decay equation and count after four half-lives - nuclear physics.",
+  "has_diagram": false,
+  "qp_sha256": "07642015b6cfb737c1211e5c5b2f5f8aa123274559c2826c23e44e9a09f3fd7a",
+  "ms_sha256": "9fbb3b9c50d10709fd6c363c21010322a4433940c1f1741817a6073bccc2f148"
+ },
+ "2016_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Momentum of trucks, impulse, average force and final speed from momentum conservation - momentum.",
+  "has_diagram": true,
+  "qp_sha256": "016a3974f53ca637e25c5604a5b0d3bc1edf66b14a15d2ba9ffcba33e498b991",
+  "ms_sha256": "cfb57c871857f0432ed991039a52a3518d354b3a5598d1fe5af96bad65b50bc2"
+ },
+ "2016_may-jun_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Energy changes of a cable car, gpe = mgh and benefits of regenerating energy on descent - energy.",
+  "has_diagram": true,
+  "qp_sha256": "af559e3c58d4d2a103a660b6e6b8aa8f6416e64789e930adca6a4ebf324571e7",
+  "ms_sha256": "15456f86798442cb5f5e25c9afff3c470079330bbdd8c04b5670a49cec17ad40"
+ },
+ "2016_may-jun_P42|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Pressure of sea-water p = h rho g, total pressure with atmosphere, force = pA on a lid and reasons it differs - pressure.",
+  "has_diagram": true,
+  "qp_sha256": "a6f8568d16a475cad203feb1557c52acb4b2ac52b19512d6deb7c0f3122496a9",
+  "ms_sha256": "b46bb87e96d08519f5c4a0a80e3f3e61c9f750089f9b645a91586f7ae9903aba"
+ },
+ "2016_may-jun_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Evaporation versus boiling, molecular explanation of latent heat and mass boiled away using L - thermal physics.",
+  "has_diagram": true,
+  "qp_sha256": "941f5d26bb12fd6300e761982969e23e3d648fcc1bd1ac90b862d3feec523f90",
+  "ms_sha256": "d5e880f65e421b4eea9e881047bcee131ed9f0ee2c58148e2924b48e22f36a8f"
+ },
+ "2016_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Measuring angle of incidence, Snell's law, critical angle and refraction of water waves at a depth change - waves and light.",
+  "has_diagram": true,
+  "qp_sha256": "8d7e1cce00888ca1b69d5d88cf473fe83c693ef0469995d9280bd3f41c101ee0",
+  "ms_sha256": "c26f168bf673aed341996f9df8d18480535c5bbcdb46e3fd4d10d68136669340"
+ },
+ "2016_may-jun_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "X-ray security scanning and matching radio, ultrasound and X-ray speeds - electromagnetic spectrum and sound.",
+  "has_diagram": false,
+  "qp_sha256": "470c53f26e39a322edb387357642efe2b37e39e8e202fb5a33bed4eb90b36314",
+  "ms_sha256": "e9d82685f1a184ec4f9ad245cc542ece293e881741f70e6d8092819a0c618062"
+ },
+ "2016_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Magnetising/demagnetising steel with a solenoid and transformer current calculation with a fuse - magnetism and transformers.",
+  "has_diagram": true,
+  "qp_sha256": "fc208942a20508477e3104e226af816a09e8da5df71363c66a38c17c6b1e77b6",
+  "ms_sha256": "aa5728e53e1e6835b86aa9ce68b9e02983f5f5e797ef539802a48e91f62b96a7"
+ },
+ "2016_may-jun_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Charge transfer by an oscillating ball between charged plates, electron flow and current Q/t with frequency - electrostatics and current.",
+  "has_diagram": true,
+  "qp_sha256": "8ab49c4d01fd48eba28f8b24c3b64f2a9bb5dd502ff284a60ff6bd18c206b339",
+  "ms_sha256": "aeef9eb97283cc0f69a16cda595bfbaa0de8ae2808304f04c7ae8a9f228ff5b6"
+ },
+ "2016_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Stretching a spring: measuring length, extensions, extension-load graph and finding an unknown weight from the graph.",
+  "has_diagram": true,
+  "qp_sha256": "c19b17b7d7cd8c03861f1bad9186b1af0b266c2dc38a74bc96448887becdf7ed",
+  "ms_sha256": "e8aee16e4ed3ecbb91c1873ee328f90d2f218ff3d2bbec24185898cf29b71ad4"
+ },
+ "2016_may-jun_P62|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balancing method (moments) to find the weight of modelling clay: distances, improving balance reliability and locating centres of mass.",
+  "has_diagram": true,
+  "qp_sha256": "1339184ce649566b98389a7833182ef8882719d14290aeb9c687be82a80eba5b",
+  "ms_sha256": "9542215aa3bd9792ad0ee2fd8023735bfd6772a11582ff55e3719f0979d45f33"
+ },
+ "2016_may-jun_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Converging lens magnification for two lens positions, testing m1 x m2 = 1, precautions and difficulty finding the focused image.",
+  "has_diagram": true,
+  "qp_sha256": "5c7bc35fe6f69300b623ce39615dfbbb09863dbe5a7676071259a2a7e4300308",
+  "ms_sha256": "8259d75348e1f14ed128bf4a59236346dcd7eadf805b82dbb565b23a1235c32e"
+ },
+ "2016_may-jun_P62|4": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Planning an experiment on how wire resistance depends on length: circuit diagram, method, lengths, controlled variables and table.",
+  "has_diagram": false,
+  "qp_sha256": "ecb741cd9fbf1fcbff77ce7f5f97bac5a750fbf1ab1d6712b7c0be1e340ad791",
+  "ms_sha256": "3d0fcd39926269e77731f277225c6b214cfe67dce7632f1503158b15c18a9e5a"
+ },
+ "2016_may-jun_P62|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of water in beakers with and without lid and insulation: table, comparing rates, controlled variables, lid material and measuring cylinder reading.",
+  "has_diagram": true,
+  "qp_sha256": "e77b64a964bf709212398d7b5699eb56ea863fc56bcef183d6a2dc249bb1371f",
+  "ms_sha256": "76d06a5f0841a56b9f7a94203e08263d0c4dfc4d6bd8d93ea2991224e1533e65"
+ },
+ "2016_oct-nov_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Speed-time graph of a vehicle: constant acceleration, its value, changing acceleration and distance from area - motion.",
+  "has_diagram": true,
+  "qp_sha256": "c85033146a7561243fa1aeead64d277ad3ad3cb09563508f54486f55c3ba8952",
+  "ms_sha256": "c3cdfd8caf3baf25e6cb02e7c1eb36d46f2bbe18ce1a5dc0d1449ba2add21528"
+ },
+ "2016_oct-nov_P42|10": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Charges of proton, neutron, alpha, beta and gamma and their deflection in a magnetic field - nuclear radiation.",
+  "has_diagram": true,
+  "qp_sha256": "b6c734b20f87bc99f076ed97f6621dea4a35c6fef530364e771bacf0f869239a",
+  "ms_sha256": "9d3fae22ba5c3a36f1c99e1cbe4a511808af3cd8d9d64e51d080ecf7b6cece8e"
+ },
+ "2016_oct-nov_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Atoms remaining after three half-lives and count rate after 12 days with background - half-life.",
+  "has_diagram": false,
+  "qp_sha256": "3c7434312eafbb1ee7565f32e7631c2ab31f2e4499faa40ab631a992cce855f7",
+  "ms_sha256": "e5cce8d2e962e89ac646af54010c6f06dc368e47d0880ed44416cb4715c7ae43"
+ },
+ "2016_oct-nov_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "KE expression, scalar quantity, momentum conservation for bumper cars and elastic energy transfers - momentum and energy.",
+  "has_diagram": true,
+  "qp_sha256": "52e4c22d3ab189950b0438c064b26a10912d03af1edb66d7b705e254770589fd",
+  "ms_sha256": "365f48dfe64839b14fe2c04628790bcae5e2f62a3b8be33a65e543eff134cd48"
+ },
+ "2016_oct-nov_P42|3": {
+  "topics": [
+   "1",
+   "2"
+  ],
+  "difficulty": "hard",
+  "reason": "Mercury barometer (atmospheric pressure) and a faulty barometer with trapped air using Boyle's law pV = constant.",
+  "has_diagram": true,
+  "qp_sha256": "9afa9dd84f76e599243b716655572de4bae548736fa331f05b15830d7f2338fb",
+  "ms_sha256": "8a6558d482a809713cbf1848a7b97742e3ce1bff0a101d46b28a58250bfe1acd"
+ },
+ "2016_oct-nov_P42|4": {
+  "topics": [
+   "1",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Wind turbine efficiency using electrical output P = VI, battery energy store and environmental/economic impacts of wind power.",
+  "has_diagram": false,
+  "qp_sha256": "0aaf767f0a23ceb07015ec949f1f4e1d87e5dc0269deab0fb9f882cc62b5eb63",
+  "ms_sha256": "ec9342b3415c8ffbddca6e5693451a3c6bff509ee997bcd72811b31d4e634c8e"
+ },
+ "2016_oct-nov_P42|5": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Molecular arrangement and motion in ice and water, latent heat of fusion and thermocouple (thermal) plus volume from density (1).",
+  "has_diagram": false,
+  "qp_sha256": "8267bf139b4294848544d52b0c6d8959373985c50fde1570f185b034cdd36a3e",
+  "ms_sha256": "f9b023dc506bb596e04316c1d394b53f70e3439f54d8933aa2456c8781a89dbd"
+ },
+ "2016_oct-nov_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Pitch/loudness changes, sound needing a medium, speed and wavelength of sound in water and diffraction at a gap - waves and sound.",
+  "has_diagram": true,
+  "qp_sha256": "fe342fc92b71aff4a8c98a1a8878b99fa31f7c818ec56677f918950f1a65efda",
+  "ms_sha256": "0e042d4499e25bf7c21433eb3176f5eef2ee99d6006d421190d5c08dbc1358dc"
+ },
+ "2016_oct-nov_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Thermistor symbol, truth table for combined logic gates and a NOT gate truth table - electronics.",
+  "has_diagram": true,
+  "qp_sha256": "7de2cb9c954e834363c49a052c4f515acc3ccff25e876351a2eb3d235eb0cb81",
+  "ms_sha256": "aa8a3075a833b56b4e62310c5cb975b64e24082a30ab7747833ef7155c8f598f"
+ },
+ "2016_oct-nov_P42|8": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Correcting an EM spectrum, speed of light, refractive index, critical angle and total internal reflection in an optical fibre.",
+  "has_diagram": true,
+  "qp_sha256": "d4394944ce588f5ebc090c5b84168406af5759253828aca53c0583316fee8a7f",
+  "ms_sha256": "be019c8322a0975f5267439463cb0495a80834f4411377341d41a79023727e19"
+ },
+ "2016_oct-nov_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Series cells e.m.f., parallel and total resistance, current and comparison of currents in resistors - circuits.",
+  "has_diagram": true,
+  "qp_sha256": "74dae6e6c6be4f1894773603e51436c0093bd3814b57c7c90c29e77fbd6559cc",
+  "ms_sha256": "29b62540f04614be070cc418e65cde28ab1403560d8aed2f016a9a0c41757a22"
+ },
+ "2016_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balancing method (moments) to find a load's weight: distances, centring the load, W = kx/y, repeat values and averaging.",
+  "has_diagram": true,
+  "qp_sha256": "8e8790b0dae3927cda7cfdb2811c4f4dc6776930ca344e233241331a43ef2421",
+  "ms_sha256": "f2e9bcb358389c9a4f1b8233e667a35377808d85c88f35020822c6273d4e9aab"
+ },
+ "2016_oct-nov_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of a resistor with resistance wires: meter readings, R = V/I, constancy of R and replacing wires with a variable resistor.",
+  "has_diagram": true,
+  "qp_sha256": "15d1eea4dbb9b651be22e0359a5195e191538120dc5828e5d2883d95f30e7172",
+  "ms_sha256": "2ded8eeef29c079c01e78356a51eb7f7dc58808586c219e70fb8ab7f07d82450"
+ },
+ "2016_oct-nov_P62|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "easy",
+  "reason": "Variables affecting oscillations of a mass on a spring and a pendulum: interpreting tables for length, mass and amplitude, timing precautions.",
+  "has_diagram": true,
+  "qp_sha256": "c39b1180a40488585833fa513e182ae6e92cdf144b7253799a2103e3daea7343",
+  "ms_sha256": "b273e0697c5c900ef1d3e9d20d8fc76af7aca251e3cbb4ad3d5828a90d4714d8"
+ },
+ "2016_oct-nov_P62|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "hard",
+  "reason": "Planning an experiment on whether a lid reduces the time to heat water to boiling: apparatus, method, controls, table and conclusion.",
+  "has_diagram": false,
+  "qp_sha256": "ed62c741cc50c05b03bf64efd70de594f91f920d841d8347e7a734c855a24954",
+  "ms_sha256": "18f62916300cbbebce53cc2968fd3c0aab6a753edd19629ecf706c4f7f490587"
+ },
+ "2016_oct-nov_P62|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Plane mirror reflection ray trace: line lengths, pin positions, graph of d against angle of incidence and proportionality, practical difficulties.",
+  "has_diagram": true,
+  "qp_sha256": "5802122423534869c71cdc06df1759b0b3973f2593ba3e81260532f442648b61",
+  "ms_sha256": "ff08a986378154b10b0de6b943157a5c57df905be3980061b3c0db2fff183e60"
+ },
+ "2017_feb-mar_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Sketching distance-time and speed-time graphs and take-off speed from F = ma and v = at - motion and forces.",
+  "has_diagram": true,
+  "qp_sha256": "3f3f7c8eec61ff395d171c650a1fea73181562bd8ae62d57575fd040067f11e5",
+  "ms_sha256": "85bb6cf2c1ee030890ce5885e773af6d919b3a1e1f10814bb3189190090a8957"
+ },
+ "2017_feb-mar_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Electron flow in a circuit and lightning: current Q/t and energy QV - electric charge and current.",
+  "has_diagram": true,
+  "qp_sha256": "bf8a0b93a8a7d29998098642324457af2c8ca382da330f2010962c683a626dd4",
+  "ms_sha256": "496d83e27aef01eea26dea0ffc5dd56c197b96311bda0aa7332331fb881a81dd"
+ },
+ "2017_feb-mar_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "hard",
+  "reason": "Deducing alpha, beta and gamma presence from absorption by paper and deflection in a magnetic field with background - radiation.",
+  "has_diagram": true,
+  "qp_sha256": "6d729eec03fe49897e22ac6cc8b34e4f898de7ef596575720abb324c3a64ccc9",
+  "ms_sha256": "0d57ecd3117803b76c0902b72b8e9a34d933e4ba9f45d455d37cac5577c22c10"
+ },
+ "2017_feb-mar_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Momentum as vector, crumple-zone change of momentum and force, KE to find speed - momentum and energy.",
+  "has_diagram": true,
+  "qp_sha256": "b7f002c214a7201f59403809f01be32e32101813f49a945e2d01a075afd866dd",
+  "ms_sha256": "698ce3c3025aa0f673cd6ea1b662f8938e95586494328e058e65e1f084ad9df3"
+ },
+ "2017_feb-mar_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Conditions for equilibrium, moment of a boat's weight and tensions in two ropes - moments.",
+  "has_diagram": true,
+  "qp_sha256": "3a66ea02450fc9b62ac9b859073ec76dc5f4fbece4c4a40e66b7b6bdf2cfb6fa",
+  "ms_sha256": "7f7d59842596ee462f0bd6e1393ca0cec1fbff82661747aa2422468a7bca2a60"
+ },
+ "2017_feb-mar_P42|4": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Galilean thermometer: thermal expansion of water reducing density and delay from poor conduction (thermal) with floating/sinking by density (1).",
+  "has_diagram": true,
+  "qp_sha256": "a5a09d4554d98a19c6ce89b64fb22f158c513011bfe9a33569f8c6391f4279aa",
+  "ms_sha256": "16b9102af2ddd1748ff583dd9fa9c4f4c62ff2a80e86ee9d50465105d1b6feb0"
+ },
+ "2017_feb-mar_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Evaporation versus boiling, changes of state and a cooling curve with specific heat capacity of liquid and solid - thermal.",
+  "has_diagram": true,
+  "qp_sha256": "cec3c49975373f372b30abb9719c90b4941e713b7c1dbd12ef65092b6d266820",
+  "ms_sha256": "d6c4579bb0d868a7dfa1cf10857401b579307be18add83b3f70da80fc754d5cb"
+ },
+ "2017_feb-mar_P42|6": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Infrared absorption by matt black and shiny bulbs and resulting air expansion in a differential thermoscope - thermal radiation.",
+  "has_diagram": true,
+  "qp_sha256": "9b9fb14b13c184aa27b77604a9ea3a4047452f85ad2c0ef08c49083b9b0e64b7",
+  "ms_sha256": "883ec97d9f0b67eb22b266f7f59b1a5db98ac1a8b4fed59ab49296bfd20ceda2"
+ },
+ "2017_feb-mar_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Converging lens image description, ray through principal focus and focal length from a ray diagram - lenses.",
+  "has_diagram": true,
+  "qp_sha256": "46b827b512c24c4ce2b66a4deaec5ebed038a3649885c48772a210a3a5f66a79",
+  "ms_sha256": "5ed399dd8089191aa4c85c2ca52e56469a511efaf162289a2f448dc6eb5d0e5f"
+ },
+ "2017_feb-mar_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Transformer coil and core materials, step-up/step-down transformers and high-voltage transmission - electromagnetism.",
+  "has_diagram": true,
+  "qp_sha256": "dd90c7a4b2808ce399785055dd73a0a8b470ec630b2ab79a4541f9fb0fc50de0",
+  "ms_sha256": "6ad201d1d403cb196400e68c7a87a7093b1fe34e693001a02561ad27263fa665"
+ },
+ "2017_feb-mar_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Filament lamp I-V graph, resistance and power at normal brightness, parallel lamps e.m.f. and current - electricity.",
+  "has_diagram": true,
+  "qp_sha256": "f419664859a53aa18b4e61af48eadebc606477f2922dece53c03d114d71fcacd",
+  "ms_sha256": "f77825857e95981dfeddb14447e1b1c85436584bc36d20eaf2dfb467b3c25c94"
+ },
+ "2017_feb-mar_P62|1": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Effect of surrounding temperature on cooling of water in test-tubes: thermometer readings, table, precautions, conclusion and fair-test change.",
+  "has_diagram": true,
+  "qp_sha256": "ea68966aa0b202700eed002384425b870ac651a7e24d8df9db02f4389d7b8ee1",
+  "ms_sha256": "acba11c9da7595d4464cb6b26f8a71a1d694e39876203bb409d90413be03b0c9"
+ },
+ "2017_feb-mar_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of three wires: voltmeter connection, meter readings, R = V/I, resistance per unit length, measuring length and heating.",
+  "has_diagram": true,
+  "qp_sha256": "516ac48ad5c09d10868668510412386ed2eead4e3ae9b0d7ecb4c077d940483e",
+  "ms_sha256": "c8284cac57b71306d01d96c0141b98fedaa2838fe4d5a92b4511101186c2aa8d"
+ },
+ "2017_feb-mar_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Converging lens magnification against object distance: image height, M = hI/hO, graph and u at M = 1, difficulties and alignment.",
+  "has_diagram": true,
+  "qp_sha256": "9945f15164fbc1be16faa5a0f565107d3417e35b938d0667e1cfe85ed1c870c1",
+  "ms_sha256": "abc0d4a724d22703b2a38e0d0d678bb2f92f51ee6aada7774cdd3cb94e08baa3"
+ },
+ "2017_feb-mar_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Planning an experiment to compare extension of springs made from different wire materials: making springs, method, controls and presentation.",
+  "has_diagram": false,
+  "qp_sha256": "0c9fb4be83c897bfc1cac556ac01972f253d9b0006bb4525d71cfe61b8cfe863",
+  "ms_sha256": "09e247555887be5c0c5c49df0b749445732879ce26e2acd9d3aaad2385ab6af0"
+ },
+ "2017_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Scalars and vectors, distance-time graph and scale-diagram resultant velocity - measurement and motion.",
+  "has_diagram": true,
+  "qp_sha256": "3caed1509e459638a359561cb57efde232ae4522c88b29fb77ae997a06270a7e",
+  "ms_sha256": "54a6bccc42ee403ea24c78f128cdedce35a00d1639b916ac80aa8d8b5a73e370"
+ },
+ "2017_may-jun_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "LED symbol, identifying a NOR gate and designing an OR function from NOR gates - logic gates.",
+  "has_diagram": false,
+  "qp_sha256": "ca5a9e0b88e72075dd5119ae0ac43bfb5d1ca86ad75cc17cb6cd92f0295868f3",
+  "ms_sha256": "b3369d823504bd8525c59a0a40e11c436a74892994e3655c952d52a6e7183da9"
+ },
+ "2017_may-jun_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Alpha-particle scattering paths, random background radiation and protection from alpha and beta - nuclear physics.",
+  "has_diagram": true,
+  "qp_sha256": "0d3598cd191a2ccd46b2af5e5af074b04cb1df182a308e5bdc053a266778c367",
+  "ms_sha256": "67b6642d16610fcfa2eef4a1dde9ea17fe89b5cfb49c9d59574a2dd0d5ab98a5"
+ },
+ "2017_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Mass, weight and deceleration on the Moon, then brake pedal force from pressure F = pA and moments - forces and pressure.",
+  "has_diagram": true,
+  "qp_sha256": "a34aa146cddf2fb6607c8fdc5230d859236527cb4a17bce11ec2c63a37761153",
+  "ms_sha256": "4cdd2641798293a7eecc2975cea1b4fe629676315b78fe34b0862298454ba446"
+ },
+ "2017_may-jun_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Impulse definition, momentum conservation in a sticking collision, impulse on block and KE loss - momentum.",
+  "has_diagram": true,
+  "qp_sha256": "715d8b8464afbc4ce483b0ce7620653345ea1a6294be5c4dd96a7d7496d37cde",
+  "ms_sha256": "f0612f1161c8c0f943f7d469f1c2900ddeee685a27d116270e54617afd26d23b"
+ },
+ "2017_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Gas pressure from molecular momentum change, effect of reduced volume and Boyle's law calculation - gases.",
+  "has_diagram": false,
+  "qp_sha256": "87b143c15cc6dd2073ba7c924b5731d350410da412351db826a32778a21fedfe",
+  "ms_sha256": "66314dc2538e36bb16aa314f557be216893de5d6d93b5cf8856d609c47e1595a"
+ },
+ "2017_may-jun_P42|5": {
+  "topics": [
+   "2",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Kettle heating time from mc dT and E = VIt, assumption, and an experiment on good and bad emitters of thermal radiation.",
+  "has_diagram": true,
+  "qp_sha256": "709430fa7f9e7f3b485a76c91a87eb6cfc274923204db04c46621d3244fe4261",
+  "ms_sha256": "f6523e601d1ea3dee8bac2836b25dfa6ee7d037ae874dc7a5585d1cd7d2ec858"
+ },
+ "2017_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Amplitude and wavelength from a graph, v = f lambda for water waves and diffraction at a wide gap with deeper water - waves.",
+  "has_diagram": true,
+  "qp_sha256": "77a7cbea08cbe3b20640240d3ecafb355cd123b7212b06b1da4b46de9be59895",
+  "ms_sha256": "9016e94c6f963825cc9b4f4a0ca63f18d1819b0f075dc5b7ecf640dff800c443"
+ },
+ "2017_may-jun_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refractive index from speeds, Snell's law angle and ray diagram locating the apparent image of an object under liquid - refraction.",
+  "has_diagram": true,
+  "qp_sha256": "8e3d71cc78c610d666d4ad8842b760beff08b0b1d7464eb0615aa36075309036",
+  "ms_sha256": "1831e548c44175d0b0e863b811df0041382ee8ed89cf5ecc1cfd70a0b69816d4"
+ },
+ "2017_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Lamp current and resistance from rating and a resistance-wire potential divider position for normal brightness - circuits.",
+  "has_diagram": true,
+  "qp_sha256": "5550fc642efc750ece2538918f30af2a4bcdb57b02088d1bc09c2f52d498b68b",
+  "ms_sha256": "dc13364a9269185c731ce2ede5c1a4e516557100fd7fef1593750aa4617fee0a"
+ },
+ "2017_may-jun_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Magnetic field between poles, motor-effect force direction, field pattern round a wire and force on a pole - electromagnetism.",
+  "has_diagram": true,
+  "qp_sha256": "25c0e00d1a77cec772add0fcc818fdf115b1d9e45610cd8c6a1158ae499f7cb2",
+  "ms_sha256": "a6b3161b4e646fe1790c8c19d1d4b4bccbff41544ae02ded1133e285e540ab44"
+ },
+ "2017_may-jun_P62|1": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of resistance wires: meter readings, R = V/I, R proportional to length, parallel combination R1 = 2R2 and sources of variation.",
+  "has_diagram": true,
+  "qp_sha256": "7172702902cd33de00a92e4d6eedd276f9bf973606467af3d915325db62e8c36",
+  "ms_sha256": "9cc3b69a9f9f622de0de4178d867797c162145c431c2ed38ecf3bca23f12c4f0"
+ },
+ "2017_may-jun_P62|2": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refraction through a transparent block with pins: normal, incidence line, measuring emergent angle and displacement, comparing both sides.",
+  "has_diagram": true,
+  "qp_sha256": "25f611ec059a056071ba641d6ef58fe3e5b741990abaa3a4ae6ac3d8fd6e2f27",
+  "ms_sha256": "0a3782ebed3db6f7246d3bd2ad99bdb0bd2f3521af828ffeb0b7e540ed5a2007"
+ },
+ "2017_may-jun_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Converging lens image on a screen: object-screen distance, finding best focus, focal length f = uv/(u+v), image appearance and sensible procedures.",
+  "has_diagram": true,
+  "qp_sha256": "ebc667ed86a7f4c95cf555552ee8b96b620ec0ad68c140d7c0b2916b3a354875",
+  "ms_sha256": "7454009d9dde14671169f33a548f3f51087719db8d39247de9c69ee5d3de15d2"
+ },
+ "2017_may-jun_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Principle of moments with a metre rule: graph of b against a, proportionality, calculating moments and the neglected weight of the rule.",
+  "has_diagram": true,
+  "qp_sha256": "3434ef7306aa1f9cfb6618a8fa70e61d40a97a60df1e98735078c2665435bbc3",
+  "ms_sha256": "4684c382bb93f0628da7c0b08e8ae0f80bf43245c416f4f103de7a154ba11780"
+ },
+ "2017_may-jun_P62|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "hard",
+  "reason": "Planning an experiment on how draughts from a fan affect the rate of cooling of hot water: method, controls, table and conclusion.",
+  "has_diagram": false,
+  "qp_sha256": "730f41fb0030ad9225622385e0832aacf21c3aedf23bd436c46af7a4736de7e1",
+  "ms_sha256": "e41c51b7a38eef4a2e5d2a086ad3392543ceb67dbc3c41e8475bd88f04079f82"
+ },
+ "2017_oct-nov_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Mass from density, weight, weight vs mass, liquid density from pressure p = h rho g and why a cylinder sinks.",
+  "has_diagram": true,
+  "qp_sha256": "bbdd0d991f2b3ea94054ecdabb4d294bf10510f2fc3167c32a6259022ca1293d",
+  "ms_sha256": "344c36dbfcd1f53a0380285a1b530c1ca5c92dfe4516d61fa8db5bfa1b49b362"
+ },
+ "2017_oct-nov_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Magnetic field direction and strength round a wire and a solenoid-operated door lock - electromagnetism.",
+  "has_diagram": true,
+  "qp_sha256": "39d21a4bfc3af24a1f43b98875dca7722fa5a837dc25c1489246a8eb6030bc2a",
+  "ms_sha256": "451e2423b82ce4c6b857eb4e020264ea4389d1b652a553fc6d20579b2f55fa26"
+ },
+ "2017_oct-nov_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Beta-decay nuclide equation, background radiation and randomness, count after two half-lives with background - nuclear.",
+  "has_diagram": false,
+  "qp_sha256": "50022c7a68b22aa041fad1a0f5a6294205ee99e3d41748e666e4220d578a7a4c",
+  "ms_sha256": "c7386eb31b661902c87c66896ab5603ce71dc800d80b61fceaf4a3d19bbe35bd"
+ },
+ "2017_oct-nov_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "easy",
+  "reason": "Effects of a resultant force, F = ma, time from acceleration and a resistive force - forces and motion.",
+  "has_diagram": false,
+  "qp_sha256": "61bf57e331e439a80216c3ae3edceb10d9a2c510b0659d447f039373a46e83ac",
+  "ms_sha256": "239af2b8079fd58c870f0f3996e1f5bb9866aff02b0a1e12c0ab050bed346315"
+ },
+ "2017_oct-nov_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Fossil-fuel power station energy transfers, the Sun as origin of fuel energy and renewability - energy resources.",
+  "has_diagram": false,
+  "qp_sha256": "fa449392b68e4c4b576fd259d413bfaa764c5ff64bf9c148ad15347ea710e9bf",
+  "ms_sha256": "fae9ef37b8a903c48fab960f409efd037319a1b87c1a2aa4018e2767841500c5"
+ },
+ "2017_oct-nov_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Evaporation versus boiling, evaporation rate with temperature and power from latent heat of vaporisation - thermal.",
+  "has_diagram": true,
+  "qp_sha256": "f492f063dd9cd99f702e27c238c0b661a686552e1d076e630f868e745f9038af",
+  "ms_sha256": "cf0dddaf90cca6c2161d52c2887ecc55009bc2e59fe88961c8e50ab229e6b6af"
+ },
+ "2017_oct-nov_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "White houses reflecting thermal radiation (3 marks) and a cooling star emitting less radiation (1 mark, star life cycle). Reviewed 2026-11-09: the star part asks how radiated power changes as a hot body cools, which is thermal radiation (2), not stellar evolution, so 6 was removed.",
+  "has_diagram": false,
+  "qp_sha256": "c9e909bff74bdf421c91d14df8523e68a35725c16a3b39af46dd4b9c2cda3d2f",
+  "ms_sha256": "e95d65fb397ce74fd536bc1754cf9196d17571132a9991aaf8541796180e35e8"
+ },
+ "2017_oct-nov_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Diffraction of water waves at a gap, effect of gap width and of frequency on spreading - waves.",
+  "has_diagram": true,
+  "qp_sha256": "20bae96f605593f598e2ffbf5bdf9f1fcf2c656ae79466262764f9fe8d9401ea",
+  "ms_sha256": "2e59664a924ca3cc1fd9f0bee45d004cdd429d8341084fb3ee8971be0612e903"
+ },
+ "2017_oct-nov_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Describing a converging-lens image and ray construction of a plane-mirror image - light.",
+  "has_diagram": true,
+  "qp_sha256": "66f4e3c9a5352f01f0501015ca7d0955b2217b07be5076b17de672a60e913824",
+  "ms_sha256": "065ec29d3f5d89aa3c0410a3116ac504ecb97aaa4d7790e164099f84586ec42b"
+ },
+ "2017_oct-nov_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Series-parallel resistor combination and p.d. across one resistor - circuits.",
+  "has_diagram": true,
+  "qp_sha256": "81781735b4df0e2c0d2db3bc091272ea960e4161bcab88b15be023beca75b320",
+  "ms_sha256": "8b865d4816e3f8c68cc59abc5d73bb62ba643111fad3d090bc259cea09eaa196"
+ },
+ "2017_oct-nov_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Naming resistor, thermistor and LED, explaining a temperature-indicator potential divider and a three-input logic truth table - electronics.",
+  "has_diagram": true,
+  "qp_sha256": "1325a95ca696d31ae3e2555b0be16fe8911b8be3f859f5afc6e15e7491b1011b",
+  "ms_sha256": "e495cc540111c0c9bbbaa61c20c6399d82a419380f9293613cc7d02027baa07b"
+ },
+ "2017_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Comparing pendulum periods: scaled length, parallax with a set-square, stopwatch reading, period, comparison and identifying variables vs precautions.",
+  "has_diagram": true,
+  "qp_sha256": "7c44aba887b698039b2aa60b544f2463ee68d14b849e4757e226f7853235ff83",
+  "ms_sha256": "28b711ccb28ad12c804ff576c431afd9fe7fb4d7b7e2645163032dfaf98f56f7"
+ },
+ "2017_oct-nov_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Mixing hot and cold water: room temperature, temperature falls, stirring, reasons for differences, insulation, controls and measuring cylinder line of sight.",
+  "has_diagram": true,
+  "qp_sha256": "6195e451e4ab5e0036bfcabcf4642341027678f12e5bd6fd719df338accb93eb",
+  "ms_sha256": "fa1342db167b230dcc0aeed87ccc89fc8d869a25828ce6bb548048bfeb47ae09"
+ },
+ "2017_oct-nov_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Lens focal length from a v-u graph and intersection with the v = u line, image differences and precautions.",
+  "has_diagram": true,
+  "qp_sha256": "7fbab7b928018cd4912dae84d89abff178a8fd52f6da02eb26803fb0f1dd1379",
+  "ms_sha256": "5c61fc69bccfc2d0f74cf29f21c9aaaf05ae940de7af8fc527ce41db87065190"
+ },
+ "2017_oct-nov_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Planning an experiment on how rubber bands of different widths stretch under loads: method, controlled variable, table and conclusion.",
+  "has_diagram": true,
+  "qp_sha256": "b7bb9443e12d64e370c0037a10c83744eb1e49eac7fc706962f4fe5c57ffbe38",
+  "ms_sha256": "3da9313a80e613d033d48c3749fe7774320d07f94c38d9d6ba2e2ed87858cbea"
+ },
+ "2018_feb-mar_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Acceleration definition, plotting a speed-time graph with deceleration and circular motion force and velocity - motion.",
+  "has_diagram": true,
+  "qp_sha256": "c7e7e7553cd1a6342cba65ee107202ce87c96eaf0b087da4664c3468c7e102d6",
+  "ms_sha256": "5c4ce5a85a82c611c2d4cdc423d3bcb28d6fcfabb76437f386e0a3233ed9918a"
+ },
+ "2018_feb-mar_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Factors affecting induced e.m.f., transformer turns ratio and diode rectification - electromagnetic induction.",
+  "has_diagram": true,
+  "qp_sha256": "0e19176f897d34e26b77d795a98edfb7bcb8be27b444f297fc62aa9be8efc082",
+  "ms_sha256": "cd9bb5c1d45d36a2c6c72f848bdd166f8b2479b6f9e23fbb5eef54f0d3adfd5e"
+ },
+ "2018_feb-mar_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "easy",
+  "reason": "Safe storage and handling of sources, properties of alpha/beta/gamma and decay types - radioactivity.",
+  "has_diagram": false,
+  "qp_sha256": "e4a06380b8f9b26c7e794e5ba4b0620e4bfcf9daff70916f5ed991f76efe61e5",
+  "ms_sha256": "688daf74c39a480f8bb3a47356c70688ddad46d5d99474580ddedff5a05a4a4f"
+ },
+ "2018_feb-mar_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "GPE increase from work done, mgh for passengers and efficiency from power and time - energy.",
+  "has_diagram": true,
+  "qp_sha256": "60140392e07af575b2f9655766e5f1c1b6a158edce0edd9bd2075a1ca7f2ab84",
+  "ms_sha256": "ba11e27f92f04fd4ac3efe83be0559bd98ac64e79ca494b40db5d9eb802dec3f"
+ },
+ "2018_feb-mar_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Moment definition, centre of mass, mass from weight and equilibrium of a suspended rod - moments.",
+  "has_diagram": true,
+  "qp_sha256": "b04fe3f5157cc720f556eb25d35e40785d7e4f5438eec8b9689cace61b5919fe",
+  "ms_sha256": "08c5b38b62d610080592da15ab432f6937a5909da9d5fcd8709ab5922730d9b6"
+ },
+ "2018_feb-mar_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Molecular conduction in plastic, free-electron conduction in metal and thermal energy loss mc dT - thermal.",
+  "has_diagram": true,
+  "qp_sha256": "94f2e11a84d814f73ae920129b86d124d631feca71351653f2e9fe7dd3e84223",
+  "ms_sha256": "39eba9f300a12a3fe3b14d572eebb3b8088c9b35ff3e03ff0c76362f193019de"
+ },
+ "2018_feb-mar_P42|5": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Brownian motion of smoke particles (4 marks) and average force on a wall from rate of change of momentum (3 marks).",
+  "has_diagram": true,
+  "qp_sha256": "5d8cf550dd1827290ab2f2848242a573d714155b3b8ffda6c4e8bd515e5211d3",
+  "ms_sha256": "751d02e582e1140b87e9e9ce37a368b0796fb01cf682c9aed504d3ae25eb14d8"
+ },
+ "2018_feb-mar_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "EM spectrum regions, refraction angle in a prism and dispersion of red and blue light - light and EM spectrum.",
+  "has_diagram": true,
+  "qp_sha256": "c2c468060842f3ba6968cf5b31a191c42f7c340802c13a5f81aa578524eda640",
+  "ms_sha256": "2f70a43ea5284f4fcda15ccafc12a23ef9155b6b5562a361f49354c88f532a2c"
+ },
+ "2018_feb-mar_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Speed of light in water from refractive index and drawing refracted wavefronts and angle of refraction - refraction.",
+  "has_diagram": true,
+  "qp_sha256": "7272c2ddd48133f6e354e2bf0916235c507249731ef39bfb3fb65590957ad0b2",
+  "ms_sha256": "add7d984289f6fdd6727f5158272802415aa41a7d5fdfbdfcc8d585ecd3b23a0"
+ },
+ "2018_feb-mar_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Headlamp current from P = IV, energy E = QV and fuel volume for that energy - electrical energy.",
+  "has_diagram": false,
+  "qp_sha256": "05266b0d9d6b58342ab90516084c4614d6685f34ce16b2b94144437140931627",
+  "ms_sha256": "0140ebc4104c95eeaeb1d76b5759d2bc27405d6e780ceffe459315248840f950"
+ },
+ "2018_feb-mar_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "I-V graphs of resistor and lamp, lamp resistance and currents/p.d.s in parallel and series - circuits.",
+  "has_diagram": true,
+  "qp_sha256": "17ba18a0480085b776715cdfba4c6835749df130e263e9e9bf6af35194722ab3",
+  "ms_sha256": "f2d5d7d8860227aacfe3c583237a591452194219a474555d781db4142ae5a231"
+ },
+ "2018_feb-mar_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balancing a metre rule on a pivot with a block (principle of moments): placing the load, finding the balance point, a vs b graph, gradient and mass of the rule.",
+  "has_diagram": true,
+  "qp_sha256": "aab5151c97270a0606271ba0146b8ad973bc4a8b32de97b4971426799337a101",
+  "ms_sha256": "5d022ef018fe838590a6299f4c7fcaaff9aa10dac7a1646a885282d0e5fe35e2"
+ },
+ "2018_feb-mar_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of different volumes of hot water: thermometer readings, table, cooling-rate calculations, conclusion and a plan to compare heat loss through the surface and the sides.",
+  "has_diagram": true,
+  "qp_sha256": "e54bfb67f75e5bad7edbd9b6419e3b37cb6f7240ae97013c17b1d26688a80638",
+  "ms_sha256": "fd734a449e320ca34bee92c24bd44bc09847039f4b747af3419489b9189346e7"
+ },
+ "2018_feb-mar_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Lamps in series and parallel: voltmeter placement, meter readings, adding p.d.s, R = V/I and how filament temperature affects lamp resistance.",
+  "has_diagram": true,
+  "qp_sha256": "6b27563e33c5bf58dfe56c980c44ece4efa059f18e9739881083503476d7e053",
+  "ms_sha256": "b0f7fbfb6563a0e03ab8d4073a80d4c80696256cbb7f7b463cfa9bfbaa2be780"
+ },
+ "2018_feb-mar_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how one factor (ball mass, size or drop height) affects the crater made by a ball dropped into sand: motion/energy of a falling object.",
+  "has_diagram": true,
+  "qp_sha256": "86da6d0c199217afe4e33e48e60ee191c8f3822976b722a39a4c665f60bda0a6",
+  "ms_sha256": "59868ab4ca623b4869e588590a40bb181701d386fd68f2214f573466b70cb678"
+ },
+ "2018_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Drawing distance-time and speed-time graphs, acceleration and distance from area under graph - motion.",
+  "has_diagram": true,
+  "qp_sha256": "a4d9179cfe7ced3130c1e14c99c9d4ae36ecb96d14efc68d820c14ca9e140008",
+  "ms_sha256": "545518c8e6d5139441ea95436d542b58b7a3c94513855356fb2da1db58c818cc"
+ },
+ "2018_may-jun_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Charge induction in a metal plate by a charged sheet and repulsion of like-charged spheres - electrostatics.",
+  "has_diagram": true,
+  "qp_sha256": "646fe9b868cdb5654a133462f284694af8accaa295200bcc2b528f31bfc781f1",
+  "ms_sha256": "fa996d5666602c7c0c8e7e0cabb06570fe08e3d868d116426e2d8403a5e4a324"
+ },
+ "2018_may-jun_P42|11": {
+  "topics": [
+   "5",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Alpha decay equation, fission, reactor shielding and half-life (nuclear) with environmental pros and cons of nuclear power (energy resources).",
+  "has_diagram": false,
+  "qp_sha256": "a3a52a4bfea16107f2be62301095cb1e9db1e0dda8c77cc03c97636ebd875563",
+  "ms_sha256": "8bc3e3bd00e3806a25208ecbdc9e2833d028f1c9577b139cc3c0a79b52d7fcdd"
+ },
+ "2018_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Why a hollow cylinder floats, pressure p = h rho g and force on its base, weight from balanced forces - pressure and density.",
+  "has_diagram": true,
+  "qp_sha256": "f51939df3dd4fb7f36d415e206de5bf5044b4fa10a50cc22ecc0dab43640f890",
+  "ms_sha256": "05b032179aabb63ca7f4195478e0c467195fa462a220d62f8dcc3ab28a3f61d6"
+ },
+ "2018_may-jun_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "KE of an aircraft and catapult force from work done = force x distance - energy and work.",
+  "has_diagram": true,
+  "qp_sha256": "08ff4b25e1cb797835cc27d41f8c06af70c50cc3649fdf74998afdaa1f9a5059",
+  "ms_sha256": "44eadacd57220c3e39e03f40939533fb67447564a5c72de582275ccb1d6a6749"
+ },
+ "2018_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Particle arrangement in solids and gases, vibration, intermolecular forces and diffusion of helium - particle model.",
+  "has_diagram": true,
+  "qp_sha256": "cc1dc535c6eae35a9b38b24f9ca909d65bc46c72c356f0c74c01686accd7afdd",
+  "ms_sha256": "f7f139fe960a893837f62ab277d8c787f53a3a5eb4c0b2e1f86e279ee3efe7af"
+ },
+ "2018_may-jun_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning an experiment on good and bad absorbers of thermal radiation with black and polished cans - thermal radiation.",
+  "has_diagram": true,
+  "qp_sha256": "22ea545d3bd31eb1c584e12439552648b506f1c638064d91fa1cb183329dc706",
+  "ms_sha256": "5734a151225573e48ab94aa752e44f211d6b577f518761c244facd23e64cf098"
+ },
+ "2018_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Ultrasound properties, X-ray wavelength from v = f lambda and safety of X-rays and microwaves - EM spectrum and sound.",
+  "has_diagram": false,
+  "qp_sha256": "bc2935ce64bac9032cd5c76f7cc81af7667b6cce0f1a8e34f407addaf886a5b4",
+  "ms_sha256": "4f40968f5a491f46eceed0d02f82c3cbe1b84aa62830dfd5149310593a786f73"
+ },
+ "2018_may-jun_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "hard",
+  "reason": "Light slowing in plastic and ray diagram of a converging lens magnifier: virtual image position and height - light.",
+  "has_diagram": true,
+  "qp_sha256": "934faa50ad8b13f5c87f47d071c2c464562e968e2ad4e02d7f65a4b1df978a4d",
+  "ms_sha256": "b0170232284ae0d3997941bdf42c0e2fa89f5cf47ead13ef799823139ce8f6a2"
+ },
+ "2018_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Rheostat, voltmeter connection, I-V line for a 20 ohm resistor and effect of a parallel resistor - circuits.",
+  "has_diagram": true,
+  "qp_sha256": "6d676fa47d3ca86a647f06ab2fb2f47fd686ca80c1a61ea395ad44a7c075d1d3",
+  "ms_sha256": "025b03050daa6358d2322240a8dc83f970c55c8bb9aa71ce5278a483f4d06808"
+ },
+ "2018_may-jun_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Turning effect on a coil, factors changing it, and induction as a magnet falls through a coil - motor effect and induction.",
+  "has_diagram": true,
+  "qp_sha256": "2c2a26dba5e4378aef420b701dff93a3a52058f3f6b46c6cdcc31bc8afdf6a80",
+  "ms_sha256": "d9bc269c92e86cf5edec0eeb75bcb6de0fedda6ad8aab390ea7aedaa0076939a"
+ },
+ "2018_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Density of water: measuring cup diameters and height, volume, mass, rho = m/V to suitable sig figs, and reading a measuring-cylinder meniscus.",
+  "has_diagram": true,
+  "qp_sha256": "fc84ff1280669fe2415c15539912ba75146a00d27ba6cae761a7c07df3ca036e",
+  "ms_sha256": "3d990706f262ea7be2060c428c85dff2b022df4d0ffd0a3154798a7fb1766ff2"
+ },
+ "2018_may-jun_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling curve of hot water: thermometer reading, table, temperature-time graph with a room-temperature line, precautions and ways to increase the cooling rate.",
+  "has_diagram": true,
+  "qp_sha256": "297a59a824c5ec8eb0a9975efbdc0af9a354ec2829b47eb64b700ee9aff7edb2",
+  "ms_sha256": "e08555cc1163bc6417da9353586776d6025b5ecfe9b8ef02b016618024a498d2"
+ },
+ "2018_may-jun_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Focal length of a converging lens from object and image distances (scale drawing, f = UV/(U+V)), averaging and precautions when focusing an image.",
+  "has_diagram": true,
+  "qp_sha256": "6f9c660aaba199717995fa10d43cacf0648ba37d9c7b7a0d0ce2d1ad8919033d",
+  "ms_sha256": "203d07469bc8f0c05fdec0dcfd93211fc495a95a6ed7e49b978318412deea7fe"
+ },
+ "2018_may-jun_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how the mass of a toy truck rolling off a ramp affects the distance it travels: motion and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "ee2ecb84b0398b055a8a54bf96242feeea91918b41cca2bef24fe42c2c8f2a94",
+  "ms_sha256": "16fdcea9893ba9a442026471a3f981fe75b8fda491be7d6dbad7cd1ed6b240e0"
+ },
+ "2018_oct-nov_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Speed from a distance-time graph gradient, average speed, zero acceleration and balanced forces, deceleration - motion.",
+  "has_diagram": true,
+  "qp_sha256": "bddfd4ddaca816f4002af52a82e9e7da0523231a1261706c65e59f853cc4b86c",
+  "ms_sha256": "7d1d8f7ce3f35bc1dad5f652735ddd0d67cd4b56f69d2769eb1bafa87abf481a"
+ },
+ "2018_oct-nov_P42|10": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Background radiation sources and randomness, half-life from corrected counts and matching radiations to properties and uses.",
+  "has_diagram": false,
+  "qp_sha256": "a9efe07516afee17cc0555ce02f1006b21ce5763f9ea84de8876070876e7c299",
+  "ms_sha256": "3ec77f87a640454cea316ec3e8fec253dab89e7810f44bd76036212a175c6512"
+ },
+ "2018_oct-nov_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Mass of liquid from volume and density on a balance and manometer pressure to find a liquid's density - density and pressure.",
+  "has_diagram": true,
+  "qp_sha256": "f15a27b516be07acc5fbb28f3a5171e3e7f84f064aee3b4787324837b25e184e",
+  "ms_sha256": "a036bd072570b21c7e679d1bdc045cd4542568c42291faec8b8a57825975e9c0"
+ },
+ "2018_oct-nov_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Change of momentum, impulse Ft, ball speed and kinetic/elastic energy transfers - momentum and energy.",
+  "has_diagram": false,
+  "qp_sha256": "5bd41f92603719894c39836b3d627784c75b3890e3cfd8d095146da82be50597",
+  "ms_sha256": "aba7db967dcf4d6b3121a9df7b599bcc3f30ca666eebffd407ba1d79d1b6da3f"
+ },
+ "2018_oct-nov_P42|4": {
+  "topics": [
+   "2",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Specific heat capacity experiment with insulation and calculation using electrical energy VIt - thermal with electrical energy.",
+  "has_diagram": true,
+  "qp_sha256": "8a3c3669f0cb18c976f499a46e352eebcdd0bcc1562113a6034d8f4c235581b3",
+  "ms_sha256": "bb09c7b060442da0bced946d0aa2855bfe274b1d3f84ee67225307fb1c71aff0"
+ },
+ "2018_oct-nov_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Dispersion of white light by a prism, total internal reflection in an optical fibre, critical angle and uses - light.",
+  "has_diagram": true,
+  "qp_sha256": "cce2da184de3d6b0db90e1379e31f40a598b1e12d607d695e80bfbdeb5a8529d",
+  "ms_sha256": "2e840ab8c41b648e82d1ee253e6915f7f1bf4b2c6a2bfbbd05dfe5a59e33a3c9"
+ },
+ "2018_oct-nov_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Compressions and rarefactions, wave speed v = f lambda, medium of sound and ultrasound comparison - sound.",
+  "has_diagram": true,
+  "qp_sha256": "9a7b7050801c80957f464a8cd3444e7713208f6f4552216abec195ffc09ce2e3",
+  "ms_sha256": "e88678107384aca10870adf5c05685755d7b574e9d0847c6fa3f21e420f073c3"
+ },
+ "2018_oct-nov_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Parallel lamp currents from P = IV, supply voltage, filament resistance and dependence on length and area - electricity.",
+  "has_diagram": true,
+  "qp_sha256": "00fe0d497bb79433b5eaaeb3fd40d534d35be261d3675df98b2382cbc4158806",
+  "ms_sha256": "612de5b938ac95cf9a997c3d60c7b2e6700a4d319763cd444ea6adeb6c23241e"
+ },
+ "2018_oct-nov_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Attraction and turning of charged floating cubes, conductors vs insulators and field round a point charge - electrostatics.",
+  "has_diagram": true,
+  "qp_sha256": "83b81f0323204980935efa6fdfde76c5a59b5defee7509533007d1147c47104c",
+  "ms_sha256": "7f1bbfad74b7011a764adbb7704806d62d761950827a1bca72d8fa1dedeb4480"
+ },
+ "2018_oct-nov_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Magnet material, electromagnetic induction when a magnet enters a coil, Lenz's law polarity and reversing deflection.",
+  "has_diagram": true,
+  "qp_sha256": "24e44f2b2606920e26bbfbec91a1579638571a7de471b46077f5903a2efe6d41",
+  "ms_sha256": "c8edf817506ff7ceda6e511407683b4e2e8238f81faab0c722698c4374a6f2d8"
+ },
+ "2018_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Spring constant from load-extension data: set-square reading, extensions, L vs e graph, gradient and k to suitable sig figs (Hooke's law).",
+  "has_diagram": true,
+  "qp_sha256": "f12b4205c2fe2e7c92d21e2ea865aa698ca42772b11d803afb544cad4ee0467b",
+  "ms_sha256": "0902f57e06b36f99bf7fe37e3fd1068d6d40a3b6d6085c1b5a8d065167e89fa0"
+ },
+ "2018_oct-nov_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Power of two lamps in series: meter readings, P = VI for each lamp, comparison within experimental accuracy, fault diagnosis and drawing a parallel circuit with a variable resistor.",
+  "has_diagram": true,
+  "qp_sha256": "46037b9da85c199224ad8bcb395b61564ba100ce7ecd41deea142be2d82f6308",
+  "ms_sha256": "0c2953806eed8c1bb848ce7890b8630860394a82180ddb93598886cb2989d409"
+ },
+ "2018_oct-nov_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refraction through a transparent block with optical pins: drawing normal and rays, measuring lengths, refractive index n = a/b and precautions.",
+  "has_diagram": true,
+  "qp_sha256": "9d7fa77e3645630a2c6fd39b525dc77c541b8c2b7b9a48bc688985e9dbd6ce39",
+  "ms_sha256": "be4422bc3d5539f2e8b81db8e3b413e77e51d3b6098c0bc6d2606aa44f49ff5b"
+ },
+ "2018_oct-nov_P62|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how container material (copper, aluminium, glass) affects the time to heat water to boiling: thermal energy transfer and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "f7572ba201f6e8e53a1cd806e56d85232f0ba7c73ae0750ed0389390c923bc3d",
+  "ms_sha256": "f761429edc6297d7eb96fe772b7807ee8c8ca673d63dd3e2b96965497de58b93"
+ },
+ "2019_feb-mar_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines acceleration, describes motion from a distance-time graph and calculates average and maximum speed: kinematics only.",
+  "has_diagram": true,
+  "qp_sha256": "0ca771b513659d74030ba84dd58465927e7ae201aca8721297e361764e81534f",
+  "ms_sha256": "eeb98b8cafee3203bfd0ac9bdff9567f44b6fb0272350d22eff4fd701d2ac863"
+ },
+ "2019_feb-mar_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Why high-voltage transmission reduces losses, transformer turns ratio and core material: transmission and transformers.",
+  "has_diagram": true,
+  "qp_sha256": "041ff9210b3e1108c8ccd853e8bf7a5ce51c573c0627279c9e04ade1d817ac09",
+  "ms_sha256": "4563dd15f35825443e7df8e1779f9f54c786e8619d594157521501d03f15c1f2"
+ },
+ "2019_feb-mar_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "easy",
+  "reason": "Beta-decay nuclide equation, count rate after two half-lives and differences between gamma and beta emission: radioactivity.",
+  "has_diagram": false,
+  "qp_sha256": "1c9a364decd0ff27312134a58b746d7afefc94d0b1ab5e30506aed6ed8fb4271",
+  "ms_sha256": "dc5459b66bcf14d304835947ba043074938cd773545b050b87c610394c743942"
+ },
+ "2019_feb-mar_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Wind turbine as an energy resource (advantage/disadvantage), mass from density and kinetic energy of air, and why not all KE is converted: energy resources, density and energy.",
+  "has_diagram": true,
+  "qp_sha256": "33a883263c35aeacbc9137c295c7d942e0e479dc55a00b4af4a07726b9e8690a",
+  "ms_sha256": "cf1773618efe69841ad0492321f73d7ff51c30dcf912a93e7fe6e89d521aa2ae"
+ },
+ "2019_feb-mar_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Effects of a force on motion and a scale vector diagram to find rope tension from a 360 N weight: forces and resultants.",
+  "has_diagram": true,
+  "qp_sha256": "400c9f9dbab9aef70267eec9ed52a6fc180aabf6aadee0193a2d044cbf63d6bb",
+  "ms_sha256": "b2bd8ab24694a9310a5b8ce4595eed7a5cab2e7b9a92fb8f26d8bf9c3d0640f9"
+ },
+ "2019_feb-mar_P42|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Mercury barometer: vacuum above the mercury, h from p = hρg, effect of tilting and of trapped air: pressure.",
+  "has_diagram": true,
+  "qp_sha256": "2a7ac3a23f6a6b5cdac1224d1784948b5268a9c594019f7d9f6da7e719750a07",
+  "ms_sha256": "c9f04acbf4c9df3560a030654dcb26f5d8481971802b52243a1d403bfeb52cd0"
+ },
+ "2019_feb-mar_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Fixed points, liquid-in-glass thermometer linearity, range and sensitivity, and drawing/using a thermocouple: thermometry.",
+  "has_diagram": false,
+  "qp_sha256": "71925ddbc9c2713b5797f4d8ed0e33cfce7235eb24d02c96cd404f9047175238",
+  "ms_sha256": "fb67d90e702649c5f35b174262ee724aefed4e0c110d2412dc66549bc46b43d5"
+ },
+ "2019_feb-mar_P42|6": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Convection in a heated room, time for a 1.5 kW heater to warm air via mcΔθ and P = E/t, and reasons for heat losses: specific heat capacity and thermal transfer.",
+  "has_diagram": false,
+  "qp_sha256": "3e891ab821be11d91faf6ff3014808ea82e41a3da2a290f4e055bcf2450f9892",
+  "ms_sha256": "265a3ce2b619890ed009d851695938b756e015d5f04695e0589cf5353629406b"
+ },
+ "2019_feb-mar_P42|7": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Changes of state from molecule diagrams, why gases expand more than solids, and Boyle's law volume of escaped gas: particle model and gas laws.",
+  "has_diagram": true,
+  "qp_sha256": "e526ad04c523f3f6d8b2da40e8a8a8f04395954bb7cc096fdbc53d60e2fa1710",
+  "ms_sha256": "b246ea4a04724c9df9b7c098e071420ab978c9cc74f52d2a9f90d97de66daaf9"
+ },
+ "2019_feb-mar_P42|8": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Drawing refracted wavefronts from ice into air, ray directions and angles, and speed in ice from refractive index: refraction of light.",
+  "has_diagram": true,
+  "qp_sha256": "21443e37bcdd425a48c7d38e23bd53e89d902c9c7a5c93034fd46947a3f16837",
+  "ms_sha256": "233eddccfe6ecfc4dd3bb9b1bbb2d50bb6913894d47214d71e5f437303573836"
+ },
+ "2019_feb-mar_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance from I-V graphs of a resistor and thermistor, how their resistances change, parallel supply current and energy IVt: circuits.",
+  "has_diagram": true,
+  "qp_sha256": "c744cc9f078d2229b1c5fc096c1c31cc86ef31a0d256426d424843a0fda55252",
+  "ms_sha256": "55f3fe51655f04ea8ff2a26ec701f9addf5ec2fecbe8bd053ee8cbee99eb9905"
+ },
+ "2019_feb-mar_P62|1": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Reflection by a plane mirror on a ray-trace sheet: measuring angles, drawing normal and reflected ray, a vs theta graph and sources of inaccuracy.",
+  "has_diagram": true,
+  "qp_sha256": "67d3fa4a340d2c3e31449c34646dc71943312774f8de6542da8e8f3823b038c8",
+  "ms_sha256": "f38d08115b31b5abfdd476564d1113285c3d0059725cae8261ef43e6e81258a9"
+ },
+ "2019_feb-mar_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of hot water with insulation versus a lid: thermometer reading, table, conclusion, cooling-rate calculation and why the starting temperature must be controlled.",
+  "has_diagram": true,
+  "qp_sha256": "f3151e0030365a9bf985451338574e0273b3cee6c5b85cf5aebf7ee7bc78148a",
+  "ms_sha256": "7ad3d240c7cbeaccad958060fffcf608e60f6ff6d13603f8d36a1a928c8e85e3"
+ },
+ "2019_feb-mar_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of lengths of resistance wire: voltmeter placement, meter readings, R = V/I, R/l, predicting R for 25 cm and adding a variable resistor.",
+  "has_diagram": true,
+  "qp_sha256": "bc7c5ce930e4323dd1f2c485576464a23757faaf231b7acd5c9a641564636ac3",
+  "ms_sha256": "e95e0ed6d86b2cea9772e61dc7435a7d4c77522aab7324bc2f700e48d1c017f2"
+ },
+ "2019_feb-mar_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how air resistance (card fixed to a pendulum) affects the swing/period of a pendulum: oscillation timing and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "a7685ff5ab65582227a90138c0d169299d80de31c1ee4c9f837d536061024e92",
+  "ms_sha256": "d4a12f7a4087ba0645e6383255d43ce27051dda2cebdd519494185d8ea7369dd"
+ },
+ "2019_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Interprets a speed-time graph, finds distance from average speed and sketches a further stop-then-accelerate stage: kinematics.",
+  "has_diagram": true,
+  "qp_sha256": "f075dcd31f6a79c9f6e7e4af9757c8bea54249a1e3d4a8e9bf399aeffeff7a0a",
+  "ms_sha256": "0a13fc0f6338cb0dd2cba198ad72a4476020cd0904fd5ac4792d3d06cc7a6c35"
+ },
+ "2019_may-jun_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Combined resistance of a series-parallel network and why the lamp's resistance rises with current: circuits and resistance.",
+  "has_diagram": true,
+  "qp_sha256": "1de3324594b059ff4f9805c03555fea626f9e533940763067d49599ef63d11b5",
+  "ms_sha256": "ce99a5eb1ea432b0ccbc106946ea8b3283792ef68a53be4d5f87026e29bbd6c7"
+ },
+ "2019_may-jun_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "easy",
+  "reason": "Alpha-decay nuclide equation for radon-222 and carbon-14 dating with two half-lives: radioactivity.",
+  "has_diagram": false,
+  "qp_sha256": "e7f7f47555fe88601d40b7a656e0792330b31e16345f71295b1aee555a411398",
+  "ms_sha256": "8e94ecada2ac6560b1aee5745b817d72b05ce250454164049a114c12cd42f301"
+ },
+ "2019_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Momentum change of a water jet, force from rate of change of momentum, and direction/size of the model's acceleration via F = ma: momentum and forces.",
+  "has_diagram": true,
+  "qp_sha256": "17c7a8b18c11a752ff5112b1360303f5b6b25ae750eab5d8ac85fcd4952cec61",
+  "ms_sha256": "c993343e78bb4830c62d81521127b6dab5c24372c84f6cbd18f24c782ed36d1e"
+ },
+ "2019_may-jun_P42|3": {
+  "topics": [
+   "1",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Solar cells as an energy resource (energy form, environmental points, renewability) and efficiency using input from W/m2 and electrical output P = IV: energy resources and efficiency, with one electrical-power step.",
+  "has_diagram": false,
+  "qp_sha256": "e4cfaf34e7500d89cc3703894f88f7ed5e90e1b71d502a05b2e6b6a538dd1708",
+  "ms_sha256": "68a1b669055d05fd698ac82743c465968fec14568de324d8568175c18245a435"
+ },
+ "2019_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Molecular explanation of gas pressure rising when volume is reduced at constant temperature and ordering expansion of gases, liquids and solids: particle model.",
+  "has_diagram": false,
+  "qp_sha256": "5fc5af30c1ae0124a930d6ee163d9c5a5a96aca311a852544fea83050184c4dd",
+  "ms_sha256": "7c6c9725dd41de3be63a2d730bfe6bcad47b48e861b88c5b8e0a1b1ead7ea85a"
+ },
+ "2019_may-jun_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Names boiling and evaporation, finds heater power from mcΔθ and P = E/t, and an insulation precaution: specific heat capacity and changes of state.",
+  "has_diagram": true,
+  "qp_sha256": "1e11bc6d6c3dd2883873b4e28276bb2f8d9db1814d45763cd01b365843f525ba",
+  "ms_sha256": "ffb9b083bb7d76f8827e2fd682fd0ee409beaf1e0d86daf6130bde4f34179ca3"
+ },
+ "2019_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refraction of water waves in a ripple tank, drawing a wave of half amplitude and higher frequency, sound faster in steel and λ = v/f: wave properties and sound.",
+  "has_diagram": true,
+  "qp_sha256": "de5a0d094ece6c300ab2f42904d4b2945390810365c516bb1eb95004f204afca",
+  "ms_sha256": "15fd0c52d0a5eea7f442667f6995a7615fd8061c0fafe78267afa6810eaf8be8"
+ },
+ "2019_may-jun_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Completes converging-lens ray diagrams for two focal lengths and describes a magnifying glass image: thin lenses.",
+  "has_diagram": true,
+  "qp_sha256": "732a4bdda274bbfbedca1ab66b1ec75c8facb34f737b9327da883cbf241e8a3a",
+  "ms_sha256": "fe082d3337f12a8e61dadd981e8565906f55badfa7ec96b83018da3fae78e4ef"
+ },
+ "2019_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Charging a sphere by induction, identifying an LED, NAND truth table and a two-gate logic table: electrostatics and electronics.",
+  "has_diagram": true,
+  "qp_sha256": "62e61f45998a46fa7f212957a9a7851537dd7ddbd4adf787f0c3a2cf14ef3e4b",
+  "ms_sha256": "dee4b80b8228d626f64e1570a3449bf64e131b0a3ed6c7f3fd517a1f88cf1ecc"
+ },
+ "2019_may-jun_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Demagnetising with a.c. in a coil and the split-ring commutator and supply voltage in a d.c. motor: magnetism and motor effect.",
+  "has_diagram": true,
+  "qp_sha256": "bdaa0db99e62bf3a3306b1b7eece2bc58302261e321e2d61331f3ea736fb928e",
+  "ms_sha256": "b149c1475b897763a70d7152504646a48186cb1f89cfd894f54cad01a974388d"
+ },
+ "2019_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balancing loads on a metre rule (moments): why the balance point is not at 50 cm, a vs b graph from the origin, gradient, intercept and comparison with load width.",
+  "has_diagram": true,
+  "qp_sha256": "77f3e93156cd18da2f49efce85f2dd784d55d9fc09fa9acefddfdafe044086f9",
+  "ms_sha256": "c24f005811e4542da03d52e5a0732aa62bb4f66fb643b4ccc63e409371ade4e8"
+ },
+ "2019_may-jun_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "easy",
+  "reason": "Rate of cooling of water with a lid versus on a mat: thermometer and table readings, conclusion, fair-test variables and reading a measuring cylinder.",
+  "has_diagram": true,
+  "qp_sha256": "21c1e70cc99a4de97a7820d18e3e6a50e6726251fd9448bb75cbb2e25f673cec",
+  "ms_sha256": "b05fc71030094f475c2397476a1bd625c902999a11f79601bb800b6f41d5597f"
+ },
+ "2019_may-jun_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of resistors and a lamp: meter readings, R = V/I, comparing resistors within experimental accuracy, filament temperature and drawing a parallel circuit.",
+  "has_diagram": true,
+  "qp_sha256": "c434c6477a0b6c783fd0a3ef872c3e5e91510d178d729ce4ab6fbad19f8f7d28",
+  "ms_sha256": "4766f28e962231b382a0ff31a97d551050cfe17f519e0087003fed33a2aab3c1"
+ },
+ "2019_may-jun_P62|4": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how converging-lens thickness affects focal length: apparatus diagram with u and v, measuring thickness between blocks, results table.",
+  "has_diagram": true,
+  "qp_sha256": "e914d440551ddcce5e49623d7c9855ac4b0ac5e72393c8065b0157777c0925c3",
+  "ms_sha256": "a516fc863a608a6212f1e73e80234c01b11b1c4ef3e64b01b203ed7e8c2ed8c9"
+ },
+ "2019_oct-nov_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Pool depth from volume and area, density of sea water, pressure p = ρgh at the bottom and a measuring instrument: measurement, density and pressure.",
+  "has_diagram": true,
+  "qp_sha256": "d95abe9d2238ec221d9cde2e2f1f9900711b067d83ad6faab5f40623196b34cc",
+  "ms_sha256": "477b6b55dc02be59733cb9d119b03b18a9003bf107739d495528a88e0a149f95"
+ },
+ "2019_oct-nov_P42|10": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "easy",
+  "reason": "Masses and charges of the neutron, gamma ray and helium nucleus, and safe handling and storage of radioactive sources: nuclear physics.",
+  "has_diagram": false,
+  "qp_sha256": "b716f166523fba6ed7ce240c59437e0b005d54af1295f5a12ae47d3cf8f4be72",
+  "ms_sha256": "87df6381f3026ad55bc6c3d6d15291c703fe248e214333d2a48600af93672ebd"
+ },
+ "2019_oct-nov_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Conditions for equilibrium, drawing W and R on a metre rule, moments about the pivot and the pivot reaction: moments.",
+  "has_diagram": true,
+  "qp_sha256": "a7959417509621f088d5c98a3f8109065db5d0b162a895985040b49ee3a96444",
+  "ms_sha256": "6cbae4b2a2e8abec98521a7f25703cd3c40f348f4b8d87853fd0a5b7a41ff129"
+ },
+ "2019_oct-nov_P42|3": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Gas pressure explained by molecular momentum change at the walls and Boyle's law to find the pressure before compression: particle model and gas laws.",
+  "has_diagram": true,
+  "qp_sha256": "4067643db671dbd131093c2da416cdb8e6a7c133bc5377ec34adb5681f52f64a",
+  "ms_sha256": "5caaa707527b83fdc746c48c2f2b5890c09d800ff8e16be68343933e61df78f6"
+ },
+ "2019_oct-nov_P42|4": {
+  "topics": [
+   "2",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Thermal capacity of a block heated with E = VIt, and how size and temperature affect the rate of thermal radiation: thermal physics with an electrical-energy step.",
+  "has_diagram": false,
+  "qp_sha256": "fc568bdc0e225cc64721e57eacea5cca37367f00dce3b84cd1e4176559c23dab",
+  "ms_sha256": "546113b2f70f5608f70f0b50d63eaf45cf5cdfb4932edb353aae16eec82dd997"
+ },
+ "2019_oct-nov_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Compressions and rarefactions, longitudinal versus transverse waves, λ = v/f for sound in rock and whether it is audible: waves and sound.",
+  "has_diagram": false,
+  "qp_sha256": "a4a1eaebf460eab6430f0fe48fe647283eafa21ecbc67de57137937b09210c78",
+  "ms_sha256": "58e624e7e733b38b57380c7492339843beb1e034107ac2299f93996d490ed0ef"
+ },
+ "2019_oct-nov_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Coin seen through water by refraction away from the normal, virtual image, speed of light and speed in water from refractive index: refraction of light.",
+  "has_diagram": true,
+  "qp_sha256": "d96b1e0a20f5c11511234c71dfe19f6e7adce7eb0147a24613bf528ab17c3974",
+  "ms_sha256": "08f2e272efb1407cea8ef3976f4660f6e18720e95437e3587c16aeb5f9810f9c"
+ },
+ "2019_oct-nov_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Induced e.m.f. as a magnet on a trolley passes through a coil (effect of speed) and three electrical hazards with an extension lead: electromagnetic induction and electrical safety.",
+  "has_diagram": true,
+  "qp_sha256": "c6718511adf8136b95bea19f740398c94b09ebdcb7c9cd325b6ea477d565a08a",
+  "ms_sha256": "22e03809812b74d5570077550018e16160190d1f33d29a01714e57269d374c36"
+ },
+ "2019_oct-nov_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance scaling with length and cross-sectional area, and completing a truth table and a NOR gate in a logic circuit: resistance and logic gates.",
+  "has_diagram": true,
+  "qp_sha256": "b3851fad55dfb4f93bd9c67f3880549761bd0ca4d5b4ef8cb549bac406661fa1",
+  "ms_sha256": "eefd29f1e4583f969326941ed595e5da9f9465c525612fdcfaa2fdec334f4955"
+ },
+ "2019_oct-nov_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines electric field, draws the field between parallel plates, charge Q = It and energy E = QV stored in a battery: electrostatics and electrical quantities.",
+  "has_diagram": true,
+  "qp_sha256": "2f7830d67988cb46cae64809f6002db0fa7ec52a6fac26d57f23af1f8c107c37",
+  "ms_sha256": "b6ae67f14387bf6fc7217261c2d5a370a3cd13eed9756fcd1410959fbd21b251"
+ },
+ "2019_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Pendulum: measuring length, period from 20 oscillations, T squared vs d graph, gradient and calculation of g (acceleration of free fall).",
+  "has_diagram": true,
+  "qp_sha256": "cd6933a32e39c3e8f27ba279d4d2ed1f7c081179e705f6119928b4f9a7548977",
+  "ms_sha256": "27836b752a173c812708e5dbe894b2a1752968772c6a2c3e34b4af2efceb22d9"
+ },
+ "2019_oct-nov_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of a wire against length: ammeter reading, R = V/I, proportionality of R and l, interpolation and minimising heating of the wire.",
+  "has_diagram": true,
+  "qp_sha256": "38c33b48482c511943fd814f857fd4b94b7d30ba9c4c3a09e28edc9e1cca2694",
+  "ms_sha256": "40eca5a83c0139703772b0428b96631cb4ac262ad700a2443389eae71690cfd7"
+ },
+ "2019_oct-nov_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Focal length of a lens by the displacement method (f = uv/D): scale measurement, two focused positions, averaging and comparing values.",
+  "has_diagram": true,
+  "qp_sha256": "404e94254b3842a74cde00398bf47b6147042a310befcc427603328bb7a1fea3",
+  "ms_sha256": "96cbda0ef0a7b6667604097b49fbd34d9c45452787231faa79d95d5e342e407d"
+ },
+ "2019_oct-nov_P62|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how insulating materials around a copper container affect the time for ice to melt: thermal insulation and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "01533abde97413c1c9cc3f98f663712d9cf7fe1a336e0b4eac6d296ee24474d8",
+  "ms_sha256": "490748f6e4cf1a5476dce47ca487bb9829cc515643a336758a8d9ad8899f568a"
+ },
+ "2020_feb-mar_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Rocket acceleration from Δv/Δt, plotting the speed-time graph, height from the area under it and sketching decreasing acceleration then constant speed: kinematics.",
+  "has_diagram": true,
+  "qp_sha256": "57842581ae46e0f67203813401705dfb94b46092b11483dd0fcd0685622cfcd4",
+  "ms_sha256": "999d6ee71e0d847aed99257d6f1d805210a982bc39a0df75a50691c8b42901bf"
+ },
+ "2020_feb-mar_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Alternating magnetic field of an a.c. coil, induced e.m.f. in a steel pan and the resulting heating of water: electromagnetic induction.",
+  "has_diagram": true,
+  "qp_sha256": "5aea240c0cf37fbe9c9d3e82e3a217a9e32932a090f95ff56faa482e2434a269",
+  "ms_sha256": "a290ea3921453ab896a4aa6956cdf2d7753705c496f00c7c57ce016826eb85b7"
+ },
+ "2020_feb-mar_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Neutrons, electrons and relative mass of helium-3 and helium-4 atoms, and deducing beta radiation from absorption by aluminium: atomic structure and radiation.",
+  "has_diagram": false,
+  "qp_sha256": "2c7b8edadab8e57f1c4cbe197575c4d10fee29d52d13f0a6e3e463999b3de94c",
+  "ms_sha256": "90749ce418754f5da0561ef2312b456b9f0940d51f16a9a8d9224808ba22ecc4"
+ },
+ "2020_feb-mar_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Impulse as change of momentum of a decelerating athlete, defining impulse, average force = impulse/time and F = ma: momentum and forces.",
+  "has_diagram": false,
+  "qp_sha256": "84d4d7a68015dc9e14e942905c3525ef0f752ce533ea823b917fcb22eef76f8e",
+  "ms_sha256": "7da9bbb831acc2315b990f3328ae61726d7db0d289d0944695e63f844100fbff"
+ },
+ "2020_feb-mar_P42|3": {
+  "topics": [
+   "1",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Wind speed from kinetic energy, input power, generator output P = VI, efficiency and volume of air from density: energy resources and efficiency with an electrical-power step.",
+  "has_diagram": true,
+  "qp_sha256": "ff32f65d4a227d5538c7c794015652e32d8b2c772055e649a65d5890ac78507f",
+  "ms_sha256": "b2df76e57ea9b2bb5fa59cbb714f04b63c7ac0e974537bab4f4671cddb625400"
+ },
+ "2020_feb-mar_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines specific latent heat of fusion, finds the specific heat capacity of water and the mass of ice melted: specific heat and latent heat.",
+  "has_diagram": false,
+  "qp_sha256": "8227fd099f35dd6fc38d49b44e8269bf2aa6cfd30f8eede1c4328938bea8b89b",
+  "ms_sha256": "69d7527b335108f0414d3848de5bfd52022cc2e15c14a6fae21c39e86cd2136e"
+ },
+ "2020_feb-mar_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "easy",
+  "reason": "Names conduction and radiation in everyday cases, particle/electron explanation of conduction in metal, and a shiny white sunshade as best reflector: thermal energy transfer.",
+  "has_diagram": true,
+  "qp_sha256": "97cb7869330b169ad4c8554ef876f7f0acff938c8a6a975dc649332e611ce3b4",
+  "ms_sha256": "60e23cd865ea129f8ae1ea28e6061f2c9c6bcb05412b763c41d9b5efe074d022"
+ },
+ "2020_feb-mar_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Draws diffracted crests past a harbour wall, refraction into shallow water and how wavelength, frequency and speed change: wave properties.",
+  "has_diagram": true,
+  "qp_sha256": "b5af2b61a518bf8cef18a0ed8848fdd65ebde206ca6d3a7c16cdba9f0c5ec7c0",
+  "ms_sha256": "c7c4217703a4d5695e4d001a13d04dcb65ad09831b83bcdb6a4ef4cdc33cbf11"
+ },
+ "2020_feb-mar_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Locates an object from its image with two rays through a converging lens, identifies focal length, and draws red versus green light through a prism and a rectangular block: lenses and refraction/dispersion.",
+  "has_diagram": true,
+  "qp_sha256": "203459d126d25b8c12827237d393a3ddde45cb2c9a5ddb4fe67cc86bfeba36c9",
+  "ms_sha256": "4319d6ed70cefb65e43d138fbb56c773e67d1192300a4673738588ff0bc8abe1"
+ },
+ "2020_feb-mar_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Series circuit current with a lamp and resistance wire, then resistance of a partly used wire in parallel with a resistor using R ∝ length and parallel combination: circuits and resistance.",
+  "has_diagram": true,
+  "qp_sha256": "0acb4eabd882d0e78c9022e5fd8365b91aa3db10cff7e426f3b8b9e597cce3a8",
+  "ms_sha256": "b30523a9db4d1e70bd8dda3baf1606db678c5ade2be774ca3812e5356a778d75"
+ },
+ "2020_feb-mar_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Names a NAND gate and a NOT gate from symbol/truth table and completes the truth table of a two-gate circuit: logic gates.",
+  "has_diagram": true,
+  "qp_sha256": "68916d3a4ae0600ebad0f7385ff7e803cc900896f7a6992e88ee9a087987db25",
+  "ms_sha256": "46b15edd96f8a3200948e11d27d1685d878ae9bca3a413126d43ba20b5b22aca"
+ },
+ "2020_feb-mar_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Density of a wooden rod by measurement (length, diameter, mass) and by flotation/displacement in a measuring cylinder; line of sight and inaccuracy.",
+  "has_diagram": true,
+  "qp_sha256": "845921cbd2f948668199d73fa4f1bc4a338cfd8a0b1f38f1ea7ad11aa3135745",
+  "ms_sha256": "88830e063475c31292e55aa80f5c5d62b78aba288339becf0a7fbc25fd809023"
+ },
+ "2020_feb-mar_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of hot water: thermometer reading, table headings, cooling rates over successive intervals, decreasing rate, final temperature and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "b979ae1e7126b7740a75c206182b108489765945f16776a10f023eafbad320b2",
+  "ms_sha256": "f39800e591390b6c4dd7318773b1e8428d6bd94ba1ff2f7996c91d9d0830761f"
+ },
+ "2020_feb-mar_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Investigating a power supply with a resistance wire: meter readings, resistance, 1/I, l vs 1/I graph, e.m.f. from the gradient and effect of ammeter resistance.",
+  "has_diagram": true,
+  "qp_sha256": "2a211819e47a0b6a97e6244ac122f51cee251099c63f9544e4ed3d3a2a1a972b",
+  "ms_sha256": "cd2c84d7f502a7039641f318e73977a2428ed5fe75f94d8358a98cc30a047559"
+ },
+ "2020_feb-mar_P62|4": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how air speed through a model wind turbine (generator) affects the current in a resistor: circuit with ammeter, control variables and method.",
+  "has_diagram": true,
+  "qp_sha256": "6cf4d285dec9f0b7b96e6881844183f4403682743a96eb2c1c05c662fe8459cf",
+  "ms_sha256": "6c51dc8bcdbdffdff62c379bda270f50debe4b13a7af6fa2f1368ec3dda74b65"
+ },
+ "2020_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Distance as area under a walk-bus-walk speed-time graph, average speed, gradient as acceleration and zero acceleration at constant speed: kinematics.",
+  "has_diagram": true,
+  "qp_sha256": "ea6416ba217e57eba644edad636e8bf8ac82c26c142f62d9463756af3728d6c9",
+  "ms_sha256": "94061663a727bd322815147136e42ffcf6b50d6240df1c28ab03f55556d2354b"
+ },
+ "2020_may-jun_P42|10": {
+  "topics": [
+   "5",
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Lead collimator for a radioactive source and the paths of alpha, beta and gamma radiation through a strong magnetic field explained with the equivalent current/left-hand rule: radiation properties with the force on moving charges.",
+  "has_diagram": true,
+  "qp_sha256": "b201e5275c9071ba14e088a282d7c1ac4c6a9b3485496ab2e252eb5f90f43ba6",
+  "ms_sha256": "4ee3607d572f5983b5049d272b0f9a1c43984a99c197b832b2a19fde7a703b7f"
+ },
+ "2020_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Impulse and average braking force on a train, streamlining and drag, and reduced friction on a wet track: momentum and forces.",
+  "has_diagram": false,
+  "qp_sha256": "d4c8ec46e45fdfc7f32320dcfc1abb0e8425e97618edc39f581f5df24a8cfade",
+  "ms_sha256": "958105030edc3ce680f6f86d344040d053f46c802d0b81d8cba32b80e9d322ff"
+ },
+ "2020_may-jun_P42|3": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Temperature rise of water in a 20% efficient solar panel using mcΔT, plus advantages and disadvantages of solar versus coal heating: specific heat capacity with efficiency and energy resources.",
+  "has_diagram": false,
+  "qp_sha256": "3ff38bad35f8d003df1fcdfd1b3bc8fad63f838b776707ff283917d5be64f171",
+  "ms_sha256": "859f32b291bfb8a831208fdec715d42968af8402d48e53904d39ee7405a9161b"
+ },
+ "2020_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Marking fixed points on a liquid-in-glass thermometer, unsuitable liquid below its melting point, sensitivity, range and linearity: thermometry.",
+  "has_diagram": true,
+  "qp_sha256": "519029e5257626946d00d392ff57e5c3ed552066c36fae72e5bc8c05f54b1427",
+  "ms_sha256": "d6ad9b3eb34a354f32a3706d4cb9170a63dafb2129c45b45537da87c7b6aa372"
+ },
+ "2020_may-jun_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Draws reflected wavefronts at a barrier, frequency from f = v/λ, and echoes as reflected sound made of compressions and rarefactions: wave properties and sound.",
+  "has_diagram": true,
+  "qp_sha256": "3afe8b1982ffe793f85e38cdd1b353b41c945f65d565a18674e1daee177efcee",
+  "ms_sha256": "cd6f669e1527e5cc30671fa47cff9e809982a116ec0baa1d8324846e04e5ee54"
+ },
+ "2020_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Ray path by total internal reflection in a two-prism periscope and showing n = 1/sin c gives 1.41: total internal reflection.",
+  "has_diagram": true,
+  "qp_sha256": "149757583a472b4216c2461cce8456b05204fe046feb0e875c27d2ed44e01d92",
+  "ms_sha256": "b1afef320404beffb7dcac7b57f915609d1e3f63408504fda56b5ac33d713f42"
+ },
+ "2020_may-jun_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Building a step-down transformer on an iron core, the core's function, input current from VpIp = VsIs, and earthing a metal case: transformers and electrical safety.",
+  "has_diagram": true,
+  "qp_sha256": "1a13ce1dff01b066223c94b72db8a96b2ac310a615bb6d4b90bdc6887ff5e39d",
+  "ms_sha256": "113e2bc1f56f22cec5cbd2e8788e9540acca621784eb1b33213b28496a0c008b"
+ },
+ "2020_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Draws an LED circuit with standard symbols, LED resistance from V/I, heater resistance from series p.d. and heater power P = VI: circuits.",
+  "has_diagram": true,
+  "qp_sha256": "9d40196a01d93a10c331e95ffbd2bb56b2db445b49356b85fcceb206b94318f6",
+  "ms_sha256": "64b4924604a50cfe4ac5d567f7c4bab567008d218e1f2207d5cea282fbabf5b6"
+ },
+ "2020_may-jun_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "NAND truth table, deducing an AND gate and completing a two-gate truth table, and number of electrons from Q = It: logic gates and charge.",
+  "has_diagram": true,
+  "qp_sha256": "16d2164bc4c26d21498975e05409fa0e0d505b5aa41fcbcbd42a49a9601d00e8",
+  "ms_sha256": "49654218a890d773333002d6eed01f70940eec3b7145884b1ebe9ef9226a8e86"
+ },
+ "2020_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Period of a pendulum: measuring length with a set-square, timing 20 oscillations, effect of length and bob mass on the period, measuring amplitude.",
+  "has_diagram": true,
+  "qp_sha256": "2e45bba3c9f948c7773b80f1bfcc7bf38733c6246f71e305f32cb9c23fa37dc9",
+  "ms_sha256": "b65f7dd2a462dfc16d005d447a7d6a2d6f73aee9ab0acb4c9f6d15654008dba5"
+ },
+ "2020_may-jun_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Potential difference along a resistance wire: meter readings, units, V vs l graph from the origin, constant-current conclusion and interpolation.",
+  "has_diagram": true,
+  "qp_sha256": "a279c97cd112407571b16c75b93ab63af4563dc93b4ca2521be5abfd66d05763",
+  "ms_sha256": "bc1e25822cc8edf581918d77c196752387619f4de2474e65bbaed0bb2595a5f1"
+ },
+ "2020_may-jun_P62|3": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Thermal properties of sand and water by mixing with hot water: temperature rises and falls, ratios S and W, testing a prediction and controlled temperatures.",
+  "has_diagram": true,
+  "qp_sha256": "d1d39afe1c52021a72a8d7ca47dd09a9f8a367022843485c73f7f95494e4f90c",
+  "ms_sha256": "deb34306c33100a3b3d38108cbe272bd8b480758e8eb20c3c63e94b96125d5e7"
+ },
+ "2020_may-jun_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how the material of loaded 1 m strips affects how far they bend: forces causing deformation, measurement and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "7a5efef4f06b9f652f3c660a8152aca84bdc95921b5fb6dc4bb2effe72f5b690",
+  "ms_sha256": "c92e8df98906b799ef25ff013a60b189819ec88c9864eabed21d2667b3848f69"
+ },
+ "2020_oct-nov_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Sky-diver speed-time graph: parachute opening, terminal velocity, forces of weight and air resistance during the fall, and average speed: motion and forces.",
+  "has_diagram": true,
+  "qp_sha256": "06a4747757a2b35e58f5895d4a392a314e0f785b2e7640082373d4b93e888939",
+  "ms_sha256": "278770ec8268a827656ef85d32d0706d14861d64c1ad741326a8b830a223a7c5"
+ },
+ "2020_oct-nov_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Placing an ammeter and voltmeter, current in a series resistor feeding a parallel pair, and positioning a diode for one-way current: circuits.",
+  "has_diagram": true,
+  "qp_sha256": "46c7d5b0395010814c5589eb14abb492624bfd3173e0ec46c2b2e4b0e789211d",
+  "ms_sha256": "f8aa9c73d9d1aab5d4b519f6f9f5e2ab7e7479602e6678cfe75ccd5e5c0c61aa"
+ },
+ "2020_oct-nov_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Differences between fission and fusion, choosing a 6-hour half-life for a gamma tracer, beta-decay equation for Mo-99 and another medical use: nuclear physics.",
+  "has_diagram": false,
+  "qp_sha256": "4228a8c595c199be350f084aa26b0bfd4864809af1d03e8b944484aaf7b0b2cc",
+  "ms_sha256": "e5bf1bf58ad6e3114143ac1a77cad6b51949b6b4a43b02dc103c5464db668d9b"
+ },
+ "2020_oct-nov_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines moment, weight of a rod, moments of W and F about a pivot, the holding force and how it changes with angle: moments.",
+  "has_diagram": true,
+  "qp_sha256": "76717f523dc856ee5a9dbbafbc574dc5fc091f7213eb7a100542a160eef28c9b",
+  "ms_sha256": "5fe1a0f6276b2d63c9b599f947ae98f02b5d29acc5ad9f526e63fcd1e52f01de"
+ },
+ "2020_oct-nov_P42|3": {
+  "topics": [
+   "1",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Efficiency of a wind turbine from input kinetic energy per minute and electrical output P = VI: efficiency and energy with an electrical-power step.",
+  "has_diagram": false,
+  "qp_sha256": "21d6580d60def2aea2b9f83de1d51a1544a3f733259540d79c040a323003f916",
+  "ms_sha256": "f7e39811557ccd3d3e180ca1c25907282b643913451c6bcd3a4062598b31db0c"
+ },
+ "2020_oct-nov_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Names a thermocouple, calculates a temperature from its voltmeter readings and suggests a suitable application: thermometry.",
+  "has_diagram": true,
+  "qp_sha256": "c91d89a33b0e1de3c2f8870187d53fb9af2753cec16085db6632180486829dc5",
+  "ms_sha256": "32f6b3280553ddc0ca4e300de40e7c9d27f4f64fa20aaac9ac6517dad225276a"
+ },
+ "2020_oct-nov_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines specific latent heat, molecular explanation of melting, latent heat of vaporisation from mass boiled off, and an insulation precaution: latent heat.",
+  "has_diagram": true,
+  "qp_sha256": "50de2a578b1ecf343659581cf43e010a16a479efdecf783e7149c2f468e8242a",
+  "ms_sha256": "d2ecf8f5df203fb9174bc116b9bdeb89d2dcd5d809eed61980c4a92358b42f66"
+ },
+ "2020_oct-nov_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Marks amplitude, wavelength and a trough on a string wave, shows v = fλ gives 2.0 cm/s, and contrasts transverse and longitudinal waves: wave properties.",
+  "has_diagram": true,
+  "qp_sha256": "5cf127cdef5f7bfd9a58303459b46be616498f26ab4b7ec0651e9bb74ad34360",
+  "ms_sha256": "8b2480f0d1f2fe536cd745b5791d383b5118892defb24c267fcd724f4120abc3"
+ },
+ "2020_oct-nov_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Total internal reflection in an optical fibre, critical angle from n = 1/sin c, endoscope use and monochromatic light as single frequency: light.",
+  "has_diagram": true,
+  "qp_sha256": "018010eec9d805917caa764177a29e2385bb1c5a15e30182cf7d8f4ca6ad832d",
+  "ms_sha256": "b62ddacaca15e151af93beb9379891a3d9a846f7d5145e1bbc919650541b58a6"
+ },
+ "2020_oct-nov_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "easy",
+  "reason": "Why outdoor sockets differ (damp conditions) and why fuses and circuit breakers are used: electrical safety.",
+  "has_diagram": false,
+  "qp_sha256": "5eb0d0cf5b4c97c8af8f3db21c123dda9fd77a3daa83a1af5204e445e4e72a39",
+  "ms_sha256": "0f52769a0d5caf6fd473acfae89e5c91e2535973f5258dafc8398c42e945a0af"
+ },
+ "2020_oct-nov_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Compass directions and poles around a bar magnet, a demagnetising method, and the field pattern around a current-carrying wire and its reversal: magnetism and magnetic effect of current.",
+  "has_diagram": true,
+  "qp_sha256": "37df6f8b327aa8327fe0b1398a6713a1287b4ca7f7c324e3b2c1ee93ae456e07",
+  "ms_sha256": "20c61fdf669f65ad388f063b9933c8bf6d9f458c6d993f99273bee898b0b22fe"
+ },
+ "2020_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Stretching a spring: set-square reading, measuring length, length vs load graph from the origin, intercept l0 and comparison with the unloaded length.",
+  "has_diagram": true,
+  "qp_sha256": "f32a708966d4b4826f89ff1c3529be71310641a5ffd5b2322e74bfa40584a246",
+  "ms_sha256": "823283e7904d09b8046d50ae89ef3dbe3a1942a03a1fe7c78b0705e656c6b2bd"
+ },
+ "2020_oct-nov_P62|2": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refraction through a transparent block with optical pins: normal, incident and emergent rays, measuring lengths and the emergent angle versus the incident angle.",
+  "has_diagram": true,
+  "qp_sha256": "cb01786e6afd025bb6cda755000a811f9d585fdc2fdd7f89b0df253c26312420",
+  "ms_sha256": "b4824e1a9e6ff973428b12daed9b83358c62b3f4eae871b4effebc82e4162186"
+ },
+ "2020_oct-nov_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of sections made of one, two and three wire pieces: meter readings, R = V/I, conclusion, extending to length and the variable-resistor symbol.",
+  "has_diagram": true,
+  "qp_sha256": "a6d628403ad4977d02b2f6596040bbf2c55e32ee524d4bf37d8047a2d333ad0f",
+  "ms_sha256": "4fbb842801de8d48d8c517e0d0d8c4a69234ce914384ee88aace91390c8776e9"
+ },
+ "2020_oct-nov_P62|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how the initial temperature of water affects the time for ice cubes to melt: thermal energy transfer and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "f6bf13659af139b26aba835de2f618b1334c606524d7b12189706ab54ad8e884",
+  "ms_sha256": "92602051641cac37e674ea6ab13a32b14804fd3202961829320db9ba030b0cd3"
+ },
+ "2021_feb-mar_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Weight of a glass pane from density and volume, resultant force on an aquarium window from a pressure difference, and liquid density from p = ρgh: density and pressure.",
+  "has_diagram": true,
+  "qp_sha256": "4f0561633ffd82628befc379c7433ffdce2bd0a648532c7e60ee3c3827d4ebe7",
+  "ms_sha256": "09a01ab9f0c5e4811212d35ca0db36bbec7eadcb5cf655f875226ac8c7c946f8"
+ },
+ "2021_feb-mar_P42|10": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "easy",
+  "reason": "Proton number, nucleon number and charge of an alpha particle, beta-decay equation for strontium-90, and original mass after two half-lives: radioactivity.",
+  "has_diagram": false,
+  "qp_sha256": "b1194ce68569f3494c0621ef3fd0e64200ba658fca26288f2b538b236e0b0001",
+  "ms_sha256": "73fc6cc414232fb1474662350dbbab33a83c0b39b45b1100314a912452627e62"
+ },
+ "2021_feb-mar_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines moment and calculates a crane load's moment, scalars versus vectors with examples, and a scale diagram for the resultant of two forces: moments and vectors.",
+  "has_diagram": true,
+  "qp_sha256": "75263393d75cd3151f8e4616aef8a91d4ca185424de9b2ab2508b82b27d64162",
+  "ms_sha256": "e2393c274e4e09fd6529e04f26c75c3be3820895eb71977a517fa76e56b4749d"
+ },
+ "2021_feb-mar_P42|3": {
+  "topics": [
+   "1",
+   "2"
+  ],
+  "difficulty": "easy",
+  "reason": "Whether a crop-waste power station is renewable, heat loss when piping waste thermal energy far away and insulating the pipes, and environmental effects of burning coal: energy resources with a thermal-transfer part.",
+  "has_diagram": false,
+  "qp_sha256": "89f12d8fb8d01ad81201143e9a5e66291b7298f43f6993355d6affaa4a76a9e7",
+  "ms_sha256": "94bc9baa706f87f3dde87afd362179c774d8d8b07ef19927b4dc09af3dd14cbf"
+ },
+ "2021_feb-mar_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Gas pressure explained by change of molecular momentum at the walls, Boyle's law p2 = p1V1/V2, and why heating during compression raises the pressure further: particle model and gas laws.",
+  "has_diagram": false,
+  "qp_sha256": "6db8893a062fde7a6906d580653e64e1bf2ddeb8b939d1fb83b5a92cff61835a",
+  "ms_sha256": "491a28d7c1bd6172812f61f4045f1460467617b39ff2281689f37dbf885189cc"
+ },
+ "2021_feb-mar_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Echo, wavelength of medical ultrasound from λ = v/f, and drawing reflected circular wavefronts from a barrier: sound and wave properties.",
+  "has_diagram": true,
+  "qp_sha256": "50eb4338ca7650a98c3eb821a406738dc7fac84a42d3eda2f467c4fa62e0446b",
+  "ms_sha256": "538dc6aa93fc1e38dc1e6cef99ffe4b3c1270be507463336301f479b99d46710"
+ },
+ "2021_feb-mar_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Ray diagram for a magnifying converging lens with image length, describing the virtual magnified image, and red versus green rays through prisms: lenses and dispersion.",
+  "has_diagram": true,
+  "qp_sha256": "2ec9d641ece45793ec8fded8caa0a61814b83b407f60b3b2d3ea7f0406d06bc4",
+  "ms_sha256": "af9f685a41cc1cd163fffc6b656e5d46fcc5f272be890a7347f7692b3753fbc4"
+ },
+ "2021_feb-mar_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Why no current flows when a wire is stationary in a magnetic field, the motion direction that induces a given current, and effects of reversing and faster motion: electromagnetic induction.",
+  "has_diagram": true,
+  "qp_sha256": "3d17b5a093babd72dd8b4ed1e3e2e92f29d4db477a35b5cb38e129860f66b8be",
+  "ms_sha256": "545de2f26784a75cd2857888a5b0855e6e71dfc4d83992fad3fd875b00c4d774"
+ },
+ "2021_feb-mar_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines e.m.f., heater power from V and R, p.d. across a series resistor and current in a parallel 10 Ω resistor: circuits.",
+  "has_diagram": true,
+  "qp_sha256": "9156389062ea78666f65b3475ac61dc146be23efc6bf30810c2deae9dfc77fe8",
+  "ms_sha256": "6c91e02bf856a63a1731337cf0e18675d4c6931c9df0e2803d50679f7eeb44e9"
+ },
+ "2021_feb-mar_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "OR truth table, NOR symbol, and deducing gate X is AND from a circuit truth table: logic gates.",
+  "has_diagram": true,
+  "qp_sha256": "7bedbec02ad8b46f742598e0a62c9eaacc56d08d711366810504f8d0138f6992",
+  "ms_sha256": "ca194454ca0a460460e76b533cd5b9a789d6a60ff11b985be079d5fa5e4ec431"
+ },
+ "2021_feb-mar_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Oscillating (bifilar) metre rule: checking horizontal, thread separation, timing 5 oscillations, 1/T, d vs 1/T graph, gradient and reliability.",
+  "has_diagram": true,
+  "qp_sha256": "4b6ebb5873ceae5d72622cfc945fec5aaa9d1bf9bad292835e81ae4be7ff7efb",
+  "ms_sha256": "007e801940c4c50241085277c40bc30f67ee8bebc44500f3106a1618db9fdaeb"
+ },
+ "2021_feb-mar_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of hot water in a thin plastic cup versus a polystyrene cup: thermometer, table, conclusion, cooling rate, lid experiment and controls.",
+  "has_diagram": true,
+  "qp_sha256": "22e1c0a82c0727fd231a5125b314be07827efc3cc225371d48de0da04cd35112",
+  "ms_sha256": "99c29ba756ef6fe272d9fc602f3e256715994ada8ab04a1ea704deae396a7c1c"
+ },
+ "2021_feb-mar_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Lamp and resistor in series: meter readings, resistances of lamp and resistor, how lamp resistance changes with p.d., graphical extrapolation and a variable-resistor circuit.",
+  "has_diagram": true,
+  "qp_sha256": "6fb58bdc1f639e1281e19199cd942d585c48ced4f292c1b37364823c5cc172b2",
+  "ms_sha256": "621b4c5de34bf422c37e56af39614f94320af01fb8c1a4d79dba9b9ddb0af0a1"
+ },
+ "2021_feb-mar_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how one factor (slope angle, ball size or material) affects the average speed of a ball rolling down a slope: speed = distance/time.",
+  "has_diagram": true,
+  "qp_sha256": "5fe2ced6840ce26a1c76ed1b52bd054cc89ca1aa6595d46c49e106d3e0a93719",
+  "ms_sha256": "ca6e7b20e48fecea854b1e4490bbcdab5cead3840b7535c0546d0e930ef9886e"
+ },
+ "2021_may-jun_P42|1": {
+  "topics": [
+   "1",
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Density of a floating weather balloon, why it falls when the gas cools and contracts, and a speed-time sketch to terminal velocity with initial and final accelerations: density and motion with a gas-cooling step.",
+  "has_diagram": true,
+  "qp_sha256": "cae65fda6f23d88857a2d5bcfdebdb60f2c4a9a505700a4bf090447371667342",
+  "ms_sha256": "245f82f8f17ecd5b83847e42e7f9dd73b224ef3dcd3c3dcbd8bb02dac98da47a"
+ },
+ "2021_may-jun_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance from a p.d.-current graph, a thermistor-resistor potential divider switching a lamp as temperature rises, and naming the thermistor: circuits and potential dividers.",
+  "has_diagram": true,
+  "qp_sha256": "9a996f92b77597453e1a9b976054b9e5959260e5ee77a5a4bcd696189d98a8c7",
+  "ms_sha256": "a631de28fae678bcaa818a301fc16f59d65fbc03d2d29d7d1ebcb8a192268d2c"
+ },
+ "2021_may-jun_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Half-life from a count-rate graph corrected for background, count rate at a later time, and why 2 mm plastic cannot stop gamma: radioactivity and safety.",
+  "has_diagram": true,
+  "qp_sha256": "1c23fc14aef809e8994801a0349e032c380736a5f30d27e982ce2b1082541a4c",
+  "ms_sha256": "913710f7f4f59fcfaf39d3c9164a77d15aacac2d445faa8d1501f3c0e3ed1618"
+ },
+ "2021_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Defines moment, finds a force by balancing moments about a pivot, and describes an experiment showing no net moment in equilibrium: moments.",
+  "has_diagram": true,
+  "qp_sha256": "5d9fd312c7df52bb1934cebd40e0f04b68514d97be9eeb89b40b7b42354d5d02",
+  "ms_sha256": "0ff9c896ebf0d1d8ba877a9ba11373215e60792a29422d88342d93089f4e8eab"
+ },
+ "2021_may-jun_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Shows falling water reaches 17 m/s from energy conservation or equations of motion, then the force from the rocks as rate of change of momentum: energy and momentum.",
+  "has_diagram": true,
+  "qp_sha256": "f65318327737926b8e6918d7d095ec99fd798bf787f79afe84326c2199a6c2cd",
+  "ms_sha256": "f242f49fdad80a942360be5c973cf5f94d41bcfc1ade595ce03df4f9fcd0b5ee"
+ },
+ "2021_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Brownian motion of pollen explained by molecular bombardment, cooling of skin by evaporating ethanol, and a fan increasing evaporation: particle model and evaporation.",
+  "has_diagram": false,
+  "qp_sha256": "dc1716eb8c4a8242ad9cd08e35205558adc50c87a882a5e33a3787e07b0f1924",
+  "ms_sha256": "46b8617eb238f26d0edef7f7401a403c9d1a37f5e3a93a314a12a2728baa6ddb"
+ },
+ "2021_may-jun_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Air gaps in a cup holder reducing conduction, a lid reducing convection/evaporation, and radiation through space: thermal energy transfer.",
+  "has_diagram": true,
+  "qp_sha256": "fcbc33ad0c54bbb702cf917540c8e29f1762ed36d2e98c2574f8b943dd0d5dbf",
+  "ms_sha256": "6a1270151efbba2ba599ac0a5f1eddfcc76d4f2e4040df294ec9794f7d4de02e"
+ },
+ "2021_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Draws blue versus green light through a prism (dispersion) and calculates the frequency of blue light from c = fλ: light and electromagnetic waves.",
+  "has_diagram": true,
+  "qp_sha256": "b388707414af041e3d5041707c2988f8d73f5f9bb17090a87862c6ceb8a767de",
+  "ms_sha256": "51588b8718f8019e4f2b551ef003f5df6a17411e3fea5ff8b37968819a6527bb"
+ },
+ "2021_may-jun_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Field lines between opposite poles, compass needle alignment and why, and a demagnetising method: magnetism.",
+  "has_diagram": true,
+  "qp_sha256": "6982519bfc69e3e09e63a361f3060bab65bf4d95472e0bcfdae76e0e78aa64db",
+  "ms_sha256": "2b695528d65d131c046d0eff300f64c06f27a1fe58b5e2baff317630fee05ff5"
+ },
+ "2021_may-jun_P42|8": {
+  "topics": [
+   "4",
+   "5"
+  ],
+  "difficulty": "hard",
+  "reason": "Deflection of alpha particles and gamma rays between charged plates and in a magnetic field, then rotation, zero moment and commutator action in a d.c. motor: motor effect and charges in fields with radiation properties.",
+  "has_diagram": true,
+  "qp_sha256": "b6617a6b69cc826b6b6af1dbaacc889d82ff63bd3cac353b0730a5aabac7dd7b",
+  "ms_sha256": "6fc096a808772f3d939c050a0a16294edb52a6c2af0e16c0507cf82f52c31a9f"
+ },
+ "2021_may-jun_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Conventional current versus electron flow directions and number of electrons per second from Q = It: current and charge.",
+  "has_diagram": true,
+  "qp_sha256": "1d5a912b3b085a97426b1bd613eb9d676552db83dfb729957ddce348e501a783",
+  "ms_sha256": "fd4880e2dc93c22c1f93312fcafff1ae855de67d4a03003b4eeb3a68e12b0c93"
+ },
+ "2021_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Density of sand: estimating volume, circumference with string, beaker height and volume, balance readings, rho = m/V with unit, measuring-cylinder reading.",
+  "has_diagram": true,
+  "qp_sha256": "4011e5750d3ffd0ef4da2b9f0ae0e876f29b604cd56514ad9b2ff7c3c08070f7",
+  "ms_sha256": "1db5704d18a157d723b3b4cc70a88db77272f62d8a77bc6b8f92414a920d4424"
+ },
+ "2021_may-jun_P62|2": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Position of the image in a plane mirror using pins on a ray-trace sheet: normal and construction lines, pin spacing, measuring a and b and comparing a/b.",
+  "has_diagram": true,
+  "qp_sha256": "3ac68d9b954d594bfbf07b6575d1e0af934bb4ab8ccac506250494aa244cf6e0",
+  "ms_sha256": "7a35e8261554934774bdb59e7c1c834a7ab47083c630718cd08ae807ea53b81a"
+ },
+ "2021_may-jun_P62|3": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of a resistor compared with lengths of resistance wire: readings with units, R = V/I, V vs l graph, equivalent length and estimated wire resistance.",
+  "has_diagram": true,
+  "qp_sha256": "eca8c16bee0edc12ff0a48b497182f3dc89d2d5dd718fe4206b2b49274cfa760",
+  "ms_sha256": "b4e87234c790b3ad139d46351c1623429720c42ccc4d290d6a61260be16eef02"
+ },
+ "2021_may-jun_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning an investigation of the extension of springs made of different metals under loads: Hooke's law/elastic deformation and control variables.",
+  "has_diagram": true,
+  "qp_sha256": "608560b479ae9cd78afde406fae18c20145118e8a2e9da174d53930d8760a1e5",
+  "ms_sha256": "010730f1a8adee367740d19b8ed279acb6a8d4b57e79cc5133cb158a77197b11"
+ },
+ "2021_oct-nov_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Rocket speed-time graph: how acceleration changes, acceleration from a tangent and distance as area under the graph: kinematics.",
+  "has_diagram": true,
+  "qp_sha256": "549825f6df1b2784c59fab451bfe972d4e7cf10c815cc124ad52ed0844c752c9",
+  "ms_sha256": "c8462b0b0ab25811d329100061ae483d0a3afb973863e6ac3894cb352183323c"
+ },
+ "2021_oct-nov_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Names an OR gate, truth table of a gate combination, earthing a metal case, how a fuse works and choosing a fuse rating: logic gates and electrical safety.",
+  "has_diagram": true,
+  "qp_sha256": "4960d54230659631f350620e5498f36ccaec6607f237e7174f20643a0bc177b9",
+  "ms_sha256": "a9adccb612572f7f889f73e8f3ca622d3edc7320c81fc765ee1c3917b82859c5"
+ },
+ "2021_oct-nov_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Structure and composition of a beryllium-8 atom and a beta-decay nuclide equation to barium-135 using a table of proton numbers: atomic structure and radioactive decay.",
+  "has_diagram": true,
+  "qp_sha256": "510c879aa76da14f058116bc9cb4608df73839b8f29d746ed148d046cbafa1ca",
+  "ms_sha256": "21ba31363f02103a32d8d5402f4e2ae366d9f1522d6bee580a60cb9a48cf967f"
+ },
+ "2021_oct-nov_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "States Hooke's law, finds the limit of proportionality and spring constant from an extension-load graph, new spring length, and mass from weight on another planet: elastic deformation and weight.",
+  "has_diagram": true,
+  "qp_sha256": "48ef9dc8c541ea75db16523105774aec9b70d72af243fefcc20bc9a9a545b2c1",
+  "ms_sha256": "75715e0becafc5191453a357d05180887a524d903a3c3c6168f05015269ae211"
+ },
+ "2021_oct-nov_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Conservation of momentum in a slow car collision and the equal and opposite impulses between the cars: momentum.",
+  "has_diagram": true,
+  "qp_sha256": "c2476d16608dadf2d57d5a5bebd776cf217e4334805f6b60180bd3f9e0f0205a",
+  "ms_sha256": "02318fe11b16fe81c6332ee9f0b3c7aa459035fda442a903718219e4bac374a5"
+ },
+ "2021_oct-nov_P42|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "easy",
+  "reason": "Wind power as renewable, energy resources not derived from the Sun, and energy stores in fossil fuels and dammed water: energy resources.",
+  "has_diagram": false,
+  "qp_sha256": "c7e3e03d3d85ca3d9b9b965b2d2f8d290261a78c8978a55e10564d99585c52e5",
+  "ms_sha256": "d2a3d5cf8d851da67688eb270a2dfdff9827bc2312f7095b3765bbcc8107df43"
+ },
+ "2021_oct-nov_P42|5": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Draws a thermocouple measuring a temperature difference, other thermometric properties and advantages of thermocouples: thermometry.",
+  "has_diagram": true,
+  "qp_sha256": "b271992a3d571cad1aae565f0479643fbc13bb783bf0af3069d1843c08e9d619",
+  "ms_sha256": "1e1d4d6e41d6dde7815968d95f8aebb0df4b959189947fd99c6c6385ae7c387e"
+ },
+ "2021_oct-nov_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Marks compression, rarefaction and wavelength on a particle diagram, speed of sound in water, frequency from v = fλ and whether it is ultrasound: sound.",
+  "has_diagram": true,
+  "qp_sha256": "026623363188776e86b01acaab798f9f1467ab2f1b0be00bfc8563307831d77c",
+  "ms_sha256": "1b47b71db12ea5853ec7a1e7a28ad9c29221b341838a6c0c76fd4c030df892f4"
+ },
+ "2021_oct-nov_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "hard",
+  "reason": "Accurately draws refraction into a prism using Snell's law with n = 1.5, the angle at the second face and the emergent ray, plus total internal reflection in an optical fibre: refraction and TIR.",
+  "has_diagram": true,
+  "qp_sha256": "fd59057406854ffe3f91bc7016b0f2e79d659ef41e6ce41d3826235f2526b8e1",
+  "ms_sha256": "3cb4737bf6421cdc5558e31a92303aa2a282b807d501e4edf0e1c06bbfc7e707"
+ },
+ "2021_oct-nov_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Charge distribution induced on a conductor by a charged rod, electron flow when earthed, and charge Q = It: electrostatics and charge.",
+  "has_diagram": true,
+  "qp_sha256": "89ade3d469771ec42a414ea1bd083f6aa837fd12f9158c3c8697f02b3ab89425",
+  "ms_sha256": "cba5aab2c2139d1a744339b846c8318b5bea39abae62a410dc7aa52a6576e969"
+ },
+ "2021_oct-nov_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Combined e.m.f. of cells in series, finding an unknown series resistor from a parallel-series total, and p.d. from V = IR: circuits.",
+  "has_diagram": true,
+  "qp_sha256": "00bc3685987097b3db23f1bbfa9574743fc37cf460d8e10fd73033b2dd3131c6",
+  "ms_sha256": "74144b32ad22df958b53969078b7a4ed56c8bffb48bfe052524d0fe659d73f56"
+ },
+ "2021_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Density of a wooden block by measurement and by flotation (mass of displaced water), comparing masses and improving the submerged-volume measurement.",
+  "has_diagram": true,
+  "qp_sha256": "fdfd3e2e9547bd7d9fbe857ce3f00bd1d1fbc2a19b97c27cc7510278b581a644",
+  "ms_sha256": "8fdbe161149c797db8d8931258f421e68001c261ed36fa6c8837292b815d52f6"
+ },
+ "2021_oct-nov_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistances of a resistor and a lamp alone and in series: readings, R = V/I, drawing the series circuit with voltmeter and testing RS + RL = RC.",
+  "has_diagram": true,
+  "qp_sha256": "5392c57e2f4e05dd8bd05a7f5c4a83ef52abfe13de89338df42b7a5ce925859f",
+  "ms_sha256": "fe860ebfff452a5020af4c5833be1005f1fc3f047064a63da7c3d3b5d95e7886"
+ },
+ "2021_oct-nov_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Images formed by a converging lens: u/v, u vs u/v graph, reading u when u = v, focal length f = u1/2 and practical focusing difficulties.",
+  "has_diagram": true,
+  "qp_sha256": "9c944018f19af1cbc7862960c7340445de80fe93416117a88e6e9e5f4e7b517e",
+  "ms_sha256": "4701982dc403cad4fdffe69d59a3728233956bf5c30add1b623127751b0fb8a1"
+ },
+ "2021_oct-nov_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning an investigation of the load needed to break wires of different metals: forces and material strength, controlling wire diameter.",
+  "has_diagram": true,
+  "qp_sha256": "6c369f9ff70d86d291e32268a15a15be5821c73053200f94b6cb5613ed056a04",
+  "ms_sha256": "49785270e09d1eb7bda4ec53b658c619b99b60a8d503fa36c1f073e2f6da21ea"
+ },
+ "2022_feb-mar_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Speed-time graph of a rolling ball: reading time, zero resultant force at constant speed, acceleration from gradient, ramp length from area.",
+  "has_diagram": true,
+  "qp_sha256": "471a36ae7a3f27c8dbf3b6182209507fcdf783e1e698168a04db566a958a09a1",
+  "ms_sha256": "838234a8254188e8be6965c8c20fc8ddf2265d6a9ec88abda73d48a66df56d3e"
+ },
+ "2022_feb-mar_P42|10": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Alpha decay nuclide equation for americium-241, ionisation of air in a smoke detector and why alpha rather than gamma is used.",
+  "has_diagram": true,
+  "qp_sha256": "693ecd4084ddd3313ae2e0c4288616bac787b57fec80941a7ea4eff423c6b379",
+  "ms_sha256": "5fd4e608b0519651e8174efbd9535f8ab68b78cff2b49b3317319792962cf70a"
+ },
+ "2022_feb-mar_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Spring balance: Hooke's law, W = mg, sketching extension-load beyond limit of proportionality, and change in GPE.",
+  "has_diagram": true,
+  "qp_sha256": "17ef2865da8dddfd5b9c808dc361cce0c6dc3596c98bf370de08c7407977e8ba",
+  "ms_sha256": "c3711789f6a728fa3346461667ba9a03ea3b5afb8df47e19aed4bbb4ca45ae64"
+ },
+ "2022_feb-mar_P42|3": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Evaporation of a puddle, factors slowing evaporation, and cooling by sweating explained in terms of molecules.",
+  "has_diagram": true,
+  "qp_sha256": "e2ce0155d7955bb49ee7cd326e440d8a7548105732d5db4871bcbceb62fd1e72",
+  "ms_sha256": "9f51d926171dd020a3e198e38e8c2a597300ff05ccc3a38cbd035e8d74c4f5d6"
+ },
+ "2022_feb-mar_P42|4": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Sand mass from density (motion/forces chapter) then thermal capacity, heating time with E = Pt, conduction in molecular terms and thermal equilibrium; thermal physics carries most marks.",
+  "has_diagram": true,
+  "qp_sha256": "f92dfa917c8665e24e977368ed89be38d3e4883285e181524bc54df2aed5d76c",
+  "ms_sha256": "2a44439488222bd183b4ce6b539d248095ac8364afce974a91cd2b47903f38d2"
+ },
+ "2022_feb-mar_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Plane mirror ray diagram, image position and nature, lateral inversion, monochromatic light and f = v/wavelength for green light.",
+  "has_diagram": true,
+  "qp_sha256": "45041a9910efc180686fc4ca0431f1b83f2991ae278ae0010634c5c4ee1742e1",
+  "ms_sha256": "384a43fbd49c146354daa8586baf282496c0eddb61eb8a65be227fc0e1fdff7d"
+ },
+ "2022_feb-mar_P42|6": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Magnetic field between bar magnets, slip rings, induced current direction and how a rotating-coil a.c. generator produces alternating current.",
+  "has_diagram": true,
+  "qp_sha256": "cfa3372af39f26ea61e7973d95a1cd16be8e87bef2d09140eba792c9ddb4e8e5",
+  "ms_sha256": "ac235f55c2b6fe722d60a4c871f3b7e6366fe90f75f25cac439bbfb238708c14"
+ },
+ "2022_feb-mar_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Series/parallel circuit: cells in a battery, total resistance R = V/I, parallel resistance, voltmeter placement and lamp power.",
+  "has_diagram": true,
+  "qp_sha256": "c1cead57901fd10e17d71d95ab6b51a703b0ad007a63d1b6b5b4b91452f2a885",
+  "ms_sha256": "58ec04d558bd174bbb8c4d4020be602736688b5cd3141a5322c3429d190ca50c"
+ },
+ "2022_feb-mar_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Step-down transformer: labelled structure, operation by changing magnetic field and induced e.m.f., turns ratio calculation.",
+  "has_diagram": false,
+  "qp_sha256": "69a72a3f01399f5c8722a35092e93bc0b81d6bac0d850545a44fcf04147a025d",
+  "ms_sha256": "15b1cc071c0f2a4f2449488c19653052e9256bbcd6b8bf7a736415fafb424bbe"
+ },
+ "2022_feb-mar_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "easy",
+  "reason": "Digital signals, truth table for a two-gate logic circuit and identifying the equivalent NAND gate.",
+  "has_diagram": true,
+  "qp_sha256": "a094499e45cf6b823d0ec7c957964f383811740ac511d155c606ff8b29995d67",
+  "ms_sha256": "f0fb3d6e8704cb215bf378d228c4acfa0e9dd645ba70bce455da7a9c35f0cf36"
+ },
+ "2022_feb-mar_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Spring extension combined with moments to find the weight of a metre rule: spring lengths, checking horizontal, l vs d graph, intercept and W_R calculation.",
+  "has_diagram": true,
+  "qp_sha256": "c04b130a0f4c87e9c901b4288a67481a3602d9185a0d5a7e1f6b07139365a50e",
+  "ms_sha256": "5e95e1637d36d4c5cf60982ec43cb1830504f4c0ddd2911230eaed87801ca060"
+ },
+ "2022_feb-mar_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Thermal insulation by an air gap between nested beakers: thermometer reading, precautions, table, conclusion, improving the test, controls and cooling rate.",
+  "has_diagram": true,
+  "qp_sha256": "532a7c3d3dcb81100d7114474f749388d9ae08396897d389c751cf7ca9fed805",
+  "ms_sha256": "36edddf655ae1cdfccc49586b22083732b77cb69fb48ed19029ec2818f62edfb"
+ },
+ "2022_feb-mar_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Ray tracing through a transparent block with a plane mirror on one face (refraction and reflection): normal, angles and testing beta = theta2 - theta1.",
+  "has_diagram": true,
+  "qp_sha256": "e53984db2917c70642b2466def5a1e5ed8eb925dbc4697ebb477fab889b9ee82",
+  "ms_sha256": "4dd7393b17c1817518a2b43a57e1d84932ea750b41aa0b4dd9d9728ae58a9836"
+ },
+ "2022_feb-mar_P62|4": {
+  "topics": [
+   "2",
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how one factor (current, p.d., volume of water) affects the rate of temperature rise from an immersion heater, including completing the heater circuit.",
+  "has_diagram": true,
+  "qp_sha256": "3c209034dc8fdaa95df6f4ce4921994f9268ee6cf116b32386a6729a1d6a1b90",
+  "ms_sha256": "01f66d3aecf743f72375a8e12469a3b3a26b1806251244dc03efc1dce762f7e4"
+ },
+ "2022_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Electric bicycle: energy stored E = Pt, chemical energy store, running time from power, and environmental benefits versus a motorcycle (energy resources).",
+  "has_diagram": false,
+  "qp_sha256": "77ff3b107ca3071b11c15614ed32dd79aaa63dd40f7e100b52c7e73efeab83c1",
+  "ms_sha256": "20258895d5c4ff7668b3294e68d7b557a7d1fe276e4c96fabe8123836f7e07f0"
+ },
+ "2022_may-jun_P42|10": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Two-gate logic circuit truth table, sensor input conditions for a buzzer, and why a relay is needed to switch it.",
+  "has_diagram": true,
+  "qp_sha256": "a7bb1686f60db0762243e99e3d6bf7f8e5be0b428f4c42c92f0e525a66f120d0",
+  "ms_sha256": "67e8819a8027c9cf2a9cdc5eb8645977bb2fbd0424225612e3c9f3ce8835bd4f"
+ },
+ "2022_may-jun_P42|11": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Alpha-particle scattering paths by gold nuclei, alpha charge, and electrons/neutrons/protons in gold-198.",
+  "has_diagram": true,
+  "qp_sha256": "600efa0c22bd06ef770a3d1a68e8098b4008d44a71b3cd6e4d9100e7c92d293b",
+  "ms_sha256": "bbcac659f927e68c8f9c209c64c801806caf5d4a8f03b10e8a6a338e5dd674d6"
+ },
+ "2022_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Connected masses over a pulley: resultant force F = ma, tension from weight minus resultant, v = at, and light-gate timing t = d/v.",
+  "has_diagram": true,
+  "qp_sha256": "d853476071e4c32438a6b96f438da4babe599760c88ab1cfa5984f7c63e7dd38",
+  "ms_sha256": "cc9e50f1a4fc4f6e8fc02ee0a02877c210c27bcdb9894d5572c4524b6a69f0f6"
+ },
+ "2022_may-jun_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Canoe crossing a river: vector scale diagram for resultant velocity and kinetic energy calculation.",
+  "has_diagram": true,
+  "qp_sha256": "f5b12476412f0b00452921783b0fdaf65a7f19a555f24786d60e706b268a1987",
+  "ms_sha256": "ef0b1313211a36223760c988d468ef34937878ffb3ffd016db057da6261acaf8"
+ },
+ "2022_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Liquid-in-glass thermometer linearity features, thermocouple low heat capacity for fast response, and E = C x temperature change.",
+  "has_diagram": false,
+  "qp_sha256": "61c65dd5eaf7918fac5c8d7d4c2e5693e874397d0142443d662e57ab41e0fdf1",
+  "ms_sha256": "c4ba59e4ab93952fffc6ed4499474e1540422865f6d7cecccd47f96b035f7e49"
+ },
+ "2022_may-jun_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Ultrasound (frequency above 20 kHz), wavelength in soft tissue from v = f x wavelength, and medical use of X-rays.",
+  "has_diagram": false,
+  "qp_sha256": "9407d38adec2ecbeb1e38ee6224cacfe03a0c7838a4113606139fdc49a8c2cd9",
+  "ms_sha256": "1567c98ad9c792cae8fc451a85b8210adcdc0ae70cf173ff9d6ef814dbc55184"
+ },
+ "2022_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "easy",
+  "reason": "Full-size thin-lens ray diagram: focal length, nature of the real enlarged inverted image, and features of a virtual image.",
+  "has_diagram": true,
+  "qp_sha256": "1dc95bbec6b2c27597ead0a98b3456ca44b302a96a618d4e0d0bb8e0f3e1fd5c",
+  "ms_sha256": "60be9069b29ac9886d54c12a1b69c6d9bdaa051d9f9967e08de551baee0414d0"
+ },
+ "2022_may-jun_P42|7": {
+  "topics": [
+   "4",
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "U-shaped magnet polarity and motor-effect force on a current-carrying wire (electricity/magnetism), plus deflection of a beta-particle in a magnetic field (nuclear radiation).",
+  "has_diagram": true,
+  "qp_sha256": "f3bb769d552e294d6582f7f0b4ece0ab434f22e573e35a7ebf824286f0fe2f27",
+  "ms_sha256": "e09da54089bb1b32b427278c01f097d52c1ae9b0f69eb18f8e7942f37440e01b"
+ },
+ "2022_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Alternating supply period, diode, average current from charge Q = It, electron vs conventional current direction, and power P = IV.",
+  "has_diagram": true,
+  "qp_sha256": "28d334894b5ac5e94fdb41c5328449590c0ee30b8a611fdedc52da22e5b344a0",
+  "ms_sha256": "0fd9f01e7eac25af8385e6d1282059088922ea96ce87f8a4ae9ea22f1b0cf59c"
+ },
+ "2022_may-jun_P42|9": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Three-position switch circuit with motor and resistor: currents with series resistance, and combined resistance of parallel resistors.",
+  "has_diagram": true,
+  "qp_sha256": "528b25745db1ff92aea859903e232642ccf6201d5b6c60fd9470f6bce68c7ad1",
+  "ms_sha256": "3429e5daffe38e2478eddc847da2a096606e40e15e84b7bef8763fdfd8100d57"
+ },
+ "2022_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balancing objects on a metre rule (principle of moments): placing the load, distances a and b, a vs b graph and gradient as the ratio of masses.",
+  "has_diagram": true,
+  "qp_sha256": "53def04df3a4fc27093799223513849f66502bde2cbc3dc2b00774fc61db9150",
+  "ms_sha256": "7918cdcd4a1df86ece88221e047e4dda65d241960cd53b11bb73219d6abec3a4"
+ },
+ "2022_may-jun_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of series and parallel combinations of resistors: variable-resistor position, meter readings, R = V/I, drawing the circuit and testing equal resistances.",
+  "has_diagram": true,
+  "qp_sha256": "0cfec46428db470b377e565a22df1b76a2576ac825087bd519212448af9d11c1",
+  "ms_sha256": "ceeed487c6e1a1cc953086adb1128f34f30e64ab9bee1a26b1bd402b482b522c"
+ },
+ "2022_may-jun_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Focal length of a lens by the displacement method from a scale drawing (f = uv/D), averaging, precautions and a graph of uv against D.",
+  "has_diagram": true,
+  "qp_sha256": "9aa7ad8afc458d44d938f1ef10b890c1a39ecb0b6aa37624b06d021fd8c7aebf",
+  "ms_sha256": "fd0a78ef7cd3ad05af800a7a8b06fac5ac025652d1688980523c841c92acb5d4"
+ },
+ "2022_may-jun_P62|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning to rank insulating discs between a heated and an unheated metal cylinder by temperature rise or time: thermal conduction and controls.",
+  "has_diagram": true,
+  "qp_sha256": "d89b98a6e5d94cd6bd1bcecc6b6aeb32c3cdb07efb0a2287f9a0ed4a598b33ae",
+  "ms_sha256": "394db2a0772ab53547ce7d9cf8a89dd7c83b2a41c005b3e94eae431387d1c7df"
+ },
+ "2023_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Hovering helicopter equilibrium conditions and GPE; parachutist speed-time graph accelerations and forces leading to terminal velocity.",
+  "has_diagram": true,
+  "qp_sha256": "ebb3c4dd99746ecd143188cf0fadef90ed8e4b00ca12267600b4951466aa9a60",
+  "ms_sha256": "45b29315e7b33d9bdc666277166e9c7bb4d285d4f1439abe292422a59f452d5e"
+ },
+ "2023_may-jun_P42|10": {
+  "topics": [
+   "6"
+  ],
+  "difficulty": "medium",
+  "reason": "Orbital speed v = 2 pi r/T, seasons from the Sun's ray angles, life cycle of a massive star, and galaxy distance from the Hubble constant in light-years.",
+  "has_diagram": false,
+  "qp_sha256": "0a79a9a67d3cc5b50247ca54a7613020710c6df2fd494e80b76ad57a7dd479e4",
+  "ms_sha256": "e14275853915398b267330f375c5696790b368bd782daf4371128e60e9080b5a"
+ },
+ "2023_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Cricket ball: kinetic energy, average force from change of momentum over catch time, and moving hands back to reduce force.",
+  "has_diagram": false,
+  "qp_sha256": "d72923e672f59c8fe27deb16043fc9071188a6d19418d962d0114664ddfb1911",
+  "ms_sha256": "7b64d4b59aac139c2f7a96409bb84d5261f6504da5045ad80cef36d086911ae2"
+ },
+ "2023_may-jun_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Pressure: spreading weight over a larger area on ice, and total pressure under floating ice from rho g h plus ice weight per area.",
+  "has_diagram": true,
+  "qp_sha256": "3b8ad9139115d7b4e81adbc0611043e15849bc834cd6dd05e6abba2d714e65b9",
+  "ms_sha256": "78b9f029ce875d22f66dffcff3987bfef75ddbd4eb73b2f1b7c5001dabfc6692"
+ },
+ "2023_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Gas pressure versus temperature in particle terms, absolute zero, and Boyle's law pV = constant calculation.",
+  "has_diagram": false,
+  "qp_sha256": "d619fa12a6ea56d7faa98cc7e8f3ec75bc85a107903f70d45bc23e06b4519694",
+  "ms_sha256": "9eaec32264c1f3887f209bd6555563dc1f37a85e8c653a552e099163266af7c3"
+ },
+ "2023_may-jun_P42|5": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Mass of room air from density (forces chapter), heating time from mc x temperature rise and P = E/t, energy losses, and double glazing reducing conduction and convection; thermal physics carries most marks.",
+  "has_diagram": true,
+  "qp_sha256": "29767627ba6120f216f7b6a0227fbdf7127b3a0910f2fb5f4694a145cc9ffeba",
+  "ms_sha256": "7a164887e36a7723ee79de781c1dc24c1a58d52c4139df6e2c3416361171ee4a"
+ },
+ "2023_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "easy",
+  "reason": "Seismic P-waves longitudinal and S-waves transverse, and wavelength from v = f x wavelength.",
+  "has_diagram": false,
+  "qp_sha256": "685b2c5d73e881e6983bb08f0af2e35373b5e981eee60b269a74033cad4775d4",
+  "ms_sha256": "e6e9e1a16d85ab73442289f9191d5e2ff5a22556e8018d53fde09097f290cf7a"
+ },
+ "2023_may-jun_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Light entering oil: drawing the normal, angle of refraction from refractive index (Snell's law), speed of light in air and in oil.",
+  "has_diagram": true,
+  "qp_sha256": "f8ceef66299b77ece2629b822c91f4ec94b0a6ed0ee6ff26e084d6df85e6acac",
+  "ms_sha256": "1971c635179efd24532ca92a222e2082adfa728cdce70136d1c7b3eb32e24ad0"
+ },
+ "2023_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "hard",
+  "reason": "Magnetic field definition and direction, electric field around a charged sphere, and a diode circuit with p.d. ratios before and after reversing the cells.",
+  "has_diagram": true,
+  "qp_sha256": "95ec598415c5f7255dbb9b1dc4b19f0309bea41ad495646d2fa754fd180a16df",
+  "ms_sha256": "96095be2a9723cc20eee123ef08ca0c45676fc41246cd762bf72c5729963397a"
+ },
+ "2023_may-jun_P42|9": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Properties table for alpha/beta/gamma, effect of beta decay on the nucleus, half-life with background count correction, and handling safety.",
+  "has_diagram": true,
+  "qp_sha256": "52b805b9a5d25cca8a6f733786ae30dcb34b6af43c0ab2c5156942cb7a45679b",
+  "ms_sha256": "49883dbf1ba6f0daed78d0f7b65fbbaf3c0318d86840ee8eea168d7c8781f3f9"
+ },
+ "2023_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "easy",
+  "reason": "Stretching a spring: showing the measured length, calculating extensions, units, load vs extension graph and reading the extension for 0.50 N.",
+  "has_diagram": true,
+  "qp_sha256": "76e773ba5ae2b0ec4b94829a214f26df422fa79dad2bf8e1ea1ec4c5121bcc76",
+  "ms_sha256": "b3b581ac6a471be83aa3ed996f51d6065e6b6ccf223fa36b06da8d0f95c2b833"
+ },
+ "2023_may-jun_P62|2": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "easy",
+  "reason": "Cooling of hot water with a lid: thermometer reading, table headings and times, temperature drop, average cooling rate, ways to increase cooling and precautions.",
+  "has_diagram": true,
+  "qp_sha256": "699c031b5b927df2b44cc81e654aaed9664632926bd4e966749de641dc8e86ea",
+  "ms_sha256": "241eec5f0cf64a7e8aab130241e2b298ff617514de3aed3100deb4c5db8e8fdd"
+ },
+ "2023_may-jun_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refraction through a semicircular block with optical pins: normal and rays, measuring refraction angles and comparing with the angle of incidence.",
+  "has_diagram": true,
+  "qp_sha256": "9b0bf5cd820950df29924ab4aa8f6081a2574b124b7883af4d94c0447103734b",
+  "ms_sha256": "34408d3827f2b0c6b010f78a065326ee0099e43ba63c8034667a922a9f96875b"
+ },
+ "2023_may-jun_P62|4": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how the distance between electrodes in a conducting liquid affects the current: measuring current, controlling p.d. and other variables.",
+  "has_diagram": true,
+  "qp_sha256": "decdcf57e684053c9f67d8cea8045451b346634756993017d9bf8c9584ebb740",
+  "ms_sha256": "8e1bb3618bccfbca0d85738b0c74a21e93ac4a6a91c6a6db8af90bee921ec9c2"
+ },
+ "2023_oct-nov_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Car motion: acceleration, plotting a speed-time graph, distance from area, work done while decelerating (F = ma, W = Fd) and factors increasing stopping distance.",
+  "has_diagram": true,
+  "qp_sha256": "8af44b03bdb6ba84554c5ffa0036f5c8040102e6120f6d98da919fe5af485e1c",
+  "ms_sha256": "0fedc9726b954e384fb5457a9087c78f638e327bdf29d8d4e6c7b75a6fef699e"
+ },
+ "2023_oct-nov_P42|10": {
+  "topics": [
+   "6"
+  ],
+  "difficulty": "easy",
+  "reason": "Life cycle of stars: protostar formation, gravity balanced by thermal pressure, hydrogen fuel, red giant to planetary nebula.",
+  "has_diagram": false,
+  "qp_sha256": "9670ad734152943dde4532dbe357c9c552af1354d2e0399dcb3b5c35fcf60407",
+  "ms_sha256": "0b7d73afbfee92d3a30ffa90dfea44db00a2b7ef1e6ce893eb234311249c4f8f"
+ },
+ "2023_oct-nov_P42|2": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Tumble dryer: evaporation and condensation (thermal), weight and direction of resultant force in circular motion, and environmental energy-resource comparison (forces/energy).",
+  "has_diagram": true,
+  "qp_sha256": "64618b4e399cf703855ea925d6e1ef6552a44c416bdb4c9f90f175a1769afdbc",
+  "ms_sha256": "c376748bccb140a729e2faa6108867ddac4aa891c015d92b931a24f040f94e97"
+ },
+ "2023_oct-nov_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Balloon on a string: impulse, impulse from momentum change, conservation of momentum with released air, and resultant of two perpendicular forces.",
+  "has_diagram": true,
+  "qp_sha256": "614f4fa68030cfeb8c4278fa76fa9226459c71b7fbff667ab770195bd8bcaa27",
+  "ms_sha256": "ae4a5d7504355d2b88450e520ba3840e0c6b417582d02a5fac59f324e35b1427"
+ },
+ "2023_oct-nov_P42|4": {
+  "topics": [
+   "2",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Heated bottle: gas pressure in particle terms and on opening the lid, thermal energy mc x temperature change (thermal), plus liquid pressure difference rho g h (forces chapter).",
+  "has_diagram": true,
+  "qp_sha256": "e4bec25187a6a2e71f16dc250e3d528e3d3c28f0683b96a1ffdd8922bdf8ac14",
+  "ms_sha256": "6f1a0cbf4cfa14100ed0c55201c13b11735a0cb3e0fe8b7c30dd13a59a00f549"
+ },
+ "2023_oct-nov_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Plane mirror at a road junction ray diagram and correcting long-sightedness with a converging lens ray diagram.",
+  "has_diagram": true,
+  "qp_sha256": "96deed5afa19b50c39e8b203dda674ef5e0a4e6704a408a5140cd5dd2f2a240b",
+  "ms_sha256": "d01127be0a79cf847f9f4f5e1d70238a279f8efc459090d0cdd273d0d2b323cb"
+ },
+ "2023_oct-nov_P42|6": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Torch circuit: p.d. across LED from resistor, diode direction, operating time from battery energy E = IVt, and charge Q = It.",
+  "has_diagram": true,
+  "qp_sha256": "15224168b27ca05a69d647a84606ec3002b30c4690c46d90996481851aafcff4",
+  "ms_sha256": "e49468f767f10d74c792ce5904ae8ef55f3911857c3c418d9d628b1405b38948"
+ },
+ "2023_oct-nov_P42|7": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Matching uses to electromagnetic spectrum regions, speed of EM waves, wavelength of Bluetooth radio waves, and short range.",
+  "has_diagram": true,
+  "qp_sha256": "3152a8fe9176bb1464acaac3a3ba2f4f872c8485a6219f44bf47e3f1b6cd7904",
+  "ms_sha256": "6de353eb120bbf362d8874ec51156896beada65a8d9519fffcf7a772fe70ed2c"
+ },
+ "2023_oct-nov_P42|8": {
+  "topics": [
+   "5",
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Uranium-235 nuclide notation, fission and mass-energy change (nuclear), plus how a nuclear power station generates electricity and nuclear vs fossil fuel (energy resources).",
+  "has_diagram": false,
+  "qp_sha256": "95a7e124393c3eb6100fdb698c9f488b9dba17b1bdc7982f66d96796714546a4",
+  "ms_sha256": "cbbdc5c95639f8997230f31874cdf1cb41a2753053f0f6ac7394e0cfe7f85328"
+ },
+ "2023_oct-nov_P42|9": {
+  "topics": [
+   "6"
+  ],
+  "difficulty": "medium",
+  "reason": "Planet data table: identifying Venus, mass vs surface gravitational field strength, elliptical orbits and Earth's orbital speed from 2 pi r/T.",
+  "has_diagram": true,
+  "qp_sha256": "1065db9d0d1bdd726567057e5caf6143ea8ae0bf602e894742f3b98b3d3d993f",
+  "ms_sha256": "ae30e605f533b7261f344112b6935d825069677ef7e12547e0919825572747a9"
+ },
+ "2023_oct-nov_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Period of a pendulum: stop-watch reading, period and T squared, units, testing T^2 proportional to d, choosing d values, measuring d and timing many oscillations.",
+  "has_diagram": true,
+  "qp_sha256": "8e1b546e2f12ddc670fda83bc42b73751b3eb5ba408fa437aa20e684c911ab08",
+  "ms_sha256": "456cc083825664a03bf1e96f7c568a8bdcd7a2b941cda095a74caadf63c7f132"
+ },
+ "2023_oct-nov_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of lengths of resistance wire: meter readings, R = V/I with sig figs, units, R vs V graph from the origin and gradient.",
+  "has_diagram": true,
+  "qp_sha256": "d4aba127792a2a39594010aebea5ccb3df299e92e50f0da7c687689fd6e6a7fd",
+  "ms_sha256": "0d763c27619e2884b1a7858c3a5671c7782865de9477e759e6761e0a91bb0526"
+ },
+ "2023_oct-nov_P62|3": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Cooling of hot water: room temperature, table, temperature drops and excess over room temperature in successive intervals, testing that hotter water cools faster.",
+  "has_diagram": true,
+  "qp_sha256": "443f769ea476f4907b1ff68b0063491f89a1f2cd049288950cd4cf24f3a22699",
+  "ms_sha256": "a23a2d4d390c5b5f109ccb220e5258f491e042bed04baff8f1278fc846c81230"
+ },
+ "2023_oct-nov_P62|4": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how the colour of light (filters) affects the focal length of a converging lens: diagram, measuring u and v, table and conclusion.",
+  "has_diagram": true,
+  "qp_sha256": "d4197a0421d45b9baeaa8a56fd4821bca4aa180d3b06f66d1cdaacf9676bb86b",
+  "ms_sha256": "1f016c80c6932fdbde79d3a856d76369ecca00d11486ddf19d64591749ffc8ee"
+ },
+ "2024_may-jun_P42|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Mass from weight, resultant of a vertical and horizontal force by scale diagram or Pythagoras/trigonometry, and other effects of forces.",
+  "has_diagram": true,
+  "qp_sha256": "e52b5681edb056528b74ffe71a2e863d13f5f6dc96e5bdece05a7f827e475997",
+  "ms_sha256": "2ea23bf2315872cdfbd0c32d847f254031daaafbaa884517a826387e11d427d3"
+ },
+ "2024_may-jun_P42|10": {
+  "topics": [
+   "6"
+  ],
+  "difficulty": "medium",
+  "reason": "Solar System objects, elliptical orbits, energy change of an orbiting object between closest and furthest points, and light travel time to Jupiter.",
+  "has_diagram": true,
+  "qp_sha256": "7b6312925022ce0c8bb2166cf8aa5074927e7f20559733fabd885d7850b4dc17",
+  "ms_sha256": "5a7137a9df8251c78bd468e026f1765dcb00be9267eeec82ac45c6b2ddac4412"
+ },
+ "2024_may-jun_P42|11": {
+  "topics": [
+   "6"
+  ],
+  "difficulty": "easy",
+  "reason": "Milky Way, redshift supporting the Big Bang, and origin and microwave redshift of the CMBR.",
+  "has_diagram": false,
+  "qp_sha256": "8c10f40fcdc9ec527fad5ba86c698cf9ce679b80657c3e67a6087921be99511d",
+  "ms_sha256": "3816cdbf802c19b52f9b5144f5033e5505344ce6c37c300a32c40571b8582879"
+ },
+ "2024_may-jun_P42|2": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "easy",
+  "reason": "Definition of acceleration, time from a = change in v / t, force F = ma for a train, and extra force to overcome friction/drag.",
+  "has_diagram": false,
+  "qp_sha256": "807e41036ca383d9687c1d5fe65da79832b144f04c5818d5c3527a0a972db8f1",
+  "ms_sha256": "7612305fe52cedeb730ea1ea8c28614be40f1b5e8802e181ce2b5e2f7ee83697"
+ },
+ "2024_may-jun_P42|3": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Falling ball energy store transfers (GPE to KE to internal) and maximum speed from mgh = half m v squared.",
+  "has_diagram": false,
+  "qp_sha256": "f18efe6ae456d90fe0f33cc1ddc8b5b47d9a20fa11ab8b63ca03dd002c4d87d5",
+  "ms_sha256": "61d437659e02b41cbe98eeadc41899ed416f3f55288e01d3970e454ecd34b2c5"
+ },
+ "2024_may-jun_P42|4": {
+  "topics": [
+   "2"
+  ],
+  "difficulty": "medium",
+  "reason": "Evaporation vs boiling, Celsius to kelvin, vacuum preventing conduction and convection, and gas pressure in terms of particle collisions.",
+  "has_diagram": true,
+  "qp_sha256": "f998439cd917295fab9105a13957496a6e8716353d0810bfa5de585a26c456ed",
+  "ms_sha256": "82e52488ba15d8b555b85549ffbd7cd472717cdc803f066897d24b09c31b025f"
+ },
+ "2024_may-jun_P42|5": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Prism: ray along the normal, refractive index from critical angle, total internal reflection ray path, and advantages of optical fibres.",
+  "has_diagram": true,
+  "qp_sha256": "e8e9f5775ac66510776e857648d0c2e106a0f267d78dd0107c47d9cedc317533",
+  "ms_sha256": "20f6496970794f068a9e3caad8554343f4081bb27a523c14c402df91f5079255"
+ },
+ "2024_may-jun_P42|6": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Sound as pressure variation: compressions/rarefactions, amplitude and frequency for loudness/pitch, wavelength in water and speed of sound in air.",
+  "has_diagram": true,
+  "qp_sha256": "150f6dc93d2b4ba3d4a6b916cf72ab946c7b7f82d46eb04870b398e30fa2a9ed",
+  "ms_sha256": "0a2388a22c7b88f98bd213a0f23c32ff1d6d6b8bfd556f687ea6a32015fb33f4"
+ },
+ "2024_may-jun_P42|7": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Identifying an unmagnetised steel bar by attraction/repulsion tests, transformer input current at 100% efficiency, and labelled step-down transformer with materials.",
+  "has_diagram": true,
+  "qp_sha256": "ed714686f3f24d576515d8f0315e064f2f2ff8eca5df8724063f927dc3c550c8",
+  "ms_sha256": "4c7f5511debb0e2babe86f9815527e5508175117544e344a5ad9707710f65b08"
+ },
+ "2024_may-jun_P42|8": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Night-light circuit: voltmeter across LDR, LDR resistance in the dark and effect on LED p.d. (potential divider), and resistance of identical parallel lamps.",
+  "has_diagram": true,
+  "qp_sha256": "a7361a92289975e7b5101e6277d868346e43265edd74e4d92965adb7fafeda35",
+  "ms_sha256": "c2da9eef094379daec35c01c2a5325d7d036b8354123311edb86393f69f2d931"
+ },
+ "2024_may-jun_P42|9": {
+  "topics": [
+   "5"
+  ],
+  "difficulty": "medium",
+  "reason": "Safety precautions with medical radioisotopes, why alpha emitters are not tracers, and nuclide equation for beta decay of sodium-24.",
+  "has_diagram": false,
+  "qp_sha256": "56a17f15556ee46c5788aa855b2271cc27e1257769fcc464fd7b4c0f341e2dd2",
+  "ms_sha256": "b0921ebe3d460521faf8869dd6dd90b8050a8716b1ededbe1ed68b61c098d084"
+ },
+ "2024_may-jun_P62|1": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "hard",
+  "reason": "Spring constant by two methods: timing oscillations of a mass on a spring (k1 from T) and extension from a scale drawing with an l vs m graph (k2), 10% comparison.",
+  "has_diagram": true,
+  "qp_sha256": "7e86814512008e992da806a9b428bfdeb78fa2fe9a7a448f9d1e8fb17df11378",
+  "ms_sha256": "09daf57ceff6f2453a784d5a58bfd76e6557d989799de9393cf3664de4c59487"
+ },
+ "2024_may-jun_P62|2": {
+  "topics": [
+   "4"
+  ],
+  "difficulty": "medium",
+  "reason": "Resistance of a diode with series resistors: readings, R = V/I with sig figs, completing the table, current vs p.d. and resistance, reversed diode, variable resistor.",
+  "has_diagram": true,
+  "qp_sha256": "c71bac0ef9975b03865f90c4b30746de7874a94d3b560603eed222f482912923",
+  "ms_sha256": "fb29c352d3cce87ac35a477e5832dbd24b7b1002981a37d19c566622b41685d8"
+ },
+ "2024_may-jun_P62|3": {
+  "topics": [
+   "3"
+  ],
+  "difficulty": "medium",
+  "reason": "Refraction of a light ray through a rectangular block: normal and rays, measuring lateral displacement d and path l, reproducibility and refractive index.",
+  "has_diagram": true,
+  "qp_sha256": "be50932fe35b48b50ee0bd1cb2753ce023092da2e78d7c2dcf36d0fed7597d57",
+  "ms_sha256": "cdfdc2acafb0920ff2ddcb837b677ef4bd1778b3db4d300ea9f68dc414f69116"
+ },
+ "2024_may-jun_P62|4": {
+  "topics": [
+   "1"
+  ],
+  "difficulty": "medium",
+  "reason": "Planning how one variable (release height, ball mass) affects the horizontal distance a ball travels after leaving a track: motion/energy and controls.",
+  "has_diagram": true,
+  "qp_sha256": "bc175ab4716a465bc3c694bb8de3b5ee31df7bcee56d4ec334707f04931aba9f",
+  "ms_sha256": "6a8b9af0a8c02eb676ceea892b36c77a405ef329df2f7962d6cf6b8382c0020c"
+ }
+}
