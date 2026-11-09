@@ -92,11 +92,16 @@ const names = {
   '4BS1': ['Investigating Small Businesses (Paper 1)', 'Investigating Large Businesses (Paper 2)'],
   '4EC1': ['Microeconomics and Business Economics (Paper 1)', 'Macroeconomics and the Global Economy (Paper 2)'],
 }[code]
-// 4AC1 is chapterwise since 2026-10-16 (apply_accounting_tool_topics.py retired
-// its "1"/"2" paper topics), so never recreate them. New 4AC1 rows land with a
-// paper tag only until they are read and the apply script re-tags them.
-const chapterwiseLater = code === '4AC1'
-if (chapterwiseLater) console.warn('4AC1: after --execute, read the new questions and run scripts/apply_accounting_tool_topics.py --execute')
+// 4AC1 (2026-10-16), 4BS1 and 4EC1 (2026-11-07) are chapterwise: their apply
+// scripts retired the "1"/"2" paper topics, so never recreate them. New rows land
+// with a paper tag only until they are read and the apply script re-tags them.
+const applyScript = {
+  '4AC1': 'scripts/apply_accounting_tool_topics.py --execute',
+  '4BS1': 'scripts/chapterwise_igcse_business.py apply --execute',
+  '4EC1': 'scripts/chapterwise_igcse_economics.py apply --execute',
+}[code]
+const chapterwiseLater = Boolean(applyScript)
+if (chapterwiseLater) console.warn(`${code}: after --execute, read any new questions and run ${applyScript}`)
 const wanted = (chapterReads ? Object.entries(staged.chapters) : chapterwiseLater ? [] : names.map((name, i) => [String(i + 1), name]))
   .map(([topicCode, name]) => ({ subject_id: subject.id, code: topicCode, name,
   description: chapterReads ? 'Specification chapter; complete questions retain all subparts and may cover several chapters.' : 'Complete questions covering this exam paper, including all subparts.' }))

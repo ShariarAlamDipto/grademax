@@ -214,3 +214,38 @@ The promo banner is no longer rendered (the user asked for its removal on 13 Oct
   them and run the apply script, which re-tags them.
 - **Business 4BS1 and Economics 4EC1:** still filtered by whole exam paper (`1`/`2`), as
   set in `usesExamPaperFilters`. Difficulty is disabled for them in the UI.
+
+---
+
+## 6. Cambridge IGCSE Physics 0625, Paper 42 + 62 chapterwise (staged 9 Nov 2026)
+
+The first Cambridge subject in the tools. Scope (user decision): variant-2 **Paper 42** (Theory,
+Extended) and **Paper 62** (Alternative to Practical), whole questions, tagged with the six
+2023–2025 syllabus topics: `1` Motion, forces and energy · `2` Thermal · `3` Waves ·
+`4` Electricity and magnetism (old-syllabus logic gates/CRO go here) · `5` Nuclear · `6` Space.
+The DB subject is the existing `0625` row (`94fab3eb-…`); other 0625 components hold no questions.
+
+- Code: `scripts/onboard_cambridge_physics.py` (sources → stage → dump → merge-reads → audit →
+  marks), segmenter/proof in `scripts/lib/cambridge_physics_segments.py`, publisher
+  `scripts/publish-cambridge-physics-questions.mjs` (insert-only, refuses a stale audit), tests
+  `tests/test_cambridge_physics.py`. Staging lives in `data/analysis/live_rebuild/0625/`.
+- Cut: question N = its margin number → its `[Total: X]` (single-part plans print only `[7]`);
+  every paper must add to 80 (P4) / 40 (P6). Scheme: table labels `N(a)(i)` left of the
+  Question header's right edge, only on pages carrying the `Question | Answer | Marks` row (the
+  generic-marking pages number points 1, 2, 3 at the same x); 2015–16 schemes are the old
+  `Page n | Mark Scheme` layout with their own `[Total: X]`. Gate: block names only N, part
+  letters equal, marks agree (PROVEN 339) or full sub-part lists agree (LABEL_PROVEN 16), one
+  REVIEWED_PROVEN (2016 Feb-Mar q11: board relabelled (a)(i)/(a)(ii)/(b) as (a)/(b)/(c)).
+- `is_scrambled()` flags every 2020+ QP because only the cover is encoded; the original text
+  layer is always tried first and OCR is used only when the cut fails on it.
+- **Live (published 9 Nov 2026, verified):** 356 questions / 49 papers, 356 `questions` mirror
+  rows, 6 topics; live tags equal the 356 direct reads (pinned to both SHA-256s); PDFs under
+  `cambridge/igcse/physics/pages-v2/` on R2. Backup and created ids:
+  `data/backups/cambridge_physics_onboarding_2026-11-09T05-53-25-081Z/`. Restaging rewrites
+  the PDFs and makes every read stale; to change tags, edit topic_reads.json, re-audit, then
+  apply a guarded update (rule 7).
+- **Held (rule 5):** 2024 Oct-Nov P42/P62 and 2025 May-Jun P42/P62. Their text layer is a
+  Cambridge font cipher on every page (the scraper originals too); OCR misreads margin numbers
+  and `[k]` marks. Needs hand-set `qp_regions` in `manual_review.json` or a decoded copy.
+- UI: `['0625']` slot in `TOOL_SUBJECT_SLOTS`, `'0625'` in `CHAPTER_FILTER_CODES`,
+  `printedMarks/0625.json` imported in `questionMarks.ts`.

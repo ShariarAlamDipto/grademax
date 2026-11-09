@@ -23,6 +23,9 @@ import printedWMA13 from './printedMarks/WMA13.json'
 import printedWMA14 from './printedMarks/WMA14.json'
 import printedWME01 from './printedMarks/WME01.json'
 import printedWST01 from './printedMarks/WST01.json'
+// Cambridge 0625 P42/P62: each question's proven "[Total: X]"
+// (scripts/onboard_cambridge_physics.py marks).
+import printed0625 from './printedMarks/0625.json'
 
 export { totalQuestionMarks, allQuestionMarksKnown } from './questionMarksTotal'
 
@@ -30,7 +33,7 @@ const knownMarks: Readonly<Record<string, number>> = {
   ...printed4AC1, ...printed4BI1, ...printed4BS1, ...printed4CH1, ...printed4CP1,
   ...printed4EC1, ...printed4HB1, ...printed4MA1, ...printed4MB1, ...printed4PH1,
   ...printed4PM1, ...printedWMA11, ...printedWMA12, ...printedWMA13, ...printedWMA14,
-  ...printedWME01, ...printedWST01,
+  ...printedWME01, ...printedWST01, ...printed0625,
   // Hand-made tables; they agree with the printed totals and win on a clash.
   ...commerceMarks, ...computerScienceMarks,
 }

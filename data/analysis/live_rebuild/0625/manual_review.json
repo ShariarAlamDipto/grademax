@@ -1,0 +1,9 @@
+{
+ "2016_feb-mar_P42|11": {
+  "decision": "CONFIRMED",
+  "qp_md5": "ac9bbafdfb44157244c909283da21163",
+  "ms_md5": "2cfc00f06acf5ad38fe4edf52445fbd3",
+  "reason": "QP prints 11(a)(i) gate name [1], (a)(ii) truth table [2], (b) strongroom logic table [3]; the scheme labels the same three items (a) AND gate B1, (b) truth table B2, (c) A-F states B3 and closes [Total: 6]. Same question, board relabelled the parts.",
+  "reviewed": "2026-11-09"
+ }
+}
