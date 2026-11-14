@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getSubjectsByLevel } from '@/lib/seo-subjects'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
 import PastPaperCatalog from '@/components/PastPaperCatalog'
+import ToolsBanner from '@/components/ToolsBanner'
 
 // Static hub — links are built from the DB index at build time (no ISR writes).
 export const revalidate = false
@@ -127,6 +128,8 @@ export default async function ALevelPastPapersPage() {
             Mathematics · Further Mathematics · Sciences · Humanities · Languages.
           </p>
         </div>
+
+        <ToolsBanner board="edexcel" />
 
         {/* Units */}
         <section style={{ marginBottom: "3rem" }}>

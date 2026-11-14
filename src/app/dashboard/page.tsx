@@ -9,11 +9,12 @@ export const metadata: Metadata = {
 import { getSupabaseServer } from "@/lib/supabaseServer"
 import { getSupabaseAdmin, isSuperAdmin } from "@/lib/supabaseAdmin"
 import LevelAndGoal from "@/components/dashboard/LevelAndGoal"
-import SubjectDropdown from "@/components/dashboard/SubjectDropdown"
-import PapersChecklist from "@/components/dashboard/PapersChecklist"
 import CircularTimer from "@/components/dashboard/CircularTimer"
-import LazyMarksChart from "@/components/dashboard/LazyMarksChart"
 import Link from "next/link"
+import { RewardsPanel } from "@/components/rewards/RewardsPanel"
+import { SubjectsBoard } from "@/components/dashboard/SubjectsBoard"
+import "@/components/dashboard/dashboard-refresh.css"
+import { loadRewards } from "@/lib/rewards/stats"
 
 export default async function DashboardPage() {
   const supabase = getSupabaseServer()
@@ -26,26 +27,22 @@ export default async function DashboardPage() {
     user.email?.split("@")[0] ||
     "Student"
 
-  // Step 1: Ensure profile exists + fetch user subjects in parallel
-  const [, { data: userSubjects }] = await Promise.all([
-    supabase
-      .from("profiles")
-      .upsert(
-        {
-          id: user.id,
-          email: user.email,
-          full_name:
-            (user.user_metadata?.full_name as string) ||
-            (user.user_metadata?.name as string) ||
-            null,
-          avatar_url: (user.user_metadata?.avatar_url as string) || null,
-        },
-        { onConflict: "id", ignoreDuplicates: true }
-      ),
-    supabase
-      .from("user_subjects")
-      .select("subject_id"),
-  ])
+  // Step 1: Ensure the profile row exists
+  const { error: profileError } = await supabase
+    .from("profiles")
+    .upsert(
+      {
+        id: user.id,
+        email: user.email,
+        full_name:
+          (user.user_metadata?.full_name as string) ||
+          (user.user_metadata?.name as string) ||
+          null,
+        avatar_url: (user.user_metadata?.avatar_url as string) || null,
+      },
+      { onConflict: "id", ignoreDuplicates: true }
+    )
+  if (profileError) console.error("[dashboard] profile upsert failed:", profileError.message)
 
   // Step 2: Auto-promote super admin AFTER profile guaranteed to exist
   if (isSuperAdmin(user.email)) {
@@ -58,87 +55,54 @@ export default async function DashboardPage() {
     }
   }
 
-  // Step 3: Fetch profile with up-to-date role
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("study_level, marks_goal_pct, role")
-    .eq("id", user.id)
-    .single()
+  // Step 3: Fetch profile with up-to-date role, alongside the rewards counts
+  const [{ data: profile }, rewards] = await Promise.all([
+    supabase
+      .from("profiles")
+      .select("study_level, marks_goal_pct, role")
+      .eq("id", user.id)
+      .single(),
+    loadRewards(supabase, user.id),
+  ])
 
   const studyLevel = (profile?.study_level as "igcse" | "ial" | null) ?? null
   const marksGoal = profile?.marks_goal_pct ?? 90
-  const subjectIds = (userSubjects || []).map((r: { subject_id: string }) => r.subject_id)
   const userRole = (profile?.role as string) ?? "student"
   const showTeacherPanel = userRole === "teacher" || userRole === "admin" || isSuperAdmin(user.email)
 
   return (
-    <main className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-white px-6 pb-16">
-      {/* Dashboard Header */}
-      <div className="max-w-6xl mx-auto py-6 mb-2">
-        <div className="flex items-center justify-between">
+    <main className="db-page">
+      <div className="db-wrap">
+        <header className="db-header">
           <div>
-            <h1 className="text-2xl md:text-3xl font-bold">Hi, {displayName} 👋</h1>
-            <p className="text-sm text-gray-500 dark:text-white/50 mt-1">Welcome to your dashboard</p>
+            <h1>Hi, {displayName}</h1>
+            <p>Your subjects, completed papers, points and badges in one place.</p>
           </div>
-          <div className="flex items-center gap-3">
-            {showTeacherPanel && (
-              <Link
-                href="/dashboard/teacher"
-                className="rounded-lg border border-blue-400/30 bg-blue-400/10 px-4 py-2 text-sm text-blue-600 dark:text-blue-400 hover:bg-blue-400/20 transition-colors"
-              >
-                Teacher Panel
-              </Link>
-            )}
-            <Link
-              href="/profile"
-              className="rounded-lg border border-gray-200 dark:border-white/20 bg-gray-100 dark:bg-white/5 px-4 py-2 text-sm hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
-            >
-              Edit Profile
-            </Link>
+          <div className="db-header-links">
+            {showTeacherPanel && <Link href="/dashboard/teacher" className="db-btn">Teacher Panel</Link>}
+            <Link href="/profile" className="db-btn">Edit Profile</Link>
           </div>
-        </div>
-      </div>
+        </header>
 
-      <div className="max-w-6xl mx-auto grid gap-8 md:grid-cols-3">
-        {/* Left column: Level, Goal, Subjects */}
-        <div className="md:col-span-1 space-y-6">
-          <LevelAndGoal initialLevel={studyLevel} initialGoal={marksGoal} />
-          <SubjectDropdown currentLevel={studyLevel} initialEnrolled={subjectIds} />
-        </div>
+        <div className="db-stack">
+          <RewardsPanel data={rewards} />
 
-        {/* Right column: Timer + Papers + Chart */}
-        <div className="md:col-span-2 space-y-6">
-          <div className="grid gap-6 md:grid-cols-2">
-            <CircularTimer />
-            <LazyMarksChart firstSubjectId={subjectIds[0] || null} />
-          </div>
-          <PapersChecklist initialSubjectIds={subjectIds} marksGoal={marksGoal} userId={user.id} />
+          <div className="db-columns">
+            <SubjectsBoard userId={user.id} />
 
-          {/* Quick Links */}
-          <div className="rounded-2xl border border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 p-4">
-            <h2 className="text-lg font-semibold mb-3">Quick Access</h2>
-            <div className="grid gap-3 grid-cols-2">
-              <Link
-                href="/lectures"
-                className="flex items-center gap-3 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 px-4 py-3 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
-              >
-                <span className="text-2xl">📚</span>
-                <div>
-                  <p className="text-sm font-medium">Lectures</p>
-                  <p className="text-xs text-gray-500 dark:text-white/40">View lecture materials</p>
+            <aside className="db-side">
+              <LevelAndGoal initialLevel={studyLevel} initialGoal={marksGoal} />
+              <CircularTimer />
+              <section className="db-panel">
+                <h2>Quick access</h2>
+                <div className="db-links">
+                  <Link href="/generate">Worksheets<span>Generate topic practice</span></Link>
+                  <Link href="/test-builder">Test Builder<span>Pick questions for a test</span></Link>
+                  <Link href="/past-papers">Past papers<span>Question papers and mark schemes</span></Link>
+                  <Link href="/lectures">Lectures<span>View lecture materials</span></Link>
                 </div>
-              </Link>
-              <Link
-                href="/generate"
-                className="flex items-center gap-3 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 px-4 py-3 hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
-              >
-                <span className="text-2xl">📝</span>
-                <div>
-                  <p className="text-sm font-medium">Worksheets</p>
-                  <p className="text-xs text-gray-500 dark:text-white/40">Generate practice sheets</p>
-                </div>
-              </Link>
-            </div>
+              </section>
+            </aside>
           </div>
         </div>
       </div>

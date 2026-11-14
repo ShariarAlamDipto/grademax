@@ -45,9 +45,9 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   }
 
   return (
-    <div style={{ display: "flex", minHeight: "100vh", background: "var(--gm-bg)", color: "var(--gm-text)" }}>
+    <div className="gm-admin">
       <AdminNav role={role} />
-      <div style={{ flex: 1, minWidth: 0, overflowX: "hidden" }}>
+      <div className="ad-main">
         {children}
       </div>
     </div>

@@ -82,13 +82,13 @@ export default function Home() {
         <div aria-hidden style={{
           position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
           width: "900px", height: "500px",
-          background: "radial-gradient(ellipse at 50% -10%, rgba(110,168,254,0.08) 0%, rgba(245,158,11,0.03) 40%, transparent 70%)",
+          background: "radial-gradient(ellipse at 50% -10%, rgba(245,184,61,0.12) 0%, rgba(245,184,61,0.03) 45%, transparent 70%)",
           pointerEvents: "none",
         }} />
         <div aria-hidden style={{
           position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)",
           width: "600px", height: "200px",
-          background: "radial-gradient(ellipse at 50% 100%, rgba(110,168,254,0.04) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 50% 100%, rgba(245,184,61,0.05) 0%, transparent 60%)",
           pointerEvents: "none",
         }} />
 
@@ -118,7 +118,7 @@ export default function Home() {
               lineHeight: 1.0,
               letterSpacing: "-0.04em",
               marginBottom: "1rem",
-              background: "linear-gradient(135deg, #F59E0B 0%, #FCD34D 60%, #F97316 100%)",
+              background: "var(--gm-gold-text-grad)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -181,10 +181,10 @@ export default function Home() {
       {/* ════════════════════════════════════════
           § 2  FEATURE CARDS
           ════════════════════════════════════════ */}
-      <section style={{
+      <section className="gm-gridlines" style={{
         borderTop: "1px solid var(--gm-border)",
-        background: "var(--gm-surface)",
-        padding: "4rem 1.5rem",
+        backgroundColor: "var(--gm-surface-2)",
+        padding: "4.5rem 1.5rem 5rem",
       }}>
         <div style={{ maxWidth: "1080px", margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: "2.5rem" }}>

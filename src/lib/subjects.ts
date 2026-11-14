@@ -71,7 +71,10 @@ const edexcelSubjects: Subject[] = [
   { slug: "economics",            name: "Economics",                level: "igcse", colorKey: "other",     dataFolder: "Economics" },
   { slug: "geography",            name: "Geography",                level: "igcse", colorKey: "other",     dataFolder: "Geography" },
   { slug: "bangla",               name: "Bangla",                   level: "igcse", colorKey: "other",     dataFolder: "Bangla" },
-  { slug: "igcse-mechanics-1",   name: "Mechanics 1",              level: "igcse", colorKey: "other",     dataFolder: "Mechanics_1" },
+  // "igcse-mechanics-1" (DB code 4ME1) was removed on 14 Nov 2026: its 15 papers are
+  // the IAL WME01 papers filed under the wrong level (same Pearson barcodes, WME01/01
+  // on the covers). The IAL "mechanics-1" entry below is the real one; next.config.ts
+  // redirects the old URLs to it.
 
   // ─── IAL — Mathematics modules ────────────────────────────────────────────
   { slug: "pure-mathematics-1",      name: "Pure Mathematics 1 (P1)",         level: "ial", colorKey: "maths" },

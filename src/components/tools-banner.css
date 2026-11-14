@@ -1,0 +1,32 @@
+/* Practice-tools banner on the past-paper hub pages. Theme tokens only, so it
+   reads correctly in light and dark. */
+
+.tb-wrap { padding: 2rem 1rem 0; }
+.tb {
+  max-width: 72rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+  gap: 1.5rem 2.5rem;
+  align-items: center;
+  padding: 1.6rem 1.75rem;
+  border-radius: 20px;
+  border: 1px solid var(--gm-amber-ring);
+  background:
+    radial-gradient(ellipse 60% 140% at 0 0, var(--gm-amber-bg), transparent 70%),
+    var(--gm-card-solid, var(--gm-surface));
+  color: var(--gm-text);
+  text-align: left;
+}
+.tb-eyebrow { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gm-gold-text, var(--gm-amber)); margin: 0 0 0.4rem; }
+.tb-title { font-size: clamp(1.25rem, 3vw, 1.7rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 0.6rem; color: var(--gm-text); }
+.tb-lead { font-size: 0.9rem; line-height: 1.65; color: var(--gm-text-2); margin: 0 0 0.6rem; max-width: 56ch; }
+.tb-note { font-size: 0.84rem; line-height: 1.6; color: var(--gm-text-2); margin: 0; max-width: 56ch; }
+.tb-note b { color: var(--gm-text); }
+.tb-actions { display: flex; flex-direction: column; align-items: flex-start; gap: 0.65rem; }
+.tb-actions a { text-decoration: none; }
+.tb-fine { font-size: 0.74rem; line-height: 1.55; color: var(--gm-text-3); margin: 0.25rem 0 0; }
+@media (max-width: 760px) {
+  .tb { grid-template-columns: minmax(0, 1fr); padding: 1.25rem; }
+  .tb-actions a { width: 100%; justify-content: center; }
+}

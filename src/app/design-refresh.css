@@ -1,0 +1,244 @@
+/* ═══════════════════════════════════════════════════════════════
+   Design refresh (trial, 13 Nov 2026)
+   Loaded after globals.css from layout.tsx. Everything here is an
+   override: delete the import line and the site looks as it did.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── 1. Numerals ────────────────────────────────────────────────
+   Playfair Display draws old-style figures by default: 3, 4, 5, 7
+   and 9 hang below the baseline and 0, 1, 2 are only x-height, so
+   a code such as 4MA1 or WME01 looks like its digits have dropped
+   under the letters. Lining figures sit on the baseline at capital
+   height. Tabular spacing is left to the places that need columns. */
+html {
+  font-variant-numeric: lining-nums;
+  font-feature-settings: "lnum" 1;
+}
+
+/* ── 2. Gold accent ─────────────────────────────────────────────
+   The call-to-action colour now matches the hero word "simplified."
+   instead of the flatter orange it used to be. */
+:root,
+html.dark {
+  --gm-amber:        #F5B83D;
+  --gm-amber-hover:  #E5A422;
+  --gm-amber-bg:     rgba(245, 184, 61, 0.10);
+  --gm-amber-ring:   rgba(245, 184, 61, 0.32);
+  --gm-gold-grad:    linear-gradient(135deg, #F2A91E 0%, #FCD34D 55%, #F0A416 100%);
+  --gm-gold-ink:     #1A1206;
+  --gm-gold-text-grad: linear-gradient(135deg, #F2A91E 0%, #FCD34D 55%, #F0A416 100%);
+  --gm-gold-text:    #F7C352;
+  --gm-card-solid:   #0D1322;
+  --gm-ink-btn:      #EDF0F7;
+  --gm-ink-btn-text: #0A0E18;
+  --gm-shadow:       0 1px 2px rgba(0, 0, 0, 0.35), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+}
+
+/* ── 3. Warm light theme ────────────────────────────────────────
+   The old light theme was a cool blue-white (#F5F7FB). It only
+   looked comfortable through a night-light filter. These are warm
+   paper tones on any screen. */
+html.light {
+  --gm-bg:           #FAF5EC;
+  --gm-surface:      #FFFCF6;
+  --gm-surface-2:    #F3ECDF;
+  --gm-surface-3:    #EAE1D0;
+
+  --gm-text:         #1E1A14;
+  --gm-text-2:       #4A4337;
+  --gm-text-3:       #7B7264;
+
+  --gm-amber:        #A16207;
+  --gm-amber-hover:  #854D0E;
+  --gm-amber-bg:     rgba(202, 138, 4, 0.10);
+  --gm-amber-ring:   rgba(202, 138, 4, 0.32);
+  --gm-gold-text:    #8A5A00;
+  /* Deeper on paper, so the big headline word keeps its contrast. */
+  --gm-gold-text-grad: linear-gradient(135deg, #B97A08 0%, #E3A81A 55%, #B5750A 100%);
+
+  --gm-border:       rgba(72, 52, 20, 0.11);
+  --gm-border-2:     rgba(72, 52, 20, 0.17);
+  --gm-border-input: #A99F8E;
+
+  --gm-nav-bg:       rgba(250, 245, 236, 0.92);
+  --gm-nav-border:   rgba(72, 52, 20, 0.09);
+
+  --gm-card-bg:      rgba(255, 253, 248, 0.75);
+  --gm-card-hover:   #FFFEFB;
+  --gm-card-solid:   #FFFDF9;
+  --gm-ink-btn:      #1E1A14;
+  --gm-ink-btn-text: #FFFCF6;
+  --gm-shadow:       0 1px 2px rgba(72, 52, 20, 0.06), 0 14px 34px -18px rgba(72, 52, 20, 0.28);
+}
+
+/* Tailwind's literal white / cool greys, used by a few older screens. */
+html.light .bg-white     { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-50   { background-color: var(--gm-surface)   !important; }
+html.light .bg-gray-100  { background-color: var(--gm-surface-2) !important; }
+html.light .bg-gray-200  { background-color: var(--gm-surface-3) !important; }
+html.light .text-gray-900 { color: var(--gm-text) !important; }
+
+/* ── 4. Buttons ─────────────────────────────────────────────── */
+.btn-beacon {
+  background: var(--gm-gold-grad);
+  color: var(--gm-gold-ink);
+  border: 1px solid rgba(160, 98, 7, 0.35);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 6px 18px -8px rgba(240, 164, 22, 0.65);
+}
+.btn-beacon:hover {
+  background: var(--gm-gold-grad);
+  filter: brightness(1.05) saturate(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 10px 26px -8px rgba(240, 164, 22, 0.75);
+}
+@keyframes beacon-pulse {
+  0%, 100% { box-shadow: 0 1px 0 rgba(255,255,255,0.45) inset, 0 0 0 0 rgba(245, 184, 61, 0.45); }
+  50%      { box-shadow: 0 1px 0 rgba(255,255,255,0.45) inset, 0 0 0 9px rgba(245, 184, 61, 0); }
+}
+
+.btn-ghost-amber {
+  color: var(--gm-gold-text);
+  border: 1px solid var(--gm-amber-ring);
+  background: var(--gm-amber-bg);
+}
+.btn-ghost-amber:hover {
+  background: rgba(245, 184, 61, 0.18);
+  border-color: var(--gm-amber);
+}
+
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--gm-ink-btn);
+  color: var(--gm-ink-btn-text);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 0.55rem;
+  white-space: nowrap;
+  box-shadow: 0 6px 14px -8px rgba(0, 0, 0, 0.55);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* ── 5. Section with a faint drafting grid (homepage tools) ──── */
+.gm-gridlines {
+  background-image:
+    linear-gradient(to right, var(--gm-border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--gm-border) 1px, transparent 1px);
+  background-size: 112px 112px;
+  background-position: center top;
+}
+
+/* ── 6. Feature cards: picture on top, text, one dark button ─── */
+.fc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1.25rem;
+}
+.fc-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--gm-card-solid);
+  border: 1px solid var(--gm-border);
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--gm-shadow);
+  opacity: 0;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.fc-grid[data-visible="1"] .fc-card {
+  animation: card-reveal 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--delay, 0s);
+}
+.fc-card:hover { transform: translateY(-3px); border-color: var(--gm-amber-ring); }
+.fc-card:hover .btn-ink { transform: translateY(-1px); }
+.fc-card:focus-visible { outline: 2px solid var(--gm-amber); outline-offset: 3px; }
+
+.fc-art {
+  height: 168px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--gm-border);
+  color: var(--gm-text);
+}
+.fc-art svg { width: 78%; max-width: 250px; height: auto; overflow: visible; }
+
+/* The picture assembles itself: outlines draw, then fills and shadow arrive. */
+.fc-s {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+}
+.fc-f { opacity: 0; }
+.fc-lift { filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0)); }
+
+.fc-grid[data-visible="1"] .fc-s {
+  animation: fc-draw 1.1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: calc(var(--delay, 0s) + 0.25s + var(--d, 0s));
+}
+.fc-grid[data-visible="1"] .fc-f {
+  animation: fc-fade 0.6s ease forwards;
+  animation-delay: calc(var(--delay, 0s) + 1.1s + var(--d, 0s));
+}
+.fc-grid[data-visible="1"] .fc-lift {
+  animation: fc-lift 0.8s ease forwards;
+  animation-delay: calc(var(--delay, 0s) + 1.3s);
+}
+@keyframes fc-draw { to { stroke-dashoffset: 0; } }
+@keyframes fc-fade { to { opacity: 1; } }
+@keyframes fc-lift { to { filter: drop-shadow(0 14px 12px rgba(0, 0, 0, 0.22)); } }
+
+.fc-body { padding: 1.2rem 1.3rem 1.35rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.fc-label { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.01em; color: var(--gm-text); margin: 0; }
+.fc-text { font-size: 0.82rem; line-height: 1.6; color: var(--gm-text-2); margin: 0; flex: 1; }
+.fc-body .btn-ink { align-self: flex-start; margin-top: 0.5rem; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fc-card, .fc-f { opacity: 1; animation: none !important; }
+  .fc-s { stroke-dashoffset: 0; animation: none !important; }
+  .beacon-pulse { animation: none; }
+}
+
+/* ── 7. Screens written for dark only (profile, dashboard widgets) ──
+   They use Tailwind's white-alpha utilities (text-white/70, border-white/10,
+   bg-white/5 …), which are invisible on a light page. In light mode each is
+   re-pointed at the matching paper token. */
+html.light .text-white\/80,
+html.light .text-white\/70      { color: var(--gm-text-2) !important; }
+html.light .text-white\/60,
+html.light .text-white\/50,
+html.light .text-white\/40      { color: var(--gm-text-3) !important; }
+html.light .text-white\/30,
+html.light .text-white\/25      { color: var(--gm-border-input) !important; }
+html.light .placeholder\:text-white\/30::placeholder { color: var(--gm-text-3) !important; }
+html.light .border-white,
+html.light .border-white\/20,
+html.light .hover\:border-white\/40:hover { border-color: var(--gm-border-2) !important; }
+html.light .border-white\/10,
+html.light .border-white\/5     { border-color: var(--gm-border) !important; }
+html.light .divide-white\/5 > * + * { border-color: var(--gm-border) !important; }
+html.light .focus\:border-white\/30:focus { border-color: var(--gm-amber) !important; }
+html.light .focus\:ring-white\/30:focus  { --tw-ring-color: var(--gm-amber-ring) !important; }
+html.light .bg-white\/5         { background-color: var(--gm-card-solid) !important; }
+html.light .bg-white\/10,
+html.light .hover\:bg-white\/5:hover,
+html.light .hover\:bg-white\/10:hover { background-color: var(--gm-surface-2) !important; }
+html.light .bg-white\/20,
+html.light .hover\:bg-white\/15:hover { background-color: var(--gm-surface-3) !important; }
+html.light .bg-black\/40,
+html.light .bg-black\/30        { background-color: var(--gm-surface) !important; }
+/* "bg-white text-black" is the solid button / selected state on those screens:
+   on paper it becomes the dark ink button instead of white on cream. */
+html.light .bg-white.text-black,
+html.light .bg-white.text-black:hover { background-color: var(--gm-ink-btn) !important; color: var(--gm-ink-btn-text) !important; }
+/* Dark mode: those pages painted pure black under a navy navbar. */
+html.dark main.bg-black,
+html.dark main.dark\:bg-black   { background-color: var(--gm-bg) !important; }

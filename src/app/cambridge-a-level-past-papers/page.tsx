@@ -4,6 +4,7 @@ import { getSubjectSlugsWithPapers } from '@/lib/papersIndex'
 import { cambridgeSeoSubjects, byPopularity } from '@/lib/cambridge-seo'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
 import PastPaperCatalog from '@/components/PastPaperCatalog'
+import ToolsBanner from '@/components/ToolsBanner'
 import CambridgeSubjectCards from '@/components/CambridgeSubjectCards'
 
 // Static hub — links are built from the DB index at build time (no ISR writes).
@@ -118,6 +119,8 @@ export default async function CambridgeALevelPastPapersLanding() {
           Mathematics 9709, Economics 9708 and more — so you can jump straight to the papers you searched for.
         </p>
       </section>
+
+      <ToolsBanner board="cambridge" />
 
       {/* All A Level subjects */}
       <section className="px-4 md:px-8 py-12 bg-gray-950" id="subjects">

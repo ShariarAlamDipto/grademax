@@ -4,6 +4,7 @@ import { getSubjectSlugsWithPapers } from '@/lib/papersIndex'
 import { cambridgeSeoSubjects, byPopularity } from '@/lib/cambridge-seo'
 import { generateOrganizationSchema, generateBreadcrumbSchema, generateWebPageSchema, generateFAQSchema } from '@/lib/seo-schema'
 import PastPaperCatalog from '@/components/PastPaperCatalog'
+import ToolsBanner from '@/components/ToolsBanner'
 import CambridgeSubjectCards from '@/components/CambridgeSubjectCards'
 
 // Static hub — links are built from the DB index at build time (no ISR writes).
@@ -123,6 +124,8 @@ export default async function CambridgePastPapersLanding() {
           </Link>
         </div>
       </section>
+
+      <ToolsBanner board="cambridge" />
 
       {/* IGCSE Section */}
       <section className="px-4 md:px-8 py-12 bg-gray-950" id="igcse">

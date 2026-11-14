@@ -1,5 +1,6 @@
 
 import './globals.css'
+import './design-refresh.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Analytics } from '@vercel/analytics/next'
