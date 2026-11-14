@@ -2,7 +2,10 @@ import type { NextConfig } from "next";
 
 const baseCsp = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vercel.live`,
+  // static.cloudflareinsights.com: Cloudflare Web Analytics, injected by the
+  // edge. It replaced Vercel Speed Insights (the site is not on Vercel, so its
+  // scripts 404ed) as the source of real-user speed numbers.
+  `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.cloudflareinsights.com`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' data: https://fonts.gstatic.com",
   `img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.google.com https://*.gstatic.com`,
@@ -10,7 +13,7 @@ const baseCsp = [
   // *.r2.cloudflarestorage.com is the S3 API endpoint teachers PUT large
   // lecture files to with a presigned URL, bypassing the 4.5 MB serverless cap.
   // blob: lets the worksheet preview read the PDF it just built in the browser.
-  `connect-src 'self' blob: https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://accounts.google.com https://*.googleapis.com https://*.google.com`,
+  `connect-src 'self' blob: https://cloudflareinsights.com https://*.supabase.co wss://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.r2.cloudflarestorage.com https://accounts.google.com https://*.googleapis.com https://*.google.com`,
   `frame-src 'self' blob: https://accounts.google.com https://*.supabase.co https://pub-b96af5a8f7044337bcb17a51b3fd4a60.r2.dev https://*.google.com`,
   "frame-ancestors 'none'",
   "base-uri 'self'",

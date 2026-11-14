@@ -239,9 +239,14 @@ export function useSection<T>(section: string, query: string, refreshMs: number)
   const load = useCallback(async () => {
     try {
       const res = await fetch(`/api/admin/analytics/visitors?section=${section}&${query}`, { cache: "no-store" })
-      const json = await res.json().catch(() => ({}))
-      if (!res.ok) throw new Error(json.error ?? "Could not load visitor analytics.")
-      setData(json as T)
+      // A 200 that is not a JSON object (an HTML login or Cloudflare page) must
+      // show the error card: rendering it as data crashes the panel.
+      const json: unknown = await res.json().catch(() => null)
+      const body = json !== null && typeof json === "object" && !Array.isArray(json) ? (json as Record<string, unknown>) : null
+      if (!res.ok || !body || "error" in body) {
+        throw new Error(typeof body?.error === "string" ? body.error : "Could not load visitor analytics.")
+      }
+      setData(body as T)
       setError(null)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not load visitor analytics.")

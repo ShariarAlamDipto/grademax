@@ -68,11 +68,11 @@ export default function AdminNav({ role }: AdminNavProps) {
 
   const sidebarContent = (
     <>
-      <div className="ad-brand">
-        <span className="ad-brand-mark" aria-hidden>G</span>
+      <div className="gma-brand">
+        <span className="gma-brand-mark" aria-hidden>G</span>
         <div style={{ minWidth: 0, flex: 1 }}>
-          <p className="ad-brand-name">GradeMax</p>
-          <p className="ad-brand-sub">{isTeacher ? "Teacher Portal" : "Admin Portal"}</p>
+          <p className="gma-brand-name">GradeMax</p>
+          <p className="gma-brand-sub">{isTeacher ? "Teacher Portal" : "Admin Portal"}</p>
         </div>
         {isMobile && (
           <button
@@ -93,17 +93,17 @@ export default function AdminNav({ role }: AdminNavProps) {
           if (items.length === 0) return null
           return (
             <div key={group}>
-              <p className="ad-group">{group}</p>
+              <p className="gma-group">{group}</p>
               {items.map(item => {
                 const isActive = item.href === "/admin" ? pathname === "/admin" : pathname.startsWith(item.href)
                 const badgeCount = item.badge ? badges[item.badge] : 0
                 return (
-                  <Link key={item.href} href={item.href} className="ad-link" aria-current={isActive ? "page" : undefined}>
+                  <Link key={item.href} href={item.href} className="gma-link" aria-current={isActive ? "page" : undefined}>
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d={item.icon} />
                     </svg>
                     <span>{item.label}</span>
-                    {badgeCount > 0 && <span className="ad-count">{badgeCount > 999 ? "999+" : badgeCount}</span>}
+                    {badgeCount > 0 && <span className="gma-count">{badgeCount > 999 ? "999+" : badgeCount}</span>}
                   </Link>
                 )
               })}
@@ -112,8 +112,8 @@ export default function AdminNav({ role }: AdminNavProps) {
         })}
       </nav>
 
-      <div className="ad-side-foot">
-        <Link href="/" className="ad-link">
+      <div className="gma-side-foot">
+        <Link href="/" className="gma-link">
           <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
@@ -175,5 +175,5 @@ export default function AdminNav({ role }: AdminNavProps) {
     )
   }
 
-  return <aside className="ad-side">{sidebarContent}</aside>
+  return <aside className="gma-side">{sidebarContent}</aside>
 }
