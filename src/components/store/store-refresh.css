@@ -1,0 +1,262 @@
+/* Store page: title, the book wheel, search and filters.
+   Trial design (Nov 2026). Used by StoreHero, BookWheel and StoreCatalogue.
+   The catalogue cards below the search keep the shop's original card look. */
+
+/* ── Hero text ──────────────────────────────────────────────── */
+.sh-hero {
+  padding: 2.75rem 1.25rem 0;
+  text-align: center;
+  background: var(--gm-bg);
+}
+.sh-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gm-amber);
+  margin-bottom: 0.6rem;
+}
+.sh-title {
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+  color: var(--gm-text);
+  margin: 0 0 0.8rem;
+}
+.sh-lead {
+  max-width: 54ch;
+  color: var(--gm-text-2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 auto 1.1rem;
+}
+.sh-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; }
+.sh-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--gm-border-2);
+  color: var(--gm-text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.sh-pill:hover { border-color: var(--gm-amber); background: var(--gm-amber-bg); }
+
+/* ── The wheel sits straight on the page: no panel behind it ── */
+.sh-stage {
+  max-width: 76rem;
+  margin: 2rem auto 0;
+  padding: 0.5rem 0 0;
+  overflow: hidden;
+}
+
+/* ── Book wheel ─────────────────────────────────────────────── */
+.bw-track {
+  position: relative;
+  height: clamp(250px, 33vw, 410px);
+  --bw-step: clamp(104px, 14.5vw, 206px);
+  touch-action: pan-y;
+  cursor: grab;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.bw-track[data-dragging] { cursor: grabbing; }
+.bw-track:focus-visible { outline: 2px solid var(--gm-amber); outline-offset: -6px; border-radius: 20px; }
+.bw-book {
+  position: absolute;
+  left: 50%;
+  top: 4%;
+  width: clamp(118px, 16vw, 224px);
+  aspect-ratio: 210 / 297;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--gm-surface-2);
+  /* --d: signed distance from the centre in books; --a: its absolute value. */
+  transform:
+    translateX(calc(-50% + var(--d) * var(--bw-step)))
+    translateY(calc(var(--a) * var(--a) * 15px))
+    rotate(calc(var(--d) * 7deg))
+    scale(calc(1 - var(--a) * 0.085));
+  transform-origin: 50% 85%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18), 0 26px 30px -16px rgba(0, 0, 0, 0.42);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+  -webkit-user-drag: none;
+}
+.bw-track[data-dragging] .bw-book { transition: opacity 0.35s ease; }
+.bw-book img { pointer-events: none; }
+.bw-book:focus-visible { outline: 3px solid var(--gm-amber); outline-offset: 3px; }
+
+.bw-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 0 1rem;
+}
+.bw-current { min-width: 0; width: min(100%, 30rem); display: flex; flex-direction: column; gap: 0.15rem; }
+.bw-title {
+  color: var(--gm-text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bw-title:hover { color: var(--gm-gold-text); }
+.bw-meta { font-size: 0.8rem; color: var(--gm-text-3); font-variant-numeric: lining-nums tabular-nums; }
+.bw-arrow {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--gm-amber-ring);
+  background: var(--gm-amber-bg);
+  color: var(--gm-gold-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+.bw-arrow svg { width: 1.1rem; height: 1.1rem; }
+.bw-arrow:hover:not(:disabled) { border-color: var(--gm-amber); }
+.bw-arrow:disabled { opacity: 0.4; cursor: default; }
+.bw-hint {
+  margin: 0.9rem 0 0;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gm-text-3);
+}
+@media (max-width: 640px) {
+  .bw-track { --bw-step: 30vw; height: 60vw; }
+  .bw-book { width: 36vw; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bw-book { transition: none; }
+}
+
+/* ── Search and filters ─────────────────────────────────────── */
+.sc-wrap { max-width: 72rem; margin: 0 auto; padding: 2.5rem 1.25rem 2rem; }
+.sc-search {
+  position: relative;
+  max-width: 40rem;
+  margin: 0 auto 1.25rem;
+}
+.sc-search svg {
+  position: absolute;
+  left: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--gm-text-3);
+  pointer-events: none;
+}
+.sc-search input {
+  width: 100%;
+  height: 3.25rem;
+  padding: 0 3rem 0 2.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--gm-border-2);
+  background: var(--gm-card-solid);
+  color: var(--gm-text);
+  font: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  box-shadow: var(--gm-shadow);
+  transition: border-color 0.15s ease;
+}
+.sc-search input::placeholder { color: var(--gm-text-3); }
+.sc-search input:focus { border-color: var(--gm-amber); }
+.sc-clear {
+  position: absolute;
+  right: 0.55rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 0;
+  border-radius: 50%;
+  background: var(--gm-surface-2);
+  color: var(--gm-text-2);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.sc-filters { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 0.9rem; }
+.sc-filter {
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--gm-border);
+  background: var(--gm-surface);
+  color: var(--gm-text-2);
+}
+.sc-filter[aria-current="page"] { background: var(--gm-text); color: var(--gm-bg); }
+.sc-count { text-align: center; font-size: 0.8rem; color: var(--gm-text-3); margin-bottom: 1.75rem; }
+
+/* ── Shelves: the original card grid ────────────────────────── */
+.sc-shelf { margin-bottom: 2rem; }
+.sc-shelf-title { font-size: 1.15rem; font-weight: 800; margin: 0 0 0.9rem; }
+.sc-shelf-title span { font-size: 0.8rem; font-weight: 500; color: var(--gm-text-3); margin-left: 0.5rem; }
+.sc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  gap: 1.1rem;
+}
+.sc-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1.25rem;
+  border-radius: 0.85rem;
+  border: 1px solid var(--gm-border);
+  background: var(--gm-card-bg);
+  text-decoration: none;
+  color: inherit;
+}
+.sc-cover {
+  position: relative;
+  aspect-ratio: 210 / 297;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: var(--gm-surface-2);
+  border: 1px solid var(--gm-border);
+}
+.sc-nocover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--gm-text-3);
+}
+.sc-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.sc-name { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.35; margin: 0; }
+.sc-sub { font-size: 0.8rem; color: var(--gm-text-3); margin: 0.2rem 0 0; }
+.sc-spec { font-size: 0.8rem; color: var(--gm-text-2); margin: 0; }
+.sc-price { margin-top: auto; padding-top: 0.6rem; border-top: 1px solid var(--gm-border); }
+.sc-price small { display: block; font-size: 0.7rem; color: var(--gm-text-3); }
+.sc-price strong { font-size: 1.25rem; font-weight: 800; }
+.sc-price span { font-size: 0.75rem; color: var(--gm-text-3); margin-left: 0.5rem; }
+.sc-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gm-text-2);
+  font-size: 0.95rem;
+  border: 1px dashed var(--gm-border-2);
+  border-radius: 0.85rem;
+}

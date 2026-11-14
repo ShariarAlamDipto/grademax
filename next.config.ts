@@ -138,6 +138,9 @@ const nextConfig: NextConfig = {
       // impressions but now 404 because "paper-1" is not a year.
       { source: "/past-papers/:subject/:paper(paper-\\d+)", destination: "/past-papers/:subject", permanent: true },
       // Catch common misspellings & alternate search patterns
+      // The IGCSE "Mechanics 1" listing was a duplicate of IAL M1 (see src/lib/subjects.ts).
+      { source: "/past-papers/igcse-mechanics-1/:rest*", destination: "/past-papers/mechanics-1/:rest*", permanent: true },
+      { source: "/subjects/igcse/igcse-mechanics-1/:rest*", destination: "/subjects/ial/mechanics-1/:rest*", permanent: true },
       { source: "/pastpapers", destination: "/past-papers", permanent: true },
       { source: "/past_papers", destination: "/past-papers", permanent: true },
       { source: "/worksheets", destination: "/edexcel-worksheets", permanent: true },

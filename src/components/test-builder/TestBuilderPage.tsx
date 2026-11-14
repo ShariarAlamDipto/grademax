@@ -545,7 +545,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
   // ─────────────────────────────────────────────
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="min-h-screen gm-tool-bg">
       {/* Question Preview Side Panel */}
       {previewQuestion && (
         <QuestionPreviewModal
@@ -610,7 +610,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             <button
               onClick={() => fetchQuestions(1)}
               disabled={loadingQuestions}
-              className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-3 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full gm-tool-primary py-3 rounded-xl font-bold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loadingQuestions ? 'Searching...' : 'Search Questions'}
             </button>
@@ -766,7 +766,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
             />
 
             {/* Drawer Panel — starts below the fixed navbar (measured above). */}
-            <div style={{ top: navBottom }} className="fixed bottom-0 left-0 right-0 z-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 flex flex-col rounded-t-2xl overflow-hidden">
+            <div style={{ top: navBottom }} className="fixed bottom-0 left-0 right-0 z-40 gm-tool-bg flex flex-col rounded-t-2xl overflow-hidden">
               {/* Header */}
               <div className="shrink-0 flex items-center justify-between px-4 py-3 border-b border-gray-700 bg-gray-800/80">
                 <h2 className="text-base font-bold text-white flex items-center gap-2">
@@ -836,7 +836,7 @@ export default function TestBuilderPage({ initialSubjects, initialTopics }: Test
               </div>
               <button
                 onClick={() => setShowMobilePreview(true)}
-                className="shrink-0 px-5 py-2.5 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold rounded-lg shadow-lg active:scale-95 transition-transform"
+                className="shrink-0 px-5 py-2.5 gm-tool-primary text-sm font-semibold rounded-lg active:scale-95 transition-transform"
               >
                 Build PDF
               </button>

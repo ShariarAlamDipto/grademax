@@ -1,0 +1,59 @@
+/* Worksheet Generator and Test Builder polish (trial, 13 Nov 2026).
+   Replaces the grey-to-black page gradient and the mixed blue, green and
+   amber button gradients with one flat page tone and one gold action. */
+
+.gm-tool-bg {
+  background:
+    radial-gradient(ellipse 70% 320px at 50% 0, var(--gm-amber-bg), transparent 70%),
+    var(--gm-bg);
+}
+
+/* The one primary action on each tool: search, generate, build. */
+.gm-tool-primary {
+  background: var(--gm-gold-grad);
+  color: var(--gm-gold-ink);
+  border: 1px solid rgba(160, 98, 7, 0.35);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 8px 20px -10px rgba(201, 160, 74, 0.7);
+}
+.gm-tool-primary:hover:not(:disabled) { filter: brightness(1.05); transform: translateY(-1px); }
+.gm-tool-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.gm-tool-ready {
+  background: var(--gm-green-bg);
+  border: 1px solid var(--gm-green);
+}
+
+/* Subject picker, shared by both tools. */
+.gm-subject {
+  padding: 0.7rem 0.85rem;
+  border-radius: 0.8rem;
+  border: 1px solid var(--gm-border-2);
+  background: var(--gm-card-solid);
+  text-align: left;
+  min-width: 0;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+.gm-subject:hover { border-color: var(--gm-amber); }
+.gm-subject:focus-visible { outline: 2px solid var(--gm-amber); outline-offset: 2px; }
+.gm-subject-on {
+  border-color: var(--gm-amber);
+  background: var(--gm-amber-bg);
+  box-shadow: 0 0 0 1px var(--gm-amber) inset;
+}
+.gm-subject-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gm-text-3);
+  font-variant-numeric: lining-nums tabular-nums;
+}
+.gm-subject-on .gm-subject-code { color: var(--gm-gold-text); }
+.gm-subject-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gm-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

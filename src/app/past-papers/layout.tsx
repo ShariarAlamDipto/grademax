@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ToolsStrip } from '@/components/ToolsBanner'
 
 export const metadata: Metadata = {
   title: 'Edexcel Past Papers & Mark Schemes – IGCSE & A Level',
@@ -39,5 +40,10 @@ export default function PastPapersLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <>
+      <ToolsStrip />
+      {children}
+    </>
+  )
 }

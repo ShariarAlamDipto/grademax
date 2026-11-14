@@ -201,7 +201,7 @@ export default function PaperPreview({
               <div className="h-full rounded-full transition-all duration-500"
                 style={{ width: `${Math.round((pdfProgress.step / pdfProgress.total) * 100)}%`,
                   background: pdfProgress.step === pdfProgress.total
-                    ? 'linear-gradient(to right, #22c55e, #10b981)' : 'linear-gradient(to right, #3b82f6, #6366f1)' }} />
+                    ? 'var(--gm-green)' : 'var(--gm-amber)' }} />
             </div>
           </div>
         )}
@@ -288,7 +288,7 @@ export default function PaperPreview({
         )}
 
         <button onClick={onGenerate} disabled={items.length === 0 || generating}
-          className="w-full bg-gradient-to-r from-emerald-500 to-green-600 text-white py-2.5 rounded-xl font-bold text-sm shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+          className="w-full gm-tool-primary py-2.5 rounded-xl font-bold text-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed">
           {generating ? 'Generating...' : worksheetUrl ? 'Regenerate PDF' : 'Generate and Download PDF'}
         </button>
       </div>

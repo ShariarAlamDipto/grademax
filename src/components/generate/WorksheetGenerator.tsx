@@ -7,7 +7,8 @@ import { buildPdfInBrowser } from '@/lib/clientPdfBuild';
 import MultiPagePdfPreview from '@/components/MultiPagePdfPreview';
 import { handlePdfDownloadClick, handlePdfPreviewClick } from '@/lib/savePdf';
 import SignInPrompt from '@/components/SignInPrompt';
-import { toolSubjectDisplayCode, usesChapterFilters, usesExamPaperFilters } from '@/lib/igcseToolSubjects';
+import SubjectSelector from '@/components/test-builder/SubjectSelector';
+import { usesChapterFilters, usesExamPaperFilters } from '@/lib/igcseToolSubjects';
 import { totalQuestionMarks } from '@/lib/questionMarksTotal';
 
 interface Subject {
@@ -379,7 +380,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 p-4 md:p-8">
+    <div className="min-h-screen gm-tool-bg p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-2xl md:text-5xl font-bold mb-2 text-white">Worksheet Generator</h1>
         <p className="text-gray-300 mb-4 md:mb-8 text-sm md:text-base">
@@ -394,30 +395,14 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
             <h2 className="text-lg md:text-2xl font-semibold mb-3 md:mb-4 flex items-center gap-2 text-white">
               Select Subject
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-2 md:gap-4">
-              {subjects.length === 0 ? (
-                <div className="col-span-full text-center py-4 md:py-8 text-gray-400">
-                  <p className="text-base md:text-lg mb-2">No subjects available</p>
-                  <p className="text-xs md:text-sm">Please contact the administrator</p>
-                </div>
-              ) : (
-                subjects.map((subject) => (
-                  <button
-                    key={subject.id}
-                    onClick={() => setSelectedSubject(subject.id)}
-                    className={`p-2 md:p-4 rounded-lg md:rounded-xl border-2 transition-all ${
-                      selectedSubject === subject.id
-                        ? 'border-amber-500 bg-amber-900 bg-opacity-50 shadow-lg'
-                        : 'border-gray-600 bg-gray-700 bg-opacity-50 hover:border-gray-500'
-                    }`}
-                  >
-                    <div className="text-[10px] md:text-xs text-gray-400 font-medium mb-0.5 md:mb-1">{toolSubjectDisplayCode(subject.code)}</div>
-                    <div className="text-[10px] md:text-xs text-gray-400 font-medium">{subject.level || 'IGCSE'}</div>
-                    <div className="text-xs md:text-sm font-semibold text-white text-center">{subject.name}</div>
-                  </button>
-                ))
-              )}
-            </div>
+            {subjects.length === 0 ? (
+              <div className="text-center py-4 md:py-8 text-gray-400">
+                <p className="text-base md:text-lg mb-2">No subjects available</p>
+                <p className="text-xs md:text-sm">Please contact the administrator</p>
+              </div>
+            ) : (
+              <SubjectSelector subjects={subjects} selectedId={selectedSubject} onSelect={setSelectedSubject} />
+            )}
           </div>
 
           {/* Topic Selection */}
@@ -579,7 +564,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
           <button
             onClick={handleGenerate}
             disabled={loading || selectedTopics.length === 0}
-            className="w-full bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 py-3 md:py-4 rounded-xl font-bold text-base md:text-lg shadow-lg hover:shadow-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full gm-tool-primary py-3 md:py-4 rounded-xl font-bold text-base md:text-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {loading ? 'Generating...' : 'Generate Worksheet'}
           </button>
@@ -636,8 +621,8 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
                     style={{
                       width: `${Math.round((pdfProgress.step / pdfProgress.total) * 100)}%`,
                       background: pdfProgress.step === pdfProgress.total
-                        ? 'linear-gradient(to right, #22c55e, #10b981)'
-                        : 'linear-gradient(to right, #3b82f6, #6366f1)',
+                        ? 'var(--gm-green)'
+                        : 'var(--gm-amber)',
                     }}
                   />
                 </div>
@@ -666,7 +651,7 @@ export default function WorksheetGenerator({ initialSubjects, initialTopics }: W
 
             {/* Download Links */}
             {(worksheetUrl || markschemeUrl) && (
-              <div className="bg-gradient-to-r from-green-900 to-emerald-900 bg-opacity-50 border-2 border-green-500 rounded-xl p-4 md:p-6 mb-4 md:mb-6">
+              <div className="gm-tool-ready rounded-xl p-4 md:p-6 mb-4 md:mb-6">
                 <h3 className="font-bold text-green-300 mb-3 md:mb-4 text-base md:text-lg">PDFs Ready!</h3>
                 <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-4 md:mb-6">
                   {worksheetUrl && (
