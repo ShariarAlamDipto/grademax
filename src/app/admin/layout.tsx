@@ -47,7 +47,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
   return (
     <div className="gm-admin">
       <AdminNav role={role} />
-      <div className="ad-main">
+      <div className="gma-main">
         {children}
       </div>
     </div>

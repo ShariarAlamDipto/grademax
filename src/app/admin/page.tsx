@@ -39,12 +39,12 @@ function Gauge({ value, label }: { value: number; label: string }) {
   const arc = Math.PI * 80
   const filled = (Math.min(Math.max(value, 0), 100) / 100) * arc
   return (
-    <div className="ad-gauge" role="img" aria-label={`${label}: ${value}%`}>
+    <div className="gma-gauge" role="img" aria-label={`${label}: ${value}%`}>
       <svg viewBox="0 0 200 112">
-        <path d="M20 100a80 80 0 01160 0" fill="none" stroke="var(--ad-accent-soft)" strokeWidth="14" strokeLinecap="round" />
-        <path d="M20 100a80 80 0 01160 0" fill="none" stroke="var(--ad-accent)" strokeWidth="14" strokeLinecap="round" strokeDasharray={`${filled} ${arc}`} />
+        <path d="M20 100a80 80 0 01160 0" fill="none" stroke="var(--gma-accent-soft)" strokeWidth="14" strokeLinecap="round" />
+        <path d="M20 100a80 80 0 01160 0" fill="none" stroke="var(--gma-accent)" strokeWidth="14" strokeLinecap="round" strokeDasharray={`${filled} ${arc}`} />
       </svg>
-      <div className="ad-gauge-value">
+      <div className="gma-gauge-value">
         <strong>{value}%</strong>
         <span>{label}</span>
       </div>
@@ -54,7 +54,7 @@ function Gauge({ value, label }: { value: number; label: string }) {
 
 function SeeDetails({ href }: { href: string }) {
   return (
-    <Link href={href} className="ad-card-foot">
+    <Link href={href} className="gma-card-foot">
       See details
       <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
         <path strokeLinecap="round" strokeLinejoin="round" d={ARROW} />
@@ -95,52 +95,52 @@ export default function AdminOverviewPage() {
     : [0, 0, 0]
 
   return (
-    <div className="ad-page">
-      <div className="ad-head">
+    <div className="gma-page">
+      <div className="gma-head">
         <div>
-          <h1 className="ad-title">Dashboard</h1>
-          <p className="ad-lead">Papers, coverage and people across GradeMax</p>
+          <h1 className="gma-title">Dashboard</h1>
+          <p className="gma-lead">Papers, coverage and people across GradeMax</p>
         </div>
         <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
-          <Link href="/admin/analytics" className="ad-btn">Analytics</Link>
-          <Link href="/admin/papers" className="ad-btn ad-btn-dark">+ Upload papers</Link>
+          <Link href="/admin/analytics" className="gma-btn">Analytics</Link>
+          <Link href="/admin/papers" className="gma-btn gma-btn-dark">+ Upload papers</Link>
         </div>
       </div>
 
       {failed ? (
-        <p className="ad-note" role="alert" style={{ marginBottom: "1rem" }}>
+        <p className="gma-note" role="alert" style={{ marginBottom: "1rem" }}>
           The overview figures could not be loaded. Reload the page to try again.
         </p>
       ) : null}
 
-      <div className="ad-row ad-row-3">
-        <section className="ad-card">
-          <div className="ad-card-body">
-            <p className="ad-card-label">Paper library</p>
-            <p className="ad-figure">{formatCount(stats?.papers, loading)}<small>papers</small></p>
-            <p className="ad-note">{formatCount(stats?.subjects, loading)} subjects · {formatCount(r2Count, false)} files in storage</p>
-            <div className="ad-meter-row"><span>Question papers</span><b>{loading ? "—" : `${qpPct}%`}</b></div>
-            <div className="ad-meter"><i style={{ width: `${qpPct}%` }} /></div>
-            <div className="ad-meter-row"><span>Mark schemes</span><b>{loading ? "—" : `${msPct}%`}</b></div>
-            <div className="ad-meter"><i style={{ width: `${msPct}%` }} /></div>
+      <div className="gma-row gma-row-3">
+        <section className="gma-card">
+          <div className="gma-card-body">
+            <p className="gma-card-label">Paper library</p>
+            <p className="gma-figure">{formatCount(stats?.papers, loading)}<small>papers</small></p>
+            <p className="gma-note">{formatCount(stats?.subjects, loading)} subjects · {formatCount(r2Count, false)} files in storage</p>
+            <div className="gma-meter-row"><span>Question papers</span><b>{loading ? "—" : `${qpPct}%`}</b></div>
+            <div className="gma-meter"><i style={{ width: `${qpPct}%` }} /></div>
+            <div className="gma-meter-row"><span>Mark schemes</span><b>{loading ? "—" : `${msPct}%`}</b></div>
+            <div className="gma-meter"><i style={{ width: `${msPct}%` }} /></div>
           </div>
           <SeeDetails href="/admin/papers" />
         </section>
 
-        <section className="ad-card">
-          <div className="ad-card-body">
-            <p className="ad-card-label">Tool questions</p>
-            <div className="ad-split">
+        <section className="gma-card">
+          <div className="gma-card-body">
+            <p className="gma-card-label">Tool questions</p>
+            <div className="gma-split">
               <div>
-                <p className="ad-figure">{formatCount(stats?.questionPages, loading)}</p>
-                <p className="ad-note">
+                <p className="gma-figure">{formatCount(stats?.questionPages, loading)}</p>
+                <p className="gma-note">
                   of {formatCount(stats?.pages, loading)} pages{" "}
-                  <span className="ad-chip">{loading ? "—" : `${questionPct}%`}</span>
+                  <span className="gma-chip">{loading ? "—" : `${questionPct}%`}</span>
                 </p>
               </div>
-              <div className="ad-bars" aria-hidden>
+              <div className="gma-bars" aria-hidden>
                 {[questionPct, qpPct, msPct].map((h, i) => (
-                  <span key={i} className="ad-bar"><i style={{ height: `${Math.max(h, 6)}%` }} /></span>
+                  <span key={i} className="gma-bar"><i style={{ height: `${Math.max(h, 6)}%` }} /></span>
                 ))}
               </div>
             </div>
@@ -148,19 +148,19 @@ export default function AdminOverviewPage() {
           <SeeDetails href="/admin/tagger" />
         </section>
 
-        <section className="ad-card">
-          <div className="ad-card-body">
-            <p className="ad-card-label">People</p>
-            <div className="ad-split">
+        <section className="gma-card">
+          <div className="gma-card-body">
+            <p className="gma-card-label">People</p>
+            <div className="gma-split">
               <div>
-                <p className="ad-figure">{formatCount(users?.total, loading)}</p>
-                <p className="ad-note">
+                <p className="gma-figure">{formatCount(users?.total, loading)}</p>
+                <p className="gma-note">
                   {formatCount(users?.students, loading)} students · {formatCount(users?.teachers, loading)} teachers · {formatCount(users?.admins, loading)} admins
                 </p>
               </div>
-              <div className="ad-bars" aria-hidden>
+              <div className="gma-bars" aria-hidden>
                 {userBars.map((h, i) => (
-                  <span key={i} className="ad-bar"><i style={{ height: `${h}%` }} /></span>
+                  <span key={i} className="gma-bar"><i style={{ height: `${h}%` }} /></span>
                 ))}
               </div>
             </div>
@@ -169,14 +169,14 @@ export default function AdminOverviewPage() {
         </section>
       </div>
 
-      <div className="ad-row ad-row-2">
-        <section className="ad-card">
-          <div className="ad-card-body">
-            <h2 className="ad-section-title" style={{ marginTop: 0 }}>Quick actions</h2>
-            <div className="ad-actions">
+      <div className="gma-row gma-row-2">
+        <section className="gma-card">
+          <div className="gma-card-body">
+            <h2 className="gma-section-title" style={{ marginTop: 0 }}>Quick actions</h2>
+            <div className="gma-actions">
               {QUICK_ACTIONS.map(action => (
-                <Link key={action.href} href={action.href} className="ad-action">
-                  <span className="ad-action-icon">
+                <Link key={action.href} href={action.href} className="gma-action">
+                  <span className="gma-action-icon">
                     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d={action.icon} />
                     </svg>
@@ -191,11 +191,11 @@ export default function AdminOverviewPage() {
           </div>
         </section>
 
-        <section className="ad-card">
-          <div className="ad-card-body">
-            <p className="ad-card-label">Coverage</p>
+        <section className="gma-card">
+          <div className="gma-card-body">
+            <p className="gma-card-label">Coverage</p>
             <Gauge value={loading ? 0 : msPct} label="papers with a mark scheme" />
-            <div className="ad-legend">
+            <div className="gma-legend">
               <div><span><i />Question papers</span><span>{formatCount(stats?.papersWithQP, loading)}</span></div>
               <div><span><i data-soft />Mark schemes</span><span>{formatCount(stats?.papersWithMS, loading)}</span></div>
             </div>
