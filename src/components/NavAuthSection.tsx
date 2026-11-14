@@ -91,7 +91,7 @@ export default function NavAuthSection() {
           )}
           {isAdmin && (
             <Link
-              href="/dashboard/admin"
+              href="/admin"
               onClick={() => setDropdownOpen(false)}
               className="flex items-center gap-3 px-4 py-2.5 text-sm hover:bg-gray-100 dark:hover:bg-white/5 transition-colors"
             >
