@@ -17,6 +17,24 @@ interface ToolsBannerProps {
   board: ToolsBannerBoard
 }
 
+/**
+ * A slim one-line version for the pages under /past-papers, shown straight
+ * under the navbar on every subject, year, session and paper page.
+ */
+export function ToolsStrip() {
+  return (
+    <aside className="tb-strip" aria-label="Practice tools">
+      <p>
+        <b>Practise your weak points.</b> Build a worksheet from the chapters you lose marks on, or, if you teach, a test from real questions.
+      </p>
+      <div className="tb-strip-links">
+        <Link href="/generate" className="tb-strip-main">Worksheet Generator</Link>
+        <Link href="/test-builder">Test Builder for teachers</Link>
+      </div>
+    </aside>
+  )
+}
+
 const COPY: Record<ToolsBannerBoard, { lead: string; scope: string }> = {
   edexcel: {
     lead: "Past papers show you what you got wrong. Pick the chapters you find hard and the Worksheet Generator builds a practice sheet from real questions, with its mark scheme.",

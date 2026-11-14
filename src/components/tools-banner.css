@@ -30,3 +30,35 @@
   .tb { grid-template-columns: minmax(0, 1fr); padding: 1.25rem; }
   .tb-actions a { width: 100%; justify-content: center; }
 }
+
+/* Slim strip under the navbar on every /past-papers page. */
+.tb-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem 1.25rem;
+  flex-wrap: wrap;
+  padding: 0.65rem 1rem;
+  background: var(--gm-amber-bg);
+  border-bottom: 1px solid var(--gm-amber-ring);
+  color: var(--gm-text);
+  text-align: center;
+}
+.tb-strip p { margin: 0; font-size: 0.84rem; line-height: 1.5; color: var(--gm-text-2); }
+.tb-strip b { color: var(--gm-text); font-weight: 700; }
+.tb-strip-links { display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.tb-strip-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--gm-amber-ring);
+  color: var(--gm-gold-text, var(--gm-amber));
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.tb-strip-links a:hover { border-color: var(--gm-amber); }
+.tb-strip-links a.tb-strip-main { background: var(--gm-gold-grad); color: var(--gm-gold-ink); border-color: rgba(160, 98, 7, 0.35); }

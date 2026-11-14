@@ -13,7 +13,7 @@
   background: var(--gm-gold-grad);
   color: var(--gm-gold-ink);
   border: 1px solid rgba(160, 98, 7, 0.35);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 8px 20px -10px rgba(240, 164, 22, 0.7);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 8px 20px -10px rgba(201, 160, 74, 0.7);
 }
 .gm-tool-primary:hover:not(:disabled) { filter: brightness(1.05); transform: translateY(-1px); }
 .gm-tool-primary:disabled { opacity: 0.5; cursor: not-allowed; }

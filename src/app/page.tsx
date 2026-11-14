@@ -82,13 +82,13 @@ export default function Home() {
         <div aria-hidden style={{
           position: "absolute", top: 0, left: "50%", transform: "translateX(-50%)",
           width: "900px", height: "500px",
-          background: "radial-gradient(ellipse at 50% -10%, rgba(245,184,61,0.12) 0%, rgba(245,184,61,0.03) 45%, transparent 70%)",
+          background: "radial-gradient(ellipse at 50% -10%, rgba(217,174,85,0.12) 0%, rgba(217,174,85,0.03) 45%, transparent 70%)",
           pointerEvents: "none",
         }} />
         <div aria-hidden style={{
           position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)",
           width: "600px", height: "200px",
-          background: "radial-gradient(ellipse at 50% 100%, rgba(245,184,61,0.05) 0%, transparent 60%)",
+          background: "radial-gradient(ellipse at 50% 100%, rgba(217,174,85,0.05) 0%, transparent 60%)",
           pointerEvents: "none",
         }} />
 

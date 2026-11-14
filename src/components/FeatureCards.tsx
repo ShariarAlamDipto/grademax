@@ -8,7 +8,7 @@ import Link from "next/link"
  * Styles live in src/app/design-refresh.css (.fc-*).
  */
 
-const GOLD = "#F2B233"
+const GOLD = "#D9AE55"
 const PAPER = "var(--gm-surface)"
 
 /** Delay (seconds) for one stroke or fill, read by the .fc-s / .fc-f rules. */

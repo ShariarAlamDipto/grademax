@@ -20,14 +20,14 @@ html {
    instead of the flatter orange it used to be. */
 :root,
 html.dark {
-  --gm-amber:        #F5B83D;
-  --gm-amber-hover:  #E5A422;
-  --gm-amber-bg:     rgba(245, 184, 61, 0.10);
-  --gm-amber-ring:   rgba(245, 184, 61, 0.32);
-  --gm-gold-grad:    linear-gradient(135deg, #F2A91E 0%, #FCD34D 55%, #F0A416 100%);
+  --gm-amber:        #D9AE55;
+  --gm-amber-hover:  #C79A3F;
+  --gm-amber-bg:     rgba(217, 174, 85, 0.10);
+  --gm-amber-ring:   rgba(217, 174, 85, 0.32);
+  --gm-gold-grad:    linear-gradient(135deg, #C9A04A 0%, #E4C57E 55%, #C39A45 100%);
   --gm-gold-ink:     #1A1206;
-  --gm-gold-text-grad: linear-gradient(135deg, #F2A91E 0%, #FCD34D 55%, #F0A416 100%);
-  --gm-gold-text:    #F7C352;
+  --gm-gold-text-grad: linear-gradient(135deg, #C9A04A 0%, #E4C57E 55%, #C39A45 100%);
+  --gm-gold-text:    #E0BB6A;
   --gm-card-solid:   #0D1322;
   --gm-ink-btn:      #EDF0F7;
   --gm-ink-btn-text: #0A0E18;
@@ -54,7 +54,7 @@ html.light {
   --gm-amber-ring:   rgba(202, 138, 4, 0.32);
   --gm-gold-text:    #8A5A00;
   /* Deeper on paper, so the big headline word keeps its contrast. */
-  --gm-gold-text-grad: linear-gradient(135deg, #B97A08 0%, #E3A81A 55%, #B5750A 100%);
+  --gm-gold-text-grad: linear-gradient(135deg, #A5762A 0%, #C9A150 55%, #A06F22 100%);
 
   --gm-border:       rgba(72, 52, 20, 0.11);
   --gm-border-2:     rgba(72, 52, 20, 0.17);
@@ -83,17 +83,17 @@ html.light .text-gray-900 { color: var(--gm-text) !important; }
   background: var(--gm-gold-grad);
   color: var(--gm-gold-ink);
   border: 1px solid rgba(160, 98, 7, 0.35);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 6px 18px -8px rgba(240, 164, 22, 0.65);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 6px 18px -8px rgba(201, 160, 74, 0.65);
 }
 .btn-beacon:hover {
   background: var(--gm-gold-grad);
   filter: brightness(1.05) saturate(1.05);
   transform: translateY(-1px);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 10px 26px -8px rgba(240, 164, 22, 0.75);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset, 0 10px 26px -8px rgba(201, 160, 74, 0.75);
 }
 @keyframes beacon-pulse {
-  0%, 100% { box-shadow: 0 1px 0 rgba(255,255,255,0.45) inset, 0 0 0 0 rgba(245, 184, 61, 0.45); }
-  50%      { box-shadow: 0 1px 0 rgba(255,255,255,0.45) inset, 0 0 0 9px rgba(245, 184, 61, 0); }
+  0%, 100% { box-shadow: 0 1px 0 rgba(255,255,255,0.45) inset, 0 0 0 0 rgba(217, 174, 85, 0.45); }
+  50%      { box-shadow: 0 1px 0 rgba(255,255,255,0.45) inset, 0 0 0 9px rgba(217, 174, 85, 0); }
 }
 
 .btn-ghost-amber {
@@ -102,7 +102,7 @@ html.light .text-gray-900 { color: var(--gm-text) !important; }
   background: var(--gm-amber-bg);
 }
 .btn-ghost-amber:hover {
-  background: rgba(245, 184, 61, 0.18);
+  background: rgba(217, 174, 85, 0.18);
   border-color: var(--gm-amber);
 }
 
@@ -242,3 +242,14 @@ html.light .bg-white.text-black:hover { background-color: var(--gm-ink-btn) !imp
 /* Dark mode: those pages painted pure black under a navy navbar. */
 html.dark main.bg-black,
 html.dark main.dark\:bg-black   { background-color: var(--gm-bg) !important; }
+
+/* ── 8. The remaining shades the past-paper pages use ──────────────
+   Year, session and paper pages are written for dark only. These were left
+   white-on-cream (session headings) or grey slabs (the sticky breadcrumb). */
+html.light .text-white\/90,
+html.light .hover\:text-white:hover { color: var(--gm-text) !important; }
+html.light .text-white\/20          { color: var(--gm-border-input) !important; }
+html.light .sticky.bg-black\/50     { background-color: var(--gm-nav-bg) !important; }
+html.light .bg-white\/\[0\.02\],
+html.light .bg-white\/\[0\.03\],
+html.light .bg-white\/\[0\.04\]     { background-color: var(--gm-card-solid) !important; }
