@@ -20,6 +20,7 @@ const QUICK_ACTIONS = [
   { href: "/admin/scraper", label: "Scraper", desc: "Download missing papers", icon: "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" },
   { href: "/admin/tagger", label: "Question Tagger", desc: "Tag and classify questions", icon: "M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" },
   { href: "/admin/workbook/verify", label: "Workbook Verification", desc: "Confirm chapter assignments before they reach the book", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
+  { href: "/admin/suggestions", label: "Suggestions", desc: "User-submitted improvement ideas", icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" },
 ]
 
 const ARROW = "M5 12h14m-6-6l6 6-6 6"
