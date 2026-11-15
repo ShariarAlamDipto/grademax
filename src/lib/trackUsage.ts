@@ -21,14 +21,17 @@ export async function trackUsage(event: UsageEvent): Promise<void> {
   try {
     const db = getSupabaseAdmin()
     if (!db) return
-    await db.from("usage_events").insert({
+    const { error } = await db.from("usage_events").insert({
       user_id: event.user_id ?? null,
       feature: event.feature,
       subject_id: event.subject_id ?? null,
       subject_name: event.subject_name ?? null,
       metadata: event.metadata ?? null,
     })
-  } catch {
-    // Non-fatal — never break user-facing flows
+    // Never break the user-facing flow, but leave a trace: a silent failure
+    // here (a broken trigger, say) would stop every usage count without a sign.
+    if (error) console.error(`[trackUsage] ${event.feature} not recorded (${error.code ?? "no code"}): ${error.message}`)
+  } catch (err) {
+    console.error(`[trackUsage] ${event.feature} not recorded:`, err instanceof Error ? err.message : err)
   }
 }
