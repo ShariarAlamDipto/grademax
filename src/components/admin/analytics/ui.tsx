@@ -1,6 +1,7 @@
 "use client"
 import { useCallback, useEffect, useState, type CSSProperties, type ReactNode } from "react"
 import { toCsv } from "@/lib/analyticsQuery"
+import { readJsonObject, toReportResult } from "@/lib/adminReportGuards"
 
 /** Shared pieces for the Visitors dashboard panels. */
 
@@ -241,12 +242,9 @@ export function useSection<T>(section: string, query: string, refreshMs: number)
       const res = await fetch(`/api/admin/analytics/visitors?section=${section}&${query}`, { cache: "no-store" })
       // A 200 that is not a JSON object (an HTML login or Cloudflare page) must
       // show the error card: rendering it as data crashes the panel.
-      const json: unknown = await res.json().catch(() => null)
-      const body = json !== null && typeof json === "object" && !Array.isArray(json) ? (json as Record<string, unknown>) : null
-      if (!res.ok || !body || "error" in body) {
-        throw new Error(typeof body?.error === "string" ? body.error : "Could not load visitor analytics.")
-      }
-      setData(body as T)
+      const result = toReportResult(res, await readJsonObject(res), "Could not load visitor analytics.")
+      if (!result.ok) throw new Error(result.error)
+      setData(result.data as T)
       setError(null)
     } catch (err) {
       setError(err instanceof Error ? err.message : "Could not load visitor analytics.")

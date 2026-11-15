@@ -12,6 +12,7 @@ import ToolsPanel from "./analytics/ToolsPanel"
 import PerformancePanel from "./analytics/PerformancePanel"
 import ContentPanel from "./analytics/ContentPanel"
 import DataQualityPanel from "./analytics/DataQualityPanel"
+import PanelBoundary from "./analytics/PanelBoundary"
 import { countryName, useSection } from "./analytics/ui"
 
 /**
@@ -157,18 +158,20 @@ export default function VisitorAnalytics() {
         )}
       </p>
 
-      {section === "overview" && <OverviewPanel {...panelProps} />}
-      {section === "countries" && <CountriesPanel {...panelProps} />}
-      {section === "realtime" && <RealtimePanel {...panelProps} />}
-      {section === "behavior" && <BehaviorPanel {...panelProps} />}
-      {section === "acquisition" && <AcquisitionPanel {...panelProps} />}
-      {section === "funnels" && <FunnelsPanel {...panelProps} />}
-      {section === "retention" && <RetentionPanel {...panelProps} />}
-      {section === "patterns" && <PatternsPanel {...panelProps} />}
-      {section === "tools" && <ToolsPanel {...panelProps} />}
-      {section === "performance" && <PerformancePanel {...panelProps} />}
-      {section === "content" && <ContentPanel {...panelProps} />}
-      {section === "quality" && <DataQualityPanel {...panelProps} />}
+      <PanelBoundary key={section} name={SECTIONS.find(s => s.key === section)?.label ?? "This"}>
+        {section === "overview" && <OverviewPanel {...panelProps} />}
+        {section === "countries" && <CountriesPanel {...panelProps} />}
+        {section === "realtime" && <RealtimePanel {...panelProps} />}
+        {section === "behavior" && <BehaviorPanel {...panelProps} />}
+        {section === "acquisition" && <AcquisitionPanel {...panelProps} />}
+        {section === "funnels" && <FunnelsPanel {...panelProps} />}
+        {section === "retention" && <RetentionPanel {...panelProps} />}
+        {section === "patterns" && <PatternsPanel {...panelProps} />}
+        {section === "tools" && <ToolsPanel {...panelProps} />}
+        {section === "performance" && <PerformancePanel {...panelProps} />}
+        {section === "content" && <ContentPanel {...panelProps} />}
+        {section === "quality" && <DataQualityPanel {...panelProps} />}
+      </PanelBoundary>
     </div>
   )
 }

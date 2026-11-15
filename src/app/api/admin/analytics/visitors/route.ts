@@ -66,15 +66,15 @@ export async function GET(req: NextRequest) {
     console.error(`[admin/visitors] ${section.fn} failed (${error.code ?? "no code"}): ${error.message}`)
     // PGRST202 / 42883 = no function with these parameters: a migration is missing.
     const notSetUp = error.code === "PGRST202" || error.code === "42883"
-    return NextResponse.json(
-      {
-        error: notSetUp
-          ? "This view needs the latest analytics migrations. In the Supabase SQL editor, run any of supabase/migrations/37, 38, 40, 41, 42 and 43 that have not been run yet, in that order."
-          : "Could not load visitor analytics.",
-        notSetUp,
-      },
-      { status: notSetUp ? 503 : 500 }
-    )
+    // 57014 = the database stopped the query at its time limit (8 s for the
+    // API). Content and Data quality did this on long ranges until migration 46.
+    const timedOut = error.code === "57014"
+    const message = notSetUp
+      ? "This view needs the latest analytics migrations. In the Supabase SQL editor, run any of supabase/migrations/37, 38, 40, 41, 42 and 43 that have not been run yet, in that order."
+      : timedOut
+        ? "This report took too long to load. Try a shorter date range. If Content or Data quality keep failing, run supabase/migrations/46_usage_view_daily.sql in the Supabase SQL editor."
+        : "Could not load visitor analytics."
+    return NextResponse.json({ error: message, notSetUp }, { status: notSetUp ? 503 : timedOut ? 504 : 500 })
   }
   return NextResponse.json(data)
 }
