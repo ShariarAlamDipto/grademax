@@ -1,6 +1,7 @@
 "use client"
 import { useEffect, useState } from "react"
 import VisitorAnalytics from "@/components/admin/VisitorAnalytics"
+import { isUsageReport, readJsonObject } from "@/lib/adminReportGuards"
 
 interface Stats {
   subjects: number; papers: number; papersWithQP: number; papersWithMS: number
@@ -49,6 +50,7 @@ const UsageStat = ({ label, total, unique, color }: { label: string; total: numb
 
 type AnalyticsTab = "visitors" | "overview" | "coverage" | "usage"
 
+
 export default function AnalyticsAdminPage() {
   const [stats, setStats] = useState<Stats | null>(null)
   const [subjects, setSubjects] = useState<Subject[]>([])
@@ -58,6 +60,8 @@ export default function AnalyticsAdminPage() {
   const [loading, setLoading] = useState(true)
   const [coverageLoading, setCoverageLoading] = useState(false)
   const [usageLoading, setUsageLoading] = useState(false)
+  const [coverageError, setCoverageError] = useState<string | null>(null)
+  const [usageError, setUsageError] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState<AnalyticsTab>("visitors")
   const [coverageSort, setCoverageSort] = useState<"name" | "total" | "qp" | "ms">("total")
 
@@ -78,13 +82,19 @@ export default function AnalyticsAdminPage() {
       .catch(() => {})
   }, [])
 
+  // Both loaders keep an error response (or a non-JSON page) out of state:
+  // rendering `{ error }` as report data crashed the whole page.
   const loadCoverage = async () => {
     if (coverage.length > 0) return
     setCoverageLoading(true)
+    setCoverageError(null)
     try {
       const res = await fetch("/api/admin/analytics/coverage")
-      const data = await res.json()
-      setCoverage(data.rows || [])
+      const data = await readJsonObject(res)
+      if (!res.ok || !data || !Array.isArray(data.rows)) throw new Error("coverage")
+      setCoverage(data.rows as CoverageRow[])
+    } catch {
+      setCoverageError("Coverage could not be loaded. Open this tab again to retry.")
     } finally {
       setCoverageLoading(false)
     }
@@ -93,10 +103,14 @@ export default function AnalyticsAdminPage() {
   const loadUsage = async () => {
     if (usage) return
     setUsageLoading(true)
+    setUsageError(null)
     try {
       const res = await fetch("/api/admin/analytics/usage")
-      const data = await res.json()
-      setUsage(data)
+      const data = await readJsonObject(res)
+      if (!res.ok || !data || !isUsageReport(data)) throw new Error("usage")
+      setUsage(data as unknown as UsageData)
+    } catch {
+      setUsageError("Feature usage could not be loaded. Open this tab again to retry.")
     } finally {
       setUsageLoading(false)
     }
@@ -249,6 +263,8 @@ export default function AnalyticsAdminPage() {
 
           {coverageLoading ? (
             <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Loading coverage data…</div>
+          ) : coverageError ? (
+            <div role="alert" style={{ color: "var(--gm-text-2)", fontSize: "0.875rem" }}>{coverageError}</div>
           ) : (
             <div style={{ background: "var(--gm-surface)", border: "1px solid var(--gm-border)", borderRadius: "0.75rem", overflow: "hidden" }}>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 60px 80px 80px 80px", padding: "0.5rem 1rem", borderBottom: "1px solid var(--gm-border)", fontSize: "0.7rem", color: "var(--gm-text-3)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.06em" }}>
@@ -289,7 +305,9 @@ export default function AnalyticsAdminPage() {
           {usageLoading ? (
             <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>Loading usage data…</div>
           ) : !usage ? (
-            <div style={{ color: "var(--gm-text-3)", fontSize: "0.875rem" }}>No data yet.</div>
+            <div role={usageError ? "alert" : undefined} style={{ color: usageError ? "var(--gm-text-2)" : "var(--gm-text-3)", fontSize: "0.875rem" }}>
+              {usageError ?? "No data yet."}
+            </div>
           ) : (
             <>
               {usage.source === "sample" ? (
