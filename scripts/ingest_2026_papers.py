@@ -126,8 +126,17 @@ SINGLE_UNIT_CODE_RE = re.compile(r"^(WMA1[1-4]|WST0[1-3]|WME0[1-3]|WFM0[1-3]|WDM
 
 # ── Algolia discovery ────────────────────────────────────────────────────────
 
-def algolia_hits(family: str) -> list:
+SERIES_MONTHS = ("January", "February", "March", "May", "June", "October", "November")
+
+
+def algolia_hits(family: str, year: int | None = None) -> list:
+    # Algolia stops paginating at 10,000 hits, and each family indexes more
+    # assets than that, so an unfiltered query silently drops whole series.
+    # Narrowing to one year's exam series keeps every query under the cap.
     filters = (f'category:"Pearson-UK:Qualification-Family/{family}" AND type:"dam:Asset"')
+    if year is not None:
+        series = " OR ".join(f'category:"Pearson-UK:Exam-Series/{m}-{year}"' for m in SERIES_MONTHS)
+        filters += f" AND ({series})"
     hits, page = [], 0
     while page < 40:
         payload = {"params": f"query=&filters={quote(filters, safe='')}&hitsPerPage=1000&page={page}"}
@@ -201,8 +210,10 @@ def paper_number_for(family: str, code: str, variant: str | None, unit: str | No
 def build_manifest(year: int) -> list[dict]:
     out = []
     for fam_key, fam in FAMILIES.items():
-        hits = algolia_hits(fam)
-        print(f"  {fam}: {len(hits)} assets indexed")
+        hits = algolia_hits(fam, year)
+        print(f"  {fam}: {len(hits)} assets indexed for {year}")
+        if len(hits) >= 10000:
+            sys.exit(f"!! {fam} {year}: hit Algolia's 10,000-hit cap; the manifest would be incomplete")
         for h in hits:
             yr, season = hit_series(h)
             kind = hit_kind(h)
